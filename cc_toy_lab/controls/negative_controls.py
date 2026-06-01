@@ -313,7 +313,7 @@ def build_broken_wilson_control(
             alpha=float(alpha),
             mode="clean" if disorder_strength == 0.0 else "geometric_weight",
             disorder_strength=float(disorder_strength),
-            seed=seed + 1,  # Different seed for ring baseline
+            seed=seed,  # SAME seed for disorder (must match wilson_ring basis)
             radius=float(radius),
             s1_family="ring",
         )
