@@ -321,12 +321,12 @@ def build_broken_wilson_control(
         # Wilson term (approximately) = H_wilson - H_ring
         wilson_term_approx = op_wilson - op_ring
 
-        # Scramble: multiply by random Hermitian sign pattern
+        # Scramble: multiply by random Hermitian sign pattern on diagonal
         rng = np.random.default_rng(int(seed))
         s3_dim = s3_dimension(int(j_max))
         total_dim = s3_dim * int(s1_size)
-        random_signs = rng.choice([-1.0, 1.0], size=total_dim)
-        scrambled_wilson = np.diag(random_signs.astype(complex)) @ wilson_term_approx
+        random_signs = rng.choice([-1.0, 1.0], size=(total_dim, total_dim))
+        scrambled_wilson = random_signs * wilson_term_approx  # Element-wise
 
         operator = op_ring + scrambled_wilson
         operator = _hermitize(operator)
