@@ -118,18 +118,25 @@ def build_s3_dirac_operator(
 def s3_dimension(j_max: int) -> int:
     """Calculate total Hilbert space dimension for S³ Dirac eigenspaces up to level j_max.
 
-    Uses arXiv:1103.4097 degeneracy formula: 2(k+1)² per level k ≥ 1.
+    Uses arXiv:1103.4097 degeneracy formula:
+    - k=0 (negative branch only): degeneracy 2
+    - k ≥ 1 (both branches): degeneracy 2(k+1)² per level
+
+    CRITICAL: Must match build_s3_dirac_operator dimension calculation.
+    v0.1.24 fix includes k=0 negative branch (arXiv:1103.4097 Section 6).
 
     Args:
         j_max: Maximum level parameter (determines k_max = j_max+1)
 
     Returns:
-        Total dimension: sum_{k=1}^{j_max+1} 2(k+1)²
+        Total dimension: 2 + sum_{k=1}^{j_max+1} 2(k+1)²
 
     Examples:
-        j_max=0: k=1 → dim = 2(1+1)² = 8
-        j_max=1: k=1,2 → dim = 8 + 2(2+1)² = 8 + 18 = 26
-        j_max=2: k=1,2,3 → dim = 8 + 18 + 2(3+1)² = 8 + 18 + 32 = 58
+        j_max=0: k=0,1 → dim = 2 + 2(1+1)² = 2 + 8 = 10
+        j_max=1: k=0,1,2 → dim = 2 + 8 + 2(2+1)² = 2 + 8 + 18 = 28
+        j_max=2: k=0,1,2,3 → dim = 2 + 8 + 18 + 2(3+1)² = 2 + 8 + 18 + 32 = 60
+        j_max=3: k=0,1,2,3,4 → dim = 2 + 8 + 18 + 32 + 50 = 110
     """
+    k0_neg_degeneracy = 2  # k=0 negative branch only (no positive counterpart)
     k_values = range(1, int(j_max) + 2)  # k = 1, 2, ..., j_max+1
-    return int(sum(2 * (k + 1) ** 2 for k in k_values))
+    return k0_neg_degeneracy + int(sum(2 * (k + 1) ** 2 for k in k_values))
