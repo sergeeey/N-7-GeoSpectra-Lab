@@ -144,39 +144,45 @@
 
 ## Updated Specificity Verdict
 
-**From Negative Controls Full Pattern Audit (2026-05-31):**
-- Verdict: `HARNESS_NONSPECIFIC` (broken_wilson_term reproduced full pattern)
+**Evolution:**
+1. **2026-05-31:** `HARNESS_NONSPECIFIC` (broken_wilson_term reproduced full pattern)
+2. **2026-06-01 AM:** `PARTIAL_SPECIFICITY` (after code audit: broken_wilson_term = ring)
+3. **2026-06-01 PM:** `GEOMETRY_AGNOSTIC` (after scrambled Wilson rerun) ← **FINAL**
 
-**From Diagnostic Sprint (2026-06-01):**
-- Updated: `PARTIAL_SPECIFICITY` — harness rejects random/scrambled but accepts intact S³×S¹ geometry
+**From wilson_mode="scrambled" Rerun (2026-06-01):**
+- **Scrambled Wilson contrast:** 2.94× (≥2.0× threshold) ✅
+- **Scrambled FSS slope:** -0.0702 STABLE (>-0.1 threshold) ✅
+- **Verdict:** Wilson term geometric structure **NOT load-bearing**
 
-**Rationale:**
-- `broken_wilson_term` is NOT a "broken" control — it's intact `ring` family
-- Random Hermitian and scrambled geometry both FAIL (WEAKENING slopes, low contrasts)
-- Harness discriminates between geometric structure (S³ ⊗ S¹) vs scrambled/random
+**Specificity Cascade:**
+- ✅ **L1 (Random rejection):** Random Hermitian → contrast <2.0×, FSS WEAKENING
+- ✅ **L2 (Geometry scrambling):** Scrambled geometry → contrast <2.0×, FSS WEAKENING
+- ✅ **L3 (S¹ family intact):** ring / wilson_ring → contrast ≥8.0×, FSS STABLE
+- ❌ **L4 (Wilson term intact):** scrambled Wilson → contrast 2.94×, FSS STABLE
+
+**What harness IS sensitive to:**
+- ✅ S³⊗S¹ **product structure** (Kronecker sum H = H_S3 ⊗ I + I ⊗ H_S1)
+
+**What harness is NOT sensitive to:**
+- ❌ S¹ **family details** (ring vs wilson_ring vs scrambled_wilson)
+- ❌ Wilson term **sign structure** (intact vs scrambled)
 
 **What this does NOT prove:**
-- ❌ "S³×S¹ compactification validated" — ring showing robustness ≠ physical validation
-- ❌ "Wilson term irrelevant" — scrambled Wilson untested
-- ❌ "Harness fully nonspecific" — geometric scrambling DID fail
+- ❌ "S³×S¹ compactification validated" — harness accepts scrambled Wilson
+- ❌ "Wilson term irrelevant" — we only tested scrambling, not full removal
+- ❌ "Harness fully nonspecific" — product structure IS distinguished from random
 
 ---
 
 ## Next Steps (Priority Order)
 
-### Priority 1 — wilson_mode="scrambled" Rerun (Minimal Compute)
+### Priority 1 — ✅ COMPLETE: wilson_mode="scrambled" Rerun
 
-**Goal:** Test if Wilson term geometric structure is load-bearing.
+**Status:** ✅ **COMPLETE** (2026-06-01)
 
-**Grid:** 18 cases (W=0/20 × sizes=16/64/128 × seeds=123/456/789)
+**Result:** Scrambled Wilson reproduces 2.94× contrast + STABLE FSS (-0.0702) → Wilson term **NOT load-bearing**
 
-**Runtime:** ~14 minutes (1 batch)
-
-**Decision rule:**
-- IF scrambled Wilson reproduces STABLE slope → Wilson term NOT load-bearing
-- IF scrambled Wilson shows WEAKENING slope → Wilson term IS load-bearing
-
-**Deliverable:** `reports/WILSON_SCRAMBLED_ANALYSIS_v0.1.24.md`
+**Deliverable:** `reports/WILSON_SCRAMBLED_ANALYSIS_v0.1.24.md` ✅
 
 ### Priority 2 — Control-Normalized Effect Size (Quick Analysis)
 
