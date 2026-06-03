@@ -106,17 +106,17 @@ Pre-registered protocol: [`reports/GATE_4B_RERUN_PROTOCOL_v0.1.24.md`](reports/G
 
 ```mermaid
 flowchart LR
-    A[Compact product geometry<br/>S³ × S¹] --> B[Spectral operator<br/>Dirac / Anderson]
-    B --> C[Discretization<br/>3 lattice families + FFT control]
-    C --> D[Disorder sweep<br/>W = 0, 12, 20]
-    D --> E[Sparse eigendecomposition]
-    E --> F1[True IPR<br/>Σ |ψᵢ|⁴]
-    E --> F2[r-statistic<br/>adjacent gap ratio]
-    F1 --> G[Pre-registered<br/>decision rules]
+    A["Compact product geometry<br/>S³ × S¹"] --> B["Spectral operator<br/>Dirac / Anderson"]
+    B --> C["Discretization<br/>3 lattice families + FFT control"]
+    C --> D["Disorder sweep<br/>W = 0, 12, 20"]
+    D --> E["Sparse eigendecomposition"]
+    E --> F1["True IPR<br/>sum of psi_i^4"]
+    E --> F2["r-statistic<br/>adjacent gap ratio"]
+    F1 --> G["Pre-registered<br/>decision rules"]
     F2 --> G
-    I[Falsification controls<br/>random / scrambled / broken / FFT] --> G
-    G --> H[Verdict<br/>PASS / WEAK / FAIL / DISCRETIZATION_SENSITIVE]
-    G --> J[Audit trail<br/>raw JSON + reports]
+    I["Falsification controls<br/>random / scrambled / broken / FFT"] --> G
+    G --> H["Verdict<br/>PASS / WEAK / FAIL / DISCRETIZATION_SENSITIVE"]
+    G --> J["Audit trail<br/>raw JSON + reports"]
 ```
 
 Source modules: `cc_toy_lab/{geometry, spectral, radion, topology, controls, discovery}/`.
