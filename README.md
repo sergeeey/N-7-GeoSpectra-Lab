@@ -166,9 +166,9 @@ Tom Lawrence's work is the analytical / theoretical line of inquiry that initial
 ## Author
 
 **Sergey Boyko** — independent researcher
-Email: sergeikuch80@gmail.com
-ORCID: pending
-Affiliation: Ronin Institute for Independent Scholarship (in progress)
+Affiliation: Ronin Institute for Independent Scholarship 2.0 (Research Scholar)
+ORCID: [0009-0009-2178-5701](https://orcid.org/0009-0009-2178-5701)
+Email: sergey.boyko@ronininstitute.org (academic) · sergeikuch80@gmail.com (personal)
 
 GitHub: [@sergeeey](https://github.com/sergeeey)
 Project repository: https://github.com/sergeeey/N-7-GeoSpectra-Lab

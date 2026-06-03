@@ -12,7 +12,9 @@ type: software
 authors:
   - family-names: Boyko
     given-names: Sergey
-    email: sergeikuch80@gmail.com
+    email: sergey.boyko@ronininstitute.org
+    orcid: 'https://orcid.org/0009-0009-2178-5701'
+    affiliation: 'Ronin Institute for Independent Scholarship 2.0'
 repository-code: 'https://github.com/sergeeey/N-7-GeoSpectra-Lab'
 url: 'https://github.com/sergeeey/N-7-GeoSpectra-Lab'
 abstract: >-
