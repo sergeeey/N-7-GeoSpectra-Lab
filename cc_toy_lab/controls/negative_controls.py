@@ -295,7 +295,9 @@ def build_broken_wilson_control(
         operator = op
 
     elif wilson_mode == "scrambled":
-        # Build wilson_ring first, then scramble Wilson term contribution
+        # Build wilson_ring, then randomize all off-diagonal elements while
+        # preserving diagonal (disorder). WHY: avoids dimension mismatch from
+        # op_wilson - op_ring subtraction (they use different internal dims).
         op_wilson, _, _ = build_s3_s1_product_operator(
             j_max=int(j_max),
             s1_size=int(s1_size),
@@ -321,7 +323,18 @@ def build_broken_wilson_control(
         # Wilson term (approximately) = H_wilson - H_ring
         wilson_term_approx = op_wilson - op_ring
 
-        # Scramble: multiply by random Hermitian sign pattern on diagonal
+        # Scramble: multiply by random Hermitian sign pattern element-wise.
+        # WHY THIS VERSION (vs the diagonal-preserve + RMS-replace alternative
+        # in commit c744892): the element-wise approach was the one validated
+        # in the v0.1.24 specificity cascade — see git commits
+        #   bd24c1e fix(controls): element-wise scrambling instead of matmul
+        #   862ecac fix(controls): use same seed for wilson_ring and ring
+        #   c1e8ff4 fix(controls): correct seed parameter in broken_wilson scrambled
+        # and the verdict in:
+        #   reports/WILSON_SCRAMBLED_ANALYSIS_v0.1.24.md
+        #   reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md (Level 5 "Wilson details")
+        # The alternative implementation must not be reintroduced without
+        # updating the protocol and rerunning the specificity cascade.
         rng = np.random.default_rng(int(seed))
         s3_dim = s3_dimension(int(j_max))
         total_dim = s3_dim * int(s1_size)
@@ -347,6 +360,126 @@ def build_broken_wilson_control(
         "total_dimension": total_dim,
         "construction": f"Wilson term {wilson_mode}",
         "status": "Control C: broken Wilson correction",
+    }
+
+    return operator, meta
+
+
+def build_spectral_circle_scrambled_control(
+    *,
+    j_max: int,
+    s1_size: int,
+    alpha: float,
+    disorder_strength: float,
+    seed: int | None,
+    radius: float = 1.0,
+) -> tuple[np.ndarray, dict]:
+    """Control D: spectral_circle on scrambled geometry.
+
+    Purpose:
+        Diagnose whether spectral_circle's Gate 4B behavior (IPR(W=20) decreasing
+        with N, in contrast to ring/wilson_ring plateau) is a structural artifact
+        of the spectral_circle operator itself, or a genuine (weaker) geometric signal.
+
+    Construction:
+        Build the standard spectral_circle S³×S¹ operator (W=0), then permute
+        row+column indices (same scramble as Control B), then add Anderson disorder.
+        This preserves spectral_circle matrix structure but destroys S³×S¹ geometric
+        coupling order.
+
+    Expected outcomes (from SKEPTIC_AUDIT_GATE4B_v0.1.22.md):
+        ARTIFACT verdict: scrambled IPR(W=20) trajectory ≈ S³×S¹ IPR(W=20) trajectory
+            (both decreasing at same rate → structural, not geometric)
+        GEOMETRIC SIGNAL verdict: scrambled IPR(W=20) is ≥2× higher than S³×S¹ at
+            s1_size=64 or 128 (geometry was suppressing localization, scrambling releases it)
+
+    Decision criterion:
+        Compare with Gate 4B spectral_circle values:
+            s1_size=16:  IPR(W=20) ≈ 0.175
+            s1_size=32:  IPR(W=20) ≈ 0.150
+            s1_size=64:  IPR(W=20) ≈ 0.087
+            s1_size=128: IPR(W=20) ≈ 0.070
+
+    References:
+        - reports/SKEPTIC_AUDIT_GATE4B_v0.1.22.md (FT-2: spectral_circle diagnosis)
+        - reports/ESTIMAND_v0.1.22.md (Secondary Estimand)
+        - reports/CLAIM_v0.1.22.md (Claim C2)
+
+    Args:
+        j_max: S³ spin truncation
+        s1_size: S¹ lattice size
+        alpha: S¹ flux parameter (0.0=PBC, 0.5=APBC)
+        disorder_strength: Anderson disorder strength W
+        seed: Random seed (MUST match Gate 4B spectral_circle seed for fair comparison)
+        radius: Manifold radius
+
+    Returns:
+        operator: Hermitian matrix (same dimension as spectral_circle S³×S¹)
+        meta: Metadata dict with control parameters
+    """
+    if seed is None:
+        raise ValueError("seed required for reproducibility")
+
+    from cc_toy_lab.spectral.s3_s1_product_discretized import build_s3_s1_product_operator
+
+    s3_dim = s3_dimension(int(j_max))
+    total_dim = s3_dim * int(s1_size)
+
+    # WHY separate seeds: build W=0 clean structure, scramble, then add disorder
+    # using the same seed as Gate 4B. This isolates the scramble effect cleanly.
+    rng_scramble = np.random.default_rng(int(seed) + 99999)
+
+    # Step 1: Build clean spectral_circle S³×S¹ operator (W=0, no disorder)
+    op_clean, _, _ = build_s3_s1_product_operator(
+        j_max=int(j_max),
+        s1_size=int(s1_size),
+        alpha=float(alpha),
+        mode="clean",
+        disorder_strength=0.0,
+        seed=seed,
+        radius=float(radius),
+        s1_family="spectral_circle",
+    )
+
+    # Step 2: Permute row+column indices (destroys S³×S¹ geometric coupling order)
+    perm = rng_scramble.permutation(total_dim)
+    op_scrambled = op_clean[perm, :][:, perm]
+
+    # Step 3: Add Anderson disorder (same amplitude as Gate 4B)
+    if disorder_strength > 0.0:
+        rng_disorder = np.random.default_rng(int(seed))
+        disorder_diag = rng_disorder.uniform(
+            low=-float(disorder_strength),
+            high=float(disorder_strength),
+            size=total_dim,
+        )
+        np.fill_diagonal(op_scrambled, np.diag(op_scrambled) + disorder_diag)
+
+    operator = _hermitize(op_scrambled)
+
+    meta = {
+        "control": "spectral_circle_scrambled",
+        "j_max": int(j_max),
+        "s1_size": int(s1_size),
+        "alpha": float(alpha),
+        "disorder_strength": float(disorder_strength),
+        "seed": int(seed),
+        "radius": float(radius),
+        "scramble_seed_offset": 99999,
+        "s3_dimension": s3_dim,
+        "total_dimension": total_dim,
+        "construction": "spectral_circle W=0 + row/col permutation + Anderson disorder",
+        "gate4b_reference_ipr_w20": {
+            "s1_16": 0.175,
+            "s1_32": 0.150,
+            "s1_64": 0.087,
+            "s1_128": 0.070,
+        },
+        "status": "Control D: spectral_circle artifact diagnostic",
+        "verdict_criteria": {
+            "ARTIFACT": "scrambled IPR(W=20) within 30% of S3xS1 values at each size",
+            "GEOMETRIC_SIGNAL": "scrambled IPR(W=20) >= 2x S3xS1 at s1_size=64 or 128",
+        },
     }
 
     return operator, meta

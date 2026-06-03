@@ -63,16 +63,24 @@ from cc_toy_lab.controls.negative_controls import (
     build_random_hermitian_control,
     build_scrambled_geometry_control,
     build_broken_wilson_control,
+    build_spectral_circle_scrambled_control,
 )
 from cc_toy_lab.spectral.metrics import mean_adjacent_gap_ratio, inverse_participation_ratio
 from scipy.linalg import eigh
 
 
 # Locked v0.1.22 negative controls grid
+# v0.1.22 update (2026-06-03): added spectral_circle_scrambled (Control D)
+# and s1_size=32 restored for full FSS coverage per BATCH_DESIGN_v0.1.22.md
 PILOT_GRID = {
-    "controls": ["random_hermitian", "scrambled_geometry", "broken_wilson_term"],  # 3
+    "controls": [
+        "random_hermitian",
+        "scrambled_geometry",
+        "broken_wilson_term",
+        "spectral_circle_scrambled",  # Control D: spectral_circle artifact diagnostic
+    ],
     "disorder_values": [0, 20],  # 2 (skip W=12 diagnostic)
-    "sizes": [16, 64, 128],  # 3 (skip 32)
+    "sizes": [16, 32, 64, 128],  # 4 (all sizes for FSS trend analysis)
     "j_max_values": [3],  # 1 (max dimension only)
     "seeds": [123, 456, 789],  # 3
     "alpha": 0.0,  # S¹ flux (PBC)
@@ -219,6 +227,8 @@ def run_single_case(case: dict, use_gpu: bool = False) -> dict:
             scramble_mode="permutation",  # Default scramble mode
         )
     elif control == "broken_wilson_term":
+        # WHY scrambled not disabled: disabled=pure ring (already in Gate4B, not a negative control).
+        # scrambled randomizes Wilson coefficients while preserving matrix structure.
         operator, meta = build_broken_wilson_control(
             j_max=j_max,
             s1_size=s1_size,
@@ -226,7 +236,16 @@ def run_single_case(case: dict, use_gpu: bool = False) -> dict:
             disorder_strength=disorder_strength,
             seed=seed,
             radius=radius,
-            wilson_mode="disabled",  # Default Wilson mode
+            wilson_mode="scrambled",
+        )
+    elif control == "spectral_circle_scrambled":
+        operator, meta = build_spectral_circle_scrambled_control(
+            j_max=j_max,
+            s1_size=s1_size,
+            alpha=alpha,
+            disorder_strength=disorder_strength,
+            seed=seed,
+            radius=radius,
         )
     else:
         raise ValueError(f"unknown control: {control}")
