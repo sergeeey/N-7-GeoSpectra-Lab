@@ -1,6 +1,6 @@
 {
-  "title": "A Falsification-First Validation Harness for Discretized Spectral Operators on Compact Product Manifolds (v0.1.16 Pre-Review Draft)",
-  "description": "GeoSpectra Falsification Ladder methodology paper. Presents a falsification-first validation workflow for discretized spectral operators on compact toy manifolds, validated through the v0.1.15 case study (S²×S¹ product-discretized full diagnostic, 6615+6615+1349 cases). Ring/alpha=0 caveat resolved via targeted follow-up (s1_size≥64 empirical guideline). Pre-review manuscript ready for external domain expert feedback (Track A: lattice field theory, differential geometry, numerical analysis). This is a METHODOLOGY paper, NOT a physical compactification proof. All validation on finite-lattice toy operators (s1_size≤96). Eight scientific non-claims explicitly stated: no continuum compactification, no S⁶/S³×S⁶, no Standard Model, no physical chirality, no Witten/Lichnerowicz bypass, no physical extra dimensions, no hierarchy solution, no observable predictions. Baseline: v0.1.15-s2-s1-product-discretized-full (computational validation completed 2026-05-16).",
+  "title": "GeoSpectra Lab — A Falsification-First Validation Harness for Discretized Spectral Operators on Compact Product Manifolds (v0.1.24)",
+  "description": "GeoSpectra Lab is a falsification-first validation harness for discretized spectral operators on finite-lattice compact product toy manifolds. The Gate 4B v0.1.24 corrected campaign (216 cases, S³×S¹) plus negative-controls campaign v0.1.22 (54 cases) plus wilson-scrambled extension (18 cases) plus spectral-circle extension (18 cases) — 306 cases total — produced the FINAL verdict DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC: the harness distinguishes lattice product structure from random / scrambled / broken baselines (specificity to Level 3 — FFT vs lattice discretization), but does NOT distinguish Wilson-term internal details (Level 5). Aggregate true-IPR contrast (W=20 vs W=0) preserved at 7.07× after S³ Dirac operator correction (versus 7.15× before correction, change less than 1.1%). This is a methodology paper, NOT a physical compactification proof. All validation on finite-lattice toy operators (N ≤ 896). Eight scientific non-claims explicitly stated: no continuum compactification, no S⁶ or S³×S⁶ validation, no Standard Model derivation, no physical chirality, no Witten/Lichnerowicz bypass, no physical extra dimensions, no hierarchy solution, no observable predictions.",
   "creators": [
     {
       "name": "Boyko, Sergey",
@@ -16,34 +16,33 @@
     "Anderson localization",
     "Dirac operators",
     "finite-lattice diagnostics",
-    "methodology paper",
+    "methodology",
     "toy model validation",
     "product manifolds",
     "lattice field theory",
     "differential geometry",
     "numerical analysis",
-    "progressive profiles",
-    "independent audit",
-    "caveat handling"
+    "negative controls",
+    "discretization sensitivity",
+    "scientific software"
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/sergeeey/--7---GeoSpectra-Lab-.git",
+      "identifier": "https://github.com/sergeeey/N-7-GeoSpectra-Lab",
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
   ],
   "contributors": [
     {
-      "name": "Claude Sonnet 4.5 (Anthropic)",
+      "name": "Claude (Anthropic)",
       "type": "Other",
       "affiliation": "Anthropic"
     }
   ],
-  "upload_type": "publication",
-  "publication_type": "workingpaper",
-  "version": "v0.1.16-methodology-review-draft",
-  "publication_date": "2026-05-17",
+  "upload_type": "software",
+  "version": "v0.1.24-discretization-sensitive-final",
+  "publication_date": "2026-06-03",
   "language": "eng",
-  "notes": "Pre-review methodology manuscript. External domain expert peer review has not yet been performed. Do not cite as peer-reviewed work. This work validates a falsification-first workflow for discretized toy operators on finite lattices. It does NOT prove continuum compactification, Standard Model derivation, physical chirality, or S⁶/Calabi-Yau validation. Baseline: v0.1.15-s2-s1-product-discretized-full (computational validation, promoted 2026-05-16)."
+  "notes": "This work validates a falsification-first workflow for discretized toy operators on finite lattices. It does NOT prove continuum compactification, Standard Model derivation, physical chirality, or S⁶/Calabi-Yau validation. Inspired by but independent from Tom Lawrence's covariant compactification framework; per Tom Lawrence's own assessment (CAMP, 2026-05-26), S³×S¹ is closer to original Kaluza-Klein than to covariant compactification, which requires at least two extra dimensions."
 }

@@ -26,3 +26,25 @@ reports/RUNS/
 
 # Logs
 *.log
+
+# --- Security: never commit server/credentials/internal logistics ---
+SERVER_INFO.md
+*SERVER*.md
+RERUN_SERVER_SPEC.md
+PROJECT_STATUS_CHECKLIST.md
+PRE_RERUN_CHECKLIST.md
+hardware_requirements_calculation.md
+*credentials*
+*.pem
+*.key
+hetzner_*
+
+# --- Personal research notes / prompts in root (move to docs/_private if needed) ---
+глубокое*
+Обойти*
+исследовательская*
+калуца*
+
+# --- Third-party PDFs in root ---
+Toy-модель*
+Геометрическое*
