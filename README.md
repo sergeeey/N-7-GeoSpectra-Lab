@@ -28,6 +28,23 @@ the harness can distinguish a lattice product structure from random / scrambled 
 
 ---
 
+## Current Claim Boundary
+
+```text
+Observed signal             ✅ yes
+Survives S³ Dirac fix       ✅ yes (7.15× → 7.07×, <1.1% change)
+Rejects random noise        ✅ yes (L1)
+Rejects scrambled S¹        ✅ yes (L2)
+Distinguishes FFT vs lattice ✅ yes (L3)
+Specific to S³×S¹ physics   ❌ no
+Physics claim               ❌ no
+Best verdict                DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
+```
+
+**Want this on one page?** → [`docs/PROJECT_SKETCH.md`](docs/PROJECT_SKETCH.md) (3-minute read)
+
+---
+
 ## What This Repository Does
 
 - Builds discretized Dirac-style spectral operators on compact product toy geometries (current case study: **S³×S¹**, lattice dimension N ≤ 896).
