@@ -2,7 +2,7 @@
 
 **A falsification-first numerical harness for finite-lattice spectral toy geometries**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20252651.svg)](https://doi.org/10.5281/zenodo.20252651)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20252650.svg)](https://doi.org/10.5281/zenodo.20252650)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 ![Tests](https://img.shields.io/badge/tests-43%20files-blue)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
@@ -179,7 +179,7 @@ Project repository: https://github.com/sergeeey/N-7-GeoSpectra-Lab
 
 If you use this methodology or reference this work, please cite via the metadata in [`CITATION.cff`](CITATION.cff) or:
 
-> Boyko, S. (2026). *A Falsification-First Validation Harness for Discretized Spectral Operators on Compact Product Manifolds.* Zenodo. https://doi.org/10.5281/zenodo.20252651
+> Boyko, S. (2026). *A Falsification-First Validation Harness for Discretized Spectral Operators on Compact Product Manifolds.* Zenodo. https://doi.org/10.5281/zenodo.20252650
 
 ---
 
