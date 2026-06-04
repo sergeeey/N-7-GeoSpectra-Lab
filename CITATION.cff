@@ -32,7 +32,10 @@ abstract: >-
   preserved at 7.07× after S³ Dirac operator correction (versus
   7.15× before correction, change less than 1.1%). This is a
   methodology paper, NOT a physical compactification proof. All
-  validation on finite-lattice toy operators (N ≤ 896). Eight
+  validation on finite-lattice toy operators (largest operator N =
+  13824 at s1_size=128; S³ Hilbert dimension 108 per S¹ site — the
+  previously reported N≤896 was a single-shell labeling erratum,
+  see DIMENSION_DISCREPANCY_AUDIT_v0.1.25). Eight
   scientific non-claims explicitly stated: no continuum
   compactification, no S⁶ or S³×S⁶ validation, no Standard Model
   derivation, no physical chirality, no Witten/Lichnerowicz bypass,

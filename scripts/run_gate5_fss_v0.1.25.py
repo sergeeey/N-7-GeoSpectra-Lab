@@ -21,10 +21,13 @@ from scipy.linalg import eigh
 from cc_toy_lab.spectral.s3_s1_product_discretized import build_s3_s1_product_operator
 from cc_toy_lab.spectral.metrics import mean_adjacent_gap_ratio, inverse_participation_ratio
 
-# ── Locked grid (pre-registered 2026-06-03) ──────────────────────────────────
+# ── Locked grid (pre-registered 2026-06-03, REVISED for true dimension) ───────
+# Original s1=[256,512] was infeasible: true N=110×s1, so s1=512 → N=56320 → OOM.
+# Corrected to feasible range. See DIMENSION_DISCREPANCY_AUDIT_v0.1.25.
+# For s1≥256, use a sparse eigensolver (eigsh) — separate work item.
 GRID = {
     "families":  ["ring", "wilson_ring"],
-    "s1_sizes":  [256, 512],
+    "s1_sizes":  [160, 192],   # N = 17600, 21120 (dense eigh feasible on ≥32GB)
     "w_values":  [0, 20],
     "j_max":     3,
     "seeds":     [123, 456, 789],
@@ -65,7 +68,7 @@ def print_plan(cases):
     print("=" * 70)
     print(f"Total cases: {len(cases)}")
     print(f"Families: {GRID['families']}")
-    print(f"Sizes: {GRID['s1_sizes']} (N = {7*256}, {7*512} for j_max=3)")
+    print(f"Sizes: {GRID['s1_sizes']} (N = {[110*s for s in GRID['s1_sizes']]} = 110×s1 for j_max=3)")
     print(f"W values: {GRID['w_values']}")
     print(f"Seeds: {GRID['seeds']}")
     print()

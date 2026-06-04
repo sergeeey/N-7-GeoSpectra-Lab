@@ -43,23 +43,32 @@ spectral_circle excluded from primary analysis (plateau absent per v0.1.22).
 
 ---
 
-## Grid
+## Grid (REVISED 2026-06-03 — dimension correction)
+
+**Original grid (s1=256, 512) was INVALID** — based on the erroneous N=7×s1 label.
+True operator dimension is 110×s1 (current code, S³ dim 110). See
+DIMENSION_DISCREPANCY_AUDIT_v0.1.25. Corrected feasible grid:
 
 | Parameter | Values |
 |-----------|--------|
 | Families | ring, wilson_ring |
-| s1_size | 256, 512 |
+| s1_size | 160, 192 |
 | W | 0, 20 |
 | j_max | 3 |
 | seeds | 123, 456, 789 |
 | alpha | 0.0 |
 | **Total** | **2 × 2 × 2 × 1 × 3 = 24 cases** |
 
-Matrix dimensions:
-- s1=256, j_max=3: N = 7 × 256 = 1792
-- s1=512, j_max=3: N = 7 × 512 = 3584
+True matrix dimensions (110×s1):
+- s1=160, j_max=3: N = 110 × 160 = 17600  (eigh peak ~20 GB — feasible on 32GB)
+- s1=192, j_max=3: N = 110 × 192 = 21120  (eigh peak ~28 GB — borderline on 32GB)
 
-Runtime estimate (from Gate 4B): ~30s/case on Hetzner CX52 → ~12 min total.
+**Infeasible with dense eigh:** s1=256 (N=28160, ~50GB), s1=512 (N=56320, ~200GB).
+To reach s1≥256, a sparse iterative eigensolver (ARPACK `eigsh` for bottom-10%
+eigenpairs) is required — separate work item, NOT this pre-registration.
+
+Runtime estimate: s1=160 ~700s/case, s1=192 ~1200s/case → ~6 hours total for 24
+cases. Server-only (Hetzner CX52 or larger).
 
 ---
 
@@ -67,13 +76,13 @@ Runtime estimate (from Gate 4B): ~30s/case on Hetzner CX52 → ~12 min total.
 
 Gate 4B FSS slope (log contrast vs log N): +1.0 (approx doubling per doubling)
 
-| s1=256 IPR(W=20) for ring | Verdict |
-|---------------------------|---------|
-| > 0.290 (within ±15% of 0.339) | SATURATION — plateau confirmed |
+| s1=160/192 IPR(W=20) for ring | Verdict |
+|-------------------------------|---------|
+| 0.288–0.390 (within ±15% of 0.339) | SATURATION — plateau confirmed |
 | > 0.390 (growth >15%) | CONTINUING — no saturation |
 | < 0.237 (drop >30%) | REVERSAL — investigate artifact |
 
-Same criteria apply to wilson_ring (reference 0.266).
+Same criteria apply to wilson_ring (reference 0.266: SATURATION 0.226–0.306).
 
 **Gate 5 PASS:** Both families show SATURATION or CONTINUING.
 **Gate 5 WARN:** One family REVERSAL → investigate before Gate 6.

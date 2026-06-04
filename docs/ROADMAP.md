@@ -18,7 +18,7 @@
 - [x] v0.1.20 eigenvalue-mean metric identified as invalid
 - [x] Full Gate 4B rerun with corrected metric
 - [x] 216/216 cases executed (0 failures)
-- [x] Finite-size scaling grid: s1_size = 16, 32, 64, 128 (N = 112 to 896)
+- [x] Finite-size scaling grid: s1_size = 16, 32, 64, 128 (operator N = 1728 to 13824; S³ dim 108 per S¹ site)
 - [x] Three discretization families tested: spectral_circle, ring, wilson_ring
 - [x] FSS trend analysis: STRENGTHENING (3.76× → 24.90×)
 
@@ -128,10 +128,10 @@
 - Purpose: Find optimal contrast, test W-dependence
 
 #### 4B. Finite-Size Scaling (Larger Lattices)
-- Current: s1_size = 16, 32, 64, 128 (N ≤ 896)
-- Plan: s1_size = 256, 512 (N ≤ 3584)
+- Current: s1_size = 16, 32, 64, 128 (operator N = 1728 to 13824)
+- Plan: s1_size = 192 (N=21120) via sparse eigensolver; s1=256 (N=28160) needs ≥64GB; s1=512 (N=56320) INFEASIBLE with dense eigh
 - Purpose: Test FSS continuation, check for collapse
-- **Constraint:** Requires remote execution (local thermal limit)
+- **Constraint:** Dense `eigh` O(N³) caps at s1≈192 on 32GB; see DIMENSION_DISCREPANCY_AUDIT_v0.1.25 + GATE5 rewrite
 
 #### 4C. Null Geometry Control (T⁴ Baseline)
 - Current: Only S³×S¹ tested
@@ -282,7 +282,7 @@
 - Analytical continuum comparison
 - Error bounds and convergence proof
 
-**Status:** NOT feasible with current resources (N ≤ 896 max on local hardware)
+**Status:** NOT feasible with current resources (dense eigh caps at N≈21000, s1≈192, on local hardware)
 
 ---
 

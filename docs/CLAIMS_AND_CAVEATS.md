@@ -12,7 +12,7 @@
 
 **Allowed:**
 - GeoSpectra Lab is a reproducible falsification-first validation harness for finite-lattice spectral toy geometries
-- Current case study: S³×S¹ finite lattice (N ≤ 896)
+- Current case study: S³×S¹ finite lattice (largest operator N = 13824 at s1=128; S³ dim 108 per S¹ site — see erratum DIMENSION_DISCREPANCY_AUDIT_v0.1.25)
 - Validation methodology includes: controls, progressive profiles, independent audit, targeted follow-up, negative controls
 
 **Evidence:**
@@ -27,10 +27,10 @@
 
 **Allowed (with mandatory caveats):**
 
-> "S³×S¹ Gate 4B supports finite-lattice robustness of the W=20 Anderson disorder localization signal under finite-size scaling from s1_size=16 to 128 (N = 112 to 896), with true eigenvector-based IPR contrast ≥2.0× and family consistency ≥2/3."
+> "S³×S¹ Gate 4B supports finite-lattice robustness of the W=20 Anderson disorder localization signal under finite-size scaling from s1_size=16 to 128 (operator N = 1728 to 13824), with true eigenvector-based IPR contrast ≥2.0× and family consistency ≥2/3."
 
 **Mandatory caveats:**
-- Finite-lattice only (N ≤ 896)
+- Finite-lattice only (largest operator N = 13824 at s1=128)
 - Anderson disorder only (diagonal on-site U(r) ∈ [-W, W])
 - S³×S¹ only (no generalization to other geometries)
 - W=20 exploratory (not optimized)
@@ -94,7 +94,7 @@
 - "GeoSpectra demonstrates real compact product geometry"
 
 **Why:**
-- All results are finite-lattice (N ≤ 896)
+- All results are finite-lattice (largest operator N = 13824 at s1=128)
 - No thermodynamic limit (N → ∞)
 - No continuum field theory
 - Toy numerical operators, not physical Hamiltonians
@@ -138,7 +138,7 @@
 - "Finite-lattice results extrapolate to N → ∞"
 
 **Why:**
-- Largest lattice: N = 896
+- Largest lattice: N = 13824 (s1=128, S³ dim 108)
 - No rigorous N → ∞ extrapolation performed
 - Finite-size effects not fully characterized
 
@@ -215,7 +215,7 @@
 | Domain | Can Claim | Cannot Claim |
 |--------|-----------|--------------|
 | **Scope** | Finite-lattice toy validation harness | Physical compactification |
-| **Geometry** | S³×S¹ finite lattice (N ≤ 896) | Continuum / thermodynamic limit |
+| **Geometry** | S³×S¹ finite lattice (N ≤ 13824) | Continuum / thermodynamic limit |
 | **Physics** | Computational robustness checks | Standard Model / gauge groups |
 | **Chirality** | S² monopole index (toy control) | Protected chiral zero modes |
 | **Methodology** | Falsification-first validation | Physics theory proof |

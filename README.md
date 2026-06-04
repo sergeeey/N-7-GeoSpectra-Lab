@@ -47,7 +47,7 @@ Best verdict                DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
 
 ## What This Repository Does
 
-- Builds discretized Dirac-style spectral operators on compact product toy geometries (current case study: **S³×S¹**, lattice dimension N ≤ 896).
+- Builds discretized Dirac-style spectral operators on compact product toy geometries (current case study: **S³×S¹**, largest operator dimension N = 13824 at s1_size=128; S³ Hilbert dimension 108 per S¹ site. *Note: earlier docs cited N≤896 — a single-shell labeling erratum corrected in `reports/DIMENSION_DISCREPANCY_AUDIT_v0.1.25.md`*).
 - Runs **pre-registered** finite-size-scaling sweeps under Anderson-style on-site disorder.
 - Measures **true eigenvector-based** Inverse Participation Ratio (IPR) and adjacent gap ratio (r-statistic).
 - Compares the geometric signal against four classes of falsification controls:
