@@ -97,5 +97,49 @@ Secondary: IPR(W=20) trajectory — plateau (flat) vs decay.
 
 ---
 
-**Status:** PRE-REGISTERED — awaiting server execution
-**Next step:** `scripts/run_cross_geometry_s2s1_v0.1.25.py --dry-run`
+## Results — methodology-matched operator (2026-06-04) [VERIFIED-run]
+
+### Operator correction (mandatory record)
+
+The FIRST run used a HAND-ROLLED S²×S¹ operator (crude scalar Laplacian⊗ring,
+disorder on full diagonal). It gave IPR(W=20)≈0.83 — a CONSTRUCTION ARTIFACT,
+not comparable to S³×S¹ (ring ~0.32). Flagged by skeptic trigger (suspiciously
+high) before any claim. `[DISMISSED — artifact]`
+
+Replaced with the ESTABLISHED builder `build_product_discretized_operator`
+(q=0, cutoff=j_max), byte-identical in structure to build_s3_s1_product_operator:
+`H = kron(D_S2², I) + kron(I, P_S1)` with the SAME build_s1_operator (ring,
+geometric_weight). Only the sphere factor (D_S2² vs D_S3²) differs.
+
+### Trustworthy result (18 cases, local, ~20s)
+
+| s1 | IPR(W=0) | IPR(W=20) | contrast | S³×S¹ ref | transfer ratio | verdict |
+|----|----------|-----------|----------|-----------|----------------|---------|
+| 16 | 0.084 | 0.350 | 3.9× | 4.1× | 0.95 | TRANSFER |
+| 32 | 0.043 | 0.331 | 7.5× | 7.4× | 1.02 | TRANSFER |
+| 64 | 0.022 | 0.298 | 14.3× | 14.2× | 1.01 | TRANSFER |
+
+S²×S¹ ring contrast ≈ S³×S¹ ring contrast (ratio ≈ 1.0). IPR(W=20) plateau ~0.30.
+
+### Honest interpretation — TRANSFER ⟹ confirms GEOMETRY_AGNOSTIC, NOT discovery
+
+The signal transfers because the **S¹ disorder machinery is byte-identical** between
+S²×S¹ and S³×S¹ (same build_s1_operator). The sphere factor only adds a diagonal
+offset (block structure), which does not change the localization regime driven by
+the S¹ disorder. So "the signal transfers" means **"the signal lives in the S¹
+disorder, which is the same"** — this is a CONFIRMATION of the v0.1.22
+GEOMETRY_AGNOSTIC verdict, NOT evidence that the geometry matters.
+
+**Allowed claim:** "With matched methodology, S²×S¹ ring reproduces the S³×S¹ ring
+contrast (ratio ≈ 1.0), consistent with the harness being geometry-agnostic: the
+localization signal is carried by the shared S¹ disorder, not the sphere factor."
+
+**Forbidden claim:** "Localization discovered on S²×S¹" / "signal generalizes across
+geometries" — the result shows geometry-INdependence, the opposite of a geometric
+discovery.
+
+---
+
+**Status:** COMPLETE (methodology-matched, local) — server rerun optional for more seeds
+**Verdict:** TRANSFER (trustworthy) ⟹ confirms GEOMETRY_AGNOSTIC
+**Date:** 2026-06-04

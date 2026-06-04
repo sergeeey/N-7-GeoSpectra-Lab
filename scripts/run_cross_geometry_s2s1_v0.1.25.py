@@ -3,7 +3,17 @@
 Pre-registration: reports/CROSS_GEOMETRY_S2S1_PREREGISTRATION_v0.1.25.md
 Families: ring on S²×S¹
 Grid: 1 family × 2 W × 3 sizes × 1 j_max × 3 seeds = 18 cases
-Runtime estimate: ~2 min on Hetzner CX52
+
+METHODOLOGY FIX (2026-06-04):
+The first version used a HAND-ROLLED S²×S¹ operator (crude Laplacian⊗ring with
+disorder on the full diagonal) → gave IPR(W=20)≈0.83, a construction ARTIFACT
+not comparable to S³×S¹. Replaced with the ESTABLISHED, methodology-matched
+builder `build_product_discretized_operator` (q=0, cutoff=j_max), which is
+byte-identical in structure to build_s3_s1_product_operator:
+    H = kron(D_S2², I_S1) + kron(I_S2, P_S1)
+with the SAME build_s1_operator for the S¹ part (identical disorder machinery).
+This makes the S²×S¹ vs S³×S¹ comparison fair (only the sphere factor differs).
+Verified: IPR(W=20)≈0.30-0.35, same regime as S³×S¹ ring (~0.32).
 
 Usage:
     python scripts/run_cross_geometry_s2s1_v0.1.25.py --dry-run
@@ -19,6 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import numpy as np
 from scipy.linalg import eigh
 from cc_toy_lab.spectral.metrics import mean_adjacent_gap_ratio, inverse_participation_ratio
+from cc_toy_lab.spectral.s2_s1_product_discretized import build_product_discretized_operator
 
 # ── Locked grid (pre-registered 2026-06-03) ──────────────────────────────────
 GRID = {
@@ -46,46 +57,29 @@ OUT = Path("reports/RUNS/cross_geometry_s2s1_v0.1.25")
 
 
 def build_s2s1_operator(*, j_max, s1_size, alpha, disorder_strength, seed, radius):
-    """Build S²×S¹ product operator with ring S¹.
+    """Build methodology-matched S²×S¹ operator (established builder).
 
-    S²: diagonal Laplacian eigenvalues l(l+1)/R², degeneracy (2l+1)
-    S¹: ring discretization (nearest-neighbour hopping)
-    Product: tensor product, Anderson disorder on diagonal
+    Uses build_product_discretized_operator (q=0, cutoff=j_max):
+        H = kron(D_S2², I_S1) + kron(I_S2, P_S1)
+    with the SAME build_s1_operator (ring, geometric_weight disorder) as
+    build_s3_s1_product_operator. q=0 = plain S² Dirac (no monopole charge);
+    cutoff=j_max mirrors the S³ truncation. This makes S²×S¹ vs S³×S¹
+    comparable: only the sphere factor (D_S2² vs D_S3²) differs.
     """
-    # S² spectral Laplacian: eigenvalues l(l+1)/R^2, degeneracy 2l+1
-    s2_eigs = []
-    for l in range(j_max + 1):
-        lam = l * (l + 1) / radius**2
-        for _ in range(2 * l + 1):
-            s2_eigs.append(lam)
-    s2_dim = len(s2_eigs)  # = (j_max+1)^2
-
-    # S¹ ring: tridiagonal hopping matrix
-    h_s1 = np.zeros((s1_size, s1_size), dtype=complex)
-    for i in range(s1_size):
-        h_s1[i, (i + 1) % s1_size] = -1.0
-        h_s1[(i + 1) % s1_size, i] = -1.0
-    # Boundary twist
-    phase = np.exp(2j * np.pi * alpha)
-    h_s1[s1_size - 1, 0] = -phase
-    h_s1[0, s1_size - 1] = -phase.conj()
-
-    # Product: H = H_S2 ⊗ I_S1 + I_S2 ⊗ H_S1
-    h_s2_diag = np.diag(s2_eigs).astype(complex)
-    eye_s1 = np.eye(s1_size, dtype=complex)
-    eye_s2 = np.eye(s2_dim, dtype=complex)
-
-    H = np.kron(h_s2_diag, eye_s1) + np.kron(eye_s2, h_s1)
-
-    # Anderson disorder
-    N = H.shape[0]
-    if disorder_strength > 0:
-        rng = np.random.default_rng(int(seed))
-        disorder = rng.uniform(-disorder_strength, disorder_strength, N)
-        H += np.diag(disorder.astype(complex))
-
-    return H, {"geometry": "S2xS1", "s2_dim": s2_dim, "s1_size": s1_size,
-               "total_dim": N, "j_max": j_max}
+    op, _lifted, meta = build_product_discretized_operator(
+        q=0,
+        cutoff=int(j_max),
+        s1_size=int(s1_size),
+        alpha=float(alpha),
+        mode="clean" if disorder_strength == 0 else "geometric_weight",
+        disorder_strength=float(disorder_strength),
+        seed=seed,
+        radius=float(radius),
+        s1_family="ring",
+    )
+    return op, {"geometry": "S2xS1", "s2_dim": meta["s2_dimension"],
+                "s1_size": int(s1_size), "total_dim": meta["total_dimension"],
+                "j_max": int(j_max)}
 
 
 def generate_grid():
