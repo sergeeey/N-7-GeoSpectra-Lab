@@ -150,7 +150,16 @@
 - Add: Participation entropy, localization length, multifractal analysis
 - Purpose: Reduce single-metric artifact risk
 
-**Estimated effort:** 6-8 weeks total (4A-4E)
+#### 4F. Tom-Aligned Geometry Ladder (DEFERRED — needs geometry-sensitivity first)
+- Motivation: Tom Lawrence's dimension-counting mapping (U(1)→S², SU(2)→S³, SU(3)→S⁶)
+- Dimensional consistency VERIFIED: λ₁(S^d)=d (see `reports/TOM_MAPPING_DIMENSIONAL_CONSISTENCY_v0.1.25.md`)
+- Ladder: S² (U(1)) → S³ (SU(2)) → S⁶ (SU(3)) → S³×S⁶ (combined)
+- **Precondition:** harness is currently GEOMETRY_AGNOSTIC → cannot discriminate these
+  spheres yet. Run only after geometry-sensitivity is demonstrated. Otherwise outputs
+  carry no discriminating evidence.
+- Status: roadmap only, NOT scheduled. Communication value for Tom, not a science task.
+
+**Estimated effort:** 6-8 weeks total (4A-4E); 4F deferred indefinitely
 
 ---
 
