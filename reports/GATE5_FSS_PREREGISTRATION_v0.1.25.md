@@ -52,23 +52,41 @@ DIMENSION_DISCREPANCY_AUDIT_v0.1.25. Corrected feasible grid:
 | Parameter | Values |
 |-----------|--------|
 | Families | ring, wilson_ring |
-| s1_size | 160, 192 |
+| s1_size | 160, 192, 256 |
 | W | 0, 20 |
 | j_max | 3 |
 | seeds | 123, 456, 789 |
 | alpha | 0.0 |
-| **Total** | **2 × 2 × 2 × 1 × 3 = 24 cases** |
+| **Total** | **2 × 3 × 2 × 1 × 3 = 36 cases** |
 
 True matrix dimensions (110×s1):
-- s1=160, j_max=3: N = 110 × 160 = 17600  (eigh peak ~20 GB — feasible on 32GB)
-- s1=192, j_max=3: N = 110 × 192 = 21120  (eigh peak ~28 GB — borderline on 32GB)
+- s1=160: N = 17600  (dense op 5.0 GB)
+- s1=192: N = 21120  (dense op 7.1 GB)
+- s1=256: N = 28160  (dense op 12.7 GB — fits 32GB)
 
-**Infeasible with dense eigh:** s1=256 (N=28160, ~50GB), s1=512 (N=56320, ~200GB).
-To reach s1≥256, a sparse iterative eigensolver (ARPACK `eigsh` for bottom-10%
-eigenpairs) is required — separate work item, NOT this pre-registration.
+### Solver: exact block diagonalization (NOT eigsh)
 
-Runtime estimate: s1=160 ~700s/case, s1=192 ~1200s/case → ~6 hours total for 24
-cases. Server-only (Hetzner CX52 or larger).
+The S³×S¹ operator is EXACTLY block-diagonal in the S³ index: 110 independent
+S¹ chains of size s1 (verified: `connected_components` → 110 blocks). Each row
+has 3 nonzeros. We diagonalize each s1×s1 block with dense `eigh` and combine.
+
+**Verified correctness:** block solver reproduces full dense-`eigh` IPR AND
+r_stat to machine precision (diff ≤ 2e-14) across ring/wilson_ring, W=0/20,
+s1=32/64. Speedup ~88× (0.71s vs 62s at s1=64). Module:
+`cc_toy_lab/spectral/block_ipr_solver.py` (asserts block structure at runtime).
+
+**Why NOT sparse eigsh:** benchmarked `eigsh(which='SA', k=N//10)` at s1=64 —
+returned WRONG IPR (0.036 vs true 0.296, non-convergence for 10% of eigenpairs)
+AND was 6× SLOWER (399s vs 62s). ARPACK is unsuited to "bottom 10%". Recorded
+in DIMENSION_DISCREPANCY_AUDIT_v0.1.25 follow-up.
+
+**Remaining limit:** `build_s3_s1_product_operator` returns a DENSE N×N array, so
+the operator itself caps at s1≈256 (12.7GB) / s1≈300 (~17GB) on 32GB. s1≥320
+(op ≥20GB) and s1=512 (op 51GB) require sparse OPERATOR CONSTRUCTION — future
+work item, NOT this pre-registration.
+
+Runtime estimate (block solver): ~3–10s/case → **~3 min total for 36 cases**.
+Operator build dominates at large s1. Local-feasible up to s1=256 on ≥16GB.
 
 ---
 

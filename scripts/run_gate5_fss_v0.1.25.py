@@ -20,6 +20,7 @@ import numpy as np
 from scipy.linalg import eigh
 from cc_toy_lab.spectral.s3_s1_product_discretized import build_s3_s1_product_operator
 from cc_toy_lab.spectral.metrics import mean_adjacent_gap_ratio, inverse_participation_ratio
+from cc_toy_lab.spectral.block_ipr_solver import solve_block_ipr_rstat
 
 # ── Locked grid (pre-registered 2026-06-03, REVISED for true dimension) ───────
 # Original s1=[256,512] was infeasible: true N=110×s1, so s1=512 → N=56320 → OOM.
@@ -27,7 +28,7 @@ from cc_toy_lab.spectral.metrics import mean_adjacent_gap_ratio, inverse_partici
 # For s1≥256, use a sparse eigensolver (eigsh) — separate work item.
 GRID = {
     "families":  ["ring", "wilson_ring"],
-    "s1_sizes":  [160, 192],   # N = 17600, 21120 (dense eigh feasible on ≥32GB)
+    "s1_sizes":  [160, 192, 256],   # N = 17600, 21120, 28160 (block-solver; dense op ≤12.7GB)
     "w_values":  [0, 20],
     "j_max":     3,
     "seeds":     [123, 456, 789],
@@ -84,7 +85,14 @@ def print_plan(cases):
     print("=" * 70)
 
 
-def run_case(case: dict) -> dict:
+def run_case(case: dict, solver: str = "block") -> dict:
+    """Run one Gate 5 case.
+
+    solver='block': exact per-block diagonalization (verified == dense eigh to
+        machine precision; ~88× faster; avoids eigh O(N²) workspace OOM).
+        Falls back to dense automatically if the operator is not block-diagonal.
+    solver='dense': full dense eigh (reference; OOM at s1≥192 on 32GB).
+    """
     op, _, _ = build_s3_s1_product_operator(
         j_max=case["j_max"],
         s1_size=case["s1_size"],
@@ -96,11 +104,22 @@ def run_case(case: dict) -> dict:
         s1_family=case["family"],
     )
     N = op.shape[0]
-    eigvals, eigvecs = eigh(op)
     n_low = max(1, int(0.1 * N))
-    ipr = float(np.mean(inverse_participation_ratio(eigvecs[:, :n_low])))
-    r_stat = float(mean_adjacent_gap_ratio(eigvals))
-    return {**case, "N": N, "true_ipr_mean": ipr, "r_stat": r_stat}
+
+    if solver == "block":
+        try:
+            res = solve_block_ipr_rstat(op, low_fraction=0.10)
+            return {**case, "N": N, "true_ipr_mean": res["true_ipr_mean"],
+                    "r_stat": res["r_stat"], "solver": "block",
+                    "n_blocks": res["n_blocks"]}
+        except ValueError:
+            pass  # not block-diagonal → fall through to dense
+
+    eigvals, eigvecs = eigh(op)
+    idx = np.argsort(eigvals)[:n_low]
+    ipr = float(np.mean(inverse_participation_ratio(eigvecs[:, idx])))
+    r_stat = float(mean_adjacent_gap_ratio(np.sort(eigvals)))
+    return {**case, "N": N, "true_ipr_mean": ipr, "r_stat": r_stat, "solver": "dense"}
 
 
 def apply_decision_rules(results: list[dict]) -> dict:
@@ -130,6 +149,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--run", action="store_true")
+    parser.add_argument("--solver", choices=["block", "dense"], default="block",
+                        help="block = exact per-block diag (default, ~88x faster, no OOM); "
+                             "dense = full eigh (reference, OOM at s1>=192)")
     args = parser.parse_args()
 
     cases = generate_grid()
@@ -144,7 +166,7 @@ def main():
 
     for i, case in enumerate(cases, 1):
         ct = time.perf_counter()
-        r = run_case(case)
+        r = run_case(case, solver=args.solver)
         dt = time.perf_counter() - ct
         elapsed = time.perf_counter() - t0
         eta = elapsed / i * (len(cases) - i)
