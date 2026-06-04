@@ -1,0 +1,47 @@
+{
+  "gate4b": {
+    "ring": {
+      "mean_contrast": 13.780496921860605,
+      "std_contrast": 10.260629901302545,
+      "cv_percent": 74.45761905019303,
+      "n_seeds": 12
+    },
+    "spectral_circle": {
+      "mean_contrast": 5.542076267972629,
+      "std_contrast": 2.4714346540458845,
+      "cv_percent": 44.59402098683082,
+      "n_seeds": 12
+    },
+    "wilson_ring": {
+      "mean_contrast": 15.145522113162249,
+      "std_contrast": 12.207473111473785,
+      "cv_percent": 80.6012035786132,
+      "n_seeds": 12
+    }
+  },
+  "negative_controls": {
+    "broken_wilson_term": {
+      "mean_contrast": 16.329356929377145,
+      "std_contrast": 11.935758286588154,
+      "cv_percent": 73.09386608553619,
+      "n_seeds": 9
+    },
+    "random_hermitian": {
+      "mean_contrast": 1.1772825395983588,
+      "std_contrast": 0.1530155630670176,
+      "cv_percent": 12.997352625243241,
+      "n_seeds": 9
+    },
+    "scrambled_geometry": {
+      "mean_contrast": 11.301331382129979,
+      "std_contrast": 8.573446594923452,
+      "cv_percent": 75.86227060362158,
+      "n_seeds": 9
+    }
+  },
+  "analysis_date": "2026-06-01",
+  "data_sources": {
+    "gate4b": "reports\\RUNS\\gate4_fss_v0.1.24",
+    "negative_controls": "reports\\RUNS\\negative_controls_v0.1.22"
+  }
+}

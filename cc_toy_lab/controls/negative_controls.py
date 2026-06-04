@@ -309,13 +309,39 @@ def build_broken_wilson_control(
             s1_family="wilson_ring",
         )
 
-        rng = np.random.default_rng(int(seed) + 77777)
-        diag_saved = np.diag(op_wilson).copy()
-        total_dim = op_wilson.shape[0]
-        # Replace off-diagonal with random values of same RMS magnitude
-        off_scale = float(np.std(op_wilson - np.diag(diag_saved)))
-        random_off = rng.normal(0.0, off_scale, (total_dim, total_dim))
-        operator = np.diag(diag_saved) + (random_off + random_off.T) / 2
+        op_ring, _, _ = build_s3_s1_product_operator(
+            j_max=int(j_max),
+            s1_size=int(s1_size),
+            alpha=float(alpha),
+            mode="clean" if disorder_strength == 0.0 else "geometric_weight",
+            disorder_strength=float(disorder_strength),
+            seed=seed,  # SAME seed for disorder (must match wilson_ring basis)
+            radius=float(radius),
+            s1_family="ring",
+        )
+
+        # Wilson term (approximately) = H_wilson - H_ring
+        wilson_term_approx = op_wilson - op_ring
+
+        # Scramble: multiply by random Hermitian sign pattern element-wise.
+        # WHY THIS VERSION (vs the diagonal-preserve + RMS-replace alternative
+        # in commit c744892): the element-wise approach was the one validated
+        # in the v0.1.24 specificity cascade — see git commits
+        #   bd24c1e fix(controls): element-wise scrambling instead of matmul
+        #   862ecac fix(controls): use same seed for wilson_ring and ring
+        #   c1e8ff4 fix(controls): correct seed parameter in broken_wilson scrambled
+        # and the verdict in:
+        #   reports/WILSON_SCRAMBLED_ANALYSIS_v0.1.24.md
+        #   reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md (Level 5 "Wilson details")
+        # The alternative implementation must not be reintroduced without
+        # updating the protocol and rerunning the specificity cascade.
+        rng = np.random.default_rng(int(seed))
+        s3_dim = s3_dimension(int(j_max))
+        total_dim = s3_dim * int(s1_size)
+        random_signs = rng.choice([-1.0, 1.0], size=(total_dim, total_dim))
+        scrambled_wilson = random_signs * wilson_term_approx  # Element-wise
+
+        operator = op_ring + scrambled_wilson
         operator = _hermitize(operator)
 
     s3_dim = s3_dimension(int(j_max))
@@ -444,7 +470,10 @@ def build_spectral_circle_scrambled_control(
         "total_dimension": total_dim,
         "construction": "spectral_circle W=0 + row/col permutation + Anderson disorder",
         "gate4b_reference_ipr_w20": {
-            "s1_16": 0.175, "s1_32": 0.150, "s1_64": 0.087, "s1_128": 0.070
+            "s1_16": 0.175,
+            "s1_32": 0.150,
+            "s1_64": 0.087,
+            "s1_128": 0.070,
         },
         "status": "Control D: spectral_circle artifact diagnostic",
         "verdict_criteria": {

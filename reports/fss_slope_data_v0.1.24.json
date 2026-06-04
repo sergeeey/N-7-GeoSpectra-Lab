@@ -1,0 +1,143 @@
+{
+  "gate4b": {
+    "ring": {
+      "W0": {
+        "slope": -0.9523657289987159,
+        "intercept": 0.1607646240406191,
+        "r_squared": 0.9998526701006792,
+        "p_value": 7.366766312266738e-05,
+        "std_err": 0.008174594179733853,
+        "n_points": 4,
+        "classification": "WEAKENING",
+        "status": "OK"
+      },
+      "W20": {
+        "slope": 0.010590273347150994,
+        "intercept": -1.1675266745026278,
+        "r_squared": 0.06668154595007367,
+        "p_value": 0.741772298251962,
+        "std_err": 0.02801588000212404,
+        "n_points": 4,
+        "classification": "STABLE",
+        "status": "OK"
+      }
+    },
+    "spectral_circle": {
+      "W0": {
+        "slope": -1.0,
+        "intercept": 0.0,
+        "r_squared": 1.0,
+        "p_value": 1e-20,
+        "std_err": 0.0,
+        "n_points": 4,
+        "classification": "WEAKENING",
+        "status": "OK"
+      },
+      "W20": {
+        "slope": -0.4932932711674848,
+        "intercept": -0.2761089460611885,
+        "r_squared": 0.9771233455614483,
+        "p_value": 0.011504504025714683,
+        "std_err": 0.05337178831208548,
+        "n_points": 4,
+        "classification": "WEAKENING",
+        "status": "OK"
+      }
+    },
+    "wilson_ring": {
+      "W0": {
+        "slope": -1.0,
+        "intercept": 0.0,
+        "r_squared": 1.0,
+        "p_value": 1e-20,
+        "std_err": 0.0,
+        "n_points": 4,
+        "classification": "WEAKENING",
+        "status": "OK"
+      },
+      "W20": {
+        "slope": 0.026253695337937692,
+        "intercept": -1.5444236113431857,
+        "r_squared": 0.21515160412224166,
+        "p_value": 0.5361556251044519,
+        "std_err": 0.0354565141649971,
+        "n_points": 4,
+        "classification": "STABLE",
+        "status": "OK"
+      }
+    }
+  },
+  "negative_controls": {
+    "broken_wilson_term": {
+      "W0": {
+        "slope": -0.9920880370714109,
+        "intercept": 0.3120470441014751,
+        "r_squared": 0.9996620897335063,
+        "p_value": 0.01170321755048832,
+        "std_err": 0.01823997735864315,
+        "n_points": 3,
+        "classification": "WEAKENING",
+        "status": "OK"
+      },
+      "W20": {
+        "slope": 0.01639613101593394,
+        "intercept": -1.1785884744824102,
+        "r_squared": 0.38955623623803615,
+        "p_value": 0.5708953727385958,
+        "std_err": 0.02052480927004216,
+        "n_points": 3,
+        "classification": "STABLE",
+        "status": "OK"
+      }
+    },
+    "random_hermitian": {
+      "W0": {
+        "slope": -1.0008164755002256,
+        "intercept": -3.5798330343938,
+        "r_squared": 0.999999582091175,
+        "p_value": 0.000411548406377772,
+        "std_err": 0.0006469866328979076,
+        "n_points": 3,
+        "classification": "WEAKENING",
+        "status": "OK"
+      },
+      "W20": {
+        "slope": -1.1360941929485433,
+        "intercept": -2.8924666098259273,
+        "r_squared": 0.9995739574547752,
+        "p_value": 0.013141273409051638,
+        "std_err": 0.023454887754579868,
+        "n_points": 3,
+        "classification": "WEAKENING",
+        "status": "OK"
+      }
+    },
+    "scrambled_geometry": {
+      "W0": {
+        "slope": -1.757196250579656,
+        "intercept": 0.5971288657722535,
+        "r_squared": 0.9999458214280067,
+        "p_value": 0.004685951848621405,
+        "std_err": 0.01293438577735843,
+        "n_points": 3,
+        "classification": "WEAKENING",
+        "status": "OK"
+      },
+      "W20": {
+        "slope": -0.8964387332028734,
+        "intercept": -0.6256631241371982,
+        "r_squared": 0.9654500727613975,
+        "p_value": 0.11902461817874355,
+        "std_err": 0.16958181219926965,
+        "n_points": 3,
+        "classification": "WEAKENING",
+        "status": "OK"
+      }
+    }
+  },
+  "analysis_date": "2026-06-01",
+  "data_sources": {
+    "gate4b": "reports\\RUNS\\gate4_fss_v0.1.24",
+    "negative_controls": "reports\\RUNS\\negative_controls_v0.1.22"
+  }
+}
