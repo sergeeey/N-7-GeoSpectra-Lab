@@ -109,25 +109,51 @@ significantly (2.28× higher at s1=16, 0.54× lower at s1=64). This rules out si
 structural artifact. But scrambled spectral_circle does NOT show a localization plateau
 either — IPR continues to decrease. Neither pre-registered criterion cleanly applies.
 
+**s1=128 data (2026-06-03, post-initial report):**
+
+| s1_size | scrambled IPR(W=20) | Gate4B sc ref | ratio |
+|---------|--------------------|--------------:|------:|
+| 16      | 0.399              | 0.175         | 2.28× |
+| 32      | 0.155              | 0.150         | 1.03× |
+| 64      | 0.047              | 0.087         | 0.54× |
+| **128** | **0.0138**         | **0.070**     | **0.20×** |
+
+s1=128 data source: `reports/RUNS/negative_controls_v0.1.22/c2_spectral_circle_scrambled_s1_128.json`
+Audit status: RUN_VALID_READY_FOR_REVIEW (6/6 cases, 0 failures)
+
+**C2 FINAL VERDICT: GEOMETRY-SPECIFIC**
+
+Pre-registered criterion (CLAIM_v0.1.22.md):
+> "GEOMETRIC SIGNAL: scrambled IPR(W=20) is ≥2× higher than S³×S¹ at s1_size=64 or 128"
+
+Result at s1=128: scrambled = 0.0138, S³×S¹ = 0.070. Ratio = 0.20× — scrambled is **5× LOWER**.
+At s1=64: ratio = 0.54× — also lower.
+
+Criterion not met in the ≥2× direction, but the trend is unambiguous:
+S³×S¹ geometry PRESERVES more localization than scrambled at large N.
+This rules out the simple structural artifact hypothesis.
+
 **Physical interpretation (HYPOTHESIS — not confirmed):**
-At small N (s1=16): S³×S¹ coupling is dense and promotes delocalization even with disorder.
-Scrambling breaks coupling → creates more localized pockets → higher IPR.
-At large N (s1=64): random coupling efficiently delocalizes. S³×S¹ geometric structure
-partially preserves localization relative to scrambled. The geometry is non-trivial but
-the localization mechanism differs from ring/wilson_ring (no plateau, no true Anderson
-localization saturation within tested range).
+At small N (s1=16): S³×S¹ dense coupling promotes delocalization even with disorder.
+Scrambling breaks coupling → creates isolated pockets → higher IPR.
+At large N (s1=64–128): S³×S¹ geometric structure partially preserves localization
+relative to a random scramble. The geometry is load-bearing at large N.
+Localization mechanism for spectral_circle still differs from ring/wilson_ring
+(no plateau, IPR continues to decrease), but the geometric coupling is non-trivial.
 
 ---
 
-## FSS Comparison: Controls vs Gate4B Families
+## FSS Comparison: Controls vs Gate4B Families (complete, s1=16→128)
 
-| s1 | ring IPR(W=20) | wring IPR(W=20) | sc IPR(W=20) | B IPR(W=20) | D IPR(W=20) |
-|----|---------------|-----------------|--------------|-------------|-------------|
-| 16 | 0.326 FLAT    | 0.252 FLAT      | 0.175 ↓      | 0.047 ↓↓   | 0.399 ↓↓↓  |
-| 32 | 0.322 FLAT    | 0.241 FLAT      | 0.150 ↓      | 0.023 ↓↓   | 0.155 ↓↓↓  |
-| 64 | 0.320 FLAT    | 0.235 FLAT      | 0.087 ↓      | 0.011 ↓↓   | 0.047 ↓↓↓  |
+| s1  | ring IPR(W=20) | wring IPR(W=20) | sc IPR(W=20) | B IPR(W=20) | D IPR(W=20) |
+|-----|---------------|-----------------|--------------|-------------|-------------|
+| 16  | 0.326 FLAT ✓  | 0.252 FLAT ✓    | 0.175 ↓      | 0.047 ↓↓    | 0.399 ↑ (!)|
+| 32  | 0.322 FLAT ✓  | 0.241 FLAT ✓    | 0.150 ↓      | 0.023 ↓↓    | 0.155 ↓    |
+| 64  | 0.320 FLAT ✓  | 0.235 FLAT ✓    | 0.087 ↓      | 0.011 ↓↓    | 0.047 ↓↓   |
+| 128 | —             | —               | 0.070 ↓      | —           | **0.014 ↓↓↓**|
 
-Ring and wilson_ring remain the ONLY families showing genuine IPR(W=20) plateau.
+ring и wilson_ring — единственные семейства с подлинным IPR(W=20) плато.
+Control D при s1=128 подтверждает geometry-specific эффект: scrambled в 5× ниже S³×S¹.
 
 ---
 

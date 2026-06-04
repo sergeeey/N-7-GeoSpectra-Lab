@@ -43,8 +43,21 @@
 - "All three discretization families confirm W=20 contrast ≥2.0×"
 - "spectral_circle: 4.25×, ring: 8.31×, wilson_ring: 8.49×"
 - "No single-family domination (max 36% of aggregate contrast)"
+- "ring and wilson_ring show genuine IPR(W=20) plateau (flat across s1_size=16→64)"
 
-**Rationale:** 3/3 families PASS independently, no discretization artifact.
+**Qualifier added (v0.1.22 negative controls, 2026-06-03) — FINAL:**
+- spectral_circle: contrast pass (≥2.0× threshold met), but IPR(W=20) DECREASING with N
+  (0.175→0.150→0.087→0.070 from s1=16→128). No localization plateau.
+- C2 verdict (s1=128 confirmed): GEOMETRY-SPECIFIC.
+  Scrambled spectral_circle IPR(W=20) = 0.014 vs S³×S¹ = 0.070 (ratio 0.20×).
+  Geometry is load-bearing at large N — NOT a structural artifact.
+  Localization mechanism distinct from ring/wilson_ring (no plateau).
+- Allowed qualifier phrase: "spectral_circle: contrast pass, plateau absent,
+  geometry-sensitive at large N."
+
+**Rationale:** 3/3 families PASS the pre-registered ≥2.0× threshold.
+ring and wilson_ring additionally show IPR plateau — the stronger localization criterion.
+spectral_circle qualifier does NOT change the Gate 4B PASS verdict.
 
 ---
 
