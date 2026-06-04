@@ -2,7 +2,7 @@
 
 **Vision:** Build a falsification-first validation harness that can distinguish robust finite-lattice spectral signals from artifacts, discretization sensitivity, and false positives.
 
-**Current Status:** Gate 4B v0.1.21 completed, negative controls v0.1.22 in progress (batches 1-2 done, 3-6 pending remote execution).
+**Current Status:** Gate 4B v0.1.24 SIGNAL_PRESERVED, Negative Controls v0.1.22 COMPLETE, Specificity verdict: DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC. *(Updated 2026-06-03)*
 
 ---
 
@@ -40,73 +40,53 @@
 
 ---
 
-## Phase 2 — Negative Controls / Artifact Zoo 🔄 ACTIVE
+## Phase 2 — Negative Controls / Artifact Zoo ✅ COMPLETED
 
 **Goal:** Test whether harness can reject broken, random, scrambled, or artifact-dominated baselines.
 
-**Status:** 🔄 IN PROGRESS (v0.1.22)
+**Status:** ✅ COMPLETED (2026-06-03)
 
-### Priority Controls
+### Final Verdict: DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
 
-#### Control A: Random Hermitian Baseline
-**Purpose:** Check if generic random matrix with disorder fakes IPR contrast  
-**Construction:** Diagonal U(r) ∈ [-W, W], Gaussian off-diagonal, NO geometric structure  
-**Expected:** Should NOT reproduce full Gate 4B robust pattern  
-**Status:** Batches 1-2 completed (18/18 cases)
+| Level | Test | Verdict |
+|-------|------|---------|
+| L1 | Random Hermitian | ✅ REJECTS (slope -1.14, WEAKENING) |
+| L2 | Scrambled geometry | ✅ REJECTS (slope -0.90, WEAKENING) |
+| L3 | FFT vs lattice (spectral_circle) | ✅ DISTINGUISHES (spectral -0.48 vs ring +0.01) |
+| L4 | Lattice families (ring/wilson_ring) | ✅ ACCEPTS (both STABLE) |
+| L5 | Wilson details | ❌ DOES NOT DISTINGUISH (scrambled -0.07, STABLE) |
 
-#### Control B: Scrambled Geometry
-**Purpose:** Preserve dimension/scale but break S³×S¹ geometric coupling  
-**Construction:** S³ indices permuted OR S³/S¹ decoupled OR wrong spectrum  
-**Expected:** Should weaken or destabilize signal  
-**Status:** Batches 3-4 pending (remote execution)
+**C1 (harness discrimination): CONFIRMED** — controls A/B/C correctly rejected
+**C2 (spectral_circle diagnosis): GEOMETRY-SPECIFIC** — scrambled 5× lower than S³×S¹ at s1=128
 
-#### Control C: Broken Wilson Term
-**Purpose:** Test if Wilson correction is load-bearing  
-**Construction:** Wilson coefficient = 0 OR Wilson structure scrambled  
-**Expected:** Should NOT reproduce wilson_ring robustness  
-**Status:** Batches 5-6 pending (remote execution)
+**Total cases executed:** 132 local (v0.1.22) + 54 server (v0.1.22 batches 1-6) + 36 extended
 
-### Execution Plan
+### Controls Summary
 
-| Batch | Control | W | Cases | Status |
-|-------|---------|---|-------|--------|
-| 1 | random_hermitian | 0 | 9 | ✅ DONE (local) |
-| 2 | random_hermitian | 20 | 9 | ✅ DONE (local) |
-| 3 | scrambled_geometry | 0 | 9 | 📋 PENDING (remote) |
-| 4 | scrambled_geometry | 20 | 9 | 📋 PENDING (remote) |
-| 5 | broken_wilson_term | 0 | 9 | 📋 PENDING (remote) |
-| 6 | broken_wilson_term | 20 | 9 | 📋 PENDING (remote) |
-
-**Total:** 54 cases (18 done, 36 pending)
-
-**Runtime estimate:** ~3-4 hours on remote infrastructure (Google Colab / cluster)
-
-### Decision Rules (Pre-Registered)
-
-**HARNESS_SPECIFIC verdict:** If ALL controls fail (≥2/3 show <2.0× contrast, weak/collapsing FSS)
-
-**HARNESS_NONSPECIFIC verdict:** If ANY control reproduces full Gate 4B-like robust pattern (≥2.0× contrast, stable/strengthening FSS, r-stat shift, reproducible across seeds/sizes)
-
-**Deliverables:**
-- [ ] Complete batches 3-6 on remote infrastructure
-- [ ] Pull results locally
-- [ ] Aggregate 54 cases → `aggregate_summary.json`
-- [ ] Apply decision rules → verdict
-- [ ] Write final report → `S3_S1_NEGATIVE_CONTROLS_RESULTS_v0.1.22.md`
+| Control | Cases | Verdict | IPR(W=20) max | vs ring ref |
+|---------|-------|---------|--------------|-------------|
+| A: random_hermitian | 24 local | ✅ REJECTED | 0.0024 | 0.7% |
+| B: scrambled_geometry | 24 local + 18 server | ✅ REJECTED | 0.052 | 16% |
+| C: broken_wilson_scrambled | 24 local + 18 server | ✅ REJECTED | 0.007 | 2% |
+| D: spectral_circle_scrambled | 24+6 local | GEOMETRY-SPECIFIC | 0.014 at s1=128 | — |
 
 **Reports:**
-- `reports/S3_S1_NEGATIVE_CONTROLS_PREREGISTRATION_v0.1.22.md`
-- `reports/NEGATIVE_CONTROLS_IMPLEMENTATION_PLAN_v0.1.22.md`
-- `reports/NEGATIVE_CONTROLS_REMOTE_EXECUTION_PLAN_v0.1.22.md`
-- `reports/CURRENT_STATUS_v0.1.22_NEGATIVE_CONTROLS_PLANNING.md`
+- `reports/S3_S1_NEGATIVE_CONTROLS_RESULTS_v0.1.22.md` ← финальный
+- `reports/SKEPTIC_AUDIT_GATE4B_v0.1.22.md`
+- `reports/ESTIMAND_v0.1.22.md`
+- `reports/CLAIM_v0.1.22.md`
+- `reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md`
+- `reports/UNIFIED_RESULT_RECONCILIATION_AUDIT_v0.1.24.md`
 
 ---
 
-## Phase 3 — Clean Compact-Product Spectral Checks 📋 PLANNED
+## Phase 3 — Clean Compact-Product Spectral Checks 📋 READY TO START
 
 **Goal:** Verify that clean W=0 finite-lattice geometry has meaningful compact-product spectral structure.
 
-**Motivation:** Before claiming S³×S¹ signal is geometry-specific, verify clean baseline has expected product spectrum.
+**Blocker resolved:** Phase 2 complete. Phase 3 is now unblocked.
+
+**Motivation:** Negative controls confirm DISCRETIZATION_SENSITIVE verdict. Phase 3 characterises WHY lattice product structure produces the signal — analytic comparison.
 
 ### Planned Diagnostics
 

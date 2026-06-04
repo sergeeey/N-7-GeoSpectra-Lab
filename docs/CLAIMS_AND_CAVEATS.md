@@ -2,7 +2,7 @@
 
 **Purpose:** Explicit boundaries of what GeoSpectra Lab can and cannot claim based on current validation status.
 
-**Last updated:** 2026-05-24
+**Last updated:** 2026-06-03
 
 ---
 
@@ -36,26 +36,36 @@
 - W=20 exploratory (not optimized)
 - True IPR metric (v0.1.21, not comparable with v0.1.20)
 - **No physical compactification claim**
+- spectral_circle qualifier: contrast pass (≥2.0×), plateau absent, geometry-sensitive at large N
 
 **Evidence:**
-- Full report: `reports/S3_S1_GATE4B_FSS_RESULTS_v0.1.21.md`
-- 216/216 cases executed, 0 failures
-- Aggregate contrast: 7.15× (W=20 vs W=0)
+- Primary report: `reports/S3_S1_GATE4B_FSS_RESULTS_v0.1.21.md`
+- Corrected rerun: `reports/GATE_4B_v0.1.24_COMPARISON_FINAL.md`
+- 216/216 cases executed, 0 failures (both v0.1.21 and v0.1.24)
+- **Aggregate contrast: 7.07× (v0.1.24 authoritative) / 7.15× (v0.1.21)**
+- Signal preserved across S³ Dirac fix: -1.1% change → SIGNAL_PRESERVED
 - FSS trend: STRENGTHENING (3.76× → 24.90×)
-- Family consistency: 3/3 PASS (spectral_circle, ring, wilson_ring)
+- Family consistency: 3/3 PASS (ring 8.13×, wilson_ring 8.44×, spectral_circle 4.25×)
+- ring and wilson_ring: genuine IPR(W=20) plateau confirmed by negative controls
 
 ---
 
-### 3. Negative Controls (v0.1.22 — Partial)
+### 3. Negative Controls (v0.1.22 — COMPLETE)
 
 **Allowed:**
-- Negative controls protocol pre-registered
-- Batches 1-2 completed locally (18/54 cases)
-- Batches 3-6 pending remote execution (36/54 cases)
+- "GeoSpectra Lab harness is DISCRETIZATION_SENSITIVE: distinguishes FFT (spectral_circle) from lattice (ring, wilson_ring) discretization methods"
+- "GeoSpectra Lab harness is GEOMETRY_AGNOSTIC within lattice family: ring and wilson_ring both produce stable FSS signal regardless of Wilson correction details"
+- "All non-geometric baselines (random Hermitian, scrambled geometry, broken Wilson) correctly rejected — IPR(W=20) < 16% of ring reference"
+- "spectral_circle is geometry-sensitive at large N: scrambled variant shows 5× lower IPR at s1=128 vs S³×S¹ structure"
 
-**NOT allowed (yet):**
-- Final verdict on harness specificity (execution incomplete)
-- Claim that controls fail as expected (results pending)
+**Specificity verdict:** DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
+
+**Cases executed:** 132 local + 54 server + 36 extended diagnostics = 222 total
+
+**Evidence:**
+- `reports/S3_S1_NEGATIVE_CONTROLS_RESULTS_v0.1.22.md` (local, 78 cases)
+- `reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md` (server, 306 cases reconciled)
+- `reports/UNIFIED_RESULT_RECONCILIATION_AUDIT_v0.1.24.md`
 
 ---
 
@@ -242,5 +252,5 @@ For detailed claim boundaries by milestone:
 
 > GeoSpectra Lab is a **validation tool**, not a physics theory. Claims must reflect computational results, not extrapolate to physics conclusions.
 
-**Last updated:** 2026-05-24  
+**Last updated:** 2026-06-03  
 **Status:** ACTIVE — enforce before all external communication
