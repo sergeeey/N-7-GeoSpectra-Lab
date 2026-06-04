@@ -48,12 +48,17 @@
 **Qualifier added (v0.1.22 negative controls, 2026-06-03) — FINAL:**
 - spectral_circle: contrast pass (≥2.0× threshold met), but IPR(W=20) DECREASING with N
   (0.175→0.150→0.087→0.070 from s1=16→128). No localization plateau.
-- C2 verdict (s1=128 confirmed): GEOMETRY-SPECIFIC.
+- C2 verdict (s1=128 confirmed): SCRAMBLING-SENSITIVE / STRUCTURE-SENSITIVE (spectral_circle).
   Scrambled spectral_circle IPR(W=20) = 0.014 vs S³×S¹ = 0.070 (ratio 0.20×).
-  Geometry is load-bearing at large N — NOT a structural artifact.
+  Scrambling the spectral_circle structure suppresses the signal at large N — NOT a
+  trivial structural artifact, but ALSO NOT S³×S¹-specificity: cross-geometry S²×S¹
+  transfer (v0.1.25, ratio ≈ 1.0) shows the broader signal is geometry-agnostic,
+  consistent with the DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC verdict.
   Localization mechanism distinct from ring/wilson_ring (no plateau).
 - Allowed qualifier phrase: "spectral_circle: contrast pass, plateau absent,
-  geometry-sensitive at large N."
+  scrambling-sensitive (structure-sensitive) at large N — not S³×S¹-specific."
+- Forbidden: "spectral_circle signal is S³×S¹-specific" / "geometry-specific" (overclaim;
+  contradicts geometry-agnostic cross-geometry transfer).
 
 **Rationale:** 3/3 families PASS the pre-registered ≥2.0× threshold.
 ring and wilson_ring additionally show IPR plateau — the stronger localization criterion.

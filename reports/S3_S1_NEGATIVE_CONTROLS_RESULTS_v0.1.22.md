@@ -121,7 +121,13 @@ either — IPR continues to decrease. Neither pre-registered criterion cleanly a
 s1=128 data source: `reports/RUNS/negative_controls_v0.1.22/c2_spectral_circle_scrambled_s1_128.json`
 Audit status: RUN_VALID_READY_FOR_REVIEW (6/6 cases, 0 failures)
 
-**C2 FINAL VERDICT: GEOMETRY-SPECIFIC**
+**C2 FINAL VERDICT: SCRAMBLING-SENSITIVE / STRUCTURE-SENSITIVE (spectral_circle)**
+
+> The spectral_circle scrambled control does not reproduce the large-N spectral_circle
+> signal, supporting structure-sensitivity of this family. This should NOT be read as
+> S³×S¹-specificity, because cross-geometry S²×S¹ transfer (v0.1.25, transfer_ratio ≈ 1.0)
+> indicates the broader signal is geometry-agnostic across tested product geometries,
+> consistent with the overall DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC verdict.
 
 Pre-registered criterion (CLAIM_v0.1.22.md):
 > "GEOMETRIC SIGNAL: scrambled IPR(W=20) is ≥2× higher than S³×S¹ at s1_size=64 or 128"
@@ -153,7 +159,8 @@ Localization mechanism for spectral_circle still differs from ring/wilson_ring
 | 128 | —             | —               | 0.070 ↓      | —           | **0.014 ↓↓↓**|
 
 ring и wilson_ring — единственные семейства с подлинным IPR(W=20) плато.
-Control D при s1=128 подтверждает geometry-specific эффект: scrambled в 5× ниже S³×S¹.
+Control D при s1=128 подтверждает scrambling-sensitive эффект: scrambled в 5× ниже S³×S¹
+(чувствительность к структуре spectral_circle, НЕ S³×S¹-специфичность — см. оговорку выше).
 
 ---
 
