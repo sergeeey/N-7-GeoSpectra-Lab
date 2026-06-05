@@ -10,7 +10,7 @@ This is an infrastructure failure, recorded for traceability. The corrected S³ 
 
 ## 2. Evidence
 
-Raw facts collected from the server (Hetzner CPX42, `ape-2026`, root@46.224.28.128, tmux session `geospectra_gate4b`):
+Raw facts collected from the server (Hetzner CPX42, `ape-2026`, <user>@<hetzner-server-ip>, tmux session `geospectra_gate4b`):
 
 - timestamp: **May 25 11:45:21** (server UTC)
 - killed process: **python** (PID 1002566)

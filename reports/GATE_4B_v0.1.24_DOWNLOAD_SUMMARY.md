@@ -7,7 +7,7 @@
 
 ## Download Verification
 
-**Server:** Hetzner CX52 (root@46.224.28.128)  
+**Server:** Hetzner CX52 (<user>@<hetzner-server-ip>)  
 **Download method:** tar + scp (rsync не установлен локально)  
 **Download time:** ~2 minutes
 

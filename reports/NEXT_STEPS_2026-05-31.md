@@ -212,7 +212,7 @@ sergeikuch80@gmail.com
 ---
 
 #### 8. ✅ Delete Hetzner Server
-**Server:** root@46.224.28.128 (Hetzner CX52)  
+**Server:** <user>@<hetzner-server-ip> (Hetzner CX52)  
 **Cost:** €29.95/month (минимум 1 месяц billing)
 
 **Как удалить:**

@@ -2,7 +2,7 @@
 # Run Negative Controls batches 3-6 (v0.1.22) on Hetzner server
 # ONLY run this AFTER Gate 4B v0.1.24 verdict = SIGNAL_PRESERVED
 
-SERVER="root@46.224.28.128"
+SERVER="<user>@<hetzner-server-ip>"
 
 echo "=== Negative Controls batches 3-6 launcher ==="
 echo ""

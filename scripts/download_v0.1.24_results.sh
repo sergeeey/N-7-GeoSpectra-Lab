@@ -1,7 +1,7 @@
 #!/bin/bash
 # Download Gate 4B v0.1.24 results from Hetzner CX52
 
-SERVER="root@46.224.28.128"
+SERVER="<user>@<hetzner-server-ip>"
 REMOTE_PATH="~/geospectra/reports/RUNS/gate4_fss_v0.1.24"
 LOCAL_PATH="reports/RUNS/gate4_fss_v0.1.24"
 

@@ -206,7 +206,7 @@
 - Location: `reports/RUNS/gate4_fss_v0.1.24/`
 - Date: 2026-05-31
 - Commit: `4b77684` (runner), operator at `093573b` (corrected)
-- Server: Hetzner CX52 (46.224.28.128), 32 GB RAM, 16 vCPU
+- Server: Hetzner CX52 (<hetzner-server-ip>), 32 GB RAM, 16 vCPU
 - Runtime: [FILL] hours
 - Status: [FILL after verification]
 

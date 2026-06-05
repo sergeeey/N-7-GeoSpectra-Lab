@@ -1,7 +1,7 @@
 #!/bin/bash
 # Quick server status check for Gate 4B v0.1.24 rerun
 
-SERVER="root@46.224.28.128"
+SERVER="<user>@<hetzner-server-ip>"
 
 echo "=== Server Status Check ==="
 echo "Server: $SERVER"
