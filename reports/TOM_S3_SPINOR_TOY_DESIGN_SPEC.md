@@ -88,22 +88,29 @@ Two peer-reviewed sources identified in `SPINOR_HARMONICS_LITERATURE_AUDIT_2026-
 
 ### Camporesi & Higuchi 1996 — gr-qc/9505009
 
-Core reference for S^N spinor harmonics.
+**[VERIFIED_FROM_PDF — 2026-06-05]** PDF fetched from arXiv and read in full (Section 3).
+Full title: *"On the eigenfunctions of the Dirac operator on spheres and real hyperbolic spaces"*
+Authors: Roberto Camporesi (Politecnico di Torino) + Atsushi Higuchi (Universität Bern).
+This IS the spinor harmonics paper — correct primary reference for Tom's framework.
 
-| Eq. | Content | Relevance |
+**⚠️ COORDINATE NOTE:** Camporesi-Higuchi uses **geodesic polar θ ∈ [0,π]**, NOT Hopf α.
+Possible relation: `θ_geodesic = 2 α_Hopf`. If Tom's α is Hopf, eq 3.25 in Hopf notation becomes
+`(cosα)^{l+1} (sinα)^l P^{...}(cos2α)` — matching Ben Achour scalar structure. Must clarify with Tom.
+
+| Eq. | Content | Verification |
 |---|---|---|
-| 3.1 | `ds²_N = dθ² + sin²θ ds²_{N-1}` — geodesic-polar coordinates | metric on S³ |
-| 3.5 | `ω_{ijk} = (1/sinθ) ω̃_{ijk}`, `ω_{iNk} = cosθ/sinθ δ_{ik}` | spin connection |
-| **3.9** | `∇_a ψ = ∂_a ψ − (1/2) ω_{abc} Σ^{bc} ψ` | spin connection term [HYPOTHESIS: may be absent in orbital-only treatment] |
-| 3.25 | `φ_{nl}(θ) = (cosθ/2)^{l+1} (sinθ/2)^l P^{(N/2+l-1, N/2+l)}_{n-l}(cosθ)` | Jacobi-polynomial α-eigenfunction |
-| 3.26 | `λ²_{n,N} = (n + N/2)²` → S³: `λ = ±(n + 3/2)` | eigenvalue formula |
-| 3.34 | `∇̸ ψ^{(s)}_{±nlm} = ±i(n + N/2) ψ^{(s)}_{±nlm}` | full first-order Dirac eq |
+| 3.1 | `ds²_N = dθ² + sin²θ ds²_{N-1}` (geodesic polar, f(θ)=sinθ) | **✅ VERIFIED_FROM_PDF** |
+| 3.5 | `ω_{ijk} = (1/sinθ)ω̃_{ijk}`, `ω_{iNk} = −(cosθ/sinθ)δ_{ik}` | **✅ VERIFIED_FROM_PDF** |
+| **3.9** | `∇_a ψ = e_a ψ − (1/2) ω_{abc} Σ^{bc} ψ` — spin connection term | **✅ VERIFIED_FROM_PDF** |
+| 3.25 | `φ_{nl}(θ) = (cosθ/2)^{l+1} (sinθ/2)^l P^{(N/2+l−1, N/2+l)}_{n−l}(cosθ)` | **✅ VERIFIED_FROM_PDF** |
+| 3.26 | `λ²_{n,N} = (n + N/2)²` → S³ (N=3): `λ = ±(n + 3/2)` | **✅ VERIFIED_FROM_PDF** |
+| 3.34 | `∇̸ ψ^{(s)}_{±nlm} = ±i(n + N/2) ψ^{(s)}_{±nlm}` | **✅ VERIFIED_FROM_PDF** |
 
-**Claim status [NEEDS_EXTERNAL_SOURCE_CHECK]:** Eq. numbers cited from autonomous
-session memory — NOT verified against actual PDF on this machine.
-MUST verify gr-qc/9505009 sections 3.1, 3.5, 3.9, 3.25, 3.26, 3.34 by reading
-the actual paper before quoting in any external document.
-See Sync Audit items C5, C6 → NEEDS_EXTERNAL_SOURCE_CHECK.
+Also verified from PDF — Section 2 (Γ-matrices):
+- Eq 2.1: `{Γᵃ, Γᵇ} = 2δᵃᵇ 1` — Clifford algebra **✅**
+- Eq 2.8: `Σᵃᵇ = (1/4)[Γᵃ, Γᵇ]` — spin generators **✅**
+- Eq 2.3: for N=3 (odd): `Γ³ = (−i)Γ¹Γ² = diag(1,−1)` **✅**
+- Degeneracy S³ (N=3, odd), eq 3.58: `D₃(n) = 2(N+n−1)!/n!(N−1)! = (n+1)(n+2)` per branch **✅**
 
 ### Ben Achour et al 2016 — arXiv:1505.03426v2
 
