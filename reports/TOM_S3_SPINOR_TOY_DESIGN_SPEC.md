@@ -105,30 +105,38 @@ MUST verify gr-qc/9505009 sections 3.1, 3.5, 3.9, 3.25, 3.26, 3.34 by reading
 the actual paper before quoting in any external document.
 See Sync Audit items C5, C6 → NEEDS_EXTERNAL_SOURCE_CHECK.
 
-### Ben Achour et al 2015 — arXiv:1505.03426
+### Ben Achour et al 2016 — arXiv:1505.03426v2
 
-Core reference for Hopf coordinates on S³.
+**⚠️ CRITICAL SCOPE NOTE [VERIFIED_FROM_PDF — 2026-06-05]:**
+This paper is titled *"Explicit **vector** spherical harmonics on the 3-sphere"*.
+It constructs eigenmodes of the **Laplace-de Rahm operator on one-forms (vector harmonics)**,
+NOT spinor harmonics. Scalar modes in Section II are used as building blocks for vector modes.
+The Dirac operator does not appear. Camporesi-Higuchi remains the primary reference for
+spinor harmonics. This paper is valid for Hopf coordinates and scalar mode structure only.
 
-| Eq. | Content | Relevance |
+| Eq. | Content | Verification status |
 |---|---|---|
-| 1 | `x¹ = sinα cosφ`, `x² = sinα sinφ`, `x³ = cosα cosθ`, `x⁴ = cosα sinθ` | Hopf coordinate embedding |
-|   | `ds² = dα² + cos²α dθ² + sin²α dφ²`, α ∈ [0, π/2] | Hopf metric |
-| 3 | `Φ = C e^{i(Sφ+Dθ)} (1−x)^{S/2} (1+x)^{D/2} P^{(S,D)}_{n}(x)`, `x = cos(2α)` | scalar eigenmode |
+| 1 | `x¹ = sinα cosφ`, `x² = sinα sinφ`, `x³ = cosα cosθ`, `x⁴ = cosα sinθ` | **[VERIFIED_FROM_PDF ✅]** |
+|   | `ds² = dα² + cos²α dθ² + sin²α dφ²`, α ∈ [0, π/2] | **[VERIFIED_FROM_PDF ✅]** |
+| 2 | `ΔΦᵢ = λᵢΦᵢ`, `λᵢ = −L(L+2)`, L ∈ ℕ | **[VERIFIED_FROM_PDF ✅]** |
+| 3 | `Φ = C_{L,m₊,m₋} e^{i(Sφ+Dθ)} (1−x)^{S/2} (1+x)^{D/2} P^{(S,D)}_{L/2−m₊}(x)` | **[VERIFIED_FROM_PDF ✅]** |
+|   | `x = cos(2α)`,  `S = m₊+m₋`,  `D = m₊−m₋` | **[VERIFIED_FROM_PDF ✅]** |
 
-Key identity: `(1 − cos 2α) = 2 sin²α`, `(1 + cos 2α) = 2 cos²α`.
+Key identity [VERIFIED]: `(1 − cos 2α) = 2 sin²α`, `(1 + cos 2α) = 2 cos²α`.
 
-Lowest scalar mode (S=0, D=0, n=0): `Φ = const`.
-The `√sin(2α)` form does not appear in eq 3 for any (S, D, n) in the scalar sector
-[NEEDS_EXTERNAL_SOURCE_CHECK — verify Ben Achour eq 3 against actual PDF].
-[HYPOTHESIS — Sync Audit C7]: `√sin(2α)` appears to match the measure factor
-`√g = sinα cosα · √2`, not a Laplacian eigenfunction.
+Lowest scalar mode (S=0, D=0, n=0): **`Φ = const`** [VERIFIED_FROM_PDF ✅].
 
-**Note on Tom's ansatz [HYPOTHESIS/interpretive — Sync Audit C7]:**
-We have not read Tom's derivation step-by-step. We cannot assert what his ansatz
-"is essentially." Strongest defensible claim: "the scalar Laplacian modes on S³
-in Hopf coordinates do not include `√sin(2α)` as a mode function for any quantum
-numbers (S, D, n), per Ben Achour eq 3 [requires PDF verification]."
-Whether this is relevant to Tom's specific framework is for Tom to judge.
+`√sin(2α)` in the scalar sector [VERIFIED_FROM_PDF ✅]:
+From eq (3): `(1−x)^{S/2} = 2^{S/2} sinˢα`. For integer quantum numbers (S,D),
+the mode is always `sinˢα · cosᴰα · P^{(S,D)}_n(cos2α)`.
+The form `√sin(2α) = √(2 sinα cosα)` does NOT appear for any (S,D,n)
+in this scalar mode basis. This is now **verified from the PDF**, not from memory.
+
+**Note on Tom's ansatz [HYPOTHESIS/interpretive — Sync Audit C7, unchanged]:**
+This verification applies to **scalar modes** of the Laplace-Beltrami operator.
+Tom's framework may involve spinor modes (Dirac operator) — a different space.
+Whether the scalar result generalises to his spinor ansatz is for Tom to judge.
+We cannot assert what his `√sin(2α)` represents without reading his derivation.
 
 ### Existing project reference: arXiv:1103.4097
 
