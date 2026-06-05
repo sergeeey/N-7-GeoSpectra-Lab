@@ -1,0 +1,1216 @@
+{
+  "protocol_version": "structural-audit-smoke-v1",
+  "verdict": "STRUCTURAL_AUDIT_INCONCLUSIVE",
+  "verdict_auto_from_completed_cases": "STRUCTURAL_AUDIT_SMOKE_COMPLETED",
+  "verdict_downgraded_reason": "only 2 of 6 planned subcases ran (time budget hit); cross-family coverage missing",
+  "n_cases_planned": 6,
+  "total_seconds": 77.40104539999447,
+  "n_cases": 2,
+  "smoke_case": {
+    "label": "N=112",
+    "j_max": 3,
+    "s1_size": 16
+  },
+  "results": [
+    {
+      "family": "spectral_circle",
+      "W": 0.0,
+      "j_max": 3,
+      "s1_size": 16,
+      "s3_dim": 110,
+      "s1_dim": 16,
+      "N_total": 1760,
+      "seed": 123,
+      "build_seconds": 0.14157279999926686,
+      "audit_seconds": 38.48054239999328,
+      "block_structure": {
+        "diag_blocks_fro": 878.3108789033641,
+        "offdiag_blocks_fro": 0.0,
+        "ratio_off_over_diag": 0.0,
+        "max_single_offdiag_block_fro": 0.0,
+        "n_diag_blocks": 110,
+        "n_offdiag_blocks": 11990,
+        "verdict": "ZERO_OFFDIAG"
+      },
+      "partial_trace": {
+        "Tr_S1_reduced_to_S3": {
+          "shape": [
+            110,
+            110
+          ],
+          "frobenius_norm": 3427.022030860029,
+          "diagonality_fraction": 1.0,
+          "verdict": "DIAGONAL",
+          "diagonal_values": [
+            28.0,
+            28.0,
+            28.0,
+            28.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            92.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            188.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            316.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0,
+            476.0
+          ]
+        },
+        "Tr_S3_reduced_to_S1": {
+          "shape": [
+            16,
+            16
+          ],
+          "frobenius_norm": 8410.24636975636,
+          "diagonality_fraction": 0.9704828659182845,
+          "is_scalar_identity": false,
+          "verdict": "NONDIAGONAL"
+        }
+      },
+      "commutator": {
+        "max_commutator_norm": 0.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 1,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 2,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 3,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 4,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 5,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 6,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 7,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 8,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 9,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 10,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 11,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 12,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 13,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 14,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 15,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 16,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 17,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 18,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 19,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 20,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 21,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 22,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 23,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 24,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 25,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 26,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 27,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 28,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 29,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 30,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 31,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 32,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 33,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 34,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 35,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 36,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 37,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 38,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 39,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 40,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 41,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 42,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 43,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 44,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 45,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 46,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 47,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 48,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 49,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 50,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 51,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 52,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 53,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 54,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 55,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 56,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 57,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 58,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 59,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 60,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 61,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 62,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 63,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 64,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 65,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 66,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 67,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 68,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 69,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 70,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 71,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 72,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 73,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 74,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 75,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 76,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 77,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 78,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 79,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 80,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 81,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 82,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 83,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 84,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 85,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 86,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 87,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 88,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 89,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 90,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 91,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 92,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 93,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 94,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 95,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 96,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 97,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 98,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 99,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 100,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 101,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 102,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 103,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 104,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 105,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 106,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 107,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 108,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 109,
+            "commutator_fro_norm": 0.0
+          }
+        ],
+        "verdict": "ALL_ZERO"
+      }
+    },
+    {
+      "family": "spectral_circle",
+      "W": 20.0,
+      "j_max": 3,
+      "s1_size": 16,
+      "s3_dim": 110,
+      "s1_dim": 16,
+      "N_total": 1760,
+      "seed": 123,
+      "build_seconds": 0.17948410000826698,
+      "audit_seconds": 38.59335070000088,
+      "block_structure": {
+        "diag_blocks_fro": 907.98179896753,
+        "offdiag_blocks_fro": 0.0,
+        "ratio_off_over_diag": 0.0,
+        "max_single_offdiag_block_fro": 0.0,
+        "n_diag_blocks": 110,
+        "n_offdiag_blocks": 11990,
+        "verdict": "ZERO_OFFDIAG"
+      },
+      "partial_trace": {
+        "Tr_S1_reduced_to_S3": {
+          "shape": [
+            110,
+            110
+          ],
+          "frobenius_norm": 3340.006364523557,
+          "diagonality_fraction": 1.0,
+          "verdict": "DIAGONAL",
+          "diagonal_values": [
+            18.840699406519143,
+            18.840699406519143,
+            18.840699406519143,
+            18.840699406519143,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            82.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            178.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            306.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915,
+            466.84069940651915
+          ]
+        },
+        "Tr_S3_reduced_to_S1": {
+          "shape": [
+            16,
+            16
+          ],
+          "frobenius_norm": 8749.991325606798,
+          "diagonality_fraction": 0.9061695090740992,
+          "is_scalar_identity": false,
+          "verdict": "NONDIAGONAL"
+        }
+      },
+      "commutator": {
+        "max_commutator_norm": 0.0,
+        "per_sector": [
+          {
+            "sector": 0,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 1,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 2,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 3,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 4,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 5,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 6,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 7,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 8,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 9,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 10,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 11,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 12,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 13,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 14,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 15,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 16,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 17,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 18,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 19,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 20,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 21,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 22,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 23,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 24,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 25,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 26,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 27,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 28,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 29,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 30,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 31,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 32,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 33,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 34,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 35,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 36,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 37,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 38,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 39,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 40,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 41,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 42,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 43,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 44,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 45,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 46,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 47,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 48,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 49,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 50,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 51,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 52,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 53,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 54,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 55,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 56,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 57,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 58,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 59,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 60,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 61,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 62,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 63,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 64,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 65,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 66,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 67,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 68,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 69,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 70,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 71,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 72,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 73,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 74,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 75,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 76,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 77,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 78,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 79,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 80,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 81,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 82,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 83,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 84,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 85,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 86,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 87,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 88,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 89,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 90,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 91,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 92,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 93,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 94,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 95,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 96,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 97,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 98,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 99,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 100,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 101,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 102,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 103,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 104,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 105,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 106,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 107,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 108,
+            "commutator_fro_norm": 0.0
+          },
+          {
+            "sector": 109,
+            "commutator_fro_norm": 0.0
+          }
+        ],
+        "verdict": "ALL_ZERO"
+      }
+    }
+  ]
+}
