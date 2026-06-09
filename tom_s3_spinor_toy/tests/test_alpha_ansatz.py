@@ -14,7 +14,6 @@ from reference_spinor_harmonics import (
     phi_nl_hopf,
     tom_ansatz,
     eigenvalue_s3,
-    unweighted_mode,
 )
 from geometry_s3_hopf import volume_measure, weighted_inner_product
 
