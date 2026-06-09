@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "purpose": "Lightweight alpha-domain convention diagnostic; not a theory verdict.",
+    "alpha_domain": "(0, pi), endpoints excluded by eps",
+    "n": 20000,
+    "eps": 1e-06
+  },
+  "global": {
+    "sincos": {
+      "min": -0.49999999841820014,
+      "max": 0.49999999841820014,
+      "mean": 6.821210263296961e-17,
+      "negative_fraction": 0.5,
+      "positive_fraction": 0.5,
+      "zero_near_fraction": 0.0,
+      "finite_fraction": 1.0,
+      "alpha_min": 1e-06,
+      "alpha_max": 3.141591653589793
+    },
+    "sin2": {
+      "min": -0.9999999968364004,
+      "max": 0.9999999968364004,
+      "mean": 1.3642420526593922e-16,
+      "negative_fraction": 0.5,
+      "positive_fraction": 0.5,
+      "zero_near_fraction": 0.0,
+      "finite_fraction": 1.0,
+      "alpha_min": 1e-06,
+      "alpha_max": 3.141591653589793
+    },
+    "cot2": {
+      "min": -499999.999868212,
+      "max": 499999.9999993334,
+      "mean": 6.55766052659601e-09,
+      "negative_fraction": 0.5,
+      "positive_fraction": 0.5,
+      "zero_near_fraction": 0.0,
+      "finite_fraction": 1.0,
+      "alpha_min": 1e-06,
+      "alpha_max": 3.141591653589793
+    },
+    "sqrt_sin2_real_fraction": 0.5,
+    "sqrt_sin2_imaginary_fraction": 0.5,
+    "sqrt_sin2_complex_has_imaginary_part_fraction": 0.5,
+    "sqrt_abs_sin2_finite_fraction": 1.0
+  },
+  "intervals": {
+    "left_0_to_pi_over_2": {
+      "alpha_min": 1e-06,
+      "alpha_max": 1.5707177831013721,
+      "sin2_sign": "positive",
+      "sqrt_sin2_type": "real",
+      "sincos_sign": "positive"
+    },
+    "near_pi_over_2": {
+      "alpha_center": 1.5707963267948966,
+      "sin2_sign": "zero crossing",
+      "sincos_sign": "zero crossing",
+      "cot2": "pole / sign flip",
+      "grid_points_near_center": 2
+    },
+    "right_pi_over_2_to_pi": {
+      "alpha_min": 1.5708748704884208,
+      "alpha_max": 3.141591653589793,
+      "sin2_sign": "negative",
+      "sqrt_sin2_type": "imaginary if principal complex sqrt is used",
+      "sincos_sign": "negative"
+    }
+  },
+  "skeptic": {
+    "claim": "The cot(2 alpha) imaginary inconsistency may be related to extending a half-domain Hopf-like measure/normalization factor to alpha in [0, pi].",
+    "strongest_objection": "cot(2 alpha) itself is real on both open intervals and only has poles/sign flips; Tom's inconsistency may come from generator matching, not from a sqrt(sin(2 alpha)) or measure factor.",
+    "cheapest_falsification": "Obtain Tom's exact embedding, measure/Jacobian, I_1R differential operator, and the two coupled equations. If they do not use a sqrt-like sign-sensitive factor, this hypothesis weakens.",
+    "kill_criterion": "If Tom's exact measure is positive by construction and his alpha functions avoid sqrt(sin(2 alpha)) or any half-domain continuation, do not pursue this as the primary explanation."
+  }
+}

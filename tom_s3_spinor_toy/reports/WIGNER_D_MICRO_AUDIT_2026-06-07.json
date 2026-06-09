@@ -1,0 +1,152 @@
+{
+  "scope": "representation-sanity only; not a Tom Lawrence theory verdict",
+  "wigner_D_convention": "D^j_{m',m}(a,b,c)=exp(-i m' a)d exp(-i m c)",
+  "hopf_to_euler_for_displayed_phase": {
+    "a": "-(phi + theta)",
+    "b": "2 alpha",
+    "c": "phi - theta"
+  },
+  "label_map": {
+    "j": "L/2",
+    "m_prime": "m_plus",
+    "m": "-m_minus"
+  },
+  "cases": [
+    {
+      "L": 0,
+      "m_plus": 0.0,
+      "m_minus": 0.0,
+      "wigner_labels": {
+        "j": 0.0,
+        "m_prime": 0.0,
+        "m": -0.0
+      },
+      "proportionality": {
+        "ratio": {
+          "real": 1.0,
+          "imag": 0.0
+        },
+        "max_abs_residual": 0.0,
+        "samples": 8
+      }
+    },
+    {
+      "L": 1,
+      "m_plus": 0.5,
+      "m_minus": 0.5,
+      "wigner_labels": {
+        "j": 0.5,
+        "m_prime": 0.5,
+        "m": -0.5
+      },
+      "proportionality": {
+        "ratio": {
+          "real": -1.4142135623730951,
+          "imag": -1.737618058403816e-17
+        },
+        "max_abs_residual": 2.651706059967721e-16,
+        "samples": 8
+      }
+    },
+    {
+      "L": 1,
+      "m_plus": 0.5,
+      "m_minus": -0.5,
+      "wigner_labels": {
+        "j": 0.5,
+        "m_prime": 0.5,
+        "m": 0.5
+      },
+      "proportionality": {
+        "ratio": {
+          "real": 1.4142135623730954,
+          "imag": -1.04338128219671e-16
+        },
+        "max_abs_residual": 5.675162886129811e-16,
+        "samples": 8
+      }
+    },
+    {
+      "L": 2,
+      "m_plus": 1.0,
+      "m_minus": 0.0,
+      "wigner_labels": {
+        "j": 1.0,
+        "m_prime": 1.0,
+        "m": -0.0
+      },
+      "proportionality": {
+        "ratio": {
+          "real": -1.4142135623730947,
+          "imag": -8.845793922595702e-17
+        },
+        "max_abs_residual": 4.718340894827815e-16,
+        "samples": 8
+      }
+    },
+    {
+      "L": 2,
+      "m_plus": 1.0,
+      "m_minus": 1.0,
+      "wigner_labels": {
+        "j": 1.0,
+        "m_prime": 1.0,
+        "m": -1.0
+      },
+      "proportionality": {
+        "ratio": {
+          "real": 1.9999999999999996,
+          "imag": 8.614978002958842e-17
+        },
+        "max_abs_residual": 9.741557625702956e-16,
+        "samples": 8
+      }
+    }
+  ],
+  "phase_coefficients": {
+    "displayed_pdf_formula": "exp(i(S phi + D theta))",
+    "displayed_coefficients": "A_phi=S=m_plus+m_minus, A_theta=D=m_plus-m_minus",
+    "pdf_stated_xi_prime_requires": "exp(i(D phi + S theta))",
+    "required_coefficients": "A_phi=D=m_plus-m_minus, A_theta=S=m_plus+m_minus"
+  },
+  "working_convention_decision": {
+    "status": "resolved_as_typo",
+    "convention_id": "ben_achour_displayed_phase",
+    "phase": "exp(i(S phi + D theta))",
+    "coefficients": {
+      "S": "m_plus + m_minus",
+      "D": "m_plus - m_minus",
+      "phi": "S",
+      "theta": "D"
+    },
+    "xi_eigenvalue": "+2 i m_plus",
+    "xi_prime_eigenvalue": "+2 i m_minus",
+    "gap_status": "resolved_as_typo",
+    "claim_discipline": "use_displayed_phase_as_default",
+    "rationale": "Direct differentiation of the displayed Ben Achour scalar phase matches xi' = partial_phi - partial_theta -> +2 i m_minus.",
+    "alternative_convention": {
+      "phase": "exp(i(D phi + S theta))",
+      "xi_eigenvalue": "+2 i m_plus",
+      "xi_prime_eigenvalue": "-2 i m_minus",
+      "status": "recorded_alternative_requires_hidden_convention"
+    },
+    "requires_external_resolution": "original TeX; second source; Tom exact generator equations; explicit angle labels; explicit Wigner-D convention"
+  },
+  "user_direct_euler_swap_audit": {
+    "candidate_map": "a=theta_H, b=2 alpha, c=phi_H",
+    "displayed_phase_boundary_case": {
+      "j": 1.0,
+      "required_m_prime": -0.0,
+      "required_m": -2.0,
+      "within_wigner_range": false
+    },
+    "pdf_stated_phase_boundary_case": {
+      "j": 1.0,
+      "required_m_prime": -2.0,
+      "required_m": -0.0,
+      "within_wigner_range": false
+    },
+    "interpretation": "Under the D convention used here, the direct swap needs labels outside [-j,j] for allowed Ben Achour boundary modes, so it cannot by itself resolve the sign gap for the whole basis."
+  },
+  "xi_prime_caveat": "Displayed phase gives +2 i m_minus for xi'=partial_phi-partial_theta; rendered PDF text states -2 i m_minus."
+}
