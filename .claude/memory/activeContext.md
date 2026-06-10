@@ -3,13 +3,16 @@
 
 ## Current Focus
 AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
-BG-H1 pre-registered ✅ (design only): λ²=(n+3/2)²+(m/R)², δ(R)=√(9/4+(m₁/R)²)−3/2,
+BG-H1 pre-registered ✅ (design only): λ²=(n+3/2)²+(m/R)², δ₁(R)=√(9/4+(m₁/R)²)−3/2
+(first excited KK; periodic ground state δ₀=0 — m=0 in spectrum!),
 both spin structures forked (m∈ℤ vs m∈ℤ+1/2), no choice made.
-BG-H1-G0 ✅ PASS — source_register_bg_h1_g0.md: λ²=(n+3/2)²+(m/R)² confirmed from
-C-H eqs (2.1),(2.4),(3.26),(3.34); spinor doubling 2→4 verified; cross terms vanish
-by {Γʲ,Γ⁴}=0 (C-H eq.2.1) + [D_S³,∂_y]=0 (product independence). Spin structure
-fork both valid (standard result). KILL NOT triggered. BG-H1-G1 may proceed.
-Next: BG-H1-G1 — analytic cross-check of D² on small S³×S¹ basis.
+BG-H1-G0 ✅ PASS v1.1 (после adversarial re-audit, 4 verifiers) — source_register_bg_h1_g0.md:
+cross terms vanish by JOINT mechanism: {Γʲ,Γ⁴}=0 (eq 2.1) ∧ [∇ⱼ,∂_y]=0 + lemma
+[Σ^{bc},Γ⁴]=0 (eq 2.10) — НЕ независимо (falsified: |X|≈13.9/22.1 поодиночке).
+In-source precedent: C-H eqs 3.46-3.48 (warped cross ∝ f′, product → 0).
+Spinor doubling 2→4 [VERIFIED_FROM_PDF]. Spin structures: [WEAK]+[INFERRED] — partial-evidence pass.
+⚠ G1 warning: i-placement convention (i на D̃ ИЛИ на p, не оба — иначе √(k²−p²)).
+Next: BG-H1-G1 — analytic cross-check of D² on small S³×S¹ basis + convention-pin test.
 
 
 
@@ -68,9 +71,9 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 5. ✅ AV-2 E1 sparse reconstruction — DONE (STRONG_PASS, 1 term, 0%, analytically exact)
 6. ✅ AV-2 E2 angular singlet check — DONE (PASS, CG=√2/2, C²=0.5, item40→ANGULAR_BILINEAR_SUPPORTED)
 7. ✅ BG-H1 pre-registration — DONE (`experiments/20260610-bg-h1-s3xs1-bridge/claim_bg_h1.md`, design only, no code)
-8. ✅ BG-H1-G0 source trace — PASS (`source_register_bg_h1_g0.md`): C-H eqs (2.1),(2.4),(3.26),(3.34) confirm λ²=(n+3/2)²+(m/R)²; spinor doubling 2→4 [VERIFIED_FROM_PDF]; cross-term cancellation: {Γʲ,Γ⁴}=0 + [D_S³,∂_y]=0
-9. ▶ BG-H1-G1 — analytic cross-check: assemble D²_{S³×S¹} on small basis, verify quadrature to ≤1e-6
-9. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+8. ✅ BG-H1-G0 source trace — PASS v1.1 (`source_register_bg_h1_g0.md`): C-H eqs (2.1),(2.4),(2.10),(2.12),(2.13),(3.16),(3.26),(3.34),(3.46)-(3.48); cross-term cancellation = JOINT {Γʲ,Γ⁴}=0 ∧ [∇ⱼ,∂_y]=0 + lemma eq 2.10; corrected after adversarial re-audit (phantom file, overclaims, sign convention)
+9. ▶ BG-H1-G1 — analytic cross-check: assemble D²_{S³×S¹} on small basis, verify quadrature to ≤1e-6; MUST pin i-placement convention first
+10. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 
 
 
@@ -100,5 +103,6 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-10 22:32] `5681377`: feat(bg-h1): BG-H1-G0 source trace — PASS (product Dirac additivity confirmed from C-H)
 - [2026-06-10 20:27] `4025e79`: feat(av2): AV-2 E1 sparse reconstruction — STRONG_PASS (1 term, 0% residual)
 - [2026-06-10 19:37] `993981a`: feat(av2): AV-2 G2 boundary exponent — PASS (g_l0≈0, mixed_l0≈0.928)
