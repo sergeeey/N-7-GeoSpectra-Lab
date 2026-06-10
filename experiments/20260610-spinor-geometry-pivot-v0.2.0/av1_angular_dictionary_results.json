@@ -1,0 +1,167 @@
+{
+  "primary": {
+    "experiment": "AV1_ANGULAR_DICTIONARY_ROBUSTNESS",
+    "version": "v0.2.0",
+    "n_grid": 4000,
+    "weighted": true,
+    "av1a": {
+      "argmax": [
+        1,
+        1
+      ],
+      "argmax_value": 0.9593687888412854,
+      "expected": [
+        1,
+        1
+      ],
+      "top10": [
+        {
+          "n": 1,
+          "l": 1,
+          "projection": 0.9593687888412854,
+          "abs_projection": 0.9593687888412854
+        },
+        {
+          "n": 0,
+          "l": 0,
+          "projection": 0.9399857649179222,
+          "abs_projection": 0.9399857649179222
+        },
+        {
+          "n": 2,
+          "l": 2,
+          "projection": 0.9385310494678196,
+          "abs_projection": 0.9385310494678196
+        },
+        {
+          "n": 3,
+          "l": 3,
+          "projection": 0.9123564553508363,
+          "abs_projection": 0.9123564553508363
+        },
+        {
+          "n": 4,
+          "l": 4,
+          "projection": 0.8870584751021099,
+          "abs_projection": 0.8870584751021099
+        },
+        {
+          "n": 5,
+          "l": 5,
+          "projection": 0.8639008648505995,
+          "abs_projection": 0.8639008648505995
+        },
+        {
+          "n": 6,
+          "l": 6,
+          "projection": 0.8429779955947875,
+          "abs_projection": 0.8429779955947875
+        },
+        {
+          "n": 8,
+          "l": 6,
+          "projection": 0.43001991932514355,
+          "abs_projection": 0.43001991932514355
+        },
+        {
+          "n": 7,
+          "l": 5,
+          "projection": 0.4215003923175509,
+          "abs_projection": 0.4215003923175509
+        },
+        {
+          "n": 6,
+          "l": 4,
+          "projection": 0.4080770723295316,
+          "abs_projection": 0.4080770723295316
+        }
+      ],
+      "verdict": "AV1A_PASS"
+    },
+    "av1b": {
+      "greedy_5term_modes": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "residual_5term": 0.029017382774199983,
+      "ls_dominant_mode": [
+        9,
+        4
+      ],
+      "verdict": "AV1B_PASS",
+      "caveat": "non-orthogonal dictionary \u2014 coefficients basis-dependent"
+    },
+    "av1c": {
+      "greedy_5term_modes": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "residual_5term": 0.12380894538435475,
+      "phi11_sq_in_top5": true,
+      "verdict": "AV1C_FAIL"
+    },
+    "ht1_exploratory": {
+      "boundary_family_explained_norm": 0.9244129989458615,
+      "threshold": 0.8,
+      "signal": true,
+      "status": "EXPLORATORY_ONLY \u2014 promotion rules in claim_av1_angular.md"
+    },
+    "scope": {
+      "angular": "NOT VERIFIED \u2014 radial dictionary only; AV-2 (2D operator) required",
+      "promotion": "NONE \u2014 research_only",
+      "lambda": "FREE_COUPLING_PARAMETER"
+    }
+  },
+  "sensitivity_unweighted": {
+    "av1a_argmax": [
+      1,
+      1
+    ],
+    "av1a_verdict": "AV1A_PASS",
+    "av1c_residual": 0.19756156813353934
+  },
+  "sensitivity_fine_grid": {
+    "av1a_argmax": [
+      1,
+      1
+    ],
+    "av1a_value": 0.9593687887177517,
+    "av1c_residual": 0.12380894538539403
+  }
+}

@@ -53,6 +53,13 @@ Tom's ansatz IS approximately the (n=1,l=1) Dirac radial eigenmode with λ=±2.5
 Status: verified under radial weighted inner product; requires full angular confirmation
 before communicating to Tom.
 
+**Update 2026-06-10 (AV-1):** upgraded to [RADIAL + DICTIONARY_ROBUST] — argmax (1,1)
+survives 49-mode dictionary incl. off-diagonal modes, two measures, two grids
+(cos = 0.9594; legacy 0.9204 = cos²). AV-1c bilinear probe FAILED its pre-registered
+10% threshold (12.38%, diagonal squares only) — constraint recorded. H-T1 (n=l boundary
+family, 92.4%) stays EXPLORATORY, not promoted. Full angular check = AV-2, still pending.
+See av1_angular_dictionary_report.md.
+
 ## Kill Tests
 
 | Test | Status | Kill Condition |
@@ -108,6 +115,78 @@ EXPLICIT SCOPE STATEMENT (unchanged):
   Success here justifies (but does not substitute for) the S³×S¹ bridge gate.
   Connection path: ONE_TRACK via BG-1/BG-2/BG-3 gaps (see ha4_design_decision.md).
 ```
+
+---
+
+## Legacy Claim Map — 34 + 8 points (2026-06-10 audit)
+
+Evidence levels:
+- `[VT]` VERIFIED-tool — инструментально подтверждён, D:-репо
+- `[VR]` VERIFIED-read — подтверждён чтением файла/коммита, D:-репо
+- `[EP]` E:only — известен из предыдущих сессий, не в D:-репо до push
+- `[AB]` CONFIRMED-ABSENT — явно отсутствует
+- `[WK]` WEAK — один источник, без инструментального подтверждения
+
+### Part 1 — Legacy P1–P14 (items 1–34)
+
+| №  | Узел | Статус | Evidence | Source | Действие |
+|----|------|--------|----------|--------|----------|
+| 1  | Shift toward fermions/spinors | 🟢 strong | `[VT]` | D: Dirac², 75 tests | keep |
+| 2  | 32-component spinor generation | 🟡 scaffold | `[EP]` | E: prior session | push E: |
+| 3  | Kronecker/tensor products | 🟡 scaffold | `[EP]` | E: prior session | push E: |
+| 4  | Fermions as harmonics on S³/S⁶ | 🟢 partial | `[VT]` | D: reference_spinor_harmonics.py | keep |
+| 5  | DS⁴×S⁶ spacetime geometry | 🟡 not dynamics | `[EP]` | E: prior session | push E: |
+| 6  | S³ ~ Spin(4) / SU(2)_L×SU(2)_R | 🟡 scaffold | `[EP]` | E: prior session; D: Hopf only | push E: |
+| 7  | S⁶, SO(7), Spin(6)≅SU(4) | 🟡 scaffold | `[EP]` | E: prior session | push E: |
+| 8  | S³ via Pauli/Clifford | 🟡 partial | `[EP]` | E: prior session; D: Hopf metric | push E: |
+| 9  | (x^i σ_i + x^4 I) convention fix | 🟢 fixed | `[EP/WK]` | commit 7139ae1 (docs only) | push E: |
+| 10 | Gamma/Clifford expression | 🟡 scaffold | `[EP]` | E: prior session | push E: |
+| 11 | Hopf / Lawrence coordinates | 🟢 fixed | `[VR]` | geometry_s3_hopf.py; commit 3da1477 | keep |
+| 12 | Dragging shifts in (θ, θ̃) | 🟢 tested | `[EP]` | E: prior session | push E: |
+| 13 | Cartan directions (∂_θ ± ∂_θ̃) | 🟢 tested | `[EP]` | E: prior session | push E: |
+| 14 | Phase dependence | 🟢 tested | `[EP]` | E: prior session | push E: |
+| 15 | cot(2α) obstruction | 🟡 implicit | `[WK]` | D: implicit in V(α); no standalone proof | doc gap |
+| 16 | Separable ansatz A(α)e^{i[...]} | 🟡 incomplete | `[VR]` | D: test_alpha_ansatz.py | keep |
+| 17 | O(4), parity, global coord. issues | 🟡 partial | `[EP]` | E: prior session | push E: |
+| 18 | Large-ρ / rotations→translations | 🔴 open | `[AB]` | absent in D: and git history | future work |
+| 19 | S⁶ harmonic analysis | 🟡 partial | `[VT]` | D: d=6 eigenvalues; no SU(4) coupling | keep/extend |
+| 20 | SU(3) through SU(4)/SO(6) | 🟡 norm-dep | `[EP]` | E: prior session | push E: |
+| 21 | Higgs / Forgacs-Manton | 🔴 absent | `[AB]` | absent; README scope excludes SM gauge | keep fence |
+| 22 | Limitations / no-promotion fence | 🟢 explicit | `[VR]` | D: scope statements all v0.2.0 files | keep |
+| 23 | S³×S⁶ tensor scaffold | 🟡 partial | `[EP]` | E: prior session | push E: |
+| 24 | V matrix scaffold | 🟡 scaffold | `[EP]` | E: prior session | push E: |
+| 25 | External Wigner/CG oracle | 🟢 passed | `[EP]` | E: prior session | push E: |
+| 26 | Robustness audit | 🟢 v0.2.0 scope | `[VT]` | D: KT-3+NC-2 (new audit, not legacy) | keep |
+| 27 | Known limitations record | 🟢 explicit | `[VR]` | D: caveats.md, estimand §NOT-mean | keep |
+| 28 | V-operator ansatz registry | 🟢 registered | `[EP]` | E: prior session | push E: |
+| 29 | Ben Achour one-form identities | 🟢 fixed | `[VR]` | D: commits 7139ae1 + 3da1477 | keep |
+| 30 | Spinor-state repair | 🟢 passed | `[EP]` | E: prior session | push E: |
+| 31 | Toy-gradient reduced element | 🟡 superseded | `[EP]` | E: prior session | push E: |
+| 32 | Ben Achour E/E' mode formula | 🟡 scale-dep | `[EP/WK]` | E: prior session; not in D: | push E: |
+| 33 | P13H S³ normalization integral | 🟡 computed | `[EP]` | E: prior session; λ free | push E: + re-audit |
+| 34 | P14 lambda-fixing feasibility | 🟡 note only | `[EP]` | E: prior session; no derivation | push E: + re-audit |
+
+**E:-only items:** 2-3, 5-10, 12-14, 17, 20, 23-25, 28-34 (20 пунктов)  
+**Verified on D::** 1, 4, 11, 15-16, 18-19, 21-22, 26-27, 29 (14 пунктов)
+
+### Part 2 — v0.2.0 Additions (items 35–42)
+
+| №  | Узел | Статус | Evidence | Source |
+|----|------|--------|----------|--------|
+| 35 | Dirac spectral fingerprint pivot | 🟢 all gates pass | `[VT]` | D: E0+KT-3+NC controls |
+| 36 | R/4 → IPR channel falsified | 🟢 closed | `[VT]` | D: diff=1e-18, regression test |
+| 37 | E0 discrete radial Dirac recovery | 🟢 pass | `[VT]` | D: error=6.7e-7, 16 tests |
+| 38 | KT-3 weak disorder survival | 🟢 pass | `[VT]` | D: margin 335× (W=0.1), 67× (W=0.5) |
+| 39 | NC-2 permuted-grid specificity | 🟢 pass | `[VT]` | D: deviation 270–460%, 14 tests |
+| 40 | tom_ansatz radial → φ₁₁ (cos²=0.9204) | 🟡 **radial+dict-robust** | `[VT]` | D: AV-1a/1b PASS, AV-1c FAIL recorded; full angular = AV-2 pending |
+| 41 | HA-4 ONE_TRACK bridge gate | 🟡 decided | `[VR]` | D: ha4_design_decision.md; BG-1/2/3 open |
+| 42 | Phase 3 S³×S¹ Dirac harness | 🔴 not started | `[AB]` | BG-1/2/3 open |
+
+### Re-audit trigger
+
+Items 33-34 (P13H, P14) will be upgraded from `[EP]` to `[VT]` or `[VR]`  
+only after `git push preserve/p5-p14` from E: machine and consistency check  
+against current D: Dirac operator conventions.
 
 ---
 
