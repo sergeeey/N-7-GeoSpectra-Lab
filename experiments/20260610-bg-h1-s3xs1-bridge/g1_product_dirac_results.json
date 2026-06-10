@@ -1,0 +1,72 @@
+{
+  "gate": "BG-H1-G1",
+  "verdict": "PASS",
+  "date": "2026-06-10",
+  "max_rel_error": 0.0,
+  "grid": {
+    "n_points": 112,
+    "max_rel_error": 0.0,
+    "verdict": "PASS"
+  },
+  "convention_pin": {
+    "pass": true,
+    "constructions_differ": true
+  },
+  "clifford_anticommutation": {
+    "pass": true
+  },
+  "delta1": {
+    "max_rel_error": 0.0,
+    "periodic_r_independent": true,
+    "antiperiodic_r_sensitive": true,
+    "records": [
+      {
+        "R": 0.5,
+        "periodic_ground_lambda2": 2.25,
+        "periodic_ground_error": 0.0,
+        "delta1_periodic_numerical": 1.0,
+        "delta1_periodic_predicted": 1.0,
+        "delta1_periodic_error": 0.0,
+        "delta0_anti_numerical": 0.30277563773199456,
+        "delta0_anti_predicted": 0.30277563773199456,
+        "delta0_anti_error": 0.0
+      },
+      {
+        "R": 1.0,
+        "periodic_ground_lambda2": 2.25,
+        "periodic_ground_error": 0.0,
+        "delta1_periodic_numerical": 0.30277563773199456,
+        "delta1_periodic_predicted": 0.30277563773199456,
+        "delta1_periodic_error": 0.0,
+        "delta0_anti_numerical": 0.08113883008418976,
+        "delta0_anti_predicted": 0.08113883008418976,
+        "delta0_anti_error": 0.0
+      },
+      {
+        "R": 2.0,
+        "periodic_ground_lambda2": 2.25,
+        "periodic_ground_error": 0.0,
+        "delta1_periodic_numerical": 0.08113883008418976,
+        "delta1_periodic_predicted": 0.08113883008418976,
+        "delta1_periodic_error": 0.0,
+        "delta0_anti_numerical": 0.020690632574554835,
+        "delta0_anti_predicted": 0.020690632574554835,
+        "delta0_anti_error": 0.0
+      },
+      {
+        "R": 5.0,
+        "periodic_ground_lambda2": 2.25,
+        "periodic_ground_error": 0.0,
+        "delta1_periodic_numerical": 0.013274595042155557,
+        "delta1_periodic_predicted": 0.013274595042155557,
+        "delta1_periodic_error": 0.0,
+        "delta0_anti_numerical": 0.0033296378372906776,
+        "delta0_anti_predicted": 0.0033296378372906776,
+        "delta0_anti_error": 0.0
+      }
+    ]
+  },
+  "spin_structure_fork_reported": true,
+  "physical_spin_structure_selected": false,
+  "scope": "G1 analytic cross-check only; lambda = FREE_COUPLING_PARAMETER; GEOMETRY_AGNOSTIC intact; no physical spin-structure selection; no S3xS1 claimed solved; no physical promotion"
+}

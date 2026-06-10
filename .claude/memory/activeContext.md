@@ -11,8 +11,11 @@ cross terms vanish by JOINT mechanism: {Γʲ,Γ⁴}=0 (eq 2.1) ∧ [∇ⱼ,∂_y
 [Σ^{bc},Γ⁴]=0 (eq 2.10) — НЕ независимо (falsified: |X|≈13.9/22.1 поодиночке).
 In-source precedent: C-H eqs 3.46-3.48 (warped cross ∝ f′, product → 0).
 Spinor doubling 2→4 [VERIFIED_FROM_PDF]. Spin structures: [WEAK]+[INFERRED] — partial-evidence pass.
-⚠ G1 warning: i-placement convention (i на D̃ ИЛИ на p, не оба — иначе √(k²−p²)).
-Next: BG-H1-G1 — analytic cross-check of D² on small S³×S¹ basis + convention-pin test.
+BG-H1-G1 ✅ PASS [VERIFIED-pytest 2026-06-10, 58/60 tests] — bg_h1_product_dirac_check.py:
+D4²=-(k²+p²)·I₄ (max_rel_error=0.0, machine precision); convention-pin: correct(±i√(k²+p²)) ≠ wrong(±i|p-k|, ±i(p+k)); {Γ^j,Γ^4}=0 for j=1,2,3; δ₁(R) ✓ both spin structures; fork reported, no selection.
+Next: BG-H1-E1 — discrete S³×S¹ proxy, δ(R) vs closed form, kill: rel error > 1e-2.
+
+
 
 
 
@@ -24,6 +27,8 @@ Next: BG-H1-G1 — analytic cross-check of D² on small S³×S¹ basis + convent
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
+
 
 
 
@@ -52,6 +57,8 @@ Currently on: `main`
 
 
 
+
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -59,6 +66,8 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
+
 
 
 
@@ -72,8 +81,11 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 6. ✅ AV-2 E2 angular singlet check — DONE (PASS, CG=√2/2, C²=0.5, item40→ANGULAR_BILINEAR_SUPPORTED)
 7. ✅ BG-H1 pre-registration — DONE (`experiments/20260610-bg-h1-s3xs1-bridge/claim_bg_h1.md`, design only, no code)
 8. ✅ BG-H1-G0 source trace — PASS v1.1 (`source_register_bg_h1_g0.md`): C-H eqs (2.1),(2.4),(2.10),(2.12),(2.13),(3.16),(3.26),(3.34),(3.46)-(3.48); cross-term cancellation = JOINT {Γʲ,Γ⁴}=0 ∧ [∇ⱼ,∂_y]=0 + lemma eq 2.10; corrected after adversarial re-audit (phantom file, overclaims, sign convention)
-9. ▶ BG-H1-G1 — analytic cross-check: assemble D²_{S³×S¹} on small basis, verify quadrature to ≤1e-6; MUST pin i-placement convention first
-10. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+9. ✅ BG-H1-G1 — analytic cross-check PASS [VERIFIED-pytest 2026-06-10]: D4²=-(k²+p²)·I₄, max_rel_error=0.0; convention-pin: correct vs wrong ✓; {Γ^j,Γ^4}=0 ✓; δ₁(R) both spin structures ✓; 58 tests; g1_product_dirac_cross_check_report.md
+10. ▶ BG-H1-E1 — discrete S³×S¹ proxy: extend v0.2.0 discrete Dirac to product grid, measure δ(R) for R∈[0.5,8], fit against closed form for both spin structures; kill condition: rel error > 1e-2
+11. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
+
 
 
 
@@ -84,6 +96,8 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
+
 
 
 
@@ -102,7 +116,11 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
+
 ## Auto-commit log
+- [2026-06-10 23:10] `56d8c38`: feat(bg-h1): BG-H1-G1 product Dirac cross-check — PASS (λ²=(n+3/2)²+(m/R)², max_err=0.0)
+- [2026-06-10 22:49] `9f022a0`: fix(bg-h1): G0 source register v1.1 — corrections after adversarial re-audit
 - [2026-06-10 22:32] `5681377`: feat(bg-h1): BG-H1-G0 source trace — PASS (product Dirac additivity confirmed from C-H)
 - [2026-06-10 20:27] `4025e79`: feat(av2): AV-2 E1 sparse reconstruction — STRONG_PASS (1 term, 0% residual)
 - [2026-06-10 19:37] `993981a`: feat(av2): AV-2 G2 boundary exponent — PASS (g_l0≈0, mixed_l0≈0.928)
