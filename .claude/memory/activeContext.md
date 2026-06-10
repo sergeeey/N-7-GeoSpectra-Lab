@@ -5,7 +5,12 @@
 AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
 BG-H1 pre-registered ✅ (design only): λ²=(n+3/2)²+(m/R)², δ(R)=√(9/4+(m₁/R)²)−3/2,
 both spin structures forked (m∈ℤ vs m∈ℤ+1/2), no choice made.
-Next: BG-H1-G0 source trace (BLOCKING) — confirm product-Dirac additivity from literature.
+BG-H1-G0 ✅ PASS — source_register_bg_h1_g0.md: λ²=(n+3/2)²+(m/R)² confirmed from
+C-H eqs (2.1),(2.4),(3.26),(3.34); spinor doubling 2→4 verified; cross terms vanish
+by {Γʲ,Γ⁴}=0 (C-H eq.2.1) + [D_S³,∂_y]=0 (product independence). Spin structure
+fork both valid (standard result). KILL NOT triggered. BG-H1-G1 may proceed.
+Next: BG-H1-G1 — analytic cross-check of D² on small S³×S¹ basis.
+
 
 
 
@@ -16,6 +21,7 @@ Next: BG-H1-G0 source trace (BLOCKING) — confirm product-Dirac additivity from
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 
@@ -42,6 +48,7 @@ Currently on: `main`
 
 
 
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -49,6 +56,7 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
 
 
 
@@ -60,8 +68,10 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 5. ✅ AV-2 E1 sparse reconstruction — DONE (STRONG_PASS, 1 term, 0%, analytically exact)
 6. ✅ AV-2 E2 angular singlet check — DONE (PASS, CG=√2/2, C²=0.5, item40→ANGULAR_BILINEAR_SUPPORTED)
 7. ✅ BG-H1 pre-registration — DONE (`experiments/20260610-bg-h1-s3xs1-bridge/claim_bg_h1.md`, design only, no code)
-8. ▶ BG-H1-G0 source trace — BLOCKING gate: confirm product-Dirac decomposition + spin-structure m-sets from primary literature BEFORE any lattice code
+8. ✅ BG-H1-G0 source trace — PASS (`source_register_bg_h1_g0.md`): C-H eqs (2.1),(2.4),(3.26),(3.34) confirm λ²=(n+3/2)²+(m/R)²; spinor doubling 2→4 [VERIFIED_FROM_PDF]; cross-term cancellation: {Γʲ,Γ⁴}=0 + [D_S³,∂_y]=0
+9. ▶ BG-H1-G1 — analytic cross-check: assemble D²_{S³×S¹} on small basis, verify quadrature to ≤1e-6
 9. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
 
 
 
@@ -71,6 +81,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 
@@ -85,6 +96,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 | AV-2 G2 | 45 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 | AV-2 E1 | 26 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 | AV-2 E2 | 21 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
+
 
 
 ## Auto-commit log
