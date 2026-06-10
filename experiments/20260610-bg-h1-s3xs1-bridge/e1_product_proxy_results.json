@@ -1,0 +1,162 @@
+{
+  "gate": "BG-H1-E1",
+  "date": "2026-06-10",
+  "precondition": "BG-H1-G0 PASS v1.1 + BG-H1-G1 PASS",
+  "n_alpha_primary": 4000,
+  "edge_behavior": {
+    "R_large": 8.0,
+    "delta_large_R_disc": 0.0051993225008037935,
+    "delta_large_R_analytic": 0.005199322349036972,
+    "large_R_approx": 0.005208333333333333,
+    "large_R_approx_rel_err": 0.0017331074496717562,
+    "large_R_is_small": true,
+    "R_small": 0.5,
+    "delta_small_R_disc": 1.000000017574568,
+    "delta_small_R_analytic": 1.0,
+    "kk_dominates_at_small_R": true,
+    "analytic_gaps_monotone_in_R": true,
+    "discrete_gaps_monotone_in_R": true
+  },
+  "kronecker_sum_check": {
+    "n_alpha_small": 30,
+    "n_s1": 16,
+    "R": 1.0,
+    "n_s3": 29,
+    "n_total": 464,
+    "max_abs_err_kronecker": 9.094947017729282e-13,
+    "max_rel_err_kronecker": 4.421879411912975e-15,
+    "kronecker_identity_pass": true,
+    "lowest_eigenvalue_actual": 2.2476595757171616,
+    "lowest_eigenvalue_expected": 2.247659575717169,
+    "k0_disc_from_kronecker": 1.4992196555932589
+  },
+  "max_rel_error_periodic": 2.9189731111892813e-08,
+  "max_rel_error_antiperiodic": 2.9265621823039247e-08,
+  "max_rel_error_overall": 2.9265621823039247e-08,
+  "kill_threshold": 0.01,
+  "spin_structure_fork_reported": true,
+  "physical_spin_structure_selected": false,
+  "verdict": "PASS",
+  "scope": "E1 discrete proxy; \u03bb=FREE_COUPLING_PARAMETER; GEOMETRY_AGNOSTIC intact; no physical spin-structure selection; no S3xS1 solved claim; no physical promotion",
+  "forbidden_claims": [
+    "S3xS1 solved",
+    "physical spin structure selected",
+    "lambda fixed",
+    "physical promotion",
+    "safe_for_runtime",
+    "geometry determined"
+  ],
+  "periodic_summary": {
+    "k0_disc": 1.4999999560635806,
+    "max_rel_error": 2.9189731111892813e-08,
+    "all_pass": true,
+    "delta_table": [
+      [
+        0.5,
+        1.0,
+        1.0,
+        "1.76e-08"
+      ],
+      [
+        1.0,
+        0.3027756,
+        0.3027756,
+        "2.44e-08"
+      ],
+      [
+        2.0,
+        0.0811388,
+        0.0811388,
+        "2.78e-08"
+      ],
+      [
+        4.0,
+        0.0206906,
+        0.0206906,
+        "2.89e-08"
+      ],
+      [
+        6.0,
+        0.0092309,
+        0.0092309,
+        "2.91e-08"
+      ],
+      [
+        8.0,
+        0.0051993,
+        0.0051993,
+        "2.92e-08"
+      ]
+    ]
+  },
+  "antiperiodic_summary": {
+    "k0_disc": 1.4999999560635806,
+    "max_rel_error": 2.9265621823039247e-08,
+    "all_pass": true,
+    "delta_table": [
+      [
+        0.5,
+        0.3027756,
+        0.3027756,
+        "2.44e-08"
+      ],
+      [
+        1.0,
+        0.0811388,
+        0.0811388,
+        "2.78e-08"
+      ],
+      [
+        2.0,
+        0.0206906,
+        0.0206906,
+        "2.89e-08"
+      ],
+      [
+        4.0,
+        0.0051993,
+        0.0051993,
+        "2.92e-08"
+      ],
+      [
+        6.0,
+        0.002313,
+        0.002313,
+        "2.92e-08"
+      ],
+      [
+        8.0,
+        0.0013015,
+        0.0013015,
+        "2.93e-08"
+      ]
+    ]
+  },
+  "grid_convergence": {
+    "periodic": [
+      [
+        500,
+        1.4999971899,
+        "1.56e-06"
+      ],
+      [
+        1000,
+        1.4999992975,
+        "3.90e-07"
+      ],
+      [
+        2000,
+        1.4999998244,
+        "9.74e-08"
+      ],
+      [
+        4000,
+        1.4999999561,
+        "2.44e-08"
+      ]
+    ],
+    "monotone_periodic": true,
+    "monotone_antiperiodic": true
+  },
+  "negative_control_pass": true
+}
