@@ -2,8 +2,10 @@
 **Updated:** 2026-06-10 (session 2)
 
 ## Current Focus
-AV-2 G2 — DONE ✅. Next: E1 sparse reconstruction.
-G0, G1, G2 all PASS. item40 = RADIAL+TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED.
+AV-2 E1 — DONE ✅ STRONG_PASS (1 term, 0% residual, analytically exact).
+G0, G1, G2, E1 all PASS. item40 = RADIAL+TWO_COMPONENT_RECONSTRUCTION_SUPPORTED.
+Next: E2 angular singlet check.
+
 
 
 ## Branch State
@@ -13,6 +15,7 @@ G0, G1, G2 all PASS. item40 = RADIAL+TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED.
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 ## Key Scientific Results (VERIFIED from git 2026-06-10)
@@ -32,7 +35,9 @@ Currently on: `main`
 - `AV-2 G0`: PASS — `source_register_av2.md` — C-H eq. 3.27-3.30, 3.32-3.33, 3.37-3.38, 3.41 VERIFIED_FROM_PDF + numerical cross-checks
 - `AV-2 G1`: PASS — `test_ch_first_order_system.py` 24/24 — eq 3.28 (≤2.3e-15), eq 3.29/3.30 (FD ≤5e-7), eq 3.38 (≤6e-16), g_nl l=0 nonzero at south pole VERIFIED
 - `AV-2 G2`: PASS — `g2_boundary_exponent_report.md` — g_l0=−0.0958 (≈0, nonzero at boundary), mixed_l0=0.9281 (≈cos¹); item40 → RADIAL+TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED; 45 tests [VERIFIED-pytest 2026-06-10]
-- `item40`: `RADIAL + TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED`
+- `AV-2 E1`: STRONG_PASS — `e1_sparse_reconstruction_report.md` — 1 term: φ_{0,0}·g_{0,0} = cosα·sinα = sin(2α)/2 (exact); item40 → RADIAL+TWO_COMPONENT_RECONSTRUCTION_SUPPORTED; 26 tests [VERIFIED-pytest 2026-06-10]
+- `item40`: `RADIAL + TWO_COMPONENT_RECONSTRUCTION_SUPPORTED`
+
 
 
 ## Open Questions (awaiting Tom Lawrence)
@@ -44,14 +49,17 @@ Currently on: `main`
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
 
 
+
 ## Next Steps (ordered)
 1. ✅ Re-audit preserve/P5-P14 — DONE (`reports/P5_P14_REAUDIT_REPORT.md`)
 2. ✅ AV-2 G0 source trace — DONE (`source_register_av2.md`, VERIFIED_FROM_PDF)
 3. ✅ AV-2 G1 two-component system — DONE (`test_ch_first_order_system.py` 24/24)
 4. ✅ AV-2 G2 boundary exponent — DONE (`g2_boundary_exponent_report.md`, 45 tests)
-5. ▶ AV-2 E1 sparse reconstruction — NEXT (greedy ≤5 terms, residual < 5%)
+5. ✅ AV-2 E1 sparse reconstruction — DONE (STRONG_PASS, 1 term, 0%, analytically exact)
+6. ▶ AV-2 E2 angular singlet check — NEXT (verify φ·g pairs to J=0 singlet)
 6. BG-H1 pre-registration — S³×S¹ bridge gate (λ²=(n+3/2)²+(m/R)²)
 7. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
 
 
 ## Hard Constraints (do not change)
@@ -60,6 +68,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 ## Test Suite Status
@@ -71,3 +80,8 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 | main/v0.2.0 | 126 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 | C-H first-order | 24 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 | AV-2 G2 | 45 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
+| AV-2 E1 | 26 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
+
+
+## Auto-commit log
+- [2026-06-10 19:37] `993981a`: feat(av2): AV-2 G2 boundary exponent — PASS (g_l0≈0, mixed_l0≈0.928)
