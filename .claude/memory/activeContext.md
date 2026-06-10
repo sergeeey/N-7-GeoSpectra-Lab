@@ -13,7 +13,11 @@ In-source precedent: C-H eqs 3.46-3.48 (warped cross ∝ f′, product → 0).
 Spinor doubling 2→4 [VERIFIED_FROM_PDF]. Spin structures: [WEAK]+[INFERRED] — partial-evidence pass.
 BG-H1-G1 ✅ PASS [VERIFIED-pytest 2026-06-10, 58/60 tests] — bg_h1_product_dirac_check.py:
 D4²=-(k²+p²)·I₄ (max_rel_error=0.0, machine precision); convention-pin: correct(±i√(k²+p²)) ≠ wrong(±i|p-k|, ±i(p+k)); {Γ^j,Γ^4}=0 for j=1,2,3; δ₁(R) ✓ both spin structures; fork reported, no selection.
-Next: BG-H1-E1 — discrete S³×S¹ proxy, δ(R) vs closed form, kill: rel error > 1e-2.
+BG-H1-E1 ✅ PASS [VERIFIED-pytest 2026-06-10, 72/72 tests] — bg_h1_e1_product_proxy.py:
+k₀_disc(N=4000)=1.4999999561; max_rel_error=2.93e-08 (kill: >1e-2); O(h²) convergence confirmed;
+Kronecker sum identity ≤9.09e-13; edge behavior ✓; fork reported, no selection.
+Combined G0+G1+E1: S3XS1_KK_BRIDGE_SUPPORTED (descriptive only).
+Next: BG-H1-E2 — disorder robustness W=0.5 (KT-3 analog for product geometry).
 
 
 
@@ -82,7 +86,9 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 7. ✅ BG-H1 pre-registration — DONE (`experiments/20260610-bg-h1-s3xs1-bridge/claim_bg_h1.md`, design only, no code)
 8. ✅ BG-H1-G0 source trace — PASS v1.1 (`source_register_bg_h1_g0.md`): C-H eqs (2.1),(2.4),(2.10),(2.12),(2.13),(3.16),(3.26),(3.34),(3.46)-(3.48); cross-term cancellation = JOINT {Γʲ,Γ⁴}=0 ∧ [∇ⱼ,∂_y]=0 + lemma eq 2.10; corrected after adversarial re-audit (phantom file, overclaims, sign convention)
 9. ✅ BG-H1-G1 — analytic cross-check PASS [VERIFIED-pytest 2026-06-10]: D4²=-(k²+p²)·I₄, max_rel_error=0.0; convention-pin: correct vs wrong ✓; {Γ^j,Γ^4}=0 ✓; δ₁(R) both spin structures ✓; 58 tests; g1_product_dirac_cross_check_report.md
-10. ▶ BG-H1-E1 — discrete S³×S¹ proxy: extend v0.2.0 discrete Dirac to product grid, measure δ(R) for R∈[0.5,8], fit against closed form for both spin structures; kill condition: rel error > 1e-2
+10. ✅ BG-H1-E1 — discrete S³×S¹ proxy PASS [VERIFIED-pytest 2026-06-10, 72/72]: k₀(N=4000)=1.4999999561; max_rel_err=2.93e-08; O(h²) convergence; Kronecker ≤9e-13; δ(R) both structures ✓; e1_product_proxy_report.md
+11. ▶ BG-H1-E2 — disorder robustness W=0.5: does δ(R) shape survive? kill: destroyed on product but not pure S³ → FLAG
+12. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 11. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 
 
@@ -119,6 +125,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-10 23:12] `4bb2fb4`: Merge branch 'research/bg-h1-g1-product-dirac'
 - [2026-06-10 23:10] `56d8c38`: feat(bg-h1): BG-H1-G1 product Dirac cross-check — PASS (λ²=(n+3/2)²+(m/R)², max_err=0.0)
 - [2026-06-10 22:49] `9f022a0`: fix(bg-h1): G0 source register v1.1 — corrections after adversarial re-audit
 - [2026-06-10 22:32] `5681377`: feat(bg-h1): BG-H1-G0 source trace — PASS (product Dirac additivity confirmed from C-H)
