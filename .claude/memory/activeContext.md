@@ -2,9 +2,10 @@
 **Updated:** 2026-06-10 (session 2)
 
 ## Current Focus
-AV-2 E1 — DONE ✅ STRONG_PASS (1 term, 0% residual, analytically exact).
-G0, G1, G2, E1 all PASS. item40 = RADIAL+TWO_COMPONENT_RECONSTRUCTION_SUPPORTED.
-Next: E2 angular singlet check.
+AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS.
+item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
+E2: CG singlet = √2/2, C²=0.5 (21 tests). 218 total tests green.
+Next: BG-H1 pre-registration (S³×S¹ bridge gate).
 
 
 
@@ -36,7 +37,8 @@ Currently on: `main`
 - `AV-2 G1`: PASS — `test_ch_first_order_system.py` 24/24 — eq 3.28 (≤2.3e-15), eq 3.29/3.30 (FD ≤5e-7), eq 3.38 (≤6e-16), g_nl l=0 nonzero at south pole VERIFIED
 - `AV-2 G2`: PASS — `g2_boundary_exponent_report.md` — g_l0=−0.0958 (≈0, nonzero at boundary), mixed_l0=0.9281 (≈cos¹); item40 → RADIAL+TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED; 45 tests [VERIFIED-pytest 2026-06-10]
 - `AV-2 E1`: STRONG_PASS — `e1_sparse_reconstruction_report.md` — 1 term: φ_{0,0}·g_{0,0} = cosα·sinα = sin(2α)/2 (exact); item40 → RADIAL+TWO_COMPONENT_RECONSTRUCTION_SUPPORTED; 26 tests [VERIFIED-pytest 2026-06-10]
-- `item40`: `RADIAL + TWO_COMPONENT_RECONSTRUCTION_SUPPORTED`
+- `AV-2 E2`: PASS — `e2_angular_singlet_report.md` — CG singlet=√2/2, C²=0.5>0; SU(2) m=(+1/2,−1/2) state has nonzero singlet projection; item40 → RADIAL+ANGULAR_BILINEAR_SUPPORTED; 21 tests [VERIFIED-pytest 2026-06-10]
+- `item40`: `RADIAL + ANGULAR_BILINEAR_SUPPORTED`
 
 
 
@@ -56,8 +58,8 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 3. ✅ AV-2 G1 two-component system — DONE (`test_ch_first_order_system.py` 24/24)
 4. ✅ AV-2 G2 boundary exponent — DONE (`g2_boundary_exponent_report.md`, 45 tests)
 5. ✅ AV-2 E1 sparse reconstruction — DONE (STRONG_PASS, 1 term, 0%, analytically exact)
-6. ▶ AV-2 E2 angular singlet check — NEXT (verify φ·g pairs to J=0 singlet)
-6. BG-H1 pre-registration — S³×S¹ bridge gate (λ²=(n+3/2)²+(m/R)²)
+6. ✅ AV-2 E2 angular singlet check — DONE (PASS, CG=√2/2, C²=0.5, item40→ANGULAR_BILINEAR_SUPPORTED)
+7. ▶ BG-H1 pre-registration — S³×S¹ bridge gate (λ²=(n+3/2)²+(m/R)²)
 7. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 
 
@@ -81,7 +83,9 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 | C-H first-order | 24 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 | AV-2 G2 | 45 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 | AV-2 E1 | 26 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
+| AV-2 E2 | 21 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
 
 
 ## Auto-commit log
+- [2026-06-10 20:27] `4025e79`: feat(av2): AV-2 E1 sparse reconstruction — STRONG_PASS (1 term, 0% residual)
 - [2026-06-10 19:37] `993981a`: feat(av2): AV-2 G2 boundary exponent — PASS (g_l0≈0, mixed_l0≈0.928)

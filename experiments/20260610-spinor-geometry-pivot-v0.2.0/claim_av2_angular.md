@@ -52,7 +52,7 @@ This is falsifiable and decisive either way:
 | AV2-G1 | 2-component radial system (φ, g) reproduces λ = ±(n+3/2) AND both components match C-H analytic forms (rel. error < 1e-4) | **✅ PASS 2026-06-10** — `tests/test_ch_first_order_system.py` 24/24; eq 3.28 ≤2.3e-15, eqs 3.29/3.30 FD ≤5e-7, eq 3.38 ≤6e-16; g_nl l=0 nonzero at south pole VERIFIED |
 | AV2-G2 | Boundary exponent measurement: numerical log-log fit of mode densities near α = π/2; confirm φ-bilinears → cos², measure g-bilinears (prediction: cos^{2l}) | **✅ PASS 2026-06-10** — `g2_boundary_exponent_report.md`; 45 tests; g_l0 exponent=−0.0958 (≈0), mixed_l0 exponent=0.9281 (≈cos¹); item40 → RADIAL+TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED |
 | AV2-E1 (PRIMARY) | Sparse reconstruction of sin(2α) over MIXED bilinear dictionary {φ̄φ, ḡg, φ̄g} + const, greedy ≤5 terms | **✅ STRONG_PASS 2026-06-10** — `e1_sparse_reconstruction_report.md`; 26 tests; 1 term: φ_{0,0}·g_{0,0} = cosα·sinα = sin(2α)/2 (analytically exact, C-H eqs 3.25/3.27); item40 → RADIAL+TWO_COMPONENT_RECONSTRUCTION_SUPPORTED |
-| AV2-E2 | If E1 passes: angular singlet check — verify the chosen bilinears can pair to total-angular-momentum singlets (required for a scalar √||g||) | no singlet pairing → reconstruction is formal, not eq.-49-meaningful |
+| AV2-E2 | If E1 passes: angular singlet check — verify the chosen bilinears can pair to total-angular-momentum singlets (required for a scalar √||g||) | **✅ PASS 2026-06-10** — `e2_angular_singlet_report.md`; CG singlet=√2/2, C²=0.5>0; item40 → RADIAL+ANGULAR_BILINEAR_SUPPORTED; 21 tests |
 
 Verdict rules (pre-registered):
 - E1 residual < 5% AND E2 singlet check passes →
