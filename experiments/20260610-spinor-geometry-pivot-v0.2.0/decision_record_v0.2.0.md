@@ -60,6 +60,15 @@ survives 49-mode dictionary incl. off-diagonal modes, two measures, two grids
 family, 92.4%) stays EXPLORATORY, not promoted. Full angular check = AV-2, still pending.
 See av1_angular_dictionary_report.md.
 
+**Update 2026-06-10 (AV-1c′):** sparse H-T1 KILLED — D2 (boundary bilinears + const)
+residual 13.0% > 10% pre-registered threshold; recorded in
+null_results/20260610-ht1-sparse-bilinear.md. Both mechanism predictions CONFIRMED:
+P1 (boundary cos-exponent obstruction, residual peaks at α/π = 0.500 exactly) and
+P2 (Tom's f^(φ) constant term is load-bearing: 37.9% → 13.0%). Refined picture:
+eq. 49 radial layer = constant + DENSE bilinear series (full-LS over extended
+dictionary ≈ 5e-4, span contains target; no sparse truncation works).
+Linear-level AV-1a finding untouched. See av1c_prime_report.md.
+
 ## Kill Tests
 
 | Test | Status | Kill Condition |

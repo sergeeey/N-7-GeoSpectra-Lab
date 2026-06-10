@@ -1,0 +1,100 @@
+{
+  "experiment": "AV1C_PRIME_CROSS_BILINEAR_DICTIONARY",
+  "version": "v0.2.0",
+  "n_grid": 4000,
+  "primary_endpoint": "D2 greedy 5-term residual, weighted L2",
+  "d1_pure_bilinears": {
+    "dictionary": "D1_pure_bilinears",
+    "n_elements": 15,
+    "include_constant": false,
+    "greedy_5term_labels": [
+      "(0,0)x(2,2)",
+      "(0,0)x(0,0)",
+      "(4,4)x(4,4)",
+      "(0,0)x(1,1)",
+      "(1,1)x(4,4)"
+    ],
+    "residual_5term": 0.37921787081594843,
+    "residual_full_ls": 0.37921697249421904,
+    "residual_peak_alpha_over_pi": 0.3654086478380405,
+    "constant_in_top5": false
+  },
+  "d2_primary": {
+    "dictionary": "D2_bilinears_plus_const",
+    "n_elements": 16,
+    "include_constant": true,
+    "greedy_5term_labels": [
+      "const",
+      "(4,4)x(4,4)",
+      "(0,0)x(0,0)",
+      "(1,1)x(1,1)",
+      "(0,0)x(1,1)"
+    ],
+    "residual_5term": 0.12995141367986607,
+    "residual_full_ls": 0.12993848725122223,
+    "residual_peak_alpha_over_pi": 0.49987503124218946,
+    "constant_in_top5": true
+  },
+  "d3_extended": {
+    "dictionary": "D3_extended_plus_const",
+    "n_elements": 121,
+    "include_constant": true,
+    "greedy_5term_labels": [
+      "const",
+      "(0,0)x(2,0)",
+      "(1,0)x(4,4)",
+      "(3,2)x(4,3)",
+      "(3,1)x(4,4)"
+    ],
+    "residual_5term": 0.08883944488473361,
+    "residual_full_ls": 0.0004901752775340804,
+    "residual_peak_alpha_over_pi": 0.49987503124218946,
+    "constant_in_top5": true
+  },
+  "sensitivity_unweighted": {
+    "dictionary": "D2_unweighted",
+    "n_elements": 16,
+    "include_constant": true,
+    "greedy_5term_labels": [
+      "(0,0)x(2,2)",
+      "const",
+      "(0,0)x(0,0)",
+      "(4,4)x(4,4)",
+      "(0,0)x(1,1)"
+    ],
+    "residual_5term": 0.20982692307738907,
+    "residual_full_ls": 0.2097901973743238,
+    "residual_peak_alpha_over_pi": 0.49987503124218946,
+    "constant_in_top5": true
+  },
+  "sensitivity_fine_grid": {
+    "dictionary": "D2_fine_grid",
+    "n_elements": 16,
+    "include_constant": true,
+    "greedy_5term_labels": [
+      "const",
+      "(4,4)x(4,4)",
+      "(0,0)x(0,0)",
+      "(0,0)x(2,2)",
+      "(0,0)x(1,1)"
+    ],
+    "residual_5term": 0.12995172048855197,
+    "residual_full_ls": 0.12993879339344763,
+    "residual_peak_alpha_over_pi": 0.4999375078115236,
+    "constant_in_top5": true
+  },
+  "verdict": "KILL_HT1_STAYS_NOT_PROMOTED",
+  "mechanism": {
+    "P2_constant_term_load_bearing": true,
+    "d1_vs_d2_residual": [
+      0.37921787081594843,
+      0.12995141367986607
+    ],
+    "P1_residual_peak_alpha_over_pi_D1": 0.3654086478380405
+  },
+  "scope": {
+    "angular": "NOT VERIFIED \u2014 radial layer only; AV-2 pending",
+    "promotion_ceiling": "RADIAL_BILINEAR_STRUCTURE_SUPPORTED at most \u2014 NOT full spinor identification, NOT physical promotion",
+    "lambda": "FREE_COUPLING_PARAMETER"
+  }
+}
