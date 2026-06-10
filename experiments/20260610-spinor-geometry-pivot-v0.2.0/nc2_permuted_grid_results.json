@@ -1,0 +1,106 @@
+{
+  "experiment": "NC2_PERMUTED_GRID_NEGATIVE_CONTROL_FULL",
+  "overall_verdict": "NC2_PASS",
+  "s3": {
+    "experiment": "NC2_PERMUTED_GRID_NEGATIVE_CONTROL",
+    "version": "v0.2.0",
+    "d": 3,
+    "n_grid": 2000,
+    "n_seeds": 5,
+    "analytic_target": 1.5,
+    "clean_baseline": 1.4999998244114923,
+    "seed_results": [
+      {
+        "seed": 0,
+        "lambda_min_permuted": 8.363463705910483,
+        "deviation_fraction": 4.575642470606989,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 1,
+        "lambda_min_permuted": 5.5447130059399425,
+        "deviation_fraction": 2.696475337293295,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 2,
+        "lambda_min_permuted": 6.934738079683083,
+        "deviation_fraction": 3.6231587197887216,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 3,
+        "lambda_min_permuted": 8.0758489717532,
+        "deviation_fraction": 4.383899314502133,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 4,
+        "lambda_min_permuted": 5.940061683011135,
+        "deviation_fraction": 2.960041122007423,
+        "fingerprint_destroyed": true
+      }
+    ],
+    "n_seeds_fingerprint_destroyed": 5,
+    "min_deviation_fraction": 2.696475337293295,
+    "max_deviation_fraction": 4.575642470606989,
+    "verdict": "NC2_PASS",
+    "verdict_note": "fingerprint destroyed in ALL seeds \u2014 harness is GEOMETRY-SENSITIVE",
+    "scope": {
+      "HA-4": "OPEN \u2014 NC-2 is a Tier-3 control for S^d only",
+      "promotion": "NONE \u2014 research_only",
+      "ipr": "NOT USED as endpoint"
+    }
+  },
+  "s6": {
+    "experiment": "NC2_PERMUTED_GRID_NEGATIVE_CONTROL",
+    "version": "v0.2.0",
+    "d": 6,
+    "n_grid": 2000,
+    "n_seeds": 5,
+    "analytic_target": 3.0,
+    "clean_baseline": 2.9999996833259974,
+    "seed_results": [
+      {
+        "seed": 0,
+        "lambda_min_permuted": 15.29898986669474,
+        "deviation_fraction": 4.099663288898246,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 1,
+        "lambda_min_permuted": 12.666234133004842,
+        "deviation_fraction": 3.2220780443349475,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 2,
+        "lambda_min_permuted": 12.600922313704787,
+        "deviation_fraction": 3.200307437901596,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 3,
+        "lambda_min_permuted": 13.991524964329088,
+        "deviation_fraction": 3.6638416547763626,
+        "fingerprint_destroyed": true
+      },
+      {
+        "seed": 4,
+        "lambda_min_permuted": 14.978730302339644,
+        "deviation_fraction": 3.992910100779881,
+        "fingerprint_destroyed": true
+      }
+    ],
+    "n_seeds_fingerprint_destroyed": 5,
+    "min_deviation_fraction": 3.200307437901596,
+    "max_deviation_fraction": 4.099663288898246,
+    "verdict": "NC2_PASS",
+    "verdict_note": "fingerprint destroyed in ALL seeds \u2014 harness is GEOMETRY-SENSITIVE",
+    "scope": {
+      "HA-4": "OPEN \u2014 NC-2 is a Tier-3 control for S^d only",
+      "promotion": "NONE \u2014 research_only",
+      "ipr": "NOT USED as endpoint"
+    }
+  }
+}

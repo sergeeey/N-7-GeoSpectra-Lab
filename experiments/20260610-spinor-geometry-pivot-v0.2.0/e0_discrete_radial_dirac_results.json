@@ -1,0 +1,94 @@
+{
+  "experiment": "E0_DISCRETE_RADIAL_DIRAC_EIGENVALUE_RECOVERY",
+  "version": "v0.2.0",
+  "primary_endpoint": "spectral (eigenvalue ladder + eigenvector correspondence); IPR not used",
+  "s3": {
+    "d": 3,
+    "n_grid": 4000,
+    "ladder_computed": [
+      1.4999999560635806,
+      2.499999723538656,
+      3.4999991465406546,
+      4.499998070905268,
+      5.499996342425587
+    ],
+    "ladder_analytic": [
+      1.5,
+      2.5,
+      3.5,
+      4.5,
+      5.5
+    ],
+    "max_rel_err": 6.650135296578955e-07,
+    "threshold": 0.05,
+    "verdict": "PASS",
+    "eigenvector_correspondence": {
+      "chi_minus_vs_phi_nl": [
+        1.0000000000000002,
+        0.999999999999997,
+        0.9999999999999808
+      ],
+      "chi_plus_vs_g_nl": [
+        0.9999999999999999,
+        0.9999999999999968,
+        0.9999999999999803
+      ]
+    },
+    "chirality_spectra_identical": true
+  },
+  "generalization": {
+    "d6": {
+      "d": 6,
+      "n_grid": 4000,
+      "ladder_computed": [
+        2.9999999208589556,
+        3.9999995829933273,
+        4.999998803663086,
+        5.999997428224225,
+        6.999995302938618
+      ],
+      "ladder_analytic": [
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0
+      ],
+      "max_rel_err": 6.710087688028514e-07,
+      "threshold": 0.05,
+      "verdict": "PASS"
+    },
+    "d2": "EXCLUDED_FROM_FD \u2014 \u03ba=1/2 endpoint coefficient \u03ba(\u03ba-1)=-1/4 is the critical limit-circle value (uniform FD rate ~h^0.1, ~5% error even at N=32000); use spectral_fingerprint_proxy.dirac_ladder_shooting [VERIFIED-tool 2026-06-10]."
+  },
+  "findings": {
+    "tom_ansatz": {
+      "status": "RADIAL_PROJECTION_FINDING_ONLY \u2014 angular sector unverified, NOT a full spinor identification",
+      "dominant_mode": {
+        "n": 1,
+        "l": 1,
+        "projection": 0.9203911549633673
+      },
+      "projection_table": {
+        "phi_10": 0.0267978133881545,
+        "phi_11": 0.9203911549633673,
+        "phi_20": 0.03638745340413165,
+        "phi_21": 0.00991815550642008,
+        "phi_22": 0.8808436537413018,
+        "phi_30": 0.003699316066567641,
+        "phi_31": 0.08697639609705511,
+        "phi_32": 0.004484297069674593,
+        "phi_33": 0.8323972636167601,
+        "phi_40": 0.007768152189502493,
+        "phi_41": 0.0023191728090767782,
+        "phi_42": 0.12434574303989823,
+        "phi_43": 0.002338194593104746,
+        "phi_44": 0.7868755384608566
+      }
+    }
+  },
+  "scope": {
+    "HA-4": "OPEN \u2014 pure-sphere ladder recovery does not address the original S3xS1 GEOMETRY_AGNOSTIC verdict",
+    "promotion": "NONE \u2014 research_only",
+    "disorder": "W>0 untested (KT-3 pending)"
+  }
+}
