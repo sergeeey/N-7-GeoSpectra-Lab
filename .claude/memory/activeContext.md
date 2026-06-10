@@ -24,6 +24,7 @@ Next: BG-H1-E2 — disorder robustness W=0.5 (KT-3 analog for product geometry).
 
 
 
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -31,6 +32,7 @@ Next: BG-H1-E2 — disorder robustness W=0.5 (KT-3 analog for product geometry).
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 
@@ -63,6 +65,7 @@ Currently on: `main`
 
 
 
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -70,6 +73,7 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
 
 
 
@@ -89,7 +93,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 10. ✅ BG-H1-E1 — discrete S³×S¹ proxy PASS [VERIFIED-pytest 2026-06-10, 72/72]: k₀(N=4000)=1.4999999561; max_rel_err=2.93e-08; O(h²) convergence; Kronecker ≤9e-13; δ(R) both structures ✓; e1_product_proxy_report.md
 11. ▶ BG-H1-E2 — disorder robustness W=0.5: does δ(R) shape survive? kill: destroyed on product but not pure S³ → FLAG
 12. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
-11. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
 
 
 
@@ -102,6 +106,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 
@@ -124,7 +129,9 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
 ## Auto-commit log
+- [2026-06-10 23:26] `129cd6e`: feat(bg-h1): BG-H1-E1 discrete S³×S¹ proxy — PASS (δ(R) max_err=2.93e-08, 72 tests)
 - [2026-06-10 23:12] `4bb2fb4`: Merge branch 'research/bg-h1-g1-product-dirac'
 - [2026-06-10 23:10] `56d8c38`: feat(bg-h1): BG-H1-G1 product Dirac cross-check — PASS (λ²=(n+3/2)²+(m/R)², max_err=0.0)
 - [2026-06-10 22:49] `9f022a0`: fix(bg-h1): G0 source register v1.1 — corrections after adversarial re-audit
