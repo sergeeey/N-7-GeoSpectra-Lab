@@ -16,8 +16,10 @@ D4²=-(k²+p²)·I₄ (max_rel_error=0.0, machine precision); convention-pin: co
 BG-H1-E1 ✅ PASS [VERIFIED-pytest 2026-06-10, 72/72 tests] — bg_h1_e1_product_proxy.py:
 k₀_disc(N=4000)=1.4999999561; max_rel_error=2.93e-08 (kill: >1e-2); O(h²) convergence confirmed;
 Kronecker sum identity ≤9.09e-13; edge behavior ✓; fork reported, no selection.
-Combined G0+G1+E1: S3XS1_KK_BRIDGE_SUPPORTED (descriptive only).
-Next: BG-H1-E2 — disorder robustness W=0.5 (KT-3 analog for product geometry).
+BG-H1-E2 ✅ PASS [VERIFIED-pytest 2026-06-10, 67/67 tests] — bg_h1_e2_disorder_proxy.py:
+W=0.5, 30 seeds, N=1000; max_frag_ratio=0.998 (kill: >10); max_mean_err=2.54e-04 (kill: >0.05);
+monotone ✓ both structures; frag_ratio≤1 analytically (δ=f(k₀) deterministic); fork reported, no selection.
+Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1 COMPLETE ✅.
 
 
 
@@ -91,7 +93,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 8. ✅ BG-H1-G0 source trace — PASS v1.1 (`source_register_bg_h1_g0.md`): C-H eqs (2.1),(2.4),(2.10),(2.12),(2.13),(3.16),(3.26),(3.34),(3.46)-(3.48); cross-term cancellation = JOINT {Γʲ,Γ⁴}=0 ∧ [∇ⱼ,∂_y]=0 + lemma eq 2.10; corrected after adversarial re-audit (phantom file, overclaims, sign convention)
 9. ✅ BG-H1-G1 — analytic cross-check PASS [VERIFIED-pytest 2026-06-10]: D4²=-(k²+p²)·I₄, max_rel_error=0.0; convention-pin: correct vs wrong ✓; {Γ^j,Γ^4}=0 ✓; δ₁(R) both spin structures ✓; 58 tests; g1_product_dirac_cross_check_report.md
 10. ✅ BG-H1-E1 — discrete S³×S¹ proxy PASS [VERIFIED-pytest 2026-06-10, 72/72]: k₀(N=4000)=1.4999999561; max_rel_err=2.93e-08; O(h²) convergence; Kronecker ≤9e-13; δ(R) both structures ✓; e1_product_proxy_report.md
-11. ▶ BG-H1-E2 — disorder robustness W=0.5: does δ(R) shape survive? kill: destroyed on product but not pure S³ → FLAG
+11. ✅ BG-H1-E2 — disorder robustness W=0.5 PASS [VERIFIED-pytest 2026-06-10, 67/67]: max_frag_ratio=0.998; max_mean_err=2.54e-04; monotone ✓; e2_disorder_report.md
 12. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 
 
@@ -131,6 +133,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-10 23:30] `79dbfb9`: Merge branch 'research/bg-h1-e1-product-proxy'
 - [2026-06-10 23:29] `3a9237d`: chore: update activeContext — BG-H1-E1 PASS recorded, duplicate line fixed
 - [2026-06-10 23:26] `129cd6e`: feat(bg-h1): BG-H1-E1 discrete S³×S¹ proxy — PASS (δ(R) max_err=2.93e-08, 72 tests)
 - [2026-06-10 23:12] `4bb2fb4`: Merge branch 'research/bg-h1-g1-product-dirac'

@@ -1,0 +1,55 @@
+{
+  "gate": "BG-H1-E2",
+  "date": "2026-06-10",
+  "verdict": "PASS",
+  "failures": [],
+  "parameters": {
+    "W": 0.5,
+    "n_alpha": 1000,
+    "n_seeds": 30,
+    "R_values": [0.5, 1.0, 2.0, 4.0, 6.0, 8.0],
+    "m1_periodic": 1.0,
+    "m1_antiperiodic": 0.5
+  },
+  "kill_thresholds": {
+    "mean_rel_error": 0.05,
+    "fragility_ratio": 10.0,
+    "monotone_decreasing": true
+  },
+  "s3_fragility": {
+    "k0_baseline": 1.4999992975,
+    "k0_mean": 1.5003935644,
+    "k0_std": 4.324312e-3,
+    "s3_mean_rel_fragility": 2.310995e-3,
+    "s3_max_rel_fragility": 6.551857e-3
+  },
+  "verdict_metrics": {
+    "max_periodic_mean_rel_error": 2.532e-4,
+    "max_antiperiodic_mean_rel_error": 2.538e-4,
+    "max_periodic_fragility_ratio": 0.9958,
+    "max_antiperiodic_fragility_ratio": 0.9984
+  },
+  "periodic_r_stats": [
+    {"R": 0.5,  "mean": 0.9998450, "std": 1.729e-3, "mean_rel_error": 1.55e-4, "fragility_ratio": 0.600},
+    {"R": 1.0,  "mean": 0.3027111, "std": 7.256e-4, "mean_rel_error": 2.13e-4, "fragility_ratio": 0.832},
+    {"R": 2.0,  "mean": 0.0811192, "std": 2.217e-4, "mean_rel_error": 2.42e-4, "fragility_ratio": 0.948},
+    {"R": 4.0,  "mean": 0.0206854, "std": 5.877e-5, "mean_rel_error": 2.51e-4, "fragility_ratio": 0.986},
+    {"R": 6.0,  "mean": 0.0092285, "std": 2.642e-5, "mean_rel_error": 2.53e-4, "fragility_ratio": 0.993},
+    {"R": 8.0,  "mean": 0.0051980, "std": 1.492e-5, "mean_rel_error": 2.53e-4, "fragility_ratio": 0.996}
+  ],
+  "antiperiodic_r_stats": [
+    {"R": 0.5,  "mean": 0.3027111, "std": 7.256e-4, "mean_rel_error": 2.13e-4, "fragility_ratio": 0.832},
+    {"R": 1.0,  "mean": 0.0811192, "std": 2.217e-4, "mean_rel_error": 2.42e-4, "fragility_ratio": 0.948},
+    {"R": 2.0,  "mean": 0.0206854, "std": 5.877e-5, "mean_rel_error": 2.51e-4, "fragility_ratio": 0.986},
+    {"R": 4.0,  "mean": 0.0051980, "std": 1.492e-5, "mean_rel_error": 2.53e-4, "fragility_ratio": 0.996},
+    {"R": 6.0,  "mean": 0.0023124, "std": 6.650e-6, "mean_rel_error": 2.54e-4, "fragility_ratio": 0.998},
+    {"R": 8.0,  "mean": 0.0013012, "std": 3.745e-6, "mean_rel_error": 2.54e-4, "fragility_ratio": 0.998}
+  ],
+  "scope": {
+    "lambda": "FREE_COUPLING_PARAMETER",
+    "safe_for_runtime": false,
+    "spin_structure_selected": false,
+    "geometry_claim": "none — GEOMETRY_AGNOSTIC intact"
+  },
+  "combined_bg_h1_verdict": "S3XS1_KK_BRIDGE_SUPPORTED_ROBUST"
+}
