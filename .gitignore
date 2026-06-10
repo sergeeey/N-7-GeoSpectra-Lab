@@ -48,3 +48,6 @@ hetzner_*
 # --- Third-party PDFs in root ---
 Toy-модель*
 Геометрическое*
+
+# Local Claude workspace context
+tom_s3_spinor_toy/.claude/

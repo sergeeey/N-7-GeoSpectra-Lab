@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "n_cases": 216,
+    "source": "E:\\Проверка Гипотез\\работаю над проверкой гипотез\\N-7-GeoSpectra-Lab\\reports\\RUNS\\gate4_fss_v0.1.24\\batches",
+    "threshold": 2.0
+  },
+  "global": {
+    "n_pairs": 72,
+    "geometric_mean_ratio": 8.386419556905498,
+    "arithmetic_ratio_of_means": 7.068145786223542,
+    "median_of_per_pair_ratio": 7.65250386455147,
+    "wilcoxon_stat": 2628.0,
+    "wilcoxon_p_one_sided_greater": 8.29375901188199e-14,
+    "cohens_dz_logscale": 2.7212339056368244,
+    "common_language_effect": 1.0,
+    "passes_2x_geometric": true
+  },
+  "bootstrap": {
+    "geometric_mean_ratio_ci95": [
+      7.01946837450412,
+      10.038435511567956
+    ],
+    "n_boot": 10000
+  },
+  "subgroups": [
+    {
+      "n_pairs": 24,
+      "geometric_mean_ratio": 10.35776610691111,
+      "arithmetic_ratio_of_means": 8.126069972929862,
+      "median_of_per_pair_ratio": 10.97234073010972,
+      "wilcoxon_stat": 300.0,
+      "wilcoxon_p_one_sided_greater": 5.960464477539063e-08,
+      "cohens_dz_logscale": 2.9302187203519594,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "family=ring",
+      "p_bh": 1.0728836059570313e-07,
+      "p_holm": 4.172325134277344e-07
+    },
+    {
+      "n_pairs": 24,
+      "geometric_mean_ratio": 5.111715195741503,
+      "arithmetic_ratio_of_means": 4.245198667985923,
+      "median_of_per_pair_ratio": 5.196486864266474,
+      "wilcoxon_stat": 300.0,
+      "wilcoxon_p_one_sided_greater": 5.960464477539063e-08,
+      "cohens_dz_logscale": 3.7739947803636107,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "family=spectral_circle",
+      "p_bh": 1.0728836059570313e-07,
+      "p_holm": 4.172325134277344e-07
+    },
+    {
+      "n_pairs": 24,
+      "geometric_mean_ratio": 11.140303128232208,
+      "arithmetic_ratio_of_means": 8.44012131981847,
+      "median_of_per_pair_ratio": 11.597206779402185,
+      "wilcoxon_stat": 300.0,
+      "wilcoxon_p_one_sided_greater": 5.960464477539063e-08,
+      "cohens_dz_logscale": 2.932981866106493,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "family=wilson_ring",
+      "p_bh": 1.0728836059570313e-07,
+      "p_holm": 4.172325134277344e-07
+    },
+    {
+      "n_pairs": 18,
+      "geometric_mean_ratio": 3.544806661748641,
+      "arithmetic_ratio_of_means": 3.6721117273776005,
+      "median_of_per_pair_ratio": 3.8378390285385704,
+      "wilcoxon_stat": 171.0,
+      "wilcoxon_p_one_sided_greater": 3.814697265625e-06,
+      "cohens_dz_logscale": 5.083116097524052,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "size=16",
+      "p_bh": 3.814697265625e-06,
+      "p_holm": 1.52587890625e-05
+    },
+    {
+      "n_pairs": 18,
+      "geometric_mean_ratio": 6.412759191391616,
+      "arithmetic_ratio_of_means": 6.707517724407666,
+      "median_of_per_pair_ratio": 6.5302779294253765,
+      "wilcoxon_stat": 171.0,
+      "wilcoxon_p_one_sided_greater": 3.814697265625e-06,
+      "cohens_dz_logscale": 7.031887176690321,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "size=32",
+      "p_bh": 3.814697265625e-06,
+      "p_holm": 1.52587890625e-05
+    },
+    {
+      "n_pairs": 18,
+      "geometric_mean_ratio": 10.529599819350647,
+      "arithmetic_ratio_of_means": 11.933867363543904,
+      "median_of_per_pair_ratio": 13.724801688024048,
+      "wilcoxon_stat": 171.0,
+      "wilcoxon_p_one_sided_greater": 3.814697265625e-06,
+      "cohens_dz_logscale": 4.813607091681911,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "size=64",
+      "p_bh": 3.814697265625e-06,
+      "p_holm": 1.52587890625e-05
+    },
+    {
+      "n_pairs": 18,
+      "geometric_mean_ratio": 20.666026939794936,
+      "arithmetic_ratio_of_means": 24.897586029339376,
+      "median_of_per_pair_ratio": 29.85472452024151,
+      "wilcoxon_stat": 171.0,
+      "wilcoxon_p_one_sided_greater": 3.814697265625e-06,
+      "cohens_dz_logscale": 4.77533572319378,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "size=128",
+      "p_bh": 3.814697265625e-06,
+      "p_holm": 1.52587890625e-05
+    },
+    {
+      "n_pairs": 36,
+      "geometric_mean_ratio": 8.418807754980469,
+      "arithmetic_ratio_of_means": 7.058546207293439,
+      "median_of_per_pair_ratio": 7.66040906086973,
+      "wilcoxon_stat": 666.0,
+      "wilcoxon_p_one_sided_greater": 1.4551915228366852e-11,
+      "cohens_dz_logscale": 2.7169919095372292,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "j_max=2",
+      "p_bh": 6.548361852765083e-11,
+      "p_holm": 1.3096723705530167e-10
+    },
+    {
+      "n_pairs": 36,
+      "geometric_mean_ratio": 8.354155960247391,
+      "arithmetic_ratio_of_means": 7.077885685861508,
+      "median_of_per_pair_ratio": 7.606050242086678,
+      "wilcoxon_stat": 666.0,
+      "wilcoxon_p_one_sided_greater": 1.4551915228366852e-11,
+      "cohens_dz_logscale": 2.6872263027192638,
+      "common_language_effect": 1.0,
+      "passes_2x_geometric": true,
+      "label": "j_max=3",
+      "p_bh": 6.548361852765083e-11,
+      "p_holm": 1.3096723705530167e-10
+    }
+  ],
+  "spec_curve": {
+    "n_specs": 30,
+    "n_pass": 30,
+    "robust_fraction": 1.0,
+    "min_contrast": 3.544806661748641,
+    "max_contrast": 29.85472452024151,
+    "specs": [
+      {
+        "central": "arith",
+        "grouping": "all",
+        "subset": "all",
+        "contrast": 7.068145786223542,
+        "passes": true,
+        "n": 72
+      },
+      {
+        "central": "arith",
+        "grouping": "per_family",
+        "subset": "ring",
+        "contrast": 8.126069972929862,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "arith",
+        "grouping": "per_family",
+        "subset": "spectral_circle",
+        "contrast": 4.245198667985923,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "arith",
+        "grouping": "per_family",
+        "subset": "wilson_ring",
+        "contrast": 8.44012131981847,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "arith",
+        "grouping": "per_size",
+        "subset": "16",
+        "contrast": 3.6721117273776005,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "arith",
+        "grouping": "per_size",
+        "subset": "32",
+        "contrast": 6.707517724407666,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "arith",
+        "grouping": "per_size",
+        "subset": "64",
+        "contrast": 11.933867363543904,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "arith",
+        "grouping": "per_size",
+        "subset": "128",
+        "contrast": 24.897586029339376,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "arith",
+        "grouping": "per_jmax",
+        "subset": "2",
+        "contrast": 7.058546207293439,
+        "passes": true,
+        "n": 36
+      },
+      {
+        "central": "arith",
+        "grouping": "per_jmax",
+        "subset": "3",
+        "contrast": 7.077885685861508,
+        "passes": true,
+        "n": 36
+      },
+      {
+        "central": "geo",
+        "grouping": "all",
+        "subset": "all",
+        "contrast": 8.386419556905498,
+        "passes": true,
+        "n": 72
+      },
+      {
+        "central": "geo",
+        "grouping": "per_family",
+        "subset": "ring",
+        "contrast": 10.35776610691111,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "geo",
+        "grouping": "per_family",
+        "subset": "spectral_circle",
+        "contrast": 5.111715195741506,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "geo",
+        "grouping": "per_family",
+        "subset": "wilson_ring",
+        "contrast": 11.140303128232214,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "geo",
+        "grouping": "per_size",
+        "subset": "16",
+        "contrast": 3.544806661748641,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "geo",
+        "grouping": "per_size",
+        "subset": "32",
+        "contrast": 6.412759191391616,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "geo",
+        "grouping": "per_size",
+        "subset": "64",
+        "contrast": 10.529599819350647,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "geo",
+        "grouping": "per_size",
+        "subset": "128",
+        "contrast": 20.666026939794946,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "geo",
+        "grouping": "per_jmax",
+        "subset": "2",
+        "contrast": 8.418807754980469,
+        "passes": true,
+        "n": 36
+      },
+      {
+        "central": "geo",
+        "grouping": "per_jmax",
+        "subset": "3",
+        "contrast": 8.354155960247391,
+        "passes": true,
+        "n": 36
+      },
+      {
+        "central": "median",
+        "grouping": "all",
+        "subset": "all",
+        "contrast": 7.65250386455147,
+        "passes": true,
+        "n": 72
+      },
+      {
+        "central": "median",
+        "grouping": "per_family",
+        "subset": "ring",
+        "contrast": 10.97234073010972,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "median",
+        "grouping": "per_family",
+        "subset": "spectral_circle",
+        "contrast": 5.196486864266474,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "median",
+        "grouping": "per_family",
+        "subset": "wilson_ring",
+        "contrast": 11.597206779402185,
+        "passes": true,
+        "n": 24
+      },
+      {
+        "central": "median",
+        "grouping": "per_size",
+        "subset": "16",
+        "contrast": 3.8378390285385704,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "median",
+        "grouping": "per_size",
+        "subset": "32",
+        "contrast": 6.5302779294253765,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "median",
+        "grouping": "per_size",
+        "subset": "64",
+        "contrast": 13.724801688024048,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "median",
+        "grouping": "per_size",
+        "subset": "128",
+        "contrast": 29.85472452024151,
+        "passes": true,
+        "n": 18
+      },
+      {
+        "central": "median",
+        "grouping": "per_jmax",
+        "subset": "2",
+        "contrast": 7.66040906086973,
+        "passes": true,
+        "n": 36
+      },
+      {
+        "central": "median",
+        "grouping": "per_jmax",
+        "subset": "3",
+        "contrast": 7.606050242086678,
+        "passes": true,
+        "n": 36
+      }
+    ]
+  },
+  "tipping": {
+    "geometric_contrast": 8.386419556905498,
+    "threshold": 2.0,
+    "ipr_w0_inflation_to_break": 4.193209778452749,
+    "interpretation": "IPR_W0 baseline would need to be ~4.19x larger (or IPR_W20 that much smaller) to drag the geometric contrast below 2.0x."
+  },
+  "logo": {
+    "folds": [
+      {
+        "held_out_family": "ring",
+        "geo_contrast_on_kept_2_families": 7.546261113011607,
+        "geo_contrast_on_held_family": 10.35776610691111,
+        "kept_passes": true,
+        "held_passes": true
+      },
+      {
+        "held_out_family": "spectral_circle",
+        "geo_contrast_on_kept_2_families": 10.741911103817582,
+        "geo_contrast_on_held_family": 5.111715195741506,
+        "kept_passes": true,
+        "held_passes": true
+      },
+      {
+        "held_out_family": "wilson_ring",
+        "geo_contrast_on_kept_2_families": 7.276396800795972,
+        "geo_contrast_on_held_family": 11.140303128232214,
+        "kept_passes": true,
+        "held_passes": true
+      }
+    ],
+    "all_folds_stable": true
+  },
+  "power": {
+    "observed_dz_logscale": 2.7212339056368244,
+    "n_pairs": 72,
+    "caveat": "This is the OBSERVED effect size, not an a-priori power analysis. Post-hoc power is a deterministic function of the p-value and does NOT recover the T6 (winner's curse) protection. A genuine a-priori power analysis requires a NEW pre-registered run.",
+    "achieved_power_given_observed_dz": 1.0
+  }
+}
