@@ -2,10 +2,10 @@
 **Updated:** 2026-06-10 (session 2)
 
 ## Current Focus
-AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS.
-item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
-E2: CG singlet = √2/2, C²=0.5 (21 tests). 218 total tests green.
-Next: BG-H1 pre-registration (S³×S¹ bridge gate).
+AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
+BG-H1 pre-registered ✅ (design only): λ²=(n+3/2)²+(m/R)², δ(R)=√(9/4+(m₁/R)²)−3/2,
+both spin structures forked (m∈ℤ vs m∈ℤ+1/2), no choice made.
+Next: BG-H1-G0 source trace (BLOCKING) — confirm product-Dirac additivity from literature.
 
 
 
@@ -59,8 +59,9 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 4. ✅ AV-2 G2 boundary exponent — DONE (`g2_boundary_exponent_report.md`, 45 tests)
 5. ✅ AV-2 E1 sparse reconstruction — DONE (STRONG_PASS, 1 term, 0%, analytically exact)
 6. ✅ AV-2 E2 angular singlet check — DONE (PASS, CG=√2/2, C²=0.5, item40→ANGULAR_BILINEAR_SUPPORTED)
-7. ▶ BG-H1 pre-registration — S³×S¹ bridge gate (λ²=(n+3/2)²+(m/R)²)
-7. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+7. ✅ BG-H1 pre-registration — DONE (`experiments/20260610-bg-h1-s3xs1-bridge/claim_bg_h1.md`, design only, no code)
+8. ▶ BG-H1-G0 source trace — BLOCKING gate: confirm product-Dirac decomposition + spin-structure m-sets from primary literature BEFORE any lattice code
+9. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 
 
 
