@@ -34,8 +34,8 @@
 |---|---|---|
 | HA-1: harness computes full spinor harmonics | VIOLATED | Scope to radial-only; block IPR as primary |
 | HA-2: Hopf coords = standard S³ spectrum | UNVERIFIED | Required before cross-sphere comparison |
-| HA-3: fingerprint survives W>0 | NO DATA | KT-3 experiment |
-| **HA-4: S^d discrimination solves S³×S¹ GEOMETRY_AGNOSTIC** | **SCOPE GAP** | **Record explicitly; do not conflate** |
+| HA-3: fingerprint survives W>0 | **VERIFIED-tool 2026-06-10** | KT-3 PASS: max shift 7.5e-4 at W=0.1, margin 335×, W*>0.5 |
+| **HA-4: S^d discrimination solves S³×S¹ GEOMETRY_AGNOSTIC** | **DECIDED 2026-06-10** | ONE_TRACK_WITH_EXPLICIT_BRIDGE_GATE — see ha4_design_decision.md |
 
 ## Side Finding: tom_ansatz ≈ phi_{11}
 
@@ -57,11 +57,11 @@ before communicating to Tom.
 
 | Test | Status | Kill Condition |
 |---|---|---|
-| KT-1: discrete eigenvalue recovery | **NOT YET RUN** | >5% error at N_α=100 |
-| KT-2: S²/S³ gap = 0.5 numerically | **NOT YET RUN** | gap error >50% |
-| KT-3: disorder smears fingerprint | NOT YET RUN | W=0.1 wipes λ_min |
-| KT-4: scalar vs Dirac on same sphere | NOT YET RUN | can't distinguish patterns |
-| KT-5: tom_ansatz ↔ phi_{11} | **VERIFIED** | 0.920391 (pass) |
+| KT-1: discrete eigenvalue recovery | **PASS** (E0, 2026-06-10) | max rel. error 6.7e-7, margin ~75 000× |
+| KT-2: S²/S³ gap = 0.5 numerically | **PASS** (proxy, 2026-06-10) | gap error 1.6e-6; separation exact |
+| KT-3: disorder smears fingerprint | **PASS** (2026-06-10) | max shift 7.5e-4 at W=0.1; W*>0.5 |
+| KT-4: scalar vs Dirac on same sphere | **PASS** (NC-3, proxy) | cross-match 0.0 — zero confusion |
+| KT-5: tom_ansatz ↔ phi_{11} | **VERIFIED** | 0.920391 (regression-tested) |
 
 ## Revised Controls Tier 1
 
@@ -78,27 +78,35 @@ E1  tom_ansatz decomposition regression test        [already verified, write as 
 E2  Tier 2 controls (C9a, C9b, C9c)                [depends on E0 pass]
     ↓ PARALLEL after E2 pass:
 E3  KT-2 cross-sphere S²/S³ gap                    [requires S² implementation]
-E4  KT-3 disorder W=0.1 fingerprint survival
-E5  Tier 3 negative controls (NC-1, NC-2, NC-3)
-    ↓ DESIGN GATE (not experiment):
-E6  HA-4: define relationship between S^d discrimination and S³×S¹ problem
+E4  KT-3 disorder W=0.1 fingerprint survival        [PASS 2026-06-10]
+E5  Tier 3 negative controls (NC-1, NC-2, NC-3)    [NC-1,NC-3 PASS; NC-2 pending]
+    ↓ DESIGN GATE (completed 2026-06-10):
+E6  HA-4: ONE_TRACK_WITH_EXPLICIT_BRIDGE_GATE       [DECIDED — see ha4_design_decision.md]
+    ↓ BRIDGE GATE (Phase 3 entry condition):
+BG  NC-2 (permuted grid) → S³×S¹ Dirac harness design (BG-1/BG-2/BG-3)
 ```
 
 ## Decision
 
 ```
-VERDICT: CONDITIONAL_GO
+VERDICT: CONDITIONAL_GO (updated 2026-06-10 after KT-3 + HA-4)
 
-GREEN (proceed now):   E0 → E1 (regression) → E2
-YELLOW (after E2):     E3, E4, E5 in parallel
-ORANGE GATE:           HA-4 scope question — design decision before Phase 3 paper
-NO-GO conditions:      KT-1 fail or KT-2 gap_error > 50%
+GREEN (complete):  E0 PASS, KT-1 PASS, KT-2 PASS, KT-3 PASS, KT-4 PASS (NC-3),
+                   KT-5 VERIFIED, C9a/C9b/C9c PASS, NC-1/NC-3 PASS
+OPEN (next):       NC-2 (permuted grid) — last Tier-3 control
+DECIDED:           HA-4 = ONE_TRACK_WITH_EXPLICIT_BRIDGE_GATE (2026-06-10)
+PHASE 3 ENTRY:     NC-2 PASS → BG-GATE design (S³×S¹ Dirac harness)
 
-EXPLICIT SCOPE STATEMENT:
+NO-GO conditions (all cleared):
+  KT-1 fail:         cleared (6.7e-7)
+  KT-2 gap error >50%: cleared (1.6e-6)
+  KT-3 wipes fingerprint: cleared (335× margin)
+
+EXPLICIT SCOPE STATEMENT (unchanged):
   This pivot tests geometry discrimination on PURE spheres S², S³, S⁶.
   This is a DIFFERENT question from the original S³×S¹ GEOMETRY_AGNOSTIC verdict.
-  Success here does not resolve the original scalar-harness failure.
-  Connection path to original question: UNDESIGNED (HA-4 gate open).
+  Success here justifies (but does not substitute for) the S³×S¹ bridge gate.
+  Connection path: ONE_TRACK via BG-1/BG-2/BG-3 gaps (see ha4_design_decision.md).
 ```
 
 ---
