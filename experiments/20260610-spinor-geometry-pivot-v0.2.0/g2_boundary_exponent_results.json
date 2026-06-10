@@ -1,0 +1,863 @@
+{
+  "gate": "AV2-G2",
+  "date": "2026-06-10",
+  "modes_tested": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "preregistered_phi_sq": {
+    "(0, 0)": 2.0,
+    "(1, 0)": 2.0,
+    "(1, 1)": 4.0,
+    "(2, 0)": 2.0,
+    "(2, 1)": 4.0,
+    "(3, 2)": 6.0
+  },
+  "preregistered_g_sq": {
+    "(0, 0)": 0.0,
+    "(1, 0)": 0.0,
+    "(1, 1)": 2.0,
+    "(2, 0)": 0.0,
+    "(2, 1)": 2.0,
+    "(3, 2)": 4.0
+  },
+  "preregistered_mixed": {
+    "(0, 0)": 1.0,
+    "(1, 0)": 1.0,
+    "(1, 1)": 3.0,
+    "(2, 0)": 1.0,
+    "(2, 1)": 3.0
+  },
+  "fits": [
+    {
+      "n": -1,
+      "l": -1,
+      "bilinear_type": "target_sin2alpha",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 0.9861,
+      "r_squared": 1.0,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0139,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": -1,
+      "l": -1,
+      "bilinear_type": "target_sin2alpha",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 0.9925,
+      "r_squared": 1.0,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0075,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": -1,
+      "l": -1,
+      "bilinear_type": "target_sin2alpha",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 0.9956,
+      "r_squared": 1.0,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0044,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 2.0,
+      "r_squared": 1.0,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 2.0,
+      "r_squared": 1.0,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 2.0,
+      "r_squared": 1.0,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": -0.0278,
+      "r_squared": 0.821,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.0278,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": -0.0149,
+      "r_squared": 0.8702,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.0149,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": -0.0089,
+      "r_squared": 0.9128,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.0089,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 0.9861,
+      "r_squared": 1.0,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0139,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 0.9925,
+      "r_squared": 1.0,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0075,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 0,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 0.9956,
+      "r_squared": 1.0,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0044,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 1.9096,
+      "r_squared": 0.9995,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0904,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 1.952,
+      "r_squared": 0.9999,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.048,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 1.9714,
+      "r_squared": 1.0,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0286,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": -0.1824,
+      "r_squared": 0.814,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.1824,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": -0.0958,
+      "r_squared": 0.8676,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.0958,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": -0.0568,
+      "r_squared": 0.9118,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.0568,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 0.8636,
+      "r_squared": 0.9944,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.1364,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 0.9281,
+      "r_squared": 0.9991,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0719,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 0.9573,
+      "r_squared": 0.9998,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.0427,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 3.9722,
+      "r_squared": 1.0,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.0278,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 3.9851,
+      "r_squared": 1.0,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.0149,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 3.9911,
+      "r_squared": 1.0,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.0089,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 1.9443,
+      "r_squared": 0.9998,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0557,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 1.9702,
+      "r_squared": 1.0,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0298,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 1.9822,
+      "r_squared": 1.0,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0178,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 2.9582,
+      "r_squared": 1.0,
+      "preregistered_exponent": 3.0,
+      "deviation": 0.0418,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 2.9776,
+      "r_squared": 1.0,
+      "preregistered_exponent": 3.0,
+      "deviation": 0.0224,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 1,
+      "l": 1,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 2.9867,
+      "r_squared": 1.0,
+      "preregistered_exponent": 3.0,
+      "deviation": 0.0133,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 1.7702,
+      "r_squared": 0.9962,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.2298,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 1.8791,
+      "r_squared": 0.9994,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.1209,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 1.9283,
+      "r_squared": 0.9999,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0717,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": -0.4311,
+      "r_squared": 0.8044,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.4311,
+      "pass_fail": "BORDERLINE"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": -0.221,
+      "r_squared": 0.8643,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.221,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": -0.1298,
+      "r_squared": 0.9105,
+      "preregistered_exponent": 0.0,
+      "deviation": 0.1298,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 0.6696,
+      "r_squared": 0.9453,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.3304,
+      "pass_fail": "BORDERLINE"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 0.829,
+      "r_squared": 0.9934,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.171,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 0,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 0.8992,
+      "r_squared": 0.9988,
+      "preregistered_exponent": 1.0,
+      "deviation": 0.1008,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 3.8751,
+      "r_squared": 0.9998,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.1249,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 3.9336,
+      "r_squared": 1.0,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.0664,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 3.9605,
+      "r_squared": 1.0,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.0395,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 1.8061,
+      "r_squared": 0.9974,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.1939,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 1.8976,
+      "r_squared": 0.9996,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.1024,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 1.9391,
+      "r_squared": 0.9999,
+      "preregistered_exponent": 2.0,
+      "deviation": 0.0609,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 2.8406,
+      "r_squared": 0.9993,
+      "preregistered_exponent": 3.0,
+      "deviation": 0.1594,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 2.9156,
+      "r_squared": 0.9999,
+      "preregistered_exponent": 3.0,
+      "deviation": 0.0844,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 2,
+      "l": 1,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 2.9498,
+      "r_squared": 1.0,
+      "preregistered_exponent": 3.0,
+      "deviation": 0.0502,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 5.8435,
+      "r_squared": 0.9998,
+      "preregistered_exponent": 6.0,
+      "deviation": 0.1565,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 5.9168,
+      "r_squared": 1.0,
+      "preregistered_exponent": 6.0,
+      "deviation": 0.0832,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "phi_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 5.9504,
+      "r_squared": 1.0,
+      "preregistered_exponent": 6.0,
+      "deviation": 0.0496,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 3.7852,
+      "r_squared": 0.9993,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.2148,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 3.8862,
+      "r_squared": 0.9999,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.1138,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "g_sq",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 3.9323,
+      "r_squared": 1.0,
+      "preregistered_exponent": 4.0,
+      "deviation": 0.0677,
+      "pass_fail": "PASS"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.85,
+        0.98
+      ],
+      "fitted_exponent": 4.8143,
+      "r_squared": 0.9997,
+      "preregistered_exponent": NaN,
+      "deviation": 999.0,
+      "pass_fail": "NO_PREREGISTRATION"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.9,
+        0.98
+      ],
+      "fitted_exponent": 4.9015,
+      "r_squared": 0.9999,
+      "preregistered_exponent": NaN,
+      "deviation": 999.0,
+      "pass_fail": "NO_PREREGISTRATION"
+    },
+    {
+      "n": 3,
+      "l": 2,
+      "bilinear_type": "mixed_phi_g",
+      "window": [
+        0.93,
+        0.98
+      ],
+      "fitted_exponent": 4.9414,
+      "r_squared": 1.0,
+      "preregistered_exponent": NaN,
+      "deviation": 999.0,
+      "pass_fail": "NO_PREREGISTRATION"
+    }
+  ],
+  "key_finding_g_l0_exponent": -0.0958,
+  "key_finding_mixed_l0_exponent": 0.9281,
+  "mechanism_supported": true,
+  "verdict": "PASS",
+  "item40_max_status": "RADIAL + TWO_COMPONENT_BOUNDARY_MECHANISM_SUPPORTED",
+  "scope": "G2 boundary exponent measurement only; no full angular verification; no physical promotion; no claim that Tom ansatz is solved; no H-T1 promotion",
+  "forbidden_claims": [
+    "full angular verification complete",
+    "Tom ansatz solved",
+    "H-T1 promoted",
+    "sparse reconstruction confirmed (that is E1)",
+    "physical lambda fixed",
+    "safe_for_runtime"
+  ]
+}
