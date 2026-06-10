@@ -1,0 +1,154 @@
+{
+  "version": "v0.2.0",
+  "primary_endpoint": "spectral_fingerprint",
+  "fingerprints": {
+    "2": {
+      "lambda_min": 0.9999999999375359,
+      "lambda_min_analytic": 1.0,
+      "ladder": [
+        0.9999999999375359,
+        1.9999999999398954,
+        2.9999999999397304,
+        3.9999999999475717
+      ],
+      "ladder_source": "shooting",
+      "max_rel_ladder_error": 6.24641449675778e-11
+    },
+    "3": {
+      "lambda_min": 1.499999956138617,
+      "lambda_min_analytic": 1.5,
+      "ladder": [
+        1.499999956138617,
+        2.4999997234037554,
+        3.4999991465729203,
+        4.499998070780444
+      ],
+      "ladder_source": "fd",
+      "max_rel_ladder_error": 4.287154568140118e-07
+    },
+    "6": {
+      "lambda_min": 2.99999992077091,
+      "lambda_min_analytic": 3.0,
+      "ladder": [
+        2.99999992077091,
+        3.999999582795239,
+        4.99999880361048,
+        5.999997428444866
+      ],
+      "ladder_source": "fd",
+      "max_rel_ladder_error": 4.2859252236127077e-07
+    }
+  },
+  "spectral_distances": {
+    "S2-S3": {
+      "computed": 0.4999992242827509,
+      "analytic": 0.5,
+      "rel_err": 1.5514344982037187e-06
+    },
+    "S2-S6": {
+      "computed": 1.9999989339641904,
+      "analytic": 2.0,
+      "rel_err": 5.330179048135264e-07
+    },
+    "S3-S6": {
+      "computed": 1.4999997096814395,
+      "analytic": 1.5,
+      "rel_err": 1.9354570701679563e-07
+    }
+  },
+  "s3_sector_structure": {
+    "sectors": {
+      "0": [
+        1.499999956138617,
+        2.4999997234037554,
+        3.4999991465729203,
+        4.499998070780444
+      ],
+      "1": [
+        2.4999999241959165,
+        3.499999611511206,
+        4.499998888200753,
+        5.499997600303208
+      ],
+      "2": [
+        3.4999999140020805,
+        4.499999542876861,
+        5.499998695773093,
+        6.499997217628534
+      ]
+    },
+    "degeneracy_reconstruction": [
+      {
+        "n": 0,
+        "lambda": 1.5,
+        "sectors_containing": [
+          0
+        ],
+        "sector_count_expected": 1,
+        "degeneracy_reconstructed": 2,
+        "degeneracy_analytic": 2
+      },
+      {
+        "n": 1,
+        "lambda": 2.5,
+        "sectors_containing": [
+          0,
+          1
+        ],
+        "sector_count_expected": 2,
+        "degeneracy_reconstructed": 6,
+        "degeneracy_analytic": 6
+      },
+      {
+        "n": 2,
+        "lambda": 3.5,
+        "sectors_containing": [
+          0,
+          1,
+          2
+        ],
+        "sector_count_expected": 3,
+        "degeneracy_reconstructed": 12,
+        "degeneracy_analytic": 12
+      }
+    ]
+  },
+  "negative_controls": {
+    "NC-A_ipr_shift_invariance_gap": 6.938893903907228e-18,
+    "NC-B_random_hermitian_match": 0.0,
+    "NC-C_scalar_vs_dirac": {
+      "scalar_eigenvalues": [
+        -5.1305709458659976e-08,
+        2.9999991777248933,
+        7.999995836294968,
+        14.999986840942999
+      ],
+      "dirac_ladder": [
+        1.499999956138617,
+        2.4999997234037554,
+        3.4999991465729203,
+        4.499998070780444
+      ],
+      "cross_match_score": 0.0
+    }
+  },
+  "discretization_survival_fd": {
+    "3": {
+      "1000": 6.859210366311825e-06,
+      "2000": 1.714800619525805e-06,
+      "4000": 4.287154568140118e-07
+    },
+    "6": {
+      "1000": 6.857956246886232e-06,
+      "2000": 1.7144926502214257e-06,
+      "4000": 4.2859252236127077e-07
+    }
+  },
+  "known_limitations": [
+    "d=2 lowest sector (kappa=1/2) is the critical limit-circle case: uniform FD converges only logarithmically (~5% at N=4000, rate h^0.1); shooting solver used instead [VERIFIED-tool 2026-06-10].",
+    "Degeneracy pattern uses ANALYTIC angular factors 2(l+1); only the sector-membership structure is numerically verified.",
+    "Disorder (W>0) not yet tested \u2014 fingerprint survival under disorder is KT-3, out of scope for this proxy.",
+    "Radial proxy only: no lattice product S^d x S^1; HA-4 scope gap (pure-sphere discrimination != original S3xS1 question) remains open."
+  ],
+  "status": "research_only \u2014 no physical promotion, no gauge-group claim"
+}
