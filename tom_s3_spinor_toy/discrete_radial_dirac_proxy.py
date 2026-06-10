@@ -47,7 +47,7 @@ KILL_TEST_REL_TOL = 0.05  # pre-registered: above this → REDESIGN_DISCRETIZATI
 
 
 # ---------------------------------------------------------------------------
-# Partner radial component (mirror of CH eq 3.25 under α → π/2 - α)
+# Partner radial component — Camporesi-Higuchi eq 3.27 (VERIFIED_FROM_PDF)
 # ---------------------------------------------------------------------------
 
 def g_nl_hopf(n: int, l: int, alpha: np.ndarray) -> np.ndarray:
@@ -55,7 +55,12 @@ def g_nl_hopf(n: int, l: int, alpha: np.ndarray) -> np.ndarray:
 
         g_{nl}(α) = sinα^{l+1} · cosα^l · P^{(l+3/2, l+1/2)}_{n-l}(cos 2α)
 
-    Mirror of phi_nl_hopf under α → π/2 - α (Jacobi indices swapped).
+    VERIFIED_FROM_PDF 2026-06-10: this IS Camporesi-Higuchi eq 3.27 with
+    α = θ/2, N = 3 (references/camporesi_higuchi_grqc9505009.pdf).
+    Mirror identity eq 3.28: g_nl(α) = (−1)^{n−l} φ_nl(π/2 − α).
+    Coupled to phi_nl_hopf by the first-order system eqs 3.29-3.30.
+    See experiments/.../source_register_av2.md and
+    tests/test_ch_first_order_system.py.
     """
     if n < l or l < 0:
         raise ValueError(f"Require n ≥ l ≥ 0, got n={n}, l={l}")

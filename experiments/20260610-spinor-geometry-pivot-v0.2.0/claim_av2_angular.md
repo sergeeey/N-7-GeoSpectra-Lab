@@ -48,7 +48,7 @@ This is falsifiable and decisive either way:
 
 | Gate | Check | Kill condition |
 |---|---|---|
-| AV2-G0 | Source trace (Step -4): verify from C-H PDF the full eigenspinor form incl. partner component normalization and angular weights; verify spin connection in Hopf coords from a primary source | formula not verifiable from PDF → STOP, no implementation from memory |
+| AV2-G0 | Source trace (Step -4): verify from C-H PDF the full eigenspinor form incl. partner component normalization and angular weights; verify spin connection in Hopf coords from a primary source | **✅ PASS 2026-06-10** — see source_register_av2.md; eqs 3.27-3.30, 3.32-3.33, 3.37-3.38, 3.41 verified from PDF + numerically cross-checked (18 regression tests). Spin connection in Hopf coords NOT needed for G1/G2/E1 path: eqs 3.29-3.30 already absorb it. H-AV2 boundary mechanism upgraded [INFERRED] → [VERIFIED_FROM_PDF]: ψ_n0 nonzero at south pole (p. 9) |
 | AV2-G1 | 2-component radial system (φ, g) reproduces λ = ±(n+3/2) AND both components match C-H analytic forms (rel. error < 1e-4) | spectrum wrong → implementation invalid, fix before any claim |
 | AV2-G2 | Boundary exponent measurement: numerical log-log fit of mode densities near α = π/2; confirm φ-bilinears → cos², measure g-bilinears (prediction: cos^{2l}) | exponents contradict analytic forms → numerics broken |
 | AV2-E1 (PRIMARY) | Sparse reconstruction of sin(2α) over MIXED bilinear dictionary {φ̄φ, ḡg, φ̄g} + const, greedy ≤5 terms | residual > 10% → obstruction persists at full level → dense conclusion FINAL |
