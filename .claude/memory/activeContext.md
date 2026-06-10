@@ -131,6 +131,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-10 23:29] `3a9237d`: chore: update activeContext — BG-H1-E1 PASS recorded, duplicate line fixed
 - [2026-06-10 23:26] `129cd6e`: feat(bg-h1): BG-H1-E1 discrete S³×S¹ proxy — PASS (δ(R) max_err=2.93e-08, 72 tests)
 - [2026-06-10 23:12] `4bb2fb4`: Merge branch 'research/bg-h1-g1-product-dirac'
 - [2026-06-10 23:10] `56d8c38`: feat(bg-h1): BG-H1-G1 product Dirac cross-check — PASS (λ²=(n+3/2)²+(m/R)², max_err=0.0)
