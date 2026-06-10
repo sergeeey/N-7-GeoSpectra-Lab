@@ -30,7 +30,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
-| `main` | up to date with origin | v0.2.0: E0, KT-3, NC-2, AV-1, AV-1c′, AV-2 (126 tests) |
+| `main` | current | v0.2.0 + AV-2 + BG-H1 (G0,G1,E1,E2) — 415 tests total |
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
@@ -119,13 +119,13 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 | Suite | Tests | Status | Verified |
 |-------|-------|--------|----------|
 | preserve/P5-P14 | 191 | passed | [VERIFIED-SYNTHETIC] prior session |
-| P13H only | 3 | passed | [VERIFIED-pytest 2026-06-10] |
-| P14 only | 2 | passed | [VERIFIED-pytest 2026-06-10] |
-| main/v0.2.0 | 126 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
-| C-H first-order | 24 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
-| AV-2 G2 | 45 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
-| AV-2 E1 | 26 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
-| AV-2 E2 | 21 | passed | [VERIFIED-pytest 2026-06-10, home PC] |
+| **main/total** | **415** | **passed, 2 skipped** | **[VERIFIED-pytest 2026-06-10]** |
+| main/v0.2.0 | 126 | passed | [VERIFIED-pytest 2026-06-10] |
+| BG-H1-G1 | 58 | passed | [VERIFIED-pytest 2026-06-10] |
+| BG-H1-E1 | 72 | passed | [VERIFIED-pytest 2026-06-10] |
+| BG-H1-E2 | 67 | passed | [VERIFIED-pytest 2026-06-10] |
+| C-H first-order | 24 | passed | [VERIFIED-pytest 2026-06-10] |
+| AV-2 G2+E1+E2 | 92 | passed | [VERIFIED-pytest 2026-06-10] |
 
 
 
@@ -133,6 +133,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-10 23:41] `ab47174`: Merge branch 'research/bg-h1-e2-disorder'
 - [2026-06-10 23:40] `5629942`: feat(bg-h1): BG-H1-E2 disorder robustness W=0.5 — PASS (frag_ratio=0.998, 67 tests)
 - [2026-06-10 23:30] `79dbfb9`: Merge branch 'research/bg-h1-e1-product-proxy'
 - [2026-06-10 23:29] `3a9237d`: chore: update activeContext — BG-H1-E1 PASS recorded, duplicate line fixed
