@@ -93,8 +93,11 @@ cd N-7-GeoSpectra-Lab
 # Minimal environment (Python 3.11+)
 pip install -r requirements.txt
 
-# Run the test suite (43 test files, 200+ tests)
+# Legacy hermiticity suite (10 tests, S³×S¹ cc_toy_lab track)
 pytest -q tests/
+
+# Active Dirac eigenspinor suite (417 tests, tom_s3_spinor_toy track)
+pytest -q tom_s3_spinor_toy/tests/ --tb=no
 
 # Run a smoke version of the radion stabilization study
 python scripts/radion_stabilization.py --quick

@@ -21,15 +21,19 @@ from cc_toy_lab.spectral.s3_s1_product_discretized import (
 
 
 def test_s3_dimension_calculation():
-    """Verify S³ Hilbert space dimension formula (arXiv:1103.4097 degeneracy)."""
-    # j_max=0: k=1 → 2(1+1)² = 8
-    assert s3_dimension(0) == 8
+    """Verify S³ Hilbert space dimension formula (arXiv:1103.4097 degeneracy).
 
-    # j_max=1: k=1,2 → 8 + 2(2+1)² = 8 + 18 = 26
-    assert s3_dimension(1) == 26
+    v0.1.24 fix: k=0 negative branch (degeneracy 2) was missing in pre-v0.1.24.
+    Correct formula: 2 + sum_{k=1}^{j_max+1} 2(k+1)²
+    """
+    # j_max=0: k=0 (deg 2) + k=1 (deg 8) = 10
+    assert s3_dimension(0) == 10
 
-    # j_max=2: k=1,2,3 → 8 + 18 + 2(3+1)² = 8 + 18 + 32 = 58
-    assert s3_dimension(2) == 58
+    # j_max=1: 2 + 8 + 2(2+1)² = 2 + 8 + 18 = 28
+    assert s3_dimension(1) == 28
+
+    # j_max=2: 2 + 8 + 18 + 2(3+1)² = 2 + 8 + 18 + 32 = 60
+    assert s3_dimension(2) == 60
 
 
 def test_s3_dirac_operator_hermiticity():
