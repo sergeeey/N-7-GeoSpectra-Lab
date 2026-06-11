@@ -32,6 +32,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -39,6 +40,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 
@@ -83,6 +85,7 @@ Currently on: `main`
 
 
 
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -90,6 +93,7 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
 
 
 
@@ -117,8 +121,11 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 12. ✅ BG-H1 closure docs — DONE (2026-06-11): decision_record items 40-42 → 🟢; ha4_design_decision BG-H1 Closure section added; bg_h1_executive_summary.md written
 13. ✅ LAMBDA-B5-G0 — STRUCTURAL_SPLIT_REQUIRED (2026-06-11): invariant one-forms ξ̃/ξ̃′ NOT in span(E_i/E′_i) — E=(L+2)B+C annihilates them at L=0 [VERIFIED-sympy 12/12 + git-show]. Dereli-style matching impossible by tuning c_i^I; requires V = λ_geom·V_ω + Σc_i·V_modes. λ total NOT fixed; λ_geom conditionally canonical (Tom Q3). experiments/20260611-lambda-b5-structural-split/
 14. ✅ LAMBDA-B5-G2 — PASS_FRAME_ARTIFACT_CONFIRMED [VERIFIED-sympy 14/14, 2026-06-11]. cot(2α)=Hopf-frame spin-connection artifact. dσ₃/(σ₁∧σ₂)=2 (integer, invariant frame). Candidate answer Tom Q2 (scoped). commit ee5e8c6.
-15. **NEXT: BG-GATE §4** — geometry discrimination (Phase 3 entry). Await Tom Lawrence reply. OR G1 (canonical Dirac in invariant frame → ±(n+3/2) spectrum) if relevant before reply.
-16. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+15. ✅ LAMBDA-B5-G1 — PASS_DIRAC_SPECTRUM_CONFIRMED [VERIFIED-sympy 10/10, 2026-06-11]. D_phys=−iγ^a∇_a spectrum ±(n+3/2). Γ_a=(i/2)γ^a from G2 k=2. Lichnerowicz D²=9/4 ✓. λ₀=3/2 matches k0_disc=1.4999999561. commit afefbbe.
+16. ✅ LAMBDA-B5-G3 — PASS_SU2_CURVATURE_CONFIRMED [VERIFIED-sympy 9/9, 2026-06-11]. F_{ab}=(1/4)[γ_a,γ_b]=(i/2)ε_{abc}γ^c, su(2): [J_a,J_b]=−ε_{abc}J_c, Casimir=−(3/4)I j=1/2. commit afefbbe.
+17. **NEXT: BG-GATE §4** — geometry discrimination (Phase 3 entry). Await Tom Lawrence reply.
+18. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
 
 
 
@@ -149,12 +156,14 @@ git log --oneline --decorate -5
 
 
 
+
 ## Hard Constraints (do not change)
 - DO NOT mix Tom Lawrence / Covariant Compactification with IDM/MULTING/Buckholtz
 - DO NOT claim "lambda fixed" or "physical V promoted"
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 
@@ -189,9 +198,10 @@ git log --oneline --decorate -5
 
 
 
+
 ## Auto-commit log
-- [2026-06-11 14:41] `fc30a28`: feat(lambda-b5): G2 cot(2α) frame-artifact gate — PASS_FRAME_ARTIFACT_CONFIRMED
-[summarized] [summarized] [summarized] - [2026-06-11 08:22] `df63e98`: Merge branch 'research/lambda-b5-g0-structural-split'
+- [2026-06-11 18:59] `5469658`: feat(lambda-b5): G1+G3 Dirac spectrum + spinorial curvature — PASS
+[summarized] - [2026-06-11 18:14] `4a7bc74`: chore: update activeContext — LAMBDA-B5-G2 PASS, next step BG-GATE par4
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
