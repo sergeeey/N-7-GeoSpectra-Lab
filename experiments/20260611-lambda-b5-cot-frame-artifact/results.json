@@ -1,0 +1,41 @@
+{
+  "gate": "LAMBDA-B5-G2",
+  "verdict": "PASS_FRAME_ARTIFACT_CONFIRMED",
+  "date": "2026-06-11",
+  "checks": {
+    "C1_tan_minus_cot_eq_minus_2cot2a": true,
+    "C2_torsion_free_e1": true,
+    "C2_torsion_free_e2": true,
+    "C2_torsion_free_e3": true,
+    "C2_frame_omega12_eq_tana": true,
+    "C2_frame_omega13_eq_neg_cota": true,
+    "C2_hopf_combo_gives_neg2cot2a": true,
+    "C3_nomizu_connection_is_constant_rational": true,
+    "C3_no_trig_in_invariant_frame": true,
+    "C3_omega12_k3_coeff_equals_1": true,
+    "C3_omega23_k1_coeff_equals_1": true,
+    "C3_omega31_k2_coeff_equals_1": true,
+    "CONTROL_S2_omega21_eq_cos_theta_dphi": true,
+    "CONTROL_S2_zero_connection_fails_torsion": true
+  },
+  "hopf_frame": {
+    "omega_12_component": "tan(alpha) * e2",
+    "omega_13_component": "-cot(alpha) * e3",
+    "omega_23": "0",
+    "combination": "tan(alpha) - cot(alpha) = -2*cot(2*alpha) [EXACT]"
+  },
+  "invariant_frame": {
+    "connection_type": "Nomizu (Levi-Civita on Lie group)",
+    "structure_constants": "c_ij^k = 2*eps_ijk  (S3 = SU(2))",
+    "connection_components": {
+      "(0, 1, 2)": 1,
+      "(0, 2, 1)": -1,
+      "(1, 0, 2)": -1,
+      "(1, 2, 0)": 1,
+      "(2, 0, 1)": 1,
+      "(2, 1, 0)": -1
+    },
+    "trig_singularities": "NONE \u2014 all coefficients are rational numbers"
+  },
+  "answer_to_tom_q2": "cot(2alpha) = tan(alpha) - cot(alpha) is the Hopf-frame spin connection combination. In the left-invariant (Maurer-Cartan) frame, the connection coefficients are pure integers (eps_ijk); no trigonometric functions appear. The cot(2alpha) obstruction disappears in the invariant frame."
+}
