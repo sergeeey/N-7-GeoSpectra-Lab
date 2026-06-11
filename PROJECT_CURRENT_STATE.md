@@ -86,13 +86,14 @@ Required form: V = λ_geom·V_ω + Σc_i·V_modes.
 
 Full record: `experiments/20260611-lambda-b5-structural-split/`
 
-### LAMBDA-B5 G2 — **NEXT GATE** (not started)
+### LAMBDA-B5 G2 ✅ PASS_FRAME_ARTIFACT_CONFIRMED
 
-**Hypothesis:** cot(2α) term in frame is a frame artifact, not physics.
-Mechanism: tan α − cot α = −2cot(2α); Hopf ω₁₂=tanα·e², ω₁₃=−cotα·e³
-vs invariant form ω_ij=ε_ijk σ_k/ρ.
-Candidate answer to Tom Q2.
-Pre-registration: not yet written — write claim first, then implement.
+**Result:** cot(2α) is a Hopf-frame spin-connection artifact; absent in left-invariant frame.
+Mechanism confirmed: tan α − cot α = −2cot(2α); Hopf ω₁₂=tanα·e², ω₁₃=−cotα·e³;
+invariant frame ω_ij=ε_ijk σ_k/ρ has constant integer structure constants only.
+Answer to Tom Q2: yes, vanishes with correct SO(4) spinor basis.
+Evidence: 14/14 sympy checks PASS.
+Full record: `experiments/20260611-lambda-b5-cot-frame-artifact/`
 
 Note: G1/G3 only if G0/G2 are clean.
 

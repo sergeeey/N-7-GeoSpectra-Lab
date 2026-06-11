@@ -24,7 +24,7 @@
 | **Active falsification tests** | FT-1 (r-stat W=0 baseline anomaly), FT-2 (inter-family IPR divergence), FT-3 (FSS strengthening vs denominator artifact) — see `docs/CLAIMS_AND_CAVEATS.md` |
 
 **What "DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC" means in one sentence:**
-the harness can distinguish a lattice product structure from random / scrambled / broken baselines, but it does **not** distinguish between Wilson-term details inside the lattice family — i.e. it validates **the lattice product topology**, not **S³×S¹ physics**.
+the harness can distinguish a lattice product structure from random / scrambled / broken baselines, but it does **not** distinguish between Wilson-term details inside the lattice family — i.e. it detects **a lattice-discretized product-structure pattern**, not **S³×S¹ physics**.
 
 ---
 

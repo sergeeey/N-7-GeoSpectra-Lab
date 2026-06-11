@@ -36,7 +36,7 @@ No spin structure selected. Both carry forward.
 
 ## What This Closes
 
-BG-GATE sub-items 1, 2, 3 from `ha4_design_decision.md` are satisfied. The KK bridge mechanism works to numerical precision and is robust under disorder at the S³ level.
+BG-GATE sub-items 1, 2, 3 from `ha4_design_decision.md` are satisfied. The proxy Kronecker-sum check passes to numerical precision and is robust under diagonal disorder at the S³ level.
 
 ## What Remains Open
 
