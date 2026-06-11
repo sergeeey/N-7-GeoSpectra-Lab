@@ -103,8 +103,10 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 10. ✅ BG-H1-E1 — discrete S³×S¹ proxy PASS [VERIFIED-pytest 2026-06-10, 72/72]: k₀(N=4000)=1.4999999561; max_rel_err=2.93e-08; O(h²) convergence; Kronecker ≤9e-13; δ(R) both structures ✓; e1_product_proxy_report.md
 11. ✅ BG-H1-E2 — disorder robustness W=0.5 PASS [VERIFIED-pytest 2026-06-10, 67/67]: max_frag_ratio=0.998; max_mean_err=2.54e-04; monotone ✓; e2_disorder_report.md
 12. ✅ BG-H1 closure docs — DONE (2026-06-11): decision_record items 40-42 → 🟢; ha4_design_decision BG-H1 Closure section added; bg_h1_executive_summary.md written
-13. **NEXT: BG-GATE §4 — geometry discrimination** (Phase 3 entry). Await Tom Lawrence reply before starting.
-14. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+13. ✅ LAMBDA-B5-G0 — STRUCTURAL_SPLIT_REQUIRED (2026-06-11): invariant one-forms ξ̃/ξ̃′ NOT in span(E_i/E′_i) — E=(L+2)B+C annihilates them at L=0 [VERIFIED-sympy 12/12 + git-show]. Dereli-style matching impossible by tuning c_i^I; requires V = λ_geom·V_ω + Σc_i·V_modes. λ total NOT fixed; λ_geom conditionally canonical (Tom Q3). experiments/20260611-lambda-b5-structural-split/
+14. **NEXT: LAMBDA-B5-G2 — cot(2α) frame-artifact hypothesis** (tan α − cot α = −2cot(2α); Hopf ω₁₂=tanα·e², ω₁₃=−cotα·e³ vs invariant ω_ij=ε_ijk σ_k/ρ). Candidate answer to Tom Q2. Then G1/G3 only if G0/G2 clean.
+15. BG-GATE §4 — geometry discrimination (Phase 3 entry). Await Tom Lawrence reply.
+16. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
 
 
 
@@ -149,6 +151,8 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-11 08:22] `ae05133`: feat(lambda-b5): G0 structural split — invariant sector outside E/E' tower
+- [2026-06-11 07:17] `bc81057`: Merge branch 'docs/audit-e2-gate-scope-patch'
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
