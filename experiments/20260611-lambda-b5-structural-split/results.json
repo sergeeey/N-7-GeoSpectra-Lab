@@ -1,0 +1,43 @@
+{
+  "gate": "LAMBDA-B5-G0",
+  "verdict": "STRUCTURAL_SPLIT_REQUIRED",
+  "date": "2026-06-11",
+  "conventions": {
+    "metric": "dalpha^2 + cos^2(alpha) dtheta^2 + sin^2(alpha) dphi^2",
+    "orientation": "vol = +sin(alpha)cos(alpha) dalpha^dtheta^dphi",
+    "seed_xi": "(0, cos^2 a, sin^2 a)",
+    "seed_xi_prime": "(0, -cos^2 a, sin^2 a)",
+    "E_formula": "E = (L+2)*B + C;  E' = (L+2)*B' - C'"
+  },
+  "checks": {
+    "dual_of_xi_equals_seed_xi": true,
+    "dual_of_xi_prime_equals_seed_xi_prime": true,
+    "star_d_xi_eq_minus_2_xi": true,
+    "star_d_xi_prime_eq_plus_2_xi_prime": true,
+    "B0_eq_minus_2_xi": true,
+    "C0_eq_plus_4_xi": true,
+    "E_at_L0_vanishes_identically": true,
+    "B0_prime_eq_plus_2_xi_prime": true,
+    "C0_prime_eq_plus_4_xi_prime": true,
+    "E_prime_at_L0_vanishes_identically": true,
+    "phi2_is_L2_scalar_eigenmode_ev_8": true,
+    "E_at_L2_is_nonzero": true
+  },
+  "primary_result": {
+    "B_L0": "-2 xi~",
+    "C_L0": "+4 xi~",
+    "E_L0": "0 (identically)",
+    "B_prime_L0": "+2 xi~'",
+    "C_prime_L0": "+4 xi~'",
+    "E_prime_L0": "0 (identically)"
+  },
+  "positive_control": {
+    "seed": "Phi = cos(2 alpha), L = 2 scalar eigenmode (Delta eigenvalue 8)",
+    "E_L2_nonzero": true
+  },
+  "lambda_status": {
+    "lambda_total": "NOT fixed (P14 no-go intact for the mode sector)",
+    "lambda_geom": "conditionally canonical IF V_omega identified with geometric Dirac spin-connection term (modeling choice - Tom Q3)",
+    "mode_coefficients": "free"
+  }
+}
