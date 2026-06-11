@@ -33,6 +33,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -40,6 +41,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 
@@ -86,6 +88,7 @@ Currently on: `main`
 
 
 
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -93,6 +96,7 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
 
 
 
@@ -123,8 +127,10 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 14. ✅ LAMBDA-B5-G2 — PASS_FRAME_ARTIFACT_CONFIRMED [VERIFIED-sympy 14/14, 2026-06-11]. cot(2α)=Hopf-frame spin-connection artifact. dσ₃/(σ₁∧σ₂)=2 (integer, invariant frame). Candidate answer Tom Q2 (scoped). commit ee5e8c6.
 15. ✅ LAMBDA-B5-G1 — PASS_DIRAC_SPECTRUM_CONFIRMED [VERIFIED-sympy 10/10, 2026-06-11]. D_phys=−iγ^a∇_a spectrum ±(n+3/2). Γ_a=(i/2)γ^a from G2 k=2. Lichnerowicz D²=9/4 ✓. λ₀=3/2 matches k0_disc=1.4999999561. commit afefbbe.
 16. ✅ LAMBDA-B5-G3 — PASS_SU2_CURVATURE_CONFIRMED [VERIFIED-sympy 9/9, 2026-06-11]. F_{ab}=(1/4)[γ_a,γ_b]=(i/2)ε_{abc}γ^c, su(2): [J_a,J_b]=−ε_{abc}J_c, Casimir=−(3/4)I j=1/2. commit afefbbe.
-17. **NEXT: BG-GATE §4** — geometry discrimination (Phase 3 entry). Await Tom Lawrence reply.
-18. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+17. ✅ ACH Falsification Matrix — DONE (2026-06-11): TOM_RECONSTRUCTION_ACH_MATRIX.md — 6 cases, all evidence linked to commits. Killed branches documented. Forbidden promotions consolidated. claim_template.md: mandatory Kill target field. commit 46c545f.
+18. ✅ LAMBDA-B5-G4 — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V [VERIFIED-sympy 7/7, 2026-06-11]. rank(J_phys)=2 (λ non-identifiable from {o₁,o₂}), rank(J_full)=3 (identifiable IFF V promoted). λ=FREE_COUPLING_PARAMETER is a formal theorem, not just discipline fence. det(J_full)=32π²m₁²ρ/(15R²√(9R²+4m₁²))≠0. commit dce2156 → merged 28b7e17.
+19. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
 
 
 
@@ -157,12 +163,14 @@ git log --oneline --decorate -5
 
 
 
+
 ## Hard Constraints (do not change)
 - DO NOT mix Tom Lawrence / Covariant Compactification with IDM/MULTING/Buckholtz
 - DO NOT claim "lambda fixed" or "physical V promoted"
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 
@@ -199,9 +207,9 @@ git log --oneline --decorate -5
 
 
 
+
 ## Auto-commit log
-- [2026-06-11 18:59] `5469658`: feat(lambda-b5): G1+G3 Dirac spectrum + spinorial curvature — PASS
-[summarized] - [2026-06-11 18:14] `4a7bc74`: chore: update activeContext — LAMBDA-B5-G2 PASS, next step BG-GATE par4
+[summarized] - [2026-06-11 19:25] `dce2156`: feat(lambda-b5): G4 λ identifiability — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
