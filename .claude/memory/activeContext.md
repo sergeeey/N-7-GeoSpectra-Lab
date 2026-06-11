@@ -27,6 +27,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -34,6 +35,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 
@@ -68,6 +70,7 @@ Currently on: `main`
 
 
 
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -75,6 +78,7 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
 
 
 
@@ -94,7 +98,10 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 9. ✅ BG-H1-G1 — analytic cross-check PASS [VERIFIED-pytest 2026-06-10]: D4²=-(k²+p²)·I₄, max_rel_error=0.0; convention-pin: correct vs wrong ✓; {Γ^j,Γ^4}=0 ✓; δ₁(R) both spin structures ✓; 58 tests; g1_product_dirac_cross_check_report.md
 10. ✅ BG-H1-E1 — discrete S³×S¹ proxy PASS [VERIFIED-pytest 2026-06-10, 72/72]: k₀(N=4000)=1.4999999561; max_rel_err=2.93e-08; O(h²) convergence; Kronecker ≤9e-13; δ(R) both structures ✓; e1_product_proxy_report.md
 11. ✅ BG-H1-E2 — disorder robustness W=0.5 PASS [VERIFIED-pytest 2026-06-10, 67/67]: max_frag_ratio=0.998; max_mean_err=2.54e-04; monotone ✓; e2_disorder_report.md
-12. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+12. ✅ BG-H1 closure docs — DONE (2026-06-11): decision_record items 40-42 → 🟢; ha4_design_decision BG-H1 Closure section added; bg_h1_executive_summary.md written
+13. **NEXT: BG-GATE §4 — geometry discrimination** (Phase 3 entry). Await Tom Lawrence reply before starting.
+14. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+
 
 
 
@@ -108,6 +115,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 
@@ -132,7 +140,11 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
 ## Auto-commit log
+- [2026-06-11 06:44] `97c8a10`: chore: update activeContext — BG-H1 closure docs complete, Phase 3 next step
+- [2026-06-11 06:42] `d3fee3a`: docs(bg-h1): close bridge-gate 1 — update status map, ha4 decision, executive summary
+- [2026-06-10 23:44] `8b3678b`: Merge branch 'chore/bg-h1-complete-context'
 - [2026-06-10 23:44] `be2eeaf`: chore: update activeContext — BG-H1 COMPLETE, test suite 415 tests on main
 - [2026-06-10 23:41] `ab47174`: Merge branch 'research/bg-h1-e2-disorder'
 - [2026-06-10 23:40] `5629942`: feat(bg-h1): BG-H1-E2 disorder robustness W=0.5 — PASS (frag_ratio=0.998, 67 tests)
