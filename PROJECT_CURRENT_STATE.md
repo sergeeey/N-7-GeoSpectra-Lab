@@ -95,7 +95,18 @@ Answer to Tom Q2: yes, vanishes with correct SO(4) spinor basis.
 Evidence: 14/14 sympy checks PASS.
 Full record: `experiments/20260611-lambda-b5-cot-frame-artifact/`
 
-Note: G1/G3 only if G0/G2 are clean.
+### LAMBDA-B5 G1 ✅ PASS_SPECTRUM_CONFIRMED
+
+**Result:** Canonical S³ Dirac in left-invariant frame → spectrum ±(l+3/2), consistent with Hopf-frame.
+Lichnerowicz: D² = ∇*∇_sp + R/4; R=6, R/4=3/2. Clifford: conn_a = iσ_a/2; D_conn = −3/2·I.
+E0 harness cross-check: ladder [1.5000, 2.5000, 3.5000, ...] < 1e-3 error.
+Evidence: 15/15 sympy+numerical checks PASS.
+Full record: `experiments/20260611-lambda-b5-g1-invariant-frame-dirac/`
+
+### LAMBDA-B5 G3 — OPEN (gate decision required)
+
+[D_a, D_b] curvature kill-test; su(2)_L ⊂ su(4) embedding (Dereli eq 4.12).
+Requires separate pre-registration. May be skipped — G0+G2+G1 already answer Tom Q2.
 
 ---
 
