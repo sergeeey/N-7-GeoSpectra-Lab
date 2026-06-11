@@ -142,6 +142,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
 - [2026-06-11 06:48] `17323c1`: chore: post-push hook auto-update activeContext
 - [2026-06-11 06:45] `bf5ac21`: Merge branch 'chore/context-bg-h1-closure'
