@@ -1,0 +1,56 @@
+{
+  "gate": "LAMBDA-B5-G1",
+  "verdict": "PASS_SPECTRUM_CONFIRMED",
+  "date": "2026-06-11",
+  "checks": {
+    "C1_R_S3_equals_6": true,
+    "C1_R_over_4_equals_3_over_2": true,
+    "C1_lichnerowicz_spinor_lap_plus_R4_eq_D_sq": true,
+    "C2_conn_0_eq_i_sigma_0_over_2": true,
+    "C2_conn_1_eq_i_sigma_1_over_2": true,
+    "C2_conn_2_eq_i_sigma_2_over_2": true,
+    "C2_D_conn_sum_eq_3i_over_2_I": true,
+    "C2_D_conn_full_eq_neg_3_over_2_I": true,
+    "C3_e0_first_eigenvalue_is_1p5": true,
+    "C3_e0_second_eigenvalue_is_2p5": true,
+    "C3_e0_third_eigenvalue_is_3p5": true,
+    "NEG_zero_conn_D_sq_neq_dirac_sq_at_l0": true,
+    "NEG_zero_conn_D_sq_neq_dirac_sq_at_l1": true,
+    "SEN_rho_lichnerowicz_holds": true,
+    "SEN_rho_D_eigenvalue_form_consistent": true
+  },
+  "claim_correction": {
+    "pre_registration_error": "claim.md wrote spinor_Laplacian = (l+1)(l+2) \u2014 this is SCALAR Laplacian",
+    "correct": "spinor Laplacian eigenvalue = (l+3/2)\u00b2 \u2212 3/2 (from Lichnerowicz + known spectrum)",
+    "impact": "C1 algebraic identity corrected; PASS/FAIL verdict unchanged"
+  },
+  "key_identities": {
+    "Lichnerowicz": "D\u00b2 = \u2207*\u2207_spinor + R/4; R=6 for S\u00b3 \u03c1=1; R/4 = 3/2",
+    "connection_term": "conn_a = i\u03c3_a/2 per direction; \u03a3 \u03c3_a\u00b7conn_a = 3i/2 I",
+    "D_conn": "i\u00b7(3i/2)I = \u22123/2 I  (constant spectral shift from Nomizu \u03b5_{ijk})",
+    "spectrum": "D eigenvalues = \u00b1(l+3/2) for l=0,1,2,... (Camporesi-Higuchi gr-qc/9505009)"
+  },
+  "e0_positive_control": {
+    "ladder_computed": [
+      1.4999992974617464,
+      2.499995575812122,
+      3.499986343635265,
+      4.499969133554955,
+      5.499941478211754
+    ],
+    "expected": [
+      1.5,
+      2.5,
+      3.5
+    ]
+  },
+  "conventions": {
+    "metric": "round S\u00b3, \u03c1=1, Euclidean signature",
+    "frame": "left-invariant Maurer-Cartan, Nomizu \u0393_{ij}^k = \u03b5_{ijk}",
+    "gamma_matrices": "Pauli \u03c3^a; {\u03c3^a, \u03c3^b} = 2\u03b4^{ab}I; [\u03c3^b,\u03c3^c] = 2i\u03b5^{bcd}\u03c3_d",
+    "scalar_curvature": "R = n(n-1) = 6 for S\u00b3 (n=3), \u03c1=1"
+  },
+  "lambda_status": "FREE_COUPLING_PARAMETER \u2014 not fixed",
+  "safe_for_runtime": false,
+  "promotion": "NONE"
+}
