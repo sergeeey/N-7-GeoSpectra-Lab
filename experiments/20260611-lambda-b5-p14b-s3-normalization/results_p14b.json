@@ -1,0 +1,53 @@
+{
+  "gate": "LAMBDA-B5-P14B",
+  "verdict": "PASS_S3_MEASURE_SELF_CONSISTENT",
+  "passed": 7,
+  "total": 7,
+  "s3_volume_unit": "2*pi**2",
+  "s3_volume_rho": "2*pi**2*rho**3",
+  "bilinear_radial_norm": "1/12",
+  "bilinear_full_norm": "pi**2/3",
+  "measure": "sin(alpha)*cos(alpha) d_alpha  ==  sin(2*alpha)/2 d_alpha",
+  "autonomous": true,
+  "requires_tom_q4": false,
+  "note": "Measure is self-consistent regardless of Tom's basis choice. Q4 concerns WHICH spinor modes are canonical, not WHETHER the measure is valid.",
+  "GEOMETRY_AGNOSTIC": true,
+  "safe_for_runtime": false,
+  "checks": [
+    {
+      "check": "T1",
+      "pass": true,
+      "desc": "\u222b\u2080^{\u03c0/2} sin(\u03b1)cos(\u03b1) d\u03b1 = 1/2"
+    },
+    {
+      "check": "T2",
+      "pass": true,
+      "desc": "S\u00b3 volume (unit) = 2\u03c0\u00b2"
+    },
+    {
+      "check": "T3",
+      "pass": true,
+      "desc": "sin(\u03b1)cos(\u03b1) = sin(2\u03b1)/2 \u2014 symbolic identity"
+    },
+    {
+      "check": "T4",
+      "pass": true,
+      "desc": "\u222b\u2080^{\u03c0/2} sin\u00b2\u03b1 cos\u00b2\u03b1 \u00b7 sin\u03b1 cos\u03b1 d\u03b1 = 1/12 (AV-2 E1 bilinear norm, radial)"
+    },
+    {
+      "check": "T5",
+      "pass": true,
+      "desc": "Full bilinear norm = \u03c0\u00b2/3 \u2014 finite and exact"
+    },
+    {
+      "check": "T6",
+      "pass": true,
+      "desc": "|e^{i\u03c7}\u00b7cos\u03b1\u00b7sin\u03b1|\u00b2 = cos\u00b2\u03b1\u00b7sin\u00b2\u03b1 \u2014 phase-invariant"
+    },
+    {
+      "check": "T7",
+      "pass": true,
+      "desc": "S\u00b3(\u03c1) volume = 2\u03c0\u00b2\u03c1\u00b3 \u2014 radius scaling consistent"
+    }
+  ]
+}
