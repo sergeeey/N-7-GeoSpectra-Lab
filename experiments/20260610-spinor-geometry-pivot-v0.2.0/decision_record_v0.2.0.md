@@ -187,9 +187,9 @@ Evidence levels:
 | 37 | E0 discrete radial Dirac recovery | 🟢 pass | `[VT]` | D: error=6.7e-7, 16 tests |
 | 38 | KT-3 weak disorder survival | 🟢 pass | `[VT]` | D: margin 335× (W=0.1), 67× (W=0.5) |
 | 39 | NC-2 permuted-grid specificity | 🟢 pass | `[VT]` | D: deviation 270–460%, 14 tests |
-| 40 | tom_ansatz radial → φ₁₁ (cos²=0.9204) | 🟡 **radial+dict-robust** | `[VT]` | D: AV-1a/1b PASS, AV-1c FAIL recorded; full angular = AV-2 pending |
-| 41 | HA-4 ONE_TRACK bridge gate | 🟡 decided | `[VR]` | D: ha4_design_decision.md; BG-1/2/3 open |
-| 42 | Phase 3 S³×S¹ Dirac harness | 🔴 not started | `[AB]` | BG-1/2/3 open |
+| 40 | tom_ansatz radial → φ₁₁ (cos²=0.9204) | 🟢 **RADIAL+ANGULAR_BILINEAR_SUPPORTED** | `[VT]` | D: AV-2 G0–G2/E1–E2 all PASS; CG singlet=√2/2, C²=0.5 (2026-06-10) |
+| 41 | HA-4 ONE_TRACK bridge gate | 🟢 **BG-H1 CLOSED** | `[VT]` | D: bridge-gate-1 PASS (G0+G1+E1+E2); geometry-disc step (BG-GATE §4) still open |
+| 42 | Phase 3 S³×S¹ Dirac harness | 🟢 **KK harness PASS** | `[VT]` | D: BG-H1: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST, 415 tests (2026-06-10) |
 
 ### Re-audit trigger
 
