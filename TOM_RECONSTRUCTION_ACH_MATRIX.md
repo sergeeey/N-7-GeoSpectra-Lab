@@ -10,7 +10,7 @@ No memory-based assertions. [INFERRED] without artifact = not accepted.
 Every gate claim.md MUST include a `Kill target:` field — which hypothesis dies on FAIL.
 Gates without kill target are not scheduled.
 
-**Last updated:** 2026-06-11 (G1+G3 PASS, commit afefbbe)
+**Last updated:** 2026-06-11 (G4 PASS, commit dce2156+28b7e17)
 
 ---
 
@@ -80,23 +80,20 @@ Awaiting Tom's confirmation of which frame he means.
 
 | Hypothesis | Prediction | Verdict | Evidence |
 |---|---|---|---|
-| H1: λ fixed by S³ alone | S³ Dirac + V-operator uniquely fixes λ | `KILLED` | P13H (preserve branch): coefficient = (16π²ρ³/15)×λ — λ factored out, not determined |
-| H2: λ fixed by background connection | spin connection sector determines λ independently | `OPEN` | G0 (ae05133): V = λ_geom·V_ω + Σcᵢ·Vmodes; λ_geom conditionally canonical (Tom Q3) |
-| H3: λ free until external principle (S⁶, gauge, action) | S³-only invariants insufficient to fix λ | `LIVE` | P13H + G0 consistent with this; formal proof = G4 (identifiability gate, not yet run) |
+| H1: λ fixed by S³ alone | S³ Dirac + V-operator uniquely fixes λ | `KILLED` | G4 (dce2156): rank(J_phys)=2, λ-column=[0,0]ᵀ → structural non-identifiability proved [VERIFIED-sympy 7/7] |
+| H2: λ fixed by background connection | spin connection sector determines λ independently | `OPEN` | G0 (ae05133): V = λ_geom·V_ω + Σcᵢ·Vmodes; λ_geom conditionally canonical (Tom Q3); G4 shows λ non-identifiable from S³-only observables |
+| H3: λ free until external principle (S⁶, gauge, action) | S³-only invariants insufficient to fix λ | `VERIFIED_FORMAL_THEOREM` | G4 (dce2156) 7/7: rank(J_phys)=2 < 3 = \|θ\| — λ structurally non-identifiable. Identifiable IFF V promoted (rank(J_full)=3). λ=FREE_COUPLING_PARAMETER is a proved theorem. |
 
-**Surviving:** H3 is the working hypothesis. H1 killed. H2 open.
+**Surviving:** H3 — VERIFIED_FORMAL_THEOREM. H1 formally killed by Jacobian rank. H2 open.
 
-**Critical gap:** H3 is asserted (λ=FREE_COUPLING_PARAMETER) but not formally *proved*.
-Current evidence shows λ is not fixed by existing checks; it does not prove it cannot be fixed by
-additional constraints from S⁶ or gauge sector. **This is exactly what G4 must close.**
+**Formal result (G4, [VERIFIED-sympy 7/7]):**
+- `rank(J_phys) = 2`, `dim(θ) = 3` → λ-column of Jacobian identically zero — structural non-identifiability
+- `rank(J_full) = 3` → λ identifiable IFF V observable promoted
+- `det(J_full) = 32π²m₁²ρ / (15R²√(9R²+4m₁²))` — nonzero for all ρ,R,m₁>0
+- Recovery formula: `λ = 15·V_obs / (16π²ρ³)` — linear, requires V promotion
+- Corollary: V promotion is NECESSARY AND SUFFICIENT for λ identifiability
 
-**Next discriminating test:**
-`LAMBDA-B5-G4` — Identifiability gate.
-- Parameters: θ = {λ, ρ, R, spin structure s}
-- Observables: Dirac spectrum ±(n+3/2)/ρ, KK shift δ₁(R,s), V-coefficient (16π²ρ³/15)·λ
-- Compute Jacobian rank of observable map. If rank < |θ| → formal no-go theorem.
-- Kill target (PASS): H1 formally killed, H3 promoted to VERIFIED negative result.
-- Kill target (FAIL): H3 needs revision; H2 requires re-examination.
+**Next discriminating test:** Tom's answer to Q3. After that: V-promotion decision.
 
 ---
 
@@ -182,7 +179,7 @@ Binary observable: **does the KK spectrum contain a zero mode δ₀=0?**
 |---|---|---|---|---|
 | 1 | sin(2α) | H4: mixed φ·g | VERIFIED | Archive |
 | 2 | cot(2α) | H3: Hopf-frame artifact | VERIFIED | Await Tom Q2 reply |
-| 3 | λ_V | H3: free until external | LIVE (not proved) | G4 identifiability gate |
+| 3 | λ_V | H3: free until external | VERIFIED_FORMAL_THEOREM | Await Tom Q3; then V-promotion |
 | 4 | V-sector | H2: structural split | LIVE | Await Tom Q3; then G4 |
 | 5 | Dirac core | H4: verified geometry | VERIFIED | Closed subgraph |
 | 6 | Spin structure | H1 / H2 both | FORK | Await Tom Q1 |
@@ -193,7 +190,7 @@ These claims cannot be made regardless of future results unless the blocking dep
 
 | Claim | Blocked by |
 |---|---|
-| "λ is fixed" | Case 3 H1 killed; G4 not run; Tom Q3 open |
+| "λ is fixed" | Case 3 H1 formally killed by G4 (rank proof); Tom Q3 open; V-promotion BLOCKED |
 | "physical V promoted" | λ=FREE_COUPLING_PARAMETER; safe_for_runtime=False |
 | "S³ geometry selects spin structure" | Case 6 FORK open; Tom Q1 unanswered |
 | "SM generation derived from this" | S⁶ OPEN; hypercharge OPEN; chirality OPEN |
