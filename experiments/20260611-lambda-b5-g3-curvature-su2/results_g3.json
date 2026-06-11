@@ -1,0 +1,60 @@
+{
+  "gate": "LAMBDA-B5-G3",
+  "verdict": "PASS_SU2_CURVATURE_CONFIRMED",
+  "passed": 9,
+  "total": 9,
+  "curvature_formula": "[nabla_a, nabla_b] = (1/4)[gamma_a, gamma_b] = (i/2) eps_{abc} gamma^c",
+  "curvature_generates": "su(2)_L with Casimir j=1/2",
+  "unit_s3": "R_{abcd} = delta_{ac}delta_{bd} - delta_{ad}delta_{bc}  [K=+1 from G2]",
+  "connection_to_g2": "K=+1 curvature confirmed by G2 T11-T13 (R^{ab}=e^a\u2227e^b)",
+  "lambda_status": "FREE_COUPLING_PARAMETER",
+  "GEOMETRY_AGNOSTIC": true,
+  "safe_for_runtime": false,
+  "checks": [
+    {
+      "check": "T1",
+      "pass": true,
+      "desc": "[gamma^a, gamma^b] = 2i eps^{abc} gamma^c  [9 entries]"
+    },
+    {
+      "check": "T2",
+      "pass": true,
+      "desc": "R_{1212} = 1 \u2014 sectional curvature K=+1 consistent with G2"
+    },
+    {
+      "check": "T3a",
+      "pass": true,
+      "desc": "F_{12} = (1/4) R_{12cd} gamma^c gamma^d = (i/2) gamma^3"
+    },
+    {
+      "check": "T3b",
+      "pass": true,
+      "desc": "F_{ab} = (1/4)[gamma^a, gamma^b] for all a,b  [9 entries]"
+    },
+    {
+      "check": "T4",
+      "pass": true,
+      "desc": "F_{ab} = -F_{ba}  (antisymmetry in a,b)"
+    },
+    {
+      "check": "T5",
+      "pass": true,
+      "desc": "[J_a, J_b] = -eps_{abc} J_c  \u2014 anti-Hermitian su(2) generators (J_a=(i/2)sigma_a)"
+    },
+    {
+      "check": "T6",
+      "pass": true,
+      "desc": "J_a^dag = -J_a  (anti-Hermitian generators of su(2)_L)"
+    },
+    {
+      "check": "T7",
+      "pass": true,
+      "desc": "Sigma J_a^2 = -(3/4) I  \u2014 Casimir j=1/2 spin-1/2 rep"
+    },
+    {
+      "check": "T8",
+      "pass": true,
+      "desc": "[nabla_1, nabla_2] = (i/2) gamma^3  \u2014 explicit spinorial curvature"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "gate": "LAMBDA-B5-G1",
+  "verdict": "PASS_DIRAC_SPECTRUM_CONFIRMED",
+  "passed": 10,
+  "total": 10,
+  "lowest_eigenvalue": "+-3/2",
+  "spectrum": "+-(n+3/2) for n=0,1,2,...",
+  "convention": "D_phys = -i gamma^a nabla_a;  Gamma_a = (i/2) gamma^a;  gamma^a = Pauli sigma^a",
+  "connection_to_g2": "Gamma_a = (i/2) gamma^a because MC structure const k=2 (G2 T14)",
+  "connection_to_numerics": "lambda_0 = 3/2 matches k0_disc = 1.4999999561  [BG-H1-E1 VERIFIED-pytest]",
+  "lambda_status": "FREE_COUPLING_PARAMETER",
+  "GEOMETRY_AGNOSTIC": true,
+  "safe_for_runtime": false,
+  "checks": [
+    {
+      "check": "T1",
+      "pass": true,
+      "desc": "{gamma^a, gamma^b} = 2 delta^{ab} I  [9 entries]"
+    },
+    {
+      "check": "T2",
+      "pass": true,
+      "desc": "Sigma_a (gamma^a)^2 = 3I"
+    },
+    {
+      "check": "T3",
+      "pass": true,
+      "desc": "Gamma_a = (1/4) omega_{a,bc}[gamma^b,gamma^c] = (i/2) gamma^a  [G2 k=2]"
+    },
+    {
+      "check": "T4",
+      "pass": true,
+      "desc": "D_raw(const) = gamma^a Gamma_a = (3i/2) I"
+    },
+    {
+      "check": "T5",
+      "pass": true,
+      "desc": "D_phys = -i D_raw \u2192 (3/2) I  \u2014 eigenvalue lambda_0 = +3/2"
+    },
+    {
+      "check": "T6",
+      "pass": true,
+      "desc": "Anti-Killing spinor \u2192 D_phys = -(3/2) I \u2014 lambda_0 = -3/2"
+    },
+    {
+      "check": "T7",
+      "pass": true,
+      "desc": "D_phys^2 = (9/4) I  \u2014 Lichnerowicz lower bound |lambda_min|=3/2"
+    },
+    {
+      "check": "T8",
+      "pass": true,
+      "desc": "Gamma_a^dag = -Gamma_a  (anti-Hermitian) \u2192 D_phys = D_phys^dag"
+    },
+    {
+      "check": "T9",
+      "pass": true,
+      "desc": "Gaps lambda_{n+1}^2 - lambda_n^2 = 2n+4  for n=0..4  [spectrum formula]"
+    },
+    {
+      "check": "T10",
+      "pass": true,
+      "desc": "Lichnerowicz: nabla^*nabla + R/4 = 3/4 + 3/2 = 9/4  [R=6 unit S3]"
+    }
+  ]
+}
