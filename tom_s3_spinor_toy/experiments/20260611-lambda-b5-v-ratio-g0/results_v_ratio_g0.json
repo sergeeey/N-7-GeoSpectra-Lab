@@ -1,0 +1,67 @@
+{
+  "gate": "LAMBDA-B5-V-RATIO-G0",
+  "verdict": "PASS_LAMBDA_FREE_RATIO_CONFIRMED",
+  "passed": 7,
+  "total": 7,
+  "sector_A": {
+    "j_L_in": 1.0,
+    "j_L_out": 1.0,
+    "j_R": 0.5,
+    "nonzero_elements": 6,
+    "geom_factor": "sqrt(3)",
+    "representative_ratio": "1"
+  },
+  "sector_B": {
+    "j_L_in": 0.5,
+    "j_L_out": 1.5,
+    "j_R": 1.0,
+    "nonzero_elements": 6,
+    "col_m_tgt_half": 2,
+    "geom_factor": "sqrt(6)/2",
+    "cg_m_neg": "sqrt(3)/3",
+    "cg_m_pos": "sqrt(6)/3",
+    "ratio": "sqrt(2)",
+    "ratio_squared": "2"
+  },
+  "key_result": "R = CG_a/CG_b \u2014 \u03bb cancels in ratio. Sector B: R(m_tgt=1/2) = \u221a2 \u2014 non-trivial structural prediction independent of \u03bb.",
+  "lambda_status": "FREE_COUPLING_PARAMETER \u2014 confirmed free in ratio (dR/d\u03bb=0)",
+  "GEOMETRY_AGNOSTIC": true,
+  "safe_for_runtime": false,
+  "checks": [
+    {
+      "check": "T1",
+      "pass": true,
+      "desc": "Sector A: 6 nonzero CG elements (\u22652 required)"
+    },
+    {
+      "check": "T2",
+      "pass": true,
+      "desc": "R = M_a/M_b = CG_a/CG_b = 1 (\u03bb\u00b7vred\u00b7geom cancel)"
+    },
+    {
+      "check": "T3",
+      "pass": true,
+      "desc": "dR_A/d\u03bb = 0 \u2014 sector A ratio is \u03bb-free"
+    },
+    {
+      "check": "T4",
+      "pass": true,
+      "desc": "Sector B m_tgt=1/2 column: 2 elements (\u22652 required)"
+    },
+    {
+      "check": "T5",
+      "pass": true,
+      "desc": "R\u00b2 = (CG_larger/CG_smaller)\u00b2 = 2 \u2192 R = \u221a2 exactly (got R = sqrt(2))"
+    },
+    {
+      "check": "T6",
+      "pass": true,
+      "desc": "Sector B ratio R = sqrt(2) \u2260 \u00b11 \u2014 non-trivial structural prediction"
+    },
+    {
+      "check": "T7",
+      "pass": true,
+      "desc": "dR_B/d\u03bb = 0 \u2014 sector B ratio sqrt(2) is \u03bb-free"
+    }
+  ]
+}
