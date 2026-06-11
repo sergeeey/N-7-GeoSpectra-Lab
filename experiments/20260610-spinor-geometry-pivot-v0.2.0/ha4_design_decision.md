@@ -159,11 +159,11 @@ NC-2 (permuted grid negative control) → BG-GATE design (Phase 3)
 
 ## Updated HA-4 Status
 
-| Field | Old (pre-decision) | New (post-decision) |
-|---|---|---|
-| HA-4 status | SCOPE GAP (undesigned) | DECIDED: ONE_TRACK_WITH_EXPLICIT_BRIDGE_GATE |
-| Next action | undefined | NC-2 → BG-GATE design |
-| Phase 3 entry condition | HA-4 unresolved | NC-2 PASS + BG-GATE designed |
+| Field | Old (pre-decision) | Post-decision | **Post-BG-H1 (2026-06-11)** |
+|---|---|---|---|
+| HA-4 status | SCOPE GAP (undesigned) | DECIDED: ONE_TRACK_WITH_EXPLICIT_BRIDGE_GATE | **BG-GATE §1–3 CLOSED by BG-H1** |
+| Next action | undefined | NC-2 → BG-GATE design | **BG-GATE §4 (geometry discrimination)** |
+| Phase 3 entry condition | HA-4 unresolved | NC-2 PASS + BG-GATE designed | **§4 is the remaining Phase 3 entry criterion** |
 
 ---
 
@@ -172,3 +172,29 @@ NC-2 (permuted grid negative control) → BG-GATE design (Phase 3)
 - No physical promotion: ✓ (research_only throughout)
 - IPR not primary endpoint: ✓ (mentioned only in context of localization endpoint note)
 - tom_ansatz radial-only: ✓ (finding status unchanged)
+
+---
+
+## Bridge-Gate 1 Closure — BG-H1 (2026-06-11)
+
+**Verdict:** `S3XS1_KK_BRIDGE_SUPPORTED_ROBUST` — descriptive only.
+
+BG-H1 evaluated the first three sub-items of BG-GATE via proxy gates (no full S³×S¹ Dirac lattice built):
+
+| BG-GATE sub-item | BG-H1 gate | Result |
+|---|---|---|
+| 1. Discrete S³×S¹ Dirac operator | G0 (source trace) + G1 (analytic cross-check) | **PASS** — D4²=−(k²+p²)·I₄, max_err=0.0 |
+| 2. KK tower structure verified | E1 (discrete proxy, δ(R) sweep) | **PASS** — max_rel_err=2.93e-08 |
+| 3. Disorder on S¹ sector | E2 (W=0.5, 30 seeds) | **PASS** — max_frag_ratio=0.998 (kill: >10) |
+| **4. Geometry discrimination** | — | **OPEN** (defines Phase 3 entry condition) |
+
+**What this closes:** The KK product formula is verified numerically, disorder does not selectively destroy the KK gap relative to S³, and the analytic product structure holds to machine precision. The three preconditions for attempting the full S³×S¹ harness are satisfied.
+
+**What remains open:** Sub-item 4 — demonstrate at least one geometry pair that Dirac discriminates but scalar cannot. This is the Phase 3 research task. BG-H1 justifies investing in that implementation; it does not substitute for it.
+
+**Spin structure fork:** both periodic (m₁=1, m∈ℤ) and antiperiodic NS (m₁=½, m∈ℤ+½) computed. No selection made. Fork carries forward to Phase 3.
+
+**Constraints unchanged:**
+- GEOMETRY_AGNOSTIC intact — no geometry claim
+- lambda = FREE_COUPLING_PARAMETER
+- safe_for_runtime = False
