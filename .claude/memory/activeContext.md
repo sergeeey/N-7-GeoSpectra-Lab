@@ -129,7 +129,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 16. ✅ LAMBDA-B5-G3 — PASS_SU2_CURVATURE_CONFIRMED [VERIFIED-sympy 9/9, 2026-06-11]. F_{ab}=(1/4)[γ_a,γ_b]=(i/2)ε_{abc}γ^c, su(2): [J_a,J_b]=−ε_{abc}J_c, Casimir=−(3/4)I j=1/2. commit afefbbe.
 17. ✅ ACH Falsification Matrix — DONE (2026-06-11): TOM_RECONSTRUCTION_ACH_MATRIX.md — 6 cases, all evidence linked to commits. Killed branches documented. Forbidden promotions consolidated. claim_template.md: mandatory Kill target field. commit 46c545f.
 18. ✅ LAMBDA-B5-G4 — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V [VERIFIED-sympy 7/7, 2026-06-11]. rank(J_phys)=2 (λ non-identifiable from {o₁,o₂}), rank(J_full)=3 (identifiable IFF V promoted). λ=FREE_COUPLING_PARAMETER is a formal theorem, not just discipline fence. det(J_full)=32π²m₁²ρ/(15R²√(9R²+4m₁²))≠0. commit dce2156 → merged 28b7e17.
-19. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+19. ✅ LAMBDA-B5-P14B — PASS_S3_MEASURE_SELF_CONSISTENT [VERIFIED-sympy 7/7, 2026-06-11]. S³ Hopf measure sin(α)cos(α)dα: volume=2π², bilinear norm=π²/3, phase-invariant. Autonomous — does not require Tom Q4. commit 282eb1c → merged 06999ad.
 
 
 
@@ -209,6 +209,10 @@ git log --oneline --decorate -5
 
 
 ## Auto-commit log
+- [2026-06-11 19:42] `0871098`: chore: P14B PASS — update activeContext item 19
+- [2026-06-11 19:42] `282eb1c`: feat(lambda-b5): P14B S3 Hopf measure normalization — PASS_S3_MEASURE_SELF_CONSISTENT
+- [2026-06-11 19:35] `5a1e092`: fix(lambda-b5-g4): harden T7 lambda-solve uniqueness assertion
+- [2026-06-11 19:30] `996eb9e`: Merge branch 'chore/g4-context-update'
 - [2026-06-11 19:30] `388e8f0`: chore(context): G4 PASS — update activeContext + ACH matrix Case 3
 [summarized] - [2026-06-11 19:25] `dce2156`: feat(lambda-b5): G4 λ identifiability — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
