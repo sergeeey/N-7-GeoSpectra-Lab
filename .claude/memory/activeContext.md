@@ -209,6 +209,7 @@ git log --oneline --decorate -5
 
 
 ## Auto-commit log
+- [2026-06-11 19:30] `388e8f0`: chore(context): G4 PASS — update activeContext + ACH matrix Case 3
 [summarized] - [2026-06-11 19:25] `dce2156`: feat(lambda-b5): G4 λ identifiability — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
