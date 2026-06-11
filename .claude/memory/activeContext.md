@@ -151,6 +151,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 ## Auto-commit log
+- [2026-06-11 08:22] `ae05133`: feat(lambda-b5): G0 structural split — invariant sector outside E/E' tower
 - [2026-06-11 07:17] `bc81057`: Merge branch 'docs/audit-e2-gate-scope-patch'
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
