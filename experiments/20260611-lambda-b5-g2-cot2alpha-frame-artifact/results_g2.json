@@ -1,0 +1,91 @@
+{
+  "verdict": "PASS_FRAME_ARTIFACT_CONFIRMED",
+  "passed": 14,
+  "total": 14,
+  "checks": [
+    {
+      "check": "T1: tan(α) − cot(α) = −2cot(2α)  [exact identity]",
+      "status": "PASS",
+      "note": "residual=0"
+    },
+    {
+      "check": "T2: d/dα[cot α] ≠ 0  [α-dependent, not constant]",
+      "status": "PASS",
+      "note": "d/dα cot α = -cot(alpha)**2 - 1"
+    },
+    {
+      "check": "T3: de¹ = 0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check": "T4: de² = −tan(α) e¹∧e²",
+      "status": "PASS",
+      "note": "de²=(-sin(alpha), 0, 0), -tanα·e¹∧e²=(-sin(alpha), 0, 0)"
+    },
+    {
+      "check": "T5: de³ = +cot(α) e¹∧e³",
+      "status": "PASS",
+      "note": "de³=(0, cos(alpha), 0), cotα·e¹∧e³=(0, cos(alpha), 0)"
+    },
+    {
+      "check": "T6: Cartan de¹ + ω¹₂∧e² + ω¹₃∧e³ = 0",
+      "status": "PASS",
+      "note": "residual=(0, 0, 0)"
+    },
+    {
+      "check": "T7: Cartan de² + ω²₁∧e¹ + ω²₃∧e³ = 0  [ω¹₂=+tanα e²]",
+      "status": "PASS",
+      "note": "residual=(0, 0, 0)"
+    },
+    {
+      "check": "T8: Cartan de³ + ω³₁∧e¹ + ω³₂∧e² = 0  [ω¹₃=−cotα e³]",
+      "status": "PASS",
+      "note": "residual=(0, 0, 0)"
+    },
+    {
+      "check": "T9: ω¹₂/e² = +tan(α)  [α-dependent coefficient]",
+      "status": "PASS",
+      "note": "ω¹₂/e² = tan(alpha)"
+    },
+    {
+      "check": "T10: ω¹₃/e³ = −cot(α)  [α-dependent coefficient]",
+      "status": "PASS",
+      "note": "ω¹₃/e³ = -1/tan(alpha)"
+    },
+    {
+      "check": "T11: R¹₂ = e¹∧e²  [unit-sphere curvature]",
+      "status": "PASS",
+      "note": "R¹₂=(cos(alpha), 0, 0), e¹∧e²=(cos(alpha), 0, 0)"
+    },
+    {
+      "check": "T12: R¹₃ = e¹∧e³",
+      "status": "PASS",
+      "note": "R¹₃=(0, sin(alpha), 0), e¹∧e³=(0, sin(alpha), 0)"
+    },
+    {
+      "check": "T13: R²₃ = e²∧e³",
+      "status": "PASS",
+      "note": "R²₃=(0, 0, sin(2*alpha)/2), e²∧e³=(0, 0, sin(2*alpha)/2)"
+    },
+    {
+      "check": "T14: dσ₃/(σ₁∧σ₂) = integer constant  [invariant frame: constant MC structure]",
+      "status": "PASS",
+      "note": "ratio=2, ∂_α=0, ∂_θ=0, ∂_φ=0"
+    }
+  ],
+  "key_result": {
+    "hopf_connection_w12_coeff": "tan(alpha)",
+    "hopf_connection_w13_coeff": "-1/tan(alpha)",
+    "hopf_sum_tan_minus_cot": "tan(alpha) - 1/tan(alpha)",
+    "hopf_sum_equals_minus2cot2a_residual": "tan(alpha) + 2/tan(2*alpha) - 1/tan(alpha)",
+    "invariant_mc_structure_constant": "2",
+    "frame_artifact_conclusion": "cot(2α) = (tan α − cot α) / (−2) arises from α-dependent Hopf-frame spin connection. Invariant frame has integer MC structure constants — no cot(2α) obstruction."
+  },
+  "fence": {
+    "lambda_status": "FREE_COUPLING_PARAMETER — G2 does NOT fix lambda",
+    "geometry_status": "GEOMETRY_AGNOSTIC intact — no spin-structure selection",
+    "promotion_status": "PROMOTION_BLOCKED — no physical V promoted",
+    "safe_for_runtime": false
+  }
+}
