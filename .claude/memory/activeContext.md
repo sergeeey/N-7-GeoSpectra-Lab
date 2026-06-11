@@ -28,6 +28,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -35,6 +36,7 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
 
 
 
@@ -71,6 +73,7 @@ Currently on: `main`
 
 
 
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -78,6 +81,7 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
 
 
 
@@ -109,12 +113,14 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
 ## Hard Constraints (do not change)
 - DO NOT mix Tom Lawrence / Covariant Compactification with IDM/MULTING/Buckholtz
 - DO NOT claim "lambda fixed" or "physical V promoted"
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
 
 
 
@@ -134,6 +140,7 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 | BG-H1-E2 | 67 | passed | [VERIFIED-pytest 2026-06-10] |
 | C-H first-order | 24 | passed | [VERIFIED-pytest 2026-06-10] |
 | AV-2 G2+E1+E2 | 92 | passed | [VERIFIED-pytest 2026-06-10] |
+
 
 
 
