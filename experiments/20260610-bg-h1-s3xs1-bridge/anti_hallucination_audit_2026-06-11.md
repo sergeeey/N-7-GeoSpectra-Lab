@@ -57,12 +57,15 @@ print(run_e2_gate()['verdict'])"
 ## Findings — where the auditor is RIGHT (and what was done)
 
 ### W1: E2 kill condition is analytically unreachable [CONFIRMED]
+
+**Gate classification (explicit):** E2 is a **consistency / robustness gate**, NOT a strong falsification gate for the product structure. This distinction must be used verbatim in any re-telling of BG-H1 results.
+
 `fragility_ratio > 10` cannot fire: δ=f(k₀) is a deterministic function with |dδ/dk₀|<1, so ratio ≤ 1 by construction. **This was already documented in `e2_disorder_report.md` §Fragility Ratio Analysis** ("Kill condition (ratio > 10) cannot be triggered by this mechanism") — but it means E2's falsification power lives ONLY in:
 - (b) mean_rel_error > 5% — real check (could fire if discretization broke under disorder), and
 - (c) monotonicity — real check, and
 - S³-sector robustness at W=0.5 itself.
 
-**Status:** disclosed pre-existing limitation, now elevated to top-level audit finding. E2 should be cited as "consistency + S³ robustness gate", NOT as a strong falsification gate for the product structure.
+**Status:** disclosed pre-existing limitation, now elevated to top-level audit finding. Cite E2 only as "consistency + S³ robustness gate"; never as strong product-structure falsification.
 
 ### W2: P13A–P13G upgrades are [VERIFIED-read] of status fields [CONFIRMED]
 The re-audit table upgrades P13A–G from E:only → VERIFIED based on reading the modules' own status fields. This verifies **fence self-consistency**, not independent re-derivation of the math. Only P13H (pytest 3/3 + live sympy) and P14 (pytest 2/2 + lambda_fixed=False) have stronger evidence.
@@ -90,6 +93,43 @@ E1 has `run_negative_control_periodic_ground` (m=0 → δ₀=0 exactly). E2 has 
 4. α convention + measure sin(α)cos(α)dα → affects all inner-product statements
 5. Spin structure on S¹ (periodic vs antiperiodic) → BG-H2 candidate gate (feasibility only, no physics selection)
 
+## Negative Control Backlog — not yet implemented
+
+The following negative controls would strengthen E2 and related gates. None are required for
+current BG-H1 PASS status (all gates passed their pre-registered conditions), but are flagged
+here as explicit gaps for Phase 3 review.
+
+| # | Control | What it tests | Gate it strengthens |
+|---|---|---|---|
+| NC-E2-1 | **Wrong spin structure** — inject m∈ℤ+½ into periodic gate, m∈ℤ into antiperiodic gate | E2 must distinguish structures, not collapse them | E2 |
+| NC-E2-2 | **Wrong k₀** — replace S³ ground eigenvalue with k₀=1.0 or k₀=2.0 | δ(R) formula must fail if S³ ground state is wrong | E1 + E2 |
+| NC-E2-3 | **Wrong α mapping** — use θ instead of α=θ/2 as argument to C-H formulas | Catches coordinate convention errors in radial modes | G0/E1 |
+| NC-E2-4 | **Convention flip** — negate the KK quadrature (λ²(S³×S¹) = (n+3/2)² − (m/R)²) | E1 gap should spike for this wrong formula | G1/E1 |
+| NC-E2-5 | **Corrupted operator** — zero out off-diagonal Γ blocks in product Dirac before squaring | D₄² should fail the k²+p² identity | G1 |
+
+**Priority:** NC-E2-5 > NC-E2-4 > NC-E2-1. These are backlogged, not blocking current Phase 3 design.
+
+---
+
+## Gate Failure Scope Table
+
+Answers: "Could each result have come out differently if the physics were wrong?"
+
+| Result | Can it fail? | Failure mechanism | Current status |
+|---|---|---|---|
+| G0: cross-terms vanish | ✅ yes — if product structure wrong | Non-zero off-diagonal in Γ-commutator; falsified individually (|X|≈13.9) | PASS v1.1 (both conditions required jointly) |
+| G1: D₄²=−(k²+p²)·I₄ | ✅ yes — if eigenvalue formula wrong | max_err spikes above machine precision; convention-pin rejects ±i(p±k) forms | PASS (max_err=0.0, machine precision) |
+| E1: δ(R) max_err=2.93e-08 | ✅ yes — if FD discretization inconsistent with analytic gap | max_err > 1e-2 kill fires | PASS (margin 340 000×) |
+| E2: mean_err < 5% | ✅ yes — if disorder breaks gap more than S³-sector predicts | mean_err > 0.05 kill fires | PASS (max 2.54e-04, margin 200×) |
+| E2: frag_ratio < 10 | ⚠️ analytically unreachable — ratio ≤ 1 always | δ=f(k₀) deterministic; kill condition by construction unreachable | PASS (W1 — cited as consistency gate only) |
+| E2: monotonicity | ✅ yes — stochastic disorder could break monotone ordering | `_monotone_decreasing` assertion fails | PASS (30 seeds, both structures) |
+| P13A–G status fields | ✅ fence-consistency only | A different status field value would be caught | READ-VERIFIED (fence); NOT independent re-derivation |
+| P13H coefficient 16π²ρ³/15 | ✅ yes — if sympy integration wrong | Coefficient mismatch vs pre-registered | PASS (pytest 3/3 + live sympy) |
+| P14 lambda=FREE | ✅ yes — if S³-only does fix λ | lambda_fixed=True would fire promotion | PASS (lambda_fixed=False, pytest 2/2) |
+| P10 selection rule | n/a — terminal fence only | Not a math result; no fail mode applies | FENCE (smoke_only, no new V operator) |
+
+---
+
 ## Verdict
 
 ```
@@ -97,4 +137,6 @@ ENGINEERING SCAFFOLD:      confirmed reproducible (bit-exact reproduction, 415 t
 SOURCE TRACEABILITY:       confirmed (C-H PDF on disk, eq-level register)
 PHYSICAL PROOF OF THEORY:  not claimed anywhere in repo — fence machine-enforced
 VALIDATION THEATER:        not detected; 3 real weaknesses (W1-W3) disclosed above
+E2 GATE SCOPE:             consistency/robustness gate — NOT strong falsification gate (explicit)
+NEGATIVE CONTROLS:         5 backlogged (NC-E2-1 to NC-E2-5), none blocking BG-H1 PASS
 ```
