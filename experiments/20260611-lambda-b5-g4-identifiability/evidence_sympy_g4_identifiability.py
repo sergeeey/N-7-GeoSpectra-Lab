@@ -97,7 +97,9 @@ chk("T6", d_o1_drho != 0, "do1/drho != 0 — rho identifiable from Dirac spectru
 
 # ── T7: lambda recovery formula — linear in o3 when rho known ────────────────
 # From o3 = (16pi^2 rho^3/15)*lambda  =>  lambda = 15*o3/(16*pi^2*rho^3)
-lam_recovered = sp.solve(sp.Eq(o3, sp.Symbol("V_obs")), lam)[0]
+_lam_solutions = sp.solve(sp.Eq(o3, sp.Symbol("V_obs")), lam)
+assert len(_lam_solutions) == 1, f"Expected unique λ recovery, got {_lam_solutions}"
+lam_recovered = _lam_solutions[0]
 lam_expected = 15 * sp.Symbol("V_obs") / (16 * pi**2 * rho**3)
 chk(
     "T7",
