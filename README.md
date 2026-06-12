@@ -4,7 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20252650.svg)](https://doi.org/10.5281/zenodo.20252650)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-![Tests](https://img.shields.io/badge/tests-43%20files-blue)
+![Tests](https://img.shields.io/badge/tests-60%20files-blue)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Verdict](https://img.shields.io/badge/verdict-DISCRETIZATION__SENSITIVE-orange)
 
@@ -93,10 +93,10 @@ cd N-7-GeoSpectra-Lab
 # Minimal environment (Python 3.11+)
 pip install -r requirements.txt
 
-# Legacy hermiticity suite (10 tests, S³×S¹ cc_toy_lab track)
+# Full regression suite (494 tests across 44 files, cc_toy_lab track)
 pytest -q tests/
 
-# Active Dirac eigenspinor suite (417 tests, tom_s3_spinor_toy track)
+# Active Dirac eigenspinor suite (434 tests, tom_s3_spinor_toy track)
 pytest -q tom_s3_spinor_toy/tests/ --tb=no
 
 # Run a smoke version of the radion stabilization study

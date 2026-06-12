@@ -70,7 +70,9 @@ def run(args: argparse.Namespace) -> dict[str, float | str]:
     max_relative_error = float(np.max(np.abs(final_radii - r0) / r0))
     mfg_target = 1.0 / r0
     mfg_relative_error = float(abs(mfg_result.x_bar[-1] - mfg_target) / mfg_target)
-    alpha_errors = {resolution: abs(estimate - ALPHA_C) for resolution, estimate in invariance.items()}
+    alpha_errors = {
+        resolution: abs(estimate - ALPHA_C) for resolution, estimate in invariance.items()
+    }
 
     assert abs(minimum_b.radius - 1.1892) < 5e-4, "Potential B minimum does not match R0"
     assert curvature(potential_b, minimum_b.radius, params) > 0.0, "Potential B is not stable"
@@ -156,7 +158,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--t-final", type=float, default=40.0)
     parser.add_argument("--dt", type=float, default=0.005)
     parser.add_argument("--seed", type=int, default=42)
-    return parser.parse_args()
+    # WHY: --quick reduces n_agents and coarsens dt for a fast smoke run (~3x faster);
+    # t_final stays at 40.0 so convergence assertions still pass.
+    parser.add_argument(
+        "--quick", action="store_true", help="Fast smoke run (n_agents=50, dt=0.01)"
+    )
+    args = parser.parse_args()
+    if args.quick:
+        if args.n_agents == 300:
+            args.n_agents = 50
+        if args.dt == 0.005:
+            args.dt = 0.01
+    return args
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 **Last authoritative commit:** `e2931e3` (HEAD = origin/main after push)
 **Authoritative date:** 2026-06-11
 **Branch:** `main` — clean, synced with origin/main
-**Tests:** 415 passed, 2 skipped (main); 191 passed (preserve/tom-s3-p5-p14-scaffold)
+**Tests:** 432 passed, 2 skipped (main); 191 passed (preserve/tom-s3-p5-p14-scaffold)
 
 ---
 
@@ -15,7 +15,7 @@ git pull --ff-only
 python -m pytest tom_s3_spinor_toy/tests/ -q --tb=no
 ```
 
-Expected output: `415 passed, 2 skipped`. If fewer → you are behind.
+Expected output: `432 passed, 2 skipped`. If fewer → you are behind.
 
 After work (before switching machines):
 
