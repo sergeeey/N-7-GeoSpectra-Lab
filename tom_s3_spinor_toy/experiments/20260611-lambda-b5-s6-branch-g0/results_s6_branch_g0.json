@@ -1,0 +1,67 @@
+{
+  "gate": "LAMBDA-B5-S6-BRANCH-G0",
+  "verdict": "PASS_SU4_BRANCHING_SM_COMPATIBLE",
+  "passed": 7,
+  "total": 7,
+  "branching_table": {
+    "4": "3_{+1/3} + 1_{-1}",
+    "4bar": "3bar_{-1/3} + 1_{+1}",
+    "6": "3_{+2/3} + 3bar_{-2/3}",
+    "15": "8_{0} + 3_{+4/3} + 3bar_{-4/3} + 1_{0}"
+  },
+  "charges_all": [
+    "-4/3",
+    "-1",
+    "-2/3",
+    "-1/3",
+    "0",
+    "1/3",
+    "2/3",
+    "1",
+    "4/3"
+  ],
+  "all_rational": true,
+  "pati_salam_identification": "T = (B-L)/4, quarks charge +1/3, leptons charge -1",
+  "compatibility_status": "NECESSARY_CONDITION_SATISFIED",
+  "sm_derivation_claimed": false,
+  "lambda_status": "FREE_COUPLING_PARAMETER \u2014 unaffected by this gate",
+  "GEOMETRY_AGNOSTIC": true,
+  "safe_for_runtime": false,
+  "checks": [
+    {
+      "check": "T1",
+      "pass": true,
+      "desc": "tr(T) = 0 = 0 \u2014 T is traceless (SU(4) consistency)"
+    },
+    {
+      "check": "T2",
+      "pass": true,
+      "desc": "4-rep charges = {+1/3 (\u00d73), -1 (\u00d71)} \u2014 [-1, 1/3] with mult [1, 3]"
+    },
+    {
+      "check": "T3",
+      "pass": true,
+      "desc": "3\u00d7(1/3) + 1\u00d7(-1) = 0 = 0 (tracelessness via charges)"
+    },
+    {
+      "check": "T4",
+      "pass": true,
+      "desc": "4\u0304-rep charges = {-1/3 (\u00d73), +1 (\u00d71)} \u2014 correct conjugate"
+    },
+    {
+      "check": "T5",
+      "pass": true,
+      "desc": "6-rep charges = {+2/3 (\u00d73), -2/3 (\u00d73)} \u2014 conjugate pair \u2713"
+    },
+    {
+      "check": "T6",
+      "pass": true,
+      "desc": "Adjoint 15 charges include {0 (\u00d710), \u00b14/3 (\u00d73)} \u2014 all rational, no irrational"
+    },
+    {
+      "check": "T7",
+      "pass": true,
+      "desc": "All charges rational: [-4/3, -1, -2/3, -1/3, 0, 1/3, 2/3, 1, 4/3] \u2282 \u211a (no irrational values)"
+    }
+  ]
+}

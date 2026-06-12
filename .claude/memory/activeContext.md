@@ -1,5 +1,5 @@
 # activeContext — N-7-GeoSpectra-Lab
-**Updated:** 2026-06-10 (session 2)
+**Updated:** 2026-06-11 (G2 PASS)
 
 ## Current Focus
 AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
@@ -29,6 +29,11 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
+
+
+
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -36,6 +41,11 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `main`
+
+
+
+
+
 
 
 
@@ -74,6 +84,11 @@ Currently on: `main`
 
 
 
+
+
+
+
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -81,6 +96,11 @@ Currently on: `main`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
+
+
+
+
 
 
 
@@ -104,12 +124,40 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 11. ✅ BG-H1-E2 — disorder robustness W=0.5 PASS [VERIFIED-pytest 2026-06-10, 67/67]: max_frag_ratio=0.998; max_mean_err=2.54e-04; monotone ✓; e2_disorder_report.md
 12. ✅ BG-H1 closure docs — DONE (2026-06-11): decision_record items 40-42 → 🟢; ha4_design_decision BG-H1 Closure section added; bg_h1_executive_summary.md written
 13. ✅ LAMBDA-B5-G0 — STRUCTURAL_SPLIT_REQUIRED (2026-06-11): invariant one-forms ξ̃/ξ̃′ NOT in span(E_i/E′_i) — E=(L+2)B+C annihilates them at L=0 [VERIFIED-sympy 12/12 + git-show]. Dereli-style matching impossible by tuning c_i^I; requires V = λ_geom·V_ω + Σc_i·V_modes. λ total NOT fixed; λ_geom conditionally canonical (Tom Q3). experiments/20260611-lambda-b5-structural-split/
-14. **NEXT: LAMBDA-B5-G2 — cot(2α) frame-artifact hypothesis** (tan α − cot α = −2cot(2α); Hopf ω₁₂=tanα·e², ω₁₃=−cotα·e³ vs invariant ω_ij=ε_ijk σ_k/ρ). Candidate answer to Tom Q2. Then G1/G3 only if G0/G2 clean.
-15. BG-GATE §4 — geometry discrimination (Phase 3 entry). Await Tom Lawrence reply.
-16. P14B — S3 normalization robustness test (AFTER Tom confirms replacement basis)
+14. ✅ LAMBDA-B5-G2 — PASS_FRAME_ARTIFACT_CONFIRMED [VERIFIED-sympy 14/14, 2026-06-11]. cot(2α)=Hopf-frame spin-connection artifact. dσ₃/(σ₁∧σ₂)=2 (integer, invariant frame). Candidate answer Tom Q2 (scoped). commit ee5e8c6.
+15. ✅ LAMBDA-B5-G1 — PASS_DIRAC_SPECTRUM_CONFIRMED [VERIFIED-sympy 10/10, 2026-06-11]. D_phys=−iγ^a∇_a spectrum ±(n+3/2). Γ_a=(i/2)γ^a from G2 k=2. Lichnerowicz D²=9/4 ✓. λ₀=3/2 matches k0_disc=1.4999999561. commit afefbbe.
+16. ✅ LAMBDA-B5-G3 — PASS_SU2_CURVATURE_CONFIRMED [VERIFIED-sympy 9/9, 2026-06-11]. F_{ab}=(1/4)[γ_a,γ_b]=(i/2)ε_{abc}γ^c, su(2): [J_a,J_b]=−ε_{abc}J_c, Casimir=−(3/4)I j=1/2. commit afefbbe.
+17. ✅ ACH Falsification Matrix — DONE (2026-06-11): TOM_RECONSTRUCTION_ACH_MATRIX.md — 6 cases, all evidence linked to commits. Killed branches documented. Forbidden promotions consolidated. claim_template.md: mandatory Kill target field. commit 46c545f.
+18. ✅ LAMBDA-B5-G4 — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V [VERIFIED-sympy 7/7, 2026-06-11]. rank(J_phys)=2 (λ non-identifiable from {o₁,o₂}), rank(J_full)=3 (identifiable IFF V promoted). λ=FREE_COUPLING_PARAMETER is a formal theorem, not just discipline fence. det(J_full)=32π²m₁²ρ/(15R²√(9R²+4m₁²))≠0. commit dce2156 → merged 28b7e17.
+19. ✅ LAMBDA-B5-P14B — PASS_S3_MEASURE_SELF_CONSISTENT [VERIFIED-sympy 7/7, 2026-06-11]. S³ Hopf measure sin(α)cos(α)dα: volume=2π², bilinear norm=π²/3, phase-invariant. Autonomous — does not require Tom Q4. commit 282eb1c → merged 06999ad.
 
 
 
+
+
+
+
+
+
+
+## HOME → WORK CHECKPOINT (2026-06-11)
+
+**Completed at home → main @ df63e98:**
+- LAMBDA-B5-G0 = STRUCTURAL_SPLIT_REQUIRED [VERIFIED-sympy 12/12]
+- Invariant sector outside span(E_i/E'_i); E(L=0)≡0 exactly proved
+- Evidence script auto-generates results.json (not hand-edited)
+- Positive control E(L=2)≠0 — non-global degeneracy confirmed
+- Ready for G2: cot(2α) frame-artifact check (Tom Q2 candidate)
+
+**On work machine — FIRST DO THIS:**
+```bash
+git fetch --all --prune
+git log --oneline --decorate -5
+# If ANY commit after df63e98 → G2 may be done
+# Always use origin/main state, not memory
+```
+
+---
 
 
 
@@ -122,6 +170,11 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+
+
+
+
+
 
 
 
@@ -150,9 +203,18 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
+
+
+
+
 ## Auto-commit log
-- [2026-06-11 08:22] `ae05133`: feat(lambda-b5): G0 structural split — invariant sector outside E/E' tower
-- [2026-06-11 07:17] `bc81057`: Merge branch 'docs/audit-e2-gate-scope-patch'
+- [2026-06-11 19:42] `0871098`: chore: P14B PASS — update activeContext item 19
+- [2026-06-11 19:42] `282eb1c`: feat(lambda-b5): P14B S3 Hopf measure normalization — PASS_S3_MEASURE_SELF_CONSISTENT
+- [2026-06-11 19:35] `5a1e092`: fix(lambda-b5-g4): harden T7 lambda-solve uniqueness assertion
+- [2026-06-11 19:30] `996eb9e`: Merge branch 'chore/g4-context-update'
+- [2026-06-11 19:30] `388e8f0`: chore(context): G4 PASS — update activeContext + ACH matrix Case 3
+[summarized] - [2026-06-11 19:25] `dce2156`: feat(lambda-b5): G4 λ identifiability — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
