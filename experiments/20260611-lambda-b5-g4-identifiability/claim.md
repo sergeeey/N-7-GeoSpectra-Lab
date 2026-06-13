@@ -26,7 +26,7 @@ Result:
 
 **Checks planned (8 checks):**
 - T1: Observable map o₁=1/ρ, o₂=√(9/4+m₁²/R²)−3/2, o₃=(16π²ρ³/15)·λ defined symbolically
-- T2: Jacobian J_full = ∂(o₁,o₂,o₃)/∂(λ,ρ,R) computed symbolically
+- T2: Jacobian J_full = ∂(o₁,o₂,o₃)/∂(λ,ρ,R) computed symbolically [shape (3,3) asserted]
 - T3: det(J_full) ≠ 0 — full rank 3 when V observable included
 - T4: ∂o₁/∂λ = 0 and ∂o₂/∂λ = 0 — λ absent from physical observables
 - T5: Restricted Jacobian J_phys = ∂(o₁,o₂)/∂(λ,ρ,R) has rank 2, not 3 — λ column is zero
@@ -34,7 +34,7 @@ Result:
 - T7: After ρ identified, λ = 15·o₃/(16π²ρ³) — linear recovery IF o₃ observable
 - T8: Without o₃, observables {o₁,o₂} identify {ρ,R} only — λ has zero information content
 
-**Verdict:** PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V [VERIFIED-sympy 7/7, 2026-06-11]
+**Verdict:** PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V [VERIFIED-sympy 8/8, 2026-06-11; T2 assert added 2026-06-13]
 
 **Key numbers:**
 - `rank(J_phys) = 2`, `dim(θ) = 3` → λ column = zero, non-identifiable from {o₁,o₂}

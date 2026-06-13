@@ -1,8 +1,8 @@
 {
   "gate": "LAMBDA-B5-G4",
   "verdict": "PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V",
-  "passed": 7,
-  "total": 7,
+  "passed": 8,
+  "total": 8,
   "params": [
     "lambda",
     "rho",
@@ -19,47 +19,54 @@
   ],
   "rank_J_phys": "2 (lambda col=0)",
   "rank_J_full": "3 (full rank)",
+  "det_J_full": "32*pi**2*m1**2*rho/(15*R**2*sqrt(9*R**2 + 4*m1**2))",
   "lambda_recovery": "lambda = 15*V_obs/(16*pi^2*rho^3)  [requires V promotion]",
   "formal_result": "lambda=FREE_COUPLING_PARAMETER is a formal theorem: lambda is structurally non-identifiable from S3-only observables. Identifiable IFF V is promoted (PROMOTION_BLOCKED -> non-identifiable).",
-  "corollary": "V promotion is NECESSARY AND SUFFICIENT condition for lambda identifiability",
-  "lambda_status": "FREE_COUPLING_PARAMETER \u2014 formally proved by this gate",
+  "corollary": "V promotion is NECESSARY AND SUFFICIENT condition for lambda identifiability (positive half assumes kappa-normalization of V is independently known)",
+  "positive_half_caveat": "lambda identifiable WITH V assuming kappa (V normalization) is independently known; else only kappa*lambda identifiable. Negative half (lambda non-identifiable without V) is kappa-independent and ROBUST.",
+  "lambda_status": "FREE_COUPLING_PARAMETER -- formally proved by this gate",
   "GEOMETRY_AGNOSTIC": true,
   "safe_for_runtime": false,
   "checks": [
     {
       "check": "T1",
       "pass": true,
-      "desc": "Observable map: o1=f(rho), o2=f(R,m1), o3=f(lambda,rho) \u2014 each depends on declared param"
+      "desc": "Observable map: o1=f(rho), o2=f(R,m1), o3=f(lambda,rho) -- each depends on declared param"
+    },
+    {
+      "check": "T2",
+      "pass": true,
+      "desc": "J_full is 3x3 symbolic Jacobian d(o1,o2,o3)/d(lambda,rho,R)"
     },
     {
       "check": "T3",
       "pass": true,
-      "desc": "det(J_full) != 0 \u2014 rank 3 when V observable included (lambda identifiable with V)"
+      "desc": "det(J_full) != 0 -- rank 3 when V observable included (lambda identifiable with V)"
     },
     {
       "check": "T4",
       "pass": true,
-      "desc": "do1/dlambda = do2/dlambda = 0 \u2014 lambda absent from {o1,o2}"
+      "desc": "do1/dlambda = do2/dlambda = 0 -- lambda absent from {o1,o2}"
     },
     {
       "check": "T5",
       "pass": true,
-      "desc": "J_phys lambda-column = [0,0]^T \u2014 lambda non-identifiable from {o1,o2}"
+      "desc": "J_phys lambda-column = [0,0]^T -- lambda non-identifiable from {o1,o2}"
     },
     {
       "check": "T6",
       "pass": true,
-      "desc": "do1/drho != 0 \u2014 rho identifiable from Dirac spectrum spacing"
+      "desc": "do1/drho != 0 -- rho identifiable from Dirac spectrum spacing"
     },
     {
       "check": "T7",
       "pass": true,
-      "desc": "lambda = 15*V_obs/(16*pi^2*rho^3) \u2014 linear recovery IF V observable"
+      "desc": "lambda = 15*V_obs/(16*pi^2*rho^3) -- unique, linear recovery IF V observable"
     },
     {
       "check": "T8",
       "pass": true,
-      "desc": "Fisher info lambda from {o1,o2} = 0 \u2014 lambda has zero information content without V"
+      "desc": "Fisher info lambda from {o1,o2} = 0 -- lambda has zero information content without V"
     }
   ]
 }
