@@ -1,0 +1,28 @@
+{
+  "gate": "S6-HARM-G5",
+  "date": "2026-06-15",
+  "description": "Spin connection on S6 via Cartan structure equations",
+  "evidence_script": "s6_harm_g5_spin_connection.py",
+  "checks_passed": 17,
+  "checks_total": 17,
+  "verdict": "PASS_S6_SPIN_CONNECTION_COTBK_CONFIRMED",
+  "pytest_total": 507,
+  "pytest_new": 14,
+  "key_results": {
+    "cartan_pairs_verified": 3,
+    "universal_coord_law": "omega^{phi_k}_{beta_k, phi_k}(coord) = cos(beta_k)  for k=1,2,3",
+    "frame_forms": {
+      "k1": "cot(beta_1) / rho",
+      "k2": "cot(beta_2) / (rho * cos(beta_1))",
+      "k3": "cot(beta_3) / (rho * cos(beta_1) * cos(beta_2))"
+    },
+    "cotbk_chain": "G2 (root generators) -> G3 (scalar ODE centrifugal) -> G4 (Lichnerowicz shift) -> G5 (spin connection)",
+    "cartan_equations_checked": [
+      "T1: de^{phi_1} + omega^{phi_1}_{beta_1} ^ e^{beta_1} = 0",
+      "T2: de^{beta_2} + omega^{beta_2}_{beta_1} ^ e^{beta_1} = 0",
+      "T3a: dβ_1^dφ_2 term of Cartan eq for e^{phi_2} = 0",
+      "T3b: dβ_2^dφ_2 term of Cartan eq for e^{phi_2} = 0",
+      "T4: dβ_3^dφ_3 term of Cartan eq for e^{phi_3} = 0"
+    ]
+  }
+}
