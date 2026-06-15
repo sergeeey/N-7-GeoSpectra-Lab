@@ -1,0 +1,54 @@
+{
+  "gate": "S6-HARM-G0",
+  "date": "2026-06-15",
+  "verdict": "PASS_SO6_CLIFFORD_FOUNDATION_CONFIRMED",
+  "pass_count": 17,
+  "total_checks": 22,
+  "gamma_matrices": "\u0393_a hermitian 8\u00d78 via \u03c3\u2081/\u03c3\u2082/\u03c3\u2083 tensor products",
+  "cartan_generators": "H\u2081=J\u2081\u2082=(i/2)(\u03c3\u2083\u2297I\u2297I), H\u2082=J\u2083\u2084=(i/2)(I\u2297\u03c3\u2083\u2297I), H\u2083=J\u2085\u2086=(i/2)(I\u2297I\u2297\u03c3\u2083)",
+  "chirality": "\u0393\u2087=\u03c3\u2083\u2297\u03c3\u2083\u2297\u03c3\u2083, eigenvalues \u00b11, splits 8=4\u22954\u0304",
+  "results": {
+    "T1_clifford_all_21_pairs": "PASS",
+    "T2_so6_algebra_J12_J23_eq_J13": "PASS",
+    "T2_so6_algebra_J12_J34_eq_0": "PASS",
+    "T2_so6_algebra_J13_J35_eq_J15": "PASS",
+    "T3_H1_H2_commute": "PASS",
+    "T3_H1_H3_commute": "PASS",
+    "T3_H2_H3_commute": "PASS",
+    "T4_H1_equals_i_half_s3_I_I": "PASS",
+    "T4_H2_equals_i_half_I_s3_I": "PASS",
+    "T4_H3_equals_i_half_I_I_s3": "PASS",
+    "T5_G7_squares_to_I8": "PASS",
+    "T5_G7_eigenvalues": "[-1, 1]",
+    "T5_G7_eigenvalues_are_pm1": "PASS",
+    "T5_G7_multiplicity_4_each": "PASS",
+    "T6_chiral_plus_indices": [
+      0,
+      3,
+      5,
+      6
+    ],
+    "T6_chiral_minus_indices": [
+      1,
+      2,
+      4,
+      7
+    ],
+    "T6_chiral_split_4_4": "PASS",
+    "T6_weights_of_4": [
+      "(-1/2, -1/2, 1/2)",
+      "(-1/2, 1/2, -1/2)",
+      "(1/2, -1/2, -1/2)",
+      "(1/2, 1/2, 1/2)"
+    ],
+    "T6_weights_of_4bar": [
+      "(-1/2, -1/2, -1/2)",
+      "(-1/2, 1/2, 1/2)",
+      "(1/2, -1/2, 1/2)",
+      "(1/2, 1/2, -1/2)"
+    ],
+    "T6_4_has_even_minus_weights": "PASS",
+    "T6_4bar_has_odd_minus_weights": "PASS",
+    "T7_all_generators_commute_with_G7": "PASS"
+  }
+}
