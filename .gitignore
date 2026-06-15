@@ -48,3 +48,14 @@ hetzner_*
 # --- Third-party PDFs in root ---
 Toy-модель*
 Геометрическое*
+
+# --- Claude Code local settings (machine-specific) ---
+**/.claude/settings.local.json
+**/.claude/memory/_auto/
+
+# --- Temporary working files ---
+**/tmp_pdf_review/
+**/*.bak
+
+# --- Binary research outputs (not versioned) ---
+*.xlsx

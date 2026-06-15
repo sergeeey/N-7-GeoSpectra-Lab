@@ -1,5 +1,28 @@
 # activeContext — N-7-GeoSpectra-Lab
-**Updated:** 2026-06-11 (G2 PASS)
+**Updated:** 2026-06-15 (S6-HARM-G5 COMPLETE — cotβ_k universality G2→G3→G4→G5, 507 pytest)
+
+## Current Focus
+[summarized] **S6-HARM BRANCH COMPLETE: G0→G5 all PASS** (2026-06-15)
+S6-HARM-G1 ✅ PASS_S6_COORDINATES_CARTAN_PHASES_CONFIRMED (2026-06-15, commit 45b7308)
+  (β₁,β₂∈[0,π/2], β₃∈[0,π], φ₁,φ₂,φ₃∈[0,2π])
+  Σ(xⁱ)²=ρ² ✓, metric diagonal ✓, Vol(S⁶)=16π³/15·ρ⁶ ✓
+  Cartan phases: e^{i(m₁φ₁+m₂φ₂+m₃φ₃)}, m_k=±½ (analog Tom row 14)
+
+S6-HARM-G0 ✅ PASS_SO6_CLIFFORD_FOUNDATION_CONFIRMED (2026-06-15, commit 81a4167)
+7/7 sympy + 7/7 pytest (443 total, 2 skipped). SO(6) Clifford algebra established:
+Γ₁=σ₁⊗I⊗I … Γ₆=σ₃⊗σ₃⊗σ₂ (hermitian 8×8), {Γ_a,Γ_b}=2δ_{ab}I₈ (21 pairs PASS),
+Cartan H_i=(i/2)(σ₃ in i-th factor), chirality Γ₇=σ₃⊗σ₃⊗σ₃ → 4⊕4̄ Weyl split.
+Motivated by Tom row 19 correction: S⁶ = parallel track, not deferred.
+
+Tom Lawrence answered 2026-06-14 (20/22 rows). Key results:
+- Q2 cot(2α): "Sounds right" → G2 PASS confirmed by Tom independently
+- Q4 coordinates: "Correct" → sin(2α) measure confirmed
+- Q1 basis: direction correct, correction: SU(2)_L×SU(2)_R includes weak hypercharge
+- Q3 λ: Tom also open on mechanism — "tied up with massless→massive transition"
+- Row 17 "No": O(4)/parity/global issues — misread, Tom offered to explain (PENDING)
+- Row 19 "No": S⁶ = parallel harmonic analysis of SO(6), NOT separate later track → S6-HARM started
+
+Thank-you message to Tom sent 2026-06-15 (short, asks about rows 17+19).
 
 ## Current Focus
 AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
@@ -34,13 +57,63 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
-| `main` | current | v0.2.0 + AV-2 + BG-H1 (G0,G1,E1,E2) — 415 tests total |
+| `main` | ← merge pending | v0.2.0 + AV-2 + BG-H1 + Lambda-B5 (G1-G4+v-ratio+s6) — 432 tests |
+| `feature/sci-audit-fixes-2026-06-13` | current (commit a814a19) | /intended-vs-implemented + /sci-code-audit fixes: 436 tests |
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
-Currently on: `main`
+Currently on: `feature/sci-audit-fixes-2026-06-13`
+
+
+
+
+
+
+
+
+## Session 2026-06-13: Skill Chain Audit
+**Chain:** /intended-vs-implemented → /sci-code-audit → /gate-check (IN PROGRESS)
+
+**Completed fixes (commit a814a19):**
+- G4 T2: добавлен chk("T2") assert → 7/7 → 8/8 [FINDING-1 HIGH]
+- G4 JSON: det_J_full теперь персистируется [FINDING-2 MEDIUM]
+- G4 T7: bare assert заменён на chk() (без JSON при сбое) [sci-audit B2]
+- G4 JSON: добавлен positive_half_caveat (κ-нормализация, per Codex 2026-06-12) [sci-audit A5]
+- decision.md создан для всех 3 gate: g4, v-ratio-g0, s6-branch-g0 [FINDING-4]
+- tests/test_gate_v_ratio_g0.py: 3 независимых pytest теста на sqrt(2) ratio [D1]
+- 436 passed, 2 skipped (было 432+2)
+
+**Open findings (не исправлены):**
+- sci-audit A2+A3 (HIGH): chk() семантика разная между g4 и v-ratio/s6 — нужен gate_utils.py
+- sci-audit A6 (MEDIUM): s6 T6 не сверяет кратности с expected_15
+- sci-audit C2 (MEDIUM): v-ratio sector A "первые два элемента" — хрупкая индексация
+- FINDING-3 (MEDIUM): experiments/ раздвоен (8 папок в root, 2 в tom_s3_spinor_toy/) — решение на усмотрение пользователя
+
+**Waiting for Tom Q1-Q4** (отправлено 2026-06-09): spin structure fork (Case 6 ACH) — FORK без ответа.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,6 +162,17 @@ Currently on: `main`
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -110,8 +194,19 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ## Next Steps (ordered)
-1. ✅ Re-audit preserve/P5-P14 — DONE (`reports/P5_P14_REAUDIT_REPORT.md`)
+[summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] 1. ✅ Re-audit pr...
 2. ✅ AV-2 G0 source trace — DONE (`source_register_av2.md`, VERIFIED_FROM_PDF)
 3. ✅ AV-2 G1 two-component system — DONE (`test_ch_first_order_system.py` 24/24)
 4. ✅ AV-2 G2 boundary exponent — DONE (`g2_boundary_exponent_report.md`, 45 tests)
@@ -130,15 +225,8 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 17. ✅ ACH Falsification Matrix — DONE (2026-06-11): TOM_RECONSTRUCTION_ACH_MATRIX.md — 6 cases, all evidence linked to commits. Killed branches documented. Forbidden promotions consolidated. claim_template.md: mandatory Kill target field. commit 46c545f.
 18. ✅ LAMBDA-B5-G4 — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V [VERIFIED-sympy 7/7, 2026-06-11]. rank(J_phys)=2 (λ non-identifiable from {o₁,o₂}), rank(J_full)=3 (identifiable IFF V promoted). λ=FREE_COUPLING_PARAMETER is a formal theorem, not just discipline fence. det(J_full)=32π²m₁²ρ/(15R²√(9R²+4m₁²))≠0. commit dce2156 → merged 28b7e17.
 19. ✅ LAMBDA-B5-P14B — PASS_S3_MEASURE_SELF_CONSISTENT [VERIFIED-sympy 7/7, 2026-06-11]. S³ Hopf measure sin(α)cos(α)dα: volume=2π², bilinear norm=π²/3, phase-invariant. Autonomous — does not require Tom Q4. commit 282eb1c → merged 06999ad.
-
-
-
-
-
-
-
-
-
+20. ✅ LAMBDA-B5-V-RATIO-G0 — PASS_LAMBDA_FREE_RATIO_CONFIRMED [VERIFIED-sympy 7/7, 2026-06-11]. Within fixed (j_L_in, j_L_out, j_R) sector, λ·vred·geom cancel in ratio → R=CG_a/CG_b (pure algebraic). Sector B (j_L=1/2→3/2, j_R=1): R=√2 EXACT — first non-trivial λ-free structural prediction from S³ geometry. Sector A (j=1→1): R=±1 (trivial phase). commit 65fc64d → merged.
+21. ✅ LAMBDA-B5-S6-BRANCH-G0 — PASS_SU4_BRANCHING_SM_COMPATIBLE [VERIFIED-sympy 7/7, 2026-06-11]. T=diag(1/3,1/3,1/3,-1); all charges ∈ ℚ. 4→3_{+1/3}+1_{-1} [Pati-Salam quarks+lepton]; 6→3_{+2/3}+3̄_{-2/3}; 15→8_0+3_{±4/3}+1_0. NECESSARY condition for S³×S⁶ SM compatibility confirmed. NOT sufficient — no SM derivation. commit bbe7bb8 → merged 93e681e.
 
 ## HOME → WORK CHECKPOINT (2026-06-11)
 
@@ -164,12 +252,34 @@ git log --oneline --decorate -5
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ## Hard Constraints (do not change)
 - DO NOT mix Tom Lawrence / Covariant Compactification with IDM/MULTING/Buckholtz
 - DO NOT claim "lambda fixed" or "physical V promoted"
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
-- DO NOT write to Tom until he responds to 4-question message
 - runtime=research_only, selection_rules=smoke_only
+- WAIT for Tom reply on rows 17+19 before modifying S³ global structure conclusions
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -208,13 +318,19 @@ git log --oneline --decorate -5
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ## Auto-commit log
-- [2026-06-11 19:42] `0871098`: chore: P14B PASS — update activeContext item 19
-- [2026-06-11 19:42] `282eb1c`: feat(lambda-b5): P14B S3 Hopf measure normalization — PASS_S3_MEASURE_SELF_CONSISTENT
-- [2026-06-11 19:35] `5a1e092`: fix(lambda-b5-g4): harden T7 lambda-solve uniqueness assertion
-- [2026-06-11 19:30] `996eb9e`: Merge branch 'chore/g4-context-update'
-- [2026-06-11 19:30] `388e8f0`: chore(context): G4 PASS — update activeContext + ACH matrix Case 3
-[summarized] - [2026-06-11 19:25] `dce2156`: feat(lambda-b5): G4 λ identifiability — PASS_LAMBDA_NON_IDENTIFIABLE_WITHOUT_V
+[summarized] - [2026-06-15 11:29] `0367f11`: feat(s6-harm): G5 spin connection on S⁶ — cotβ_k universality G2→G3→G4→G5
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
