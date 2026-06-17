@@ -1,8 +1,8 @@
 # activeContext — N-7-GeoSpectra-Lab
-**Updated:** 2026-06-15 (S6-HARM-G5 COMPLETE — cotβ_k universality G2→G3→G4→G5, 507 pytest)
+**Updated:** 2026-06-15 (G9 COMPLETE — G₂/SU(3) equal-rank chirality mechanism, 553 pytest)
 
 ## Current Focus
-[summarized] **S6-HARM BRANCH COMPLETE: G0→G5 all PASS** (2026-06-15)
+[summarized] [summarized] [summarized] **S6-HARM BRANCH COMPLETE: G0→G5 all PASS** (2026-06-15)
 S6-HARM-G1 ✅ PASS_S6_COORDINATES_CARTAN_PHASES_CONFIRMED (2026-06-15, commit 45b7308)
   (β₁,β₂∈[0,π/2], β₃∈[0,π], φ₁,φ₂,φ₃∈[0,2π])
   Σ(xⁱ)²=ρ² ✓, metric diagonal ✓, Vol(S⁶)=16π³/15·ρ⁶ ✓
@@ -24,8 +24,40 @@ Tom Lawrence answered 2026-06-14 (20/22 rows). Key results:
 
 Thank-you message to Tom sent 2026-06-15 (short, asks about rows 17+19).
 
-## Current Focus
-AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
+## G9 COMPLETE ✅ (2026-06-15, commit 6a644fb) — G₂/SU(3) equal-rank chirality mechanism
+Verifies G8 escape route is structural, not hand-waving:
+- G₂ roots 12 = 6 long + 6 short (ratio √3); LONG roots = A₂ = su(3) → SU(3)⊂G₂
+- SHORT roots = 3⊕3̄ of SU(3) = (TS⁶)_ℂ = the SAME color SU(3) as G6
+- |W(G₂)|=12, |W(SU(3))|=6 → χ(S⁶)=2; rank(G₂)=rank(SU(3))=2 → EQUAL RANK
+- Equal rank = Bott/GKRS condition for chiral fermions w/ nonzero Dirac index [DOCS]
+14/14 pytest. SCOPE: necessary condition only. Twisted index NUMBER for SM reps
+deferred to G10 (GKRS bookkeeping error-prone, NEEDS lit-check). Not 3 generations.
+ARC CLOSED: G6 (content) + G8 (obstruction) + G9 (escape exists) = honest map.
+
+## G8 COMPLETE ✅ (2026-06-15, commit 4467c42) — chirality obstruction (Witten problem)
+NEGATIVE result (honest): round S³×S⁶ alone gives NO chiral fermions.
+A. Künneth: b₁=b₂=0 → no Wilson lines, no abelian flux.
+B. Dirac spectrum ±-symmetric → index=0 → zero net chirality.
+C. simply connected → Hosotani impossible (vs S³×S¹ b₁=1, BG-H1).
+Escape [INFERRED]: S⁶=G₂/SU(3) coset connection; SU(3) ↔ SU(3)_color (G6).
+12/12 pytest. Facts (dim G₂/SU(3)=6, Künneth) verified independently.
+WHY: makes Witten-1981 chirality problem concrete for Tom's geometry — the
+single most important open mechanism. G6+G7+G8 = full map of where theory stands.
+
+## G7 COMPLETE ✅ (2026-06-15, commit c001c85) — S³×S⁶ KK mass spectrum
+M²_{mn} = (m+3/2)²/ρ₃² + (n+3)²/ρ₆². No zero modes (Lichnerowicz — positive curvature).
+M²_min = 45/4 at ρ₃=ρ₆=1. ΔM²(S³) = 4/ρ₃², ΔM²(S⁶) = 7/ρ₆².
+Crossover ρ₆/ρ₃ = √(7/4) ≈ 1.32. M²(1,0)/M²(0,0) = 61/45 (exact).
+12/12 pytest. Corrects prior wrong claim (ρ₆/ρ₃ = 2 was error).
+
+## G6 COMPLETE ✅ (2026-06-15, commit 95ccff9) — S³×S⁶ spinor → one SM generation
+32 = 4(S³) × 8(S⁶) states, Y = T3R + (B-L)/2 (Pati-Salam).
+All 32/32 matched: quarks ×3 (color), leptons ×1 — no exotic states, ΣY = 0.
+8/8 pytest PASS. Total: 515 passed, 2 skipped.
+SCOPE: algebra/weight-space only. NOT zero modes, NOT 3 generations, NOT λ.
+NEXT: letter to Tom, merge branch to main.
+
+## AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
 BG-H1 pre-registered ✅ (design only): λ²=(n+3/2)²+(m/R)², δ₁(R)=√(9/4+(m₁/R)²)−3/2
 (first excited KK; periodic ground state δ₀=0 — m=0 in spectrum!),
 both spin structures forked (m∈ℤ vs m∈ℤ+1/2), no choice made.
@@ -68,6 +100,8 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -76,6 +110,8 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `feature/sci-audit-fixes-2026-06-13`
+
+
 
 
 
@@ -103,6 +139,8 @@ Currently on: `feature/sci-audit-fixes-2026-06-13`
 - FINDING-3 (MEDIUM): experiments/ раздвоен (8 папок в root, 2 в tom_s3_spinor_toy/) — решение на усмотрение пользователя
 
 **Waiting for Tom Q1-Q4** (отправлено 2026-06-09): spin structure fork (Case 6 ACH) — FORK без ответа.
+
+
 
 
 
@@ -173,6 +211,8 @@ Currently on: `feature/sci-audit-fixes-2026-06-13`
 
 
 
+
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -205,8 +245,10 @@ Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire /
 
 
 
+
+
 ## Next Steps (ordered)
-[summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] 1. ✅ Re-audit pr...
+[summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [su...
 2. ✅ AV-2 G0 source trace — DONE (`source_register_av2.md`, VERIFIED_FROM_PDF)
 3. ✅ AV-2 G1 two-component system — DONE (`test_ch_first_order_system.py` 24/24)
 4. ✅ AV-2 G2 boundary exponent — DONE (`g2_boundary_exponent_report.md`, 45 tests)
@@ -263,12 +305,16 @@ git log --oneline --decorate -5
 
 
 
+
+
 ## Hard Constraints (do not change)
 - DO NOT mix Tom Lawrence / Covariant Compactification with IDM/MULTING/Buckholtz
 - DO NOT claim "lambda fixed" or "physical V promoted"
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - runtime=research_only, selection_rules=smoke_only
 - WAIT for Tom reply on rows 17+19 before modifying S³ global structure conclusions
+
+
 
 
 
@@ -329,8 +375,14 @@ git log --oneline --decorate -5
 
 
 
+
+
 ## Auto-commit log
-[summarized] - [2026-06-15 11:29] `0367f11`: feat(s6-harm): G5 spin connection on S⁶ — cotβ_k universality G2→G3→G4→G5
+- [2026-06-15 17:15] `6a644fb`: feat(g9): S⁶=G₂/SU(3) equal-rank → chirality escape from G8 is structural
+- [2026-06-15 16:33] `4467c42`: feat(g8): chirality obstruction on round S³×S⁶ — Witten problem quantified
+- [2026-06-15 16:26] `c001c85`: feat(g7): S³×S⁶ KK mass spectrum — no zero modes, SM tower confirmed
+- [2026-06-15 15:14] `95ccff9`: feat(g6): S³×S⁶ spinor = one SM generation — 32/32 states matched
+[summarized] [summarized] - [2026-06-15 13:50] `d25fd4a`: chore: gitignore local Claude settings + temp files; update activeContext
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
