@@ -1,0 +1,82 @@
+{
+  "gate": "G13-TWISTED-DIRAC",
+  "verdict": "PASS_G13_TWISTED_DIRAC_CHIRALITY",
+  "passed": 13,
+  "total": 13,
+  "index_twisted": 1,
+  "index_standard": 0,
+  "chi_S6": 2,
+  "c3_T10": 2,
+  "ch3_T10": 1,
+  "A_hat_S6": 1,
+  "singlets_S_minus": 1,
+  "singlets_S_plus": 1,
+  "interpretation": "ind(D_{T^{1,0}}) = 1 \u2260 0: net chiral zero mode EXISTS on S\u2076=G\u2082/SU(3). Zero mode is SU(3)-neutral (color singlet) in S^- sector. Compatible with nu_R=(1,1)_0 (right-handed neutrino). Upgrades G9 from necessary condition to sufficient: geometry IS chirality-capable. Quark-sector zero modes (color-triplet) require a different twist or mechanism.",
+  "checks": [
+    {
+      "check": "T1_euler_chi",
+      "pass": true,
+      "desc": "\u03c7(S\u2076) = 2  (b\u2080=b\u2086=1, rest 0)"
+    },
+    {
+      "check": "T2_pontryagin_zero",
+      "pass": true,
+      "desc": "p\u2081(S\u2076) = 0  (H^4(S\u2076) = 0; S\u2076 stably parallelizable \u2192 TS\u2076\u2295\u03b5\u00b9 \u2245 \u03b5\u2077)"
+    },
+    {
+      "check": "T3_A_hat_one",
+      "pass": true,
+      "desc": "\u00c2(S\u2076) = 1  (Pontryagin vanishing: \u00c2 = 1 \u2212 p\u2081/24 + \u22ef \u2192 1)"
+    },
+    {
+      "check": "T4_c3_equals_chi",
+      "pass": true,
+      "desc": "c\u2083(T^{1,0}) = 2 = \u03c7(S\u2076)  (top Chern class = Euler class, almost complex)"
+    },
+    {
+      "check": "T5_lower_chern_zero",
+      "pass": true,
+      "desc": "c\u2081=c\u2082=0 for T^{1,0} over S\u2076  (H\u00b2=H\u2074=0 for S\u2076; no room for c\u2081,c\u2082)"
+    },
+    {
+      "check": "T6_ch3_one",
+      "pass": true,
+      "desc": "ch\u2083(T^{1,0}) = c\u2083/2 = 1  (Chern character with c\u2081=c\u2082=0)"
+    },
+    {
+      "check": "T7_index_twisted_nonzero",
+      "pass": true,
+      "desc": "ind(D_{T^{1,0}}) = 1 \u2260 0  \u2192 chiral zero mode EXISTS  [G9 upgraded]"
+    },
+    {
+      "check": "T8_index_standard_zero",
+      "pass": true,
+      "desc": "ind(D^LC) = 0  [G4 consistent: no zero modes for standard Dirac]"
+    },
+    {
+      "check": "T9_chirality_matrix",
+      "pass": true,
+      "desc": "\u0393\u2087\u00b2 = I\u2088 \u2713  and  \u0393\u2087 = i\u00b7\u0393\u2081\u0393\u2082\u0393\u2083\u0393\u2084\u0393\u2085\u0393\u2086 \u2713  (kron(\u03c3\u2083,\u03c3\u2083,\u03c3\u2083))"
+    },
+    {
+      "check": "T10_SU3_commutes_chirality",
+      "pass": true,
+      "desc": "[C_i^spin, \u0393\u2087] = 0 for all 8 SU(3) generators  (color commutes with chirality)"
+    },
+    {
+      "check": "T11_singlet_in_Sminus",
+      "pass": true,
+      "desc": "S^- (dim 4): 1 SU(3) singlet  [zero mode = color-neutral, \u03bd_R-compatible]"
+    },
+    {
+      "check": "T12_singlet_in_Splus",
+      "pass": true,
+      "desc": "S^+ (dim 4): 1 SU(3) singlet  [S^+ = 1 \u2295 3, S^- = 3\u0304 \u2295 1 as SU(3)-reps]"
+    },
+    {
+      "check": "T13_chirality_exhausts_spinor",
+      "pass": true,
+      "desc": "dim(S^+) + dim(S^-) = 4 + 4 = 8 = dim(S\u2076 spinor)"
+    }
+  ]
+}
