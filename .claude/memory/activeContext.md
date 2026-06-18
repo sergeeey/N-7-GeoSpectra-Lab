@@ -11,6 +11,10 @@ subgroup; whether GAUGE FIELD reduces to it = orthogonal→unitary gap Tom NAMES
 fermion coupling open. NOT claimed. Correctly-scoped fix of the G9 over-reach pattern.
 → Strongest collab footing: we now work ON Tom's own stated open problem.
 
+
+
+
+
 ## λ-FREE RATIO FAMILY ✅ (2026-06-17, commit 768ddf6) — generalises V-RATIO-G0 √2
 Closed form: R²(j,m) = 2(j−m+1)/(j+m) for S³ vector-operator raising sector j→j+1.
 √2 = R(1/2,1/2) is one entry; this is the GENERATING FORMULA for the whole tower.
@@ -18,6 +22,10 @@ Verified 2 ways: symbolic proof (general j,m) + numeric vs clebsch_gordan, 21 to
 New λ-free ratios: R=2 (j=1,m=0), √3 (j=2,m=0), 2√2 (j=2,m=−1), √6/3 (j=3/2,m=3/2).
 6/6 pytest (total 559). SCOPE: structural ratios of V-op matrix elements, λ-free (Wigner-Eckart);
 NOT a coupling/observable prediction; standard rep theory + explicit closed form. Real DELTA (formula > number).
+
+
+
+
 
 ## Skeptic Audit 2026-06-17 ✅ (commit 3a169d0) — convention/scope check before Tom reads deeper
 Context-asymmetric skeptic + sympy re-verify of G6-G9 + S³ spin-connection claims.
@@ -30,8 +38,36 @@ group (his PMs Sec 1.5/7), NOT coset gauge group → my G9 coset path is standar
 Do NOT present G9 coset to Tom as "his". G10 reframed: S⁶ spin connection → SO(6)⊃SU(4)→SU(3)×U(1).
 Tom artifacts parked on Desktop: s3_spin_connection_check.py (SENT 17 Jun), structure_equation_primer, pati_salam_g6_draft.
 
+
+
+
+
+## HYP_01-EXT ✅ (2026-06-18, commit 001b519) — S³×S¹ volume-conservation flux modulus
+V_eff(φ)=3N_S3²exp(−φ/2)+N_S1²exp(+3φ/2); φ*=ln(N_S3/N_S1) [closed-form, no free κ].
+5/5 gate + 15/15 pytest (587 total). Improves HYP_01: coupling from R_S3³·R_S1=const topology,
+not ad-hoc κ. Falsifier: decouple S¹ → dV/dφ monotone → no min. Equipartition V_S3/V_S1=3 universal.
+SCOPE: φ=compactification modulus, NOT Tom's λ (separate sectors); λ remains free.
+
+
+## λ-FREE RANK-2 ✅ (2026-06-18) — R₂,A² and R₂,B² closed forms for j→j+2 sector
+5/5 gate + 77/77 pytest (664 total). Two adjacent-component ratios for rank-2 tensors:
+  R₂,A²(j,m) = 3(j−m+1)/[2(j+m)]   [= (3/4)×R₁², same structure as rank-1, prefactor 3/4]
+  R₂,B²(j,m) = 4(j−m+2)/(j+m−1)    [shifted +1 in both numerator and denominator]
+Verified vs sympy CG: 35 tower pts (A), 28 tower pts (B), 0 mismatches.
+Boundary: R₂,A²(j,j)=3/(4j); R₂,B²(j,j)=8/(2j−1). λ-free by Wigner-Eckart.
+Rank hierarchy now: R₁²=2(j−m+1)/(j+m); R₂A=(3/4)R₁²; R₂B=4(j−m+2)/(j+m−1).
+
+## G10-B ✅ (2026-06-18, commit 524616e) — Explicit SU(3) ↪ SO(6): J-preserving traceless generators
+5/5 sympy+numpy, 6/6 pytest (572 total). su(3)={X∈so(6):[X,J]=0 AND ⟨X,J⟩=0}.
+8 explicit 6×6 real antisymmetric generators: closed, compact (Gram neg-def), rank 2.
+Cartan basis: H_λ₃=M₀₁−M₂₃, H_λ₈=M₀₁+M₂₃−2M₄₅. Generic Cartan: H_gen=3M₀₁−M₂₃−2M₄₅.
+Key fix: Weyl wall bug (b=c Cartan → centralizer dim 4) fixed by all-different coefficients.
+SCOPE: algebraic embedding only. Gauge-field reduction SO(6)→SU(3) remains Tom's open problem.
+Two-constraint approach: commutator [X,J]=0 gives u(3), Frobenius ⟨X,J⟩=0 projects to su(3).
+
+
 ## Current Focus
-[summarized] [summarized] [summarized] **S6-HARM BRANCH COMPLETE: G0→G5 all PASS** (2026-06-15)
+[summarized] [summarized] [summarized] [summarized] [summarized] [summarized] [summarized] **S6-HARM BRANCH COMPLETE: G0→G5 all PASS*...
 S6-HARM-G1 ✅ PASS_S6_COORDINATES_CARTAN_PHASES_CONFIRMED (2026-06-15, commit 45b7308)
   (β₁,β₂∈[0,π/2], β₃∈[0,π], φ₁,φ₂,φ₃∈[0,2π])
   Σ(xⁱ)²=ρ² ✓, metric diagonal ✓, Vol(S⁶)=16π³/15·ρ⁶ ✓
@@ -63,6 +99,10 @@ Verifies G8 escape route is structural, not hand-waving:
 deferred to G10 (GKRS bookkeeping error-prone, NEEDS lit-check). Not 3 generations.
 ARC CLOSED: G6 (content) + G8 (obstruction) + G9 (escape exists) = honest map.
 
+
+
+
+
 ## G8 COMPLETE ✅ (2026-06-15, commit 4467c42) — chirality obstruction (Witten problem)
 NEGATIVE result (honest): round S³×S⁶ alone gives NO chiral fermions.
 A. Künneth: b₁=b₂=0 → no Wilson lines, no abelian flux.
@@ -73,11 +113,19 @@ Escape [INFERRED]: S⁶=G₂/SU(3) coset connection; SU(3) ↔ SU(3)_color (G6).
 WHY: makes Witten-1981 chirality problem concrete for Tom's geometry — the
 single most important open mechanism. G6+G7+G8 = full map of where theory stands.
 
+
+
+
+
 ## G7 COMPLETE ✅ (2026-06-15, commit c001c85) — S³×S⁶ KK mass spectrum
 M²_{mn} = (m+3/2)²/ρ₃² + (n+3)²/ρ₆². No zero modes (Lichnerowicz — positive curvature).
 M²_min = 45/4 at ρ₃=ρ₆=1. ΔM²(S³) = 4/ρ₃², ΔM²(S⁶) = 7/ρ₆².
 Crossover ρ₆/ρ₃ = √(7/4) ≈ 1.32. M²(1,0)/M²(0,0) = 61/45 (exact).
 12/12 pytest. Corrects prior wrong claim (ρ₆/ρ₃ = 2 was error).
+
+
+
+
 
 ## G6 COMPLETE ✅ (2026-06-15, commit 95ccff9) — S³×S⁶ spinor → one SM generation
 32 = 4(S³) × 8(S⁶) states, Y = T3R + (B-L)/2 (Pati-Salam).
@@ -85,6 +133,10 @@ All 32/32 matched: quarks ×3 (color), leptons ×1 — no exotic states, ΣY = 0
 8/8 pytest PASS. Total: 515 passed, 2 skipped.
 SCOPE: algebra/weight-space only. NOT zero modes, NOT 3 generations, NOT λ.
 NEXT: letter to Tom, merge branch to main.
+
+
+
+
 
 ## AV-2 COMPLETE ✅ — G0, G1, G2, E1, E2 all PASS. item40 = RADIAL+ANGULAR_BILINEAR_SUPPORTED.
 BG-H1 pre-registered ✅ (design only): λ²=(n+3/2)²+(m/R)², δ₁(R)=√(9/4+(m₁/R)²)−3/2
@@ -131,6 +183,10 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 
 
 
+
+
+
+
 ## Branch State
 | Branch | Status | Contains |
 |--------|--------|---------|
@@ -139,6 +195,10 @@ Combined G0+G1+E1+E2: S3XS1_KK_BRIDGE_SUPPORTED_ROBUST (descriptive only). BG-H1
 | `preserve/tom-s3-p5-p14-scaffold` | up to date with origin | P5–P14 / P13H / V-operator / lambda no-go (191 tests) |
 
 Currently on: `feature/sci-audit-fixes-2026-06-13`
+
+
+
+
 
 
 
@@ -168,6 +228,10 @@ Currently on: `feature/sci-audit-fixes-2026-06-13`
 - FINDING-3 (MEDIUM): experiments/ раздвоен (8 папок в root, 2 в tom_s3_spinor_toy/) — решение на усмотрение пользователя
 
 **Waiting for Tom Q1-Q4** (отправлено 2026-06-09): spin structure fork (Case 6 ACH) — FORK без ответа.
+
+
+
+
 
 
 
@@ -242,6 +306,10 @@ Currently on: `feature/sci-audit-fixes-2026-06-13`
 
 
 
+
+
+
+
 ## Open Questions (awaiting Tom Lawrence)
 1. Is replacement basis U(α,θ,θ̃) the correct spinor frame for S3?
 2. cot(2α) — expected to vanish with correct SO(4) spinor basis?
@@ -249,6 +317,10 @@ Currently on: `feature/sci-audit-fixes-2026-06-13`
 4. α convention and S3 measure `sin(α)cos(α)dα` correct?
 
 Tom last contacted: 2026-06-09 (LinkedIn, 4 questions sent). Status: hang fire / no reply yet.
+
+
+
+
 
 
 
@@ -336,12 +408,20 @@ git log --oneline --decorate -5
 
 
 
+
+
+
+
 ## Hard Constraints (do not change)
 - DO NOT mix Tom Lawrence / Covariant Compactification with IDM/MULTING/Buckholtz
 - DO NOT claim "lambda fixed" or "physical V promoted"
 - DO NOT merge preserve → main without explicit audit/cherry-pick decision
 - runtime=research_only, selection_rules=smoke_only
 - WAIT for Tom reply on rows 17+19 before modifying S³ global structure conclusions
+
+
+
+
 
 
 
@@ -406,18 +486,12 @@ git log --oneline --decorate -5
 
 
 
+
+
+
+
 ## Auto-commit log
-- [2026-06-18 12:51] `3663dbc`: feat(g10): S⁶ spin connection → SO(6) gauge field — Tom's mechanism at s₂=6
-- [2026-06-18 12:37] `8a9c54c`: chore: activeContext — λ-free ratio family complete
-- [2026-06-18 12:36] `768ddf6`: feat(lambda-free): closed-form λ-free ratio family — generalises V-RATIO-G0 √2
-- [2026-06-18 08:51] `9cad6d9`: chore: activeContext — skeptic audit complete, G6-G9 confirmed
-- [2026-06-18 08:50] `3a169d0`: fix(audit): G6 multiplicity print message + G9 headline scope
-- [2026-06-17 19:55] `7260290`: chore: update activeContext — G9 complete, Tom Sec 4.3 verified
-- [2026-06-15 17:15] `6a644fb`: feat(g9): S⁶=G₂/SU(3) equal-rank → chirality escape from G8 is structural
-- [2026-06-15 16:33] `4467c42`: feat(g8): chirality obstruction on round S³×S⁶ — Witten problem quantified
-- [2026-06-15 16:26] `c001c85`: feat(g7): S³×S⁶ KK mass spectrum — no zero modes, SM tower confirmed
-- [2026-06-15 15:14] `95ccff9`: feat(g6): S³×S⁶ spinor = one SM generation — 32/32 states matched
-[summarized] [summarized] - [2026-06-15 13:50] `d25fd4a`: chore: gitignore local Claude settings + temp files; update activeContext
+[summarized] - [2026-06-18 18:39] `001b519`: feat(hyp01ext): S³×S¹ volume-conservation flux modulus — φ*=ln(N_S3/N_S1)
 - [2026-06-11 07:17] `c1705f9`: docs(audit): patch E2 gate scope + negative-control backlog
 - [2026-06-11 07:05] `fb0a029`: docs(audit): anti-hallucination audit — 7 questions tool-verified, E1/E2 reproduced bit-exact
 - [2026-06-11 06:49] `ea3d79c`: Merge branch 'chore/context-post-push'
