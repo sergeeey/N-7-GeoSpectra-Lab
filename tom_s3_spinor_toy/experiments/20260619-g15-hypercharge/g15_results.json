@@ -1,0 +1,18 @@
+{
+  "passed": 12,
+  "total": 12,
+  "gates": {
+    "T1_BmL_diagonal": true,
+    "T2_Hamming_formula": true,
+    "T3_commutes_chirality": true,
+    "T4_commutes_SU3": true,
+    "T5_quark_BmL": true,
+    "T6_antiquark_BmL": true,
+    "T7_singlet_BmL": true,
+    "T8_proportional_to_J": true,
+    "T9_Y_T3R0": true,
+    "T10_SM_table": true,
+    "T11_uniqueness_sector_const": true,
+    "T12_BmL_hermitian": true
+  }
+}
