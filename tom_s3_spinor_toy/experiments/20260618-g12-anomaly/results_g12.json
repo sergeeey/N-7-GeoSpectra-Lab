@@ -1,0 +1,46 @@
+{
+  "gate": "G12-ANOMALY-CHECK",
+  "verdict": "PASS_G12_ANOMALY_FREE",
+  "passed": 6,
+  "total": 6,
+  "weyl_count": 16,
+  "interpretation": "All 5 SM gauge anomaly conditions satisfied for one-generation 32-component spinor from G6/G11. NECESSARY CONDITION confirmed. Does NOT prove Y assignment is geometric.",
+  "checks": [
+    {
+      "check": "T1_SU3_cubic",
+      "value": "0",
+      "pass": true,
+      "desc": "[SU(3)]\u00b3 anomaly"
+    },
+    {
+      "check": "T2_SU2_cubic",
+      "value": "0",
+      "pass": true,
+      "desc": "[SU(2)]\u00b3 anomaly (auto: pseudo-real)"
+    },
+    {
+      "check": "T3_SU2sq_U1",
+      "value": "0",
+      "pass": true,
+      "desc": "[SU(2)]\u00b2 \u00d7 U(1)_Y anomaly"
+    },
+    {
+      "check": "T4_SU3sq_U1",
+      "value": "0",
+      "pass": true,
+      "desc": "[SU(3)]\u00b2 \u00d7 U(1)_Y anomaly"
+    },
+    {
+      "check": "T5_U1_cubic",
+      "value": "0",
+      "pass": true,
+      "desc": "[U(1)_Y]\u00b3 anomaly"
+    },
+    {
+      "check": "T6_grav_sq_U1",
+      "value": "0",
+      "pass": true,
+      "desc": "[grav]\u00b2 \u00d7 U(1)_Y anomaly"
+    }
+  ]
+}
