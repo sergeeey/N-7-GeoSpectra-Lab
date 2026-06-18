@@ -1,0 +1,45 @@
+{
+  "gate": "G10-B-SU3-EXPLICIT",
+  "verdict": "PASS_G10B_SU3_EXPLICIT_EMBEDDING",
+  "passed": 5,
+  "total": 5,
+  "dim_su3": 8,
+  "rank_su3": 2,
+  "gram_eigs": {
+    "min": -6.0,
+    "max": -2.0,
+    "all_negative": true
+  },
+  "cartan_H_generic": "3*M_01 - M_23 - 2*M_45 (all-different coefficients, generic)",
+  "cartan_H_lambda3": "M_01 - M_23 (analogue of Gell-Mann lambda_3/2)",
+  "cartan_H_lambda8": "M_01 + M_23 - 2*M_45 (analogue of lambda_8/sqrt3)",
+  "scope": "algebraic embedding su(3) \u21aa so(6); gauge-field reduction is Tom's open problem",
+  "open_per_tom": "orthogonal SO(6) gauge field -> special-unitary SU(3) color (PMs p.29)",
+  "checks": [
+    {
+      "check": "T1_dim8",
+      "pass": true,
+      "desc": "dim su(3) = 8 (expect 8 = dim su(3))"
+    },
+    {
+      "check": "T2_closure",
+      "pass": true,
+      "desc": "all [T\u2090,T_b] \u2208 su(3) (0 violations)"
+    },
+    {
+      "check": "T3_J_not_in_su3",
+      "pass": true,
+      "desc": "J \u2209 span(su3) \u2014 u(1) factor is linearly independent of su(3)"
+    },
+    {
+      "check": "T4_compact",
+      "pass": true,
+      "desc": "Gram Tr(T\u2090T\u1d66) neg-def: eigs in [-6.0000, -2.0000] < 0"
+    },
+    {
+      "check": "T5_rank2",
+      "pass": true,
+      "desc": "centralizer of generic H \u2208 Cartan has dim 2 (expect 2 = rank su(3))"
+    }
+  ]
+}
