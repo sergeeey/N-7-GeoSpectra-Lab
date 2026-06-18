@@ -1,0 +1,49 @@
+{
+  "gate": "G10-S6-SO6-GAUGE",
+  "verdict": "PASS_G10_S6_SO6_GAUGE_STRUCTURE",
+  "passed": 6,
+  "total": 6,
+  "mechanism": "Tom PMs Sec 7: compact-space spin connection = O(s2) gauge field",
+  "table": {
+    "s2=2": "U(1)",
+    "s2=3": "SU(2) (S3, Sergey)",
+    "s2=6": "SO(6) (S6, this gate)"
+  },
+  "so6_iso_su4": "dim 15=15, rank 3=3",
+  "J_commutant_dim": "9 = u(3) = su(3)(8) + u(1)(1)",
+  "vector6_branch": "6 = 3 + 3bar under J-preserving SU(3) (matches G9 S6 tangent)",
+  "OPEN_per_Tom": "orthogonal SO(6) -> special-unitary SU(3) reduction + fermion coupling (PMs p.29)",
+  "scope": "structure setup only; does NOT claim S6 gauge field gives SU(3) color",
+  "checks": [
+    {
+      "check": "T1_so6_generators",
+      "pass": true,
+      "desc": "15 antisymmetric so(6) generators (expect 15)"
+    },
+    {
+      "check": "T2_closure",
+      "pass": true,
+      "desc": "all [M_a,M_b] antisymmetric \u2192 algebra closes in so(6)"
+    },
+    {
+      "check": "T3_so6_iso_su4",
+      "pass": true,
+      "desc": "dim so(6)=15 = dim su(4)=15; both rank 3 \u2192 so(6)\u2245su(4) [DOCS]"
+    },
+    {
+      "check": "T4_complex_structure",
+      "pass": true,
+      "desc": "J\u00b2=\u2212I and J = M01+M23+M45 (the U(1) generator)"
+    },
+    {
+      "check": "T5_u3_commutant",
+      "pass": true,
+      "desc": "dim{X\u2208so(6):[X,J]=0} = 9 = u(3); su(3) = 8 (=8) + u(1)"
+    },
+    {
+      "check": "T6_6_to_3_3bar",
+      "pass": true,
+      "desc": "J eigenvalues +i\u00d73, \u2212i\u00d73 \u2192 6 = 3 \u2295 3\u0304 (matches G9 S\u2076 tangent)"
+    }
+  ]
+}
