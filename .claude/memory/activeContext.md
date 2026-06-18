@@ -1,5 +1,16 @@
 # activeContext — N-7-GeoSpectra-Lab
-**Updated:** 2026-06-15 (G9 COMPLETE — G₂/SU(3) equal-rank chirality mechanism, 553 pytest)
+**Updated:** 2026-06-17 (Skeptic audit of G6-G9 — all 4 CONFIRMED, 2 fixes, commit 3a169d0)
+
+## Skeptic Audit 2026-06-17 ✅ (commit 3a169d0) — convention/scope check before Tom reads deeper
+Context-asymmetric skeptic + sympy re-verify of G6-G9 + S³ spin-connection claims.
+ALL 4 physics claims CONFIRMED (no falsifications). 2 fixes applied:
+- G6 print "should be 2 each" → "3 (color)" for quark multiplicity (counts always correct; message was wrong).
+- G9 claim.md headline "escape is real" → "NECESSARY condition satisfied" (scope tighten; body already correct).
+Verified the G6 bug independently (grep+read) before fixing (audit-gate: agent [VERIFIED]=my [INFERRED]).
+KEY FINDING (earlier this session): Tom's gauge fields = spin connection of compact-space orthogonal
+group (his PMs Sec 1.5/7), NOT coset gauge group → my G9 coset path is standard-KK, NOT Tom's mechanism.
+Do NOT present G9 coset to Tom as "his". G10 reframed: S⁶ spin connection → SO(6)⊃SU(4)→SU(3)×U(1).
+Tom artifacts parked on Desktop: s3_spin_connection_check.py (SENT 17 Jun), structure_equation_primer, pati_salam_g6_draft.
 
 ## Current Focus
 [summarized] [summarized] [summarized] **S6-HARM BRANCH COMPLETE: G0→G5 all PASS** (2026-06-15)
@@ -378,6 +389,7 @@ git log --oneline --decorate -5
 
 
 ## Auto-commit log
+- [2026-06-18 08:50] `3a169d0`: fix(audit): G6 multiplicity print message + G9 headline scope
 - [2026-06-17 19:55] `7260290`: chore: update activeContext — G9 complete, Tom Sec 4.3 verified
 - [2026-06-15 17:15] `6a644fb`: feat(g9): S⁶=G₂/SU(3) equal-rank → chirality escape from G8 is structural
 - [2026-06-15 16:33] `4467c42`: feat(g8): chirality obstruction on round S³×S⁶ — Witten problem quantified
