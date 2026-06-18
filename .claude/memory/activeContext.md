@@ -378,6 +378,7 @@ git log --oneline --decorate -5
 
 
 ## Auto-commit log
+- [2026-06-17 19:55] `7260290`: chore: update activeContext — G9 complete, Tom Sec 4.3 verified
 - [2026-06-15 17:15] `6a644fb`: feat(g9): S⁶=G₂/SU(3) equal-rank → chirality escape from G8 is structural
 - [2026-06-15 16:33] `4467c42`: feat(g8): chirality obstruction on round S³×S⁶ — Witten problem quantified
 - [2026-06-15 16:26] `c001c85`: feat(g7): S³×S⁶ KK mass spectrum — no zero modes, SM tower confirmed
