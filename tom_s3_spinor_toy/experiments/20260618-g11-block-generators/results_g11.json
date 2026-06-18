@@ -1,0 +1,47 @@
+{
+  "gate": "G11-BLOCK-GENERATORS",
+  "verdict": "PASS_G11_BLOCK_GENERATORS",
+  "passed": 6,
+  "total": 6,
+  "J_32x32": "kron(block_diag(sigma_i/2, 0), I8)  \u2014 SU(2)_L on S3 spinor",
+  "K_32x32": "kron(block_diag(0, sigma_i/2), I8)  \u2014 SU(2)_R on S3 spinor",
+  "C_32x32": "kron(I4, C_i^spin_8x8)  \u2014 SU(3) on S6 spinor",
+  "lift_method": "C^spin = sum_{a<b} C^vec[a,b] * [Gamma_a,Gamma_b]/4",
+  "J3_eigenvalues": {
+    "1/2": 8,
+    "-1/2": 8,
+    "0": 16
+  },
+  "checks": [
+    {
+      "check": "T1_su2L_algebra",
+      "pass": true,
+      "desc": "[J_a,J_b] = i\u03b5_{abc}J_c  SU(2)_L  (9 commutators, 4\u00d74)"
+    },
+    {
+      "check": "T2_su2R_algebra",
+      "pass": true,
+      "desc": "[K_a,K_b] = i\u03b5_{abc}K_c  SU(2)_R  (9 commutators, 4\u00d74)"
+    },
+    {
+      "check": "T3_JL_KR_commute",
+      "pass": true,
+      "desc": "[J_L, K_R] = 0  (9 pairs, L\u2295R block structure)"
+    },
+    {
+      "check": "T4_spinor_hom_C1C2",
+      "pass": true,
+      "desc": "\u03c6([C\u2081,C\u2082]^vec) = [C\u2081,C\u2082]^spin  (spinor lift is Lie algebra hom.)"
+    },
+    {
+      "check": "T5_su3_all_pairs_hom",
+      "pass": true,
+      "desc": "\u03c6([C\u1d62,C\u2c7c]) = [\u03c6(C\u1d62),\u03c6(C\u2c7c)] for all 64 pairs (0 violations) \u2192 su(3) closes in spinor rep"
+    },
+    {
+      "check": "T6_J3_32_eigenvalues",
+      "pass": true,
+      "desc": "J\u2083^{32} diagonal: 8\u00d7(\u00bd) + 8\u00d7(\u2212\u00bd) + 16\u00d7(0)  [G6: T3L=\u00bd for |L\u2191\u27e9\u2297S\u2076, etc.]"
+    }
+  ]
+}
