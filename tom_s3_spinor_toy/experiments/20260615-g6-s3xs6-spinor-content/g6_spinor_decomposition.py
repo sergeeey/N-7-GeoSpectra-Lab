@@ -209,7 +209,7 @@ print(f"Extra (not SM):  {extra}")
 
 # Count multiplicities
 counts = Counter(matched)
-print("\nMultiplicities (should be 2 each = color×isospin for quarks, 1 for others):")
+print("\nMultiplicities (should be 3 for quarks = color triplet, 1 for leptons):")
 for name in sorted(counts):
     print(f"  {name}: {counts[name]}")
 

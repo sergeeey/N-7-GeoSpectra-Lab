@@ -1,4 +1,4 @@
-# G9 — Claim: S⁶ = G₂/SU(3) is equal-rank → chirality escape from G8 is real
+# G9 — Claim: S⁶ = G₂/SU(3) is equal-rank → NECESSARY condition for the G8 chirality escape is satisfied
 
 **Question type:** [x] descriptive  [ ] predictive  [ ] causal
 
