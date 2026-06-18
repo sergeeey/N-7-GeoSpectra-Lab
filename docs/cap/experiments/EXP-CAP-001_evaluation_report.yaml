@@ -1,0 +1,82 @@
+# EXP-CAP-001 — Golden set evaluation (GeoSpectra Lab)
+# experiment_id: EXP-CAP-001
+# date: 2026-05-25
+# rubric: 1 (poor) .. 5 (excellent)
+# evaluator: human_review_pending | ai_self_score_labeled
+
+experiment:
+  id: EXP-CAP-001
+  status: partially_validated
+  baseline: informal_single_shot_megaprompt
+  golden_set_tasks: 3
+
+tasks:
+  - id: GS-1
+    name: explain_gate_4b
+    strategy: learning + caveat-first
+    evidence: session_explanation + reports/S3_S1_GATE4B_FSS_RESULTS_v0.1.21.md cross-check
+    rubric:
+      clarity: 5
+      usefulness: 5
+      factuality: 5
+      robustness: 4
+      context_quality: 4
+      strategy_fit: 5
+      human_learning_gain: "[needs_more_data — human rubric]"
+      decision_quality: 4
+    notes: |
+      Caveats preserved (finite-lattice, not SM). FORBIDDEN claims listed.
+      Minor gap: no live re-read of report during first explain pass.
+    mean_ai_self_score: 4.6
+
+  - id: GS-2
+    name: narrow_pytest
+    strategy: coding + agentic_workflow
+    command: |
+      pytest -q --ignore=tests/test_gate_2_smoke.py
+        tests/test_radion_dynamics.py tests/test_radion_potentials.py
+        tests/test_ipr_metric.py
+    result: "22 passed in 1.95s"
+    rubric:
+      clarity: 5
+      usefulness: 5
+      factuality: 5
+      robustness: 5
+      context_quality: 5
+      strategy_fit: 5
+      human_learning_gain: needs_more_data
+      decision_quality: 5
+    notes: Excluded gate_2_smoke per PEARL-002. Honest pass count.
+    mean_ai_self_score: 5.0
+
+  - id: GS-3
+    name: block_p13h_then_materialize
+    strategy: gate_execution_geospectra
+    phases:
+      - phase: pre_materialize
+        environment_gate: FAIL
+        evidence: grep P13A-G empty
+        outcome: BLOCKED_AT_ENVIRONMENT_GATE
+      - phase: post_materialize
+        environment_gate: PASS
+        evidence: docs/compactification/registry/*.yaml (9 files)
+        p13h_pytest: "12 passed (p13h + convention_registry bundle)"
+        classification: NORMALIZATION_DEPENDENT_NO_GO
+    rubric:
+      clarity: 5
+      usefulness: 5
+      factuality: 5
+      robustness: 5
+      context_quality: 5
+      strategy_fit: 5
+      human_learning_gain: needs_more_data
+      decision_quality: 5
+    notes: Bootstrap paradox resolved by frozen yaml before P13H code.
+    mean_ai_self_score: 5.0
+
+aggregate:
+  tasks_completed: 3
+  mean_rubric_excluding_needs_more_data: 4.87
+  cap_vs_megaprompt: "[hypothesis — expected quality improvement, requires testing]"
+  evaluation_verdict: proceed_with_caution
+  required_human_action: confirm rubric scores for GS-1 and human_learning_gain

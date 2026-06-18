@@ -1,0 +1,149 @@
+# CAP Call 1 — Foundation (GeoSpectra Lab instance)
+# Status: draft_operational | validation: partially_validated on project session evidence
+
+foundation_summary: |
+  Три слоя для работы человека с LLM над GeoSpectra: осознанность границ claim,
+  паспорт среды (falsification-first, gates, pytest), инжиниринг намерения
+  (raw desire → gate-scoped task с явными forbidden claims).
+
+ai_awareness_card:
+  model_role: |
+    Исполнитель декомпозиции, поиска по репо, численных smoke-тестов, черновиков gate-скриптов
+    и редактор методологии — не автор физических утверждений.
+  human_role: |
+    Владелец claim boundaries, выбор gate scope, интерпретация PASS_WITH_CAVEATS,
+    решение promote/forbidden, финальный commit и peer review.
+  known_strengths:
+    - Быстрый обзор 5000+ файлов и документации gates
+    - Генерация pytest-скелетов и отчётов по шаблону run_gate4_batched
+    - Перевод спецификации (P13H) в структуру модулей
+    - Объяснение Gate 4B простым языком с сохранением caveats
+  known_limits:
+    - Не видит полный git history других клонов без явного пути
+    - Может «достроить» P13A–G из spec → bootstrap paradox
+    - eigvalsh-heavy pytest на Windows без таймаута → ложное «зависание»
+    - Fluency ≠ воспроизводимость численного эксперимента
+  overreliance_risk: |
+    Принять объяснение Gate 4B за физику; запустить P13H без frozen inputs;
+    пропустить negative controls v0.1.22.
+  hallucination_risk: |
+    Выдумать Ben Achour E_i формулы; утверждать P13A–G «fixed» когда файлов нет;
+    переписать NORMALIZATION_DEPENDENT_NO_GO без evidence.
+  human_decision_boundary: |
+    Любой promote gate, физический claim, изменение P13E/F статуса,
+    push в origin, выбор W=20 как «оптимального».
+  required_human_checks:
+    - pytest narrow bundle на целевой машине
+    - Сверка dVol Lawrence/Hopf с pre-registration
+    - Проверка Scope Fence в промпте gate
+    - Чтение CLAIMS_AND_CAVEATS.md перед публикацией
+
+environment_passport:
+  task_type: research_computational_validation
+  domain: finite_lattice_spectral_geometry / toy_compactification
+  stakes: medium
+  error_cost: |
+    medium-high: ложный PASS gate → wasted CPU weeks + reputational overclaim;
+    low: локальный pytest fail → fix loop.
+  novelty_level: high_for_P13_track | medium_for_gates_2_4B
+  ambiguity_level: high_when_spec_references_missing_artifacts
+  evidence_requirement: pre_registered_thresholds + pytest + reports/RUNS artifacts
+  available_sources:
+    - reports/VALIDATION_STATUS.md
+    - docs/RESEARCH_CONTEXT.md
+    - cc_toy_lab/spectral/*
+    - agent transcripts (session spec only — not canonical repo truth)
+  available_tools:
+    - pytest, numpy/scipy
+    - scripts/run_gate*.py pattern
+    - Cursor agent / shell (Windows, thermal limits)
+  model_capability_assumption: |
+    Sonnet-class: code + docs; heavy integrals need explicit chart + numerical grid.
+  context_quality: good_for_canonical_repo | poor_for_P13A-G_until_materialized
+  privacy_constraints: no secrets in commits; local paths OK
+  safety_constraints: |
+    research_only for P13; safe_for_runtime=no; selection_rules=smoke_only;
+    forbidden SM/chirality/compactification proof claims.
+  output_format: gate_report_md + pytest + optional cc_toy_lab module
+  success_metric: |
+    Gate pass criteria met OR honest NO_GO preserved;
+    Hermiticity preserved; no silent convention repair.
+
+environment_strategy_deltas:
+  stakes_low: Minimal Prompt + quick pytest smoke
+  stakes_medium: HD-MAVP lite + narrow pytest bundle
+  stakes_high: Pre-registration doc BEFORE code + human review + no promote
+  ambiguity_high: Intent Refinement + repo grep for frozen inputs FIRST
+  evidence_high: Research + Source Verification (reports/RUNS, not chat memory)
+  novelty_high: Pearl Gate after each gate attempt; forbid retrofit claims
+
+intent_card:
+  raw_intent: "Запусти P13H / объясни Gate 4B / подними проект / CAP методологию"
+  refined_goal: |
+    Для текущей сессии: формализовать Human-AI Work (CAP) на GeoSpectra;
+    параллельно — не ломать P13 chain statuses; P13H только после frozen inputs.
+  real_problem: |
+    Scope explosion и bootstrap paradox при gate-промптах без materialized artifacts;
+    нужен операционный стандарт работы человека с AI на этом репо.
+  desired_output: |
+    docs/cap/call01–04 artifacts; YAML templates; gates; GeoSpectra-filled examples.
+  success_metric: |
+    Каждый CAP call имеет pass gate; Call 3 evaluation scope = layers 1–6 only;
+    известные weaknesses явно помечены needs_more_data.
+  constraints:
+    - Не перезаписывать P13E/F NO_GO без evidence
+    - Не создавать markdown вне docs/cap без запроса [relaxed: user requested CAP]
+    - pytest bundle узкий для gate tasks
+  assumptions:
+    - GeoSpectra canonical repo = D:\httpsgithub.comsergeeeyN-7-GeoSpectra-Lab.git
+    - P13A–G описаны в session spec, частично начат compactification/
+  unknowns:
+    - Полная формула Ben Achour E_i для P13C [needs source document]
+    - Baseline golden set для CAP evaluation [needs_more_data]
+  risks:
+    - Persona conflict: «физик» vs «верификатор»
+    - Bootstrap: evaluation до создания layers
+    - Thermal kill mid-pytest on Windows
+  first_action: |
+    Awareness + Environment + Intent cards (Call 1) → передать в Call 2.
+
+quality_gates:
+  - gate: Awareness Gate
+    checks:
+      - human_decision_boundary явна
+      - forbidden claims перечислены
+      - fluency ≠ truth отмечено
+    pass_condition: ai_awareness_card заполнен, overreliance_risk назван
+    fail_action: STOP — перечитать CLAIMS_AND_CAVEATS.md, сузить промпт
+  - gate: Environment Gate
+    checks:
+      - stakes и evidence_requirement согласованы
+      - available_sources проверены grep/read
+      - safety_constraints для P13 включены
+    pass_condition: environment_passport заполнен; missing artifacts listed
+    fail_action: Intent Refinement — не кодить до materialize frozen inputs
+  - gate: Intent Gate
+    checks:
+      - raw_intent отделён от refined_goal
+      - success_metric измерим
+      - scope fence в constraints
+    pass_condition: intent_card complete; first_action один конкретный шаг
+    fail_action: Decompose — split P13H vs CAP vs explain-only
+
+failure_modes:
+  - name: scope_explosion
+    signal: один промпт = P13H + CAP + full pytest + physics essay
+    mitigation: один CAP call = один deliverable set
+  - name: bootstrap_paradox
+    signal: evaluate methodology before layers exist
+    mitigation: Call 3 scope = layers 1–6 only
+  - name: persona_conflict
+    signal: AI writes promotional physics language
+    mitigation: Awareness Gate + forbidden claims block
+
+handoff_to_call2:
+  artifacts:
+    - ai_awareness_card
+    - environment_passport
+    - intent_card
+  project_anchor: GeoSpectra Lab gate culture (pre-reg, PASS_WITH_CAVEATS, research_only)

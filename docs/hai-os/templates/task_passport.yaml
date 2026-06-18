@@ -1,0 +1,27 @@
+# HAI-OS v0.3 — Task Passport (template)
+hai_os_version: 0.3.0
+artifact: task_passport
+
+task_passport:
+  raw_intent: ""
+  refined_goal: ""
+  real_problem: ""
+  task_type: ""
+  domain: ""
+  stakes: low  # low | medium | high | critical
+  error_cost: ""
+  ambiguity_level: low  # low | medium | high
+  novelty_level: low  # low | medium | high
+  evidence_requirement: low  # low | medium | high
+  desired_output: ""
+  success_metric: ""
+  constraints: []
+  assumptions: []
+  unknowns: []
+  risks: []
+  human_decision_boundary: ""
+  first_useful_action: ""
+
+task_gate:
+  passed: false
+  fail_action: Уточнить Task Passport

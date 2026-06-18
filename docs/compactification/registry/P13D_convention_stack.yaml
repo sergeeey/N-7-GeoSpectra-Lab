@@ -1,0 +1,9 @@
+# P13D — convention stack (frozen)
+gate_id: P13D
+status: fixed
+hermiticity: preserved
+gamma_basis: dirac_chiral_4x4
+su4_normalization: trace_normalized_generators
+generator_trace_inner_product: "Tr(T_I T_J) = delta_IJ / 2"
+gamma_hermiticity: "gamma^a = (gamma^a)^dag"
+volume_element: "rho^3 * sin(alpha) * cos(alpha) d_alpha d_theta d_theta_tilde"

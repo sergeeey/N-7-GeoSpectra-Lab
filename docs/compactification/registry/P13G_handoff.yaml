@@ -1,0 +1,14 @@
+# P13G — handoff / limitations (frozen)
+gate_id: P13G
+status: fixed
+lambda: FREE_COUPLING_PARAMETER
+runtime: research_only
+safe_for_runtime: false
+selection_rules: smoke_only
+promotion: forbidden_without_separate_gate
+allowed_conventions:
+  - CONV_HAAR_UNIT
+  - CONV_HAAR_HARMONIC_SQRT2
+convention_note: |
+  CONV_HAAR_UNIT: harmonic mode L2-normalized on Haar grid.
+  CONV_HAAR_HARMONIC_SQRT2: harmonic amplitude carries sqrt(2) relative factor.

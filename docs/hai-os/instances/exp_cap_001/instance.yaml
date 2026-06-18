@@ -1,0 +1,47 @@
+# HAI-OS v0.3 instance — EXP-CAP-001 golden set
+instance_id: exp_cap_001
+project: GeoSpectra Lab
+hai_os_version: 0.3.0
+completed: true
+
+task_passport:
+  raw_intent: Validate CAP methodology on 3 real tasks
+  refined_goal: Golden set rubric 1-5 on explain / pytest / P13H block
+  real_problem: Is CAP better than megaprompt for this repo?
+  task_type: method_validation
+  domain: human_ai_workflow
+  stakes: low
+  evidence_requirement: medium
+  success_metric: 3 tasks scored + honest hypothesis labels
+  success_metric_note: "[hypothesis: CAP quality improvement requires human confirm]"
+  first_useful_action: run GS-2 narrow pytest
+
+strategy_card:
+  selected_strategy: research
+  activated_extensions: [Verification Gap]
+  human_review_required: true
+
+verification_report:
+  claims:
+    - "GS-2 pytest 22 passed"
+    - "GS-3 bootstrap block then materialize worked"
+  evidence:
+    - docs/cap/experiments/EXP-CAP-001_evaluation_report.yaml
+  verification_gap: medium
+  verdict: proceed_with_caution
+  confidence: medium
+  required_tests:
+    - human rubric confirm GS-1
+    - 5_real_tasks per HAI-OS v0.3 spec
+
+decision_record:
+  decision: Adopt HAI-OS v0.3 as daily standard; keep CAP as deep reference
+  next_action: test_on_5_real_tasks
+  review_date: 2026-06-08
+
+gates:
+  task_gate: passed
+  context_gate: passed
+  strategy_gate: passed
+  verification_gate: passed
+  decision_gate: pending_human_rubric

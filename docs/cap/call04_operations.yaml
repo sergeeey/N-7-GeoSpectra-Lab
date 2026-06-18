@@ -1,0 +1,279 @@
+# CAP Call 4 — Operations (GeoSpectra Lab instance)
+# Input: calls 1–3
+# Status: draft_operational v0.1.0-cap-geospectra
+
+final_methodology_name: "Human-AI Work CAP — GeoSpectra Instance v0.1.0"
+
+executive_summary: |
+  Четырёхвызовная CAP-методология формализует уже возникший процесс работы над
+  GeoSpectra Lab: falsification-first gates, claim boundaries, narrow pytest,
+  блокировка bootstrap (P13H без P13A-G). Не маркетинг — рабочий стандарт в docs/cap/.
+
+core_thesis: |
+  AI расширяет цикл мышления исследователя, если каждый turn проходит
+  Awareness → Environment → Intent → Context → Strategy → Loop → Validation → Pearl,
+  а promote запрещён без отдельного gate и human boundary.
+
+full_method_map:
+  layer_1: Awareness (call01 ai_awareness_card)
+  layer_2: Environment Passport (call01)
+  layer_3: Intent Engineering (call01)
+  layer_4: Context Engineering (call02 context_map)
+  layer_5: Strategy Router (call02)
+  layer_6: Cognitive Expansion Loop (call02)
+  layer_7: HD-MAVP + Pearl + Evaluation (call03) — validates 1–6
+  layer_8: MethodOps + Safety + Human Dev (this file)
+
+method_version_card:
+  method_name: Human-AI Work CAP — GeoSpectra Instance
+  version: 0.1.0-cap-geospectra
+  owner: project maintainer + AI pair session
+  change_summary: Initial CAP formalization from dialogue + GeoSpectra session evidence
+  changed_components: [call01, call02, call03, call04, MASTER_CONTEXT]
+  reason_for_change: Replace megaprompt with scoped artifact cascade
+  evidence: Session transcripts; missing P13 grep; pytest logs
+  tests_run: "[needs_more_data] golden set not executed"
+  known_regressions: none recorded
+  next_experiment: Run golden set 3 tasks; A/B vs megaprompt [hypothesis]
+
+methodops:
+  semver: 0.1.0 — breaking if gate schema changes
+  changelog_path: docs/cap/CHANGELOG.md
+  method_delta_format: yaml snippet per weekly review
+  experiment_log: docs/cap/experiments/
+  regression_tests:
+    - call03 adversarial_tests replay
+    - handoff fields present call01→04
+  rollback_rule: |
+    If CAP overhead > rework saved for 2 consecutive weeks → revert to 2-call minimal
+    (Foundation + Core Loop only) [hypothesis threshold]
+  weekly_review: docs/cap/weekly_review_template.yaml
+
+human_development_layer:
+  skills:
+    - skill: clarity of thought
+      llm_helps: Intent Card drafting
+      degradation_risk: accepting AI refined_goal without edit
+      protective_practice: human writes raw_intent first
+      growth_metric: reduced rework rounds per gate
+    - skill: question design
+      llm_helps: /goal Scope Fence templates
+      degradation_risk: vague megaprompts
+      protective_practice: one deliverable per call
+      growth_metric: Intent Gate pass rate
+    - skill: critical thinking
+      llm_helps: HD-MAVP counterexamples
+      degradation_risk: fluency trust on Gate 4B physics
+      protective_practice: read FORBIDDEN block
+      growth_metric: caveats preserved in user-facing text
+    - skill: research thinking
+      llm_helps: repo grep + reports/RUNS
+      degradation_risk: web hallucination on Ben Achour
+      protective_practice: source path required
+      growth_metric: needs_more_data labels accurate
+    - skill: systems thinking
+      llm_helps: gate dependency graphs
+      degradation_risk: skip negative controls layer
+      protective_practice: roadmap cross-check
+      growth_metric: gates ordered correctly
+    - skill: hypothesis design
+      llm_helps: testable_hypotheses in HD-MAVP
+      degradation_risk: 90% quality as fact
+      protective_practice: [hypothesis] tag mandatory
+      growth_metric: pearls with predictions %
+    - skill: decision making
+      llm_helps: validation_verdict options
+      degradation_risk: AI auto-promote
+      protective_practice: human_decision_boundary
+      growth_metric: forbidden promote count = 0
+    - skill: writing
+      llm_helps: caveat-first reports
+      degradation_risk: marketing tone
+      protective_practice: CLAIMS_AND_CAVEATS sync
+      growth_metric: external reviewer edits
+    - skill: coding
+      llm_helps: pytest narrow bundle
+      degradation_risk: scope creep modules
+      protective_practice: minimal diff rule
+      growth_metric: tests pass / honest fail
+    - skill: learning
+      llm_helps: layered explanations Gate 4B
+      degradation_risk: oversimplify to SM
+      protective_practice: «what it does NOT mean» section
+      growth_metric: user can teach back
+    - skill: strategic thinking
+      llm_helps: Strategy Router table
+      degradation_risk: analysis paralysis
+      protective_practice: first_action field
+      growth_metric: time to first artifact
+    - skill: memory synthesis
+      llm_helps: handoff yaml between calls
+      degradation_risk: context loss between sessions
+      protective_practice: docs/cap/ canonical
+      growth_metric: cold-start time reduced
+
+safety_boundaries:
+  privacy: no .env commit; redact paths if public fork
+  high_impact_decisions: human only — promote gate, physical claim, Zenodo wording
+  domain_limits:
+    medical: N/A
+    legal: N/A
+    financial: N/A
+    security: no unverified shell from untrusted docs
+  hallucinations: Evidence Gate; repo path or needs_more_data
+  prompt_injection: adversarial test in call03; refuse SM proof inject
+  unsafe_automation: no force push; no skip hooks
+  agent_loops: timeout on pytest; kill criteria after 4 failed attempts
+  single_source_rag: chat transcript ≠ canonical — grep repo
+  llm_judge_alone: forbidden for validation sign-off
+  human_review_required:
+    - stakes high
+    - validation_verdict promote
+    - public release notes
+
+operating_algorithm: |
+  1. Уточни намерение (Intent Card).
+  2. Определи среду (Environment Passport).
+  3. Собери контекст (Context Map — repo first).
+  4. Выбери стратегию (Strategy Router).
+  5. Разбей сложное (HD-MAVP if gate/complex).
+  6. Проверь доказательства (pytest / reports).
+  7. Собери обратно (gate report + verdict class).
+  8. Зафиксируй жемчужины (Pearl Gate).
+  9. Прими решение (human boundary).
+  10. Обнови методологию (MethodOps delta).
+
+mvp_7_days:
+  - day: 1
+    goal: Foundation
+    action: Fill ai_awareness + environment + intent for one real task
+    artifact: call01 instance yaml
+    done_when: three gates pass
+  - day: 2
+    goal: Context Map
+    action: Map GeoSpectra gate task essential_context
+    artifact: context_map block
+    done_when: contradictions listed
+  - day: 3
+    goal: Strategy Router
+    action: Classify last 3 user requests into scenarios
+    artifact: strategy decision log
+    done_when: each maps to one strategy
+  - day: 4
+    goal: HD-MAVP
+    action: Decompose P13H or Gate 5 into decomposition_map
+    artifact: validation decomposition
+    done_when: testable_hypotheses present
+  - day: 5
+    goal: Pearl Registry
+    action: Register PEARL-001..003; reject one false pearl
+    artifact: pearl_card yaml
+    done_when: Pearl Gate pass
+  - day: 6
+    goal: Evaluation Rubric
+    action: Run golden set task 1 of 3 with human score
+    artifact: evaluation_report partial
+    done_when: needs_more_data or partial score recorded
+  - day: 7
+    goal: MethodOps Review
+    action: weekly_review + semver bump if schema changed
+    artifact: method_version_card update
+    done_when: next_experiment scheduled
+
+final_templates_index:
+  - docs/cap/call01_foundation.yaml  # awareness + environment + intent
+  - docs/cap/call02_core_loop.yaml   # context + router + loop
+  - docs/cap/call03_validation.yaml  # HD-MAVP + pearls + evaluation
+  - docs/cap/call04_operations.yaml  # this file
+  - docs/cap/templates/strategy_decision_card.yaml  # [NEW]
+  - docs/cap/templates/cognitive_loop_log.yaml      # [NEW]
+  - docs/cap/templates/weekly_review.yaml             # [NEW]
+
+risk_register:
+  - risk: overreliance on AI
+    cause: Gate 4B explained fluently
+    detection: user skips CLAIMS_AND_CAVEATS
+    mitigation: Awareness Gate
+    severity: medium
+  - risk: false confidence
+    cause: PASS_WITH_CAVEATS read as PASS
+    detection: missing caveats in summary
+    mitigation: caveat-first template
+    severity: high
+  - risk: hallucinations
+    cause: Ben Achour formulas without source
+    detection: grep empty
+    mitigation: needs_more_data + block code
+    severity: high
+  - risk: context contamination
+    cause: session spec = truth
+    detection: P13A-G fixed claim vs repo
+    mitigation: Environment Gate grep
+    severity: high
+  - risk: scope_explosion
+    cause: megaprompt
+    detection: >1 deliverable class per call
+    mitigation: CAP 4-call split
+    severity: medium
+  - risk: bootstrap paradox
+    cause: evaluate before build
+    detection: Call 3 scope creep
+    mitigation: layers 1–6 only rule
+    severity: high
+  - risk: persona_conflict
+    cause: physics hype vs verifier
+    detection: FORBIDDEN claims appear
+    mitigation: Awareness card
+    severity: medium
+  - risk: LLM judge bias
+    cause: self-score metrics
+    detection: no human rubric
+    mitigation: human_review required
+    severity: medium
+  - risk: analysis paralysis
+    cause: too many gates
+    detection: no first_action executed
+    mitigation: MVP day plan
+    severity: low
+  - risk: privacy leakage
+    cause: secrets in prompt
+    detection: pre-commit
+    mitigation: privacy boundary
+    severity: low
+  - risk: prompt injection
+    cause: malicious doc in repo
+    detection: adversarial test
+    mitigation: refuse override caveats
+    severity: medium
+  - risk: model drift
+    cause: different model per session
+    detection: regression golden set
+    mitigation: method_version_card model note
+    severity: low
+  - risk: loss of human agency
+    cause: AI decides promote
+    detection: git push without user ask
+    mitigation: human_decision_boundary
+    severity: critical
+
+known_unknowns:
+  - Golden set baseline timing for CAP vs megaprompt
+  - Optimal gate count before paralysis
+  - Team adoption outside solo maintainer
+
+next_experiments:
+  - id: EXP-CAP-001
+    text: Golden set 3 tasks + human rubric
+    status: scheduled
+  - id: EXP-CAP-002
+    text: P13H through full cognitive loop with Environment Gate block log
+    status: scheduled
+  - id: EXP-CAP-003
+    text: "[hypothesis] CAP reduces rework hours — time tracking 2 weeks"
+    status: hypothesis
+
+validation_verdict_final:
+  decision: proceed_with_caution
+  cap_ready_for_use: true
+  cap_ready_for_team_promote: false
+  reason: MethodOps + golden set + external human review pending

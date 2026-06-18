@@ -1,0 +1,15 @@
+# HAI-OS v0.3 — Method Delta (optional MethodOps module)
+hai_os_version: 0.3.0
+artifact: method_delta
+module: methodops
+
+method_delta:
+  version_from: ""
+  version_to: ""
+  changed_components: []
+  reason_for_change: ""
+  evidence: ""
+  tests_run: ""
+  known_regressions: []
+  next_experiment: ""
+  expected_improvement: "[hypothesis, requires testing]"

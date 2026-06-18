@@ -1,0 +1,14 @@
+# P13B1 — repaired spinor-state basis (frozen)
+gate_id: P13B1
+status: fixed
+low_mode_pair: [0, 1]
+modes:
+  - index: 0
+    label: scalar_spinor_j0
+    spinor_direction: [1, 0, 0, 0]
+    spatial_profile: constant
+  - index: 1
+    label: harmonic_spinor_j1_E1
+    spinor_direction: [0, 1, 0, 0]
+    spatial_profile: "sin(alpha) * cos(theta)"
+primary_test_pair: [0, 1]

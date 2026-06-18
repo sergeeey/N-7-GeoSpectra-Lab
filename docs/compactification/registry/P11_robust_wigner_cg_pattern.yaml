@@ -1,0 +1,32 @@
+# P11 — frozen robust Wigner/CG matrix-element selection pattern
+# status: fixed | do not modify from P13H
+
+gate_id: P11
+status: fixed
+runtime: research_only
+description: |
+  Low-mode off-diagonal matrix elements with mismatched harmonic quantum labels
+  are ZERO under the robust Wigner/CG selection pattern (smoke truncation).
+
+selection_rules:
+  - rule_id: P11-R1
+    pair: [0, 1]
+    i_label: scalar_spinor_j0
+    j_label: harmonic_spinor_j1_E1
+    expected: zero
+    tolerance: 1.0e-10
+    reason: scalar x first harmonic off-diagonal — CG/Wigner orthogonality
+
+pattern_table:
+  - i: 0
+    j: 0
+    expected: nonzero_structure
+  - i: 0
+    j: 1
+    expected: zero
+  - i: 1
+    j: 0
+    expected: zero
+  - i: 1
+    j: 1
+    expected: nonzero_structure

@@ -1,0 +1,191 @@
+# HAI-OS — Human-AI Operating System
+# version: 0.3.0 | status: hypothesis | role: daily_operating_standard
+
+methodology:
+  name: HAI-OS
+  version: 0.3.0
+  role: daily_operating_standard
+  status: hypothesis
+  reference_whitepaper: CEVA
+  main_rule: keep_core_small_extensions_optional
+  quality_improvement_claim: "[hypothesis: expected quality improvement, requires testing]"
+
+core_thesis: |
+  AI усиливает мышление человека только если работа проходит через управляемый цикл:
+  Task -> Context -> Strategy -> Work -> Verification -> Decision.
+  CEVA используется не как SOP, а как reference architecture для объяснения,
+  расширения и обоснования.
+
+core_v0_3:
+  - element: Task Passport
+    purpose: Уточнить задачу, риск и критерий успеха
+    artifact: task_passport
+  - element: Context Map
+    purpose: Управлять контекстом и источниками
+    artifact: context_map
+  - element: Strategy Router
+    purpose: Выбрать глубину работы
+    artifact: strategy_card
+  - element: Work Loop
+    purpose: Выполнить задачу
+    artifact: work_log
+  - element: Verification Gate
+    purpose: Проверить выводы
+    artifact: verification_report
+  - element: Decision Record
+    purpose: Зафиксировать человеческое решение
+    artifact: decision_record
+
+operating_principles:
+  - Fluency is not truth.
+  - Confidence is not evidence.
+  - Human owns intent, judgment and accountability.
+  - Risk determines process depth.
+  - Context has a ceiling.
+  - Unsupported claims must be marked.
+  - Extensions are activated only by need.
+
+ceva_elements_selective:
+  - element: Verification Gap
+    v0_3_status: core_principle
+    how_used: Проверять разрыв между ответом и доказательством
+  - element: Context Ceiling
+    v0_3_status: core_principle
+    how_used: Не перегружать модель контекстом
+  - element: Human Agency
+    v0_3_status: core_principle
+    how_used: Человек владеет намерением и решением
+  - element: Pearl Registry
+    v0_3_status: optional_module
+    how_used: Для побочных открытий
+  - element: MethodOps
+    v0_3_status: optional_module
+    how_used: Для улучшения метода
+  - element: Human Development
+    v0_3_status: optional_extension
+    how_used: Для развития навыков
+  - element: HD-MAVP
+    v0_3_status: activated_module
+    how_used: Для сложных/high-risk задач
+
+five_core_gates:
+  - gate: Task Gate
+    checks: Goal, real problem, stakes, success metric
+    pass_condition: Задача ясна и ограничена
+    fail_action: Уточнить Task Passport
+  - gate: Context Gate
+    checks: Sources, gaps, contradictions, privacy, context ceiling
+    pass_condition: Контекст достаточен и не загрязнён
+    fail_action: Очистить/сжать/дособрать контекст
+  - gate: Strategy Gate
+    checks: Strategy fits risk, ambiguity and evidence need
+    pass_condition: Выбран правильный режим
+    fail_action: Re-route
+  - gate: Verification Gate
+    checks: Claims, evidence, unsupported claims, verification gap
+    pass_condition: Выводы проверены или честно маркированы
+    fail_action: Mark hypothesis / needs_more_data
+  - gate: Decision Gate
+    checks: Human rationale, risks, next action
+    pass_condition: Человек принял решение осознанно
+    fail_action: Не финализировать
+
+strategy_router_v0_3:
+  - signal: Clear + low-risk
+    strategy: minimal
+    optional_module: none
+  - signal: Vague intent
+    strategy: clarify
+    optional_module: none
+  - signal: High evidence requirement
+    strategy: research
+    optional_module: Verification Gap
+  - signal: Complex system/claim
+    strategy: hd_mavp
+    optional_module: HD-MAVP
+  - signal: Reusable prompt/process
+    strategy: promptops
+    optional_module: MethodOps
+  - signal: High-risk decision
+    strategy: decide + review
+    optional_module: Human Review
+  - signal: Multi-step automation
+    strategy: agentic
+    optional_module: Safety Boundaries
+  - signal: Valuable side discovery
+    strategy: continue main flow
+    optional_module: Pearl Registry
+  - signal: Learning goal
+    strategy: learn
+    optional_module: Human Development
+  - signal: Context overload
+    strategy: compress/retrieve
+    optional_module: Context Ceiling
+
+optional_modules:
+  pearl_registry_module:
+    activation_condition: valuable_side_observation_after_main_gate
+    artifact: pearl_card
+    rule: never_interrupt_main_flow
+  methodops_module:
+    activation_condition: method_changed_or_reused
+    artifact: method_delta
+    rule: every_change_requires_reason_and_test_plan
+  human_development_module:
+    activation_condition: learning_or_skill_growth_goal
+    artifact: learning_log
+    rule: ai_must_not_replace_human_practice
+  hd_mavp_module:
+    activation_condition: complex_or_high_risk_task
+    artifact: decomposition_and_validation_report
+    rule: claims_must_be_testable_or_marked_hypothesis
+
+operating_algorithm_v0_3:
+  - Заполни Task Passport.
+  - Пройди Task Gate.
+  - Собери Context Map.
+  - Проверь Context Gate и Context Ceiling.
+  - Выбери стратегию через Strategy Router.
+  - Выполни работу.
+  - Проверь Verification Gap.
+  - Сформируй Decision Record.
+  - Активируй optional modules только если есть сигнал.
+  - Зафиксируй Method Delta, если изменился сам метод.
+
+version_delta:
+  version_from: 0.2.0
+  version_to: 0.3.0
+  changed_components:
+    - operating_principles
+    - context_map
+    - verification_report
+    - strategy_router
+    - optional_modules
+  added_from_CEVA:
+    - verification_gap
+    - context_ceiling
+    - human_agency
+    - pearl_registry_as_optional
+    - methodops_as_optional
+    - human_development_as_extension
+    - hd_mavp_as_activated_module
+  preserved_from_v0_2:
+    - compact_core
+    - five_gates
+    - task_passport
+    - router_first_design
+  rejected_from_CEVA:
+    - mandatory_12_layer_core
+    - full_whitepaper_structure_as_sop
+    - mandatory_pearl_registry
+    - heavy_methodops_by_default
+  expected_improvement: "[hypothesis, requires testing]"
+
+final_verdict:
+  verdict: proceed_with_HAI_OS_v0_3
+  core_standard: HAI-OS v0.3
+  reference_document: CEVA
+  main_design_decision: compact_core_with_optional_extensions
+  validation_status: hypothesis
+  next_required_action: test_on_5_real_tasks
+  do_not_do: expand_core_back_to_12_layers

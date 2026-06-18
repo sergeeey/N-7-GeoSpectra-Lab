@@ -1,0 +1,20 @@
+# HAI-OS v0.3 — Context Map (template)
+hai_os_version: 0.3.0
+artifact: context_map
+
+context_map:
+  essential_context: []
+  optional_context: []
+  excluded_context: []
+  source_quality: medium  # low | medium | high | mixed
+  source_freshness: current  # current | stale | unknown
+  contradictions: []
+  missing_context: []
+  privacy_sensitive_context: []
+  context_ceiling_risk: low  # low | medium | high
+  compression_strategy: none  # none | summary | structured_digest | retrieval
+  update_rule: ""
+
+context_gate:
+  passed: false
+  fail_action: Очистить/сжать/дособрать контекст
