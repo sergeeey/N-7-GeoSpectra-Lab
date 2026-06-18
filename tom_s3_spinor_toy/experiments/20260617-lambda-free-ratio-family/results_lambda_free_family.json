@@ -1,0 +1,43 @@
+{
+  "gate": "LAMBDA-FREE-RATIO-FAMILY",
+  "verdict": "PASS_LAMBDA_FREE_RATIO_FAMILY_CONFIRMED",
+  "passed": 5,
+  "total": 5,
+  "closed_form": "R^2(j,m) = 2*(j-m+1)/(j+m)",
+  "generalises": "V-RATIO-G0 single ratio R=sqrt(2) = R(j=1/2,m=1/2)",
+  "new_predictions": {
+    "j=1,m=0": "2",
+    "j=3/2,m=3/2": "sqrt(6)/3",
+    "j=2,m=0": "sqrt(3)",
+    "j=2,m=-1": "2*sqrt(2)"
+  },
+  "lambda_status": "FREE_COUPLING_PARAMETER \u2014 cancels in every ratio (Wigner-Eckart)",
+  "scope": "structural ratios of S3 vector-operator matrix elements; \u03bb-free; NOT a coupling/observable prediction",
+  "checks": [
+    {
+      "check": "T1_symbolic",
+      "pass": true,
+      "desc": "general (j,m): CG-ratio\u00b2 = 2*(j - m + 1)/(j + m) = 2(j\u2212m+1)/(j+m)"
+    },
+    {
+      "check": "T2_numeric",
+      "pass": true,
+      "desc": "closed form matches CG at all 21 tower points (0 mismatches)"
+    },
+    {
+      "check": "T3_sqrt2",
+      "pass": true,
+      "desc": "R\u00b2(1/2,1/2) = 2 \u2192 R = \u221a2 (recovers V-RATIO-G0)"
+    },
+    {
+      "check": "T4_lambda_free",
+      "pass": true,
+      "desc": "d(M_a/M_b)/d\u03bb = 0 \u2014 ratio is \u03bb-free"
+    },
+    {
+      "check": "T5_new_predictions",
+      "pass": true,
+      "desc": "4 non-trivial NEW \u03bb-free ratios (R\u22601)"
+    }
+  ]
+}
