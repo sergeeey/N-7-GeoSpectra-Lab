@@ -1,5 +1,13 @@
 # activeContext — N-7-GeoSpectra-Lab
-**Updated:** 2026-06-17 (Skeptic audit of G6-G9 — all 4 CONFIRMED, 2 fixes, commit 3a169d0)
+**Updated:** 2026-06-17 (λ-free ratio FAMILY closed form, commit 768ddf6, 559 pytest)
+
+## λ-FREE RATIO FAMILY ✅ (2026-06-17, commit 768ddf6) — generalises V-RATIO-G0 √2
+Closed form: R²(j,m) = 2(j−m+1)/(j+m) for S³ vector-operator raising sector j→j+1.
+√2 = R(1/2,1/2) is one entry; this is the GENERATING FORMULA for the whole tower.
+Verified 2 ways: symbolic proof (general j,m) + numeric vs clebsch_gordan, 21 tower pts, 0 mismatch.
+New λ-free ratios: R=2 (j=1,m=0), √3 (j=2,m=0), 2√2 (j=2,m=−1), √6/3 (j=3/2,m=3/2).
+6/6 pytest (total 559). SCOPE: structural ratios of V-op matrix elements, λ-free (Wigner-Eckart);
+NOT a coupling/observable prediction; standard rep theory + explicit closed form. Real DELTA (formula > number).
 
 ## Skeptic Audit 2026-06-17 ✅ (commit 3a169d0) — convention/scope check before Tom reads deeper
 Context-asymmetric skeptic + sympy re-verify of G6-G9 + S³ spin-connection claims.
@@ -389,6 +397,8 @@ git log --oneline --decorate -5
 
 
 ## Auto-commit log
+- [2026-06-18 12:36] `768ddf6`: feat(lambda-free): closed-form λ-free ratio family — generalises V-RATIO-G0 √2
+- [2026-06-18 08:51] `9cad6d9`: chore: activeContext — skeptic audit complete, G6-G9 confirmed
 - [2026-06-18 08:50] `3a169d0`: fix(audit): G6 multiplicity print message + G9 headline scope
 - [2026-06-17 19:55] `7260290`: chore: update activeContext — G9 complete, Tom Sec 4.3 verified
 - [2026-06-15 17:15] `6a644fb`: feat(g9): S⁶=G₂/SU(3) equal-rank → chirality escape from G8 is structural
