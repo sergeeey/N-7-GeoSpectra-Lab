@@ -1,5 +1,15 @@
 # activeContext — N-7-GeoSpectra-Lab
-**Updated:** 2026-06-17 (λ-free ratio FAMILY closed form, commit 768ddf6, 559 pytest)
+**Updated:** 2026-06-17 (G10 — S⁶→SO(6) gauge field, Tom's mechanism, commit 3663dbc, 566 pytest)
+
+## G10 ✅ (2026-06-17, commit 3663dbc) — S⁶ spin connection → SO(6) gauge field (Tom's s₂=6)
+Read Tom PMs Section 7 fully → his mechanism: compact-space spin connection = O(s₂) gauge field.
+Table: s₂=2→U(1) (eq109), s₂=3→SU(2) (eq118 = Sergey's S³), s₂=6→SO(6) (G10).
+VERIFIED-sympy: so(6) 15 gens close; dim15=dim su(4) rank3; J(J²=−I) commutant=u(3) dim9=su(3)+u(1);
+J splits vector 6→3⊕3̄ (= G9 S⁶ tangent). 7/7 pytest.
+HONEST SCOPE (critical): mechanism gives ORTHOGONAL SO(6), NOT SU(3) color. SU(3)=J-preserving
+subgroup; whether GAUGE FIELD reduces to it = orthogonal→unitary gap Tom NAMES HIMSELF (p.29) +
+fermion coupling open. NOT claimed. Correctly-scoped fix of the G9 over-reach pattern.
+→ Strongest collab footing: we now work ON Tom's own stated open problem.
 
 ## λ-FREE RATIO FAMILY ✅ (2026-06-17, commit 768ddf6) — generalises V-RATIO-G0 √2
 Closed form: R²(j,m) = 2(j−m+1)/(j+m) for S³ vector-operator raising sector j→j+1.
@@ -397,6 +407,8 @@ git log --oneline --decorate -5
 
 
 ## Auto-commit log
+- [2026-06-18 12:51] `3663dbc`: feat(g10): S⁶ spin connection → SO(6) gauge field — Tom's mechanism at s₂=6
+- [2026-06-18 12:37] `8a9c54c`: chore: activeContext — λ-free ratio family complete
 - [2026-06-18 12:36] `768ddf6`: feat(lambda-free): closed-form λ-free ratio family — generalises V-RATIO-G0 √2
 - [2026-06-18 08:51] `9cad6d9`: chore: activeContext — skeptic audit complete, G6-G9 confirmed
 - [2026-06-18 08:50] `3a169d0`: fix(audit): G6 multiplicity print message + G9 headline scope
