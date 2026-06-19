@@ -1,0 +1,19 @@
+{
+  "passed": 13,
+  "total": 13,
+  "gates": {
+    "T1_binary_chirality": true,
+    "T2_quark_invariant": true,
+    "T3_quark_irreducible": true,
+    "T4_antiquark_irreducible": true,
+    "T5_quark_cartan_weights": true,
+    "T6_conjugate_reps": true,
+    "T7_traceless_cartan": true,
+    "T8_anti_hermitian": true,
+    "T9_full_decomposition": true,
+    "T10_combinatorial_colors": true,
+    "T11_combinatorial_anticolors": true,
+    "T12_singlets_extremes": true,
+    "T13_algebra_closes": true
+  }
+}

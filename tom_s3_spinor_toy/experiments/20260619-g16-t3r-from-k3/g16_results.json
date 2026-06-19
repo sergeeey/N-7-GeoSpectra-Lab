@@ -1,0 +1,16 @@
+{
+  "passed": 10,
+  "total": 10,
+  "gates": {
+    "T1_K3_diagonal": true,
+    "T2_eigenvalue_structure": true,
+    "T3_K3_J3_commute": true,
+    "T4_K3_commutes_SU3": true,
+    "T5_Y_diagonal": true,
+    "T6_SM_fermion_Y": true,
+    "T7_SM_antifermion_Y": true,
+    "T8_L_sector_doublet_Y": true,
+    "T9_Y_commutes_SU3": true,
+    "T10_Y_hermitian": true
+  }
+}

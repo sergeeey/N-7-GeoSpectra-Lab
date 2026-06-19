@@ -1,0 +1,40 @@
+{
+  "gate": "HYP01EXT-S3S1-FLUX",
+  "verdict": "PASS_HYP01EXT_S3S1_FLUX_MODULUS",
+  "passed": 5,
+  "total": 5,
+  "v_eff": "3*N_S3^2*exp(-phi/2) + N_S1^2*exp(3*phi/2)",
+  "phi_star": "ln(N_S3 / N_S1)",
+  "coupling_mechanism": "S3xS1 volume conservation R_S3^3*R_S1=const (no free kappa)",
+  "falsifier": "decouple S1 -> dV/dphi = -3/2*N_S3^2*exp(-phi/2) < 0 everywhere -> no minimum",
+  "equipartition": "V_S3/V_S1 = 3 at phi* for all (N_S3,N_S1) [from l=1 eigenvalue 3]",
+  "vs_HYP01": "HYP01 had ad-hoc kappa; HYP01-EXT derives coupling from topology alone",
+  "scope": "toy KK kinetic energy; phi=compactification modulus, NOT Tom's free lambda",
+  "checks": [
+    {
+      "check": "C1_analytic_exact",
+      "pass": true,
+      "desc": "\u03c6* = ln(N_S3/N_S1) matches scipy.minimize_scalar to \u22641e-5 (5/5 cases)"
+    },
+    {
+      "check": "C2_genuine_minimum",
+      "pass": true,
+      "desc": "\u2202V/\u2202\u03c6 \u2248 0 and V'' > 0 at \u03c6* for all 5 cases \u2192 genuine minimum"
+    },
+    {
+      "check": "C3_falsifier_decoupled",
+      "pass": true,
+      "desc": "decouple S\u00b9 (V_S1=const) \u2192 dV/d\u03c6 < 0 everywhere \u2192 no interior min (5/5)"
+    },
+    {
+      "check": "C4_symmetric_point",
+      "pass": true,
+      "desc": "\u03c6*(N_S3=N_S1=1) = 0.00e+00 \u2248 0 (equal fluxes \u2192 equal radii)"
+    },
+    {
+      "check": "C5_equipartition",
+      "pass": true,
+      "desc": "V_S3/V_S1 = 3.0 at \u03c6* for all cases (3:1 from S\u00b3 l=1 eigenvalue 1\u00b73=3)"
+    }
+  ]
+}

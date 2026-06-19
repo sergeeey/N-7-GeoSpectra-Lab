@@ -1,0 +1,42 @@
+{
+  "gate": "S6-HARM-G2",
+  "date": "2026-06-15",
+  "verdict": "PASS_S6_ROOT_GENERATORS_COTBETA_CONFIRMED",
+  "pass_count": 16,
+  "total_boolean_checks": 15,
+  "key_result": "cot\u03b2_k in root generators = frame artifact, S\u2076 analog of cot(2\u03b1) on S\u00b3",
+  "L12": "\u2202_{\u03c6\u2081}  [pure Cartan]",
+  "L13_phi1": "cot\u03b2\u2081 \u00b7 sin\u03b2\u2082 cos\u03c6\u2082 sin\u03c6\u2081",
+  "L35_phi2": "cot\u03b2\u2082 \u00b7 sin\u03b2\u2083 cos\u03c6\u2083 sin\u03c6\u2082",
+  "L15_phi1": "cot\u03b2\u2081 \u00b7 cos\u03b2\u2082 sin\u03b2\u2083 cos\u03c6\u2083 sin\u03c6\u2081",
+  "results": {
+    "T1_L12_phi1_coeff_is_1": "PASS",
+    "T1_L12_all_others_zero": "PASS",
+    "T1_L12_coefficients": [
+      "0",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "T2_L34_phi2_coeff_is_1": "PASS",
+    "T2_L34_all_others_zero": "PASS",
+    "T3_L56_phi3_coeff_is_1": "PASS",
+    "T3_L56_all_others_zero": "PASS",
+    "T4_L13_full_structure_correct": "PASS",
+    "T4_L13_phi1_coeff_has_cotb1": "PASS",
+    "T4_L13_no_phi3_coeff": "PASS",
+    "T4_L13_no_beta3_coeff": "PASS",
+    "T5_L35_phi2_coeff_has_cotb2": "PASS",
+    "T5_L35_no_phi1_coeff": "PASS",
+    "T5_L35_no_beta1_coeff": "PASS",
+    "T5_L35_phi2_coeff": "sin(\\beta_3)*sin(\\phi_2)*cos(\\phi_3)/tan(\\beta_2)",
+    "T6_L15_phi1_coeff_has_cotb1": "PASS",
+    "T6_L15_no_phi2_from_direct": "PASS",
+    "T6_L15_phi1_coeff": "sin(\\beta_3)*sin(\\phi_1)*cos(\\beta_2)*cos(\\phi_3)/tan(\\beta_1)",
+    "T7_L23_phi1_coeff_also_has_cotb1": "PASS",
+    "T7_cotb1_hierarchy": "L_{1j},L_{2j} (j\u22653) \u2192 cot\u03b2\u2081 in \u2202_{\u03c6\u2081}; L_{3j},L_{4j} (j\u22655) \u2192 cot\u03b2\u2082 in \u2202_{\u03c6\u2082}",
+    "T7_tom_analog": "cot\u03b2_k on S\u2076 = frame artifact (nested sphere), analog of cot(2\u03b1) on S\u00b3 (Tom row 15: Sounds right)"
+  }
+}

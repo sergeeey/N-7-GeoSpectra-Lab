@@ -1,0 +1,22 @@
+{
+  "gate": "S6-HARM-G4",
+  "date": "2026-06-15",
+  "verdict": "PASS_S6_DIRAC_SPECTRUM_CONFIRMED",
+  "passed": 14,
+  "total": 14,
+  "pytest_total": 493,
+  "pytest_skipped": 2,
+  "Christoffel_chr_p1_p1b1": "cot(beta_1)",
+  "Christoffel_chr_b1_p1p1": "-sin(2*beta_1)/2",
+  "Riemann_mixed_R_p1_b1_p1_b1": "1",
+  "sectional_curvature_K": "1/rho^2",
+  "scalar_curvature_R": "30/rho^2",
+  "Lichnerowicz_bound_R_over_4": "15/(2*rho^2)",
+  "ground_state_lambda0_sq": "9/rho^2",
+  "killing_spinor_count": 8,
+  "g0_weight_count": 8,
+  "spectrum_l0_l1_l2_l3": ["3/rho", "4/rho", "5/rho", "6/rho"],
+  "tom_s3_lambda0": "3/(2*rho)",
+  "s6_lambda0": "3/rho",
+  "ratio_s6_over_s3": "2"
+}

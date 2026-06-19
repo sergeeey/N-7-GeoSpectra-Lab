@@ -1,0 +1,31 @@
+{
+  "gate": "S6-HARM-G3",
+  "date": "2026-06-15",
+  "verdict": "PASS_S6_SEPARATION_CONFIRMED",
+  "pass_count": 13,
+  "total_boolean_checks": 13,
+  "key_result": "\u0394 = L\u2081 + (1/cos\u00b2\u03b2\u2081)[L\u2082 + (1/cos\u00b2\u03b2\u2082)L\u2083]; L\u2083=S\u00b2 Laplacian (eigenvalues \u2212l(l+1)); three nested Jacobi-type ODEs",
+  "tom_analog": "Tom S\u00b3 radial ODE \u2194 S\u2076 three nested ODEs (innermost = Legendre on S\u00b2)",
+  "results": {
+    "T1_nested_form_cosb3": "PASS",
+    "T1_laplacian_cosb3_result": "-2*cos(\\beta_3)/(cos(\\beta_1)**2*cos(\\beta_2)**2)",
+    "T1_nested_form_sinb1sq": "PASS",
+    "T1_nested_form_sinb2sq": "PASS",
+    "T2_L3_P0_eigenvalue_0": "PASS",
+    "T2_L3_P1_eigenvalue_minus2": "PASS",
+    "T2_L3_P2_eigenvalue_minus6": "PASS",
+    "T2_L3_P1_result": "-2*cos(\\beta_3)",
+    "T2_L3_P2_result": "9*sin(\\beta_3)**2 - 6",
+    "T3_separation_b1b2_product": "PASS",
+    "T3_separation_b1b3_product": "PASS",
+    "T3_separation_three_way_product": "PASS",
+    "T4_l3_eigenvalue": "l\u2083=1 \u2192 l\u2083(l\u2083+1)=2 \u2192 L\u2082 potential = \u22122/cos\u00b2\u03b2\u2082",
+    "T4_cotb2_link": "cot\u03b2\u2082 from G2 L\u2083\u2085 enters ODE\u2082 as \u2212l\u2083(l\u2083+1)/cos\u00b2\u03b2\u2082 centrifugal term",
+    "T4_nesting_l3_into_l2_decomposition": "PASS",
+    "T5_L1_operator_on_sin2b1": "PASS",
+    "T5_L1_operator_on_cos2b1": "PASS",
+    "T5_L1_constant_kernel": "PASS",
+    "T6_nested_ODE_structure": "ODE\u2083: L\u2083A\u2083 + l\u2083(l\u2083+1)A\u2083=0  \u2192  l\u2083=0,1,2,...  [Legendre P_l(cos\u03b2\u2083)]\nODE\u2082: L\u2082A\u2082 + [l\u2082 \u2212 l\u2083(l\u2083+1)/cos\u00b2\u03b2\u2082]A\u2082=0  \u2192  Jacobi-type on [0,\u03c0/2]\nODE\u2081: L\u2081A\u2081 + [\u03bb \u2212 l\u2082/cos\u00b2\u03b2\u2081]A\u2081=0  \u2192  Jacobi-type on [0,\u03c0/2]",
+    "T6_tom_analog": "Tom S\u00b3: radial ODE in \u03b1 gives Jacobi polynomial A(\u03b1).\nS\u2076: three nested ODEs, innermost (L\u2083) = S\u00b2 Legendre, next two = Jacobi-type.\nThe 1/cos\u00b2\u03b2_k centrifugal terms = cot\u03b2_k artifacts from G2 (frame dependent)."
+  }
+}

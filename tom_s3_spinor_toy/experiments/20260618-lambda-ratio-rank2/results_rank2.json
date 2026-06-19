@@ -1,0 +1,40 @@
+{
+  "gate": "LAMBDA-FREE-RANK2",
+  "verdict": "PASS_LAMBDA_FREE_RANK2_CONFIRMED",
+  "passed": 5,
+  "total": 5,
+  "rank1_closed": "R1^2(j,m) = 2*(j-m+1)/(j+m)",
+  "rank2_A_closed": "R2A^2(j,m) = 3*(j-m+1) / (2*(j+m))",
+  "rank2_B_closed": "R2B^2(j,m) = 4*(j-m+2) / (j+m-1)",
+  "rank_connection": "R2A^2 = (3/4) * R1^2  [same rational structure, prefactor 3/4]",
+  "boundary_rB": "R2B^2(j,j) = 8/(2j-1)  [e.g. j=1:8, j=2:8/3, j=4:8/7]",
+  "mechanism": "Wigner-Eckart: reduced element and lambda cancel in any intra-sector ratio",
+  "scope": "structural CG ratios for rank-2 tensor on S3; lambda stays free",
+  "checks": [
+    {
+      "check": "T1_R2A_closed_form",
+      "pass": true,
+      "desc": "R\u2082,A\u00b2 = 3(j\u2212m+1)/[2(j+m)] verified at 35 tower pts (0 mismatches)"
+    },
+    {
+      "check": "T2_R2B_closed_form",
+      "pass": true,
+      "desc": "R\u2082,B\u00b2 = 4(j\u2212m+2)/(j+m\u22121) verified at 28 tower pts (0 mismatches)"
+    },
+    {
+      "check": "T3_lambda_free",
+      "pass": true,
+      "desc": "d(R\u2082,A)/d\u03bb = 0 \u2014 ratio is \u03bb-free"
+    },
+    {
+      "check": "T4_rank_connection",
+      "pass": true,
+      "desc": "R\u2082,A\u00b2(j,j) = (3/4)\u00d7R\u2081\u00b2(j,j) = 3/(4j); same rank-1 structure with prefactor 3/4"
+    },
+    {
+      "check": "T5_R2B_boundary",
+      "pass": true,
+      "desc": "R\u2082,B\u00b2(j,j) = 8/(2j\u22121) = 4/(j\u2212\u00bd): 8/(2*j - 1) == 8/(2*j - 1)"
+    }
+  ]
+}
