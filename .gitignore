@@ -51,7 +51,8 @@ Toy-модель*
 
 # --- Claude Code local settings (machine-specific) ---
 **/.claude/settings.local.json
-**/.claude/memory/_auto/
+**/.claude/memory/
+**/.claude/verification_plan.md
 
 # --- Temporary working files ---
 **/tmp_pdf_review/

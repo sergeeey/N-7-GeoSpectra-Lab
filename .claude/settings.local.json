@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "mcp__obsidian-vault__read_note"
-    ]
-  }
-}
