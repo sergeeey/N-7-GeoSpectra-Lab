@@ -7,7 +7,37 @@
 
 ---
 
-## 1. Executive Verdict
+## 0. RE-AUDIT 2026-06-17 (supersedes the 2026-06-03 audit below)
+
+**Re-audited after the G6–G10 / S³×S⁶ / Tom-collaboration work. Read-only, no changes made, repo NOT published.**
+
+### Executive verdict (2026-06-17): **NOT public-ready — KEEP PRIVATE.** Score ~5.0/10.
+
+The single most important action is unverifiable from here and must be done by hand:
+
+> 🔴 **VERIFY REPO VISIBILITY NOW.** `gh` was unavailable during audit, so I could not confirm whether `github.com/sergeeey/N-7-GeoSpectra-Lab` is private. The URL was shared with Tom. **If it is public, the items below are already exposed — make it private until cleaned.**
+
+### Fixed since 2026-06-03 ✅
+- `LICENSE` file now present (was blocker 3).
+- `SERVER_INFO.md` is now **untracked + gitignored** (was blocker 1) — live IP no longer in a tracked source file. *(Caveat: the IP `46.224.28.128` still appears inside THIS audit doc, which IS tracked — harmless once the Hetzner server is confirmed deleted.)*
+- README verdict updated to `DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC (FINAL)` — the falsified-verdict blocker 2 is resolved.
+
+### NEW / still-open blockers (2026-06-17)
+
+| # | Severity | Finding | Action |
+|---|----------|---------|--------|
+| N1 | 🔴 HIGH (privacy) | `.claude/memory/activeContext.md` is **tracked** — it contains the full live research strategy incl. Tom-handling notes ("do NOT present G9 coset to Tom as his", parked-artifact plans). Also tracked: `.claude/settings.local.json`, `.claude/verification_plan.md`. | `git rm --cached .claude/memory/activeContext.md .claude/settings.local.json .claude/verification_plan.md`; add `.claude/` to `.gitignore`; if repo was ever public, rewrite history (git-filter-repo). |
+| N2 | 🔴 HIGH (collaboration/ethics) | `reports/` tracks **drafts of messages to Tom + reconstructions of his UNPUBLISHED theory**: `NOTE_FOR_TOM_SENT_*`, `TOM_MESSAGE_GATE_1_DRAFT`, `TOM_RESPONSE_TRIAGE_PLAN`, `TOM_MAPPING_*`, `TOM_RECONSTRUCTION_ACH_MATRIX`, `TOM_S3_SPINOR_TOY_DESIGN_SPEC`. Publishing a collaborator's unpublished work / your private handling of them could damage the relationship and raises consent issues. | Move Tom-specific drafts/reconstructions out of the public surface (private dir or untrack) OR get Tom's explicit OK. This is the biggest ethical blocker, not just a hygiene one. |
+| N3 | 🟠 MEDIUM (truth/drift) | **Count-drift:** README badge `tests-60 files` but real tracked test files = **74** (Stage 10.1 FAIL). | Update badge to 74, or switch to a CI-generated count. NB: there is still **no CI** (`.github/workflows/` absent) — do not add a CI badge without a workflow. |
+| N4 | 🟠 MEDIUM (staleness) | README describes only the **old S³×S¹ IPR/disorder** work (v0.1.24). It says nothing about the current focus: **G6–G10 (S³×S⁶ → SM rep content, KK spectrum, chirality obstruction, equal-rank, S⁶→SO(6) gauge), λ-free ratio family, and the Tom spin-connection result.** A reader sees a frozen 2026-06-03 snapshot, not the live work. | If/when public: add a "Current work (S³×S⁶ / Tom Lawrence collaboration)" section with honest scope (representation-level, λ free, SU(3) is an OPEN orthogonal→unitary gap per Tom). |
+
+### Honest strategic note (read before deciding to showcase)
+
+This is a **live collaboration on Tom Lawrence's unpublished theory**, mid-flight. Showcasing it publicly now is **premature** for two reasons: (1) it would expose his unpublished work + your private collaboration strategy (N1, N2); (2) the strongest results (G6–G10) are explicitly representation-level with open gaps Tom himself flags — a showcase would have to be heavily caveated to stay honest. **Recommendation: keep PRIVATE; revisit showcase only after the collaboration reaches a milestone Tom agrees is publishable.** The methodology (falsification ladder, evidence markers, null results, this very audit) remains the genuinely showcase-worthy asset — but separated from the Tom-specific material.
+
+---
+
+## 1. Executive Verdict  *(2026-06-03 — partially superseded by §0 above)*
 
 **Current score: 5.4 / 10 → Target after fixes: 8.2 / 10**
 
