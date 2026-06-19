@@ -33,6 +33,28 @@ arXiv:hep-th/0610241 [DOCS]
 | **NCG first-order condition** | Satisfied by construction of D_F [DOCS] | Holds for SU(3)×U(1)_{B-L}, fails for SU(2)_L/R (G22) [VERIFIED] | ⚠️ partial | CCM imposes as axiom; we derive what it selects |
 | **Majorana mass** | Right-handed neutrino Majorana term in D_F [DOCS] | Not constructed (one-generation toy) [UNKNOWN] | ❌ not addressed | Would require S³×S⁶ extension |
 
+## Prior Work — Dolan-Nash 2002 (nearest precursor)
+
+**Brian P. Dolan & C. Nash**, "The Standard Model Fermion Spectrum From Complex Projective Spaces",
+arXiv:hep-th/0207078 (2002). [DOCS — full text verified 2026-06-19]
+
+| Aspect | Dolan-Nash 2002 | Our S³×S⁶ |
+|--------|----------------|-----------|
+| **Manifold** | CP² × CP³ (dim 4+6) | S³ × S⁶ (dim 3+6) |
+| **Method** | Index theorem + holonomy bundle gauging | NCG spectral triple (D_F, J_F, γ_F) |
+| **Spectrum** | 1 SM generation + ν_R ✅ | 1 SM generation + ν_R ✅ |
+| **Yukawa count** | Not derived (not addressed) | 4 from 256→16→4 cascade ✅ |
+| **KO-dimension** | Not addressed | 6, verified (G18) ✅ |
+| **CCM connection** | Not addressed | 3 CCM postulates → derived ✅ |
+| **Generations** | Open question | Open question |
+
+**Novelty verdict:** Our result is independent of Dolan-Nash 2002. Different manifold
+(S³×S⁶ ≠ CP²×CP³), different method (NCG vs index theorem), and new consequences
+(Yukawa count, spectral triple structure, CCM comparison). Dolan-Nash is the nearest
+prior work and must be cited in any publication.
+
+---
+
 ## Key Differences (what CCM postulates that we derive)
 
 1. **Algebra A_F is postulated, not derived.** CCM starts with A_F = ℂ⊕ℍ⊕M₃(ℂ) as a given. We never specify A_F — the same gauge group emerges from S³×S⁶ isometry and holonomy.
