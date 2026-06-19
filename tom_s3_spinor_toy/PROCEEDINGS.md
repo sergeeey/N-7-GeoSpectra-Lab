@@ -136,7 +136,10 @@ different manifold, NCG method, explicit spectral action.
 
 ## 7. Open Questions
 
-1. **Three generations**: Z₃ orbifold on S⁶ is excluded (Smith theory, χ(S⁶)=2 not divisible by 3). G₂-instanton bundle approach under investigation.
+1. **Three generations**: Two routes on S⁶ are formally excluded:
+   - ℤ₃ orbifold: χ(S⁶)=2, not divisible by 3 (Smith theory, G27)
+   - G₂-instanton: G₂ symmetry forces index(D⊗V)=0 for all equivariant bundles (G₂ has no outer automorphisms → mult(**3**)=mult(**3̄**) in every G₂-irrep, G30)
+   The canonical bundle T^{1,0}S⁶ gives one generation (index=1). Three generations require breaking G₂→SU(3) or a mechanism from the S³ factor.
 2. **Majorana sector**: ν_R Majorana mass from S⁶ curvature terms (not yet computed).
 3. **4D limit**: tree-level result; RGE running from M_{KK} to M_Z not included.
 4. **λ coupling**: free parameter by Fisher rank theorem (G4); not the same as g₂, g₃.
@@ -151,7 +154,7 @@ all from geometry. The spectral action predicts the coupling ratio g₂²/g₃²
 at equal radii, matching SM at M_Z within 4.3% with zero free parameters. 
 The weak/strong hierarchy is geometric.
 
-All results are machine-verified: 1102 pytest tests, 
+All results are machine-verified: 1136 pytest tests, 
 github.com/sergeeey/N-7-GeoSpectra-Lab.
 
 ---
