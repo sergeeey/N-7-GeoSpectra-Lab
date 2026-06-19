@@ -1,0 +1,36 @@
+NOTE FOR TOM — 2026-06-19
+=========================
+
+Thank you very much for pointing me to Section 7 and refs 8, 9, 35 of your PMs paper.
+I will work through them carefully and come back with proper feedback once I have had
+time to study the non-linear realisation step in detail.
+
+In the meantime, I am attaching the explanation of our S3 spin connection script
+(s3_spin_connection_explanation.txt) in case it is useful context.
+
+Brief summary of what the script does:
+
+On the unit S3 in Hopf coordinates (alpha, theta, phi), with orthonormal triad
+
+    e1 = d(alpha)
+    e2 = cos(alpha) d(theta)
+    e3 = sin(alpha) d(phi)
+
+the unique Levi-Civita spin connection satisfying the Cartan structure equation
+d(e^a) + omega^a_b ^ e^b = 0 has components
+
+    omega_theta^{12} = sin(alpha)
+    omega_phi^{13}   = -cos(alpha)
+
+The cot(alpha) that appears in the differential-form expression omega^1_3 = -cot(alpha) e3
+is NOT a singularity: cot(alpha) * sin(alpha) = cos(alpha), so the component is smooth.
+
+This matches exactly what you describe in Section 7.4 of PMs for s2=3:
+your theta_mu^i gauge fields ARE these spin connection components.
+The SU(2) Yang-Mills identification follows directly.
+
+I will be back with more detailed feedback on Section 7 and the refs once I have
+studied them properly.
+
+With best regards,
+Sergey Boyko
