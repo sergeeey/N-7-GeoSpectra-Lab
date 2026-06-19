@@ -1,0 +1,17 @@
+# HAI-OS v0.3 — Pearl Card (optional module)
+hai_os_version: 0.3.0
+artifact: pearl_card
+module: pearl_registry
+activation: valuable_side_observation_after_main_gate
+
+pearl_card:
+  id: ""
+  source_stage: ""
+  observation: ""
+  property_type: reusable_pattern
+  # new_property | unexpected_link | counterexample | reusable_pattern | future_hypothesis | method_warning
+  why_it_matters: ""
+  testable_prediction: ""
+  is_object_property_or_analysis_artifact: ""
+  confidence: medium
+  next_review_date: ""

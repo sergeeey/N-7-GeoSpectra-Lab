@@ -1,0 +1,18 @@
+# HAI-OS v0.3 — Verification Report (template)
+hai_os_version: 0.3.0
+artifact: verification_report
+
+verification_report:
+  claims: []
+  evidence: []
+  unsupported_claims: []
+  verification_gap: medium  # low | medium | high
+  contradictions: []
+  required_tests: []
+  verdict: needs_more_data
+  # proceed | proceed_with_caution | needs_more_data | reject | redesign
+  confidence: medium  # low | medium | high
+
+verification_gate:
+  passed: false
+  fail_action: Mark hypothesis / needs_more_data

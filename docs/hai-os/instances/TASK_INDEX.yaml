@@ -1,0 +1,18 @@
+# HAI-OS instance index — GeoSpectra Lab
+hai_os_version: 0.3.0
+
+instances:
+  - id: p13h_gate
+    path: p13h_gate/instance.yaml
+    status: completed
+    strategy: hd_mavp
+    verdict: proceed_with_caution
+  - id: exp_cap_001
+    path: exp_cap_001/instance.yaml
+    status: completed
+    strategy: research
+    verdict: proceed_with_caution
+
+planned_real_tasks: 5
+completed_real_tasks: 2
+validation_status: hypothesis

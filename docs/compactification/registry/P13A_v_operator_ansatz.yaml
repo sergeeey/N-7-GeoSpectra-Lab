@@ -1,0 +1,10 @@
+# P13A — V-operator ansatz registry (frozen)
+gate_id: P13A
+status: fixed
+ansatz: "V_S3(x) = lambda * sum_{a,I} gamma^a A_a^I(x) T_I"
+lambda_role: FREE_COUPLING_PARAMETER
+matrix_element: "<psi_i | V_S3 | psi_j> = integral psi_i^dag V_S3 psi_j dVol_S3"
+smoke_truncation:
+  generator_indices: [0, 1]
+  gamma_indices: [0, 1, 2, 3]
+A_field_rule: "A[a,I](x) from P13C ben_achour map"

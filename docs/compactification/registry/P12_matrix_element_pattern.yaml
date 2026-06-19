@@ -1,0 +1,23 @@
+# P12 — frozen diagonal / scale pattern (companion to P11)
+# status: fixed | do not modify from P13H
+
+gate_id: P12
+status: fixed
+runtime: research_only
+description: |
+  Diagonal same-mode matrix elements carry NONZERO structure but absolute
+  coefficient scale is NOT fixed by Haar measure alone (normalization_dependent).
+
+scale_rules:
+  - rule_id: P12-S1
+    pair: [0, 0]
+    expected: nonzero_structure
+    absolute_scale: normalization_dependent
+  - rule_id: P12-S2
+    pair: [1, 1]
+    expected: nonzero_structure
+    absolute_scale: normalization_dependent
+
+normalization_note: |
+  Diagonal elements factor as coeff * lambda; coeff may shift under allowed
+  harmonic amplitude conventions (P13G) — not an absolute coupling fix.

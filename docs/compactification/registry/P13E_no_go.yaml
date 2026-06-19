@@ -1,0 +1,4 @@
+# P13E — no-go classification (frozen — do not overwrite without evidence)
+gate_id: P13E
+status: fixed
+reduced_coefficient_scale: NORMALIZATION_DEPENDENT_NO_GO

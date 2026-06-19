@@ -1,0 +1,17 @@
+# HAI-OS v0.3 — Strategy Card (template)
+hai_os_version: 0.3.0
+artifact: strategy_card
+
+strategy_card:
+  selected_strategy: minimal
+  # minimal | clarify | research | code | write | decide | learn | hd_mavp | promptops | agentic
+  reason: ""
+  required_artifacts: []
+  required_checks: []
+  activated_extensions: []
+  avoid: []
+  human_review_required: false
+
+strategy_gate:
+  passed: false
+  fail_action: Re-route

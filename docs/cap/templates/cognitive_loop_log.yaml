@@ -1,0 +1,53 @@
+# Cognitive Loop Log — template (one gate task iteration)
+
+cognitive_loop_log:
+  task_id:
+  gate_id:  # e.g. P13H, CAP-call2, explain-gate4b
+  steps:
+    - step: Intention
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Context
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Decomposition
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Exploration
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Hypothesis
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: AI Collaboration
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Critique
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Evidence Check
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Recomposition
+      completed: false
+      artifact_ref:
+      gate_pass:
+    - step: Decision
+      completed: false
+      human_decision:
+      gate_pass:
+    - step: Reflection
+      completed: false
+      pearl_candidates: []
+      gate_pass:
+    - step: Next Iteration
+      completed: false
+      handoff:

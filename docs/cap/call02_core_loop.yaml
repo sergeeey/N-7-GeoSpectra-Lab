@@ -1,0 +1,219 @@
+# CAP Call 2 — Core Loop (GeoSpectra Lab instance)
+# Input: call01_foundation.yaml
+# Status: draft_operational
+
+core_loop_summary: |
+  Context Map для gate-задач GeoSpectra; Strategy Router (10+ сценариев);
+  Cognitive Expansion Loop с human/AI split и gate на каждом шаге.
+
+context_map:
+  essential_context:
+    - docs/RESEARCH_CONTEXT.md claim boundaries
+    - reports/VALIDATION_STATUS.md current baseline
+    - Frozen gate pre-registration (if exists)
+    - pytest.ini pythonpath
+    - Scope Fence from user /goal prompt
+  optional_context:
+    - agent transcripts (spec only — verify against repo)
+    - reports/RUNS/* historical metrics
+    - README long baseline tables
+  excluded_context:
+    - Chat claims «203 passed» without local rerun date
+    - Old clone activeContext overclaims (S³×S¹ VALIDATED)
+    - .venv site-packages
+    - Unrelated PDFs in repo root without citation task
+  source_quality:
+    canonical: reports/*.md committed in repo
+    session: agent-transcripts — hypothesis until file exists
+    external: Lawrence arXiv — inspiration only not endorsement
+  source_freshness:
+    gate4b: 2026-05-22 fixed
+    p13_track: partial — compactification/ started, P13A-G reports missing
+  contradictions:
+    - README line «not a git repo» vs current cloned git state [resolve: trust git status]
+    - P13H spec says P13A-G fixed vs repo grep empty [resolve: materialize or block P13H]
+  missing_context:
+    - Ben Achour E_i primary source document
+    - P11/P12 Wigner/CG pattern modules
+  privacy_sensitive_context: none in public repo work
+  compression_strategy: |
+    Link paths + executive summary; inline only gate thresholds and formulas under test.
+  update_rule: |
+    After each pytest run → append RUNS/ metrics to context_map optional;
+    After gate verdict → freeze; no post-hoc threshold edits.
+
+context_rules:
+  include_when: stakes >= medium OR gate_id present OR pytest expected
+  exclude_when: fluency-only explanation OR no repo path cited
+  anti_contamination: |
+    Label [session spec] vs [repo file:path:line]; never merge without grep proof.
+  iteration_update: |
+    End of turn: update missing_context list; do not grow essential_context unbounded.
+
+strategy_router:
+  scenarios:
+    - scenario: simple_task
+      environment_signal: "stakes=low, ambiguity=low, evidence=low"
+      recommended_strategy: Minimal Prompt
+      avoid: HD-MAVP full, MethodOps delta
+      output_artifact: single file edit or one-liner answer
+    - scenario: unclear_task
+      environment_signal: "ambiguity=high"
+      recommended_strategy: Intent Refinement (Intent Card)
+      avoid: immediate code generation
+      output_artifact: intent_card.yaml delta
+    - scenario: research
+      environment_signal: "evidence_requirement=high, novelty=high"
+      recommended_strategy: Research + Source Verification
+      avoid: web-only physics claims
+      output_artifact: report section + citations paths
+    - scenario: coding
+      environment_signal: "task_type=implementation, tests available"
+      recommended_strategy: PATCH loop (read → minimal diff → pytest narrow)
+      avoid: 500-line rewrite
+      output_artifact: .py + test_*.py
+    - scenario: writing
+      environment_signal: "output_format=markdown report"
+      recommended_strategy: Structured sections + caveats-first
+      avoid: marketing tone
+      output_artifact: reports/*.md
+    - scenario: strategic_decision
+      environment_signal: "stakes=high, promote question"
+      recommended_strategy: HD-MAVP + human Decision Gate
+      avoid: AI auto-promote gate
+      output_artifact: validation_verdict.yaml
+    - scenario: learning
+      environment_signal: "user asks 'what is this project'"
+      recommended_strategy: Explain + mermaid + claim boundaries
+      avoid: pretending lab proves SM
+      output_artifact: chat + optional docs link
+    - scenario: production_prompt
+      environment_signal: "reusable /goal gate spec"
+      recommended_strategy: PromptOps — frozen inputs block + deliverables list
+      avoid: scope explosion in one shot
+      output_artifact: gate spec + checklist
+    - scenario: high_risk_review
+      environment_signal: "stakes=critical OR physical claim"
+      recommended_strategy: Human Review + CLAIMS_AND_CAVEATS cross-check
+      avoid: LLM-as-judge alone
+      output_artifact: review table pass/fail
+    - scenario: agentic_workflow
+      environment_signal: "multi-step shell + background pytest"
+      recommended_strategy: Task tool + timeout + narrow bundle
+      avoid: full 480-test suite on Windows without timeout
+      output_artifact: terminal log + pytest_run.log
+    - scenario: gate_execution_geospectra
+      environment_signal: "gate_id=P13*|Gate* + pre-reg refs"
+      recommended_strategy: |
+        1) grep frozen inputs 2) pre-reg doc 3) smoke pytest 4) report 5) NO promote
+      avoid: bootstrap missing P13A-G from spec alone
+      output_artifact: reports/GATE*_RESULTS.md + tests
+
+decision_tree: |
+  IF task is simple AND stakes low → Minimal Prompt
+  IF ambiguity high → Intent Refinement (stop coding)
+  IF evidence_requirement high → Research + Source Verification (repo first)
+  IF task is complex OR gate_id → HD-MAVP decomposition
+  IF output must be reused → PromptOps (/goal template + Scope Fence)
+  IF risk high OR forbidden claims nearby → Human Review required
+  IF pytest expected → Strategy = coding + narrow bundle
+  IF missing frozen artifacts (P13A-G) → FAIL Environment Gate → materialize OR block
+  IF explanation only → learning strategy; no file churn
+
+cognitive_expansion_loop:
+  steps:
+    - step: Intention
+      human_action: Formulate raw intent + stakes
+      ai_action: Mirror + ask only if blocking unknown
+      artifact: intent_card
+      gate: Intent Gate
+      common_failure: Scope explosion in one message
+    - step: Context
+      human_action: Point to repo paths, gate spec
+      ai_action: Read files; label [session] vs [repo]
+      artifact: context_map
+      gate: Context Gate
+      common_failure: Trust chat memory over grep
+    - step: Decomposition
+      human_action: Approve subtasks order
+      ai_action: decomposition_map draft
+      artifact: decomposition_map
+      gate: Decomposition Gate (Call 3)
+      common_failure: Skip frozen-input check
+    - step: Exploration
+      human_action: Choose branch (explain vs implement)
+      ai_action: search/read/explore subagent if broad
+      artifact: exploration notes
+      gate: none
+      common_failure: Rabbit hole .venv
+    - step: Hypothesis
+      human_action: Mark hypothesis vs fact
+      ai_action: State expected outcome + likely NO_GO
+      artifact: testable_hypotheses list
+      gate: Evidence Gate (later)
+      common_failure: Expected 90% quality as fact
+    - step: AI Collaboration
+      human_action: Review diffs
+      ai_action: Minimal patch + tests
+      artifact: git diff
+      gate: pytest pass
+      common_failure: Over-engineering registry
+    - step: Critique
+      human_action: Skeptic pass on claims
+      ai_action: List failure modes + caveats
+      artifact: failure_modes section
+      gate: Quality Gate
+      common_failure: Persona conflict (hype)
+    - step: Evidence Check
+      human_action: Run pytest locally
+      ai_action: Report exit code honestly
+      artifact: pytest log
+      gate: Evidence Gate
+      common_failure: Kill hung job without timeout diagnosis
+    - step: Recomposition
+      human_action: Accept verdict class
+      ai_action: Single executive summary
+      artifact: gate report md
+      gate: Recomposition Gate
+      common_failure: Upgrade NO_GO without evidence
+    - step: Decision
+      human_action: promote / forbid / next gate
+      ai_action: Never auto-promote
+      artifact: decision line in report
+      gate: Human Decision Boundary
+      common_failure: AI implies SM proof
+    - step: Reflection
+      human_action: What to change in process
+      ai_action: Pearl candidates + method delta draft
+      artifact: pearl_card candidate
+      gate: Pearl Gate (Call 3)
+      common_failure: Skip reflection
+    - step: Next Iteration
+      human_action: Pick next CAP call or gate
+      ai_action: handoff block
+      artifact: handoff yaml
+      gate: none
+      common_failure: Restart megaprompt
+
+quality_gates:
+  - gate: Context Gate
+    checks: essential vs excluded respected; contradictions listed
+    pass_condition: context_map complete; missing_context explicit
+    fail_action: grep repo before code
+  - gate: Strategy Gate
+    checks: one primary strategy from router table
+    pass_condition: scenario named; avoid list honored
+    fail_action: split into second session
+  - gate: Cognitive Loop Gate
+    checks: Intention→Context→...→Reflection present for gate tasks
+    pass_condition: each step has artifact or N/A marked
+    fail_action: insert missing Critique or Evidence Check
+
+failure_modes:
+  - context_contamination: session spec treated as committed code
+  - strategy_mismatch: HD-MAVP for «explain Gate 4B» one-shot
+  - loop_skip: P13H code without Environment Gate
+
+handoff_to_call3:
+  layers_to_validate: [Awareness, Environment, Intent, Context, Strategy, Cognitive Loop]
+  geospectra_instantiation: docs/cap/call01_foundation.yaml + this file

@@ -1,0 +1,12 @@
+# HAI-OS v0.3 — Work Log (template)
+hai_os_version: 0.3.0
+artifact: work_log
+
+work_log:
+  started_at: ""
+  strategy: ""
+  actions: []
+  # - timestamp, action, output_path, notes
+  files_changed: []
+  commands_run: []
+  blockers: []

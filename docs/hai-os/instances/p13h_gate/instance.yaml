@@ -1,0 +1,99 @@
+# HAI-OS v0.3 instance — P13H S3 normalization integral test
+instance_id: p13h_gate
+project: GeoSpectra Lab
+hai_os_version: 0.3.0
+completed: true
+
+task_passport:
+  raw_intent: Run P13H absolute normalization integral on S3
+  refined_goal: One explicit low-mode integral; classify coefficient normalization
+  real_problem: Can Haar measure + wavefunction norm fix absolute coeff, or P13E NO_GO holds?
+  task_type: research_gate
+  domain: compactification_toy / S3
+  stakes: medium
+  error_cost: false PASS on normalization would inflate compactification claims
+  ambiguity_level: high
+  novelty_level: high
+  evidence_requirement: high
+  desired_output: p13h script + pytest + report + classification
+  success_metric: explicit integral + honest classification + P13E preserved
+  constraints:
+    - Do not modify P13A-G statuses
+    - Lawrence/Hopf dVol only
+    - research_only runtime
+  assumptions:
+    - Frozen registry on disk before code
+  unknowns:
+    - Ben Achour primary paper formulas beyond embedding
+  risks:
+    - bootstrap without P13A-G files
+    - wrong volume element
+  human_decision_boundary: promote / overwrite P13E / physical claims
+  first_useful_action: materialize docs/compactification/registry/*.yaml
+
+context_map:
+  essential_context:
+    - docs/compactification/registry/P13A-P13G.yaml
+    - reports/CONVENTION_NORMALIZATION_REGISTRY.md
+  excluded_context:
+    - chat claims P13A-G fixed without grep
+  contradictions:
+    - resolved: registry was missing, then materialized
+  missing_context: []
+  context_ceiling_risk: medium
+  compression_strategy: structured_digest
+
+strategy_card:
+  selected_strategy: hd_mavp
+  reason: complex gate + frozen chain + numerical integral
+  activated_extensions: [HD-MAVP]
+  required_checks: [pytest narrow bundle, hermiticity, P11 pattern]
+  human_review_required: true
+  avoid: [silent convention repair, SM claims]
+
+work_log:
+  actions:
+    - materialized 9 yaml registry files
+    - implemented cc_toy_lab/compactification/p13h_integral.py
+    - scripts/p13h_s3_absolute_normalization_integral_test.py
+    - 12 pytest passed
+  commands_run:
+    - pytest tests/test_p13h_s3_absolute_normalization_integral_test.py tests/test_convention_registry.py
+
+verification_report:
+  claims:
+    - "Absolute coeff not fixed from Haar + L2 norm alone"
+    - "Primary (0,1) element is zero — P11 compatible"
+  evidence:
+    - reports/P13H_S3_ABSOLUTE_NORMALIZATION_INTEGRAL_TEST.md
+    - 12 passed pytest
+  unsupported_claims: []
+  verification_gap: low
+  verdict: proceed_with_caution
+  confidence: medium
+
+decision_record:
+  decision: Accept P13H classification NORMALIZATION_DEPENDENT_NO_GO; lambda FREE
+  rationale: Diagonal (1,1) coeff shifts >10% across P13G conventions; P13E preserved
+  evidence_used:
+    - P13H report
+    - pytest bundle
+  accepted_risks:
+    - smoke grid only, not continuum
+  rejected_options:
+    - promote V-selection rules
+    - overwrite P13E to CONVENTION_FIXED_CANDIDATE
+  next_action: optional Gate 5 / negative controls v0.1.22
+  review_date: 2026-06-01
+
+optional_modules:
+  pearl_card:
+    id: PEARL-001
+    observation: bootstrap paradox — gate inputs must exist on disk before execution
+
+gates:
+  task_gate: passed
+  context_gate: passed
+  strategy_gate: passed
+  verification_gate: passed
+  decision_gate: passed

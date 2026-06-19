@@ -1,0 +1,14 @@
+# Strategy Decision Card — template
+# [NEW — hypothesis, not validated]
+
+strategy_decision_card:
+  timestamp:
+  user_request_summary:
+  environment_passport_ref: docs/cap/call01_foundation.yaml#environment_passport
+  selected_scenario:  # from call02 strategy_router
+  recommended_strategy:
+  avoid:
+  output_artifact:
+  gate_used:
+  human_override: false
+  notes:

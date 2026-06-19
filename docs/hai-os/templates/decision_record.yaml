@@ -1,0 +1,16 @@
+# HAI-OS v0.3 — Decision Record (template)
+hai_os_version: 0.3.0
+artifact: decision_record
+
+decision_record:
+  decision: ""
+  rationale: ""
+  evidence_used: []
+  accepted_risks: []
+  rejected_options: []
+  next_action: ""
+  review_date: ""
+
+decision_gate:
+  passed: false
+  fail_action: Не финализировать без human rationale

@@ -1,0 +1,20 @@
+# P13C — Ben Achour / Lawrence-Hopf source identities (frozen)
+gate_id: P13C
+status: fixed
+source_id: ben_achour_lawrence_hopf_embedding
+chart: lawrence_hopf_unit_rho
+E_i:
+  x1: "rho * sin(alpha) * cos(theta)"
+  x2: "rho * sin(alpha) * sin(theta)"
+  x3: "rho * cos(alpha) * sin(theta_tilde)"
+  x4: "rho * cos(alpha) * cos(theta_tilde)"
+E_prime_i:
+  x1: "cos(alpha) * cos(theta)"
+  x2: "cos(alpha) * sin(theta)"
+  x3: "-sin(alpha) * sin(theta_tilde)"
+  x4: "-sin(alpha) * cos(theta_tilde)"
+A_map:
+  - I: 0
+    components: E_i
+  - I: 1
+    components: E_prime_i

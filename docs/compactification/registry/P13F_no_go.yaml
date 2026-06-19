@@ -1,0 +1,5 @@
+# P13F — no-go confirmation record (frozen)
+gate_id: P13F
+status: fixed
+reduced_coefficient_scale: NORMALIZATION_DEPENDENT_NO_GO
+lambda: FREE_COUPLING_PARAMETER
