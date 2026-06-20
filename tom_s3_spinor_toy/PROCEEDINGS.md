@@ -136,10 +136,22 @@ different manifold, NCG method, explicit spectral action.
 
 ## 7. Open Questions
 
-1. **Three generations**: Two routes on S⁶ are formally excluded:
-   - ℤ₃ orbifold: χ(S⁶)=2, not divisible by 3 (Smith theory, G27)
-   - G₂-instanton: G₂ symmetry forces index(D⊗V)=0 for all equivariant bundles (G₂ has no outer automorphisms → mult(**3**)=mult(**3̄**) in every G₂-irrep, G30)
-   The canonical bundle T^{1,0}S⁶ gives one generation (index=1). Three generations require breaking G₂→SU(3) or a mechanism from the S³ factor.
+1. **Three generations (Proposition T1)**: No mechanism within five geometric classes
+   selects N_gen=3 on S³×S⁶. The obstruction is structural, via two lemmas (G50):
+
+   **Lemma 1 (χ-lemma):** H²(S⁶;ℤ)=H⁴(S⁶;ℤ)=0 forces c₁=c₂=0 for any bundle on S⁶.
+   Whitney formula: c₃(Λ²(T^{0,1}))=c₁c₂−c₃(T^{1,0})=−χ(S⁶)=−2. All Chern-class
+   mechanisms give |c₃|=χ(S⁶)=2, not the 6 required for three generations. This covers
+   G33 (Gauss-Bonnet-Chern), G37 (tadpole), G38 (S_spec minimum = G33 restated), G39
+   (Whitney via SU(4)).
+
+   **Lemma 2 (rigidity):** A round metric on a homogeneous space selects a unique isotropy
+   decomposition → exactly one spinor sector. Covers G44, G46, Proposition T2.
+
+   Remaining cases (G27 ℤ₃ orbifold, G30 G₂-instanton, G31 Lichnerowicz, G34–G36, G40–G43,
+   G45) follow as corollaries: the topological budget of S³×S⁶ is exhausted by one
+   generation — k_grav(S³)=0, χ(S⁶)=2, η(S⁶)=0, Ω⁶_Spin=0 — no integer invariant
+   equals 3. Three generations require a dynamical mechanism beyond pure geometry.
 2. **Compactification radii**: The spectral action Tr f(D²/Λ²) on S³×S⁶ is strictly
    monotone in each radius — the heat kernel K_{S^n}(t) = Σ_k m_k e^{-t(k+n/2)²} satisfies
    dK/dt < 0 for all t > 0, so S_spec has no interior minimum in (ρ₃, ρ₆) space and cannot

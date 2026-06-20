@@ -16,11 +16,14 @@ coupling ratio g₂²/g₃² = 15/(16π) at equal radii agrees with the SM value
 within 4.3%. The KO-dimension 6 spectral triple structure
 A_F = ℂ⊕ℍ⊕M₃(ℂ) emerges from representation theory rather than being postulated,
 and Yukawa parameter count reduces to dim=4 via SU(3)-orbit degeneracy on S⁶.
-We show by case analysis (Proposition T1) that no mechanism within the five
-geometric mechanism classes investigated here — topological invariants,
-representation theory, brane-flux quantization, SO(8) triality, or stable
-Hermitian-Yang-Mills bundles — can select N_gen=3 on S³×S⁶; string compactification
-mechanisms are excluded by dimensionality (dim = 9) rather than falsified.
+We show by two structural lemmas (Proposition T1): the χ-lemma
+(H²(S⁶;ℤ)=H⁴(S⁶;ℤ)=0 forces c₁=c₂=0, so all Chern-class mechanisms give
+|c₃|=χ(S⁶)=2≠6) and the rigidity lemma (round metric on a homogeneous space →
+unique isotropy → one spinor sector). Together these cover all five geometric
+mechanism classes — topological invariants, representation theory, brane-flux
+quantization, SO(8) triality, and stable Hermitian-Yang-Mills bundles — leaving
+no mechanism that can select N_gen=3 on S³×S⁶; string compactification is
+excluded by dimensionality (dim = 9) rather than falsified.
 This result extends to all products Sᵃ×Sᵇ with round metrics (Proposition T2):
 the Dirac operator on any such product has minimum eigenvalue a/2 > 0, yielding
 no zero modes and hence N_gen = 0 from geometry alone. Together, Propositions T1
@@ -43,6 +46,8 @@ factor, but the full two-radius potential V(ρ₃, ρ₆) has not been computed.
 | 2026-06-20 | Attribution: "CCM program" → "Lawrence [2022]" for spin connection identification |
 | 2026-06-20 | Category 3 clarified: excluded by dimensionality, not falsified |
 | 2026-06-20 | 6 categories → 5 geometric mechanism classes (string excluded from count) |
+| 2026-06-20 | T2 + Casimir open problem added |
+| 2026-06-20 | T1 proof upgraded: "case analysis" → "2 structural lemmas" (χ-lemma + rigidity, G50) |
 
 ---
 
