@@ -162,7 +162,7 @@ Pre-registered claim: λ² = (n+3/2)² + (m/R)²
 | G28 | Spectral action inner fluctuation → SM gauge kinetic terms | PASS | g₂²∝Vol(S⁶)/N_{s6}, g₃²∝Vol(S³)/N_{s3} — cross-spectator effect |
 | G29 | Coupling ratio g₂²/g₃² geometric prediction | PASS | g₂²/g₃² = 15/(16π) ≈ 0.298 at equal unit radii; SM error +4.3% |
 
-**Unification condition:** ρ₃/ρ₆² = (16π/15)^{1/3} ≈ 1.88 (non-trivial radius ratio for g₂=g₃).  
+**Unification condition:** ρ₃/ρ₆² = (16π/15)^{1/3} ≈ 1.496 ≈ 3/2 (non-trivial radius ratio for g₂=g₃).  
 **Tom connection:** S³ spin connection ω^{12}=sin(α) in G28 = Tom's SU(2) gauge fields (PMs Section 7.4).
 
 ---
