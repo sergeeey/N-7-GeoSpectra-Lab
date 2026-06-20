@@ -9,3 +9,4 @@
 | G34-D1 | 2026-06-20 | d1-flux-quantization | WEAK | H⁶(S⁶;ℤ)=ℤ allows any c₃ ∈ ℤ; no topological invariant of S⁶ equals 3; D1 necessary not sufficient |
 | G34-B3 | 2026-06-20 | b3-wzw-s3-level | REJECT | η(D_{S³})=0 → k_grav=0 → SU(2)₀ WZW → 1 primary, not 3; spin conn CS on S³ gives k=0 |
 | G34-A2 | 2026-06-20 | a2-cobordism-s6 | REJECT | Ω^{Spin}_6=0 → no mod-k cobordism invariants on S⁶; η(S⁶)=0 via APS+trivial filling |
+| G35-C1 | 2026-06-20 | c1-ncg-m3-generation | REJECT | rank(T^{1,0}S⁶)=3 ≠ ind=1; ONE M₃(ℂ) on S³×S⁶ → color SU(3), not generation count |
