@@ -140,9 +140,17 @@ different manifold, NCG method, explicit spectral action.
    - ℤ₃ orbifold: χ(S⁶)=2, not divisible by 3 (Smith theory, G27)
    - G₂-instanton: G₂ symmetry forces index(D⊗V)=0 for all equivariant bundles (G₂ has no outer automorphisms → mult(**3**)=mult(**3̄**) in every G₂-irrep, G30)
    The canonical bundle T^{1,0}S⁶ gives one generation (index=1). Three generations require breaking G₂→SU(3) or a mechanism from the S³ factor.
-2. **Majorana sector**: ν_R Majorana mass from S⁶ curvature terms (not yet computed).
-3. **4D limit**: tree-level result; RGE running from M_{KK} to M_Z not included.
-4. **λ coupling**: free parameter by Fisher rank theorem (G4); not the same as g₂, g₃.
+2. **Compactification radii**: The spectral action Tr f(D²/Λ²) on S³×S⁶ is strictly
+   monotone in each radius — the heat kernel K_{S^n}(t) = Σ_k m_k e^{-t(k+n/2)²} satisfies
+   dK/dt < 0 for all t > 0, so S_spec has no interior minimum in (ρ₃, ρ₆) space and cannot
+   stabilize the compactification. On the constant-volume surface Vol(S³×S⁶) = const,
+   S_spec is maximized at r*≈0.70 (not at r=1); the equal-radii assumption ρ₃=ρ₆ is
+   phenomenological. Dynamical stabilization via Coleman-Weinberg or flux quantization
+   (Freund-Rubin type) remains open. Birmingham, Kantowski, Milton (1988) cover the S⁶
+   factor; the full two-radius potential V(ρ₃,ρ₆) on S³×S⁶ has not been computed.
+3. **Majorana sector**: ν_R Majorana mass from S⁶ curvature terms (not yet computed).
+4. **4D limit**: tree-level result; RGE running from M_{KK} to M_Z not included.
+5. **λ coupling**: free parameter by Fisher rank theorem (G4); not the same as g₂, g₃.
 
 ---
 
@@ -154,7 +162,7 @@ all from geometry. The spectral action predicts the coupling ratio g₂²/g₃²
 at equal radii, matching SM at M_Z within 4.3% with zero free parameters. 
 The weak/strong hierarchy is geometric.
 
-All results are machine-verified: 1136 pytest tests, 
+All results are machine-verified: 1602 pytest tests,
 github.com/sergeeey/N-7-GeoSpectra-Lab.
 
 ---
