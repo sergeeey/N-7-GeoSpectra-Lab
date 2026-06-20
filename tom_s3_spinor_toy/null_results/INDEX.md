@@ -21,3 +21,4 @@
 | G44-B1 | 2026-06-20 | d4-triality-s3xs6 | REJECT | G₂ has no 8-dim irrep → 8_v≅8_s≅8_c as G₂-modules → triality orbit collapses to 1; S⁶ blind to τ |
 | G45-B2 | 2026-06-20 | d4-triality-s3xs7 | WEAK | Triality orbit size=3 PASS (SO(8) visible); but 1 parallelization→N_gen=1; 3 sectors together = algebraic only |
 | G46 | 2026-06-20 | triality-geometrization | NULL | Single metric → unique isotropy → 1 coset structure; 3-Sasakian within 8_s sector only; SO(8) dim=28 |
+| G47 | 2026-06-20 | exhaustion-theorem | PASS+OPEN | Theorem T1: Cat 1-5 (14 null results) proved; Cat 6 (G43-B5 Harland-Nölle-Santi) remains OPEN |
