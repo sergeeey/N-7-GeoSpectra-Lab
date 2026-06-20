@@ -42,9 +42,19 @@ G40 DOES escape Proposition T1's Lemma 2 (rigidity):
 However: G40 escaping Lemma 2 doesn't help because G40 itself is WEAK
 (allows N_gen=3 but doesn't force it). The escape is theoretical only.
 
-## Kill Analysis
+## Kill Analysis (G52 correction)
 
-Nothing killed by G52. G40 was WEAK before; still WEAK after adding S³.
+**Killed:** "factor-2 from π₅(SU(3))→π₅(G₂) via ℤ₂ extension" (G40 factual error)
+
+**Reason:** π₅(S⁶)=0 (cellular approximation: k=5 < n=6 → πₖ(Sⁿ)=0), not ℤ₂.
+The ℤ₂ is π₇(S⁶) — the actual Freudenthal result for S⁶ (π_{n+1}(Sⁿ)=ℤ₂ at n=6 gives index 7, not 5).
+G40 confused π₅(S⁶) with π₇(S⁶). Common error: misremembering which n Freudenthal applies to.
+
+**Not killed:** G40 WEAK verdict — SSB still doesn't select topological charge
+
+**Not killed:** c₃=2 — it comes from G33 (χ(S⁶)=2, Chern-Gauss-Bonnet), independent of G40
+
+**Rescued:** c₃=2 has exactly ONE geometric source (G33). The G40 homotopy error was distracting but harmless to T1.
 
 **What this shows:**
 The three-generation problem cannot be solved by topology alone, even when:

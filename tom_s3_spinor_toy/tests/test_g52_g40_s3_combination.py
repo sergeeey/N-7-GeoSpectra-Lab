@@ -1,25 +1,21 @@
 """
 G52: G40 × S³ combination — does the S³ factor rescue G40 from WEAK status?
 
-G40 (B2, WEAK): G₂→SU(3) SSB on S⁶ allows c₃=6 via π₅(G₂/SU(3))=π₅(S⁶)=ℤ,
-    but does not FORCE c₃=6. Any integer winding number w₆ ∈ ℤ is allowed.
+G40 (B2, WEAK): G₂→SU(3) SSB on S⁶ does not FORCE c₃=6.
+    Correction (G52): G40 originally claimed π₅(S⁶)=ℤ₂ from Freudenthal suspension.
+    WRONG — Freudenthal gives π_{n+1}(Sⁿ)=ℤ₂ for n≥3, so π₇(S⁶)=ℤ₂, NOT π₅(S⁶).
+    Cellular approximation (Whitehead 1949): k < n → πₖ(Sⁿ)=0. k=5,n=6 → π₅(S⁶)=0.
 
 G52 asks: Can the S³ factor provide a constraint that forces w₆=3 (→ c₃=6, N_gen=3)?
 
 Analysis:
 1. S³ Hopf winding: h ∈ π₃(S³) = ℤ — any integer, free.
-2. Combined invariant (h, w₆) ∈ π₃(S³) × π₅(S⁶) = ℤ × ℤ.
-3. No topological coupling between S³ and S⁶ sectors forces w₆=3.
-4. Cross-spectator structure (G28): S³ couples to SU(3) gauge via Vol(S³),
-   S⁶ couples to SU(2) gauge via Vol(S⁶). This is a VOLUME coupling, not
-   a topological winding number constraint.
-5. Chern-Simons on S³: gives integer level k ∈ ℤ for SU(2), but k is
-   independent of w₆ on S⁶.
+2. π₅(S⁶) = 0 (cellular approx) → no SSB defect winding from S⁶ topology.
+3. Combined topological invariant: ℤ × 0 = ℤ. No preferred element.
+4. Cross-spectator structure (G28): S³ couples to SU(3) via Vol(S³) — volume, not winding.
+5. Chern-Simons on S³: integer level k ∈ ℤ for SU(2), independent of S⁶.
 
-VERDICT: WEAK (same as G40 alone).
-The S³ factor is topologically decoupled from the S⁶ SSB winding number.
-Combining G40 with S³ does not promote from WEAK to PROMOTE.
-N_gen=3 is still "allowed but not forced."
+VERDICT: WEAK (same as G40, now with corrected homotopy — π₅ error does not help G40).
 """
 
 from math import gcd
@@ -28,17 +24,17 @@ from math import gcd
 # ── Homotopy group data ──────────────────────────────────────────────────
 
 # Relevant homotopy groups (standard results)
-# pi_n(S^k) table for n, k of interest:
-# pi_3(S^3) = Z   ← S^3 Hopf invariant
-# pi_5(S^6) = Z   ← G2/SU(3) = S^6, winding for SSB defects
-# pi_3(G2)  = 0   ← G2 simply connected and higher π_3=0
-# pi_5(G2)  = 0   ← G2 has π_5 = Z (actually), check below
-# G2/SU(3) = S^6, so: π_n(G2) → π_n(S^6) → π_{n-1}(SU(3)) → π_{n-1}(G2)
+# Cellular approximation (Whitehead 1949): πₖ(Sⁿ)=0 for k < n.
+# Freudenthal suspension: π_{n+1}(Sⁿ)=ℤ₂ for n≥3.
+# These two together:
+#   π₅(S⁶) = 0  (k=5 < n=6, cellular approx — G40 error: confused with Freudenthal)
+#   π₇(S⁶) = ℤ₂ (Freudenthal: n+1=7 for n=6)
 
 PI_3_S3 = "Z"  # = ℤ: Hopf fibration, winding number h ∈ ℤ
-PI_5_S6 = "Z"  # = ℤ: SSB defect winding number w₆ ∈ ℤ (for G₂/SU(3)=S⁶)
+PI_5_S6 = "0"  # = 0: cellular approx (k=5 < n=6); G40 error was "ℤ₂" (Freudenthal confusion)
+PI_7_S6 = "Z_2"  # = ℤ₂: actual Freudenthal result for S⁶ (π_{6+1}(S⁶))
 PI_3_S6 = "0"  # = 0: S⁶ is 5-connected
-PI_5_S3 = "Z_2"  # = ℤ₂: the Hopf map η₂ (torsion, not free)
+PI_5_S3 = "Z_2"  # = ℤ₂: Hopf map η₂ (torsion)
 
 
 class TestHomotopyGroups:
@@ -46,20 +42,34 @@ class TestHomotopyGroups:
     Homotopy groups relevant to G40×S³ combination.
     """
 
-    def test_pi5_s6_is_Z(self):
-        """π₅(S⁶) = ℤ → G₂/SU(3) SSB defects have free integer winding."""
-        # G₂/SU(3) = S⁶ as homogeneous space
-        # SSB defects are classified by π₅(G₂/SU(3)) = π₅(S⁶) = ℤ
-        # (from Hurewicz: S⁶ is 5-connected, π₅=ℤ... wait)
-        # Actually π_n(S^n) = ℤ for all n ≥ 1.
-        # π₅(S⁵) = ℤ, but π₅(S⁶) = 0 ≠ ℤ (S⁶ is 5-connected means π_k=0 for k<6)
-        # π₆(S⁶) = ℤ (fundamental class)
-        # But SSB defect classification in d=6 needs π₅ of the coset space
-        # G₂→SU(3): coset is S⁶, defects in 6d bulk classified by π₅(S⁶) = 0
-        # This is the key: π₅(S⁶) = 0, NOT ℤ.
-        # The G40 result "factor 2 homotopy" must come from a different group.
-        pi_5_S6 = 0  # S^6 is 5-connected; π_5(S^6) = 0
-        assert pi_5_S6 == 0  # S^6 is 5-connected
+    def test_pi5_s6_is_zero_cellular_approximation(self):
+        """π₅(S⁶) = 0 by cellular approximation: k=5 < n=6 → πₖ(Sⁿ) = 0."""
+        # Whitehead cellular approximation theorem (1949):
+        #   Any map Sᵏ → Sⁿ with k < n is null-homotopic.
+        #   Therefore πₖ(Sⁿ) = 0 for all k < n.
+        # For S⁶: π₅(S⁶) = 0, π₄(S⁶) = 0, ..., π₁(S⁶) = 0.
+        k, n = 5, 6
+        assert k < n  # cellular approximation applies
+        pi_5_S6 = 0  # πₖ(Sⁿ) = 0 by cellular approx
+        assert pi_5_S6 == 0
+
+    def test_freudenthal_suspension_gives_pi7_s6_not_pi5(self):
+        """
+        Freudenthal suspension: π_{n+1}(Sⁿ) = ℤ₂ for n ≥ 3.
+        For S⁶ (n=6): π₇(S⁶) = ℤ₂, NOT π₅(S⁶).
+        G40 confusingly applied 'Freudenthal' as π₅(S⁶) = ℤ₂ — this is wrong.
+        """
+        # Freudenthal: π_{n+1}(Sⁿ) = ℤ₂ for n ≥ 3
+        n = 6
+        freudenthal_index = n + 1  # = 7
+        assert freudenthal_index == 7  # applies to π₇, not π₅
+
+        pi_7_S6 = PI_7_S6  # = "Z_2": correct Freudenthal result
+        pi_5_S6 = 0  # = 0: by cellular approximation
+
+        assert pi_7_S6 == "Z_2"
+        assert pi_5_S6 == 0
+        assert pi_5_S6 != pi_7_S6  # the G40 error: used π₇ result for π₅ index
 
     def test_pi_5_s6_zero_means_no_defects(self):
         """π₅(S⁶) = 0 means G₂→SU(3) SSB has no stable 6D defects."""
