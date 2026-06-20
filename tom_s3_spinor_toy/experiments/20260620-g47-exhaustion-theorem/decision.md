@@ -13,7 +13,7 @@
 | H_G47a: all 5 categories covered by ≥1 null result | **PASS** | Verified against NULL_RESULTS registry |
 | H_G47b: 5 categories are logically independent | **PASS** | Distinct mathematical frameworks confirmed |
 | H_G47c: 5 categories exhaust all known mechanisms | **WEAK** | "Known" bounded by literature; novel mechanisms possible |
-| H_G47d: G43-B5 gap is real and unresolved | **OPEN** | Harland-Nölle-Santi 2010 paper not read |
+| H_G47d: G43-B5 gap is real and unresolved | **OPEN** | c₃=6 HYM bundle on S⁶ not constructed in known literature |
 
 **Overall: PASS + OPEN** — Theorem T1 holds conditionally on G43-B5 remaining open.
 
@@ -97,10 +97,11 @@ but the theorem requires *forcing*, not allowing. WEAK results are compatible wi
 
 ## Gap: What Remains (G43-B5)
 
-**G43-B5: Harland-Nölle-Santi (2010) S⁶ instanton class**
+**G43-B5: HYM instantons on S⁶ — open mathematical question**
 
-- Reference: Harland, Nölle, Santi (2010) — "Constructing (anti-)self-dual instantons on six-dimensional manifolds"
-- Question: Do they construct an explicit G₂-structure preserving instanton on S⁶ with c₃ = 6?
+- Closest reference: Harland & Nölle (2011), "Instantons and Killing spinors" arXiv:1109.3552
+  (Note: "Harland-Nölle-Santi" was a phantom citation — "Santi" does not appear as co-author; corrected)
+- Question: Does any paper construct an explicit G₂-structure preserving instanton on S⁶ with c₃ = 6?
 - If NO → Theorem T1 becomes unconditional (gap closes)
 - If YES → Need G48: does c₃=6 HYM bundle force N_gen=3? (separate question)
 

@@ -66,7 +66,8 @@ generation count on M. The theorem is conditional on Category 6 being OPEN.*
 - No compact geometry carries all 3 triality sectors simultaneously [G46]
 
 **Category 6: Stable bundle instantons on S⁶ (OPEN)**
-- G43-B5: Harland-Nölle-Santi (2010) S⁶ instanton class
+- G43-B5: HYM instantons on S⁶ — open mathematical question
+  (Closest ref: Harland & Nölle 2011, arXiv:1109.3552; "Santi" co-author was phantom — corrected)
 - μ ≡ 0 (slope = 0) is consistent with any c₃ — can c₃ = 6 HYM bundle be constructed?
 - Revival condition: explicit HYM bundle with c₃ = 6 on S⁶
 - STATUS: OPEN — neither ruled out nor confirmed
