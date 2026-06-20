@@ -13,3 +13,8 @@
 | G36-K1 | 2026-06-20 | k1-k-theory-s6 | REJECT | K̃(S⁶)=ℤ homogeneous; Adams ψ^k eigenvalue k³ same for all n; "3β"=N_gen=3 circular |
 | G37-S1 | 2026-06-20 | s1-string-tadpole | REJECT | dim(S³×S⁶)=9≠6; χ(S³×S⁶)=0; min Type IIA tadpole → c₃=2=N_gen=1; brane count circular |
 | G38-S2 | 2026-06-20 | s2-spectral-action-min | REJECT | S_spec(c₃) monotone increasing; min at c₃=2 (=G33); G38 is G33 restated in energy language |
+| G39-B1 | 2026-06-20 | g32-b1-pati-salam-su4 | REJECT | Spin(6)≅SU(4) → Λ²(T^{0,1}) has c₃=2 not 6; factor 3 unaccounted by spin geometry |
+| G40-B2 | 2026-06-20 | g32-b2-higgs-ssb-g2-su3 | WEAK | G₂→SU(3) SSB allows c₃=6 (π₅ exact seq; factor 2 homotopy) but does not FORCE it |
+| G41-B3 | 2026-06-20 | g32-b3-brane-picture | WEAK | 3 D6-branes → rank-3 gauge, c₃ free; 2×N=6 arithmetic holds but no physical mechanism |
+| G42-B4 | 2026-06-20 | g32-b4-anomaly-gs | REJECT | H⁴(S⁶)=0 makes GS trivial (p₁=c₂=0); also 9D≠10D → GS out of scope |
+| G43-B5 | 2026-06-20 | g32-b5-stable-bundles | OPEN | μ≡0 blind to c₃; c₃=6 HYM not constructed; revival: Harland-Nölle-Santi S⁶ instanton class |
