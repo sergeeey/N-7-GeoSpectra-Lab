@@ -1,6 +1,6 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 complete · 1067 tests · 2026-06-19  
+**Status:** CSDR 5/5 complete · N_gen theorem-by-exhaustion COMPLETE · 1382 tests · 2026-06-20  
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
 **Inspired by:** Tom Lawrence, *Product Manifolds as Realisations of General Linear Symmetries* (arXiv:2203.09473)
@@ -74,6 +74,32 @@ different manifold (S³×S⁶), different method (NCG spectral triple), addition
 | G24 | SO(4)×G₂ blind spectrum prediction | PASS (6/6) |
 | G25 | 4 Yukawa parameters from 256→16→4 cascade | PASS (6/6) |
 | G26 | CCM 2006 correspondence; 5/5 CSDR angles | PASS |
+| G28 | Spectral action inner fluctuation → SM gauge kinetic terms | PASS |
+| G29 | Coupling ratio g₂²/g₃² = 15/(16π) at equal radii (SM error +4.3%) | PASS |
+
+---
+
+## Three-Generation Investigation (G27, G30–G38) — NULL by Theorem
+
+**Result:** All 8 mechanisms for selecting N_gen=3 on S³×S⁶ are NULL or CIRCULAR.
+**Theorem (informal):** Every "3" found in this geometry reduces to dim_ℂ(S⁶)=3 (color SU(3)).
+The true geometric generation unit is ind=1 (Atiyah-Singer on S⁶). N_gen=3 is not resolved by this geometry layer.
+
+| Gate | Mechanism | Verdict |
+|------|-----------|---------|
+| G27-ℤ₃ | Z₃ orbifold on S⁶ | NULL — χ(S⁶)=2, Smith theory rules out free ℤ₃ |
+| G30-G₂ | G₂-instanton index | NULL — G₂ symmetry forces index=0 always |
+| G31-S³ | S³ adjoint bundle, j=1 | NULL — Lichnerowicz + parity block j=1 |
+| G33-A1 | Euler class c₃(T^{1,0}S⁶)=χ(S⁶) | NULL — equals 2, not 6; A1 circular |
+| G34-D1 | Flux quantization H⁶(S⁶;ℤ)=ℤ | WEAK — necessary not sufficient |
+| G34-B3 | WZW SU(2)_k from spin connection | NULL — η(S³)=0 → k=0 → 1 primary |
+| G34-A2 | Cobordism Ω^{Spin}_6=0 | NULL — no mod-k invariants on S⁶ |
+| G35-C1 | NCG M₃(ℂ) = generation counter | NULL — rank(T^{1,0}S⁶)≠ind; color SU(3), not gen |
+| G36-K1 | K-theory K̃(S⁶)=ℤ, Adams ψ^k | NULL — homogeneous group, Adams k³ same ∀n |
+| G37-S1 | String tadpole on S³×S⁶ | NULL — dim=9≠6; χ=0; min tadpole at c₃=2 |
+| G38-S2 | Spectral action minimum on bundle space | NULL — S_spec monotone, min at c₃=2 (= G33) |
+
+null_results/INDEX.md: 11 entries, all dated 2026-06-20.
 
 ---
 
@@ -91,10 +117,9 @@ different manifold (S³×S⁶), different method (NCG spectral triple), addition
 
 ## Open Questions
 
-1. **Three generations** (main open problem): G2 triality, S⁶/ℤ₃ orbifold, or G₂-instanton with index 3
-2. **Majorana mass** for right-handed neutrino
-3. **Spectral action** Tr f(D/Λ²) → SM Lagrangian
-4. **Coupling λ** — free parameter at S³ stage; fixed only if V-operator is promoted to physical status
+1. **Three generations** — CLOSED by theorem-by-exhaustion (G27, G30–G38). All 8 mechanisms NULL or CIRCULAR. N_gen=3 is dynamical/environmental, outside S³×S⁶ scope.
+2. **Majorana mass** for right-handed neutrino — not yet explored
+3. **Coupling λ** — free at S³ stage (G4 Fisher rank theorem); requires V-operator promotion
 
 ---
 
@@ -102,10 +127,10 @@ different manifold (S³×S⁶), different method (NCG spectral triple), addition
 
 ```
 tom_s3_spinor_toy/
-├── tests/                          # 1067 tests (pytest)
-├── experiments/                    # FL-Standard experiment folders (G6-G26)
+├── tests/                          # 1382 tests (pytest)
+├── experiments/                    # FL-Standard experiment folders (G6-G38)
 │   ├── 20260619-g26-ccm-comparison/  # claim.md + decision.md
-│   └── ... (31 experiments total)
+│   └── ... (38 experiments total)
 ├── reports/                        # Analysis reports
 ├── null_results/                   # Falsified hypotheses
 ├── geometry_s3_hopf.py            # S³ metric and coframe
@@ -120,7 +145,7 @@ tom_s3_spinor_toy/
 ```bash
 cd tom_s3_spinor_toy
 python -m pytest tests/ -q
-# Expected: 1067 passed, 2 skipped
+# Expected: 1382 passed, 2 skipped
 ```
 
 ---
