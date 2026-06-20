@@ -23,3 +23,4 @@
 | G46 | 2026-06-20 | triality-geometrization | NULL | Single metric → unique isotropy → 1 coset structure; 3-Sasakian within 8_s sector only; SO(8) dim=28 |
 | G47 | 2026-06-20 | exhaustion-theorem | PASS+OPEN | Theorem T1: Cat 1-5 (14 null results) proved; Cat 6 (G43-B5 HYM-bundles on S⁶) remains OPEN |
 | G48 | 2026-06-20 | harland-nolle-verification | NULL | Primary read: no c₃=6 on S⁶; cone≠base; N_gen absent → G43-B5 closed → T1 UNCONDITIONAL |
+| G49 | 2026-06-20 | type-iia-kk-s3xs7 | NULL | dim=10 ✓ but min|λ_S⁷|=7/2≠0 → no zero modes; H⁴(S⁷)=0 → flux integers free → circular |
