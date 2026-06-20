@@ -19,3 +19,4 @@
 | G42-B4 | 2026-06-20 | g32-b4-anomaly-gs | REJECT | H⁴(S⁶)=0 makes GS trivial (p₁=c₂=0); also 9D≠10D → GS out of scope |
 | G43-B5 | 2026-06-20 | g32-b5-stable-bundles | OPEN | μ≡0 blind to c₃; c₃=6 HYM not constructed; revival: Harland-Nölle-Santi S⁶ instanton class |
 | G44-B1 | 2026-06-20 | d4-triality-s3xs6 | REJECT | G₂ has no 8-dim irrep → 8_v≅8_s≅8_c as G₂-modules → triality orbit collapses to 1; S⁶ blind to τ |
+| G45-B2 | 2026-06-20 | d4-triality-s3xs7 | WEAK | Triality orbit size=3 PASS (SO(8) visible); but 1 parallelization→N_gen=1; 3 sectors together = algebraic only |
