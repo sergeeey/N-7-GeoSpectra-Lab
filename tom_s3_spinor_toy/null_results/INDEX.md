@@ -11,3 +11,4 @@
 | G34-A2 | 2026-06-20 | a2-cobordism-s6 | REJECT | Ω^{Spin}_6=0 → no mod-k cobordism invariants on S⁶; η(S⁶)=0 via APS+trivial filling |
 | G35-C1 | 2026-06-20 | c1-ncg-m3-generation | REJECT | rank(T^{1,0}S⁶)=3 ≠ ind=1; ONE M₃(ℂ) on S³×S⁶ → color SU(3), not generation count |
 | G36-K1 | 2026-06-20 | k1-k-theory-s6 | REJECT | K̃(S⁶)=ℤ homogeneous; Adams ψ^k eigenvalue k³ same for all n; "3β"=N_gen=3 circular |
+| G37-S1 | 2026-06-20 | s1-string-tadpole | REJECT | dim(S³×S⁶)=9≠6; χ(S³×S⁶)=0; min Type IIA tadpole → c₃=2=N_gen=1; brane count circular |
