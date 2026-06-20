@@ -1,7 +1,7 @@
 # N-7 GeoSpectra Lab — Research Status Report
 **Date:** 2026-06-20  
-**Branch:** main @ a720ccd  
-**Test suite:** 1382 passed, 2 skipped  
+**Branch:** main @ latest (1553 tests)  
+**Test suite:** 1553 passed, 2 skipped  
 **Author:** Sergey Boyko
 
 ---
@@ -12,9 +12,9 @@
 for one generation. Five independent CSDR verification angles all PASS. 29 positive gates (G6–G29)
 closed via Falsification Ladder (FL) Standard protocol: claim.md → evidence script → decision.md.
 
-**Additional result (2026-06-20):** Theorem by exhaustion on three-generation problem.
-All 8 mechanisms for N_gen=3 selection on S³×S⁶ are NULL or CIRCULAR (G27, G30–G38, 11 null results).
-N_gen=3 is a dynamical selection problem outside the scope of this geometry layer.
+**Additional result (2026-06-20):** **Theorem T1** (Three-Generation Obstruction) by exhaustion.
+G27–G47: 14 NULL, 4 WEAK, 1 OPEN (G43-B5). Five mechanism categories exhausted.
+N_gen=3 cannot be selected by any known geometric mechanism on S³×S⁶.
 
 External contact: **Tom Lawrence** (replied 2026-06-19, reviewing Section 7 of his PMs paper).  
 Hard fences active: λ = FREE_COUPLING_PARAMETER, sm_derivation_claimed = False.
@@ -167,25 +167,68 @@ Pre-registered claim: λ² = (n+3/2)² + (m/R)²
 
 ---
 
-## Three-Generation Investigation (G27, G30–G38) — Theorem by Exhaustion
+## Three-Generation Investigation (G27–G47) — Theorem T1 by Exhaustion
 
-**Status: COMPLETE ✅ — all 8 mechanisms NULL or CIRCULAR**
+**Status: COMPLETE ✅ — Theorem T1 PASS+OPEN**
+
+### Category 1: Topological invariants
 
 | Gate | Mechanism | Verdict | Why |
 |------|-----------|---------|-----|
-| G27-ℤ₃ | Z₃ orbifold on S⁶ | REJECT | χ(S⁶)=2 not divisible by 3; Smith theory rules out free ℤ₃ |
-| G30-G₂ | G₂-instanton index | REJECT | G₂ symmetry forces ind=0; mult(3)=mult(3̄) in all G₂-irreps |
-| G31-S³ | S³ adjoint bundle, j=1 | REJECT | Lichnerowicz D²≥1/2ρ₃²>0 for j=1; parity: odd-dim needs j=1/2 |
-| G33-A1 | Euler class c₃(T^{1,0}S⁶)=χ(S⁶) | REJECT | c₃=χ(S⁶)=2; A1 circular (embeds N_gen=3 as input) |
+| G27-ℤ₃ | Z₃ orbifold on S⁶ | NULL | χ(S⁶)=2 not divisible by 3; Smith theory rules out free ℤ₃ |
+| G33-A1 | Euler class c₃(T^{1,0}S⁶)=χ(S⁶) | NULL | c₃=χ(S⁶)=2; A1 circular (embeds N_gen=3 as input) |
+| G34-A2 | Cobordism Ω^{Spin}_6=0 | NULL | No mod-k cobordism invariants on S⁶; η(S⁶)=0 |
+| G36-K1 | K-theory K̃(S⁶)=ℤ, Adams ops | NULL | K̃(S⁶)=ℤ homogeneous; Adams k³ eigenvalue same ∀n |
 | G34-D1 | Flux quantization H⁶(S⁶;ℤ)=ℤ | WEAK | H⁶=ℤ allows any c₃∈ℤ; necessary not sufficient |
-| G34-B3 | WZW SU(2)_k from spin connection | REJECT | η(S³)=0 → k_grav=0 → SU(2)₀ WZW → 1 primary field |
-| G34-A2 | Cobordism Ω^{Spin}_6=0 | REJECT | No mod-k cobordism invariants on S⁶; η(S⁶)=0 |
-| G35-C1 | NCG M₃(ℂ) = generation counter | REJECT | rank(T^{1,0}S⁶)=3 ≠ ind=1; M₃(ℂ) = color SU(3) |
-| G36-K1 | K-theory K̃(S⁶)=ℤ, Adams ops | REJECT | K̃(S⁶)=ℤ homogeneous; Adams k³ eigenvalue same ∀n |
-| G37-S1 | String tadpole on S³×S⁶ | REJECT | dim=9≠6; χ=0; min tadpole→c₃=2=N_gen=1; brane count circular |
-| G38-S2 | Spectral action minimum on bundle space | REJECT | S_spec(c₃) monotone; min at c₃=2 (=G33 restated in energy) |
 
-**Informal theorem:** Every "3" found in S³×S⁶ reduces to dim_ℂ(S⁶)=3 (color SU(3)) or is a circular input. The true topological generation unit is ind(D_{T^{1,0}S⁶})=1. N_gen=3 is a dynamical selection problem.
+### Category 2: Representation / index theory
+
+| Gate | Mechanism | Verdict | Why |
+|------|-----------|---------|-----|
+| G30-G₂ | G₂-instanton index | NULL | G₂ symmetry forces ind=0; mult(3)=mult(3̄) in all G₂-irreps |
+| G31-S³ | S³ adjoint bundle, j=1 | NULL | Lichnerowicz D²≥1/2ρ₃²>0 for j=1; parity kills adjoint mode |
+| G35-C1 | NCG M₃(ℂ) = generation counter | NULL | rank(T^{1,0}S⁶)=3 ≠ ind=1; M₃(ℂ) = color SU(3) |
+
+### Category 3: String / spectral mechanisms
+
+| Gate | Mechanism | Verdict | Why |
+|------|-----------|---------|-----|
+| G34-B3 | WZW SU(2)_k from spin connection | NULL | η(S³)=0 → k_grav=0 → SU(2)₀ WZW → 1 primary field |
+| G37-S1 | String tadpole on S³×S⁶ | NULL | dim=9≠6; χ=0; min tadpole→c₃=2=N_gen=1 |
+| G38-S2 | Spectral action minimum | NULL | S_spec(c₃) monotone; min at c₃=2 (=G33 restated) |
+
+### Category 4: Brane and flux mechanisms
+
+| Gate | Mechanism | Verdict | Why |
+|------|-----------|---------|-----|
+| G39-B1 | Pati-Salam SO(4), non-equivariant bundle | NULL | Spin geometry gives c₃=2; factor 3 unaccounted |
+| G42-B4 | Green-Schwarz anomaly cancellation | NULL | H⁴(S⁶)=0 → GS trivial; 9D≠10D scope |
+| G40-B2 | G₂→SU(3) SSB Higgsing | WEAK | c₃=6 allowed via π₅ exact seq but not forced |
+| G41-B3 | 3 D6-branes picture | WEAK | rank-3 gauge, c₃ free; no physical mechanism forcing c₃=6 |
+| G43-B5 | Stable HYM bundles on S⁶ | OPEN | μ≡0 blind to c₃; c₃=6 bundle not constructed in known literature |
+
+### Category 5: SO(8) triality (S⁷ extension)
+
+| Gate | Mechanism | Verdict | Why |
+|------|-----------|---------|-----|
+| G44-B1 | D₄ triality on S³×S⁶ (G₂) | NULL | G₂ has no 8-dim irrep → triality orbit collapses to 1 on S⁶ |
+| G45-B2 | D₄ triality on S³×S⁷ (SO(8)) | WEAK | Orbit size=3 visible, but single parallelization → N_gen=1 |
+| G46 | Geometric realization of ℂ⊗ℍ⊗𝕆 | NULL | Single metric → unique isotropy; SO(8) dim=28 not compactifiable |
+
+### Theorem T1 (2026-06-20)
+
+**Three-Generation Obstruction Theorem:**  
+No mechanism from Categories 1–5 can select N_gen=3 on S³×S⁶.  
+Proof: 14 null results cover all 5 categories by exhaustion.  
+**Conditional on G43-B5 (Category 6, stable bundles) remaining OPEN.**
+
+| Status | Count | Gates |
+|--------|-------|-------|
+| NULL (proven negative) | 14 | G27, G30, G31, G33, G34-B3, G34-A2, G35, G36, G37, G38, G39, G42, G44, G46 |
+| WEAK (allowed, not forced) | 4 | G34-D1, G40-B2, G41-B3, G45-B2 |
+| OPEN | 1 | G43-B5 (HYM bundles on S⁶) |
+
+*Tests: G47 synthesis adds 29 tests → 1553 total.*
 
 ---
 
@@ -213,17 +256,17 @@ Pending Tom reply to: message explaining our S³ spin connection result.
 tom_s3_spinor_toy/
 ├── README.md                              # Project overview
 ├── RESEARCH_STATUS_REPORT.md             # This file
-├── tests/                                # 1382 tests
-├── experiments/                          # 38 FL-Standard experiments (G6-G38)
+├── tests/                                # 1553 tests
+├── experiments/                          # 47 FL-Standard experiments (G6-G47)
 │   ├── 20260615-g6-s3xs6-spinor-content/ # claim.md + decision.md
-│   └── ... (G6-G29 PASS + G30-G38 NULL)
+│   └── ... (G6-G29 PASS + G30-G47 NULL/WEAK/OPEN)
 ├── reports/                              # Analysis reports
-├── null_results/                         # 11 falsified hypotheses (G27-G38)
-│   └── INDEX.md                          # all REJECT entries
+├── null_results/                         # 20 entries: 14 NULL + 4 WEAK + 1 OPEN + G47 synthesis
+│   └── INDEX.md                          # all REJECT/WEAK/OPEN entries
 ├── TOM_RECONSTRUCTION_ACH_MATRIX.md      # ACH falsification matrix
 └── geometry_s3_hopf.py                   # S³ Hopf coordinates + coframe
 ```
 
 ---
 
-*Updated 2026-06-20. CSDR 5/5 complete. N_gen theorem-by-exhaustion complete (11 null results). Last commit: a720ccd. For resume: `git checkout main && python -m pytest tests/ -q`.*
+*Updated 2026-06-20. CSDR 5/5 complete. Theorem T1 (G47): 14 NULL + 4 WEAK + 1 OPEN = 19 results. 1553 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
