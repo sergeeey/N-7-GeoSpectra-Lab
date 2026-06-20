@@ -174,7 +174,7 @@ all from geometry. The spectral action predicts the coupling ratio g₂²/g₃²
 at equal radii, matching SM at M_Z within 4.3% with zero free parameters. 
 The weak/strong hierarchy is geometric.
 
-All results are machine-verified: 1677 pytest tests,
+All results are machine-verified: 1696 pytest tests,
 github.com/sergeeey/N-7-GeoSpectra-Lab.
 
 ---
