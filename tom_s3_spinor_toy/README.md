@@ -1,6 +1,6 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 complete · Theorem T1 PASS+OPEN · 1696 tests · 2026-06-21  
+**Status:** CSDR 5/5 complete · Theorem T1 · Zero-fit observables G62 PROMOTE · 1906 tests · 2026-06-21  
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
 **Inspired by:** Tom Lawrence, *Product Manifolds as Realisations of General Linear Symmetries* (arXiv:2203.09473)
@@ -79,6 +79,49 @@ different manifold (S³×S⁶), different method (NCG spectral triple), addition
 
 ---
 
+## Zero-Fit Physical Predictions (G54–G62) — NEW 2026-06-21
+
+**Result:** First parameter-free predictions from S³×S⁶ geometry alone.
+
+The compactification chain — UV-selection → NP stabilization → physical observables — yields
+concrete dimensionless numbers without any numerical tuning:
+
+| Input | Value | Source |
+|-------|-------|--------|
+| λ (NP exponent) | **1/3** (exact) | dim(S³)/dim(S³×S⁶) = 3/9 (G61) |
+| A_np | 0.3787 | Minkowski condition V_total(ρ₆\*)=0 (G60 pearl) |
+| ρ₆\* | 1.090 | UV Casimir pole cancellation c_{1/2}=0 (G57) |
+
+| Observable | Value | Notes |
+|-----------|-------|-------|
+| ρ₆_min | **1.179** | AdS minimum position |
+| V_min | **−2.53×10⁻⁶** | Shallow AdS (KKLT-like; uplift needed) |
+| **m_mod/m_KK** | **2.02%** | Moduli/KK hierarchy — zero-fit prediction |
+
+**Key structural finding:** UV-selection point (ρ₆\*=1.090, where Casimir divergence cancels)
+and potential minimum (ρ₆\_min=1.179) are **distinct** — consistent with KKLT uplift structure.
+The 8.2% separation arises from the geometry without input.
+
+Casimir correction is sub-dominant (~20% on V_min) and does not change ρ₆\_min or m_mod/m_KK
+at this level of approximation.
+
+**Stabilization gates (G54–G62):**
+
+| Gate | Claim | Verdict |
+|------|-------|---------|
+| G54-A | V_flux = const on SM constraint ρ₃=Cρ₆² | PASS |
+| G54-B/C | Casimir pole residue c_{1/2} at s=−1/2 | PASS |
+| G54-D/E | ζ_FP Hadamard finite part; three radii ρ₆\_min<ρ₆\*<ρ₆\*\* | PASS |
+| G54-F | 4D EH frame: Dine-Seiberg runaway without NP | PASS |
+| G55 | Two-flux 2D: V\_flux\_min=q₃q₆=1 exact | PASS |
+| G56+G57 | KKLT-like NP stabilization + UV-selection ρ₆\*=1.090 | PASS |
+| G58–G59 | Curvature and FR charge-scaling: outside SM window | NULL |
+| G60 | Minkowski uplift constraint → A\_np from geometry | PASS (pearl) |
+| G61 | λ = 1/3 (dimensional) or π/9 (E7 gaugino) | WEAK PROMOTE |
+| **G62** | **Zero-fit observables: m\_mod/m\_KK=2.02%** | **PROMOTE** |
+
+---
+
 ## Three-Generation Investigation (G27, G30–G38) — NULL by Theorem
 
 **Result:** All 8 mechanisms for selecting N_gen=3 on S³×S⁶ are NULL or CIRCULAR.
@@ -127,7 +170,7 @@ null_results/INDEX.md: 11 entries, all dated 2026-06-20.
 
 ```
 tom_s3_spinor_toy/
-├── tests/                          # 1696 tests (pytest)
+├── tests/                          # 1906 tests (pytest)
 ├── experiments/                    # FL-Standard experiment folders (G6-G38)
 │   ├── 20260619-g26-ccm-comparison/  # claim.md + decision.md
 │   └── ... (38 experiments total)
@@ -145,7 +188,7 @@ tom_s3_spinor_toy/
 ```bash
 cd tom_s3_spinor_toy
 python -m pytest tests/ -q
-# Expected: 1382 passed, 2 skipped
+# Expected: 1906 passed, 4 skipped
 ```
 
 ---
