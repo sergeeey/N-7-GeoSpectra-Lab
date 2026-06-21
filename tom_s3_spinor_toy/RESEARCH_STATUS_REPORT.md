@@ -1,7 +1,7 @@
 # N-7 GeoSpectra Lab — Research Status Report
-**Date:** 2026-06-20  
-**Branch:** main @ latest (1553 tests)  
-**Test suite:** 1553 passed, 2 skipped  
+**Date:** 2026-06-21  
+**Branch:** main @ merge(g62) (1906 tests)  
+**Test suite:** 1906 passed, 4 skipped  
 **Author:** Sergey Boyko
 
 ---
@@ -16,8 +16,13 @@ closed via Falsification Ladder (FL) Standard protocol: claim.md → evidence sc
 G27–G47: 14 NULL, 4 WEAK, 1 OPEN (G43-B5). Five mechanism categories exhausted.
 N_gen=3 cannot be selected by any known geometric mechanism on S³×S⁶.
 
+**New result (2026-06-21):** **G62 PROMOTE** — first zero-fit physical predictions.
+Chain: SM constraint → UV-selection (G57) → λ=1/3 (G61) → A_np from Minkowski (G60) → minimum.
+No free parameters. Key prediction: **m_mod/m_KK = 2.02%** (moduli 50× lighter than KK modes).
+Full observable table: ρ₆_min=1.179, V_min=−2.53×10⁻⁶, m²_mod=2.95×10⁻⁴, m²_KK=0.719.
+
 External contact: **Tom Lawrence** (replied 2026-06-19, reviewing Section 7 of his PMs paper).  
-Hard fences active: λ = FREE_COUPLING_PARAMETER, sm_derivation_claimed = False.
+Hard fences active: sm_derivation_claimed = False.
 
 ---
 
