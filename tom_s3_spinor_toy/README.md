@@ -98,6 +98,12 @@ concrete dimensionless numbers without any numerical tuning:
 | V_min | **−2.53×10⁻⁶** | Shallow AdS (KKLT-like; uplift needed) |
 | **m_mod/m_KK** | **2.02%** | Moduli/KK hierarchy — zero-fit prediction |
 
+**On C = 0.986:** The SM constraint ρ₃ = C·ρ₆² uses C derived from PDG 2022 gauge couplings
+(g₂²/g₃² at M_Z → C = 0.9865, deviation from natural C=1 is 1.4%). This is an observational
+input, not a fit to the observables below. The equal-radius case C=1 predicts g₂/g₃ with 4.3%
+error; C=0.986 closes this gap. All stabilization results (G57–G62) are independent of
+adjusting C within [0.98, 1.00]. (G29, PROMOTE)
+
 **Key structural finding:** UV-selection point (ρ₆\*=1.090, where Casimir divergence cancels)
 and potential minimum (ρ₆\_min=1.179) are **distinct** — consistent with KKLT uplift structure.
 The 8.2% separation arises from the geometry without input.
