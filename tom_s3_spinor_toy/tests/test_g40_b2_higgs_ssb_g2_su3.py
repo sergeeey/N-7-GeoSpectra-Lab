@@ -11,7 +11,6 @@ Tests:
 """
 
 
-
 class TestT1_G2_SU3_Branching:
     """G₂→SU(3) representation decomposition."""
 
@@ -61,26 +60,36 @@ class TestT2_Homotopy_Sequence:
     Known values:
       π₅(SU(3)) = ℤ
       π₅(G₂)   = ℤ
-      π₅(S⁶)   = ℤ₂    (Freudenthal suspension theorem)
+      π₅(S⁶)   = 0     (cellular approximation: k=5 < n=6 → πₖ(Sⁿ)=0)
       π₄(SU(3)) = 0
       π₄(G₂)   = 0
+
+    G52 correction: original G40 claimed π₅(S⁶)=ℤ₂ via Freudenthal suspension theorem.
+    Error: Freudenthal gives π_{n+1}(Sⁿ)=ℤ₂ for n≥3, so for S⁶ that is π₇(S⁶)=ℤ₂, NOT π₅(S⁶).
+    Correct value: π₅(S⁶)=0 (S⁶ is 5-connected). See test_g52_g40_s3_combination.py.
     """
 
     def test_homotopy_groups_known(self):
         homotopy = {
             "pi5_SU3": "Z",  # ℤ
             "pi5_G2": "Z",  # ℤ
-            "pi5_S6": "Z2",  # ℤ₂
+            "pi5_S6": "0",  # 0 — cellular approx (G52 corrects original G40 error: was "Z2")
             "pi4_SU3": "0",
             "pi4_G2": "0",
         }
         assert homotopy["pi5_SU3"] == "Z"
         assert homotopy["pi5_G2"] == "Z"
-        assert homotopy["pi5_S6"] == "Z2"
+        assert homotopy["pi5_S6"] == "0"  # G52 correction: NOT ℤ₂
         assert homotopy["pi4_SU3"] == "0"
 
     def test_image_of_su3_in_g2_is_2Z(self):
         """
+        NOTE (G52 correction): the original exact-sequence argument below used
+        π₅(S⁶)=ℤ₂ which is WRONG. Correct value is π₅(S⁶)=0 (cellular approx).
+        The conclusion c₃=2 still holds, but via G33 (χ(S⁶)=2, Chern-Gauss-Bonnet),
+        NOT via this homotopy path. This test is kept as historical record.
+
+        Original (wrong) argument:
         Exact sequence: ℤ → ℤ → ℤ₂ → 0
         The map ℤ = π₅(G₂) → π₅(S⁶) = ℤ₂ is surjective (exact).
         Its kernel = image of π₅(SU(3)) → π₅(G₂).
@@ -88,10 +97,10 @@ class TestT2_Homotopy_Sequence:
         → generator of π₅(SU(3)) maps to 2× generator of π₅(G₂).
 
         Consequence: c₃(fundamental SU(3) bundle from embedding) = 2.
-        This MATCHES G33: c₃(T^{1,0}S⁶) = 2.  ✓
+        This MATCHES G33: c₃(T^{1,0}S⁶) = 2.  ✓ (G33 is the authoritative source)
         """
 
-        # Kernel of Z → Z₂ is 2Z
+        # Kernel of Z → Z₂ is 2Z (historical reasoning, path is wrong but result survives via G33)
         def map_to_Z2(n):
             return n % 2
 
@@ -99,7 +108,7 @@ class TestT2_Homotopy_Sequence:
         image_of_su3_generator = 2  # from exactness
         assert map_to_Z2(image_of_su3_generator) == 0  # lies in kernel
 
-        # c₃ of fundamental SU(3) bundle = 2 (consistent with G33)
+        # c₃ of fundamental SU(3) bundle = 2 (G33 is authoritative: χ(S⁶)=2)
         c3_fundamental_su3 = image_of_su3_generator
         assert c3_fundamental_su3 == 2
 
