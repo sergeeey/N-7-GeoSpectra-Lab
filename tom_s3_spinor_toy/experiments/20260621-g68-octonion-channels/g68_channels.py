@@ -102,7 +102,7 @@ def clifford_anticomm(mats: list[np.ndarray], i: int, j: int) -> np.ndarray:
 
 
 def check_clifford_relations(mats: list[np.ndarray], tol: float = 1e-10) -> bool:
-    """Verify {M_i, M_j} = -2δ_{ij} I for i,j = 0..6 (Clifford Cl(7,0) relation)."""
+    """Verify {M_i, M_j} = -2δ_{ij} I for i,j = 0..6 (Clifford Cl(0,7) convention)."""
     n = len(mats)
     I8 = np.eye(N_OCT)
     for i in range(n):
@@ -128,10 +128,11 @@ def pseudoscalar(mats: list[np.ndarray]) -> np.ndarray:
 OMEGA_L = pseudoscalar(L)
 OMEGA_R = pseudoscalar(R)
 
-# For Cl(7,0): Ω₇² = (-1)^(7*6/2) * I = (-1)^21 * I = -I
-# The two irreps of Cl(7,0) are distinguished by Ω₇ = +√(-1) or -√(-1) acting.
-# Over ℝ, this means OMEGA_L = c*I and OMEGA_R = -c*I for some real c.
-# We'll compute c numerically.
+# Signature note: generators satisfy {M_i,M_j}=-2δ_{ij}I with M_i²=-I,
+# which is the Cl(0,7) convention (negative-definite generators).
+# For Cl(0,7): Ω₇² = (-1)^(7·6/2)·(-1)^7·I = (-1)^21·(-1)^7·I = (-1)^28·I = +I
+# Numerically verified: OMEGA_L=-I₈, OMEGA_R=+I₈, both square to +I₈.
+# The two irreps are distinguished by the sign of Ω₇: OMEGA_L≠OMEGA_R.
 
 # ─── G68-D5: G₂ content (consistent with G67-B2) ─────────────────────────────
 # Under G₂ ⊂ SO(7) ⊂ Spin(8): both 8_s (L) and 8_c (R) restrict to 7+1 of G₂.
@@ -156,9 +157,9 @@ AF_M3_DIM_EQUALS_TRIALITY = M3_FUNDAMENTAL_DIM == N_TRIALITY  # True
 
 # What G68 proves:
 G68_PROVEN = [
-    "L-matrices satisfy Cl(7,0) anti-commutation (D2)",
-    "R-matrices satisfy Cl(7,0) anti-commutation (D3)",
-    "Pseudoscalar Ω_L ≠ Ω_R → L,R are distinct Cl(7,0) irreps (D4)",
+    "L-matrices satisfy Cl(0,7) anti-commutation {M_i,M_j}=-2δI (D2)",
+    "R-matrices satisfy Cl(0,7) anti-commutation {M_i,M_j}=-2δI (D3)",
+    "Pseudoscalar Ω_L=-I₈≠Ω_R=+I₈ → L,R are distinct irreps of Cl(0,7) (D4)",
     "Both L and R give 7+1 under G₂ (D5, by G67-B2)",
     "dim(M₃(ℂ) fund) = 3 = N_triality (D6, by G37+G67)",
 ]
