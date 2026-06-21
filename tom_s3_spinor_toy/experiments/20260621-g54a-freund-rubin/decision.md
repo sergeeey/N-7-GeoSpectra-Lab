@@ -1,7 +1,7 @@
 # G54-A Decision — Freund-Rubin Flux on S³×S⁶
 
 **Date:** 2026-06-21  
-**Verdict:** OPEN (F1-F3 PASS; F4 OPEN — string frame total is monotone, 4D EH frame not yet computed)
+**Verdict:** PROMOTE (F1-F4 PASS; F4 completed as G54-F — Dine-Seiberg runaway in EH frame, 2026-06-21)
 
 ## Results
 
