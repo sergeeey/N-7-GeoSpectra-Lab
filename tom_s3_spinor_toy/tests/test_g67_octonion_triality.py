@@ -21,7 +21,6 @@ from g67_triality import (  # noqa: E402
     G2_LONG,
     G2_ALL_ROOTS,
     G2_7_WEIGHTS,
-    SU3_ROOTS,
     SU3_TRIPLET_WEIGHTS,
     SU3_ANTITRIPLET_WEIGHTS,
     SU3_SINGLET_WEIGHT,
@@ -57,13 +56,47 @@ def test_g2_roots_in_hyperplane():
         assert abs(np.sum(r)) < 1e-10, f"Root {r} not in x+y+z=0 plane"
 
 
-def test_g2_short_roots_equal_su3_roots():
-    """G₂ short roots = SU(3) roots — same algebraic structure (A₂ ⊂ G₂)."""
-    assert len(G2_SHORT) == len(SU3_ROOTS)
-    for r in G2_SHORT:
-        assert weight_in_set(r, SU3_ROOTS), f"Short G₂ root {r} not in SU(3) roots"
-    for r in SU3_ROOTS:
-        assert weight_in_set(r, G2_SHORT), f"SU(3) root {r} not in G₂ short roots"
+def test_a2_root_system_properties():
+    """G₂ short roots form the A₂ root system — verified by axioms, not copy comparison.
+
+    Previous version compared G2_SHORT with SU3_ROOTS, but SU3_ROOTS = G2_SHORT.copy()
+    making the test trivially tautological. This version checks A₂ axioms directly:
+      1. Simply-laced: all roots have equal length
+      2. Weyl closure: σ_β(α) = α - ⟨α,β⟩·β is always another root in G2_SHORT
+      3. No orthogonal pairs (Cartan ≠ 0 for non-antipodal) — distinguishes A₂ from A₁⊕A₁
+      4. Rank 2: roots span a 2D subspace of ℝ³ (the hyperplane x+y+z=0)
+    """
+    roots = G2_SHORT
+    norm_sq = np.dot(roots[0], roots[0])  # = 2 for {±(ei−ej)}
+
+    # A₂-1: simply-laced — all 6 roots same length
+    for r in roots:
+        assert abs(np.dot(r, r) - norm_sq) < 1e-10, f"Root {r} has wrong length"
+
+    # A₂-2: Weyl closure — σ_β(α) = α - 2(α·β)/(β·β)·β must land in root system
+    for alpha in roots:
+        for beta in roots:
+            cartan = 2 * np.dot(alpha, beta) / norm_sq
+            reflected = alpha - cartan * beta
+            assert weight_in_set(reflected, roots), (
+                f"Weyl closure FAIL: σ_{beta}({alpha}) = {np.round(reflected, 3)} not in roots"
+            )
+
+    # A₂-3: no orthogonal non-antipodal pairs (Cartan = ±1, never 0)
+    # A₁⊕A₁ would give Cartan=0 for cross-component pairs; A₂ never does
+    for alpha in roots:
+        for beta in roots:
+            if np.allclose(alpha, beta) or np.allclose(alpha, -beta):
+                continue
+            cartan = 2 * np.dot(alpha, beta) / norm_sq
+            assert abs(round(cartan)) == 1, (
+                f"A₂ requires |Cartan|=1 for non-antipodal pairs, got {cartan:.3f} "
+                f"({alpha} vs {beta}) — Cartan=0 would mean A₁⊕A₁, not A₂"
+            )
+
+    # A₂-4: rank 2 — roots span 2D subspace of ℝ³ (the x+y+z=0 hyperplane)
+    rank = np.linalg.matrix_rank(np.array(list(roots)))
+    assert rank == 2, f"A₂ root system has rank 2, got {rank}"
 
 
 def test_g2_length_ratio_sqrt3():
