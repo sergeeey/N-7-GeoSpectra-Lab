@@ -150,8 +150,11 @@ Lemma L5 fails if:
 | L3 | Three Z₃ eigenspaces independent | G67, G73, G75 | Channels equivalent → 1 mode × 3 labels | PROMOTE |
 | L4 | dim ker(D⁻) = 0 exactly | G74A, G74B | Lichnerowicz normalization / G₂-Schur scope | PROMOTE |
 | L5 | sign(ind)=+1 → left-handed | G74B, G23 | Convention mismatch L↔R | PROMOTE |
+| C1 | λ_geom = c·ρ₆² → exp(−λ/ρ₆²) = const (Track B meta-result) | LAMBDA-DIM-GATE | New scale Λ_NP ≠ ρ₆ → not geometric | PROMOTE |
 
 **Chain:** L1 ⊢ L2 ⊢ (L3 ∥ L4) ⊢ L5 → N_gen = 3 exactly with left-handed chirality.
+
+**Track B structural result:** C1 → λ = FREE_COUPLING_PARAMETER (geometric derivation structurally impossible).
 
 ---
 
@@ -162,6 +165,33 @@ Lemma L5 fails if:
 3. Does NOT imply G73/G74A/G74B have been externally verified by a mathematician
 4. Does NOT exclude other mechanisms that could also give N_gen = 3
 5. Does NOT replace a rigorous peer-reviewed proof
+
+---
+
+## Corollary C1 — λ-Dimensional Obstruction (Track B Meta-Result)
+
+**Statement:**
+Any coupling λ derivable from internal S³×S⁶ geometry satisfies λ = c·ρ₆² on the
+compactification trajectory (where ρ₃ = κρ₆, κ = √(7/6) fixed by G66). Therefore:
+
+    exp(−λ_geom/ρ₆²) = exp(−c·κᵃ) = constant (∀ a, c)
+
+No geometric/spectral mechanism produces a non-trivial ρ₆-dependent exponential.
+
+**Proof sketch (Buckingham Pi):**
+[λ] = [length²]. Internal scales = {ρ₃, ρ₆}. Most general form: λ = c·ρ₃ᵃ·ρ₆^(2−a).
+On trajectory ρ₃ = κρ₆: λ = c·κᵃ·ρ₆². Then exp(−λ/ρ₆²) = exp(−c·κᵃ) = const. □
+
+**Hodge corollary (Künneth):**
+H³(S³×S⁶) = H³(S³) = ℝ. The harmonic 3-form flux threads S³ (topologically quantized);
+S⁶ has b₃ = 0 (no harmonic 3-forms). The flux potential scales as Vol(S³)/Vol(S⁶),
+not as a flux quantum from S⁶ — consistent with C1.
+
+**Supporting gate:** `experiments/20260622-lambda-dim-gate/`
+
+**Formal failure condition:**
+C1 fails if the compactification trajectory has ρ₃ ≠ κρ₆ (ratio is not fixed), OR
+if a geometric mechanism introduces a new scale Λ_NP hidden inside {ρ₃, ρ₆} labeling.
 
 ---
 
