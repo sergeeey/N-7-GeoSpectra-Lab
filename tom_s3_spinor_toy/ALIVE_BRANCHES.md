@@ -26,7 +26,7 @@
 | TOM-BRIDGE | S³ spin connection → локальные SU(2)×SU(2) трансформации совпадают с операторами Тома на гармониках | PAUSED | Явная форма diff. операторов Тома неизвестна | Прямое сравнение с его ур. (84) TSSv9 | Tom Part 5/6 — он сам придёт с вопросами | — |
 | ~~G85B~~ | ~~Spectral saddle даёт мост к exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: t*=ρ₆²/3 exists, K(t*)>0, but exp factor = exp(−3)=const → no bridge | — | G85A, G85B |
 | ~~G86A~~ | ~~Dual-modulus T∝ρ₆^α → exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: I=Γ(3)/T³~ρ₆^{−3α} for ALL α; structural theorem, 0/25 alpha give exp | — | G84A, G86A |
-| G86B | Dilaton / warp compensation route к exp(−λ/ρ₆²) | OPEN | G84A/G84B убили стандартную редукцию | Ввести warp factor Ω(y)≠1 в метрику ds²=Ω²ds⁴+…, вычислить 4D effective action. PASS если Ω-вклад даёт exp(−const/ρ₆²) без новых свободных параметров. FAIL если Ω вводит новый свободный параметр или вклад подавлен. | — | G84A, G84B |
+| ~~G86B~~ | ~~Warp factor Ω(y) → exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: uniform flux→trivial A=const; localized→polynomial+free Q; postulated→circular; ALL fail PASS | — | G84A, G86B |
 | G72 | Geometric realization of 8_v triality bundle on S⁶ | PAUSED | 8_v construction требует explicit Tom input | — | TOM-BRIDGE PROMOTE → тогда открываем | — |
 
 ---
@@ -42,11 +42,12 @@ exp(−λ/ρ₆²) происхождение — что проверено:
   ├── Poisson/theta resummation (G85A) → форма есть, мост нет
   ├── Spectral saddle/worldline (G85B) → t*=ρ₆²/3, exp(−3)=const, не 1/ρ₆²
   ├── Dual-modulus T∝ρ₆^α ALL α (G86A) → STRUCTURAL: I~ρ₆^{−3α}, ВСЕГДА степенная
+  ├── Warp factor Ω(y) на S⁶ (G86B) → тривиальный A=const; λ~ρ₆² + свободный Q; circular
   └── Minkowski uplift через λ_geom (G60) → λ_geom < 0
 
 ОТКРЫТО:
-  └── Warp factor Ω(y) (G86B) ← ПОСЛЕДНИЙ оставшийся кандидат
-  └── Warp/dilaton compensation (G86B)
+  *** ВЕСЬ ГЕОМЕТРИЧЕСКИЙ/СПЕКТРАЛЬНЫЙ КЛАСС ИСЧЕРПАН (G83–G86B) ***
+  Brane instantons / gaugino condensation — вне scope этого проекта
 ```
 
 ---

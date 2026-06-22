@@ -27,3 +27,4 @@
 | G51 | 2026-06-20 | sspec-constraint-monotone | NULL | S_spec monotone along ρ₃=0.986ρ₆² (SM coupling constraint) → no interior min; coupling ratio alone cannot stabilize radii |
 | G85B | 2026-06-22 | spectral-saddle-worldline | NULL | Saddle t*=ρ₆²/3 exists (K(t*)>0), but exp factor = exp(−3)=const, NOT exp(−λ/ρ₆²); ρ₆-dependence at saddle is ρ₆⁰ (λ_fit=0) |
 | G86A | 2026-06-22 | dual-modulus-alpha-sweep | NULL | STRUCTURAL: I=Γ(d/2)/T^{d/2} ~ ρ₆^{−3α} for ALL α∈[−4,8]; Laplace integrals with power-law T are ALWAYS power-law; 0/25 alpha give exp(−λ/ρ₆²) |
+| G86B | 2026-06-22 | warp-factor-omega-s6 | NULL | Uniform flux → trivial A=const (Hopf); localized source → power-law δM_Pl²~ρ₆² (R²_pow=1.000) + free Q; postulated exp(−λ/ρ₆²) is y-independent on S⁶ → same as trivial; ALL cases fail PASS; λ-map EXHAUSTED |
