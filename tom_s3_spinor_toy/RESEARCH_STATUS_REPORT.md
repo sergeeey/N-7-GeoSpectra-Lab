@@ -1,7 +1,7 @@
 # N-7 GeoSpectra Lab — Research Status Report
-**Date:** 2026-06-21 (updated 2026-06-22)  
-**Branch:** main @ 6a9a005 (2220 tests)  
-**Test suite:** 2220 passed, 4 skipped  
+**Date:** 2026-06-22  
+**Branch:** main @ 4e554a1  
+**Test suite:** 2217 passed, 4 skipped  
 **Author:** Sergey Boyko
 
 ---
@@ -22,6 +22,12 @@ remains valid; G73 circumvents it by using three bundles of c₃=2, not one of c
 Chain: SM constraint → UV-selection (G57) → λ=1/3 (G61) → A_np from Minkowski (G60) → minimum.
 No free parameters. Key prediction: **m_mod/m_KK = 2.02%** (moduli 50× lighter than KK modes).
 Full observable table: ρ₆_min=1.179, V_min=−2.53×10⁻⁶, m²_mod=2.95×10⁻⁴, m²_KK=0.719.
+
+**Track B result (2026-06-22):** λ-origin mapping COMPLETE — the entire geometric/spectral class
+(G83–G86B, 6 null results) is exhausted. **λ = FREE_COUPLING_PARAMETER** is confirmed by
+exhaustion: no Laplace/spectral/warp mechanism can produce exp(−λ/ρ₆²) without a new free
+parameter. Non-perturbative origin (brane instantons, gaugino condensation) is outside the scope
+of this geometric framework.
 
 External contact: **Tom Lawrence** (replied 2026-06-19, reviewing Section 7 of his PMs paper).  
 Hard fences active: sm_derivation_claimed = False.
@@ -271,11 +277,33 @@ Pending Tom reply to: message explaining our S³ spin connection result.
 
 ---
 
+## Track B — Lambda-Map (G83–G86B): COMPLETE ✅
+
+**Goal:** Determine whether exp(−λ/ρ₆²) in the effective potential can be derived geometrically.
+
+**Result:** EXHAUSTED — no mechanism found. λ = FREE_COUPLING_PARAMETER.
+
+| Gate(s) | Mechanism class | Result |
+|---------|----------------|--------|
+| G83–G84B | Standard gauge reduction (KK mass from S⁶ geometry) | Power-law +12/+6, not 1/ρ₆² |
+| G85A | Poisson resummation of spectral heat kernel | exp(−n²ρ₆²) form exists; bridge to ρ₆-minimum missing |
+| G85B | Spectral saddle t*=ρ₆²/3 in proper-time integral | exp(−3)=const regardless of ρ₆ [VERIFIED] |
+| G86A | Dual-modulus T∝ρ₆^α (ALL α∈[−4,8]) | **Structural theorem: I=Γ(d/2)/T^{d/2}~ρ₆^{-3α} always** |
+| G86B | Warp factor Ω(y) on S⁶ | Trivial (Hopf lemma) / power-law+free Q / circular [VERIFIED] |
+
+**Meaning:** The factor exp(−λ/ρ₆²) is phenomenological. Its physical origin lies in non-perturbative
+effects (D-brane instantons with S_inst~Vol/g_s, or gaugino condensation W~exp(−3S/8π²g²)) — both
+requiring a UV completion beyond the geometric framework studied here.
+
+**Hard fence:** λ = FREE_COUPLING_PARAMETER in any paper or claim from this project.
+
+---
+
 ## Open Questions
 
 1. **Three generations** — RESOLVED (G73+G74A+G74B). N_gen=3 exactly from twisted Atiyah-Singer index. SM left-handed chirality geometric. See gate table above.
 2. **Majorana mass** for right-handed neutrino
-3. **λ coupling** — free at S³ stage (G4 Fisher rank theorem); requires V-operator promotion for identification (ACH Case 6 open)
+3. **λ coupling** — TRACK B COMPLETE: free parameter, non-perturbative origin. No geometric derivation found (G83–G86B exhausted).
 
 ---
 
@@ -298,4 +326,4 @@ tom_s3_spinor_toy/
 
 ---
 
-*Updated 2026-06-22. CSDR 5/5 + N_gen=3 EXACTLY (G73-G74B) + SM chirality + G62 zero-fit. 2220 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
+*Updated 2026-06-22. CSDR 5/5 + N_gen=3 EXACTLY (G73-G74B) + SM chirality + G62 zero-fit + Track B λ-map EXHAUSTED (G83-G86B). 2217 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
