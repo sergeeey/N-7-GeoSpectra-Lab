@@ -7,8 +7,8 @@
 
 ## Abstract
 
-We derive Standard-Model-like gauge structure, fermion quantum numbers,
-generation count, and chirality for one generation from the geometry of S³×S⁶. By identifying the
+We derive the Standard Model gauge structure and fermion quantum numbers
+for one generation from the geometry of S³×S⁶. By identifying the
 spin connection with gauge fields (following Lawrence [2022]), we obtain the gauge
 group SU(3)×SU(2)×U(1)_{B−L} and the full electric charge formula Q = T₃L + (B−L)/2
 geometrically, with all 32 spinor states matching one SM generation. The gauge
