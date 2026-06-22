@@ -37,12 +37,16 @@ In this paper we present a candidate mathematical construction in which the
 three-generation count N_gen = 3 emerges as an exact integer from the
 Atiyah-Singer index theorem on the internal space S⁶ = G₂/SU(3), without
 postulating it, without tuning parameters, and without any input from the
-Standard Model. We work within the framework of Lawrence [2022], who showed
-that identifying the spin connection of S³ with gauge fields reproduces the
-Standard Model gauge group SU(3)×SU(2)×U(1) and the correct fermion quantum
-numbers for one generation. Extending this construction to the product space
-S³×S⁶, we find that the six-dimensional factor provides the geometric mechanism
-for generation counting.
+Standard Model. We build on the Kaluza-Klein framework of Lawrence [2022], who established that
+in product manifolds the spin connection of the compact factor acts as a gauge
+potential (demonstrated for U(1) in six dimensions and SO(3) ≅ SU(2) in seven
+dimensions). We extend this mechanism to the ten-dimensional product S³×S⁶:
+the S³ spin connection yields SU(2)_L × SU(2)_R from the bi-invariant metric on S³
+(isometry group SO(4) ≅ SU(2)_L × SU(2)_R), while the G₂ holonomy of S⁶ = G₂/SU(3)
+provides SU(3)_c — together giving the Pati-Salam gauge algebra. The fermion quantum
+numbers for one generation emerge from the spinor decomposition under SO(4) × G₂.
+The six-dimensional factor additionally provides the geometric mechanism for generation
+counting.
 
 The key observation is that S⁶ = G₂/SU(3) admits a G₂-equivariant
 almost-complex structure J, and the negative-chirality spinor bundle
@@ -89,16 +93,21 @@ to prior work and discusses open problems.
 
 ### 2.1. Gauge structure from S³
 
-Lawrence [2022] showed that, in the spectral action formalism applied to the
-three-sphere S³, identifying the spin connection ω_μ^{ab} with gauge fields A_μ
-produces the Standard Model gauge group SU(3)×SU(2)_L×SU(2)_R×U(1)_{B-L} without
-additional assumptions. The isometry group of S³ is SO(4) ≅ SU(2)_L × SU(2)_R, and
-the SU(3) color factor arises from the self-dual part of the spin connection, matching
-the gauge algebra of the Pati-Salam group SU(4)×SU(2)_L×SU(2)_R after symmetry breaking.
+Lawrence [2022] established that in product Kaluza-Klein manifolds, components of
+the Levi-Civita connection with mixed indices (4D spacetime ↔ compact space) transform
+as gauge potentials of the orthogonal symmetry O(s₂) of the compact factor. The two
+explicit examples are: six total dimensions (one extra) → U(1) gauge group, and seven
+total dimensions (three extra, analogous to S³) → SO(3) ≅ SU(2) gauge group. Lawrence
+explicitly notes that extending to SU(3) would require embedding in U(4) and is left
+for future work [Lawrence 2022, §14].
 
-In the product space S³×S⁶, the spin connection of S³ provides the non-abelian gauge
-fields, while the S⁶ factor contributes the generation structure (§3) and the
-hypercharge quantum numbers via its G₂-harmonic decomposition.
+We extend this mechanism to S³×S⁶. The S³ factor has isometry group SO(4) ≅ SU(2)_L × SU(2)_R
+from its bi-invariant round metric, giving two independent SU(2) gauge factors. The
+S⁶ = G₂/SU(3) factor contributes SU(3)_c via its G₂ holonomy (G₂ contains SU(3) as
+the structure group of T^{1,0}S⁶). The U(1)_{B-L} factor is identified from the B−L
+charge embedded in SU(4)_PS ≃ SO(6) (G16). Together, the spin connections of S³ × S⁶
+yield the Pati-Salam gauge algebra SU(3)_c × SU(2)_L × SU(2)_R × U(1)_{B-L}, which
+contains the Standard Model gauge group as a subgroup after Pati-Salam symmetry breaking.
 
 ### 2.2. Standard Model fermion content for one generation
 
@@ -161,6 +170,32 @@ knowing λ (the non-perturbative coupling); see §6.
 The key structural prediction is the **hierarchy** g₂ < g₃: the electroweak coupling
 is weaker than the strong coupling because Vol(S³) < Vol(S⁶) at unit radii. This is
 a geometric fact, not a phenomenological input.
+
+### 2.5. Weinberg angle estimate
+
+Given Y = T₃R + (B-L)/2 [G16], the Weinberg angle follows from the Pati-Salam mixing
+formula. With g_{2R} = g_{2L} = g₂ (left-right symmetry of S³) and the SU(4) breaking
+relation g_{B-L} = g₄ × √(3/2) where g₄ ≈ g₃ at M_KK (assuming both SU(3)_c and U(1)_{B-L}
+originate from the S⁶ sector):
+
+    1/g'² = 1/g₂² + 2/(3g₃²)
+
+    sin²θ_W = 3/(6 + 2r)   where   r = g₂²/g₃²               (G-W formula)
+
+This formula reproduces the known Pati-Salam prediction at r=1 (g₂=g₃ unification):
+sin²θ_W = 3/8 = 0.375. At our geometric value r = 15/(16π) ≈ 0.298:
+
+    sin²θ_W ≈ 0.455   at M_KK   (string-scale prediction)
+
+This is larger than the standard PS value 0.375, requiring more RGE running to reach the
+SM value 0.231 at M_Z. The additional running Δ ≈ 0.224 (vs. 0.144 for standard PS)
+implies M_KK is substantially below the standard GUT scale M_GUT ≈ 10¹⁶ GeV — consistent
+with an intermediate-scale S³×S⁶ compactification. A quantitative prediction for M_KK
+requires knowing λ (the non-perturbative coupling) through the Track B obstruction (§6).
+
+**Caveat:** The assumption g_{SU(4)} = g₃ (SU(4)_PS and SU(3)_c couplings equal at M_KK)
+is a simplification pending a complete Pati-Salam spectral action computation on S³×S⁶;
+the above is a structural estimate, not a derived result.
 
 ---
 
