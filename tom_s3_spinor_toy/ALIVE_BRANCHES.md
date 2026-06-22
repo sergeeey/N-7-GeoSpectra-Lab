@@ -21,13 +21,13 @@
 
 ## Живые маршруты
 
-| ID | Claim (1 строка) | Статус | Изменённое предположение | Kill condition | Revival condition | Последняя проверка | Связанный null |
-|----|-----------------|--------|--------------------------|---------------|------------------|-------------------|----------------|
-| TOM-BRIDGE | S³ spin connection → локальные SU(2)×SU(2) трансформации совпадают с операторами Тома на гармониках | PAUSED | Явная форма diff. операторов Тома | Тест покажет несовпадение при подстановке | Tom Lawrence Part 5 или Part 6 | 2026-06-22 | — |
-| G85B | Spectral saddle / worldline resummation даёт финальный мост к A·exp(−λ_np/ρ₆²) | OPEN | Метод ресуммирования (Bessel/saddle, не Poisson/theta) | Вычисление показывает расходимость или отсутствие седловой точки | — | 2026-06-22 | G85A (Poisson/theta — форма есть, моста нет) |
-| G86A | Dual-modulus или inverse-modulus route к exp(−λ/ρ₆²) | OPEN | Нестандартное определение модуля (не T∝ρ⁶) | Показывает те же +6/+12 что G84A | — | 2026-06-22 | G84A (стандартный ansatz → +12) |
-| G86B | Dilaton / warp compensation route к exp(−λ/ρ₆²) | OPEN | Warp factor ≠ 1 в размерной редукции | Вводит новые свободные параметры без предсказательной силы | — | 2026-06-22 | G84A, G84B |
-| G72 | Geometric realization of 8_v triality bundle on S⁶ | PAUSED | Требует explicit construction от Тома | 8_v не поддаётся G₂-equivariant construction | Tom подтверждает operator bridge (TOM-BRIDGE) | 2026-06-22 | — |
+| ID | Claim (1 строка) | Статус | Limited by | Next falsifier | Revival condition | Связанный null |
+|----|-----------------|--------|------------|----------------|------------------|----------------|
+| TOM-BRIDGE | S³ spin connection → локальные SU(2)×SU(2) трансформации совпадают с операторами Тома на гармониках | PAUSED | Явная форма diff. операторов Тома неизвестна | Прямое сравнение с его ур. (84) TSSv9 | Tom Part 5/6 — он сам придёт с вопросами | — |
+| G85B | Spectral saddle / worldline resummation даёт финальный мост к A·exp(−λ_np/ρ₆²) | OPEN | G85A показал: Poisson/theta форма есть, моста нет | Найти седловую точку в proper-time интеграле или доказать отсутствие | — | G85A |
+| G86A | Dual-modulus / inverse-modulus route к exp(−λ/ρ₆²) | OPEN | G84A убил стандартный T∝ρ⁶ ansatz | Показать T(ρ₆) с другим определением модуля → проверить степень | — | G84A |
+| G86B | Dilaton / warp compensation route к exp(−λ/ρ₆²) | OPEN | G84A/G84B убили стандартную редукцию | Показать warp factor ≠ 1 не вводит новых свободных параметров | — | G84A, G84B |
+| G72 | Geometric realization of 8_v triality bundle on S⁶ | PAUSED | 8_v construction требует explicit Tom input | — | TOM-BRIDGE PROMOTE → тогда открываем | — |
 
 ---
 
@@ -60,5 +60,6 @@ exp(−λ/ρ₆²) происхождение — что проверено:
 
 ---
 
-*Паттерн: оригинальный (нет публичных аналогов с revival_condition + kill_condition + null pointer).
-Ближайший аналог: Arbor (arXiv 2606.11926) — но без revival_condition и без parked/killed разделения.*
+*Паттерн: оригинальный — сочетание null_results/ + parked/ + ALIVE_BRANCHES с revival_condition не найдено в публичных репо.*
+
+*Внешний аналог: [UNVERIFIED] Возможная параллель с branch-status системами для hypothesis tracking — не верифицировано инструментом. Не цитировать внешне до подтверждения.*
