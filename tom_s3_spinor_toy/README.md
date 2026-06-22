@@ -1,6 +1,6 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 complete · Theorem T1 · Zero-fit observables G62 PROMOTE · 1906 tests · 2026-06-21  
+**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · SM chirality geometric · 2189 tests · 2026-06-21  
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
 **Inspired by:** Tom Lawrence, *Product Manifolds as Realisations of General Linear Symmetries* (arXiv:2203.09473)
@@ -21,6 +21,8 @@ finite algebra A_F of Noncommutative Geometry.
 | KO-dimension 6 of the finite spectral triple | G18: anticommutation relations of (γ_F, J_F, D_F) |
 | Chirality = SU(2)_L vs SU(2)_R gauge sectors | G23: Witten index=0, representation asymmetry |
 | B−L from K₃ on S⁶ | G16: Cartan generator of SO(6)⊃SU(3) |
+| **N_gen = 3 EXACTLY** | **G73+G74A+G74B: Atiyah-Singer ind=1 per channel × 3 Z₃-triality channels** |
+| **Left-handed chirality** | **G74B: sign(ind)=+1; orientation of S⁶ is the single Z₂ input** |
 
 **Comparison with CCM 2006** (Connes-Chamseddine-Marcolli, arXiv:hep-th/0610241):
 
@@ -76,6 +78,10 @@ different manifold (S³×S⁶), different method (NCG spectral triple), addition
 | G26 | CCM 2006 correspondence; 5/5 CSDR angles | PASS |
 | G28 | Spectral action inner fluctuation → SM gauge kinetic terms | PASS |
 | G29 | Coupling ratio g₂²/g₃² = 15/(16π) at equal radii (SM error +4.3%) | PASS |
+| G67 | SO(8) triality Z₃: three channels 8_v, 8_s, 8_c with c₃=2 each | PASS (25/25) |
+| G73 | ind(D_{S⁶}⊗S⁻) = Â(S⁶)·c₃/2 = 1 per channel; N_gen ≥ 3 | PROMOTE (29/29) |
+| **G74A** | **Lichnerowicz gap 8/45≪1 + G₂-Schur: dim ker = 1 EXACTLY → N_gen = 3** | **PROMOTE (30/30)** |
+| **G74B** | **sign(ind)=+1 → LEFT_HANDED_EXCESS; L=1, R=0 per channel** | **PROMOTE (31/31)** |
 
 ---
 
@@ -128,11 +134,21 @@ at this level of approximation.
 
 ---
 
-## Three-Generation Investigation (G27, G30–G38) — NULL by Theorem
+## Three-Generation Investigation → RESOLVED by G73+G74A+G74B
 
-**Result:** All 8 mechanisms for selecting N_gen=3 on S³×S⁶ are NULL or CIRCULAR.
-**Theorem (informal):** Every "3" found in this geometry reduces to dim_ℂ(S⁶)=3 (color SU(3)).
-The true geometric generation unit is ind=1 (Atiyah-Singer on S⁶). N_gen=3 is not resolved by this geometry layer.
+**Result (updated 2026-06-21):** N_gen = 3 EXACTLY from twisted Atiyah-Singer index on S⁶.
+
+**Mechanism:** ind(D_{S⁶}⊗S⁻) = Â(S⁶)·c₃(S⁻)/2 = 1 per channel × 3 Z₃-triality channels = **3**.
+- c₃(S⁻) = χ(S⁶) = 2 (G33, Chern–Gauss–Bonnet)
+- Â(S⁶) = 1 (G50, H⁴(S⁶;ℤ)=0)
+- Three channels from G₂ = Fix(Z₃ ⊂ Aut(𝕆)) on SO(8) reps 8_v, 8_s, 8_c (G67)
+- Count exact: |F_{S⁻}|/(R/4) = 8/45 ≪ 1 (G74A Lichnerowicz) + G₂-Schur → dim ker ≤ 1
+
+**Why earlier NULL scan (G27–G38) did not find this:** Those 10 mechanisms tried single-bundle
+selections with c₃=6. The χ-lemma (Proposition T1) correctly rules those out. The resolution uses
+THREE bundles of c₃=2 each — c₃=2 is an asset (ind=1), not a limitation.
+
+**Earlier NULL results (still valid for their respective classes):**
 
 | Gate | Mechanism | Verdict |
 |------|-----------|---------|
@@ -166,7 +182,7 @@ null_results/INDEX.md: 11 entries, all dated 2026-06-20.
 
 ## Open Questions
 
-1. **Three generations** — CLOSED by theorem-by-exhaustion (G27, G30–G38). All 8 mechanisms NULL or CIRCULAR. N_gen=3 is dynamical/environmental, outside S³×S⁶ scope.
+1. **Three generations** — RESOLVED (G73+G74A+G74B). N_gen=3 exactly from twisted Atiyah-Singer index. Left-handed chirality from sign(ind)=+1. See gate chain above.
 2. **Majorana mass** for right-handed neutrino — not yet explored
 3. **Coupling λ** — free at S³ stage (G4 Fisher rank theorem); requires V-operator promotion
 
@@ -176,7 +192,7 @@ null_results/INDEX.md: 11 entries, all dated 2026-06-20.
 
 ```
 tom_s3_spinor_toy/
-├── tests/                          # 1906 tests (pytest)
+├── tests/                          # 2189 tests (pytest)
 ├── experiments/                    # FL-Standard experiment folders (G6-G38)
 │   ├── 20260619-g26-ccm-comparison/  # claim.md + decision.md
 │   └── ... (38 experiments total)
@@ -194,7 +210,7 @@ tom_s3_spinor_toy/
 ```bash
 cd tom_s3_spinor_toy
 python -m pytest tests/ -q
-# Expected: 1906 passed, 4 skipped
+# Expected: 2189 passed, 4 skipped
 ```
 
 ---
@@ -209,7 +225,7 @@ python -m pytest tests/ -q
 **This is NOT:**
 - A proof of S³×S⁶ as the physical compactification space
 - A derivation of the SM Lagrangian or coupling constants
-- A bypass of known no-go theorems (Witten, Lichnerowicz)
+- A bypass of the Witten index no-go (our result uses it, not bypasses it)
 - Endorsed by Tom Lawrence or affiliated with his research group
 
 ---
