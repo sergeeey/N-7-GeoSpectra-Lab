@@ -22,7 +22,7 @@ This repository contains two independent research projects on compact geometries
 | **Method** | Eigensolver + IPR / r-stat | Index theory (Atiyah-Singer) + exact arithmetic |
 | **Verdict** | `DISCRETIZATION_SENSITIVE` | N_gen = 3 **EXACTLY** |
 | **Key result** | 7.07× signal; geometry-agnostic | Three SM generations from Atiyah-Singer index |
-| **Tests** | ~500 regression tests | **2221 tests** (fractions.Fraction, zero float ops) |
+| **Tests** | ~500 regression tests | **2210 tests** (fractions.Fraction, zero float ops) |
 | **Directory** | `cc_toy_lab/`, `scripts/`, `tests/` | [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) |
 | **Entry point** | `reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md` | `tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md` |
 
@@ -89,7 +89,7 @@ Best verdict                DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
 
 ## Track B — What the Algebraic Project Establishes
 
-See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2221 tests.
+See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2210 tests.
 
 - **N_gen = 3 exactly:** Atiyah-Singer index ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels (G73, PROMOTE 29/29)
 - **dim ker = 1 exactly:** Lichnerowicz spectral gap + G₂-Schur → no extra zero modes (G74A, PROMOTE 30/30)
@@ -130,7 +130,7 @@ pip install -r requirements.txt
 # Full regression suite (494 tests across 44 files, cc_toy_lab track)
 pytest -q tests/
 
-# Algebraic spinor suite — Track B (2221 tests, exact arithmetic)
+# Algebraic spinor suite — Track B (2210 tests, exact arithmetic)
 pytest -q tom_s3_spinor_toy/tests/ --tb=no
 
 # Run a smoke version of the radion stabilization study
