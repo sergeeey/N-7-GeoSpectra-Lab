@@ -25,8 +25,8 @@
 |----|-----------------|--------|------------|----------------|------------------|----------------|
 | TOM-BRIDGE | S³ spin connection → локальные SU(2)×SU(2) трансформации совпадают с операторами Тома на гармониках | PAUSED | Явная форма diff. операторов Тома неизвестна | Прямое сравнение с его ур. (84) TSSv9 | Tom Part 5/6 — он сам придёт с вопросами | — |
 | G85B | Spectral saddle / worldline resummation даёт финальный мост к A·exp(−λ_np/ρ₆²) | OPEN | G85A показал: Poisson/theta форма есть, моста нет | В proper-time интеграле ∫₀^∞ dt K(t,ρ₆) найти стационарную точку ∂K/∂t=0 при ρ₆≈1.090. PASS: t* существует и K(t*)>0. FAIL: интеграл монотонный (нет седла). | — | G85A |
-| G86A | Dual-modulus / inverse-modulus route к exp(−λ/ρ₆²) | OPEN | G84A убил стандартный T∝ρ⁶ ansatz | Показать T(ρ₆) с другим определением модуля → проверить степень | — | G84A |
-| G86B | Dilaton / warp compensation route к exp(−λ/ρ₆²) | OPEN | G84A/G84B убили стандартную редукцию | Показать warp factor ≠ 1 не вводит новых свободных параметров | — | G84A, G84B |
+| G86A | Dual-modulus / inverse-modulus route к exp(−λ/ρ₆²) | OPEN | G84A убил стандартный T∝ρ⁶ ansatz | Построить T(ρ₆)=B·ρ₆^α с α≠6, интегрировать по proper-time, проверить: PASS если результат ∝exp(−const/ρ₆²) с const>0. FAIL если exponent положительный или T снова ∝ρ₆^6. | — | G84A |
+| G86B | Dilaton / warp compensation route к exp(−λ/ρ₆²) | OPEN | G84A/G84B убили стандартную редукцию | Ввести warp factor Ω(y)≠1 в метрику ds²=Ω²ds⁴+…, вычислить 4D effective action. PASS если Ω-вклад даёт exp(−const/ρ₆²) без новых свободных параметров. FAIL если Ω вводит новый свободный параметр или вклад подавлен. | — | G84A, G84B |
 | G72 | Geometric realization of 8_v triality bundle on S⁶ | PAUSED | 8_v construction требует explicit Tom input | — | TOM-BRIDGE PROMOTE → тогда открываем | — |
 
 ---
