@@ -1,0 +1,92 @@
+{
+  "action_ansatz": "unwarped product metric; constant dilaton/warp prefactor; zero-mode F_mu_nu only",
+  "derived_baseline_alphas": {
+    "BULK_S3XS6": 12,
+    "LOCALIZED_S3": 6,
+    "LOCALIZED_S6": 6
+  },
+  "external_dimension": 4,
+  "falsified_within_ansatz": [
+    "4D Weyl rescaling alone converts positive volume power to -2",
+    "standard constant-prefactor bulk or cycle reduction yields alpha=-2"
+  ],
+  "gate": "G84A",
+  "gates": {
+    "G84A-1_independent_power_methods_agree": true,
+    "G84A-2_expected_positive_powers": true,
+    "G84A-3_4d_yang_mills_weyl_invariant": true,
+    "G84A-4_weyl_detector_negative_control": true,
+    "G84A-5_no_baseline_inverse_square": true,
+    "G84A-6_verdict_allowed": true
+  },
+  "inverse_square_derived": false,
+  "next_gate": "G84B_SPECTRAL_EXPONENTIAL_ORIGIN",
+  "open_routes": [
+    "rho-dependent dilaton prefactor",
+    "warped cycle volume",
+    "dual modulus or T-duality",
+    "spectral determinant origin independent of gauge modulus"
+  ],
+  "project_path": "rho3=C*rho6^2",
+  "reproduction_commands": [
+    "python tom_s3_spinor_toy/experiments/20260622-g84a-standard-gauge-reduction/g84a_standard_gauge_reduction.py",
+    "python -m pytest tom_s3_spinor_toy/tests/test_g84a_standard_gauge_reduction.py -q"
+  ],
+  "required_compensators": {
+    "bulk_prefactor_alpha": -14,
+    "s3_localized_prefactor_alpha": -8,
+    "s6_localized_prefactor_alpha": -8
+  },
+  "sector_results": [
+    {
+      "baseline_alpha": 12,
+      "direct_volume_alpha": 12,
+      "inverse_square_obtained": false,
+      "log_derivative_alpha": 12,
+      "name": "BULK_S3XS6",
+      "prefactor_alpha_required_for_minus_two": -14,
+      "wrapped_s3_dimensions": 3,
+      "wrapped_s6_dimensions": 6
+    },
+    {
+      "baseline_alpha": 6,
+      "direct_volume_alpha": 6,
+      "inverse_square_obtained": false,
+      "log_derivative_alpha": 6,
+      "name": "LOCALIZED_S3",
+      "prefactor_alpha_required_for_minus_two": -8,
+      "wrapped_s3_dimensions": 3,
+      "wrapped_s6_dimensions": 0
+    },
+    {
+      "baseline_alpha": 6,
+      "direct_volume_alpha": 6,
+      "inverse_square_obtained": false,
+      "log_derivative_alpha": 6,
+      "name": "LOCALIZED_S6",
+      "prefactor_alpha_required_for_minus_two": -8,
+      "wrapped_s3_dimensions": 0,
+      "wrapped_s6_dimensions": 6
+    },
+    {
+      "baseline_alpha": 0,
+      "direct_volume_alpha": 0,
+      "inverse_square_obtained": false,
+      "log_derivative_alpha": 0,
+      "name": "POINT_LOCALIZED",
+      "prefactor_alpha_required_for_minus_two": -2,
+      "wrapped_s3_dimensions": 0,
+      "wrapped_s6_dimensions": 0
+    }
+  ],
+  "supports_lambda_np_pi_over_9": false,
+  "supports_lambda_v_identity": false,
+  "verdict": "DERIVED_POSITIVE_POWER_STANDARD_ANSATZ",
+  "weyl_scaling": {
+    "changes_rho6_power_in_4d": false,
+    "form_rank": 2,
+    "formula": "Omega^(d-2p) for sqrt(g)|F_p|^2",
+    "negative_control_power_in_5d": 1,
+    "power_in_4d": 0
+  }
+}
