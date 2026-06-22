@@ -1,9 +1,34 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · SM chirality geometric · 2220 tests · 2026-06-21  
+**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · SM chirality geometric · 2221 tests · 2026-06-22  
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
 **Inspired by:** Tom Lawrence, *Product Manifolds as Realisations of General Linear Symmetries* (arXiv:2203.09473)
+
+---
+
+## ⚠️ Where to Start (for reviewers)
+
+**The root `.py` files** (`alpha_dependence_comparison.py`, `reference_spinor_harmonics.py`,
+`geometry_s3_hopf.py`, etc.) are **early geometric infrastructure** from the P5–P14 exploration
+phase. The result described there (√sin(2α) = measure factor, not an eigenspinor) is a correct
+transitional falsification — NOT the main result of this project.
+
+**The main mathematical content is in `experiments/`:**
+
+```
+experiments/
+├── 20260621-g67-octonion-triality/     ← SO(8) Z₃ triality → 3 independent channels
+├── 20260621-g68-octonion-channels/     ← L/R inequivalence in Cl(7,0)
+├── 20260621-g69-csdr-coset/            ← CSDR: 3+3̄+1+1 independent route
+├── 20260621-g73-three-channel-dirac/   ← N_gen = 3 from Atiyah-Singer  ← START HERE
+├── 20260621-g74a-lichnerowicz-gap/     ← dim ker = 1 exactly (not just ≥ 1)
+└── 20260621-g74b-chirality-from-index/ ← SM left-handed excess from sign(ind)
+```
+
+Each directory: `*.py` (implementation, exact `fractions.Fraction`) + `decision.md` (FL Full-Ladder verdict).
+
+Full narrative: [`RESEARCH_STATUS_REPORT.md`](RESEARCH_STATUS_REPORT.md) | Preprint: [`preprint_abstract.md`](preprint_abstract.md)
 
 ---
 
@@ -164,7 +189,7 @@ THREE bundles of c₃=2 each — c₃=2 is an asset (ind=1), not a limitation.
 | G37-S1 | String tadpole on S³×S⁶ | NULL — dim=9≠6; χ=0; min tadpole at c₃=2 |
 | G38-S2 | Spectral action minimum on bundle space | NULL — S_spec monotone, min at c₃=2 (= G33) |
 
-null_results/INDEX.md: 11 entries, all dated 2026-06-20.
+null_results/INDEX.md: 25 entries (G27–G52, G58–G60 + earlier branches).
 
 ---
 
@@ -192,7 +217,7 @@ null_results/INDEX.md: 11 entries, all dated 2026-06-20.
 
 ```
 tom_s3_spinor_toy/
-├── tests/                          # 2220 tests (pytest)
+├── tests/                          # 2221 tests (pytest)
 ├── experiments/                    # FL-Standard experiment folders (G6-G38)
 │   ├── 20260619-g26-ccm-comparison/  # claim.md + decision.md
 │   └── ... (38 experiments total)

@@ -68,7 +68,7 @@ Best verdict                DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
 
 ---
 
-## What This Repository Does
+## Track A — What the Numerical Harness Does
 
 - Builds discretized Dirac-style spectral operators on compact product toy geometries (current case study: **S³×S¹**, largest operator dimension N = 13824 at s1_size=128; S³ Hilbert dimension 108 per S¹ site. *Note: earlier docs cited N≤896 — a single-shell labeling erratum corrected in `reports/DIMENSION_DISCREPANCY_AUDIT_v0.1.25.md`*).
 - Runs **pre-registered** finite-size-scaling sweeps under Anderson-style on-site disorder.
@@ -77,16 +77,27 @@ Best verdict                DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
   random Hermitian, scrambled geometry, broken Wilson term, alternative discretization (FFT vs lattice).
 - Logs every claim with an explicit evidence marker and an explicit list of what each result does **not** mean.
 
-## What This Repository Does **NOT** Do
+## Track A — What the Numerical Harness Does NOT Do
 
 - Does **not** prove covariant compactification.
-- Does **not** bypass the Witten / Lichnerowicz no-go theorems.
-- Does **not** prove chiral fermions or protected chiral zero modes.
+- Does **not** prove chiral fermions, protected zero modes, or SM chirality.
 - Does **not** derive the Standard Model gauge group `SU(3) × SU(2) × U(1)`.
 - Does **not** validate any cosmological or physical extra-dimensional model.
 - Does **not** claim a thermodynamic limit (N → ∞) — all results are finite-lattice.
-- Does **not** prove `S³×S¹` is the correct geometry for anything physical — see "Inspiration" below.
+- Does **not** prove `S³×S¹` is the correct geometry for anything physical.
 - Does **not** carry institutional endorsement from any third party, including Tom Lawrence.
+
+## Track B — What the Algebraic Project Establishes
+
+See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2221 tests.
+
+- **N_gen = 3 exactly:** Atiyah-Singer index ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels (G73, PROMOTE 29/29)
+- **dim ker = 1 exactly:** Lichnerowicz spectral gap + G₂-Schur → no extra zero modes (G74A, PROMOTE 30/30)
+- **SM chirality:** sign(ind) = +1 → left-handed excess → 3 left-handed SM generations (G74B, PROMOTE 31/31)
+- **SM fermion content:** 3+3̄+1+1 per generation from three independent routes — SO(8) triality (G67), CSDR on G₂/SU(3) (G69), SO(4)×G₂ rep theory (G24)
+- **Exact arithmetic:** `fractions.Fraction` throughout — zero floating-point operations in the core index chain
+
+Track B does NOT: claim S³×S⁶ is the physical compactification; derive the SM gauge group; fix coupling constant λ (free parameter, enforced by test suite).
 
 ---
 
@@ -168,6 +179,7 @@ Source modules: `cc_toy_lab/{geometry, spectral, radion, topology, controls, dis
 
 ## Documentation Map
 
+### Track A — Numerical
 | You want to know... | Read this |
 |---|---|
 | Why this project exists and what question it actually asks | [`docs/RESEARCH_CONTEXT.md`](docs/RESEARCH_CONTEXT.md) |
@@ -180,6 +192,15 @@ Source modules: `cc_toy_lab/{geometry, spectral, radion, topology, controls, dis
 | What was tried and failed (first-class results) | [`reports/NULL_RESULTS.md`](reports/NULL_RESULTS.md) |
 | Open scientific issues | [`reports/ISSUES_SCIENTIFIC.md`](reports/ISSUES_SCIENTIFIC.md) |
 | Full GitHub showcase audit (engineering hygiene + safety) | [`docs/GITHUB_SHOWCASE_AUDIT.md`](docs/GITHUB_SHOWCASE_AUDIT.md) |
+
+### Track B — Algebraic
+| You want to know... | Read this |
+|---|---|
+| Overview, gate chain G6–G74B, all results | [`tom_s3_spinor_toy/README.md`](tom_s3_spinor_toy/README.md) |
+| Full technical status report | [`tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md`](tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md) |
+| Preprint abstract (T1/T2 theorems) | [`tom_s3_spinor_toy/preprint_abstract.md`](tom_s3_spinor_toy/preprint_abstract.md) |
+| 25 falsified approaches (null results) | [`tom_s3_spinor_toy/null_results/INDEX.md`](tom_s3_spinor_toy/null_results/INDEX.md) |
+| N_gen=3 core calculation | [`tom_s3_spinor_toy/experiments/20260621-g73-three-channel-dirac/`](tom_s3_spinor_toy/experiments/20260621-g73-three-channel-dirac/) |
 
 ---
 
