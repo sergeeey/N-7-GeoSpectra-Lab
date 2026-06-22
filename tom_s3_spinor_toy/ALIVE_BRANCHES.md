@@ -25,7 +25,7 @@
 |----|-----------------|--------|------------|----------------|------------------|----------------|
 | TOM-BRIDGE | S³ spin connection → локальные SU(2)×SU(2) трансформации совпадают с операторами Тома на гармониках | PAUSED | Явная форма diff. операторов Тома неизвестна | Прямое сравнение с его ур. (84) TSSv9 | Tom Part 5/6 — он сам придёт с вопросами | — |
 | ~~G85B~~ | ~~Spectral saddle даёт мост к exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: t*=ρ₆²/3 exists, K(t*)>0, but exp factor = exp(−3)=const → no bridge | — | G85A, G85B |
-| G86A | Dual-modulus / inverse-modulus route к exp(−λ/ρ₆²) | OPEN | G84A убил стандартный T∝ρ⁶ ansatz | Построить T(ρ₆)=B·ρ₆^α с α≠6, интегрировать по proper-time, проверить: PASS если результат ∝exp(−const/ρ₆²) с const>0. FAIL если exponent положительный или T снова ∝ρ₆^6. | — | G84A |
+| ~~G86A~~ | ~~Dual-modulus T∝ρ₆^α → exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: I=Γ(3)/T³~ρ₆^{−3α} for ALL α; structural theorem, 0/25 alpha give exp | — | G84A, G86A |
 | G86B | Dilaton / warp compensation route к exp(−λ/ρ₆²) | OPEN | G84A/G84B убили стандартную редукцию | Ввести warp factor Ω(y)≠1 в метрику ds²=Ω²ds⁴+…, вычислить 4D effective action. PASS если Ω-вклад даёт exp(−const/ρ₆²) без новых свободных параметров. FAIL если Ω вводит новый свободный параметр или вклад подавлен. | — | G84A, G84B |
 | G72 | Geometric realization of 8_v triality bundle on S⁶ | PAUSED | 8_v construction требует explicit Tom input | — | TOM-BRIDGE PROMOTE → тогда открываем | — |
 
@@ -40,11 +40,12 @@ exp(−λ/ρ₆²) происхождение — что проверено:
   ├── Стандартная калибровочная редукция (G83-G84A) → +12/+6, не 1/ρ₆²
   ├── Spectral proper-time (G84B) → только внутри интеграла
   ├── Poisson/theta resummation (G85A) → форма есть, мост нет
-  ├── Spectral saddle/worldline (G85B) → t*=ρ₆²/3 есть, K>0, но exp(−3)=const, не 1/ρ₆²
+  ├── Spectral saddle/worldline (G85B) → t*=ρ₆²/3, exp(−3)=const, не 1/ρ₆²
+  ├── Dual-modulus T∝ρ₆^α ALL α (G86A) → STRUCTURAL: I~ρ₆^{−3α}, ВСЕГДА степенная
   └── Minkowski uplift через λ_geom (G60) → λ_geom < 0
 
 ОТКРЫТО:
-  ├── Dual-modulus route (G86A)
+  └── Warp factor Ω(y) (G86B) ← ПОСЛЕДНИЙ оставшийся кандидат
   └── Warp/dilaton compensation (G86B)
 ```
 
