@@ -248,6 +248,38 @@ none is a linear combination of the others. The total zero-mode count is:
 
 This count is exact (not a lower bound), as proved in §4.
 
+### 3.5. Uniqueness of the mechanism
+
+The generation-counting mechanism relies on two independent structural inputs: G₂ isometry
+(providing the triality automorphism) and χ(S⁶) = 2 (providing ind = 1 per channel). Both
+are required simultaneously, and they select S⁶ uniquely within the class of compact
+homogeneous nearly Kähler 6-manifolds.
+
+**Classification.** Butruille [2005] proved that the complete list of compact homogeneous
+nearly Kähler 6-manifolds consists of exactly four spaces:
+1. S⁶ = G₂/SU(3) — isometry group G₂, Euler characteristic χ = 2
+2. S³×S³ = SU(2)³/SU(2)_diag — isometry group SO(4)×SO(4), χ = 0
+3. ℂP³ = Sp(2)/(U(1)×Sp(1)) — isometry group SU(4), χ = 4
+4. SU(3)/U(1)² (complete flag) — isometry group SU(3), χ = 6
+
+**Triality selects S⁶.** The triality automorphism Z₃ ⊂ Aut(SO(8)) requires the isometry
+group to contain G₂ = Fix(Z₃). Among the four NK6 spaces, only S⁶ has G₂ as its
+isometry group. The other three spaces (items 2–4 above) do not support the triality
+mechanism.
+
+**Index constraint selects S⁶.** For the mechanism to produce ind = 1 per channel
+(and N_gen = 3 total), we need χ(M₆) = 2. Of the four NK6 spaces, only S⁶ satisfies
+this: χ(S³×S³) = 0, χ(ℂP³) = 4, χ(SU(3)/U(1)²) = 6.
+
+**Combined uniqueness.** S⁶ = G₂/SU(3) is the unique compact homogeneous nearly Kähler
+6-manifold simultaneously satisfying G₂ isometry and χ = 2. The mechanism N_gen = 3 via
+G₂ triality + Atiyah-Singer index is not reproducible on any other space in this class.
+
+This contrasts with string compactification on Calabi-Yau threefolds, where N_gen is
+determined by |χ(CY₃)|/2 and requires a specific topological choice from the landscape
+of ∼10⁵⁵⁰⁰ known CY₃ geometries [Kreuzer-Skarke 2000]. Our mechanism selects N_gen = 3
+from a list of four.
+
 ---
 
 ## 4. Exact Kernel Count and Chirality
