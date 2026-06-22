@@ -1,0 +1,198 @@
+{
+  "analytic_relations": {
+    "reason": "positive a,b cannot satisfy both relations simultaneously",
+    "slope_match_relation": "b = -3 * a * rho0^8 = -3 * a * 1.992563",
+    "value_and_slope_simultaneously_possible": false,
+    "value_match_relation": "b = a * rho0^8 = a * 1.992563"
+  },
+  "analytic_value_slope_match_possible": false,
+  "curvature_errors": {
+    "f_12": {
+      "curvature_at_rho0": -0.0015103819401904434,
+      "relative_curvature_error": 0.9987008779222897
+    },
+    "f_6": {
+      "curvature_at_rho0": -0.000284851202836926,
+      "relative_curvature_error": 0.999754991451751
+    },
+    "f_pow": {
+      "curvature_at_rho0": 4.1487642645339754e-06,
+      "relative_curvature_error": 1.0000035684690791
+    }
+  },
+  "distinguishable_under_threshold": true,
+  "falsifiers": [
+    "positive-power alternatives remain within threshold on the project-relevant interval",
+    "analytic positive-a positive-b value+slope contradiction disappears"
+  ],
+  "fit_results": {
+    "f_12": {
+      "narrow": {
+        "best_parameter": 6.848379224690744e-06,
+        "max_relative_error": 0.02846420369758198,
+        "objective": 0.00023493572226580852,
+        "rms_relative_error": 0.015327613064851569
+      },
+      "project_relevant": {
+        "best_parameter": 4.833417547049742e-06,
+        "max_relative_error": 0.14176102304653987,
+        "objective": 0.003994292669275553,
+        "rms_relative_error": 0.06320041668593296
+      },
+      "wide": {
+        "best_parameter": 6.112489040630052e-06,
+        "max_relative_error": 0.2753491794953746,
+        "objective": 0.011690357915000105,
+        "rms_relative_error": 0.10812195852369724
+      }
+    },
+    "f_6": {
+      "narrow": {
+        "best_parameter": 6.1678589652981835e-06,
+        "max_relative_error": 0.028451130788157333,
+        "objective": 0.0002347642378501109,
+        "rms_relative_error": 0.015322018073677857
+      },
+      "project_relevant": {
+        "best_parameter": 6.726616844315629e-06,
+        "max_relative_error": 0.14175585856077283,
+        "objective": 0.00399241735236337,
+        "rms_relative_error": 0.06318557867396143
+      },
+      "wide": {
+        "best_parameter": 6.127859460850811e-06,
+        "max_relative_error": 0.275338847061934,
+        "objective": 0.01166929757392894,
+        "rms_relative_error": 0.10802452302106656
+      }
+    },
+    "f_pow": {
+      "narrow": {
+        "best_parameter": 5.878790417312001e-06,
+        "max_relative_error": 0.028447625914360637,
+        "objective": 0.0002347131253494734,
+        "rms_relative_error": 0.015320350040043909
+      },
+      "project_relevant": {
+        "best_parameter": 4.9291225264439365e-06,
+        "max_relative_error": 0.1417481376974494,
+        "objective": 0.003991564007745282,
+        "rms_relative_error": 0.06317882562809539
+      },
+      "wide": {
+        "best_parameter": 7.374167184210109e-06,
+        "max_relative_error": 0.2753306980992128,
+        "objective": 0.011666481115520887,
+        "rms_relative_error": 0.10801148603514761
+      }
+    }
+  },
+  "forms_compared": [
+    "f_inv",
+    "f_6",
+    "f_12",
+    "f_pow"
+  ],
+  "gate": "G84C",
+  "gates": {
+    "G84C-1_analytic_contradiction_exists": true,
+    "G84C-2_project_relevant_interval_fitted": true,
+    "G84C-3_thresholds_declared": true,
+    "G84C-4_verdict_allowed": true,
+    "G84C-5_distinguishability_tested": true
+  },
+  "intervals": {
+    "narrow": [
+      1.05,
+      1.15
+    ],
+    "project_relevant": [
+      0.9,
+      1.3
+    ],
+    "wide": [
+      0.8,
+      1.5
+    ]
+  },
+  "mass_proxy_comparison": {
+    "evaluated": true,
+    "inverse_square_curvature": -1.1626174060966488,
+    "positive_power_curvatures": {
+      "f_12": -0.0015103819401904434,
+      "f_6": -0.000284851202836926,
+      "f_pow": 4.1487642645339754e-06
+    },
+    "proxy": "second derivative of -log f at rho0"
+  },
+  "max_relative_errors": {
+    "f_12": {
+      "narrow": 0.02846420369758198,
+      "project_relevant": 0.14176102304653987,
+      "wide": 0.2753491794953746
+    },
+    "f_6": {
+      "narrow": 0.028451130788157333,
+      "project_relevant": 0.14175585856077283,
+      "wide": 0.275338847061934
+    },
+    "f_pow": {
+      "narrow": 0.028447625914360637,
+      "project_relevant": 0.1417481376974494,
+      "wide": 0.2753306980992128
+    }
+  },
+  "missing_tolerance_inputs": [
+    "no project-defined distinguishability threshold",
+    "no project-defined accepted RMS/max-error window for functional-form matching"
+  ],
+  "next_required_gate": "G84D_DILATON_WARP_OR_TDUALITY_AUDIT",
+  "potential_minimum_comparison": {
+    "evaluated": true,
+    "interpretation": "the candidate forms drive opposite local trends, so they would shift any monotone denominator potential differently",
+    "inverse_square_slope_sign": "positive",
+    "positive_power_slope_sign": "negative",
+    "surrogate": "local monotonicity and slope at rho0; full project potential not re-solved"
+  },
+  "reproduction_commands": [
+    "python tom_s3_spinor_toy/experiments/20260622-g84c-functional-form-degeneracy/g84c_functional_form_degeneracy.py",
+    "python -m pytest tom_s3_spinor_toy/tests/test_g84c_functional_form_degeneracy.py -q"
+  ],
+  "rho0": 1.09,
+  "rms_relative_errors": {
+    "f_12": {
+      "narrow": 0.015327613064851569,
+      "project_relevant": 0.06320041668593296,
+      "wide": 0.10812195852369724
+    },
+    "f_6": {
+      "narrow": 0.015322018073677857,
+      "project_relevant": 0.06318557867396143,
+      "wide": 0.10802452302106656
+    },
+    "f_pow": {
+      "narrow": 0.015320350040043909,
+      "project_relevant": 0.06317882562809539,
+      "wide": 0.10801148603514761
+    }
+  },
+  "slope_errors": {
+    "f_12": {
+      "relative_slope_error": 1.0002872327925696,
+      "slope_at_rho0": -0.0001496673391952839
+    },
+    "f_6": {
+      "relative_slope_error": 1.0001191756181884,
+      "slope_at_rho0": -6.209840287258723e-05
+    },
+    "f_pow": {
+      "relative_slope_error": 1.0000086786085263,
+      "slope_at_rho0": -4.5221307582054456e-06
+    }
+  },
+  "threshold_used": {
+    "max_relative_max": 0.05,
+    "rms_relative_max": 0.02
+  },
+  "verdict": "FUNCTIONAL_FORM_DISTINGUISHABLE"
+}
