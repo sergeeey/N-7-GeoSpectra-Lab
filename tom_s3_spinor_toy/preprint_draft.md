@@ -130,6 +130,36 @@ input (G16, G17). The charge sum over one generation vanishes:
 
     Σ_α Q_α = 0              (automatic consistency check)
 
+**Anomaly cancellation.** The geometric hypercharge assignment Y = K₃ + (B−L)/2 passes
+all gauge anomaly conditions per generation (verified symbolically):
+
+    [Grav]²U(1)_Y : ΣY  = 0
+    [U(1)_Y]³     : ΣY³ = 0
+    [SU(3)]²U(1)_Y : Σ_{quarks} Y = 0
+    [SU(2)]²U(1)_Y : Σ_{doublets} Y = 0
+
+All four conditions are satisfied with each generation separately anomaly-free — no
+inter-generation cancellation is required. The Y values were derived from the
+spin-connection decomposition, not adjusted to cancel anomalies.
+
+**Charge quantization.** Every hypercharge value satisfies 6Y ∈ ℤ, with no denominators
+exceeding 6. The geometric charge formula produces precisely the Standard Model hypercharge
+lattice; no exotic fractional charges appear.
+
+**GUT normalization.** The quadratic-trace ratio (verified symbolically):
+
+    k_Y = Tr(Y²) / Tr(T₃L²) = (10/3) / 2 = **5/3**
+
+This is the canonical SU(5)-GUT normalization. Combined with g₂²/g₃² = 15/(16π) (§2.4),
+the full coupling triangle follows:
+
+    g_Y²/g₃² = (3/5) × (15/(16π)) = **9/(16π)** ≈ 0.179
+
+**Right-handed neutrinos.** The spinor decomposition on S³×S⁶ contains exactly one
+neutral singlet (Y = 0, SU(3)_c singlet, SU(2)_L singlet) per generation — the
+right-handed neutrino ν_R. For N_gen = 3, this gives exactly three ν_R states,
+geometrically mandated with no phenomenological adjustment.
+
 ### 2.3. NCG spectral triple
 
 The product geometry S³×S⁶ admits a noncommutative spectral triple structure
@@ -283,6 +313,16 @@ none is a linear combination of the others. The total zero-mode count is:
 
 This count is exact (not a lower bound), as proved in §4.
 
+**Corollary (family universality, G75).** The Z₃ eigenspaces with eigenvalues {1, ω, ω²}
+are mutually orthogonal under the L²(S³×S⁶) inner product (Lemma L3). Therefore the
+off-diagonal gauge kinetic terms between generations vanish identically:
+
+    ∫_{S³×S⁶} ψ_α† Γᴹ ψ_β dVol = 0    for α ≠ β
+
+Family-universal gauge interactions — the empirical fact that all three generations couple
+identically to W, Z, and gluons — follow geometrically from Z₃ eigenspace orthogonality.
+No phenomenological "flavor-blindness" assumption is required.
+
 ### 3.5. Uniqueness of the mechanism
 
 The generation-counting mechanism relies on two independent structural inputs: G₂ isometry
@@ -314,6 +354,16 @@ This contrasts with string compactification on Calabi-Yau threefolds, where N_ge
 determined by |χ(CY₃)|/2 and requires a specific topological choice from the landscape
 of ∼10⁵⁵⁰⁰ known CY₃ geometries [Kreuzer-Skarke 2000]. Our mechanism selects N_gen = 3
 from a list of four.
+
+**Remark (topological identity c₃ = 2N_gen).** The total top Chern class satisfies:
+
+    c₃_total = c₃(T^{1,0}S⁶) × N_channels = 2 × 3 = 6 = 2 × N_gen
+
+This identity connects the Euler characteristic χ(S⁶) = 2 (measured per channel by the
+Gauss-Bonnet integral, §3.3) with the generation count N_gen = 3 (from the triality
+channel sum, §3.4). It is a consequence of the two-input structure of the mechanism:
+the topological data (χ = 2) and the algebraic data (Z₃ triality) are independent, and
+their product gives the full c₃ = 6 of the total twisted bundle.
 
 ---
 
@@ -650,6 +700,16 @@ The following questions are left open and represent directions for future work:
    on S⁶ = G₂/SU(3). Whether the same mechanism applies to other nearly Kähler 6-manifolds
    (such as ℂP³ or SU(3)/T²) is an open question that could inform the uniqueness of the
    S³×S⁶ construction.
+
+8. **Strong CP problem.** The S³ Dirac operator has spectrum {±(n + 3/2) : n ≥ 0} —
+   perfectly paired positive and negative eigenvalues. The Atiyah-Patodi-Singer η-invariant
+   therefore vanishes identically: η(0, D_{S³}) = 0. By the APS index theorem, a vanishing
+   η-invariant implies no CP-odd boundary contribution from the S³ sector to the topological
+   QCD theta angle. This is a structural geometric hint: the S³ compactification does not
+   introduce a new strong CP problem. Whether this extends to a complete resolution of
+   θ_QCD = 0 would require a global Pontryagin density analysis on the full S³×S⁶ geometry,
+   including contributions from the S⁶ sector and any non-perturbative effects — this is
+   left for future work.
 
 ---
 
