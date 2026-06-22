@@ -1,9 +1,13 @@
 # Project Current State
 
-**Last authoritative commit:** `e2931e3` (HEAD = origin/main after push)
-**Authoritative date:** 2026-06-11
+> **⚠️ STALE SNAPSHOT** — this file was last updated 2026-06-11.
+> Current authoritative state: `main@c89aada` (2026-06-22), **2221 tests** in `tom_s3_spinor_toy/`.
+> See `README.md` for the live entry point and both research tracks.
+
+**Last authoritative commit:** `c89aada` (2026-06-22)
 **Branch:** `main` — clean, synced with origin/main
-**Tests:** 432 passed, 2 skipped (main); 191 passed (preserve/tom-s3-p5-p14-scaffold)
+**Tests — Track B (tom_s3_spinor_toy):** 2221 passed, 4 skipped
+**Tests — Track A (cc_toy_lab):** ~500 regression files (see `tests/`)
 
 ---
 

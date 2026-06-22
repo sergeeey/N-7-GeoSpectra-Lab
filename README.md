@@ -12,7 +12,30 @@
 
 ---
 
-## ⚠️ Current Status (2026-06-03)
+## Two Research Tracks
+
+This repository contains two independent research projects on compact geometries:
+
+| | Track A — Numerical | Track B — Algebraic |
+|---|---|---|
+| **Geometry** | S³×S¹ finite lattice | S³×S⁶ spectral triple |
+| **Method** | Eigensolver + IPR / r-stat | Index theory (Atiyah-Singer) + exact arithmetic |
+| **Verdict** | `DISCRETIZATION_SENSITIVE` | N_gen = 3 **EXACTLY** |
+| **Key result** | 7.07× signal; geometry-agnostic | Three SM generations from Atiyah-Singer index |
+| **Tests** | ~500 regression tests | **2221 tests** (fractions.Fraction, zero float ops) |
+| **Directory** | `cc_toy_lab/`, `scripts/`, `tests/` | [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) |
+| **Entry point** | `reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md` | `tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md` |
+
+**Track A** explored whether a lattice product structure produces a robust spectral signal. It does — but the signal is DISCRETIZATION_SENSITIVE, not specific to S³×S¹ physics.
+
+**Track B** derived N_gen = 3 Standard Model generations from the Atiyah-Singer index theorem on S³×S⁶, using three independent routes:
+- G73: ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels = 3
+- G74A: Lichnerowicz gap + G₂-Schur → dim ker = 1 **exactly**
+- G74B: sign(ind) = +1 → left-handed excess → SM chirality
+
+---
+
+## ⚠️ Current Status — Track A (2026-06-03)
 
 | Item | Value |
 |---|---|
@@ -96,7 +119,7 @@ pip install -r requirements.txt
 # Full regression suite (494 tests across 44 files, cc_toy_lab track)
 pytest -q tests/
 
-# Active Dirac eigenspinor suite (434 tests, tom_s3_spinor_toy track)
+# Algebraic spinor suite — Track B (2221 tests, exact arithmetic)
 pytest -q tom_s3_spinor_toy/tests/ --tb=no
 
 # Run a smoke version of the radion stabilization study

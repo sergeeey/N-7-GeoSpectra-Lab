@@ -1,5 +1,9 @@
 # Research Context
 
+> **⚠️ VERSION NOTE:** This document describes Track A (numerical, S³×S¹ lattice) state as of v0.1.21–v0.1.22.
+> The authoritative current status is **v0.1.24 FINAL: `DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC`** — see [`README.md`](../README.md).
+> For Track B (algebraic, S³×S⁶, N_gen=3), see [`tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md`](../tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md).
+
 ## Scientific Motivation
 
 GeoSpectra Lab is an independent computational project focused on **falsification-first validation** of finite-lattice spectral toy geometries.
