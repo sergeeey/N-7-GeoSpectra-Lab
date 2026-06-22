@@ -88,7 +88,7 @@ def c3_direct_sum(c3_A: int, c3_B: int) -> int:
 # c₃(T^{1,0}S⁶) from G33: equals the Euler characteristic χ(S⁶) = 2.
 # Proof: the Chern-Gauss-Bonnet theorem on S⁶ with SU(3) structure gives
 #   χ(S⁶) = ∫c₃(T^{1,0}S⁶) = 2.
-C3_T10_S6 = 2  # from G33 [VERIFIED-25-tests]
+C3_T10_S6 = 2  # from G33 [VERIFIED-25-tests]; derived: χ(S⁶)=2, H²=H⁴=0→c₁=c₂=0 [see G50, G33]
 
 # c₃(trivial rank-1 bundle) = 0 (trivial bundle has all Chern classes = 0)
 C3_TRIVIAL = 0
@@ -110,7 +110,7 @@ C3_S_MINUS = c3_direct_sum(C3_T10_S6, C3_TRIVIAL)  # = 2
 #
 # Therefore: ind(D ⊗ E) = c₃(E)/2
 
-A_HAT_S6 = 1  # Â-genus of S⁶ is exactly 1
+A_HAT_S6 = 1  # Â-genus of S⁶ is exactly 1; derived: H⁴(S⁶;ℤ)=0→p₁=0→Â=1 [see G50, G13]
 
 
 def dirac_index_s6(c3: int) -> Fraction:

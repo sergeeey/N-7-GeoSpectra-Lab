@@ -225,3 +225,24 @@ def test_g73_result_summary():
     assert G73_RESULT["A_hat_S6"] == 1
     assert G73_RESULT["states_per_gen"] == 32
     assert G73_RESULT["total_states"] == 96
+
+
+# ─── Cross-gate integration ───────────────────────────────────────────────────
+
+
+def test_n_triality_channels_matches_g67():
+    """N_TRIALITY_CHANNELS in G73 matches G67's three SO(8) triality channels.
+
+    G67 establishes the three independent Z₃-triality channels (8_v, 8_s, 8_c).
+    G73 imports this count as N_TRIALITY_CHANNELS = 3.
+    This test ensures the two modules stay consistent.
+    """
+    _g67_dir = os.path.join(
+        os.path.dirname(__file__), "..", "experiments", "20260621-g67-octonion-triality"
+    )
+    sys.path.insert(0, _g67_dir)
+    from g67_triality import N_CHANNELS as G67_N_CHANNELS  # noqa: PLC0415
+
+    assert N_TRIALITY_CHANNELS == G67_N_CHANNELS, (
+        f"G73 N_TRIALITY_CHANNELS={N_TRIALITY_CHANNELS} ≠ G67 N_CHANNELS={G67_N_CHANNELS}"
+    )
