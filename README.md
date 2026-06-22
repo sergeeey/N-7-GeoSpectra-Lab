@@ -199,7 +199,7 @@ Source modules: `cc_toy_lab/{geometry, spectral, radion, topology, controls, dis
 | Overview, gate chain G6–G74B, all results | [`tom_s3_spinor_toy/README.md`](tom_s3_spinor_toy/README.md) |
 | Full technical status report | [`tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md`](tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md) |
 | Preprint abstract (T1/T2 theorems) | [`tom_s3_spinor_toy/preprint_abstract.md`](tom_s3_spinor_toy/preprint_abstract.md) |
-| 25 falsified approaches (null results) | [`tom_s3_spinor_toy/null_results/INDEX.md`](tom_s3_spinor_toy/null_results/INDEX.md) |
+| 24 falsified approaches (null results) | [`tom_s3_spinor_toy/null_results/INDEX.md`](tom_s3_spinor_toy/null_results/INDEX.md) |
 | N_gen=3 core calculation | [`tom_s3_spinor_toy/experiments/20260621-g73-three-channel-dirac/`](tom_s3_spinor_toy/experiments/20260621-g73-three-channel-dirac/) |
 
 ---

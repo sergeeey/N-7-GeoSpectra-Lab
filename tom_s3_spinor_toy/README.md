@@ -53,7 +53,7 @@ finite algebra A_F of Noncommutative Geometry.
 
 | CCM 2006 postulates | S³×S⁶ derives |
 |---------------------|---------------|
-| Algebra A_F = ℂ⊕ℍ⊕M₃(ℂ) | Bypassed — gauge group from S³×S⁶ isometry |
+| Algebra A_F = ℂ⊕ℍ⊕M₃(ℂ) | Not postulated — SM-like rep content from S³×S⁶ symmetry; full gauge group derivation NOT claimed |
 | Exactly 4 Yukawa parameters | From product geometry + CPT (G25) |
 | B−L via unimodularity | From K₃ on S⁶ (G16) |
 
@@ -189,7 +189,7 @@ THREE bundles of c₃=2 each — c₃=2 is an asset (ind=1), not a limitation.
 | G37-S1 | String tadpole on S³×S⁶ | NULL — dim=9≠6; χ=0; min tadpole at c₃=2 |
 | G38-S2 | Spectral action minimum on bundle space | NULL — S_spec monotone, min at c₃=2 (= G33) |
 
-null_results/INDEX.md: 25 entries (G27–G52, G58–G60 + earlier branches).
+null_results/INDEX.md: 24 entries (G27–G51, G58–G60 + earlier branches).
 
 ---
 
