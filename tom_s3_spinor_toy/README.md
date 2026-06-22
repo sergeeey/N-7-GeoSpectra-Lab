@@ -1,6 +1,6 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · SM chirality geometric · 2189 tests · 2026-06-21  
+**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · SM chirality geometric · 2220 tests · 2026-06-21  
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
 **Inspired by:** Tom Lawrence, *Product Manifolds as Realisations of General Linear Symmetries* (arXiv:2203.09473)
@@ -192,7 +192,7 @@ null_results/INDEX.md: 11 entries, all dated 2026-06-20.
 
 ```
 tom_s3_spinor_toy/
-├── tests/                          # 2189 tests (pytest)
+├── tests/                          # 2220 tests (pytest)
 ├── experiments/                    # FL-Standard experiment folders (G6-G38)
 │   ├── 20260619-g26-ccm-comparison/  # claim.md + decision.md
 │   └── ... (38 experiments total)
@@ -210,7 +210,7 @@ tom_s3_spinor_toy/
 ```bash
 cd tom_s3_spinor_toy
 python -m pytest tests/ -q
-# Expected: 2189 passed, 4 skipped
+# Expected: 2220 passed, 4 skipped
 ```
 
 ---

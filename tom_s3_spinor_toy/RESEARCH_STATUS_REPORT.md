@@ -1,7 +1,7 @@
 # N-7 GeoSpectra Lab — Research Status Report
 **Date:** 2026-06-21 (updated 2026-06-22)  
-**Branch:** main @ 6a9a005 (2189 tests)  
-**Test suite:** 2189 passed, 4 skipped  
+**Branch:** main @ 6a9a005 (2220 tests)  
+**Test suite:** 2220 passed, 4 skipped  
 **Author:** Sergey Boyko
 
 ---
@@ -257,7 +257,7 @@ Proof: 14 null results cover all 5 categories by exhaustion.
 | WEAK (allowed, not forced) | 4 | G34-D1, G40-B2, G41-B3, G45-B2 |
 | OPEN | 1 | G43-B5 (HYM bundles on S⁶) |
 
-*Tests: G47 synthesis adds 29 tests → 1553 total.*
+*Tests: G47 synthesis adds 29 tests → 1553 total (historical — this gate was the 1553rd test).*
 
 ---
 
@@ -285,7 +285,7 @@ Pending Tom reply to: message explaining our S³ spin connection result.
 tom_s3_spinor_toy/
 ├── README.md                              # Project overview
 ├── RESEARCH_STATUS_REPORT.md             # This file
-├── tests/                                # 1553 tests
+├── tests/                                # 2220 tests
 ├── experiments/                          # 47 FL-Standard experiments (G6-G47)
 │   ├── 20260615-g6-s3xs6-spinor-content/ # claim.md + decision.md
 │   └── ... (G6-G29 PASS + G30-G47 NULL/WEAK/OPEN)
@@ -298,4 +298,4 @@ tom_s3_spinor_toy/
 
 ---
 
-*Updated 2026-06-22. CSDR 5/5 + N_gen=3 EXACTLY (G73-G74B) + SM chirality + G62 zero-fit. 2189 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
+*Updated 2026-06-22. CSDR 5/5 + N_gen=3 EXACTLY (G73-G74B) + SM chirality + G62 zero-fit. 2220 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
