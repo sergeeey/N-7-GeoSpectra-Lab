@@ -23,6 +23,18 @@ Chain: SM constraint → UV-selection (G57) → λ=1/3 (G61) → A_np from Minko
 No free parameters. Key prediction: **m_mod/m_KK = 2.02%** (moduli 50× lighter than KK modes).
 Full observable table: ρ₆_min=1.179, V_min=−2.53×10⁻⁶, m²_mod=2.95×10⁻⁴, m²_KK=0.719.
 
+**Stabilization audit (2026-06-22):** G76 classifies the chain as 3 fixed,
+6 conditional, and 5 free parameters. G82 finds that G62's `m_mod/m_KK=2.02%`
+is a coordinate-curvature proxy, not a canonically normalized physical mass ratio.
+Under the tested Einstein-frame kinetic metric and the additional convention
+`M4=Ms=1`, the metric-only proxy is 0.252%; the physical ratio remains
+unidentified. G77 independently verifies that the uplift ansatz can produce local
+Minkowski minima, but does not derive the uplift sector.
+
+**Exact local verdicts:** G76 `PASS`; G77 `PASS_ALGEBRAIC_TOY`; G82
+`CONDITIONAL`. The NP exponent, uplift power, Casimir normalization, and physical
+scale map remain `FREE` or `OPEN` as recorded by G76.
+
 **Track B result (2026-06-22):** λ-origin mapping COMPLETE — the entire geometric/spectral class
 (G83–G86B, 6 null results) is exhausted. **λ = FREE_COUPLING_PARAMETER** is confirmed by
 exhaustion: no Laplace/spectral/warp mechanism can produce exp(−λ/ρ₆²) without a new free
@@ -304,6 +316,8 @@ requiring a UV completion beyond the geometric framework studied here.
 1. **Three generations** — RESOLVED (G73+G74A+G74B). N_gen=3 exactly from twisted Atiyah-Singer index. SM left-handed chirality geometric. See gate table above.
 2. **Majorana mass** for right-handed neutrino
 3. **λ coupling** — TRACK B COMPLETE: free parameter, non-perturbative origin. No geometric derivation found (G83–G86B exhausted).
+4. **Canonical mass scale** — requires normalized 4D reduction, `M4/Ms`, and the full two-modulus Hessian.
+5. **Uplift origin** — G77 proves algebraic viability only; `p` and the microscopic source of `D` remain free.
 
 ---
 

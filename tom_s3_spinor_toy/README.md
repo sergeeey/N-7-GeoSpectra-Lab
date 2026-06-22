@@ -1,6 +1,7 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · SM chirality geometric · 2217 tests · 2026-06-22  
+**Status:** CSDR 5/5 · N_gen=3 EXACTLY (G73+G74A+G74B) · G76/G77/G82 local audit · 2748 tests collected · 2026-06-22
+
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
 **Inspired by:** Tom Lawrence, *Product Manifolds as Realisations of General Linear Symmetries* (arXiv:2203.09473)
@@ -110,24 +111,26 @@ different manifold (S³×S⁶), different method (NCG spectral triple), addition
 
 ---
 
-## Zero-Fit Physical Predictions (G54–G62) — NEW 2026-06-21
+## Conditional Stabilization Predictions (G54–G82)
 
-**Result:** First parameter-free predictions from S³×S⁶ geometry alone.
+**Audit update (2026-06-22):** G76 and G82 show that this chain is not
+parameter-free and the G62 mass ratio was not canonically normalized.
 
-The compactification chain — UV-selection → NP stabilization → physical observables — yields
-concrete dimensionless numbers without any numerical tuning:
+The compactification chain — UV-selection → NP stabilization → conditional
+dimensionless observables — gives the following values under the stated inputs:
 
 | Input | Value | Source |
 |-------|-------|--------|
-| λ (NP exponent) | **1/3** (exact) | dim(S³)/dim(S³×S⁶) = 3/9 (G61) |
-| A_np | 0.3787 | Minkowski condition V_total(ρ₆\*)=0 (G60 pearl) |
-| ρ₆\* | 1.090 | UV Casimir pole cancellation c_{1/2}=0 (G57) |
+| λ (NP exponent) | **1/3** (candidate) | dimensional hypothesis `3/9`; `FREE` until derived microscopically |
+| A_np | 0.3787 | `CONDITIONAL` on λ, normalization, and the G60 Minkowski condition |
+| ρ₆\* | 1.090 | `CONDITIONAL` on the UV calculation and external `C_SM=0.986` |
 
 | Observable | Value | Notes |
 |-----------|-------|-------|
 | ρ₆_min | **1.179** | AdS minimum position |
 | V_min | **−2.53×10⁻⁶** | Shallow AdS (KKLT-like; uplift needed) |
-| **m_mod/m_KK** | **2.02%** | Moduli/KK hierarchy — zero-fit prediction |
+| coordinate-curvature proxy | **2.02%** | `sqrt(V''(rho)/m_KK²)`; not canonical |
+| canonical metric-only proxy | **0.252%** | conditional on the tested Einstein-frame metric and `M4=Ms=1` |
 
 **On C = 0.986:** The SM constraint ρ₃ = C·ρ₆² uses C derived from PDG 2022 gauge couplings
 (g₂²/g₃² at M_Z → C = 0.9865, deviation from natural C=1 is 1.4%). This is an observational
@@ -137,10 +140,26 @@ adjusting C within [0.98, 1.00]. (G29, PROMOTE)
 
 **Key structural finding:** UV-selection point (ρ₆\*=1.090, where Casimir divergence cancels)
 and potential minimum (ρ₆\_min=1.179) are **distinct** — consistent with KKLT uplift structure.
-The 8.2% separation arises from the geometry without input.
+The 8.2% separation is a conditional output of the implemented toy potential.
 
-Casimir correction is sub-dominant (~20% on V_min) and does not change ρ₆\_min or m_mod/m_KK
-at this level of approximation.
+Casimir correction is sub-dominant for the tested coefficient range. A physical
+modulus/KK mass ratio still requires the normalized reduced action, `M4/Ms`, and
+the full two-field mass eigenproblem.
+
+### G77 uplift schemes
+
+- **Scheme A:** choose `p`, enforce `V=0` and `V'=0` at
+  `rho6_star=1.090`, and solve for `A_np` and `D`.
+- **Scheme B:** keep the previous `A_np=0.3787`, then solve for the shifted
+  Minkowski minimum and `D`.
+
+G77 is `PASS_ALGEBRAIC_TOY`: both schemes produce local minima in the tested
+one-field potential. This is not a microscopic or string-theoretic derivation
+of the uplift sector. The exponent `p` remains `FREE`.
+
+The earlier `D` table used the convention `K=1`. The repository potential uses
+`K_VOL=652.841994`, so repository-normalized values are
+`D_repo=D_K1/K_VOL`.
 
 **Stabilization gates (G54–G62):**
 
@@ -155,7 +174,25 @@ at this level of approximation.
 | G58–G59 | Curvature and FR charge-scaling: outside SM window | NULL |
 | G60 | Minkowski uplift constraint → A\_np from geometry | PASS (pearl) |
 | G61 | λ = 1/3 (dimensional) or π/9 (E7 gaugino) | WEAK PROMOTE |
-| **G62** | **Zero-fit observables: m\_mod/m\_KK=2.02%** | **PROMOTE** |
+| G62 | coordinate-space observables; 2.02% curvature proxy | REINTERPRETED BY G82 |
+| G76 | parameter provenance registry | PASS |
+| G77 | algebraic uplift at fixed radius or fixed amplitude | PASS_ALGEBRAIC_TOY |
+| G82 | canonical radion mass audit | CONDITIONAL |
+
+### Reproduce the local audit
+
+```bash
+python tom_s3_spinor_toy/experiments/20260622-g76-parameter-registry/g76_parameter_registry.py
+python -m pytest tom_s3_spinor_toy/tests/test_g76_parameter_registry.py -q
+
+python tom_s3_spinor_toy/experiments/20260622-g77-uplift-solver/g77_uplift_solver.py
+python -m pytest tom_s3_spinor_toy/tests/test_g77_uplift_solver.py -q
+
+python tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/g82_canonical_mass.py
+python -m pytest tom_s3_spinor_toy/tests/test_g82_canonical_mass.py -q
+
+python -m pytest tom_s3_spinor_toy/tests/test_markdown_claim_audit.py -q
+```
 
 ---
 
@@ -217,7 +254,7 @@ null_results/INDEX.md: 24 entries (G27–G51, G58–G60 + earlier branches).
 
 ```
 tom_s3_spinor_toy/
-├── tests/                          # 2217 tests (pytest)
+├── tests/                          # 2748 tests collected (pytest, 2026-06-22)
 ├── experiments/                    # FL-Standard experiment folders (G6-G38)
 │   ├── 20260619-g26-ccm-comparison/  # claim.md + decision.md
 │   └── ... (38 experiments total)
@@ -235,7 +272,7 @@ tom_s3_spinor_toy/
 ```bash
 cd tom_s3_spinor_toy
 python -m pytest tests/ -q
-# Expected: 2217 passed, 4 skipped
+# Current collection: 2748 tests; full runtime depends on heavy numerical gates
 ```
 
 ---
