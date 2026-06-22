@@ -1,7 +1,7 @@
 # N-7 GeoSpectra Lab — Research Status Report
-**Date:** 2026-06-21  
-**Branch:** main @ merge(g62) (1906 tests)  
-**Test suite:** 1906 passed, 4 skipped  
+**Date:** 2026-06-21 (updated 2026-06-22)  
+**Branch:** main @ 6a9a005 (2189 tests)  
+**Test suite:** 2189 passed, 4 skipped  
 **Author:** Sergey Boyko
 
 ---
@@ -12,9 +12,11 @@
 for one generation. Five independent CSDR verification angles all PASS. 29 positive gates (G6–G29)
 closed via Falsification Ladder (FL) Standard protocol: claim.md → evidence script → decision.md.
 
-**Additional result (2026-06-20):** **Theorem T1** (Three-Generation Obstruction) by exhaustion.
-G27–G47: 14 NULL, 4 WEAK, 1 OPEN (G43-B5). Five mechanism categories exhausted.
-N_gen=3 cannot be selected by any known geometric mechanism on S³×S⁶.
+**Three-generation result (2026-06-21):** **G73+G74A+G74B PROMOTE** — N_gen = 3 EXACTLY from
+geometry. ind(D_{S⁶}⊗S⁻) = Â(S⁶)·c₃(S⁻)/2 = 1 per Z₃-triality channel × 3 = 3. Lichnerowicz
+safety factor 8/45≪1 + G₂-Schur → dim ker = 1 EXACTLY (not just ≥ 1). sign(ind)=+1 → SM
+left-handed chirality. 31/31 tests. Note: Proposition T1 (exhaustion of single-bundle mechanisms)
+remains valid; G73 circumvents it by using three bundles of c₃=2, not one of c₃=6.
 
 **New result (2026-06-21):** **G62 PROMOTE** — first zero-fit physical predictions.
 Chain: SM constraint → UV-selection (G57) → λ=1/3 (G61) → A_np from Minkowski (G60) → minimum.
@@ -172,9 +174,31 @@ Pre-registered claim: λ² = (n+3/2)² + (m/R)²
 
 ---
 
-## Three-Generation Investigation (G27–G47) — Theorem T1 by Exhaustion
+## Three-Generation Resolution — G67+G73+G74A+G74B
 
-**Status: COMPLETE ✅ — Theorem T1 PASS+OPEN**
+**Status: RESOLVED ✅ — N_gen = 3 EXACTLY from geometry (2026-06-21)**
+
+| Gate | Claim | Verdict | Key result |
+|------|-------|---------|------------|
+| G67 | SO(8) triality Z₃ → three independent channels 8_v,8_s,8_c | PASS (25/25) | G₂=Fix(Z₃⊂Aut(𝕆)); each channel carries c₃=2 |
+| G73 | ind(D_{S⁶}⊗S⁻) = 1 per channel × 3 channels = 3 | PROMOTE (29/29) | c₃(S⁻)=χ(S⁶)=2; Â(S⁶)=1; N_gen ≥ 3 |
+| G74A | Lichnerowicz+G₂-Schur: dim ker = 1 EXACTLY | PROMOTE (30/30) | 8/45≪1 (safety 5.625×); G₂-singlet mult=1 |
+| G74B | sign(ind)=+1 → LEFT_HANDED_EXCESS | PROMOTE (31/31) | L=1, R=0 per channel; Z₂ orientation = parity |
+
+**Physical meaning:** Negative-chirality spinor bundle S⁻ = T^{1,0}S⁶ ⊕ trivial has
+c₃(S⁻) = χ(S⁶) = 2. With Â(S⁶) = 1 (since H⁴(S⁶;ℤ) = 0) → ind = 1 per channel.
+Three channels from G₂=Fix(Z₃⊂Aut(𝕆)) acting on SO(8) triality → N_gen = 3.
+G₂-equivariance + Schur: kernel is a G₂-singlet, multiplicity = 1 EXACTLY.
+
+---
+
+## Three-Generation Investigation (G27–G47) — Proposition T1 by Exhaustion
+
+**Status: COMPLETE ✅ — Proposition T1: closes single-bundle c₃=6 mechanisms**
+
+These NULL results are still valid for their respective mechanism classes. They prove
+that no single bundle with c₃=6 can be selected. The G73 resolution uses three bundles
+of c₃=2 each — this class was not covered by T1 categories 1–5.
 
 ### Category 1: Topological invariants
 
@@ -249,7 +273,7 @@ Pending Tom reply to: message explaining our S³ spin connection result.
 
 ## Open Questions
 
-1. **Three generations** — CLOSED (G27+G30-G38 theorem by exhaustion). N_gen=3 lies outside S³×S⁶ geometry scope.
+1. **Three generations** — RESOLVED (G73+G74A+G74B). N_gen=3 exactly from twisted Atiyah-Singer index. SM left-handed chirality geometric. See gate table above.
 2. **Majorana mass** for right-handed neutrino
 3. **λ coupling** — free at S³ stage (G4 Fisher rank theorem); requires V-operator promotion for identification (ACH Case 6 open)
 
@@ -274,4 +298,4 @@ tom_s3_spinor_toy/
 
 ---
 
-*Updated 2026-06-20. CSDR 5/5 complete. Theorem T1 (G47): 14 NULL + 4 WEAK + 1 OPEN = 19 results. 1553 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
+*Updated 2026-06-22. CSDR 5/5 + N_gen=3 EXACTLY (G73-G74B) + SM chirality + G62 zero-fit. 2189 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
