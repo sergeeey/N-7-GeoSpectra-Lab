@@ -1,0 +1,241 @@
+﻿{
+  "fixed_amplitude": {
+    "K_1": [
+      {
+        "A_np": 0.3787,
+        "D": 0.0023248590022366977,
+        "K": 1.0,
+        "V_residual": -2.168404344971009e-19,
+        "curvature": 0.13086638543657877,
+        "dV_residual": 3.9026507719919223e-14,
+        "local_minimum": true,
+        "power": 2,
+        "rho0": 1.1964366699066125,
+        "rho_shift_vs_uv_percent": 9.764832101524078
+      },
+      {
+        "A_np": 0.3787,
+        "D": 0.003394638035913185,
+        "K": 1.0,
+        "V_residual": 0.0,
+        "curvature": 0.07784132930246933,
+        "dV_residual": 5.7332610881033474e-15,
+        "local_minimum": true,
+        "power": 4,
+        "rho0": 1.2221957529448524,
+        "rho_shift_vs_uv_percent": 12.128050728885542
+      },
+      {
+        "A_np": 0.3787,
+        "D": 0.005230388467836218,
+        "K": 1.0,
+        "V_residual": 0.0,
+        "curvature": 0.036438707953778675,
+        "dV_residual": 6.587612400021925e-15,
+        "local_minimum": true,
+        "power": 6,
+        "rho0": 1.2643584507372734,
+        "rho_shift_vs_uv_percent": 15.996188141034251
+      },
+      {
+        "A_np": 0.3787,
+        "D": 0.008835616088226946,
+        "K": 1.0,
+        "V_residual": -1.0842021724855044e-19,
+        "curvature": 0.010208907287242995,
+        "dV_residual": -3.469446951953614e-18,
+        "local_minimum": true,
+        "power": 8,
+        "rho0": 1.3458525528383847,
+        "rho_shift_vs_uv_percent": 23.472711269576575
+      }
+    ],
+    "K_repo": [
+      {
+        "A_np": 0.3787,
+        "D": 3.561135807531774e-06,
+        "K": 652.8419942086003,
+        "V_residual": 0.0,
+        "curvature": 0.00020045644136978564,
+        "dV_residual": 5.978273838426126e-17,
+        "local_minimum": true,
+        "power": 2,
+        "rho0": 1.1964366699066125,
+        "rho_shift_vs_uv_percent": 9.764832101524078
+      },
+      {
+        "A_np": 0.3787,
+        "D": 5.1997850414452785e-06,
+        "K": 652.8419942086003,
+        "V_residual": 0.0,
+        "curvature": 0.00011923456640701868,
+        "dV_residual": 8.783731663027095e-18,
+        "local_minimum": true,
+        "power": 4,
+        "rho0": 1.2221957529448524,
+        "rho_shift_vs_uv_percent": 12.128050728885542
+      },
+      {
+        "A_np": 0.3787,
+        "D": 8.01172184730042e-06,
+        "K": 652.8419942086003,
+        "V_residual": 0.0,
+        "curvature": 5.581549863953576e-05,
+        "dV_residual": 1.0091550533587734e-17,
+        "local_minimum": true,
+        "power": 6,
+        "rho0": 1.2643584507372734,
+        "rho_shift_vs_uv_percent": 15.996188141034251
+      },
+      {
+        "A_np": 0.3787,
+        "D": 1.3534080476758871e-05,
+        "K": 652.8419942086003,
+        "V_residual": -2.117582368135751e-22,
+        "curvature": 1.5637640633753927e-05,
+        "dV_residual": -5.929230630780102e-21,
+        "local_minimum": true,
+        "power": 8,
+        "rho0": 1.3458525528383847,
+        "rho_shift_vs_uv_percent": 23.472711269576575
+      }
+    ]
+  },
+  "gate": "G77",
+  "gates": {
+    "G77-1_equations_satisfied": true,
+    "G77-2_reference_tables_reproduced": true,
+    "G77-3_positive_stable_uplifts": true,
+    "G77-4_both_normalizations_recorded": true,
+    "G77-5_wrong_normalization_control_fails": true,
+    "G77-6_power_not_derived": true
+  },
+  "inputs": {
+    "A_fixed": 0.3787,
+    "C_SM": 0.986,
+    "F_flux": 0.28605671600139365,
+    "K_vol": 652.8419942086003,
+    "lambda_np": 0.3333333333333333,
+    "powers": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "rho_target": 1.09
+  },
+  "microscopic_uplift_derived": false,
+  "negative_control_wrong_K_residual": 0.0060367571694276605,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260622-g77-uplift-solver/g77_uplift_solver.py",
+  "target_radius": {
+    "K_1": [
+      {
+        "A_np": 0.40121516724828615,
+        "A_shift_vs_0p3787_percent": 5.945383482515498,
+        "B": 0.3030621385856693,
+        "D": 0.0071832742754260595,
+        "K": 1.0,
+        "V_residual": 8.673617379884035e-19,
+        "curvature": 0.582103254487265,
+        "dV_residual": -5.0306980803327406e-17,
+        "local_minimum": true,
+        "power": 2,
+        "rho0": 1.09
+      },
+      {
+        "A_np": 0.407267956181821,
+        "A_shift_vs_0p3787_percent": 7.54369056821258,
+        "B": 0.30763417700382206,
+        "D": 0.01082900007807298,
+        "K": 1.0,
+        "V_residual": -1.734723475976807e-18,
+        "curvature": 0.4875733410764082,
+        "dV_residual": 6.591949208711867e-17,
+        "local_minimum": true,
+        "power": 4,
+        "rho0": 1.09
+      },
+      {
+        "A_np": 0.4177722416944597,
+        "A_shift_vs_0p3787_percent": 10.317465459323927,
+        "B": 0.3155687006500947,
+        "D": 0.017597032197381415,
+        "K": 1.0,
+        "V_residual": 1.734723475976807e-18,
+        "curvature": 0.3941723336620128,
+        "dV_residual": 1.1102230246251565e-16,
+        "local_minimum": true,
+        "power": 6,
+        "rho0": 1.09
+      },
+      {
+        "A_np": 0.4404947907102467,
+        "A_shift_vs_0p3787_percent": 16.31761043312563,
+        "B": 0.3327324194249151,
+        "D": 0.033066245049424695,
+        "K": 1.0,
+        "V_residual": 2.0816681711721685e-17,
+        "curvature": 0.30387112964769253,
+        "dV_residual": -2.0816681711721685e-16,
+        "local_minimum": true,
+        "power": 8,
+        "rho0": 1.09
+      }
+    ],
+    "K_repo": [
+      {
+        "A_np": 0.40121516724828615,
+        "A_shift_vs_0p3787_percent": 5.945383482515498,
+        "B": 0.3030621385856693,
+        "D": 1.100308242905528e-05,
+        "K": 652.8419942086003,
+        "V_residual": 0.0,
+        "curvature": 0.0008916449528587402,
+        "dV_residual": -7.453889935837843e-20,
+        "local_minimum": true,
+        "power": 2,
+        "rho0": 1.09
+      },
+      {
+        "A_np": 0.407267956181821,
+        "A_shift_vs_0p3787_percent": 7.54369056821258,
+        "B": 0.30763417700382206,
+        "D": 1.658747472456992e-05,
+        "K": 652.8419942086003,
+        "V_residual": -5.082197683525802e-21,
+        "curvature": 0.0007468473979717077,
+        "dV_residual": 8.809142651444724e-20,
+        "local_minimum": true,
+        "power": 4,
+        "rho0": 1.09
+      },
+      {
+        "A_np": 0.4177722416944597,
+        "A_shift_vs_0p3787_percent": 10.317465459323927,
+        "B": 0.3155687006500947,
+        "D": 2.6954504081363822e-05,
+        "K": 652.8419942086003,
+        "V_residual": 0.0,
+        "curvature": 0.0006037791116684717,
+        "dV_residual": 1.6263032587282567e-19,
+        "local_minimum": true,
+        "power": 6,
+        "rho0": 1.09
+      },
+      {
+        "A_np": 0.4404947907102467,
+        "A_shift_vs_0p3787_percent": 16.31761043312563,
+        "B": 0.3327324194249151,
+        "D": 5.064969064912689e-05,
+        "K": 652.8419942086003,
+        "V_residual": 2.710505431213761e-20,
+        "curvature": 0.0004654590040763413,
+        "dV_residual": -3.2526065174565133e-19,
+        "local_minimum": true,
+        "power": 8,
+        "rho0": 1.09
+      }
+    ]
+  },
+  "verdict": "PASS_ALGEBRAIC_TOY"
+}

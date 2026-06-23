@@ -1,0 +1,21 @@
+﻿{
+  "class_counts": {
+    "conditional": 6,
+    "fixed": 3,
+    "free": 5
+  },
+  "dangling_dependencies": [],
+  "gate": "G76",
+  "gates": {
+    "G76-1_schema_complete": true,
+    "G76-2_no_dangling_dependencies": true,
+    "G76-3_external_inputs_explicit": true,
+    "G76-4_lambda_symbols_separate": true,
+    "G76-5_amplitudes_conditional": true,
+    "G76-6_mass_scale_not_claimed_fixed": true
+  },
+  "lambda_identity_assumed": false,
+  "parameter_count": 14,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260622-g76-parameter-registry/g76_parameter_registry.py",
+  "verdict": "PASS"
+}

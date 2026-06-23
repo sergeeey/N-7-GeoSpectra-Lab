@@ -1,0 +1,185 @@
+﻿{
+  "bridge_derivations_executable_now": [],
+  "conclusion": "Current repository data can test numerical proximity and internal consistency, but cannot derive or refute the cross-sector bridge.",
+  "dependency_graph": {
+    "edges": [
+      {
+        "from": "S3xS6_geometry",
+        "status": "insufficient",
+        "to": "lambda_v_operator"
+      },
+      {
+        "from": "S3xS6_geometry",
+        "status": "candidate_only",
+        "to": "lambda_np"
+      },
+      {
+        "from": "rho6",
+        "status": "implemented_in_ansatz",
+        "to": "lambda_np"
+      },
+      {
+        "from": "lambda_v_operator",
+        "status": "missing_normalization",
+        "to": "bridge_map"
+      },
+      {
+        "from": "lambda_np",
+        "status": "missing_microscopic_action",
+        "to": "bridge_map"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "lambda_v_operator",
+        "inputs": [
+          "V_operator_normalization",
+          "V_observable"
+        ],
+        "kind": "free_parameter",
+        "status": "FREE"
+      },
+      {
+        "id": "lambda_np",
+        "inputs": [
+          "NP_action",
+          "rho6_field_definition"
+        ],
+        "kind": "free_parameter",
+        "status": "FREE"
+      },
+      {
+        "id": "rho6",
+        "inputs": [
+          "S6_radius_convention"
+        ],
+        "kind": "shared_geometry",
+        "status": "CONDITIONAL"
+      },
+      {
+        "id": "S3xS6_geometry",
+        "inputs": [
+          "n3",
+          "n6",
+          "metric_conventions"
+        ],
+        "kind": "shared_geometry",
+        "status": "FIXED_WITHIN_ANSATZ"
+      },
+      {
+        "id": "bridge_map",
+        "inputs": [
+          "common_reduced_action",
+          "canonical_field_map",
+          "operator_to_NP_matching"
+        ],
+        "kind": "missing_derivation",
+        "status": "OPEN"
+      }
+    ]
+  },
+  "g78_status": "CONDITIONAL_FOR_LAMBDA_NP; BLOCKED_AS_DERIVATION_OF_LAMBDA_V_OPERATOR",
+  "gate": "G79B",
+  "gates": {
+    "G79B-1_evidence_files_exist": true,
+    "G79B-2_dependency_graph_complete": true,
+    "G79B-3_all_routes_have_required_fields": true,
+    "G79B-4_numerical_coincidence_not_bridge": true,
+    "G79B-5_g78_bridge_status_conditional": true,
+    "G79B-6_verdict_allowed": true
+  },
+  "missing_evidence": [],
+  "precondition": "G79A=OPEN_IDENTITY_UNPROVEN",
+  "reproduction_commands": [
+    "python tom_s3_spinor_toy/experiments/20260622-g79b-lambda-bridge-feasibility/g79b_lambda_bridge_feasibility.py",
+    "python -m pytest tom_s3_spinor_toy/tests/test_g79b_lambda_bridge_feasibility.py -q",
+    "python -m pytest tom_s3_spinor_toy/tests/test_g79a_lambda_identity_audit.py tom_s3_spinor_toy/tests/test_g76_parameter_registry.py -q"
+  ],
+  "route_count": 5,
+  "routes": [
+    {
+      "current_status": "OPEN",
+      "derivation_executable_with_current_repo": false,
+      "existing_evidence": [
+        "v_definition",
+        "v_nonidentifiability",
+        "nonlinear_hypothesis"
+      ],
+      "falsifier": "The common action contains independent counterterms or independent normalization constants for the two coefficients.",
+      "id": "DIRECT_OPERATOR_MATCHING",
+      "missing_inputs": [
+        "parent action containing both sectors",
+        "operationally normalized V observable",
+        "canonical field redefinition linking V variables to rho6"
+      ],
+      "required_derivation": "Derive V-operator and NP exponential from one normalized reduced action, then show the same coefficient multiplies both terms after field redefinitions."
+    },
+    {
+      "current_status": "OPEN",
+      "derivation_executable_with_current_repo": false,
+      "existing_evidence": [
+        "parameter_registry",
+        "np_implementation"
+      ],
+      "falsifier": "The reduced coefficients depend on independent moduli or normalization constants.",
+      "id": "DIMENSIONAL_REDUCTION_GAUGE_KINETIC",
+      "missing_inputs": [
+        "higher-dimensional action",
+        "normalized gravitational and gauge terms",
+        "dilaton/warp dependence",
+        "exact T(rho6) relation"
+      ],
+      "required_derivation": "Perform the full higher-dimensional to 4D Einstein-frame reduction and derive both the V coupling and the gauge kinetic/modulus function f(T), including T(rho6)."
+    },
+    {
+      "current_status": "CONDITIONAL_CANDIDATE_ONLY",
+      "derivation_executable_with_current_repo": false,
+      "existing_evidence": [
+        "np_candidates"
+      ],
+      "falsifier": "The derived lambda_np differs from lambda_v_operator after all normalizations, or the hidden sector is absent/inconsistent.",
+      "id": "GAUGINO_CONDENSATION",
+      "missing_inputs": [
+        "explicit hidden-sector embedding",
+        "dual Coxeter number selected by the model",
+        "gauge kinetic function",
+        "T(rho6) derivation",
+        "separate V-to-NP coefficient matching"
+      ],
+      "required_derivation": "Specify a hidden gauge sector, derive W_np=A exp(-2*pi*T/h_dual), derive T(rho6), and independently match its coefficient to lambda_v_operator."
+    },
+    {
+      "current_status": "OPEN",
+      "derivation_executable_with_current_repo": false,
+      "existing_evidence": [
+        "np_candidates"
+      ],
+      "falsifier": "The instanton action has a different rho6 dependence or an independent prefactor.",
+      "id": "INSTANTON_ACTION",
+      "missing_inputs": [
+        "brane species and wrapped cycle",
+        "brane tension",
+        "dilaton and warp factor",
+        "RR/NS background fields",
+        "cycle-volume normalization",
+        "V-sector matching calculation"
+      ],
+      "required_derivation": "Compute the wrapped Euclidean brane DBI+CS action and reduce it to S_inst=lambda_np/rho6^2, then match the same normalized interaction to the V-operator coefficient."
+    },
+    {
+      "current_status": "INSUFFICIENT_FOR_IDENTITY",
+      "derivation_executable_with_current_repo": true,
+      "existing_evidence": [
+        "np_candidates",
+        "identity_audit"
+      ],
+      "falsifier": "Candidate agreement disappears under allowed normalization, uplift, or radius-convention changes.",
+      "id": "NUMERICAL_COINCIDENCE",
+      "missing_inputs": [
+        "a theoretical mechanism turning proximity into identity"
+      ],
+      "required_derivation": "No derivation exists; compare candidate numbers only as a diagnostic."
+    }
+  ],
+  "verdict": "OPEN_MISSING_DERIVATION"
+}

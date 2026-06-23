@@ -1,0 +1,120 @@
+﻿{
+  "schema_version": "1.0",
+  "scope": "G54-G63 stabilization and uplift chain",
+  "classes": ["fixed", "conditional", "free"],
+  "parameters": [
+    {
+      "symbol": "n3",
+      "value": 3,
+      "class": "fixed",
+      "provenance": "geometry",
+      "dependencies": [],
+      "scope": "dimension of S3"
+    },
+    {
+      "symbol": "n6",
+      "value": 6,
+      "class": "fixed",
+      "provenance": "geometry",
+      "dependencies": [],
+      "scope": "dimension of S6"
+    },
+    {
+      "symbol": "K_vol",
+      "value": 652.8419942086003,
+      "class": "fixed",
+      "provenance": "geometry",
+      "dependencies": ["n3", "n6"],
+      "scope": "unit-sphere volume product used by the current EH-frame toy potential"
+    },
+    {
+      "symbol": "C_SM",
+      "value": 0.986,
+      "class": "conditional",
+      "provenance": "external",
+      "dependencies": [],
+      "scope": "observational gauge-coupling input; scale and threshold prescription not derived"
+    },
+    {
+      "symbol": "C_UV",
+      "value": 1.0743,
+      "class": "conditional",
+      "provenance": "spectral_computation",
+      "dependencies": ["n3", "n6"],
+      "scope": "UV-finite ray; depends on the implemented heat-kernel truncation and conventions"
+    },
+    {
+      "symbol": "rho6_star",
+      "value": 1.09,
+      "class": "conditional",
+      "provenance": "derived",
+      "dependencies": ["C_UV", "C_SM"],
+      "scope": "intersection rho6_star=C_UV/C_SM"
+    },
+    {
+      "symbol": "V_flux",
+      "value": 0.28605671600139365,
+      "class": "conditional",
+      "provenance": "derived",
+      "dependencies": ["C_SM"],
+      "scope": "15*C_SM^3/(16*pi) on the imposed SM constraint"
+    },
+    {
+      "symbol": "lambda_np",
+      "value": null,
+      "candidates": [0.3333333333333333, 0.3490658503988659],
+      "class": "free",
+      "provenance": "model_hypothesis",
+      "dependencies": [],
+      "scope": "non-perturbative exponential coefficient; candidates are not first-principles derivations"
+    },
+    {
+      "symbol": "lambda_v_operator",
+      "value": null,
+      "class": "free",
+      "provenance": "non_identifiable",
+      "dependencies": [],
+      "scope": "V-operator coupling; G4 proves non-identifiability from S3-only observables"
+    },
+    {
+      "symbol": "A_np",
+      "value": null,
+      "class": "conditional",
+      "provenance": "derived",
+      "dependencies": ["lambda_np", "rho6_star", "V_flux"],
+      "scope": "determined only after a specified vacuum condition and potential normalization"
+    },
+    {
+      "symbol": "uplift_p",
+      "value": null,
+      "class": "free",
+      "provenance": "model_choice",
+      "dependencies": [],
+      "scope": "power in D/rho^p; microscopic uplift sector not specified"
+    },
+    {
+      "symbol": "uplift_D",
+      "value": null,
+      "class": "conditional",
+      "provenance": "derived",
+      "dependencies": ["uplift_p", "lambda_np", "rho6_star", "V_flux", "K_vol"],
+      "scope": "derived from V=0 and dV/drho=0 once convention and target radius are fixed"
+    },
+    {
+      "symbol": "alpha_casimir",
+      "value": null,
+      "class": "free",
+      "provenance": "normalization_unknown",
+      "dependencies": [],
+      "scope": "conversion coefficient between spectral finite part and 4D potential"
+    },
+    {
+      "symbol": "M4_over_Ms",
+      "value": null,
+      "class": "free",
+      "provenance": "scale_map_unknown",
+      "dependencies": [],
+      "scope": "needed to compare canonically normalized modulus mass with string-unit KK mass"
+    }
+  ]
+}

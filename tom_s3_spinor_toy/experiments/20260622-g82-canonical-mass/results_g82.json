@@ -1,0 +1,27 @@
+﻿{
+  "assumption": "4D Einstein-frame product-space kinetic metric; M4=Ms=1 only for metric-only proxy",
+  "canonical_hessian_metric_only": 4.555452381416077e-06,
+  "canonical_mass_ratio_metric_only": 0.0025165235209095643,
+  "canonical_to_coordinate_ratio": 0.1242836455082022,
+  "coordinate_mass_ratio_proxy": 0.020248227436678177,
+  "finite_difference_canonical_hessian": 4.555402353890927e-06,
+  "gate": "G82",
+  "gates": {
+    "G82-1_path_metric_exact_90": true,
+    "G82-2_hessian_transform_agrees": true,
+    "G82-3_proxy_changes_materially": true,
+    "G82-4_absolute_scale_not_identified": true,
+    "G82-5_noncanonical_rescaling_changes_hessian": true
+  },
+  "missing_inputs": [
+    "explicitly normalized 4D reduced action",
+    "M4/Ms scale map (or equivalent gravitational normalization)",
+    "proof that the imposed rho3=C*rho6^2 path is the physical mass eigen-direction"
+  ],
+  "path_kinetic_coefficient": 90.0,
+  "physical_mass_ratio_identified": false,
+  "relative_agreement": 1.0981900580020575e-05,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/g82_canonical_mass.py",
+  "rho_min": 1.179058187144622,
+  "verdict": "CONDITIONAL"
+}
