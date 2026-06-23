@@ -1,0 +1,59 @@
+{
+  "canonical_field_defined": true,
+  "canonical_normalization_explicit": true,
+  "canonical_proxy_value": 0.0025165235209095643,
+  "coordinate_proxy_value": 0.020248227436678177,
+  "evidence_levels": [
+    "canonical_field",
+    "einstein_frame",
+    "kk_scale",
+    "mass_ratio",
+    "normalization"
+  ],
+  "falsified_routes": [
+    "claim that local docs already contain a closed reduced 4D action",
+    "claim that the old 2.02% is physically identified by the current repo",
+    "claim that canonicalization alone closes the mass ratio"
+  ],
+  "files_examined_count": 5,
+  "full_reduced_action_reconstructed": false,
+  "gate": "G88F",
+  "gates": {
+    "G88F-1_sources_found": true,
+    "G88F-2_partial_chain_present": false,
+    "G88F-3_full_reconstruction_found": false,
+    "G88F-4_physical_ratio_not_promoted": true,
+    "G88F-5_coordinate_proxy_remains_proxy": true
+  },
+  "missing_inputs": [
+    "single local file or chain that reconstructs the normalized reduced 4D action",
+    "explicit same-frame KK scale map",
+    "explicit Planck/string normalization map",
+    "explicit derivation that the physical mass and KK scale are compared in the same convention"
+  ],
+  "next_required_gate": "EXTERNAL_REDUCED_ACTION_OR_EXPLICIT_FRAME_MAP",
+  "physical_ratio_value": null,
+  "ratio_invariant_under_reparametrization": false,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g88f-full-reduced-action-reconstruction/g88f_full_reduced_action_reconstruction.py",
+  "same_frame_comparison": false,
+  "searched_terms": [
+    "reduced 4D action",
+    "4D Einstein-frame action",
+    "Einstein frame",
+    "string frame",
+    "canonical field",
+    "canonical radion",
+    "radion kinetic",
+    "KK scale",
+    "Planck/string",
+    "M4/Ms"
+  ],
+  "source_files": [
+    "tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/claim.md",
+    "tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/g82_canonical_mass.py",
+    "tom_s3_spinor_toy/experiments/20260622-g83-gauge-kinetic-modulus-scaling/g83_gauge_kinetic_modulus_scaling.py",
+    "tom_s3_spinor_toy/preprint.tex",
+    "tom_s3_spinor_toy/preprint_draft.md"
+  ],
+  "verdict": "INSUFFICIENT_ACTION"
+}

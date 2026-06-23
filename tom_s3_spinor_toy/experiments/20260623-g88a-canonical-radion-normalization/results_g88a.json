@@ -1,0 +1,26 @@
+{
+  "canonical_hessian_metric_only": 4.555452381416077e-06,
+  "canonical_mass_ratio_metric_only": 0.0025165235209095643,
+  "canonical_to_coordinate_ratio": 0.1242836455082022,
+  "coordinate_mass_ratio_proxy": 0.020248227436678177,
+  "finite_difference_canonical_hessian": 4.555402353890927e-06,
+  "gate": "G88A",
+  "gates": {
+    "G88A-1_path_metric_exact_90": true,
+    "G88A-2_finite_difference_agrees": true,
+    "G88A-3_canonical_proxy_is_smaller": true,
+    "G88A-4_canonical_field_is_logarithmic": true,
+    "G88A-5_physical_ratio_not_identified": true
+  },
+  "missing_inputs": [
+    "explicitly normalized 4D reduced action",
+    "M4/Ms scale map (or equivalent gravitational normalization)",
+    "proof that the imposed rho3=C*rho6^2 path is the physical mass eigen-direction"
+  ],
+  "path_kinetic_coefficient": 90.0,
+  "physical_mass_ratio_identified": false,
+  "relative_agreement": 1.0981900580020575e-05,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g88a-canonical-radion-normalization/g88a_canonical_radion_normalization.py",
+  "rho_min": 1.179058187144622,
+  "verdict": "CANONICAL_PROXY_ONLY"
+}

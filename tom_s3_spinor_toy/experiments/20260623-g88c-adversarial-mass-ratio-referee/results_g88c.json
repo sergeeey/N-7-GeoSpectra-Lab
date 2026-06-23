@@ -1,0 +1,22 @@
+{
+  "canonical_metric_only_ratio": 0.0025165,
+  "canonical_to_coordinate_ratio": 0.1242838798893718,
+  "gate": "G88C",
+  "gates": {
+    "G88C-1_old_value_is_coordinate_artifact": true,
+    "G88C-2_canonical_proxy_exists": true,
+    "G88C-3_physical_ratio_not_confirmed": true,
+    "G88C-4_missing_action_and_scale_map": true,
+    "G88C-5_no_invalid_equality_between_old_and_canonical": true
+  },
+  "missing_inputs": [
+    "explicit reduced 4D action",
+    "M4/Ms map",
+    "proof that the compared KK scale is defined in the same frame as the radion mass"
+  ],
+  "old_coordinate_ratio": 0.020248,
+  "physical_mass_ratio_identified": false,
+  "reference_value_verdict": "COORDINATE_ARTIFACT",
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g88c-adversarial-mass-ratio-referee/g88c_adversarial_mass_ratio_referee.py",
+  "verdict": "CANONICAL_PROXY_ONLY"
+}

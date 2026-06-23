@@ -1,0 +1,24 @@
+{
+  "canonical_mass_ratio_metric_only": 0.0025165235209095643,
+  "canonical_to_coordinate_ratio": 0.1242836455082022,
+  "coordinate_mass_ratio_proxy": 0.020248227436678177,
+  "gate": "G88B",
+  "gates": {
+    "G88B-1_string_unit_KK_scale_reproduced": true,
+    "G88B-2_coordinate_vs_canonical_ratios_differ": true,
+    "G88B-3_scale_map_missing": true,
+    "G88B-4_ratio_is_convention_dependent": true
+  },
+  "missing_inputs": [
+    "explicit reduced 4D action normalization",
+    "M4/Ms map or equivalent convention stack",
+    "proof that the KK scale is being compared in the same frame as the radion mass"
+  ],
+  "mkk_string": 0.8481345627409151,
+  "mmod_string": 0.017173221523285646,
+  "path_kinetic_coefficient": 90.0,
+  "physical_mass_ratio_identified": false,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g88b-kk-scale-consistency/g88b_kk_scale_consistency.py",
+  "rho_min": 1.179058187144622,
+  "verdict": "SCALE_CONVENTION_DEPENDENT"
+}

@@ -1,0 +1,76 @@
+{
+  "action_sources_found": [
+    "tom_s3_spinor_toy/experiments/20260621-g62-observables/decision.md",
+    "tom_s3_spinor_toy/experiments/20260621-g54f-4d-eh-frame/claim.md",
+    "tom_s3_spinor_toy/experiments/20260621-g54f-4d-eh-frame/decision.md",
+    "tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/claim.md",
+    "tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/g82_canonical_mass.py",
+    "tom_s3_spinor_toy/tests/test_g82_canonical_mass.py",
+    "tom_s3_spinor_toy/experiments/20260622-g82-canonical-mass/decision.md",
+    "tom_s3_spinor_toy/experiments/20260623-g88a-canonical-radion-normalization/claim.md",
+    "tom_s3_spinor_toy/experiments/20260623-g88a-canonical-radion-normalization/g88a_canonical_radion_normalization.py",
+    "tom_s3_spinor_toy/experiments/20260623-g88a-canonical-radion-normalization/decision.md",
+    "tom_s3_spinor_toy/experiments/20260623-g88b-kk-scale-consistency/claim.md",
+    "tom_s3_spinor_toy/experiments/20260623-g88b-kk-scale-consistency/g88b_kk_scale_consistency.py",
+    "tom_s3_spinor_toy/experiments/20260623-g88b-kk-scale-consistency/decision.md",
+    "tom_s3_spinor_toy/experiments/20260623-g88c-adversarial-mass-ratio-referee/claim.md",
+    "tom_s3_spinor_toy/experiments/20260623-g88c-adversarial-mass-ratio-referee/g88c_adversarial_mass_ratio_referee.py",
+    "tom_s3_spinor_toy/experiments/20260623-g88c-adversarial-mass-ratio-referee/decision.md",
+    "tom_s3_spinor_toy/experiments/20260622-g84a-standard-gauge-reduction/decision.md",
+    "tom_s3_spinor_toy/experiments/20260622-g83-gauge-kinetic-modulus-scaling/decision.md",
+    "tom_s3_spinor_toy/experiments/20260621-g54f-4d-eh-frame/decision.md"
+  ],
+  "canonical_field_defined": true,
+  "canonical_normalization_explicit": true,
+  "canonical_proxy_value": 0.0025165235209095643,
+  "coordinate_proxy_value": 0.020248227436678177,
+  "falsified_routes": [
+    "coordinate-space V'' as a physical mass by itself",
+    "claim that the 2.02% proxy survives canonical normalization unchanged",
+    "claim that canonicalization alone fixes the KK normalization"
+  ],
+  "files_examined_count": 19,
+  "frame_definitions_found": [
+    "Einstein frame",
+    "string frame"
+  ],
+  "gate": "G88D",
+  "gates": {
+    "G88D-1_canonical_field_defined": true,
+    "G88D-2_metric_canonicalization_agrees": true,
+    "G88D-3_coordinate_proxy_exceeds_canonical_proxy": true,
+    "G88D-4_reduced_action_missing": true,
+    "G88D-5_same_frame_kk_map_missing": true
+  },
+  "kk_scale_definition_found": true,
+  "missing_inputs": [
+    "explicit reduced 4D action",
+    "same-frame KK normalization map",
+    "M4/Ms scale map or equivalent gravitational normalization",
+    "proof that the compared mass and KK scale are defined in the same field frame"
+  ],
+  "next_required_gate": "G88E_KK_SCALE_FRAME_CONSISTENCY",
+  "physical_ratio_value": null,
+  "ratio_invariant_under_reparametrization": false,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g88d-full-4d-reduced-action-mass-extraction/g88d_full_4d_reduced_action_mass_extraction.py",
+  "same_frame_comparison": false,
+  "searched_terms": [
+    "reduced action",
+    "4D action",
+    "Einstein frame",
+    "string frame",
+    "radion",
+    "canonical field",
+    "kinetic term",
+    "mass extraction",
+    "second derivative",
+    "KK scale",
+    "Planck mass",
+    "M4",
+    "Ms",
+    "rho6",
+    "V(rho6)",
+    "V''"
+  ],
+  "verdict": "CANONICAL_PROXY_ONLY"
+}

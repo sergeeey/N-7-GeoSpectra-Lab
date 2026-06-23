@@ -1,0 +1,34 @@
+{
+  "canonical_proxy_value": 0.0025165235209095643,
+  "coordinate_proxy_value": 0.020248227436678177,
+  "falsified_routes": [
+    "claim that the KK scale is already fixed in the same normalization as the radion mass",
+    "claim that the old 2.02% ratio is frame invariant"
+  ],
+  "frame_definitions_found": [
+    "Einstein frame",
+    "string frame"
+  ],
+  "gate": "G88E",
+  "gates": {
+    "G88E-1_frame_definitions_present": true,
+    "G88E-2_kk_coordinate_proxy_defined": true,
+    "G88E-3_einstein_frame_kk_map_missing": true,
+    "G88E-4_ratio_depends_on_convention": true
+  },
+  "kk_scale_definitions": {
+    "coordinate": "m_KK = 1/rho6",
+    "einstein_frame": null,
+    "string_unit": "m_KK = 1/rho_min"
+  },
+  "missing_inputs": [
+    "explicit Einstein-frame KK scale map",
+    "M4/Ms normalization stack",
+    "same-frame comparison for radion mass and KK threshold"
+  ],
+  "next_required_gate": "FULL_REDUCED_ACTION_RECONSTRUCTION",
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g88e-kk-scale-frame-consistency/g88e_kk_scale_frame_consistency.py",
+  "same_frame_comparison": false,
+  "scale_map_explicit": false,
+  "verdict": "FRAME_MAP_MISSING"
+}
