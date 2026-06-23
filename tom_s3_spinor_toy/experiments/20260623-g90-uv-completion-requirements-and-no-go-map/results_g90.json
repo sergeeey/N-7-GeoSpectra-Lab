@@ -1,0 +1,242 @@
+{
+  "verdict": "NO_GO_MAP_COMPLETE",
+  "supported_claims": [
+    {
+      "claim": "The repository supports a phenomenological spectral compactification toy model with derived SM-like structure.",
+      "evidence": [
+        "README.md: The product geometry",
+        "README.md: 32-component spinor = 1 SM generation",
+        "README.md: N_gen = 3 EXACTLY"
+      ]
+    },
+    {
+      "claim": "The lambda bottleneck is not derived internally and remains FREE_COUPLING_PARAMETER.",
+      "evidence": [
+        "RESEARCH_STATUS_REPORT.md: λ = FREE_COUPLING_PARAMETER",
+        "ALIVE_BRANCHES.md: G85B",
+        "null_results/INDEX.md: G86B"
+      ]
+    },
+    {
+      "claim": "The right-handed neutrino sector is Dirac-only in the current branch unless new B-L-breaking physics is added.",
+      "evidence": [
+        "experiments/20260623-g89a-majorana-gauge-invariance-selection-rules/decision.md: DIRAC_ONLY_ALLOWED",
+        "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: DIRAC_ONLY_CONFIRMED",
+        "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: The current model branch remains Dirac-only for neutrinos."
+      ]
+    },
+    {
+      "claim": "The physical mass ratio is not confirmed; only proxy-level results are available.",
+      "evidence": [
+        "RESEARCH_STATUS_REPORT.md: coordinate-curvature proxy, not a canonically normalized physical mass ratio",
+        "README.md: G82 | canonical radion mass audit | CONDITIONAL",
+        "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: INSUFFICIENT_ACTION"
+      ]
+    }
+  ],
+  "unsupported_claims": [
+    {
+      "claim": "lambda is derived from current repository geometry.",
+      "reason": "Track B is exhausted; the geometric/spectral class closed without a derivation.",
+      "evidence": [
+        "RESEARCH_STATUS_REPORT.md: Track B result",
+        "ALIVE_BRANCHES.md: G85A",
+        "ALIVE_BRANCHES.md: G86B"
+      ]
+    },
+    {
+      "claim": "The old 2.02% mass ratio is a confirmed physical prediction.",
+      "reason": "G88D/G88E/G88F show proxy-level results plus missing action and frame map.",
+      "evidence": [
+        "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: INSUFFICIENT_ACTION",
+        "RESEARCH_STATUS_REPORT.md: coordinate-curvature proxy"
+      ]
+    },
+    {
+      "claim": "A bare Majorana mass term for nu_R is allowed in the current model branch.",
+      "reason": "Exact B-L forbids it, and no B-L = +2 compensator exists.",
+      "evidence": [
+        "experiments/20260623-g89a-majorana-gauge-invariance-selection-rules/decision.md: DIRAC_ONLY_ALLOWED",
+        "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: DIRAC_ONLY_CONFIRMED"
+      ]
+    }
+  ],
+  "no_go_routes": [
+    {
+      "route": "Standard gauge reduction",
+      "checked_by": "G84A",
+      "verdict": "FAIL_FOR_INVERSE_SQUARE",
+      "why_failed": "Unwarped reduction yields positive powers (+12/+6), not 1/rho6^2.",
+      "revive_needed": "A non-standard gauge kinetic function or additional dilaton/warp/duality prefactor.",
+      "evidence": [
+        "experiments/20260622-g84a-standard-gauge-reduction/decision.md: DERIVED_POSITIVE_POWER_STANDARD_ANSATZ"
+      ]
+    },
+    {
+      "route": "Spectral / proper-time",
+      "checked_by": "G84B, G85A",
+      "verdict": "FORMS_ONLY",
+      "why_failed": "The inverse-square form appears only at integrand level; no final A*exp(-lambda/rho6^2) term is derived.",
+      "revive_needed": "A determinant or resummation step that produces a fixed effective exponential coefficient.",
+      "evidence": [
+        "experiments/20260622-g85a-poisson-bessel-resummation-audit/decision.md: POISSON_THETA_FORM_ONLY",
+        "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: INSUFFICIENT_ACTION"
+      ]
+    },
+    {
+      "route": "Poisson / theta resummation",
+      "checked_by": "G85A",
+      "verdict": "BRIDGE_MISSING",
+      "why_failed": "A theta/Poisson identity exists, but it does not close the bridge to the inverse-square effective term.",
+      "revive_needed": "A final identification of the resummed expression with a rho6-dependent effective potential term.",
+      "evidence": [
+        "experiments/20260622-g85a-poisson-bessel-resummation-audit/decision.md: POISSON_THETA_FORM_ONLY"
+      ]
+    },
+    {
+      "route": "Saddle / worldline",
+      "checked_by": "G85B",
+      "verdict": "NULL",
+      "why_failed": "The saddle gives exp(-3)=const, not exp(-lambda/rho6^2).",
+      "revive_needed": "A rho6-dependent saddle that survives integration and produces the target functional form.",
+      "evidence": [
+        "experiments/20260622-g85b-spectral-saddle/decision.md: constant instead"
+      ]
+    },
+    {
+      "route": "Dual modulus",
+      "checked_by": "G86A",
+      "verdict": "STRUCTURAL_POWER_LAW_ONLY",
+      "why_failed": "Power-law T(rho6) always integrates to a power law, never to the desired inverse-square exponential.",
+      "revive_needed": "A non-power-law modulus relation or a different UV mechanism.",
+      "evidence": [
+        "experiments/20260622-g86a-dual-modulus/decision.md: power-law T(ρ₆) gives power-law"
+      ]
+    },
+    {
+      "route": "Warp factor",
+      "checked_by": "G86B",
+      "verdict": "TRIVIAL_OR_CIRCULAR",
+      "why_failed": "Uniform warp is trivial; localized warp becomes power-law plus free Q; the target form is circular.",
+      "revive_needed": "A derived warp/dilaton equation with a genuine rho6-dependent exponential source.",
+      "evidence": [
+        "experiments/20260622-g86b-warp-factor/decision.md: free Q"
+      ]
+    },
+    {
+      "route": "Dimensional lambda gate",
+      "checked_by": "META-C1 / G83-G86B",
+      "verdict": "PROMOTE_FREE_PARAMETER",
+      "why_failed": "Buckingham-Pi style reasoning shows geometric lambda collapses to rho6^2 along the trajectory.",
+      "revive_needed": "A non-geometric source for lambda.",
+      "evidence": [
+        "null_results/INDEX.md: lambda-dimensional-obstruction"
+      ]
+    },
+    {
+      "route": "Physical mass ratio / canonical normalization",
+      "checked_by": "G88D, G88E, G88F",
+      "verdict": "INSUFFICIENT_ACTION",
+      "why_failed": "No full reduced 4D action, no same-frame KK map, and only proxy-level masses are available.",
+      "revive_needed": "A full 4D Einstein-frame reduced action with canonical radion and consistent KK/Planck/string normalization.",
+      "evidence": [
+        "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: INSUFFICIENT_ACTION",
+        "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: same-frame `M4/Ms` map are missing"
+      ]
+    },
+    {
+      "route": "Majorana mass / neutrino seesaw",
+      "checked_by": "G89A, G89B",
+      "verdict": "DIRAC_ONLY_CONFIRMED",
+      "why_failed": "Exact B-L forbids a bare Majorana mass and no B-L=+2 compensator exists.",
+      "revive_needed": "An explicit B-L breaking sector or new operator with charge +2.",
+      "evidence": [
+        "experiments/20260623-g89a-majorana-gauge-invariance-selection-rules/decision.md: DIRAC_ONLY_ALLOWED",
+        "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: DIRAC_ONLY_CONFIRMED"
+      ]
+    }
+  ],
+  "conditional_routes": [
+    {
+      "route": "External non-perturbative lambda origin",
+      "status": "OPEN",
+      "note": "Only a UV completion can supply a genuine non-perturbative source for exp(-lambda/rho6^2).",
+      "evidence": [
+        "RESEARCH_STATUS_REPORT.md: λ = FREE_COUPLING_PARAMETER",
+        "ALIVE_BRANCHES.md: G85B",
+        "null_results/INDEX.md: G86B"
+      ]
+    },
+    {
+      "route": "Full reduced 4D action",
+      "status": "OPEN",
+      "note": "Needed to upgrade the mass ratio from a proxy to a physical observable.",
+      "evidence": [
+        "RESEARCH_STATUS_REPORT.md: coordinate-curvature proxy, not a canonically normalized physical mass ratio",
+        "README.md: G82 | canonical radion mass audit | CONDITIONAL",
+        "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: INSUFFICIENT_ACTION"
+      ]
+    },
+    {
+      "route": "B-L breaking sector",
+      "status": "OPEN",
+      "note": "Required if the model is to support Majorana or seesaw neutrinos.",
+      "evidence": [
+        "experiments/20260623-g89a-majorana-gauge-invariance-selection-rules/decision.md: DIRAC_ONLY_ALLOWED",
+        "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: DIRAC_ONLY_CONFIRMED",
+        "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: The current model branch remains Dirac-only for neutrinos."
+      ]
+    }
+  ],
+  "uv_requirements": [
+    "A mechanism for exp(-lambda/rho6^2).",
+    "A source for lambda.",
+    "A hidden gauge / brane / instanton sector or comparable UV origin.",
+    "A full 4D reduced action.",
+    "Canonical radion normalization.",
+    "Same-frame KK scale.",
+    "A B-L breaking sector if Majorana/seesaw neutrinos are desired.",
+    "Otherwise an explicit Dirac-only neutrino prediction."
+  ],
+  "lambda_origin_status": {
+    "status": "FREE_COUPLING_PARAMETER",
+    "summary": "Track B is exhausted; lambda is not derived in the current repository.",
+    "evidence": [
+      "RESEARCH_STATUS_REPORT.md: λ = FREE_COUPLING_PARAMETER",
+      "ALIVE_BRANCHES.md: G85B",
+      "null_results/INDEX.md: G86B"
+    ]
+  },
+  "mass_ratio_status": {
+    "status": "INSUFFICIENT_ACTION",
+    "summary": "2.02% is a coordinate-curvature proxy; ~0.252% is a canonical proxy, but not a confirmed physical ratio.",
+    "evidence": [
+      "RESEARCH_STATUS_REPORT.md: coordinate-curvature proxy, not a canonically normalized physical mass ratio",
+      "README.md: G82 | canonical radion mass audit | CONDITIONAL",
+      "experiments/20260623-g88f-full-reduced-action-reconstruction/decision.md: INSUFFICIENT_ACTION"
+    ],
+    "commits": [
+      "9752c93"
+    ]
+  },
+  "neutrino_status": {
+    "status": "DIRAC_ONLY_CONFIRMED",
+    "summary": "Bare Majorana mass is forbidden by exact B-L in the current branch; Dirac-only is the current prediction.",
+    "evidence": [
+      "experiments/20260623-g89a-majorana-gauge-invariance-selection-rules/decision.md: DIRAC_ONLY_ALLOWED",
+      "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: DIRAC_ONLY_CONFIRMED",
+      "experiments/20260623-g89b-b-minus-l-breaking-operator-audit/decision.md: The current model branch remains Dirac-only for neutrinos."
+    ],
+    "commits": [
+      "7792811"
+    ]
+  },
+  "missing_inputs": [
+    "A microscopic non-perturbative origin for lambda.",
+    "A full reduced 4D Einstein-frame action.",
+    "A canonical radion field and consistent mass extraction.",
+    "A same-frame KK/Planck/string normalization map.",
+    "A B-L=+2 operator or scalar if Majorana neutrinos are desired."
+  ],
+  "next_required_gate": "External UV/string completion specification, not another internal GeoSpectra derivation gate."
+}
