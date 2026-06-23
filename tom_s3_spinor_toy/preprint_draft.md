@@ -197,6 +197,15 @@ prediction. This gap is naturally attributed to RGE running from M_KK down to M_
 A quantitative reconciliation requires fixing M_KK in physical units, which requires
 knowing λ (the non-perturbative coupling); see §6.
 
+**RGE matching constraint.** One-loop SM running (b₃ = −7, b₂ = −19/6, MS-bar scheme)
+constrains M_KK from the M_Z measurement: the ratio 15/(16π) is reproduced at
+M_KK ≈ **130 GeV** if only SM particle content is active below M_KK. For M_KK > 130 GeV
+the one-loop ratio rises rapidly — 0.362 at 1 TeV, 0.430 at 10 TeV — so a realistic
+intermediate-scale M_KK requires threshold corrections or new particle content between
+M_KK and M_Z. The near-coincidence of the geometric ratio 15/(16π) ≈ 0.298 with the
+measured M_Z value 0.287 (4.2% gap) is thus a near-electroweak-scale coincidence, not
+a precision GUT-scale prediction.
+
 The key structural prediction is the **hierarchy** g₂ < g₃: the electroweak coupling
 is weaker than the strong coupling because Vol(S³) < Vol(S⁶) at unit radii. This is
 a geometric fact, not a phenomenological input.
@@ -492,6 +501,11 @@ Expanding in the small parameter ε = u*/n ≈ 0.047, the leading-order solution
 
 with first correction κ₁ = √(7/6 + u*/(2n(n+1))) ≈ 1.0817 (error 0.004%).
 
+The ratio κ² = (n+1)/n depends only on n = dim(S⁶) = 6 and is structurally independent
+of the S⁶ Dirac spectrum {±(n+3/2)}: the closest rational-power approximation (3/2)^{1/5}
+≈ 1.0845 deviates 0.4% from the exact √(7/6) = 1.0801. The two geometric invariants
+(moduli gap κ and Dirac ground-state gap 3/2) arise from different mathematical inputs.
+
 The inputs to the radius prediction are:
 - λ = 1/3 (geometric ratio dim(S³)/dim(S³×S⁶) = 3/9, see G61; this is a phenomenological input)
 - ρ₆* = 1.090 (UV-selection fixed point from Hadamard zeta regularization, G54-D/G57)
@@ -709,6 +723,15 @@ The following questions are left open and represent directions for future work:
    introduce a new strong CP problem. Whether this extends to a complete resolution of
    θ_QCD = 0 would require a global Pontryagin density analysis on the full S³×S⁶ geometry,
    including contributions from the S⁶ sector and any non-perturbative effects — this is
+   left for future work.
+
+9. **λ as topological ratio [HYPOTHESIS].** The free coupling satisfies
+   λ = N_gen / dim(S³×S⁶) = 3/9 = **1/3** if λ is identified with the ratio of the
+   generation count to the total internal dimension. Unlike geometric derivations from
+   the radii ρ₃, ρ₆ (which are forbidden by the Buckingham Pi obstruction of §6, since
+   they would produce exp(−λ/ρ₆²) = const), a topological identification of this kind
+   does not require λ to be expressible as c·ρ₃ᵃ·ρ₆^{2−a}. Whether any known brane
+   instanton or gaugino condensation mechanism produces exactly λ = 1/3 is unknown and
    left for future work.
 
 ---
