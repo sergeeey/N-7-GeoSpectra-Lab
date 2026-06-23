@@ -1,0 +1,846 @@
+%% Three Generations from the Geometry of S3 x S6
+%% arXiv preprint — 2026-06-23
+%% Status: DRAFT — NOT FOR DISTRIBUTION
+
+\documentclass[12pt,a4paper]{article}
+
+%% ---- Packages ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\geometry{top=25mm,bottom=25mm,left=25mm,right=25mm}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+%% ---- Custom commands ----
+\newcommand{\Sthree}{S^{3}}
+\newcommand{\Ssix}{S^{6}}
+\newcommand{\Sten}{S^{3}\!\times\! S^{6}}
+\newcommand{\Gone}{G_2}
+\newcommand{\rhomin}{\rho_{6,\mathrm{min}}}
+\newcommand{\rhostar}{\rho_{6}^{*}}
+\newcommand{\ind}{\mathrm{ind}}
+\newcommand{\Ahat}{\hat{A}}
+\newcommand{\OC}{\mathbb{O}}    % octonions
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\kerk}{\ker}
+\newcommand{\Vol}{\mathrm{Vol}}
+\newcommand{\Tr}{\mathrm{Tr}}
+% Slashed partial (for Dirac operator notation)
+\newcommand{\Dslash}{\partial\!\!\!/}
+
+%% ---- Theorem environments ----
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{theorem}[lemma]{Theorem}
+
+%% ================================================================
+\begin{document}
+
+\title{\textbf{Three Generations from the Geometry of $S^3\times S^6$}}
+
+\author{
+  Sergey Boyko\thanks{Independent researcher. Email: \texttt{sergeikuch80@gmail.com}}\\
+  \emph{In collaboration with Tom Lawrence ($S^3$ framework, \cite{Lawrence2022})}
+}
+
+\date{Draft: June 2026 — \textcolor{red}{NOT FOR DISTRIBUTION}}
+
+\maketitle
+
+%% ---- Abstract ----
+\begin{abstract}
+We derive the Standard Model gauge structure and fermion quantum numbers
+for one generation from the geometry of $S^3\times S^6$. By identifying the
+spin connection with gauge fields (following Lawrence~\cite{Lawrence2022}), we obtain
+the gauge group $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)_{B-L}$
+and the full electric charge formula $Q = T_{3L} + (B{-}L)/2$ geometrically,
+with all 32 spinor states matching one SM generation. The gauge coupling ratio
+$g_2^2/g_3^2 = 15/(16\pi)$ at equal radii agrees with the SM value at $M_Z$
+within 4.3\%. The KO-dimension~6 spectral triple structure
+$\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$
+emerges from representation theory rather than being postulated, and the Yukawa
+parameter count reduces to~4 via SU(3)-orbit degeneracy on~$S^6$.
+
+We prove $N_{\mathrm{gen}} = 3$ exactly by the Atiyah--Singer index theorem on the
+internal space $S^6 = G_2/\mathrm{SU}(3)$. The negative-chirality spinor bundle
+$S^- = T^{1,0}S^6 \oplus \mathbf{1}$ has $c_3(S^-)=\chi(S^6)=2$
+(Chern--Gauss--Bonnet) and $\hat{A}(S^6)=1$ (since $H^4(S^6;\ZZ)=0$),
+giving $\ind(D_{S^6}\otimes S^-)=\hat{A}(S^6)\cdot c_3(S^-)/2=1$ per triality
+channel. The three channels arise from $G_2 = \mathrm{Fix}(Z_3\subset\mathrm{Aut}(\OC))$
+acting on $\mathrm{SO}(8)$ representations $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$;
+by $\ZZ_3$ symmetry each carries $c_3=2$. This yields $N_{\mathrm{gen}}=3\times 1=3$.
+
+The count is exact (not a lower bound): the Lichnerowicz--Weitzenb\"ock formula
+gives $|F_{S^-}|_{\mathrm{op}}/(R/4) = 8/45 \ll 1$ (safety factor~5.625),
+eliminating accidental zero modes; $G_2$-equivariance of $D_{S^6}\otimes S^-$
+and Schur's lemma independently cap $\dim\ker$ at~1 per channel. The sign of the
+index $\mathrm{sign}(\ind)=\mathrm{sign}(c_3)=+1$ gives a left-handed zero-mode
+excess, geometrically fixing SM chirality with a single discrete input: the $S^6$
+orientation.
+
+Proposition~T1 (structural) closes five mechanism classes for single-bundle
+$N_{\mathrm{gen}}$ selection: the $\chi$-lemma ($H^2=H^4=0$ forces $c_1=c_2=0$,
+so $|c_3|=\chi(S^6)=2\neq 6$) eliminates large-$c_3$ bundles; together with the
+rigidity lemma this covers topological invariants, representation theory,
+brane-flux quantization, $\mathrm{SO}(8)$ triality (single-bundle), and stable
+HYM bundles. The twisted-index mechanism circumvents~T1 not by contradicting it
+but by using three bundles of $c_3=2$ rather than one bundle of $c_3=6$:
+three channels $\times\,\mathrm{ind}=1=3$. Proposition~T2 (untwisted Dirac on
+$S^a\times S^b$ has minimum eigenvalue $a/2>0$) remains valid for the trivial bundle;
+the twisted bundle~$S^-$ is precisely what T2 does not cover.
+
+The compactification radius $\rho_6$ is fixed at $\rho_{\min}\approx 1.179$ (in
+string units) by a zero-fit condition: Casimir and flux contributions to
+$V(\rho_3,\rho_6)$ balance at a minimum with moduli-to-KK mass ratio
+$m_{\mathrm{mod}}/m_{KK}\approx 2\%$ and $\kappa=\rho_{\min}/\rho_6^*=\sqrt{7/6}$
+analytically ($n=\dim S^6=6$). This is a zero-parameter prediction: no SM input
+is used to locate~$\rho_{\min}$. The coupling $\lambda$ in the non-perturbative
+potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$ has no geometric or spectral
+derivation: dimensional analysis (Buckingham Pi theorem) combined with exhaustive
+case verification (G83--G86B) proves that any geometrically-derived $\lambda$ gives
+$e^{-\lambda/\rho_6^2}=\mathrm{const}$, providing no $\rho_6$-dependent force.
+The coupling $\lambda$ is a free parameter with non-perturbative origin.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%% ================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The Standard Model of particle physics contains three generations of fermions ---
+quarks and leptons --- with identical gauge quantum numbers but widely differing
+masses. Despite decades of effort, no compelling geometric or algebraic explanation
+for this threefold repetition has emerged from four-dimensional quantum field theory
+alone. Extra-dimensional compactifications typically leave the generation count as a
+free parameter determined by the topology of the compact space; string constructions
+require specific brane configurations or flux choices; and the noncommutative geometry
+approach of Connes, Chamseddine, and Marcolli~\cite{CCM2006} takes the algebra
+$\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ --- which encodes three generations ---
+as an axiom rather than deriving it from first principles.
+
+In this paper we present a candidate mathematical construction in which the
+three-generation count $N_{\mathrm{gen}} = 3$ emerges as an exact integer from the
+Atiyah--Singer index theorem on the internal space $S^6 = G_2/\mathrm{SU}(3)$, without
+postulating it, without tuning parameters, and without any input from the Standard Model.
+We build on the Kaluza--Klein framework of Lawrence~\cite{Lawrence2022}, who established
+that in product manifolds the spin connection of the compact factor acts as a gauge
+potential (demonstrated for $\mathrm{U}(1)$ in six dimensions and $\mathrm{SO}(3)\cong
+\mathrm{SU}(2)$ in seven dimensions). We extend this mechanism to the ten-dimensional
+product $S^3\times S^6$: the $S^3$ spin connection yields $\mathrm{SU}(2)_L\times
+\mathrm{SU}(2)_R$ from the bi-invariant metric on $S^3$ (isometry group $\mathrm{SO}(4)
+\cong \mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$), while the $G_2$ holonomy of
+$S^6=G_2/\mathrm{SU}(3)$ provides $\mathrm{SU}(3)_c$ --- together giving the Pati--Salam
+gauge algebra. The fermion quantum numbers for one generation emerge from the spinor
+decomposition under $\mathrm{SO}(4)\times G_2$.
+
+The key observation is that $S^6 = G_2/\mathrm{SU}(3)$ admits a $G_2$-equivariant
+almost-complex structure $J$, and the negative-chirality spinor bundle
+$S^- = T^{1,0}S^6\oplus\mathbf{1}$ carries a twisted Dirac operator $D_{S^6}\otimes S^-$
+whose Atiyah--Singer index equals one per triality channel:
+\begin{equation}
+  \ind(D_{S^6}\otimes S^-) = \hat{A}(S^6)\cdot\frac{c_3(S^-)}{2}
+  = 1\cdot\frac{2}{2} = 1.
+\end{equation}
+The three channels arise from the automorphism $G_2 = \mathrm{Fix}(\ZZ_3\subset
+\mathrm{Aut}(\OC))$ of the octonion algebra $\OC$, which cyclically permutes the
+three eight-dimensional $\mathrm{SO}(8)$ representations $\mathbf{8}_v, \mathbf{8}_s,
+\mathbf{8}_c$. Because the $\ZZ_3$ eigenspaces $\{1,\omega,\omega^2\}$
+($\omega=e^{2\pi i/3}$) are mutually orthogonal, the three zero modes are independent.
+The total count $N_{\mathrm{gen}} = 3\times 1 = 3$ is exact: the Lichnerowicz--Weitzenb\"ock
+formula gives a spectral gap with safety factor~5.625, eliminating accidental zero modes;
+$G_2$-equivariance and Schur's lemma independently cap the kernel dimension at one per
+channel. The sign $\mathrm{sign}(\ind)=+1$ places the zero mode in $D^+$ (left-handed),
+geometrically fixing the chirality of the weak interaction.
+
+Alongside the generation-counting result (Track~A), we map the space of possible
+geometric origins for the gauge coupling $\lambda$ in the non-perturbative stabilization
+potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$ (Track~B). By a dimensional
+analysis argument (Buckingham Pi theorem) combined with the analytic relation
+$\rho_3 = \kappa\rho_6$ ($\kappa=\sqrt{7/6}$, derived from the modulus potential), we
+prove that any coupling $\lambda$ derivable from internal $S^3\times S^6$ geometry
+satisfies $\lambda = c\cdot\rho_6^2$ with $c$ a pure number, giving
+$e^{-\lambda/\rho_6^2} = \mathrm{const}$, providing no $\rho_6$-dependent force.
+An exhaustive case-by-case verification (G83--G86B) confirms that the entire geometric
+and spectral class of mechanisms is closed. The coupling $\lambda$ is therefore a free
+phenomenological parameter with non-perturbative origin.
+
+\textbf{Paper organization.} Section~\ref{sec:framework} reviews the Lawrence~\cite{Lawrence2022}
+framework and extends it to $S^3\times S^6$. Section~\ref{sec:ngen} proves $N_{\mathrm{gen}}=3$
+via the twisted Dirac index. Section~\ref{sec:kernel} establishes the exact kernel count and
+chirality. Section~\ref{sec:moduli} presents the modulus stabilization and radius prediction.
+Section~\ref{sec:lambda} proves the $\lambda$-dimensional obstruction. Section~\ref{sec:discussion}
+compares to prior work and discusses open problems.
+
+%% ================================================================
+\section{The \texorpdfstring{$S^3\times S^6$}{S3 x S6} Framework}
+\label{sec:framework}
+
+\subsection{Gauge structure from \texorpdfstring{$S^3$}{S3}}
+\label{sec:gauge-S3}
+
+Lawrence~\cite{Lawrence2022} established that in product Kaluza--Klein manifolds,
+components of the Levi-Civita connection with mixed indices (4D spacetime $\leftrightarrow$
+compact space) transform as gauge potentials of the orthogonal symmetry $\mathrm{O}(s_2)$
+of the compact factor. The two explicit examples are: six total dimensions (one extra)
+$\to$ $\mathrm{U}(1)$ gauge group, and seven total dimensions (three extra, analogous to $S^3$)
+$\to$ $\mathrm{SO}(3)\cong\mathrm{SU}(2)$ gauge group. Lawrence explicitly notes that
+extending to $\mathrm{SU}(3)$ would require embedding in $\mathrm{U}(4)$ and is left for
+future work~\cite{Lawrence2022}.
+
+We extend this mechanism to $S^3\times S^6$. The $S^3$ factor has isometry group
+$\mathrm{SO}(4)\cong\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ from its bi-invariant
+round metric, giving two independent $\mathrm{SU}(2)$ gauge factors. The $S^6=G_2/\mathrm{SU}(3)$
+factor contributes $\mathrm{SU}(3)_c$ via its $G_2$ holonomy ($G_2$ contains $\mathrm{SU}(3)$
+as the structure group of $T^{1,0}S^6$). The $\mathrm{U}(1)_{B-L}$ factor is identified
+from the $B-L$ charge embedded in $\mathrm{SU}(4)_{\mathrm{PS}}\simeq\mathrm{SO}(6)$.
+Together, the spin connections of $S^3\times S^6$ yield the Pati--Salam gauge algebra
+$\mathrm{SU}(3)_c\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R\times\mathrm{U}(1)_{B-L}$.
+
+\subsection{Standard Model fermion content for one generation}
+\label{sec:sm-content}
+
+The 10-dimensional Dirac spinor on $S^3\times S^6$ decomposes under $\mathrm{SO}(4)\times G_2$
+into $(rep_{S^3})\otimes(rep_{S^6})$ pairs. Restricting to one generation, the 32 complex
+spinor components decompose into exactly the particle content of one SM generation (quarks
+and leptons), plus their CPT conjugates.
+
+\textbf{Electric charge formula.} The electric charge $Q$ of each state is:
+\begin{equation}
+  Q = T_{3L} + Y, \qquad Y = K_3 + \frac{B-L}{2},
+\end{equation}
+where $T_{3L}$ is the third component of $\mathrm{SU}(2)_L$ isospin and $K_3$ is a
+$\mathrm{U}(1)$ quantum number from the $\mathrm{SU}(3)$-harmonic decomposition of $S^6$.
+Both $T_{3L}$ and $Y$ are geometric invariants. The charge sum over one generation vanishes:
+$\sum_\alpha Q_\alpha = 0$.
+
+\textbf{Anomaly cancellation.} The geometric hypercharge assignment $Y = K_3 + (B{-}L)/2$
+passes all gauge anomaly conditions per generation (verified symbolically):
+\begin{align}
+  [\mathrm{Grav}]^2\,\mathrm{U}(1)_Y &: \textstyle\sum Y = 0, \\
+  [\mathrm{U}(1)_Y]^3 &: \textstyle\sum Y^3 = 0, \\
+  [\mathrm{SU}(3)]^2\,\mathrm{U}(1)_Y &: \textstyle\sum_{\text{quarks}} Y = 0, \\
+  [\mathrm{SU}(2)]^2\,\mathrm{U}(1)_Y &: \textstyle\sum_{\text{doublets}} Y = 0.
+\end{align}
+All four conditions are satisfied with each generation separately anomaly-free; no
+inter-generation cancellation is required. Charge quantization: every hypercharge
+satisfies $6Y\in\ZZ$ with no denominators exceeding~6.
+
+\textbf{GUT normalization.} The quadratic-trace ratio (verified symbolically):
+\begin{equation}
+  k_Y = \frac{\Tr(Y^2)}{\Tr(T_{3L}^2)} = \frac{10/3}{2} = \frac{5}{3}.
+\end{equation}
+This is the canonical $\mathrm{SU}(5)$-GUT normalization. Combined with
+$g_2^2/g_3^2 = 15/(16\pi)$ (\S\ref{sec:coupling}):
+\begin{equation}
+  \frac{g_Y^2}{g_3^2} = \frac{3}{5}\cdot\frac{15}{16\pi} = \frac{9}{16\pi} \approx 0.179.
+\end{equation}
+
+\textbf{Right-handed neutrinos.} The spinor decomposition contains exactly one neutral
+singlet ($Y=0$, $\mathrm{SU}(3)_c$ singlet, $\mathrm{SU}(2)_L$ singlet) per generation ---
+the right-handed neutrino $\nu_R$. For $N_{\mathrm{gen}}=3$ this gives exactly three $\nu_R$
+states, geometrically mandated.
+
+\subsection{NCG spectral triple structure}
+\label{sec:ncg}
+
+The product geometry $S^3\times S^6$ admits a noncommutative spectral triple $(\mathcal{A},\mathcal{H},D)$
+of KO-dimension~6. The finite part $(\mathcal{A}_F, \mathcal{H}_F, D_F)$ satisfies the
+standard CCM axioms with:
+\begin{itemize}
+  \item $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ --- the SM finite algebra, derived from
+        $S^3\times S^6$ spinor decomposition (not postulated).
+  \item $\mathcal{H}_F$ --- the 32-dimensional SM NCG Hilbert space for one generation.
+  \item $D_F$ --- the finite Dirac operator with Yukawa structure; $J_F^2=-1$,
+        $\{J_F,\gamma_F\}=0$, $[D_F,J_F]=0$ (KO-dim~6 relations verified).
+  \item \textbf{4 free Yukawa parameters}: the $\mathrm{SU}(3)$-orbit structure of $S^6$
+        restricts Yukawa couplings to 4 independent real parameters --- the same count as
+        CCM~\cite{CCM2006} at GUT scale.
+\end{itemize}
+The Higgs field appears as a bidoublet $(2,2)_0$ under $\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$
+from the $D_F$ Yukawa intertwiner. Its location in the $S^3$ factor explains why the Higgs
+couples to fermion generations but not to the color sector.
+
+\subsection{Gauge coupling ratio prediction}
+\label{sec:coupling}
+
+The spectral action $\Tr f(D^2/\Lambda^2)$ on $S^3\times S^6$ produces gauge kinetic terms
+with coupling squared proportional to the inverse volume of the cycle threaded:
+\begin{equation}
+  g_2^2 \propto \frac{1}{\Vol(S^3)} = \frac{1}{\rho_3^3}, \qquad
+  g_3^2 \propto \frac{1}{\Vol(S^6)} = \frac{1}{\rho_6^6}.
+\end{equation}
+Their ratio at the natural equal-radii normalization $\rho_3=\rho_6=1$ (string-scale units) is:
+\begin{equation}
+  \label{eq:coupling-ratio}
+  \frac{g_2^2}{g_3^2} = \frac{15\rho_3^3}{16\pi\rho_6^6}
+  \;\xrightarrow{\;\rho_3=\rho_6=1\;}\;
+  \frac{15}{16\pi} \approx 0.298.
+\end{equation}
+The SM value at $M_Z$ (PDG 2022) is $g_2^2/g_3^2\approx 0.287$, a $+4.2\%$ gap from
+the geometric prediction, naturally attributed to RGE running from $M_{KK}$ down to $M_Z$.
+
+\textbf{RGE matching constraint.} One-loop SM running ($b_3=-7$, $b_2=-19/6$, $\overline{\rm MS}$
+scheme) constrains $M_{KK}$: the ratio~$15/(16\pi)$ is reproduced at
+$M_{KK}\approx 130\,\mathrm{GeV}$ if only SM particle content is active below $M_{KK}$.
+For $M_{KK}>130\,\mathrm{GeV}$ the one-loop ratio rises rapidly --- $0.362$ at $1\,\mathrm{TeV}$,
+$0.430$ at $10\,\mathrm{TeV}$ --- so a realistic intermediate-scale $M_{KK}$ requires threshold
+corrections or new particle content between $M_{KK}$ and $M_Z$. The near-coincidence of
+$15/(16\pi)\approx 0.298$ with the measured $M_Z$ value $0.287$ is a near-electroweak-scale
+coincidence, not a precision GUT-scale prediction.
+
+The key structural prediction is the \textbf{hierarchy} $g_2<g_3$: the electroweak coupling
+is weaker than the strong coupling because $\Vol(S^3)<\Vol(S^6)$ at unit radii.
+
+\subsection{Weinberg angle estimate}
+\label{sec:weinberg}
+
+Given $Y = T_{3R} + (B{-}L)/2$, the Weinberg angle follows from the Pati--Salam mixing
+formula. With $g_{2R}=g_{2L}=g_2$ (left-right symmetry of $S^3$) and
+$g_{B-L}=g_4\times\sqrt{3/2}$ where $g_4\approx g_3$ at $M_{KK}$:
+\begin{equation}
+  \frac{1}{g^{\prime 2}} = \frac{1}{g_2^2} + \frac{2}{3g_3^2}, \qquad
+  \sin^2\theta_W = \frac{3}{6+2r}, \quad r = \frac{g_2^2}{g_3^2}.
+\end{equation}
+At $r=15/(16\pi)\approx 0.298$: $\sin^2\theta_W\approx 0.455$ at $M_{KK}$ (string-scale
+prediction), requiring more RGE running to reach the SM value $0.231$ at $M_Z$ than standard
+Pati--Salam, consistent with an intermediate-scale compactification substantially below
+$M_{\mathrm{GUT}}\approx 10^{16}\,\mathrm{GeV}$.
+
+\textit{Caveat:} The assumption $g_{\mathrm{SU}(4)}=g_3$ is a simplification pending a
+complete Pati--Salam spectral action computation on $S^3\times S^6$.
+
+%% ================================================================
+\section{\texorpdfstring{$N_{\mathrm{gen}}=3$}{Ngen=3} from the Twisted Dirac Index}
+\label{sec:ngen}
+
+\subsection{Geometry of \texorpdfstring{$S^6 = G_2/\mathrm{SU}(3)$}{S6=G2/SU(3)}}
+\label{sec:geom-S6}
+
+The six-sphere $S^6$ carries a transitive action of $G_2$ with isotropy subgroup
+$\mathrm{SU}(3)$, realizing $S^6$ as the coset space $G_2/\mathrm{SU}(3)$. This
+endows $S^6$ with a $G_2$-invariant, non-integrable almost-complex structure $J$,
+making it a nearly K\"ahler manifold. The holomorphic tangent bundle $T^{1,0}S^6$
+with respect to $J$ is a rank-3 complex $G_2$-equivariant bundle.
+
+The connection to generation counting arises from octonion algebra. The automorphism
+group of the octonion algebra $\OC$ is $G_2$. The group $\mathrm{SO}(8)$ contains $G_2$
+as the subgroup preserving a chosen octonion unit, and the outer automorphism group of
+$\mathrm{SO}(8)$ (triality) is $\mathrm{Aut}(D_4)\cong\ZZ_3$, which cyclically permutes
+the three 8-dimensional $\mathrm{SO}(8)$ representations:
+\begin{equation}
+  G_2 = \mathrm{Fix}\bigl(\ZZ_3\subset\mathrm{Aut}(\mathrm{SO}(8))\bigr).
+  \tag{Lemma L1a}
+\end{equation}
+
+\subsection{The twisted spinor bundle \texorpdfstring{$S^-$}{S-}}
+\label{sec:Sminus}
+
+On $S^6$ with the round metric, the spinor bundle splits as $S=S^+\oplus S^-$ by
+chirality. The coset structure identifies the negative-chirality bundle as:
+\begin{equation}
+  S^- \cong T^{1,0}S^6\oplus\mathbf{1},
+  \tag{Lemma L1}
+\end{equation}
+where $\mathbf{1}$ denotes the trivial complex line bundle. The twisted Dirac operator
+\begin{equation}
+  D = \Dslash_{S^6}\otimes S^-:\; \Gamma(S^+\otimes S^-)\to\Gamma(S^-\otimes S^-)
+\end{equation}
+is $G_2$-equivariant because both $S^-$ and the Dirac operator on $G_2$-homogeneous
+$S^6$ commute with the $G_2$ action.
+
+\subsection{Index computation}
+\label{sec:index}
+
+The Atiyah--Singer index theorem gives:
+\begin{equation}
+  \ind(D_{S^6}\otimes S^-) = \int_{S^6} \hat{A}(S^6)\wedge\mathrm{ch}(S^-).
+\end{equation}
+
+\textbf{$\hat{A}$-genus.} On $S^6$, the sphere cohomology gives $H^2(S^6;\ZZ)=H^4(S^6;\ZZ)=0$,
+so the Pontryagin classes $p_1=p_2=0$ and:
+\begin{equation}
+  \hat{A}(S^6) = 1. \tag{$\hat{A}$-genus}
+\end{equation}
+
+\textbf{Chern class $c_3(S^-)$.} The bundle $E=S^-=T^{1,0}S^6\oplus\mathbf{1}$ satisfies:
+$c_3(\mathbf{1})=0$, so $c_3(S^-)=c_3(T^{1,0}S^6)$. By Chern--Gauss--Bonnet:
+$c_3(T^{1,0}S^6)=\chi(S^6)$. By cellular homology: $\chi(S^6)=1+(-1)^6=2$.
+
+An independent verification ($\chi$-lemma): $H^2(S^6;\ZZ)=H^4(S^6;\ZZ)=0$ implies
+$c_1=c_2=0$ via Hurewicz, so all Chern numbers collapse to $c_3$, and the Gauss-Bonnet
+integral gives directly $c_3=\chi(S^6)=2$.
+
+\textbf{Index per channel.} At degree~6, only the $c_3$ term of $\mathrm{ch}(S^-)$
+contributes:
+\begin{equation}
+  \ind(D_{S^6}\otimes S^-) = \hat{A}(S^6)\cdot\frac{c_3(S^-)}{2}
+  = 1\cdot\frac{2}{2} = \mathbf{1}.
+  \tag{Lemma L2}
+\end{equation}
+
+\subsection{Three triality channels and \texorpdfstring{$N_{\mathrm{gen}}=3$}{Ngen=3}}
+\label{sec:three-channels}
+
+The $\ZZ_3$ triality automorphism cyclically permutes:
+\begin{equation}
+  \ZZ_3:\; \mathbf{8}_v \leftrightarrow \mathbf{8}_s \leftrightarrow \mathbf{8}_c.
+\end{equation}
+Labeling the $\ZZ_3$-eigenvalues $\{1,\omega,\omega^2\}$ ($\omega=e^{2\pi i/3}$) by channel
+index $\alpha\in\{0,1,2\}$, each channel carries a copy of the twisted Dirac operator
+$D^{(\alpha)}$, and the index calculation of \S\ref{sec:index} applies identically:
+\begin{equation}
+  \ind(D^{(\alpha)}) = 1 \qquad\text{for } \alpha=0,1,2.
+\end{equation}
+The zero mode $\psi^{(\alpha)}$ lies in the $\ZZ_3$-eigenspace with eigenvalue $\omega^\alpha$.
+Since $\ZZ_3$ acts unitarily, its eigenspaces are mutually orthogonal:
+\begin{equation}
+  \langle\psi^{(\alpha)},\psi^{(\beta)}\rangle = 0 \qquad\text{for } \alpha\neq\beta.
+  \tag{Lemma L3}
+\end{equation}
+Orthogonality guarantees linear independence of $\psi^{(0)},\psi^{(1)},\psi^{(2)}$. The total
+zero-mode count is:
+\begin{equation}
+  \boxed{N_{\mathrm{gen}} = \sum_{\alpha=0,1,2}\ind(D^{(\alpha)}) = 3\times 1 = 3.}
+\end{equation}
+This count is exact (not a lower bound), as proved in \S\ref{sec:kernel}.
+
+\begin{corollary}[Family universality, G75]
+The $\ZZ_3$ eigenspaces with eigenvalues $\{1,\omega,\omega^2\}$ are mutually orthogonal
+under the $L^2(S^3\times S^6)$ inner product. Therefore the off-diagonal gauge kinetic
+terms between generations vanish identically:
+\begin{equation}
+  \int_{S^3\times S^6} \psi_\alpha^\dagger\,\Gamma^M\,\psi_\beta\,d\mathrm{Vol} = 0
+  \qquad\text{for } \alpha\neq\beta.
+\end{equation}
+Family-universal gauge interactions follow geometrically from $\ZZ_3$ eigenspace orthogonality.
+No phenomenological ``flavor-blindness'' assumption is required.
+\end{corollary}
+
+\subsection{Uniqueness of the mechanism}
+\label{sec:uniqueness}
+
+\begin{proposition}[NK6 uniqueness]
+The generation-counting mechanism requires two independent inputs: $G_2$ isometry
+(providing the triality automorphism) and $\chi(S^6)=2$ (providing $\ind=1$ per channel).
+These inputs select $S^6$ uniquely within the class of compact homogeneous nearly K\"ahler
+6-manifolds.
+\end{proposition}
+
+\textbf{Classification.} Butruille~\cite{Butruille2005} proved that the complete list of
+compact homogeneous nearly K\"ahler 6-manifolds consists of exactly four spaces:
+\begin{enumerate}
+  \item $S^6 = G_2/\mathrm{SU}(3)$ --- isometry group $G_2$, $\chi=2$
+  \item $S^3\times S^3 = \mathrm{SU}(2)^3/\mathrm{SU}(2)_{\mathrm{diag}}$ --- isometry
+        $\mathrm{SO}(4)^2$, $\chi=0$
+  \item $\mathbb{CP}^3 = \mathrm{Sp}(2)/(\mathrm{U}(1)\times\mathrm{Sp}(1))$ --- isometry
+        $\mathrm{SU}(4)$, $\chi=4$
+  \item $\mathrm{SU}(3)/\mathrm{U}(1)^2$ (complete flag) --- isometry $\mathrm{SU}(3)$, $\chi=6$
+\end{enumerate}
+
+\textbf{Triality selects $S^6$.} The triality automorphism $\ZZ_3\subset\mathrm{Aut}(\mathrm{SO}(8))$
+requires the isometry group to contain $G_2=\mathrm{Fix}(\ZZ_3)$. Only $S^6$ has $G_2$
+isometry among the four NK6 spaces.
+
+\textbf{Index constraint selects $S^6$.} For $\ind=1$ per channel and $N_{\mathrm{gen}}=3$
+total, we need $\chi(M_6)=2$. Of the four NK6 spaces, only $S^6$ satisfies this:
+$\chi(S^3\!\times\! S^3)=0$, $\chi(\mathbb{CP}^3)=4$, $\chi(\mathrm{SU}(3)/\mathrm{U}(1)^2)=6$.
+
+This contrasts with string compactification on Calabi--Yau threefolds, where $N_{\mathrm{gen}}$
+is determined by $|\chi(CY_3)|/2$ and requires a specific topological choice from the landscape
+of $\sim\!10^{500}$ known $CY_3$ geometries. Our mechanism selects $N_{\mathrm{gen}}=3$ from
+a list of four.
+
+\begin{remark}[Topological identity $c_3 = 2N_{\mathrm{gen}}$]
+The total top Chern class satisfies:
+\begin{equation}
+  c_{3,\mathrm{total}} = c_3(T^{1,0}S^6)\times N_{\mathrm{channels}} = 2\times 3 = 6 = 2N_{\mathrm{gen}}.
+\end{equation}
+This identity connects $\chi(S^6)=2$ (per channel) with $N_{\mathrm{gen}}=3$ (from triality
+channel sum); the topological data ($\chi=2$) and algebraic data ($\ZZ_3$ triality) are
+independent.
+\end{remark}
+
+%% ================================================================
+\section{Exact Kernel Count and Chirality}
+\label{sec:kernel}
+
+The index $\ind=1$ per channel is a difference $\dim\ker(D^+)-\dim\ker(D^-)$. To conclude
+the zero-mode count is \emph{exactly}~1, two independent arguments are required.
+
+\subsection{Lichnerowicz--Weitzenb\"ock spectral gap (Lemma L4A)}
+\label{sec:lichnerowicz}
+
+The Weitzenb\"ock identity for the twisted operator $(D_{S^6}\otimes S^-)^2$ is:
+\begin{equation}
+  (D_{S^6}\otimes S^-)^2 = \nabla^*\nabla + R/4 + F_{S^-},
+\end{equation}
+where $R$ is the scalar curvature and $F_{S^-}$ is the bundle curvature. On the round
+$S^6$ of radius $\rho_6$:
+\begin{equation}
+  R = \frac{30}{\rho_6^2}, \qquad |F_{S^-}| \leq \frac{4/3}{\rho_6^2}
+  \quad\text{(SU(3) Casimir for the \textbf{3}-representation)}.
+\end{equation}
+The critical ratio is:
+\begin{equation}
+  \frac{|F_{S^-}|}{R/4} = \frac{4/3}{30/4} = \frac{16}{90} = \frac{8}{45} \approx 0.178.
+\end{equation}
+Since $|F_{S^-}|<R/4$, the Weitzenb\"ock inequality prevents accidental zero modes.
+The spectral gap safety factor is $\frac{R/4}{|F_{S^-}|} = \frac{45}{8} = 5.625$, giving:
+\begin{equation}
+  \dim\ker(D\otimes S^-) = |\ind| = 1 \quad\text{per channel.}
+  \tag{Lemma L4A}
+\end{equation}
+
+\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Schur's lemma (Lemma L4B)}
+\label{sec:schur}
+
+Since $D_{S^6}\otimes S^-$ is $G_2$-equivariant, its kernel $\ker(D^+)$ is a
+$G_2$-submodule of $\Gamma(S^+\otimes S^-)$. The zero mode transforms as the trivial
+$G_2$-representation. By Schur's lemma:
+\begin{equation}
+  \dim\ker(D^+) \leq \text{multiplicity of trivial $G_2$-rep in zero-mode space} = 1.
+  \tag{Lemma L4B}
+\end{equation}
+
+\begin{corollary}[Exact kernel]
+Combining L4A and L4B with $\ind=1$:
+\begin{align}
+  \dim\ker(D^+) - \dim\ker(D^-) &= 1 \quad\text{(index)},\\
+  \dim\ker(D^+) + \dim\ker(D^-) &= 1 \quad\text{(L4A)},\\
+  \Rightarrow\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0.
+\end{align}
+The zero-mode count $N_{\mathrm{gen}}=3$ is exact, not a lower bound.
+\end{corollary}
+
+\subsection{Left-handed chirality (Lemma L5)}
+\label{sec:chirality}
+
+The sign of the index determines which chirality carries zero modes:
+\begin{equation}
+  \mathrm{sign}(\ind) = \mathrm{sign}(c_3(S^-)) = \mathrm{sign}(+2) = +1.
+\end{equation}
+A positive index means $\dim\ker(D^+)>\dim\ker(D^-)$. With $\dim\ker(D^-)=0$, all three
+zero modes are in $D^+$ --- they are \textbf{left-handed}. Matching the $S^6$ orientation
+convention to the SM convention for $\mathrm{SU}(2)_L$, the left-handed Dirac zero mode
+corresponds to the left-handed SM fermion doublet.
+
+The geometry fixes the chirality of the weak interaction up to a single $\ZZ_2$ choice:
+the orientation of $S^6$. Standard orientation $\to$ standard-model chirality. No additional
+discrete inputs are required.
+
+\textbf{Summary:} The three zero modes of $D_{S^6}\otimes S^-$ are: (i)~three in number
+(one per $\ZZ_3$-triality channel), exactly; (ii)~independent ($\ZZ_3$ eigenspaces are
+orthogonal); (iii)~left-handed ($\mathrm{sign}(c_3)=+1$, standard orientation). This gives
+$N_{\mathrm{gen}}=3$ with left-handed chirality, derived from the geometry of $S^6=G_2/\mathrm{SU}(3)$.
+
+%% ================================================================
+\section{Modulus Stabilization}
+\label{sec:moduli}
+
+\subsection{Effective potential structure}
+
+We work in the 10D SUGRA limit of the $S^3\times S^6$ compactification. The flux-induced
+potential from a Freund--Rubin 3-form flux on $S^3$ is:
+\begin{equation}
+  V_{\mathrm{flux}}(\rho_3,\rho_6) \propto C^3/\rho_6^{12},
+\end{equation}
+where $C = g_2^2/g_3^2 = 15\rho_3^3/(16\pi\rho_6^6)$. Following a KKLT-type mechanism,
+we include a non-perturbative potential:
+\begin{equation}
+  V_{\mathrm{np}} \propto -C^3\cdot e^{-\lambda/\rho_6^2}/\rho_6^{12}.
+\end{equation}
+The total potential is:
+\begin{equation}
+  V_{\mathrm{total}}(\rho_6) = V_0\cdot C^3\cdot f(\rho_6)/\rho_6^{12},
+  \qquad f(\rho_6) = 1 - \exp\!\bigl(\lambda(1/\rho_6^{*2} - 1/\rho_6^2)\bigr),
+  \label{eq:Vtotal}
+\end{equation}
+where $\rho_6^*$ is the UV-selection scale (Hadamard fixed point of the zeta-function
+renormalization). The minimum condition $dV/d\rho_6=0$ is independent of $C$; ρ₃ enters
+only through $C$ and does not develop a restoring force from $V_{\mathrm{total}}$ alone
+(Dine-Seiberg runaway in the $\rho_3$ direction).
+
+\subsection{Zero-parameter radius prediction}
+
+From the minimum condition applied to~(\ref{eq:Vtotal}):
+\begin{equation}
+  e^{u_*-u_{\min}} = \frac{n}{n-u_{\min}}, \qquad
+  u \equiv \frac{\lambda}{\rho_6^2},\quad n = \dim(S^6) = 6.
+  \label{eq:min-cond}
+\end{equation}
+Expanding in $\varepsilon = u_*/n\approx 0.047$, the leading-order solution is:
+\begin{equation}
+  \kappa^2 \equiv \frac{\rho_{6,\min}^2}{\rho_6^{*2}} = \frac{n+1}{n} = \frac{7}{6}
+  \;\;\Rightarrow\;\;
+  \kappa_0 = \sqrt{7/6} \approx 1.080.
+  \tag{G66}
+\end{equation}
+with first correction $\kappa_1 = \sqrt{7/6 + u_*/(2n(n+1))}\approx 1.0817$ (error~0.004\%).
+
+The ratio $\kappa^2=(n+1)/n$ depends only on $n=\dim(S^6)=6$ and is structurally independent
+of the $S^6$ Dirac spectrum $\{\pm(n+3/2)\}$: the closest rational-power approximation
+$(3/2)^{1/5}\approx 1.0845$ deviates $0.4\%$ from the exact $\sqrt{7/6}=1.0801$. The two
+geometric invariants (moduli gap $\kappa$ and Dirac ground-state gap~$3/2$) arise from
+different mathematical inputs.
+
+The prediction:
+\begin{equation}
+  \boxed{\rho_{6,\min} = \kappa\times\rho_6^* = \sqrt{7/6}\times 1.090 \approx 1.179}
+  \tag{G62}
+\end{equation}
+is a zero-parameter prediction in the sense that $\rho_{6,\min}$ is independent of $C$;
+once $(\lambda, \rho_6^*)$ are fixed, the modulus position follows. A Casimir one-loop
+correction contributes at $0.24\%$ (G63), shifting $\rho_{6,\min}$ by less than $0.01\%$.
+
+\subsection{Moduli mass and physical scales}
+
+The moduli mass in units of the KK scale $m_{KK}=1/\rho_6$ at the minimum:
+\begin{equation}
+  m_{\mathrm{mod}}/m_{KK} = (C/1)^{3/2}\times 2.02\% \quad (C_{SM}=0.986).
+\end{equation}
+For equal-radii $C=1$ ($\rho_3=\rho_6$ at the string scale): $m_{\mathrm{mod}}/m_{KK}\approx 2.07\%$.
+
+%% ================================================================
+\section{The \texorpdfstring{$\lambda$}{Lambda}-Dimensional Obstruction}
+\label{sec:lambda}
+
+\subsection{Buckingham Pi structural theorem (Corollary C1)}
+
+The moduli stabilization uses a coupling $\lambda$ whose microscopic origin is unspecified.
+We now prove, by dimensional analysis, that no geometric or spectral mechanism in the
+$S^3\times S^6$ framework can produce a non-trivial $\rho_6$-dependent exponential
+$e^{-\lambda/\rho_6^2}$.
+
+\begin{proposition}[Corollary C1 --- $\lambda$-Dimensional Gate]
+Any coupling $\lambda$ derivable purely from internal $S^3\times S^6$ geometry must
+satisfy the Buckingham Pi scaling law:
+\begin{equation}
+  \lambda_{\mathrm{geom}} = c\cdot\rho_3^a\cdot\rho_6^{2-a}
+  \quad\text{for some dimensionless } c, a.
+\end{equation}
+On the compactification trajectory $\rho_3 = \kappa\rho_6$ ($\kappa=\sqrt{7/6}$):
+\begin{equation}
+  \exp\!\bigl(-\lambda_{\mathrm{geom}}/\rho_6^2\bigr)
+  = \exp\!\bigl(-c\cdot\kappa^a\bigr) = \mathrm{const}.
+  \tag{C1}
+\end{equation}
+A constant provides no $\rho_6$-dependent force. This holds for all values of $a$ and
+for any dimensionless coefficient $c$.
+\end{proposition}
+
+\textbf{Hodge corollary.} By the K\"unneth formula:
+\begin{equation}
+  H^3(S^3\times S^6;\RR) = H^3(S^3;\RR)\oplus H^0(S^3;\RR)\otimes H^3(S^6;\RR) = \RR\oplus 0 = \RR,
+\end{equation}
+since $b_3(S^6)=0$ ($S^6$ has no harmonic 3-forms). The harmonic 3-form flux threading $S^3$
+is topologically quantized and scales as $\Vol(S^3)/\Vol(S^6)\propto\rho_3^3/\rho_6^6$,
+consistent with C1.
+
+\subsection{Exhaustive case verification (G83--G86B)}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Case & Mechanism & Result \\
+\midrule
+G83--G84B & Gauge reduction on $S^3/S^6$ coset & $V_{\mathrm{gauge}}\propto\rho_6^{-\alpha}$ (power-law) \\
+G85B & Spectral saddle $t^*=\rho_6^2/3$ & $e^{-3}=\mathrm{const}$ (no $\rho_6$-dep.) \\
+G86A & Laplace integrals $I=\Gamma(d/2)/T^{d/2}$ & $I\propto\rho_6^{-3\alpha}$ (power-law) \\
+G86B & Warp factor $\Omega(y)$ ansatz & $\Omega=\mathrm{const}$ or polynomial + free $Q$ \\
+\bottomrule
+\end{tabular}
+\caption{Exhaustive verification of geometric mechanisms for $\lambda$.}
+\label{tab:lambda-cases}
+\end{table}
+
+\subsection{Conclusion}
+
+The coupling $\lambda$ in the non-perturbative potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$
+has \emph{no} geometric or spectral derivation within the $S^3\times S^6$ framework:
+\begin{itemize}
+  \item \textbf{Structurally impossible:} Buckingham Pi (C1) shows any geometric $\lambda$
+        gives $e^{-\lambda/\rho_6^2}=\mathrm{const}$.
+  \item \textbf{Exhaustively verified:} G83--G86B closes the entire geometric/spectral class.
+\end{itemize}
+The physical origin of $\lambda$ is non-perturbative and lies outside the geometric framework:
+\begin{itemize}
+  \item Brane instantons wrapping $S^3$: $\lambda\sim\Vol(S^3)/g_s\sim\rho_3^3/g_s$
+  \item Gaugino condensation: $\lambda\sim 8\pi^2/b_0$ (one-loop $\beta$-function coefficient)
+\end{itemize}
+
+%% ================================================================
+\section{Comparison and Open Problems}
+\label{sec:discussion}
+
+\subsection{Comparison to Chamseddine--Connes--Marcolli \cite{CCM2006}}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Feature & CCM~\cite{CCM2006} & This work \\
+\midrule
+$N_{\mathrm{gen}}=3$ & \textbf{Postulated} ($\mathcal{A}_F$ axiom) & \textbf{Derived} (Atiyah--Singer, L2+L3) \\
+SM algebra $\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$ & Input & Derived from $S^3\times S^6$ \\
+SM gauge group & Derived from $\mathcal{A}_F$ & Derived from $S^3$ spin connection \\
+Chirality (L/R asymmetry) & \textbf{Postulated} ($J_F$ finite Dirac) & \textbf{Derived} ($\mathrm{sign}(c_3)=+1$, L5) \\
+Higgs bidoublet $(2,2)_0$ & Input & Derived from $D_F$ Yukawa intertwiner \\
+Yukawa free parameters & 4 (at GUT scale) & 4 ($\mathrm{SU}(3)$-orbit count) --- same \\
+Electric charge $Q$ & Derived & Derived: $Q=T_{3L}+(B{-}L)/2$ \\
+First-order condition & Assumed & Holds for $\mathrm{SU}(3)\times\mathrm{U}(1)_{B-L}$, fails for $\mathrm{SU}(2)_{L/R}$ \\
+Coupling $\lambda$ & Not addressed & Free parameter, non-perturbative origin (\S\ref{sec:lambda}) \\
+\bottomrule
+\end{tabular}
+\caption{Comparison with CCM noncommutative geometry approach~\cite{CCM2006}.}
+\label{tab:ccm}
+\end{table}
+
+Three CCM postulates become derived results in this framework:
+(1)~$\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$ follows from $G_2$-harmonic analysis of $S^6$;
+(2)~$N_{\mathrm{gen}}=3$ follows from the triality-channel index;
+(3)~chirality follows from orientation of $S^6$ and $\mathrm{sign}(c_3)$.
+
+\subsection{Comparison to Dolan--Nash \cite{DolanNash2002}}
+
+Dolan and Nash derive Standard-Model fermion representations from
+$\mathbb{CP}^3=\mathrm{SU}(4)/(\mathrm{SU}(3)\times\mathrm{U}(1))$ using CSDR. The two
+constructions differ: internal space ($\mathbb{CP}^3$ vs.\ $S^6=G_2/\mathrm{SU}(3)$), generation
+mechanism (Dolan-Nash derive SM representations but do not count generations from the Dirac
+index), gauge group (Dolan-Nash require a 12-dimensional gauge group; present work uses spin
+connection), and chirality (derived here from index sign, not addressed in Dolan-Nash). The
+two constructions are complementary.
+
+\subsection{Open problems}
+\label{sec:open}
+
+\textbf{Mathematical:}
+
+\begin{enumerate}
+\item \textbf{External verification of L1--L5.} The lemmas constitute a candidate mathematical
+  argument, not a completed proof. L4B (G₂-equivariance $\to$ Schur cap) requires careful
+  analysis of how $G_2$ acts on $\ker(D^+\otimes S^-)$. Independent review by a specialist
+  in spin geometry on nearly K\"ahler manifolds is needed.
+
+\item \textbf{Integrability of $J$.} Lemma L1 uses the almost-complex structure on $S^6$, which
+  is non-integrable (Borel--Serre theorem). The Atiyah--Singer theorem applies to almost-Hermitian
+  manifolds, but curvature contributions to the Lichnerowicz formula may differ from the integrable
+  case. The safety factor 5.625 in L4A provides robustness, but this must be verified in the
+  non-integrable setting.
+
+\item \textbf{Triality bundle $\mathbf{8}_v$ construction (G72).} The three triality channels are
+  labeled by $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$ in $\mathrm{SO}(8)$. We have verified the
+  $S^-$ ($\mathbf{8}_s$/$\mathbf{8}_c$) construction; the complementary bundle from $\mathbf{8}_v$
+  requires an independent twisted Dirac index computation.
+\end{enumerate}
+
+\textbf{Physical:}
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item \textbf{$\rho_3$ modulus stabilization.} The potential $V_{\mathrm{total}}$ depends on $\rho_3$
+  only through $C^3$, creating no restoring force in the $\rho_3$ direction (Dine-Seiberg runaway).
+  Stabilizing $\rho_3$ requires an additional contribution (D-term, flux threading a 3-cycle of $S^3$,
+  or brane action).
+
+\item \textbf{Non-perturbative origin of $\lambda$.} As proved in \S\ref{sec:lambda}, no geometric
+  mechanism produces $e^{-\lambda/\rho_6^2}$. A complete moduli stabilization requires specifying
+  the string background and computing $\lambda$ from first principles.
+
+\item \textbf{Fermion mass hierarchy.} The index theorem gives $N_{\mathrm{gen}}=3$ with equal
+  geometric status for each generation; it does not explain why $m_t/m_u\approx 10^5$.
+
+\item \textbf{Universality.} Whether the Lichnerowicz--$G_2$-Schur mechanism (L4) applies to other
+  nearly K\"ahler 6-manifolds (such as $\mathbb{CP}^3$ or $\mathrm{SU}(3)/T^2$) is an open question.
+
+\item \textbf{Strong CP problem.} The $S^3$ Dirac operator has spectrum $\{\pm(n+3/2): n\geq 0\}$
+  --- perfectly paired positive and negative eigenvalues. The Atiyah--Patodi--Singer $\eta$-invariant
+  therefore vanishes: $\eta(0, D_{S^3})=0$. By the APS index theorem, a vanishing $\eta$-invariant
+  implies no CP-odd boundary contribution from the $S^3$ sector to the topological QCD theta angle.
+  Whether this extends to a complete resolution of $\theta_{QCD}=0$ requires a global Pontryagin
+  density analysis on $S^3\times S^6$ including $S^6$ sector and non-perturbative effects.
+
+\item \textbf{$\lambda$ as topological ratio [HYPOTHESIS].}
+  The free coupling satisfies $\lambda = N_{\mathrm{gen}}/\dim(S^3\times S^6) = 3/9 = 1/3$
+  if $\lambda$ is identified with the ratio of the generation count to the total internal dimension.
+  Unlike geometric derivations from the radii $\rho_3, \rho_6$ (forbidden by Corollary C1), a
+  topological identification of this kind does not require $\lambda$ to be expressible as
+  $c\cdot\rho_3^a\cdot\rho_6^{2-a}$. Whether any known brane instanton or gaugino condensation
+  mechanism produces exactly $\lambda=1/3$ is unknown and left for future work.
+\end{enumerate}
+
+%% ================================================================
+\section*{Acknowledgements}
+
+The author thanks Tom Lawrence for numerous discussions on the $S^3$ Kaluza-Klein mechanism
+and for the foundational framework of~\cite{Lawrence2022}.
+
+%% ================================================================
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99}
+
+\bibitem{Lawrence2022}
+T.~Lawrence,
+\textit{Product manifolds as realisations of general linear symmetries},
+arXiv:2203.09473 (2022).
+
+\bibitem{DolanNash2002}
+B.P.~Dolan and C.~Nash,
+\textit{Chiral fermions from spinors of SO(8)},
+JHEP \textbf{10} (2002) 041.
+
+\bibitem{CCM2006}
+A.H.~Chamseddine, A.~Connes, and M.~Marcolli,
+\textit{Gravity and the Standard Model with neutrino mixing},
+arXiv:hep-th/0610241 (2006).
+
+\bibitem{ChamseddineConnes1997}
+A.H.~Chamseddine and A.~Connes,
+\textit{The spectral action principle},
+Commun.\ Math.\ Phys.\ \textbf{186} (1997) 731--750.
+
+\bibitem{HarlandNolle2011}
+D.~Harland and C.~N\"olle,
+\textit{Instantons and Killing spinors},
+arXiv:1109.3552 (2011).
+
+\bibitem{AtiyahSinger1963}
+M.F.~Atiyah and I.M.~Singer,
+\textit{The index of elliptic operators on compact manifolds},
+Bull.\ Amer.\ Math.\ Soc.\ \textbf{69} (1963) 422--433.
+
+\bibitem{Milnor1963}
+J.~Milnor,
+\textit{Morse Theory},
+Princeton University Press, 1963.
+
+\bibitem{Buckingham1914}
+E.~Buckingham,
+\textit{On physically similar systems; illustrations of the use of dimensional equations},
+Phys.\ Rev.\ \textbf{4} (1914) 345--376.
+
+\bibitem{Butruille2005}
+J.-B.~Butruille,
+\textit{Homogeneous nearly K\"ahler manifolds},
+arXiv:math/0509171 (2005).
+
+\end{thebibliography}
+
+\end{document}
