@@ -1,0 +1,57 @@
+{
+  "b_minus_l2_scalar_found": false,
+  "dirac_neutrino_explicit": true,
+  "exact_b_minus_l_preserved": true,
+  "falsified_routes": [
+    "bare nu_R^T C nu_R as gauge singlet under exact B-L",
+    "Majorana mass with no B-L breaking sector",
+    "claim that the current repo already constructs a Majorana \u03bd_R mass"
+  ],
+  "files_examined_count": 11,
+  "gate": "G89A",
+  "gates": {
+    "G89A-1_nuR_quantum_numbers_found": true,
+    "G89A-2_exact_BminusL_preserved": true,
+    "G89A-3_no_BminusL2_scalar_found": true,
+    "G89A-4_dirac_neutrino_explicit": true,
+    "G89A-5_majorana_not_claimed_as_broken_in_repo": true
+  },
+  "majorana_bilinear_b_minus_l": -2,
+  "majorana_missing_from_repo": true,
+  "mass_term_status": "DIRAC_ONLY_ALLOWED",
+  "missing_inputs": [
+    "explicit B-L=2 breaking scalar/operator",
+    "neutrino-sector symmetry breaking sector",
+    "proof that any Majorana block survives the exact B-L selection rule"
+  ],
+  "next_required_gate": "G89B_GEOMETRIC_BILINEAR_SINGLET_AUDIT",
+  "nu_r_b_minus_l": -1,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g89a-majorana-gauge-invariance-selection-rules/g89a_majorana_gauge_invariance_selection_rules.py",
+  "requires_b_minus_l_breaking": false,
+  "searched_terms": [
+    "nu_R",
+    "Majorana",
+    "B-L",
+    "B\u2212L",
+    "SU(2)_R",
+    "Pati-Salam",
+    "charge conjugation",
+    "finite Dirac",
+    "real structure",
+    "seesaw"
+  ],
+  "source_files": [
+    "tom_s3_spinor_toy/README.md",
+    "tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md",
+    "tom_s3_spinor_toy/experiments/20260619-g18-ncg-dirac-df/claim.md",
+    "tom_s3_spinor_toy/experiments/20260619-g20-yukawa-intertwiner/claim.md",
+    "tom_s3_spinor_toy/experiments/20260619-g21-extended-schur/decision.md",
+    "tom_s3_spinor_toy/experiments/20260619-g22-first-order/decision.md",
+    "tom_s3_spinor_toy/tests/test_g18_ncg.py",
+    "tom_s3_spinor_toy/tests/test_g19_higgs_bidoublet.py",
+    "tom_s3_spinor_toy/tests/test_g20_yukawa_intertwiner.py",
+    "tom_s3_spinor_toy/tests/test_g21_extended_schur.py",
+    "tom_s3_spinor_toy/tests/test_g22_first_order.py"
+  ],
+  "verdict": "DIRAC_ONLY_ALLOWED"
+}

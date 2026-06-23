@@ -1,0 +1,69 @@
+{
+  "b_minus_l_exact": true,
+  "b_minus_l_plus_two_candidate_found": false,
+  "candidate_derived_from_geometry": false,
+  "candidate_quantum_numbers": [
+    {
+      "dBL": 0,
+      "dT3L": "\u00b11/2",
+      "dT3R": "\u22131/2",
+      "role": "SM Higgs bidoublet"
+    },
+    {
+      "dBL": "+2 or -2",
+      "role": "forbidden lepton-number-violating operator"
+    }
+  ],
+  "candidate_sources": [
+    "tom_s3_spinor_toy/tests/test_g19_higgs_bidoublet.py",
+    "tom_s3_spinor_toy/experiments/20260619-g20-yukawa-intertwiner/claim.md"
+  ],
+  "candidate_vev_available": false,
+  "candidates_examined": [
+    {
+      "couples_to_nu_r_nu_r": false,
+      "derived_from_geometry": true,
+      "name": "Higgs bidoublet / Yukawa mediator",
+      "quantum_numbers": {
+        "dBL": 0,
+        "dT3L": "\u00b11/2",
+        "dT3R": "\u22131/2",
+        "role": "SM Higgs bidoublet"
+      },
+      "source": "tom_s3_spinor_toy/tests/test_g19_higgs_bidoublet.py",
+      "vev_available": true
+    },
+    {
+      "couples_to_nu_r_nu_r": false,
+      "derived_from_geometry": true,
+      "name": "Forbidden |dBL|=2 channel",
+      "quantum_numbers": {
+        "dBL": "+2 or -2",
+        "role": "forbidden lepton-number-violating operator"
+      },
+      "source": "tom_s3_spinor_toy/experiments/20260619-g20-yukawa-intertwiner/claim.md",
+      "vev_available": false
+    }
+  ],
+  "coupling_to_nu_r_nu_r_allowed": false,
+  "dirac_only_supported": true,
+  "gate": "G89B",
+  "gates": {
+    "G89B-1_exact_BminusL_is_present": true,
+    "G89B-2_no_Bplus2_candidate_found": true,
+    "G89B-3_candidate_list_nonempty": true,
+    "G89B-4_dirac_only_supported": true,
+    "G89B-5_no_fake_majorana_promotion": true
+  },
+  "majorana_bilinear_b_minus_l": -2,
+  "missing_inputs": [
+    "a B-L=+2 scalar/operator or equivalent breaking sector",
+    "a coupling to nu_R nu_R",
+    "evidence that the compensator can acquire a VEV or scale"
+  ],
+  "next_required_gate": "G89C_GEOMETRIC_BILINEAR_SINGLET_AUDIT",
+  "nu_r_b_minus_l": -1,
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260623-g89b-b-minus-l-breaking-operator-audit/g89b_b_minus_l_breaking_operator_audit.py",
+  "seesaw_supported": false,
+  "verdict": "DIRAC_ONLY_CONFIRMED"
+}
