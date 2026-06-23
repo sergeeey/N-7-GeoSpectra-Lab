@@ -382,6 +382,14 @@ so the Pontryagin classes $p_1=p_2=0$ and:
 $c_3(\mathbf{1})=0$, so $c_3(S^-)=c_3(T^{1,0}S^6)$. By Chern--Gauss--Bonnet:
 $c_3(T^{1,0}S^6)=\chi(S^6)$. By cellular homology: $\chi(S^6)=1+(-1)^6=2$.
 
+\begin{remark}[Nearly K\"ahler validity]
+Although $S^6$ is not a complex manifold (Borel--Serre theorem), the identity
+$c_n(T^{1,0}M)=e(TM)=\chi(M)$ holds for \emph{any} almost-Hermitian manifold $(M,g,J)$
+by Chern--Weil theory, requiring only the compatibility of $J$ with $g$, not
+integrability of $J$~\cite{KN1969}. Therefore
+$c_3(T^{1,0}S^6)=\chi(S^6)=2$ is valid on the nearly K\"ahler $S^6$.
+\end{remark}
+
 An independent verification ($\chi$-lemma): $H^2(S^6;\ZZ)=H^4(S^6;\ZZ)=0$ implies
 $c_1=c_2=0$ via Hurewicz, so all Chern numbers collapse to $c_3$, and the Gauss-Bonnet
 integral gives directly $c_3=\chi(S^6)=2$.
@@ -514,9 +522,22 @@ Since $D_{S^6}\otimes S^-$ is $G_2$-equivariant, its kernel $\ker(D^+)$ is a
 $G_2$-submodule of $\Gamma(S^+\otimes S^-)$. The zero mode transforms as the trivial
 $G_2$-representation. By Schur's lemma:
 \begin{equation}
-  \dim\ker(D^+) \leq \text{multiplicity of trivial $G_2$-rep in zero-mode space} = 1.
+  \dim\ker(D^+) \leq \text{multiplicity of trivial $G_2$-rep in } S^- = 1.
   \tag{Lemma L4B}
 \end{equation}
+
+\textbf{Why the multiplicity equals one.}
+The $G_2$ irrep $\mathbf{7}$ (real) decomposes under $\mathrm{SU}(3)\subset G_2$ as
+$\mathbf{7}=\mathbf{1}+\mathbf{3}+\bar{\mathbf{3}}$, where
+$T^{1,0}S^6=\mathbf{3}$ and $T^{0,1}S^6=\bar{\mathbf{3}}$.
+The singlet $\mathbf{1}$ corresponds to the fixed imaginary unit $e_7\in\mathrm{Im}(\mathbb{O})$
+and is \emph{not} a subbundle of $T^{1,0}S^6$.
+Hence in $S^-=T^{1,0}S^6\oplus\mathbf{1}_{\mathrm{trivial}}$:
+\[
+  \mathrm{mult}(\text{trivial }G_2,\,T^{1,0}S^6)=0,\qquad
+  \mathrm{mult}(\text{trivial }G_2,\,\mathbf{1}_{\mathrm{trivial}})=1,
+\]
+giving total multiplicity $=1$ and $\dim\ker(D^+)\leq 1$.
 
 \begin{corollary}[Exact kernel]
 Combining L4A and L4B with $\ind=1$:
@@ -840,6 +861,13 @@ Phys.\ Rev.\ \textbf{4} (1914) 345--376.
 J.-B.~Butruille,
 \textit{Homogeneous nearly K\"ahler manifolds},
 arXiv:math/0509171 (2005).
+
+\bibitem{KN1969}
+S.~Kobayashi and K.~Nomizu,
+\textit{Foundations of Differential Geometry}, Vol.~II,
+Wiley Interscience (1969), \S 8.
+(For any almost-Hermitian manifold $(M,g,J)$: $c_n(T^{1,0}M)=e(TM)$,
+integrability of $J$ not required.)
 
 \end{thebibliography}
 
