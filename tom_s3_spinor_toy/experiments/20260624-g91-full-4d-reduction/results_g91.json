@@ -1,0 +1,77 @@
+{
+  "analytical_structure": {
+    "dV_dsigma3_analytic": 7.580592296423062e-06,
+    "dV_dsigma3_numerical": 7.580592299000562e-06,
+    "meaning": "dV/d(ln rho3) = -3V. At AdS min (V<0) this is >0 => rho3 increases without bound. S3 radius needs external stabilization.",
+    "sigma3_is_runaway": true
+  },
+  "caveats": [
+    "PATH CONSTRAINT: rho3 = rho6^2 is an assumption, not derived from V(rho3,rho6)",
+    "FLAT DIRECTION: sigma3 (S3 radius) has no extremum in current potential",
+    "UNITS: ratio is dimensionless in string units; M4/Ms map still needed for SI units",
+    "EIGENSTATE: constrained path [2,1] is not an eigenvector of the full 2D Hessian"
+  ],
+  "closes_from_G88F": [
+    "frame map: Omega^2 cancels exactly in ratio (CLOSED)",
+    "KK scale: uses verified S3/S6 spectra (CLOSED)",
+    "action chain: 2D potential V(rho3,rho6) written explicitly (CLOSED)"
+  ],
+  "gate": "G91",
+  "gates": {
+    "G91-1_sigma3_runaway_analytic": true,
+    "G91-2_frame_independence_exact": true,
+    "G91-3_path_k_equals_90": true,
+    "G91-4_kk_spectrum_from_verified_formula": true,
+    "G91-5_ratio_is_positive": true,
+    "G91-6_modulus_below_kk_threshold": true
+  },
+  "ratio_data": {
+    "correction_vs_G88A": {
+      "G88A_ratio": 0.0025164412108970515,
+      "G91_ratio": 0.001978025700522417,
+      "interpretation": "G88A used m_KK=1/rho6 (proxy); G91 uses m_KK=3/(2*rho3) (verified S3 spectrum). Ratio changes by factor ~sqrt(rho6^2 * PATH_K * m_kk_correct^2 / m_kk_proxy^2).",
+      "ratio_G91_over_G88A": 0.7860408945604963
+    },
+    "einstein_frame": {
+      "m2_kk": 0.1612872783822812,
+      "m2_mod": 6.310502944626467e-07,
+      "omega_sq_at_min": 7.218331174027206,
+      "ratio": 0.001978025700522417
+    },
+    "frame_independence": {
+      "confirmed": true,
+      "einstein_ratio": 0.001978025700522417,
+      "relative_difference": 0.0,
+      "string_ratio": 0.001978025700522417
+    },
+    "kk_masses": {
+      "lightest_source": "S3",
+      "m_kk_S3_verified": 1.0789925808460523,
+      "m_kk_S6_verified": 2.544396880417109,
+      "m_kk_lightest": 1.0789925808460523,
+      "m_kk_proxy_G88A": 0.8481322934723696
+    },
+    "m2_mod_string": 4.555130012898771e-06,
+    "m_mod_string": 0.002134275055586503,
+    "path_k": 90.0,
+    "ratio_table": {
+      "G88A_proxy_kk_1_over_rho": 0.0025164412108970515,
+      "G91_S3_kk_3_over_2rho3": 0.001978025700522417,
+      "G91_S6_kk_3_over_rho6": 0.0008388137369656838,
+      "G91_lightest_kk": 0.001978025700522417
+    },
+    "rho3_min": 1.3901856478232966,
+    "rho6_min": 1.1790613418407443,
+    "string_frame": {
+      "m2_kk_lightest": 1.1642249895208248,
+      "m2_mod": 4.555130012898771e-06,
+      "ratio_lightest_kk": 0.001978025700522417
+    },
+    "v_min_string": -2.5268640988076873e-06
+  },
+  "reproduction_command": "python tom_s3_spinor_toy/experiments/20260624-g91-full-4d-reduction/g91_full_4d_reduction.py",
+  "still_open_from_G88F": [
+    "path constraint is not derived from V (OPEN - needs external stabilization for rho3)"
+  ],
+  "verdict": "CONSTRAINED_PHYSICAL_RATIO"
+}
