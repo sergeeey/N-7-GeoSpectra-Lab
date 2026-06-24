@@ -137,11 +137,11 @@ def audit(root: Path = ROOT) -> dict:
     )
     inverse_square_is_ansatz = (
         "only an ansatz" in g56
-        and ("exp(-" in g56 or "exp(в€’" in g56)
-        and ("r6ВІ" in g56 or "ПЃв‚†ВІ" in g56)
+        and ("exp(−" in g56 or "exp(-" in g56)
+        and ("ρ₆²" in g56 or "rho6**2" in g56)
     )
     g61_assumes_inverse_square = (
-        ("П„ = 1/ПЃв‚†ВІ" in g61 or "РџвЂћ = 1/РџРѓРІвЂљвЂ Р’Р†" in g61)
+        "1/ρ₆²" in g61
         and "Status: WEAK" in g61
     )
     reduction_route = next(
