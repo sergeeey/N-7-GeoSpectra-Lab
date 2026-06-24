@@ -1,6 +1,6 @@
 %% Three Generations from the Geometry of S3 x S6
 %% arXiv preprint — 2026-06-23
-%% Status: DRAFT — NOT FOR DISTRIBUTION
+%% Status: PREPRINT — 2026
 
 \documentclass[12pt,a4paper]{article}
 
@@ -57,7 +57,7 @@
   \emph{In collaboration with Tom Lawrence ($S^3$ framework, \cite{Lawrence2022})}
 }
 
-\date{Draft: June 2026 — \textcolor{red}{NOT FOR DISTRIBUTION}}
+\date{June 2026}
 
 \maketitle
 
@@ -75,20 +75,23 @@ $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$
 emerges from representation theory rather than being postulated, and the Yukawa
 parameter count reduces to~4 via SU(3)-orbit degeneracy on~$S^6$.
 
-We prove $N_{\mathrm{gen}} = 3$ exactly by the Atiyah--Singer index theorem on the
-internal space $S^6 = G_2/\mathrm{SU}(3)$. The negative-chirality spinor bundle
+We prove that the Atiyah--Singer index of the twisted Dirac operator on
+$S^6 = G_2/\mathrm{SU}(3)$ equals exactly one. The negative-chirality spinor bundle
 $S^- = T^{1,0}S^6 \oplus \mathbf{1}$ has $c_3(S^-)=\chi(S^6)=2$
 (Chern--Gauss--Bonnet) and $\hat{A}(S^6)=1$ (since $H^4(S^6;\ZZ)=0$),
-giving $\ind(D_{S^6}\otimes S^-)=\hat{A}(S^6)\cdot c_3(S^-)/2=1$ per triality
-channel. The three channels arise from $G_2 = \mathrm{Fix}(Z_3\subset\mathrm{Aut}(\OC))$
-acting on $\mathrm{SO}(8)$ representations $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$;
-by $\ZZ_3$ symmetry each carries $c_3=2$. This yields $N_{\mathrm{gen}}=3\times 1=3$.
+giving:
+\[
+  \ind(D_{S^6}\otimes S^-)=\hat{A}(S^6)\cdot c_3(S^-)/2=1.
+\]
+We \emph{conjecture} $N_{\mathrm{gen}}=3$ from the $G_2 =
+\mathrm{Fix}(\ZZ_3\subset\mathrm{Aut}(\OC))$ triality structure, which cyclically
+permutes three $\mathrm{SO}(8)$ representations $\mathbf{8}_v, \mathbf{8}_s,
+\mathbf{8}_c$, each expected to carry $\ind=1$. Making this three-channel argument
+rigorous --- in particular, constructing three explicit $G_2$-equivariant bundles and
+proving independence of their index contributions --- is left as an open problem
+(\S\ref{sec:open}).
 
-The count is exact (not a lower bound): the Lichnerowicz--Weitzenb\"ock formula
-gives $|F_{S^-}|_{\mathrm{op}}/(R/4) = 8/45 \ll 1$ (safety factor~5.625),
-eliminating accidental zero modes; $G_2$-equivariance of $D_{S^6}\otimes S^-$
-and Schur's lemma independently cap $\dim\ker$ at~1 per channel. The sign of the
-index $\mathrm{sign}(\ind)=\mathrm{sign}(c_3)=+1$ gives a left-handed zero-mode
+The sign $\mathrm{sign}(\ind)=\mathrm{sign}(c_3)=+1$ gives a left-handed zero-mode
 excess, geometrically fixing SM chirality with a single discrete input: the $S^6$
 orientation.
 
@@ -162,11 +165,11 @@ The three channels arise from the automorphism $G_2 = \mathrm{Fix}(\ZZ_3\subset
 three eight-dimensional $\mathrm{SO}(8)$ representations $\mathbf{8}_v, \mathbf{8}_s,
 \mathbf{8}_c$. Because the $\ZZ_3$ eigenspaces $\{1,\omega,\omega^2\}$
 ($\omega=e^{2\pi i/3}$) are mutually orthogonal, the three zero modes are independent.
-The total count $N_{\mathrm{gen}} = 3\times 1 = 3$ is exact: the Lichnerowicz--Weitzenb\"ock
-formula gives a spectral gap with safety factor~5.625, eliminating accidental zero modes;
-$G_2$-equivariance and Schur's lemma independently cap the kernel dimension at one per
-channel. The sign $\mathrm{sign}(\ind)=+1$ places the zero mode in $D^+$ (left-handed),
-geometrically fixing the chirality of the weak interaction.
+We conjecture $N_{\mathrm{gen}}=3\times 1=3$ from three independent triality channels;
+making this rigorous requires constructing three explicit $G_2$-equivariant bundles
+(open problem; see \S\ref{sec:open}). The sign $\mathrm{sign}(\ind)=+1$ places the
+zero mode in $D^+$ (left-handed), geometrically fixing the chirality of the weak
+interaction.
 
 Alongside the generation-counting result (Track~A), we map the space of possible
 geometric origins for the gauge coupling $\lambda$ in the non-perturbative stabilization
@@ -181,9 +184,10 @@ and spectral class of mechanisms is closed. The coupling $\lambda$ is therefore 
 phenomenological parameter with non-perturbative origin.
 
 \textbf{Paper organization.} Section~\ref{sec:framework} reviews the Lawrence~\cite{Lawrence2022}
-framework and extends it to $S^3\times S^6$. Section~\ref{sec:ngen} proves $N_{\mathrm{gen}}=3$
-via the twisted Dirac index. Section~\ref{sec:kernel} establishes the exact kernel count and
-chirality. Section~\ref{sec:moduli} presents the modulus stabilization and radius prediction.
+framework and extends it to $S^3\times S^6$. Section~\ref{sec:ngen} proves $\ind=1$ per generation slot via the twisted Dirac index
+and states the $N_{\mathrm{gen}}=3$ conjecture from triality.
+Section~\ref{sec:kernel} establishes the chirality result and discusses the open
+kernel-count problem. Section~\ref{sec:moduli} presents the modulus stabilization and radius prediction.
 Section~\ref{sec:lambda} proves the $\lambda$-dimensional obstruction. Section~\ref{sec:discussion}
 compares to prior work and discusses open problems.
 
@@ -426,7 +430,8 @@ zero-mode count is:
 \begin{equation}
   \boxed{N_{\mathrm{gen}} = \sum_{\alpha=0,1,2}\ind(D^{(\alpha)}) = 3\times 1 = 3.}
 \end{equation}
-This count is exact (not a lower bound), as proved in \S\ref{sec:kernel}.
+This count is exact per channel (not a lower bound) \emph{conditional on} the three
+channels being independent (L3, open); see \S\ref{sec:kernel} and \S\ref{sec:open}.
 
 \begin{corollary}[Family universality, G75]
 The $\ZZ_3$ eigenspaces with eigenvalues $\{1,\omega,\omega^2\}$ are mutually orthogonal
@@ -485,68 +490,72 @@ independent.
 \end{remark}
 
 %% ================================================================
-\section{Exact Kernel Count and Chirality}
+\section{Chirality and Open Kernel-Count Problem}
 \label{sec:kernel}
 
 The index $\ind=1$ per channel is a difference $\dim\ker(D^+)-\dim\ker(D^-)$. To conclude
-the zero-mode count is \emph{exactly}~1, two independent arguments are required.
+the zero-mode count is \emph{exactly}~1, two additional arguments are needed.
+Both are currently incomplete; they are recorded here as open problems.
 
-\subsection{Lichnerowicz--Weitzenb\"ock spectral gap (Lemma L4A)}
+\subsection{Lichnerowicz--Weitzenb\"ock bound (L4A --- open problem)}
 \label{sec:lichnerowicz}
 
 The Weitzenb\"ock identity for the twisted operator $(D_{S^6}\otimes S^-)^2$ is:
 \begin{equation}
   (D_{S^6}\otimes S^-)^2 = \nabla^*\nabla + R/4 + F_{S^-},
 \end{equation}
-where $R$ is the scalar curvature and $F_{S^-}$ is the bundle curvature. On the round
-$S^6$ of radius $\rho_6$:
+where $R$ is the scalar curvature and $F_{S^-}$ is the bundle curvature endomorphism.
+On the round $S^6$ of radius $\rho_6$, a norm estimate gives:
 \begin{equation}
-  R = \frac{30}{\rho_6^2}, \qquad |F_{S^-}| \leq \frac{4/3}{\rho_6^2}
-  \quad\text{(SU(3) Casimir for the \textbf{3}-representation)}.
+  R = \frac{30}{\rho_6^2}, \qquad \|F_{S^-}\|_F \leq \frac{4/3}{\rho_6^2}
+  \quad\text{(Frobenius norm via SU(3) Casimir for \textbf{3})},
 \end{equation}
-The critical ratio is:
-\begin{equation}
-  \frac{|F_{S^-}|}{R/4} = \frac{4/3}{30/4} = \frac{16}{90} = \frac{8}{45} \approx 0.178.
-\end{equation}
-Since $|F_{S^-}|<R/4$, the Weitzenb\"ock inequality prevents accidental zero modes.
-The spectral gap safety factor is $\frac{R/4}{|F_{S^-}|} = \frac{45}{8} = 5.625$, giving:
-\begin{equation}
-  \dim\ker(D\otimes S^-) = |\ind| = 1 \quad\text{per channel.}
-  \tag{Lemma L4A}
-\end{equation}
+with ratio $\|F_{S^-}\|_F/(R/4) = 8/45 \approx 0.178$.
 
-\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Schur's lemma (Lemma L4B)}
+\textbf{Open problem (L4A).} A uniform lower bound $R/4 + F_{S^-} > 0$ as an
+endomorphism operator would force $\ker(D\otimes S^-)=0$ by the Bochner--Lichnerowicz
+argument --- contradicting $\ind=1\neq 0$. The correct conclusion is therefore: the
+curvature endomorphism $F_{S^-}$ must have at least one negative mode whose magnitude
+reaches $R/4$ on the index-required subspace. Proving $\dim\ker=1$ requires an explicit
+spectral computation of $F_{S^-}$ as an endomorphism on $\Gamma(S^+\otimes S^-)$,
+e.g., via the Kostant--Parthasarathy formula on the naturally reductive space
+$G_2/\mathrm{SU}(3)$~\cite{Agricola2002}. This computation is left as an open problem.
+\tag{L4A, open}
+
+\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Schur's lemma (L4B --- open problem)}
 \label{sec:schur}
 
 Since $D_{S^6}\otimes S^-$ is $G_2$-equivariant, its kernel $\ker(D^+)$ is a
-$G_2$-submodule of $\Gamma(S^+\otimes S^-)$. The zero mode transforms as the trivial
-$G_2$-representation. By Schur's lemma:
-\begin{equation}
-  \dim\ker(D^+) \leq \text{multiplicity of trivial $G_2$-rep in } S^- = 1.
-  \tag{Lemma L4B}
-\end{equation}
+$G_2$-submodule of $\Gamma(S^+\otimes S^-)$.
 
-\textbf{Why the multiplicity equals one.}
-The $G_2$ irrep $\mathbf{7}$ (real) decomposes under $\mathrm{SU}(3)\subset G_2$ as
+\textbf{Fibre argument (partial).}
+The $G_2$ irrep $\mathbf{7}$ decomposes under $\mathrm{SU}(3)\subset G_2$ as
 $\mathbf{7}=\mathbf{1}+\mathbf{3}+\bar{\mathbf{3}}$, where
 $T^{1,0}S^6=\mathbf{3}$ and $T^{0,1}S^6=\bar{\mathbf{3}}$.
-The singlet $\mathbf{1}$ corresponds to the fixed imaginary unit $e_7\in\mathrm{Im}(\mathbb{O})$
-and is \emph{not} a subbundle of $T^{1,0}S^6$.
-Hence in $S^-=T^{1,0}S^6\oplus\mathbf{1}_{\mathrm{trivial}}$:
+In $S^-=T^{1,0}S^6\oplus\mathbf{1}_{\mathrm{trivial}}$, the trivial $G_2$-representation
+appears with fibre multiplicity:
 \[
   \mathrm{mult}(\text{trivial }G_2,\,T^{1,0}S^6)=0,\qquad
-  \mathrm{mult}(\text{trivial }G_2,\,\mathbf{1}_{\mathrm{trivial}})=1,
+  \mathrm{mult}(\text{trivial }G_2,\,\mathbf{1}_{\mathrm{trivial}})=1.
 \]
-giving total multiplicity $=1$ and $\dim\ker(D^+)\leq 1$.
 
-\begin{corollary}[Exact kernel]
-Combining L4A and L4B with $\ind=1$:
+\textbf{Open problem (L4B).} Schur's lemma bounds the multiplicity of a representation
+in a \emph{finite-dimensional} $G$-module (a fibre). The kernel
+$\ker(D^+\otimes S^-)$ is a \emph{global} $G_2$-module of sections over $S^6$; its
+isotypic decomposition depends on the full spectral theory, not just fibre data.
+Completing the argument requires a $G_2$-equivariant character computation for the zero
+modes of $D\otimes S^-$, using the invariant spinor classification of~\cite{AgrHofLawn2023}.
+This is left as an open problem.
+\tag{L4B, open}
+
+\begin{corollary}[Exact kernel, conditional]
+\emph{If} L4A and L4B are established (see \S\ref{sec:open}), then combining with $\ind=1$:
 \begin{align}
-  \dim\ker(D^+) - \dim\ker(D^-) &= 1 \quad\text{(index)},\\
-  \dim\ker(D^+) + \dim\ker(D^-) &= 1 \quad\text{(L4A)},\\
+  \dim\ker(D^+) - \dim\ker(D^-) &= 1 \quad\text{(index, proved)},\\
+  \dim\ker(D^+) + \dim\ker(D^-) &= 1 \quad\text{(requires L4A)},\\
   \Rightarrow\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0.
 \end{align}
-The zero-mode count $N_{\mathrm{gen}}=3$ is exact, not a lower bound.
+The zero-mode count $N_{\mathrm{gen}}=3$ would then be exact, not a lower bound.
 \end{corollary}
 
 \subsection{Left-handed chirality (Lemma L5)}
@@ -565,10 +574,11 @@ The geometry fixes the chirality of the weak interaction up to a single $\ZZ_2$ 
 the orientation of $S^6$. Standard orientation $\to$ standard-model chirality. No additional
 discrete inputs are required.
 
-\textbf{Summary:} The three zero modes of $D_{S^6}\otimes S^-$ are: (i)~three in number
-(one per $\ZZ_3$-triality channel), exactly; (ii)~independent ($\ZZ_3$ eigenspaces are
-orthogonal); (iii)~left-handed ($\mathrm{sign}(c_3)=+1$, standard orientation). This gives
-$N_{\mathrm{gen}}=3$ with left-handed chirality, derived from the geometry of $S^6=G_2/\mathrm{SU}(3)$.
+\textbf{Summary:} The index theorem gives $\ind=1$ per channel with
+$\mathrm{sign}(\ind)=+1$ --- left-handed chirality is geometrically determined (proved).
+The conjecture $N_{\mathrm{gen}}=3$ additionally requires: (i)~three independent triality
+channels with $\ind=1$ each (L3, open) and (ii)~$\dim\ker=1$ per channel (L4A+L4B, open).
+These open problems are stated precisely in \S\ref{sec:open}.
 
 %% ================================================================
 \section{Modulus Stabilization}
@@ -740,7 +750,7 @@ The coupling $\lambda$ is treated as a free non-perturbative parameter in this p
 \toprule
 Feature & CCM~\cite{CCM2006} & This work \\
 \midrule
-$N_{\mathrm{gen}}=3$ & \textbf{Postulated} ($\mathcal{A}_F$ axiom) & \textbf{Derived} (Atiyah--Singer, L2+L3) \\
+$N_{\mathrm{gen}}=3$ & \textbf{Postulated} ($\mathcal{A}_F$ axiom) & \textbf{Conjectured} (Atiyah--Singer L2; L3 open) \\
 SM algebra $\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$ & Input & Derived from $S^3\times S^6$ \\
 SM gauge group & Derived from $\mathcal{A}_F$ & Derived from $S^3$ spin connection \\
 Chirality (L/R asymmetry) & \textbf{Postulated} ($J_F$ finite Dirac) & \textbf{Derived} ($\mathrm{sign}(c_3)=+1$, L5) \\
@@ -776,21 +786,38 @@ two constructions are complementary.
 \textbf{Mathematical:}
 
 \begin{enumerate}
-\item \textbf{External verification of L1--L5.} The lemmas constitute a candidate mathematical
-  argument, not a completed proof. L4B (G₂-equivariance $\to$ Schur cap) requires careful
-  analysis of how $G_2$ acts on $\ker(D^+\otimes S^-)$. Independent review by a specialist
-  in spin geometry on nearly K\"ahler manifolds is needed.
+\item \textbf{L3 --- Three explicit $G_2$-equivariant bundles.} The conjecture
+  $N_{\mathrm{gen}}=3$ requires constructing three explicit $G_2$-equivariant bundles
+  $E_0, E_1, E_2$ (three $\ZZ_3$-twisted versions of $S^-$) and computing
+  $\ind(D\otimes E_\alpha)=1$ for each $\alpha\in\{0,1,2\}$ independently.
+  The current argument conflates $\ZZ_3\subset G_2$ (isometry of $S^6$, acts on sections)
+  with $\ZZ_3\subset\mathrm{Aut}(\mathrm{SO}(8))$ (outer automorphism, acts on abstract
+  representation labels). An explicit bundle construction is needed to close this gap.
+
+\item \textbf{L4A --- Spectral computation of $\dim\ker(D\otimes S^-)=1$.}
+  As argued in \S\ref{sec:lichnerowicz}, the Lichnerowicz bound does not directly give
+  $\dim\ker=1$ (a uniform positive lower bound on $R/4+F_{S^-}$ would give $\ker=0$,
+  contradicting $\ind=1$). The correct approach uses the Kostant--Parthasarathy formula
+  for $(D\otimes S^-)^2$ on the naturally reductive space $G_2/\mathrm{SU}(3)$
+  \cite{Agricola2002}, which expresses the squared Dirac eigenvalues in terms of $G_2$
+  and $\mathrm{SU}(3)$ Casimir operators. This formula should yield $\dim\ker=1$ as a
+  consequence of the $G_2$ representation theory.
+
+\item \textbf{L4B --- $G_2$-equivariant character computation.}
+  The fibre-level Schur argument in \S\ref{sec:schur} is suggestive but not a proof for
+  the global $L^2$-kernel. A complete argument requires an explicit character computation
+  of the $G_2$ action on $\ker(D^+\otimes S^-)$, building on the invariant spinor
+  classification of $S^6=G_2/\mathrm{SU}(3)$~\cite{AgrHofLawn2023}.
 
 \item \textbf{Integrability of $J$.} Lemma L1 uses the almost-complex structure on $S^6$, which
   is non-integrable (Borel--Serre theorem). The Atiyah--Singer theorem applies to almost-Hermitian
-  manifolds, but curvature contributions to the Lichnerowicz formula may differ from the integrable
-  case. The safety factor 5.625 in L4A provides robustness, but this must be verified in the
-  non-integrable setting.
+  manifolds, but curvature contributions to the Weitzenb\"ock formula may differ from the integrable
+  case. This must be verified for the nearly K\"ahler setting of $S^6$.
 
 \item \textbf{Triality bundle $\mathbf{8}_v$ construction (G72).} The three triality channels are
   labeled by $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$ in $\mathrm{SO}(8)$. We have verified the
   $S^-$ ($\mathbf{8}_s$/$\mathbf{8}_c$) construction; the complementary bundle from $\mathbf{8}_v$
-  requires an independent twisted Dirac index computation.
+  requires an independent twisted Dirac index computation (related to L3 above).
 \end{enumerate}
 
 \textbf{Physical:}
@@ -890,6 +917,23 @@ S.~Kobayashi and K.~Nomizu,
 Wiley Interscience (1969), \S 8.
 (For any almost-Hermitian manifold $(M,g,J)$: $c_n(T^{1,0}M)=e(TM)$,
 integrability of $J$ not required.)
+
+\bibitem{AgrHofLawn2023}
+I.~Agricola, T.~Hofmann, and M.-A.~Lawn,
+\textit{Invariant spinors on homogeneous spheres},
+Differential Geom.\ Appl.\ \textbf{88} (2023), 102014;
+arXiv:2203.02961.
+(Theorem~5.1: $S^6=G_2/\mathrm{SU}(3)$ has exactly two $G_2$-invariant Killing spinors
+$\psi_\pm = 1\pm y_1\wedge y_2\wedge y_3$.)
+
+\bibitem{Agricola2002}
+I.~Agricola,
+\textit{Connections on naturally reductive spaces, their Dirac operator and homogeneous
+models in string theory},
+Commun.\ Math.\ Phys.\ \textbf{232} (2002) 535--563;
+arXiv:math/0202094.
+(Theorems~3.3 and~4.2: Kostant--Parthasarathy formula for $(D^t)^2$ on $G/H$;
+$G$-invariant spinors are eigenspinors with eigenvalue $9t^2[Q(\rho_g,\rho_g)-Q(\rho_h,\rho_h)]>0$.)
 
 \end{thebibliography}
 
