@@ -631,47 +631,63 @@ correction contributes at $0.24\%$ (G63), shifting $\rho_{6,\min}$ by less than 
 
 \subsection{Moduli mass and physical scales}
 
-The moduli mass in units of the KK scale $m_{KK}=1/\rho_6$ at the minimum:
+A coordinate-space proxy for the moduli mass in units of $m_{KK}=1/\rho_6$ (G82, G88A):
 \begin{equation}
-  m_{\mathrm{mod}}/m_{KK} = (C/1)^{3/2}\times 2.02\% \quad (C_{SM}=0.986).
+  m_{\mathrm{mod}}/m_{KK}\big|_{\mathrm{coord}} = (C/1)^{3/2}\times 2.02\% \quad (C_{SM}=0.986).
 \end{equation}
-For equal-radii $C=1$ ($\rho_3=\rho_6$ at the string scale): $m_{\mathrm{mod}}/m_{KK}\approx 2.07\%$.
+For equal-radii $C=1$: $m_{\mathrm{mod}}/m_{KK}|_{\mathrm{coord}}\approx 2.07\%$.
+
+\textbf{Caveat (G88D):} The $2.02\%$ figure is a \emph{coordinate-space proxy} computed as
+$\sqrt{V''(\rho_{\min})/m_{KK}^2}$ without canonical field normalization. Accounting for the
+radion kinetic matrix along the physical path $(\dot\rho_3:\dot\rho_6)=(2:1)$ (kinetic-path
+coefficient $K_{\mathrm{path}}=90$) yields $m_{\mathrm{mod}}/m_{KK}|_{\mathrm{canon}}\approx 0.25\%$,
+a factor $\sqrt{K_{\mathrm{path}}}/\rho_{\min}\approx 8$ smaller. A frame-consistent ratio
+requires the explicit reduced 4D action (gate G88E, open). The estimate $\sim 1$--$2\%$
+should be read as an order-of-magnitude upper bound, not a precise prediction.
 
 %% ================================================================
 \section{The \texorpdfstring{$\lambda$}{Lambda}-Dimensional Obstruction}
 \label{sec:lambda}
 
-\subsection{Buckingham Pi structural theorem (Corollary C1)}
+\subsection{Buckingham Pi analysis and trajectory constraint}
 
 The moduli stabilization uses a coupling $\lambda$ whose microscopic origin is unspecified.
-We now prove, by dimensional analysis, that no geometric or spectral mechanism in the
-$S^3\times S^6$ framework can produce a non-trivial $\rho_6$-dependent exponential
-$e^{-\lambda/\rho_6^2}$.
-
-\begin{proposition}[Corollary C1 --- $\lambda$-Dimensional Gate]
-Any coupling $\lambda$ derivable purely from internal $S^3\times S^6$ geometry must
-satisfy the Buckingham Pi scaling law:
+Dimensional analysis constrains any geometrically-derived $\lambda$: any coupling built purely
+from $S^3\times S^6$ radii satisfies
 \begin{equation}
   \lambda_{\mathrm{geom}} = c\cdot\rho_3^a\cdot\rho_6^{2-a}
-  \quad\text{for some dimensionless } c, a.
+  \quad\text{for some dimensionless }c,\,a.
+  \label{eq:buckingham-pi}
 \end{equation}
-On the compactification trajectory $\rho_3 = \kappa\rho_6$ ($\kappa=\sqrt{7/6}$):
+
+\textbf{Trajectory dependence.}
+On a \emph{slope-1} trajectory $\rho_3=\alpha\rho_6$,
+eq.~\eqref{eq:buckingham-pi} gives $\exp(-\lambda_{\mathrm{geom}}/\rho_6^2)=\exp(-c\alpha^a)=\mathrm{const}$
+--- no $\rho_6$-dependent restoring force.
+The physical compactification trajectory satisfies $\rho_3\propto\rho_6^2$
+(\emph{slope~2}; G28: $\rho_3^3=(16\pi/15)\rho_6^6$; numerically verified in G29; tangent
+$(2,1)$ in G88D kinetic matrix). On slope~2 with $\rho_3=C'\rho_6^2$:
 \begin{equation}
   \exp\!\bigl(-\lambda_{\mathrm{geom}}/\rho_6^2\bigr)
-  = \exp\!\bigl(-c\cdot\kappa^a\bigr) = \mathrm{const}.
-  \tag{C1}
+  = \exp\!\bigl(-c\,(C')^a\,\rho_6^{a}\bigr),
+  \label{eq:slope2-exp}
 \end{equation}
-A constant provides no $\rho_6$-dependent force. This holds for all values of $a$ and
-for any dimensionless coefficient $c$.
-\end{proposition}
+which is $\rho_6$-\emph{dependent} for every $a\neq 0$.
+Wrapped-$S^3$ brane instantons give $\lambda\sim\Vol(S^3)\sim\rho_3^3=(C')^3\rho_6^6$
+($a=3$): eq.~\eqref{eq:slope2-exp} yields $\exp(-c(C')^3\rho_6^3)$, a strongly
+$\rho_6$-dependent geometric candidate.
+
+\textbf{Note on $\kappa$.}
+The quantity $\kappa=\sqrt{7/6}$ in G66 is the ratio $\rho_{6,\min}/\rho_6^*\approx 1.082$
+(ratio of two $\rho_6$ values on the moduli potential), not the slope $\rho_3/\rho_6$.
+The slope-1 argument does not apply to the physical trajectory.
 
 \textbf{Hodge corollary.} By the K\"unneth formula:
 \begin{equation}
   H^3(S^3\times S^6;\RR) = H^3(S^3;\RR)\oplus H^0(S^3;\RR)\otimes H^3(S^6;\RR) = \RR\oplus 0 = \RR,
 \end{equation}
 since $b_3(S^6)=0$ ($S^6$ has no harmonic 3-forms). The harmonic 3-form flux threading $S^3$
-is topologically quantized and scales as $\Vol(S^3)/\Vol(S^6)\propto\rho_3^3/\rho_6^6$,
-consistent with C1.
+is topologically quantized and scales as $\Vol(S^3)/\Vol(S^6)\propto\rho_3^3/\rho_6^6$.
 
 \subsection{Exhaustive case verification (G83--G86B)}
 
@@ -687,24 +703,29 @@ G86A & Laplace integrals $I=\Gamma(d/2)/T^{d/2}$ & $I\propto\rho_6^{-3\alpha}$ (
 G86B & Warp factor $\Omega(y)$ ansatz & $\Omega=\mathrm{const}$ or polynomial + free $Q$ \\
 \bottomrule
 \end{tabular}
-\caption{Exhaustive verification of geometric mechanisms for $\lambda$.}
+\caption{Systematic search over geometric mechanisms for $\lambda$ (G83--G86B). The wrapped-$S^3$ instanton channel ($a=3$ in eq.~\eqref{eq:buckingham-pi}) was not computed.}
 \label{tab:lambda-cases}
 \end{table}
 
-\subsection{Conclusion}
+\subsection{Empirical status}
 
-The coupling $\lambda$ in the non-perturbative potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$
-has \emph{no} geometric or spectral derivation within the $S^3\times S^6$ framework:
+No geometric derivation of $\lambda$ was found in the mechanisms examined (G83--G86B):
 \begin{itemize}
-  \item \textbf{Structurally impossible:} Buckingham Pi (C1) shows any geometric $\lambda$
-        gives $e^{-\lambda/\rho_6^2}=\mathrm{const}$.
-  \item \textbf{Exhaustively verified:} G83--G86B closes the entire geometric/spectral class.
+  \item \textbf{Not found:} Gauge-coset reduction, spectral saddle ($t^*=\rho_6^2/3$),
+        Laplace integrals, and warp-factor ans\"{a}tze all yield power-law or constant
+        contributions on the slope-2 physical trajectory --- none reproduce
+        $e^{-\lambda/\rho_6^2}$.
+  \item \textbf{Open channel:} Wrapped-$S^3$ instantons
+        ($\lambda\sim\rho_3^3\sim\rho_6^6$, $a=3$) give $\exp(-c(C')^3\rho_6^3)$
+        via eq.~\eqref{eq:slope2-exp} --- a live $\rho_6$-dependent geometric candidate
+        not yet computed (gate G72, on hold pending Tom's spinor-harmonic framework).
 \end{itemize}
-The physical origin of $\lambda$ is non-perturbative and lies outside the geometric framework:
+Candidate non-perturbative origins for $\lambda$:
 \begin{itemize}
   \item Brane instantons wrapping $S^3$: $\lambda\sim\Vol(S^3)/g_s\sim\rho_3^3/g_s$
   \item Gaugino condensation: $\lambda\sim 8\pi^2/b_0$ (one-loop $\beta$-function coefficient)
 \end{itemize}
+The coupling $\lambda$ is treated as a free non-perturbative parameter in this paper.
 
 %% ================================================================
 \section{Comparison and Open Problems}

@@ -64,7 +64,10 @@ def test_action_is_incomplete_and_not_physical():
 def test_gates_reflect_incomplete_chain():
     gates = G88F.run()["gates"]
     assert gates["G88F-1_sources_found"] is True
-    assert gates["G88F-2_partial_chain_present"] is False
+    # G88F-2 is True: partial chain elements (canonical_field, einstein_frame,
+    # kk_scale, reduced_action) now exist in G82/G83/G85 — chain is partial but
+    # full reconstruction (G88F-3) is still absent, verdict stays INSUFFICIENT_ACTION
+    assert gates["G88F-2_partial_chain_present"] is True
     assert gates["G88F-3_full_reconstruction_found"] is False
     assert gates["G88F-4_physical_ratio_not_promoted"] is True
     assert gates["G88F-5_coordinate_proxy_remains_proxy"] is True

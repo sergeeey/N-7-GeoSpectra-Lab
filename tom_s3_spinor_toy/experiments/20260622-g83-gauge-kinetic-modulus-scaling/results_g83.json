@@ -1,4 +1,4 @@
-﻿{
+{
   "candidate_positive_alpha": 6,
   "conclusion": "The repository derives positive rho6^6 spectator-volume dependence for internal gauge kinetic coefficients, but does not derive a normalized 4D gauge modulus T(rho6). The inverse-square relation is an explicit weak assumption, so pi/9 is not presently supported.",
   "derived_C": null,
