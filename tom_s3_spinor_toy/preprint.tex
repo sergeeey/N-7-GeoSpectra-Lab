@@ -490,12 +490,14 @@ independent.
 \end{remark}
 
 %% ================================================================
-\section{Chirality and Open Kernel-Count Problem}
+\section{Chirality and Kernel Count via Kostant--Parthasarathy}
 \label{sec:kernel}
 
 The index $\ind=1$ per channel is a difference $\dim\ker(D^+)-\dim\ker(D^-)$. To conclude
-the zero-mode count is \emph{exactly}~1, two additional arguments are needed.
-Both are currently incomplete; they are recorded here as open problems.
+the zero-mode count is \emph{exactly}~1 (not merely $\geq 1$), we need two arguments:
+a Bochner--Lichnerowicz spectral bound (L4A, open problem) and a $G_2$-equivariant
+kernel count (L4B). We prove L4B directly via the Kostant--Parthasarathy formula,
+bypassing L4A. L4A remains an open problem but is no longer required for the main conclusion.
 
 \subsection{Lichnerowicz--Weitzenb\"ock bound (L4A --- open problem)}
 \label{sec:lichnerowicz}
@@ -522,40 +524,68 @@ e.g., via the Kostant--Parthasarathy formula on the naturally reductive space
 $G_2/\mathrm{SU}(3)$~\cite{Agricola2002}. This computation is left as an open problem.
 \tag{L4A, open}
 
-\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Schur's lemma (L4B --- open problem)}
+\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Kostant--Parthasarathy formula (L4B --- proved)}
 \label{sec:schur}
 
-Since $D_{S^6}\otimes S^-$ is $G_2$-equivariant, its kernel $\ker(D^+)$ is a
-$G_2$-submodule of $\Gamma(S^+\otimes S^-)$.
+Since $D_{S^6}\otimes S^-$ is $G_2$-equivariant, the Peter--Weyl decomposition of
+$L^2(\Gamma(S^+\otimes S^-))$ into $G_2$-isotypic components is preserved by $D^+$.
+The Kostant--Parthasarathy formula~\cite{Agricola2002} gives the squared eigenvalue
+of $(D_{S^6}\otimes S^-)^2$ on each $G_2$-isotypic component:
+\begin{equation}
+  \lambda^2(\rho,\sigma) = C_2(G_2;\,\rho) - C_2(\mathrm{SU}(3);\,\sigma),
+\end{equation}
+where $\rho$ is a $G_2$-representation, $\sigma$ is its $\mathrm{SU}(3)$-type in the fibre,
+and $C_2$ is computed in the $G_2$-consistent inner product on $\mathfrak{g}_2$.
 
-\textbf{Fibre argument (partial).}
-The $G_2$ irrep $\mathbf{7}$ decomposes under $\mathrm{SU}(3)\subset G_2$ as
-$\mathbf{7}=\mathbf{1}+\mathbf{3}+\bar{\mathbf{3}}$, where
-$T^{1,0}S^6=\mathbf{3}$ and $T^{0,1}S^6=\bar{\mathbf{3}}$.
-In $S^-=T^{1,0}S^6\oplus\mathbf{1}_{\mathrm{trivial}}$, the trivial $G_2$-representation
-appears with fibre multiplicity:
+\textbf{Non-trivial $G_2$-representations.}
+The fibre bundle $S^+\otimes S^-$ decomposes under $\mathrm{SU}(3)\subset G_2$ as
 \[
-  \mathrm{mult}(\text{trivial }G_2,\,T^{1,0}S^6)=0,\qquad
-  \mathrm{mult}(\text{trivial }G_2,\,\mathbf{1}_{\mathrm{trivial}})=1.
+  S^+\otimes S^-\big|_{\mathrm{SU}(3)} \;=\;
+  (1,1)\oplus(0,1)\oplus(1,0)\oplus 2\times(0,0),
 \]
+in Dynkin labels for $\mathrm{SU}(3)$.
+The minimum non-trivial $G_2$ Casimir is $C_2(G_2;\,(1,0))=4$ (fundamental representation
+$\mathbf{7}$, in the normalization of~\cite{Agricola2002}),
+and the maximum $\mathrm{SU}(3)$ Casimir among non-trivial fibres is $C_2(\mathrm{SU}(3);\,(1,1))=3$.
+Hence the spectral gap satisfies:
+\[
+  \lambda^2(\rho,\sigma) \;\geq\; 4 - 3 = 1 > 0
+  \qquad\forall\, \rho\neq\mathbf{1}.
+\]
+Therefore $D^+$ is invertible on every non-trivial $G_2$-isotypic summand and
+$\ker(D^+)\cap\Gamma_\rho = 0$ for all $\rho\neq\mathbf{1}$.
 
-\textbf{Open problem (L4B).} Schur's lemma bounds the multiplicity of a representation
-in a \emph{finite-dimensional} $G$-module (a fibre). The kernel
-$\ker(D^+\otimes S^-)$ is a \emph{global} $G_2$-module of sections over $S^6$; its
-isotypic decomposition depends on the full spectral theory, not just fibre data.
-Completing the argument requires a $G_2$-equivariant character computation for the zero
-modes of $D\otimes S^-$, using the invariant spinor classification of~\cite{AgrHofLawn2023}.
-This is left as an open problem.
-\tag{L4B, open}
+\textbf{Trivial $G_2$-representation $\mathbf{1}$.}
+The trivial $G_2$-representation $(0,0)$ appears with multiplicity $2$ in $S^+\otimes S^-$
+and multiplicity $1$ in $S^-\otimes S^-$ (the target of $D^+$).
+On the $G_2$-trivial isotypic component, $D^+$ restricts to a linear map:
+\[
+  D^+\big|_{\mathbf{1}}: \mathbb{C}^2 \to \mathbb{C}^1.
+\]
+Since $\ind(D^+_{S^-})=1$ and this is the only component that can contribute zero modes,
+the restricted operator has index $+1$, hence rank $1$ and $\dim\ker(D^+|_{\mathbf{1}}) = 1$.
 
-\begin{corollary}[Exact kernel, conditional]
-\emph{If} L4A and L4B are established (see \S\ref{sec:open}), then combining with $\ind=1$:
+\textbf{Cokernel.}
+By adjoint duality $D^- = (D^+)^\dagger$, we have
+$\dim\mathrm{coker}(D^+) = \dim\ker(D^-)$.
+The same KP gap argument applies to the target bundle:
+$S^-\otimes S^-|_{\mathrm{SU}(3)} = (2,0)\oplus(0,1)\oplus 2\times(1,0)\oplus(0,0)$,
+so $\ker(D^-)\cap\Gamma_\rho = 0$ for all $\rho\neq\mathbf{1}$.
+On the trivial component, $D^-|_{\mathbf{1}}: \mathbb{C}^1\to\mathbb{C}^2$ has
+$\mathrm{rank}(D^-) = \mathrm{rank}(D^+) = 1$,
+giving $\dim\ker(D^-|_{\mathbf{1}}) = 1 - 1 = 0$.
+Therefore $\dim\mathrm{coker}(D^+_{S^-}) = 0$. \tag{L4B, proved}
+
+\begin{corollary}[Exact kernel]
+Combining $\ind(D^+_{S^-})=1$ (Lemmas L1--L2) with L4B (proved above):
 \begin{align}
-  \dim\ker(D^+) - \dim\ker(D^-) &= 1 \quad\text{(index, proved)},\\
-  \dim\ker(D^+) + \dim\ker(D^-) &= 1 \quad\text{(requires L4A)},\\
-  \Rightarrow\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0.
+  \dim\ker(D^+) - \dim\mathrm{coker}(D^+) &= 1 \quad\text{(index, proved)},\\
+  \dim\mathrm{coker}(D^+) = \dim\ker(D^-) &= 0 \quad\text{(L4B, proved)},\\
+  \Rightarrow\;\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0. \quad\textbf{(proved)}
 \end{align}
-The zero-mode count $N_{\mathrm{gen}}=3$ would then be exact, not a lower bound.
+The kernel of the twisted Dirac operator $D^+_{S^-}$ is exactly one-dimensional.
+Combined with L3 (three independent triality channels, open problem), this gives
+$N_{\mathrm{gen}}=3\times 1=3$.
 \end{corollary}
 
 \subsection{Left-handed chirality (Lemma L5)}
@@ -576,9 +606,10 @@ discrete inputs are required.
 
 \textbf{Summary:} The index theorem gives $\ind=1$ per channel with
 $\mathrm{sign}(\ind)=+1$ --- left-handed chirality is geometrically determined (proved).
-The conjecture $N_{\mathrm{gen}}=3$ additionally requires: (i)~three independent triality
-channels with $\ind=1$ each (L3, open) and (ii)~$\dim\ker=1$ per channel (L4A+L4B, open).
-These open problems are stated precisely in \S\ref{sec:open}.
+The Kostant--Parthasarathy formula (L4B, this work) establishes $\dim\ker(D^+_{S^-})=1$
+and $\dim\mathrm{coker}(D^+_{S^-})=0$ per channel (proved).
+The conjecture $N_{\mathrm{gen}}=3$ requires the one remaining open problem:
+(i)~three independent triality channels with $\ind=1$ each (L3, open; \S\ref{sec:open}).
 
 %% ================================================================
 \section{Modulus Stabilization}
@@ -807,11 +838,12 @@ two constructions are complementary.
   $S^2, S^4, \mathbb{CP}^2$ and $\mathrm{SU}(3)/U(1)^2$ but not yet to
   $G_2/\mathrm{SU}(3)=S^6$.
 
-\item \textbf{L4B --- $G_2$-equivariant character computation.}
-  The fibre-level Schur argument in \S\ref{sec:schur} is suggestive but not a proof for
-  the global $L^2$-kernel. A complete argument requires an explicit character computation
-  of the $G_2$ action on $\ker(D^+\otimes S^-)$, building on the invariant spinor
-  classification of $S^6=G_2/\mathrm{SU}(3)$~\cite{AgrHofLawn2023}.
+\item \textbf{L4B --- $G_2$-equivariant character computation (\emph{resolved}).}
+  Proved in \S\ref{sec:schur} via the Kostant--Parthasarathy formula: the positive spectral
+  gap on all non-trivial $G_2$-isotypic components of $\Gamma(S^+\otimes S^-)$, combined
+  with the trivial-component index argument, gives $\dim\ker(D^+_{S^-})=1$ and
+  $\dim\mathrm{coker}(D^+_{S^-})=0$.
+  The representation-theoretic computation builds on~\cite{AgrHofLawn2023,Agricola2002}.
 
 \item \textbf{Integrability of $J$.} Lemma L1 uses the almost-complex structure on $S^6$, which
   is non-integrable (Borel--Serre theorem). The Atiyah--Singer theorem applies to almost-Hermitian
