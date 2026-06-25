@@ -415,9 +415,14 @@ The $\ZZ_3$ triality automorphism cyclically permutes:
 \end{equation}
 Labeling the $\ZZ_3$-eigenvalues $\{1,\omega,\omega^2\}$ ($\omega=e^{2\pi i/3}$) by channel
 index $\alpha\in\{0,1,2\}$, each channel carries a copy of the twisted Dirac operator
-$D^{(\alpha)}$, and the index calculation of \S\ref{sec:index} applies identically:
+$D^{(\alpha)}$.
+Since all three SO(8) representations restrict to the same $G_2$-module
+$(1,0)_{G_2}\oplus(0,0)_{G_2}=7\oplus 1$ (because $G_2=\mathrm{Fix}(\ZZ_3)$),
+the Kostant--Parthasarathy spectral gap argument of \S\ref{sec:schur} applies identically
+to every channel, giving (experiment E-L3-PARTIAL, this work):
 \begin{equation}
   \ind(D^{(\alpha)}) = 1 \qquad\text{for } \alpha=0,1,2.
+  \label{eq:l3partial}
 \end{equation}
 The zero mode $\psi^{(\alpha)}$ lies in the $\ZZ_3$-eigenspace with eigenvalue $\omega^\alpha$.
 Since $\ZZ_3$ acts unitarily, its eigenspaces are mutually orthogonal:
@@ -431,7 +436,10 @@ zero-mode count is:
   \boxed{N_{\mathrm{gen}} = \sum_{\alpha=0,1,2}\ind(D^{(\alpha)}) = 3\times 1 = 3.}
 \end{equation}
 This count is exact per channel (not a lower bound) \emph{conditional on} the three
-channels being independent (L3, open); see \S\ref{sec:kernel} and \S\ref{sec:open}.
+channels being independent (L3b, open; see \S\ref{sec:open}).
+The per-channel indices~\eqref{eq:l3partial} are proved; channel independence
+(distinguishing the three $G_2$-equivariant bundles at the $G_2$ rather than $\mathrm{SU}(3)$
+level) is the remaining open component of L3.
 
 \begin{corollary}[Family universality, G75]
 The $\ZZ_3$ eigenspaces with eigenvalues $\{1,\omega,\omega^2\}$ are mutually orthogonal
@@ -607,9 +615,12 @@ discrete inputs are required.
 \textbf{Summary:} The index theorem gives $\ind=1$ per channel with
 $\mathrm{sign}(\ind)=+1$ --- left-handed chirality is geometrically determined (proved).
 The Kostant--Parthasarathy formula (L4B, this work) establishes $\dim\ker(D^+_{S^-})=1$
-and $\dim\mathrm{coker}(D^+_{S^-})=0$ per channel (proved).
+and $\dim\mathrm{coker}(D^+_{S^-})=0$ (proved). $\ind=1$ for each of the three SO(8)
+triality channels follows from the $G_2$ branching rule $\mathbf{8}_\alpha|_{G_2}=7\oplus 1$
+(E-L3-PARTIAL, this work; partial L3, proved).
 The conjecture $N_{\mathrm{gen}}=3$ requires the one remaining open problem:
-(i)~three independent triality channels with $\ind=1$ each (L3, open; \S\ref{sec:open}).
+(i)~linear independence of the three zero modes / non-isomorphism of the three
+$G_2$-equivariant bundles at the $G_2$ level (L3b, open; \S\ref{sec:open}).
 
 %% ================================================================
 \section{Modulus Stabilization}
@@ -817,13 +828,24 @@ two constructions are complementary.
 \textbf{Mathematical:}
 
 \begin{enumerate}
-\item \textbf{L3 --- Three explicit $G_2$-equivariant bundles.} The conjecture
-  $N_{\mathrm{gen}}=3$ requires constructing three explicit $G_2$-equivariant bundles
-  $E_0, E_1, E_2$ (three $\ZZ_3$-twisted versions of $S^-$) and computing
-  $\ind(D\otimes E_\alpha)=1$ for each $\alpha\in\{0,1,2\}$ independently.
-  The current argument conflates $\ZZ_3\subset G_2$ (isometry of $S^6$, acts on sections)
-  with $\ZZ_3\subset\mathrm{Aut}(\mathrm{SO}(8))$ (outer automorphism, acts on abstract
-  representation labels). An explicit bundle construction is needed to close this gap.
+\item \textbf{L3a --- $\ind=1$ per triality channel (\emph{proved}, this work).}
+  All three SO(8) triality representations $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$
+  restrict to the same $G_2$-module $(1,0)_{G_2}\oplus(0,0)_{G_2}=7\oplus 1$ under
+  $G_2=\mathrm{Fix}(\ZZ_3\subset\mathrm{Aut}(\mathrm{SO}(8)))$.
+  Their $S^-$-subbundles have the same $\mathrm{SU}(3)$-module $(1,0)\oplus(0,0)$,
+  so the Kostant--Parthasarathy argument of \S\ref{sec:schur} applies identically
+  to every channel, giving $\ind(D^{(\alpha)})=1$ for $\alpha=0,1,2$
+  (experiment E-L3-PARTIAL).
+
+\item \textbf{L3b --- Channel independence (\emph{open}).}
+  The three $S^-$-subbundles from $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$ are
+  \emph{identical} as $\mathrm{SU}(3)$-modules $(1,0)\oplus(0,0)$. Proving that they
+  are non-isomorphic as $G_2$-equivariant bundles over $S^6$ requires a $G_2$-level
+  construction --- for example, three line bundles $\rho_0,\rho_1,\rho_2$ associated
+  to the three 1-dimensional $\ZZ_3$-characters (noting $H^2(S^6)=0$ so $c_1=0$ for all
+  line bundles; the distinction must arise at the $G_2$-representation level rather than
+  topologically). An explicit equivariant bundle construction is needed to close this gap;
+  the authors plan to address this in collaboration with T.~Lawrence.
 
 \item \textbf{L4A --- Spectral computation of $\dim\ker(D\otimes S^-)=1$.}
   As argued in \S\ref{sec:lichnerowicz}, the Lichnerowicz bound does not directly give
@@ -850,10 +872,6 @@ two constructions are complementary.
   manifolds, but curvature contributions to the Weitzenb\"ock formula may differ from the integrable
   case. This must be verified for the nearly K\"ahler setting of $S^6$.
 
-\item \textbf{Triality bundle $\mathbf{8}_v$ construction (G72).} The three triality channels are
-  labeled by $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$ in $\mathrm{SO}(8)$. We have verified the
-  $S^-$ ($\mathbf{8}_s$/$\mathbf{8}_c$) construction; the complementary bundle from $\mathbf{8}_v$
-  requires an independent twisted Dirac index computation (related to L3 above).
 \end{enumerate}
 
 \textbf{Physical:}
