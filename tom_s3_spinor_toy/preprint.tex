@@ -437,9 +437,10 @@ zero-mode count is:
 \end{equation}
 This count is exact per channel (not a lower bound) \emph{conditional on} the three
 channels being independent (L3b, open; see \S\ref{sec:open}).
-The per-channel indices~\eqref{eq:l3partial} are proved; channel independence
-(distinguishing the three $G_2$-equivariant bundles at the $G_2$ rather than $\mathrm{SU}(3)$
-level) is the remaining open component of L3.
+The per-channel indices~\eqref{eq:l3partial} are proved; channel independence requires
+$\mathrm{Spin}(8)$-level input (experiment E-L3B proves no $G_2$-equivariant invariant
+can distinguish the three channels; see \S\ref{sec:open}) and is the remaining open
+component of L3.
 
 \begin{corollary}[Family universality, G75]
 The $\ZZ_3$ eigenspaces with eigenvalues $\{1,\omega,\omega^2\}$ are mutually orthogonal
@@ -619,8 +620,9 @@ and $\dim\mathrm{coker}(D^+_{S^-})=0$ (proved). $\ind=1$ for each of the three S
 triality channels follows from the $G_2$ branching rule $\mathbf{8}_\alpha|_{G_2}=7\oplus 1$
 (E-L3-PARTIAL, this work; partial L3, proved).
 The conjecture $N_{\mathrm{gen}}=3$ requires the one remaining open problem:
-(i)~linear independence of the three zero modes / non-isomorphism of the three
-$G_2$-equivariant bundles at the $G_2$ level (L3b, open; \S\ref{sec:open}).
+(i)~linear independence of the three zero modes (L3b, open; \S\ref{sec:open}).
+Experiment E-L3B (this work) proves the $G_2$-equivariant bundles are
+pairwise isomorphic, so the distinction requires $\mathrm{Spin}(8)$ fibre symmetry input.
 
 %% ================================================================
 \section{Modulus Stabilization}
@@ -837,15 +839,25 @@ two constructions are complementary.
   to every channel, giving $\ind(D^{(\alpha)})=1$ for $\alpha=0,1,2$
   (experiment E-L3-PARTIAL).
 
-\item \textbf{L3b --- Channel independence (\emph{open}).}
-  The three $S^-$-subbundles from $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$ are
-  \emph{identical} as $\mathrm{SU}(3)$-modules $(1,0)\oplus(0,0)$. Proving that they
-  are non-isomorphic as $G_2$-equivariant bundles over $S^6$ requires a $G_2$-level
-  construction --- for example, three line bundles $\rho_0,\rho_1,\rho_2$ associated
-  to the three 1-dimensional $\ZZ_3$-characters (noting $H^2(S^6)=0$ so $c_1=0$ for all
-  line bundles; the distinction must arise at the $G_2$-representation level rather than
-  topologically). An explicit equivariant bundle construction is needed to close this gap;
-  the authors plan to address this in collaboration with T.~Lawrence.
+\item \textbf{L3b --- Channel independence (\emph{open; geometric path ruled out}).}
+  Experiment E-L3B (this work) proves an obstruction theorem: by the homogeneous bundle
+  correspondence, $G_2$-equivariant vector bundles on $G_2/\mathrm{SU}(3)$ are classified
+  by $\mathrm{SU}(3)$-representations. Since all three channels restrict to the
+  \emph{same} $\mathrm{SU}(3)$-module $(1,0)\oplus(0,1)\oplus 2\cdot(0,0)$, the bundles
+  $E_v\cong E_s\cong E_c$ are pairwise isomorphic as $G_2$-equivariant bundles. No
+  $G_2$-invariant, including nearly-K\"ahler instanton connections, can distinguish them.
+  At the $\mathrm{SO}(7)$ level a partial distinction exists
+  ($\mathbf{8}_v|_{\mathrm{SO}(7)}=7\oplus 1$ splits, while $\mathbf{8}_s|_{\mathrm{SO}(7)}
+  =\mathbf{8}_c|_{\mathrm{SO}(7)}=\mathbf{8}_{\mathrm{spin}}$ is the unique irreducible
+  $\mathrm{Spin}(7)$ spinor), but $\mathbf{8}_s$ and $\mathbf{8}_c$ remain indistinguishable
+  below $\mathrm{SO}(8)$.
+  The correct level is $\mathrm{Spin}(8)$: the three representations are pairwise
+  non-isomorphic by definition of triality, so Schur's lemma gives
+  $\mathrm{Hom}_{\mathrm{Spin}(8)}(\mathbf{8}_\alpha,\mathbf{8}_\beta)=0$ for $\alpha\ne\beta$.
+  If the compactification setup preserves $\mathrm{Spin}(8)$ as an internal fibre symmetry,
+  the three zero modes are $\mathrm{Spin}(8)$-invariantly orthogonal and $N_{\mathrm{gen}}=3$
+  follows. Confirming this physical input is the remaining open question, to be addressed in
+  collaboration with T.~Lawrence.
 
 \item \textbf{L4A --- Spectral computation of $\dim\ker(D\otimes S^-)=1$.}
   As argued in \S\ref{sec:lichnerowicz}, the Lichnerowicz bound does not directly give
