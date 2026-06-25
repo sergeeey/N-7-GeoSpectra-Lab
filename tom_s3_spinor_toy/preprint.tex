@@ -901,6 +901,30 @@ two constructions are complementary.
 
 \item \textbf{Fermion mass hierarchy.} The index theorem gives $N_{\mathrm{gen}}=3$ with equal
   geometric status for each generation; it does not explain why $m_t/m_u\approx 10^5$.
+  In fact, a stronger statement holds:
+
+\begin{theorem}[Yukawa Degeneracy]\label{thm:yukawa-deg}
+  Let $\psi^{(\alpha)}$ denote the unique positive-chirality zero mode of $D^{(\alpha)}$
+  for $\alpha\in\{v,s,c\}$ on $S^6 = G_2/\mathrm{SU}(3)$. Then
+  $Y_{vs} = Y_{vc} = Y_{sc}$,
+  where $Y_{\alpha\beta} := \int_{S^6} (\psi^{(\alpha)})^\dagger \varphi_H\, \psi^{(\beta)}\,\mathrm{vol}_{S^6}$.
+\end{theorem}
+
+\begin{proof}
+  By the Lichnerowicz gap (Lemma~L4, \S\ref{sec:lichnerowicz}), each $\ker(D^{(\alpha)}|_{\Sigma^+})$
+  is one-dimensional. By $G_2$-equivariance of $D^{(\alpha)}$, this kernel is $G_2$-invariant,
+  hence a $G_2$-invariant section of $\Sigma^+\otimes E_\alpha$.
+  By Theorem~5.1 of \cite{AgrHofLawn2023}, $\Sigma^+_{\mathrm{inv}} = \mathrm{span}_{\mathbb{C}}\{1\}$
+  on $G_2/\mathrm{SU}(3)$ (the unique $G_2$-invariant chiral spinor).
+  By the E-L3B bundle isomorphism theorem (\S\ref{sec:index}), $E_v\cong E_s\cong E_c$
+  as $G_2$-equivariant bundles, so their $\mathrm{SU}(3)$-invariant fiber elements coincide.
+  Therefore $\psi^{(\alpha)} = \psi_0\otimes e_\alpha$ with the same profile $\psi_0$ for all $\alpha$,
+  and the Yukawa integrals satisfy $Y_{vs} = Y_{vc} = Y_{sc}$.
+\end{proof}
+
+  Consequently, Yukawa mass hierarchy cannot arise from $S^6$ geometry alone; it must originate
+  from the NCG finite Dirac operator $D_F$ with its four free Yukawa matrices
+  $\{Y_\nu, Y_e, Y_u, Y_d\}$ \cite{CCM2006}.
 
 \item \textbf{Universality.} Whether the Lichnerowicz--$G_2$-Schur mechanism (L4) applies to other
   nearly K\"ahler 6-manifolds (such as $\mathbb{CP}^3$ or $\mathrm{SU}(3)/T^2$) is an open question.
