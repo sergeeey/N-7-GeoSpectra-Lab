@@ -1,0 +1,35 @@
+{
+  "gate": "GA2",
+  "geometry": {
+    "rho6_min_string_units": 1.1790613418407443,
+    "rho3_min_string_units": 1.3901856478232966,
+    "vol_s3_string_units": 53.03323782098898,
+    "vol_s6_string_units": 88.8580428450663,
+    "v9_total_string_units": 4712.429718510029
+  },
+  "planck_ratio": {
+    "M_Pl_over_M_s": 68.64713918664076,
+    "M_s_over_M_Pl": 0.014567249441832639,
+    "interpretation": "String scale is M_s = M_Pl / 68.6"
+  },
+  "physical_masses": {
+    "M_s_GeV": 1.7772044319035818e+17,
+    "m_KK_GeV": 1.917590396670688e+17,
+    "m_mod_GeV": 379304308768959.6,
+    "m_KK_TeV": 191759039667068.8,
+    "m_mod_TeV": 379304308768.9596,
+    "ratio_check": 0.0019780257005224166
+  },
+  "cosmology": {
+    "coughlan_bound_TeV": 30.0,
+    "m_mod_TeV": 379304308768.9596,
+    "cosmologically_safe": true,
+    "verdict": "SAFE \u2014 modulus heavier than Coughlan bound"
+  },
+  "tev_scenario": {
+    "ms_needed_for_tev_kk_GeV": 926.7904318821977,
+    "string_length_meters": 2.1256153842667232e-19,
+    "rho6_physical_meters": 2.506230927210852e-19,
+    "interpretation": "For TeV-scale KK modes, need rho6 ~ 2.51e-19 m \u2014 sub-mm extra dimensions (ADD scenario, not our case)"
+  }
+}
