@@ -1,0 +1,10 @@
+{
+  "status": "VERIFIED",
+  "dim_so4": 6,
+  "su2_L_algebra": true,
+  "su2_R_algebra": true,
+  "decoupled": true,
+  "max_cross_comm_err": 0.0,
+  "sm_interpretation": "SU(2)_L from J+ sector of SO(4) = Iso(S3)",
+  "kk_scale_GeV": 1.3848547717842323e+17
+}
