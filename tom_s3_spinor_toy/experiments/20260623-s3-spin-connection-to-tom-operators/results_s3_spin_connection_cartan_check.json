@@ -1,0 +1,24 @@
+{
+  "verdict": "PASS_CARTAN_HOPF_FRAME",
+  "metric": "ds2 = dα2 + cos2(α)dθ2 + sin2(α)dφ2",
+  "coframe": {
+    "e1": "dα",
+    "e2": "cos(α)dθ",
+    "e3": "sin(α)dφ"
+  },
+  "connection_one_forms": {
+    "omega_12": "tan(α)e2",
+    "omega_13": "-cot(α)e3",
+    "omega_23": "0"
+  },
+  "coordinate_components": {
+    "omega_theta_12": "sin(α)",
+    "omega_phi_13": "-cos(α)"
+  },
+  "cartan_equations_checked": true,
+  "cartan_residuals": {
+    "eq1": "0",
+    "eq2": "0",
+    "eq3": "0"
+  }
+}
