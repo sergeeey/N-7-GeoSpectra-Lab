@@ -1,0 +1,19 @@
+{
+  "status": "PARTIAL",
+  "so4_cartan_dim": 2,
+  "g2_cartan_dim": 0,
+  "pati_salam_Y_works": false,
+  "covered": {
+    "SU3_color": "G96 VERIFIED: SU(3) \u2282 G\u2082 \u2282 SO(7)",
+    "SU2_L": "G95 VERIFIED: SU(2)_L \u2282 SO(4)",
+    "SU2_R": "G95 VERIFIED: SU(2)_R \u2282 SO(4)",
+    "T3_R_for_Y": "G95: T3_R \u2282 SO(4)"
+  },
+  "missing": {
+    "BL_generator": "B-L not in Iso(S3xS6) = SO(4)xSO(7)",
+    "SU4": "Pati-Salam needs SU(4) which is NOT in SO(7) or SO(4)",
+    "3_generations": "Tom ansatz needed"
+  },
+  "Y_formula": "Y = T3_R + (B-L)/2; T3_R covered by G95, B-L is open",
+  "conclusion": "SO(4)xSO(7) covers SU(3)xSU(2)_LxSU(2)_R but NOT U(1)_BL. Hypercharge requires additional structure (Tom ansatz or extra U(1) from the D=13 field content, not just the isometry group)."
+}
