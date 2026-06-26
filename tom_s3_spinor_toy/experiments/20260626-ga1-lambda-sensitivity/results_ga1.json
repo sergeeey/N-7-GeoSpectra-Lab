@@ -1,0 +1,123 @@
+{
+  "gate": "GA1",
+  "sweep": [
+    {
+      "lambda": 0.15,
+      "rho6_min": 1.178102,
+      "rho3_min": 1.387925,
+      "v_min": -1.124406179676486e-06,
+      "m2_mod": 2.066450021280785e-06,
+      "m_kk": 1.08075034362237,
+      "kk_source": "S3",
+      "ratio": 0.0013301085058132372,
+      "ratio_pct": 0.13301085058132373,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.2,
+      "rho6_min": 1.178361,
+      "rho3_min": 1.388535,
+      "v_min": -1.5037790061909619e-06,
+      "m2_mod": 2.7492390512492256e-06,
+      "m_kk": 1.0802749953131028,
+      "kk_source": "S3",
+      "ratio": 0.0015348711687455943,
+      "ratio_pct": 0.15348711687455943,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.25,
+      "rho6_min": 1.178622,
+      "rho3_min": 1.38915,
+      "v_min": -1.885475533286514e-06,
+      "m2_mod": 3.4290109665089413e-06,
+      "m_kk": 1.0797970826889425,
+      "kk_source": "S3",
+      "ratio": 0.0017149137687411113,
+      "ratio_pct": 0.17149137687411115,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.3333,
+      "rho6_min": 1.179061,
+      "rho3_min": 1.390184,
+      "v_min": -2.526864099028364e-06,
+      "m2_mod": 4.5551911389214955e-06,
+      "m_kk": 1.078993675696112,
+      "kk_source": "S3",
+      "ratio": 0.0019780369650931945,
+      "ratio_pct": 0.19780369650931945,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.4,
+      "rho6_min": 1.179416,
+      "rho3_min": 1.391021,
+      "v_min": -3.044743726685737e-06,
+      "m2_mod": 5.449998649730346e-06,
+      "m_kk": 1.0783446479403438,
+      "kk_source": "S3",
+      "ratio": 0.0021649138067766412,
+      "ratio_pct": 0.21649138067766413,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.45,
+      "rho6_min": 1.179684,
+      "rho3_min": 1.391654,
+      "v_min": -3.4359731442197544e-06,
+      "m2_mod": 6.117501618846472e-06,
+      "m_kk": 1.0778541587561186,
+      "kk_source": "S3",
+      "ratio": 0.0022947059658956527,
+      "ratio_pct": 0.22947059658956526,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.5,
+      "rho6_min": 1.179954,
+      "rho3_min": 1.392292,
+      "v_min": -3.829647007172391e-06,
+      "m2_mod": 6.781900270260379e-06,
+      "m_kk": 1.0773604507693775,
+      "kk_source": "S3",
+      "ratio": 0.0024172116054869248,
+      "ratio_pct": 0.24172116054869247,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.55,
+      "rho6_min": 1.180226,
+      "rho3_min": 1.392934,
+      "v_min": -4.225790506673292e-06,
+      "m2_mod": 7.443179947682372e-06,
+      "m_kk": 1.076863494397264,
+      "kk_source": "S3",
+      "ratio": 0.0025334865598201084,
+      "ratio_pct": 0.25334865598201084,
+      "minimum_exists": true
+    },
+    {
+      "lambda": 0.6,
+      "rho6_min": 1.180501,
+      "rho3_min": 1.393582,
+      "v_min": -4.624429196094487e-06,
+      "m2_mod": 8.101326010124147e-06,
+      "m_kk": 1.0763632590953456,
+      "kk_source": "S3",
+      "ratio": 0.002644351539129507,
+      "ratio_pct": 0.2644351539129507,
+      "minimum_exists": true
+    }
+  ],
+  "summary": {
+    "reference_lambda": 0.333333,
+    "reference_ratio_pct": 0.19780369650931945,
+    "ratio_min_pct": 0.13301085058132373,
+    "ratio_max_pct": 0.2644351539129507,
+    "spread_factor": 1.988,
+    "sensitivity_pct_per_unit_lambda": 0.3,
+    "verdict": "ROBUST",
+    "interpretation": "ratio varies by <3x across lambda in [0.15,0.60] => Bottleneck 1 affects absolute value but not order-of-magnitude physics"
+  }
+}
