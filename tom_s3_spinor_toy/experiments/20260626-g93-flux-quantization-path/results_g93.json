@@ -1,0 +1,131 @@
+{
+  "gate": "G93",
+  "eft_check": {
+    "g91_status": "MARGINAL",
+    "g92_status": "INVALID",
+    "conclusion": "G91 minimum is EFT-VALID; G92 Casimir minimum is EFT-INVALID (rho3<1)"
+  },
+  "flux_scan": [
+    {
+      "success": true,
+      "n3": 1.0,
+      "n6": 0.0,
+      "rho3": 0.3,
+      "rho6": 1.2643455822620044,
+      "v_min": -0.00029675503734403347,
+      "rho3_over_rho6_sq": 0.18766775721859882,
+      "path_deviation_pct": 81.23322427814011,
+      "eft_status": "INVALID",
+      "m_s3": 0.0,
+      "m_s6": 0.02371856981248497
+    },
+    {
+      "success": true,
+      "n3": 1.0,
+      "n6": 1.0,
+      "rho3": 0.3,
+      "rho6": 1.6109250482376058,
+      "v_min": -9.942544578445987e-05,
+      "rho3_over_rho6_sq": 0.11560339431752116,
+      "path_deviation_pct": 88.43966056824787,
+      "eft_status": "INVALID",
+      "m_s3": 0.0,
+      "m_s6": 0.015780126416545366
+    },
+    {
+      "success": true,
+      "n3": 1.0,
+      "n6": 2.0,
+      "rho3": 0.3,
+      "rho6": 1.900139356283892,
+      "v_min": -4.211187610755424e-05,
+      "rho3_over_rho6_sq": 0.0830903040425419,
+      "path_deviation_pct": 91.69096959574581,
+      "eft_status": "INVALID",
+      "m_s3": 0.0,
+      "m_s6": 0.010627120013068083
+    },
+    {
+      "success": true,
+      "n3": 1.0,
+      "n6": 3.0,
+      "rho3": 0.3,
+      "rho6": 2.1191439201287645,
+      "v_min": -2.3256860900798036e-05,
+      "rho3_over_rho6_sq": 0.06680367425957782,
+      "path_deviation_pct": 93.31963257404222,
+      "eft_status": "INVALID",
+      "m_s3": 0.0,
+      "m_s6": 0.008007418178714738
+    },
+    {
+      "success": true,
+      "n3": 1.0,
+      "n6": 4.0,
+      "rho3": 0.3,
+      "rho6": 2.2988494621701996,
+      "v_min": -1.4793400533878929e-05,
+      "rho3_over_rho6_sq": 0.05676755494598016,
+      "path_deviation_pct": 94.32324450540199,
+      "eft_status": "INVALID",
+      "m_s3": 0.0,
+      "m_s6": 0.006435535602531792
+    },
+    {
+      "success": false,
+      "n3": 2.0,
+      "n6": 0.0
+    },
+    {
+      "success": false,
+      "n3": 2.0,
+      "n6": 1.0
+    },
+    {
+      "success": false,
+      "n3": 2.0,
+      "n6": 2.0
+    },
+    {
+      "success": false,
+      "n3": 2.0,
+      "n6": 3.0
+    },
+    {
+      "success": false,
+      "n3": 2.0,
+      "n6": 4.0
+    },
+    {
+      "success": false,
+      "n3": 3.0,
+      "n6": 0.0
+    },
+    {
+      "success": false,
+      "n3": 3.0,
+      "n6": 1.0
+    },
+    {
+      "success": false,
+      "n3": 3.0,
+      "n6": 2.0
+    },
+    {
+      "success": false,
+      "n3": 3.0,
+      "n6": 3.0
+    },
+    {
+      "success": false,
+      "n3": 3.0,
+      "n6": 4.0
+    }
+  ],
+  "best_candidate": null,
+  "interpretation": {
+    "g92_problem": "Casimir pushes S3 into sub-stringy regime (rho3=0.32 < 1). Not physical.",
+    "g93_question": "Does flux quantization (N3,N6) produce EFT-valid minimum on G91 path?",
+    "verdict": "Path NOT recovered by integer flux quanta in scanned range"
+  }
+}
