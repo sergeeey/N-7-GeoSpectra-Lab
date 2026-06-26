@@ -1,0 +1,12 @@
+{
+  "dim_g2": 14,
+  "dim_su3_subalgebra": 8,
+  "dim_complement": 6,
+  "g2_closes": true,
+  "jacobi_max_err": 6.938893903907228e-17,
+  "stabilizer_max_err": 2.1327506508401242e-16,
+  "su3_closes": true,
+  "decomp": "adj(G2) = 14 = 8 + 6",
+  "sm_relevance": "SU(3)_color <- SU(3) subset G2 subset SO(7) = Iso(S6)",
+  "status": "VERIFIED"
+}
