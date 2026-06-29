@@ -1,104 +1,175 @@
-# GeoSpectra Experiments — Phase 4 Package
+# GeoSpectra Experiments - Phase 4 Package
 
-**Status:** PHASE 4B COMPLETE 2026-06-29 — Phase diagram of spectral recoverability
-**Commit:** 4fc3770
+**Status:** BENCHMARK_HARDENING_COMPLETE_FOR_PHASE4B_V1
+**Date:** 2026-06-29
 
-## New Framing
+## Framing
 
-> **We study when compact-product geometry fingerprints remain recoverable from spectra under disorder — not whether they are "always robust."**
->
-> This produces a **phase diagram**: recoverable / degraded / erased.
+> We study when compact-product geometry fingerprints remain recoverable from
+> finite spectra under disorder.
+
+This is a synthetic/toy **recoverability benchmark**, not a proof of physical
+compactification or Standard Model derivation.
 
 ## Quick Start
 
 ```bash
 pip install numpy scipy scikit-learn
-python phase4a_ensemble_full.py              # Ensemble + ablation
-python phase4a_ml_classifier_ood.py          # ML + OOD
-python phase4a_validation_minimal.py         # 7-check validation
-python phase4a_crucial_experiments.py        # Strong Inference: 4 crucial tests
-python phase4b_phase_diagram.py             # Phase diagram (W x N x pair)
+python phase4a_ensemble_full.py                 # Phase 4A ensemble + ablation
+python phase4a_ml_classifier_ood.py             # ML + OOD
+python phase4a_validation_minimal.py            # 7-check validation
+python phase4a_crucial_experiments.py           # Strong Inference tests
+python phase4b_phase_diagram.py                 # Legacy fixed-threshold diagnostic
+python phase4b_recoverability_benchmark.py --quick
+python phase4b_recoverability_benchmark.py --seeds 10 --k-values 15 30
 ```
+
+Run commands from the `experiments/` directory or pass the paths from the repo root.
 
 ## Experiment Index
 
-| File | Phase | What it does | Runtime |
-|------|-------|-------------|---------|
-| `geometry_fingerprint_core.py` | 3 | Analytic 4-geometry discrimination | 5s |
-| `phase4a_ensemble_full.py` | 4A | **Ensemble 10 seeds + ablation** | 250s |
-| `phase4a_ml_classifier_ood.py` | 4A | **ML classifier + OOD** | 120s |
-| `phase4a_validation_minimal.py` | 4A | **7-check validation** | 120s |
-| `phase4a_crucial_experiments.py` | 4A | **Strong Inference 4 tests** | 180s |
-| `phase4b_phase_diagram.py` | 4B | **Phase diagram (NEW)** | 300s |
+| File | Phase | What it does | Evidence role |
+|---|---|---|---|
+| `geometry_fingerprint_core.py` | 3 | Analytic 4-geometry discrimination | L4 synthetic benchmark |
+| `phase4a_ensemble_full.py` | 4A | Ensemble 10 seeds + ablation | Spectral-density legacy core evidence |
+| `phase4a_ml_classifier_ood.py` | 4A | ML classifier + OOD | Moderate-disorder check |
+| `phase4a_validation_minimal.py` | 4A | 7-check validation suite | Audit support |
+| `phase4a_crucial_experiments.py` | 4A | Strong Inference tests | Exploratory; rerun-inconsistent values |
+| `phase4b_phase_diagram.py` | 4B | Legacy `sd > 4` phase diagnostic | Synced diagnostic, not final proof |
+| `phase4b_recoverability_benchmark.py` | 4B | AUC/separation/bootstrap/k benchmark | Primary strict benchmark |
 
-## Phase 4B: Spectral Recoverability Phase Diagram
+## Current Honest Results
 
-### Result — 3 Regimes Discovered
+### Positive Legacy Claim
 
-| Regime | Condition | Evidence |
-|--------|-----------|----------|
-| **Recoverable** | Flat-vs-curved, any W | T4 vs curved: 100% to W=30 |
-| **Degraded** | Curved-vs-curved, W=15-20 | S3xS1 vs S2xS2: drops to 33-67% |
-| **Erased** | Curved-vs-curved, W≥25 | S3xS1 vs S2xS2: 0% at W=25,30 |
+Spectral density is the dominant discriminator inside the original Phase 4A/4B
+protocols.
 
-### Phase Diagram by Pair
+- Current level: **L4 CORE, protocol-bound**.
+- It remains useful, but it is not an L5 physical or universal recoverability
+  claim.
 
+### New Strict Benchmark Boundary
+
+The strict benchmark asks a harder question:
+
+> Are cross-geometry spectral-density distances larger than same-geometry
+> seed/disorder variation?
+
+Full run:
+
+```bash
+python experiments/phase4b_recoverability_benchmark.py --seeds 10 --k-values 15 30
 ```
-T4 vs S3xS1:  🔴W=0 → 🟢W=1..30 (flat-vs-curved ROBUST)
-T4 vs S2xS2:  🔴W=0 → 🟢W=1..30 (flat-vs-curved ROBUST)
-S3xS1 vs S2xS2: 🟢W=0..12 → 🔴W=15,20,25,30 (curved-vs-curved DEGRADES)
-```
 
-### Key Finding
+Result:
 
-**W=20 is not a failure — it's a phase boundary.** The degradation is **pair-dependent**:
-- Flat-vs-curved pairs survive to W=30
-- Curved-vs-curved pairs degrade at W=15-20 and erase at W≥25
+| Quantity | Value |
+|---|---:|
+| Cells | 72 |
+| Recoverable | 6 |
+| Degraded | 0 |
+| Erased | 66 |
+| Recoverable W values | W=0 only |
+| k=30 W>0 rescues | 0 |
 
-This transforms the W=20 "problem" into a **scientific result about spectral recoverability regimes**.
+Interpretation:
 
-## Key Results (HONEST — post-reproduction)
+- Under strict AUC-vs-within variation, the current spectral-density distance is
+  **not recoverable for W>0**.
+- `k=30` does **not** rescue W>0 in this benchmark version.
+- The failure mode is not "no signal exists"; it is that same-geometry disorder
+  variation is as large as or larger than cross-geometry separation.
 
-### Confirmed (reproduced)
-- **Ensemble:** 76.5% distinct (was claimed 82%), spectral density 99.2%
-- **ML OOD W<=10:** 98-100%
-- **ML OOD W=20 (baseline):** 62.5% (train W=0 only) — artifact
-- **Validation:** 6 PASS + 1 NOTE
-- **Multiclass:** 15.8% — honest boundary, does NOT work
+## Phase 4B Legacy Diagnostic
 
-### Salvaged via Strong Inference
-| Test | Result | Status |
-|------|--------|--------|
-| Train W<=10, test W=20 | **80.0%** | W=20 salvaged |
-| 2 features (sd+d_eff) | **100.0%** | Feature selection critical |
-| k=30 at W=20 | **86.7%** | More eigenvalues help |
-| Threshold, diff seeds | **48.3%** | Threshold NOT robust |
+The old fixed-threshold script is retained for continuity, but it should not be
+used as publication-grade evidence by itself.
 
-## Parameters (locked)
+Clean rerun diagnostic output:
 
-```python
-W_VALUES = [0, 1, 2, 5, 8, 10, 12, 15, 18, 20, 25, 30]
-SEEDS_TRAIN = [42, 123, 999, 777, 100]
-SEEDS_TEST = [200, 300, 400, 500, 600]
-K_EIG = 15-30 (15 baseline, 30 for W>=15)
-T4_SIZE = 6^4 = 1296
-CURVED_SIZE = 50*8 = 400 (N=300 for Phase 4B)
-```
+| Quantity | Value |
+|---|---:|
+| Grid cells | 36 |
+| Recoverable | 30 |
+| Degraded | 0 |
+| Erased | 6 |
+
+Important corrections:
+
+- The old committed JSON/documentation said 35 cells; the script now emits and
+  saves 36 cells.
+- The current threshold rules produce **0 degraded cells**, so "three regimes
+  discovered" is downgraded.
+- `T4_vs_S2xS2` at W=20 is present and recoverable in the legacy rerun.
+- Curved-vs-curved high-W behavior is fragile and non-monotonic: W=15,20,25,30
+  are weak/erased in the legacy grid, while W=18 is recoverable.
+
+## Benchmark Metrics
+
+Primary metric:
+
+- AUC of cross-geometry spectral-density distances versus same-geometry
+  seed-to-seed spectral-density distances.
+
+Secondary metrics:
+
+- Relative separation.
+- Bootstrap 95% CI.
+- k-rescue delta: `k=30` versus `k=15`.
+
+Pre-registered labels:
+
+| Label | Rule |
+|---|---|
+| recoverable | `AUC >= 0.90` and `relative_separation >= 1.0` |
+| degraded | `AUC >= 0.70` or `relative_separation >= 0.5` |
+| erased | otherwise |
+
+## k=30 Rescue Mechanism
+
+`k=30` was tested as the main rescue mechanism in the strict benchmark.
+
+Current result:
+
+- `k=30` did not promote any W>0 cell to recoverable or degraded.
+- It remains an exploratory direction only if paired with better normalization or
+  richer features.
+
+## Claim Boundary
+
+Allowed:
+
+- Benchmark recoverability under a toy generator.
+- Pair-dependent robustness or fragility under disorder.
+- Algorithmic comparison of `k`, AUC, and spectral-density features.
+- Negative benchmark boundaries.
+
+Not allowed from this evidence alone:
+
+- Physical compactification proof.
+- Standard Model derivation.
+- Quantum-foam or real-physics claims.
+
+Those remain `[NEEDS-REAL-DATA]`.
 
 ## Data
 
-All results saved as JSON. Load with:
-
 ```python
 import json
-# Phase 4A
-with open('data/phase4a_ensemble_results.json') as f:
-    data = json.load(f)
-with open('experiments/20260629-crucial-experiments/crucial_results.json') as f:
-    crucial = json.load(f)
-# Phase 4B
+
 with open('experiments/20260629-phase4b/phase4b_results.json') as f:
-    phase_diag = json.load(f)
+    legacy = json.load(f)
+
+with open('experiments/20260629-phase4b/phase4b_benchmark_results.json') as f:
+    benchmark = json.load(f)
 ```
 
-**Phase diagram established. W=20 transformed from problem to boundary result.**
+## Next Gates
+
+1. Add hard negatives: label permutation, N-shuffle, same-geometry controls,
+   unseen-W grid.
+2. Test normalization/alignment that reduces same-geometry disorder variation.
+3. Test richer feature vectors beyond spectral-density distance alone.
+4. Re-run with N=500 and at least 20 seeds.
+5. Promote only cells whose lower 95% AUC CI stays above 0.80.
