@@ -1,6 +1,6 @@
 """
 Phase 4A ML: Train on Clean (W=0), Test OOD (W>0)
-Measures: out-of-distribution robustness
+FIXED: per-W accuracy computed from actual data, not configs
 """
 import json, sys, warnings
 from pathlib import Path
@@ -85,58 +85,65 @@ for n,p in [("S3xS1",s31(50,8,42)),("S2xS2",s22(50,8,42))]:
 
 PAIRS = [("T4","S3xS1",1),("T4","S2xS2",1),("S3xS1","S2xS2",1),("T4","T4",0),("S3xS1","S3xS1",0),("S2xS2","S2xS2",0)]
 
-def cl(cfgs):
-    data=[]
-    for W,s,n1,n2,lb in cfgs:
-        L1=ad(laps[n1],W,s) if W>0 else laps[n1]
-        L2=ad(laps[n2],W,s) if W>0 else laps[n2]
-        p1=get_fp(L1,n1,K_EIG); p2=get_fp(L2,n2,K_EIG)
-        if p1 and p2: data.append((fe(p1,p2),lb,f"{n1}_vs_{n2}"))
+def collect_data(seed_list, W_list):
+    """Collect (features, label, W) for given seeds and W values."""
+    data = []
+    for s in seed_list:
+        for W in W_list:
+            for n1,n2,lb in PAIRS:
+                L1 = ad(laps[n1], W, s) if W > 0 else laps[n1]
+                L2 = ad(laps[n2], W, s) if W > 0 else laps[n2]
+                fp1 = get_fp(L1, n1, K_EIG)
+                fp2 = get_fp(L2, n2, K_EIG)
+                if fp1 and fp2:
+                    data.append((fe(fp1, fp2), lb, W, f"{n1}_vs_{n2}"))
     return data
 
 # Train
-trc=[]
-for s in SEEDS:
-    for n1,n2,lb in PAIRS: trc.append((0,s,n1,n2,lb))
-trd=cl(trc)
-Xtr,ytr=np.array([d[0] for d in trd]),np.array([d[1] for d in trd])
+train_data = collect_data(SEEDS, W_TRAIN)
+Xtr = np.array([d[0] for d in train_data])
+ytr = np.array([d[1] for d in train_data])
 
 # Test
-tec=[]
-for s in SEEDS:
-    for W in W_TEST:
-        for n1,n2,lb in PAIRS: tec.append((W,s,n1,n2,lb))
-ted=cl(tec)
-Xte,yte=np.array([d[0] for d in ted]),np.array([d[1] for d in ted])
+test_data = collect_data(SEEDS, W_TEST)
+Xte = np.array([d[0] for d in test_data])
+yte = np.array([d[1] for d in test_data])
+test_W = [d[2] for d in test_data]
 
-clf=RandomForestClassifier(n_estimators=50,max_depth=5,random_state=42)
-clf.fit(Xtr,ytr)
-acc=float(clf.score(Xtr,ytr))
+clf = RandomForestClassifier(n_estimators=50, max_depth=5, random_state=42)
+clf.fit(Xtr, ytr)
 
-print("="*50); print("PHASE 4A ML: CLASSIFIER + OOD"); print("="*50)
+print("="*50)
+print("PHASE 4A ML: CLASSIFIER + OOD (FIXED)")
+print("="*50)
 print(f"Train: {len(Xtr)} samples")
+print(f"Test:  {len(Xte)} samples")
+
 print(f"\nOOD Results:")
-print(f"  {'W':>5} | {'Acc':>8}")
+print(f"  {'W':>5} | {'Acc':>8} | {'N':>4}")
 for W in W_TEST:
-    mask=[c[0]==W for c in tec]
-    if any(mask):
-        idx=[i for i,m in enumerate(mask) if m]
-        a=clf.score(Xte[idx],yte[idx])
-        print(f"  {W:5.1f} | {a:7.1%}")
+    idx = [i for i in range(len(test_data)) if test_W[i] == W]
+    if idx:
+        acc = clf.score(Xte[idx], yte[idx])
+        print(f"  {W:5.1f} | {acc:7.1%} | {len(idx):4}")
 
 # Feature importance
-fi=clf.feature_importances_
-fn=["r1","r2","deff1","deff2","cv1","cv2","sd_dist","r_spread","deff_spread","cv_spread","d1_1","d1_2","d1_3","d1_4","d1_5","d2_1","d2_2","d2_3","d2_4","d2_5"]
-print(f"\nTop features:")
+fi = clf.feature_importances_
+fn = ["r1","r2","deff1","deff2","cv1","cv2","sd_dist","r_spread","deff_spread","cv_spread","d1_1","d1_2","d1_3","d1_4","d1_5","d2_1","d2_2","d2_3","d2_4","d2_5"]
+print(f"\nTop 5 features:")
 for idx in np.argsort(fi)[::-1][:5]:
     print(f"  {fn[idx]}: {fi[idx]:.3f}")
 
-summary={"train_acc":acc,"ood":[],"feature_importance":{fn[i]:float(fi[i]) for i in range(len(fn))}}
+# Save
+summary = {"train_acc": float(clf.score(Xtr, ytr)), "ood": []}
 for W in W_TEST:
-    idx=[i for i,c in enumerate(tec) if c[0]==W]
-    if idx: summary["ood"].append({"W":W,"acc":float(clf.score(Xte[idx],yte[idx]))})
+    idx = [i for i in range(len(test_data)) if test_W[i] == W]
+    if idx:
+        summary["ood"].append({"W": W, "acc": float(clf.score(Xte[idx], yte[idx])), "n": len(idx)})
+summary["feature_importance"] = {fn[i]: float(fi[i]) for i in range(len(fn))}
 
-out=Path(__file__).parent.parent/"data"/"phase4a_ml_ood.json"
+out = Path(__file__).parent.parent / "data" / "phase4a_ml_ood.json"
 out.parent.mkdir(exist_ok=True)
-with open(out,"w") as f: json.dump(summary,f,indent=2,default=str)
+with open(out, "w") as f:
+    json.dump(summary, f, indent=2, default=str)
 print(f"\nSaved: {out}")
