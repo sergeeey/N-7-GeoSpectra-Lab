@@ -156,3 +156,62 @@ Interpretation:
 - The next research target is not to defend the old threshold, but to find
   normalization, richer features, or model protocols that beat this stricter
   baseline.
+
+## Feature Benchmark V2 Result (2026-06-29)
+
+A second benchmark tested the proposed rescue mechanisms:
+
+1. better normalization/alignment,
+2. relative spectra,
+3. heat-kernel/zeta/moments,
+4. multi-feature fingerprints,
+5. pair-calibrated metrics,
+6. AUC instead of fixed thresholds,
+7. 20 seeds,
+8. disorder-invariant features,
+9. unfolded spacing spectra.
+
+Run:
+
+```bash
+python experiments/phase4b_feature_benchmark.py --seeds 20 --n-values 300 --k-values 15 30 --bootstrap 100
+```
+
+Observed best-of-feature-search result:
+
+| Metric | Value |
+|---|---:|
+| Best-by-cell entries | 72 |
+| Recoverable | 14 |
+| Degraded | 11 |
+| Erased | 47 |
+| W>0 recoverable cells | 8 |
+| W>=25 recoverable/degraded cells | 0 |
+
+Feature winners by best-cell count:
+
+| Feature mode | Wins |
+|---|---:|
+| unfolded_spacing | 23 |
+| moments | 13 |
+| heat_zeta | 10 |
+| gap_ratios | 9 |
+| aligned_density | 8 |
+| relative_spectrum | 7 |
+| multi_feature | 2 |
+
+Interpretation:
+
+- Normalized moment features recover flat-vs-curved pairs at W=1 and W=2.
+- Heat/zeta and unfolded-spacing features produce degraded flat-vs-curved cells at
+  W=5, W=8, W=18, and W=20.
+- Curved-vs-curved is not rescued by the tested features.
+- W>=25 remains erased.
+- k=30 is not the main rescue mechanism: it matches recoverable count but loses
+  degraded cells relative to k=15 in this run.
+- Pair calibration was not the dominant rescue; most winning cells were raw
+  feature distances.
+
+Evidence status: **L3 exploratory positive**. The run is useful, but best-of-
+feature-search is optimistic until confirmed with held-out feature selection,
+hard negatives, and N=500/800.

@@ -173,3 +173,56 @@ with open('experiments/20260629-phase4b/phase4b_benchmark_results.json') as f:
 3. Test richer feature vectors beyond spectral-density distance alone.
 4. Re-run with N=500 and at least 20 seeds.
 5. Promote only cells whose lower 95% AUC CI stays above 0.80.
+
+## Phase 4B Feature Benchmark V2
+
+V2 implements the next rescue mechanisms:
+
+- better normalization/alignment,
+- relative spectra,
+- heat-kernel/zeta/moments,
+- multi-feature fingerprints,
+- pair-calibrated metrics,
+- AUC against same-geometry variation,
+- 20 seeds,
+- disorder-invariant spacing features,
+- unfolded spacing spectra.
+
+Run:
+
+```bash
+python experiments/phase4b_feature_benchmark.py --seeds 20 --n-values 300 --k-values 15 30 --bootstrap 100
+```
+
+Result:
+
+| Metric | Value |
+|---|---:|
+| Best-by-cell entries | 72 |
+| Recoverable | 14 |
+| Degraded | 11 |
+| Erased | 47 |
+| W>0 recoverable cells | 8 |
+| W>=25 recoverable/degraded cells | 0 |
+
+Main findings:
+
+- `moments` rescue flat-vs-curved at W=1/2.
+- `heat_zeta` and `unfolded_spacing` give degraded flat-vs-curved cells at
+  W=5/8/18/20.
+- Curved-vs-curved is not rescued.
+- High disorder W>=25 remains erased.
+- `k=30` is not the main rescue in V2: it has the same recoverable count as
+  k=15 and fewer degraded cells.
+- Pair calibration is not the dominant winning mechanism in this run.
+
+Evidence status: **L3 exploratory positive**. Because V2 chooses the best feature
+mode per cell, it needs held-out feature selection and hard negatives before any
+L4/L5 promotion.
+
+Next expensive gates:
+
+```bash
+python experiments/phase4b_feature_benchmark.py --seeds 20 --n-values 500 --k-values 15 30 --bootstrap 100
+python experiments/phase4b_feature_benchmark.py --seeds 20 --n-values 800 --k-values 15 30 --bootstrap 100
+```

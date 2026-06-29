@@ -111,3 +111,38 @@ experiments/phase4b_recoverability_benchmark.py
 experiments/20260629-phase4b/phase4b_results.json
 experiments/20260629-phase4b/phase4b_benchmark_results.json
 ```
+
+## V2 Feature Benchmark Addendum
+
+`phase4b_feature_benchmark.py` tests the proposed rescue mechanisms with 20 seeds
+at N=300, k in {15, 30}:
+
+- normalized/aligned spectra,
+- unfolded spacing spectra,
+- relative spectra,
+- gap ratios,
+- moments,
+- heat/zeta signatures,
+- multi-feature fingerprints,
+- pair-calibrated distances,
+- AUC against same-geometry disorder variation.
+
+Result summary:
+
+| Claim | Value | Level | Notes |
+|---|---:|---|---|
+| V2 best-of-feature-search cells | 72 | **L3** | Exploratory multiple-comparison search |
+| V2 recoverable cells | 14 | **L3** | 6 at W=0, 8 at W=1/2 flat-vs-curved |
+| V2 degraded cells | 11 | **L3** | Mostly flat-vs-curved at W=5/8/18/20 |
+| V2 erased cells | 47 | **L3** | Includes curved-vs-curved under W>0 and W>=25 |
+| Better normalization/features rescue low-W flat-vs-curved | Yes | **L3** | Moments dominate W=1/2 recoveries |
+| Curved-vs-curved rescue | No | **L4 NEGATIVE** | No recoverable/degraded best cells for S3xS1_vs_S2xS2 at W>0 |
+| k=30 as main rescue | No | **L4 NEGATIVE** | Same recoverable count as k=15, fewer degraded cells |
+| N=500/800 | Not run | **L2** | Pending expensive resolution gate |
+
+Updated interpretation:
+
+> The strict raw-density benchmark was too pessimistic for easy flat-vs-curved
+> pairs, but the V2 feature benchmark does not rescue the hard curved-vs-curved
+> problem or high-disorder W>=25 cells. The next decisive test is held-out feature
+> selection plus N=500/800, not another fixed threshold.
