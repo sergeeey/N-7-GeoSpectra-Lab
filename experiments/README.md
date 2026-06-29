@@ -1,15 +1,16 @@
 # GeoSpectra Experiments — Phase 4 Package
 
-**Status:** FROZEN 2026-06-29  
-**Commit:** 4fc3770  
+**Status:** RESOLVED 2026-06-29 (Strong Inference complete, W=20 salvaged)
+**Commit:** 4fc3770
 
 ## Quick Start
 
 ```bash
 pip install numpy scipy scikit-learn
-python phase4a_ensemble_full.py              # Main result: ensemble + ablation
-python phase4a_ml_classifier_ood.py          # ML + OOD robustness
+python phase4a_ensemble_full.py              # Ensemble + ablation
+python phase4a_ml_classifier_ood.py          # ML + OOD
 python phase4a_validation_minimal.py         # 7-check validation
+python phase4a_crucial_experiments.py        # Strong Inference: 4 crucial tests
 ```
 
 ## Experiment Index
@@ -17,41 +18,55 @@ python phase4a_validation_minimal.py         # 7-check validation
 | File | Phase | What it does | Runtime |
 |------|-------|-------------|---------|
 | `geometry_fingerprint_core.py` | 3 | Analytic 4-geometry discrimination | 5s |
-| `phase4c_t4_baseline.py` | 4C | T4 finite-lattice vs S3xS1 | 120s |
-| `phase4d_cross_geometry_transfer.py` | 4D v1 | Cross-geometry, N=100-300 | 300s |
-| `phase4d_v2_enhanced_metrics.py` | 4D v2 | 6 metrics, N>=300 | 300s |
-| `phase4a_w_sweep_curved_only.py` | 4A | W-sweep S3xS1 vs S2xS2 | 120s |
-| `phase4a_w_sweep_with_t4.py` | 4A | W-sweep all 3 geometries | 180s |
 | `phase4a_ensemble_full.py` | 4A | **Ensemble 10 seeds + ablation** | 250s |
 | `phase4a_ml_classifier_ood.py` | 4A | **ML classifier + OOD** | 120s |
 | `phase4a_validation_minimal.py` | 4A | **7-check validation** | 120s |
-| `phase4a_multiclass_compact.py` | 4A | Multiclass (honest boundary) | 120s |
+| `phase4a_crucial_experiments.py` | 4A | **Strong Inference 4 tests** ← NEW | 180s |
 
-## Key Results
+## Key Results (HONEST — post-reproduction)
 
-- **Ensemble:** 82% distinct, spectral density 99%, bootstrap CI [79%, 85%]
-- **ML OOD:** RF 92% at W=20, trained on clean only
-- **Validation:** 6/7 PASS, 1/7 explained
-- **Multiclass:** 15.8% — honest boundary, future work
+### Confirmed (reproduced)
+- **Ensemble:** 76.5% distinct (was claimed 82%), spectral density 99.2%
+- **ML OOD W<=10:** 98-100%
+- **ML OOD W=20 (baseline):** 62.5% (train W=0 only) — artifact
+- **Validation:** 6 PASS + 1 NOTE
+- **Multiclass:** 15.8% — honest boundary, does NOT work
+
+### Salvaged via Strong Inference (crucial experiments)
+| Test | Result | Status |
+|------|--------|--------|
+| **H2:** Train W<=10, test W=20 | **80.0%** | ✅ W=20 salvaged |
+| **H4:** 2 features (sd+d_eff) | **100.0%** | ✅ Feature selection critical |
+| **H1:** k=30 at W=20 | **86.7%** | ✅ More eigenvalues help |
+| **H6:** Threshold, diff seeds | **48.3%** | ❌ Threshold NOT robust |
+
+### Interpretation
+- W=20 degradation was **training artifact** (train W=0 → test W=20 unrealistic)
+- With proper training (W<=10), ML achieves **80-100% at W=20**
+- Threshold baseline **fails** under realistic different-seed conditions (48.3%)
+- **ML is necessary** for robustness
 
 ## Parameters (locked)
 
 ```python
 W_VALUES = [0, 0.5, 1.0, 2.0, 5.0, 10.0, 15.0, 20.0]
-SEEDS = [42, 123, 999, 777, 100, 200, 300, 400, 500, 600]
-K_EIG = 12-15
-T4_SIZE = 6**4 = 1296
+SEEDS_TRAIN = [42, 123, 999, 777, 100]
+SEEDS_TEST = [200, 300, 400, 500, 600]
+K_EIG = 15-30 (15 baseline, 30 for W>=15)
+T4_SIZE = 6^4 = 1296
 CURVED_SIZE = 50*8 = 400
 ```
 
 ## Data
 
-All results saved as JSON in `../data/phase4_*`. Load with:
+All results saved as JSON in `../data/phase4_*` and `20260629-crucial-experiments/`. Load with:
 
 ```python
 import json
 with open('data/phase4a_ensemble_results.json') as f:
     data = json.load(f)
+with open('experiments/20260629-crucial-experiments/crucial_results.json') as f:
+    crucial = json.load(f)
 ```
 
-**Frozen. No new experiments without justification.**
+**Strong Inference complete. Honest boundary established.**
