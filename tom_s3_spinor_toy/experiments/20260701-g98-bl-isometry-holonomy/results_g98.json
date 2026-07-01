@@ -1,0 +1,24 @@
+{
+  "gate": "G98",
+  "verdict": "WEAK_UNINFORMATIVE_DIAGONAL_ARTIFACT",
+  "gates": {
+    "T1_gamma7_anticommutes": true,
+    "T1_gamma7_hermitian": true,
+    "T1_gamma7_squares_to_I": true,
+    "T2_coset_built": true,
+    "T3_so6_gens_built": true,
+    "T4a_21_generators_independent": true,
+    "T4b_closes_under_commutation": true,
+    "T5_BmL_commutes_with_so6": false,
+    "T6_BmL_fails_coset_at_least_one": true,
+    "CONTROL_cartan_gens_also_fail_coset": true,
+    "differential_informative": false,
+    "T7_alt_construction_identical": true
+  },
+  "bml_coset_nonzero_count": 6,
+  "control_cartan_coset_nonzero": {
+    "J_01": 2,
+    "J_23": 2,
+    "J_45": 2
+  }
+}
