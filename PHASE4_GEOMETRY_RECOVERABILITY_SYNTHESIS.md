@@ -52,4 +52,4 @@ The geometry signal is **real but bounded**: it survives moderate disorder, weak
 
 - Does NOT prove compactification
 - Does NOT derive SM
-- Does NOT fix lambda
+- Does NOT fix lambda_v_operator or lambda_np
