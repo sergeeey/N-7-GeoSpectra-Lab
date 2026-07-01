@@ -1,0 +1,25 @@
+name: G79A Identity Audit
+
+# Repo-wide gate (lambda_v_operator vs lambda_np, see tom_s3_spinor_toy/experiments/20260622-g79a-lambda-identity-audit/): fails if a text file mentions the coupling parameter without an explicit sector marker. Runs on every push/PR since the audit scans the whole repo, not a diff.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  g79a-identity-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run G79A identity audit (lambda_v_operator / lambda_np)
+        run: python -m pytest tom_s3_spinor_toy/tests/test_g79a_lambda_identity_audit.py -v
