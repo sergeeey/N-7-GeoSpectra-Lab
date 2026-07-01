@@ -20,7 +20,7 @@ This repository contains two independent research projects on compact geometries
 |---|---|---|
 | **Geometry** | S³×S¹ finite lattice | S³×S⁶ spectral triple |
 | **Method** | Eigensolver + IPR / r-stat | Index theory (Atiyah-Singer) + exact arithmetic |
-| **Verdict** | `DISCRETIZATION_SENSITIVE` | N_gen = 3 **EXACTLY** |
+| **Verdict** | `DISCRETIZATION_SENSITIVE` | N_gen = 3 (arithmetic exact; depends on open gate G67-C3, see below) |
 | **Key result** | 7.07× signal; geometry-agnostic | Three SM generations from Atiyah-Singer index |
 | **Tests** | ~500 regression tests | **2210 tests** (fractions.Fraction, zero float ops) |
 | **Directory** | `cc_toy_lab/`, `scripts/`, `tests/` | [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) |
@@ -32,6 +32,13 @@ This repository contains two independent research projects on compact geometries
 - G73: ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels = 3
 - G74A: Lichnerowicz gap + G₂-Schur → dim ker = 1 **exactly**
 - G74B: sign(ind) = +1 → left-handed excess → SM chirality
+
+**Open dependency (honestly flagged in G67/G73 themselves):** the "×3 channels" step
+assumes three geometrically distinct octonion-multiplication channels (L_p, R_p, T_p)
+each appear in the S³×S⁶ Dirac action — this is gate **G67-C3, still OPEN**. G44
+(2026-06-20) shows G₂ (S⁶'s isotropy group) cannot distinguish the three SO(8) triality
+reps (8_v≅8_s≅8_c as G₂-modules) — the same fact G73 uses, for a different purpose. See
+`TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7 for the full reconciliation.
 
 ---
 

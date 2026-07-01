@@ -173,6 +173,39 @@ Binary observable: **does the KK spectrum contain a zero mode δ₀=0?**
 
 ---
 
+## Case 7 — N_gen=3: does triality genuinely give 3 distinct channels, or does G2 collapse them?
+
+**Node:** G73's "N_gen=3 PROMOTE" verdict vs G44's "D4 triality on S3xS6 REJECT" verdict —
+both rest on the SAME underlying fact (G2=Fix(Z3): 8_v|G2 = 8_s|G2 = 8_c|G2 = 7+1
+identically) but reach apparently different conclusions. Added 2026-07-01 (G100 audit)
+after this relationship was found to be absent from this matrix and from README.md.
+
+| Hypothesis | Prediction | Verdict | Evidence |
+|---|---|---|---|
+| H1: G2-triality-collapse kills any 3-channel mechanism on S3xS6 | since G2 can't distinguish 8_v/8_s/8_c, no geometric construction using only G2 structure can give 3 distinct index contributions | `PARTIALLY_VERIFIED` | G44 (2026-06-20, REJECT): kills the specific "one bundle, index enhanced to 3 by triality symmetry" mechanism on exactly this basis |
+| H2: 3 distinct physical channels (L_p, R_p, T_p octonion mult.) exist independently in the S3xS6 Dirac action, each individually ordinary (c3=2, index=1), summing to 3 | index=1 per channel is unaffected by G2 blindness (each channel's c3 is computed directly, not "enhanced" by symmetry); only the EXISTENCE of 3 separate channels in the action needs proof | `OPEN` | G67-C3 (2026-06-21): "OPEN — prove all 3 channels appear in S3xS6 action". G73 (2026-06-21, PROMOTE 29/29 on the ARITHMETIC given H2): explicitly notes in its own "boundary conditions" section that geometric realization of the E_v bundle "depends on G72 (Tom)... here we use algebraic triality argument" — i.e. H2 is ASSUMED for the arithmetic, not derived |
+
+**Surviving:** Both, for different questions. H1 (G44) correctly kills a DIFFERENT mechanism
+(single-bundle symmetry-enhancement) than H2 (G73) requires (three separate channels).
+G73's PROMOTE verdict is conditional on H2, which is honestly flagged OPEN in G67/G73's own
+text but was never connected to G44's REJECT verdict at the summary-document level.
+
+**Forbidden promotions from this node:**
+- "N_gen=3 is fully geometrically derived" — conditional on G67-C3 (H2), still OPEN
+- "G44's REJECT contradicts G73's PROMOTE" — they answer different questions (single-bundle
+  enhancement vs three-separate-channels existence); not a logical contradiction, but the
+  SHARED premise (G2 cannot distinguish the three reps) means H2 needs an INDEPENDENT
+  geometric argument for why three channels appear, not just "triality says so"
+- "the E_v/E_s/E_c bundles are geometrically distinct objects" — this is exactly what
+  remains unproven; G73 uses their EQUALITY of G2-content (which G44 also uses) only to
+  argue each would individually give c3=2 IF they exist as separate objects
+
+**Next discriminating test:** Resolve G67-C3 — either construct L_p/R_p/T_p as genuinely
+distinct bundles on S3xS6 (geometric), or find the G72 input from Tom that specifies which
+mechanism realizes all three channels physically. Full record: `experiments/20260701-g100-ach-g44-g73-audit/`.
+
+---
+
 ## Summary table
 
 | Case | Node | Surviving | Status | Next action |
@@ -183,6 +216,7 @@ Binary observable: **does the KK spectrum contain a zero mode δ₀=0?**
 | 4 | V-sector | H2: structural split | LIVE | Await Tom Q3; then G4 |
 | 5 | Dirac core | H4: verified geometry | VERIFIED | Closed subgraph |
 | 6 | Spin structure | H1 / H2 both | FORK | Await Tom Q1 |
+| 7 | N_gen=3 (G44 vs G73) | H1 (G44) + H2 (G73), different questions | OPEN (H2 = G67-C3 unresolved) | Resolve G67-C3; needs G72/Tom or new geometry |
 
 ## Forbidden promotions (consolidated)
 
