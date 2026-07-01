@@ -258,7 +258,7 @@ of c₃=2 each — this class was not covered by T1 categories 1–5.
 
 | Gate | Mechanism | Verdict | Why |
 |------|-----------|---------|-----|
-| G44-B1 | D₄ triality on S³×S⁶ (G₂) | NULL | G₂ has no 8-dim irrep → triality orbit collapses to 1 on S⁶. **Note (G100, 2026-07-01):** G73's later N_gen=3 PROMOTE uses this SAME G₂-collapse fact for a different purpose (three separate channels, not one enhanced bundle) — see `TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7. G73's "×3" step depends on still-OPEN gate G67-C3. |
+| G44-B1 | D₄ triality on S³×S⁶ (G₂) | NULL | G₂ has no 8-dim irrep → triality orbit collapses to 1 on S⁶. **Note (G100, 2026-07-01):** G73's later N_gen=3 PROMOTE uses this SAME G₂-collapse fact for a different purpose (three separate channels, not one enhanced bundle) — see `TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7. G73's "×3" step depends on gate G67-C3, which is **2/3 closed** (G68: L≠R rigorously, via pseudoscalar Ω_L=+I≠Ω_R=-I) and 1/3 open (8_v vector channel, needs G72/Tom). |
 | G45-B2 | D₄ triality on S³×S⁷ (SO(8)) | WEAK | Orbit size=3 visible, but single parallelization → N_gen=1 |
 | G46 | Geometric realization of ℂ⊗ℍ⊗𝕆 | NULL | Single metric → unique isotropy; SO(8) dim=28 not compactifiable |
 
