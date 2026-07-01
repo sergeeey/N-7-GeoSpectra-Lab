@@ -183,12 +183,15 @@ after this relationship was found to be absent from this matrix and from README.
 | Hypothesis | Prediction | Verdict | Evidence |
 |---|---|---|---|
 | H1: G2-triality-collapse kills any 3-channel mechanism on S3xS6 | since G2 can't distinguish 8_v/8_s/8_c, no geometric construction using only G2 structure can give 3 distinct index contributions | `PARTIALLY_VERIFIED` | G44 (2026-06-20, REJECT): kills the specific "one bundle, index enhanced to 3 by triality symmetry" mechanism on exactly this basis |
-| H2: 3 distinct physical channels (L_p, R_p, T_p octonion mult.) exist independently in the S3xS6 Dirac action, each individually ordinary (c3=2, index=1), summing to 3 | index=1 per channel is unaffected by G2 blindness (each channel's c3 is computed directly, not "enhanced" by symmetry); only the EXISTENCE of 3 separate channels in the action needs proof | `OPEN` | G67-C3 (2026-06-21): "OPEN — prove all 3 channels appear in S3xS6 action". G73 (2026-06-21, PROMOTE 29/29 on the ARITHMETIC given H2): explicitly notes in its own "boundary conditions" section that geometric realization of the E_v bundle "depends on G72 (Tom)... here we use algebraic triality argument" — i.e. H2 is ASSUMED for the arithmetic, not derived |
+| H2: 3 distinct physical channels (L_p, R_p, T_p octonion mult.) exist independently in the S3xS6 Dirac action, each individually ordinary (c3=2, index=1), summing to 3 | index=1 per channel is unaffected by G2 blindness (each channel's c3 is computed directly, not "enhanced" by symmetry); only the EXISTENCE of 3 separate channels in the action needs proof | `PARTIAL_CLOSURE (2/3)` | **G68 (2026-06-21, 28/28 tests):** L_i and R_i octonion multiplication matrices ARE rigorously distinct — both satisfy Cl(0,7) Clifford relations separately, but the pseudoscalar differs (Ω_L=+I₈ ≠ Ω_R=−I₈), an actual invariant, not a relabeling. 2 of 3 channels (8_s=L, 8_c=R) are genuinely, algebraically inequivalent representations. **Still open:** the third (8_v, vector) channel — G68 states explicitly it "does NOT arise from left or right O-multiplication by any standard construction"; its geometric realization on S3xS6 needs G72 (Tom input). G73 (2026-06-21, PROMOTE 29/29 on the ARITHMETIC given H2) uses the algebraic c3-equality argument for all 3, not G68's explicit construction. |
 
 **Surviving:** Both, for different questions. H1 (G44) correctly kills a DIFFERENT mechanism
 (single-bundle symmetry-enhancement) than H2 (G73) requires (three separate channels).
-G73's PROMOTE verdict is conditional on H2, which is honestly flagged OPEN in G67/G73's own
-text but was never connected to G44's REJECT verdict at the summary-document level.
+G73's PROMOTE verdict is conditional on H2, which is 2/3 rigorously closed (G68: L vs R
+genuinely inequivalent Clifford reps) and 1/3 open (8_v vector channel, needs G72/Tom) —
+this partial-closure state was honestly flagged in G67/G68's own text but was never
+connected to G44's REJECT verdict at the summary-document level, and G68 itself was also
+missing from README.md/RESEARCH_STATUS_REPORT.md before this update.
 
 **Forbidden promotions from this node:**
 - "N_gen=3 is fully geometrically derived" — conditional on G67-C3 (H2), still OPEN
@@ -216,7 +219,7 @@ mechanism realizes all three channels physically. Full record: `experiments/2026
 | 4 | V-sector | H2: structural split | LIVE | Await Tom Q3; then G4 |
 | 5 | Dirac core | H4: verified geometry | VERIFIED | Closed subgraph |
 | 6 | Spin structure | H1 / H2 both | FORK | Await Tom Q1 |
-| 7 | N_gen=3 (G44 vs G73) | H1 (G44) + H2 (G73), different questions | OPEN (H2 = G67-C3 unresolved) | Resolve G67-C3; needs G72/Tom or new geometry |
+| 7 | N_gen=3 (G44 vs G73) | H1 (G44) + H2 (G73), different questions | PARTIAL (H2 = G67-C3: 2/3 closed by G68, 1/3 open) | Resolve 8_v channel; needs G72/Tom or new geometry |
 
 ## Forbidden promotions (consolidated)
 
