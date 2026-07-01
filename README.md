@@ -35,6 +35,18 @@ This repository contains two independent research projects on compact geometries
 
 ---
 
+## Industrial Applications
+
+The spectral-fingerprint method built here (Track A: graph-Laplacian eigenvalue
+signatures on finite lattices) has been adapted for a commercial use case — see
+[GeoSpectra-Industrial](https://github.com/sergeeey/GeoSpectra-Industrial) (ScanGuard).
+Same core signal-detection principle, different question: instead of "is this
+signal specific to S³×S¹ physics?" it asks "is this 3D scan anomalous?".
+Pilot-ready MVP (Two-Mode Architecture, 20 ADRs), seeking first real-scan
+validation partners. Independent codebase, independent benchmarks.
+
+---
+
 ## ⚠️ Current Status — Track A (2026-06-03)
 
 | Item | Value |
