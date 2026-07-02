@@ -1,10 +1,27 @@
 {
-  "t1_same_acc": {"acc": 1.0, "v": "PASS"},
-  "t2_fp_rate": {"fp_rate": 0.0, "v": "PASS"},
-  "t3_curved_boundary": {
-    "by_W": {"0": 1.0, "5": 1.0, "10": 1.0, "15": 0.6, "20": 0.8},
-    "degrades": true,
+  "t1_same_acc": {
+    "acc": 0.9230769230769231,
     "v": "PASS"
   },
-  "t4_ablation": {"full": 1.0, "no_sd": 1.0, "drop": 0.0, "v": "FAIL"}
+  "t2_fp_rate": {
+    "fp_rate": 0.07692307692307693,
+    "v": "PASS"
+  },
+  "t3_curved_boundary": {
+    "by_W": {
+      "0": 1.0,
+      "5": 1.0,
+      "10": 1.0,
+      "15": 1.0,
+      "20": 1.0
+    },
+    "degrades": false,
+    "v": "FAIL"
+  },
+  "t4_ablation": {
+    "full": 1.0,
+    "no_sd": 0.9583333333333334,
+    "drop": 0.04166666666666663,
+    "v": "FAIL"
+  }
 }
