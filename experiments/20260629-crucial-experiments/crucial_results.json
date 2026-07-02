@@ -1,23 +1,28 @@
 {
   "H2_overfitting": {
-    "train_W": [0, 1, 5, 10],
+    "train_W": [
+      0,
+      1,
+      5,
+      10
+    ],
     "test_W": 20,
-    "acc": 0.8,
-    "verdict": "H2 killed"
+    "acc": 0.7,
+    "verdict": "H2 confirmed"
   },
   "H4_features": {
     "n_features": 2,
-    "acc": 1.0,
+    "acc": 0.8333333333333334,
     "verdict": "H4 confirmed"
   },
   "H1_k30": {
     "k": 30,
-    "acc": 0.8666666666666667,
-    "baseline_k15": 0.625
+    "acc": 0.9,
+    "baseline_k15": 0.6666666666666666
   },
   "H6_diffseeds": {
     "threshold_acc_same_seed": 0.909,
-    "threshold_acc_diff_seeds": 0.4827586206896552,
-    "verdict": "H6 killed — threshold NOT robust"
+    "threshold_acc_diff_seeds": 0.4642857142857143,
+    "verdict": "H6 killed \u2014 threshold NOT robust"
   }
 }

@@ -353,7 +353,15 @@ def test_analyze_mean_r_positive_is_finite_or_nan_without_crash():
         low_energy_count=4,
     )
 
-    assert np.isfinite(result.mean_r_positive) or np.isnan(result.mean_r_positive)
+    # NaN is valid when no positive eigenvalue pairs exist in this configuration.
+    # If a value is present it must be a valid r-statistic: finite and in [0, 1].
+    if not np.isnan(result.mean_r_positive):
+        assert np.isfinite(result.mean_r_positive), (
+            f"mean_r_positive is Inf: {result.mean_r_positive}"
+        )
+        assert 0.0 <= result.mean_r_positive <= 1.0, (
+            f"mean_r_positive out of r-stat range [0,1]: {result.mean_r_positive}"
+        )
 
 
 def test_threshold_scan_is_stable_for_q1_clean_pbc():
