@@ -8,7 +8,8 @@
   },
   "H2_flux": {
     "H2_S6": 0,
-    "kill_reason": "H^2(S^6)=0 -> no harmonic 2-forms -> flux ansatz impossible",
+    "H4_S6": 0,
+    "kill_reason": "H^2(S^6)=0 and H^4(S^6)=0 -> no NS-NS B-field nor internal F_4 flux ansatz possible on S^6",
     "killed": true
   },
   "H3_orbifold": {
@@ -22,7 +23,10 @@
     "KO_dim_S3": 3,
     "KO_dim_S6": 6,
     "KO_dim_product": 1,
-    "chiral_requires": [2, 6],
+    "chiral_requires": [
+      2,
+      6
+    ],
     "kill_reason": "KO-dim=1 mod 8; chirality requires 2 or 6",
     "killed": true
   },
