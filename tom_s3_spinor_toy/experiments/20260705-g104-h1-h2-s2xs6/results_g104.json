@@ -1,0 +1,45 @@
+{
+  "gate": "G104",
+  "C1_positive_control": {
+    "exists": true,
+    "rho_min": 1.1790598835202615,
+    "rho_a_min": 1.3901822089268125,
+    "v_min": -2.5268640991607213e-06,
+    "kappa_sq": 1.1700885522488111,
+    "m_kk": 1.078995249952137,
+    "m_mod": 0.02024784218108818
+  },
+  "C1_pass": true,
+  "H1_lambda": 0.5,
+  "H1_run": {
+    "exists": true,
+    "rho_min": 1.1799535827568286,
+    "rho_a_min": 1.6428381135188685,
+    "v_min": -6.015595451910407e-06,
+    "kappa_sq": 1.171863022860597,
+    "m_kk": 0.6087027028232594,
+    "m_mod": 0.030964167155007143
+  },
+  "H2_lambda": 0.25,
+  "H2_run": {
+    "exists": true,
+    "rho_min": 1.178620947642377,
+    "rho_a_min": 1.6372781521894095,
+    "v_min": -2.961698042188377e-06,
+    "kappa_sq": 1.1692175222804602,
+    "m_kk": 0.6107697697320243,
+    "m_mod": 0.02201764856662875
+  },
+  "C2_both_minima_exist": true,
+  "C3_kappa_rel_spread_h1_vs_h2": 0.00226262481507896,
+  "C3_kappa_target": 1.1666666666666667,
+  "C3_h1_matches_target": true,
+  "C3_h2_matches_target": true,
+  "C3_kappa_lambda_blind": true,
+  "C4_differentiating_ratios": {
+    "v_min_ratio_h1_over_h2": 2.031130576520734,
+    "m_mod_ratio_h1_over_h2": 1.40633397164574
+  },
+  "verdict": "NULL_KAPPA_STILL_LAMBDA_BLIND",
+  "interpretation": "Positive control reproduces G66 kappa^2=7/6 exactly on (3,6). On (2,6): H1 and H2 both admit an AdS minimum. kappa^2 is STILL lambda-blind off the (3,6) point (matches the H1-pearl's 'near-universal across Sa x Sb family' claim if blind). The differentiating observables (V_min, m_mod) differ between H1/H2 by the C4 ratios above -- descriptive only, no independent physical target exists to prefer either yet."
+}
