@@ -12,10 +12,13 @@
 for one generation. Five independent CSDR verification angles all PASS. 29 positive gates (G6–G29)
 closed via Falsification Ladder (FL) Standard protocol: claim.md → evidence script → decision.md.
 
-**Three-generation result (2026-06-21):** **G73+G74A+G74B PROMOTE** — N_gen = 3 EXACTLY from
+**Three-generation result (updated 2026-07-05):** **G73+G74A+G74B PROMOTE** — N_gen = 3 from
 geometry. ind(D_{S⁶}⊗S⁻) = Â(S⁶)·c₃(S⁻)/2 = 1 per Z₃-triality channel × 3 = 3. Lichnerowicz
 safety factor 8/45≪1 + G₂-Schur → dim ker = 1 EXACTLY (not just ≥ 1). sign(ind)=+1 → SM
-left-handed chirality. 31/31 tests. Note: Proposition T1 (exhaustion of single-bundle mechanisms)
+left-handed chirality. 31/31 tests. **Open dependency:** the "×3 channels" step relies on
+G67-C3 — G68 (28/28) rigorously closes 2/3 (L≠R via pseudoscalar Ω_L=+I≠Ω_R=-I); the vector
+channel 8_v remains open (G72 UNRESOLVED bundle ledger, G101 ruled out a naive G₂ construction,
+correct path is G102/Spin(8) triality, not started). Note: Proposition T1 (exhaustion of single-bundle mechanisms)
 remains valid; G73 circumvents it by using three bundles of c₃=2, not one of c₃=6.
 
 **New result (2026-06-21):** **G62 PROMOTE** — first zero-fit physical predictions.
@@ -194,7 +197,7 @@ Pre-registered claim: λ² = (n+3/2)² + (m/R)²
 
 ## Three-Generation Resolution — G67+G73+G74A+G74B
 
-**Status: RESOLVED ✅ — N_gen = 3 EXACTLY from geometry (2026-06-21)**
+**Status: PROMOTE — N_gen = 3 from geometry (updated 2026-07-05); one dependency open (G67-C3, 2/3 closed, 1/3 open — see Case 7 in TOM_RECONSTRUCTION_ACH_MATRIX.md)**
 
 | Gate | Claim | Verdict | Key result |
 |------|-------|---------|------------|
