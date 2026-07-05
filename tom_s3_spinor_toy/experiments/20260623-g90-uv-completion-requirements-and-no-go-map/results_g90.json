@@ -6,7 +6,7 @@
       "evidence": [
         "README.md: The product geometry",
         "README.md: 32-component spinor = 1 SM generation",
-        "README.md: N_gen = 3 EXACTLY"
+        "README.md: dim ker = 1 EXACTLY → N_gen = 3"
       ]
     },
     {

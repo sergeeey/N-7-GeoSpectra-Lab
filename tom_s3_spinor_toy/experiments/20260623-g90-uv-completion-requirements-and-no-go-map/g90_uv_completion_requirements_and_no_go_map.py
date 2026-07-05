@@ -62,14 +62,19 @@ def build_result() -> dict[str, Any]:
             _evidence(sources["null_index"], "G86B"),
         ],
         "mass_ratio_not_confirmed": [
-            _evidence(sources["status"], "coordinate-curvature proxy, not a canonically normalized physical mass ratio"),
+            _evidence(
+                sources["status"],
+                "coordinate-curvature proxy, not a canonically normalized physical mass ratio",
+            ),
             _evidence(sources["readme"], "G82 | canonical radion mass audit | CONDITIONAL"),
             _evidence(sources["g88f"], "INSUFFICIENT_ACTION"),
         ],
         "dirac_only_neutrinos": [
             _evidence(sources["g89a"], "DIRAC_ONLY_ALLOWED"),
             _evidence(sources["g89b"], "DIRAC_ONLY_CONFIRMED"),
-            _evidence(sources["g89b"], "The current model branch remains Dirac-only for neutrinos."),
+            _evidence(
+                sources["g89b"], "The current model branch remains Dirac-only for neutrinos."
+            ),
         ],
     }
 
@@ -79,7 +84,7 @@ def build_result() -> dict[str, Any]:
             "evidence": [
                 _evidence(sources["readme"], "The product geometry"),
                 _evidence(sources["readme"], "32-component spinor = 1 SM generation"),
-                _evidence(sources["readme"], "N_gen = 3 EXACTLY"),
+                _evidence(sources["readme"], "dim ker = 1 EXACTLY → N_gen = 3"),
             ],
         },
         {
