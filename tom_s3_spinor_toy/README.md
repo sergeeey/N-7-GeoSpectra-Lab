@@ -1,6 +1,6 @@
 # S³×S⁶ Spinor Toy — Geometric Origin of One SM Generation
 
-**Status:** CSDR 5/5 · N_gen=3 (G73+G74A+G74B; G67-C3 dependency 2/3 closed via G68, 1/3 open — vector channel 8_v, see below) · G76/G77/G82 local audit · 2748 tests collected · 2026-07-05
+**Status:** CSDR 5/5 · N_gen=3 (G73+G74A+G74B; G67-C3 dependency: 2/3 closed via G68, 1/3 = fiber-Spin(8) postulate — G102 proved it is NOT internally derivable, see below) · G76/G77/G82 local audit · 2748 tests collected · 2026-07-05
 
 **Zenodo (parent repo):** [10.5281/zenodo.20252650](https://doi.org/10.5281/zenodo.20252650) (concept DOI)  
 **Author:** Sergey Boyko · Independent researcher  
@@ -203,10 +203,13 @@ computation. **Caveat:** the "×3 independent channels" step relies on gate G67-
 Z₃-triality labels (8_v, 8_s, 8_c) genuinely correspond to three physically independent Dirac
 channels? G68 (28/28 tests) rigorously closes 2/3 of this: L and R octonion multiplications are
 inequivalent Cl(0,7) representations (pseudoscalar Ω_L=+I ≠ Ω_R=-I, a real invariant). The third,
-vector channel (8_v) remains OPEN — G72 found no explicit twisting bundle E_v with known c₃; a
-naive G₂-based construction was ruled out (G101, category mismatch); the correct path needs the
-full Spin(8) triality outer automorphism (queued as G102, not started, needs Tom's input or
-literature grounding in Baez/Harvey before code). See `TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7.
+vector channel (8_v): G72 found no explicit twisting bundle; G101 ruled out the naive G₂-based
+construction (category mismatch); **G102 (2026-07-05) settled it** — the explicit Cl(0,8) triality
+triple was built (Baez-grounded), and the centralizer of the geometric g₂ in so(8) is ZERO: no
+fiber symmetry large enough for Spin(8)-Schur can coexist with the S⁶ geometry. The third channel
+is therefore an explicit MODEL POSTULATE (independent fiber Spin(8) — the sharp question for Tom's
+framework), not a derivable fact. See `TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7 and
+`experiments/20260705-g102-spin8-fiber-obstruction/decision.md`.
 
 **Mechanism:** ind(D_{S⁶}⊗S⁻) = Â(S⁶)·c₃(S⁻)/2 = 1 per channel × 3 Z₃-triality channels = **3**.
 - c₃(S⁻) = χ(S⁶) = 2 (G33, Chern–Gauss–Bonnet)
@@ -252,7 +255,7 @@ null_results/INDEX.md: 24 entries (G27–G51, G58–G60 + earlier branches).
 
 ## Open Questions
 
-1. **Three generations** — G73+G74A+G74B PROMOTE, N_gen=3 from twisted Atiyah-Singer index; left-handed chirality from sign(ind)=+1. One dependency open: G67-C3 (2/3 closed by G68, 1/3 open — vector channel 8_v, needs G72/Tom or G102). See gate chain above.
+1. **Three generations** — G73+G74A+G74B PROMOTE, N_gen=3 from twisted Atiyah-Singer index; left-handed chirality from sign(ind)=+1. G67-C3 dependency settled by G102: 2/3 closed by G68; the third channel is NOT internally derivable (c_{so(8)}(g₂)=0) — it is a fiber-Spin(8) postulate, falsifiable through Tom's framework. See gate chain above.
 2. **Majorana mass** for right-handed neutrino — not yet explored
 3. **Coupling λ** — free at S³ stage (G4 Fisher rank theorem); requires V-operator promotion
 
