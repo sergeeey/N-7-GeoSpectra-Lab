@@ -1,0 +1,116 @@
+{
+  "gate": "G103",
+  "sweep": [
+    {
+      "lambda_np": 0.15,
+      "rho6_min": 1.178102,
+      "v_min": -1e-06,
+      "m_mod": 0.001438,
+      "m_kk": 1.08075,
+      "kk_source": "S3",
+      "ratio_pct": 0.133011
+    },
+    {
+      "lambda_np": 0.2,
+      "rho6_min": 1.178361,
+      "v_min": -2e-06,
+      "m_mod": 0.001658,
+      "m_kk": 1.080275,
+      "kk_source": "S3",
+      "ratio_pct": 0.153487
+    },
+    {
+      "lambda_np": 0.25,
+      "rho6_min": 1.178622,
+      "v_min": -2e-06,
+      "m_mod": 0.001852,
+      "m_kk": 1.079797,
+      "kk_source": "S3",
+      "ratio_pct": 0.171491
+    },
+    {
+      "lambda_np": 0.333333,
+      "rho6_min": 1.179061,
+      "v_min": -3e-06,
+      "m_mod": 0.002134,
+      "m_kk": 1.078994,
+      "kk_source": "S3",
+      "ratio_pct": 0.197804
+    },
+    {
+      "lambda_np": 0.4,
+      "rho6_min": 1.179416,
+      "v_min": -3e-06,
+      "m_mod": 0.002335,
+      "m_kk": 1.078345,
+      "kk_source": "S3",
+      "ratio_pct": 0.216491
+    },
+    {
+      "lambda_np": 0.45,
+      "rho6_min": 1.179684,
+      "v_min": -3e-06,
+      "m_mod": 0.002473,
+      "m_kk": 1.077854,
+      "kk_source": "S3",
+      "ratio_pct": 0.229471
+    },
+    {
+      "lambda_np": 0.5,
+      "rho6_min": 1.179954,
+      "v_min": -4e-06,
+      "m_mod": 0.002604,
+      "m_kk": 1.07736,
+      "kk_source": "S3",
+      "ratio_pct": 0.241721
+    },
+    {
+      "lambda_np": 0.55,
+      "rho6_min": 1.180226,
+      "v_min": -4e-06,
+      "m_mod": 0.002728,
+      "m_kk": 1.076863,
+      "kk_source": "S3",
+      "ratio_pct": 0.253349
+    },
+    {
+      "lambda_np": 0.6,
+      "rho6_min": 1.180501,
+      "v_min": -5e-06,
+      "m_mod": 0.002846,
+      "m_kk": 1.076363,
+      "kk_source": "S3",
+      "ratio_pct": 0.264435
+    }
+  ],
+  "checks": {
+    "S_symbolic_blind": true,
+    "I_kk_spread_pct": 0.4076,
+    "I_pass": true,
+    "M_modulus_exponent": 0.4928,
+    "M_pass": true,
+    "P_positive_control": true,
+    "P_reference": {
+      "rho6_min": 1.179061,
+      "ratio_pct": 0.1978
+    },
+    "N_negative_control": {
+      "fake_spread_pct": 17.4748,
+      "caught": true
+    }
+  },
+  "thresholds": {
+    "kk_spread_pass_pct": 0.5,
+    "kk_spread_kill_pct": 1.0,
+    "exponent_pass": [
+      0.4,
+      0.6
+    ],
+    "exponent_kill": [
+      0.3,
+      0.7
+    ]
+  },
+  "verdict": "PASS",
+  "interpretation": "Geometric KK tower is lambda-blind (direct: symbolic zero; indirect: 0.408% over 4x lambda range); lambda_np is observable only in the modulus sector with m_mod ~ lambda^0.493 (H1 sqrt-law). lambda_np = FREE_COUPLING_PARAMETER at the observable level: nothing built from geometry can fix it, closing the UV-derivation branch."
+}
