@@ -1,0 +1,23 @@
+{
+  "gate": "G106",
+  "point_tested": {
+    "a": 2,
+    "N": 7,
+    "lambda": 0.3333333333333333
+  },
+  "predicted": {
+    "kappa_sq": 1.1428571428571428,
+    "mass_exponent": 0.4922088977059433
+  },
+  "actual": {
+    "exists": true,
+    "kappa_sq": 1.1454159449443053,
+    "rho_min": 1.16656276478736,
+    "mass_exponent_local": 0.493199445827335
+  },
+  "kappa_diff": 0.002558802087162526,
+  "kappa_pass": true,
+  "exponent_diff": 0.00099054812139171,
+  "exponent_pass": true,
+  "verdict": "PROMOTE"
+}
