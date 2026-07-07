@@ -1,0 +1,71 @@
+{
+  "experiment": "phase4e_minkowski_transfer",
+  "version": "mvp_v1",
+  "timestamp": "2026-07-08T22:00:00Z",
+  "parameters": {
+    "l_max_a": 6,
+    "l_max_b": 4,
+    "W_values": [0.0, 0.1, 0.3, 0.5, 1.0],
+    "n_seeds": 3,
+    "kappa": 1.0801234497346435
+  },
+  "results": [
+    {
+      "geometry": "S³×S⁶ (physical)",
+      "dimensions": "S³×S⁶",
+      "total_dimension": 9,
+      "radii": {"R_a": 1.0801, "R_b": 1.0},
+      "n_eigenvalues_sampled": 13404,
+      "clean_metrics": {
+        "heat_zeta_exact": {"t_0.1": 1889.76}
+      },
+      "disorder_sweep": [
+        {"W": 0.0, "phase": "RECOVERABLE", "confidence": 1.0},
+        {"W": 0.1, "phase": "DEGRADED", "confidence": 0.59},
+        {"W": 0.3, "phase": "DEGRADED", "confidence": 0.56},
+        {"W": 0.5, "phase": "DEGRADED", "confidence": 0.50},
+        {"W": 1.0, "phase": "ERASED", "confidence": 0.0}
+      ]
+    },
+    {
+      "geometry": "S⁴×S⁵",
+      "dimensions": "S⁴×S⁵",
+      "total_dimension": 9,
+      "radii": {"R_a": 1.0, "R_b": 1.0},
+      "n_eigenvalues_sampled": 13576,
+      "clean_metrics": {
+        "heat_zeta_exact": {"t_0.1": 1481.92}
+      },
+      "disorder_sweep": [
+        {"W": 0.0, "phase": "RECOVERABLE", "confidence": 1.0},
+        {"W": 0.1, "phase": "DEGRADED", "confidence": 0.59},
+        {"W": 0.3, "phase": "DEGRADED", "confidence": 0.56},
+        {"W": 0.5, "phase": "DEGRADED", "confidence": 0.50},
+        {"W": 1.0, "phase": "ERASED", "confidence": 0.0}
+      ]
+    },
+    {
+      "geometry": "S²×S⁷",
+      "dimensions": "S²×S⁷",
+      "total_dimension": 9,
+      "radii": {"R_a": 1.0, "R_b": 1.0},
+      "n_eigenvalues_sampled": 12424,
+      "clean_metrics": {
+        "heat_zeta_exact": {"t_0.1": 689.53}
+      },
+      "disorder_sweep": [
+        {"W": 0.0, "phase": "RECOVERABLE", "confidence": 1.0},
+        {"W": 0.1, "phase": "DEGRADED", "confidence": 0.59},
+        {"W": 0.3, "phase": "DEGRADED", "confidence": 0.55},
+        {"W": 0.5, "phase": "DEGRADED", "confidence": 0.49},
+        {"W": 1.0, "phase": "ERASED", "confidence": 0.0}
+      ]
+    }
+  ],
+  "robustness_scores": {
+    "S³×S⁶ (physical)": 10,
+    "S⁴×S⁵": 10,
+    "S²×S⁷": 10
+  },
+  "evidence": "[ANALYTIC-SPECTRUM] [REPRODUCED] [DETERMINISTIC] [PARTIAL]"
+}
