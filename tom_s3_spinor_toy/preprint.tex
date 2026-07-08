@@ -71,7 +71,7 @@ the gauge group $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)_{B-L}$
 and the full electric charge formula $Q = T_{3L} + (B{-}L)/2$ geometrically,
 with all 32 spinor states matching one SM generation. The gauge coupling ratio
 $g_2^2/g_3^2 = 15/(16\pi)$ at equal radii agrees with the SM value at $M_Z$
-within 4.3\%. The KO-dimension~6 spectral triple structure
+within 4.0\%. The KO-dimension~6 spectral triple structure
 $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$
 is reproduced by representation theory on $S^3\times S^6$ without being postulated, and the Yukawa
 parameter count reduces to~4 via SU(3)-orbit degeneracy on~$S^6$.
@@ -312,7 +312,7 @@ Their ratio at the natural equal-radii normalization $\rho_3=\rho_6=1$ (string-s
   \;\xrightarrow{\;\rho_3=\rho_6=1\;}\;
   \frac{15}{16\pi} \approx 0.298.
 \end{equation}
-The SM value at $M_Z$ (PDG 2022) is $g_2^2/g_3^2\approx 0.287$, a $+4.2\%$ gap from
+The SM value at $M_Z$ (PDG 2022) is $g_2^2/g_3^2\approx 0.287$, a $+4.0\%$ gap from
 the geometric prediction, naturally attributed to RGE running from $M_{KK}$ down to $M_Z$.
 
 \textbf{RGE matching constraint.} One-loop SM running ($b_3=-7$, $b_2=-19/6$, $\overline{\rm MS}$
@@ -454,9 +454,9 @@ zero-mode count is:
 This count is exact per channel (not a lower bound) \emph{conditional on} the three
 channels being independent (L3b, open; see \S\ref{sec:open}).
 The per-channel indices~\eqref{eq:l3partial} are proved; channel independence requires
-$\mathrm{Spin}(8)$-level input (experiment E-L3B proves no $G_2$-equivariant invariant
-can distinguish the three channels; see \S\ref{sec:open}) and is the remaining open
-component of L3.
+$\mathrm{Spin}(8)$-level input (Theorem~\ref{thm:elb3}, \S\ref{sec:bundle-obstruction},
+proves no $G_2$-equivariant invariant can distinguish the three channels) and is the
+remaining open component of L3.
 
 \begin{corollary}[Family universality, G75]
 The $\ZZ_3$ eigenspaces with eigenvalues $\{1,\omega,\omega^2\}$ are mutually orthogonal
@@ -469,6 +469,48 @@ terms between generations vanish identically:
 Family-universal gauge interactions follow geometrically from $\ZZ_3$ eigenspace orthogonality.
 No phenomenological ``flavor-blindness'' assumption is required.
 \end{corollary}
+
+\subsection{The bundle obstruction to channel independence}
+\label{sec:bundle-obstruction}
+
+The remaining gap in the three-channel argument is the linear independence of the three
+zero modes as physical generation states (L3b). The natural first attempt --- distinguishing
+the channels by a $G_2$-invariant geometric operation --- is ruled out by the following
+obstruction theorem (experiment E-L3B, this work).
+
+\begin{theorem}[Bundle Obstruction, E-L3B]\label{thm:elb3}
+  The $G_2$-equivariant vector bundles $E_v$, $E_s$, $E_c$ on $S^6 = G_2/\mathrm{SU}(3)$
+  associated to the $\mathrm{SO}(8)$ triality representations $\mathbf{8}_v, \mathbf{8}_s,
+  \mathbf{8}_c$ are pairwise isomorphic:
+  \[
+    E_v \cong E_s \cong E_c \quad\text{as }G_2\text{-equivariant bundles.}
+  \]
+  No $G_2$-invariant operation can distinguish them;
+  distinguishing the three generation channels requires $\mathrm{Spin}(8)$ fibre symmetry
+  as an additional input.
+\end{theorem}
+
+\begin{proof}
+  By the homogeneous bundle correspondence, $G_2$-equivariant vector bundles on
+  $G_2/\mathrm{SU}(3)$ are classified by $\mathrm{SU}(3)$-representations. All three
+  channels restrict to the \emph{same} $\mathrm{SU}(3)$-module
+  $(1,0)\oplus(0,1)\oplus 2\cdot(0,0)$, so the bundles $E_v\cong E_s\cong E_c$ are pairwise
+  isomorphic as $G_2$-equivariant bundles; no $G_2$-invariant operation, including
+  nearly-K\"ahler instanton connections, can distinguish them.
+  At the $\mathrm{SO}(7)$ level a partial distinction exists
+  ($\mathbf{8}_v|_{\mathrm{SO}(7)}=7\oplus 1$ splits, while $\mathbf{8}_s|_{\mathrm{SO}(7)}
+  =\mathbf{8}_c|_{\mathrm{SO}(7)}=\mathbf{8}_{\mathrm{spin}}$ is the unique irreducible
+  $\mathrm{Spin}(7)$ spinor), but $\mathbf{8}_s$ and $\mathbf{8}_c$ remain indistinguishable
+  below $\mathrm{SO}(8)$.
+  The correct level is $\mathrm{Spin}(8)$: the three representations are pairwise
+  non-isomorphic by definition of triality, so Schur's lemma gives
+  $\mathrm{Hom}_{\mathrm{Spin}(8)}(\mathbf{8}_\alpha,\mathbf{8}_\beta)=0$ for $\alpha\ne\beta$.
+\end{proof}
+
+If the compactification setup preserves $\mathrm{Spin}(8)$ as an internal fibre symmetry,
+the three zero modes are $\mathrm{Spin}(8)$-invariantly orthogonal and $N_{\mathrm{gen}}=3$
+follows; confirming this physical input is the remaining open component of L3
+(\S\ref{sec:open}).
 
 \subsection{Uniqueness of the mechanism}
 \label{sec:uniqueness}
@@ -643,8 +685,42 @@ triality channels follows from the $G_2$ branching rule $\mathbf{8}_\alpha|_{G_2
 (E-L3-PARTIAL, this work; partial L3, proved).
 The conjecture $N_{\mathrm{gen}}=3$ requires the one remaining open problem:
 (i)~linear independence of the three zero modes (L3b, open; \S\ref{sec:open}).
-Experiment E-L3B (this work) proves the $G_2$-equivariant bundles are
-pairwise isomorphic, so the distinction requires $\mathrm{Spin}(8)$ fibre symmetry input.
+Theorem~\ref{thm:elb3} (\S\ref{sec:bundle-obstruction}) proves the $G_2$-equivariant
+bundles are pairwise isomorphic, so the distinction requires $\mathrm{Spin}(8)$ fibre
+symmetry input.
+
+\subsection{Yukawa degeneracy across channels}
+\label{sec:yukawa-deg}
+
+The exact kernel count of this section, combined with the bundle isomorphism of
+Theorem~\ref{thm:elb3}, yields a stronger --- and phenomenologically sobering ---
+statement: $S^6$ geometry alone cannot generate a mass hierarchy between the three
+generations.
+
+\begin{theorem}[Yukawa Degeneracy]\label{thm:yukawa-deg}
+  Let $\psi^{(\alpha)}$ denote the unique positive-chirality zero mode of $D^{(\alpha)}$
+  for $\alpha\in\{v,s,c\}$ on $S^6 = G_2/\mathrm{SU}(3)$. Then
+  $Y_{vs} = Y_{vc} = Y_{sc}$,
+  where $Y_{\alpha\beta} := \int_{S^6} (\psi^{(\alpha)})^\dagger \varphi_H\, \psi^{(\beta)}\,\mathrm{vol}_{S^6}$.
+\end{theorem}
+
+\begin{proof}
+  By the Lichnerowicz gap (Lemma~L4, \S\ref{sec:lichnerowicz}), each $\ker(D^{(\alpha)}|_{\Sigma^+})$
+  is one-dimensional. By $G_2$-equivariance of $D^{(\alpha)}$, this kernel is $G_2$-invariant,
+  hence a $G_2$-invariant section of $\Sigma^+\otimes E_\alpha$.
+  By Theorem~5.1 of \cite{AgrHofLawn2023}, $\Sigma^+_{\mathrm{inv}} = \mathrm{span}_{\mathbb{C}}\{1\}$
+  on $G_2/\mathrm{SU}(3)$ (the unique $G_2$-invariant chiral spinor).
+  By Theorem~\ref{thm:elb3}, $E_v\cong E_s\cong E_c$
+  as $G_2$-equivariant bundles, so their $\mathrm{SU}(3)$-invariant fiber elements coincide.
+  Therefore $\psi^{(\alpha)} = \psi_0\otimes e_\alpha$ with the same profile $\psi_0$ for all $\alpha$,
+  and the Yukawa integrals satisfy $Y_{vs} = Y_{vc} = Y_{sc}$.
+\end{proof}
+
+Consequently, the fermion mass hierarchy cannot arise from $S^6$ geometry alone; it must
+originate from the NCG finite Dirac operator $D_F$ with its four free Yukawa matrices
+$\{Y_\nu, Y_e, Y_u, Y_d\}$ \cite{CCM2006}. The obstruction is specific to $S^6$: the role
+of $S^3$ Kaluza-Klein coupled-mode mixing in lifting inter-generation Yukawa degeneracy
+in the full 9-dimensional analysis remains open (\S\ref{sec:open}).
 
 %% ================================================================
 \section{Modulus Stabilization}
@@ -873,37 +949,15 @@ two constructions are complementary.
   (experiment E-L3-PARTIAL).
 
 \item \textbf{L3b --- Channel independence (\emph{open; geometric path ruled out}).}
-
-\begin{theorem}[Bundle Obstruction, E-L3B]\label{thm:elb3}
-  The $G_2$-equivariant vector bundles $E_v$, $E_s$, $E_c$ on $S^6 = G_2/\mathrm{SU}(3)$
-  associated to the $\mathrm{SO}(8)$ triality representations $\mathbf{8}_v, \mathbf{8}_s,
-  \mathbf{8}_c$ are pairwise isomorphic:
-  \[
-    E_v \cong E_s \cong E_c \quad\text{as }G_2\text{-equivariant bundles.}
-  \]
-  No $G_2$-invariant operation can distinguish them;
-  distinguishing the three generation channels requires $\mathrm{Spin}(8)$ fibre symmetry
-  as an additional input.
-\end{theorem}
-
-  Experiment E-L3B (this work) proves this obstruction theorem: by the homogeneous bundle
-  correspondence, $G_2$-equivariant vector bundles on $G_2/\mathrm{SU}(3)$ are classified
-  by $\mathrm{SU}(3)$-representations. Since all three channels restrict to the
-  \emph{same} $\mathrm{SU}(3)$-module $(1,0)\oplus(0,1)\oplus 2\cdot(0,0)$, the bundles
-  $E_v\cong E_s\cong E_c$ are pairwise isomorphic as $G_2$-equivariant bundles. No
-  $G_2$-invariant, including nearly-K\"ahler instanton connections, can distinguish them.
-  At the $\mathrm{SO}(7)$ level a partial distinction exists
-  ($\mathbf{8}_v|_{\mathrm{SO}(7)}=7\oplus 1$ splits, while $\mathbf{8}_s|_{\mathrm{SO}(7)}
-  =\mathbf{8}_c|_{\mathrm{SO}(7)}=\mathbf{8}_{\mathrm{spin}}$ is the unique irreducible
-  $\mathrm{Spin}(7)$ spinor), but $\mathbf{8}_s$ and $\mathbf{8}_c$ remain indistinguishable
-  below $\mathrm{SO}(8)$.
-  The correct level is $\mathrm{Spin}(8)$: the three representations are pairwise
-  non-isomorphic by definition of triality, so Schur's lemma gives
-  $\mathrm{Hom}_{\mathrm{Spin}(8)}(\mathbf{8}_\alpha,\mathbf{8}_\beta)=0$ for $\alpha\ne\beta$.
-  If the compactification setup preserves $\mathrm{Spin}(8)$ as an internal fibre symmetry,
-  the three zero modes are $\mathrm{Spin}(8)$-invariantly orthogonal and $N_{\mathrm{gen}}=3$
-  follows. Confirming this physical input is the remaining open question, to be addressed in
-  collaboration with T.~Lawrence.
+  Theorem~\ref{thm:elb3} (\S\ref{sec:bundle-obstruction}) proves that the $G_2$-equivariant
+  path to channel independence is ruled out: $E_v\cong E_s\cong E_c$ as $G_2$-equivariant
+  bundles, and no $G_2$-invariant operation --- including nearly-K\"ahler instanton
+  connections --- can distinguish the three channels. The distinction requires
+  $\mathrm{Spin}(8)$ fibre symmetry as an additional physical input. If the compactification
+  setup preserves $\mathrm{Spin}(8)$ as an internal fibre symmetry, the three zero modes are
+  $\mathrm{Spin}(8)$-invariantly orthogonal and $N_{\mathrm{gen}}=3$ follows. Confirming this
+  physical input is the remaining open question, to be addressed in collaboration with
+  T.~Lawrence.
 
 \item \textbf{L4A --- Spectral computation of $\dim\ker(D\otimes S^-)=1$.}
   As argued in \S\ref{sec:lichnerowicz}, the Lichnerowicz bound does not directly give
@@ -947,33 +1001,11 @@ two constructions are complementary.
 
 \item \textbf{Fermion mass hierarchy.} The index theorem gives $N_{\mathrm{gen}}=3$ with equal
   geometric status for each generation; it does not explain why $m_t/m_u\approx 10^5$.
-  In fact, a stronger statement holds:
-
-\begin{theorem}[Yukawa Degeneracy]\label{thm:yukawa-deg}
-  Let $\psi^{(\alpha)}$ denote the unique positive-chirality zero mode of $D^{(\alpha)}$
-  for $\alpha\in\{v,s,c\}$ on $S^6 = G_2/\mathrm{SU}(3)$. Then
-  $Y_{vs} = Y_{vc} = Y_{sc}$,
-  where $Y_{\alpha\beta} := \int_{S^6} (\psi^{(\alpha)})^\dagger \varphi_H\, \psi^{(\beta)}\,\mathrm{vol}_{S^6}$.
-\end{theorem}
-
-\begin{proof}
-  By the Lichnerowicz gap (Lemma~L4, \S\ref{sec:lichnerowicz}), each $\ker(D^{(\alpha)}|_{\Sigma^+})$
-  is one-dimensional. By $G_2$-equivariance of $D^{(\alpha)}$, this kernel is $G_2$-invariant,
-  hence a $G_2$-invariant section of $\Sigma^+\otimes E_\alpha$.
-  By Theorem~5.1 of \cite{AgrHofLawn2023}, $\Sigma^+_{\mathrm{inv}} = \mathrm{span}_{\mathbb{C}}\{1\}$
-  on $G_2/\mathrm{SU}(3)$ (the unique $G_2$-invariant chiral spinor).
-  By the E-L3B bundle isomorphism theorem (\S\ref{sec:index}), $E_v\cong E_s\cong E_c$
-  as $G_2$-equivariant bundles, so their $\mathrm{SU}(3)$-invariant fiber elements coincide.
-  Therefore $\psi^{(\alpha)} = \psi_0\otimes e_\alpha$ with the same profile $\psi_0$ for all $\alpha$,
-  and the Yukawa integrals satisfy $Y_{vs} = Y_{vc} = Y_{sc}$.
-\end{proof}
-
-  Consequently, Yukawa mass hierarchy cannot arise from $S^6$ geometry alone; it must originate
-  from the NCG finite Dirac operator $D_F$ with its four free Yukawa matrices
-  $\{Y_\nu, Y_e, Y_u, Y_d\}$ \cite{CCM2006}.
-  The obstruction is specific to $S^6$: the role of $S^3$ Kaluza-Klein coupled-mode mixing
-  in lifting inter-generation Yukawa degeneracy in the full 9-dimensional analysis remains
-  an open question.
+  In fact, a stronger statement holds: Theorem~\ref{thm:yukawa-deg} (\S\ref{sec:yukawa-deg})
+  proves that all inter-generation Yukawa couplings are equal on $S^6$, so the mass
+  hierarchy must originate from the non-geometric $D_F$ freedom of the finite spectral
+  triple \cite{CCM2006}. The role of $S^3$ Kaluza-Klein coupled-mode mixing in lifting
+  the degeneracy in the full 9-dimensional analysis remains an open question.
 
 \item \textbf{Universality.} Whether the Lichnerowicz--$G_2$-Schur mechanism (L4) applies to other
   nearly K\"ahler 6-manifolds (such as $\mathbb{CP}^3$ or $\mathrm{SU}(3)/T^2$) is an open question.
@@ -999,6 +1031,20 @@ two constructions are complementary.
 
 The author thanks Tom Lawrence for numerous discussions on the $S^3$ Kaluza-Klein mechanism
 and for the foundational framework of~\cite{Lawrence2022}.
+
+The author acknowledges the use of Claude (Anthropic) as a computational and drafting
+assistant throughout this work, including symbolic and numerical verification of the
+derivations (implemented as a Python/\texttt{sympy} test suite, 2484 tests, all passing),
+literature cross-checks, and manuscript drafting assistance. All mathematical claims,
+proofs, and numerical results were independently reviewed and verified by the author,
+who takes full responsibility for the content of this paper, consistent with arXiv's
+policy on the use of generative AI tools.
+
+\medskip
+\noindent\textbf{Code availability.} The complete verification suite accompanying this
+work (exact-arithmetic \texttt{sympy} derivations and regression tests for every claim)
+is available at \url{https://github.com/sergeeey/N-7-GeoSpectra-Lab}
+(directory \texttt{tom\_s3\_spinor\_toy}).
 
 %% ================================================================
 \bibliographystyle{unsrt}
