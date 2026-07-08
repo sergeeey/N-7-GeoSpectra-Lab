@@ -563,8 +563,15 @@ independent.
 The index $\ind=1$ per channel is a difference $\dim\ker(D^+)-\dim\ker(D^-)$. To conclude
 the zero-mode count is \emph{exactly}~1 (not merely $\geq 1$), we need two arguments:
 a Bochner--Lichnerowicz spectral bound (L4A, open problem) and a $G_2$-equivariant
-kernel count (L4B). We prove L4B directly via the Kostant--Parthasarathy formula,
-bypassing L4A. L4A remains an open problem but is no longer required for the main conclusion.
+kernel count (L4B). The Kostant--Parthasarathy formula rigorously establishes a spectral
+gap on every \emph{non-trivial} $G_2$-isotypic component, ruling out zero modes there
+(this part does not depend on L4A). On the remaining $G_2$-trivial component, however,
+the kernel dimension depends on the rank of a specific linear map
+$D^+|_{\mathbf{1}}:\CC^2\to\CC^1$ that is \emph{not} determined by the global index alone:
+both rank~0 ($\dim\ker=2$) and rank~1 ($\dim\ker=1$) are compatible with
+$\ind(D^+_{S^-})=1$, since the index of any linear map between spaces of dimension~2
+and~1 equals $2-1=1$ regardless of rank. Settling this rank is therefore a genuinely
+open sub-problem (L4B, open), distinct from and in addition to L4A.
 
 \subsection{Lichnerowicz--Weitzenb\"ock bound (L4A --- open problem)}
 \label{sec:lichnerowicz}
@@ -591,7 +598,7 @@ e.g., via the Kostant--Parthasarathy formula on the naturally reductive space
 $G_2/\mathrm{SU}(3)$~\cite{Agricola2002}. This computation is left as an open problem.
 \textbf{(L4A, open)}
 
-\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Kostant--Parthasarathy formula (L4B --- proved)}
+\subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Kostant--Parthasarathy formula (L4B --- partially resolved; rank open)}
 \label{sec:schur}
 
 Since $D_{S^6}\otimes S^-$ is $G_2$-equivariant, the Peter--Weyl decomposition of
@@ -622,37 +629,60 @@ Hence the spectral gap satisfies:
 Therefore $D^+$ is invertible on every non-trivial $G_2$-isotypic summand and
 $\ker(D^+)\cap\Gamma_\rho = 0$ for all $\rho\neq\mathbf{1}$.
 
-\textbf{Trivial $G_2$-representation $\mathbf{1}$.}
+\textbf{Trivial $G_2$-representation $\mathbf{1}$ --- open.}
 The trivial $G_2$-representation $(0,0)$ appears with multiplicity $2$ in $S^+\otimes S^-$
 and multiplicity $1$ in $S^-\otimes S^-$ (the target of $D^+$).
 On the $G_2$-trivial isotypic component, $D^+$ restricts to a linear map:
 \[
   D^+\big|_{\mathbf{1}}: \mathbb{C}^2 \to \mathbb{C}^1.
 \]
-Since $\ind(D^+_{S^-})=1$ and this is the only component that can contribute zero modes,
-the restricted operator has index $+1$, hence rank $1$ and $\dim\ker(D^+|_{\mathbf{1}}) = 1$.
+The index of \emph{any} linear map $\CC^2\to\CC^1$ equals $2-1=1$ regardless of its rank
+(rank~0 gives $\dim\ker=2,\dim\mathrm{coker}=1$; rank~1 gives $\dim\ker=1,\dim\mathrm{coker}=0$;
+both satisfy $\ind=1$). Knowing $\ind(D^+_{S^-})=1$ therefore does \emph{not}, by itself,
+determine whether $D^+|_{\mathbf{1}}$ has rank $0$ or $1$. Nor does $G_2$-equivariance
+settle it: the two copies of $(0,0)$ in $S^+\otimes S^-$ arise from different SU(3)-fibre
+pieces (the singlet inside $(0,1)\otimes(1,0)$, and the singlet-times-singlet piece
+$(0,0)\otimes(0,0)$), and Schur's lemma only forces $D^+|_{\mathbf 1}$ to be \emph{some}
+linear map on this $2$-dimensional space --- it does not fix which one. The naive
+Casimir-difference formula used above is a theorem for symmetric spaces and for Kostant's
+cubic Dirac operator, but $S^6=G_2/\mathrm{SU}(3)$ is naturally reductive and
+\emph{not} symmetric: the physically relevant Levi-Civita Dirac operator differs from the
+cubic one by a torsion term (Clifford multiplication by the $G_2$-invariant associative
+$3$-form), which could in principle couple the two copies of $(0,0)$ off-diagonally. We
+therefore \textbf{do not claim rank$=1$ is proved}; it is assumed by analogy with the
+naive count, pending an explicit torsion-term computation (see experiment
+\texttt{20260708-dolan-casimir-g2su3}, parked). Rank~$0$ (giving $\dim\ker(D^+)=2$) is an
+open, unexcluded alternative.
 
-\textbf{Cokernel.}
+\textbf{Cokernel (same caveat applies).}
 By adjoint duality $D^- = (D^+)^\dagger$, we have
 $\dim\mathrm{coker}(D^+) = \dim\ker(D^-)$.
 The same KP gap argument applies to the target bundle:
 $S^-\otimes S^-|_{\mathrm{SU}(3)} = (2,0)\oplus(0,1)\oplus 2\times(1,0)\oplus(0,0)$,
 so $\ker(D^-)\cap\Gamma_\rho = 0$ for all $\rho\neq\mathbf{1}$.
 On the trivial component, $D^-|_{\mathbf{1}}: \mathbb{C}^1\to\mathbb{C}^2$ has
-$\mathrm{rank}(D^-) = \mathrm{rank}(D^+) = 1$,
-giving $\dim\ker(D^-|_{\mathbf{1}}) = 1 - 1 = 0$.
-Therefore $\dim\mathrm{coker}(D^+_{S^-}) = 0$. \quad\textbf{(L4B, proved)}
+$\mathrm{rank}(D^-) = \mathrm{rank}(D^+)$ by adjoint symmetry, so this inherits the same
+open rank question: \textbf{if} rank$=1$ (assumed, not proved), $\dim\ker(D^-|_{\mathbf{1}}) = 0$
+and $\dim\mathrm{coker}(D^+_{S^-}) = 0$; if rank$=0$, $\dim\ker(D^-|_{\mathbf{1}})=1$ and
+$\dim\mathrm{coker}(D^+_{S^-})=1$. \quad\textbf{(L4B, open --- see above)}
 
-\begin{corollary}[Exact kernel]
-Combining $\ind(D^+_{S^-})=1$ (Lemmas L1--L2) with L4B (proved above):
+\begin{corollary}[Exact kernel --- conditional on L4B]
+\textbf{This corollary is conditional on the open rank question above (L4B) and is not
+an unconditional proof.} Assuming rank$(D^+|_{\mathbf 1})=1$ (the working hypothesis
+carried through the rest of this paper, not yet independently verified):
 \begin{align}
   \dim\ker(D^+) - \dim\mathrm{coker}(D^+) &= 1 \quad\text{(index, proved)},\\
-  \dim\mathrm{coker}(D^+) = \dim\ker(D^-) &= 0 \quad\text{(L4B, proved)},\\
-  \Rightarrow\;\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0. \quad\textbf{(proved)}
+  \dim\mathrm{coker}(D^+) = \dim\ker(D^-) &= 0 \quad\text{(L4B, assumed, not proved)},\\
+  \Rightarrow\;\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0. \quad\textbf{(conditional on L4B rank assumption)}
 \end{align}
-The kernel of the twisted Dirac operator $D^+_{S^-}$ is exactly one-dimensional.
-Combined with L3 (three independent triality channels, open problem), this gives
-$N_{\mathrm{gen}}=3\times 1=3$.
+\textbf{If} the rank assumption above holds, the kernel of the twisted Dirac operator
+$D^+_{S^-}$ is exactly one-dimensional, and combined with L3 (three independent triality
+channels, open problem), this gives $N_{\mathrm{gen}}=3\times 1=3$. If instead
+rank$(D^+|_{\mathbf 1})=0$, $\dim\ker(D^+_{S^-})=2$ and the zero-mode count per channel,
+and everything downstream of it (Lemma L5 chirality below, the Yukawa degeneracy argument
+of \S\ref{sec:yukawa-deg}), would need to be re-derived for a two-dimensional kernel.
+This corollary should be read as establishing the index and the non-trivial-sector
+vanishing rigorously, while the exact trivial-sector kernel dimension remains open.
 \end{corollary}
 
 \subsection{Left-handed chirality (Lemma L5)}
@@ -668,8 +698,14 @@ The sign of the index determines which chirality carries zero modes:
 \begin{equation}
   \mathrm{sign}(\ind) = \mathrm{sign}(c_3(S^-)) = \mathrm{sign}(+2) = +1.
 \end{equation}
-A positive index means $\dim\ker(D^+)>\dim\ker(D^-)$. With $\dim\ker(D^-)=0$, all three
-zero modes are in $D^+$ --- they are \textbf{left-handed}. Matching the $S^6$ orientation
+A positive index means $\dim\ker(D^+)>\dim\ker(D^-)$, \emph{regardless} of the open L4B
+rank question above: $\ind=1>0$ forces a net left-handed excess whether the trivial-sector
+rank is $0$ or $1$. With the working assumption $\dim\ker(D^-)=0$ (rank$=1$, see
+\S\ref{sec:kernel}), all three zero modes are in $D^+$ --- they are \textbf{left-handed} ---
+and this is the version carried through the rest of the paper. If instead rank$=0$, there
+is a subdominant right-handed partner ($\dim\ker(D^-)=1$) alongside two left-handed modes,
+still giving the correct net chiral asymmetry but not the clean ``all three purely
+left-handed'' picture stated here. Matching the $S^6$ orientation
 convention to the SM convention for $\mathrm{SU}(2)_L$, the left-handed Dirac zero mode
 corresponds to the left-handed SM fermion doublet.
 
@@ -678,9 +714,11 @@ the orientation of $S^6$. Standard orientation $\to$ standard-model chirality. N
 discrete inputs are required.
 
 \textbf{Summary:} The index theorem gives $\ind=1$ per channel with
-$\mathrm{sign}(\ind)=+1$ --- left-handed chirality is geometrically determined (proved).
-The Kostant--Parthasarathy formula (L4B, this work) establishes $\dim\ker(D^+_{S^-})=1$
-and $\dim\mathrm{coker}(D^+_{S^-})=0$ (proved). $\ind=1$ for each of the three SO(8)
+$\mathrm{sign}(\ind)=+1$ --- a net left-handed excess is geometrically determined (proved,
+independent of L4B). The Kostant--Parthasarathy formula rigorously rules out zero modes on
+every non-trivial $G_2$-isotypic component (proved); on the remaining trivial component, it
+is \emph{assumed} (not proved) that $\dim\ker(D^+_{S^-})=1$ and $\dim\mathrm{coker}(D^+_{S^-})=0$
+rather than $2$ and $1$ respectively --- see \S\ref{sec:kernel} (L4B, open). $\ind=1$ for each of the three SO(8)
 triality channels follows from the $G_2$ branching rule $\mathbf{8}_\alpha|_{G_2}=7\oplus 1$
 (E-L3-PARTIAL, this work; partial L3, proved).
 The conjecture $N_{\mathrm{gen}}=3$ requires the one remaining open problem:
@@ -1010,12 +1048,21 @@ work.
   $S^2, S^4, \mathbb{CP}^2$ and $\mathrm{SU}(3)/U(1)^2$ but not yet to
   $G_2/\mathrm{SU}(3)=S^6$.
 
-\item \textbf{L4B --- $G_2$-equivariant character computation (\emph{resolved}).}
-  Proved in \S\ref{sec:schur} via the Kostant--Parthasarathy formula: the positive spectral
-  gap on all non-trivial $G_2$-isotypic components of $\Gamma(S^+\otimes S^-)$, combined
-  with the trivial-component index argument, gives $\dim\ker(D^+_{S^-})=1$ and
-  $\dim\mathrm{coker}(D^+_{S^-})=0$.
-  The representation-theoretic computation builds on~\cite{AgrHofLawn2023,Agricola2002}.
+\item \textbf{L4B --- $G_2$-equivariant character computation (\emph{partially resolved; rank
+  on the trivial component open}).}
+  The Kostant--Parthasarathy formula (\S\ref{sec:schur}) proves a positive spectral gap on
+  all non-trivial $G_2$-isotypic components of $\Gamma(S^+\otimes S^-)$ --- this part is
+  proved. On the remaining trivial component, the map $D^+|_{\mathbf 1}:\CC^2\to\CC^1$ has
+  index $1$ regardless of its rank (index of any linear map between spaces of these
+  dimensions is automatically $2-1=1$), so the global index alone does not fix
+  $\dim\ker(D^+_{S^-})\in\{1,2\}$. We assume $\dim\ker(D^+_{S^-})=1$
+  (equivalently rank$=1$) as a working hypothesis, not a proved fact; ruling out rank$=0$
+  requires an explicit torsion-term (Clifford multiplication by the $G_2$-invariant
+  associative $3$-form) computation distinguishing the Levi-Civita from the cubic Dirac
+  operator on this naturally reductive (non-symmetric) coset, since the naive
+  per-summand Casimir formula is only a theorem in the symmetric/cubic-Dirac case.
+  See experiment \texttt{20260708-dolan-casimir-g2su3} (parked; explicit computation
+  needed). The representation-theoretic setup builds on~\cite{AgrHofLawn2023,Agricola2002}.
 
 \item \textbf{Integrability of $J$.} Lemma L1 uses the almost-complex structure on $S^6$, which
   is non-integrable (Borel--Serre theorem). The Atiyah--Singer theorem applies to almost-Hermitian
