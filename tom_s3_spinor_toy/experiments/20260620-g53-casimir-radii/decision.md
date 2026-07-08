@@ -82,6 +82,27 @@ where V_flux ~ q²/ρ₆⁸ provides the decreasing term that competes with S_sp
 
 ## Verdict
 
-OPEN. C1-C3 confirmed by 19/19 tests. C4 is an open numerical computation.
-The approximate Casimir extends G51 NULL (monotone), but the full ζ(-1/2) continuation
-is the definitive test. Radii stabilization remains open pending G54.
+ARCHIVE (superseded by G54 chain, 2026-06-21).
+
+C1–C3: PASS (19/19 tests confirmed).
+C4: not computed (spectral ζ_{D²}(-1/2; ρ₃, ρ₆) on S³×S⁶ requires full Chowla-Selberg
+regularization with 5 Seeley-DeWitt subtractions). However, the C4 question is now moot:
+G54 (Freund-Rubin flux + Casimir zeta_FP) found radii stabilization via a different
+mechanism that does not require computing ζ_{D²}(-1/2) in closed form.
+
+## Note on ζ_Riemann(-1/2)
+
+The VALUE of the Riemann zeta function at s = -1/2 is known analytically via the
+functional equation ζ(s) = 2^s π^{s-1} sin(πs/2) Γ(1-s) ζ(1-s):
+
+    ζ_Riemann(-1/2) = -ζ_Riemann(3/2) / (4π) ≈ -0.207886
+
+This is a Seeley-DeWitt COEFFICIENT appearing in the heat kernel expansion
+K(τ) ~ A₀ τ^{-3/2} + A₂ τ^{-1/2} + ..., NOT the spectral zeta ζ_{D²}(-1/2; ρ₃, ρ₆).
+The two are distinct: one is a universal constant, the other is a two-radius functional.
+Verified numerically 2026-07-08.
+
+## Revival condition
+
+Revive C4 only if a future mechanism requires the exact Casimir energy on S³×S⁶
+(e.g., SUSY cancellation check, quantum gravity correction to flux potential).
