@@ -2768,3 +2768,113 @@ copies, 4 more "3bar" copies -- or however the true 5+5 split falls)
 and diagonalize the full 16x16 D^2_7 matrix -- a substantially larger
 undertaking than anything done in Rounds 15-18, not attempted this
 round.
+
+## Round 19 (2026-07-09, user asked to "давай построй полную 16x16
+## матрицу D^2_7"): built the FULL 16x16 matrix -- rho=7's danger zone
+## CLOSED, no zero mode anywhere
+
+**Construction** (`g2su3_v7_16dim_full_matrix.py`): built EXPLICIT basis
+vectors for the full multiplicity space M = Hom_SU(3)(V_7,F), 16-dim:
+- 6 singlets (Hom(1,F)): 4 simple 1a/1b tensor combos (1(x)1, y123(x)1,
+  1(x)y123, y123(x)y123) + v_a (Round 17's 3(x)3bar contraction) + its
+  tensor-factor swap. All VERIFIED SU(3)-invariant, rank 6.
+- 5 "3"-copies (Hom(3,F)): 4 simple embeddings (1(x)y_i, y_i(x)1,
+  y123(x)y_i, y_i(x)y123, each VERIFIED to match Sigma's own y1,y2,y3
+  action pattern for all 8 generators) + a 5th extracted from the
+  Casimir=4/3 eigenspace of Lambda^2(x)Lambda^2 (=3bar(x)3bar=6bar(+)3),
+  reordered to match the canonical pattern -- VERIFIED IN-FILE (not just
+  asserted) via `matches_reference_pattern`. Jointly rank 15.
+- 5 "3bar"-copies (Hom(3bar,F)): mirror construction via Lambda^2=
+  {y12,y13,y23}, 5th from Lambda^1(x)Lambda^1's Casimir=4/3 eigenspace,
+  also in-file-verified. Jointly rank 15.
+- EXHAUSTIVENESS (corrected mid-round, see Reviewer section): NOT simply
+  "Casimir mult=30 => 5+5" (Casimir alone can't distinguish conjugate
+  irreps sharing an eigenvalue -- only forces mult(3)+mult(3bar)=10). The
+  real closing argument: Sigma = 1a(+)3(+)3bar(+)1b under SU(3) (already
+  tool-verified elsewhere), so Sigma(x)Sigma's 16 cross-terms give EXACTLY
+  5 "3"-sources and EXACTLY 5 "3bar"-sources, matching c1..c5/d1..d5
+  one-for-one with no leftover cross-term. Docstring corrected to state
+  this properly.
+
+**The intertwiners**: reused Round 18's Schur T (V_7's "3"={B,C,D} ->
+anything matching y1,y2,y3) applied to EACH of the 5 "3"-copies (since all
+5 provably transform identically), and T2 similarly for "3bar" -- no new
+intertwiner machinery, per the session's standing discipline of reusing
+already-reviewed pieces.
+
+**The 16x16 matrix**: applied `d7_apply` (Round 17's formula, reused
+verbatim) TWICE to each of the 16 basis w_i, flattened to 448-dim,
+extracted coefficients via Hermitian normal equations (c = (W^H W)^{-1}
+W^H . target -- W^T W would be singular for this complex-entried W,
+confirmed: det(W^T W)=0 exactly vs det(W^H W)=531441/256), and for EVERY
+ONE of the 16, VERIFIED (not approximately -- EXACTLY, all 448 flattened
+components) that D^2_7(w_i) lies precisely in span(basis). All 16 passed.
+
+**RESULT: eigenvalues of the full 16x16 D^2_7 matrix = {4: mult 4, 2: mult
+4, 20/3: mult 4, 10/3: mult 4}. ALL STRICTLY POSITIVE. Zero eigenvalue:
+False.** Trace = 64, matching 4*4+2*4+(20/3)*4+(10/3)*4 = 64 exactly
+(independent sanity check, both by me and by the reviewer).
+
+**Reviewer:** verdict NEEDS_WORK (P1) on the FIRST pass -- correctly
+caught that `build_3_fifth_copy`/`build_3bar_fifth_copy` hardcoded a
+reordering (c5 reversed, d5 identity) with a docstring claiming "solved
+(Schur, not guessed)... verified, tool" but NO actual verification in the
+committed file (the solve had happened in an earlier interactive
+exploration, not carried into the script). Reviewer independently
+re-verified both reorderings correct via a from-scratch reimplementation
+(all 10 pattern-match checks, 5 threes + 5 threebars x 8 generators,
+passed exactly), but flagged this as unreproducible from the file alone.
+Also flagged a P2 docstring overclaim (the "Casimir spectrum confirms
+5+5" framing, see Exhaustiveness above) and P2 untracked scratch pickle
+files. ALL THREE CLOSED same round: added `matches_reference_pattern` +
+explicit asserts for c5 and d5 (independently, BEFORE the reviewer's
+report even arrived -- same instinct as the P1 finding), corrected the
+docstring's exhaustiveness justification, deleted the scratch pickles.
+Reran end-to-end after all fixes: identical result, all asserts pass
+silently, ruff clean.
+
+**Skeptic** (context-blind, no Bash/execution access this round --
+disclosed explicitly, did static + hand-symbolic rep-theory analysis):
+verdict CONFIRMED-REAL, with 3 WEAKENED points, none fatal:
+1. Exhaustiveness -- independently re-derived BY HAND via the same
+   Sigma=1a(+)3(+)3bar(+)1b tensor-product accounting the reviewer used
+   (two independent people/routes converging on the same closing
+   argument). Confirmed dim M=16 exactly, no hidden 17th direction
+   possible.
+2. `.H` vs `.T` -- confirmed correct and, independently, confirmed the
+   "exact-in-span" check cannot be fooled by coincidence (W has full
+   column rank 16 => c<->target is a bijection, so residual=0 on all 448
+   components means c is THE unique correct answer, not a lucky guess).
+3. c5/d5 reordering not verified in-file -- same finding as reviewer's
+   P1, independently arrived at. Closed the same way (see above).
+Additionally verified: positivity of D^2_7's eigenvalues implies
+ker(D_7)=ker(D^2_7)={0} REGARDLESS of whether the basis is orthonormal
+(eigenvalues are similarity-invariant; kernel argument needs no
+self-adjointness assumption) -- the "no zero mode" conclusion is
+basis-independent and robust even before checking self-adjointness.
+
+**Additional check (mine, closes skeptic's normalization scope caveat
+entirely):** verified D_7 is genuinely self-adjoint w.r.t. the natural
+L^2 inner product on M -- computed the Gram matrix G=W^H W (confirmed
+Hermitian, eigenvalues {1:4, 3:4, 3/2:8}, all real positive => valid
+inner product) and confirmed G.D^2_MAT is Hermitian. This upgrades the
+eigenvalue VALUES {4,2,20/3,10/3} from "only their zero-vs-nonzero-ness
+is meaningful" to "the full spectrum is physically meaningful," not just
+a coordinate artifact of the non-orthonormal basis.
+
+### Net assessment
+
+This is the most thoroughly verified result of the whole rho=7
+investigation (Rounds 15-19): a genuinely exhaustive 16-dim multiplicity
+space (dimension-count closed via an independent tensor-product argument,
+confirmed by BOTH reviewer and skeptic via separate routes), every basis
+element's SU(3)-equivariance verified in-file (not asserted), the closure
+of D^2_7 on this space verified EXACTLY for all 16 directions, the
+resulting matrix's self-adjointness independently confirmed, and the
+eigenvalue computation cross-checked via trace. **rho=7 introduces NO
+unwanted zero mode anywhere in its danger zone -- this question, open
+since Round 15, is now CLOSED.**
+
+Per this project's discipline, updating preprint.tex is a separate,
+deliberate decision -- not made unilaterally this round. The result is
+ready for that decision whenever the user chooses to make it.
