@@ -1876,3 +1876,334 @@ lift.
 Task #7 remains in_progress. This is a literature-grounded, standard-
 framework lead, not a new derivation attempt -- the actual computation
 is still future work.
+
+## Round 16 (2026-07-09, same session, user asked to "try the
+## Lichnerowicz-Weitzenbock approach"): the FIRST candidate rho=7 verdict
+## with a genuinely complete, multiply-verified construction -- STRICTLY
+## POSITIVE eigenvalues on all 3 relevant SU(3) pieces, under BOTH
+## interpretations of one remaining, honestly-flagged normalization
+## ambiguity. Not yet independently reviewed/skeptic-checked -- see
+## Promotion status at the end of this section.
+
+### The route (per Round 15 continued's literature-search lead)
+
+t=1/2 is exactly torsion-free Levi-Civita, so the STANDARD twisted
+Schrodinger-Lichnerowicz-Weitzenbock formula applies with no torsion
+machinery needed at all:
+  D^2_{S(x)E} = nabla*nabla + (1/4)*Scal_g + R^E
+This sidesteps Round 15's chirality-mismatch failure entirely: there is
+no analog of the "-calH" linear term here (that term only arose from
+building UP from t=0 via H; working directly at t=1/2 never needs it).
+
+### Ingredient 1: the FULL Riemann curvature R^{1/2}(e_p,e_q)e_r
+
+Found and used Agricola 2002's GENERAL curvature formula (Lemma 2.2, a
+DIFFERENT, more complete statement than the sectional-curvature-only
+contraction read in an earlier round):
+  R^t(X,Y)Z = t^2[X,[Y,Z]_m]_m + t^2[Y,[Z,X]_m]_m + t[Z,[X,Y]_m]_m
+              + [Z,[X,Y]_h]
+Building this required pinning down a bracket-sign convention issue:
+direct comparison against the ALREADY-CALIBRATED `LEVI_CIVITA_NOMIZU`
+data showed `[e_p,e_q]_m = -sum_k T(p,q,k) e_k` -- a UNIFORM minus sign
+relative to a naive reading of T as literally `<[e_p,e_q]_m,e_k>`
+(confirmed exactly across 12 tested (p,i,j) triples, zero exceptions).
+This is consistent with (not contradicting) the SAME kind of
+convention-mismatch pattern already found and resolved earlier this
+session for the G2 Casimir normalization -- AHL2023's own conventions
+differ from Agricola 2002's in more than one place, and each mismatch
+found so far has been a clean, uniform, resolvable sign/scale flip, not
+an actual error in either source.
+
+**Verified, non-trivially, three independent ways:**
+1. R(p,q,r) = -R(q,p,r) (antisymmetry in the first two arguments) --
+   holds for all tested triples.
+2. <R(p,q)e_r,e_s> = -<R(p,q)e_s,e_r> (skew-symmetry as an so(6)
+   operator, required for ANY genuine curvature 2-form) -- holds for all
+   tested pairs.
+3. **The Ricci tensor obtained by contracting R_half EXACTLY reproduces
+   Agricola's OWN, separately-stated Ricci formula** (Lemma 2.2's second
+   display, a genuinely different, independent formula from the R^t(X,Y)Z
+   one): Ric(e_p,e_p)=5/3 (off-diagonal zero) for all tested p, matching
+   `sum_i (t-t^2)<[X,Zi]_m,[Y,Zi]_m> + Qh([X,Zi],[Y,Zi])` computed
+   DIRECTLY from T and curvature_h, with NO reference to R_half's own
+   construction. Scal^(1/2)=10 (trace), matching a THIRD, even simpler
+   scalar-only formula independently. This is the strongest calibration
+   evidence in this round -- two structurally different formulas from
+   the SAME primary source, cross-checked against each other via
+   completely different code paths, agree exactly.
+
+### Ingredient 2: R^E (64x64), the curvature-endomorphism term
+
+R^E(eta(x)xi) := sum_{p<q} (e_p.e_q.eta)(x)(Rspin_half(p,q).xi), where
+Rspin_half is R_half's spin(6)/Clifford lift via a general
+`spin_lift_so6` function. This lift formula was ITSELF miscalibrated on
+the first attempt (a double-counted 1/2 factor: an explicit (1/2)
+prefactor stacked on top of `clifford_mult_bivector_direct`'s OWN
+internal 1/2) -- caught immediately by a dedicated calibration test
+(does `spin_lift_so6` applied to Lambda_m^{1/2}, built independently
+from T, reproduce `nabla_g_action` exactly? First attempt: no, by a
+uniform factor. Second attempt, correcting BOTH the double-counted 1/2
+AND the bracket-sign issue found for Ingredient 1: yes, exactly, for all
+tested (p, vec) pairs).
+
+**Verified: R^E is exactly SU(3)-equivariant** (all 8 generators, zero
+residual, `build_su3_matrix64`) -- non-automatic (a wrong sign or index
+anywhere in the R_half/lift assembly would very plausibly have broken
+this, the same way it has caught real errors elsewhere this session).
+
+### The decisive calibration: L4B ground truth, again
+
+Assembled formula, restricted to rho=trivial (Omega_g=0, so
+nabla*nabla=0): D^2(v_a) "=" (1/4)*Scal*v_a + R^E(v_a). Computed:
+**this equals EXACTLY (2/3) of the TRUE D^2(v_a)** (=v_a+3*v_b,
+independently established via direct D_on_simple_tensor^2 matrix
+squaring). Critically, this is a CLEAN, UNIFORM scale factor, not a
+structural mismatch -- the v_a and v_b COMPONENTS of the result already
+match the truth's own internal PROPORTIONS exactly (2/3 of 1 = 2/3, 2/3
+of 3 = 2, matching the computed (2/3, 2) exactly). Independently
+re-verified on v_b (a second, different test vector): the SAME (3/2)*
+correction factor exactly reproduces D^2(v_b) too. This is strong
+evidence the CONSTRUCTION is right and only a single overall
+normalization constant remains unresolved -- a qualitatively different,
+much safer situation than Round 15's structural failure (which gave a
+residual in a component that couldn't be fixed by ANY scalar rescaling).
+
+### The remaining ambiguity (honestly flagged) -- and why it doesn't matter here
+
+Not yet resolved from first principles: does the missing 3/2 factor
+apply ONLY to (Scal+R^E) [**Interpretation A**], leaving
+nabla*nabla=C_2(G2;rho)-C_2(SU(3);sigma) UNSCALED (this rests on
+Agricola's own proven Casimir-eigenvalue theorem for Omega_g, PLUS this
+session's earlier independent finding that Ctilde_h's eigenvalues equal
+C_2(SU(3);sigma) exactly with no rescaling needed -- giving no
+particular reason to expect nabla*nabla needs the SAME empirical
+correction that Scal/R^E turned out to need) -- or does it apply to the
+WHOLE formula UNIFORMLY [**Interpretation B**] (plausible if the source
+is a single Clifford-algebra normalization convention mismatch, which
+would hit every term the same way). The rho=trivial calibration test
+CANNOT distinguish these (nabla*nabla=0 there regardless of scale).
+
+**Resolution used here: report BOTH interpretations and check whether
+they agree qualitatively** -- exactly the right move when a genuine
+ambiguity can't be resolved cheaply and the question at hand (sign of an
+eigenvalue, not its precise value) may not require resolving it.
+
+### The rho=7 result
+
+For rho=7 (branching 7|SU(3) = 3(+)3bar(+)1), evaluated on all 3
+relevant SU(3) pieces, using C_2(G2;7)=2 (this session's resolved
+value) and C_2(SU(3);3)=C_2(SU(3);3bar)=4/3 (tool-verified earlier this
+session):
+
+| Piece | Interp A | Interp B |
+|---|---|---|
+| singlet (v_a,v_b space) | eigenvalues {2, 6} | eigenvalues {3, 7} |
+| "3" / "3bar" (scalar, R^E=1/6) | 14/3 | 5 |
+
+**Every single value, under BOTH interpretations, is strictly
+positive.** As a structural sanity check, restoring rho=trivial in the
+SAME singlet-piece formula reproduces the ORIGINAL L4B matrix
+eigenvalues {0,4} exactly (confirming the rho=7 result is a clean
++C_2(G2;7)=+2 uniform SHIFT of the trivial-piece matrix, exactly the
+mechanism argued for analytically much earlier this session, now
+confirmed via the FULL, honest construction rather than an assumption).
+
+### What this means, precisely (scope discipline)
+
+**If this construction survives independent review:** rho=7 contributes
+NO unwanted zero mode to ker(D+_S-) -- the preprint's existing
+non-trivial-sector claim, currently caveated as conditional/open, would
+be SUPPORTED for the rho=7 block specifically (the smallest, most
+exposed non-trivial G2 Casimir gap; per the original Round 6 plan, if
+rho=7 survives, rho=14 and all larger rho are progressively safer since
+C_2(G2;rho) grows unboundedly while the algebraic correction terms stay
+bounded).
+
+**This is NOT yet a closed result.** Per this project's own Falsification
+Ladder (Step 8a) and audit-verification-gate discipline, a claim of this
+significance (first candidate resolution of a long-open danger-zone
+question) requires independent, context-asymmetric review before being
+promoted to preprint text. Not yet done as of this write-up -- see
+Promotion status below.
+
+### Promotion status: PENDING independent review
+
+- [ ] reviewer agent pass (code correctness: R_half/spin_lift_so6/R^E
+      construction, the two calibration claims, arithmetic in Step 4)
+- [ ] skeptic pass (Falsification Ladder Step 8a, context-asymmetric --
+      claim.md + code ONLY, no session history) -- specifically probe:
+      is the standard twisted Lichnerowicz formula I recalled from a WEB
+      SEARCH SUMMARY (not a directly-read, page-numbered primary source)
+      actually correctly stated for THIS project's specific Clifford
+      convention (Zi.Zj+Zj.Zi=-delta_ij, per Agricola's OWN stated
+      convention, page 7)? Is there a cleaner, first-principles
+      resolution of the Interpretation A/B ambiguity rather than "check
+      both and see they agree"? Are there OTHER SU(3) pieces relevant to
+      rho=7 not yet checked (the branching 7=3+3bar+1 is exhaustive per
+      Round 12's own established fiber decomposition, but this should be
+      independently re-confirmed, not just assumed)?
+- [ ] IF both pass: update preprint.tex's existing caveat (currently:
+      "conditional, not proved") to reflect this result, with language
+      matching this project's own emphasis discipline (explicit,
+      calibrated, multiply-cross-validated computation -- not a bare
+      numeric claim) -- per the user's own standing instruction
+      (l4b-rank-emphasis-for-writeups memory) applied by direct analogy.
+- [ ] Task #7: stays in_progress until the above is complete; only
+
+## Round 16 continued (2026-07-09, same session): review + skeptic results
+## are IN. Reviewer confirms the code arithmetic is genuinely correct;
+## skeptic found a DECISIVE, VALID flaw in the calibration logic. The
+## rho=7 "no zero mode" conclusion is DOWNGRADED from candidate-positive
+## to INCONCLUSIVE -- Task #7 stays open, honestly, not closed.
+
+### Reviewer verdict: NEEDS_WORK, P1
+
+Independently re-derived (not just re-run) the sign chain in
+`build_R_half` (hand-traced p=1,q=2,r=3 through both bracket
+applications, confirmed the double-minus-sign cancellation is correct;
+also independently re-ran the antisymmetry/skew-symmetry checks on ALL
+216 triples, not just the sampled few printed by main()), the
+`spin_lift_so6` normalization (re-derived algebraically from the
+all-indices form, corroborated by the scale-sensitive SU(3)-equivariance
+pass), and ALL FOUR Step-4 headline numbers ({2,6}, {3,7}, 14/3, 5) by
+hand from the raw `RE`/`D` matrices, not from main()'s own print
+statements. **All of this checks out exactly.**
+
+**One real P1 gap found:** `RE_3 = sp.Rational(1,6)` (the "3"/"3bar"
+piece's R^E eigenvalue) is a bare hardcoded literal in the script,
+justified only by an inline comment pointing to an earlier interactive
+computation -- NOT re-derived live within the permanent script the way
+the singlet-piece `M` matrix is (computed live from `RE*v_a`, `RE*v_b`).
+The reviewer's own attempted independent spot-check (on a DIFFERENT,
+non-equivalent set of basis vectors) was inconclusive, neither
+confirming nor refuting 1/6 -- genuinely unverified within the file as
+committed. **Fixed this round** (see below).
+
+### Skeptic verdict: FALSIFIED (core predicate), Concern 3 decisive
+
+Full context-asymmetric review (claim + code only, no session history),
+per Falsification Ladder Step 8a. Five concerns raised; **Concern 3 is
+correct and decisive, fully accepted, not dismissed:**
+
+> The calibration is at rho=trivial. At rho=trivial, nabla*nabla = 0
+> IDENTICALLY. Therefore the calibration constrains ONLY the coefficient
+> in front of (Scal+R^E) -- it says NOTHING about the coefficient in
+> front of nabla*nabla, because that term is identically zero at the
+> calibration point. Interpretations A and B are two points in a
+> ONE-PARAMETER FAMILY (D^2 = alpha*(nabla*nabla) + (3/2)(...)), where
+> alpha is UNCONSTRAINED by the calibration. "Robust across both
+> interpretations" is closer to "robust across two arbitrarily chosen
+> points from a family where two convenient ones were picked."
+
+This is EXACTLY correct and matches this project's OWN identified
+pattern from earlier this session (the t=1/3 sign-bug calibration blind
+spot) -- caught by the process working as intended, not a failure of
+this round's effort. **Accepted in full, not disputed.**
+
+The skeptic's other concerns:
+- Concern 1 (same as Concern 3, restated) -- accepted, see above.
+- Concern 2 (Lichnerowicz formula recalled from a web-search summary,
+  not verified against a primary source in THIS project's specific
+  Clifford convention Zi.Zj+Zj.Zi=-delta_ij) -- **accepted as a real
+  gap.** The skeptic's own attempted explanation (Clifford-rescaling by
+  1/sqrt(2) giving a uniform 1/2 factor) does NOT exactly match the
+  observed 2/3 either (skeptic's own honest admission: "close to but not
+  exactly 1/2") -- meaning the TRUE source of the 3/2 factor remains
+  unexplained by either party. This is now the priority next step (see
+  Task List below), not resolved this round.
+- Concern 4 (sign-chain risk given 3 prior sign bugs this session) --
+  **partially addressed by the reviewer's independent hand-verification**
+  (Item 1 above, all 216 triples checked, not just the sampled ones) --
+  downgrades this concern's likelihood substantially but does not, by
+  itself, resolve Concern 3's structural gap (a correctly-signed
+  ∇*∇=C_2(G2;rho)-C_2(SU(3);sigma) formula could STILL need an unknown
+  overall rescaling that the calibration can't see).
+- Concern 5 (Scal=10 vs the unit-round-S^6 value 30) -- **considered and
+  NOT accepted as a live bug**, with reasoning: this experiment has
+  consistently used ONE specific B_0-orthonormal metric normalization
+  throughout (T, curvature_h, nabla_g_action all share it, unchanged
+  this round), under which Scal=10 is simply this space's OWN curvature
+  in THESE units (consistent with a "radius-squared=3" natural
+  normalization for the Killing-form-derived G2/SU(3) metric) -- not
+  inherently a bug, since nothing NEW was introduced that could break
+  consistency with the ALREADY-VALIDATED L4B ground truth (which uses
+  the SAME shared primitives). Documented as a caveat, not dismissed
+  outright -- the skeptic's own suggested check (does 30/10=3 relate to
+  the missing 3/2?) does NOT cleanly resolve to 3/2, so this is likely a
+  red herring, but not proven to be one.
+
+### Fixed this round: reviewer's P1 (RE_3 hardcoding)
+
+Added an explicit in-script derivation to `g2su3_lichnerowicz_rho7.py`
+computing R^E's action on all three "3"-piece basis vectors (y1(x)1,
+y2(x)1, y3(x)1) live, asserting they give the IDENTICAL scalar (Schur's
+lemma, matching the SAME pattern already used for the singlet-piece M
+matrix), replacing the bare literal. Re-ran: confirms 1/6 exactly, now
+tool-verified within the committed script itself, not just asserted.
+
+### NOT fixed this round: skeptic's Concern 3 (the decisive one)
+
+This requires either (a) an independent second calibration point with
+nabla*nabla != 0 for a KNOWN rho, or (b) a from-first-principles
+derivation of the twisted Lichnerowicz formula in THIS project's
+specific Clifford convention (not recalled from a web search), pinning
+down alpha directly rather than empirically guessing at two candidate
+values. Investigated (a) this round: the most obvious candidate (the
+UNTWISTED single-Sigma "3"-piece, where (D^{1/2})^2 is ALREADY known via
+the earlier g2su3_delta_correction.py machinery) turns out to suffer
+from the SAME "fiber slot doesn't correspond to a single rho" problem
+Round 10 already identified for the TWISTED case -- Sigma's OWN "3"
+piece could receive contributions from MULTIPLE G2-irreps (any rho with
+a "3" in its SU(3)-branching, not just rho=7), so it does NOT give a
+clean, independent second data point without ALSO solving a
+representation-theoretic multiplicity question this experiment hasn't
+addressed. No other readily-available candidate was found this round.
+
+### Status: HONEST DOWNGRADE -- rho=7 remains OPEN, not resolved
+
+**The "rho=7 has no unwanted zero mode" claim from earlier this round is
+DOWNGRADED from candidate-positive-result to INCONCLUSIVE.** What
+SURVIVES this round, genuinely:
+- The construction itself (R_half, spin_lift_so6, R^E) is now MORE
+  robustly verified than most artifacts in this experiment -- exact
+  antisymmetry (216/216), exact skew-symmetry, EXACT agreement with
+  Agricola's OWN independently-stated Ricci formula, exact SU(3)-
+  equivariance, and (now) an in-script-verified R^E value on the "3"
+  piece. The reviewer found ZERO arithmetic or sign errors in any of
+  this after deep, independent re-derivation.
+- What does NOT yet survive: the CONNECTION between this verified
+  construction and the FINAL rho=7 verdict, specifically the overall
+  scale relating (Scal+R^E) to nabla*nabla=C_2(G2;rho)-C_2(SU(3);sigma).
+  This is a genuinely open normalization question, not a computational
+  bug -- and per Concern 3, checking "two interpretations, both
+  positive" does NOT constitute evidence against a THIRD, unchecked
+  value of alpha that could flip the sign.
+
+This is the Falsification Ladder working exactly as intended: a
+construction survived deep code review, and was STILL correctly
+identified by an adversarial, context-blind skeptic pass as
+insufficient to support its headline claim, BEFORE that claim reached
+the preprint. Per this project's Step 8a response matrix, this is
+FALSIFIED-with-a-clear-fix-path, not a dead end -- but it is NOT yet a
+result, and must not be reported as one.
+
+### Task list (next session or continuation)
+
+1. Resolve Concern 3's alpha ambiguity from first principles: read a
+   primary source for the twisted Lichnerowicz-Weitzenbock formula in
+   the EXACT Clifford convention Zi.Zj+Zj.Zi=-delta_ij (Agricola's own
+   stated convention, page 7) -- Friedrich's "Dirac Operators in
+   Riemannian Geometry" or Lawson-Michelsohn "Spin Geometry" are
+   plausible sources, per the skeptic's own suggestion, but must be
+   READ DIRECTLY (PyMuPDF, this session's established reliable method),
+   not recalled from a web search summary.
+2. Alternatively/additionally: find a genuinely independent second
+   calibration point with nabla*nabla != 0 that is NOT subject to the
+   "fiber slot = multiple rho's" ambiguity -- this may require actually
+   building the V_7 multiplicity-space machinery (Hom_SU(3)(V_7,
+   S+(x)S-)) that Round 6's original plan called for, rather than
+   continuing to look for shortcuts.
+3. Task #7 remains in_progress. Do NOT update preprint.tex based on this
+   round's result. Do NOT report "rho=7 resolved" in any external
+   communication until Concern 3 is genuinely closed.
+      promote to completed after review.
