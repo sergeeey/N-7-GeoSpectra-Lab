@@ -1636,3 +1636,126 @@ parameter-dependent formula in this experiment should be checked at (at
 least) two DIFFERENT, non-degenerate parameter values, or via an
 independent data path as done here (curvature_h vs H^2), not just the
 one "nice" value where most terms cancel.
+
+## Round 15 (2026-07-09, same session, user asked to "build the twisted
+## quartic term"): built and equivariance-verified a genuine new
+## component (twisted_Ch), but the ASSEMBLY into the final D^2 formula
+## FAILS a direct L4B calibration check -- a real structural blocker,
+## not a sign slip, documented honestly rather than forced.
+
+### What was built (`g2su3_twisted_Ch_attempt.py`, committed)
+
+Leibniz-extended Agricola's C_tilde_h (Proposition 3.3, the su(3)-Casimir
+lifted into the Clifford algebra -- the ingredient identified in Round
+14 continued as the missing twisted-curvature piece) to Sigma(x)Sigma:
+  twisted_Ch(eta(x)xi) := (Ch.eta)(x)xi
+      + (1/4) sum_{p,q=1..6,p!=q} (Zp.Zq.eta)(x)([Zp,Zq]_h.xi)
+using curvature_h (Round 13) for [Zp,Zq]_h and the already-trusted
+su3_action (the SAME Clifford-algebra lift used throughout this whole
+experiment) for its action on xi. This is a NEW 64x64 matrix, not a
+restatement of anything already computed.
+
+### Two genuine passes (real evidence the construction itself is sound)
+
+1. **SU(3)-equivariance: EXACT, zero residual, all 8 generators**
+   ([twisted_Ch,su3_i]=0 for i=1..8) -- a non-trivial, non-automatic
+   check (this is NOT guaranteed by construction; a wrong sign or index
+   anywhere in the curvature_h/su3_action assembly would very likely
+   have broken it, the same way earlier equivariance checks this session
+   caught real errors).
+2. **twisted_Ch(v_a) = 0 and twisted_Ch(v_b) = 0 EXACTLY** -- clean,
+   and structurally consistent with the UNTWISTED C_h ALSO being exactly
+   zero on the analogous {1,y123} singlet-pair piece (independently
+   re-verified this round: untwisted Ch diagonal is
+   [0,4/3,4/3,4/3,4/3,4/3,4/3,0], zero on the 1st and last (singlet)
+   slots, 4/3 -- matching the tool-verified C_2(SU(3);3)=4/3 -- on the
+   "3"/"3bar" slots).
+
+### The failure (the actual finding this round)
+
+Naively assembling the twisted analog of Agricola's UNTWISTED closed
+formula (D^{1/2})^2 = Omega_g - H + Ctilde_h + (1/4)H^2 TERM-BY-TERM
+(H->calH, Ctilde_h->twisted_Ch, H^2->calH^2) and testing against the
+L4B ground truth (D^2(v_a)=D^2(v_b)=v_a+3*v_b, independently verified
+this round by direct matrix squaring of the ALREADY-VALIDATED
+D_on_simple_tensor, no new assumptions):
+
+  0(Omega_g,rho=trivial) - calH(v_a) + twisted_Ch(v_a) + (1/4)calH^2(v_a)
+  = 0 - (-2*sqrt(3)*w) + 0 + (v_a+3*v_b)
+  = v_a + 3*v_b + 2*sqrt(3)*w   != v_a + 3*v_b (the TRUE, known answer)
+
+A clean, nonzero, exactly-computed residual of +2*sqrt(3)*w -- not a
+near-miss or a rounding artifact, a definite mismatch, entirely
+attributable to the "-calH(v_a)" linear term (which independently equals
+-2*sqrt(3)*w, exactly matching calH=2*D_on_simple_tensor's own
+already-established action on v_a).
+
+### Diagnosis: a real structural mismatch, not a sign bug
+
+Agricola's H (untwisted) is a chirality-flipping ENDOMORPHISM WITHIN the
+single 8-dim Sigma (Sigma=S+(+)S- as ONE space containing both
+chiralities together) -- H:S+->S- and S-->S+ both stay inside the SAME
+8-dim Sigma, so "-H" is a well-defined additive term in an endomorphism
+of Sigma, and D^2 (an endomorphism of Sigma) can legitimately include it.
+
+The TWISTED calH, by contrast, maps the 16-dim S+(x)S- slice to the
+DIFFERENT 16-dim S-(x)S- slice of the 64-dim Sigma(x)Sigma (only the
+LEFT tensor factor's chirality flips, per this whole experiment's own
+established D_on_simple_tensor Leibniz convention -- Clifford
+multiplication acts on the left/eta factor only). "-calH(v_a)" therefore
+genuinely lands in a DIFFERENT subspace (S-(x)S-, specifically the
+w=1(x)1 slot) than v_a+3*v_b (which lives in S+(x)S-) -- it cannot
+simply cancel additively against terms (Omega_g, twisted_Ch, calH^2)
+that all correctly preserve S+(x)S-.
+
+This means Theorem 3.2's closed-form decomposition does not carry over
+via a naive term-by-term Leibniz substitution: the paper's PROOF (not
+just its stated result) is specific to a single Clifford module C(m)
+acting on one spinor bundle S, and does not address a Leibniz-twisted
+operator D_{S(x)E} mapping between two different slices of a
+tensor-product bundle. Properly generalizing Theorem 3.2 to this setting
+needs its own derivation from the index-level manipulations in
+Agricola's proof (Lemma 3.3/3.4, Proposition 3.4's computation), NOT a
+substitution into the already-closed-form single-bundle result -- a
+genuinely new, nontrivial piece of work, not yet attempted.
+
+### Status: BLOCKED, honestly, not forced
+
+This is qualitatively DIFFERENT from every other correction this session
+(nu_8's three attempts, the Jac_h/Jac_m sign swap) -- those were
+transcription/sign errors with a definite right answer waiting to be
+found. This is a genuine open QUESTION about how a proven single-bundle
+theorem generalizes to a twisted operator, which the cited literature
+does not directly answer. Per this project's Stuck Detection protocol
+(Tier 1: quick retry -- done, found the equivariance pass; Tier 2:
+context refresh via re-reading the primary source -- done, this IS how
+Round 14's sign bug was found; Tier 3: strategy switch needed), this is
+flagged for a dedicated future round with a FRESH derivation strategy
+(e.g. redo Agricola's Proposition 3.4-style index computation directly
+for D_{S(x)E}, or search for literature on twisted Kostant-Parthasarathy
+formulas specifically), rather than pushed further here at risk of a
+4th silent error this session.
+
+Task #7 (rho=7,14 torsion correction) remains explicitly in_progress,
+NOT closed, NOT falsified -- genuinely open, with a clearly diagnosed
+blocker and a preserved, reusable partial artifact (twisted_Ch, equivariant
+and correctly zero on the singlet pieces) for whoever picks this up next.
+
+### Pearl (process-level)
+
+observation: a construction can pass EVERY individual verification
+available (equivariance, clean zero on an expected piece) and still fail
+when assembled into the target formula -- individual-component
+correctness does not imply assembly correctness, especially when
+combining objects that live in structurally different spaces (a single
+bundle vs. a twisted tensor-product bundle). The L4B ground truth (a
+FULLY independently established fact, not derived from Theorem 3.2 at
+all) was exactly the right tool to catch this: an assembly-level
+calibration check, not just component-level ones.
+falsifiable_prediction: a correctly-generalized twisted Theorem 3.2 must
+reproduce D^2(v_a)=v_a+3*v_b EXACTLY when restricted to rho=trivial
+(Omega_g=0) -- this is now a hard, already-available acceptance test for
+any future attempt at this derivation.
+trigger_condition: next dedicated session attempting the twisted
+quartic/curvature term for rho=7.
+next_check: whenever this task is resumed.
