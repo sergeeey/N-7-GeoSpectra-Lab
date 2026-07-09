@@ -1101,3 +1101,110 @@ session).
 ### Agricola's Lemma 3.3 technique (now with the CORRECT asymmetric
 ### calH formula from Round 10, not the wrong symmetric H_twisted guess),
 ### or pursue a corrected V_7 construction.
+
+## Round 12 (2026-07-09): re-derived the twisted anticommutator with the
+## CORRECT asymmetric calH -- real progress (calH^2 now fully known per
+## SU(3) piece), but the anticommutator itself unifies onto the SAME
+## missing curvature ingredient that blocked the V_7 route -- not solved,
+## but now precisely characterized as ONE blocker instead of two.
+
+### Key structural fact confirmed: D_on_simple_tensor = (1/2)*calH EXACTLY,
+### D^0_twisted is COMPLETELY ABSENT from what has been computed so far
+
+Re-derived D^t_twisted = D^0_twisted + t*calH carefully (asymmetric calH,
+Round 10): calH(eta(x)xi) = (H eta)(x)xi + sum_i(e_i.eta)(x)(Lambda_m^1(e_i)xi).
+Since `nabla_g(i,vec)` computes ONLY Lambda_m^{1/2}(e_i).vec = (1/2)Lambda_m^1(e_i).vec
+(no e_i(vec) true-derivative term anywhere in the code), D_on_simple_tensor
+computes EXACTLY (1/2)*calH -- D^0_twisted is not merely "hard to compute",
+it is LITERALLY ABSENT from every computation done in this experiment so
+far, including the L4B result. (This does not invalidate L4B -- Round
+10/11 already established D^0_twisted=0 on rho=trivial specifically,
+independent of this fact. But it means: for rho != trivial, essentially
+ALL of D^2's true content beyond the algebraic calH^2 piece is still
+completely unknown, not just "the correction term".)
+
+### calH^2 = 4*D^2 computed directly (safe -- pure matrix square of the
+### already-built, already-equivariance-verified D), decomposed per
+### SU(3)-irreducible piece within S+(x)S- (the physically relevant domain)
+
+Using explicit basis vectors adapted to each SU(3) irrep within the 16-dim
+S+(x)S- (matching preprint.tex's own branching 8+3+3bar+2x1):
+  "3"  piece {y1(x)1, y2(x)1, y3(x)1}:               D^2 = 2/3  (scalar, verified block-scalar)
+  "3bar" piece {y123(x)y12, y123(x)y13, y123(x)y23}: D^2 = 10/3 (scalar, verified block-scalar)
+  "8"  piece (complement of v_a in the 9-dim {y1,y2,y3}(x){y12,y13,y23}):
+       D^2 = 0 EXACTLY -- computed the full 9x9 submatrix, confirmed rank-1
+       structure with v_a as the ONLY nonzero-eigenvalue direction (matching
+       the already-known D^2(v_a)=v_a+3v_b when projected back onto this
+       9-dim slice); the 8-dimensional complement is annihilated identically
+       by the algebraic (calH-only) part of D^2.
+  "1"x2 (trivial-mult-2): D^2(v_a)=v_a+3v_b (already known, Round 6-9);
+       D^2(v_b) not yet separately computed this round.
+
+These are REAL, computed, algebraic-part-only numbers -- useful building
+blocks, but do NOT by themselves answer the rho=7 question (see next
+section for why).
+
+### The anticommutator {D^0_twisted, calH}: re-derived carefully, unifies
+### onto the SAME missing ingredient as the V_7 route
+
+Expanded {D^0_twisted,calH}(eta(x)xi) term-by-term (8 pieces, tracked
+individually this time, not shortcut). Two of the eight terms combine
+cleanly via Agricola's own Lemma 3.3 (the UNTWISTED anticommutator
+{e_p,H} = -(3/2)*sum_{jk}T(j,k,p)*e_j.e_k, itself PURELY algebraic and
+already computable from T(i,j,k)): this piece resolves to
+sum_p K_p . e_p(eta) (x) xi, K_p:=-(3/2)sum_jk T(j,k,p)e_j.e_k -- still
+containing the bare true-derivative e_p(eta), not yet eliminated.
+
+Found a genuinely useful NEW tool for the DIAGONAL part of second
+derivatives: Agricola's own definition Omega_g := -sum_p e_p^2 + C_h
+(page 9-10) rearranges to sum_p e_p^2(psi) = C_h(psi) - Omega_g(psi).
+Since Omega_g(psi)=C_2(G2;rho)*psi is KNOWN for any given rho (e.g. 4 for
+rho=7), and C_h (the su(3)-Casimir lifted into the Clifford algebra) is
+ITSELF purely algebraic and computable the SAME way H was built --
+via SU3_GENERATORS structure constants instead of torsion T(i,j,k) --
+this gives sum_p e_p^2(psi) EXPLICITLY in terms of already-computable
+data, for ANY rho, once C_h is built (not yet built this round, but
+confirmed tractable -- same technique as g2su3_H_element.py, swapping
+the input structure-constant table).
+
+**But this only resolves the DIAGONAL sum sum_p e_p^2.** Fully expanding
+(D^0_twisted)^2 and the REMAINING six anticommutator terms requires
+individual OFF-DIAGONAL second-derivative commutators e_p(e_q(psi)) for
+p!=q, which decompose (standard Lie-group fact) as
+  e_p(e_q(psi)) - e_q(e_p(psi)) = [e_p,e_q](psi) = [e_p,e_q]_m(psi) + [e_p,e_q]_h(psi)
+The m-part is a computable first-derivative direction (via T(p,q,k)) --
+fine. The h-part, [e_p,e_q]_h(psi) = -ad([e_p,e_q]_h)~.psi (Lemma 3.4),
+requires the INDIVIDUAL su(3)-valued curvature element [e_p,e_q]_h for
+EACH pair (p,q) -- this is EXACTLY the "Jac_h-as-a-2-form" curvature data
+that the failed V_7 ansatz (Round 6/8) was also trying to reach, and
+which Round 6's Jac_h=-Jac_m identity does NOT supply (that identity is
+about the totally-antisymmetric TRIPLE bracket Jac_h(X,Y,Z), a different
+object from the single bilinear curvature 2-form [e_p,e_q]_h needed here).
+
+**Conclusion: the twisted-anticommutator route and the V_7 route were not
+actually independent alternatives -- both terminate at the SAME missing
+ingredient (the su(3)-valued curvature 2-form of the canonical connection,
+[e_p,e_q]_h for individual pairs p,q). This is genuine progress: the
+problem is now precisely localized to ONE well-defined missing object,
+not vaguely gestured at across two different unsuccessful approaches.**
+
+### Most promising concrete next step identified (not yet attempted)
+
+The Ambrose-Singer theorem states the CANONICAL (t=0) connection's
+curvature is PARALLEL, with the standard relation R^0(X,Y) = -ad([X,Y]_h)|_m
+for X,Y in m -- i.e. the canonical curvature IS essentially [e_p,e_q]_h
+(up to the sign/ad-embedding already used throughout this experiment).
+AHL2023 Proposition 5.4 (already read this session, gave the explicit
+Ambrose-Singer TORSION T^AS) may adjacent-ly give or imply this curvature
+data for exactly S^6=G2/SU(3) -- this was not fully extracted when the
+paper was read earlier this session (only the torsion 3-form was pulled
+out). Re-reading AHL2023's Section 5.1 / Proposition 5.4 specifically for
+the CURVATURE (not just torsion) statement is the most promising next
+step -- lower risk than re-deriving [e_p,e_q]_h from scratch via a new
+V_7 ansatz, since it reuses an ALREADY-VERIFIED primary source rather than
+introducing new unverified structure.
+
+### Status: task #7 still OPEN. Real, concrete progress this round
+### (calH^2 fully known per irrep; the two previously-separate blockers
+### unified into one precisely-identified missing object; a concrete,
+### lower-risk next step identified). No forced conclusion on rho=7.
