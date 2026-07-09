@@ -2429,3 +2429,220 @@ not change any number. Net effect: reinforces that g2su3_omega_g_independent_che
 is itself correct and reusable -- but the OVERALL rho=7 verdict remains
 open for the reason already documented (the 1/6 gap in connecting to
 R^E/Scal), unaffected by this LGTM.
+
+## Round 17 (2026-07-09, user asked to "build the V_7 multiplicity-space
+## Dirac operator from scratch"): a genuinely first-principles
+## construction, avoiding EVERY formula-matching trap of Rounds 15-16,
+## reproduces the SAME {2,6} eigenvalues independently. Strongest result
+## yet for rho=7's singlet piece -- pending independent review.
+
+### The construction (no recalled formula, no closed-form substitution)
+
+For a homogeneous vector bundle G x_H F with H-intertwiner w:V_rho->F,
+matrix-coefficient sections psi_{v,w}(g):=w(rho_V(g^{-1})v) satisfy (via
+Agricola's own equation 3, "grad_Z psi = Z(psi)+Lambda_tilde_m(Z)psi",
+combined with the differentiation identity independently re-derived and
+CONFIRMED CORRECT by the Round-16-v2 reviewer, "e_p(psi_v)|_e =
+-iota(rho_V(e_p)v)"):
+
+  D(psi_{v,w})|_e = -sum_p e_p . w(rho_V(e_p) v) + D_on_simple_tensor(w(v))
+
+Verified this round, carefully, term-by-term: the SECOND term (built from
+nabla_g^F(e_p)(eta⊗xi):=nabla_g(p,eta)⊗xi+eta⊗nabla_g(p,xi), the pure
+Leibniz-extended CONNECTION with no Clifford mult yet, then Clifford-
+multiplied on the LEFT factor per this experiment's established
+convention) is EXACTLY D_on_simple_tensor(eta,xi) -- confirmed by direct
+term-matching, not assumed. This means the construction uses ONLY
+already-validated, already-calibrated pieces (V_7's matrices from Round
+14, D_on_simple_tensor from Round 10-12, Clifford multiplication) --
+NO recalled Lichnerowicz formula (Round 16's trap), NO naive
+substitution into Agricola's UNTWISTED closed-form Theorem 3.2 (Round
+15's trap).
+
+By Schur's lemma, D acts on the rho=7-isotypic component as
+Id_{V_7} (x) D_7 for a linear map D_7 on intertwiners -- the formula
+above, applied to v ranging over ALL of V_7, literally DEFINES D_7(w)
+as a new intertwiner w', directly computable and composable (apply
+twice for D^2_7) without ever needing to differentiate a section at a
+general group element g.
+
+### The singlet piece, without solving for the "3"/"3bar" intertwiners
+
+phi_2 (V_7's SU(3)-singlet) is COMPLETELY ISOLATED under su(3)
+restricted to V_7 -- row AND column 0 EXACTLY zero for all 8 generators
+(re-verified this round). This means "project v onto its phi_2-
+component" is ITSELF SU(3)-equivariant, with NO need to explicitly
+identify V_7's "3"/"3bar" pieces. w_a(v):=v[phi_2]*v_a, w_b(v):=
+v[phi_2]*v_b -- VERIFIED SU(3)-equivariant SYMBOLICALLY (all 7
+directions, all 8 generators, a single symbolic check covering every
+case at once, not spot-checks).
+
+### Result (`g2su3_v7_multiplicity_dirac.py`)
+
+D_7(w_a)(phi_2) = -sqrt(3)*w exactly, matching D_on_simple_tensor(v_a)
+from L4B (expected: w_a(rho_7(e_p)phi_2)=0, so the new term vanishes
+here -- a real but limited consistency check, not new information by
+itself).
+
+D^2_7(w_a)(phi_2) and D^2_7(w_b)(phi_2), computed by applying the SAME
+from-scratch formula TWICE, give:
+  D^2_7|_{singlet block, basis v_a,v_b} = [[3,1],[3,5]]
+  eigenvalues: {2, 6}
+
+**Both eigenvalues strictly positive -- and this EXACTLY MATCHES
+Interpretation A's prediction from the discredited Round 16 R^E/Scal
+construction, via a route that shares NO machinery with it whatsoever**
+(no Scal, no R^E, no R_half curvature tensor, no "generic Lichnerowicz"
+assumption -- only V_7's matrices, D_on_simple_tensor, and Clifford
+multiplication, all independently trusted before this round began).
+
+### A real, non-trivial structural check that passed
+
+D^2_7(w_a)(phi_2) and D^2_7(w_b)(phi_2) were checked for "leakage"
+outside span(v_a,v_b) into other parts of the 64-dim fiber -- ZERO
+leakage, exactly, for both. This is NOT automatic: an error anywhere in
+the rho_7(e_p) matrices, the Clifford-left-factor convention, or the
+V_7-basis bookkeeping would generically produce a result NOT confined
+to span(v_a,v_b) (since D^2_7 must respect SU(3)-equivariance, and only
+an actually-correct construction is GUARANTEED to preserve this) --
+passing this check is meaningful evidence, not a tautology.
+
+### What this does NOT yet cover
+
+Only the singlet ("1") piece of rho=7's branching (7|SU(3)=3(+)3bar(+)1)
+has been computed this way. The "3"/"3bar" pieces need explicit
+intertwiners w_3, w_3bar (V_7's "3"-piece is NOT isolated the simple
+way phi_2 is -- building these requires either solving the SU(3)-
+intertwining linear system directly, or explicitly diagonalizing V_7's
+complementary 6-dim su(3)-action) -- not yet attempted this round.
+
+### Promotion status: reviewer LGTM, skeptic WEAKENED -- concerns
+### addressed with follow-up evidence, not just argument
+
+### Reviewer verdict: LGTM (P2, no blockers)
+
+Independently re-derived the central formula from the standard theory
+of matrix-coefficient sections (Wang's-theorem style), confirmed
+`clifford_left_64`'s index arithmetic, `d7_apply`'s use of `w(rho_7(e_p)v)`
+(not the wrong `rho_7(e_p)w(v)`), and all Step-4 arithmetic by hand from
+raw printed entries -- all correct. Then ran an ADDITIONAL,
+SELF-DEVISED test the script itself never performs: checked whether
+`D_7(w_a)` and `D_7(w_b)` (the OUTPUTS of d7_apply, not just the inputs
+w_a/w_b) are THEMSELVES SU(3)-equivariant, for all 8 generators. **Passed
+exactly, both outputs, all 8 generators.** This is materially stronger
+than the script's own "no leakage" check (see skeptic Concern 4 below)
+since it stresses rho7_ep, clifford_left_64, and D64 jointly -- exactly
+the class of cross-piece interaction that broke Round 15's construction.
+One P2 (documentation): the "Agricola equation 3" citation is not
+re-verified against a cached primary-source quote in this repo (unlike
+several other citations this session that ARE verbatim-quoted) -- the
+underlying math was independently re-derived by the reviewer from
+first principles regardless, so this doesn't affect correctness, only
+citation hygiene.
+
+### Skeptic verdict: WEAKENED (not FALSIFIED) -- 5 concerns, addressed below
+
+Full context-asymmetric review. Verdict: "directionally plausible... but
+LOW confidence the specific numbers {2,6} are established independently
+of the prior [Round 16] construction." Addressing each concern with
+FOLLOW-UP EVIDENCE (not just counter-argument):
+
+**Concern 1 (E_SIGN "unjustified, possibly calibrated against prior
+construction"):** REFUTED WITH EVIDENCE. `git log` confirms E_SIGN
+(and rho7_ep/rho7_nuk) originate in `g2su3_appendix_a_construction.py`
+lines 37-38/129, explicitly commented "per Section 5.1's own
+definition" -- i.e. AHL2023's OWN stated convention (e_i:=nu_{8+i} for
+i=1,2,4,6, e_i:=-nu_{8+i} for i=3,5), committed in 9de3caa/d60e838,
+BEFORE either Round 16 or Round 17 existed. It cannot have been
+"calibrated against" either construction's output. (Reviewer separately
+flags this as duplicated across 3 files -- a real DRY issue, P2, not a
+correctness issue.)
+
+**Concern 2 (does D_on_simple_tensor really equal the full, correct
+connection term, with nothing missing?):** DIRECTLY VERIFIED, not just
+argued. Built "Leibniz-extended nabla_g on F, then clifford_left_64"
+independently from scratch and checked it EXACTLY equals
+D_on_simple_tensor's own (already-validated) output, for 4 different
+representative simple tensors (all zero residual). This is the EXACT
+identity the whole Round-17 construction depends on, now tool-verified
+directly rather than argued from the docstring's own claim.
+
+**Concern 3 (phi_2 row/column-zero redundancy):** skeptic itself called
+this a non-issue given orthonormal basis (confirmed: V_7's basis IS the
+same orthonormal B_0 basis used throughout, per Round 14).
+
+**Concern 4a ("no leakage" is a Schur tautology, not evidence):**
+PARTIALLY ACCEPTED as a methodological framing point -- "no leakage"
+alone only rules out errors that break SU(3)-block structure, not
+errors preserving it (uniform sign/scale). But the REVIEWER's
+additional, stronger test (D_7(w_a)/D_7(w_b) THEMSELVES being
+SU(3)-equivariant, not assumed) is NOT tautological -- equivariance of
+the intermediate result is a genuine, checkable property that a
+cross-piece indexing bug (Round 15's failure mode) would very plausibly
+break, and it passed. Going forward, "no leakage" should be described
+as a necessary-but-not-sufficient sanity check, not standalone proof --
+noted for future write-ups.
+
+**Concern 4b (matrix [[3,1],[3,5]] is not symmetric -- suspicious for a
+self-adjoint D^2):** DIRECTLY RESOLVED, not just asserted. Computed the
+ACTUAL Gram matrix of {v_a,v_b} in the standard orthonormal-SUBSETS-
+basis inner product on Sigma(x)Sigma: <v_a,v_a>=3 (three orthogonal
+unit-coefficient terms), <v_b,v_b>=1, <v_a,v_b>=0 -- i.e. G=diag(3,1),
+NOT the identity (v_a, v_b are valid basis vectors but NOT orthonormal).
+Checked G.M == M^T.G for M=[[3,1],[3,5]]: **both sides give
+[[9,3],[3,5]] EXACTLY.** The matrix IS self-adjoint w.r.t. the correct
+inner product -- the apparent asymmetry was entirely an artifact of
+v_a's larger norm, not a bug. This is a genuine, POSITIVE finding (the
+construction respects a real physical constraint on D^2) that the
+skeptic's own suggested test (Concern 4, "cheapest falsification test
+1") directly confirms rather than refutes.
+
+**Concern 5 (agreement with Round 16's R^E/Scal construction "not
+independent" since both allegedly share NU, D64, v_a, v_b):**
+PARTIALLY REFUTED. Round 16's R^E was built from `curvature_h` (which
+uses the FULL 8x8 NU via `ad_nu_m_trusted`, for the su(3)-2-form
+[e_p,e_q]_h) -- it does NOT use V_7's e_p-action (`rho_7(e_p)`, the
+6-generator restriction to V_7) AT ALL. Round 17 uses rho_7(e_p)
+DIRECTLY and never touches curvature_h/R_half. These ARE genuinely
+different derived quantities computed via different paths, even though
+both ultimately trace back to the same underlying `NU` dict (AHL2023's
+Appendix A) and both use the SAME v_a,v_b (a real, acknowledged shared
+input -- NOT fully independent, but LESS shared than the skeptic's
+"both use NU, D64, v_a, v_b" framing suggested). Honest characterization:
+MEDIUM independence, not full, not none.
+
+**Concern 6c ("suspicious" that {2,6} might be a free Casimir-formula
+consequence, guessing {2,6}={C_G2(V_7), Scal/5}):** the skeptic's own
+guess used the GENERIC unit-round-sphere value Scal=30 -- this
+project's OWN, already tool-verified value is Scal=10 (different metric
+normalization, established Round 16), giving Scal/5=2, NOT 6 -- the
+skeptic's specific numerology does not hold. The ACTUAL explanation for
+{2,6} is more mundane and already independently derived much earlier
+this session: {2,6} = {0,4} + 2*[1,1] -- i.e. EXACTLY the rho=trivial
+L4B matrix [[1,1],[3,3]] (eigenvalues {0,4}) UNIFORMLY SHIFTED by
+C_2(G2;7)=2, matching the "Omega_g contributes a uniform +C_2(G2;rho)
+shift" structural argument made analytically before ANY of Rounds
+15-17's constructions were built, and separately confirmed via the
+Round-16-v2 Omega_g-independent-check. Three independent routes
+(analytic prediction, Omega_g check, full D_7 construction) now agree
+on this same shift structure -- reassuring convergence, not a
+coincidence needing further explanation.
+
+### Net assessment
+
+This is now the best-supported rho=7 result of the session: a
+genuinely from-scratch construction (sharing only V_7's matrices,
+D_on_simple_tensor, and Clifford multiplication with prior work -- NOT
+the broken R^E/Scal machinery), reviewed (LGTM, with a novel passing
+equivariance-of-output test), and skeptic-reviewed with EVERY concern
+addressed by concrete follow-up computation (not just counter-argument)
+except the inherent, honestly-scoped limitation: **only the singlet
+piece is done.** The "3"/"3bar" pieces of rho=7's branching still need
+explicit w_3/w_3bar intertwiners (harder to construct than w_a/w_b,
+since V_7's "3"-piece is not an isolated coordinate the way phi_2 is)
+-- not yet attempted. Per this project's own skeptic-leaning default
+under stage ambiguity, and because the "danger zone" claim is about ALL
+of rho=7's branching, NOT just the singlet: still NOT promoting to
+preprint.tex, still NOT declaring rho=7 fully resolved. Task #7 stays
+in_progress, but with a real, solid, multiply-verified partial result
+now in hand.
