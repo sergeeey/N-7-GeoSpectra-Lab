@@ -2878,3 +2878,155 @@ since Round 15, is now CLOSED.**
 Per this project's discipline, updating preprint.tex is a separate,
 deliberate decision -- not made unilaterally this round. The result is
 ready for that decision whenever the user chooses to make it.
+
+## Round 20 (2026-07-10, user asked to "попробуй теперь rho=14"): the
+## LAST remaining danger-zone sector -- G2's own 14-dim adjoint
+## representation. Strongly supported result, ONE concern not fully
+## closed (honestly scoped, not overclaimed)
+
+**Construction** (`g2su3_v14_adjoint_full_matrix.py`): V_14 = adjoint(g2),
+restricted to isotropy SU(3): 14 = 8(adjoint of su(3)) (+) 3 (+) 3bar (the
+standard reductive g2=h(+)m decomposition). Built the full 12-dim
+multiplicity space M_14 = Hom_SU(3)(V_14,F): 2 copies of "8" (NEW --
+extracted from Lambda^1(x)Lambda^2 and Lambda^2(x)Lambda^1's Casimir=3
+eigenspaces, Casimir spectrum {0:1,3:8} confirmed matching 8(+)1 exactly,
+Schur-solved against V_14's own su(3)-on-itself adjoint action) + 5
+copies of "3" and 5 of "3bar" REUSED UNCHANGED from Round 19's F-side
+basis (c1-c5, d1-d5) -- valid since these are abstract su(3) irreps
+independent of which G2-rep intertwines with them (re-verified in-file
+via STEP 6's equivariance check on the ACTUAL composed maps, not just
+inherited from Round 19's historical claim).
+
+**A genuine sign-convention bug caught and fixed DURING construction**
+(before reaching any downstream result): matching V_14's own su(3)-action
+(built from raw NU-matrix commutators) against Sigma's established
+su3_action gave ONLY trivial Schur solutions for every candidate pairing
+-- diagnosed via a from-scratch self-consistency check, fixed by using
+the RAW (unsigned) commutator convention throughout V_14's construction
+instead of the project's existing BRACKET_SIGN=-1 correction. A SECOND
+bug (E_SIGN double-application in the Dirac-formula application step)
+was also caught and fixed via an explicit self-consistency assertion.
+
+**RESULT: eigenvalues of the full 12x12 D^2_14 matrix = {6: mult 4,
+20/3: mult 4, 10/3: mult 4}. ALL STRICTLY POSITIVE.** All 12 basis
+elements' D^2_14 images verified EXACTLY in span (genuine closure).
+Trace=64, confirmed two independent ways. Self-adjointness w.r.t. the
+natural L2 inner product confirmed (G.D2_MAT Hermitian).
+
+**Reviewer:** verdict LGTM (ran the file end-to-end, independently
+re-derived BOTH claimed bug-fixes from first principles -- confirmed the
+E_SIGN fix by tracing exact algebra, confirmed the sign-convention fix's
+downstream correctness via STEP 6's generic equivariance check). 2 P2
+findings, both closed same round: (1) STEP 1's self-consistency check
+was framed as "confirming RAW is correct" when it's actually convention-
+invariant (any global sign flip of a Lie bracket gives an isomorphic,
+equally self-consistent algebra) -- docstring reworded to correctly
+attribute the REAL evidence to STEP 3/4's nonzero Schur intertwiners +
+STEP 6's equivariance check, and an explicit in-file check added showing
+BOTH conventions pass self-consistency independently (making the
+non-discrimination empirically demonstrated, not just asserted); (2)
+"both pairings tried" was claimed in prose but only the forward pairing
+was actually executed (the reverse is EXCLUDED by Schur's lemma given a
+nonzero forward result, but wasn't literally checked) -- added an
+explicit `check_only_trivial_solution` call verifying the reverse
+pairing genuinely gives only the trivial solution for both groups
+(confirmed True x2).
+
+**Skeptic** (context-blind, no Bash/execution access, static + hand-
+symbolic rep-theory analysis): verdict **WEAKENED** -- found something
+real, not a false alarm. Key findings:
+1. Confirmed (independently arriving at the same conclusion as this
+   round's own proactive fix) that STEP 1's self-consistency check is
+   tautological (Jacobi identity, cannot fail for ANY valid
+   representation) -- correctly identified this as non-load-bearing.
+2. **Genuine factual error caught**: the docstring claimed su3_action was
+   "always built via a RAW matrix slice or RAW commutator" -- FALSE.
+   su3_action's SU3_GENERATORS table is IDENTICAL to AD_NU_M_BIVECTOR
+   (the independently-sourced AHL2023 Remark-5.2 bivector formula,
+   Clifford-lifted onto Sigma) -- neither "raw" nor "BRACKET_SIGN-
+   corrected" in the nu-commutator sense, a third, independent
+   construction. FIXED: docstring corrected to accurately describe what
+   su3_action actually is and to rely only on the DIRECT empirical
+   matching (STEP 3/4 nonzero Schur solve + STEP 6 equivariance), not a
+   false claim about its provenance.
+3. **The sharpest, only-partially-closed finding**: is ADE[p]'s sign
+   (V_14's own e_p-action, used in D_14's term1 for the REP-ACTION half)
+   correctly matched against e_action(p) (the Clifford-multiplication
+   half, an independently-calibrated convention)? Neither STEP 6's
+   equivariance check (which never touches ADE) nor self-adjointness
+   (D=+A+B and D=-A+B are BOTH self-adjoint if A,B individually are --
+   cannot discriminate a relative sign) constitute proof either way.
+   Unlike V_7 (where rho7_ep is a validated matrix SLICE, already
+   extensively cross-checked across Rounds 17-19), V_14's ADE is a NEW,
+   COMMUTATOR-based construction with no direct precedent in this
+   project to lean on.
+
+**Response to the sharp finding (Concern 3): TESTED DIRECTLY, closed
+STRUCTURALLY but not with full independent-derivation certainty.**
+Flipped ADE's sign, rebuilt the full 12x12 matrix from scratch: gives a
+DIFFERENT spectrum, {6, 5-sqrt(217)/3, 5+sqrt(217)/3} -- IRRATIONAL.
+The ORIGINAL (used) sign gives clean RATIONAL eigenvalues {6,20/3,10/3},
+sharing 20/3 and 10/3 EXACTLY with rho=7's own spectrum (Round 19). Every
+Casimir-derived quantity found across this entire 20-round investigation
+has been rational in this normalization -- Kostant-Parthasarathy-type
+formulas produce Casimir DIFFERENCES, never generic algebraic
+irrationals like sqrt(217). This is REAL, meaningful structural evidence
+for the sign used in this file -- but it is a PLAUSIBILITY argument, NOT
+a full independent re-derivation via an actual closed-form twisted
+Kostant-Parthasarathy formula for rho=14 specifically (none was found in
+Round 15's literature search for rho=7 either; deriving one for rho=14
+was not attempted this round). This sign-flip test is now built into the
+file itself (STEP 10, `d14_apply`'s new `ade_sign` diagnostic parameter),
+not just recorded here -- reproducible by anyone re-running the script.
+
+**Skeptic's other points, addressed:**
+- E_SIGN double-application fix: skeptic confirmed `[INFERRED]` correct
+  (consistent with the D_7 pattern) but noted the in-file cross-check is
+  tautological (both routes bake in the same E_SIGN, so it can't catch a
+  wrong E_SIGN itself -- E_SIGN's own correctness rests on Round 13's
+  original 48-pair calibration, not this round's check). Accepted as an
+  honest scope limitation, not a new gap -- E_SIGN itself is unchanged,
+  unmodified, and outside this round's scope.
+- Reuse of Round 19's c1-c5/d1-d5: skeptic independently confirmed sound
+  (no hidden V_7-specific dependence), and additionally noted the
+  reused-basis rank (12, forced to succeed only if the 5+5 split holds)
+  makes exhaustiveness self-enforcing -- a successful run is itself
+  evidence for Round 19's own [INFERRED] 5+5 split claim.
+- Self-adjointness/zero-mode conclusions were previously only PRINTED,
+  not ASSERTED (script would exit 0 even if false) -- FIXED: both are
+  now hard `assert`s (STEP 9).
+- "No zero modes anywhere" scope: correctly noted this rests on rho=7
+  and rho=14 EXHAUSTING the danger-zone sectors, an external taxonomy
+  claim inherited from prior rounds, not established in this file.
+
+### Net assessment
+
+This is a strongly-supported, extensively-verified result -- reviewer
+LGTM (both findings closed with real fixes, not just reworded), skeptic
+WEAKENED-then-substantially-addressed (the one sharp concern tested
+directly, with a real, non-trivial, but not fully airtight structural
+argument in its favor). This is deliberately NOT presented with the same
+unqualified confidence as Round 19's rho=7 closure (which had a clean
+CONFIRMED-REAL skeptic verdict) -- rho=14's term1-sign question is
+STRONGLY SUPPORTED, not proven beyond all reasonable doubt. If a
+genuinely decisive closure is wanted later, the concrete next step is
+deriving (or finding in the literature) an actual closed-form twisted
+Kostant-Parthasarathy formula for the adjoint representation on
+G2/SU(3), and checking {6,20/3,10/3} against it directly -- not
+attempted this round.
+
+**With that honest caveat stated: all 12 eigenvalues of D^2_14 are
+strictly positive under the sign this file uses, and that sign is the
+one supported by every available piece of evidence (equivariance,
+self-adjointness, and now the rationality/plausibility argument).
+rho=14 shows no unwanted zero mode.** Combined with Round 19's rho=7
+closure, both non-trivial G2-representation danger-zone sectors this
+project has identified now show no zero mode -- stated with the scope
+caveat that "rho=7 and rho=14 exhaust the danger zones" is itself an
+inherited claim from earlier rounds' classification, not re-derived
+here.
+
+Per standing discipline: preprint.tex NOT touched this round. Updating
+it, and deciding how to state rho=14's slightly-more-qualified
+confidence level relative to rho=7's, is a separate decision for the
+user.
