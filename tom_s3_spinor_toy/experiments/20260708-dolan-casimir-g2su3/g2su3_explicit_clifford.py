@@ -76,14 +76,6 @@ def x_contract(j, vec):
     return out
 
 
-def x_action(j, vec):
-    return IMAG * sqrt(2) * x_contract(j, vec)
-
-
-def y_action(j, vec):
-    return IMAG * sqrt(2) * y_wedge(j, vec)
-
-
 def e_action(i, vec):
     """Real orthonormal basis e_1..e_6 acting on Sigma, per AHL2023 eq. (5).
     e_{2j-1} . eta = i (x_j _| eta + y_j ^ eta)

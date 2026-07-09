@@ -156,9 +156,20 @@ def main():
     print(f"\nClosed-form (H^2)_0 = (3/8) sum <[Zi,Zj]_m,[Zi,Zj]_m> = {scalar_closed_form}")
     diag_vals = set(sp.simplify(H2[r, r]) for r in range(DIM))
     print(
-        f"Diagonal entries of H^2 (should all equal (H^2)_0 if H^2 has no deg-4 part surviving on diagonal... "
-        f"actually deg-4 part IS off-diagonal in this basis in general): {diag_vals}"
+        f"Diagonal entries of H^2 (individual entries, NOT all equal to (H^2)_0 -- see below): {diag_vals}"
     )
+
+    # (H^2)_0 is the coefficient of the identity in H^2's Clifford-algebra
+    # decomposition, i.e. the TRACE-AVERAGE Tr(H^2)/DIM -- not a per-entry
+    # constant. The degree-4 part contributes a traceless correction that
+    # varies by SU(3)-isotypic piece (12 on the trivial-mult-2 piece, 0 on
+    # the 3+3bar piece), so individual diagonal entries differ while the
+    # trace-average matches the closed form exactly.
+    trace_avg = sp.simplify(sum(H2[r, r] for r in range(DIM)) / DIM)
+    assert sp.simplify(trace_avg - scalar_closed_form) == 0, (
+        f"Tr(H^2)/DIM = {trace_avg} does not match closed-form (H^2)_0 = {scalar_closed_form}"
+    )
+    print(f"Verified: Tr(H^2)/{DIM} = {trace_avg} matches closed-form (H^2)_0 exactly.")
 
 
 if __name__ == "__main__":
