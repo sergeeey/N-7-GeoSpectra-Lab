@@ -9,11 +9,31 @@ cross-validated against AHL2023's independently-published torsion) --
 NO new curvature/Jac_h data needed, abandoning the failed V_7/octonion
 route for THIS specific piece.
 
+SIGN CORRECTION (2026-07-09, continuation session): re-read Agricola
+2002 Theorem 3.2 directly via PyMuPDF (not doc_bridge OCR, which is what
+an earlier round used when first transcribing this formula into
+decision.md). The PDF's ACTUAL quartic-term bracket is
+"<Zi, Jac_h(Zj,Zk,Zl) + 9t^2 Jac_m(Zj,Zk,Zl)>" -- Jac_h carries NO t
+factor, Jac_m carries the 9t^2 factor. An earlier round's decision.md
+transcription had these SWAPPED ("Jac_m(...) + 9t^2 Jac_h(...)"), which
+silently flipped the sign of the quartic_term formula below. Caught and
+INDEPENDENTLY confirmed via a completely separate data path: built
+(Ctilde_h)_4 directly from curvature_h (Round 13/14's g2 curvature data,
+built from AHL2023 Appendix A -- unrelated to H/torsion) and verified
+numerically Ctilde_h_4 == -(1/9)*H2_4 EXACTLY (sympy, zero residual) --
+this identity only holds with the corrected sign, confirming the fix.
+The t=1/3 sanity check below CANNOT catch this bug (the quartic
+coefficient (1-9t^2) is itself exactly zero at t=1/3, so the check passes
+identically regardless of the sign in front of it) -- a real example of
+a calibration point being insensitive to the exact bug it was meant to
+guard against; only the independent curvature_h cross-check catches it.
+
 Derivation:
   cubic term(t)  = 2(1-3t) H                              [already known]
-  quartic term(t) = (1-9t^2) * (1/9) (H^2)_4                [NEW, this file]
-    since Jac_h=-Jac_m => quartic bracket = Jac_m + 9t^2 Jac_h
-                        = Jac_m(1-9t^2), and the Jac_m-alone
+  quartic term(t) = -(1-9t^2) * (1/9) (H^2)_4 = (9t^2-1)*(1/9)*(H^2)_4
+    [CORRECTED SIGN, see above] since Jac_h=-Jac_m => quartic bracket =
+                        Jac_h + 9t^2 Jac_m = -Jac_m + 9t^2 Jac_m
+                        = Jac_m(9t^2-1), and the Jac_m-alone
                         contribution equals (1/9)(H^2)_4 by matching
                         Prop 3.2's coefficient (-9/2) against Thm 3.2's
                         quartic coefficient (-1/2): ratio = 1/9.
@@ -24,7 +44,10 @@ Derivation:
 
 Sanity check built in: at t=1/3, BOTH the cubic and quartic terms must
 vanish exactly (Agricola's Theorem 3.3) -- this is checked numerically
-below before trusting the t=1/2 result.
+below, but per the note above it does NOT validate the quartic term's
+SIGN (only that its magnitude-determining prefactor is correctly zero
+at t=1/3); the sign is validated separately via the curvature_h
+cross-check in g2su3_delta_correction_sign_check.py.
 
 Define Delta(t) := (D^t)^2 - (D^{1/3})^2 (difference from the Kostant
 cubic Dirac operator, for which (D^{1/3})^2 restricted to a (rho,sigma)
@@ -32,12 +55,12 @@ isotypic piece is EXACTLY the naive Casimir-difference formula the
 preprint already uses -- Kostant-Parthasarathy proper). This isolates
 PRECISELY the correction the skeptic flagged as missing.
 
-Delta(t) = 2(1-3t)H + (1-9t^2)*(1/9)*(H^2 - 3*Id) + [scalar(t)-scalar(1/3)]
+Delta(t) = 2(1-3t)H + (9t^2-1)*(1/9)*(H^2 - 3*Id) + [scalar(t)-scalar(1/3)]
 scalar(t)-scalar(1/3) = (3/8)*(t^2-1/9)*8 = 3*(t^2-1/9)
 
-At t=1/2: Delta(1/2) = -H - (5/36)*(H^2-3I) + 3*(1/4-1/9)
-                      = -H - (5/36)H^2 + (5/12)I + (5/12)I
-                      = -H - (5/36)H^2 + (5/6)I
+At t=1/2: Delta(1/2) = -H + (5/36)*(H^2-3I) + 3*(1/4-1/9)
+                      = -H + (5/36)H^2 - (5/12)I + (5/12)I
+                      = -H + (5/36)H^2
 """
 
 import sympy as sp
@@ -53,7 +76,10 @@ def cubic_term(t, H):
 
 def quartic_term(t, H2, H2_0):
     H2_4 = H2 - H2_0 * sp.eye(DIM)
-    return (1 - 9 * t**2) * sp.Rational(1, 9) * H2_4
+    # SIGN CORRECTED 2026-07-09 (was (1-9t^2), see module docstring for the
+    # Theorem 3.2 Jac_h/Jac_m transcription error this fixes, independently
+    # confirmed via curvature_h): correct prefactor is (9t^2-1).
+    return (9 * t**2 - 1) * sp.Rational(1, 9) * H2_4
 
 
 def scalar_diff(t, sum_Qm):
