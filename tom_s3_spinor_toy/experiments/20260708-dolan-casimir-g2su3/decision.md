@@ -2646,3 +2646,125 @@ of rho=7's branching, NOT just the singlet: still NOT promoting to
 preprint.tex, still NOT declaring rho=7 fully resolved. Task #7 stays
 in_progress, but with a real, solid, multiply-verified partial result
 now in hand.
+
+## Round 18 (2026-07-09, user asked to "попробуй построить w_3/w_3bar
+## для 3/3bar части"): built the "3"/"3bar" intertwiners -- and found
+## why this can't just extend Round 17's {2,6} the way it looked like
+## it would
+
+**Construction** (`g2su3_v7_3_3bar_intertwiners.py`): V_7's complementary
+6-dim block (local indices 1..6, everything except phi_2) was, for the
+first time this experiment, EXPLICITLY diagonalized under the commuting
+Cartan pair (nu_7,nu_8) -- 6 weight eigenvectors found, grouped into two
+genuine 3-dim su(3)-invariant subspaces via the "weights sum to zero"
+criterion, closure-VERIFIED under all 8 generators (not just the Cartan
+pair). Matched against Sigma's already-established y1,y2,y3 ("3") and
+y12,y13,y23 ("3bar") via a SOLVED (sp.linsolve, not guessed) Schur
+intertwiner T, T2 -- each returns EXACTLY a 1-parameter family (72
+equations, 9 unknowns), confirming both irrep-match and irreducibility.
+w_3, w_3bar built and VERIFIED SU(3)-equivariant (symbolic, generic v,
+all 8 generators).
+
+**The finding:** applying Round 17's own (already-reviewed) D_7 formula
+to w_3 at v=phi_2 -- an input where w_3 is IDENTICALLY ZERO by
+construction -- returns a NONZERO result (lands on a THIRD, previously
+unused singlet of F, 1(x)1, distinct from v_a,v_b). Symmetrically,
+D_7(w_a) [Round 17's phi_2-only map] is nonzero at v=e_1. This is
+BIDIRECTIONAL leakage: D_7 does NOT respect "which SU(3)-sub-piece of
+V_7 the domain of w is supported on" as an invariant grading of the
+multiplicity space M := Hom_SU(3)(V_7,F). This is not a construction
+bug -- there is no structural reason to expect otherwise (D is only
+G2-equivariant; SU(3) is merely the isotropy group used to DEFINE M as
+a vector space, nothing forces D_7 to be block-diagonal w.r.t. that
+particular domain decomposition).
+
+**Independently confirmed via SU(3) Casimir spectrum on the full 64-dim
+F** (eigenvalues {0:mult6, 4/3:mult30, 3:mult16, 10/3:mult12}, textbook
+Dynkin-label values, cross-checked): the TRUE multiplicity space is
+dim M = 6 (trivial) + 10 ("3"+"3bar" combined) = 16 -- not the 2+1+1=4
+dimensions explored so far (Round 17's v_a,v_b plus this round's
+w_3,w_3bar). [The "5+5" 3-vs-3bar split is [INFERRED] from F's
+self-conjugacy, not tool-verified -- Casimir alone can't distinguish
+conjugate irreps of equal eigenvalue -- but dim M=16 itself is robust
+to the exact split since 3x+3y=30 forces x+y=10 regardless.]
+
+**Review:** reviewer LGTM (no correctness issues; independently
+re-enumerated all C(6,3)=20 possible weight-vector groupings and
+confirmed {B,C,D}/{A,E,F} is the UNIQUE zero-weight-sum pair, not a
+cherry-pick; traced the phi_2-leak by hand through d7_apply and
+confirmed it's a genuine, expected mechanism, not an index/zero-vector
+bug; independently recomputed the Sigma-alone Casimir spectrum as a
+second check on the 4/3 normalization). Flagged 2 minor P2 hardening
+gaps -- both fixed same round: (a) `solve_intertwiner`'s
+"exactly-1-solution" guard cannot structurally distinguish a real
+1-param family from the trivial all-zero solution (sp.linsolve always
+returns one tuple for a homogeneous system either way) -- added an
+explicit `assert det(T) != 0` / `assert det(T2) != 0` right after
+substitution, the actual non-degeneracy check; (b) removed an unused
+`P_group_full_6dim` parameter from `build_w_cols`.
+
+**Skeptic** (context-blind, claim+code only): verdict CONFIRMED, with
+one WEAKENED aspect -- flagged that the file never re-verified, IN ITS
+OWN SCOPE, that (FT1) D_7(w_3)/D_7(w_3bar)'s OUTPUTS are themselves
+SU(3)-equivariant (the entire "leaks into phi_2" reading is only
+meaningful if w3_prime is a genuine element of M, not some
+non-equivariant artifact), and (FT4) that V_7 local index 0 is really
+su(3)-isolated within this file's own scope (inherited from Round 17
+without a local check). Both were [INFERRED] only, since the skeptic
+had no Bash/execution access (static+hand-symbolic tracing only,
+explicitly disclosed). Both closed THIS round by adding the checks and
+running them: FT1 (`verify_equivariance` on w3_prime, w3bar_prime,
+w3_double, w3bar_double) -> True for all four; FT4 (explicit re-check
+that rho7_nuk(k) kills local index 0's row AND column for all 8
+generators, asserted) -> True. Both [INFERRED] markers lifted to
+[VERIFIED-tool]. Skeptic separately noted the CONCLUSION ("16x16
+required, {2,6} alone insufficient") is doubly robust -- it follows
+from dim M = 16 >> 4 alone via ordinary linear algebra (a
+positive-definite 2x2 principal submatrix never implies positive-
+definiteness of the full 16x16 matrix), independent of whether the
+leakage computation itself is exactly right.
+
+**Skeptic's Concern 1/2 (wrong grouping could pass by luck / "sum to
+zero" insufficient criterion):** DEFUSED -- not merely "a" grouping,
+the UNIQUE one (reviewer independently confirmed via exhaustive
+enumeration), and even if the "sum to zero" heuristic admitted a
+spurious triple, the closure test would still reject it (two
+independent gates, not one).
+
+**Skeptic's Concern 6 (smuggled unestablished assumptions):** none
+found -- every reused piece (NU, D64, d7_apply, phi_2-is-singlet) traces
+to a prior file that carries its own independent validation, and this
+round added a fresh, local re-check (FT4) of the one inherited fact the
+interpretation most depends on.
+
+### Net assessment / SCOPE CORRECTION to Round 17
+
+w_3, w_3bar are now built, Schur-verified, SU(3)-equivariant, and
+reviewed+skeptic-CONFIRMED. But this is NOT the clean extension of
+Round 17's {2,6} to the "3"/"3bar" pieces that the Round-16-v2
+Omega_g-independent-check's "14/3" prediction had suggested was coming.
+Instead, the attempt to build it surfaced a real, structural fact:
+**Round 17's {2,6} eigenvalues remain a correctly-computed 2x2 matrix
+sub-block (the v=phi_2-in, v=phi_2-out, {v_a,v_b} piece of D^2_7) -- but
+they do NOT, by themselves, establish "no zero mode in the rho=7 danger
+zone."** The true operator relevant to that question lives on the full
+16-dim multiplicity space M, with off-block-diagonal couplings between
+the singlet-support, "3"-support, and "3bar"-support pieces that are
+NOT visible from any small sub-block explored so far (only 4 of 16
+dimensions have been touched: 2 singlets + 1 "3"-copy + 1 "3bar"-copy).
+A genuine zero mode of the full operator could in principle be a linear
+combination spanning all three pieces simultaneously.
+
+Per this project's NULL Retroactive Scan discipline (a new finding
+changing the interpretation of a prior PROMOTE-leaning result must be
+applied retroactively): Round 17's activeContext.md entry is corrected,
+not retracted -- its computation stands, its scope is narrowed.
+
+**Still NOT promoting anything to preprint.tex. Still NOT declaring
+rho=7 resolved (danger zone remains genuinely OPEN).** Task #7 stays
+in_progress. Next step, clearly scoped now for the first time: build
+out the remaining 12 basis intertwiners (4 more singlets, 4 more "3"
+copies, 4 more "3bar" copies -- or however the true 5+5 split falls)
+and diagonalize the full 16x16 D^2_7 matrix -- a substantially larger
+undertaking than anything done in Rounds 15-18, not attempted this
+round.
