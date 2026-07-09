@@ -2206,4 +2206,226 @@ result, and must not be reported as one.
 3. Task #7 remains in_progress. Do NOT update preprint.tex based on this
    round's result. Do NOT report "rho=7 resolved" in any external
    communication until Concern 3 is genuinely closed.
-      promote to completed after review.
+
+## Round 16 continued v2 (2026-07-09, same session, user asked to "find
+## an independent second calibration point"): FOUND ONE -- directly
+## answers the skeptic's own suggested "cheapest test". Concern 3
+## appears CLOSED, pending independent review (dispatched, not yet in).
+
+### The idea (not a calibration-point hack -- a genuinely separate derivation)
+
+Rather than search for another D^2 ground truth to compare against, used
+DATA NEVER BEFORE USED FOR THIS PURPOSE: V_7's own representation
+matrices (Round 14, rho_7(e_p) for p=1..6, the m-direction/"rolling"
+action, restricted from the validated 8x8 nu_k matrices). For a
+homogeneous-bundle section realized as a matrix-coefficient
+psi_v(g):=iota(rho_V(g^{-1})v) (v in V_rho, iota an H-intertwiner into
+the fiber F), a direct computation gives the GENERAL identity
+  (e_p)^2(psi_v)|_e = iota(rho_V(e_p)^2 v)
+-- re-derived twice, independently, with two DIFFERENT sign conventions
+for psi_v (with/without the group-inverse), giving the IDENTICAL result
+both times (a good robustness check: applying the SAME raw derivative
+twice symmetrizes away the inverse-convention ambiguity).
+
+Combined with Agricola's OWN definition (page 12, quoted verbatim
+earlier this session) Omega_g := -sum_p Z_p^2 + Ctilde_h (Z_p = RAW
+left-invariant vector fields, exactly matching what "(e_p)^2" computes
+above -- NOT a new assumption, Agricola's own stated formula), this
+gives Omega_g(psi_v)|_e = iota(-sum_p rho_V(e_p)^2 v) + Ctilde_h_twisted(iota(v)),
+COMPUTABLE without ANY reference to R_half, R^E, or the L4B/Scal
+calibration that the skeptic found insufficient.
+
+### What was verified (tool, `g2su3_omega_g_independent_check.py`)
+
+1. **General Casimir decomposition on V_7, a pure matrix identity, no
+   eigenbasis needed:** -sum_p rho_7(e_p)^2 + (-sum_k rho_7(nu_k)^2) ==
+   2*I_7 == C_2(G2;7)*I_7 EXACTLY. This is just splitting the
+   ALREADY-VALIDATED identity C_2(G2;7)=-sum_{ALL 14}rho_7(nu_k)^2 (Round
+   14) into su(3)-part + m-part -- no new assumption, pure algebra.
+2. **-sum_k rho_7(nu_k)^2 (SU(3)-Casimir restricted to V_7) is EXACTLY
+   block-scalar**: eigenvalues {0 (mult 1), 4/3 (mult 6)} -- matching
+   C_2(SU(3);1)=0 and C_2(SU(3);3)=C_2(SU(3);3bar)=4/3 EXACTLY (this
+   4/3 was independently tool-verified via a COMPLETELY DIFFERENT method
+   earlier this session, su3_casimir_action_squared on Sigma's y1/y12 --
+   now confirmed a SECOND, independent way, via V_7's own matrices).
+   Hence -sum_p rho_7(e_p)^2 = {2 on singlet, 2/3 on "3"/"3bar"}.
+3. **phi_2 (V_7's singlet, independently re-confirmed killed by all 8
+   su(3) generators restricted to V_7) gives -sum_p rho_7(e_p)^2.phi_2 =
+   2*phi_2 EXACTLY** (direct numeric computation, matches item 1's
+   general result specialized to the singlet).
+4. **Ctilde_h_twisted (Round 15's construction, built from curvature_h +
+   su3_action -- COMPLETELY SEPARATE from R_half/R^E) gives EXACTLY
+   (4/3)*(y1(x)1) on y1(x)1** -- a NEW check this round (Round 15 only
+   verified it was zero on v_a,v_b) -- matching the UNTWISTED single-
+   Sigma Ctilde_h's OWN eigenvalue (4/3) on the analogous "3" piece
+   exactly, extending Round 15's partial verification.
+
+### Assembly: BOTH relevant pieces confirmed
+
+- Singlet: Omega_g = 2*iota(phi_2) + 0 = 2*iota(phi_2) =>
+  nabla*nabla = Omega_g - Ctilde_h_twisted = 2 - 0 = 2, matching
+  C_2(G2;7)-C_2(SU(3);1) = 2-0 = 2 EXACTLY.
+- "3" (and by the identical argument, "3bar"): Omega_g = (2/3)*iota(v) +
+  (4/3)*iota(v) = 2*iota(v) => nabla*nabla = 2 - 4/3 = 2/3, matching
+  C_2(G2;7)-C_2(SU(3);3) = 2-4/3 = 2/3 EXACTLY.
+
+**This independently confirms Interpretation A's nabla*nabla coefficient
+(alpha=1, unscaled) is CORRECT for both pieces, via a route that never
+touches the (Scal+R^E) calibration's mysterious 3/2 factor at all.**
+Per Interpretation A's already-computed values: singlet eigenvalues
+{2,6}, "3"/"3bar" piece = 14/3 -- both strictly positive, and NOW backed
+by an independent derivation of the load-bearing term, not by "checking
+two plausible interpretations."
+
+### What this does NOT resolve
+
+The (Scal+R^E) piece's own 3/2 normalization mystery (skeptic Concern 2)
+is UNTOUCHED by this argument -- but it no longer needs to be fully
+explained for the rho=7 QUALITATIVE conclusion, since nabla*nabla (the
+ONLY rho-dependent piece) is now independently pinned down, and
+Interpretation A (the one this round's argument supports) already gives
+strictly positive eigenvalues using the EMPIRICALLY-fitted 3/2 factor
+for (Scal+R^E) specifically. The 3/2 factor's ORIGIN remains an open,
+lower-priority loose end (does not affect the sign of the answer either
+way, since it multiplies a term added to an already-positive nabla*nabla
+contribution).
+
+### Promotion status: PENDING independent review (dispatched)
+
+Given the significance (this would directly resolve the skeptic's
+decisive Concern 3), a reviewer and a context-blind skeptic pass have
+been dispatched on THIS NEW argument specifically, per the same
+discipline applied to the original (falsified) Round 16 claim. NOT yet
+promoted -- do not cite as resolved until those results are in.
+
+## Round 16 continued v3 (2026-07-09, same session): second skeptic pass
+## FALSIFIED this attempt too -- and a direct, tool-verified follow-up
+## check CONFIRMS the skeptic's deeper concern has real substance, even
+## though its specific framing was likely wrong. Task #7 STAYS OPEN.
+## Recommending a pause on this specific sub-thread.
+
+### The second skeptic's verdict: FALSIFIED, Concern 2
+
+Full context-asymmetric review (claim + code only) of the v2 (Omega_g
+independent check) argument. The skeptic's Concern 1 (the central
+differentiation identity (e_p)^2(psi_v)|_e = iota(rho_V(e_p)^2 v)) was
+independently re-derived from scratch and CONFIRMED CORRECT -- "no sign
+trap" -- matching this round's own claim exactly. Concern 2, the
+decisive one: is "Omega_g - Ctilde_h" (Agricola's own decomposition,
+what this round computed) actually the SAME "nabla*nabla" that appears
+in the GENERIC twisted Lichnerowicz formula D^2=nabla*nabla+(1/4)Scal+R^E
+(the formula g2su3_lichnerowicz_rho7.py's R^E/Scal construction is
+built on)? The skeptic argued these could differ because Omega_g is
+tied to "the characteristic/canonical connection" while the generic
+formula's nabla*nabla is tied to Levi-Civita specifically.
+
+### Correction to the skeptic's specific framing (verified against the primary source)
+
+The skeptic's Concern 2, AS STATED, rests on treating Omega_g as
+CONNECTION-SPECIFIC (t=0 or t=1/3, not t=1/2). This is FACTUALLY
+INCORRECT per Agricola's OWN Theorem 3.2, read directly and quoted
+verbatim earlier this session: "(Dt)2psi = Omega_g(psi) +
+1/2(1-3t)Sum...ZiZjZk(psi) - ..." -- Omega_g(psi) appears with NO
+t-coefficient, IDENTICALLY for every value of t (canonical t=0, cubic
+t=1/3, Levi-Civita t=1/2) -- this is the theorem's own, explicit,
+already-multiply-verified structure (used throughout this whole
+experiment, e.g. the earlier "(D^t)^2=Omega_g+2(1-3t)H+C̃h+t^2H^2"
+derivation, cross-checked against Theorem 3.3's t=1/3 special case).
+Omega_g is PROVABLY t-independent -- NOT specific to any one connection.
+
+### But the DEEPER version of the concern is real -- confirmed by direct
+
+### computation, not just plausible-sounding
+
+Despite the above correction, tested whether "Omega_g - Ctilde_h" (my
+assumed nabla*nabla) is actually consistent with matching Agricola's
+OWN, fully-verified (D^{1/2})^2 = Omega_g - H + Ctilde_h + (1/4)*H^2
+formula against the GENERIC untwisted Lichnerowicz formula
+(D^{1/2})^2 = nabla*nabla + (1/4)*Scal (R^E=0 trivially for the
+untwisted/E=trivial case). Setting these equal and substituting
+nabla*nabla := Omega_g - Ctilde_h requires the identity
+  -H + 2*Ctilde_h + (1/4)*H^2 == (1/4)*Scal
+On the "3" piece, using ALL ALREADY-ESTABLISHED, TOOL-VERIFIED values
+(H=0, Ctilde_h=4/3, H^2=0, Scal=10):
+  LHS = -0 + 2*(4/3) + 0 = 8/3
+  RHS = (1/4)*10 = 5/2
+  **8/3 != 5/2, discrepancy = EXACTLY 1/6, tool-verified, not a
+  hand-arithmetic slip.**
+
+This is a REAL, CONCRETE inconsistency -- not the skeptic's specific
+"wrong connection" diagnosis, but genuine evidence that "nabla*nabla :=
+Omega_g - Ctilde_h" does NOT simply equal "the generic Lichnerowicz
+nabla*nabla" (as recalled from a web search, never verified against a
+primary source in THIS project's specific Clifford convention -- the
+SAME root-cause concern the FIRST skeptic pass raised as Concern 2,
+now independently confirmed to have real teeth via direct computation,
+not just a plausible-sounding worry).
+
+### Verdict: task #7 STAYS OPEN. Genuine partial progress, not resolution.
+
+**What IS now solidly established** (survives BOTH skeptic passes,
+confirmed via multiple independent routes): Omega_g's OWN eigenvalue
+formula, C_2(G2;rho)-C_2(SU(3);sigma), is CORRECT and T-INDEPENDENT --
+confirmed via Agricola's own theorem (primary source), via the untwisted
+Ctilde_h construction, and now via V_7's own matrices (three independent
+lines of evidence, matching this experiment's own L4B-methodology
+standard). This is a genuine, reusable, well-verified building block.
+
+**What is NOT established**: how this Omega_g piece correctly combines
+with the (Scal+R^E) machinery to give the TRUE, physical D^2. The
+"generic twisted Lichnerowicz formula" used for R^E/Scal was recalled
+from a web search summary and has NOW been shown, via direct
+computation (not speculation), to be INCONSISTENT with Agricola's own,
+fully-verified machinery by a concrete, nonzero amount (1/6 on the
+untwisted "3" piece) -- meaning the R^E/Scal construction itself likely
+has an error or missing term, not just an unexplained overall scale
+factor as previously believed.
+
+### Recommendation: pause this specific sub-thread
+
+This sub-problem (the twisted, non-trivial-rho danger-zone gap for
+rho=7) has now survived 3 full attempts within this session alone
+(twisted_Ch/Round 15, Lichnerowicz R^E/Round 16, Omega_g-independent-
+check/Round 16 v2), each catching a real, substantive error in the
+previous one via this project's own review+skeptic discipline -- exactly
+as that discipline is designed to do, but also a signal that this
+SPECIFIC derivation (twisted Kostant-Parthasarathy-type formula for a
+naturally reductive space) is genuinely hard and not close to a quick
+resolution via incremental fixes. Recommend NOT attempting a 4th
+construction in this same session without a fundamentally different
+strategy (e.g. building the FULL V_7 multiplicity-space Dirac operator
+from scratch rather than trying to match a recalled generic formula, or
+seeking a primary-source-verified twisted Lichnerowicz formula in
+EXACTLY this project's Clifford convention before building anything
+further on top of it).
+
+Task #7 remains in_progress, explicitly OPEN. preprint.tex is NOT
+updated. No external communication should describe rho=7 as resolved.
+
+### Addendum: second reviewer's LGTM (received after the above was written)
+
+The reviewer pass on `g2su3_omega_g_independent_check.py` returned
+**LGTM** -- independently re-derived the central differentiation
+identity from scratch (two different ways, both agreeing), confirmed
+all of Step 1-4's arithmetic reproduces exactly, and confirmed
+Omega_g's OWN eigenvalue formula (C_2(G2;rho)-C_2(SU(3);sigma)) is
+internally solid. This does NOT contradict the honest downgrade above --
+the reviewer correctly verified THIS FILE's own scope (that
+Omega_g-C̃h telescopes correctly and matches C_2(G2;7)-C_2(SU(3);sigma)
+within Agricola's OWN framework, which is true and was never in
+question) -- it was not asked to check, and does not touch, the SEPARATE
+question this round's follow-up computation found broken: whether
+"Omega_g-C̃h" (verified solid) equals "the generic Lichnerowicz
+nabla*nabla" used in the R^E/Scal construction (found NOT to, via the
+tool-verified 1/6 discrepancy above). The reviewer's one substantive
+observation (P2, not blocking): Step 4's "two independent confirmations"
+of the "3"-piece value are algebraically the SAME equation (Omega_g:=
+(-Σρ7(ep)²)+Ctilde_h_twisted telescopes trivially when subtracting
+Ctilde_h_twisted back out) -- the REAL, independent agreement in that
+file is between Step 1 (V_7's abstract matrices, giving 2/3) and Step 3
+(the twisted Clifford construction, giving 4/3, summing to the
+independently-known 2) -- worth tightening in a future revision, does
+not change any number. Net effect: reinforces that g2su3_omega_g_independent_check.py
+is itself correct and reusable -- but the OVERALL rho=7 verdict remains
+open for the reason already documented (the 1/6 gap in connecting to
+R^E/Scal), unaffected by this LGTM.
