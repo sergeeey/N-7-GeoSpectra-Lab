@@ -1,92 +1,117 @@
 """
-Rigorous calibration check for the rolling-map ansatz in
-g2su3_V7_construction.py. For every pair i<j in 1..6, compute [M_i,M_j] as a
-7x7 matrix commutator, then decompose its restriction to m (rows/cols 1..6)
-as a combination of the 15 elementary bivectors e_a^e_b (a<b, 1<=a,b<=6) via
-exact linear solve, and check whether the result lies ENTIRELY within the
-8-dimensional span of the su(3) vector-action generators (su3_vector_action,
-i=1..8) -- since h=su(3) is exactly the isotropy subalgebra (dim g2=14,
-dim S^6=6, so dim(isotropy)=8=dim su(3), with NO extra u(1)), any residual
-component orthogonal to su(3)'s image within so(6) signals an error in the
-rolling-map ansatz (or a bug), not a legitimate extra term.
+Round 14 (2026-07-09): V_7 construction that FIXES Round 6/8's failed
+"rolling map" ansatz (see g2su3_V7_construction.py -- superseded, kept
+only as a record of the dead end; decision.md documents why) -- not by
+re-deriving a new ansatz, but by RESTRICTING the already-validated
+g2su3_appendix_a_construction.py data.
+
+AHL2023 Lemma A.1: g2 = stab_{spin(7)}{phi_1}, su(3) = stab{phi_1,phi_2},
+for phi_1, phi_2 the first two standard basis vectors of Sigma_7=R^8 (NOT
+something to solve for). Verified directly below: phi_1 is killed by all
+14 g2 generators, phi_2 by exactly the 8 su(3) generators.
+
+Given phi_1 is killed by every nu_k, and every nu_k is antisymmetric (so a
+zero COLUMN forces a zero ROW at the same index), V_7 := phi_1^perp
+(7-dim) is automatically preserved by the full g2 action -- restricting
+the validated 8x8 nu_k matrices to rows/cols 2..8 gives G2's fundamental
+7-dim representation directly, no new ansatz, no separate calibration
+needed beyond what g2su3_appendix_a_construction.py already established.
+
+Two independent structural checks on the result:
+  1. C_2(G2;V_7) computed directly must be a pure scalar (irreducibility).
+  2. C_2(SU(3);adjoint) computed the same way on span{nu_1..nu_8} must
+     match the preprint's own cited value 3, with NO rescaling -- this
+     confirms AHL2023's B_0-orthonormal basis uses the standard "physics"
+     Tr(T^aT^b)=delta^ab/2 convention (C_2(adjoint SU(N))=N), the SAME
+     convention resolved independently in g2su3_casimir_convention_check.py.
 """
 
 import sympy as sp
-from g2su3_V7_construction import (
-    build_T_table,
-    m_generator_matrix,
-    su3_vector_action,
-)
+from g2su3_appendix_a_construction import NU, nu, decompose_g2
 
-BIVECTORS = [(a, b) for a in range(1, 7) for b in range(a + 1, 7)]  # 15 of them
+N8 = 8
 
 
-def bivector_vec6(a, b):
-    """e_a ^ e_b as a 6-dim vector acting on... no, we need it as an
-    ELEMENT of so(6) i.e. a 6x6 antisymmetric matrix, to compare against
-    su3_vector_action's image as 6x6 matrices."""
-    M = sp.zeros(6, 6)
-    M[a - 1, b - 1] = 1
-    M[b - 1, a - 1] = -1
-    return M
-
-
-def su3_gen_as_6x6(i):
-    """su3_vector_action(i, .) as an explicit 6x6 matrix (acting on m only,
-    ignoring the p-row/col which is always zero for su(3))."""
-    M = sp.zeros(6, 6)
-    for col in range(6):
-        vec7 = sp.zeros(7, 1)
-        vec7[col + 1] = 1
-        out = su3_vector_action(i, vec7)
-        for row in range(6):
-            M[row, col] = out[row + 1]
-    return M
+def phi(k):
+    v = sp.zeros(N8, 1)
+    v[k - 1] = 1
+    return v
 
 
 def main():
-    T = build_T_table()
-    Ms = {i: sp.simplify(m_generator_matrix(i, T)) for i in range(1, 7)}
-    S6x6 = [su3_gen_as_6x6(i) for i in range(1, 9)]
+    phi1, phi2 = phi(1), phi(2)
 
-    # Build the 8 su(3) generators as vectors in the 15-dim bivector-coefficient
-    # space (coefficient of e_a^e_b in each S_i, a<b).
-    su3_coeff_matrix = sp.zeros(15, 8)
-    for col, S in enumerate(S6x6):
-        for row, (a, b) in enumerate(BIVECTORS):
-            su3_coeff_matrix[row, col] = S[a - 1, b - 1]
-
-    print(
-        "su(3) generators expressed in the 15-dim bivector basis (rows=bivectors, cols=8 generators):"
-    )
-    sp.pprint(su3_coeff_matrix)
+    print("=" * 70)
+    print("CHECK 1: phi_1 killed by all 14 g2 generators (Lemma A.1)?")
+    print("=" * 70)
+    killed_by_all_14 = all(sp.simplify(nu(k) * phi1) == sp.zeros(N8, 1) for k in range(1, 15))
+    print(f"  phi_1 = e_1 killed by nu_1..nu_14: {killed_by_all_14}")
 
     print("\n" + "=" * 70)
-    print("For each pair (i,j), decompose [M_i,M_j]|_m against su(3)'s image")
+    print("CHECK 2: phi_2 killed by exactly the 8 su(3) generators (not m)?")
     print("=" * 70)
-    for i, j in [(a, b) for a in range(1, 7) for b in range(a + 1, 7)]:
-        comm = sp.simplify(Ms[i] * Ms[j] - Ms[j] * Ms[i])
-        # restrict to m-block (rows/cols 1..6)
-        comm_m = comm[1:7, 1:7]
-        target = sp.zeros(15, 1)
-        for row, (a, b) in enumerate(BIVECTORS):
-            target[row] = comm_m[a - 1, b - 1]
-        if all(sp.simplify(x) == 0 for x in target):
-            continue  # trivial, skip printing
-        # least-squares / exact solve: su3_coeff_matrix * x = target ?
-        # use sympy's linsolve on the augmented system
-        aug = su3_coeff_matrix.row_join(target)
-        rank_A = su3_coeff_matrix.rank()
-        rank_aug = aug.rank()
-        consistent = rank_A == rank_aug
-        print(
-            f"\n[M_{i},M_{j}]|_m nonzero. rank(su3_basis)={rank_A}, rank(augmented)={rank_aug}, "
-            f"consistent (residual-free)={consistent}"
-        )
-        if not consistent:
-            print(f"  ** RESIDUAL DETECTED ** -- [M_{i},M_{j}] has a component")
-            print("  outside su(3)'s image in so(6). Ansatz may be wrong.")
-            print(f"  Target vector (bivector coeffs): {[sp.simplify(x) for x in target]}")
+    killed_by_su3 = all(sp.simplify(nu(k) * phi2) == sp.zeros(N8, 1) for k in range(1, 9))
+    killed_by_m_too = all(sp.simplify(nu(k) * phi2) == sp.zeros(N8, 1) for k in range(9, 15))
+    print(f"  phi_2 killed by nu_1..nu_8 (su(3)): {killed_by_su3}")
+    print(f"  phi_2 ALSO killed by nu_9..nu_14 (m) [should be False]: {killed_by_m_too}")
+
+    print("\n" + "=" * 70)
+    print("V_7 := phi_1^perp (rows/cols 2..8) -- restrict all 14 nu_k")
+    print("=" * 70)
+    V7 = {k: sp.simplify(NU[k][1:8, 1:8]) for k in range(1, 15)}
+    zero_first_row_col = all(
+        sp.simplify(NU[k][0, :]) == sp.zeros(1, N8) and sp.simplify(NU[k][:, 0]) == sp.zeros(N8, 1)
+        for k in range(1, 15)
+    )
+    print(
+        f"  every nu_k has zero 1st row AND column (antisymmetry + phi_1-kill): {zero_first_row_col}"
+    )
+
+    print("\n" + "=" * 70)
+    print("CHECK 3: C_2(G2; V_7) = -sum_k (nu_k|_V7)^2 -- scalar is CONSISTENT")
+    print("with irreducibility (Schur), not independently sufficient to prove it")
+    print("(a reducible sum of non-isomorphic irreps with equal Casimir would also")
+    print("give a scalar here) -- treat this as a structural sanity check, not a")
+    print("standalone irreducibility proof")
+    print("=" * 70)
+    C2_V7 = sp.simplify(-sum((V7[k] * V7[k] for k in range(1, 15)), sp.zeros(7, 7)))
+    is_scalar_V7 = C2_V7 == C2_V7[0, 0] * sp.eye(7)
+    print(f"  C_2(G2;7) matrix == scalar * I_7 ? {is_scalar_V7}")
+    print(f"  scalar value: {sp.simplify(C2_V7[0, 0])}")
+
+    print("\n" + "=" * 70)
+    print("CHECK 4: C_2(SU(3); adjoint) via ad(nu_i), i=1..8, on span{nu_1..nu_8}")
+    print("(same computation as g2su3_casimir_convention_check.py's convention")
+    print(" cross-check, redone here directly from the 8x8 matrices)")
+    print("=" * 70)
+
+    def ad8(i, j):
+        """8-dim adjoint-action coefficient vector of ad(nu_i) on nu_j, via decompose_g2."""
+        comm = sp.simplify(nu(i) * nu(j) - nu(j) * nu(i))
+        coeffs = decompose_g2(comm)
+        return sp.Matrix([coeffs.get(k, 0) for k in range(1, 9)])
+
+    AD = [sp.Matrix.hstack(*[ad8(i, j) for j in range(1, 9)]) for i in range(1, 9)]
+    C2_adj = sp.simplify(-sum((AD[i - 1] * AD[i - 1] for i in range(1, 9)), sp.zeros(8, 8)))
+    is_scalar_adj = C2_adj == C2_adj[0, 0] * sp.eye(8)
+    print(f"  C_2(SU(3);adjoint) matrix == scalar * I_8 ? {is_scalar_adj}")
+    print(f"  scalar value: {sp.simplify(C2_adj[0, 0])}  (preprint's own cited value: 3)")
+
+    print("\n" + "=" * 70)
+    print("SUMMARY")
+    print("=" * 70)
+    print(
+        f"  C_2(G2;V_7)          = {sp.simplify(C2_V7[0, 0])}  (Agricola 2002's cited value: 4 -- see"
+    )
+    print(
+        "                          g2su3_casimir_convention_check.py for the resolved factor-of-2"
+    )
+    print(
+        "                          convention mismatch: long-root^2=2 vs physics Tr(TT)=1/2 convention)"
+    )
+    print(
+        f"  C_2(SU(3);adjoint)   = {sp.simplify(C2_adj[0, 0])}  (matches preprint exactly, no rescaling)"
+    )
 
 
 if __name__ == "__main__":

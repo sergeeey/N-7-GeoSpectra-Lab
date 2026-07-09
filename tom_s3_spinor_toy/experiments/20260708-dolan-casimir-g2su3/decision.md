@@ -1321,3 +1321,175 @@ missing piece there was exactly this same su(3)-curvature information).
 ### structural ingredients (T, H, calH, curvature_h) are now validated
 ### and available; only the final assembly into a numeric rho=7 verdict
 ### remains.
+
+## Round 14 (2026-07-09, same day, user asked to assemble the final rho=7
+## answer): V_7 (Round 6/8's original blocker) is NOW FIXED using the
+## validated Appendix A data -- a SECOND major breakthrough -- but a
+## genuine normalization ambiguity was found and must be resolved before
+## a final numeric verdict can be trusted. NOT YET the final answer.
+
+### V_7 correctly constructed, two independent validations passed
+
+AHL2023 Lemma A.1 states g2 = stab_{spin(7)}{phi_1}, su(3) = stab{phi_1,phi_2}
+for phi_1,phi_2 the FIRST TWO STANDARD BASIS VECTORS of the real spin
+representation Sigma_7=R^8 (not something requiring separate solving).
+Verified DIRECTLY: phi_1=(1,0,...,0) is killed by all 14 g2 generators
+nu_1..nu_14 (confirmed only after fixing an additional nu_8 transcription
+error, see below); phi_2=(0,1,0,...,0) is killed by exactly the 8 su(3)
+generators nu_1..nu_8 (not by nu_9..nu_14, as expected).
+
+Given this, **V_7 := phi_1^perp (7-dimensional) is G2's fundamental
+representation**, with G2's FULL action given by simply restricting the
+already-validated nu_1..nu_14 matrices to this 7-dim subspace (rows/cols
+2-8) -- since every nu_k kills phi_1, each nu_k automatically preserves
+phi_1^perp too (antisymmetric matrices with a zero column automatically
+have a zero row, by antisymmetry). **This directly fixes Round 6/8's
+failed "rolling map" ansatz** -- no guessing required, just restriction
+of already-calibrated data.
+
+### Found and fixed a SECOND independent nu_8 transcription error
+
+phi_1 was NOT killed by the ORIGINAL Round 13 nu_8 formula
+(-rho1rho2-2rho3rho4+rho5rho6) -- diagnosed as yet another stacked-
+fraction transcription ambiguity from the PDF (same failure mode as
+Round 13's first nu_9..14 attempt, now hitting nu_8 specifically, which
+had ALREADY shown a separate calibration anomaly in Round 13 that was
+set aside at the time as "not needed as an input"). **Solved directly
+via a linear system** (not guessed): treating nu_8 = a*rho1rho2 +
+b*rho3rho4 + c*rho5rho6 as unknowns and requiring [nu_8,e_p] =
+-ad(nu_8)(e_p) for all p=1..6 (the SAME trusted Remark 5.2 data used
+throughout) gives the UNIQUE solution a=c=-1, b=+2 (up to overall
+1/(4sqrt3) scale): nu_8 = (1/(4sqrt3))(-rho1.rho2 + 2.rho3.rho4 - rho5.rho6).
+With this correction: **all 8/8 su(3) generators now calibrate exactly**
+(comm=-expected, zero exceptions, up from 7/8 in Round 13), the m-part
+cross-check against T(p,q,k) still passes 100% (unaffected, as expected),
+AND phi_1 is now killed by all 14 generators. The curvature_h table
+values also became visibly cleaner (e.g. nu_8 coefficients now
+sqrt(3)/6, sqrt(3)/6, -sqrt(3)/3 instead of the messier sqrt(3)/18,
+-5sqrt(3)/18, 2sqrt(3)/9) -- clean fractions after a correction is itself
+a mild positive signal, though not proof on its own.
+
+### Cross-check via the Casimir operator -- structure confirmed, and the
+### apparent normalization discrepancy found here is RESOLVED below
+
+(Committed as `g2su3_V7_calibration_check.py` -- phi_1/phi_2 kill checks
++ both Casimir computations, re-runnable.) Computed C_2 := -sum_{k=1}^{14}
+(nu_k restricted to V_7)^2 directly.
+**Result: EXACTLY 2*Identity_7x7** (a clean scalar -- a real, non-trivial
+structural validation, since an incorrectly-built representation would
+generically NOT give a pure scalar here; strictly, a scalar Casimir is
+CONSISTENT with irreducibility via Schur's lemma, not independently
+sufficient to prove it in general, since a reducible sum of
+non-isomorphic irreps with coincidentally equal Casimir eigenvalues would
+also give one -- but for THIS specific case it does establish
+irreducibility, because G2's next-smallest nontrivial irrep after the
+trivial IS the 7 itself, so no other combination of small G2-irreps could
+sum to dimension 7). As a further check, computed
+the analogous Casimir for su(3) acting on its OWN adjoint (8-dim, via
+ad(nu_i) for i=1..8 on span{nu_1..nu_8}): **result EXACTLY 3*Identity_8x8**,
+matching the preprint's own cited C_2(SU(3);adjoint)=3 EXACTLY, no
+rescaling needed.
+
+**The discrepancy (as first found):** the preprint (and this whole
+experiment, following Agricola 2002's stated convention) uses
+C_2(G2;7)=4, but my direct computation in AHL2023's own B_0-orthonormal
+basis gives C_2(G2;7)=2 -- a factor-of-2 difference. Critically, this is
+NOT a uniform rescaling between the two papers' conventions (which would
+also show up in the su(3) check, and it did NOT -- su(3)'s Casimir
+matched 3=3 exactly with zero rescaling needed).
+
+### RESOLVED (same round, follow-up): root-system Casimir check confirms
+### C_2(G2;7)=2 is CORRECT in this experiment's own units -- Agricola's
+### "4" uses a different, but standard and fully identifiable, convention
+
+Rather than trust memory about which convention Agricola 2002 uses,
+computed BOTH C_2(G2;7) and C_2(G2;14) completely independently, from
+G2's abstract root system (Cartan matrix, fundamental weights, Weyl
+dimension formula + Casimir formula (lambda,lambda+2*delta)), in the
+explicit, standard "long root^2=2" convention
+(`g2su3_casimir_convention_check.py`, tool-verified via sympy, not
+recalled from memory). Result: **dim(1,0)=7 with C_2=4, dim(0,1)=14 with
+C_2=8** in that convention -- confirming Agricola's "(1,0)" label
+genuinely does mean the 7-dimensional representation (no labeling
+mismatch), and her "C_2=4" is exactly the standard "long root^2=2"
+value.
+
+Separately, re-deriving what convention AHL2023's B_0-orthonormal basis
+implicitly uses: the su(3) check (C_2(adjoint)=3 in the nu-basis,
+TOOL-VERIFIED both via `g2su3_casimir_convention_check.py`'s ad(nu_i)
+computation and independently again in `g2su3_V7_calibration_check.py`)
+matches the STANDARD PHYSICS convention Tr(T^aT^b)=(1/2)delta^ab (where
+C_2(adjoint SU(N))=N, giving 3 for N=3) -- NOT the "long root^2=2"
+convention (which would give C_2(adjoint SU(3))=2*h^v=6 for su(3)'s dual
+Coxeter number h^v=3 -- **this "6" figure itself is [MEMORY]/[INFERRED]
+from the standard Lie-theory relation C_2(adjoint)=2*(dual Coxeter
+number), not independently computed by any script this round**; it is
+not load-bearing for the resolution, which only needs the ALREADY
+tool-verified 3-vs-6-would-be relationship's DIRECTION, not this exact
+value). The "physicist" convention is exactly HALF of
+"long root^2=2" uniformly across ALL representations of a given algebra
+(root length^2=1 instead of 2 rescales every Casimir eigenvalue by
+1/2, since C_2 is linear in the bilinear form used to define it). Halving
+G2's own "long root^2=2" values: C_2(7): 4/2=**2** (matches my direct
+8x8-matrix computation EXACTLY), C_2(14): 8/2=**4**.
+
+**Conclusion: the "discrepancy" is a real, now fully-explained, uniform
+factor-of-2 convention mismatch between Agricola 2002 (long root^2=2,
+the common math-literature/Killing-form convention) and AHL2023's B_0
+basis (the standard physics Tr(T^aT^b)=delta^ab/2 convention) -- NOT a
+labeling confusion, NOT an error in either source, and NOT specific to
+G2 vs SU(3) (SU(3) simply happened not to expose it because the preprint
+already re-states SU(3)'s Casimir in the halved/physics convention,
+while its citation of Agricola's G2 figure was left in her original
+un-halved convention -- an internal citation-convention mismatch inside
+the preprint's own text, now identified precisely). This is exactly a
+Type-1 error in the research-methodology.md classifier ("symbolic
+overload": the SAME symbol C_2(G2;7) denoting two numerically different
+but both-legitimate quantities in the two source papers).
+
+**Resolution for this experiment: use C_2(G2;7)=2, C_2(G2;14)=4** (the
+AHL2023/B_0-basis values) for ALL further computation here, since T, H,
+calH, calH^2, and curvature_h are already built in that exact basis --
+using Agricola's "4"/"8" here would silently mix conventions.
+
+C_2(SU(3);3) was ALSO independently tool-verified in this same basis
+(not just recalled from the standard (N^2-1)/(2N) formula): applying
+`su3_casimir_action_squared` (the project's own already-calibrated su(3)
+action, `g2su3_twisted_kernel.py`, same machinery used for Round 12's
+calH^2-per-irrep decomposition) to y1 and y12 gives
+sum_i rho(nu_i)^2 = -4/3 * (eigenvector) exactly on BOTH the "3" (y1) and
+"3bar" (y12) pieces, i.e. C_2(SU(3);3) = C_2(SU(3);3bar) = -(-4/3) =
+**4/3**, matching the standard formula AND consistent with
+C_2(SU(3);adjoint)=3 in the same convention.
+
+The non-trivial-component worst-case gap for rho=7 (against sigma=3,
+using Round 12's calH^2 value of 2/3 on that piece) is
+C_2(G2;7) - C_2(SU(3);3) + [correction] = 2 - 4/3 + 2/3 = **4/3 > 0**
+in the algebraic part alone (still positive, smaller margin than the
+uncorrected-convention "4-4/3+2/3=10/3" naive read [reviewer-caught
+arithmetic slip, 2026-07-09: this parenthetical originally said "8/3",
+which is wrong; 4-4/3=8/3, +2/3=10/3 -- corrected, does not affect the
+4/3 result actually used above, which was independently verified
+correct], but a real, now internally-consistent, tool-verified number
+rather than an unresolved question) -- NOTE this is only the
+algebraic/calH contribution to the gap and is NOT yet the full rho=7
+answer (see below, the rho-dependent true-derivative piece via V_7
+sections is still not included in this number).
+
+### Status: V_7 blocker (Round 6/8) now CLOSED via validated Appendix A
+### restriction -- a real, second major breakthrough this round, with two
+### independent structural validations (phi_1 annihilation, exact scalar
+### Casimir). The C_2(G2;7)=2-vs-4 puzzle is ALSO now CLOSED (root-system
+### computation, `g2su3_casimir_convention_check.py`) -- a clean,
+### fully-explained convention mismatch, not a bug. The FINAL rho=7
+### numeric verdict is STILL NOT computed -- what remains is assembling
+### the actual 4-dim multiplicity space Hom_SU(3)(V_7, S+(x)S-) and
+### extending calH/nabla_g to it via the SAME Leibniz pattern already
+### used to build D_on_simple_tensor from H (V_7 provides the missing
+### rho-dependent true-derivative piece; Round 10 established that
+### reading rho=7 data directly off fiber-level 3/3bar/8 blocks, as
+### attempted in Rounds 6-9, is NOT valid -- multiple rho's share each
+### fiber sigma-type, so the isolation must go through V_7 explicitly).
+### This is a well-defined, scoped next step, not an open-ended search --
+### but it is a genuinely new construction (not yet done), so no final
+### kernel verdict is claimed this round.
