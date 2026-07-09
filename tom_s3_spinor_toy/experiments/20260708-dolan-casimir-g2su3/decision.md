@@ -1759,3 +1759,120 @@ any future attempt at this derivation.
 trigger_condition: next dedicated session attempting the twisted
 quartic/curvature term for rho=7.
 next_check: whenever this task is resumed.
+
+## Round 15 continued (2026-07-09, same session): literature search for a
+## "twisted Kostant-Parthasarathy formula" -- no ready-made citable result
+## found for the exact combination needed, BUT surfaced a genuinely
+## better, standard alternative framework not previously used in this
+## experiment: t=1/2 IS torsion-free (Levi-Civita), so the STANDARD
+## twisted Lichnerowicz-Weitzenbock formula applies directly.
+
+### What was searched (PVF: literature before more computation)
+
+~10 targeted web searches covering: "twisted Kostant-Parthasarathy
+formula", Agricola/Friedrich's own later papers on twisted Dirac
+operators with torsion, Kostant's own 1999 Dirac-cohomology framework
+(twisted cubic operator D_V for arbitrary g-modules V, on equal-rank
+reductive G/H), Mehdi-Zierau's "Principal series representations and
+harmonic spinors" / "Harmonic spinors on reductive homogeneous spaces"
+(explicitly twist Kostant's CUBIC Dirac operator by a finite-dim rep of
+H), and Semmelmann-Weingart's "Weitzenbock machine" (general twisted
+Dirac operators via generalized gradients).
+
+Two source PDFs (Kostant's own "Dirac Cohomology for the Cubic Dirac
+Operator", arXiv:math/0208048, and Agricola-Friedrich's "The Casimir
+operator of a metric connection with skew-symmetric torsion",
+arXiv:math/0305233) were fetched and read directly via PyMuPDF (WebFetch
+itself failed to decode both PDFs' text streams -- consistent with this
+whole session's earlier finding that PyMuPDF is more reliable than other
+extraction methods for these older LaTeX-generated PDFs).
+
+### Findings
+
+1. **The twisted CUBIC (t=1/3) Kostant-Parthasarathy formula IS
+   well-established** (Kostant 1999 "A cubic Dirac operator and the
+   emergence of Euler number multiplets", Duke Math J. 100; Mehdi-Zierau
+   2006/2014) -- for EQUAL-RANK reductive G/H (G2 and SU(3) both have
+   rank 2, so this condition IS satisfied here) and V any finite-dim
+   G-module, D_V^2 reduces to a clean Casimir-difference-plus-constant
+   formula. This is exactly the "naive KP formula" ALREADY used
+   throughout this experiment for t=1/3 (Theorem 3.3's specialization,
+   already proved/trusted) -- the literature CONFIRMS this base point,
+   it does not give anything NEW beyond what's already in hand.
+
+2. **No paper was found combining torsion (Agricola's general-t Theorem
+   3.2) WITH twisting by a coefficient bundle E.** Agricola-Friedrich's
+   OWN follow-up paper on the Casimir operator with skew torsion (2003)
+   was checked directly and confirmed (via WebFetch's model, then
+   independently by reading the fetched PDF) to stay entirely in the
+   UNTWISTED (spinor-bundle-only) setting -- no coefficient-bundle
+   generalization. Kostant's Dirac-cohomology framework is purely
+   Lie-algebraic (no metric/torsion/geometry at all -- it works with
+   abstract reductive Lie subalgebras, not naturally reductive metrics).
+   This is a genuine, not-yet-searched-around gap, consistent with (not
+   contradicting) Round 15's own finding of a real structural obstacle.
+
+3. **Better lead: t=1/2 is EXACTLY the torsion-free Levi-Civita
+   connection** (Agricola's torsion form T^t(X,Y,Z)=(2t-1)<[X,Y]_m,Z>
+   vanishes identically at t=1/2 -- already knew this, but had not
+   previously drawn the consequence). This means the PHYSICALLY relevant
+   operator for this whole experiment (t=1/2, used throughout for the
+   zero-mode count) is the ORDINARY, torsion-free Riemannian Dirac
+   operator on S^6 -- meaning the STANDARD, well-established, textbook
+   twisted Schrodinger-Lichnerowicz-Weitzenbock formula applies directly,
+   with NO need for Agricola's torsion machinery at t=1/2 specifically:
+     D^2_{S(x)E} = nabla*nabla + (1/4)Scal_g + R^E
+   where nabla*nabla is the Bochner/rough Laplacian of the FULL twisted
+   connection, Scal_g is the (constant, known) scalar curvature of round
+   S^6, and R^E is a PURELY ALGEBRAIC, pointwise Clifford-contracted
+   curvature-endomorphism term built from E's OWN curvature (E=V_7 here)
+   -- this is the standard formula physics/geometry literature states for
+   ANY twisted Dirac operator on ANY Riemannian manifold (not
+   naturally-reductive-specific, no torsion-family machinery needed).
+
+### Why this is a genuinely different, more promising angle than Round 15's attempt
+
+Round 15's failed attempt tried to Leibniz-extend Agricola's t-FAMILY
+decomposition (Omega_g + cubic-H + quartic + scalar, built around the
+CANONICAL/torsion connection as the base point, t=0) to the twisted
+case -- and hit a real structural mismatch (the cubic H-term's
+chirality-flip behavior doesn't respect the twisted bundle's slice
+structure). The Lichnerowicz-Weitzenbock route instead takes the
+LEVI-CIVITA connection itself (t=1/2, torsion-free) as the base point --
+avoiding the "H term" entirely (H only enters when relating DIFFERENT
+values of t; if we work directly at t=1/2 rather than building up from
+t=0, we never need it). nabla*nabla (Bochner Laplacian) for a HOMOGENEOUS
+bundle is standardly known (via Frobenius reciprocity, e.g. Wallach's
+book on harmonic analysis on homogeneous spaces) to reduce to a
+Casimir-of-G-minus-Casimir-of-isotropy-rep formula -- the SAME kind of
+representation-theoretic reduction already used throughout this
+experiment, just for a DIFFERENT (torsion-free, Levi-Civita-native)
+starting point. R^E is then the ONLY new ingredient needed, and it is
+PURELY ALGEBRAIC (pointwise, no derivatives) -- computable, in
+principle, from V_7's OWN curvature via the SAME curvature_h data
+already validated in Round 13, contracted through V_7's representation
+matrices (Round 14) rather than through su3_action's spin-representation
+lift.
+
+### Status: NOT attempted this round (time-bounded, avoiding a rushed
+
+### 4th derivation in one session) -- flagged as the recommended next
+### strategy, with concrete starting ingredients already in hand:
+- V_7's explicit matrices (Round 14, `g2su3_appendix_a_construction.py`
+  restricted to rows/cols 2..8)
+- curvature_h (Round 13)
+- Scal_g for round S^6 of radius rho_6 (should already be known/derivable
+  from this experiment's existing S^6 geometry conventions)
+- The general formula for R^E on a naturally reductive homogeneous
+  bundle at the LEVI-CIVITA connection specifically (needs care: the
+  Levi-Civita curvature of an associated bundle on a space with torsion
+  at OTHER t-values is NOT simply "-rho_E([X,Y]_h)" -- Agricola's own
+  Theorem 2.1 curvature formula, already read this session, gives the
+  FULL R^t(X,Y) including the (t-t^2)Qm term, which at t=1/2 gives a
+  nonzero (1/4)Qm contribution IN ADDITION to the Qh/isotropy piece --
+  this t-dependent piece must be included, not just the naive
+  isotropy-curvature guess)
+
+Task #7 remains in_progress. This is a literature-grounded, standard-
+framework lead, not a new derivation attempt -- the actual computation
+is still future work.
