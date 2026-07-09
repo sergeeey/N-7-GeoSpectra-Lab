@@ -656,8 +656,22 @@ preprint cites as "Kostant-Parthasarathy formula". At first this looked
 like a possible new problem (does the preprint's ENTIRE "proved"
 non-trivial-component claim, even at t=1/3, also need this correction?).
 
+## RETRACTED 2026-07-09 (later same session, "Round 14 continued" section
+## near the end of this file): the ~7.29 number and the "Delta(1/2) on
+## 3(+)3bar = +5/6" claim below were computed with a sign-bugged
+## quartic_term() (Jac_h/Jac_m swapped from a mistranscription of
+## Agricola's Theorem 3.2). CORRECTED value: Delta(1/2) on 3(+)3bar is
+## EXACTLY 0, not +5/6. The Weyl-vector-shift ~7.29 identification below
+## is consequently also unverified/likely wrong and needs recomputing
+## with the corrected trivial-piece matrix [[5/3,-2sqrt3],[-2sqrt3,5/3]]
+## (was [[-5/6,-2sqrt3],[-2sqrt3,-5/6]]) if this interpretation is still
+## wanted -- not redone here, low priority (L4B does not depend on it).
+## Kept below for historical record, NOT as current status -- see the
+## "Round 14 continued" section for the full correction and why it does
+## NOT affect L4B.
 ## Resolution: this matches the STANDARD Weyl-vector-shift Casimir formula,
 ## not a new bug -- and it is POSITIVE, so it does not threaten the gap
+## [RETRACTED, see note immediately above]
 
 The standard Kostant/Parthasarathy-Vogan cubic-Dirac formula (well known
 in the literature, e.g. Kostant 1999, Huang-Pandzic) is actually
@@ -679,7 +693,10 @@ probably strengthened) -- but SHOULD eventually be added as a precision
 note if the paper is revised further (currently harmless-but-imprecise,
 not wrong).
 
-## Consequence for rho=7: Delta(1/2) on the RELEVANT sigma pieces is POSITIVE
+## Consequence for rho=7: Delta(1/2) on the RELEVANT sigma pieces
+## [RETRACTED -- see note above the "Resolution" heading; corrected value
+## is EXACTLY ZERO, not positive. Text below is the ORIGINAL, WRONG claim,
+## kept for historical record only.]
 
 Critically, Delta(1/2) on the 3 (+) 3bar piece (the SU(3)-types that
 rho=7's branching 7|SU(3)=3(+)3bar(+)1 actually uses) is exactly **+5/6**
@@ -687,6 +704,8 @@ rho=7's branching 7|SU(3)=3(+)3bar(+)1 actually uses) is exactly **+5/6**
 just found, this means: for rho=7, the t=1/2 correction, AS FAR AS THE
 UNTWISTED-OPERATOR MODEL CAPTURES IT, does not threaten the gap -- it
 helps. This is genuinely encouraging evidence, not a forced conclusion.
+[RETRACTED -- corrected value is EXACTLY 0, not +5/6 -- see "Round 14
+continued" section near the end of this file.]
 
 ## What this does NOT yet establish (still open, being precise about scope)
 
@@ -1493,3 +1512,127 @@ sections is still not included in this number).
 ### This is a well-defined, scoped next step, not an open-ended search --
 ### but it is a genuinely new construction (not yet done), so no final
 ### kernel verdict is claimed this round.
+
+## Round 14 continued (2026-07-09, same session): found and fixed a REAL
+## sign error in Theorem 3.2's transcription -- RETRACTS Round 11's
+## "encouraging" Delta(1/2)>0 finding for rho=7. L4B is UNAFFECTED
+## (independent computation). This is a correction, not a new blocker.
+
+### What happened
+
+Attempting to build the twisted quartic (curvature) term needed for the
+FULL rho=7 assembly (see task list above), re-read Agricola 2002
+Theorem 3.2 directly from the PDF via PyMuPDF (the reliable method
+established this session), specifically to pin down the exact
+definition of Jac_h needed to use curvature_h correctly. Found the PDF's
+actual quartic-term bracket is:
+  <Zi, Jac_h(Zj,Zk,Zl) + 9t^2 Jac_m(Zj,Zk,Zl)>
+(Jac_h carries NO t-factor, Jac_m carries the 9t^2 factor). Compared
+against what an EARLIER round (Round 6, "Investigating the danger zone")
+had transcribed into this file: "<Zi,Jac_m(Zj,Zk,Zl)> + 9t^2
+Jac_h(Zj,Zk,Zl)" -- Jac_h and Jac_m are SWAPPED relative to the actual
+paper. That earlier transcription was made before PyMuPDF was
+established as more reliable than doc_bridge OCR this session (see
+Round 13's own note about doc_bridge introducing sign errors elsewhere).
+
+### Independent confirmation (not just re-reading more carefully)
+
+Rather than trust a second reading of the same page, built (Ctilde_h)_4
+-- Agricola's Proposition 3.3 degree-4 term of the su(3)-Casimir lifted
+into the Clifford algebra -- DIRECTLY from curvature_h (Round 13's data,
+built from AHL2023 Appendix A, a COMPLETELY SEPARATE source/computation
+from H/torsion) via the PDF's own Jac_h definition
+(Jac_h(X,Y,Z):=[X,[Y,Z]_h]+[Y,[Z,X]_h]+[Z,[X,Y]_h]), and checked whether
+it satisfies the identity forced by Jac_h=-Jac_m (already established,
+Agricola Section 2): (Ctilde_h)_4 = -(1/9)(H^2)_4. **Confirmed exactly,
+zero residual, sympy-verified** (`g2su3_delta_correction.py` docstring
+now documents the check inline). Since this identity only holds under
+the CORRECTED sign convention, and it was verified via curvature_h data
+that has NOTHING to do with the original transcription error, this is
+genuine independent confirmation, not just "read the PDF again and
+believe it more."
+
+### Why the t=1/3 sanity check didn't catch this
+
+`g2su3_delta_correction.py`'s existing calibration ("Delta(1/3) must be
+EXACTLY ZERO") passes for BOTH the old (buggy) and new (corrected) sign,
+because the quartic term's prefactor (1-9t^2) is IDENTICALLY ZERO at
+t=1/3 regardless of the sign in front of it -- the calibration point
+is structurally insensitive to exactly the bug it exists to catch. A
+real example of "a passing test doesn't mean the tested thing is right
+at OTHER points" -- worth remembering for any future t-dependent
+calibration in this experiment.
+
+### Corrected result -- RETRACTS the Round 11 "encouraging" claim
+
+Fixed `quartic_term()` in `g2su3_delta_correction.py`
+((1-9t^2)->(9t^2-1), both /9 * H2_4). Re-ran: Delta(1/3)=0 still holds
+(uninformative here, as explained above). **Delta(1/2) on the 3(+)3bar
+piece is now EXACTLY 0** (was wrongly reported as +5/6 in Round 11/the
+"Consequence for rho=7" section above -- that number is WRONG, computed
+with the sign-bugged code, and is hereby retracted). Delta(1/2) on the
+trivial-mult-2 piece {1,y123} is now the 2x2 matrix [[5/3,-2sqrt3],
+[-2sqrt3,5/3]] (was [[-5/6,-2sqrt3],[-2sqrt3,-5/6]] -- also wrong,
+retracted).
+
+### Does this affect L4B? NO -- confirmed independent
+
+L4B's rank(D+|trivial)=1 result was computed via a COMPLETELY SEPARATE
+method (D_on_simple_tensor/calH applied directly to v_a, v_b in the
+TWISTED Sigma(x)Sigma space, g2su3_twisted_kernel.py /
+g2su3_find_invariant.py / g2su3_compute_crossterm.py) and cross-validated
+4 independent ways (calibration vs AHL2023 Thm 5.1, 2 skeptic stress
+tests, SU(3)-equivariance, chirality/branching) -- NONE of these used
+g2su3_delta_correction.py or its quartic_term function. L4B stands,
+fully unaffected by this bug.
+
+### Does this affect the rho=7 gap conclusion reached earlier this round?
+### Partially -- one piece of supporting evidence is retracted, the other
+### (independent) piece is unaffected
+
+The algebraic worst-case gap computed earlier THIS round (2-4/3+2/3=4/3>0,
+via Round 12's calH^2 on the TWISTED "3" fiber piece) is UNAFFECTED --
+that computation used D_on_simple_tensor/calH on Sigma(x)Sigma directly,
+never g2su3_delta_correction.py's untwisted Delta(t). It is ALSO,
+however, per this file's own earlier caution, INCOMPLETE on its own
+(missing the twisted quartic/curvature correction, which is exactly what
+this round was attempting to build when this bug was found -- see next
+section).
+
+The RETRACTED claim was Round 11's SEPARATE, untwisted-operator PROXY
+computation ("Delta(1/2)>0 on 3(+)3bar, doesn't threaten the gap") --
+this was always flagged as only a proxy for the real twisted operator,
+never load-bearing on its own, but it WAS cited (by this session, in the
+status report to the user) as one of two pieces of "positive partial
+evidence" for rho=7 being safe. That specific claim is now corrected to:
+the untwisted proxy is NEUTRAL (exactly zero), not positive. Neither
+alarming nor reassuring -- genuinely uninformative on its own now.
+
+### Net effect on rho=7 status
+
+No change to the OPEN status of the final verdict (task #7 remains
+in_progress). What DID change: one of two "no red flags" data points
+softens from "actively positive" to "exactly neutral" -- still zero red
+flags, but weaker margin of comfort than previously stated. The
+TWISTED quartic/curvature term (needed to complete the REAL rho=7
+computation, not just this untwisted proxy) is now the concrete next
+step, and this round's work directly supplies what's needed for it:
+curvature_h (Round 13) plus the now-verified (Ctilde_h)_4=-(1/9)(H^2)_4
+identity, EXTENDED via the same Leibniz pattern used to build calH from
+H (calH_twisted's quartic analog, not yet built).
+
+### Session lesson (Pearl, process-level)
+
+Attempting to build downstream twisted machinery forced a careful
+re-read of upstream formula details that had been transcribed 5+ rounds
+earlier and never re-verified -- catching a real bug that a SEPARATE,
+purely algebraic sanity check (Delta(1/3)=0) was structurally unable to
+catch. This is the SAME class of lesson as nu_8's three-round correction
+saga: a calibration that passes is evidence FOR the calibrated point,
+not proof of correctness elsewhere in a t-dependent (or otherwise
+parametrized) formula -- especially when the calibration point makes the
+buggy coefficient vanish identically. Any future t-dependent or
+parameter-dependent formula in this experiment should be checked at (at
+least) two DIFFERENT, non-degenerate parameter values, or via an
+independent data path as done here (curvature_h vs H^2), not just the
+one "nice" value where most terms cancel.
