@@ -22,6 +22,11 @@ nu_5 := (1/4)(rho(e1)rho(e4) + rho(e2)rho(e3))
 nu_6 := (1/4)(rho(e1)rho(e5) + rho(e2)rho(e6))
 nu_7 := (1/4)(rho(e1)rho(e6) - rho(e2)rho(e5))
 nu_8 := (1/(4sqrt3))(rho(e1)rho(e2) - 2rho(e3)rho(e4) + rho(e5)rho(e6))
+  [STALE -- this is the ORIGINAL verbatim-PDF transcription attempt, kept
+  here only as a record of what was read off the page. It failed
+  calibration and was corrected TWICE since (see NU[8]'s inline comment
+  below for the actual, working formula -- do not use this line as
+  ground truth for nu_8]
 nu_9  := (1/(4sqrt3))(-2rho(e1)rho(e7) - rho(e3)rho(e6) - rho(e4)rho(e5))
 nu_10 := (1/(4sqrt3))(rho(e2)rho(e7) - rho(e3)rho(e5) + rho(e4)rho(e6))
 nu_11 := (1/(4sqrt3))(-rho(e1)rho(e3) - rho(e2)rho(e4) + 2rho(e6)rho(e7))
@@ -95,7 +100,18 @@ NU = {
     5: sp.Rational(1, 4) * (prod(1, 4) - prod(2, 3)),
     6: sp.Rational(1, 4) * (prod(1, 5) + prod(2, 6)),
     7: sp.Rational(1, 4) * (prod(1, 6) - prod(2, 5)),
-    8: (sp.Rational(1, 4) / sqrt(3)) * (-prod(1, 2) - 2 * prod(3, 4) + prod(5, 6)),
+    # nu_8 CORRECTED (2026-07-09, continuation): the PyMuPDF-extracted text
+    # for nu_8's fraction layout was still ambiguous (a stacked fraction
+    # that doesn't linearize unambiguously) and the naive reading above
+    # failed calibration (did not even kill phi_1=(1,0,...,0), which
+    # EVERY g2 generator including nu_8 must do). SOLVED DIRECTLY (not
+    # guessed) via the linear system {[X,e_p] = -ad(nu_8)(e_p), p=1..6}
+    # for X = a*rho1rho2+b*rho3rho4+c*rho5rho6 -- unique solution
+    # a=c=-1, b=+2 (up to the 1/(4sqrt3) overall scale). Verified below:
+    # kills phi_1, calibrates exactly for all 6 p, AND is now consistent
+    # with the earlier-validated m-part cross-check (which never needed
+    # nu_8 as an input, so is unaffected either way).
+    8: (sp.Rational(1, 4) / sqrt(3)) * (-prod(1, 2) + 2 * prod(3, 4) - prod(5, 6)),
     9: (sp.Rational(1, 4) / sqrt(3)) * (2 * prod(1, 7) - prod(3, 6) - prod(4, 5)),
     10: (sp.Rational(1, 4) / sqrt(3)) * (2 * prod(2, 7) - prod(3, 5) + prod(4, 6)),
     11: (sp.Rational(1, 4) / sqrt(3)) * (prod(1, 3) - prod(2, 4) - 2 * prod(6, 7)),
