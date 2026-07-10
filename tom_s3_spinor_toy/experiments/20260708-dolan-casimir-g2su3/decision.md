@@ -3834,3 +3834,89 @@ the RIGHT/S^- factor) -- NOT YET DONE this step.
 **L4A status: object correctly identified and the operator built +
 verified; Weitzenbock decomposition NOT YET done.** preprint.tex NOT
 touched this round.
+
+---
+
+## Round 23 STEP B (2026-07-10): Weitzenbock decomposition attempt --
+## HONEST NULL at its own first sanity check, not yet resolved
+
+**Derivation (script: `g2su3_Sminus_weitzenbock.py`).** Expanded
+D^2 = sum_{p,q} e_p.e_q . nabla_p nabla_q on Gamma(S^+(x)S^-) the SAME way
+as Round 22 (Clifford-relation p=q/p<q split), using
+nabla_p(eta(x)xi) := (nabla_p eta)(x)xi + eta(x)(nabla_p xi) (the full
+tensor-product/Leibniz connection D_on_simple_tensor already implements).
+Verified algebraically (by hand, not yet numerically re-derived from a
+DIFFERENT angle) that: p=q part = nabla^{S(x)E,*}nabla^{S(x)E} exactly
+(cross terms cancel by p<->q symmetry); p<q part splits into 4 pieces via
+[nabla_p,nabla_q]v = R(e_p,e_q)v + nabla_{[e_p,e_q]}v, with (c) := the
+E(=S^-)-side-only curvature term identified as F_{S^-} in the standard
+BGV twisted-Dirac sense, and (a)+(b)+(d) grouped into nabla*nabla+R/4.
+R(e_p,e_q) := [M_p,M_q] - nabla_{[e_p,e_q]}, where M_p=nabla_g(p,.) (the
+ALREADY-CALIBRATED Levi-Civita spin connection on Sigma, same object
+D_on_simple_tensor itself uses) and nabla_{[e_p,e_q]} splits via the
+m-part (T-table, torsion) acting through nabla_g, and the h-part
+(curv_h-table) acting through su3_action (ALREADY calibrated against
+AHL2023 page 42) with a minus sign (standard canonical-connection-at-
+base-point fact).
+
+**STEP B1 (decisive sanity check, run BEFORE trusting anything
+downstream): does -sum_{p<q} e_p.e_q.R(e_p,e_q) equal (Scal/4)*Id_8 on
+Sigma (the textbook Lichnerowicz identity)? FAILS.** Result is diagonal
+but NOT scalar: `diag(3/2, -7/6,-7/6,-7/6,-7/6,-7/6,-7/6, 3/2)` --
+i.e. value 3/2 on the two SU(3)-trivial slots (degree 0 and degree 3 of
+Lambda*(C^3)) and -7/6 uniformly on the six "3"/"3bar" slots. This IS
+SU(3)-block-scalar (consistent with R(e_p,e_q) being SU(3)-equivariant,
+a partial correctness signal -- an actually-broken construction would
+more likely give a non-block-scalar mess), but it is NOT the uniform
+scalar the Lichnerowicz identity requires. STOPPED HERE -- did NOT
+proceed to build F_{S^-} (STEP B2/B3 code exists in the file but its
+output was never reached/inspected, since the assert on B1 fails first
+and the script exits before B2 runs).
+
+**Kill Analysis:**
+- KILLED (for now, pending re-derivation): the specific R(e_p,e_q)
+  formula as constructed (`curvature_R` in g2su3_Sminus_weitzenbock.py)
+  as a correct representation of the twisted-Dirac curvature operator
+  needed for the standard Lichnerowicz identity to hold in this exact
+  form.
+- SURVIVED: STEP A's block identification and SU(3)-content match
+  (untouched by this failure, a fully independent, already-verified
+  result); the individual primitives reused (nabla_g, su3_action,
+  T-table, curv_h-table) -- each independently calibrated/validated in
+  EARLIER rounds, not newly built here, so the bug (if it is a bug) is
+  most likely in HOW they are COMBINED in `curvature_R`/`nabla_bracket`,
+  not in the primitives themselves.
+- OPEN, NOT YET DIAGNOSED: (a) is the sign/coefficient convention on the
+  h-part isotropy term (`-curv_h(p,q,k)*su3_action(k,.)`) exactly right,
+  or does it need a different normalization specific to the SPIN
+  representation (as opposed to Round 22's V_7 representation, where an
+  analogous sign issue WAS found and fixed -- an genuine, real
+  possibility this is the SAME class of bug recurring in a new context,
+  not yet checked); (b) is "R(e_p,e_q) := [M_p,M_q] - nabla_{[e_p,e_q]}"
+  the textbook-correct curvature FORMULA for a general (non-torsion-
+  free-frame) invariant basis, or is there a missing torsion-dependent
+  correction term specific to Levi-Civita's OWN torsion-free property
+  applied to a NON-coordinate frame (i.e. possibly an extra term beyond
+  the standard R(X,Y)=[nabla_X,nabla_Y]-nabla_{[X,Y]} formula is needed
+  when X,Y are not coordinate vector fields and the connection itself
+  has frame-dependent structure functions); (c) whether the DIAGONAL-
+  BUT-NOT-SCALAR result (3/2 vs -7/6) is itself informative -- e.g. does
+  it match some OTHER known quantity (Ricci scalar per SU(3)-type,
+  rather than the full uniform Scal), suggesting the "Scal/4" I'm
+  checking against needs to be REPLACED by a type-dependent quantity in
+  this non-normal-frame setting, which would mean my ENTIRE assumption
+  that "(a) alone equals a uniform R/4" is the wrong grouping, and (a)
+  needs to be combined with PART of (b) before it becomes uniform.
+
+**This is an honest, reported NULL at the FIRST decisive checkpoint --
+not shipped as a finding, not silently patched. No further code changes
+attempted this round; the root cause needs dedicated, careful
+re-derivation (most likely re-checking hypothesis (c) above: whether
+"R/4" should be understood as "the uniform PART of a type-dependent
+quantity" with the type-DEPENDENT part correctly belonging to F_{S^-}
+or to a torsion-correction term, not to a separately-verified-alone
+"R/4"). STEP A's result (the 16x16 D64^2|_{S^+(x)S^-} matrix, exactly
+matching the preprint's own SU(3) fibre content) remains solid and
+reusable regardless of how STEP B's remaining issue resolves.**
+
+preprint.tex NOT touched this round.
