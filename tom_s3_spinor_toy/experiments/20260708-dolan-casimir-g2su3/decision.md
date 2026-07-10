@@ -4185,3 +4185,102 @@ round's earlier drafts claimed, but still a genuine advance over having
 no explicit F_{S^-} computation at all.** preprint.tex NOT touched this
 round -- and should NOT be touched with the retracted "mechanistic
 explanation"/"exact cancellation" framing if this work is cited later.
+
+---
+
+## Round 23 -- The preprint norm-bound tension, analyzed (per user request
+## "разбери напряжённость с нормой из препринта")
+
+**Question:** preprint.tex line 590-591 gives a PRIOR estimate
+`||F_{S^-}||_F <= (4/3)/rho_6^2` against `R=30/rho_6^2`, ratio 8/45~=
+0.178. This round's exact computation gives a much larger ratio (~1,
+using the -5/2 eigenvalue against Scal/4=5/2, or ~1.03 using the
+CORRECT Frobenius norm sqrt(15*(1/6)^2+(5/2)^2)=sqrt(20/3) against the
+same Scal/4 -- checked explicitly: the earlier "single eigenvalue"
+comparison and the "proper Frobenius norm" comparison give
+similar-magnitude answers here, so using the wrong norm-type is NOT
+the explanation).
+
+**Scale-invariance argument (checked first, before assuming a units
+mismatch):** if Scal (this experiment, =10, a fixed structure-constant-
+derived number) and R (preprint, =30/rho_6^2, an explicit function of
+the geometric radius) measure the SAME quantity under a POSSIBLY
+different overall metric normalization, then BOTH R and F_{S^-} (being
+built from the SAME curvature-type Clifford contraction, hence scaling
+identically under any uniform metric rescaling) should give a
+SCALE-INVARIANT ratio -- so a pure rho_6-normalization difference
+CANNOT by itself explain a ~5.8x ratio discrepancy. Ruled out as the
+sole explanation.
+
+**Historical precedent found (directly relevant, NOT previously
+connected to this question): Round 16's OWN calibration** (this same
+decision.md, "The decisive calibration: L4B ground truth, again"
+section) found that "(1/4)*Scal*v_a + R^E(v_a)" (for the OLD,
+since-abandoned build_RE construction) needed an EXPLICIT, uniform
+scale factor of 3/2 to match the TRUE D^2(v_a) -- "a clean, uniform
+scale factor, not a structural mismatch." This CONFIRMS: this project's
+raw "Scal=10" (and constructions built from the same T-table/curv_h-
+table primitives) have HISTORICALLY required an explicit calibration
+factor before comparing against "the true physical D^2" at face value
+-- this is a real, precedented phenomenon in THIS codebase, not
+something being invented ad hoc to explain away an inconvenient result.
+
+**Root-cause connection to the ALREADY-KNOWN review-round-1 gap
+(the actual resolution of this "tension"):** direct computation
+(already done, see above): `remainder := D64^2 - F_{S^-}` on the 2-dim
+SU(3)-invariant subspace = `[[17/6,5/3],[5,7/2]]`, confirmed NOT a
+scalar multiple of Id. This means: **there is no clean, independently-
+isolated "R/4" scalar object anywhere in this round's own construction
+to compare against EITHER Scal/4=5/2 (this experiment's own value) OR
+the preprint's rho_6-parametrized R/4 in the first place.** The
+"norm-bound tension" is therefore NOT an independent new puzzle
+requiring its own separate resolution -- it is the SAME root gap
+review round 1 already identified (remainder != scalar; nabla*nabla
+has not been independently isolated), now observed from a second,
+independent angle (comparing against an EXTERNAL prior estimate
+instead of checking eigenvector alignment against D64^2 internally).
+Both symptoms point to the same missing piece.
+
+**Verified basis-independence of the underlying findings (a quick,
+necessary check before trusting ANY of this): are the "remainder is
+not scalar" / "F_{S^-},D64^2 don't commute" facts artifacts of w_a,w_b
+being an ORTHOGONAL-but-not-ORTHONORMAL basis (||w_b||=1, ||w_a||=
+sqrt(3), Gram matrix diag(3,1) -- the skeptic's own report noted this
+in passing), rather than genuine operator-level facts? Checked: NO --
+"is operator X proportional to Id" and "do operators X,Y commute" are
+BOTH properties preserved under ANY change of basis (orthonormal or
+not), since matrix multiplication in ANY basis correctly represents
+operator composition, and the identity OPERATOR is represented by the
+identity MATRIX in every basis. So the non-orthonormality of w_a,w_b
+does NOT undermine either finding -- they are robust, basis-independent
+facts about the actual operators, not artifacts of the specific
+2-dim-subspace coordinate representation chosen.
+
+**Conclusion on the norm-bound tension:** NOT resolved this round, and
+should NOT be forced to a specific number without doing the underlying
+work. What IS established: (1) it is not explained by a units/rho_6
+mismatch (ruled out by the scale-invariance argument); (2) it is not
+surprising GIVEN this project's own Round 16 precedent of needing an
+explicit calibration factor for structurally analogous constructions;
+(3) it cannot be meaningfully resolved without FIRST doing the
+already-flagged work of independently isolating a genuine nabla*nabla
+(checking, e.g., that it is positive-semi-definite, a REQUIRED property
+of any genuine connection Laplacian -- NOT yet checked) and a genuine
+scalar R/4 from "remainder", rather than assuming their sum reduces to
+Scal/4*Id. The preprint's OLD 8/45 estimate was itself explicitly
+framed as "a norm estimate" (not an exact computation) for an
+EXPLICITLY-OPEN problem -- so a loose prior bound turning out not to
+match the first exact computation is not, on its own, evidence of an
+error in either source; it is the EXPECTED outcome of solving an open
+problem whose only prior treatment was a rough estimate.
+
+**Next step (not done this round, scope discipline):** isolate
+nabla*nabla independently (e.g. via the matrix-coefficient-section
+machinery already built in Rounds 17-22, applied to THIS round's
+Gamma(S^+(x)S^-) fibre with rho ranging over {trivial,7,14} per STEP
+A's own SU(3)-content identification), check its PSD property as a
+first sanity gate, and see whether a Round-16-style clean calibration
+factor emerges when comparing the properly-isolated R/4 against
+Scal=10 and against the preprint's own rho_6-parametrized convention.
+
+preprint.tex NOT touched this round.
