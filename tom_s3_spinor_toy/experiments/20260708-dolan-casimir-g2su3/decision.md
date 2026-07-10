@@ -3030,3 +3030,66 @@ Per standing discipline: preprint.tex NOT touched this round. Updating
 it, and deciding how to state rho=14's slightly-more-qualified
 confidence level relative to rho=7's, is a separate decision for the
 user.
+
+## Round 20 continued (2026-07-10, user asked to "попробовать вывести
+## Kostant-Parthasarathy формулу для rho=14"): the approach is
+## STRUCTURALLY INAPPLICABLE to this specific operator -- a genuine,
+## substantive finding, not a failed attempt
+
+**Investigated whether an independent closed-form Kostant-Parthasarathy
+formula could adjudicate the ADE-sign question.** Before investing in
+the full G2 root-system / highest-weight machinery needed to derive it
+(rank-2 root system, Weyl vector rho_G2/rho_su3, none of which exists
+anywhere in this project yet), checked whether the comparison would even
+be VALID -- and found it would not be, for a structural reason
+independent of the sign question entirely:
+
+**Kostant's cubic Dirac operator, by its own defining theorem, acts as a
+SCALAR (a pure Casimir difference) on EVERY H-isotypic piece of
+V(x)S(m), for ANY multiplicity -- i.e. it is BLOCK-DIAGONAL with respect
+to which SU(3)-type appears, by construction, always.** But Round 18
+ALREADY PROVED, independently of any sign question, that THIS
+experiment's own operator (built via Agricola's naturally-reductive
+Levi-Civita construction, t=1/2) does NOT have this property: D_7(w_a)
+[phi_2-supported by construction] comes back NONZERO on the "3"-piece
+domain (v=e_1) -- direct, tool-verified evidence of cross-SU(3)-piece
+mixing that Kostant's canonical (t=1/3, "cubic") operator structurally
+CANNOT exhibit.
+
+**Consequence: this experiment's operator and Kostant's cubic Dirac
+operator are provably DIFFERENT operators (different torsion, t=1/2 vs
+t=1/3), not the same operator in different notation.** A Kostant-
+Parthasarathy eigenvalue comparison would therefore be comparing the
+wrong mathematical object: a MISMATCH would not indicate an error in
+this round's construction (expected, since it's genuinely a different
+operator), and a MATCH would itself be the suspicious, unexplained
+result. Pursuing this comparison further would not have been
+informative regardless of effort invested -- correctly identifying this
+BEFORE building the full G2 Lie-theory machinery (which would have been
+wasted effort) is itself the useful outcome of this sub-investigation.
+
+**One genuine additional structural fact found along the way (sign-
+independent, kept since it's free extra evidence, tool-verified):**
+trace(D^2_14) = 64 under BOTH the used sign and the flipped sign
+(checked directly). Since trace(AB)=trace(BA) always, trace(D^2) =
+trace(term1^2) - 2*trace(term1.term2) + trace(term2^2), and flipping
+ADE's sign flips the SIGN of the cross term trace(term1.term2) while
+leaving trace(term1^2) unchanged -- so trace-invariance under the flip
+means trace(term1.term2)=0 EXACTLY. Interesting (an unexpected
+orthogonality between the two halves of the formula, in trace), but does
+NOT discriminate the sign (both possibilities are consistent with it) --
+recorded for completeness, not as resolving evidence.
+
+**A genuinely decisive alternative would require deriving the CORRECT,
+t=1/2-specific (torsion-corrected) Casimir-shift formula for this exact
+operator** -- comparable in scope to correctly redoing Round 16's R^E/
+Scal machinery (which was attempted for rho=7, found buggy, and
+abandoned in favor of the direct matrix-coefficient-section construction
+that has been used successfully since Round 17). This is a substantial,
+separate undertaking, not a quick check -- not attempted this round.
+
+**Status unchanged from the "Net assessment" above: rho=14 remains
+STRONGLY SUPPORTED, not airtight.** This sub-investigation closes with a
+genuine negative result (the natural-seeming verification path doesn't
+apply here) rather than a resolution -- reported honestly rather than
+silently abandoned.
