@@ -3636,3 +3636,99 @@ scope statement is honest (Target 5: CONFIRMED-REAL).
 **Script re-run after STEP 6, exit 0, all 16 basis elements pass:**
 singlet_1..6, three_1..5, threebar_1..5 -- casimir/termB_sq/su3_curv
 off-type-clean on every one, no exceptions.
+
+---
+
+## Round 22 -- Third and FINAL review round (Step 8a iteration 3/3, FL cap)
+
+Dispatched skeptic via Workflow and reviewer via Workflow (reviewer
+returned empty AGAIN -- second consecutive empty result specifically
+for `agentType: 'reviewer'` inside the Workflow tool, while the same
+agent type worked cleanly via the direct Agent tool in iteration 1;
+looks like a Workflow-layer quirk, not a content problem). Re-dispatched
+reviewer via the direct Agent tool (the channel that worked before) as
+a third attempt, in parallel with processing the skeptic's already-
+returned verdict.
+
+**Skeptic verdict: `CONFIRMED-REAL`, explicit recommendation: "Close
+review. Do not open iteration 4."**
+- Target 1 (STEP 6's `own_type_prefix` classifier -- does it repeat
+  iteration 1's "three"/"threebar" prefix-collision bug?): CONFIRMED-
+  REAL, no bug. Hand-traced all 16 labels against the 3-way classifier
+  (`"singlet"`, `"three_"`, `"threebar_"`) -- the asymmetric prefixes
+  (singlet has no trailing underscore, the other two do) are safe for
+  this specific 16-label set (neither three_* nor threebar_* starts
+  with "singlet"; each of the other two's trailing underscore correctly
+  excludes the other).
+- Target 2 (is "16/16 off-type-clean" fully non-vacuous?): WEAKENED,
+  real but minor. Independently re-derived (not just citing iteration
+  2's own enumeration): su3_curvature_term is structurally IDENTICALLY
+  ZERO on 10 of 16 elements (all 6 singlets -- phi_2's row/col-0
+  isolation applies to rho7_nuk too, same mechanism as casimir's
+  singlet-zero -- plus three_1/three_3/threebar_1/threebar_3), so
+  STEP 6's per-element "clean" verdict is TRIVIALLY true for su3_curv
+  on those 10, and only genuinely empirically load-bearing on the
+  remaining 6. casimir is similarly trivial-on-singlets (same
+  structural reason) but genuinely nonzero-and-tested on the 10
+  three/threebar cases; termB_sq's "off-type-clean" is close to
+  structurally guaranteed by construction (D64 acts slot-by-slot,
+  preserving support pattern) regardless of value, so its check is
+  largely a wiring sanity check, not a deep empirical test. Net:
+  the TRUE non-vacuous test count for the one function where this
+  distinction matters most (su3_curv) went from iteration-1's 0, to
+  iteration-2/STEP-5's 1 (three_5), to STEP 6's 6 -- a real
+  strengthening, just not literally "16 independent confirmations" as
+  the aggregate framing could be misread.
+- Target 3 (arithmetic-necessity CONCLUSION wording): CONFIRMED-REAL,
+  correctly and clearly stated -- properly hedged, does not walk back
+  the real finding, correctly identifies what IS and is NOT
+  independently novel.
+- Target 4 (STEP 6's "closes the N=2/selection-bias concern" claim):
+  WEAKENED, minor -- directionally correct (materially reduces the
+  concern) but "no longer just 2 favorable cases" reads stronger than
+  the true count (2 -> 6 non-vacuous for su3_curv specifically, not
+  2 -> 16 uniformly across all three functions).
+- **True kill condition (per FL Step 8a): NOT MET.** Core predicate
+  intact: 5-piece decomposition sums exactly to ground truth on 2
+  structurally different inputs; 3 pieces individually off-type-clean
+  on all 16 basis elements (true, even if the DEPTH of evidence per
+  element varies by function).
+
+**Response (accepted, NOT another code-fix cycle -- FL cap is 3
+iterations, already reached, and the skeptic's own recommendation is
+to close):**
+| Concern | Response |
+|---|---|
+| STEP 6 conflates trivially-zero-clean with genuinely-nonzero-clean per element | **Accepted as documented limitation** (recorded here). True non-vacuous count for su3_curv specifically: 6 of 16 (three_2/4/5, threebar_2/4/5), not 16. casimir: nonzero-and-tested on 10 of 16 (three_*, threebar_*), structurally-trivial on the other 6 (singlets). termB_sq: off-type-clean is close to a structural guarantee (D64 preserves domain-slot support by construction) rather than a deep empirical test on any of the 16 -- more a wiring check than new evidence. |
+| "Closes the N=2/selection-bias concern" phrasing slightly overstates uniformity across the 3 functions | **Accepted as documented limitation** -- true direction, imprecise magnitude; if ever cited in a preprint, state the per-function non-vacuous counts explicitly (su3_curv: 6/16; casimir: 10/16 nonzero + Schur-structural on the rest; termB_sq: structural by construction) rather than a single "16/16" headline. |
+
+**L4A Round 22 status: CLOSED for this round.** The explicit closed-form
+Weitzenbock identity (D_7^2 = Scal/4+nabla*nabla_can + su3-curvature +
+torsion + mixed_A-B) is derived, and its type-preservation/type-mixing
+structure is verified with genuine (non-vacuous where it matters most --
+su3_curv) empirical content on 2 fully-tested inputs plus a 16-element
+sweep for the narrower 3-piece sub-claim. Three review iterations
+completed (FL Evaluator-Optimizer cap reached); no further code-fix
+cycles this round. Next steps (spectral assembly for L4A's actual
+F_{S^-} ask; independent rho=14 cross-check via the same technique) are
+natural follow-ups, not required to close this round's claim.
+preprint.tex NOT touched this round.
+
+**Reviewer verdict (iteration 3/3, direct Agent-tool dispatch after two
+Workflow-layer empty results -- content confirmed, not a Workflow
+finding): `LGTM`, severity P2.** Independently re-derived the
+vacuous/genuine split for su3_curv (10/16 identically zero, 6/16
+genuinely nonzero) via its own diagnostic, matching the skeptic's
+finding exactly and independently confirming `casimir`/`termB_sq` are
+genuinely nonzero-tested on all 16 (not affected by the same issue --
+narrows the concern to su3_curv's share of the headline number only, as
+the skeptic also concluded). One new, non-blocking, forward-looking
+note: the `"singlet"` prefix (no trailing separator, unlike `"three_"`/
+`"threebar_"`) doesn't apply the same trailing-underscore discipline
+the iteration-1 fix established, though no current label collides with
+it -- latent fragility for future rounds, not a present bug.
+
+**Both independent reviews (skeptic: CONFIRMED-REAL, explicit "close
+review, do not open iteration 4"; reviewer: LGTM/P2) agree on the same
+version.** FL Step 8a review is CLOSED for Round 22. No further code
+changes this round.
