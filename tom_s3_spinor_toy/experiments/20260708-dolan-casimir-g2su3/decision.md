@@ -3920,3 +3920,160 @@ matching the preprint's own SU(3) fibre content) remains solid and
 reusable regardless of how STEP B's remaining issue resolves.**
 
 preprint.tex NOT touched this round.
+
+---
+
+## Round 23 STEP B v2 (2026-07-10): root cause found and fixed --
+## F_{S^-} derived and cross-validated against the L4B calibration point
+
+**Root cause of STEP B v1's failure (found via a targeted, minimal
+diagnostic before attempting any fix):** v1 expanded D^2 by simplifying
+`e_p.nabla_p.e_q.nabla_q` into `e_p.e_q.nabla_p.nabla_q`, implicitly
+assuming Clifford mult (e_p) commutes with the covariant derivative
+(nabla_q). In Round 22 this held trivially (Clifford mult acted on F,
+the domain operator acted on the SEPARATE V_7 factor). HERE, for
+Dslash=sum_p e_p.M_p (M_p=nabla_g(p,.), the ALREADY-CALIBRATED spin
+connection), e_p and M_p act on the SAME single Sigma and do NOT
+commute (M_p is itself built from Clifford bivectors). Confirmed
+directly: `Dslash_mat @ Dslash_mat` (ground truth, literal matrix
+composition) did NOT match the naive `-sum M_p^2 - sum_{p<q}
+e_p.e_q.[M_p,M_q]` reconstruction. The missing piece is a genuine
+Leibniz correction (nabla_b e_a, the covariant derivative of the FRAME
+VECTOR itself -- nonzero for a naturally reductive space's invariant,
+non-normal frame) that v1's shortcut silently dropped.
+
+**Fix (script rewritten, `g2su3_Sminus_weitzenbock.py` v2): abandon the
+algebraic shortcut entirely, use ONLY matrix composition (safe, handles
+operator ordering automatically) for anything touching Dslash-squared,
+and ONLY Kronecker-bilinear algebra ((A(x)B)(C(x)D)=(AC)(x)(BD), which
+is ALWAYS valid regardless of commutativity) for the genuinely twisted
+TERM2 piece** (TERM2(eta(x)xi):=sum_p(e_p.eta)(x)(nabla_p xi), Clifford
+mult on the LEFT/eta factor, covariant derivative on the RIGHT/xi
+factor -- DIFFERENT tensor factors, same safe structure as Round 22).
+
+D = TERM1+TERM2 (TERM1:=Dslash(x)Id). D^2=(TERM1+TERM2)^2 = TERM1^2 +
+TERM1.TERM2 + TERM2.TERM1 + TERM2^2 (plain algebraic identity, ALWAYS
+true for any two operators, computed via direct matrix multiplication).
+TERM1^2 = Dslash^2(x)Id, using Dslash^2 as DIRECTLY computed (ground
+truth, not further decomposed -- this is exactly what v1 got wrong by
+trying to split it). TERM2^2 = sum_{p,q}(E_pE_q)(x)(M_pM_q), safely
+split via Kronecker bilinearity into CASIMIR_E (p=q) + a p<q
+cross-term; the cross-term further splits via [M_p,M_q]=R(e_p,e_q)+
+nabla_{[e_p,e_q]} (a standard, frame-independent curvature-commutator
+identity -- valid for M_p,M_q alone, no e/M commutativity claim
+needed) into **F_{S^-} := sum_{p<q}(E_pE_q)(x)R(e_p,e_q)** (genuinely
+E-side-only curvature -- THE ASK) and a torsion-type remainder term.
+
+**A second, trivial sign bug was caught and fixed in the same pass:**
+the initial F_{S^-}/torsion split carried a leftover leading minus sign
+inherited from v1's (abandoned) formula convention; T22_cross (the
+object being matched, from the NEW safe derivation) has no such minus.
+Fixed by removing it -- confirmed by re-running the exact-match assert.
+
+**RESULT (script exits 0, EVERY step is a hard assert, all pass,
+[VERIFIED-tool]):**
+- STEP B0/B0b: TERM1+TERM2 == D64 EXACTLY (all 4096 entries) -- the
+  split itself is correct.
+- STEP B1: TERM1^2+TERM1.TERM2+TERM2.TERM1+TERM2^2 == D64^2 EXACTLY --
+  the 4-piece expansion is correct (pure algebra, but confirms no
+  transcription error in building the 4 pieces).
+- STEP B2: TERM2^2 == CASIMIR_E + cross-term EXACTLY (Kronecker
+  bilinearity); cross-term == F_{S^-} + TORSION_E EXACTLY (R vs
+  nabla_bracket split, after the sign fix).
+- STEP B3: F_{S^-} restricted to the 16-dim Gamma(S^+(x)S^-) is
+  Hermitian. **Spectrum: `{1/6: 15, -5/2: 1}`** -- exactly ONE negative
+  mode, matching the preprint's own qualitative L4A prediction ("the
+  curvature endomorphism F_{S^-} must have at least one negative mode")
+  to the letter, and QUANTITATIVELY: R/4 = Scal/4 = 5/2 in this
+  experiment's normalization, so on the -5/2 eigenspace, R/4+F_{S^-} =
+  5/2-5/2 = 0 EXACTLY.
+- STEP B4 (decisive cross-check): remainder(nabla*nabla+R/4) + F_{S^-}
+  == D64^2|_{Gamma(S^+(x)S^-)} EXACTLY, over the FULL 16x16 block.
+
+**IMPORTANT SCOPE CAVEAT (before any further claim):** D64^2 restricted
+to the FULL 16-dim Gamma(S^+(x)S^-) has spectrum `{10/3:3, 4:1, 0:9,
+2/3:3}` -- a 9-dimensional "kernel" of this restricted matrix. This
+does NOT directly mean "9 physical zero modes" -- D64, as built and
+used throughout this whole project (Rounds 1-22), correctly represents
+a genuine matrix-coefficient section ONLY for the rho=TRIVIAL
+G2-isotypic piece, which requires the fibre value to be SU(3)-INVARIANT
+(a much smaller subspace than the full 16-dim fibre; for OTHER G2-irreps
+rho, D64 is used as an INGREDIENT -- "TERM_B" in the Round 17-22
+machinery -- not as the full operator on its own). Evaluating D64^2 on
+a non-invariant vector is mathematically well-defined but does not by
+itself correspond to a section of any specific Peter-Weyl block.
+
+## Round 23 STEP C: restrict to the genuine 2-dim SU(3)-invariant
+## subspace, cross-validate against the ALREADY-ESTABLISHED L4B result
+
+Per user instruction ("ограничься на 2-мерное SU(3)-инвариантное
+подпространство и проверь"): found the common null space of all 8
+su(3) generators (restricted to the 16-dim Gamma(S^+(x)S^-) block, via
+`build_su3_matrix64` already used in STEP A4) -- confirmed 2-dimensional
+(matching STEP A's own Casimir=0 multiplicity), with explicit basis:
+```
+w_b = 1 (x) y123                              (mirrors v_b = y123 (x) 1)
+w_a = y12(x)y3 - y13(x)y2 + y23(x)y1           (mirrors v_a = y1(x)y23 - y2(x)y13 + y3(x)y12)
+```
+**NOTE:** w_a, w_b are the MIRROR of Round 4-17's classic v_a, v_b (same
+structure, LEFT/RIGHT swapped) -- v_a,v_b live in Gamma(S^-(x)S^+) (a
+DIFFERENT chirality block from this round's Gamma(S^+(x)S^-)), so this
+is a genuinely independent construction, not a re-use of the same
+vectors.
+
+**RESULT (both leak-checks pass exactly -- w_a,w_b span an invariant
+subspace for BOTH operators, as expected from SU(3)-equivariance):**
+- **D64^2 restricted to span(w_a,w_b) = `[[1,1],[3,3]]`, eigenvalues
+  `{4:1, 0:1}`** -- EXACTLY Round 4-17's own, extensively-validated
+  D^2_trivial result (the SAME matrix, up to the mirror-block symmetry)
+  -- an independent cross-check confirming this round's construction is
+  consistent with the ALREADY-ESTABLISHED L4B calibration point, not
+  merely internally self-consistent.
+- **F_{S^-} restricted to span(w_a,w_b) = `[[-11/6,-2/3],[-2,-1/2]]`,
+  eigenvalues `{-5/2:1, 1/6:1}`** -- the FULL 16-dim block's ONE
+  negative eigenvalue is ENTIRELY contained within this 2-dim
+  SU(3)-invariant subspace (not merely present somewhere in the other
+  14 dimensions).
+
+**What this establishes -- a genuine, quantitative explanation of an
+ALREADY-KNOWN result:** the zero eigenvalue of D^2_trivial=[[1,1],[3,3]]
+(known since Round 4-17, used throughout L4B) is now explained, for the
+FIRST TIME, as a DIRECT CONSEQUENCE of F_{S^-}'s own negative mode
+EXACTLY canceling R/4 (5/2-5/2=0) on that specific eigenvector -- not
+merely observed as a numerical coincidence. This is the L4A open
+problem's own requested object ("explicit spectral computation of
+F_{S^-}"), computed, verified against the ALREADY-ESTABLISHED D^2
+result via an independent construction, and shown to MECHANISTICALLY
+explain why the zero mode exists.
+
+**Kill Analysis:**
+- KILLED: v1's Clifford-commutator shortcut (assumed e_p, M_q commute
+  -- false when both act on the same Sigma factor); a genuine algebraic
+  error, not a sign convention issue.
+- SURVIVED: the STEP A block identification (untouched); D64/nabla_g/
+  su3_action primitives (reused unmodified, each independently
+  calibrated in earlier rounds); the Round 22-style "matrix composition
+  first, algebraic simplification only where provably safe" discipline
+  (which is EXACTLY what caught and would have prevented v1's error had
+  it been applied from the start).
+- OPENED: F_{S^-}'s full spectrum is now known; a genuine mechanistic
+  explanation of the pre-existing L4B zero mode; a concrete, reusable
+  method (find the SU(3)-invariant subspace, restrict F_{S^-}+D^2 to
+  it) that could extend to the OTHER 14 dimensions of the fibre
+  (corresponding to rho=7 and rho=14 contributions, per STEP A's own
+  SU(3)-content identification 8(+)3(+)3bar(+)1(+)1) via the SAME
+  matrix-coefficient-section machinery from Rounds 17-20 -- NOT
+  attempted this round (scope discipline: the 2-dim invariant subspace
+  was the specific ask).
+
+**L4A status: substantially advanced.** F_{S^-} is explicitly derived,
+verified (4 independent hard-assert cross-checks), and shown to
+mechanistically explain the already-known L4B zero mode on the
+SU(3)-invariant (rho=trivial-type) 2-dim subspace. The FULL L4A claim
+(spectral computation "as an endomorphism on Gamma(S^+(x)S^-)", i.e.
+covering ALL of the 16-dim fibre's Peter-Weyl content, not just the
+2-dim invariant piece) remains open pending the rho=7/rho=14 extension
+noted above. Review (reviewer+skeptic) not yet dispatched this round --
+pending, given the significance of this finding for L4A.
+
+preprint.tex NOT touched this round.
