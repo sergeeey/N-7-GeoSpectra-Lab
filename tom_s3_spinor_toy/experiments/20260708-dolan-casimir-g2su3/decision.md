@@ -3311,3 +3311,146 @@ needs neither Scal normalization nor the nabla*nabla_can formula import
 to hold in its fallback form. Results 1-2 keep their WEAKENED/negative-
 control status, already correctly scoped in the original docstring.
 No changes to the cross-terms derivation path recommended above.
+
+---
+
+## Round 22 (2026-07-10) -- L4A continued: explicit Nomizu cross-terms
+## derived and quantitatively verified as the type-mixing carrier
+
+**User instruction:** "го вариант 1, выводи cross-terms" (proceed with
+option 1: derive the Levi-Civita vs canonical-Casimir Nomizu cross-terms
+explicitly), following Round 21's own forward-pointing docstring.
+
+**GOAL.** Round 21 proved no invariant fiber endomorphism can complete
+D^2 = nabla*nabla_can + Scal/4 + R^E, and predicted the missing piece is
+a Nomizu cross-term "schematically -sum_p[Z_p.Lambda_p + Lambda_p.Z_p +
+Lambda_p^2]". This round derives it EXPLICITLY, in closed form, entirely
+within the already-validated matrix-coefficient-section machinery, and
+verifies it reproduces the observed type-mixing quantitatively (not just
+qualitatively).
+
+**DERIVATION (script: `g2su3_nomizu_crossterms.py`).** Writing
+D_7 = TERM_A + TERM_B from Round 17's own defining formula and expanding
+D_7^2 = (TERM_A+TERM_B)^2 by hand (Clifford relations + the
+representation identity [rho_7(e_p),rho_7(e_q)]=rho_7([e_p,e_q])) splits
+D_7^2 into FIVE closed-form pieces:
+- CASIMIR (from T_A's p=q part) -- type-preserving
+- D64-SQUARED (from T_B^2) -- type-preserving, F-side only
+- SU(3)-CURVATURE (from T_A's p<q part, the su(3)-bracket half)
+- TORSION CROSS-TERM (from T_A's p<q part, the m-bracket half, using the
+  already-built torsion table T(p,q,r))
+- MIXED A-B CROSS-TERM (from T_A.T_B + T_B.T_A, an anticommutator
+  {e_p,D64} contracted against rho_7(e_p))
+
+**TWO DEAD ENDS, both caught by the project's own verification discipline
+before any claim was made (Kill Analysis below), not shipped as findings:**
+
+1. **Vacuous domain-index-0-only test.** First verification attempt
+   compared only the phi_2 (domain-index-0) slice of the reconstruction
+   against ground truth. It passed trivially and appeared to show
+   TORSION alone caused v_a/v_b's threebar leakage from Round 21's
+   "singlet_1" -- but v_a/v_b turned out to be singlets s5/s2, NOT
+   Round 21's actual "singlet_1"=s1 (F has 6 SU(3)-singlets total,
+   `build_singlets()`), and separately the domain-index-0-only slice
+   is structurally BLIND to Round 21's "three_i"/"threebar_i" basis
+   elements (which are supported ONLY on domain indices 1-6) -- so any
+   test restricted to index 0 trivially reports zero off-type
+   coefficients regardless of what the real operator does. Caught by:
+   (a) re-checking `build_singlets()`'s actual definitions against v_a/
+   v_b, (b) a direct diagnostic confirming `D^2(singlet_1)` has 2
+   nonzero F-components on EACH of domain indices 1-6, not just index 0.
+2. **Sign convention mismatch between two independently-built
+   representations.** The full 7-domain-index (448-dim) test, run with
+   the naive assumption [rho_7(e_p),rho_7(e_q)] = +rho_7([e_p,e_q]),
+   FAILED its own decisive assert with a uniform discrepancy of exactly
+   4/3 at exactly one row per non-singlet domain index (i=1..6).
+   Root-caused via a 4-step bisection (all tool-verified, not guessed):
+   (i) confirmed TERM_A+TERM_B alone exactly reproduces a SINGLE
+   application of D_7 for all 7 domain indices (rules out the
+   primitives); (ii) isolated T_A(T_A(w)) computed directly via
+   primitives vs via the algebraic casimir+su3curv+torsion split --
+   mismatch localized to the p!=q (bracket) part specifically;
+   (iii) directly compared `[rho_7(e_1),rho_7(e_2)]` (V_7's own
+   representation, Round 14, `g2su3_v7_multiplicity_dirac.py`) against
+   its reconstruction from the T(p,q,r)/curv_h(p,q,k) tables
+   (`g2su3_H_element.py`/`g2su3_appendix_a_construction.py`) as explicit
+   7x7 matrices: they are EXACT NEGATIVES of each other -- a genuine,
+   tool-confirmed convention mismatch between two independently-built
+   g2 representations, the same class of issue
+   `g2su3_appendix_a_construction.py`'s own pre-existing
+   `BRACKET_SIGN=-1` comment already flags for a DIFFERENT pairing.
+   Fix: drop the leading minus sign in `su3_curvature_term` and
+   `torsion_cross_term` (the two minus signs -- one from the p<q
+   expansion, one from the convention mismatch -- cancel).
+
+**RESULT (after the fix, script exits 0, all asserts pass,
+[VERIFIED-tool]):**
+- STEP 2 (decisive): sum of all 5 pieces == D^2(singlet_1) EXACTLY,
+  over the FULL 448-dim (7-domain-index) object -- not a projection, not
+  a slice.
+- STEP 3/4: extracting coefficients via Round 21's own 16-dim basis
+  (reused unmodified): CASIMIR, D64-SQUARED, and SU(3)-CURVATURE are
+  each INDIVIDUALLY and EXACTLY type-preserving (zero off-type
+  coefficients). TORSION alone gives `{threebar_2: -4i/3}` and
+  MIXED_A-B alone gives `{threebar_1: 2i/3, threebar_2: 2i}` -- NEITHER
+  alone matches Round 21's original leakage -- but their SUM gives
+  EXACTLY `{threebar_1: 2i/3, threebar_2: 2i/3}`, matching Round 21's
+  Result 3 finding to the letter.
+
+**Original hypothesis (torsion alone) tested and FALSIFIED; corrected
+finding is more precise, and matches the SHAPE of Round 21's own
+prediction better than the original hypothesis did:** Round 21's
+docstring predicted "schematically -sum_p[Z_p.Lambda_p + Lambda_p.Z_p +
+Lambda_p^2]" -- THREE terms, not one. TORSION is the Lambda_p^2-type
+piece (from T_A squared); MIXED_A-B is the Z_p.Lambda_p+Lambda_p.Z_p-type
+piece (from T_A.T_B+T_B.T_A). The corrected result recovers exactly this
+two-piece (three-term) structure, not a single-term one.
+
+**What this establishes for L4A:** the Weitzenbock identity's correct
+form on this multiplicity space is now EXPLICIT and closed-form:
+  D_7^2 = [Scal/4 + nabla*nabla_can]  +  [SU(3)-CURVATURE]
+        + [TORSION CROSS-TERM]  +  [MIXED A-B CROSS-TERM]
+with every piece an explicit, computable operator built from
+already-validated primitives (rho7_ep, rho7_nuk, T-table, curv_h-table,
+D64, Clifford left-mult). The "R^E" of the ORIGINAL Weitzenbock identity
+is not a single fiber endomorphism but the SUM of SU(3)-CURVATURE +
+TORSION + MIXED_A-B -- genuinely NOT reducible to a pointwise fiber
+operator alone (consistent with, and now explaining constructively,
+Round 21's impossibility theorem). L4A's actual ask (F_{S^-} spectral
+data) requires assembling this full operator over the SU(3)-singlet
+domain block and diagonalizing it -- the ingredients now all exist and
+are individually verified; the assembly + diagonalization is the natural
+next step, NOT YET DONE this round (scope discipline: this round's
+claim is the closed-form derivation + its quantitative verification on
+ONE domain-singlet test case, not yet the full spectral computation).
+
+**Kill Analysis:**
+- KILLED: the "torsion alone carries the leakage" hypothesis (falsified
+  directly, not merely unconfirmed); the domain-index-0-only test
+  methodology (shown vacuous for THIS class of question; still valid
+  for OTHER questions like Round 17's original single-application
+  checks, which never claimed to test off-type content).
+- SURVIVED: the overall 5-piece algebraic decomposition (exact, once
+  the sign fix is applied); Round 21's Result 3 finding itself
+  (re-derived independently via a completely different route -- direct
+  term-by-term construction rather than coefficient-extraction on the
+  full D^2 -- and matches to the letter, a strong independent
+  cross-check of Round 21, not just a consequence of it); every
+  already-existing primitive (rho7_ep, T-table, curv_h-table, D64,
+  clifford_left_64) -- none needed modification, only correct combination.
+- OPENED: the explicit closed-form Weitzenbock identity above; a natural
+  path to L4A's actual spectral ask (assemble + diagonalize the full
+  4-term operator on the singlet block, extending to "3"/"3bar" blocks);
+  a NEW independent recomputation ROUTE for rho=14's flagged sign
+  (same TERM_A/TERM_B decomposition technique applies verbatim to V_14,
+  not yet attempted).
+
+**Review status:** reviewer + context-blind skeptic dispatched on
+g2su3_nomizu_crossterms.py; verdicts to be appended in a follow-up
+commit, per the same Step 8a discipline as Round 21.
+
+**L4A status: still OPEN, advanced further** -- from "a diagnosed
+structural obstruction plus a concrete derivation path" (Round 21's
+close) to "the derivation is done, closed-form, and quantitatively
+verified on one test case; only the spectral assembly step remains."
+preprint.tex NOT touched this round.
