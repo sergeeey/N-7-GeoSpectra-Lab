@@ -79,9 +79,48 @@ so the earlier claim that F_{S^-}'s -5/2 eigenvalue "explains" or
 RETRACTED. What survives, independently re-verified by both reviewers:
 F_{S^-} itself IS correctly, exactly derived (Hermitian, closed-form,
 spectrum {1/6:15,-5/2:1}) -- this is the explicit spectral computation
-L4A's own text asks for. Isolating a genuine, independently-verified
-nabla*nabla and R/4 (as opposed to their unseparated sum "remainder")
-is NOT done this round.
+L4A's own text asks for.
+
+ROUND 24 UPDATE (STEP D, 2026-07-10): the genuine, independent nabla*nabla
+IS now isolated -- built DIRECTLY from the connection as -sum_p N_p^2,
+N_p := M_p(x)Id + Id(x)M_p (naturally reductive => frame self-derivative
+nabla_{e_p}e_p = 0), NOT back-derived as D^2-F-Scal/4 (that would be
+circular). It is Hermitian and PSD by construction (all M_p skew-Hermitian),
+eigenvalues {0:1,1/3:8,2/3:6,4/3:1} on the 16-dim fibre. RESULT of the
+kill-gate: with THIS (PSD) nabla*nabla and THIS F, the three-term split
+D^2 = nabla*nabla + Scal/4 + F_{S^-} does NOT close to a scalar Scal/4:
+Delta := D^2 - nabla*nabla - F_{S^-} is NON-scalar (16-dim AND 2-dim), and
+stays non-scalar even after adding Round 22's TORSION_E.
+
+WHAT IS SOLID [VERIFIED-tool]: on the 2-dim SU(3)-invariant subspace (where
+the L4B kernel/trivial component actually lives) Delta = [[5/2,4/3],[4,5/2]].
+Its SCALAR (trace-average) part is EXACTLY 5/2 = the nominal Scal/4, and the
+leftover [[0,4/3],[4,0]] is TRACE-FREE. So the scalar content matches the
+preprint's R/4=5/2, but Delta carries an irreducible non-scalar (trace-free)
+piece -- there is no clean scalar R/4 cleanly SEPARATED from the rest in this
+construction.
+
+WHAT IS NOT RESOLVED [HYPOTHESIS]: whether that trace-free piece is (i) the
+frame/Leibniz term (nabla_b e_a for the non-normal invariant frame, flagged
+in v1's error analysis above) that the FULL torsionful Weitzenbock would
+reorganize -- in which case Scal/4=5/2 is fine and the naive -sum N_p^2 is
+simply not the complete Bochner operator -- or (ii) a sign that F_{S^-} is
+not the complete twist curvature. STEP D does NOT distinguish these; note
+also that D^2-F-c*Id cannot be PSD for c=5/2 (det of the 2-dim remainder
+minus 5/2*Id is -8<0), so a clean PSD nabla*nabla with scalar Scal/4=5/2 and
+THIS F is impossible -- consistent with (i) requiring a non-PSD-difference
+frame term, or with (ii).
+
+CONSEQUENCE for L4A: the norm-ratio argument (||F||/(R/4) <= 8/45) compares
+||F|| against an R/4 that is NOT cleanly isolated as a scalar in this
+realization; the "8/45 vs ~1.03" numbers are therefore not a well-posed
+apples-to-apples comparison until the frame/torsion structure is pinned.
+This does NOT falsify the preprint's conclusion -- F_{S^-} (Hermitian,
+spectrum {1/6:15,-5/2:1}) and the Atiyah-Singer index=1 are untouched -- but
+it shows the L4A bound step needs the full (torsionful) Weitzenbock, not the
+naive three-term form. Deriving the frame-term correction explicitly and
+checking whether Delta - frame_term = (5/2)*Id is the natural next step,
+which would decide (i) vs (ii). NOT done here.
 
 Evidence markers: every numeric claim is re-computed and asserted in
 main() below ([VERIFIED-tool] on run).
@@ -407,6 +446,108 @@ def main():
     print(f"  for them to share eigenvectors at all)? {commute}")
 
     print("\n" + "=" * 70)
+    print("STEP D (Round 24 kill-gate): isolate nabla*nabla DIRECTLY from the")
+    print("connection (NOT as D^2-F-Scal/4, which would be circular -- skeptic")
+    print("FLAW 1), then test whether the Lichnerowicz split D^2 = nabla*nabla")
+    print("+ Scal/4 + F_{S^-} closes with a CLEAN SCALAR Scal/4.")
+    print("=" * 70)
+    print("  METHOD. Total twisted connection on Sigma(x)Sigma:")
+    print("    N_p := M_p(x)Id + Id(x)M_p    (Leibniz; both factors carry nabla_g).")
+    print("  S^6=G2/SU(3) is naturally reductive => the frame self-derivative")
+    print("  nabla_{e_p}e_p = U(e_p,e_p) = 0 (natural reductivity kills the")
+    print("  symmetric part), so the Bochner Laplacian is exactly")
+    print("    nabla*nabla = -sum_p N_p^2 ,")
+    print("  built ONLY from M_p -- genuinely independent of D^2 and F_{S^-}.")
+    print("  PRE-REGISTERED PREDICTION (stated BEFORE computing the result, per")
+    print("  skeptic): remainder-(5/2)Id has det=-8<0, so Scal/4=5/2 is already")
+    print("  falsified on the 2-dim block. Expect EITHER (a) Delta:=D^2-nabla*nabla")
+    print("  -F is NON-scalar (a torsion term survives, per Round 22's proof that")
+    print("  the nearly-Kahler Weitzenbock carries curvature+TORSION+mixed), OR")
+    print("  (b) Delta=c*Id with c!=5/2 (clean split, Scal/4 empirically pinned).")
+
+    Np = {p: kron(Ms[p], Id8) + kron(Id8, Ms[p]) for p in range(1, 7)}
+    nsn = sp.zeros(N64, N64)
+    for p in range(1, 7):
+        nsn += -(Np[p] * Np[p])
+    nsn = sp.simplify(nsn)
+
+    print("\n  Bug-check 1 -- M_p skew-Hermitian (metric connection => -sum N_p^2 PSD):")
+    all_skew = True
+    for p in range(1, 7):
+        skew = sp.simplify(Ms[p] + Ms[p].H) == sp.zeros(DIM, DIM)
+        all_skew = all_skew and skew
+    print(f"    all six M_p skew-Hermitian? {all_skew}")
+
+    nsn_block = nsn[dom_rows, dom_rows]
+    nsn_herm = sp.simplify(nsn_block - nsn_block.H) == sp.zeros(16, 16)
+    print(f"  nabla*nabla|_16 Hermitian? {nsn_herm}")
+    nsn_eigs = nsn_block.eigenvals()
+    print(f"  nabla*nabla|_16 eigenvalues: {nsn_eigs}")
+    nsn_psd = all(complex(sp.N(ev)).real >= -sp.Rational(1, 10**6) for ev in nsn_eigs)
+    print("  PSD (CONSTRUCTION bug-check ONLY -- non-PSD would mean a code bug,")
+    print(f"  NOT 'F falsified')? {nsn_psd}")
+
+    print("\n  THE DIFFERENTIATING TEST (skeptic FLAW 2 -- scalarity of Delta, not")
+    print("  PSD, is the real falsifier):")
+    Delta16 = sp.simplify(D2_full_block - nsn_block - F_block)
+    is_scalar16 = Delta16 == Delta16[0, 0] * sp.eye(16)
+    print(f"    Delta := D^2 - nabla*nabla - F_{{S^-}} on the 16-dim block is c*Id? {is_scalar16}")
+    if is_scalar16:
+        print(
+            f"    => Lichnerowicz split VALIDATED; Scal/4 empirically pinned: c = {Delta16[0, 0]}"
+        )
+    else:
+        print("    => Delta is NON-scalar: the clean 'nabla*nabla + Scal/4 + F' split does")
+        print("       NOT hold with THIS F alone. Localizing the non-scalar part:")
+        Delta16_torsion_test = sp.simplify(Delta16 + torsion_E[dom_rows, dom_rows])
+        is_scalar_after_torsion = Delta16_torsion_test == Delta16_torsion_test[0, 0] * sp.eye(16)
+        print(
+            f"       Delta + TORSION_E|_16 is c*Id (torsion accounts for it)? "
+            f"{is_scalar_after_torsion}"
+        )
+        if is_scalar_after_torsion:
+            print(
+                f"       => confirmed torsion term; residual scalar Scal/4 = "
+                f"{Delta16_torsion_test[0, 0]}"
+            )
+
+    print("\n  Same test on the 2-dim SU(3)-invariant subspace (w_a,w_b):")
+    nsn_2x2 = project_2x2(nsn, w_a, w_b, "nabla*nabla")
+    print("  nabla*nabla restricted to span(w_a,w_b):")
+    sp.pprint(nsn_2x2)
+    Delta2 = sp.simplify(D2_2x2 - nsn_2x2 - F_2x2)
+    print("  Delta = D^2 - nabla*nabla - F_{S^-} on the 2-dim block:")
+    sp.pprint(Delta2)
+    is_scalar2 = Delta2 == Delta2[0, 0] * sp.eye(2)
+    print(
+        f"  Delta scalar on 2-dim? {is_scalar2}"
+        + (f"  (c = {Delta2[0, 0]})" if is_scalar2 else "  (NON-scalar)")
+    )
+    if not is_scalar2:
+        tors_2x2 = project_2x2(torsion_E, w_a, w_b, "TORSION_E")
+        Delta2_after = sp.simplify(Delta2 + tors_2x2)
+        is_scalar2_after = Delta2_after == Delta2_after[0, 0] * sp.eye(2)
+        print("  Delta + TORSION_E on the 2-dim block:")
+        sp.pprint(Delta2_after)
+        print(
+            f"  scalar after adding torsion? {is_scalar2_after}"
+            + (f"  (Scal/4 = {Delta2_after[0, 0]})" if is_scalar2_after else "")
+        )
+
+    print("\n  Scalar/traceless decomposition of Delta on the 2-dim block")
+    print("  (Delta = scalar_part*Id + traceless): does the SCALAR part equal")
+    print("  the nominal Scal/4 = 5/2, with the leftover TRACE-FREE?")
+    scalar_part = sp.simplify(Delta2.trace() / 2)
+    traceless = sp.simplify(Delta2 - scalar_part * sp.eye(2))
+    print(f"    scalar part (trace/2) = {scalar_part}  (nominal Scal/4 = 5/2)")
+    print("    traceless remainder:")
+    sp.pprint(traceless)
+    print(f"    remainder is trace-free? {sp.simplify(traceless.trace()) == 0}")
+    print(f"    scalar part == 5/2 exactly? {scalar_part == sp.Rational(5, 2)}")
+    assert scalar_part == sp.Rational(5, 2), "scalar part of Delta is not 5/2"
+    assert sp.simplify(traceless.trace()) == 0, "remainder is not trace-free"
+
+    print("\n" + "=" * 70)
     print("CONCLUSION")
     print("=" * 70)
     print(f"  F_{{S^-}} spectrum on Gamma(S^+(x)S^-) (full 16-dim): {eigs}")
@@ -434,6 +575,15 @@ def main():
     print("  spectral computation the preprint's L4A section asks for. Whether")
     print("  its -5/2 eigenvalue bears any specific relationship to R/4 or to the")
     print("  D^2 zero mode is NOT established by this round's work.")
+    print("  ROUND 24 ADDENDUM (STEP D, supersedes the '...NOT done this round'")
+    print("  clause above for the nabla*nabla-isolation question): an independent")
+    print("  PSD nabla*nabla = -sum N_p^2 IS now built. With it, Delta := D^2 -")
+    print("  nabla*nabla - F on the 2-dim block = [[5/2,4/3],[4,5/2]]: its scalar")
+    print("  (trace-average) part is EXACTLY 5/2 = nominal Scal/4, the leftover is")
+    print("  TRACE-FREE. So Scal/4=5/2 is recovered as the scalar CONTENT, but the")
+    print("  three-term split does NOT close to a clean scalar -- a trace-free")
+    print("  frame/torsion term survives. Which of {frame-correction, incomplete-F}")
+    print("  it is remains OPEN (see module docstring, ROUND 24 UPDATE).")
 
 
 if __name__ == "__main__":

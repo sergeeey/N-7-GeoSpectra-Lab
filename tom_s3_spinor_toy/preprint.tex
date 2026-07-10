@@ -75,8 +75,9 @@ within 4.0\%. The KO-dimension~6 spectral triple structure
 $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$
 is reproduced by representation theory on $S^3\times S^6$ without being postulated, and the Yukawa
 parameter count reduces to~4 via SU(3)-orbit degeneracy on~$S^6$.
-A geometric obstruction (Theorem~\ref{thm:yukawa-deg}) proves that all
-inter-generation Yukawa couplings are equal on $S^6$; mass hierarchy requires
+A geometric obstruction (Theorem~\ref{thm:yukawa-deg}) shows that all
+inter-generation Yukawa couplings are equal on $S^6$ (conditional on the L4B
+kernel-rank assumption, \S\ref{sec:kernel}); mass hierarchy requires
 the non-geometric $D_F$ freedom of the finite spectral triple.
 
 We prove that the Atiyah--Singer index of the twisted Dirac operator on
@@ -788,20 +789,24 @@ symmetry input.
 \subsection{Yukawa degeneracy across channels}
 \label{sec:yukawa-deg}
 
-The exact kernel count of this section, combined with the bundle isomorphism of
+The kernel count of this section, combined with the bundle isomorphism of
 Theorem~\ref{thm:elb3}, yields a stronger --- and phenomenologically sobering ---
 statement: $S^6$ geometry alone cannot generate a mass hierarchy between the three
 generations.
 
-\begin{theorem}[Yukawa Degeneracy]\label{thm:yukawa-deg}
-  Let $\psi^{(\alpha)}$ denote the unique positive-chirality zero mode of $D^{(\alpha)}$
+\begin{theorem}[Yukawa Degeneracy, conditional on the L4B rank assumption]\label{thm:yukawa-deg}
+  Assume the L4B rank hypothesis $\dim\ker(D^{(\alpha)}|_{\Sigma^+})=1$
+  (\S\ref{sec:kernel}; open, not proved). Let $\psi^{(\alpha)}$ denote the (then unique)
+  positive-chirality zero mode of $D^{(\alpha)}$
   for $\alpha\in\{v,s,c\}$ on $S^6 = G_2/\mathrm{SU}(3)$. Then
   $Y_{vs} = Y_{vc} = Y_{sc}$,
   where $Y_{\alpha\beta} := \int_{S^6} (\psi^{(\alpha)})^\dagger \varphi_H\, \psi^{(\beta)}\,\mathrm{vol}_{S^6}$.
 \end{theorem}
 
 \begin{proof}
-  By the Lichnerowicz gap (Lemma~L4, \S\ref{sec:lichnerowicz}), each $\ker(D^{(\alpha)}|_{\Sigma^+})$
+  By the L4B rank hypothesis (\S\ref{sec:kernel}; the Lichnerowicz--Weitzenb\"ock analysis of
+  \S\ref{sec:lichnerowicz} is consistent with, but does not by itself establish, this),
+  each $\ker(D^{(\alpha)}|_{\Sigma^+})$
   is one-dimensional. By $G_2$-equivariance of $D^{(\alpha)}$, this kernel is $G_2$-invariant,
   hence a $G_2$-invariant section of $\Sigma^+\otimes E_\alpha$.
   By Theorem~5.1 of \cite{AgrHofLawn2023}, $\Sigma^+_{\mathrm{inv}} = \mathrm{span}_{\mathbb{C}}\{1\}$
@@ -1160,7 +1165,8 @@ work.
 \item \textbf{Fermion mass hierarchy.} The index theorem gives $N_{\mathrm{gen}}=3$ with equal
   geometric status for each generation; it does not explain why $m_t/m_u\approx 10^5$.
   In fact, a stronger statement holds: Theorem~\ref{thm:yukawa-deg} (\S\ref{sec:yukawa-deg})
-  proves that all inter-generation Yukawa couplings are equal on $S^6$, so the mass
+  shows --- conditional on the L4B kernel-rank assumption (\S\ref{sec:kernel}) --- that all
+  inter-generation Yukawa couplings are equal on $S^6$, so the mass
   hierarchy must originate from the non-geometric $D_F$ freedom of the finite spectral
   triple \cite{CCM2006}. The role of $S^3$ Kaluza-Klein coupled-mode mixing in lifting
   the degeneracy in the full 9-dimensional analysis remains an open question.
