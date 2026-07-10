@@ -4077,3 +4077,111 @@ noted above. Review (reviewer+skeptic) not yet dispatched this round --
 pending, given the significance of this finding for L4A.
 
 preprint.tex NOT touched this round.
+
+---
+
+## Round 23 -- Review verdicts (Step 8a): a real overclaim caught and
+## retracted, core computation survives
+
+Dispatched reviewer + context-blind skeptic in parallel (direct Agent
+tool, matching the reliable channel from Round 22's own experience with
+Workflow-layer empty results). Both required a resume (truncated
+mid-task on first stop -- an established pattern this session, not new).
+
+**Reviewer verdict: `NEEDS_WORK`, severity P1.** Independently re-ran
+the script, re-verified the Kronecker-indexing convention and the
+Kronecker-bilinearity argument by hand (both ACCEPT, high confidence),
+confirmed the mirror relationship between w_a/w_b and Round 4-17's
+v_a/v_b is real (not just plausible-sounding). **Decisive finding
+(REJECT verdict on the file's own "mechanistic explanation" claim):**
+directly computed the eigenvectors of D64^2 and F_{S^-} on the 2-dim
+invariant subspace and found them to be DIFFERENT vectors (D64^2's zero
+eigenvector = (-1,1); F_{S^-}'s -5/2 eigenvector = (1,1); cross product
+-2, not parallel) -- "matching eigenvalues across two different
+operators is a weaker statement than sharing an eigenvector; only the
+latter supports a causal/mechanistic claim." Also flagged: missing
+assert that w_a,w_b actually lie in the su(3) null space (only the
+weaker "leak" property was checked); and an UNRECONCILED tension
+between this round's exact ratio |F_{S^-}|/(R/4)=1 and the preprint's
+own PRIOR (line 590) norm-bound estimate of 8/45~=0.178 (~5.6x smaller)
+-- flagged as needing resolution before preprint.tex is touched, not
+resolved this round.
+
+**Skeptic verdict: `FALSIFIED` on the load-bearing "mechanistic
+explanation" claim; core computation `CONFIRMED-REAL`.** Independently
+confirmed Targets 1-2 (the v1-vs-v2 algebraic-error diagnosis is real;
+Kronecker bilinearity is sound, re-derived from `(A⊗B)(C⊗D)=(AC)⊗(BD)`).
+**Found a MORE SERIOUS problem than the reviewer** (this is the
+decisive finding of the whole review round): computed `[F_{S^-},D64^2]`
+on the 2-dim subspace directly and got `[[0,-8/3],[8,0]] != 0` --
+F_{S^-} and D64^2 do NOT commute, meaning they cannot share ANY
+eigenbasis, not just "happen to have different eigenvectors this time."
+**Separately, found a genuine trace-level inconsistency**: if
+"remainder" (:=D64^2-F_{S^-}) really were nabla*nabla(=0, rho=trivial
+assumption)+R/4(=5/2 scalar), its trace on the 2-dim block should be
+2*(5/2)=5 -- but the ACTUAL trace is 19/3 (verified directly:
+`remainder = [[17/6,5/3],[5,7/2]]`, NOT a scalar multiple of Id at all).
+This means the docstring's "R/4=Scal/4=5/2" identification was an
+UNVERIFIED assumption carried over from a DIFFERENT context (Round 16's
+Scal=10 calibration, for the UNTWISTED case), not something established
+by this round's own construction. Also flagged (WEAKENED, non-fatal):
+w_a,w_b were hand-picked to mirror v_a,v_b rather than mechanically
+extracted from the null-space computation, making the entry-for-entry
+`[[1,1],[3,3]]` match somewhat less independent than framed (though the
+EIGENVALUE match {0,4} is genuinely basis-independent and survives);
+and the "(rho=trivial)" label on the 2-dim invariant subspace is
+imprecise (rho=7 also branches with an SU(3)-singlet, per Round 17-18's
+own established finding, so "SU(3)-invariant fibre subspace" does not
+cleanly equal "rho=trivial multiplicity space" without more care).
+
+**Both independently and by DIFFERENT methods (eigenvector comparison
+vs. commutator + trace check) converged on: the "-5/2 exactly cancels
+R/4, mechanistically explaining the zero mode" claim is WRONG.** This
+is a strong, doubly-confirmed signal, not reviewer noise.
+
+**Independent re-verification (before accepting either agent's
+finding, per this project's own audit-verification-gate discipline):**
+directly computed `remainder = D64^2-F_{S^-} = [[17/6,5/3],[5,7/2]]`,
+trace 19/3, NOT scalar; `[F_{S^-},D64^2]=[[0,-8/3],[8,0]] != 0`. BOTH
+confirmed exactly, independently of either agent's own report.
+
+**Fix applied (script `g2su3_Sminus_weitzenbock.py`, both P1s closed):**
+1. Added the missing direct assert that w_a,w_b are annihilated by all
+   8 su(3) generators (not just that D64^2/F_{S^-} preserve their span).
+2. REPLACED the CONCLUSION and added a docstring caveat: the "R/4"
+   label is now explicitly marked as inherited NAMING (matching the
+   standard Weitzenbock identity's SHAPE), not an independently-verified
+   claim; the file now COMPUTES and PRINTS both the eigenvector-mismatch
+   and the non-scalar/non-commuting facts directly (STEP C2), rather
+   than asserting the old (wrong) interpretation. Re-ran clean, exit 0,
+   all asserts pass, honest CONCLUSION confirmed printing correctly.
+
+**Response matrix (FL Step 8a):**
+| Concern | Response |
+|---|---|
+| "Mechanistic explanation" / "R/4 exactly cancels" claim (reviewer P1 + skeptic FALSIFIED, both independently, both re-confirmed by me directly) | **Fixed** -- claim retracted in both script and this doc; STEP C2 now computes and reports the mismatch/non-commutativity honestly |
+| Missing su(3)-null-space assert (reviewer P1) | **Fixed** -- direct assert added |
+| Norm-bound tension with preprint.tex line 590 (8/45 vs exact ratio 1) (reviewer P2) | **Accepted as open, unresolved item** -- flagged explicitly, NOT touching preprint.tex until reconciled |
+| w_a,w_b hand-picked vs mechanically extracted (skeptic, WEAKENED) | **Accepted as documented limitation** -- eigenvalue match {0,4} survives (basis-independent), entry-match framing already softened in this doc |
+| "(rho=trivial)" label imprecise (skeptic, WEAKENED) | **Accepted as documented limitation** -- the 2-dim subspace is more precisely "the SU(3)-invariant piece of the fibre", which may receive contributions from multiple G2-irreps (trivial AND rho=7), not exclusively rho=trivial |
+
+**What SURVIVES this review round (confirmed independently by reviewer,
+skeptic, AND my own direct re-verification, three times over):** F_{S^-}
+itself -- its closed-form derivation, Hermitian property, and FULL
+spectrum on the 16-dim Gamma(S^+(x)S^-) = `{1/6:15, -5/2:1}` -- is
+correctly, exactly computed. This genuinely IS the explicit spectral
+computation the preprint's L4A section asks for ("an explicit spectral
+computation of F_{S^-} as an endomorphism on Gamma(S^+(x)S^-)"). What
+does NOT survive: any claim that this -5/2 eigenvalue explains,
+"exactly cancels", or otherwise mechanistically relates to the D64^2
+zero mode found in Round 4-17 -- that specific interpretive overlay was
+never independently verified and is contradicted by direct computation
+of both eigenvector alignment and operator commutativity.
+
+**L4A status after this round: F_{S^-} is derived and its spectrum is
+established (real progress); its relationship to R/4 and to the
+existing zero-mode structure is OPEN, not resolved -- weaker than this
+round's earlier drafts claimed, but still a genuine advance over having
+no explicit F_{S^-} computation at all.** preprint.tex NOT touched this
+round -- and should NOT be touched with the retracted "mechanistic
+explanation"/"exact cancellation" framing if this work is cited later.

@@ -66,6 +66,23 @@ nabla*nabla+R/4 (S-side + mixed) := TERM1^2 + TERM1.TERM2 + TERM2.TERM1
 F_{S^-} := as derived above (the ONLY genuinely isolated, E-curvature-
 only piece)
 
+CAVEAT ADDED AFTER REVIEW (both reviewer and skeptic, 2nd round -- see
+decision.md Round 23 "Review verdicts" section): the label "nabla*nabla+
+R/4" above for the OTHER piece ("remainder" in main()) is a NAME
+inherited from the standard Weitzenbock identity's shape, NOT an
+independently-verified claim that this piece actually equals a clean
+scalar R/4=Scal/4=5/2 (with nabla*nabla=0). Direct computation (STEP C2)
+shows "remainder" restricted to the 2-dim SU(3)-invariant subspace is
+NOT a scalar multiple of Id, and F_{S^-}/D64^2 do NOT commute there --
+so the earlier claim that F_{S^-}'s -5/2 eigenvalue "explains" or
+"exactly cancels R/4 at" the pre-existing D^2 zero mode has been
+RETRACTED. What survives, independently re-verified by both reviewers:
+F_{S^-} itself IS correctly, exactly derived (Hermitian, closed-form,
+spectrum {1/6:15,-5/2:1}) -- this is the explicit spectral computation
+L4A's own text asks for. Isolating a genuine, independently-verified
+nabla*nabla and R/4 (as opposed to their unseparated sum "remainder")
+is NOT done this round.
+
 Evidence markers: every numeric claim is re-computed and asserted in
 main() below ([VERIFIED-tool] on run).
 """
@@ -316,6 +333,20 @@ def main():
     w_a[idx64(5, 2)] = -1
     w_a[idx64(6, 1)] = 1
 
+    # Reviewer P1 fix: actually PROVE w_a,w_b lie in the su(3) null space
+    # (the earlier "leak" check only proved D64^2/F_{S^-} preserve their
+    # span, a weaker property) by directly applying every generator.
+    w_a_16 = w_a[dom_rows, :]
+    w_b_16 = w_b[dom_rows, :]
+    for k, gen in enumerate(gens, start=1):
+        assert sp.simplify(gen * w_a_16) == sp.zeros(16, 1), (
+            f"su3 generator {k} does not annihilate w_a"
+        )
+        assert sp.simplify(gen * w_b_16) == sp.zeros(16, 1), (
+            f"su3 generator {k} does not annihilate w_b"
+        )
+    print("  w_a, w_b directly verified annihilated by all 8 su(3) generators")
+
     def project_2x2(op, va, vb, name):
         Pmat = sp.Matrix.hstack(va, vb)
         G = (Pmat.T * Pmat).inv()
@@ -345,14 +376,64 @@ def main():
     assert sp.Rational(-5, 2) in f_eigs, "F_{S^-}'s negative mode is NOT in the invariant subspace"
 
     print("\n" + "=" * 70)
+    print("STEP C2 (2nd review round fix -- both reviewer AND skeptic caught")
+    print("problems here, skeptic's finding is the more serious one): does")
+    print("F_{S^-}'s -5/2 eigenvector COINCIDE with D64^2's zero eigenvector,")
+    print("and does 'remainder' actually reduce to a scalar R/4 on this block?")
+    print("Check both. Do NOT assume either.")
+    print("=" * 70)
+    d2_null = D2_2x2.nullspace()
+    assert len(d2_null) == 1, "D64^2 restricted should have a 1-dim kernel here"
+    d2_zero_vec = d2_null[0]
+    f_neg_eigvec = [
+        v for val, mult, vecs in F_2x2.eigenvects() if val == sp.Rational(-5, 2) for v in vecs
+    ][0]
+    cross = d2_zero_vec[0] * f_neg_eigvec[1] - d2_zero_vec[1] * f_neg_eigvec[0]
+    same_eigenvector = sp.simplify(cross) == 0
+    print(f"  D64^2 zero-eigenvector: {d2_zero_vec.T}")
+    print(f"  F_{{S^-}} (-5/2)-eigenvector: {f_neg_eigvec.T}")
+    print(f"  Same eigenvector (parallel)? {same_eigenvector}")
+
+    remainder_2x2 = sp.simplify(D2_2x2 - F_2x2)
+    print("\n  remainder := D64^2 - F_{S^-} on this 2-dim block:")
+    sp.pprint(remainder_2x2)
+    is_scalar_remainder = remainder_2x2 == remainder_2x2[0, 0] * sp.eye(2)
+    print("  Is 'remainder' a scalar multiple of Id (i.e. does it reduce to a")
+    print("  clean R/4-only piece, with nabla*nabla=0, as the docstring's")
+    print(f"  original R/4=Scal/4=5/2 claim implicitly assumed)? {is_scalar_remainder}")
+    comm = sp.simplify(F_2x2 * D2_2x2 - D2_2x2 * F_2x2)
+    commute = comm == sp.zeros(2, 2)
+    print("  Do F_{S^-} and D64^2 commute on this block (a necessary condition")
+    print(f"  for them to share eigenvectors at all)? {commute}")
+
+    print("\n" + "=" * 70)
     print("CONCLUSION")
     print("=" * 70)
     print(f"  F_{{S^-}} spectrum on Gamma(S^+(x)S^-) (full 16-dim): {eigs}")
     print(f"  F_{{S^-}} spectrum on the 2-dim SU(3)-invariant subspace: {f_eigs}")
     print("  D64^2 == [[1,1],[3,3]] there, eigenvalues {4,0} -- EXACTLY Round 4-17's")
-    print("  known L4B result. On the eigenvector where F_{S^-}=-5/2, R/4+F_{S^-}=0")
-    print("  EXACTLY -- a mechanistic explanation of the pre-existing zero mode,")
-    print("  not merely a numerical coincidence.")
+    print("  known L4B result (a genuine, independent cross-check: w_a,w_b were")
+    print("  found as the su(3)-generator null space, an independent criterion,")
+    print("  and give this ALREADY-ESTABLISHED matrix).")
+    print("  RETRACTED CLAIM (both reviewer and skeptic caught this; skeptic's")
+    print("  finding is decisive): this file NO LONGER claims F_{S^-}'s -5/2")
+    print("  eigenvalue 'explains' or 'exactly cancels R/4' at the D^2 zero mode.")
+    print("  Two independent problems with that claim, both confirmed by direct")
+    print("  computation above: (1) the -5/2 eigenvector of F_{S^-} and the")
+    print("  0-eigenvector of D64^2 are DIFFERENT vectors, and F_{S^-}, D64^2 do")
+    print("  NOT commute on this block -- they cannot even in principle share an")
+    print("  eigenbasis; (2) 'remainder' (:=D64^2-F_{S^-}) is NOT a scalar multiple")
+    print("  of Id here -- the claim 'R/4=Scal/4=5/2' as a clean, separately-")
+    print("  identifiable piece of this decomposition was NEVER independently")
+    print("  verified in this round and is likely not correct as stated; isolating")
+    print("  a genuine nabla*nabla and R/4 (as opposed to the combined 'remainder')")
+    print("  would require additional work NOT done this round.")
+    print("  WHAT SURVIVES: F_{S^-} is a genuine, well-defined, Hermitian curvature")
+    print("  endomorphism with the closed-form derivation above, spectrum")
+    print("  {1/6:15,-5/2:1} on the full 16-dim fibre -- this IS the explicit")
+    print("  spectral computation the preprint's L4A section asks for. Whether")
+    print("  its -5/2 eigenvalue bears any specific relationship to R/4 or to the")
+    print("  D^2 zero mode is NOT established by this round's work.")
 
 
 if __name__ == "__main__":
