@@ -57,7 +57,7 @@ types via the m-direction action rho_7(e_r). Which piece(s) actually
 carry Round 21's observed type-mixing is an empirical question, settled
 below by direct computation -- not assumed.
 
-TWO DEAD ENDS LOGGED IN decision.md (both fixed before this version):
+FOUR DEAD ENDS LOGGED IN decision.md (all fixed before this version):
 (1) an earlier draft tested only the domain-index-0 (phi_2) SLICE of
 D^2(singlet_1) and concluded (wrongly) that no leakage occurs for
 singlet_1 at all -- vacuous, since Round 21's "three_i"/"threebar_i"
@@ -70,8 +70,27 @@ assumption) and failed its own decisive assert with a uniform 4/3
 discrepancy at exactly one row per non-singlet domain index -- traced
 via a 4-step bisection (single-application check -> T_A(T_A(w)) isolated
 from T_B -> direct bracket-vs-table comparison) to the sign mismatch
-documented above. This version has both fixes applied and is the one
-that passes.
+documented above. (3) TWO INDEPENDENT REVIEWS (reviewer + context-blind
+skeptic) both caught that "su3_curvature_term is individually type-
+preserving" was verified VACUOUSLY: su3_curvature_term is IDENTICALLY
+ZERO on singlet_1 (not merely off-type-clean), a structural fact true
+for ANY singlet-supported input regardless of correctness (su(3)
+generators never touch the SU(3)-isolated phi_2 direction) -- so the
+"VERIFIED" label on that specific sub-claim overstated what was tested.
+Fixed by STEP 5 below: a second test input where su3_curvature_term is
+genuinely nonzero (confirmed first via a fully-symbolic-generic-input
+sanity check, then scanned across all 16 of Round 21's basis elements --
+6 of the 16 give a genuinely nonzero su3_curvature_term; three_5 was
+picked as the case with the most nonzero entries). (4) the FIRST version
+of STEP 5 itself had a self-caught bug: its "off-type" filter used
+`k.startswith("three")`, which also matches "threebar_*" as a prefix
+(both strings literally start with the same 5 characters) -- silently
+UNDER-counting cross-isotypic leakage by misclassifying genuine "3bar"
+leakage as "same type, different copy". Fixed to `k.startswith("three_")`
+(with the trailing underscore, which "threebar_*" does not have); the
+corrected run found three_5 DOES leak into threebar_1/threebar_2 (a new,
+genuine cross-isotypic finding, not merely a repeat of singlet_1's).
+This version has all four fixes applied and is the one that passes.
 
 Evidence markers: every numeric claim is re-computed and asserted in
 main() below ([VERIFIED-tool] on run).
@@ -320,24 +339,93 @@ def main():
     print(f"  (torsion + mixed_AB) off-type == full off-type, EXACTLY? {joint == full_offtype}")
 
     print("\n" + "=" * 70)
+    print("STEP 5: NON-VACUOUS exercise of su3_curvature_term on a domain-'3'")
+    print("input (three_5) -- singlet_1 structurally forces su3_curv to zero,")
+    print("so STEP 3/4's 'type-preserving' verdict for it was untested there.")
+    print("=" * 70)
+    three5_idx = labels.index("three_5")
+    w_three5_cols = basis_w[three5_idx]
+    ground_truth_3 = d7_apply(d7_apply(w_three5_cols, D64), D64)
+    total_3, parts_3 = reconstruct_D2_full(w_three5_cols, Ms, D64, T, curv_h)
+    diff_3 = sp.simplify(flatten(total_3) - flatten(ground_truth_3))
+    print(
+        f"  sum of 5 pieces == D^2(three_5), full 448-dim, EXACTLY? "
+        f"{diff_3 == sp.zeros(7 * N64, 1)}"
+    )
+    assert diff_3 == sp.zeros(7 * N64, 1), "5-piece decomposition does NOT reproduce D^2(three_5)"
+
+    su3_curv_3_nonzero = any(x != 0 for x in flatten(parts_3["su3_curv"]))
+    print(
+        f"  su3_curvature_term(three_5) genuinely nonzero somewhere (real exercise, "
+        f"not structurally forced to 0 like on singlet_1)? {su3_curv_3_nonzero}"
+    )
+    assert su3_curv_3_nonzero, (
+        "su3_curvature_term is STILL identically zero on a domain-'3' input -- "
+        "the type-preservation claim remains untested, investigate further"
+    )
+
+    full_coeffs_3 = extract_coeffs(ground_truth_3, "D^2(three_5) full")
+    # "off-type" here = crosses SU(3)-ISOTYPIC boundary (3 -> 1 or 3 -> 3bar);
+    # other three_i (i!=5) coefficients are SAME isotypic type, different
+    # multiplicity copy -- Schur's lemma does not forbid mixing copies within
+    # one isotypic block, so those are NOT off-type in Round 21's sense.
+    full_offtype_3 = {k: v for k, v in full_coeffs_3.items() if not k.startswith("three_")}
+    print(f"  Full D^2(three_5) coefficients: {full_coeffs_3}")
+    print(f"  Off-type part (crosses isotypic block, singlet_*/threebar_*): {full_offtype_3}")
+
+    per_part_offtype_3 = {}
+    for name, vecs in parts_3.items():
+        c = extract_coeffs(vecs, f"part[{name}](three_5)")
+        offtype = {k: v for k, v in c.items() if not k.startswith("three_")}
+        per_part_offtype_3[name] = offtype
+        print(f"  part[{name:10s}] off-type: {offtype}")
+
+    for name in ("casimir", "termB_sq", "su3_curv"):
+        assert not per_part_offtype_3[name], (
+            f"part[{name}] has NONZERO off-isotypic-type content on three_5 -- "
+            "expected type-preserving, contradicts the singlet_1 finding"
+        )
+    print("  casimir, termB_sq, su3_curv: all STILL have ZERO off-isotypic-type")
+    print("  coefficients on three_5 -- NOW a genuine check (su3_curv is nonzero")
+    print("  overall on this input, so its off-type-cleanliness is real evidence).")
+
+    joint_3 = {}
+    for k in set(per_part_offtype_3["torsion"]) | set(per_part_offtype_3["mixed_AB"]):
+        v = per_part_offtype_3["torsion"].get(k, 0) + per_part_offtype_3["mixed_AB"].get(k, 0)
+        if sp.simplify(v) != 0:
+            joint_3[k] = sp.simplify(v)
+    assert joint_3 == full_offtype_3, (
+        "TORSION+MIXED_AB joint off-type coefficients do not match the full D^2's on three_5"
+    )
+    print(
+        f"  (torsion + mixed_AB) off-type == full off-type on three_5, EXACTLY? "
+        f"{joint_3 == full_offtype_3}"
+    )
+
+    print("\n" + "=" * 70)
     print("CONCLUSION")
     print("=" * 70)
     print("  D_7^2 = CASIMIR + D64-SQUARED + SU(3)-CURVATURE + TORSION + MIXED_A-B")
-    print("  verified EXACTLY over the FULL 448-dim (7-domain-index) W-space object")
-    print("  D^2(singlet_1) -- not just its domain-index-0 slice.")
+    print("  verified EXACTLY over the FULL 448-dim (7-domain-index) W-space object,")
+    print("  on TWO independent test inputs: domain-singlet (singlet_1) and")
+    print("  domain-'3' (three_5) -- not just a slice, not just one input regime.")
     print("  CASIMIR, D64-SQUARED, and SU(3)-CURVATURE are individually and exactly")
-    print("  type-preserving (zero off-type coefficients each). TORSION and MIXED_A-B")
-    print("  are each individually NONZERO off-type but neither alone matches the")
-    print("  full leakage; their SUM matches Round 21's original threebar_1=2i/3,")
-    print("  threebar_2=2i/3 finding EXACTLY. This refines (and matches the shape of)")
-    print("  Round 21's own prediction of a Nomizu cross-term 'schematically")
-    print("  -sum_p[Z_p.Lambda_p + Lambda_p.Z_p + Lambda_p^2]' -- TORSION is the")
-    print("  Lambda_p^2-type piece (from T_A squared), MIXED_A-B is the")
-    print("  Z_p.Lambda_p+Lambda_p.Z_p-type piece (from T_A.T_B+T_B.T_A) -- both")
-    print("  genuinely new beyond canonical-Casimir+Scal/4+R^E, and TOGETHER (not")
-    print("  individually) they are the explicitly-derived, quantitatively-verified")
-    print("  carrier of the type-mixing that obstructs the canonical-Casimir")
-    print("  Weitzenbock identity.")
+    print("  type-preserving on BOTH inputs (zero off-isotypic-type coefficients each);")
+    print("  on three_5 this is a NON-VACUOUS check, since su3_curvature_term is")
+    print("  genuinely nonzero there (unlike on singlet_1, where it is structurally")
+    print("  forced to 0 regardless of correctness -- a gap the first review round")
+    print("  caught and this STEP 5 closes). TORSION and MIXED_A-B are each")
+    print("  individually NONZERO off-type on both inputs but neither alone matches")
+    print("  the full leakage; their SUM matches it EXACTLY on both.")
+    print("  Schematic identification (NOT independently verified, offered as a")
+    print("  natural reading only): TORSION arises from T_A squared (matching the")
+    print("  shape of a 'Lambda_p^2'-type term); MIXED_A-B arises from")
+    print("  T_A.T_B+T_B.T_A (matching the shape of a 'Z_p.Lambda_p+Lambda_p.Z_p'")
+    print("  term) -- consistent with, but not a proof of, Round 21's schematic")
+    print("  prediction shape.")
+    print("  SCOPE: verified on two specific test vectors (singlet_1, three_5) out")
+    print("  of F's 6 singlets / 5 'three' copies / 5 'threebar' copies -- NOT yet")
+    print("  a general theorem over all of V_7's multiplicity space.")
 
 
 if __name__ == "__main__":
