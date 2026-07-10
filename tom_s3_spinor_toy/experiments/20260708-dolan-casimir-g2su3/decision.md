@@ -3311,3 +3311,424 @@ needs neither Scal normalization nor the nabla*nabla_can formula import
 to hold in its fallback form. Results 1-2 keep their WEAKENED/negative-
 control status, already correctly scoped in the original docstring.
 No changes to the cross-terms derivation path recommended above.
+
+---
+
+## Round 22 (2026-07-10) -- L4A continued: explicit Nomizu cross-terms
+## derived and quantitatively verified as the type-mixing carrier
+
+**User instruction:** "го вариант 1, выводи cross-terms" (proceed with
+option 1: derive the Levi-Civita vs canonical-Casimir Nomizu cross-terms
+explicitly), following Round 21's own forward-pointing docstring.
+
+**GOAL.** Round 21 proved no invariant fiber endomorphism can complete
+D^2 = nabla*nabla_can + Scal/4 + R^E, and predicted the missing piece is
+a Nomizu cross-term "schematically -sum_p[Z_p.Lambda_p + Lambda_p.Z_p +
+Lambda_p^2]". This round derives it EXPLICITLY, in closed form, entirely
+within the already-validated matrix-coefficient-section machinery, and
+verifies it reproduces the observed type-mixing quantitatively (not just
+qualitatively).
+
+**DERIVATION (script: `g2su3_nomizu_crossterms.py`).** Writing
+D_7 = TERM_A + TERM_B from Round 17's own defining formula and expanding
+D_7^2 = (TERM_A+TERM_B)^2 by hand (Clifford relations + the
+representation identity [rho_7(e_p),rho_7(e_q)]=rho_7([e_p,e_q])) splits
+D_7^2 into FIVE closed-form pieces:
+- CASIMIR (from T_A's p=q part) -- type-preserving
+- D64-SQUARED (from T_B^2) -- type-preserving, F-side only
+- SU(3)-CURVATURE (from T_A's p<q part, the su(3)-bracket half)
+- TORSION CROSS-TERM (from T_A's p<q part, the m-bracket half, using the
+  already-built torsion table T(p,q,r))
+- MIXED A-B CROSS-TERM (from T_A.T_B + T_B.T_A, an anticommutator
+  {e_p,D64} contracted against rho_7(e_p))
+
+**TWO DEAD ENDS, both caught by the project's own verification discipline
+before any claim was made (Kill Analysis below), not shipped as findings:**
+
+1. **Vacuous domain-index-0-only test.** First verification attempt
+   compared only the phi_2 (domain-index-0) slice of the reconstruction
+   against ground truth. It passed trivially and appeared to show
+   TORSION alone caused v_a/v_b's threebar leakage from Round 21's
+   "singlet_1" -- but v_a/v_b turned out to be singlets s5/s2, NOT
+   Round 21's actual "singlet_1"=s1 (F has 6 SU(3)-singlets total,
+   `build_singlets()`), and separately the domain-index-0-only slice
+   is structurally BLIND to Round 21's "three_i"/"threebar_i" basis
+   elements (which are supported ONLY on domain indices 1-6) -- so any
+   test restricted to index 0 trivially reports zero off-type
+   coefficients regardless of what the real operator does. Caught by:
+   (a) re-checking `build_singlets()`'s actual definitions against v_a/
+   v_b, (b) a direct diagnostic confirming `D^2(singlet_1)` has 2
+   nonzero F-components on EACH of domain indices 1-6, not just index 0.
+2. **Sign convention mismatch between two independently-built
+   representations.** The full 7-domain-index (448-dim) test, run with
+   the naive assumption [rho_7(e_p),rho_7(e_q)] = +rho_7([e_p,e_q]),
+   FAILED its own decisive assert with a uniform discrepancy of exactly
+   4/3 at exactly one row per non-singlet domain index (i=1..6).
+   Root-caused via a 4-step bisection (all tool-verified, not guessed):
+   (i) confirmed TERM_A+TERM_B alone exactly reproduces a SINGLE
+   application of D_7 for all 7 domain indices (rules out the
+   primitives); (ii) isolated T_A(T_A(w)) computed directly via
+   primitives vs via the algebraic casimir+su3curv+torsion split --
+   mismatch localized to the p!=q (bracket) part specifically;
+   (iii) directly compared `[rho_7(e_1),rho_7(e_2)]` (V_7's own
+   representation, Round 14, `g2su3_v7_multiplicity_dirac.py`) against
+   its reconstruction from the T(p,q,r)/curv_h(p,q,k) tables
+   (`g2su3_H_element.py`/`g2su3_appendix_a_construction.py`) as explicit
+   7x7 matrices: they are EXACT NEGATIVES of each other -- a genuine,
+   tool-confirmed convention mismatch between two independently-built
+   g2 representations, the same class of issue
+   `g2su3_appendix_a_construction.py`'s own pre-existing
+   `BRACKET_SIGN=-1` comment already flags for a DIFFERENT pairing.
+   Fix: drop the leading minus sign in `su3_curvature_term` and
+   `torsion_cross_term` (the two minus signs -- one from the p<q
+   expansion, one from the convention mismatch -- cancel).
+
+**RESULT (after the fix, script exits 0, all asserts pass,
+[VERIFIED-tool]):**
+- STEP 2 (decisive): sum of all 5 pieces == D^2(singlet_1) EXACTLY,
+  over the FULL 448-dim (7-domain-index) object -- not a projection, not
+  a slice.
+- STEP 3/4: extracting coefficients via Round 21's own 16-dim basis
+  (reused unmodified): CASIMIR, D64-SQUARED, and SU(3)-CURVATURE are
+  each INDIVIDUALLY and EXACTLY type-preserving (zero off-type
+  coefficients). TORSION alone gives `{threebar_2: -4i/3}` and
+  MIXED_A-B alone gives `{threebar_1: 2i/3, threebar_2: 2i}` -- NEITHER
+  alone matches Round 21's original leakage -- but their SUM gives
+  EXACTLY `{threebar_1: 2i/3, threebar_2: 2i/3}`, matching Round 21's
+  Result 3 finding to the letter.
+
+**Original hypothesis (torsion alone) tested and FALSIFIED; corrected
+finding is more precise, and matches the SHAPE of Round 21's own
+prediction better than the original hypothesis did:** Round 21's
+docstring predicted "schematically -sum_p[Z_p.Lambda_p + Lambda_p.Z_p +
+Lambda_p^2]" -- THREE terms, not one. TORSION is the Lambda_p^2-type
+piece (from T_A squared); MIXED_A-B is the Z_p.Lambda_p+Lambda_p.Z_p-type
+piece (from T_A.T_B+T_B.T_A). The corrected result recovers exactly this
+two-piece (three-term) structure, not a single-term one.
+
+**What this establishes for L4A:** the Weitzenbock identity's correct
+form on this multiplicity space is now EXPLICIT and closed-form:
+  D_7^2 = [Scal/4 + nabla*nabla_can]  +  [SU(3)-CURVATURE]
+        + [TORSION CROSS-TERM]  +  [MIXED A-B CROSS-TERM]
+with every piece an explicit, computable operator built from
+already-validated primitives (rho7_ep, rho7_nuk, T-table, curv_h-table,
+D64, Clifford left-mult). The "R^E" of the ORIGINAL Weitzenbock identity
+is not a single fiber endomorphism but the SUM of SU(3)-CURVATURE +
+TORSION + MIXED_A-B -- genuinely NOT reducible to a pointwise fiber
+operator alone (consistent with, and now explaining constructively,
+Round 21's impossibility theorem). L4A's actual ask (F_{S^-} spectral
+data) requires assembling this full operator over the SU(3)-singlet
+domain block and diagonalizing it -- the ingredients now all exist and
+are individually verified; the assembly + diagonalization is the natural
+next step, NOT YET DONE this round (scope discipline: this round's
+claim is the closed-form derivation + its quantitative verification on
+ONE domain-singlet test case, not yet the full spectral computation).
+
+**Kill Analysis:**
+- KILLED: the "torsion alone carries the leakage" hypothesis (falsified
+  directly, not merely unconfirmed); the domain-index-0-only test
+  methodology (shown vacuous for THIS class of question; still valid
+  for OTHER questions like Round 17's original single-application
+  checks, which never claimed to test off-type content).
+- SURVIVED: the overall 5-piece algebraic decomposition (exact, once
+  the sign fix is applied); Round 21's Result 3 finding itself
+  (re-derived independently via a completely different route -- direct
+  term-by-term construction rather than coefficient-extraction on the
+  full D^2 -- and matches to the letter, a strong independent
+  cross-check of Round 21, not just a consequence of it); every
+  already-existing primitive (rho7_ep, T-table, curv_h-table, D64,
+  clifford_left_64) -- none needed modification, only correct combination.
+- OPENED: the explicit closed-form Weitzenbock identity above; a natural
+  path to L4A's actual spectral ask (assemble + diagonalize the full
+  4-term operator on the singlet block, extending to "3"/"3bar" blocks);
+  a NEW independent recomputation ROUTE for rho=14's flagged sign
+  (same TERM_A/TERM_B decomposition technique applies verbatim to V_14,
+  not yet attempted).
+
+**Review status:** reviewer + context-blind skeptic dispatched on
+g2su3_nomizu_crossterms.py; verdicts to be appended in a follow-up
+commit, per the same Step 8a discipline as Round 21.
+
+**L4A status: still OPEN, advanced further** -- from "a diagnosed
+structural obstruction plus a concrete derivation path" (Round 21's
+close) to "the derivation is done, closed-form, and quantitatively
+verified on one test case; only the spectral assembly step remains."
+preprint.tex NOT touched this round.
+
+---
+
+## Round 22 -- Reviewer + Skeptic verdicts (Step 8a) and STEP 5 fix
+
+Both agents ran independently. **Reviewer: `NEEDS_WORK`, severity P1**
+(executed the file, confirmed all printed numbers matched this doc
+character-for-character). **Skeptic: `WEAKENED`** (no execution access
+this pass, hand-traced instead; explicitly marked numeric inputs
+`[INFERRED]`, consistent with its own prior-round discipline).
+
+**Both independently converged on the SAME P1/CHALLENGE finding** (a
+strong signal it is real, not reviewer noise): the docstring's claim
+that "SU(3)-CURVATURE is individually type-preserving... settled below
+by direct computation -- not assumed" was tested VACUOUSLY. On the only
+input used (singlet_1), `su3_curvature_term` is not merely off-type-
+clean but IDENTICALLY ZERO -- a structural fact true for ANY singlet-
+supported input (su(3) generators never touch the SU(3)-isolated phi_2
+direction, established Round 17), independent of whether the function
+is even implemented correctly. The "VERIFIED" label given equal
+confidence to this sub-claim as to the genuinely-tested torsion/mixed_AB
+pieces was an overclaim -- the same class of gap the file's own dead-end
+#1 (index-0-only slice) had already caught for a DIFFERENT piece, but
+this one slipped through.
+
+**Other, non-blocking findings from both reviews (addressed by response,
+not by code change):**
+- Skeptic Target 3: STEP 2 (sum-of-5-pieces-equals-ground-truth) is a
+  *soundness check* on the derivation's bookkeeping (necessarily true
+  once the algebra is right), not itself the novel content -- the real
+  new information is STEP 3/4 (which pieces carry which off-type
+  coefficients). **Response: accepted, reflected in this write-up's own
+  framing; no code change needed, this was already how the file's own
+  STEP labels were organized.**
+- Skeptic Target 4: the schematic identification "TORSION <-> Lambda_p^2,
+  MIXED_A-B <-> Z_p.Lambda_p+Lambda_p.Z_p" (matching Round 21's predicted
+  shape) is **post-hoc** -- asserted by which algebraic step each piece
+  came from, not independently verified against an explicit Lambda_p
+  construction. **Response: accepted; the CONCLUSION block's wording was
+  softened to explicitly say "NOT independently verified, offered as a
+  natural reading only."**
+- Skeptic Target 5 / reviewer P2: the CONCLUSION drifted toward general
+  framing without a "verified on singlet_1 only" qualifier directly
+  attached. **Response: fixed** -- CONCLUSION now states explicit scope
+  ("verified on two specific test vectors... NOT yet a general theorem").
+- Reviewer P2s (redundant `M_cas` recompute per loop iteration, inline
+  16-dim-basis-construction duplication with Round 21's own script,
+  missing standalone regression assert for the commutator-sign fact):
+  **accepted as documented limitations, not fixed this round** -- none
+  affect correctness, and the basis-construction duplication is a
+  pre-existing pattern from Round 21 itself, not introduced here.
+
+**Fix for the P1 (STEP 5, new):** added a second, genuinely non-vacuous
+test input. Confirmed first that `su3_curvature_term` is NOT identically
+zero as an operator (a fully-symbolic generic 7-tuple input gives 48
+nonzero entries at domain index 1) -- so the function itself is fine,
+only the CHOICE of test vector was degenerate. Scanned all 16 of Round
+21's basis elements: `su3_curvature_term` is identically zero on ALL 6
+singlets and on 2 of the 5 "three"/"threebar" copies each (three_1,
+three_3, threebar_1, threebar_3), but genuinely nonzero on the other 6
+(three_2/4/5, threebar_2/4/5) -- itself a notable, unexplained structural
+pattern, not investigated further this round (out of scope). Picked
+`three_5` (most nonzero entries: 12) as the new test input.
+
+**A SECOND self-caught bug, found while building STEP 5:** the first
+version of STEP 5's "off-type" filter used `k.startswith("three")` to
+mean "same isotypic type as the three_5 input, exclude from leakage
+count" -- but `"threebar_1".startswith("three")` is ALSO `True` (both
+labels share the same 5-character prefix), so the filter silently
+misclassified genuine "3 -> 3bar" cross-isotypic leakage as "same type,
+different copy" and reported an empty off-type set. Caught by reading
+the RAW (unfiltered) `full_coeffs_3` printout before trusting the
+filtered result -- it showed nonzero `threebar_1`/`threebar_2`
+coefficients that the filtered `full_offtype_3` had silently dropped.
+Fixed: `k.startswith("three_")` (trailing underscore, which "threebar_*"
+does not have).
+
+**Corrected STEP 5 result (script re-run clean after both fixes, exit 0,
+all asserts pass):**
+- Sum of 5 pieces == D^2(three_5) EXACTLY, full 448-dim (second
+  independent confirmation of the whole decomposition's soundness,
+  addressing skeptic's Target 1 residual concern about STEP 2 only
+  being tested on one input regime).
+- `su3_curvature_term(three_5)` genuinely nonzero (real exercise, not
+  structurally forced to 0).
+- Full `D^2(three_5)` coefficients: `{three_5: 8/3, threebar_1: -2i/3,
+  threebar_2: 2i/3}` -- a NEW, genuine cross-isotypic leakage finding
+  (three_5 leaks into threebar_1/threebar_2), distinct from and not a
+  repeat of singlet_1's leakage.
+- `casimir`, `termB_sq`, `su3_curv` STILL have exactly zero off-type
+  coefficients on three_5 -- now a genuine, non-vacuous confirmation
+  (su3_curv's overall output IS nonzero here, but its off-isotypic-type
+  part is exactly zero).
+- `torsion` + `mixed_AB` jointly match the full off-type coefficients
+  exactly on three_5 too (`{threebar_1: -2i/3, threebar_2: 2i/3}`),
+  same pattern as singlet_1.
+
+**Response matrix (FL Step 8a):**
+| Concern | Response |
+|---|---|
+| su3_curv "type-preserving" verified vacuously (reviewer P1 + skeptic Target 2, CONFIRMED by both) | **Fixed** -- STEP 5 added, genuinely nonzero test case, re-verified clean |
+| STEP 5's own off-type filter bug (self-caught during the fix) | **Fixed** -- `"three"` -> `"three_"` |
+| Torsion<->Lambda_p^2 schematic mapping is post-hoc (skeptic Target 4) | **Accepted, softened wording** -- explicit "not independently verified" caveat added |
+| CONCLUSION lacked explicit scope qualifier (skeptic Target 5, reviewer P2) | **Fixed** -- explicit scope line added |
+| STEP 2 is a soundness check, not the novel content (skeptic Target 3) | **Accepted framing, no code change** |
+| Redundant M_cas recompute, basis-construction duplication, missing standalone commutator-sign assert (reviewer P2s) | **Accepted as documented limitations** -- non-blocking, not fixed this round |
+
+**Net effect:** the headline claim is now verified on TWO independent,
+structurally different test inputs (a domain-singlet and a domain-"3"),
+with the previously-vacuous su3_curv sub-claim now genuinely exercised
+on the second. Two additional bugs were self-caught in the process of
+addressing the review (identically-zero test input; a prefix-collision
+filter bug), both fixed and re-verified. This is the fourth and fifth
+dead-end this round (bringing the total to four documented in the
+file's own docstring, per the "FOUR DEAD ENDS" section) -- consistent
+with, not a departure from, this whole project's established pattern of
+treating self-caught errors as evidence the verification discipline is
+working, not as embarrassments to hide.
+
+---
+
+## Round 22 -- Second review round (Step 8a iteration 2/3, via Workflow)
+
+Dispatched reviewer + context-blind skeptic in parallel via the Workflow
+tool on commit 8ea4cd7. **Reviewer's agent run returned an empty result**
+(no final answer produced -- a tool/agent-level failure, not a finding;
+confirmed by reading the workflow's own journal.jsonl, which showed
+`{"result":""}` for that agent). Not re-run immediately; instead the
+skeptic's findings (which DID return, in full) were addressed first
+since re-running review on soon-to-change code would waste the cycle.
+
+**Skeptic verdict: `WEAKENED`.** Confirmed the P1 fix from iteration 1
+is genuine, not cosmetic (Target 1: CONFIRMED-REAL -- su3_curvature_term
+is structurally capable of being nonzero on three_5, no mechanism forces
+it to 0 there the way phi_2's row/col-0 isolation forces it on
+singlet_1). Confirmed the self-caught filter bug had real consequences
+(Target 3: CONFIRMED-REAL -- `"threebar_1".startswith("three")` is
+genuinely `True` in Python; the unfixed filter would have silently
+reported "three_5 doesn't leak" when it does). Confirmed the CONCLUSION's
+scope statement is honest (Target 5: CONFIRMED-REAL).
+
+**Two new, real findings (both WEAKENED, neither fatal):**
+- **Target 2 -- the "torsion+mixed_AB joint match" is ARITHMETIC
+  NECESSITY, not independent evidence.** Given STEP 2's exact-sum assert
+  (5 pieces sum to ground truth) PLUS the 3 individual off-type-zero
+  claims (casimir, termB_sq, su3_curv), the joint match
+  `full_offtype == torsion_offtype + mixed_AB_offtype` follows by pure
+  arithmetic (subtract 3 zeros from the total, whatever remains is by
+  definition the sum of the other two). The genuinely NEW, independent
+  content per test input is 4 claims (STEP 2's soundness + 3 zero-
+  claims), not the "6 confirmations" the CONCLUSION's tone implied.
+  **Response: accepted, FIXED in CONCLUSION wording** (explicit note
+  added: "given STEP 2's exact-sum assert plus the 3 individual zero-
+  claims, this joint match is ARITHMETIC NECESSITY, not additional
+  independent evidence").
+- **Target 4 -- three_5 was picked as "most nonzero entries" among 6
+  candidates (out of 16), an N=2-total-tests scope with a favorably-
+  biased selection.** Selection direction favors catching leaks (more
+  nonzero surface area = more chances for a bug to show), but a subtle
+  bug manifesting only in a cancellation-heavy regime could in
+  principle survive both of the 2 tested cases. Skeptic's own
+  recommendation: "run all 6 nonzero cases + 1 null-control... cheap,
+  machinery already built." **Response: FIXED, more thoroughly than
+  recommended** -- STEP 6 added, checking casimir/termB_sq/su3_curv
+  off-type-cleanliness on ALL 16 of Round 21's basis elements (not just
+  6+1=7). Result: all 16 pass, closing the selection-bias concern
+  completely for this specific 3-piece sub-claim (the full 5-piece
+  decomposition including torsion/mixed_AB remains verified on 2 inputs
+  only -- STEP 6 deliberately scoped to the cheaper 3-function check,
+  not a 16x repeat of the expensive full ground-truth comparison).
+
+**Response matrix (FL Step 8a, iteration 2):**
+| Concern | Response |
+|---|---|
+| Target 2: joint match framed as extra evidence | **Fixed** -- CONCLUSION now explicitly states arithmetic necessity |
+| Target 4: N=2 with favorable selection | **Fixed** -- STEP 6, all 16 basis elements checked, all pass |
+| Target 1, 3, 5 | **Confirmed by skeptic as already correct, no change needed** |
+| Reviewer agent empty result | **Deferred to iteration 3** -- re-dispatching reviewer (and a fresh skeptic pass, since the code changed again) on the STEP-6-updated version |
+
+**Script re-run after STEP 6, exit 0, all 16 basis elements pass:**
+singlet_1..6, three_1..5, threebar_1..5 -- casimir/termB_sq/su3_curv
+off-type-clean on every one, no exceptions.
+
+---
+
+## Round 22 -- Third and FINAL review round (Step 8a iteration 3/3, FL cap)
+
+Dispatched skeptic via Workflow and reviewer via Workflow (reviewer
+returned empty AGAIN -- second consecutive empty result specifically
+for `agentType: 'reviewer'` inside the Workflow tool, while the same
+agent type worked cleanly via the direct Agent tool in iteration 1;
+looks like a Workflow-layer quirk, not a content problem). Re-dispatched
+reviewer via the direct Agent tool (the channel that worked before) as
+a third attempt, in parallel with processing the skeptic's already-
+returned verdict.
+
+**Skeptic verdict: `CONFIRMED-REAL`, explicit recommendation: "Close
+review. Do not open iteration 4."**
+- Target 1 (STEP 6's `own_type_prefix` classifier -- does it repeat
+  iteration 1's "three"/"threebar" prefix-collision bug?): CONFIRMED-
+  REAL, no bug. Hand-traced all 16 labels against the 3-way classifier
+  (`"singlet"`, `"three_"`, `"threebar_"`) -- the asymmetric prefixes
+  (singlet has no trailing underscore, the other two do) are safe for
+  this specific 16-label set (neither three_* nor threebar_* starts
+  with "singlet"; each of the other two's trailing underscore correctly
+  excludes the other).
+- Target 2 (is "16/16 off-type-clean" fully non-vacuous?): WEAKENED,
+  real but minor. Independently re-derived (not just citing iteration
+  2's own enumeration): su3_curvature_term is structurally IDENTICALLY
+  ZERO on 10 of 16 elements (all 6 singlets -- phi_2's row/col-0
+  isolation applies to rho7_nuk too, same mechanism as casimir's
+  singlet-zero -- plus three_1/three_3/threebar_1/threebar_3), so
+  STEP 6's per-element "clean" verdict is TRIVIALLY true for su3_curv
+  on those 10, and only genuinely empirically load-bearing on the
+  remaining 6. casimir is similarly trivial-on-singlets (same
+  structural reason) but genuinely nonzero-and-tested on the 10
+  three/threebar cases; termB_sq's "off-type-clean" is close to
+  structurally guaranteed by construction (D64 acts slot-by-slot,
+  preserving support pattern) regardless of value, so its check is
+  largely a wiring sanity check, not a deep empirical test. Net:
+  the TRUE non-vacuous test count for the one function where this
+  distinction matters most (su3_curv) went from iteration-1's 0, to
+  iteration-2/STEP-5's 1 (three_5), to STEP 6's 6 -- a real
+  strengthening, just not literally "16 independent confirmations" as
+  the aggregate framing could be misread.
+- Target 3 (arithmetic-necessity CONCLUSION wording): CONFIRMED-REAL,
+  correctly and clearly stated -- properly hedged, does not walk back
+  the real finding, correctly identifies what IS and is NOT
+  independently novel.
+- Target 4 (STEP 6's "closes the N=2/selection-bias concern" claim):
+  WEAKENED, minor -- directionally correct (materially reduces the
+  concern) but "no longer just 2 favorable cases" reads stronger than
+  the true count (2 -> 6 non-vacuous for su3_curv specifically, not
+  2 -> 16 uniformly across all three functions).
+- **True kill condition (per FL Step 8a): NOT MET.** Core predicate
+  intact: 5-piece decomposition sums exactly to ground truth on 2
+  structurally different inputs; 3 pieces individually off-type-clean
+  on all 16 basis elements (true, even if the DEPTH of evidence per
+  element varies by function).
+
+**Response (accepted, NOT another code-fix cycle -- FL cap is 3
+iterations, already reached, and the skeptic's own recommendation is
+to close):**
+| Concern | Response |
+|---|---|
+| STEP 6 conflates trivially-zero-clean with genuinely-nonzero-clean per element | **Accepted as documented limitation** (recorded here). True non-vacuous count for su3_curv specifically: 6 of 16 (three_2/4/5, threebar_2/4/5), not 16. casimir: nonzero-and-tested on 10 of 16 (three_*, threebar_*), structurally-trivial on the other 6 (singlets). termB_sq: off-type-clean is close to a structural guarantee (D64 preserves domain-slot support by construction) rather than a deep empirical test on any of the 16 -- more a wiring check than new evidence. |
+| "Closes the N=2/selection-bias concern" phrasing slightly overstates uniformity across the 3 functions | **Accepted as documented limitation** -- true direction, imprecise magnitude; if ever cited in a preprint, state the per-function non-vacuous counts explicitly (su3_curv: 6/16; casimir: 10/16 nonzero + Schur-structural on the rest; termB_sq: structural by construction) rather than a single "16/16" headline. |
+
+**L4A Round 22 status: CLOSED for this round.** The explicit closed-form
+Weitzenbock identity (D_7^2 = Scal/4+nabla*nabla_can + su3-curvature +
+torsion + mixed_A-B) is derived, and its type-preservation/type-mixing
+structure is verified with genuine (non-vacuous where it matters most --
+su3_curv) empirical content on 2 fully-tested inputs plus a 16-element
+sweep for the narrower 3-piece sub-claim. Three review iterations
+completed (FL Evaluator-Optimizer cap reached); no further code-fix
+cycles this round. Next steps (spectral assembly for L4A's actual
+F_{S^-} ask; independent rho=14 cross-check via the same technique) are
+natural follow-ups, not required to close this round's claim.
+preprint.tex NOT touched this round.
+
+**Reviewer verdict (iteration 3/3, direct Agent-tool dispatch after two
+Workflow-layer empty results -- content confirmed, not a Workflow
+finding): `LGTM`, severity P2.** Independently re-derived the
+vacuous/genuine split for su3_curv (10/16 identically zero, 6/16
+genuinely nonzero) via its own diagnostic, matching the skeptic's
+finding exactly and independently confirming `casimir`/`termB_sq` are
+genuinely nonzero-tested on all 16 (not affected by the same issue --
+narrows the concern to su3_curv's share of the headline number only, as
+the skeptic also concluded). One new, non-blocking, forward-looking
+note: the `"singlet"` prefix (no trailing separator, unlike `"three_"`/
+`"threebar_"`) doesn't apply the same trailing-underscore discipline
+the iteration-1 fix established, though no current label collides with
+it -- latent fragility for future rounds, not a present bug.
+
+**Both independent reviews (skeptic: CONFIRMED-REAL, explicit "close
+review, do not open iteration 4"; reviewer: LGTM/P2) agree on the same
+version.** FL Step 8a review is CLOSED for Round 22. No further code
+changes this round.
