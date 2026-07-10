@@ -403,6 +403,47 @@ def main():
     )
 
     print("\n" + "=" * 70)
+    print("STEP 6: close the N=2 selection-bias gap (skeptic Target 4, 2nd review")
+    print("round) -- check casimir/termB_sq/su3_curv off-type-clean on ALL 16")
+    print("basis elements, not just the 2 already tested (one favorably-selected")
+    print("for maximum su3_curv nonzero-ness). Cheaper than full STEP 2/5")
+    print("(reuses the same 3 functions, skips torsion/mixed_AB/ground-truth).")
+    print("=" * 70)
+
+    def own_type_prefix(label):
+        if label.startswith("singlet"):
+            return "singlet"
+        if label.startswith("threebar"):
+            return "threebar_"
+        return "three_"
+
+    all_clean = True
+    for w_cols, label in zip(basis_w, labels):
+        prefix = own_type_prefix(label)
+        offtype_found = {}
+        for fn, name in (
+            (casimir_term, "casimir"),
+            (lambda w, i: termB_squared(w, i, D64), "termB_sq"),
+            (lambda w, i: su3_curvature_term(w, i, Ms, curv_h), "su3_curv"),
+        ):
+            vecs = [sp.simplify(fn(w_cols, i)) for i in range(7)]
+            c = extract_coeffs(vecs, f"part[{name}]({label})")
+            offtype = {k: v for k, v in c.items() if not k.startswith(prefix)}
+            if offtype:
+                offtype_found[name] = offtype
+        if offtype_found:
+            all_clean = False
+            print(f"  {label}: OFF-TYPE LEAK in {offtype_found}")
+        else:
+            print(f"  {label}: casimir/termB_sq/su3_curv all off-type-clean")
+    assert all_clean, (
+        "casimir/termB_sq/su3_curv are NOT off-type-clean on all 16 basis elements -- "
+        "the type-preservation claim does not generalize past the 2 originally-tested cases"
+    )
+    print("  ALL 16 basis elements: casimir/termB_sq/su3_curv off-type-clean, VERIFIED")
+    print("  (closes the N=2/selection-bias concern -- no longer just 2 favorable cases)")
+
+    print("\n" + "=" * 70)
     print("CONCLUSION")
     print("=" * 70)
     print("  D_7^2 = CASIMIR + D64-SQUARED + SU(3)-CURVATURE + TORSION + MIXED_A-B")
@@ -410,22 +451,31 @@ def main():
     print("  on TWO independent test inputs: domain-singlet (singlet_1) and")
     print("  domain-'3' (three_5) -- not just a slice, not just one input regime.")
     print("  CASIMIR, D64-SQUARED, and SU(3)-CURVATURE are individually and exactly")
-    print("  type-preserving on BOTH inputs (zero off-isotypic-type coefficients each);")
-    print("  on three_5 this is a NON-VACUOUS check, since su3_curvature_term is")
-    print("  genuinely nonzero there (unlike on singlet_1, where it is structurally")
-    print("  forced to 0 regardless of correctness -- a gap the first review round")
-    print("  caught and this STEP 5 closes). TORSION and MIXED_A-B are each")
-    print("  individually NONZERO off-type on both inputs but neither alone matches")
-    print("  the full leakage; their SUM matches it EXACTLY on both.")
+    print("  type-preserving -- verified on ALL 16 of Round 21's basis elements")
+    print("  (STEP 6), not just the 2 used for the full decomposition test; on")
+    print("  three_5 specifically this is additionally a NON-VACUOUS check for")
+    print("  su3_curv (genuinely nonzero there, unlike on singlet_1 where it is")
+    print("  structurally forced to 0 regardless of correctness -- the gap the")
+    print("  first review round caught and STEP 5 closes). TORSION and MIXED_A-B")
+    print("  are each individually NONZERO off-type on both full-decomposition")
+    print("  test inputs but neither alone matches the full leakage; their SUM")
+    print("  does, on both -- NOTE (2nd review round, skeptic): given STEP 2's")
+    print("  exact-sum assert plus the 3 individual zero-claims, this joint match")
+    print("  is ARITHMETIC NECESSITY, not additional independent evidence -- the")
+    print("  genuinely new content is the 3 individual zero-claims plus STEP 2's")
+    print("  soundness check, not a 4th/5th/6th 'confirmation'.")
     print("  Schematic identification (NOT independently verified, offered as a")
     print("  natural reading only): TORSION arises from T_A squared (matching the")
     print("  shape of a 'Lambda_p^2'-type term); MIXED_A-B arises from")
     print("  T_A.T_B+T_B.T_A (matching the shape of a 'Z_p.Lambda_p+Lambda_p.Z_p'")
     print("  term) -- consistent with, but not a proof of, Round 21's schematic")
     print("  prediction shape.")
-    print("  SCOPE: verified on two specific test vectors (singlet_1, three_5) out")
-    print("  of F's 6 singlets / 5 'three' copies / 5 'threebar' copies -- NOT yet")
-    print("  a general theorem over all of V_7's multiplicity space.")
+    print("  SCOPE: the FULL 5-piece decomposition (including torsion/mixed_AB)")
+    print("  is verified on two specific test vectors (singlet_1, three_5); the")
+    print("  narrower 3-piece type-preservation claim is verified on all 16 of")
+    print("  Round 21's basis elements (STEP 6) -- still NOT a general theorem")
+    print("  over all of V_7's multiplicity space (e.g. non-basis linear")
+    print("  combinations are untested).")
 
 
 if __name__ == "__main__":

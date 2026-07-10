@@ -3572,3 +3572,67 @@ file's own docstring, per the "FOUR DEAD ENDS" section) -- consistent
 with, not a departure from, this whole project's established pattern of
 treating self-caught errors as evidence the verification discipline is
 working, not as embarrassments to hide.
+
+---
+
+## Round 22 -- Second review round (Step 8a iteration 2/3, via Workflow)
+
+Dispatched reviewer + context-blind skeptic in parallel via the Workflow
+tool on commit 8ea4cd7. **Reviewer's agent run returned an empty result**
+(no final answer produced -- a tool/agent-level failure, not a finding;
+confirmed by reading the workflow's own journal.jsonl, which showed
+`{"result":""}` for that agent). Not re-run immediately; instead the
+skeptic's findings (which DID return, in full) were addressed first
+since re-running review on soon-to-change code would waste the cycle.
+
+**Skeptic verdict: `WEAKENED`.** Confirmed the P1 fix from iteration 1
+is genuine, not cosmetic (Target 1: CONFIRMED-REAL -- su3_curvature_term
+is structurally capable of being nonzero on three_5, no mechanism forces
+it to 0 there the way phi_2's row/col-0 isolation forces it on
+singlet_1). Confirmed the self-caught filter bug had real consequences
+(Target 3: CONFIRMED-REAL -- `"threebar_1".startswith("three")` is
+genuinely `True` in Python; the unfixed filter would have silently
+reported "three_5 doesn't leak" when it does). Confirmed the CONCLUSION's
+scope statement is honest (Target 5: CONFIRMED-REAL).
+
+**Two new, real findings (both WEAKENED, neither fatal):**
+- **Target 2 -- the "torsion+mixed_AB joint match" is ARITHMETIC
+  NECESSITY, not independent evidence.** Given STEP 2's exact-sum assert
+  (5 pieces sum to ground truth) PLUS the 3 individual off-type-zero
+  claims (casimir, termB_sq, su3_curv), the joint match
+  `full_offtype == torsion_offtype + mixed_AB_offtype` follows by pure
+  arithmetic (subtract 3 zeros from the total, whatever remains is by
+  definition the sum of the other two). The genuinely NEW, independent
+  content per test input is 4 claims (STEP 2's soundness + 3 zero-
+  claims), not the "6 confirmations" the CONCLUSION's tone implied.
+  **Response: accepted, FIXED in CONCLUSION wording** (explicit note
+  added: "given STEP 2's exact-sum assert plus the 3 individual zero-
+  claims, this joint match is ARITHMETIC NECESSITY, not additional
+  independent evidence").
+- **Target 4 -- three_5 was picked as "most nonzero entries" among 6
+  candidates (out of 16), an N=2-total-tests scope with a favorably-
+  biased selection.** Selection direction favors catching leaks (more
+  nonzero surface area = more chances for a bug to show), but a subtle
+  bug manifesting only in a cancellation-heavy regime could in
+  principle survive both of the 2 tested cases. Skeptic's own
+  recommendation: "run all 6 nonzero cases + 1 null-control... cheap,
+  machinery already built." **Response: FIXED, more thoroughly than
+  recommended** -- STEP 6 added, checking casimir/termB_sq/su3_curv
+  off-type-cleanliness on ALL 16 of Round 21's basis elements (not just
+  6+1=7). Result: all 16 pass, closing the selection-bias concern
+  completely for this specific 3-piece sub-claim (the full 5-piece
+  decomposition including torsion/mixed_AB remains verified on 2 inputs
+  only -- STEP 6 deliberately scoped to the cheaper 3-function check,
+  not a 16x repeat of the expensive full ground-truth comparison).
+
+**Response matrix (FL Step 8a, iteration 2):**
+| Concern | Response |
+|---|---|
+| Target 2: joint match framed as extra evidence | **Fixed** -- CONCLUSION now explicitly states arithmetic necessity |
+| Target 4: N=2 with favorable selection | **Fixed** -- STEP 6, all 16 basis elements checked, all pass |
+| Target 1, 3, 5 | **Confirmed by skeptic as already correct, no change needed** |
+| Reviewer agent empty result | **Deferred to iteration 3** -- re-dispatching reviewer (and a fresh skeptic pass, since the code changed again) on the STEP-6-updated version |
+
+**Script re-run after STEP 6, exit 0, all 16 basis elements pass:**
+singlet_1..6, three_1..5, threebar_1..5 -- casimir/termB_sq/su3_curv
+off-type-clean on every one, no exceptions.
