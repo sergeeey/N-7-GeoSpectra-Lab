@@ -4284,3 +4284,173 @@ factor emerges when comparing the properly-isolated R/4 against
 Scal=10 and against the preprint's own rho_6-parametrized convention.
 
 preprint.tex NOT touched this round.
+
+---
+
+## Round 24 (2026-07-10/11) — "чем усилить результат": preprint audit +
+## isolating nabla*nabla directly from the connection
+
+### Part A (2A): preprint integrity fix (unrelated to Round 24's physics)
+
+Re-reading preprint.tex to scope the next research direction surfaced a
+real internal inconsistency, `[VERIFIED-tool]`: `thm:yukawa-deg`
+(L796-813) was stated and proved as UNCONDITIONAL ("the unique
+positive-chirality zero mode... Then Y_vs=Y_vc=Y_sc"), and its proof
+cites "the Lichnerowicz gap (Lemma L4, §sec:lichnerowicz)" for
+`dim ker=1`. But §sec:lichnerowicz's own tag (L603) reads "(L4A, open)",
+and §sec:schur explicitly states (L706, L719, L729) "we do NOT claim
+rank=1 is proved; it is assumed" / "assumed, not proved". The paper's
+OWN open-problems section (L736-737) even acknowledges the Yukawa
+degeneracy argument "would need to be re-derived for a two-dimensional
+kernel" if the assumption is wrong — directly contradicting the
+theorem's unconditional framing three sections earlier. Fixed: rescoped
+the theorem statement, proof, abstract (L78-80), and open-problems
+section (L1167-1168) to state the L4B rank dependency explicitly instead
+of asserting it. Verified via `pdflatex` (clean compile, no errors, no
+undefined refs) before and after.
+
+### Part B (STEP D): independently isolating nabla*nabla
+
+Full derivation, claims, and kill conditions: `round24_claim.md`.
+Summary: built `nabla*nabla := -sum_p N_p^2`, `N_p := M_p(x)Id+Id(x)M_p`,
+directly from the pre-existing Levi-Civita connection operators `M_p`
+(Rounds 17-23's own `nabla_g`) — NOT back-derived as `D^2-F-Scal/4`,
+which the skeptic's FLAW 1 (see below) flagged would be circular. `S^6=
+G_2/SU(3)` naturally reductive ⇒ frame self-derivative `nabla_{e_p}e_p=0`
+⇒ this construction is the genuine Bochner Laplacian for this frame.
+Verified PSD by construction (all six `M_p` skew-Hermitian ⇒ each `N_p`
+skew-Hermitian ⇒ `-N_p^2` PSD ⇒ sum PSD); confirmed via exact eigenvalues
+`{0:1,1/3:8,2/3:6,4/3:1}` on the 16-dim Γ(S^+⊗S^-) block.
+
+**Kill-gate result:** `Delta := D64^2 - nabla*nabla - F_Sminus` is
+NON-scalar on both the 16-dim and 2-dim blocks, and stays non-scalar
+after adding Round 22's `TORSION_E`. On the 2-dim SU(3)-invariant
+subspace, `Delta = [[5/2,4/3],[4,5/2]]`. **Solid finding:** the SCALAR
+(trace-average) part of `Delta` is EXACTLY `5/2` (the preprint's nominal
+Scal/4), and the leftover `[[0,4/3],[4,0]]` is TRACE-FREE — both
+asserted exactly in sympy rationals. **Not resolved:** whether that
+trace-free residual is (i) a frame/Leibniz correction the naive 3-term
+form doesn't capture, or (ii) evidence `F_Sminus` is incomplete.
+
+### Skeptic review (FL Step 8a, 2 independent context-blind passes,
+### no arbitration needed — both converged identically)
+
+C1 (independence+PSD), C2 (non-scalarity, incl. after TORSION_E), C3
+(exact trace/traceless split) — **CONFIRMED-REAL** both passes. C4 (the
+"most likely (i) frame-correction" interpretation) — **WEAKENED** both
+passes: trace-freeness is "consistent with, not proof of"; the
+trace-shift heuristic used to favor (i) is false as a general
+discriminator; one concrete (i)-candidate (TORSION_E) was already tested
+and ruled out, which the original wording didn't acknowledge. **Fix
+applied** (per FL response matrix, Dismiss-strong-wording/Accept-weaker-
+framing): C4 rewritten as genuinely unresolved between (i)/(ii), naming
+the concrete next differentiating test (canonical-connection torsion vs
+the observed residual) — this became Round 25. Also added the explicit
+non-interpretation "does NOT establish a mechanistic link between Delta's
+scalar content and R/4" per the project's own recurring pearl
+(`feedback-numerical-coincidence-not-mechanism.md`, from this same
+session's earlier Round 23 retraction).
+
+Full pytest suite run (only Python file changed structurally isolated —
+not imported by any test): **2483 passed, 4 skipped, 1 failed**. The
+failure (`test_g79a_lambda_identity_audit::test_no_new_ambiguous_lambda_
+usage`) is confirmed `[VERIFIED-tool]` PRE-EXISTING and UNRELATED — the
+flagged files (`PHASE4E_MVP_REPORT.md`, `phase4e_s3xs6_minkowski_
+transfer.py`) live under `N-7-GeoSpectra-Lab/experiments/20260708-
+phase4e/`, one directory level ABOVE this git repo entirely (sibling to
+`tom_s3_spinor_toy`, not tracked by it) — the audit test's scan root
+extends beyond this repo's tracked tree. Not fixed here (out of scope);
+noted for separate handling.
+
+Merged: `9145917`→`83e052b`→`ea943ad` (feature/round24-nabla-isolation-
+20260710, merged --no-ff, pushed).
+
+---
+
+## Round 25 (2026-07-11) — deriving Round 24's residual from Nomizu/
+## torsion algebra, blind
+
+Full derivation, claims, and kill conditions: `round25_claim.md`. Code:
+`g2su3_round25_K_derivation.py`.
+
+**Motivation:** Round 24's C4 (post-fix) named the concrete next step —
+derive a candidate for the residual `K=[[0,4/3],[4,0]]` directly from
+invariant-frame/Nomizu/torsion algebra, BLIND (not fitted to `K`), then
+compare. `g2su3_H_element.py` (built in an earlier session, validated
+independently there) already provides exactly this: Kostant's cubic
+torsion element `H := (1/4)*sum T(i,j,k)*Z_i.Z_j.Z_k`, built purely from
+the torsion 3-form; per Agricola 2002 Theorem 3.2, at `t=1/2` (this
+project's Levi-Civita convention) the cubic-Clifford correction to `D^2`
+is exactly `-H`.
+
+**Method (every step exact, nothing fitted):** decomposed Round 23's
+previously-OPAQUE `TERM1_sq := Dslash_mat^2 (x) Id_8` via direct
+subtraction: `cubic_and_curvature_L := Dslash_mat^2 - (-sum M_p^2)`,
+tested against `-H` — found a genuine non-scalar Jac_h-type remainder
+survives (matches `g2su3_H_element.py`'s own flagged, not-yet-built
+gap, "requires full g2 structure constants beyond what's been built").
+Assembled the full exact five-piece identity for `Delta` (piece_H,
+step2_remainder, T12+T21 [previously also opaque], TORSION_E,
+cross-Casimir from the N_p^2 Leibniz expansion) and verified it against
+ground truth at the full 64x64 level before trusting any 2-dim
+restriction. Introduced `compress_2x2` (linear Gram-corrected
+projection, valid for summing pieces that individually leak outside the
+invariant subspace — as opposed to `project_2x2`'s strict endomorphism
+check, which correctly rejected `piece_H` on first attempt).
+
+**Result (genuinely blind):** `kron(-H,Id8)` alone compresses to EXACTLY
+`[[0,0],[0,0]]` on the 2-dim subspace.
+
+### Skeptic review + author follow-up (the interesting part)
+
+Two independent context-blind skeptics both confirmed C1/C2/C3/C5 but
+DISAGREED on C4: Skeptic 1 read the zero as a valid (structurally-forced
+but still informative) hypothesis-test result; Skeptic 2 called it a
+chirality-grading TAUTOLOGY — `H` is chirality-odd on the left factor,
+`w_a,w_b`'s left-support lies entirely in the even/S+ sector, so
+`kron(-H,Id8)` necessarily maps that support into the disjoint odd/S-
+sector, forcing zero regardless of what `H`'s specific torsion content
+is. Per audit-verification-gate.md ("agent's [VERIFIED] = your
+[INFERRED]"), independently reproduced Skeptic 2's own substitution
+control (swapping `H` for a generic single Clifford generator `e_1` —
+same zero, `[VERIFIED-tool]`) and went further with two more controls
+NOT run by either skeptic:
+- `kron(M_1,Id8)` (a single bivector/connection operator, CHIRALITY-
+  PRESERVING — NOT covered by Skeptic 2's chirality-flip mechanism) —
+  ALSO exactly zero, `[VERIFIED-tool]`.
+- `kron(random 8x8 matrix, Id8)` — NONZERO diagonal `[[2/3,0],[0,5]]`
+  (off-diagonal still zero, confirming that part of the tautology IS
+  universal for any `X`), `[VERIFIED-tool]`.
+
+**Conclusion:** the off-diagonal zero is a genuine, universal kron-
+structure tautology (any `X` gives zero there — RIGHT tensor index can't
+change under `kron(X,Id8)`, and `w_a,w_b` have disjoint RIGHT-support).
+The FULL zero (diagonal included) is NOT universal — H, e_1, M_1 share
+some real structural property a random matrix lacks, but this project
+has NOT identified what that property is. Net effect: Skeptic 2's
+bottom line (C4 uninformative about H specifically) is CONFIRMED and
+STRENGTHENED, but the PRECISE mechanism given (pure chirality-flip) is
+itself INCOMPLETE (doesn't explain M_1). **C4 downgraded** from "the
+actual hypothesis test" to "an inconclusive probe with an incompletely-
+understood null" — do not cite this round as evidence for or against H.
+
+**Promoted finding (the actual output of this round):** `step2_remainder`
+compresses to a NON-SCALAR diagonal `[[-1/6,0],[0,5/2]]`. Since this
+piece is, by construction, exactly what Agricola's formula assigns to
+the `t^2`-weighted Jac_h/curvature-Jacobi term `g2su3_H_element.py`
+explicitly flagged as not built — this is empirical evidence that piece
+is a real, nonzero presence, not just a theoretical possibility.
+**Concrete next step, NOT started:** derive the Jac_h term explicitly
+(requires full g2 structure constants beyond `T(i,j,k)` alone) and test
+whether it, combined with the other three still-unexplained pieces
+(T12+T21, TORSION_E, cross-Casimir), closes the gap to a clean scalar.
+
+Hard asserts added to the script for C4/C5's specific numeric values
+(durability concern raised by Skeptic 1 — printed-only values could
+silently break under a future primitive refactor without failing tests).
+
+Merged: `ea943ad`→`646ab1f`→`811cb2b` (feature/round25-K-derivation-
+20260711, merged --no-ff, pushed).
+
+preprint.tex NOT touched this round (2A's fix, above, was a separate,
+already-merged edit from earlier the same session).
