@@ -3212,3 +3212,102 @@ the Schur-argument interpretation is the piece under review.
 construction with an unexplained failure" to "a diagnosed structural
 obstruction plus a concrete derivation path with all ingredients
 already built and calibrated." preprint.tex NOT touched this round.
+
+---
+
+## Round 21 -- Reviewer + Skeptic verdicts (Step 8a, appended)
+
+Both agents ran the committed script (`python
+g2su3_weitzenbock_type_obstruction.py`, exit 0, all in-file asserts
+pass) and independently re-derived the headline arithmetic by hand.
+Skeptic given claim+code only, no session history (context asymmetry).
+
+**Reviewer verdict: `LGTM`, severity P2, iteration 1/3.**
+- Pass 1 (spec compliance): PASS -- delivers exactly what the docstring
+  promises, no scope creep, reuses Rounds 16-19 machinery via import
+  only, ruff clean.
+- Pass 2 (quality): re-derived all four headline numbers by hand, all
+  exact. Three P2 (cosmetic) findings, all fixed in this commit: garbled
+  `SCAL` comment, missing local `det(T)!=0`/`det(T2)!=0` re-assert
+  (Round 19's own `main()` has it; this file silently relied on the
+  implicit singular-matrix check inside `(WH*Wmat).inv()`), duplicate
+  import statement.
+- Pass 3 (adversarial, 6 challenges targeting the Schur/type-
+  preservation argument specifically): all 6 ACCEPT/REJECT-the-attack --
+  the "non-orthogonal basis could fake the off-type coefficient" attack
+  fails because the coefficient extraction is EXACT (residual asserted
+  zero) against a FULL-COLUMN-RANK basis, making orthogonality
+  irrelevant to uniqueness; the block-diagonal-RHS-vs-witnessed-non-
+  block-diagonal-LHS argument is a complete modus tollens, not
+  suggestive.
+
+**Skeptic verdict: `CONFIRMED-REAL` (core claim), two `WEAKENED`
+caveats (Results 1-2 framing). Could not execute code (no Bash access
+in that context) -- flagged own numeric inputs as `[INFERRED]` from
+static reading, distinct from the structural argument which is
+basis-free and needed no execution.**
+- **Result 3 (main claim): CONFIRMED-REAL, and found a STRONGER version
+  of the argument than the docstring's own Schur framing.** The real
+  reason R^E must be type-preserving isn't Schur's lemma -- it's that
+  the SU(3)-type grading lives on the DOMAIN of M=Hom_SU(3)(V_7,F), and
+  any invariant fiber endomorphism acts by POST-COMPOSITION (touches
+  only the target), which trivially cannot move a map out of its
+  domain-block. This survives every escape route tried: multiplicities
+  (copy-mixing is target-side, irrelevant to domain grading), reality/
+  3-vs-3bar conjugation (still post-composition), and nabla*nabla_can
+  itself (a special case of "scalar minus post-composition by fiber
+  Casimir", hence also domain-preserving). Independently re-derived the
+  disjoint-support argument for the off-block being genuine (not a
+  normal-equations artifact): singlet basis columns are literally zero
+  outside rows 0-63, three/threebar columns are zero on rows 0-63 --
+  D^2 of a phi_2-supported vector having nonzero support outside rows
+  0-63 cannot be manufactured by the extraction method, only by real
+  geometry.
+- **Result 1 (triangulation): WEAKENED.** Genuine content, correctly
+  scoped: the two-point agreement uniquely fixes the nabla*nabla_can
+  coefficient at alpha=1 (something Round 16's single point could not
+  do) and confirms rho-independence on the singlet DIAGONAL block --
+  but does NOT independently validate the absolute entries
+  `[[-3/2,1],[3,1/2]]`, which remain single-sourced in Scal=10 and
+  C_2(G2;7)=2 (Scal/4 appears identically on both calibration points
+  and cancels out of the agreement check). Docstring's own
+  "INTERPRETATION CAVEAT" already partially covers this; the added
+  scope note above sharpens it.
+- **Result 2 (negative control): CONFIRMED as a control.** The exact
+  `(1/3)*D^2_trivial` discrepancy signature is real but Scal-contingent
+  numerology (would not land on that clean form if Scal were
+  mis-normalized) -- correctly non-load-bearing, already hedged as a
+  negative control rather than a positive finding.
+- **Rhetoric note (non-fatal):** "small structural THEOREM" oversells
+  slightly -- more precisely "a clean, tool-verified detector of the
+  known fact that the canonical connection on nearly-Kahler S^6 is not
+  torsion-free, made concrete on the rho=7 multiplicity space."
+  Recommend keeping this framing in mind for any future write-up
+  (preprint.tex NOT touched, so no immediate action needed).
+- **Self-contained fallback offered by skeptic** (importing nothing
+  beyond Rounds 18-19's own disjoint-support facts, in case anyone ever
+  disputes the nabla*nabla_can formula import): *"D^2 of a
+  domain-singlet intertwiner has nonzero non-phi_2-domain support; no
+  zeroth-order fiber endomorphism, Scal/4, or the domain-block-diagonal
+  canonical Laplacian can produce non-phi_2-domain support from a
+  phi_2-supported map; therefore the L4A build_RE route is structurally
+  dead."* Recorded here as the fallback framing if the imported-formula
+  objection is ever raised.
+
+**Response matrix (FL Step 8a):**
+| Concern | Response |
+|---|---|
+| Garbled SCAL comment | **Fixed** (this commit) |
+| Missing det(T)/det(T2) re-assert | **Fixed** (this commit, re-ran clean) |
+| Duplicate import | **Fixed** (this commit) |
+| Result 1 absolute-value single-sourcing in Scal/C2 | **Accepted limitation** -- documented above; does not touch Result 3 |
+| "THEOREM" rhetoric slightly strong | **Accepted, noted for future write-ups** -- not changing the already-committed docstring wording, but flagging the more precise framing here for whoever drafts the eventual preprint text |
+| Non-orthogonal-basis / basis-artifact attack on off-block | **Dismissed** (skeptic + reviewer both independently confirmed: exact residual + full column rank makes extraction unique regardless of orthogonality) |
+
+**Net effect: Result 3 (the structural obstruction) is not just
+survived but STRENGTHENED post-review** -- the post-composition argument
+is more general and more robust than the original Schur framing, and
+needs neither Scal normalization nor the nabla*nabla_can formula import
+to hold in its fallback form. Results 1-2 keep their WEAKENED/negative-
+control status, already correctly scoped in the original docstring.
+No changes to the cross-terms derivation path recommended above.
