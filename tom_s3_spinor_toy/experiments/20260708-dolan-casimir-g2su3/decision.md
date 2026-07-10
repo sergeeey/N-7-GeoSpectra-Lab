@@ -3093,3 +3093,122 @@ STRONGLY SUPPORTED, not airtight.** This sub-investigation closes with a
 genuine negative result (the natural-seeming verification path doesn't
 apply here) rather than a resolution -- reported honestly rather than
 silently abandoned.
+
+## Round 21 (2026-07-10, user asked to "L4A попробуй", then chose the
+## R^E-with-new-calibration-points route, then the bug-hunt route):
+## three results, including a structural THEOREM explaining why Round
+## 16's construction could never have been debugged into working
+
+**The setup.** L4A (preprint sec:lichnerowicz) asks for spectral data of
+the curvature endomorphism F_{S^-} in the twisted Weitzenbock identity
+D^2 = nabla*nabla + Scal/4 + R^E. Round 16 built an explicit R^E and
+failed calibration (2/3 mismatch, then a 1/6 inconsistency) with only
+ONE calibration point available (rho=trivial, where nabla*nabla=0
+identically -- the skeptic's decisive objection at the time was exactly
+that this point cannot constrain the nabla*nabla coefficient). Rounds
+17-20 have since produced what Round 16 lacked: independently validated
+full multiplicity-space D^2 matrices for rho=7 and rho=14.
+
+**RESULT 1 -- triangulation (POSITIVE).** The residual
+  W := D^2 - nabla*nabla_can - Scal/4,
+with nabla*nabla_can = C_2(G2;rho) - C_2(SU(3);sigma) (the canonical-
+Casimir Laplacian used throughout Rounds 15-16) and Scal=10, evaluated
+on the SU(3)-singlet fiber block {v_a, v_b} from TWO independent
+calibration sources -- rho=trivial (D^2=[[1,1],[3,3]], nabla*nabla_can=0)
+and rho=7's singlet-domain sub-block (D^2=[[3,1],[3,5]],
+nabla*nabla_can=2) -- comes out EXACTLY IDENTICAL:
+  W|_singlet = [[-3/2, 1], [3, 1/2]].
+[VERIFIED-tool, g2su3_weitzenbock_type_obstruction.py STEPs 1-3, all
+asserted.] Honest scoping: this agreement is algebraically equivalent to
+Round 17's uniform-shift observation ({2,6}={0,4}+2), reframed as a
+statement about W -- a consistency confirmation of the framework, not a
+fully independent new measurement. Also note the agreement is
+insensitive to the Scal normalization (a Scal error shifts both W's
+equally), so what it validates is the C_2-shift structure, not Scal.
+
+**RESULT 2 -- Round 16's build_RE() is definitively NOT W (NEGATIVE,
+with a clean signature).** build_RE() on the same block gives
+[[-11/6, 2/3], [2, -1/2]]: not equal, and NOT a uniform rescaling
+(entry ratios 9/11, 3/2, 3/2, -1 -- kills the old "Interp A vs B"
+framing for good, both interpretations assumed a uniform factor).
+The discrepancy has an exact form: W - RE_computed = (1/3)*D^2|_trivial
+-- recorded as an unexplained but suggestive signature. Negative
+control: symmetrizing build_RE between the two tensor factors gives
+EXACTLY 2x the original (both orderings contribute identically on this
+block) and still fails. Components re-verified individually before the
+bug-hunt was called off: R_half's Ricci contraction still reproduces
+Agricola's own formula; spin_lift_so6 still calibrates against
+nabla_g_action for all 6 directions. [VERIFIED-tool, STEPs 4-5.]
+
+**RESULT 3 -- the structural obstruction (the actual explanation, and
+the reason the bug-hunt framing was abandoned).** Round 19's validated
+16x16 D^2_7 matrix on M = Hom_SU(3)(V_7, F) has NONZERO OFF-BLOCKS
+between SU(3)-types -- re-verified this round by direct computation:
+D^2(singlet_1) has threebar_1/threebar_2 coefficients 2i/3, with the
+exact-in-span assert passing (so the expansion is unambiguous;
+additionally the singlet-type and 3bar-type basis elements have disjoint
+domain-slot support, slot 0 vs slots 1-6, so cross-type coefficients
+cannot be a non-orthogonality artifact). But EVERY candidate right-hand-
+side term of the Weitzenbock identity as interpreted in Rounds 15-16 is
+TYPE-PRESERVING on M:
+- Scal/4 is a scalar;
+- any pointwise G2-invariant bundle endomorphism (= what any curvature-
+  built fiber operator IS on a homogeneous space) acts on M by post-
+  composition with an SU(3)-equivariant fiber map, which by Schur
+  preserves each SU(3)-isotypic component of F;
+- nabla*nabla_can is block-scalar by type.
+THEREFORE no invariant fiber endomorphism R^E whatsoever can complete
+the identity with nabla*nabla identified as the canonical-Casimir
+Laplacian: the left side provably mixes types, every right-side term
+provably does not. **Round 16's failure was never a coding bug -- the
+formula AS INTERPRETED is structurally impossible.** [Off-blocks:
+VERIFIED-tool, STEP 6. Schur argument: INFERRED -- standard operator
+theory on the verified facts; under independent review as of this
+write-up.]
+
+**What this implies (the honest, useful conclusion):** the Lichnerowicz
+/Weitzenbock identity itself is a theorem and not in question; what
+fails is identifying its nabla*nabla with the CANONICAL-connection
+Casimir Laplacian. The true Levi-Civita rough Laplacian differs from
+the canonical one by Nomizu-map cross-terms (first-order, schematically
+-sum_p [Z_p Lambda_p + Lambda_p Z_p + Lambda_p^2] corrections) -- which
+are exactly the natural carrier of the observed type-mixing, and which
+are DERIVABLE with machinery this project already has (Z_p action on
+matrix-coefficient sections = -rho(e_p), Lambda_p = the calibrated
+nabla_g spin lift plus twist). This converts L4A from "debug an
+abandoned construction" (provably hopeless) into a well-defined
+derivation with all ingredients in hand.
+
+**Interpretation caveat on Result 1 (so it is not over-read):** the
+triangulated [[-3/2,1],[3,1/2]] is the singlet-block of the RESIDUAL W,
+which Result 3 proves is NOT a fiber operator globally (it has
+off-blocks). Its rho-independence across {trivial, 7} is the verified
+fact; whether the block equals genuine fiber-curvature data depends on
+the cross-terms' singlet-block contribution -- exactly what the
+derivation above would settle.
+
+**Kill Analysis (what died, what survived):**
+- KILLED: the "find the bug in build_RE()" framing (Result 3 proves no
+  bug-fix can work); the "Interp A vs B uniform-scale" hypothesis space
+  from Round 16 (Result 2's non-uniform ratios).
+- SURVIVED: every individual component of Round 16 (R_half, spin lift,
+  Scal=10) -- the parts were fine, the assembly formula was wrong;
+  the Weitzenbock identity itself (as a theorem, with the correct
+  LC Laplacian); the entire Rounds 17-20 edifice (used here as
+  calibration data, internally consistent).
+- OPENED: a concrete, tractable derivation path (LC cross-terms via
+  matrix-coefficient machinery) that would (a) produce the correct
+  Weitzenbock identity, (b) yield F_{S^-} spectral data = L4A's actual
+  ask, and (c) as a side effect give an INDEPENDENT recomputation of
+  D^2 that could cross-check rho=14's one flagged sign caveat.
+
+**Review status:** reviewer + context-blind skeptic dispatched on
+g2su3_weitzenbock_type_obstruction.py at write-up time; verdicts to be
+appended in a follow-up commit. All numeric claims are asserted in the
+committed script itself (a clean exit IS the numeric verification);
+the Schur-argument interpretation is the piece under review.
+
+**L4A status: still OPEN, but transformed** -- from "an abandoned
+construction with an unexplained failure" to "a diagnosed structural
+obstruction plus a concrete derivation path with all ingredients
+already built and calibrated." preprint.tex NOT touched this round.
