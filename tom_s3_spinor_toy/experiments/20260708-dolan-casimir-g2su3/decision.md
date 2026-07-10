@@ -3732,3 +3732,555 @@ it -- latent fragility for future rounds, not a present bug.
 review, do not open iteration 4"; reviewer: LGTM/P2) agree on the same
 version.** FL Step 8a review is CLOSED for Round 22. No further code
 changes this round.
+
+---
+
+## Round 23 (2026-07-10) -- L4A's ACTUAL object: identifying and building
+## D_{S^6} (x) S^-, STEP A (foundational verification)
+
+**User instruction:** "собери спектр F_{S-} на singlet-блоке" (assemble the
+F_{S^-} spectrum on the singlet block), directly attacking L4A.
+
+**CRITICAL FINDING (before any computation): L4A's "$S^-$" is NOT V_7
+(Round 14-22's whole apparatus) and NOT rho=trivial (L4B).** Read
+preprint.tex sec:Sminus/sec:lichnerowicz/sec:schur carefully (lines
+371-630) rather than guessing. $S^- \cong T^{1,0}S^6 \oplus \mathbf{1}$
+(Lemma L1) -- the negative-chirality half of S^6's OWN spinor bundle
+S=S^+(+)S^-, used as an AUXILIARY twisting bundle for the S^6-INTRINSIC
+Dirac operator $D=\Dslash_{S^6}\otimes S^-:\Gamma(S^+\otimes S^-)\to
+\Gamma(S^-\otimes S^-)$. This is a THIRD, genuinely different object from
+both of the other two candidates -- confirmed with the user via
+AskUserQuestion before committing effort (chose: build S^- from scratch,
+full new round).
+
+**Two navigational errors caught and corrected before any wrong claim
+was made (both self-caught, neither shipped):**
+1. First assumed D64 (=D_on_simple_tensor, this project's ALREADY-BUILT
+   64-dim intrinsic operator on F=Sigma(x)Sigma since Round 10) acts on
+   the LEFT tensor factor only, treating the RIGHT factor as a FIXED
+   auxiliary twist -- WRONG. Read D_on_simple_tensor's actual formula:
+   D(eta(x)xi) = sum_i[(e_i.nabla_{e_i}eta)(x)xi + (e_i.eta)(x)(nabla_{e_i}xi)]
+   -- a genuine Leibniz-rule TWISTED Dirac operator, with nabla_g
+   (Levi-Civita-calibrated spin connection) applied to the RIGHT factor
+   too, not held fixed. This is EXACTLY the standard twisted-Dirac
+   formula D_E = Dslash_S(x)1 + Clifford-contraction-with-nabla^E,
+   confirming D64 (as already built) is directly usable -- it does NOT
+   need to be "held fixed on the right", it needs nabla_g restricted to
+   the right factor to PRESERVE the S^- sub-bundle, which is a
+   different (and correct) requirement.
+2. First check for (1) used an overly strict criterion (exact right-
+   factor INDEX preservation), found "leaks", concluded the convention
+   was broken. Root-caused: nabla_g is built from BIVECTOR (degree-2,
+   EVEN Clifford-algebra) actions (spin-lift of the Levi-Civita Nomizu
+   map), and the chirality/volume element PROVABLY COMMUTES with the
+   even Clifford subalgebra (standard fact) -- so nabla_g preserves
+   CHIRALITY (S^- to S^-) without preserving the exact index WITHIN
+   that chirality class (it mixes {1},{2},{3},{123} among themselves,
+   which is fine and expected -- S^- is 4-dim, not required to stay on
+   a single basis vector). Re-checked with the CORRECT criterion
+   (chirality-class preservation, not exact-index preservation) --
+   passes cleanly.
+
+**RESULT (script: `g2su3_Sminus_block_identify.py`, exit 0, all asserts
+pass, [VERIFIED-tool]):**
+- Chirality identification within the EXISTING 8-dim Sigma=Lambda*(C^3)
+  basis (SUBSETS, already used throughout this whole 20+ round
+  experiment), via gamma_7=e1.e2.e3.e4.e5.e6 (chirality operator,
+  ALREADY built and verified in g2su3_skeptic_checks.py, Round 3-ish):
+  S^+ = Lambda^even = {(), (1,2),(1,3),(2,3)}  ("1 (+) 3bar")
+  S^- = Lambda^odd  = {(1,),(2,),(3,),(1,2,3)} ("3 (+) 1")
+  matching Lemma L1 EXACTLY (T^{1,0}S^6 (+) 1 = "3 (+) 1").
+- D64 restricted to Gamma(S^+(x)S^-) -> Gamma(S^-(x)S^-) (both 16-dim
+  chirality sub-blocks of the 64-dim F): well-defined, D64^2 restricted
+  to Gamma(S^+(x)S^-) is exactly Hermitian (self-adjoint 16x16
+  endomorphism) -- confirms this IS the preprint's own
+  $(D_{S^6}\otimes S^-)^2$ object.
+- SU(3)-decomposition of the 16-dim fibre, computed independently
+  from FIRST PRINCIPLES (su(3)-Casimir eigenvalues on this specific
+  16-dim block, using the SAME su(3)-generator machinery as Round
+  17-20): Casimir eigenvalues `{0: 2, 4/3: 6, 3: 8}` -- EXACTLY
+  matching the preprint's own claimed decomposition
+  `S^+(x)S^-|_{SU(3)} = (1,1)(+)(0,1)(+)(1,0)(+)2x(0,0)` = 8(+)3bar(+)3
+  (+)1(+)1 (dim 8+3+3+1+1=16) -- an independent cross-check of the
+  preprint's own Section sec:schur claim, not merely assumed.
+
+**What this establishes:** L4A's object is now correctly identified,
+built (not from scratch -- reusing D64, already validated since Round
+10) and cross-checked against the preprint's own stated fibre content.
+D64^2|_{S^+(x)S^-} (the 16x16 Hermitian matrix just extracted) IS
+$(D_{S^6}\otimes S^-)^2$. The next step is the Weitzenbock decomposition
+$= \nabla^*\nabla + R/4 + F_{S^-}$ -- structurally analogous to Round
+22's TERM_A/TERM_B split (D=TERM1+TERM2 here, TERM1=intrinsic Dslash on
+the LEFT factor, connecting to Agricola's OWN Theorem 3.2/3.3
+untwisted-spinor formula and the ALREADY-BUILT H/Kostant-cubic
+machinery in g2su3_H_element.py; TERM2=Clifford-contracted nabla_g on
+the RIGHT/S^- factor) -- NOT YET DONE this step.
+
+**Kill Analysis:**
+- KILLED: the "F_{S^-}=SU3_CURV, V_7-singlet interpretation" hypothesis
+  (Round 22's own object is NOT L4A's object -- a genuinely different
+  fibre and operator); the "D64 is left-factor-only" assumption (D64 is
+  a full Leibniz-rule twisted operator, not a simple left-mult).
+- SURVIVED: D64 itself (already validated since Round 10, reused
+  unmodified); the bivector/chirality-commutation argument (a general,
+  provable Clifford-algebra fact, not specific to this construction);
+  the overall "restrict the already-built 64-dim apparatus to the right
+  chirality sub-block" strategy (validated by the exact SU(3)-content
+  match).
+- OPENED: a concrete, verified starting point (the 16x16 Hermitian
+  D64^2|_{S^+(x)S^-}) for the actual Weitzenbock decomposition and
+  F_{S^-} spectral computation L4A asks for.
+
+**L4A status: object correctly identified and the operator built +
+verified; Weitzenbock decomposition NOT YET done.** preprint.tex NOT
+touched this round.
+
+---
+
+## Round 23 STEP B (2026-07-10): Weitzenbock decomposition attempt --
+## HONEST NULL at its own first sanity check, not yet resolved
+
+**Derivation (script: `g2su3_Sminus_weitzenbock.py`).** Expanded
+D^2 = sum_{p,q} e_p.e_q . nabla_p nabla_q on Gamma(S^+(x)S^-) the SAME way
+as Round 22 (Clifford-relation p=q/p<q split), using
+nabla_p(eta(x)xi) := (nabla_p eta)(x)xi + eta(x)(nabla_p xi) (the full
+tensor-product/Leibniz connection D_on_simple_tensor already implements).
+Verified algebraically (by hand, not yet numerically re-derived from a
+DIFFERENT angle) that: p=q part = nabla^{S(x)E,*}nabla^{S(x)E} exactly
+(cross terms cancel by p<->q symmetry); p<q part splits into 4 pieces via
+[nabla_p,nabla_q]v = R(e_p,e_q)v + nabla_{[e_p,e_q]}v, with (c) := the
+E(=S^-)-side-only curvature term identified as F_{S^-} in the standard
+BGV twisted-Dirac sense, and (a)+(b)+(d) grouped into nabla*nabla+R/4.
+R(e_p,e_q) := [M_p,M_q] - nabla_{[e_p,e_q]}, where M_p=nabla_g(p,.) (the
+ALREADY-CALIBRATED Levi-Civita spin connection on Sigma, same object
+D_on_simple_tensor itself uses) and nabla_{[e_p,e_q]} splits via the
+m-part (T-table, torsion) acting through nabla_g, and the h-part
+(curv_h-table) acting through su3_action (ALREADY calibrated against
+AHL2023 page 42) with a minus sign (standard canonical-connection-at-
+base-point fact).
+
+**STEP B1 (decisive sanity check, run BEFORE trusting anything
+downstream): does -sum_{p<q} e_p.e_q.R(e_p,e_q) equal (Scal/4)*Id_8 on
+Sigma (the textbook Lichnerowicz identity)? FAILS.** Result is diagonal
+but NOT scalar: `diag(3/2, -7/6,-7/6,-7/6,-7/6,-7/6,-7/6, 3/2)` --
+i.e. value 3/2 on the two SU(3)-trivial slots (degree 0 and degree 3 of
+Lambda*(C^3)) and -7/6 uniformly on the six "3"/"3bar" slots. This IS
+SU(3)-block-scalar (consistent with R(e_p,e_q) being SU(3)-equivariant,
+a partial correctness signal -- an actually-broken construction would
+more likely give a non-block-scalar mess), but it is NOT the uniform
+scalar the Lichnerowicz identity requires. STOPPED HERE -- did NOT
+proceed to build F_{S^-} (STEP B2/B3 code exists in the file but its
+output was never reached/inspected, since the assert on B1 fails first
+and the script exits before B2 runs).
+
+**Kill Analysis:**
+- KILLED (for now, pending re-derivation): the specific R(e_p,e_q)
+  formula as constructed (`curvature_R` in g2su3_Sminus_weitzenbock.py)
+  as a correct representation of the twisted-Dirac curvature operator
+  needed for the standard Lichnerowicz identity to hold in this exact
+  form.
+- SURVIVED: STEP A's block identification and SU(3)-content match
+  (untouched by this failure, a fully independent, already-verified
+  result); the individual primitives reused (nabla_g, su3_action,
+  T-table, curv_h-table) -- each independently calibrated/validated in
+  EARLIER rounds, not newly built here, so the bug (if it is a bug) is
+  most likely in HOW they are COMBINED in `curvature_R`/`nabla_bracket`,
+  not in the primitives themselves.
+- OPEN, NOT YET DIAGNOSED: (a) is the sign/coefficient convention on the
+  h-part isotropy term (`-curv_h(p,q,k)*su3_action(k,.)`) exactly right,
+  or does it need a different normalization specific to the SPIN
+  representation (as opposed to Round 22's V_7 representation, where an
+  analogous sign issue WAS found and fixed -- an genuine, real
+  possibility this is the SAME class of bug recurring in a new context,
+  not yet checked); (b) is "R(e_p,e_q) := [M_p,M_q] - nabla_{[e_p,e_q]}"
+  the textbook-correct curvature FORMULA for a general (non-torsion-
+  free-frame) invariant basis, or is there a missing torsion-dependent
+  correction term specific to Levi-Civita's OWN torsion-free property
+  applied to a NON-coordinate frame (i.e. possibly an extra term beyond
+  the standard R(X,Y)=[nabla_X,nabla_Y]-nabla_{[X,Y]} formula is needed
+  when X,Y are not coordinate vector fields and the connection itself
+  has frame-dependent structure functions); (c) whether the DIAGONAL-
+  BUT-NOT-SCALAR result (3/2 vs -7/6) is itself informative -- e.g. does
+  it match some OTHER known quantity (Ricci scalar per SU(3)-type,
+  rather than the full uniform Scal), suggesting the "Scal/4" I'm
+  checking against needs to be REPLACED by a type-dependent quantity in
+  this non-normal-frame setting, which would mean my ENTIRE assumption
+  that "(a) alone equals a uniform R/4" is the wrong grouping, and (a)
+  needs to be combined with PART of (b) before it becomes uniform.
+
+**This is an honest, reported NULL at the FIRST decisive checkpoint --
+not shipped as a finding, not silently patched. No further code changes
+attempted this round; the root cause needs dedicated, careful
+re-derivation (most likely re-checking hypothesis (c) above: whether
+"R/4" should be understood as "the uniform PART of a type-dependent
+quantity" with the type-DEPENDENT part correctly belonging to F_{S^-}
+or to a torsion-correction term, not to a separately-verified-alone
+"R/4"). STEP A's result (the 16x16 D64^2|_{S^+(x)S^-} matrix, exactly
+matching the preprint's own SU(3) fibre content) remains solid and
+reusable regardless of how STEP B's remaining issue resolves.**
+
+preprint.tex NOT touched this round.
+
+---
+
+## Round 23 STEP B v2 (2026-07-10): root cause found and fixed --
+## F_{S^-} derived and cross-validated against the L4B calibration point
+
+**Root cause of STEP B v1's failure (found via a targeted, minimal
+diagnostic before attempting any fix):** v1 expanded D^2 by simplifying
+`e_p.nabla_p.e_q.nabla_q` into `e_p.e_q.nabla_p.nabla_q`, implicitly
+assuming Clifford mult (e_p) commutes with the covariant derivative
+(nabla_q). In Round 22 this held trivially (Clifford mult acted on F,
+the domain operator acted on the SEPARATE V_7 factor). HERE, for
+Dslash=sum_p e_p.M_p (M_p=nabla_g(p,.), the ALREADY-CALIBRATED spin
+connection), e_p and M_p act on the SAME single Sigma and do NOT
+commute (M_p is itself built from Clifford bivectors). Confirmed
+directly: `Dslash_mat @ Dslash_mat` (ground truth, literal matrix
+composition) did NOT match the naive `-sum M_p^2 - sum_{p<q}
+e_p.e_q.[M_p,M_q]` reconstruction. The missing piece is a genuine
+Leibniz correction (nabla_b e_a, the covariant derivative of the FRAME
+VECTOR itself -- nonzero for a naturally reductive space's invariant,
+non-normal frame) that v1's shortcut silently dropped.
+
+**Fix (script rewritten, `g2su3_Sminus_weitzenbock.py` v2): abandon the
+algebraic shortcut entirely, use ONLY matrix composition (safe, handles
+operator ordering automatically) for anything touching Dslash-squared,
+and ONLY Kronecker-bilinear algebra ((A(x)B)(C(x)D)=(AC)(x)(BD), which
+is ALWAYS valid regardless of commutativity) for the genuinely twisted
+TERM2 piece** (TERM2(eta(x)xi):=sum_p(e_p.eta)(x)(nabla_p xi), Clifford
+mult on the LEFT/eta factor, covariant derivative on the RIGHT/xi
+factor -- DIFFERENT tensor factors, same safe structure as Round 22).
+
+D = TERM1+TERM2 (TERM1:=Dslash(x)Id). D^2=(TERM1+TERM2)^2 = TERM1^2 +
+TERM1.TERM2 + TERM2.TERM1 + TERM2^2 (plain algebraic identity, ALWAYS
+true for any two operators, computed via direct matrix multiplication).
+TERM1^2 = Dslash^2(x)Id, using Dslash^2 as DIRECTLY computed (ground
+truth, not further decomposed -- this is exactly what v1 got wrong by
+trying to split it). TERM2^2 = sum_{p,q}(E_pE_q)(x)(M_pM_q), safely
+split via Kronecker bilinearity into CASIMIR_E (p=q) + a p<q
+cross-term; the cross-term further splits via [M_p,M_q]=R(e_p,e_q)+
+nabla_{[e_p,e_q]} (a standard, frame-independent curvature-commutator
+identity -- valid for M_p,M_q alone, no e/M commutativity claim
+needed) into **F_{S^-} := sum_{p<q}(E_pE_q)(x)R(e_p,e_q)** (genuinely
+E-side-only curvature -- THE ASK) and a torsion-type remainder term.
+
+**A second, trivial sign bug was caught and fixed in the same pass:**
+the initial F_{S^-}/torsion split carried a leftover leading minus sign
+inherited from v1's (abandoned) formula convention; T22_cross (the
+object being matched, from the NEW safe derivation) has no such minus.
+Fixed by removing it -- confirmed by re-running the exact-match assert.
+
+**RESULT (script exits 0, EVERY step is a hard assert, all pass,
+[VERIFIED-tool]):**
+- STEP B0/B0b: TERM1+TERM2 == D64 EXACTLY (all 4096 entries) -- the
+  split itself is correct.
+- STEP B1: TERM1^2+TERM1.TERM2+TERM2.TERM1+TERM2^2 == D64^2 EXACTLY --
+  the 4-piece expansion is correct (pure algebra, but confirms no
+  transcription error in building the 4 pieces).
+- STEP B2: TERM2^2 == CASIMIR_E + cross-term EXACTLY (Kronecker
+  bilinearity); cross-term == F_{S^-} + TORSION_E EXACTLY (R vs
+  nabla_bracket split, after the sign fix).
+- STEP B3: F_{S^-} restricted to the 16-dim Gamma(S^+(x)S^-) is
+  Hermitian. **Spectrum: `{1/6: 15, -5/2: 1}`** -- exactly ONE negative
+  mode, matching the preprint's own qualitative L4A prediction ("the
+  curvature endomorphism F_{S^-} must have at least one negative mode")
+  to the letter, and QUANTITATIVELY: R/4 = Scal/4 = 5/2 in this
+  experiment's normalization, so on the -5/2 eigenspace, R/4+F_{S^-} =
+  5/2-5/2 = 0 EXACTLY.
+- STEP B4 (decisive cross-check): remainder(nabla*nabla+R/4) + F_{S^-}
+  == D64^2|_{Gamma(S^+(x)S^-)} EXACTLY, over the FULL 16x16 block.
+
+**IMPORTANT SCOPE CAVEAT (before any further claim):** D64^2 restricted
+to the FULL 16-dim Gamma(S^+(x)S^-) has spectrum `{10/3:3, 4:1, 0:9,
+2/3:3}` -- a 9-dimensional "kernel" of this restricted matrix. This
+does NOT directly mean "9 physical zero modes" -- D64, as built and
+used throughout this whole project (Rounds 1-22), correctly represents
+a genuine matrix-coefficient section ONLY for the rho=TRIVIAL
+G2-isotypic piece, which requires the fibre value to be SU(3)-INVARIANT
+(a much smaller subspace than the full 16-dim fibre; for OTHER G2-irreps
+rho, D64 is used as an INGREDIENT -- "TERM_B" in the Round 17-22
+machinery -- not as the full operator on its own). Evaluating D64^2 on
+a non-invariant vector is mathematically well-defined but does not by
+itself correspond to a section of any specific Peter-Weyl block.
+
+## Round 23 STEP C: restrict to the genuine 2-dim SU(3)-invariant
+## subspace, cross-validate against the ALREADY-ESTABLISHED L4B result
+
+Per user instruction ("ограничься на 2-мерное SU(3)-инвариантное
+подпространство и проверь"): found the common null space of all 8
+su(3) generators (restricted to the 16-dim Gamma(S^+(x)S^-) block, via
+`build_su3_matrix64` already used in STEP A4) -- confirmed 2-dimensional
+(matching STEP A's own Casimir=0 multiplicity), with explicit basis:
+```
+w_b = 1 (x) y123                              (mirrors v_b = y123 (x) 1)
+w_a = y12(x)y3 - y13(x)y2 + y23(x)y1           (mirrors v_a = y1(x)y23 - y2(x)y13 + y3(x)y12)
+```
+**NOTE:** w_a, w_b are the MIRROR of Round 4-17's classic v_a, v_b (same
+structure, LEFT/RIGHT swapped) -- v_a,v_b live in Gamma(S^-(x)S^+) (a
+DIFFERENT chirality block from this round's Gamma(S^+(x)S^-)), so this
+is a genuinely independent construction, not a re-use of the same
+vectors.
+
+**RESULT (both leak-checks pass exactly -- w_a,w_b span an invariant
+subspace for BOTH operators, as expected from SU(3)-equivariance):**
+- **D64^2 restricted to span(w_a,w_b) = `[[1,1],[3,3]]`, eigenvalues
+  `{4:1, 0:1}`** -- EXACTLY Round 4-17's own, extensively-validated
+  D^2_trivial result (the SAME matrix, up to the mirror-block symmetry)
+  -- an independent cross-check confirming this round's construction is
+  consistent with the ALREADY-ESTABLISHED L4B calibration point, not
+  merely internally self-consistent.
+- **F_{S^-} restricted to span(w_a,w_b) = `[[-11/6,-2/3],[-2,-1/2]]`,
+  eigenvalues `{-5/2:1, 1/6:1}`** -- the FULL 16-dim block's ONE
+  negative eigenvalue is ENTIRELY contained within this 2-dim
+  SU(3)-invariant subspace (not merely present somewhere in the other
+  14 dimensions).
+
+**What this establishes -- a genuine, quantitative explanation of an
+ALREADY-KNOWN result:** the zero eigenvalue of D^2_trivial=[[1,1],[3,3]]
+(known since Round 4-17, used throughout L4B) is now explained, for the
+FIRST TIME, as a DIRECT CONSEQUENCE of F_{S^-}'s own negative mode
+EXACTLY canceling R/4 (5/2-5/2=0) on that specific eigenvector -- not
+merely observed as a numerical coincidence. This is the L4A open
+problem's own requested object ("explicit spectral computation of
+F_{S^-}"), computed, verified against the ALREADY-ESTABLISHED D^2
+result via an independent construction, and shown to MECHANISTICALLY
+explain why the zero mode exists.
+
+**Kill Analysis:**
+- KILLED: v1's Clifford-commutator shortcut (assumed e_p, M_q commute
+  -- false when both act on the same Sigma factor); a genuine algebraic
+  error, not a sign convention issue.
+- SURVIVED: the STEP A block identification (untouched); D64/nabla_g/
+  su3_action primitives (reused unmodified, each independently
+  calibrated in earlier rounds); the Round 22-style "matrix composition
+  first, algebraic simplification only where provably safe" discipline
+  (which is EXACTLY what caught and would have prevented v1's error had
+  it been applied from the start).
+- OPENED: F_{S^-}'s full spectrum is now known; a genuine mechanistic
+  explanation of the pre-existing L4B zero mode; a concrete, reusable
+  method (find the SU(3)-invariant subspace, restrict F_{S^-}+D^2 to
+  it) that could extend to the OTHER 14 dimensions of the fibre
+  (corresponding to rho=7 and rho=14 contributions, per STEP A's own
+  SU(3)-content identification 8(+)3(+)3bar(+)1(+)1) via the SAME
+  matrix-coefficient-section machinery from Rounds 17-20 -- NOT
+  attempted this round (scope discipline: the 2-dim invariant subspace
+  was the specific ask).
+
+**L4A status: substantially advanced.** F_{S^-} is explicitly derived,
+verified (4 independent hard-assert cross-checks), and shown to
+mechanistically explain the already-known L4B zero mode on the
+SU(3)-invariant (rho=trivial-type) 2-dim subspace. The FULL L4A claim
+(spectral computation "as an endomorphism on Gamma(S^+(x)S^-)", i.e.
+covering ALL of the 16-dim fibre's Peter-Weyl content, not just the
+2-dim invariant piece) remains open pending the rho=7/rho=14 extension
+noted above. Review (reviewer+skeptic) not yet dispatched this round --
+pending, given the significance of this finding for L4A.
+
+preprint.tex NOT touched this round.
+
+---
+
+## Round 23 -- Review verdicts (Step 8a): a real overclaim caught and
+## retracted, core computation survives
+
+Dispatched reviewer + context-blind skeptic in parallel (direct Agent
+tool, matching the reliable channel from Round 22's own experience with
+Workflow-layer empty results). Both required a resume (truncated
+mid-task on first stop -- an established pattern this session, not new).
+
+**Reviewer verdict: `NEEDS_WORK`, severity P1.** Independently re-ran
+the script, re-verified the Kronecker-indexing convention and the
+Kronecker-bilinearity argument by hand (both ACCEPT, high confidence),
+confirmed the mirror relationship between w_a/w_b and Round 4-17's
+v_a/v_b is real (not just plausible-sounding). **Decisive finding
+(REJECT verdict on the file's own "mechanistic explanation" claim):**
+directly computed the eigenvectors of D64^2 and F_{S^-} on the 2-dim
+invariant subspace and found them to be DIFFERENT vectors (D64^2's zero
+eigenvector = (-1,1); F_{S^-}'s -5/2 eigenvector = (1,1); cross product
+-2, not parallel) -- "matching eigenvalues across two different
+operators is a weaker statement than sharing an eigenvector; only the
+latter supports a causal/mechanistic claim." Also flagged: missing
+assert that w_a,w_b actually lie in the su(3) null space (only the
+weaker "leak" property was checked); and an UNRECONCILED tension
+between this round's exact ratio |F_{S^-}|/(R/4)=1 and the preprint's
+own PRIOR (line 590) norm-bound estimate of 8/45~=0.178 (~5.6x smaller)
+-- flagged as needing resolution before preprint.tex is touched, not
+resolved this round.
+
+**Skeptic verdict: `FALSIFIED` on the load-bearing "mechanistic
+explanation" claim; core computation `CONFIRMED-REAL`.** Independently
+confirmed Targets 1-2 (the v1-vs-v2 algebraic-error diagnosis is real;
+Kronecker bilinearity is sound, re-derived from `(A⊗B)(C⊗D)=(AC)⊗(BD)`).
+**Found a MORE SERIOUS problem than the reviewer** (this is the
+decisive finding of the whole review round): computed `[F_{S^-},D64^2]`
+on the 2-dim subspace directly and got `[[0,-8/3],[8,0]] != 0` --
+F_{S^-} and D64^2 do NOT commute, meaning they cannot share ANY
+eigenbasis, not just "happen to have different eigenvectors this time."
+**Separately, found a genuine trace-level inconsistency**: if
+"remainder" (:=D64^2-F_{S^-}) really were nabla*nabla(=0, rho=trivial
+assumption)+R/4(=5/2 scalar), its trace on the 2-dim block should be
+2*(5/2)=5 -- but the ACTUAL trace is 19/3 (verified directly:
+`remainder = [[17/6,5/3],[5,7/2]]`, NOT a scalar multiple of Id at all).
+This means the docstring's "R/4=Scal/4=5/2" identification was an
+UNVERIFIED assumption carried over from a DIFFERENT context (Round 16's
+Scal=10 calibration, for the UNTWISTED case), not something established
+by this round's own construction. Also flagged (WEAKENED, non-fatal):
+w_a,w_b were hand-picked to mirror v_a,v_b rather than mechanically
+extracted from the null-space computation, making the entry-for-entry
+`[[1,1],[3,3]]` match somewhat less independent than framed (though the
+EIGENVALUE match {0,4} is genuinely basis-independent and survives);
+and the "(rho=trivial)" label on the 2-dim invariant subspace is
+imprecise (rho=7 also branches with an SU(3)-singlet, per Round 17-18's
+own established finding, so "SU(3)-invariant fibre subspace" does not
+cleanly equal "rho=trivial multiplicity space" without more care).
+
+**Both independently and by DIFFERENT methods (eigenvector comparison
+vs. commutator + trace check) converged on: the "-5/2 exactly cancels
+R/4, mechanistically explaining the zero mode" claim is WRONG.** This
+is a strong, doubly-confirmed signal, not reviewer noise.
+
+**Independent re-verification (before accepting either agent's
+finding, per this project's own audit-verification-gate discipline):**
+directly computed `remainder = D64^2-F_{S^-} = [[17/6,5/3],[5,7/2]]`,
+trace 19/3, NOT scalar; `[F_{S^-},D64^2]=[[0,-8/3],[8,0]] != 0`. BOTH
+confirmed exactly, independently of either agent's own report.
+
+**Fix applied (script `g2su3_Sminus_weitzenbock.py`, both P1s closed):**
+1. Added the missing direct assert that w_a,w_b are annihilated by all
+   8 su(3) generators (not just that D64^2/F_{S^-} preserve their span).
+2. REPLACED the CONCLUSION and added a docstring caveat: the "R/4"
+   label is now explicitly marked as inherited NAMING (matching the
+   standard Weitzenbock identity's SHAPE), not an independently-verified
+   claim; the file now COMPUTES and PRINTS both the eigenvector-mismatch
+   and the non-scalar/non-commuting facts directly (STEP C2), rather
+   than asserting the old (wrong) interpretation. Re-ran clean, exit 0,
+   all asserts pass, honest CONCLUSION confirmed printing correctly.
+
+**Response matrix (FL Step 8a):**
+| Concern | Response |
+|---|---|
+| "Mechanistic explanation" / "R/4 exactly cancels" claim (reviewer P1 + skeptic FALSIFIED, both independently, both re-confirmed by me directly) | **Fixed** -- claim retracted in both script and this doc; STEP C2 now computes and reports the mismatch/non-commutativity honestly |
+| Missing su(3)-null-space assert (reviewer P1) | **Fixed** -- direct assert added |
+| Norm-bound tension with preprint.tex line 590 (8/45 vs exact ratio 1) (reviewer P2) | **Accepted as open, unresolved item** -- flagged explicitly, NOT touching preprint.tex until reconciled |
+| w_a,w_b hand-picked vs mechanically extracted (skeptic, WEAKENED) | **Accepted as documented limitation** -- eigenvalue match {0,4} survives (basis-independent), entry-match framing already softened in this doc |
+| "(rho=trivial)" label imprecise (skeptic, WEAKENED) | **Accepted as documented limitation** -- the 2-dim subspace is more precisely "the SU(3)-invariant piece of the fibre", which may receive contributions from multiple G2-irreps (trivial AND rho=7), not exclusively rho=trivial |
+
+**What SURVIVES this review round (confirmed independently by reviewer,
+skeptic, AND my own direct re-verification, three times over):** F_{S^-}
+itself -- its closed-form derivation, Hermitian property, and FULL
+spectrum on the 16-dim Gamma(S^+(x)S^-) = `{1/6:15, -5/2:1}` -- is
+correctly, exactly computed. This genuinely IS the explicit spectral
+computation the preprint's L4A section asks for ("an explicit spectral
+computation of F_{S^-} as an endomorphism on Gamma(S^+(x)S^-)"). What
+does NOT survive: any claim that this -5/2 eigenvalue explains,
+"exactly cancels", or otherwise mechanistically relates to the D64^2
+zero mode found in Round 4-17 -- that specific interpretive overlay was
+never independently verified and is contradicted by direct computation
+of both eigenvector alignment and operator commutativity.
+
+**L4A status after this round: F_{S^-} is derived and its spectrum is
+established (real progress); its relationship to R/4 and to the
+existing zero-mode structure is OPEN, not resolved -- weaker than this
+round's earlier drafts claimed, but still a genuine advance over having
+no explicit F_{S^-} computation at all.** preprint.tex NOT touched this
+round -- and should NOT be touched with the retracted "mechanistic
+explanation"/"exact cancellation" framing if this work is cited later.
+
+---
+
+## Round 23 -- The preprint norm-bound tension, analyzed (per user request
+## "разбери напряжённость с нормой из препринта")
+
+**Question:** preprint.tex line 590-591 gives a PRIOR estimate
+`||F_{S^-}||_F <= (4/3)/rho_6^2` against `R=30/rho_6^2`, ratio 8/45~=
+0.178. This round's exact computation gives a much larger ratio (~1,
+using the -5/2 eigenvalue against Scal/4=5/2, or ~1.03 using the
+CORRECT Frobenius norm sqrt(15*(1/6)^2+(5/2)^2)=sqrt(20/3) against the
+same Scal/4 -- checked explicitly: the earlier "single eigenvalue"
+comparison and the "proper Frobenius norm" comparison give
+similar-magnitude answers here, so using the wrong norm-type is NOT
+the explanation).
+
+**Scale-invariance argument (checked first, before assuming a units
+mismatch):** if Scal (this experiment, =10, a fixed structure-constant-
+derived number) and R (preprint, =30/rho_6^2, an explicit function of
+the geometric radius) measure the SAME quantity under a POSSIBLY
+different overall metric normalization, then BOTH R and F_{S^-} (being
+built from the SAME curvature-type Clifford contraction, hence scaling
+identically under any uniform metric rescaling) should give a
+SCALE-INVARIANT ratio -- so a pure rho_6-normalization difference
+CANNOT by itself explain a ~5.8x ratio discrepancy. Ruled out as the
+sole explanation.
+
+**Historical precedent found (directly relevant, NOT previously
+connected to this question): Round 16's OWN calibration** (this same
+decision.md, "The decisive calibration: L4B ground truth, again"
+section) found that "(1/4)*Scal*v_a + R^E(v_a)" (for the OLD,
+since-abandoned build_RE construction) needed an EXPLICIT, uniform
+scale factor of 3/2 to match the TRUE D^2(v_a) -- "a clean, uniform
+scale factor, not a structural mismatch." This CONFIRMS: this project's
+raw "Scal=10" (and constructions built from the same T-table/curv_h-
+table primitives) have HISTORICALLY required an explicit calibration
+factor before comparing against "the true physical D^2" at face value
+-- this is a real, precedented phenomenon in THIS codebase, not
+something being invented ad hoc to explain away an inconvenient result.
+
+**Root-cause connection to the ALREADY-KNOWN review-round-1 gap
+(the actual resolution of this "tension"):** direct computation
+(already done, see above): `remainder := D64^2 - F_{S^-}` on the 2-dim
+SU(3)-invariant subspace = `[[17/6,5/3],[5,7/2]]`, confirmed NOT a
+scalar multiple of Id. This means: **there is no clean, independently-
+isolated "R/4" scalar object anywhere in this round's own construction
+to compare against EITHER Scal/4=5/2 (this experiment's own value) OR
+the preprint's rho_6-parametrized R/4 in the first place.** The
+"norm-bound tension" is therefore NOT an independent new puzzle
+requiring its own separate resolution -- it is the SAME root gap
+review round 1 already identified (remainder != scalar; nabla*nabla
+has not been independently isolated), now observed from a second,
+independent angle (comparing against an EXTERNAL prior estimate
+instead of checking eigenvector alignment against D64^2 internally).
+Both symptoms point to the same missing piece.
+
+**Verified basis-independence of the underlying findings (a quick,
+necessary check before trusting ANY of this): are the "remainder is
+not scalar" / "F_{S^-},D64^2 don't commute" facts artifacts of w_a,w_b
+being an ORTHOGONAL-but-not-ORTHONORMAL basis (||w_b||=1, ||w_a||=
+sqrt(3), Gram matrix diag(3,1) -- the skeptic's own report noted this
+in passing), rather than genuine operator-level facts? Checked: NO --
+"is operator X proportional to Id" and "do operators X,Y commute" are
+BOTH properties preserved under ANY change of basis (orthonormal or
+not), since matrix multiplication in ANY basis correctly represents
+operator composition, and the identity OPERATOR is represented by the
+identity MATRIX in every basis. So the non-orthonormality of w_a,w_b
+does NOT undermine either finding -- they are robust, basis-independent
+facts about the actual operators, not artifacts of the specific
+2-dim-subspace coordinate representation chosen.
+
+**Conclusion on the norm-bound tension:** NOT resolved this round, and
+should NOT be forced to a specific number without doing the underlying
+work. What IS established: (1) it is not explained by a units/rho_6
+mismatch (ruled out by the scale-invariance argument); (2) it is not
+surprising GIVEN this project's own Round 16 precedent of needing an
+explicit calibration factor for structurally analogous constructions;
+(3) it cannot be meaningfully resolved without FIRST doing the
+already-flagged work of independently isolating a genuine nabla*nabla
+(checking, e.g., that it is positive-semi-definite, a REQUIRED property
+of any genuine connection Laplacian -- NOT yet checked) and a genuine
+scalar R/4 from "remainder", rather than assuming their sum reduces to
+Scal/4*Id. The preprint's OLD 8/45 estimate was itself explicitly
+framed as "a norm estimate" (not an exact computation) for an
+EXPLICITLY-OPEN problem -- so a loose prior bound turning out not to
+match the first exact computation is not, on its own, evidence of an
+error in either source; it is the EXPECTED outcome of solving an open
+problem whose only prior treatment was a rough estimate.
+
+**Next step (not done this round, scope discipline):** isolate
+nabla*nabla independently (e.g. via the matrix-coefficient-section
+machinery already built in Rounds 17-22, applied to THIS round's
+Gamma(S^+(x)S^-) fibre with rho ranging over {trivial,7,14} per STEP
+A's own SU(3)-content identification), check its PSD property as a
+first sanity gate, and see whether a Round-16-style clean calibration
+factor emerges when comparing the properly-isolated R/4 against
+Scal=10 and against the preprint's own rho_6-parametrized convention.
+
+preprint.tex NOT touched this round.
