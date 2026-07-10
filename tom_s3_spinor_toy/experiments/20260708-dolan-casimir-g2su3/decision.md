@@ -3732,3 +3732,105 @@ it -- latent fragility for future rounds, not a present bug.
 review, do not open iteration 4"; reviewer: LGTM/P2) agree on the same
 version.** FL Step 8a review is CLOSED for Round 22. No further code
 changes this round.
+
+---
+
+## Round 23 (2026-07-10) -- L4A's ACTUAL object: identifying and building
+## D_{S^6} (x) S^-, STEP A (foundational verification)
+
+**User instruction:** "собери спектр F_{S-} на singlet-блоке" (assemble the
+F_{S^-} spectrum on the singlet block), directly attacking L4A.
+
+**CRITICAL FINDING (before any computation): L4A's "$S^-$" is NOT V_7
+(Round 14-22's whole apparatus) and NOT rho=trivial (L4B).** Read
+preprint.tex sec:Sminus/sec:lichnerowicz/sec:schur carefully (lines
+371-630) rather than guessing. $S^- \cong T^{1,0}S^6 \oplus \mathbf{1}$
+(Lemma L1) -- the negative-chirality half of S^6's OWN spinor bundle
+S=S^+(+)S^-, used as an AUXILIARY twisting bundle for the S^6-INTRINSIC
+Dirac operator $D=\Dslash_{S^6}\otimes S^-:\Gamma(S^+\otimes S^-)\to
+\Gamma(S^-\otimes S^-)$. This is a THIRD, genuinely different object from
+both of the other two candidates -- confirmed with the user via
+AskUserQuestion before committing effort (chose: build S^- from scratch,
+full new round).
+
+**Two navigational errors caught and corrected before any wrong claim
+was made (both self-caught, neither shipped):**
+1. First assumed D64 (=D_on_simple_tensor, this project's ALREADY-BUILT
+   64-dim intrinsic operator on F=Sigma(x)Sigma since Round 10) acts on
+   the LEFT tensor factor only, treating the RIGHT factor as a FIXED
+   auxiliary twist -- WRONG. Read D_on_simple_tensor's actual formula:
+   D(eta(x)xi) = sum_i[(e_i.nabla_{e_i}eta)(x)xi + (e_i.eta)(x)(nabla_{e_i}xi)]
+   -- a genuine Leibniz-rule TWISTED Dirac operator, with nabla_g
+   (Levi-Civita-calibrated spin connection) applied to the RIGHT factor
+   too, not held fixed. This is EXACTLY the standard twisted-Dirac
+   formula D_E = Dslash_S(x)1 + Clifford-contraction-with-nabla^E,
+   confirming D64 (as already built) is directly usable -- it does NOT
+   need to be "held fixed on the right", it needs nabla_g restricted to
+   the right factor to PRESERVE the S^- sub-bundle, which is a
+   different (and correct) requirement.
+2. First check for (1) used an overly strict criterion (exact right-
+   factor INDEX preservation), found "leaks", concluded the convention
+   was broken. Root-caused: nabla_g is built from BIVECTOR (degree-2,
+   EVEN Clifford-algebra) actions (spin-lift of the Levi-Civita Nomizu
+   map), and the chirality/volume element PROVABLY COMMUTES with the
+   even Clifford subalgebra (standard fact) -- so nabla_g preserves
+   CHIRALITY (S^- to S^-) without preserving the exact index WITHIN
+   that chirality class (it mixes {1},{2},{3},{123} among themselves,
+   which is fine and expected -- S^- is 4-dim, not required to stay on
+   a single basis vector). Re-checked with the CORRECT criterion
+   (chirality-class preservation, not exact-index preservation) --
+   passes cleanly.
+
+**RESULT (script: `g2su3_Sminus_block_identify.py`, exit 0, all asserts
+pass, [VERIFIED-tool]):**
+- Chirality identification within the EXISTING 8-dim Sigma=Lambda*(C^3)
+  basis (SUBSETS, already used throughout this whole 20+ round
+  experiment), via gamma_7=e1.e2.e3.e4.e5.e6 (chirality operator,
+  ALREADY built and verified in g2su3_skeptic_checks.py, Round 3-ish):
+  S^+ = Lambda^even = {(), (1,2),(1,3),(2,3)}  ("1 (+) 3bar")
+  S^- = Lambda^odd  = {(1,),(2,),(3,),(1,2,3)} ("3 (+) 1")
+  matching Lemma L1 EXACTLY (T^{1,0}S^6 (+) 1 = "3 (+) 1").
+- D64 restricted to Gamma(S^+(x)S^-) -> Gamma(S^-(x)S^-) (both 16-dim
+  chirality sub-blocks of the 64-dim F): well-defined, D64^2 restricted
+  to Gamma(S^+(x)S^-) is exactly Hermitian (self-adjoint 16x16
+  endomorphism) -- confirms this IS the preprint's own
+  $(D_{S^6}\otimes S^-)^2$ object.
+- SU(3)-decomposition of the 16-dim fibre, computed independently
+  from FIRST PRINCIPLES (su(3)-Casimir eigenvalues on this specific
+  16-dim block, using the SAME su(3)-generator machinery as Round
+  17-20): Casimir eigenvalues `{0: 2, 4/3: 6, 3: 8}` -- EXACTLY
+  matching the preprint's own claimed decomposition
+  `S^+(x)S^-|_{SU(3)} = (1,1)(+)(0,1)(+)(1,0)(+)2x(0,0)` = 8(+)3bar(+)3
+  (+)1(+)1 (dim 8+3+3+1+1=16) -- an independent cross-check of the
+  preprint's own Section sec:schur claim, not merely assumed.
+
+**What this establishes:** L4A's object is now correctly identified,
+built (not from scratch -- reusing D64, already validated since Round
+10) and cross-checked against the preprint's own stated fibre content.
+D64^2|_{S^+(x)S^-} (the 16x16 Hermitian matrix just extracted) IS
+$(D_{S^6}\otimes S^-)^2$. The next step is the Weitzenbock decomposition
+$= \nabla^*\nabla + R/4 + F_{S^-}$ -- structurally analogous to Round
+22's TERM_A/TERM_B split (D=TERM1+TERM2 here, TERM1=intrinsic Dslash on
+the LEFT factor, connecting to Agricola's OWN Theorem 3.2/3.3
+untwisted-spinor formula and the ALREADY-BUILT H/Kostant-cubic
+machinery in g2su3_H_element.py; TERM2=Clifford-contracted nabla_g on
+the RIGHT/S^- factor) -- NOT YET DONE this step.
+
+**Kill Analysis:**
+- KILLED: the "F_{S^-}=SU3_CURV, V_7-singlet interpretation" hypothesis
+  (Round 22's own object is NOT L4A's object -- a genuinely different
+  fibre and operator); the "D64 is left-factor-only" assumption (D64 is
+  a full Leibniz-rule twisted operator, not a simple left-mult).
+- SURVIVED: D64 itself (already validated since Round 10, reused
+  unmodified); the bivector/chirality-commutation argument (a general,
+  provable Clifford-algebra fact, not specific to this construction);
+  the overall "restrict the already-built 64-dim apparatus to the right
+  chirality sub-block" strategy (validated by the exact SU(3)-content
+  match).
+- OPENED: a concrete, verified starting point (the 16x16 Hermitian
+  D64^2|_{S^+(x)S^-}) for the actual Weitzenbock decomposition and
+  F_{S^-} spectral computation L4A asks for.
+
+**L4A status: object correctly identified and the operator built +
+verified; Weitzenbock decomposition NOT YET done.** preprint.tex NOT
+touched this round.
