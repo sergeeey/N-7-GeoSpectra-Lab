@@ -97,14 +97,19 @@ from g2su3_equivariance_check import build_D_matrix64
 from g2su3_explicit_clifford import DIM, IDX, SUBSETS, e_action, vec_from_subsets
 from g2su3_H_element import build_T_table
 from g2su3_lichnerowicz_rho7 import Rmat, build_R_half, build_RE, spin_lift_so6
-from g2su3_v7_16dim_full_matrix import build_3_copies, build_3bar_copies, build_singlets
+from g2su3_v7_16dim_full_matrix import (
+    build_3_copies,
+    build_3bar_copies,
+    build_singlets,
+    build_w_cols_general,
+    flatten,
+)
 from g2su3_v7_3_3bar_intertwiners import P3, P3BAR, build_MF, build_MV7, solve_intertwiner
-from g2su3_v7_16dim_full_matrix import build_w_cols_general, flatten
 from g2su3_v7_multiplicity_dirac import d7_apply, idx64
 
 N64 = DIM * DIM
 
-SCAL = sp.Integer(10)  # Scal^{1/2}=10, triple-verified in Round 16 (unchallenged part)
+SCAL = sp.Integer(10)  # Scal=10 (so Scal/4=5/2), triple-verified in Round 16 (unchallenged part)
 C2_G2_7 = sp.Integer(2)  # C_2(G2;7)=2 in this session's normalization, established Round 14+
 
 
@@ -258,8 +263,12 @@ def main():
     MF_3BAR = build_MF([(1, 2), (1, 3), (2, 3)])
     sol, t = solve_intertwiner(MV7_3, MF_3)
     T = sp.Matrix(3, 3, [c.subs(t[6], 1) for c in sol])
+    assert T.det() != 0, "3-channel intertwiner degenerate -- Schur solve gave wrong irrep pairing"
     sol2, t2 = solve_intertwiner(MV7_3BAR, MF_3BAR)
     T2 = sp.Matrix(3, 3, [c.subs(t2[8], 1) for c in sol2])
+    assert T2.det() != 0, (
+        "3bar-channel intertwiner degenerate -- Schur solve gave wrong irrep pairing"
+    )
 
     basis_w = []
     labels = []
