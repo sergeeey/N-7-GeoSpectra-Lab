@@ -5002,3 +5002,85 @@ this round, still open. The `8/45 vs ~1.03` norm-ratio tension and the
 zero existing files modified. Full project pytest suite re-run: 2483
 passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
 documented since Round 29). preprint.tex NOT touched.
+
+## Round 33 (2026-07-11): WHY only 3/15 quadruples are nonzero —
+a structural corollary of Round 28's own 3-dim-space theorem
+
+**User's instruction:** "го, round 33", after choosing this scope
+(recommended option) from 4 offered candidates — "Объяснить почему
+только 3 из 15 quadruples ненулевые", the last remaining item Round 32
+flagged as "still open" from Round 31's original list.
+
+**Key observation:** this round does NOT introduce a new proof from
+scratch — it recognizes `Ch_4`/`degree4_term` (Round 26's degree-4
+pieces of `C̃h`/`Ωg`'s cubic-term expansion) as a DIRECT INSTANCE of
+Round 28's already-proven theorem: any SU(3)-equivariant + Swap-
+symmetric Hermitian operator on `Σ` lies exactly in `span{Id,
+Casimir_su3, H}`. Both objects ARE SU(3)-equivariant, Swap-symmetric,
+and Hermitian (STEP A, verified directly), so the theorem applies.
+Combined with the STRUCTURAL fact that both are built entirely from
+4-distinct-index Clifford products (hence purely degree-4, zero
+degree-0/3 content by construction) and elementary degree-counting in
+the `{Id,Casimir_su3,H}` basis (`H` is purely degree-3, `Casimir_su3 =
+Id+X/3` has only degree-0/4 parts) — the H-coefficient is FORCED to 0
+and the Id/Casimir_su3 coefficients are FORCED to cancel at degree-0
+(STEP B, confirmed exactly for both objects: `Ch_4→(0,-1,1)`,
+`degree4_term→(0,5/4,-5/4)`). This leaves `M=c·(Casimir_su3-Id)=(c/3)·X`,
+and since `X`'s support (Round 29) is exactly the 3 pair-partition
+quadruples with equal coefficient, `Ch_4`/`degree4_term` are FORCED to
+share that same support — a NECESSARY CONSEQUENCE, not a coincidence of
+Jacobiator index gymnastics. Closes Round 31's own flagged open
+question.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis, task `w21faxvs4`):** the CLEANEST round of the
+entire session — **zero FALSIFIED claims** from either skeptic or the
+synthesis agent. The synthesis agent went notably beyond both skeptics:
+independently constructed the full 64-element orthogonal Clifford basis
+for this project's own `e_action` module from scratch, verified
+`Tr(Z_S^H·Z_T)=8·δ_ST` over 60 randomly sampled pairs, exhaustively
+decomposed `H`/`Ch_4`/`degree4_term`/`Casimir_su3` into all 64 basis
+coefficients (confirming the degree-content claims directly, not just
+via the commutator checks), and additionally tested the GENERALITY of
+the degree-counting mechanism on hand-built random/generic tensors
+unrelated to this project's actual physics data — confirming it is a
+general Clifford-algebra fact, not an accident of the specific
+curvature data. C1-C5 all `[CONFIRMED-REAL]`. Three minor non-blocking
+findings, all fixed (not merely accepted, since fixes were cheap): (1)
+`.T`→`.H` labeling nit in the Hermiticity check (mathematically
+equivalent for these real matrices, but inconsistent with Round 26's
+own convention); (2) both skeptics noted the "prediction BEFORE
+solving" framing understated that the result is STRUCTURALLY FORCED,
+not a falsifiable experimental guess — reworded throughout STEP B; (3)
+added STEP A', a new defense-in-depth in-script re-verification of
+`Casimir_su3=Id+X/3` (previously only cited from Round 29/30). A fourth
+finding — STEP D's bonus re-derivation of Round 30's
+`Ch_tilde=Casimir_su3` understated that it plugs in `Ch_4`'s own SOLVED
+`c=1` from STEP B, not a purely structural value — fixed via a scope
+caveat in the docstring's BONUS section, STEP D's print statements, and
+claim.md's "What this does NOT mean".
+
+**What survives, solid:** the full explanatory chain — WHY exactly 3 of
+15 index-quadruples are ever nonzero — is now established as a genuine
+corollary of Round 28's theorem plus elementary Clifford degree-
+counting, verified from four independent angles (STEP A's direct
+equivariance/Hermiticity checks, STEP B's 3×3 solve, the synthesis
+agent's from-scratch full-64-basis decomposition, and the synthesis
+agent's generality test on unrelated random tensors).
+
+**Still open, honestly-scoped limits:** this round explains the SUPPORT
+(which 3 quadruples, why equal across them) but NOT the SPECIFIC
+numeric value of the proportionality constant `c` (e.g. why `Ch_4`'s own
+`c=1` rather than some other number) — that still requires the direct
+combinatorial computation from Rounds 26/29/31/32, unchanged by this
+round. `RHO`/`NU`'s own construction remains not independently
+re-derived from octonion multiplication rules (Round 32's own flagged
+limit, unaffected). The `8/45 vs ~1.03` norm-ratio tension and the
+`M_p`/`Z_p` L4A convention question (Rounds 23-26) remain untouched.
+The separate, pre-existing `test_g79a_lambda_identity_audit.py` failure
+(tracked separately, `task_61278d24`) remains untouched by this round.
+
+2 new files (`g2su3_round33_why_three_quadruples.py`, `round33_claim.md`),
+zero existing files modified. Full project pytest suite re-run: 2483
+passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
+documented since Round 29). preprint.tex NOT touched.
