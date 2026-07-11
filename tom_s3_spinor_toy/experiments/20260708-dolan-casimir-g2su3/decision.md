@@ -4787,3 +4787,89 @@ generator normalization — flagged for a future round.
 files modified. Full project pytest suite re-run for regression check
 (background, MANDATORY PRE-COMMIT CHECKLIST for 3+ files). preprint.tex
 NOT touched.
+
+## Round 30 (2026-07-11): `Ch_tilde = Casimir_su3` structural derivation
+— found weak TWICE by two different review passes, both gaps closed
+
+**User's instruction:** "го, round 30" — pick up the follow-up Round 29's
+C5 flagged: prove `Ch_tilde == Casimir_su3` structurally (from Agricola's
+Prop 3.3 + known SU(3)-Casimir eigenvalues), not just numerically.
+
+**Core argument:** Agricola herself defines (page 10, before Prop 3.3)
+`C̃h := -Σᵢ ẽad(Xᵢ)∘ẽad(Yᵢ)` for `Qh`-DUAL bases of `h=su(3)` — for a
+`Qh`-ORTHONORMAL (self-dual) basis this reduces to `C̃h = -Σᵢẽad(Xᵢ)²`,
+i.e. literally the Casimir operator. `Casimir_su3` (this project's own
+`-Σsu3_action(k,·)²`) is constructed via the SAME type of object. So
+`C̃h=Casimir_su3` follows IF this project's `{ν_1..ν_8}` (AHL2023 Remark
+5.2) is `Qh`-orthonormal — established via `g₂`'s simplicity (1-dim
+`Ad(G₂)`-invariant-form space, standard) plus an INDEPENDENTLY-built g₂
+realization (`g2su3_appendix_a_construction.py`, Round 13) shown fully
+`B₀`-orthonormal across ALL 196 pairs of the FULL 14-dim g₂ (not just the
+diagonal, previously the only documented fact) — pinning the scalar
+`λ=1` exactly via the m-direction normalization match.
+
+**What remained: connecting Appendix A's proven-orthonormal `{ν_k}` to
+`su3_action`'s SPECIFIC generators** — this went through TWO independent
+correction rounds on the SAME claim:
+
+**Round 1 (FL Step 8a, 2 context-blind skeptics + tool-verified
+synthesis):** the original version used "uniqueness of the 8-dim
+irreducible Clifford module" (`dim m=6` even ⟹ unique `2³=8`-dim complex
+irrep) as the load-bearing step. BOTH skeptics independently found this
+too weak — it gives only an ABSTRACT isomorphism (conjugacy by SOME
+unknown intertwiner), not the SPECIFIC operator identity needed. Both
+proposed the same fix. The synthesis agent implemented and verified it:
+build Parthasarathy's `ẽad(ν_k)` directly from `SU3_GENERATORS`+
+`e_action` (zero reference to Appendix A) and check against
+`su3_action(k,·)` — EXACT match, no sign ambiguity, all k=1..8 (STEP C).
+Committed as (at the time) the primary proof mechanism.
+
+**Round 2 (`/boyko-triangle-audit`, run AFTER round 1 was already
+approved by both skeptics and the synthesis agent):** found STEP C's
+"exact match" is ALGEBRAICALLY FORCED regardless of what numbers sit in
+`SU3_GENERATORS` — `ead_parthasarathy` and `su3_action` are built from
+the SAME `(sign,a,b)` list via two bookkeeping schemes (ordered-pair sum
+vs antisymmetric-matrix sum) that Clifford anticommutation
+(`Z_aZ_b=-Z_bZ_a`) forces to coincide FOR ANY input data. **Independently
+re-verified before accepting the audit's claim** (not just trusted):
+ran the exact same check with a FABRICATED, arbitrary bivector table and
+arbitrary coefficient — still matched exactly, confirming STEP C tests
+`su3_action`'s normalization self-consistency, NOT whether
+`SU3_GENERATORS` represents the same abstract `ν_k` Appendix A's `ν(k)`
+does. Neither FL Step 8a skeptic caught this — a same-model-family blind
+spot, exactly the failure mode this project's own CLAUDE.md flags
+cross-model review for ("reviewer + sec-auditor are BOTH Claude = shared
+blind spots"), now shown to apply to mathematical-argument review too,
+not just code review.
+
+**Fix (STEP C', re-verified inside Round 30's own script, not merely
+cited from memory):** re-ran Round 13's OWN calibration — Appendix A's
+`ν(i)` commutator action on its own `e(p)`, checked against
+`SU3_GENERATORS`/`AD_NU_M_BIVECTOR`'s `ad(ν_i)|_m` data — confirmed
+exactly for all 8×6=48 `(i,p)` pairs. THIS is the fact that connects
+Appendix A's proven `Qh`-orthonormal `{ν_1..ν_8}` to `su3_action`'s
+generators — not STEP C. STEP C is RETAINED (a true, non-vacuous fact
+about `su3_action`'s own internal normalization) but explicitly
+RELABELED from "primary proof mechanism" to "internal consistency
+check." Caveat: for k=8 specifically, Appendix A's own `ν_8` was
+BACK-SOLVED from exactly this same equation (that file's own inline
+comment, Round 13) — so STEP C' re-verifies rather than independently
+confirms for k=8; k=1..7 ARE genuinely independent (verbatim page
+transcriptions checked against a totally different construction method).
+
+**No claim was FALSIFIED in either review pass** — both found real gaps
+in the PROOF ROUTE for an already-true conclusion, both closed with
+tool-verified evidence. `C̃h=Casimir_su3` survives BOTH passes.
+
+**Bonus corroboration (demoted from "proof" to "corroboration" post-
+skeptic):** `-Σnu(k)²` (Appendix A) and `Casimir_su3` have the IDENTICAL
+eigenvalue spectrum `{0×2, 4/3×6}` — expected from G₂→SU(3) branching
+theory (Casimir can't distinguish `3` from `3̄`), so real but weaker
+evidence than originally framed.
+
+2 new files (`g2su3_round30_ch_casimir_structural.py`,
+`round30_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented in Round 29 — `experiments/20260708-
+phase4e/`, commit `733e484`, predates this session). preprint.tex NOT
+touched.
