@@ -4940,3 +4940,65 @@ equivariant + Swap-symmetric space, flagged for a future round.
 `round31_claim.md`), zero existing files modified. Full project pytest
 suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented in Rounds 29-30). preprint.tex NOT touched.
+
+## Round 32 (2026-07-11): `build_curvature_h_table()` rebuilt entirely
+combinatorially — last remaining Clifford-matrix construction eliminated
+
+**User's instruction:** "го, round 32", after choosing this scope from 3
+offered candidates — "Довести build_curvature_h_table до комбинаторики".
+
+**Key observation:** `e(p)`/`nu(k)` (Round 13's Appendix-A construction)
+are ALREADY, by construction, linear combinations of Cl(7,0) bivectors
+`ρ(a)·ρ(b)` with explicit rational coefficients (e.g.
+`nu_1=(1/4)(ρ1ρ2-ρ5ρ6)`) — the SAME type of object Round 29's Clifford-
+word reducer manipulates, just for a DIFFERENT (7-generator) Clifford
+algebra than `Σ=Λ*(ℂ³)`'s 6. `reduce_clifford_word` is fully generic
+(only `Z_i²=-1`, `Z_iZ_j=-Z_jZ_i`) — reused UNCHANGED for 7 generators.
+Two combinatorial primitives replace the old matrix machinery: (1) a
+commutator via the reducer on 4-index words (replacing `bracket_e`'s
+matrix commutator), (2) a trace-as-dot-product formula
+`Tr(e_S^T e_T)=8·δ_ST` (VERIFIED directly against matrices, all `21`
+diagonal + `210` cross bivector pairs — a one-time primitive check, not
+per-index) replacing `decompose_g2`'s trace-projection. The
+combinatorially-rebuilt `curv_h` matches the matrix-based table exactly
+(17/17 entries) and re-derives `(1,-1/2,-7/4)` through Round 31's own
+downstream pipeline.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis):** this round's claim.md stated UP FRONT, in a
+"PRECISE SCOPE STATEMENT" table, exactly which steps use 8×8 matrices
+(A/B/E/G — one-time primitive verification, self-test, and cross-check)
+and which do not (C+D/F — the actual derivation) — directly addressing
+the overclaim pattern both skeptics caught on Round 31 (where "zero
+matrix construction anywhere" was found false). Both skeptics + synthesis
+independently confirmed this table is ACCURATE — no repeat of Round 31's
+overclaim, the lesson was genuinely applied. All C1-C4 CONFIRMED-REAL.
+One real, non-falsifying test-quality regression found by BOTH skeptics
+independently (Round 32 had dropped Round 31's own `assert len(...)==1`
+uniformity guards before `.pop()`, and the `expected_sumM2`/`expected_H2`
+dict-equality asserts) — fixed (guards restored, plus `Qm_sum` changed
+from a hardcoded literal to a genuine T-table computation with an
+assert, strengthening the "from raw T-table" framing).
+
+**What survives, solid:** combined with Rounds 29 and 31, the ENTIRE
+derivation chain from raw `NU`-dict/T-table data to `(1,-1/2,-7/4)` is
+now free of 8×8 Clifford-matrix construction, except explicitly-scoped
+verification/cross-check steps — matching the same role Rounds 29/31's
+own final sanity steps already play. This closes the LAST item from
+Round 31's own "Still open" list on the matrix-elimination front.
+
+**Still open, honestly-scoped limits:** `RHO`/`NU`'s own construction is
+NOT independently re-derived from octonion multiplication rules or the
+primary-source PDF (Remark A.2/Lemma A.1) — `NU_BIVEC_SOURCE` is a direct
+transcription of Round 13's already-established data. The
+`X=3(Cas-Id)` substitution remains an imported, not independently
+re-derived, relation (Round 29). WHY only 3 of 15 index-quadruples are
+ever nonzero is still verified but not explained from a deeper principle
+(plausibly Round 28's 3-dim SU(3)-equivariant space) — unaffected by
+this round, still open. The `8/45 vs ~1.03` norm-ratio tension and the
+`M_p`/`Z_p` L4A convention question (Rounds 23-26) remain untouched.
+
+2 new files (`g2su3_round32_curvh_combinatorial.py`, `round32_claim.md`),
+zero existing files modified. Full project pytest suite re-run: 2483
+passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
+documented since Round 29). preprint.tex NOT touched.
