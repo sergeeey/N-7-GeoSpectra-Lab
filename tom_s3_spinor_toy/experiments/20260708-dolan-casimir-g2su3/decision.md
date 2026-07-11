@@ -4873,3 +4873,70 @@ suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented in Round 29 — `experiments/20260708-
 phase4e/`, commit `733e484`, predates this session). preprint.tex NOT
 touched.
+
+## Round 31 (2026-07-11): finish Phase 2 — Ch_tilde/degree4_term via
+pure combinatorics, no `build_quartic_matrix`/`e_action` in STEPs A-C
+
+**User's instruction:** "го, round 31", after choosing this scope from
+4 offered candidates (norm-ratio tension / M_p-vs-Z_p convention /
+finish Phase 2's degree4_term-scalar_term / custom) — "Достроить Phase 2
+до конца (degree4_term/scalar_term)".
+
+**Key observation (what made this tractable):** `jach_coeff`/
+`degree4_coeff` (Round 26) were ALREADY pure scalar functions of an
+ordered index-quadruple `(i,j,k,l)` — built entirely from `curv_h`/
+`T`-table dict lookups via `jac_h`/`jac_m` (themselves pure dict lookups
++ `ad_nu_m_trusted`, zero Clifford dependency). `build_quartic_matrix`
+only used `e_action` to REALIZE an already-computed scalar coefficient
+as an 8×8 matrix entry — the coefficient itself was already fully
+determined before any matrix operation. Since `(1,2,3,4)`, `(1,2,5,6)`,
+`(3,4,5,6)` are ALREADY the target quartic basis elements in canonical
+sorted order, their coefficients (`1/3` and `-5/12`, matching Round 29's
+matrix-derived values exactly) are obtained by DIRECT function
+evaluation — 15 total (`C(6,4)`), verifying the other 12 are exactly
+zero — eliminating the `build_quartic_matrix`+trace-projection pattern
+for `Ch_tilde`/`degree4_term` specifically, the gap both FL Step 8a
+skeptics flagged on Round 29 (C6's WEAKENED note).
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis):** both skeptics converged INDEPENDENTLY on the
+SAME real finding — NOT a same-model blind spot this time, both caught
+it themselves without needing an external audit pass (unlike Round 30,
+where `/boyko-triangle-audit` was needed after both skeptics approved a
+tautology). The finding: the original claim "ZERO 8×8 Clifford-matrix
+construction anywhere in the derivation chain" overstated what was
+closed. `build_curvature_h_table()` (called in STEP A to produce
+`curv_h`) itself builds 8×8 matrices — `RHO`/`NU` (Cl(7,0)-side
+generators and their products, unchanged since Round 13), a `bracket_e`
+matrix commutator per `(p,q)` pair (15 pairs), and `decompose_g2`'s
+`Tr(nu_k.T·M)` trace-projection (210 total) — the SAME "matrix + trace-
+projection" pattern Round 29 was flagged for, RELOCATED upstream into
+computing `curv_h`, not eliminated. Also flagged: the substitution
+`X=3(Casimir_su3-Id)` (STEP C) is imported UNCHANGED from Round 29's own
+matrix-verified relation, not independently re-derived here. No claim
+was FALSIFIED — this was a scope-narrowing fix (documentation/framing
+only, numeric result untouched): claim.md and the script's docstring/
+print statements were narrowed to the defensible claim (`jach_coeff`/
+`degree4_coeff` and the specific `build_quartic_matrix`/`e_action`/
+`clifford_quad` functions are genuinely absent from STEPs A-C — the
+EXACT pattern Round 29 was flagged for is closed, not merely relocated,
+for `Ch_tilde`/`degree4_term` specifically), plus a symmetric caveat
+added (paralleling the pre-existing `Casimir_su3` caveat) for
+`build_curvature_h_table()`'s own upstream matrix construction.
+
+**What survives, solid:** the specific `build_quartic_matrix`+trace-
+projection elimination for `Ch_tilde`/`degree4_term` — a real, narrower
+code-hygiene improvement over Round 29, correctly scoped after the fix.
+
+**Still open, honestly-scoped limits:** `build_curvature_h_table()`'s
+own 8×8 matrix construction (unchanged since Round 13) is NOT addressed;
+the `X=3(Cas-Id)` substitution remains an imported, not independently
+re-derived, relation; WHY only the 3 "pair-partition" quadruples are
+ever nonzero (out of 15 possible) is verified but not explained from a
+deeper principle — plausibly connects to Round 28's proven 3-dim SU(3)-
+equivariant + Swap-symmetric space, flagged for a future round.
+
+2 new files (`g2su3_round31_full_combinatorial_derivation.py`,
+`round31_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented in Rounds 29-30). preprint.tex NOT touched.
