@@ -4559,3 +4559,58 @@ of `M_p`/`Z_p` the preprint's own L4A argument actually intends.
 
 Merged: `0d3dbd2`→`6113aa8`→`811e4e5` (feature/round26-jach-derivation-
 20260711, merged --no-ff, pushed). preprint.tex NOT touched this round.
+
+---
+
+## Round 27 (2026-07-11) — Dslash_mat = -H/2 exact identity
+
+Full derivation, claims, kill conditions, skeptic verdict:
+`round27_claim.md`. Code: `g2su3_round27_dslash_equals_H.py`.
+
+**Motivation:** user asked to derive Round 26's `M_p`-vs-`Z_p` correction
+from first principles. Investigating surfaced a stronger, previously-
+unknown fact instead: `Dslash_mat` (`:= Σ_p e_p·M_p`, the CENTRAL object
+of Rounds 14-26) equals EXACTLY `-(1/2)*H` as an OPERATOR (not just its
+square) — verified by direct independent matrix computation, no
+subtraction.
+
+**Skeptic review caught two real errors** (FL Step 8a; one skeptic had
+NO code-execution access and still found the sign error from algebra +
+code inspection alone):
+
+1. **"Independent sources" overclaim.** The original framing said `M_p`
+   (calibrated against AHL2023's Killing-spinor equation) and `H`
+   (built from Agricola-2002-style torsion data) were independently
+   anchored, making `Dslash=-H/2` a "cross-confirmation." FALSE — both
+   trace to the SAME `LEVI_CIVITA_NOMIZU` data (`H`'s T-table uses
+   `lambda_half`, which uses the same Nomizu map `nabla_g`/`M_p` uses).
+   Retracted; reframed as "a verified numerical realization of what
+   Agricola's eq. 5 predicts given this shared data."
+
+2. **Sign error in the `D^0=0` claim (the more serious one).** The
+   original argument matched "cubic term = `-H_ours`" against Agricola's
+   own "cubic term = `-H_Agricola`" and concluded `H_ours=-H_Agricola`
+   — but that algebra actually gives `H_ours=H_Agricola` DIRECTLY (no
+   flip). Independently re-verified via `torsion_T`'s own docstring
+   (`g2su3_H_element.py`): its formula matches Agricola's eq. 1
+   convention exactly, confirming no sign flip. **Corrected consequence:
+   `D^0 = -H_ours`** (Agricola's canonical/t=0 twisted Dirac operator,
+   NOT zero as first claimed) — a cleaner result: both `D^0` and
+   `D^{1/2}` are proportional to the SAME `H`, with coefficients `-1`
+   and `-1/2` respectively. Re-derived and re-asserted in-script.
+
+Also downgraded: C3 ("re-deriving the correction via `H²` algebra as an
+independent cross-check") — tautological given `Dslash²=H²/4` follows
+identically from the headline identity; relabeled "consistency rewrite."
+
+**What survives, solid:** `Dslash_mat=-H/2` and `Dslash_mat²=H²/4` (C1,
+C2) — both CONFIRMED-REAL by both skeptics, unaffected by the framing/
+sign issues above.
+
+**Still genuinely open:** WHY `D^0` takes exactly the value `-H_ours` —
+an arithmetic consequence of the identity + Agricola's eq. 5, not an
+independent geometric derivation. No separate construction of `D^0`
+exists in this codebase to check against.
+
+Merged: `d4a5287` (feature/round27-dslash-equals-H-20260711, merged
+--no-ff, pushed). preprint.tex NOT touched this round.
