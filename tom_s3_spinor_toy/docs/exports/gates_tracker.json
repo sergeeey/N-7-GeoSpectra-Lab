@@ -1,0 +1,891 @@
+{
+  "project": "N-7-GeoSpectra-Lab / tom_s3_spinor_toy",
+  "title": "Gates Tracker -- S3xS6 research pipeline, gate-by-gate status",
+  "source_xlsx": "docs/exports/gates_tracker.xlsx",
+  "generated": "2026-07-11",
+  "note": "status=null means the gate's Status cell is blank in the source sheet (typically a killed/NULL result whose verdict lives in the Section label, e.g. 'N_gen NULL', or in key_result text -- NOT a literal 'NULL' string).",
+  "status_counts": {
+    "PASS": 43,
+    "(null/killed)": 22,
+    "WEAK": 4,
+    "THEOREM": 1,
+    "PROMOTE": 13,
+    "PARTIAL": 1,
+    "CONDITIONAL": 1,
+    "STRONG_PASS": 1,
+    "STRUCTURAL_SPLIT": 1
+  },
+  "total_gates": 87,
+  "gates": [
+    {
+      "gate": "G6",
+      "section": "Fermion Chain",
+      "claim": "32-component spinor = 1 SM generation under SO(4)×G₂",
+      "status": "PASS",
+      "key_result": "32/32 states matched; all quantum numbers correct",
+      "tests": "6/6",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "G7",
+      "section": "Fermion Chain",
+      "claim": "KK mass spectrum on S³×S⁶ from Lichnerowicz",
+      "status": "PASS",
+      "key_result": "M²_{mn} = (n+3/2)²/ρ₃² + m²/ρ₆²; gap confirmed",
+      "tests": "8/8",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "G8",
+      "section": "Fermion Chain",
+      "claim": "Chirality obstruction on round S³×S⁶",
+      "status": "PASS",
+      "key_result": "b₁=b₂=0; Atiyah-Singer index=0 on untwisted bundle",
+      "tests": "6/6",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "G9",
+      "section": "Fermion Chain",
+      "claim": "Coset chirality: G₂/SU(3) gives SU(3) action on S⁶",
+      "status": "PASS",
+      "key_result": "G₂/SU(3) = S⁶; SU(3) acts isometrically",
+      "tests": "4/4",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "G10",
+      "section": "Gauge Structure",
+      "claim": "S⁶ spin connection → SO(6) gauge field",
+      "status": "PASS",
+      "key_result": "so(6)≅su(4); 15 generators; cross-spectator effect",
+      "tests": "6/6",
+      "date": "2026-06-17",
+      "depends_on": null
+    },
+    {
+      "gate": "G10b",
+      "section": "Gauge Structure",
+      "claim": "SU(3) embedded in SO(6) explicitly",
+      "status": "PASS",
+      "key_result": "J-preserving traceless subalgebra; dim=8",
+      "tests": "5/5",
+      "date": "2026-06-18",
+      "depends_on": null
+    },
+    {
+      "gate": "G11",
+      "section": "Gauge Structure",
+      "claim": "32×32 block generators SU(2)_L, SU(2)_R, SU(3)",
+      "status": "PASS",
+      "key_result": "Algebras close with correct structure constants",
+      "tests": "12/12",
+      "date": "2026-06-18",
+      "depends_on": null
+    },
+    {
+      "gate": "G12",
+      "section": "Gauge Structure",
+      "claim": "All 5 SM anomaly cancellations",
+      "status": "PASS",
+      "key_result": "ΣY³=0, ΣY=0, all mixed anomalies=0",
+      "tests": "5/5",
+      "date": "2026-06-18",
+      "depends_on": null
+    },
+    {
+      "gate": "G13",
+      "section": "Gauge Structure",
+      "claim": "Twisted Dirac index on S⁶ ≠ 0",
+      "status": "PASS",
+      "key_result": "ind(D_{T^{1,0}})=1 ≠ 0",
+      "tests": "4/4",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G14",
+      "section": "Gauge Structure",
+      "claim": "Quark color triplet from S⁶ spinor basis",
+      "status": "PASS",
+      "key_result": "3 colors = {",
+      "tests": "011⟩,",
+      "date": "101⟩,",
+      "depends_on": null
+    },
+    {
+      "gate": "G15",
+      "section": "Quantum Numbers",
+      "claim": "Hypercharge Y from S⁶ geometry",
+      "status": "PASS",
+      "key_result": "Y = T₃R + (B−L)/2 for all 8 S⁶ states",
+      "tests": "8/8",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G16",
+      "section": "Quantum Numbers",
+      "claim": "Y = K₃ + (B−L)/2 fully geometric",
+      "status": "PASS",
+      "key_result": "Right-handed generation + CPT conjugates correct",
+      "tests": "8/8",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G17",
+      "section": "Quantum Numbers",
+      "claim": "Q = T₃L + Y; ΣQ=0 for all 32 states",
+      "status": "PASS",
+      "key_result": "Electric charge geometric; ΣQ=0 exact",
+      "tests": "10/10",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G18",
+      "section": "NCG Structure",
+      "claim": "Spectral triple KO-dim=6; 4 free Yukawa",
+      "status": "PASS",
+      "key_result": "J_F²=−1, {J_F,γ_F}=0, [D_F,J_F]=0",
+      "tests": "8/8",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G19",
+      "section": "NCG Structure",
+      "claim": "(2,2)₀ Higgs bidoublet from D_F",
+      "status": "PASS",
+      "key_result": "dBL=0 geometric; Pati-Salam structure",
+      "tests": "6/6",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G20",
+      "section": "NCG Structure",
+      "claim": "Yukawa intertwiner dim=4 (8→4 via CPT)",
+      "status": "PASS",
+      "key_result": "4 = dim(SU(3)-orbits on S⁶) via CPT folding",
+      "tests": "6/6",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G21",
+      "section": "NCG Structure",
+      "claim": "S⁶ necessary: Extended Schur dim check",
+      "status": "PASS",
+      "key_result": "dim=12 without B-L, dim=8 with B-L",
+      "tests": "5/5",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G22",
+      "section": "NCG Structure",
+      "claim": "NCG first-order condition selects SU(3)×U(1)_{B-L}",
+      "status": "PASS",
+      "key_result": "Violation=(1/2)² for SU(2) sectors",
+      "tests": "6/6",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G23",
+      "section": "Closing Gates",
+      "claim": "Chirality from gauge sectors; Witten index=0",
+      "status": "PASS",
+      "key_result": "{D_F,γ_F}=0; SM chirality from SU(2)_L vs SU(2)_R",
+      "tests": "8/8",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G24",
+      "section": "Closing Gates",
+      "claim": "Blind Spectrum: SO(4)×G₂ rep → SM content",
+      "status": "PASS",
+      "key_result": "SM fermion content predicted from group theory alone",
+      "tests": "6/6",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G25",
+      "section": "Closing Gates",
+      "claim": "Yukawa Texture: 256→16→4 geometric cascade",
+      "status": "PASS",
+      "key_result": "Exactly 4 Yukawa params from geometry",
+      "tests": "6/6",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G26",
+      "section": "Closing Gates",
+      "claim": "CCM 2006 comparison: 3 postulates become derived",
+      "status": "PASS",
+      "key_result": "5/5 correspondences; Dolan-Nash 2002 cited",
+      "tests": "5/5",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G28",
+      "section": "Spectral Action",
+      "claim": "Spectral action → SM gauge kinetic terms",
+      "status": "PASS",
+      "key_result": "g₂²∝Vol(S⁶)/N_{s6}, g₃²∝Vol(S³)/N_{s3}",
+      "tests": "8/8",
+      "date": "2026-06-19",
+      "depends_on": null
+    },
+    {
+      "gate": "G29",
+      "section": "Spectral Action",
+      "claim": "Coupling ratio g₂²/g₃² = 15/(16π)",
+      "status": "PASS",
+      "key_result": "4.3% error vs SM at equal radii; zero free params",
+      "tests": "6/6",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G27",
+      "section": "N_gen NULL",
+      "claim": "Z₃ orbifold on S⁶ gives N_gen=3?",
+      "status": null,
+      "key_result": "χ(S⁶)=2; Z₃ has no free action on S⁶",
+      "tests": "8/8",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G30",
+      "section": "N_gen NULL",
+      "claim": "G₂-instanton index on S⁶ gives ind=3?",
+      "status": null,
+      "key_result": "G₂ acts identically on S⁺ and S⁻ → ind=0 for all G₂-irreps",
+      "tests": "34/34",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G31",
+      "section": "N_gen NULL",
+      "claim": "S³ adjoint bundle j=1 gives ind=3?",
+      "status": null,
+      "key_result": "Lichnerowicz D²≥0 + parity → ind=0; j_crit=3/2 (Rarita-Schwinger)",
+      "tests": "12/12",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G33",
+      "section": "N_gen NULL",
+      "claim": "Euler class c₃(T^{1,0}S⁶)=χ(S⁶) gives N_gen=3?",
+      "status": null,
+      "key_result": "c₃=χ(S⁶)=2 (not 6); A1 circular (embeds N_gen=3 as input)",
+      "tests": "10/10",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G34-D1",
+      "section": "N_gen NULL",
+      "claim": "Flux H⁶(S⁶;ℤ)=ℤ selects c₃=6?",
+      "status": "WEAK",
+      "key_result": "H⁶=ℤ allows any c₃∈ℤ; necessary not sufficient",
+      "tests": "4/4",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G34-B3",
+      "section": "N_gen NULL",
+      "claim": "WZW SU(2)_k level k=2 gives 3 primaries → N_gen=3?",
+      "status": null,
+      "key_result": "η(D_{S³})=0 → k_grav=0 → SU(2)₀ → 1 primary",
+      "tests": "6/6",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G34-A2",
+      "section": "N_gen NULL",
+      "claim": "Cobordism Ω^Spin_6=0 selects N_gen=3?",
+      "status": null,
+      "key_result": "No mod-k cobordism invariants on S⁶; η(S⁶)=0",
+      "tests": "4/4",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G35",
+      "section": "N_gen NULL",
+      "claim": "NCG M₃(ℂ) dimension = generation counter?",
+      "status": null,
+      "key_result": "rank(T^{1,0}S⁶)=3 ≠ ind=1; M₃(ℂ)=color SU(3)",
+      "tests": "6/6",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G36",
+      "section": "N_gen NULL",
+      "claim": "K-theory Adams ops select n=3?",
+      "status": null,
+      "key_result": "K̃(S⁶)=ℤ homogeneous; Adams k³ eigenvalue same ∀n",
+      "tests": "8/8",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G37",
+      "section": "N_gen NULL",
+      "claim": "String tadpole on S³×S⁶ selects N_gen=3?",
+      "status": null,
+      "key_result": "dim=9≠10D; compact bulk not specified; vacuous",
+      "tests": "4/4",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G38",
+      "section": "N_gen NULL",
+      "claim": "Spectral action minimum at c₃=6?",
+      "status": null,
+      "key_result": "S_spec(c₃) monotone → min at c₃=2 (=G33 restated)",
+      "tests": "8/8",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G39-B1",
+      "section": "N_gen NULL",
+      "claim": "Pati-Salam SU(4) bundle: Λ²(T^{0,1}) gives c₃=6?",
+      "status": null,
+      "key_result": "Λ²(T^{0,1}) has c₃=2 not 6",
+      "tests": "6/6",
+      "date": "2026-06-24",
+      "depends_on": null
+    },
+    {
+      "gate": "G40-B2",
+      "section": "N_gen NULL",
+      "claim": "G₂→SU(3) SSB via π₅(S⁶) gives c₃=6?",
+      "status": "WEAK",
+      "key_result": "π₅(S⁶)=0 (not ℤ₂); cellular approx; G₂-SSB doesn't force c₃",
+      "tests": "4/4",
+      "date": "2026-06-24",
+      "depends_on": null
+    },
+    {
+      "gate": "G41-B3",
+      "section": "N_gen NULL",
+      "claim": "3 D6-branes: rank-3 gauge bundle selects c₃=6?",
+      "status": "WEAK",
+      "key_result": "c₃ free; no physical selection principle",
+      "tests": "3/3",
+      "date": "2026-06-24",
+      "depends_on": null
+    },
+    {
+      "gate": "G42-B4",
+      "section": "N_gen NULL",
+      "claim": "Green-Schwarz anomaly cancellation selects c₃=6?",
+      "status": null,
+      "key_result": "H⁴(S⁶)=0 → GS trivial; dim=9≠10",
+      "tests": "4/4",
+      "date": "2026-06-24",
+      "depends_on": null
+    },
+    {
+      "gate": "G43+G48",
+      "section": "N_gen NULL",
+      "claim": "Stable HYM bundles (Harland-Nölle): c₃=6 on S⁶?",
+      "status": null,
+      "key_result": "Harland-Nölle: instantons on ℝ⁷ cone not S⁶; all known S⁶: c₃=2",
+      "tests": "8/8",
+      "date": "2026-06-24",
+      "depends_on": null
+    },
+    {
+      "gate": "G44",
+      "section": "N_gen NULL",
+      "claim": "D₄ triality on S³×S⁶ (G₂ holonomy) gives N_gen=3?",
+      "status": null,
+      "key_result": "G₂ has no 8-dim irrep; triality orbit collapses to 1 on S⁶",
+      "tests": "6/6",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G45",
+      "section": "N_gen NULL",
+      "claim": "D₄ triality on S³×S⁷ (SO(8)) gives N_gen=3?",
+      "status": "WEAK",
+      "key_result": "Orbit size=3 visible; single parallelization → N_gen=1",
+      "tests": "4/4",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G46",
+      "section": "N_gen NULL",
+      "claim": "Geometric ℂ⊗ℍ⊗𝕆 realization gives N_gen=3?",
+      "status": null,
+      "key_result": "Single metric → unique isotropy; SO(8) dim=28 not compactifiable",
+      "tests": "6/6",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "T1",
+      "section": "N_gen THEOREM",
+      "claim": "No single-bundle mechanism selects N_gen=3 on S³×S⁶",
+      "status": "THEOREM",
+      "key_result": "14 NULL + 4 WEAK; all 5 categories exhausted; N_gen=3 is dynamical",
+      "tests": "29/29",
+      "date": "2026-06-24",
+      "depends_on": null
+    },
+    {
+      "gate": "G50",
+      "section": "χ-Lemma",
+      "claim": "χ-lemma: H²=H⁴=0 → c₁=c₂=0 → single algebraic cause",
+      "status": "PROMOTE",
+      "key_result": "All G33/G38/G39 = one algebraic cause; T1 from 2 lemmas",
+      "tests": "10/10",
+      "date": "2026-06-20",
+      "depends_on": null
+    },
+    {
+      "gate": "G53",
+      "section": "Casimir",
+      "claim": "Casimir energy on S³×S⁶; A₀=√π/2",
+      "status": "PARTIAL",
+      "key_result": "C1-C3 PASS; ζ(−1/2) not computed analytically",
+      "tests": "12/12",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G54A",
+      "section": "Stabilization",
+      "claim": "Freund-Rubin flux: V_flux = g₂²/g₃²",
+      "status": "PASS",
+      "key_result": "V_flux=15·C_SM³/(16π)=0.2861; SU(2)_L←Vol(S⁶) cross-spectator",
+      "tests": "8/8",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G57",
+      "section": "Stabilization",
+      "claim": "UV-selection: Casimir half-integer pole c_{1/2}=0 at ρ₆*",
+      "status": "PASS",
+      "key_result": "ρ₆*=1.090 (C_UV/C_SM); UV divergence cancelled",
+      "tests": "6/6",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G60",
+      "section": "Stabilization",
+      "claim": "Minkowski uplift: can NP term alone reach V=0?",
+      "status": null,
+      "key_result": "λ_geom=−0.002<0; zeta_FP monotone; external uplift required",
+      "tests": "6/6",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G62",
+      "section": "Stabilization",
+      "claim": "Zero-fit observables from potential chain",
+      "status": "PROMOTE",
+      "key_result": "ρ₆_min=1.179, V_min=−2.53×10⁻⁶, m_mod/m_KK=2.02% (proxy); zero SM input",
+      "tests": "19/19",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G63",
+      "section": "Stabilization",
+      "claim": "Casimir correction to ρ_min",
+      "status": "PROMOTE",
+      "key_result": "Casimir=0.24% of V_flux; δρ_min<0.005%; G62 stable",
+      "tests": "13/13",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G64",
+      "section": "Stabilization",
+      "claim": "ρ_min=1.179 independent of C (g₂/g₃ ratio)",
+      "status": "PROMOTE",
+      "key_result": "ρ_min C-invariant; m_ratio∝C^{3/2}",
+      "tests": "23/23",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G65",
+      "section": "Stabilization",
+      "claim": "κ=ρ_min/ρ* is C-invariant",
+      "status": "PROMOTE",
+      "key_result": "κ=1.082 C-invariant; ρ_min∝1/C, ρ*∝1/C simultaneously",
+      "tests": "24/24",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G66",
+      "section": "Stabilization",
+      "claim": "Analytic κ² = (n+1)/n = 7/6",
+      "status": "PROMOTE",
+      "key_result": "κ=√(7/6)=1.0801 ANALYTIC; n=dim(S⁶)=6; error 0.004%",
+      "tests": "25/25",
+      "date": "2026-06-21",
+      "depends_on": null
+    },
+    {
+      "gate": "G67",
+      "section": "Three Channels",
+      "claim": "SO(8) triality Z₃ → 3 independent channels",
+      "status": "PROMOTE",
+      "key_result": "G₂=Fix(Z₃⊂Aut(𝕆)); Z₃ permutes 8_v/8_s/8_c cyclically; c₃(8_v)=c₃(8_s)=c₃(8_c)=2 (triality preserves Chern classes)",
+      "tests": "25/25",
+      "date": "2026-06-21",
+      "depends_on": "G33, G50"
+    },
+    {
+      "gate": "G69",
+      "section": "Three Channels",
+      "claim": "CSDR G₂/SU(3): Spin(6)→SU(3) branching = SM content",
+      "status": "PROMOTE",
+      "key_result": "4→3+1, 4̄→3̄+1; 3+3̄+1+1 per channel",
+      "tests": "26/26",
+      "date": "2026-06-21",
+      "depends_on": "G9, G24"
+    },
+    {
+      "gate": "G73",
+      "section": "Three Channels",
+      "claim": "ind(D_{S⁶}⊗S⁻)=1/channel × 3 channels = N_gen=3",
+      "status": "PROMOTE",
+      "key_result": "Â(S⁶)=1 exact; c₃(S⁻)=2; N_gen=3 EXACT",
+      "tests": "29/29",
+      "date": "2026-06-21",
+      "depends_on": "G33, G50, G67, G69"
+    },
+    {
+      "gate": "G74A",
+      "section": "Three Channels",
+      "claim": "Lichnerowicz+G₂-Schur: dim ker=1 EXACTLY per channel",
+      "status": "PROMOTE",
+      "key_result": "Lemma A: ‖F_S⁻‖/(R/4)=8/45≪1 (safety=5.625×, Lichnerowicz dominates); Lemma B: G₂-singlet mult=1 (Schur) → dim ker=1 EXACTLY per channel. NOTE (2026-07-11): underlying operator (M_p) under active re-derivation Rounds 14-27 — dim ker=1 NOT retracted, correction coefficients not yet first-principles derived, see activeContext.md.",
+      "tests": "30/30",
+      "date": "2026-06-21 (annotated 2026-07-11)",
+      "depends_on": "G73, G67, G9"
+    },
+    {
+      "gate": "G74B",
+      "section": "Three Channels",
+      "claim": "sign(ind)=+1 → LEFT_HANDED_EXCESS",
+      "status": "PROMOTE",
+      "key_result": "L=1, R=0 per channel; 3 left-handed zero modes total",
+      "tests": "31/31",
+      "date": "2026-06-21",
+      "depends_on": "G73, G74A, G23"
+    },
+    {
+      "gate": "G76",
+      "section": "Parameter Audit",
+      "claim": "Parameter registry: classify all constants by provenance",
+      "status": "PASS",
+      "key_result": "FIXED: n₃,n₆,K_vol / CONDITIONAL: C_SM,ρ₆*,V_flux / FREE: λ_np,λ_V,A_np",
+      "tests": "—",
+      "date": "2026-06-22",
+      "depends_on": null
+    },
+    {
+      "gate": "G82",
+      "section": "Parameter Audit",
+      "claim": "Canonical mass ratio m_mod/m_KK in Einstein frame",
+      "status": "CONDITIONAL",
+      "key_result": "2.02% (coordinate proxy) → 0.25% (canonical, M4=Ms=1); physical needs string units",
+      "tests": "5/5",
+      "date": "2026-06-22",
+      "depends_on": null
+    },
+    {
+      "gate": "AV-G0",
+      "section": "Contour AV-2",
+      "claim": "Source trace: C-H eqs 3.27-3.41 VERIFIED_FROM_PDF",
+      "status": "PASS",
+      "key_result": "Equations matched to source PDF",
+      "tests": "verified",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "AV-G1",
+      "section": "Contour AV-2",
+      "claim": "Two-component first-order system",
+      "status": "PASS",
+      "key_result": "24 tests; FD error ≤5×10⁻⁷",
+      "tests": "24/24",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "AV-G2",
+      "section": "Contour AV-2",
+      "claim": "Boundary exponent g_l0≈0; mixed_l0≈cosα",
+      "status": "PASS",
+      "key_result": "g_l0≈−0.096≈0; mixed_l0=0.928",
+      "tests": "45/45",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "AV-E1",
+      "section": "Contour AV-2",
+      "claim": "φ₀₀·g₀₀ = cosα·sinα = sin(2α)/2 EXACT",
+      "status": "STRONG_PASS",
+      "key_result": "Spinor bilinear origin of sin(2α); analytic identity",
+      "tests": "26/26",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "AV-E2",
+      "section": "Contour AV-2",
+      "claim": "Angular CG singlet C²=0.5",
+      "status": "PASS",
+      "key_result": "SU(2) state (m=±1/2) has nonzero singlet projection",
+      "tests": "21/21",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "BG-G0",
+      "section": "Contour BG-H1",
+      "claim": "Product Dirac on S³×S¹: source trace",
+      "status": "PASS",
+      "key_result": "C-H eqs (2.1),(2.4),(2.10),(3.46)-(3.48) verified",
+      "tests": "verified",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "BG-G1",
+      "section": "Contour BG-H1",
+      "claim": "D₄²=−(k²+p²)·I₄ at machine precision",
+      "status": "PASS",
+      "key_result": "max_rel_error=0.0",
+      "tests": "58/58",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "BG-E1",
+      "section": "Contour BG-H1",
+      "claim": "Discrete KK eigenvalue k₀ → 3/2 (N→∞)",
+      "status": "PASS",
+      "key_result": "k₀_disc(N=4000)=1.4999999561; max_rel_err=2.93×10⁻⁸",
+      "tests": "72/72",
+      "date": "2026-06-10",
+      "depends_on": null
+    },
+    {
+      "gate": "BG-E2",
+      "section": "Contour BG-H1",
+      "claim": "S³×S¹ bridge: disorder W=0.5 stress test",
+      "status": "PASS",
+      "key_result": "max_frag_ratio=0.998; max_mean_err=2.54×10⁻⁴",
+      "tests": "67/67",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "LB-G0",
+      "section": "Contour Lambda-B5",
+      "claim": "Invariant 1-forms ∉ span(E_i,E′_i)",
+      "status": "STRUCTURAL_SPLIT",
+      "key_result": "λ_geom conditionally canonical; Dereli route separated",
+      "tests": "12/12",
+      "date": "2026-06-11",
+      "depends_on": null
+    },
+    {
+      "gate": "LB-G2",
+      "section": "Contour Lambda-B5",
+      "claim": "cot(2α) is Hopf-frame artifact, not physical",
+      "status": "PASS",
+      "key_result": "Left-invariant frame: ω_ij=ε_ijk·σ_k/ρ (constant); no α-dependence",
+      "tests": "14/14",
+      "date": "2026-06-11",
+      "depends_on": null
+    },
+    {
+      "gate": "LB-G4",
+      "section": "Contour Lambda-B5",
+      "claim": "λ non-identifiable from S³ geometry alone",
+      "status": "PASS",
+      "key_result": "rank(J_phys)=2; Fisher rank theorem; λ=FREE",
+      "tests": "18/18",
+      "date": "2026-06-11",
+      "depends_on": null
+    },
+    {
+      "gate": "LB-VR",
+      "section": "Contour Lambda-B5",
+      "claim": "R=√2 EXACT λ-free ratio from S³ CG coefficients",
+      "status": "PASS",
+      "key_result": "Wigner-Eckart: CG ratios cancel λ; first λ-free prediction",
+      "tests": "7/7",
+      "date": "2026-06-11",
+      "depends_on": null
+    },
+    {
+      "gate": "S6H-G0",
+      "section": "Contour S6-HARM",
+      "claim": "SO(6) Clifford: {Γa,Γb}=2δI; 8 weight vectors",
+      "status": "PASS",
+      "key_result": "G₇ chirality; Killing count=8=2^{n/2}",
+      "tests": "4/4",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "S6H-G5",
+      "section": "Contour S6-HARM",
+      "claim": "cotβ_k universality: same coeff at 4 levels",
+      "status": "PASS",
+      "key_result": "Algebra, ODE, Dirac spectrum, spin connection; G2→G5 chain",
+      "tests": "17/17",
+      "date": "2026-06-15",
+      "depends_on": null
+    },
+    {
+      "gate": "G85A",
+      "section": "Lambda-Map",
+      "claim": "Poisson resummation: exp(−λ/ρ₆²) from spectral?",
+      "status": null,
+      "key_result": "Poisson theta form found; Bessel bridge absent; NP ansatz manual",
+      "tests": "10/10",
+      "date": "2026-06-22",
+      "depends_on": null
+    },
+    {
+      "gate": "G86A",
+      "section": "Lambda-Map",
+      "claim": "Any geometric T with power-law gives exp(−λ/ρ₆²)?",
+      "status": null,
+      "key_result": "Structural theorem: I=Γ(d/2)/T^{d/2}∝ρ₆^{-3α} always (power-law)",
+      "tests": "25/25",
+      "date": "2026-06-22",
+      "depends_on": null
+    },
+    {
+      "gate": "G86B",
+      "section": "Lambda-Map",
+      "claim": "Warp factor Ω(y) on S⁶ gives exp(−λ/ρ₆²)?",
+      "status": null,
+      "key_result": "Trivial (Hopf lemma) / polynomial+free Q / circular",
+      "tests": "8/8",
+      "date": "2026-06-22",
+      "depends_on": null
+    },
+    {
+      "gate": "G90",
+      "section": "Lambda-Map",
+      "claim": "Which NP form V∝exp(−a_p/ρ^p) supports minimum?",
+      "status": "PASS",
+      "key_result": "p>0 has minimum; p=2 special: κ²=(N+1)/N=7/6",
+      "tests": "12/12",
+      "date": "2026-06-22",
+      "depends_on": null
+    },
+    {
+      "gate": "G91",
+      "section": "Lambda Origin",
+      "claim": "H1 (λ=1/a) vs H2 (λ=a/(a+N)): which gives λ=1/3?",
+      "status": null,
+      "key_result": "Both give λ=1/3 on S³×S⁶; κ blind to both off (3,6) coincidence",
+      "tests": "8/8",
+      "date": "2026-07-05",
+      "depends_on": null
+    },
+    {
+      "gate": "G100",
+      "section": "Audit",
+      "claim": "G73 \"×3 channels\" dependency map: what does it rely on?",
+      "status": "PASS",
+      "key_result": "G67-C3: 2/3 closed (G68 L≠R); 1/3 open (8_v vector channel)",
+      "tests": "6/6",
+      "date": "2026-07-01",
+      "depends_on": null
+    },
+    {
+      "gate": "G102",
+      "section": "Triality",
+      "claim": "Can Spin(8) fiber give third triality channel derivably?",
+      "status": null,
+      "key_result": "c_{so(8)}(g₂)=0; no fiber symmetry coexists with S⁶ geometry; 8_v = MODEL POSTULATE",
+      "tests": "14/14",
+      "date": "2026-07-05",
+      "depends_on": null
+    },
+    {
+      "gate": "G103",
+      "section": "Lambda Origin",
+      "claim": "KK tower lambda-blindness + UV mechanism proposals",
+      "status": "PASS",
+      "key_result": "m_mod∝λ⁰·⁴⁹³; 5 external proposals killed; KK sector λ-blind",
+      "tests": "12/12",
+      "date": "2026-07-05",
+      "depends_on": null
+    },
+    {
+      "gate": "G104",
+      "section": "Lambda Origin",
+      "claim": "H1 vs H2 forward test on S²×S⁶ (different geometry)",
+      "status": null,
+      "key_result": "κ/ρ_min stays blind off (3,6) coincidence; H1≠H2 not distinguishable",
+      "tests": "8/8",
+      "date": "2026-07-05",
+      "depends_on": null
+    },
+    {
+      "gate": "G105",
+      "section": "Modulus Mass",
+      "claim": "Analytic derivation of m_mod∝ρ₆^α power law",
+      "status": "PROMOTE",
+      "key_result": "Leading order α=1/2 EXACTLY from asymptotic expansion; unifies G66+G103",
+      "tests": "18/18",
+      "date": "2026-07-06",
+      "depends_on": null
+    },
+    {
+      "gate": "G106",
+      "section": "Modulus Mass",
+      "claim": "Pre-registered prediction at genuinely new N=7 point",
+      "status": "PROMOTE",
+      "key_result": "κ² within 0.22%; exponent within 0.001; pre-registration confirmed",
+      "tests": "6/6",
+      "date": "2026-07-06",
+      "depends_on": null
+    }
+  ]
+}
