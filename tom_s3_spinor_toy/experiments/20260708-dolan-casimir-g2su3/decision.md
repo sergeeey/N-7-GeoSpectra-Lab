@@ -4454,3 +4454,108 @@ Merged: `ea943ad`→`646ab1f`→`811cb2b` (feature/round25-K-derivation-
 
 preprint.tex NOT touched this round (2A's fix, above, was a separate,
 already-merged edit from earlier the same session).
+
+---
+
+## Round 26 (2026-07-11) — deriving Jac_h/Jac_m explicitly from Agricola
+## 2002 Theorem 3.2, decomposing Round 25's residual
+
+Full derivation, claims, kill conditions, and skeptic verdict:
+`round26_claim.md`. Code: `g2su3_round26_jach_derivation.py`.
+
+**Motivation:** Round 25 promoted `step2_remainder` (`:= cubic_and_
+curvature_L - (-H)`, non-scalar on the 2-dim SU(3)-invariant subspace)
+as its headline open finding — `g2su3_H_element.py`'s own docstring
+(built in an earlier session) had explicitly flagged the "Jac_h-
+dependent piece of Theorem 3.2's quartic term... requires full g2
+structure constants beyond what's been built so far" and left it
+uncomputed. This round builds it.
+
+**Method:** read Agricola 2002's Theorem 3.2 (General Kostant-
+Parthasarathy formula) directly from the primary source PDF already in
+this repo (`Agricola_2002_Dirac_naturally_reductive.pdf`, pages 5, 8-9,
+12-14 — `pymupdf` text extraction, re-confirmed with a FRESH extraction
+mid-round, not reconstructed from memory at any point). Built `Jac_m(X,Y,
+Z):=[X,[Y,Z]_m]_m+[Y,[Z,X]_m]_m+[Z,[X,Y]_m]_m` from the T-table alone
+(double sum), and `Jac_h(X,Y,Z):=[X,[Y,Z]_h]+[Y,[Z,X]_h]+[Z,[X,Y]_h]`
+from `curv_h` combined with `ad_nu_m_trusted` (the su(3)-on-**vectors**
+action, already built and calibrated 48/48 in `g2su3_appendix_a_
+construction.py` from an earlier session). Assembled `C~h` (Prop 3.3)
+and the degree-4 term as explicit 8×8 Clifford matrices, the scalar
+term as a rational — all FOUR pieces built with ZERO dependence on
+`M_p`. Isolated `-sum Zp^2` (Agricola's canonical, t=0 piece) by DIRECT
+SUBTRACTION from `Dslash_mat^2` (ground truth) and TESTED it against
+`-sum Mp^2` (this project's own Levi-Civita operators) rather than
+assuming they match.
+
+**Result:** they do NOT match directly — this project's `M_p` and
+Agricola's canonical `Z_p` are genuinely different operators here,
+differing by an exact closed form: `H - (1/2)*Id - (7/4)*Casimir_su3
+(Sigma)` (`Casimir_su3` = the already-established SU(3) Casimir on Σ,
+reused unchanged since Round 17-20). Since `+H` here cancels the
+formula's own `-H` cubic term, **Round 25's `step2_remainder` is now
+fully decomposed**: `= H + C~h + degree4_term + (scalar_term-1/2)*Id -
+(7/4)*Casimir_su3`, verified to match Round 25's independently-computed
+`step2_remainder` exactly.
+
+### Skeptic review (FL Step 8a) — a real bug caught, then cross-
+### validated by an independent prediction
+
+Two context-blind skeptics reviewed the FIRST version of this
+derivation. Both flagged that C1/C2's self-checks (`Tr(C~h)/8=(C~h)_0`,
+Hermiticity/tracelessness of the degree-4 term) are **structural
+tautologies** — any degree-4 Clifford element with real coefficients is
+automatically traceless and Hermitian in this representation, so these
+checks verify the general SHAPE of the construction, not that `Jac_h`
+was computed with the correct numbers. Accepted as a standing
+methodological limitation (not fixed this round — would require an
+independently-computed cross-check of `C~h` via a different route,
+e.g. comparing eigenvalues against the known 1+3+3̄+1 decomposition).
+
+**Skeptic 2 found something more serious, purely from code inspection
+(no execution needed):** `curv_h` is stored ONLY for `p<q` (per
+`build_curvature_h_table`'s own loop bounds), unlike the T-table (`build_
+T_table`), which stores BOTH orders explicitly. The original `Qh_sum`
+code summed `i,j` over the FULL range but relied on `.get()`'s
+default-to-zero for missing keys — silently DROPPING every `i>j` term,
+an uncaught factor-of-2 undercount (`Qh_sum=4` instead of the correct
+`8`). Skeptic 2 went further and **explicitly predicted the fix's exact
+consequence** — "if confirmed, the reported identity `H+(1/2)Id-(7/4)
+Casimir_su3` becomes `H-(1/2)Id-(7/4)Casimir_su3` — sign flip on `Id`,
+nothing else" — BEFORE the fix was applied or re-run.
+
+**Independently re-verified, then fixed:** re-read `build_curvature_h_
+table`'s loop bounds myself (confirmed `p<q` only) and `build_T_table`'s
+(confirmed both orders) — bug confirmed real, not hypothetical.
+Re-extracted PDF page 14 FRESH (a second, independent extraction,
+matching the first) to rule out a transcription error as the cause.
+Fixed `Qh_sum` (now correctly `=8`, matching `Qm_sum`'s already-correct
+ordered-sum convention) and re-ran: **the sign flipped on the `Id` term
+exactly as Skeptic 2 predicted, and nothing else changed.** This is
+meaningfully STRONGER evidence of correctness than the original (buggy)
+clean closure was — an independent, differently-reasoned prediction
+(not just "it closed once") survived a real test.
+
+**Standing, unresolved limitation (both skeptics, explicitly documented
+in `round26_claim.md`, not dismissed):** `-sum Zp^2` is *operationally
+defined* by subtraction from the transcribed formula — by construction,
+C5/C6 cannot rule out some OTHER undetected transcription error being
+silently absorbed into a coincidentally-clean-looking correction. This
+is mitigated (two independent fresh PDF re-extractions matching; the
+bug-fix/prediction cross-validation above; C1-C3's other checks passing)
+but NOT eliminated — no first-principles derivation of the specific
+coefficients (`H`, `-1/2`, `-7/4`) exists. Reported as a verified
+algebraic fact, not an explained mechanism.
+
+**What this does NOT mean:** does not resolve the preprint's `8/45 vs
+~1.03` norm tension; does not establish whether `M_p` or `Z_p` is the
+"correct" object for the preprint's own L4A norm-bound convention; does
+not change F_{S^-}'s spectrum or the index=1 result.
+
+**Concrete next step, NOT started:** derive the specific coefficients
+(`H`, `-1/2`, `-7/4`) from first principles (e.g. an explicit `t=0` vs
+`t=1/2` expansion of Agricola's connection family), or determine which
+of `M_p`/`Z_p` the preprint's own L4A argument actually intends.
+
+Merged: `0d3dbd2`→`6113aa8`→`811e4e5` (feature/round26-jach-derivation-
+20260711, merged --no-ff, pushed). preprint.tex NOT touched this round.
