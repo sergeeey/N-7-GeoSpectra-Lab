@@ -4698,3 +4698,92 @@ as the next, deeper step.
 
 Merged: `e59777a`→`4176c4e`→`e503627` (feature/round28-coefficient-
 uniqueness-20260711, merged --no-ff, pushed). preprint.tex NOT touched.
+
+## Round 29 (2026-07-11): "Phase 2" — coefficients derived via pure
+symbolic algebra, no linear solve against a precomputed Diff
+
+**User's explicit instruction:** "продолжай выводить коэффициенты из
+первых принципов, Phase 2" — continue exactly the deeper step Round 28's
+own Honest Scope flagged as not attempted.
+
+**Key reframing (before any computation could proceed):** the user's
+original Phase-2 plan ("expand `M_p=Z_p+(1/2)Λ̃^1(Z_p)` per-p using
+Agricola's abstract bare-derivative `Z_p`") turned out not to be directly
+executable in this project's own matrix-coefficient realization. Checked
+directly: `M_p` (this project's own Levi-Civita connection matrix,
+unchanged since Round 4) equals `-Λ̃^{1/2}_m(Z_p)` **exactly**, for all
+`p=1..6`, built PURELY from the T-table via Agricola's Lemma 3.2 formula
+— zero additional "bare derivative" contribution. So there is no
+independent per-p `Z_p` matrix to expand; Round 26-28's own `Z_p` (via
+`Ωg=-ΣZp²+C̃h`, eq. 9) is accessed only through that closed-form identity,
+never as a literal per-p matrix.
+
+**What this reframing made possible:** derive `Σ_p M_p²` in closed form
+directly from RAW T-table combinatorics — the SAME Jacobi-identity-
+collapse technique Agricola uses for `H²` in her Prop 3.2, applied here
+to a different quartic sum — via a from-scratch Clifford-word reducer
+(self-tested against an independently-structured reference implementation
++ 200 random cross-checks). Result: `Σ_p M_p² = -¼·Id + (1/12)·X`,
+`X:=Z₁₂₃₄+Z₁₂₅₆+Z₃₄₅₆` — independently cross-checked exact match against
+direct matrix squaring. Did the SAME for `H²` (`=3·Id-3·X`, independently
+reproducing Prop 3.2). Then decomposed Round 26/27's own `Ch_tilde`/
+`degree4_term`/`Casimir_su3` into the SAME `{Id,X}` basis via trace
+projection with an asserted zero-residual exactness check, and assembled
+`Diff` **purely symbolically** (sympy symbols `H,Id,X`, zero numeric
+8×8 matrices) — substituted `X=3(Casimir_su3-Id)` and extracted
+`(a,b,c)=(1,-1/2,-7/4)` via `sp.coeff()`. This is qualitatively different
+from Round 28's STEP 2 (a numeric 3×3 linear solve against an
+already-computed `Diff`): here `Diff` is never built as a matrix before
+the coefficients are read off. Cross-checked against the independently-
+built numeric `Diff` (Round 28's `build_diff_noncircular`) as a sanity
+check only — exact match.
+
+**Bonus finding (not previously noted in Rounds 26-28):**
+`Ch_tilde == Casimir_su3` exactly (both equal `Id+X/3`) — plausibly
+explains why `Casimir_su3` enters `Diff` at all (via `C̃h`, Agricola's
+own h-correction term in eq. 9, not as an independently-motivated
+ingredient).
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis that independently re-ran the script and
+re-traced the two most serious concerns by reading the exact code):**
+**NO claim was FALSIFIED** — unlike Rounds 26-28, each of which had a
+real bug (Qh_sum undercounting, a sign-convention error, a circular
+`Diff` definition) caught this same way. Two framing issues WEAKENED and
+fixed:
+1. C1's "zero use of `nabla_g`/`LEVI_CIVITA_NOMIZU`" overstated
+   independence — `T(p,j,k)` itself traces back to `LEVI_CIVITA_NOMIZU`
+   via a DIFFERENT representation (6-dim vector, not 8-dim spinor) than
+   `nabla_g` uses. This is a genuine cross-representation consistency
+   check (Agricola's Lemma 3.2 reproduces the directly spin-lifted
+   connection), not an independence proof. Fixed: framing softened
+   in-script and in `round29_claim.md`.
+2. C5's "structural finding"/"this is WHY Casimir_su3 appears" language
+   oversold a verified numerical coincidence in this project's specific
+   SU(3)-generator normalization as a normalization-independent
+   structural fact (not derived from Prop 3.3 + Casimir eigenvalues
+   here). Fixed: downgraded.
+3. (Minor, C6) STEP E hand-transcribed STEP B/C's own closed-form results
+   as literal constants instead of consuming their dicts programmatically
+   — a code-hygiene gap, not an error (synthesis independently confirmed
+   the literals exactly matched STEP B/C's computed output on a fresh
+   run). Fixed: wired via explicit dict-equality assertions.
+
+**What survives, solid:** the headline result — `(1,-1/2,-7/4)` genuinely
+falls out of symbolic algebra applied to independently, combinatorially
+derived closed forms, with zero dependence on a precomputed numeric
+target anywhere in the derivation chain (STEP E). This closes the "Phase
+2" gap Round 28 flagged as open.
+
+**Still an open, honestly-scoped limit:** this is NOT a fully abstract,
+geometry-independent symbolic proof of Agricola's Theorem 3.2 — the
+specific numeric `T(p,j,k)`/`curv_h` values for THIS S⁶=G₂/SU(3) geometry
+are used throughout. Also not attempted: proving C5 (`Ch_tilde=Casimir_
+su3`) structurally, independent of this project's specific SU(3)-
+generator normalization — flagged for a future round.
+
+3 new files (`g2su3_round29_clifford_reduce.py`,
+`g2su3_round29_phase2_derivation.py`, `round29_claim.md`), zero existing
+files modified. Full project pytest suite re-run for regression check
+(background, MANDATORY PRE-COMMIT CHECKLIST for 3+ files). preprint.tex
+NOT touched.
