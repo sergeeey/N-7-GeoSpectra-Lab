@@ -4614,3 +4614,87 @@ exists in this codebase to check against.
 
 Merged: `d4a5287` (feature/round27-dslash-equals-H-20260711, merged
 --no-ff, pushed). preprint.tex NOT touched this round.
+
+---
+
+## Round 28 (2026-07-11) — proving Round 26/27's correction coefficients
+## are UNIQUE (not fitted), per an explicit user methodological critique
+
+Full derivation, claims, kill conditions, skeptic verdict:
+`round28_claim.md`. Code: `g2su3_round28_coefficient_uniqueness.py`.
+
+**Motivation:** user gave a detailed methodological critique (in
+Russian): Round 26/27's `H-(1/2)Id-(7/4)Casimir_su3` correction was
+VERIFIED-BY-MATCHING (compute the answer, notice it decomposes cleanly,
+confirm the decomposition matches), not DERIVED. Proposed the correct
+order: prove the space of admissible corrections is low-dimensional
+FIRST (via SU(3)-equivariance + Clifford-algebra structure), THEN derive
+coefficients — not the reverse.
+
+**What was proven:** Σ=Λ*(ℂ³) decomposes under SU(3) as `1⊕3⊕3̄⊕1`
+(degrees 0,1,2,3). By Schur's lemma, any SU(3)-equivariant Hermitian
+operator on Σ is forced scalar on the single copies of `3`/`3̄`, zero
+between them, and an arbitrary Hermitian 2×2 matrix on the 2-dim
+trivial-multiplicity space `{0,7}` — 6 real parameters (verified with a
+FULL symbolic parametrization including a genuinely complex off-diagonal
+term, not a restricted real-only test). An additional duality involution
+(pairing degree `k`↔`3-k`, index pairs `(0,7),(1,6),(2,5),(3,4)`) is
+verified to commute with `-ΣM_p²`, `H`, `Casimir_SU(3)` independently,
+collapsing the 6-param space to exactly 3. `{Id, Casimir_SU(3), H}` is
+shown linearly independent (nonzero 3×3 determinant `=-8√3/3`), hence a
+basis — any operator meeting the constraints is a UNIQUE combination of
+these three.
+
+### Skeptic review (FL Step 8a) — two real problems found and fixed, one
+### structural conclusion independently re-confirmed
+
+Two context-blind skeptics + a tool-verified synthesis pass (which
+independently re-ran the code AND ran its own additional symbolic test)
+reviewed this:
+
+1. **Naming/framing error (C2, cosmetic).** The original version called
+   the duality involution "Hodge-star" and implied its specific `+1`-
+   sign pairing was meaningful. WRONG: the standard Hodge-star on
+   `Λ*(ℂ³)` has signs `(+,-,+,+)`, not `(+,+,+,+)`. Both skeptics AND
+   the synthesis agent's own independent symbolic test (16 sign
+   patterns × 3 different `3↔3̄` bijections × 1 degenerate pairing)
+   confirmed EVERY variant collapses the SAME 6-param space to the SAME
+   3-dim space identically — the PAIRING structure does the constraining
+   work, not the specific sign. Fixed: renamed "Star" → "Swap" throughout,
+   dropped the "Hodge-star" claim, corrected the (previously inverted)
+   kill condition. **The 3-dim structural conclusion itself is UNAFFECTED
+   and independently re-confirmed** by the synthesis agent's own test —
+   this was a labeling error, not a mathematical one.
+
+2. **Real circularity (C4/C5 — the serious one).** The ORIGINAL script's
+   STEP 2 line read `Diff = sp.simplify(H - Id8/2 - Rational(7,4)*
+   Casimir_su3)` — i.e. `Diff` was DEFINED directly using the target
+   coefficients. The subsequent "solve the 3×3 system for (a,b,c)" step
+   was therefore mathematically GUARANTEED to return exactly `(1,-1/2,
+   -7/4)` back — a pure tautology. Both skeptics caught this
+   independently, purely from reading line 148: "the code never
+   independently constructs `Diff` from the `M_p`/`Z_p` machinery — it
+   writes the target formula directly." **Fixed:** `Diff` is now rebuilt
+   in a new `build_diff_noncircular` function using Round 26/27's ACTUAL
+   pipeline (`Ch_tilde`, `degree4_term`, `scalar_term` — built from
+   `curv_h`/T-table only, ZERO `M_p` dependence — combined via Round 27's
+   `H²/4`-based route for `Ω_g`), with no reference to the target formula
+   anywhere. Re-run: the resulting genuinely-independent `Diff` STILL
+   solves to exactly `(1,-1/2,-7/4)` — now a real, non-tautological
+   confirmation of Round 26/27's original (differently-derived) result.
+
+**What survives, solid:** the 3-dimensionality proof and the `{Id,
+Casimir_SU(3), H}` basis (C1, C3) — genuinely new, correctly derived,
+representation-theoretic content answering the "prove low-dimensionality
+first" half of the user's critique. The coefficients `(1,-1/2,-7/4)` are
+now confirmed via a genuine (not circular) computation.
+
+**Still not done, honestly:** a full from-scratch symbolic derivation via
+the Nomizu connection formula + Jacobi identities (the user's own "Phase
+2" — expand `M_p=Z_p+(1/2)Λ_m^1(Z_p)` directly and watch the coefficients
+fall out, essentially specializing Agricola 2002's own Theorem 3.2 proof
+technique to isolate the `M_p`-vs-`Z_p` piece) — not attempted, flagged
+as the next, deeper step.
+
+Merged: `e59777a`→`4176c4e`→`e503627` (feature/round28-coefficient-
+uniqueness-20260711, merged --no-ff, pushed). preprint.tex NOT touched.
