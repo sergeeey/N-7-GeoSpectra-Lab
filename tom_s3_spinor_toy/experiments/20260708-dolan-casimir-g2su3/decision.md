@@ -5616,3 +5616,82 @@ suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented since Round 29), no regressions (~638s).
 preprint.tex NOT touched (parallel session's own uncommitted work,
 left undisturbed throughout this round).
+
+## Round 40 (2026-07-12): `T12+T21`'s exact but PARTIAL contribution
+to Delta — cleanest FL Step 8a review this session
+
+**User's instruction:** "го, round 40" — chose "T12+T21 через
+`{Dslash,E_p}` (рекомендую)" via `AskUserQuestion`, after a scouting
+computation found `{Dslash_mat,E_p}` (the anticommutator) SPARSE —
+only 4/64 nonzero entries per `p`, connecting the two SU(3) singlets
+to a `p`-dependent pair of "3+3̄" indices. A follow-up attempt to
+identify this anticommutator as a single named Clifford bivector
+operator (e.g. `E_2·E_3`) did NOT match cleanly, so the round's scope
+was honestly narrowed before writing any claim: no elegant closed form
+for `{Dslash_mat,E_p}` itself is claimed.
+
+**Key observation:** `T12+T21` (Round 25's own "least-examined piece",
+per both FL Step 8a Round-39 skeptics) built via two routes — direct
+`TERM1_mat·TERM2_mat+TERM2_mat·TERM1_mat` (matching Round 23's ORIGINAL
+construction) and `Σ_p kron({Dslash_mat,E_p}, M_p)` (the anticommutator
+identity, algebraically FORCED by the general Kronecker mixed-product
+rule `(A⊗B)(C⊗D)=(AC)⊗(BD)` with `B=Id` — stated upfront as a
+construction sanity check, NOT independent evidence, proactively
+applying Round 39's own FL Step 8a lesson about linearity-forced
+"cross-checks"). Compresses to `[[0,1],[3,0]]` EXACTLY on
+`span(w_a,w_b)` — trace `0`, det `-3`, eigenvalues `±√3`. Given `Delta`'s
+known value `[[5/2,4/3],[4,5/2]]` and Round 39's own
+`piece_H+piece_step2_rem` contribution `[[-1/6,0],[0,5/2]]`, the
+REMAINING three pieces must supply `[[8/3,4/3],[4,0]]`; `T12+T21` alone
+supplies `[[0,1],[3,0]]` of that — a REAL but PARTIAL contribution,
+leaving `still_owed=[[8/3,1/3],[1,0]]` for `TORSION_E`+`cross-Casimir`,
+NOT attempted this round.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis) — the cleanest review this session:** both
+skeptics independently converged on the SAME two minor, non-substantive
+items — zero disagreement, zero FALSIFIED, zero overclaims of any
+consequence. (1) the cited Kronecker identity (`kron(A,Id)·kron(B,Id)
+=kron(AB,Id)`, both right-factors `Id`) was a strict subset of what's
+actually invoked (`TERM2`'s right factor is `M_p`, not `Id`) — the
+CONCLUSION (algebraic forcing) was correct throughout; only the
+specific citation was imprecise. **Response: Fixed** — reworded to
+cite the general mixed-product rule in both the script's docstring and
+claim.md. (2) `T12T21_2x2`'s eigenvalue structure (`±√3`) was not
+surfaced in the original version — both skeptics independently noted
+the `√3` also appeared in the `{Dslash_mat,E_p}` scouting entries this
+round started from. **Response: Fixed** — added a genuine new
+in-script STEP C.1 directly computing and asserting this structure,
+`EXIT=0`. **Bonus finding (synthesis agent, tool-verified, neither
+skeptic could check without Bash):** re-running Round 25's OWN script
+fresh independently reproduces `piece_T12T21` compressed =
+`[[0,1],[3,0]]` exactly — a genuine cross-script corroboration from a
+DIFFERENT, chronologically-earlier script (committed 2026-07-11) that
+never hardcoded this specific value as an assert. The synthesis agent
+explicitly noted this round's proactive application of Round 39's own
+skeptic lesson "measurably reduced the skeptics' own findings to two
+minor, easily-fixed items rather than a substantive overclaim" — the
+first round this session where a self-applied lesson demonstrably paid
+off in a cleaner review.
+
+**What survives, solid:** Round 25's own 5-piece decomposition of
+`Delta` now has THREE pieces known exactly (`H`, `step2_remainder`,
+`T12+T21`) — a real, verified narrowing of the open L4A investigation,
+even though the overall non-scalarity remains unresolved.
+
+**Still open, honestly-scoped limits:** `TORSION_E` and
+`cross-Casimir` (the 2 remaining pieces of Round 25's decomposition)
+are completely UNTOUCHED — `still_owed=[[8/3,1/3],[1,0]]` is real,
+nonzero, and unexplained. Does NOT resolve the `8/45 vs ~1` L4A
+tension. Does NOT touch `preprint.tex`. Does NOT resolve the
+Casimir_su3-vs-Jac_h identity question from Round 39, `RHO`/`NU`'s
+literal AHL2023 notation question, WHY Round 34's intertwiner `P` is
+Hadamard-type, or the `M_p`/`Z_p` L4A convention question (Rounds
+23-26) — all remain untouched.
+
+2 new files (`g2su3_round40_t12t21_partial_closure.py`,
+`round40_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29), no regressions (~301s).
+preprint.tex NOT touched (parallel session's own uncommitted work,
+left undisturbed throughout this round).
