@@ -5870,3 +5870,116 @@ suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented since Round 29), no regressions (~315s).
 preprint.tex NOT touched (parallel session's own uncommitted work,
 left undisturbed throughout this round).
+
+## Round 43 (2026-07-12): a general chirality/grading NO-GO theorem —
+no bivector-type Z_p (of any connection) can satisfy Round 26's identity
+
+**User's instruction:** after Round 42 named "read AHL2023's Example
+4.18" as the concrete next step, the user asked "что дальше?" (a
+genuine status/direction question), was shown a table of 5 open
+directions with #1 (read Example 4.18) recommended, and replied with a
+single word: "го" — confirming the recommended option, matching this
+session's established terse-confirmation pattern.
+
+**Investigation:** a research agent read AHL2023's "Example 4.18"
+(pp.27-28) directly and found it is actually about **S^7=Sp(2)/Sp(1)**,
+not S^6 — a genuine near-miss, honestly reported rather than stretched
+to fit. The agent kept searching and found **Proposition 5.4 (p.43)**:
+the explicit Ambrose-Singer torsion 3-form for S^6=G2/SU(3) itself.
+Before acting on this (per `audit-verification-gate.md`: agent
+`[VERIFIED]` = own `[INFERRED]`), a hand-derivation found `e_i⌟T^AS =
+-2·Λ^g(e_i)` exactly for all six generators — combined with the
+standard skew-torsion identity, this gives either `Λ^AS=2Λ^g` or
+`Λ^AS=0` depending on an unresolved sign convention. Testing BOTH
+against Round 26's own `Delta_HCas` identity showed **neither can
+possibly work**: any pure rescaling `Z_p := c·M_p` (ANY constant c)
+gives `Σ Z_p² = c²·Σ M_p²`, which (since `Σ M_p² =
+-(1/2)Id+(1/4)Casimir_su3` in closed form, Round 39) can NEVER contain
+an H-dependent term for any c — H is a genuinely different (cubic
+Clifford) object. This generalizes beyond rescaling: the reason is the
+underlying grading structure of the spinor representation itself.
+
+**The general theorem (verified computationally):** in the 8-dim
+spinor rep (occupation-number basis, even-occupation=`S^+`,
+odd-occupation=`S^-`), H's only nonzero entries are `(0,7)`/`(7,0)` —
+strictly chirality-OFF-diagonal. Every individual `M_p` (p=1..6),
+`Casimir_su3`, and `Id8` are chirality-BLOCK-diagonal. This is NOT
+special to Levi-Civita's own coefficients: 5 independent random
+bivector combinations (non-metric, not claimed to be any meaningful
+connection) are ALL block-diagonal, and so are their squares —
+confirming block-diagonality is a structural fact about "built from an
+even number of Clifford vector actions", true of ANY so(6)-valued spin
+connection whatsoever. Since chirality-block-diagonal matrices are
+closed under sum/product, `Σ_p Z_p²` is block-diagonal for ANY
+bivector-type `Z_p` — but `Delta_HCas = H-(1/2)Id-(7/4)Casimir_su3` has
+unavoidable off-diagonal content from H, identical in support to H's
+own. **Therefore no bivector-type Z_p (of any connection) can satisfy
+Round 26's own defining identity** — ruling out the entire "find the
+right connection" research program (Rounds 26/41/42) at once, for a
+general structural reason, not one more falsified ansatz.
+
+**Re-reading `g2su3_round26_jach_derivation.py` this round confirmed**
+`Z_p` was NEVER built as a per-index operator anywhere in this project
+— it exists purely as a label for "whatever fills the leftover slot"
+after subtracting known pieces from `Dslash_mat²`, exactly as that
+script's own docstring (lines 28-42) already honestly flagged as
+untested.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis):** all five claims (C1-C5) **`[CONFIRMED-REAL]`**
+— both skeptics independently re-derived the argument via different
+methods (one via exhaustive 48/48 and 120/120 case sweeps including
+complex/irrational coefficients and negative controls; the synthesis
+agent via a fully symbolic proof with 15 independent complex-valued
+coefficients spanning the ENTIRE bivector space at once, plus a generic
+symbolic closure proof on the actual 4+4 chirality partition). No
+counterexample or logical gap found despite an explicit search
+(complex-valued Z_p, Z_p on a different space, non-metric connections,
+the full Agricola t-family — all checked and ruled out as escape
+routes). No overclaim found — the claim never touches the L4A tension
+or Agricola's `Z_i` meaning.
+
+**Two non-mathematical fixes applied (not dismissed):** (1) the claim
+document's frontmatter had declared `status: skeptic_reviewed_promoted`
+before the skeptic section was actually filled in — both skeptics
+independently caught this inconsistency via `git status` (files were
+untracked, confirming no review had occurred yet); fixed by properly
+filling in the Skeptic Verdict section only after this review actually
+ran. (2) C3's original "5 random probes" framing understated the
+result's actual strength (a deterministic certainty, not a
+sampling-survived property) — strengthened per the synthesis agent's
+symbolic proof. **One additional finding applied:** the synthesis
+agent flagged that this round's "chirality" (Clifford-module `S^+`/`S^-`
+occupation-parity grading) is unrelated to physical SM fermion
+chirality (`SU(2)_L/R`, per this project's own G23/G74B) — added a
+disambiguating line to "What this does NOT mean" as cheap insurance
+against future symbol-reuse confusion.
+
+**What survives, solid:** a genuinely general, connection-independent
+NO-GO theorem, stronger than anything found in Rounds 26/41/42 (which
+tested specific ansätze one at a time). It resolves the "is there SOME
+connection whose bivector spin-lift gives Z_p" question definitively:
+no.
+
+**Still open, honestly-scoped limits (emphasized strongly):** does
+**NOT** resolve the L4A `8/45 vs ~1.03` norm-bound tension. Does
+**NOT** identify what Agricola's own `Z_i` notation in `D^t = Σ_i
+Z_i·Z_i(ψ) + t·H·ψ` actually denotes — the natural reading (flagged as
+speculative, untested) is that `Z_i·Z_i(ψ)` is shorthand for a compound
+first-order object (`e_i · ∇^t_{e_i}ψ`, chirality-ODD, hence able to
+carry H-type content, consistent with this project's own `D^0=-H`,
+Round 27) rather than a per-index bivector square. **Concrete next
+step, NOT started:** independently verify (via direct re-reading of
+Agricola 2002's own primary-source definition) what `Z_i` denotes in
+her own Dirac-operator formula, testing the "compound Dirac-building-
+block" hypothesis directly. Does NOT touch `preprint.tex`. Does NOT
+resolve the Casimir_su3-vs-Jac_h identity question (Round 39),
+`RHO`/`NU`'s literal AHL2023 notation question, or WHY Round 34's
+intertwiner `P` is Hadamard-type — all remain untouched.
+
+2 new files (`g2su3_round43_chirality_no_go.py`, `round43_claim.md`),
+zero existing files modified. Full project pytest suite re-run: 2483
+passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
+documented since Round 29), no regressions (~481s). preprint.tex NOT
+touched (parallel session's own uncommitted work, left undisturbed
+throughout this round).
