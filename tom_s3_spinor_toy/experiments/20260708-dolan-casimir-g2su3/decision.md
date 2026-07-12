@@ -5270,3 +5270,85 @@ passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
 documented since Round 29). preprint.tex NOT touched (parallel
 session's own uncommitted work, left undisturbed throughout this
 round).
+
+## Round 36 (2026-07-12): the Jacobi identity fully closes Jm4/degree4_term
+-- no 3×3 solve needed anywhere
+
+**User's instruction:** "го, round 36" — chose the recommended option
+from 4 offered candidates: "Вывести Jm4's d=2 структурно", the exact
+gap Round 35 explicitly left open ("Jm4's own d=2 is NOT derived from a
+deeper principle here").
+
+**Key observation:** `jac_h(j,k,l) + jac_m(j,k,l) = 0` EXACTLY, for all
+20 ordered triples and all 120 permutations. By linearity of
+`build_quartic_matrix` (established since Round 26): `Jm4 = 2·Ch_4` and
+`degree4_term = −5/4·Ch_4`, DIRECT matrix identities, no 3×3 solve.
+Combined with Round 35's own `Ch_4=Casimir_su3−Id` (cited unchanged):
+`Jm4=2·(Casimir_su3−Id)` and `degree4_term=−5/4·(Casimir_su3−Id)`,
+matching every prior round's value exactly. This SUPERSEDES Round 35's
+"RELOCATED, not reduced" framing — the 3×3 combinatorial solve is now
+fully ELIMINATED for both `Jm4` and `degree4_term`, not merely moved to
+a cleaner object.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis, task `wji4ntu3g`):** **zero FALSIFIED
+claims** — both skeptics independently traced Round 26's exact code
+(sign conventions, argument ordering) and confirmed the abstract
+argument matches it term-for-term; the synthesis agent went further and
+ran `g2su3_appendix_a_construction.py`'s own calibration to NUMERICALLY
+re-verify the reductivity premise `[h,m]⊆m` (48/48 pairs), plus an
+independent empirical linearity test of `build_quartic_matrix`. One
+SIGNIFICANT, non-mathematical finding from the synthesis agent (using
+its tool access to search `decision.md` and sibling scripts, something
+neither context-blind skeptic had reason to do): the core identity
+(`jac_h=-jac_m`) is NOT a fresh discovery of this round — it is
+Agricola 2002's OWN theorem (Section 2, pp.5-6), already found, quoted,
+and USED in this exact project on 2026-07-09 —
+`g2su3_delta_correction.py` (predating Round 26 by two days) builds a
+general `quartic_term(t)` formula via `H²` using this identity, and
+`decision.md` (~line 525-560, "Round 6") documents the citation plus a
+non-trivial cross-check (`Delta(1/3)=0` exactly, 64/64 entries). Rounds
+26, 33, and 35 each independently rebuilt `Ch_4`/`degree4_term`/`Jm4`
+via harder combinatorial routes without ever connecting back to this
+already-on-record shortcut — a genuine methodology lag, not a math
+error. This round's original framing ("elementary, no citation
+needed... not previously stated explicitly") was an unintentional but
+real novelty overclaim relative to this project's OWN history. **Fixed
+throughout** (docstring, print statements, claim.md): reworded from
+"fresh discovery" to "re-derivation (via a cleaner, more explicit
+direct-sum argument matching Agricola's own mechanism) + first
+application to `Ch_4`/`Jm4`/`degree4_term` as named objects" — crediting
+the primary source and the prior project usage directly.
+
+**What survives, solid:** the ENTIRE degree-4 story (`Ch_4`, `Jm4`,
+`degree4_term`) now rests on EXACTLY ONE fact requiring trust beyond
+elementary Lie theory — Round 30's own structural chain for `Ch_4`'s
+own `c=1` (2 cited textbook Lie-theory facts + one back-solved case,
+`k=8`) — unchanged, still open, but now isolated as the SOLE remaining
+gap for this whole story. Round 33's original 3×3-solve route to
+`degree4_term`'s `c'=-5/4` and Round 35's `Jm4` 3×3-solve route both
+remain valid, independent cross-checks — no longer necessary, but not
+invalidated.
+
+**Still open, honestly-scoped limits:** `Ch_4`'s own `c=1` (Round 30's
+chain, 2 cited Lie-theory facts + back-solved `k=8`) — unchanged.
+`RHO`/`NU`'s literal AHL2023 "E_{a,b}" notation question (Round 34), WHY
+Round 34's intertwiner `P` is Hadamard-type, the `8/45 vs ~1.03`
+norm-ratio tension, and the `M_p`/`Z_p` L4A convention question (Rounds
+23-26) remain untouched.
+
+**Project-methodology lesson (worth carrying forward):** before a fresh
+combinatorial re-derivation of any Jacobi/curvature identity in this
+project, grep `decision.md` and sibling round scripts for related prior
+identities FIRST — this round's core content was independently
+re-discovered rather than located via search, costing a round of
+otherwise-avoidable duplicated derivation effort (though the
+re-derivation's cleaner direct-sum route and first-time application to
+`Ch_4`/`Jm4`/`degree4_term` remain genuine, non-duplicated contributions).
+
+2 new files (`g2su3_round36_jacobi_identity_closure.py`,
+`round36_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29). preprint.tex NOT touched
+(parallel session's own uncommitted work, left undisturbed throughout
+this round).
