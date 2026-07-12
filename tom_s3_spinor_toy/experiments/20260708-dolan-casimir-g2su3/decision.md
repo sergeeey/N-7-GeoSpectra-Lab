@@ -5695,3 +5695,80 @@ suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented since Round 29), no regressions (~301s).
 preprint.tex NOT touched (parallel session's own uncommitted work,
 left undisturbed throughout this round).
+
+## Round 41 (2026-07-12): full 5-piece closure of `Delta`'s
+decomposition — bookkeeping complete, physics tension UNTOUCHED
+
+**User's instruction:** "го, round 41" — chose "Закрыть оба куска
+(рекомендую)" via `AskUserQuestion`, after a scouting computation found
+BOTH remaining pieces of Round 25's decomposition (`TORSION_E`,
+`cross-Casimir`) clean and rational when compressed on
+`span(w_a,w_b)` — `[[8/3,2/3],[2,0]]` and `[[0,-1/3],[-1,0]]`
+respectively, summing exactly to Round 40's own
+`still_owed=[[8/3,1/3],[1,0]]`.
+
+**Key observation:** `TORSION_E` and `cross_casimir` closed via DIRECT
+construction (exactly Round 25's own code — verified bit-identical by
+both FL Step 8a skeptics: same `nabla_bracket`, same `p<q` range, same
+sign conventions, same `T`-table/`curv_h`-table source). Summing with
+Round 39's `piece_H+piece_step2_rem` and Round 40's `T12+T21`
+reconstructs `Delta_2x2=[[5/2,4/3],[4,5/2]]` (Round 24/25's own known
+value) EXACTLY. `Delta` itself is directly ASSERTED not proportional
+to `Id` (an honest scoping check, not merely stated) — genuinely
+non-scalar, confirmed in-artifact.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis) — EXPLICITLY reviewed for overclaim risk
+given this round's inherent "milestone" framing:** both skeptics +
+synthesis found NO killing overclaim — construction fidelity to Round
+25 confirmed bit-identical via line-by-line comparison, and NOT
+reverse-fitted to expected values (the expected targets appear only in
+`assert` lines, never feeding into construction). **What WAS found
+and fixed:** both skeptics independently flagged the "genuine milestone
+for the L4A investigation running since Round 16" phrase and repeated
+"COMPLETE ALGEBRAIC ACCOUNTING" wording as rhetorically overweighted
+relative to the actual content (Round 25's own per-piece printouts,
+now `assert`-pinned). **Response: Fixed** — tightened language in both
+the script and claim.md, dropped the unverified "Round 16" attribution
+(the synthesis agent could not independently confirm this specific
+historical claim), narrowed scope specifically to "closing Round 25's
+own decomposition bookkeeping" rather than "the L4A investigation"
+broadly. Also **explicitly labeled C4 and C5 `[WEAKENED]`** in the
+Falsifiable Claims section itself (not just in prose elsewhere): C4
+is mathematically FORCED once the individual pieces hold, given Round
+25's own already-verified 64×64 five-piece identity plus linearity of
+`compress_2x2` — a re-verification, not independent new evidence; C5
+(`Delta` not scalar) reduces to a `sympy.Rational` sanity check
+(`5/2≠4/3`), trivial in information content. The synthesis agent
+additionally traced `Delta_2x2`'s citation chain back to Round 24's
+own `D64` construction (`g2su3_Sminus_weitzenbock.py`), confirming it
+is grounded in real computation, not an ungrounded copy-pasted number.
+
+**What survives, solid:** Round 25's ENTIRE 5-piece decomposition of
+`Delta` is now known in EXACT closed form — `piece_H+piece_step2_rem`
+(Round 39), `T12+T21` (Round 40), `TORSION_E`, `cross_casimir` (this
+round). Every piece Round 25 flagged as "not-yet-built" or "least-
+examined" is now a verified, known quantity.
+
+**Still open, honestly-scoped limits (emphasized strongly, per both
+claim.md and the skeptic review itself):** `Delta` REMAINS genuinely
+non-scalar. The `8/45 vs ~1` L4A norm-bound tension is COMPLETELY
+UNTOUCHED — that tension is about whether `R/4=Scal/4` can be cleanly,
+INDEPENDENTLY isolated from `Delta` as a scalar piece AT ALL (Round
+24's own concern), and knowing WHERE each piece of `Delta`'s value
+comes from does not answer WHETHER the underlying three-term
+Weitzenböck split is even the right decomposition for a norm-bound
+argument. This is a COMPLETE ALGEBRAIC ACCOUNTING, deliberately a
+NARROWER claim than "L4A tension resolved" or "L4A investigation
+closed" — the two must not be conflated. Does NOT touch `preprint.tex`.
+Does NOT resolve the Casimir_su3-vs-Jac_h identity question (Round
+39), the `M_p`/`Z_p` L4A convention question (Rounds 23-26), `RHO`/`NU`'s
+literal AHL2023 notation question, or WHY Round 34's intertwiner `P`
+is Hadamard-type — all remain untouched.
+
+2 new files (`g2su3_round41_torsion_crosscasimir_full_closure.py`,
+`round41_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29), no regressions (~300s).
+preprint.tex NOT touched (parallel session's own uncommitted work,
+left undisturbed throughout this round).
