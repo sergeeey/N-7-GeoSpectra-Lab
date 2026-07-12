@@ -6072,3 +6072,109 @@ genuinely different angle not yet identified.
 pytest re-run required (no source code changed). preprint.tex NOT
 touched (parallel session's own uncommitted work, left undisturbed
 throughout this round).
+
+## Round 45 (2026-07-13): blind Leibniz-correction test — REJECTED,
+true kill (not a fixable weakness)
+
+**User's instruction:** after being shown 3 options following Round
+44's closure (retire M_p-vs-Z_p, or run a chirality-based test on
+`Delta_2x2`'s non-scalarity), the user gave a detailed, well-reasoned
+Russian message specifying option 1 exactly, with an explicit
+anti-circularity protocol: derive a candidate "frame/Leibniz
+correction" for the trace-free residual `K:=[[0,4/3],[4,0]]` BLIND
+(purely from Nomizu coefficients, the connection's action on both
+tensor factors, Leibniz cross-terms), comparing to `K` only at the
+very end — explicitly FORBIDDING `K := Delta - (5/2)Id` or fitting
+coefficients to match `K` after the fact.
+
+**Grounding (before writing code):** re-read Round 24's own original
+framing of the L4A tension — `preprint.tex`'s OLD estimate `8/45≈0.178`
+vs this project's own exact `~1.03`; Round 23 already ruled out a
+units/scale mismatch. Round 24 found `Delta_2x2=[[5/2,4/3],[4,5/2]]`
+with diagonal EXACTLY `5/2=Scal/4` and trace-free residual `K`, framed
+as an open fork: (i) a frame/Leibniz correction the naive 3-term
+Weitzenböck form doesn't capture, or (ii) evidence `F_{S^-}` is
+incomplete — with an explicit warning already on file
+(`feedback-numerical-coincidence-not-mechanism.md`) against reading
+"diagonal=Scal/4" as proof of a mechanistic link. Read Round 25's own
+5-piece decomposition script directly: confirmed `∇*∇` (Round 24's own
+`-ΣN_p²`) ALREADY algebraically includes the full Leibniz cross-term
+(`CASIMIR_L_64+CASIMIR_E-cross_Casimir`) — nothing was ever "missing"
+from it. Read `D_on_simple_tensor` (D64's own several-rounds-old
+definition): confirmed `D64 = Σ_i(e_i⊗Id)·N_i` exactly — the textbook
+Leibniz-rule twisted Dirac operator.
+
+**Construction:** grouped Round 41's already-known 5-piece
+decomposition of `Delta` into `UNTWISTED := kron(Dslash_mat²-ΣM_p²,
+Id8)` (the untwisted single-copy Lichnerowicz remainder, computable
+with zero reference to `K`) and `TWISTING_SPECIFIC := (T12+T21) +
+TORSION_E + cross_casimir` (pieces that exist ONLY because `D64` has a
+genuine two-factor Leibniz connection term — forced by `D64`'s own
+already-verified structure, not invented). Compressed both on
+`span(w_a,w_b)`: `TWISTING_SPECIFIC`'s own off-diagonal matched
+`K=[[0,4/3],[4,0]]` EXACTLY.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+synthesis, explicitly instructed to attack circularity as the #1
+priority):** **TRUE KILL, unanimous.** Both skeptics, working
+independently, derived the SAME decisive structural argument: `UNTWISTED`
+has the form `kron(X,Id8)`, and `w_a`/`w_b` have DISJOINT index support
+in the right tensor factor (synthesis agent's own strengthening: in
+BOTH factors), so ANY operator of this shape — for LITERALLY ANY `X`,
+correct physics or not, verified via arbitrary symbolic matrix
+substitution — has EXACTLY ZERO off-diagonal on `span(w_a,w_b)`. Given
+the pre-existing identity `Delta=UNTWISTED+TWISTING_SPECIFIC` (Round
+41, predating this round), `off-diag(TWISTING_SPECIFIC)=off-diag(Delta)
+=K` follows AUTOMATICALLY — the K-match was FORCED, not evidence of
+anything about Leibniz corrections or torsion. Crucially: a genuinely
+MISSING `F_{S^-}` term would, by its own physical nature, ALSO be a
+two-factor-mixing operator, and would land in `TWISTING_SPECIFIC` just
+as cleanly as a correct term — **the test cannot distinguish fork (i)
+from fork (ii), by construction.** The synthesis agent additionally
+confirmed via git timestamp that Round 41's individual piece values
+(commit `3bf6fc2`, 2026-07-12 20:22:21) predate this round's script —
+empirical circularity on top of the structural tautology. A minor,
+separately-confirmed citation error (D64==TERM1+TERM2 ground-truth
+check misattributed to the wrong prior script) was also caught and
+fixed. **Response: fixed where fixable (Step 6 Conclusion, C1, C4, the
+falsifiability statement, Kill Conditions all corrected in place, not
+deleted — the honest record of what was tried and why it failed is
+kept), killed where not** — no textual reframing rescues the central
+inferential move.
+
+**What survives, solid:** Round 41's own five-piece decomposition of
+`Delta`, independently RE-verified here via a different grouping route
+— genuine, could-have-failed algebra. `D64`'s match to the textbook
+Leibniz-formula TEMPLATE also stands, though downgraded to a
+content-free Kronecker identity (true for any matrices), not itself a
+physics check.
+
+**What is killed:** the specific evidentiary claim that this
+construction discriminates fork (i) from fork (ii) for residual `K`.
+Recorded as REJECT per FL protocol
+(`null_results/20260713-round45-leibniz-correction-blind-derivation.md`
++ `INDEX.md` entry `R45-Leibniz`), with Kill Analysis: what's killed
+(this specific test's discriminating power) vs what's not killed
+(Round 41's bookkeeping, `D64`'s Leibniz-template match) vs a
+Relaxation Map (any future attempt at this fork needs a subspace where
+"untwisted" and "twisting" content are NOT separable by tensor-factor
+index alone — simply re-grouping the SAME 5 known pieces on the SAME
+`span(w_a,w_b)` cannot fix this, since ANY single-factor-embedded split
+is guaranteed to pass on this specific subspace).
+
+**Still open:** Round 24's original fork (i) vs (ii) question for
+residual `K` remains COMPLETELY OPEN — exactly as before this round.
+Does NOT resolve the L4A `8/45 vs ~1.03` tension. Does NOT touch
+`preprint.tex`. Does NOT resolve the Casimir_su3-vs-Jac_h identity
+question (Round 39), `RHO`/`NU`'s literal AHL2023 notation question,
+or WHY Round 34's intertwiner `P` is Hadamard-type — all remain
+untouched.
+
+4 new/modified files (`g2su3_round45_leibniz_correction_blind_
+derivation.py`, `round45_claim.md`, `null_results/INDEX.md` +1 row,
+`null_results/20260713-round45-...md`), zero other existing files
+modified. Full project pytest suite re-run: 2483 passed, 4 skipped, 1
+failed (same pre-existing, unrelated failure documented since Round
+29), no regressions (~618s). preprint.tex NOT touched (parallel
+session's own uncommitted work, left undisturbed throughout this
+round).
