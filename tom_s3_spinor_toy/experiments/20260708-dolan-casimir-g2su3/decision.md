@@ -5084,3 +5084,100 @@ The separate, pre-existing `test_g79a_lambda_identity_audit.py` failure
 zero existing files modified. Full project pytest suite re-run: 2483
 passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
 documented since Round 29). preprint.tex NOT touched.
+
+## Round 34 (2026-07-12): RHO/NU derived from octonion multiplication
+via an explicit Hadamard intertwiner
+
+**User's instruction:** "го, round 34", after choosing this scope
+(of 4 offered candidates) — "Довывести RHO/NU из октонионных правил
+умножения", closing a gap flagged since Round 32 and carried unchanged
+through Round 33's own "still open" list.
+
+**Key observation:** Cl(7,0) (7 anticommuting generators squaring to
+−1), as an ungraded real algebra, is `M_8(ℝ)⊕M_8(ℝ)` — exactly TWO
+inequivalent real 8-dim irreducible Clifford modules, distinguished by
+the sign of the pseudoscalar `Ω_7` (central, so any conjugation fixes
+it exactly). Octonion LEFT multiplication `L_1..L_7` (Baez 2002's
+canonical Fano-plane table, reusing Round 68's already-validated data
+rather than rebuilding it) satisfies the exact Cl(7,0) relations with
+`Ω_L=−Id`. Round 13's `RHO[1..7]` (AHL2023 Appendix A, calibrated
+against the paper's own trusted Remark 5.2 `su(3)`-action, unchanged
+since Round 13) ALSO has `Ω_RHO=−Id` — the SAME chirality as `L`, not
+`R` (Round 68's other chirality, `Ω_R=+Id`) — a rigorous proof (not a
+numerical coincidence) that `RHO` can only possibly match `L`. Solving
+the linear intertwiner system `P·L_i=RHO_i·P` for all 7 generators
+simultaneously (448 equations, 64 unknowns) gives a UNIQUE solution up
+to scale (1-dim nullspace, Schur's lemma): an explicit order-8 HADAMARD
+matrix `P` (every entry `±1`, `P^T P=8·Id`) with `P·L_i=RHO_i·P` exact
+for all 7 generators. The SAME `P` also intertwines all 14 `NU_k` (the
+full `g2` Lie algebra basis) against the octonion-bivector version of
+the identical linear-combination formulas — verified directly, not
+merely asserted from the algebra-homomorphism argument. Closes the gap
+flagged since Round 32: Round 13's entire `g2` construction is, after
+this single explicit change of basis, literally the canonical
+octonion-triality construction of `g2=Der(O)`, not an unrelated ad hoc
+Clifford-generator recipe.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis, task `w7br1lam4`):** **zero FALSIFIED claims**
+from either skeptic or the synthesis agent. Both skeptics independently
+hand-verified the pseudoscalar computation (one traced `Ω_L(e_0)`
+through all 7 left-multiplications by hand and got `−e_0`) and hand-
+diffed all 14 `NU_OCT_FORMULA` entries against Round 13's `NU` dict,
+term-by-term and sign-by-sign — exact match, no transcription bug. One
+real (non-cosmetic) documentation defect found by both skeptics and
+confirmed by synthesis: claim.md and the script both incorrectly stated
+"128 equations" and framed the check as "not just the 2 used to solve
+for `P`" — but the code actually solves all 7 generators simultaneously
+(448 equations = 7×64), never a 2-then-5 split. **Fixed**: claim.md's
+Core-argument point 4, its C3 RESULT text, the script's docstring, and
+its print statement all corrected. The underlying MATH (1-dim solution
+space, Hadamard property, exact intertwining) was never in question —
+only the process-description was wrong. Synthesis went beyond both
+skeptics: ran the script to completion (converting "contingent on the
+assert firing cleanly" verdicts to unconditional), and built an
+INDEPENDENT Cayley-Dickson octonion construction (quaternion doubling,
+a genuinely different method from Baez's Fano table) — confirming
+intertwiner EXISTENCE between octonion left-multiplication and `RHO` is
+convention-independent (forced by chirality-matching + Schur), while
+the SPECIFIC Hadamard-ness (dense, all-`±1`) of Round 34's `P` is a
+coincidence of how Baez's labeling happens to align with Round 13's
+`Emat` convention — NOT universal. This independently substantiates
+claim.md's own pre-existing caveat ("does NOT explain WHY `P` happens
+to be Hadamard-type") as correctly scoped. Registered as a pearl
+(`pearl_registry/INDEX.md`, 2026-07-12 row).
+
+**What survives, solid:** an explicit, concrete, verified (not
+abstractly-argued) orthogonal change of basis connecting Round 13's
+entire `g2` construction to the canonical octonion-triality
+construction — closing a gap open since Round 32, using the
+Round 30-learned discipline of "concrete intertwiner, not abstract
+uniqueness argument" from the start (no correction round needed this
+time, unlike Round 30's own history).
+
+**Still open, honestly-scoped limits:** does NOT prove AHL2023's own
+literal "E_{a,b}" notation (Round 13's long-standing, still-unverified
+caveat) means Baez's specific Fano sign convention — untouched,
+irrelevant to this round's claim (Round 13's `RHO` was already
+calibrated independently via Remark 5.2, not via the `E_{a,b}` guess).
+Does NOT explain WHY the intertwiner is Hadamard-type rather than
+sparse (synthesis's Cayley-Dickson cross-check shows this is
+convention-dependent, not structural). Round 33's proportionality
+constant `c`, the `8/45 vs ~1.03` norm-ratio tension, and the `M_p`/
+`Z_p` L4A convention question (Rounds 23-26) remain untouched.
+
+**Out-of-scope item flagged, not fixed here:** both skeptics and
+synthesis independently noticed a pre-existing docstring sign-typo in
+`experiments/20260621-g68-octonion-channels/g68_channels.py` (header
+says `Ω_L=+I₈, Ω_R=−I₈`, contradicting its own inline comment and
+actual computed values) — not introduced by this round, left untouched
+per scope discipline, spawned as a separate task (`task_4a2983c3`).
+
+3 files touched (`g2su3_round34_octonion_derivation.py`,
+`round34_claim.md` new; `pearl_registry/INDEX.md` +1 row — committed
+carefully via a temporary-removal/restore sequence to avoid bundling in
+a concurrent, unrelated parallel session's own uncommitted pearl-row
+edit to the same file). Full project pytest suite re-run: 2483 passed,
+4 skipped, 1 failed (same pre-existing, unrelated failure documented
+since Round 29). preprint.tex NOT touched (left as the parallel
+session's own uncommitted work, untouched by this round).
