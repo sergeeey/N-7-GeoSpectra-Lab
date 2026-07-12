@@ -5983,3 +5983,92 @@ passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
 documented since Round 29), no regressions (~481s). preprint.tex NOT
 touched (parallel session's own uncommitted work, left undisturbed
 throughout this round).
+
+## Round 44 (2026-07-12): primary-source confirmation — Agricola's
+`Z_i` is a vector + bare-derivative compound, NEVER a per-index
+connection operator, throughout her ENTIRE paper
+
+**User's instruction:** "го" — a bare confirmation of the recommended
+option after being shown 5 open directions post-Round-43, with #1
+(verify what Agricola's own `Z_i` denotes) recommended.
+
+**Investigation:** two independent, targeted research-agent dispatches
+read `Agricola_2002_Dirac_naturally_reductive.pdf` directly (pages
+1-8, then 9-14). Found: `Z_i` is defined (p.2 informally, p.4 Lemma
+2.2 formally) as an orthonormal basis of `m` — Clifford VECTORS, the
+same TYPE of object as this project's own `e_i` (NOT the same type as
+`M_p`). The Dirac operator's own formula: `∇_Zψ = Z(ψ) + Λ̃_m(Z)ψ` (eq
+3, p.7); `D^tψ = Σ_i Z_i·Z_i(ψ) + t·H·ψ` (eq 5, p.8), where `Z_i(ψ)`
+is the BARE/flat directional derivative — the connection correction
+is a separate term, resummed into `t·H`. Critically, this SAME
+bare-derivative reading holds throughout `Ω_g`'s own definition (p.13)
+and Theorem 3.2 (p.14) too — no second, distinct meaning of `Z_i` is
+ever introduced anywhere in pages 3-14.
+
+**This confirms:** `Z_i` (Agricola's own notation, throughout her
+ENTIRE relevant text) was NEVER intended to be a per-index bivector
+connection operator like `M_p` — Round 26's own implicit labeling of
+the leftover algebraic term (isolated by subtraction from
+`Dslash_mat²`) as "`Z_p`", by loose analogy with Agricola's notation,
+compared against the WRONG KIND of mathematical object from the very
+start of this investigation (Rounds 26/41/42). Round 43's general,
+representation-theoretic chirality no-go theorem independently
+PREDICTED this from pure structure; this round CONFIRMS it textually
+from the primary source — two completely independent routes converge
+on the same answer.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+synthesis) — all THREE reading the SAME primary-source pages
+THEMSELVES (not trusting this round's own research-agent quotes, per
+`audit-verification-gate.md`):** C2 and C5 CONFIRMED-REAL cleanly. C1
+found `[WEAKENED]` — this round's original citation ("p.3-4") was
+wrong; page 3 has zero occurrences of `Z_i` (correct: p.2 informal +
+p.4 formal), content otherwise right. C3 found `[CONFIRMED-REAL]`
+substance / `[WEAKENED]` equation-number (this round's own original
+text mislabeled `Ω_g`'s own formula as "eq 9"; it is actually
+unnumbered, eq 9 is the following line). **C4 found `[FALSIFIED]` —
+the most substantive finding:** this round's ORIGINAL text had
+characterized Round 26's own docstring ("`Zi(psi)` inside Omega_g
+ALWAYS means the CANONICAL t=0 covariant derivative") as "a mild
+misreading of the mechanism". Both skeptics independently re-derived,
+from the primary source, that this docstring claim is mathematically
+TRUE, not a misreading: `Λ_m^t(X)Y:=t[X,Y]_m` (p.4) vanishes at `t=0`,
+so `∇^0_{Z_i}ψ = Z_i(ψ) + 0 = Z_i(ψ)` exactly (eq 3, p.7) — the
+docstring was RIGHT all along. The synthesis agent resolved a severity
+disagreement between the two skeptics (FALSIFIED vs WEAKENED) with
+evidence neither had cited: Agricola's own **Proposition 3.4 (p.12) is
+explicitly TITLED** "The square of `D^0`, the Dirac operator
+corresponding to the canonical connection" — naming the exact term
+later reused in `Ω_g` with her OWN terminology, decisive independent
+confirmation. **Response: Fixed, not dismissed** — Core argument #4
+fully rewritten (the incorrect "misreading" framing removed entirely,
+replaced with the correct derivation and Prop. 3.4 citation); C1's
+citation and C3's equation-number both corrected in place.
+
+**What survives, solid, unaffected by the C4 self-correction:** the
+round's core, independently load-bearing thesis (C1 content + C3
+substance + C5) — `Z_i` is consistently a Clifford-degree-1 vector
+throughout pp.3-14, never a bivector connection operator, so Round
+26's implicit "Z_p" comparison target was mislabeled by analogy from
+the outset. Round 43's own theorem is untouched by any of this — C5's
+tie-in is grounded in C1+C3, not in the now-corrected C4.
+
+**Still open:** does NOT resolve L4A `8/45 vs ~1.03`. Does NOT mean
+building an actual `Z_i(ψ)` bare-derivative operator for this
+project's own Δ_6-valued realization on `G=G2` is trivial or has been
+done — a separate, nontrivial representation-theoretic computation.
+Does NOT establish that Round 26's own `Delta_HCas` identity has any
+deeper physical meaning now that "Z_p" is known mislabeled — may
+remain a bookkeeping curiosity. **Concrete next step, NOT started:**
+either (a) attempt to build the genuine `Z_i(ψ)` operator for this
+project's own realization, to test `D^0=Σ Z_i·Z_i(ψ)` against this
+project's own established `D^0=-H` (Round 27) — or (b) set aside the
+M_p-vs-Z_p thread entirely (Rounds 26/41/42/43/44 have now converged
+on "this avenue is closed") and pursue the L4A tension via a
+genuinely different angle not yet identified.
+
+1 new file (`round44_claim.md`), zero existing files modified, zero
+`.py` files touched — a documentary/primary-source finding only, no
+pytest re-run required (no source code changed). preprint.tex NOT
+touched (parallel session's own uncommitted work, left undisturbed
+throughout this round).
