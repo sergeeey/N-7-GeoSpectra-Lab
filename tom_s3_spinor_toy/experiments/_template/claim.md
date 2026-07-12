@@ -6,6 +6,28 @@
 
 ---
 
+## Prior Result Gate (MANDATORY — fill BEFORE writing anything below)
+
+> Do not proceed past this section until status is NEW or OPEN.
+> Full 7-step protocol: `PRIOR_RESULT_GATE.md` (this experiment dir,
+> or the nearest one up the tree). One real incident motivates this:
+> a round rediscovered a result a prior round had closed two days
+> earlier, because the intervening round reopened it without checking
+> and this one trusted that framing instead of re-verifying.
+
+1. Exact claim: _______________________________________________
+2. `decision.md` grep (formula + synonyms): [ ] done, 0 hits / hits reviewed at: ___
+3. `round*_claim.md` + scripts grep: [ ] done, 0 hits / hits reviewed at: ___
+4. `null_results/` + `parked/` grep: [ ] done, 0 hits / hits reviewed at: ___
+5. `git log -S`/`-G` pickaxe: [ ] done, 0 hits / hits reviewed at: ___
+6. Primary source re-read (not from memory): [ ] done, source/pages: ___
+7. **Status:** [ ] NEW  [ ] OPEN  [ ] CLOSED  [ ] SUPERSEDED  [ ] DUPLICATE  [ ] RETRACTED  [ ] PARKED
+
+If CLOSED/SUPERSEDED/DUPLICATE/RETRACTED/PARKED → STOP here, cite the
+prior result instead of proceeding.
+
+---
+
 ## Estimand
 
 **Population:** [Who/what — e.g. "Rank-3 bundles on S⁶"]  
