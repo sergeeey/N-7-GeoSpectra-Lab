@@ -5352,3 +5352,90 @@ suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented since Round 29). preprint.tex NOT touched
 (parallel session's own uncommitted work, left undisturbed throughout
 this round).
+
+## Round 37 (2026-07-12): closing BOTH of Round 30's remaining gaps —
+the invariant-form citation AND the k=8 back-solve caveat
+
+**User's instruction:** "го, round 37" — chose the recommended option
+from 4 offered candidates: "Закрыть Ch_4's c=1 полностью", fully
+closing the SOLE remaining gap Round 36 had isolated for the entire
+degree-4 story.
+
+**Key observation:** BOTH of Round 30's remaining gaps are now closed.
+(1) `(S2)` — "g2 is SIMPLE ⟹ the space of `Ad(G2)`-invariant symmetric
+bilinear forms is exactly 1-dimensional (Schur's lemma)", previously
+CITED as a standard textbook Lie-theory fact — is now DIRECTLY
+VERIFIED: built the full 14×14 adjoint action `ad(nu_i)` for Appendix
+A's own concrete matrix realization, solved the defining invariance
+system `ad(nu_i)ᵀQ+Q·ad(nu_i)=0` for all 14 generators simultaneously
+(1362 equations), found the solution space EXACTLY 1-dimensional, and
+the unique solution EXACTLY equals `B_0` (Round 30's own trace form).
+(2) The `k=8` back-solve caveat (Appendix A's `nu_8`, unlike
+`nu_1..nu_7`, was back-solved from the SAME calibration equation Round
+30's `S6'` checks) — closed via "bracket-closure": `su(3)` has NO
+7-dimensional subalgebra, so `{nu_1..nu_7}` (mutually `B_0`-
+orthonormal, `nu_8`-free) cannot be bracket-closed; computing all
+`C(7,2)=21` raw matrix commutators `[nu_i,nu_j]` (`i,j≤7`) and
+`B_0`-projecting each onto `span{nu_1..nu_7}` finds EXACTLY 2 escaping
+pairs (`(2,3)` and `(4,5)`, both `norm²=3/4`); normalizing either
+residual gives `hbar_8` that equals Appendix A's `nu_8` EXACTLY (up to
+overall sign), with genuine bracket-closure of
+`{nu_1..nu_7, hbar_8}` verified — a complete, independent re-derivation
+using ZERO reference to `nu_8`'s own formula.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis, task `wup8mwo6w`):** C1/C2 (the `(S2)`
+closure) were `[CONFIRMED-REAL]` from the start — the synthesis agent
+went further, independently rebuilding the 1362×105 coefficient matrix
+via a DIFFERENT code path (`sp.diff` extraction, not `linsolve`'s
+internal machinery) and computing `rank=104 ⟹ nullity=1` as a
+cross-check neither skeptic executed, and independently extracting the
+nullspace basis via `A.nullspace()` (a third distinct code path) to
+re-confirm `Q=B_0`. **The central finding of this review:** C3 (the
+`k=8` investigation) was GENUINELY FALSIFIED as originally written —
+this round's first version claimed closing `k=8` would "require Round
+34's octonion-native `g2=Der(O)` characterization... a separate, larger
+undertaking, not attempted this round." BOTH context-blind skeptics
+independently caught this as an overclaim and BOTH independently
+proposed the SAME fix (the bracket-closure approach above) — a strong
+convergence signal. The synthesis agent implemented and verified it
+(`hbar_8==-nu_8` exactly, plus a robustness check neither skeptic's
+argument-only treatment included: genuine bracket-closure of the
+resulting subalgebra). I independently re-verified this myself with
+fresh `sympy` computation (matching audit-verification-gate discipline
+— "agent's `[VERIFIED]` = my `[INFERRED]`") before accepting and
+incorporating it as the round's new STEP E. This is a clean, concrete
+illustration of why a reasoning-only claim marked `[VERIFIED-tool]`
+without a backing in-script assertion is exactly the failure mode
+adversarial review exists to catch — noted explicitly in the
+synthesis agent's own methodological finding, citing this project's
+`integrity.md` evidence-marker discipline.
+
+**What survives, solid:** `Ch_4`'s own `c=1` — hence the ENTIRE
+degree-4 story running since Round 29, through Rounds 30/33/35/36 — is
+now FULLY structurally derived: zero remaining citations to abstract
+Lie theory, zero back-solved generators. The whole chain (Round 29's
+`Casimir_su3=Id+X/3`, Round 30's `Ch_tilde=Casimir_su3`, Round 35's
+`c=1` derivation, Round 36's `jac_h=-jac_m` closing `Jm4`/
+`degree4_term`, and now Round 37's closure of both of Round 30's own
+remaining dependencies) rests entirely on VERIFIED computational facts
+about this project's own concrete matrix realization, not external
+citations.
+
+**Still open, honestly-scoped limits:** Round 30's `(S7)` citation
+(uniqueness of the 8-dim irreducible Clifford module) remains but is
+explicitly marked non-load-bearing (Round 30's own docstring), so it
+does not require closing for the `S9` conclusion to hold. `RHO`/`NU`'s
+literal AHL2023 "E_{a,b}" notation question (Round 34), WHY Round 34's
+intertwiner `P` is Hadamard-type, the preprint's `8/45 vs ~1.03`
+norm-ratio tension, and the `M_p`/`Z_p` L4A convention question (Rounds
+23-26) all remain untouched.
+
+2 new files (`g2su3_round37_invariant_form_uniqueness.py`,
+`round37_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29) — this run took unusually
+long (~1h23m) due to heavy system contention from a concurrent
+parallel session running its own pytest processes simultaneously, no
+regressions. preprint.tex NOT touched (parallel session's own
+uncommitted work, left undisturbed throughout this round).
