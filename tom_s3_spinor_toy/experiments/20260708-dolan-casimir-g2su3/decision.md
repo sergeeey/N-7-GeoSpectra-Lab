@@ -5439,3 +5439,87 @@ long (~1h23m) due to heavy system contention from a concurrent
 parallel session running its own pytest processes simultaneously, no
 regressions. preprint.tex NOT touched (parallel session's own
 uncommitted work, left undisturbed throughout this round).
+
+## Round 38 (2026-07-12): closed-form `Dslash_mat²` via `Casimir_su3`
+— a new synthesis, upstream of the "8/45 vs ~1" L4A tension
+
+**User's instruction:** "го, round 38" — no candidate selected via
+`AskUserQuestion` this time (tool reported no answer given); proceeded
+with the recommended default per this session's established pattern:
+the long-open "8/45 vs ~1.03" L4A norm-bound tension (preprint.tex
+L560-607, flagged unresolved since Round 23, the oldest and most
+preprint-consequential open item in this experiment).
+
+**Investigation first (research agent, no code changes):** re-read
+Round 23's own Kill Analysis (~L4204-4213 of this file). A pure `ρ_6`-
+normalization mismatch was already TESTED and REJECTED there
+(curvature-type quantities scale identically under uniform rescaling —
+the ~5.6× gap survives). The better-evidenced root cause per Round
+23's own analysis: `remainder := D64²−F_{S^-}` on the 2-dim SU(3)-
+invariant subspace is NOT scalar (`[[17/6,5/3],[5,7/2]]`, trace `19/3`),
+so `∇*∇` has never been independently isolated/verified on the
+TWISTED `Γ(S^+⊗S^-)` bundle — Round 23's own flagged next step, NOT
+attempted there. Concluded: the FULL twisted-bundle isolation is too
+large/risky for one round; instead built genuinely new, safe upstream
+groundwork.
+
+**Key observation:** established `Dslash_mat² = 3·Id − (9/4)·
+Casimir_su3` and `Σ_p M_p² = −(1/2)·Id + (1/4)·Casimir_su3`, both
+EXACT — connecting Round 27 (`Dslash_mat=-(1/2)·H`, an operator
+identity) and Round 29 (`H²=3·Id−3·X`, a closed-form quartic
+decomposition) to THIS SESSION's own `Casimir_su3=Id+X/3` machinery
+(Rounds 29/33/37) for the FIRST TIME. Spectral consequence, cross-
+checked against direct matrix diagonalization: `Dslash_mat²` has
+spectrum `{3: mult 2, 0: mult 6}` — matching `Casimir_su3`'s own
+spectrum `{0:2, 4/3:6}` structure exactly (3 on the 2 SU(3) singlets
+where `Casimir_su3=0`, 0 on the `3+3̄` sextet where `Casimir_su3=4/3`).
+Result: Round 23's own `TERM1 = Dslash_mat⊗Id_{S^-}` is now fully
+closed-form — a genuinely useful building block for a FUTURE attempt
+at the twisted `∇*∇` isolation Round 23 itself flagged, not attempted
+this round.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis; first attempt failed with a template-
+substitution bug — `args.claim`/`args.script`/`args.citedContext` all
+arrived `undefined`, both skeptics correctly issued
+`REFUSE(no_falsifiable_claim)` per the Zero-Signal Gate rather than
+fabricate a review; second attempt fixed by having agents `Read` the
+files directly via absolute paths instead of routing content through
+`args`):** all 4 original claims C1-C4 `CONFIRMED-REAL` from both
+skeptics, zero disagreement, zero FALSIFIED. Two minor flags, both
+resolved with genuine fixes rather than narrative dismissals: (1)
+skeptic-1 — the `(9/4)`/`(1/4)` coefficients silently inherit Round
+29's own SU(3)-normalization caveat, not re-flagged in the original
+claim.md — accepted as a documentation gap, added an explicit scope
+line; (2) skeptic-2 — flagged `[WEAK]`: the narrative jump from
+"`Dslash_mat²` has a 6-dim 0-eigenspace" to "`Dslash_mat` itself has a
+6-dim kernel, eigenvalues `±√3`" requires `Dslash_mat` to be *normal*
+(`ker(A²)=ker(A)` needs this), never checked in the original script.
+The synthesis agent independently verified `Dslash_mat` is real-
+symmetric with direct-diagonalization spectrum `{-√3:1,√3:1,0:6}`; I
+personally re-verified this myself with a fresh script run
+(audit-verification-gate discipline — agent's `[VERIFIED]` = my
+`[INFERRED]` until re-run) via a new in-script STEP E, `EXIT=0`,
+confirmed exactly. C5 added to Falsifiable Claims, now `[VERIFIED-tool]`.
+
+**What survives, solid:** a new, verified, closed-form synthesis
+(`Dslash_mat²=3·Id−(9/4)·Casimir_su3`, `Σ M_p²=−(1/2)·Id+(1/4)·
+Casimir_su3`, plus `Dslash_mat` itself real-symmetric with spectrum
+`{√3:1,-√3:1,0:6}`) connecting pre-existing Round 27/29 facts to this
+session's own `Casimir_su3` machinery for the first time — useful,
+upstream groundwork for a future twisted-bundle attempt.
+
+**Still open, honestly-scoped limits:** this round does NOT isolate
+`∇*∇` on the twisted `Γ(S^+⊗S^-)` bundle, does NOT reconcile the
+`8/45 vs ~1` L4A norm-bound tension, and does NOT touch `preprint.tex`.
+`RHO`/`NU`'s literal AHL2023 notation question (Round 34), WHY Round
+34's intertwiner `P` is Hadamard-type, and the `M_p`/`Z_p` L4A
+convention question (Rounds 23-26) all remain untouched.
+
+2 new files (`g2su3_round38_dslash_squared_closed_form.py`,
+`round38_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29), no regressions — system
+contention had eased this round (~346s, vs. Round 37's ~1h23m).
+preprint.tex NOT touched (parallel session's own uncommitted work,
+left undisturbed throughout this round).
