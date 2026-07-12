@@ -5772,3 +5772,101 @@ suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented since Round 29), no regressions (~300s).
 preprint.tex NOT touched (parallel session's own uncommitted work,
 left undisturbed throughout this round).
+
+## Round 42 (2026-07-12): M_p-vs-Z_p investigation — a genuine research
+gap found and reported honestly, NOT papered over
+
+**User's instruction:** a detailed, well-reasoned follow-up message
+after Round 41, accurately summarizing what that round achieved (a
+complete algebraic accounting, NOT a physics resolution) and proposing:
+"разобраться с точной конвенцией `M_p` против `Z_p` и выяснить, какая
+комбинация пяти известных частей действительно является Bochner
+Laplacian... Именно это может наконец разрешить `8/45 vs ~1`."
+
+**Key observation:** individual `Z_p` matrices were NEVER constructed
+anywhere in this project — Round 26 (Rounds 23-26 era) only ever
+isolated `-Σ Z_p²` as a single AGGREGATE 8×8 quantity, via subtraction
+from `Dslash_mat²`, establishing `(-Σ Z_p²) - (-Σ M_p²) = H -
+(1/2)·Id - (7/4)·Casimir_su3` (`Delta_HCas`). A "pure rescaling"
+hypothesis (`Z_p := 2t·M_p`, giving `Z_p=0` at `t=0`) was proposed,
+tested, and **computationally FALSIFIED** against Round 26's own
+identity (would require `Σ M_p² == Delta_HCas`, directly checked
+FALSE). Two research agents then read Agricola 2002
+(arXiv:math/0202094v1) and Agricola-Hofmann-Lawn 2023 DIRECTLY (both
+PDFs already in this repo). Found the connection family `∇^t_XY =
+∇^0_XY + t[X,Y]_m`, with `Λ^0_m=0` (canonical) and `Λ^{1/2}_m=Λ^g`
+(Levi-Civita, this project's own `LEVI_CIVITA_NOMIZU` table) — but
+**did NOT find** an explicit per-index spin-lift formula for the
+canonical connection specific to `S^6=G2/SU(3)`, only the AGGREGATE
+Dirac operator `D^0=-H` (already established, Round 27). AHL2023's own
+"Example 4.18" was flagged as the natural next place to look but was
+NOT read (research-agent time budget). Building genuine individual
+`Z_p` matrices was correctly identified as a task NOT to force within
+one round. **User chose the safer partial-step option** after being
+shown this honest research wall, rather than accepting a fabricated
+construction.
+
+**Scope executed:** computed ONLY the piece of a hypothetical "Z_p-based
+`∇*∇`" expressible from the already-known aggregate `Delta_HCas` (no
+individual `Z_p` needed), leaving the genuine `Σ_p Z_p⊗Z_p` cross-term
+EXPLICITLY open. Result: `Delta^{(Z,partial)}_2x2 =
+[[49/6,5/3],[5,7/2]]` — more non-scalar than the original (Frobenius
+norm² of the traceless part: `160/9→116/3`), reported from the START
+as suggestive/directional, NOT definitive.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis) — given explicit instruction to scrutinize
+this round's honesty HARDER than usual, since its construction is
+INHERENTLY (not cosmetically) incomplete:** C1-C3 `[CONFIRMED-REAL]`
+(Delta_HCas's citation from Round 26 verified faithful — same sign,
+same coefficients, re-executed and confirmed; compression/assembly
+arithmetic verified by hand AND by direct script execution). **C4
+found `[WEAKENED]`:** both skeptics independently discovered the
+ORIGINAL caveats admitted LESS incompleteness than actually exists —
+only the missing cross-term was flagged. Skeptic 1 found a first gap:
+the `left+right` shift convention (symmetric across both tensor
+factors) is unstated and not directly derivable from Round 41's own
+LEFT-ONLY `Delta` decomposition (`piece_H_and_step2 =
+kron(cubic_and_curvature_L,Id8)`, no right-side counterpart — because
+the right-factor Casimir contribution algebraically CANCELS between
+`D64²` and `∇*∇`, a genuine structural fact) — an alternative
+"left-only" convention gives `61/2` instead of `116/3`
+(direction-robust: both exceed `160/9`; magnitude-fragile). Skeptic 2
+independently found the SAME gap PLUS a second, distinct one: `M_p`
+also appears UNSWAPPED inside `T12+T21` (via `Dslash_mat=Σ E_p·M_p`,
+`TERM2=Σ kron(E_p,M_p)`) and `TORSION_E` (via `nabla_bracket`'s own use
+of `M_r`) — a genuinely coherent `M_p→Z_p` swap would need individual
+`Z_p` in THREE places, not one. The synthesis agent independently
+confirmed skeptic 2's additional point by re-reading Round 41's own
+construction, adopted skeptic 2's fuller framing, and additionally
+RE-EXECUTED Rounds 26/41/42's own scripts directly, confirming zero
+cross-round symbol/import drift. **Response: Fixed, not dismissed** —
+added BOTH caveats prominently (each a full paragraph with the
+specific alternative number and specific code locations) to "What this
+does NOT mean" in claim.md, and updated the script's own CONCLUSION
+print statements to match.
+
+**What survives, solid:** the honest research-gap finding itself
+(`M_p`-vs-`Z_p` requires primary-source work beyond this round — a
+genuine, well-documented dead-end reported honestly, not papered over);
+the arithmetically-exact-but-narrowly-scoped `Delta_HCas`-shift
+computation, now correctly scoped as missing THREE ingredients (not
+one).
+
+**Still open, honestly-scoped limits (emphasized strongly):** the
+`M_p`-vs-`Z_p` L4A convention question remains GENUINELY UNRESOLVED.
+The `8/45 vs ~1` L4A norm-bound tension is COMPLETELY UNTOUCHED.
+**Concrete next step, NOT started:** read AHL2023's own "Example 4.18"
+(and surrounding §2/§4 spin-lift construction method) to determine
+whether the canonical connection's per-index spin-lift for `S^6` is
+derivable from already-available data. Does NOT touch `preprint.tex`.
+Does NOT resolve the Casimir_su3-vs-Jac_h identity question (Round
+39), `RHO`/`NU`'s literal AHL2023 notation question, or WHY Round 34's
+intertwiner `P` is Hadamard-type — all remain untouched.
+
+2 new files (`g2su3_round42_mp_zp_aggregate_shift.py`,
+`round42_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29), no regressions (~315s).
+preprint.tex NOT touched (parallel session's own uncommitted work,
+left undisturbed throughout this round).
