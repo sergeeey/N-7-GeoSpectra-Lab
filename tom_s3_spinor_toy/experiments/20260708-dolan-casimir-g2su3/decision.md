@@ -6178,3 +6178,94 @@ failed (same pre-existing, unrelated failure documented since Round
 29), no regressions (~618s). preprint.tex NOT touched (parallel
 session's own uncommitted work, left undisturbed throughout this
 round).
+
+## L4A branch PARKED (2026-07-13, between Round 45 and Round 46)
+
+**User's decision:** rather than continue further blind L4A rounds
+(six rounds — 24-45 — gave real cleanup but no differentiating test
+for the frame/Leibniz-correction-vs-F_{S^-}-incomplete fork), park the
+branch with an explicit revival gate: resume ONLY when a genuinely new
+differentiating observable is proposed, NOT forced by tensor-support
+structure and NOT assembled from `Delta`'s already-known 5 pieces —
+naming 5 concrete option types (different multiplicity block, normal
+coordinates, independent primary-source `F_{S^-}` formula, held-out-
+rep sign/spectrum, or a distinguishing operator invariance). Recorded:
+`parked/20260713-l4a-frame-leibniz-vs-fsminus-fork.md` (full Parked
+Pearl fields) + `parked/INDEX.md` (+`L4A-FORK` row). User's own next
+scientific target: `Casimir_su3 vs Jac_h` (Round 39's own explicitly-
+left-open question), with an explicit anti-circularity gate (informed
+directly by Round 45's own true-kill lesson): no single-block
+coincidence, no coefficient fitting, no textual-similarity-as-proof —
+PASS requires the identity derived from definitions and confirmed on
+the FULL 8-dim module.
+
+## Round 46 (2026-07-13): Casimir_su3-vs-Jac_h — NOT new science, a
+redundant rediscovery of Round 30's own already-closed result
+
+**Investigation:** built `Casimir_su3` (from `su3_action`) and `C~h`
+(Agricola 2002's own Proposition 3.3 object, re-derived independently
+from `curv_h`/`Jac_h`, not imported from Round 26's script) and found
+`C~h - Casimir_su3 = 0` EXACTLY, all 64 entries, on the full 8-dim Σ —
+with a negative control (`H ≠ Casimir_su3`) confirming the test
+methodology discriminates. This appeared, at the time, to be a clean
+PASS resolving Round 39's own explicitly-left-open question.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+synthesis) — found this is a REDUNDANT REDISCOVERY, not new science:**
+`g2su3_round30_ch_casimir_structural.py` (2026-07-11, TWO DAYS EARLIER,
+same directory) already established this EXACT identity, at the SAME
+full 8×8 scope, with a considerably STRONGER 9-step structural
+derivation tracing it to Agricola's own page-10 definition
+("C~h := the lift of the Casimir operator of h"), surviving TWO
+independent review passes (FL Step 8a, then a `/boyko-triangle-audit`
+pass that caught a subtle gap neither skeptic in Round 30's OWN first
+pass had found). Compounding findings: (1) this round's "independent
+primitive sources" claim was FALSE — `AD_NU_M_BIVECTOR` (feeding
+`C~h`) and `SU3_GENERATORS` (feeding `Casimir_su3`) are BYTE-IDENTICAL,
+a fact Round 30's own "HONEST SCOPE" section ALREADY disclosed; (2) the
+synthesis agent found this round's `jac_h`/`h_bracket_action_on`/
+`clifford_quad` functions are VERBATIM COPIES of Round 26's own
+functions — and Round 30's own STEP E already imported and ran that
+EXACT code at the EXACT same scope, meaning this round had ZERO
+methodological novelty, not just a shared data table; (3) Agricola's
+own page-10 definition makes the identity near-definitional, not an
+independent discovery to make; (4) the "genuine conceptual
+simplification" framing was BACKWARDS — `Casimir_su3` is the SIMPLER
+object, `C~h` requires strictly MORE machinery built from the SAME
+table; (5) the negative control is largely tautological given this
+project's OWN Round 43 chirality theorem (`H` odd-degree, `Casimir_su3`
+even-degree — guaranteed to differ regardless of numeric content).
+
+**Root cause (the actual valuable finding):** Round 39 (2026-07-12)
+reopened "Casimir_su3-vs-Jac_h" as explicitly OPEN a full DAY after
+Round 30 (2026-07-11) had already CLOSED it in the SAME directory,
+with zero citation connecting them (`grep -in "round30\|round 30"`
+across `round39_claim.md`, `round46_claim.md`, and this round's own
+script: zero hits, before this correction). This is this project's
+own `research-methodology.md` § Классификатор Type 4 lag failure mode,
+inverted: an OLD PROMOTE not carried forward and cited by a LATER
+round, causing genuinely wasted duplicate investigation across TWO
+rounds (Round 39's own uncertainty, and this entire Round 46).
+
+**Response: full rewrite, not dismissal.** `round46_claim.md` and the
+script's own docstring/CONCLUSION rewritten in full to honestly record:
+what was actually found (redundant rediscovery), why it happened
+(Round 39's own uncited lag), and what survives (a harmless, non-load-
+bearing re-confirmation of Round 30's own already-solid result — the
+underlying math, `C~h=Casimir_su3`, remains TRUE and was never in
+doubt, established by Round 30, not this round).
+
+**Still open:** the user's own next genuine target after this
+correction — `RHO`/`NU`'s literal AHL2023 notation question (Round 34)
+remains the one standing, genuinely unaddressed item from the prior
+options list. L4A remains parked. Does NOT touch `preprint.tex`.
+
+2 new files (`g2su3_round46_casimir_su3_jach_identity.py`,
+`round46_claim.md`), zero existing files modified — this round's own
+finding is entirely self-contained (does not require editing Round 30
+or Round 39's own historical entries, per this project's own
+append-only decision.md discipline). Full project pytest suite
+re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing, unrelated
+failure documented since Round 29), no regressions (~433s). preprint.tex
+NOT touched (parallel session's own uncommitted work, left undisturbed
+throughout this round).
