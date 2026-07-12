@@ -5523,3 +5523,96 @@ unrelated failure documented since Round 29), no regressions — system
 contention had eased this round (~346s, vs. Round 37's ~1h23m).
 preprint.tex NOT touched (parallel session's own uncommitted work,
 left undisturbed throughout this round).
+
+## Round 39 (2026-07-12): closed form for Round 25's `step2_remainder`
+— FL Step 8a found and fixed 2 real overclaims
+
+**User's instruction:** "го, round 39" — chose "Frame-term correction
+(рекомендую)" via `AskUserQuestion`, continuing Round 24's own flagged
+next step for the L4A investigation.
+
+**Stale-summary self-correction (caught BEFORE any computation):**
+Round 38's own "Background" section characterized Round 23 as leaving
+`∇*∇` "NOT YET independently isolated/verified" — reading the actual
+files (not a compacted summary) showed this was WRONG: Round 24 had
+already isolated `∇*∇` directly from the connection, and **Round 25**
+(already closed, merged `main@811cb2b`, simply absent from the stale
+summary) went further — decomposing `Dslash_mat²` via
+`cubic_and_curvature_L := Dslash_mat²−CASIMIR_L_plain`, testing it
+against Kostant's cubic torsion element `H`, and PROMOTING the
+non-scalar residual `step2_remainder` (diagonal `[-1/6,5/2]` on the
+2-dim SU(3)-invariant subspace) as "empirical evidence the Jac_h/
+curvature-Jacobi piece is a real, nonzero presence," flagging "derive
+the Jac_h term explicitly" as the concrete next step, NOT started.
+
+**Key observation:** `step2_remainder` now has a full closed form.
+Substituting Round 38's two identities into
+`cubic_and_curvature_L = Dslash_mat²+Σ_p M_p²` gives
+`(5/2)·Id−2·Casimir_su3` EXACTLY, so `step2_remainder = (5/2)·Id−
+2·Casimir_su3+H`. This reproduces Round 25's own asserted
+`[[-1/6,0],[0,5/2]]` on `span(w_a,w_b)` EXACTLY, and the ORIGINAL
+framing (before skeptic review) claimed the diagonal split traces
+entirely to `Casimir_su3`'s own eigenvalue split (`4/3` on the sextet
+spanning `w_a`, `0` on the singlet spanning `w_b`), with `H`
+contributing zero — presented as a "CORRECTION" of Round 25's headline
+finding.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis) — a substantive review that found and fixed
+2 real overclaims, not a rubber stamp:** (1) the claim that `H`'s zero
+contribution was confirmed "via a completely different route, a
+genuine cross-check not a tautology" was FALSIFIED as a
+characterization — `compress_2x2` is R-linear, so
+`compress(kron(H,Id8)) = -compress(kron(-H,Id8))`, meaning `H`'s zero
+here is an algebraically FORCED sign-flip of Round 25's own STEP 5
+result, not fresh evidence. Both skeptics independently caught this via
+static analysis; the tool-using synthesis agent independently
+re-verified it by direct execution (confirmed `compress_2x2`'s
+linearity explicitly, confirmed the exact sign-flip relationship).
+**Response: Fixed** — added a genuine new in-script STEP F (random-
+matrix control, confirming the off-diagonal-zero pattern is ALSO
+structural for ANY `kron(X,Id8)`, carrying no Casimir-specific content
+— the SAME mechanism behind Round 25's own H/e_1/M_1 null controls),
+`EXIT=0`, and rewrote both the script's CONCLUSION and claim.md
+throughout to remove the overclaimed language. (2) the "CORRECTS Round
+25's own promoted headline finding" framing was WEAKENED, with NEW
+supporting textual evidence found by the synthesis agent:
+`g2su3_H_element.py`'s own docstring explicitly ties Agricola's Jac_h
+term to "su(3)-valued curvature" — the SAME algebraic family
+`Casimir_su3` (built from `su3_action`) belongs to. This means
+`Casimir_su3` may literally BE Agricola's Jac_h term, in which case
+this round has DERIVED Jac_h in closed form rather than shown it
+unnecessary, and Round 25's original finding would be VALIDATED, not
+corrected. **Response: Fixed, not dismissed** — reframed throughout
+from "CORRECTS" to a narrower, defensible claim: `step2_remainder`'s
+closed form uses only pre-existing ingredients (refuting Round 25's
+"not-yet-built" framing specifically), leaving the Casimir_su3-vs-
+Jac_h identity question explicitly open. True kill: NO (both skeptics
++ synthesis agree) — C1-C3 solid, tool-verified algebra with no
+core-predicate falsification; what was wrong was interpretive
+overclaiming, now fixed via a genuine artifact-level addition (STEP F)
+and honest reframing, not narrative dismissal.
+
+**What survives, solid:** `step2_remainder = (5/2)·Id−2·Casimir_su3+H`
+as an exact closed-form identity (C1-C4, C6 clean `[VERIFIED-tool]`);
+Round 25's own "not-yet-built" framing is refuted — the closed form
+uses only pre-existing ingredients (`Casimir_su3`, `H`, a scalar).
+
+**Still open, honestly-scoped limits:** this round does NOT resolve
+`Delta`'s FULL non-scalarity — Round 25's own 5-piece decomposition
+also has `T12+T21`, `TORSION_E`, and `cross-Casimir` pieces, NONE
+touched here. Does NOT reconcile the `8/45 vs ~1` L4A norm-bound
+tension. Does NOT touch `preprint.tex`. Does NOT determine whether
+`Casimir_su3` IS or merely resembles Agricola's own Jac_h term — an
+open question this round explicitly leaves standing, per the skeptic
+review's own finding. `RHO`/`NU`'s literal AHL2023 notation question
+(Round 34), WHY Round 34's intertwiner `P` is Hadamard-type, and the
+`M_p`/`Z_p` L4A convention question (Rounds 23-26) all remain
+untouched.
+
+2 new files (`g2su3_round39_step2_remainder_closed_form.py`,
+`round39_claim.md`), zero existing files modified. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29), no regressions (~638s).
+preprint.tex NOT touched (parallel session's own uncommitted work,
+left undisturbed throughout this round).
