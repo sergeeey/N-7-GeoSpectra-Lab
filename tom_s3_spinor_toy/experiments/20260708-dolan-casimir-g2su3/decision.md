@@ -5181,3 +5181,92 @@ edit to the same file). Full project pytest suite re-run: 2483 passed,
 4 skipped, 1 failed (same pre-existing, unrelated failure documented
 since Round 29). preprint.tex NOT touched (left as the parallel
 session's own uncommitted work, untouched by this round).
+
+## Round 35 (2026-07-12): deriving Ch_4's c=1, relocating degree4_term's
+c'=-5/4 onto a cleaner object
+
+**User's instruction:** "го, round 35" — chose the recommended option
+from 4 offered candidates: "Вывести конкретное значение c=1", the
+SPECIFIC numeric value Round 33 explicitly flagged as unexplained
+("does NOT explain the SPECIFIC numeric value of the proportionality
+constant `c` ... that still requires the direct combinatorial
+computation") and carried unchanged through Round 34.
+
+**Key observation:** `Ch_4`'s `c=1` is a LOGICAL CONSEQUENCE of three
+already-established structural facts, assembled here for the first
+time in this direction: (1) `Ch_0 = Tr(Ch_tilde)/8` (Round 26 —
+`Ch_4` is pure degree-4, hence traceless, a degree fact not a
+computation); (2) `Ch_tilde = Casimir_su3` EXACTLY (Round 30 —
+Agricola's own `C̃h` definition is literally the `su(3)` Casimir for a
+`Qh`-orthonormal basis, established INDEPENDENTLY of `Ch_4`'s own
+value); (3) `Tr(Casimir_su3)/8 = 1` (Round 29/33 —
+`Casimir_su3=Id+X/3`, `X` traceless by construction). Combining:
+`Ch_0 = 1`, so `Ch_4 = Ch_tilde − Id = Casimir_su3 − Id`, giving `c=1`
+— correcting Round 33's own STEP D, which had used the SOLVED `c=1` to
+re-derive `Ch_tilde=Casimir_su3` (backwards: the true dependency runs
+from Round 30's prior, independent fact TO `c=1`, not the reverse — a
+gap Round 33's own skeptic-reviewed caveat had already flagged as
+open). Separately, a NEW exact decomposition
+`degree4_term = Ch_4 − (9/8)·Jm4` (where `Jm4` is built purely from
+`jac_m`, `curv_h`-independent) shows `Jm4` ALSO satisfies Round 28's
+theorem premises and solves to `Jm4=2·(Casimir_su3−Id)` — giving
+`c' = 1 − (9/8)·2 = −5/4`, matching Round 26/31's value exactly.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+tool-verified synthesis, task `w00lq6sgq`):** **zero FALSIFIED
+claims** — every algebraic identity, arithmetic step, and non-vacuous
+check (both skeptics hand-verified and/or independently re-ran) held
+exactly. But BOTH skeptics independently caught the SAME two real
+framing overclaims, later confirmed by the synthesis agent with
+additional standalone checks neither skeptic ran:
+1. **C3 (the critical claim):** the docstring's "FULLY structurally
+   derived — zero fresh combinatorial computation" overstated the
+   result. The in-script STEP C is MECHANICALLY TAUTOLOGICAL with
+   STEP A (`Ch_tilde` is *defined* there as `Ch_0·Id+Ch_4`, and since
+   `Ch_4` is traceless, re-deriving `Ch_0` via `Tr(Ch_tilde)/8`
+   necessarily reproduces the same number) — it adds ZERO fresh
+   in-code evidence. This does NOT falsify the claim: both skeptics
+   independently confirmed Round 30's own structural chain (its STEPs
+   A-D, not its labeled "sanity cross-check" STEP E) never references
+   `Ch_4` anywhere — so the claimed dependency direction is real at
+   the mathematical level. But the independence rests entirely on
+   TRUSTING Round 30's chain (2 cited textbook Lie-theory facts, one
+   back-solved case `k=8`), not on fresh evidence this round
+   contributes. Synthesis found: `Ch_0=1` was ALREADY directly
+   computable since Round 26 (plain `Qh_sum=8` summation) — the
+   genuinely new content is a SECOND, independent route to the same
+   number via pure degree-counting, not a previously-unknown fact.
+2. **C6:** the "REDUCING... to a strictly simpler question" framing
+   for `degree4_term` overstated the progress. The SAME combinatorial
+   3×3 solve is RELOCATED from `degree4_term` onto the cleaner,
+   `curv_h`-independent `Jm4` — NOT eliminated or reduced in count.
+   Real progress (a genuinely cleaner object), but not fewer solves.
+
+Both findings fixed (docstring, in-script print statements, and
+claim.md all reworded from "fully derived"/"reduction" language to
+"logical consequence, trusting Round 30's chain"/"relocation, not
+reduction in solve-count").
+
+**What survives, solid:** `Ch_4`'s `c=1` is now correctly understood as
+following from Round 30's PRIOR, independent structural chain (not a
+fresh 3×3 solve on `Ch_4` itself) — a genuine, verified reorganization
+of the dependency direction, correcting Round 33's own backwards STEP
+D. `degree4_term`'s `c'=-5/4` is now expressed via an exact, new linear
+decomposition onto a strictly cleaner (`curv_h`-independent) object,
+even though the underlying combinatorial work is not reduced.
+
+**Still open, honestly-scoped limits:** `Jm4`'s own `d=2` is NOT
+derived from a deeper principle — same 3×3-solve-and-read-off status as
+before, just on a cleaner object. Round 30's own 2 cited textbook
+Lie-theory facts and its back-solved `k=8` case remain unclosed
+dependencies for the WHOLE chain. `RHO`/`NU`'s literal AHL2023
+"E_{a,b}" notation question, WHY Round 34's intertwiner `P` is
+Hadamard-type, the `8/45 vs ~1.03` norm-ratio tension, and the `M_p`/
+`Z_p` L4A convention question (Rounds 23-26) remain untouched.
+
+2 new files (`g2su3_round35_derive_c_value.py`, `round35_claim.md`),
+zero existing files modified. Full project pytest suite re-run: 2483
+passed, 4 skipped, 1 failed (same pre-existing, unrelated failure
+documented since Round 29). preprint.tex NOT touched (parallel
+session's own uncommitted work, left undisturbed throughout this
+round).
