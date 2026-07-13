@@ -6269,3 +6269,115 @@ re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing, unrelated
 failure documented since Round 29), no regressions (~433s). preprint.tex
 NOT touched (parallel session's own uncommitted work, left undisturbed
 throughout this round).
+
+## Round 47A (2026-07-13): mandatory Prior Result Gate — process fix
+after Round 46's duplicate
+
+**User's instruction:** after Round 46's own correction, a detailed,
+sequenced recommendation: (P0) make checking for prior results a
+mandatory, mechanical gate before any new round — no longer "remember
+to check" but an actual required step; (P1) then close the cheap,
+genuinely-open `RHO`/`NU` notation item; (P2) only then pick a new
+major scientific target, via a full open-claims audit of the preprint
+and a priority formula (impact+kill_power+reusability+publication_
+value)/(cost+assumption_debt+continuity_risk). Explicitly NOT
+recommended: returning to `8/45 vs ~1.03`, building new `Z_i`, or
+re-investigating `Casimir_su3=C~h`.
+
+**What was built:** `PRIOR_RESULT_GATE.md` (this experiment
+directory) — a mandatory 7-step protocol (exact claim → `decision.md`
+grep → `round*_claim.md`/scripts grep → `null_results`/`parked` grep →
+`git log -S`/`-G` pickaxe → primary-source re-read → final status:
+NEW/OPEN/CLOSED/SUPERSEDED/DUPLICATE/RETRACTED/PARKED) that must
+return NEW or OPEN before any `roundNN_claim.md` is written. Folded
+into `experiments/_template/claim.md` as a new mandatory leading
+section, so it applies project-wide, not just to this experiment.
+**Retroactively validated** against Round 46's own claim: the gate
+would have caught it at Step 2 alone (`decision.md` already contains
+Round 30's own headline "Ch_tilde=Casimir_su(3) structural
+derivation") — confirming the failure was a skipped check, not a
+missing tool.
+
+2 new/modified files (`PRIOR_RESULT_GATE.md` new,
+`experiments/_template/claim.md` modified), zero `.py` files touched
+— documentary/process fix only, no pytest re-run required. preprint.tex
+NOT touched.
+
+## Round 47B (2026-07-13): AHL2023's literal `E_{a,b}` notation,
+verified — Round 13's `RHO`/`NU` matches the paper exactly (notational
+cleanup, not a new theorem)
+
+**Prior Result Gate run FIRST** (per Round 47A, this round's own
+process): confirmed OPEN — `decision.md` shows Round 34 explicitly
+left this specific sub-question untouched; `git log -S "E_{a,b}"`
+shows the caveat carried unresolved from Round 13 (2026-07-09) through
+Round 38; zero hits in `null_results`/`parked`. Proceeded.
+
+**Investigation:** two targeted research-agent PDF reads of AHL2023
+found: page 8 (§2.2 "Spinors on Homogeneous Spaces", NOT local to
+Appendix A, "used throughout the paper") DOES explicitly define
+`E^(n)_{i,j}` as the skew-symmetric elementary matrix (`-1` at `(i,j)`,
+`+1` at `(j,i)`) — Round 13's own 45-round-old "OCR gives no explicit
+definition on this page" caveat was a FALSE NEGATIVE, caused by
+searching only within Appendix A itself rather than the paper's
+general-notation section. Page 49 (Remark A.2, Proposition A.3) gives
+EXPLICIT, verbatim formulas for `ρ(ε_1)..ρ(ε_7)` and `ν_1..ν_14`.
+Independently rebuilt the paper's own `E`-convention and all 21
+formulas FRESH (not imported from Round 13's code) and found: Round
+13's own `Emat` uses the OPPOSITE overall sign from the paper's own
+`E^(n)_{i,j}` — flipping every individual `ρ(ε_i)` — but since every
+`ν_k` is built ENTIRELY from PRODUCTS `ρ(ε_i)·ρ(ε_j)`, never a bare
+`ρ(ε_i)` alone, `(-A)(-B)=AB` makes this sign convention PROVABLY
+INVISIBLE to every `ν_k` — a structural consequence, not luck. Verified
+directly: ALL 14 `ν_k` match the paper's own literal formulas EXACTLY,
+with a negative control (deliberately-corrupted `ν_5`) confirming the
+comparison methodology actually discriminates.
+
+**Skeptic review (FL Step 8a, two independent context-blind skeptics +
+synthesis, all reading the PDF THEMSELVES, all 14 `ν_k` independently
+re-checked against rendered page images, not spot-checked):** all four
+claims `[CONFIRMED-REAL]`, **no claim FALSIFIED**. One genuine internal
+disagreement between the two skeptics (whether "page 8, §2.2" is the
+correct citation — skeptic 1 said no §2.2 heading appears on page 8
+itself; skeptic 2 said §2.2 is correct) was resolved by the synthesis
+agent rendering the actual PDF pages as images (not trusting either
+skeptic's text-extraction method): §2.2's heading appears on page 7,
+the section spans pages 7-9 without a new heading interrupting page 8
+— LaTeX section headings are not reprinted on every page they span,
+which caused skeptic 1's false negative. Citation confirmed correct.
+Synthesis agent additionally did a pixel-level re-check of `ν_8`
+specifically (Round 13's own docstring flags this term's documented
+history of misreadings) — caught and resolved a false alarm in its own
+first-pass text extraction before confirming no discrepancy, stronger
+confirmation than either skeptic individually provided. Two minor,
+confirmed textual-precision fixes applied (not mathematical): Core
+argument #1 now quotes the paper's actual words rather than a
+paraphrase presented as verbatim; the Prior Result Gate's own step 2
+now precisely distinguishes the literal `"E_{a,b}"` string hit (Round
+34 onward) from the substantively-real-but-differently-worded gap in
+Rounds 32/33.
+
+**Deliverable (done immediately after skeptic review, per this round's
+own acceptance criteria — doc update, not a new theorem):**
+`g2su3_appendix_a_construction.py`'s own docstring updated, replacing
+the stale "NOT verified... OCR gives no explicit definition" caveat
+with the direct primary-source citation and the sign-invisibility
+argument, resolving a 45-round-old open item.
+
+**What survives, solid:** Round 13's own `RHO`/`NU` construction was
+ALREADY mathematically correct — the indirect (calibration-only)
+justification was never masking an error. What changed is the
+JUSTIFICATION, not any downstream value, spectrum, eigenvalue, or
+curvature entry from Rounds 13-46.
+
+**Still open:** does NOT resolve the L4A tension (parked) or touch
+`preprint.tex`. Per the user's own P2 sequencing, the next step is a
+full open-claims audit of the preprint before picking a new major
+scientific target — not yet started.
+
+3 new/modified files (`g2su3_round47b_rho_nu_notation_audit.py`,
+`round47b_claim.md` new; `g2su3_appendix_a_construction.py` docstring
+modified), zero other existing files touched. Full project pytest
+suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
+unrelated failure documented since Round 29), no regressions (~237s).
+preprint.tex NOT touched.
