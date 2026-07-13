@@ -222,7 +222,10 @@ of the compact factor. The two explicit examples are: six total dimensions (one 
 $\to$ $\mathrm{U}(1)$ gauge group, and seven total dimensions (three extra, analogous to $S^3$)
 $\to$ $\mathrm{SO}(3)\cong\mathrm{SU}(2)$ gauge group. Lawrence explicitly notes that
 extending to $\mathrm{SU}(3)$ would require embedding in $\mathrm{U}(4)$ and is left for
-future work~\cite{Lawrence2022}.
+future work~\cite{Lawrence2022}; a later preprint restates this explicitly as the open
+question of $\mathrm{SU}(3)$'s embedding in $\mathrm{SU}(4)\cong\mathrm{SO}(6)$ and why
+only $\mathrm{SU}(3)$ is gauged~\cite{Lawrence2023}. The construction below answers this
+for the specific case $S^6=G_2/\mathrm{SU}(3)$.
 
 We extend this mechanism to $S^3\times S^6$. The $S^3$ factor has isometry group
 $\mathrm{SO}(4)\cong\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ from its bi-invariant
@@ -343,8 +346,18 @@ prediction), requiring more RGE running to reach the SM value $0.231$ at $M_Z$ t
 Pati--Salam, consistent with an intermediate-scale compactification substantially below
 $M_{\mathrm{GUT}}\approx 10^{16}\,\mathrm{GeV}$.
 
-\textit{Caveat:} The assumption $g_{\mathrm{SU}(4)}=g_3$ is a simplification pending a
-complete Pati--Salam spectral action computation on $S^3\times S^6$.
+\textit{Caveat (sharpened per G97):} The assumption $g_{\mathrm{SU}(4)}=g_3$ is not merely
+a simplification pending computation: an internal check of the isometry group
+$\mathrm{Iso}(S^3\times S^6)=\mathrm{SO}(4)\times\mathrm{SO}(7)$ (gate G97, this work)
+finds that $\mathrm{SU}(4)$ itself is not present among the isometries at all --- only
+$\mathrm{SU}(3)\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ (Pati--Salam without the
+$\mathrm{U}(1)_{B-L}$ factor) is realized this way. The $B-L$ generator required for the
+full Pati--Salam embedding and the $Y=T_{3R}+(B{-}L)/2$ formula used here would need to
+arise from field content (fermion zero-mode charges) rather than from the isometry group
+directly; determining this requires input beyond the present construction (open, pending
+collaboration with T.~Lawrence, see \S\ref{sec:open}). The Weinberg-angle estimate above
+should accordingly be read as illustrative pending this input, not as a computation with
+a well-defined completion path.
 
 %% ================================================================
 \section{\texorpdfstring{$N_{\mathrm{gen}}=3$}{Ngen=3} from the Twisted Dirac Index}
@@ -600,8 +613,24 @@ curvature endomorphism $F_{S^-}$ must have at least one negative mode whose magn
 reaches $R/4$ on the index-required subspace. Proving $\dim\ker=1$ requires an explicit
 spectral computation of $F_{S^-}$ as an endomorphism on $\Gamma(S^+\otimes S^-)$,
 e.g., via the Kostant--Parthasarathy formula on the naturally reductive space
-$G_2/\mathrm{SU}(3)$~\cite{Agricola2002}. This computation is left as an open problem.
-\textbf{(L4A, open)}
+$G_2/\mathrm{SU}(3)$~\cite{Agricola2002}.
+
+\textbf{Partial progress (internal verification, experiment
+\texttt{20260708-dolan-casimir-g2su3}, this work).} $F_{S^-}$'s explicit spectrum has
+since been computed directly as a matrix-coefficient endomorphism (bypassing the
+Kostant--Parthasarathy/cubic-operator route), giving $\{1/6:15,\,-5/2:1\}$ on the full
+16-dimensional fibre $\Gamma(S^+\otimes S^-)$, restricting to $\{-5/2:1,\,1/6:1\}$ on the
+2-dimensional $\mathrm{SU}(3)$-invariant subspace. This is a substantially different,
+exact result from the norm \emph{estimate} above: the exact ratio on the invariant
+subspace is $|{-}5/2|/(R/4)=1$, not the estimated $8/45\approx 0.178$, an unreconciled
+tension between the norm bound and the exact computation. An initial attempt to read the
+$-5/2$ eigenvalue as mechanistically explaining the already-known zero mode of $D^2$ on
+this subspace (the two eigenvalues cancel exactly, $5/2-5/2=0$) was tested and did not
+survive review: the corresponding eigenvectors of $D^2$ and $F_{S^-}$ are different,
+non-parallel vectors, so matching eigenvalues alone does not establish a causal
+mechanism. Extending the spectral computation to the remaining 14 fibre dimensions, and
+reconciling the exact spectrum with a rigorous Bochner--Lichnerowicz argument for
+$\dim\ker=1$, remain open. \textbf{(L4A, open)}
 
 \subsection{\texorpdfstring{$G_2$}{G2}-equivariance and Kostant--Parthasarathy formula (L4B --- partially resolved; rank open)}
 \label{sec:schur}
@@ -819,9 +848,9 @@ generations.
 
 Consequently, the fermion mass hierarchy cannot arise from $S^6$ geometry alone; it must
 originate from the NCG finite Dirac operator $D_F$ with its four free Yukawa matrices
-$\{Y_\nu, Y_e, Y_u, Y_d\}$ \cite{CCM2006}. The obstruction is specific to $S^6$: the role
-of $S^3$ Kaluza-Klein coupled-mode mixing in lifting inter-generation Yukawa degeneracy
-in the full 9-dimensional analysis remains open (\S\ref{sec:open}).
+$\{Y_\nu, Y_e, Y_u, Y_d\}$ \cite{CCM2006}. The obstruction is specific to $S^6$: the $S^3$ factor is a fixed, generation-independent
+block in the triality construction (\S\ref{sec:three-channels}), so no $S^3$-$S^6$
+coupled-mode mechanism can lift this degeneracy (\S\ref{sec:open}).
 
 %% ================================================================
 \section{Modulus Stabilization}
@@ -901,13 +930,19 @@ A coordinate-space proxy for the moduli mass in units of $m_{KK}=1/\rho_6$ (G82,
 \end{equation}
 For equal-radii $C=1$: $m_{\mathrm{mod}}/m_{KK}|_{\mathrm{coord}}\approx 2.07\%$.
 
-\textbf{Caveat (G88D):} The $2.02\%$ figure is a \emph{coordinate-space proxy} computed as
-$\sqrt{V''(\rho_{\min})/m_{KK}^2}$ without canonical field normalization. Accounting for the
-radion kinetic matrix along the physical path $(\dot\rho_3:\dot\rho_6)=(2:1)$ (kinetic-path
-coefficient $K_{\mathrm{path}}=90$) yields $m_{\mathrm{mod}}/m_{KK}|_{\mathrm{canon}}\approx 0.25\%$,
-a factor $\sqrt{K_{\mathrm{path}}}/\rho_{\min}\approx 8$ smaller. A frame-consistent ratio
-requires the explicit reduced 4D action (gate G88E, open). The estimate $\sim 1$--$2\%$
-should be read as an order-of-magnitude upper bound, not a precise prediction.
+\textbf{Caveat (G88D, updated per G91):} The $2.02\%$ figure is a \emph{coordinate-space
+proxy} computed as $\sqrt{V''(\rho_{\min})/m_{KK}^2}$ without canonical field
+normalization. The explicit reduced 4D action has since been derived (internal
+verification, gate G91, this work), giving a closed, frame-consistent ratio
+$m_{\mathrm{mod}}/m_{KK}|_{\mathrm{canon}}\approx 0.198\%$ along the canonical path
+$\rho_3=\rho_6^2$ (\S\ref{sec:lambda}) --- of the same order as, but distinct from, the
+earlier kinetic-path estimate above. This canonical-path value is itself conditional:
+it assumes the constrained path exactly, whereas the physical stabilization mechanism
+identified for $\rho_3$ (brane-instanton, see the $\rho_3$ modulus-stabilization item
+below) recovers this path only approximately, to within $\sim\!4\%$, and the ratio
+additionally depends on $\lambda$, which remains a free parameter (\S\ref{sec:lambda}).
+The estimate should therefore be read as a specific, computed value under stated
+assumptions, not yet a fully frame- and path-independent prediction.
 
 %% ================================================================
 \section{The \texorpdfstring{$\lambda$}{Lambda}-Dimensional Obstruction}
@@ -981,8 +1016,14 @@ No geometric derivation of $\lambda$ was found in the mechanisms examined (G83--
         $e^{-\lambda/\rho_6^2}$.
   \item \textbf{Open channel:} Wrapped-$S^3$ instantons
         ($\lambda\sim\rho_3^3\sim\rho_6^6$, $a=3$) give $\exp(-c(C')^3\rho_6^3)$
-        via eq.~\eqref{eq:slope2-exp} --- a live $\rho_6$-dependent geometric candidate
-        not yet computed (gate G72, on hold pending Tom's spinor-harmonic framework).
+        via eq.~\eqref{eq:slope2-exp} --- a live $\rho_6$-dependent geometric candidate.
+        A D2-brane instanton wrapping $S^3$ of this type has since been computed for a
+        different purpose, $\rho_3$ modulus stabilization (gates G94--G102, this work; see
+        \S\ref{sec:open}), but that computation explicitly does not fix $\lambda_{\mathrm{np}}$
+        itself --- it stabilizes $\rho_3$ given an independently-specified coupling, not the
+        other way around. Whether the same or a related brane-instanton mechanism could also
+        determine $\lambda_{\mathrm{np}}$ remains open, on hold pending Tom's spinor-harmonic
+        framework.
 \end{itemize}
 Candidate non-perturbative origins for $\lambda$:
 \begin{itemize}
@@ -1087,12 +1128,18 @@ work.
   to every channel, giving $\ind(D^{(\alpha)})=1$ for $\alpha=0,1,2$
   (experiment E-L3-PARTIAL).
 
-\item \textbf{L3b --- Channel independence (\emph{open; geometric path ruled out}).}
-  Theorem~\ref{thm:elb3} (\S\ref{sec:bundle-obstruction}) proves that the $G_2$-equivariant
-  path to channel independence is ruled out: $E_v\cong E_s\cong E_c$ as $G_2$-equivariant
-  bundles, and no $G_2$-invariant operation --- including nearly-K\"ahler instanton
-  connections --- can distinguish the three channels. The distinction requires
-  $\mathrm{Spin}(8)$ fibre symmetry as an additional physical input. If the compactification
+\item \textbf{L3b --- Channel independence (\emph{open; all internal geometric avenues
+  ruled out}).} Theorem~\ref{thm:elb3} (\S\ref{sec:bundle-obstruction}) proves that the
+  $G_2$-equivariant path to channel independence is ruled out: $E_v\cong E_s\cong E_c$ as
+  $G_2$-equivariant bundles, and no $G_2$-invariant operation --- including nearly-K\"ahler
+  instanton connections --- can distinguish the three channels. A subsequent, stronger
+  internal check (gate G102, this work) shows this is not merely a limitation of
+  $G_2$-equivariant constructions specifically: no continuous symmetry inside
+  $\mathrm{so}(8)$ at all commutes with the geometric $G_2$ action on the octonion fibre
+  ($\dim\,\mathfrak{c}_{\mathrm{so}(8)}(\mathfrak{g}_2)=0$ exactly), so the internal search
+  space for a distinguishing symmetry is fully exhausted, not just the $G_2$-equivariant
+  subcase. The distinction requires $\mathrm{Spin}(8)$ fibre symmetry as an additional
+  physical input external to the present geometric construction. If the compactification
   setup preserves $\mathrm{Spin}(8)$ as an internal fibre symmetry, the three zero modes are
   $\mathrm{Spin}(8)$-invariantly orthogonal and $N_{\mathrm{gen}}=3$ follows. Confirming this
   physical input is the remaining open question, to be addressed in collaboration with
@@ -1105,7 +1152,9 @@ work.
   for $(D\otimes S^-)^2$ on the naturally reductive space $G_2/\mathrm{SU}(3)$
   \cite{Agricola2002}, which expresses the squared Dirac eigenvalues in terms of $G_2$
   and $\mathrm{SU}(3)$ Casimir operators. This formula should yield $\dim\ker=1$ as a
-  consequence of the $G_2$ representation theory.
+  consequence of the $G_2$ representation theory. $F_{S^-}$'s explicit spectrum has since
+  been computed directly (see \S\ref{sec:lichnerowicz} for the result and its scope); the
+  connection between this spectrum and a rigorous proof of $\dim\ker=1$ remains open.
   An independent route is the Casimir operator method of \cite{Dolan2003}, which computes
   Dirac spectra on any compact coset $G/H$ via quadratic Casimirs; it has been applied to
   $S^2, S^4, \mathbb{CP}^2$ and $\mathrm{SU}(3)/U(1)^2$ but not yet to
@@ -1142,10 +1191,19 @@ work.
   gap argument of \S\ref{sec:schur}). The representation-theoretic setup builds
   on~\cite{AgrHofLawn2023,Agricola2002}.
 
-\item \textbf{Integrability of $J$.} Lemma L1 uses the almost-complex structure on $S^6$, which
-  is non-integrable (Borel--Serre theorem). The Atiyah--Singer theorem applies to almost-Hermitian
-  manifolds, but curvature contributions to the Weitzenb\"ock formula may differ from the integrable
-  case. This must be verified for the nearly K\"ahler setting of $S^6$.
+\item \textbf{Integrability of $J$ [verified for the constructions used in this paper].}
+  Lemma L1 uses the almost-complex structure on $S^6$, which is non-integrable
+  (Borel--Serre theorem). The Atiyah--Singer theorem applies to almost-Hermitian manifolds
+  regardless (Remark on nearly K\"ahler validity, \S\ref{sec:index}), but curvature
+  contributions to Weitzenb\"ock-type identities could in principle differ from the
+  integrable case through explicit torsion terms. For the twisted operator's
+  $\rho=\mathbf{7}$ non-trivial component (\S\ref{sec:schur}), the full torsion
+  contribution to the operator square was derived in closed form and verified to
+  quantitatively account for the type-mixing observed in the operator's action
+  (internal verification, experiment \texttt{20260708-dolan-casimir-g2su3}, this work),
+  confirming that non-integrability is correctly incorporated rather than overlooked for
+  this construction. A fully general statement covering every curvature computation on
+  the nearly K\"ahler $S^6$ is not claimed.
 
 \end{enumerate}
 
@@ -1153,10 +1211,19 @@ work.
 
 \begin{enumerate}
 \setcounter{enumi}{3}
-\item \textbf{$\rho_3$ modulus stabilization.} The potential $V_{\mathrm{total}}$ depends on $\rho_3$
-  only through $C^3$, creating no restoring force in the $\rho_3$ direction (Dine-Seiberg runaway).
-  Stabilizing $\rho_3$ requires an additional contribution (D-term, flux threading a 3-cycle of $S^3$,
-  or brane action).
+\item \textbf{$\rho_3$ modulus stabilization [mechanism identified, not fully pinned down].}
+  The potential $V_{\mathrm{total}}$ depends on $\rho_3$ only through $C^3$, creating no
+  restoring force in the $\rho_3$ direction (Dine-Seiberg runaway) at the level of
+  \S\ref{sec:moduli}. A D2-brane instanton wrapping $S^3$, with instanton action
+  $S_{\mathrm{inst}}\propto\rho_3^3$ (the physical D-brane scaling, not the
+  sub-stringy form $\propto 1/\rho_3^2$), was found to produce a genuine EFT-valid
+  two-dimensional minimum that recovers the canonical path $\rho_3\propto\rho_6^2$ used
+  throughout this paper to within $\sim\!4\%$ (internal verification, gates G94--G102,
+  this work). The required instanton coefficient corresponds, via the standard Dp-brane
+  tension formula, to a strongly-coupled string regime ($g_s\gtrsim 1$); the exact
+  numerical prefactor carries an acknowledged caveat and the mechanism is not yet an
+  exact, uniquely-fixed resolution. This identifies a candidate stabilization mechanism
+  rather than closing the open problem.
 
 \item \textbf{Non-perturbative origin of $\lambda$.} As proved in \S\ref{sec:lambda}, no geometric
   mechanism produces $e^{-\lambda/\rho_6^2}$. A complete moduli stabilization requires specifying
@@ -1168,8 +1235,11 @@ work.
   shows --- conditional on the L4B kernel-rank assumption (\S\ref{sec:kernel}) --- that all
   inter-generation Yukawa couplings are equal on $S^6$, so the mass
   hierarchy must originate from the non-geometric $D_F$ freedom of the finite spectral
-  triple \cite{CCM2006}. The role of $S^3$ Kaluza-Klein coupled-mode mixing in lifting
-  the degeneracy in the full 9-dimensional analysis remains an open question.
+  triple \cite{CCM2006}. The role of $S^3$ Kaluza--Klein coupled-mode mixing in lifting
+  this degeneracy is now closed: in the construction that defines $N_{\mathrm{gen}}=3$
+  (\S\ref{sec:three-channels}), the $S^3$ spinor factor is a fixed, generation-independent
+  block, and the generation index lives entirely within the $S^6$/octonion triality
+  structure --- so no such cross-term can exist.
 
 \item \textbf{Universality.} Whether the Lichnerowicz--$G_2$-Schur mechanism (L4) applies to other
   nearly K\"ahler 6-manifolds (such as $\mathbb{CP}^3$ or $\mathrm{SU}(3)/T^2$) is an open question.
@@ -1181,13 +1251,20 @@ work.
   Whether this extends to a complete resolution of $\theta_{QCD}=0$ requires a global Pontryagin
   density analysis on $S^3\times S^6$ including $S^6$ sector and non-perturbative effects.
 
-\item \textbf{$\lambda$ as topological ratio [HYPOTHESIS].}
-  The free coupling satisfies $\lambda = N_{\mathrm{gen}}/\dim(S^3\times S^6) = 3/9 = 1/3$
-  if $\lambda$ is identified with the ratio of the generation count to the total internal dimension.
-  Unlike geometric derivations from the radii $\rho_3, \rho_6$ (forbidden by Corollary C1), a
-  topological identification of this kind does not require $\lambda$ to be expressible as
-  $c\cdot\rho_3^a\cdot\rho_6^{2-a}$. Whether any known brane instanton or gaugino condensation
-  mechanism produces exactly $\lambda=1/3$ is unknown and left for future work.
+\item \textbf{$\lambda$ as topological ratio [REJECTED].}
+  The numerical coincidence $\lambda = N_{\mathrm{gen}}/\dim(S^3\times S^6) = 3/9 = 1/3$
+  ($\lambda$ identified with the ratio of the generation count to the total internal
+  dimension) was tested directly, alongside four other candidate closed-form values for
+  $\lambda$ (including $\pi/9$ and a K-theory ratio $n/3$), against every known
+  non-perturbative mechanism in the standard 10D class (brane instantons wrapping
+  cycles of $S^6$, gaugino condensation, worldline instantons, Borel resummation of the
+  $\alpha'$-series, and non-geometric flux backgrounds). None of the five candidates,
+  including $1/3$, is \emph{derived} by any of these mechanisms; each is merely a value
+  that happens to be numerically close to the target, fitted rather than obtained from
+  first principles (internal verification, gate G103, this work). The topological
+  identification $1/3=N_{\mathrm{gen}}/\dim(S^3\times S^6)$ therefore remains an
+  unexplained numerical coincidence, not a derivation, and should not be read as a live
+  candidate mechanism for $\lambda$.
 \end{enumerate}
 
 %% ================================================================
@@ -1218,6 +1295,11 @@ is available at \url{https://github.com/sergeeey/N-7-GeoSpectra-Lab}
 T.~Lawrence,
 \textit{Product manifolds as realisations of general linear symmetries},
 arXiv:2203.09473 (2022).
+
+\bibitem{Lawrence2023}
+T.~Lawrence,
+\textit{Covariant compactification: a radical revision of Kaluza--Klein unification},
+preprint, doi:10.20944/preprints202303.0314.v1 (2023).
 
 \bibitem{DolanNash2002}
 B.P.~Dolan and C.~Nash,
