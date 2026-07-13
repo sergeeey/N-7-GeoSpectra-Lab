@@ -203,3 +203,66 @@ a valid (if not maximally tight) certified bound.
 
 - `round55a_claim.md` — this sub-round's FL Standard-tier artifact
 - `round55a_normalization_dictionary.py` — script, all 4 items
+
+---
+
+## Round 55a.1 (2026-07-13, same day): SU(3) fibre normalization — the last narrow gate
+
+**Trigger:** the reviewer correctly identified that confirming the G₂
+side's ×2 rescale (Round 55a) does NOT automatically establish that the
+"−3" term (max SU(3) fibre Casimir, from Round 52) is in the same
+units — the SU(3) generators in the code could independently carry
+their own, different normalization. Explicit ask: compute
+`-Σ_{k=1}^8 σ(ν_k)²` directly on all 4 fibre σ-types and compare
+against the Bourbaki `su3_casimir` values used in Round 52.
+
+**Verdict: Scenario A confirmed, directly, not by analogy.**
+
+Computed `-Σ_{k=1}^8 M_k²` using `build_su3_matrix64` (the actual
+matrices underlying `Ms[p]`/`su3_curvature_term`, not the abstract
+formula in isolation) on the full 64-dim `Σ⊗Σ` fibre. Exact eigenvalues:
+`{0 (mult 6), 4/3 (mult 30), 10/3 (mult 12), 3 (mult 16)}` — confirmed
+Hermitian, dimension check 6+30+12+16=64 ✓. These match the Bourbaki
+`su3_casimir` formula **exactly**: `(0,0)→0`, `(1,0)/(0,1)→4/3`,
+`(2,0)/(0,2)→10/3`, `(1,1)→3` — **no rescale needed**. The extra `10/3`
+eigenvalue corresponds to an SU(3) type present in the ambient 64-dim
+fibre but not among the 4 types in `S⁺⊗S⁻` specifically — noted, not
+further investigated (out of scope; does not affect Round 52's own
+`max_fibre_casimir=3`, which is correctly computed from the 4
+`S⁺⊗S⁻`-relevant types only).
+
+**Round 52's `−3` is confirmed correct as originally stated. No
+correction to `C₂(ρ)-3-K_cert√C₂(ρ)` is needed on the "−3" side.**
+
+## IMPORTANT — independent re-check of the exceptional set (flagged for reviewer review)
+
+Re-deriving the exceptional set using Round 55's own formula, exactly
+as it was calibrated and empirically positive-controlled (K_cert was
+converted — dividing by `√2` — specifically so it pairs with
+**Bourbaki** `C₂(ρ)`; Round 55's own STEP 4 positive control used
+`√C₂_Bourbaki(7)=√4=2`, explicitly labeled "Bourbaki units" in the
+script, and passed with real margin), gives threshold
+`C₂_Bourbaki(ρ) > 7.460` **directly, with no further doubling**,
+yielding exceptional set **`{7}` only**.
+
+This differs from the reviewer's own Scenario-A arithmetic (which
+applied an additional `×2` conversion on top of the `7.460` threshold,
+giving `{7,14,27,64}`). Our reading: that additional doubling
+double-counts the native→Bourbaki conversion Round 55 already performed
+when deriving `K_cert` from `K_native` — `C₂(ρ)` in Round 55's own
+formula was already, and was empirically verified via the positive
+control to be, the Bourbaki value. Concretely, plugging in
+`C₂_Bourbaki(0,1)=8` (ρ=14) directly: `8-3-K_cert·√8 ≈ 8-3-4.619 ≈
+0.381 > 0` — positive, i.e. ρ=14 is NOT exceptional under this reading.
+
+**Not asserted as final.** Flagged explicitly for the reviewer's own
+independent re-check before Round 56 is treated as settled — this is
+exactly the kind of normalization subtlety this whole Round 55/55a/
+55a.1 chain exists to catch, and a genuine, non-trivial point of
+possible disagreement should not be resolved unilaterally by either
+party without cross-checking.
+
+## Files (Round 55a.1)
+
+- `round55a1_claim.md` — this sub-round's FL Standard-tier artifact
+- `round55a1_su3_normalization.py` — script, direct fibre computation
