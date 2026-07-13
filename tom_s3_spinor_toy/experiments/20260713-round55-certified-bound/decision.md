@@ -128,3 +128,78 @@ project's own integrity discipline.
 - `round55_certified_bound.py` — script, all 8 steps run in sequence,
   exact/symbolic computation throughout
 - `results_round55.json` — full structured output
+
+---
+
+## Round 55a (2026-07-13, same day): narrow normalization-consistency audit
+
+**Trigger:** a detailed external review of Round 55 (9.5/10, praised the
+methodology) recommended splitting the verdict — `K_cert` itself is a
+standalone, already-certified result; its *substitution* into
+`C₂(ρ)-3-K√C₂(ρ)` needed independent confirmation that native and
+Bourbaki units are consistently tracked, via a second representation
+and a full-operator sanity check, before being trusted. The review's
+own strongest suggestion: reframe `B_0` as `+μ_σ` (an improvement, not
+a deficit), since `D64²`'s value on the test vector was positive (4),
+not a penalty.
+
+**Verdict: PASS on all 3 checked kill conditions.**
+
+1. **Second representative (ρ=14, adjoint):** native 14-generator
+   Casimir sum gives exactly `4·I` (confirmed scalar, structure-
+   constant self-consistency independently verified). Bourbaki
+   `C₂(G₂;(0,1))=8`. Ratio = 2 — **identical** to ρ=7's ratio (native
+   2 → Bourbaki 4, ratio 2). The universal-rescale hypothesis is now
+   confirmed at two independent points, not a ρ=7-specific coincidence.
+   (Structurally this ratio is necessarily ρ-independent — it's the
+   ratio between two fixed inner products on 𝔤₂ — but the second-point
+   check catches implementation bugs the structural argument alone
+   would not, exactly as the reviewer intended.)
+2. **Full-operator reconstruction at a known point:** NOT re-derived —
+   already established exactly by Round 22's own STEP 2
+   (`decision.md:3386-3390`, `g2su3_nomizu_crossterms.py`): the 5-piece
+   sum reproduces `D_7²` (ground truth) exactly, symbolically, on the
+   full 448-dim object. Cited, not repeated.
+3. **`D64²`'s own global spectrum (resolves the `B_0`-vs-`μ_σ` question
+   for this specific piece):** exact eigenvalues `{0,2/3,10/3,4}`, all
+   `≥0` — confirmed positive semi-definite, confirmed Hermitian. This
+   is a FIXED fact (D64 has zero ρ-dependence, Round 54), true for
+   every ρ. **Resolution, stated precisely (more conservative than the
+   reviewer's own optimistic framing):** `D64²` can never be a hidden
+   negative penalty — `B_0≥0` is always safe. But the reviewer's
+   specific `+μ_σ=+4` suggestion (using `singlet_1`'s own value as a
+   universal improvement) is **not** licensed — the true global minimum
+   is 0, not 4; `singlet_1` happened to land in a higher eigenspace,
+   not the worst case. The honest, certified statement is `B_0≥0`
+   (never negative, hence Round 54's un-penalized formula
+   `C₂(ρ)-3-K√C₂(ρ)` was never wrong to omit a negative `B_0` term),
+   not a specific positive additive strengthening — that would require
+   the σ-block-specific minimum (the reviewer's own deferred `μ_σ`
+   program), not attempted in this narrow round.
+
+**What this means for Round 55's own formula:** `λ²_min(ρ) ≥
+C₂(ρ)-3-K_cert√C₂(ρ)` (Round 54's original form, no `B_0` term) is now
+on FIRM ground — the omission of a `B_0` term is justified (not just
+assumed) because `D64²` is proven `≥0` universally. `K_cert=2√6/3`'s
+own derivation is independently, doubly confirmed via the ρ=14 check.
+
+**What remains open:** the reviewer's own `μ_σ` idea (tightening the
+bound using the ACTUAL σ-block-specific minimum of `CASIMIR+D64²+
+SU3-CURVATURE`, which could be strictly greater than 0) is a genuine,
+promising next step for a TIGHTER bound — deferred, per the reviewer's
+own explicit sequencing ("если это проходит, то дальше... вычислять
+μ_σ"), to a future round.
+
+## Recommendation (updated)
+
+Branch status: **ACTIVE / BOUND-CERTIFICATION**, unchanged. The formula
+`λ²_min(ρ)≥C₂(ρ)-3-K_cert√C₂(ρ)` (K_cert=2√6/3) is now fully certified
+and normalization-consistent, ready for Round 56 (finite exceptional
+set enumeration) AS-IS — the reviewer's `μ_σ` refinement would tighten
+the threshold further but is not required to proceed to Round 56 with
+a valid (if not maximally tight) certified bound.
+
+## Files (Round 55a)
+
+- `round55a_claim.md` — this sub-round's FL Standard-tier artifact
+- `round55a_normalization_dictionary.py` — script, all 4 items
