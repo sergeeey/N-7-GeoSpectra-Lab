@@ -1,0 +1,34 @@
+{
+  "step0_normalization_gate": {
+    "naive_c2_trace_form_basis": "2",
+    "established_bourbaki_c2_rho7": "4",
+    "rescale_factor_on_generators": "sqrt(2)",
+    "verdict": "PASS-WITH-RESCALE (clean global sqrt(2) factor, full orthonormality independently confirmed)"
+  },
+  "step1b_baseline_reproduces_cubic_eigenvalue_on_singlet1": false,
+  "step3_K_cert": {
+    "max_eigenvalue_H_L": "16/3",
+    "max_eigenvalue_H_R": "16/3",
+    "K_native_basis": "4*sqrt(3)/3",
+    "K_cert_bourbaki_convention": "2*sqrt(6)/3",
+    "K_cert_numeric": 1.632993161855452
+  },
+  "step4_positive_control": {
+    "Q7_on_singlet1_ratio": "2*sqrt(3)/3",
+    "bound_2K_cert": "4*sqrt(6)/3",
+    "passes": true
+  },
+  "step6_hermiticity": {
+    "H_L_hermitian": true,
+    "H_R_hermitian": true,
+    "H_L_psd": true,
+    "H_R_psd": true
+  },
+  "step7_basis_rotation_control": "NOT PERFORMED -- flagged as open, out of this round's scope",
+  "step8_final_bound": {
+    "K_cert": "2*sqrt(6)/3",
+    "threshold_sqrt_C2": "sqrt(6)/3 + sqrt(33)/3",
+    "threshold_numeric": 2.7313507964404025,
+    "B_0_status": "NOT BOUNDED -- termB_squared's contribution to the eigenvalue (not just off-type leakage) is a residual open question"
+  }
+}
