@@ -6588,3 +6588,112 @@ introduced, nothing to reject or park). Sequencing per user's own
 explicit instruction: patch → compile → citation audit → (next)
 arXiv tarball → Round 49 (RGE-matching / M_KK thresholds, still not
 started).
+
+---
+
+## Round 48B (2026-07-13): independent claim-layer audit + propagation-gap patch
+
+**Trigger:** user shared an external reviewer's 3-layer claim
+classification for the project (Layer 1 unconditional / Layer 2
+conditional theorems / Layer 3 physical program) and asked to study,
+independently re-verify, and decide next steps — per this project's own
+`audit-verification-gate.md` rule ("agent's [VERIFIED] = your
+[INFERRED]"), the external table was treated as HYPOTHESIS, not fact,
+until tool-verified against primary `decision.md`/`null_results`
+records.
+
+**Method:** a 13-agent `Workflow` (287 tool calls, ~2M tokens): 8
+parallel agents each independently verifying one non-headline table row
+against primary sources + current `preprint.tex`; the headline N_gen=3
+claim checked 3 times independently (adversarial, no agent saw the
+others' output); a final synthesis agent combining all 11 results into
+a corrected table and a gap list.
+
+**Result: external table methodologically sound, direction never
+wrong.** Verdict breakdown: 5/10 rows TABLE_ACCURATE outright
+(geometry-c3, triality-channels/L3b, full-sm-spectrum, moduli-
+stabilization, N_gen=3 unanimous 3/3); 4/10 TABLE_NEEDS_NUANCE in a
+consistent direction — the external one-line label conflated two
+sub-claims with different epistemic status (index-fixed-conventions:
+magnitude proved unconditionally, only the sign is convention-
+dependent; gauge-couplings: G29's base ratio is solid, only the
+downstream Weinberg-angle/B-L estimate needs correction).
+
+**N_gen=3 resolution (the highest-stakes single check, done 3x
+independently):** confirmed NOT contradictory with "G48: Theorem T1
+UNCONDITIONAL". T1 is a narrower, negative obstruction result — it
+rules out 6 categories of *single-bundle* mechanisms for selecting
+N_gen=3 (`experiments/20260620-g48-harland-nolle-verification/
+decision.md`); it does not itself assert N_gen=3. Preprint.tex's own
+mechanism (three separate c3=2 bundles instead of one c3=6 bundle)
+explicitly reconciles this in the abstract ("The twisted-index mechanism
+circumvents T1 not by contradicting it but by using three bundles of
+c3=2 rather than one bundle of c3=6"). All three independent passes
+confirmed preprint.tex is internally consistent everywhere N_gen=3 is
+stated (abstract, main theorem box, comparison table, Open Problems
+L3b item) — conditional on exactly one named, proven-necessary
+external assumption (Spin(8) fibre symmetry / L3b channel
+independence, per Theorem elb3 + gate G102's `dim c_so(8)(g2)=0`).
+**No change made to any N_gen=3 text.**
+
+**Three genuine gaps confirmed (table classification correct, but
+preprint text had NOT yet propagated an already-existing internal fix
+to its summary passages — same failure shape in all three, not new
+physics):**
+
+1. **λ-no-go (most urgent — same class of problem as the original
+   λ=1/3 fix, in a different location).** §6's body was already
+   corrected on 2026-06-24 (commit `8c861ee`): the no-go holds only on
+   the unphysical slope-1 trajectory ρ3=κρ6, not the physical slope-2
+   trajectory ρ3∝ρ6². The **Abstract and Introduction still carried the
+   literal pre-audit, falsified equation and "entire...class of
+   mechanisms is closed" verbatim**, uncorrected for ~3 weeks — an
+   arXiv-bound document contradicting its own already-fixed technical
+   section. Also found: `null_results/INDEX.md`'s META-C1 row still
+   showed `verdict=PROMOTE` with the pre-audit trajectory language,
+   silently disagreeing with the project's own later record (G103's
+   decision.md documents the 2026-06-23 falsification).
+2. **NCG algebra.** `G18`/`G19`/`G20`'s own `claim.md` files explicitly
+   state A_F and the SM gauge-group identification are
+   ASSUMED/reconstructed to match known CCM structure, not
+   independently derived. Abstract, the `sec:ncg` summary box, the
+   comparison table, and discussion text (citing an unsupported "G2
+   -harmonic analysis of S6" — zero corroborating occurrence anywhere
+   else in the repo) all asserted "derived, not postulated."
+3. **Gauge couplings.** The G97-sharpened Weinberg-angle caveat already
+   added in §2.4 during Round 48A was not propagated to the Abstract,
+   §2.1 (which flatly stated the spin connections "yield" U(1)_{B-L},
+   directly contradicting G97's own finding of no SU(4) subgroup in
+   Iso(S3×S6)=SO(4)×SO(7), *in the same document*), or the comparison
+   table; no Open Problems entry existed for this gap at all.
+
+**Applied (10 edit locations across `preprint.tex` +1 in
+`null_results/INDEX.md`, all citation/wording-only, zero new
+equations):** abstract gauge-group + NCG + λ-nogo paragraphs (3
+edits); Introduction λ-nogo paragraph (removed the literal falsified
+ρ3=κρ6 equation); §2.1 gauge-structure paragraph (removed direct
+self-contradiction with G97); `sec:ncg` box; comparison table (3 rows
++ 2 footnotes) and its "three CCM postulates" discussion; Open Problems
+λ-origin bullet (softened to match §6); new Open Problems entry for
+the gauge-coupling/B-L gap; `null_results/INDEX.md` META-C1 row
+annotated SUPERSEDED (original text kept for the historical record,
+per this project's "never delete" null-results discipline).
+
+**Compilation:** pdflatex two-pass, exit 0 both passes, 24 pages (up
+from 23), no undefined references, no LaTeX errors.
+
+**Git:** feature branch `docs/round48b-preprint-propagation-fixes-
+20260713` → `merge --no-ff` → branch deleted, `main @ 2b1bf9d`. Clean
+diff, no parallel-session collision this round.
+
+**Scope discipline check:** N_gen=3 not touched (independently
+confirmed consistent, 3/3). No new mathematics, no new experiments, no
+contact with Tom Lawrence. All 10 preprint edits are citation/status-
+label changes over already-existing evidence (Round 48A's own G97
+caveat, the pre-existing §6/`8c861ee` fix, G18/19/20's own claim.md
+caveats) — same "sync text with already-existing evidence" discipline
+as Round 48A.
+
+**Verdict:** PROMOTE. Next: rebuild arXiv tarball, re-save PDF to
+Desktop, then proceed to Round 49 (RGE-matching / M_KK thresholds) per
+the user's own standing sequencing.
