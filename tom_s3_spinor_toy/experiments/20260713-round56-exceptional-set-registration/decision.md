@@ -101,6 +101,16 @@ identity `K_N√C_N=K_B√C_B`.
    — proposed as a future small round, not applied here without
    separate confirmation, per this project's own scope discipline.
 
+**Applied (2026-07-13, Round 57, `main` commit `9374c2a`):** user
+confirmed. Updated both `§sec:schur`'s main-body paragraph and the
+Open Problems L4B entry with the certified bound, `C_*`, the explicit
+`C₂(0,1)=8>C_*` check, and the Bourbaki-normalization statement,
+using the reviewer's own agreed-safe formulation distinguishing
+ρ=7 (established separately, Round 22) from every other nontrivial ρ
+(now certified by the general bound). Compiled clean, exit 0, 24 pages
+(unchanged). The trivial-component rank(D⁺|1) question — a separate
+L4B sub-issue untouched by Round 52-56 — remains open, unchanged.
+
 ## Scope discipline check
 
 No Dirac-operator matrices built for any representation beyond what
