@@ -37,14 +37,20 @@ nu_14 := (1/(4sqrt3))(-rho(e1)rho(e6) + rho(e2)rho(e5) + 2rho(e3)rho(e7))
 su(3) = span{nu_1..nu_8}, m = span{e_i}, e_i:=nu_{8+i} (i=1,2,4,6),
 e_i:=-nu_{8+i} (i=3,5) -- per Section 5.1's own definition.
 
-"E_{a,b}" convention: NOT verified in the paper's text (OCR gives no
-explicit definition on this page) -- assumed to be the standard
-ANTISYMMETRIC elementary matrix (1 at (a,b), -1 at (b,a)) since rho(eps_i)
-must be a Clifford generator (rho(eps_i)^2 = -Id, pairwise anticommuting)
-for a REAL representation, which requires antisymmetric generators.
-THIS ASSUMPTION IS CALIBRATED BELOW before being trusted for anything
-downstream -- if the calibration fails, the antisymmetric-E convention is
-wrong and this file must not be used further.
+"E_{a,b}" convention: VERIFIED against the primary source (Round 47B,
+2026-07-13, g2su3_round47b_rho_nu_notation_audit.py) -- AHL2023 page 8,
+Section 2.2, defines E^(n)_{i,j} explicitly ("Let us now fix notation
+related to matrix Lie algebras. We will use E^(n)_{i,j}... throughout
+to denote the elementary skew-symmetric n x n matrix") as -1 at (i,j),
++1 at (j,i) -- the OPPOSITE overall sign from this file's own Emat
+(below: +1 at (a,b), -1 at (b,a)). This sign difference flips every
+individual rho(eps_i) (code_rho(i) = -paper_rho(i), verified for all
+i=1..7), but since every nu_k (Proposition A.3, page 49) is built
+ENTIRELY from PRODUCTS rho(eps_i)*rho(eps_j), never a bare rho(eps_i)
+alone, (-A)(-B)=AB makes this sign convention PROVABLY INVISIBLE to
+every nu_k -- confirmed directly, all 14 nu_k match an independently
+rebuilt paper-convention construction exactly (not just calibrated
+downstream, per Round 47B's own anti-circularity requirement).
 
 CALIBRATION: [nu_i, nu_{8+p}] (matrix commutator, i=1..8 su(3) generator,
 p=1..6 m-direction) should equal ad(nu_i)(e_p) as given VERBATIM in
