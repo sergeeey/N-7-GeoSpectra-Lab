@@ -1,0 +1,42 @@
+{
+  "gate": "Round52-GrowingGap",
+  "positive_control": {
+    "c2_rho7": "4",
+    "gap_rho7": "1",
+    "max_fibre_c2": "3"
+  },
+  "dim_77_ambiguity": {
+    "27": [
+      [
+        2,
+        0
+      ]
+    ],
+    "64": [
+      [
+        1,
+        1
+      ]
+    ],
+    "77": [
+      [
+        0,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ]
+  },
+  "min_c2_nontrivial": {
+    "value": "4",
+    "achieved_at": [
+      1,
+      0
+    ]
+  },
+  "unconditional_bare_gap": "1",
+  "sub_claim_A_bare_casimir_gap": "PROVEN unconditionally (elementary algebra, all (m,n))",
+  "sub_claim_B_torsion_boundedness": "NOT RESOLVED -- zero data beyond rho=7,14, no scaling law exists anywhere in the repo"
+}
