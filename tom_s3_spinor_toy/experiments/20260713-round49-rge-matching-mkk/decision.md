@@ -119,6 +119,15 @@ only preprint edit) — not done in this round, per this project's own
 "one round, one clearly-scoped deliverable" discipline; flagged for the
 user to confirm before editing `preprint.tex` again.
 
+**Round 50 (2026-07-13, applied, `main @ ` commit `742cb54`):** user
+confirmed. Added the recommended paragraph to `preprint.tex`'s
+`sec:coupling` (RGE matching constraint), citation-only, wording exactly
+matching this round's tool-verified result (factor ≈3.4x, ratio(M_s)
+≈1.01, stable to 0.2% across PDG uncertainty). Compiled clean, exit 0,
+24 pages (unchanged). Feature branch
+`docs/round50-rge-quantification-20260713` → `merge --no-ff` → branch
+deleted, per standing workflow.
+
 ## Files
 
 - `round49_rge_matching.py` — script, positive+negative controls inline
