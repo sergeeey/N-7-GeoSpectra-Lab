@@ -6381,3 +6381,127 @@ modified), zero other existing files touched. Full project pytest
 suite re-run: 2483 passed, 4 skipped, 1 failed (same pre-existing,
 unrelated failure documented since Round 29), no regressions (~237s).
 preprint.tex NOT touched.
+
+## Round 48 (2026-07-13): full open-claims audit of `preprint.tex` —
+14 claims classified, priority-ranked Round 49 shortlist
+
+**User's instruction:** per the user's own P2 sequencing (after 47A
+Prior Result Gate + 47B RHO/NU notation), a full open-claims audit of
+the preprint before picking a new major target, classified into
+доказано/условно/вычислительно подтверждено/открыто/противоречиво/
+требует внешней проверки, then scored via the user's own priority
+formula: `(impact+kill_power+reusability+publication_value) /
+(cost+assumption_debt+continuity_risk)`.
+
+**Method:** read `preprint.tex` in full (1327 lines). 12 claims were
+already fully proved (needed no audit). 14 remaining claims (the
+paper's own conditional/open/hypothesis-labeled statements) were each
+dispatched to an independent verification agent (tool-verified via
+`decision.md`/`null_results`/`parked` grep, reading other experiment
+directories beyond this one where relevant), then genuinely-OPEN,
+non-Tom-dependent candidates were priority-scored.
+
+**Headline findings:**
+
+- **0/14 claims reached "доказано"** — expected/honest for a
+  pre-submission preprint.
+- **8/14 claims (57%) are `paper_label_stale=true`** — the preprint's
+  own wording does not reflect work already done in LATER rounds. Pure
+  documentation debt, separate from picking a new research target.
+- **1/14 claims is CONTRADICTORY — the most significant finding:**
+  the `λ = N_gen/dim(S³×S⁶) = 1/3` [HYPOTHESIS] is presented in the
+  preprint as an open question ("unknown and left for future work"),
+  but Round G103 (2026-07-05) already TESTED and REJECTED exactly this
+  hypothesis (`null_results/INDEX.md`: "G103-UV \| NULL... 'fitted,
+  none derived' numerology"). The preprint states as open something
+  this project's own prior work already closed, negatively, uncited.
+- **2/14 claims genuinely NEEDS-EXTERNAL-VERIFICATION**, confirmed NOT
+  stale: L3b (Spin(8), blocked on Tom Lawrence) and L4B trivial-
+  component rank=1 (calibrated + 3 independent lines of evidence since
+  Round 11, status honestly unchanged since — "no external sign-off
+  yet" is still accurate, not stale).
+
+**Full classification table (all 14 claims):**
+
+*Условно:* L4B ρ=14 relative-sign caveat (rational-spectrum argument
+only, no independent proof); G88E canonical normalization (G91 gave an
+explicit 4D action, but GA1/GA2/G94/G102 add real new conditionality —
+λ-dependence, 4%-precision path-constraint).
+
+*Вычислительно подтверждено:* Integrability of J (Round 22's explicit
+closed-form D₇² decomposition, reviewer+skeptic CONFIRMED-REAL — this
+is literally what the preprint's own text asks to be verified); ρ3
+modulus stabilization (G91-G94/G102: working brane-instanton
+mechanism, 4% precision, none of it cited in the preprint).
+
+*Открыто:* L4A dim ker=1 (F_{S^-} spectrum computed, Rounds 24-45
+inconclusive, PARKED — the norm-bound tension itself remains EXCLUDED
+from consideration per standing user instruction); L4B remaining
+representations beyond ρ=7,14 (qualitative Casimir-gap argument never
+quantitatively tested); RGE-matching/M_KK threshold corrections (never
+revisited since 2026-06-22); λ non-perturbative/wrapped-S3 instanton,
+G72 (Tom-dependent — a mis-cited gate number, but the physics itself
+honestly open); Universality to other NK6 manifolds (CP3, SU(3)/T2) —
+completely untouched, zero hits anywhere in the experiment tree; Strong
+CP/θ_QCD full resolution (η=0 established for S³ and separately for
+S⁶, never combined into one Pontryagin-density argument).
+
+*Требует внешней проверки:* L3b Spin(8) fiber symmetry (Tom-dependent
+— and the CITED evidence is itself stale: a stronger, LATER result,
+G102 spin8-fiber-obstruction NULL, 2026-07-05, `dim c_so(8)(g2)=0`,
+proves the full internal search space is exhausted, not just the
+narrower G2-equivariant subcase the preprint currently cites via
+Theorem E-L3B alone); L4B trivial-component rank=1 (genuinely stalled
+awaiting independent sign-off, not stale); Weinberg angle g_SU(4)=g3
+simplification (G97 found SU(4) isn't even in `Iso(S³×S⁶)` — a
+SHARPER open question than the current "pending... simplification"
+text conveys).
+
+*Противоречиво:* λ=1/3 [HYPOTHESIS] (see headline finding above).
+
+**Stale-text fix list (6 claims, citation-only, no new research, no
+Tom contact needed):** L4A (cite the F_{S^-} spectrum, NOT the
+excluded norm-bound tension), Integrability of J (mark verified,
+cite Round 22), G88E (cite G91's `CONSTRAINED_PHYSICAL_RATIO`, with
+G94/G102's own added conditionality), Weinberg angle (cite G97's
+sharper framing), ρ3 stabilization (cite G91-G94/G102's brane-instanton
+mechanism), λ=1/3 (cite G103's REJECT verdict directly). Two more
+(L3b, λ-non-pert/G72) get a citation-only strengthening (G102) without
+resolving the underlying Tom-dependent claim.
+
+**Priority-ranked Round 49 shortlist (top 5, formula above, non-Tom-
+dependent OPEN candidates only):**
+
+| # | Candidate | Priority | Why |
+|---|---|---|---|
+| 1 | RGE-matching / M_KK threshold corrections | 2.11 | Cheap (~30 min, arithmetic on already-computed G29/GA2 numbers), high kill-power on a specific preprint paragraph, low reuse/pub-value (internal bookkeeping) |
+| 2 | Universality → CP3, SU(3)/T2 | 1.5 | Clean, reusable machinery, real publication value (direct extension of Charbonneau-Harland 2016), doesn't touch the paper's core claims |
+| 3 | L4B remaining reps (ρ=27,64,77...) | 1.31 | Reuses Round 17-22's own calibrated machinery, but Round 6's own growing-gap premise is itself unverified |
+| 4 | L4A full 16-dim F_{S^-} spectrum | 1.29 | Extends calibrated machinery, but sits immediately adjacent to the just-parked 21-round L4A branch — high continuity risk |
+| 5 | Strong CP / θ_QCD | 0.80 | Untouched, but "full resolution" is physically heavy and outside the paper's core claims |
+
+**Confirmed: none of the standing user exclusions appear in the
+shortlist** — no `8/45 vs ~1.03` norm-bound work, no new `Z_i`
+constructions, no `Casimir_su3=C~h` re-investigation, no "Theorem
+Boyko" generalization.
+
+**Round 49 recommendation:** RGE-matching/M_KK threshold corrections —
+run standard 1-loop SM RGE between M_Z and GA2's own M_KK≈1.78×10¹�⁷ GeV
+using G29's own tree-level ratio (15/16π≈0.298, +4.3% vs SM), to turn
+the preprint's current qualitative "requires threshold corrections or
+new particle content... not computed" into either a quantitative close
+(if pure-SM running nearly closes the 4.3% gap) or a precise residual
+gap (strengthening the "new physics needed" claim with an actual
+number instead of a qualitative statement). FL Standard tier is
+sufficient (arithmetic on existing numbers, no new derivation).
+
+**Still open, awaiting user direction:** whether to apply the 6
+no-Tom-needed stale-text citation fixes to `preprint.tex` NOW (cheap,
+low-risk, arguably time-sensitive given the pending arXiv submission
+already staged in the repo and the λ=1/3 contradiction specifically),
+before or instead of starting Round 49.
+
+1 new file (`round48_claim.md`), zero existing files modified — a
+documentary/audit round, no source code written, no pytest re-run
+required (no code changed). `preprint.tex` NOT touched (the stale-text
+fixes are proposed, not yet applied, pending user direction).
