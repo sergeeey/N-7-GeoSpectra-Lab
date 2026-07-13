@@ -6505,3 +6505,86 @@ before or instead of starting Round 49.
 documentary/audit round, no source code written, no pytest re-run
 required (no code changed). `preprint.tex` NOT touched (the stale-text
 fixes are proposed, not yet applied, pending user direction).
+
+---
+
+## Round 48A (2026-07-13): preprint consistency patch
+
+**User instruction (explicit, verbatim intent):** fix `preprint.tex`
+BEFORE starting Round 49, because the discovered λ=1/3 contradiction
+is more dangerous for an arXiv submission than an open question would
+be — the paper claiming "unknown" while the project's own internal
+record already says "rejected" is a live inconsistency, not merely
+stale documentation. Explicit hard constraint: **no new mathematics in
+this patch, only synchronizing the text with already-existing evidence.**
+Exactly 7 items specified, each with an explicit scope boundary.
+
+**Applied (9 edit locations covering the 7 items, all citation-only,
+zero new derivations):**
+
+| # | Item | Change |
+|---|---|---|
+| 1 | λ=1/3 | `[HYPOTHESIS]` → `[REJECTED]`; cites G103's own "fitted, none derived" verdict against all 5 candidate closed forms tested |
+| 2 | L4A (§4.1 main) | Added F_{S^-} spectrum `{1/6:15,-5/2:1}` (full 16-dim fibre) / `{-5/2:1,1/6:1}` (SU(3)-invariant subspace); explicitly flagged the unreconciled tension vs the prior `8/45≈0.178` norm estimate; explicitly did **not** claim the tension resolved (per direct user instruction); reported the retracted "mechanistic explanation" attempt (Round 23: eigenvalues cancel, eigenvectors non-parallel) |
+| 3 | L4B/Kostant-Parthasarathy item | One cross-reference sentence pointing to the new §4.1 result |
+| 4 | Integrability of J | `HYPOTHESIS` → verified for this paper's ρ=7 construction specifically (cites Round 22's torsion cross-term derivation); general nearly-Kähler case explicitly NOT claimed |
+| 5a | G88D moduli-mass caveat | Cites G91's closed 4D action (`m_mod/m_KK≈0.198%` canonical path), kept conditional on G94's ~4% path-recovery deviation and free λ |
+| 5b | Weinberg angle | Sharpened per G97: SU(4) is absent from `Iso(S³×S⁶)=SO(4)×SO(7)` entirely (not merely unconstrained); estimate reframed as illustrative pending Tom's input |
+| 6 | ρ₃ stabilization | Cites G94/G102's D2-brane instanton mechanism (~4% canonical-path recovery, strongly-coupled `g_s` caveat); framed as "mechanism identified, not fully pinned down," not a closed problem |
+| 7a | L3b | Strengthened "geometric path ruled out" → "all internal geometric avenues ruled out"; added citation to G102's `dim c_{so(8)}(g₂)=0` finding; Tom-dependent conclusion unchanged |
+| 7b | Wrapped-S³ λ_np channel | Fixed a genuine mis-citation (the paper cited "gate G72," confirmed unrelated — chirality-bundle audit); corrected to G94–G102; explicitly stated this does **not** fix λ_np itself |
+
+**Independent re-verification before writing (audit-verification-gate
+discipline, not trusting Round 48's own synthesis-agent paraphrase):**
+found one genuine near-miss. Round 48's synthesis agent said "G103
+rejected λ=1/3," but G61 (2026-06-21) had earlier *promoted* λ≈1/3 as
+a best-estimate "pearl." Read `experiments/20260705-g103-kk-lambda-
+blindness/decision.md` directly in full to resolve: G61's "promotion"
+was registering a numerical coincidence as a candidate, not a proof;
+G103 later tested whether any of 5 such candidates (including 1/3)
+could be *derived* from a real non-perturbative mechanism, and found
+none could ("each fitted to the target, none derived"). No contradiction
+— resolved before writing the paper edit, not after.
+
+Also caught before writing: two *different* experiments both labelled
+"G102" exist (`20260701-g102-cs3-dbrane-normalization` — ρ₃/string-
+coupling; `20260705-g102-spin8-fiber-obstruction` — L3b/Spin(8)).
+Verified via `find experiments -iname "*g102*" -type d` and reading
+both directories separately before citing either.
+
+**Compilation:** `pdflatex` two-pass, exit 0 both passes, 23 pages
+(up from the pre-session 22-page baseline), no LaTeX errors — only
+non-fatal MiKTeX environment notices (unsupported Windows version,
+update check).
+
+**Git state note (collision handling):** `preprint.tex` had carried
+uncommitted edits from a parallel/earlier session since 2026-07-11
+(GAP-4 closure — S³ spinor factor is a fixed, generation-independent
+block, no S³-S⁶ coupled-mode mechanism can lift Yukawa degeneracy —
+plus a `Lawrence2023` preprint citation) that every prior round this
+session deliberately left untouched to avoid clobbering. Verified via
+`git diff --stat` and a full hunk-by-hunk read that these were
+unrelated to and non-conflicting with the 7 Round 48A items before
+committing. Committed together in one commit (both change sets clearly
+itemized in the message) rather than splitting via interactive hunk
+staging, since separating them post-hoc into "belongs to which round"
+buckets would have been guesswork and the risk of a hand-split error
+on a 164-line diff outweighed the value of two separate commits for a
+text-only, no-new-math patch. Feature branch
+`docs/round48a-preprint-consistency-patch-20260713` → `merge --no-ff`
+→ branch deleted, per this project's standing workflow.
+
+**Scope discipline check:** none of the standing exclusions were
+touched — `8/45 vs ~1.03` norm-bound tension itself not resolved, no
+new `Z_i` construction, no new L4A round started, "Theorem Boyko" not
+generalized, L4B higher-rep work not started, no contact initiated
+with Tom Lawrence. Confirmed by the diff itself: every one of the 9
+edits is a citation/status-label change over existing evidence, zero
+new equations, zero new claims not already backed by an existing
+`decision.md`.
+
+**Verdict:** PROMOTE (documentation-only patch; no falsifiable claim
+introduced, nothing to reject or park). Sequencing per user's own
+explicit instruction: patch → compile → citation audit → (next)
+arXiv tarball → Round 49 (RGE-matching / M_KK thresholds, still not
+started).
