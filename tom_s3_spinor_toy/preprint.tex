@@ -67,13 +67,18 @@
 We derive the Standard Model gauge structure and fermion quantum numbers
 for one generation from the geometry of $S^3\times S^6$. By identifying the
 spin connection with gauge fields (following Lawrence~\cite{Lawrence2022}), we obtain
-the gauge group $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)_{B-L}$
-and the full electric charge formula $Q = T_{3L} + (B{-}L)/2$ geometrically,
-with all 32 spinor states matching one SM generation. The gauge coupling ratio
+the gauge group $\mathrm{SU}(3)\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ geometrically;
+the $\mathrm{U}(1)_{B-L}$ factor needed to complete the Pati--Salam algebra is identified
+from fermion charge content rather than from the isometry group directly, with its
+geometric origin left open (\S\ref{sec:open}). The full electric charge formula
+$Q = T_{3L} + (B{-}L)/2$ then follows, with all 32 spinor states matching one SM
+generation. The gauge coupling ratio
 $g_2^2/g_3^2 = 15/(16\pi)$ at equal radii agrees with the SM value at $M_Z$
 within 4.0\%. The KO-dimension~6 spectral triple structure
-$\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$
-is reproduced by representation theory on $S^3\times S^6$ without being postulated, and the Yukawa
+$\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ is not separately postulated
+fermion-by-fermion: its representation content matches the geometrically-derived
+SM quantum numbers on $S^3\times S^6$, though the algebra itself remains an input
+reconstructed to match the known CCM structure. The Yukawa
 parameter count reduces to~4 via SU(3)-orbit degeneracy on~$S^6$.
 A geometric obstruction (Theorem~\ref{thm:yukawa-deg}) shows that all
 inter-generation Yukawa couplings are equal on $S^6$ (conditional on the L4B
@@ -121,9 +126,10 @@ analytically ($n=\dim S^6=6$). This is a zero-fit prediction: $\rho_{\min}$ is d
 balance with no free parameter adjusted to match it; the coupling ratio $C=g_2/g_3$
 enters through~$\rho_6^*$ but does not shift~$\rho_{\min}$. The coupling $\lambda$ in the non-perturbative
 potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$ has no geometric or spectral
-derivation: dimensional analysis (Buckingham Pi theorem) combined with exhaustive
-case verification (G83--G86B) proves that any geometrically-derived $\lambda$ gives
-$e^{-\lambda/\rho_6^2}=\mathrm{const}$, providing no $\rho_6$-dependent force.
+derivation found to date: a systematic search over geometric and spectral mechanisms
+(G83--G86B) on the physical compactification trajectory $\rho_3\propto\rho_6^2$ found
+none that reproduce a $\rho_6$-dependent $e^{-\lambda/\rho_6^2}$; one channel
+(wrapped-$S^3$ brane instantons) remains open and uncomputed.
 The coupling $\lambda$ is a free parameter with non-perturbative origin.
 \end{abstract}
 
@@ -190,15 +196,17 @@ interaction.
 
 Alongside the generation-counting result (Track~A), we map the space of possible
 geometric origins for the gauge coupling $\lambda$ in the non-perturbative stabilization
-potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$ (Track~B). By a dimensional
-analysis argument (Buckingham Pi theorem) combined with the analytic relation
-$\rho_3 = \kappa\rho_6$ ($\kappa=\sqrt{7/6}$, derived from the modulus potential), we
-prove that any coupling $\lambda$ derivable from internal $S^3\times S^6$ geometry
-satisfies $\lambda = c\cdot\rho_6^2$ with $c$ a pure number, giving
-$e^{-\lambda/\rho_6^2} = \mathrm{const}$, providing no $\rho_6$-dependent force.
-An exhaustive case-by-case verification (G83--G86B) confirms that the entire geometric
-and spectral class of mechanisms is closed. The coupling $\lambda$ is therefore a free
-phenomenological parameter with non-perturbative origin.
+potential $V_{\mathrm{np}}\sim e^{-\lambda/\rho_6^2}$ (Track~B). Dimensional analysis
+(Buckingham Pi theorem) constrains any $\lambda$ derivable purely from $S^3\times S^6$
+geometry to the form $\lambda_{\mathrm{geom}} = c\cdot\rho_3^a\cdot\rho_6^{2-a}$; on the
+physical compactification trajectory $\rho_3\propto\rho_6^2$ (slope~2, established in
+\S\ref{sec:moduli}), this is $\rho_6$-dependent for every $a\neq 0$, so dimensional
+analysis alone does not rule out a geometric $\lambda$. A systematic search over
+geometric and spectral mechanisms (G83--G86B) found none that reproduce
+$e^{-\lambda/\rho_6^2}$ on this trajectory; one candidate channel (wrapped-$S^3$ brane
+instantons, $a=3$) remains open and uncomputed (\S\ref{sec:lambda}). The coupling
+$\lambda$ is therefore treated as a free phenomenological parameter with
+non-perturbative origin.
 
 \textbf{Paper organization.} Section~\ref{sec:framework} reviews the Lawrence~\cite{Lawrence2022}
 framework and extends it to $S^3\times S^6$. Section~\ref{sec:ngen} proves $\ind=1$ per generation slot via the twisted Dirac index
@@ -231,10 +239,17 @@ We extend this mechanism to $S^3\times S^6$. The $S^3$ factor has isometry group
 $\mathrm{SO}(4)\cong\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ from its bi-invariant
 round metric, giving two independent $\mathrm{SU}(2)$ gauge factors. The $S^6=G_2/\mathrm{SU}(3)$
 factor contributes $\mathrm{SU}(3)_c$ via its $G_2$ holonomy ($G_2$ contains $\mathrm{SU}(3)$
-as the structure group of $T^{1,0}S^6$). The $\mathrm{U}(1)_{B-L}$ factor is identified
-from the $B-L$ charge embedded in $\mathrm{SU}(4)_{\mathrm{PS}}\simeq\mathrm{SO}(6)$.
-Together, the spin connections of $S^3\times S^6$ yield the Pati--Salam gauge algebra
-$\mathrm{SU}(3)_c\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R\times\mathrm{U}(1)_{B-L}$.
+as the structure group of $T^{1,0}S^6$). Together, the spin connections of $S^3\times S^6$
+yield the gauge algebra $\mathrm{SU}(3)_c\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$
+directly from the isometry group $\mathrm{Iso}(S^3\times S^6)=\mathrm{SO}(4)\times\mathrm{SO}(7)$.
+The $\mathrm{U}(1)_{B-L}$ factor needed to complete the Pati--Salam algebra
+$\mathrm{SU}(3)_c\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R\times\mathrm{U}(1)_{B-L}$ is
+\emph{not} itself an isometry of $S^3\times S^6$: an internal check (gate G97, this work)
+finds no $\mathrm{SU}(4)$ subgroup in $\mathrm{Iso}(S^3\times S^6)$, so the $B-L$ charge
+cannot be embedded via $\mathrm{SU}(4)_{\mathrm{PS}}\simeq\mathrm{SO}(6)$ as an isometry
+generator. $\mathrm{U}(1)_{B-L}$ is instead identified below (\S\ref{sec:weinberg}) from
+the fermion charge content, and its geometric origin from the isometry group directly is
+left open (\S\ref{sec:open}).
 
 \subsection{Standard Model fermion content for one generation}
 \label{sec:sm-content}
@@ -287,8 +302,11 @@ The product geometry $S^3\times S^6$ admits a noncommutative spectral triple $(\
 of KO-dimension~6. The finite part $(\mathcal{A}_F, \mathcal{H}_F, D_F)$ satisfies the
 standard CCM axioms with:
 \begin{itemize}
-  \item $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ --- the SM finite algebra, derived from
-        $S^3\times S^6$ spinor decomposition (not postulated).
+  \item $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ --- the SM finite algebra; its
+        representation content matches the $S^3\times S^6$ spinor decomposition without
+        needing to be separately postulated fermion-by-fermion, though the algebra
+        itself is reconstructed to match the known CCM structure rather than
+        independently derived from the geometry alone.
   \item $\mathcal{H}_F$ --- the 32-dimensional SM NCG Hilbert space for one generation.
   \item $D_F$ --- the finite Dirac operator with Yukawa structure; $J_F^2=-1$,
         $\{J_F,\gamma_F\}=0$, $[D_F,J_F]=0$ (KO-dim~6 relations verified).
@@ -1046,24 +1064,34 @@ The coupling $\lambda$ is treated as a free non-perturbative parameter in this p
 Feature & CCM~\cite{CCM2006} & This work \\
 \midrule
 $N_{\mathrm{gen}}=3$ & \textbf{Postulated} ($\mathcal{A}_F$ axiom) & \textbf{Conjectured} (Atiyah--Singer L2; L3 open) \\
-SM algebra $\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$ & Input & Derived from $S^3\times S^6$ \\
-SM gauge group & Derived from $\mathcal{A}_F$ & Derived from $S^3$ spin connection \\
-Chirality (L/R asymmetry) & \textbf{Postulated} ($J_F$ finite Dirac) & \textbf{Derived} ($\mathrm{sign}(c_3)=+1$, L5) \\
+SM algebra $\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$ & Input & Reconstructed, matches $S^3\times S^6$ quantum numbers$^\dagger$ \\
+SM gauge group & Derived from $\mathcal{A}_F$ & $\mathrm{SU}(3)\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ from spin connection; $\mathrm{U}(1)_{B-L}$ open$^\ddagger$ \\
+Chirality (L/R asymmetry) & \textbf{Postulated} ($J_F$ finite Dirac) & \textbf{Derived} ($\mathrm{sign}(c_3)=+1$, L5, fixed orientation convention) \\
 Higgs bidoublet $(2,2)_0$ & Input & Derived from $D_F$ Yukawa intertwiner \\
 Yukawa free parameters & 4 (at GUT scale) & 4 ($\mathrm{SU}(3)$-orbit count) --- same \\
-Electric charge $Q$ & Derived & Derived: $Q=T_{3L}+(B{-}L)/2$ \\
+Electric charge $Q$ & Derived & Derived: $Q=T_{3L}+(B{-}L)/2$; $(B{-}L)$ open$^\ddagger$ \\
 First-order condition & Assumed & Holds for $\mathrm{SU}(3)\times\mathrm{U}(1)_{B-L}$, fails for $\mathrm{SU}(2)_{L/R}$ \\
 Coupling $\lambda$ & Not addressed & Free parameter, non-perturbative origin (\S\ref{sec:lambda}) \\
 \bottomrule
 \end{tabular}
-\caption{Comparison with CCM noncommutative geometry approach~\cite{CCM2006}.}
+\caption{Comparison with CCM noncommutative geometry approach~\cite{CCM2006}.
+$^\dagger$The algebra $\mathcal{A}_F$ itself remains an input reconstructed to match
+known CCM structure, not independently derived (\S\ref{sec:ncg}).
+$^\ddagger$The $\mathrm{U}(1)_{B-L}$ generator is not itself among the isometries of
+$S^3\times S^6$ (gate G97, \S\ref{sec:weinberg}); it is identified from fermion charge
+content, with its geometric origin left open (\S\ref{sec:open}).}
 \label{tab:ccm}
 \end{table}
 
-Three CCM postulates become derived results in this framework:
-(1)~$\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$ follows from $G_2$-harmonic analysis of $S^6$;
-(2)~$N_{\mathrm{gen}}=3$ follows from the triality-channel index;
-(3)~chirality follows from orientation of $S^6$ and $\mathrm{sign}(c_3)$.
+Three CCM postulates are addressed, with different degrees of closure, in this
+framework: (1)~the representation content of $\mathcal{A}_F=\CC\oplus\HH\oplus M_3(\CC)$
+matches the $S^3\times S^6$ spinor decomposition without being separately postulated,
+though the algebra itself remains reconstructed to match known CCM structure rather
+than independently derived (\S\ref{sec:ncg}); (2)~$N_{\mathrm{gen}}=3$ is
+\emph{conjectured}, not derived, from the triality-channel index, conditional on the
+open channel-independence problem (L3b, \S\ref{sec:open}); (3)~chirality follows from
+the orientation of $S^6$ and $\mathrm{sign}(c_3)$, conditional on a fixed orientation
+convention (\S\ref{sec:kernel}).
 
 \subsection{Comparison to Dolan--Nash \cite{DolanNash2002}}
 
@@ -1225,9 +1253,11 @@ work.
   exact, uniquely-fixed resolution. This identifies a candidate stabilization mechanism
   rather than closing the open problem.
 
-\item \textbf{Non-perturbative origin of $\lambda$.} As proved in \S\ref{sec:lambda}, no geometric
-  mechanism produces $e^{-\lambda/\rho_6^2}$. A complete moduli stabilization requires specifying
-  the string background and computing $\lambda$ from first principles.
+\item \textbf{Non-perturbative origin of $\lambda$.} No geometric or spectral mechanism
+  examined to date (\S\ref{sec:lambda}; gates G83--G86B, G103) has been found to produce
+  a $\rho_6$-dependent $e^{-\lambda/\rho_6^2}$ on the physical trajectory; one channel
+  (wrapped-$S^3$ instantons) remains open and uncomputed. A complete moduli stabilization
+  requires specifying the string background and computing $\lambda$ from first principles.
 
 \item \textbf{Fermion mass hierarchy.} The index theorem gives $N_{\mathrm{gen}}=3$ with equal
   geometric status for each generation; it does not explain why $m_t/m_u\approx 10^5$.
@@ -1265,6 +1295,17 @@ work.
   identification $1/3=N_{\mathrm{gen}}/\dim(S^3\times S^6)$ therefore remains an
   unexplained numerical coincidence, not a derivation, and should not be read as a live
   candidate mechanism for $\lambda$.
+
+\item \textbf{Gauge coupling unification / $\mathrm{U}(1)_{B-L}$ origin.} The base
+  coupling-ratio prediction $g_2^2/g_3^2=15/(16\pi)$ (\S\ref{sec:coupling}) is a solid,
+  separately-caveated geometric result and does not require correction. The downstream
+  Weinberg-angle estimate (\S\ref{sec:weinberg}), however, assumes
+  $g_{\mathrm{SU}(4)}=g_3$; an internal check (gate G97, this work) finds $\mathrm{SU}(4)$
+  is absent from $\mathrm{Iso}(S^3\times S^6)=\mathrm{SO}(4)\times\mathrm{SO}(7)$
+  entirely, so the $\mathrm{U}(1)_{B-L}$ generator and the resulting Weinberg-angle
+  estimate cannot currently be derived from the isometry group alone. Resolving this ---
+  deriving $\mathrm{U}(1)_{B-L}$ from fermion zero-mode charges rather than assuming it
+  --- remains open.
 \end{enumerate}
 
 %% ================================================================
