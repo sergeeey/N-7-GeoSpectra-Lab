@@ -5,6 +5,25 @@
 theoretical grounding from existing literature; the other remains
 genuinely open, with a sharper, more tractable next question identified
 
+**CORRECTION (2026-07-13, Round 54, same day):** this round's central
+claim — that Agricola 2002's bare Theorem 3.2 shows this project's
+TORSION-CROSS-TERM piece is representation-**independent** (`O(1)`) —
+does **not** hold. Round 54's direct, line-by-line audit of the actual
+code (`g2su3_nomizu_crossterms.py`, not this round's literature-based
+inference) found `torsion_cross_term` explicitly contains one factor of
+`ρ_7(e_r)` — because this project's operator is TWISTED (built via the
+"matrix-coefficient section" formalism), unlike Agricola's bare,
+untwisted setup her theorem literally covers. See
+`experiments/20260713-round54-mixed-term-factorization-bound/
+decision.md` for the corrected, unified finding: BOTH torsion and
+mixed-A-B pieces are actually `O(√C₂(ρ))` via the same Cauchy-Schwarz
+mechanism — a stronger, code-verified result covering both pieces,
+superseding this round's narrower/incorrect per-piece claim. This
+round's other findings (Agricola's general theorem structure, the
+theorem numbering correction, the mislabeled second PDF) remain
+accurate and are not affected. Left in place, not deleted, per this
+project's "never delete, annotate" discipline for superseded findings.
+
 ## Summary
 
 Read I. Agricola's 2002 paper in full (the correct file —
