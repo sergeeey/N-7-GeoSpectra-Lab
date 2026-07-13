@@ -736,15 +736,27 @@ Casimir-type formula. This is supporting evidence, not an independent proof. We 
 $\rho=\mathbf{14}$ invertibility for the Levi-Civita operator as \textbf{strongly supported, not
 proved} --- a weaker status than $\rho=\mathbf{7}$, stated honestly as such.
 
-Two considerations, together with the above, make the remaining, unchecked non-trivial
-representations a plausible-to-safe rather than a live concern: (i) the torsion correction is a
-fixed, bounded algebraic operator on the fibre (independent of $\rho$), while the Casimir gap
-$C_2(G_2;\rho)-C_2(\mathrm{SU}(3);\sigma)$ grows without bound as $\rho$ grows, so only the
-smallest non-trivial representations are exposed to a correction of the size found here; (ii) we
-have now directly checked exactly the two representations this growth argument identifies as
-most exposed ($\rho=\mathbf{7}$ and $\rho=\mathbf{14}$), substantially closing the concern for
-the cases that mattered most, though a case-by-case check of every remaining $G_2$-representation
-is not performed here and remains formally open.
+For every nontrivial irreducible $G_2$-representation other than the fundamental
+representation $\rho=(1,0)=\mathbf{7}$, the Levi--Civita twisted Dirac block is invertible
+by a certified, uniform Casimir lower bound (internal verification, experiments
+\texttt{20260713-round52-growing-gap-premise-audit} through
+\texttt{20260713-round56-exceptional-set-registration}, this work). Writing $C_2(\rho)$ for
+the $G_2$ Casimir eigenvalue in the Bourbaki normalization already used above (so
+$C_2(1,0)=4$, $C_2(0,1)=8$), the full correction to the cubic Kostant--Parthasarathy
+formula --- the torsion-cross-term and the mixed twisting term identified above, combined
+--- satisfies an exact, certified operator-norm bound $K_{\mathrm{cert}}=2\sqrt6/3$
+(verified via exact eigenvalues of the corresponding fixed matrices, not a numerical
+estimate), giving
+\[
+  \lambda^2_{\min}(\rho) \;\geq\; C_2(\rho) - 3 - \frac{2\sqrt6}{3}\sqrt{C_2(\rho)},
+\]
+which is positive for every $C_2(\rho) > C_* = \frac{13+2\sqrt{22}}{3} \approx 7.460$. Since
+the smallest nontrivial case after the fundamental, $\rho=(0,1)=\mathbf{14}$, already
+satisfies $C_2(0,1)=8 > C_*$, and $C_2(\rho)$ grows monotonically without bound,
+\textbf{every nontrivial representation other than the fundamental is certified invertible
+by this single general bound} --- no further case-by-case computation is required. The
+remaining fundamental block $\rho=(1,0)=\mathbf{7}$ is treated separately, by the explicit
+finite-dimensional computation above (established, not by this general bound).
 
 \textbf{Trivial $G_2$-representation $\mathbf{1}$ --- open.}
 The trivial $G_2$-representation $(0,0)$ appears with multiplicity $2$ in $S^+\otimes S^-$
@@ -1205,9 +1217,9 @@ work.
 
 \item \textbf{L4B --- $G_2$-equivariant character computation (\emph{partially resolved; rank
   on the trivial component supported by explicit computation, pending independent
-  confirmation; non-trivial-sector vanishing for the Levi-Civita operator now directly
-  verified for the two smallest representations, $\rho=\mathbf{7}$ established and
-  $\rho=\mathbf{14}$ strongly supported}).}
+  confirmation; non-trivial-sector vanishing for the Levi-Civita operator directly
+  verified for $\rho=\mathbf{7}$ (established) and $\rho=\mathbf{14}$ (strongly supported),
+  and now certified for every other nontrivial representation by a proven general bound}).}
   The Kostant--Parthasarathy formula (\S\ref{sec:schur}) proves a positive spectral gap on
   all non-trivial $G_2$-isotypic components of $\Gamma(S^+\otimes S^-)$ \emph{for Kostant's
   cubic Dirac operator}. For the physically relevant Levi-Civita operator, an independent,
@@ -1229,10 +1241,11 @@ work.
   and two independent stress tests but has not yet received a final independent sign-off, so
   we report it as strong supporting evidence rather than a proved fact. See experiment
   \texttt{20260708-dolan-casimir-g2su3} (trivial-component rank computed; non-trivial-component
-  torsion correction directly verified for $\rho=\mathbf{7},\mathbf{14}$; remaining
-  representations formally open but structurally expected to be safe, per the growing-Casimir-
-  gap argument of \S\ref{sec:schur}). The representation-theoretic setup builds
-  on~\cite{AgrHofLawn2023,Agricola2002}.
+  torsion correction directly verified for $\rho=\mathbf{7},\mathbf{14}$) and experiments
+  \texttt{20260713-round52-growing-gap-premise-audit} through
+  \texttt{20260713-round56-exceptional-set-registration} (a certified general bound now closes
+  every remaining nontrivial representation; see \S\ref{sec:schur} for the full statement).
+  The representation-theoretic setup builds on~\cite{AgrHofLawn2023,Agricola2002}.
 
 \item \textbf{Integrability of $J$ [verified for the constructions used in this paper].}
   Lemma L1 uses the almost-complex structure on $S^6$, which is non-integrable
