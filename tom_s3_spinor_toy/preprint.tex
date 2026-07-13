@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \usepackage{enumerate}
 \usepackage{xcolor}
 \usepackage{cancel}
@@ -1085,8 +1086,9 @@ The coupling $\lambda$ is treated as a free non-perturbative parameter in this p
 
 \begin{table}[h]
 \centering
-\small
-\begin{tabular}{@{}lll@{}}
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}L{0.20\textwidth}L{0.22\textwidth}L{0.50\textwidth}@{}}
 \toprule
 Feature & CCM~\cite{CCM2006} & This work \\
 \midrule
@@ -1101,6 +1103,7 @@ First-order condition & Assumed & Holds for $\mathrm{SU}(3)\times\mathrm{U}(1)_{
 Coupling $\lambda$ & Not addressed & Free parameter, non-perturbative origin (\S\ref{sec:lambda}) \\
 \bottomrule
 \end{tabular}
+\renewcommand{\arraystretch}{1.0}
 \caption{Comparison with CCM noncommutative geometry approach~\cite{CCM2006}.
 $^\dagger$The algebra $\mathcal{A}_F$ itself remains an input reconstructed to match
 known CCM structure, not independently derived (\S\ref{sec:ncg}).
