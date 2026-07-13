@@ -1,0 +1,27 @@
+{
+  "gate": "Round49-RGE",
+  "inputs": {
+    "M_Z_GeV": 91.1876,
+    "alpha_em_inv_MZ_PDG": 127.955,
+    "sin2_thetaW_MZ_PDG": 0.23122,
+    "alpha_s_MZ_PDG": 0.1179,
+    "b2": -3.1666666666666665,
+    "b3": -7.0,
+    "G29_ratio_tree_level": 0.2984155182973038,
+    "M_s_GeV_GA2": 1.7772044319035818e+17,
+    "M_KK_GeV_GA2_for_reference_only": 1.917590396670688e+17
+  },
+  "cross_check_mz_ratio": 0.2866840538051721,
+  "positive_controls": {
+    "ratio_1TeV": 0.3620924298714915,
+    "ratio_10TeV": 0.42922411933733945,
+    "backward_solved_MKK_GeV": 130.72320334461574
+  },
+  "new_result_at_Ms": {
+    "mu_GeV": 1.7772044319035818e+17,
+    "alpha2_inv": 47.329284932127166,
+    "alpha3_inv": 47.70430383586771,
+    "ratio_g2sq_g3sq": 1.0079236122894808
+  },
+  "factor_mismatch_predicted_over_geometric": 3.3775844434648743
+}
