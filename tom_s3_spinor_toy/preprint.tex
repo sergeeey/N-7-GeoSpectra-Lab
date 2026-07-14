@@ -51,7 +51,7 @@
 %% ================================================================
 \begin{document}
 
-\title{\textbf{Three Generations from the Geometry of $S^3\times S^6$}}
+\title{\textbf{Toward Three Generations from the Geometry of $S^3\times S^6$}}
 
 \author{
   Sergey Boyko\thanks{%
@@ -75,7 +75,11 @@ geometric origin left open (\S\ref{sec:open}). The full electric charge formula
 $Q = T_{3L} + (B{-}L)/2$ then follows, with all 32 spinor states matching one SM
 generation. The gauge coupling ratio
 $g_2^2/g_3^2 = 15/(16\pi)$ at equal radii agrees with the SM value at $M_Z$
-within 4.0\%. The KO-dimension~6 spectral triple structure
+within 4.0\%; running this ratio via one-loop SM RGE to the theory's own predicted
+scale $M_s$ instead gives a value $\approx 3.4\times$ away from the geometric
+prediction, stable to $0.2\%$ across current PDG uncertainty, indicating the
+$M_Z$-scale agreement is a near-electroweak-scale coincidence rather than a
+scale-consistent match (\S\ref{sec:coupling}). The KO-dimension~6 spectral triple structure
 $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ is not separately postulated
 fermion-by-fermion: its representation content matches the geometrically-derived
 SM quantum numbers on $S^3\times S^6$, though the algebra itself remains an input
@@ -153,10 +157,12 @@ $\mathcal{A}_F = \CC\oplus\HH\oplus M_3(\CC)$ --- which encodes three generation
 as an axiom rather than deriving it from first principles.
 
 In this paper we present a candidate mathematical construction in which the
-three-generation count $N_{\mathrm{gen}} = 3$ is obtained as an exact integer from the
-Atiyah--Singer index theorem on $S^6 = G_2/\mathrm{SU}(3)$ (two triality channels) and
-the $G_2 = \mathrm{Fix}(\mathbb{Z}_3)$ triality structure (the third, vector channel,
-conjecturally --- see Section~\ref{sec:three-channels}), without using SM fermion data as input.
+per-channel index $\ind=1$ is obtained as an exact integer from the
+Atiyah--Singer index theorem on $S^6 = G_2/\mathrm{SU}(3)$, proved identically for
+all three $G_2=\mathrm{Fix}(\mathbb{Z}_3)$ triality channels
+(Section~\ref{sec:three-channels}); we \emph{conjecture} the three-generation count
+$N_{\mathrm{gen}}=3$ from these three channels, conditional on their physical
+independence (\S\ref{sec:open}, item L3b), without using SM fermion data as input.
 We build on the Kaluza--Klein framework of Lawrence~\cite{Lawrence2022}, who established
 that in product manifolds the spin connection of the compact factor acts as a gauge
 potential (demonstrated for $\mathrm{U}(1)$ in six dimensions and $\mathrm{SO}(3)\cong
@@ -173,8 +179,8 @@ principle within the string landscape: they single out $S^6 = G_2/\mathrm{SU}(3)
 uniquely from the four compact homogeneous nearly-K\"{a}hler 6-manifolds
 (\S\ref{sec:uniqueness}), realising $S^6$ as a \emph{geometric attractor} for
 compactifications that fix the SM fermion quantum numbers without free
-parameters, with $N_{\mathrm{gen}} = 3$ following from the triality structure
-(conjecturally for the third channel).
+parameters, with $N_{\mathrm{gen}} = 3$ conjectured from the triality structure,
+conditional on channel independence (\S\ref{sec:open}, item L3b).
 
 The key observation is that $S^6 = G_2/\mathrm{SU}(3)$ admits a $G_2$-equivariant
 almost-complex structure $J$, and the negative-chirality spinor bundle
@@ -188,10 +194,15 @@ The three channels arise from the automorphism $G_2 = \mathrm{Fix}(\ZZ_3\subset
 \mathrm{Aut}(\OC))$ of the octonion algebra $\OC$, which cyclically permutes the
 three eight-dimensional $\mathrm{SO}(8)$ representations $\mathbf{8}_v, \mathbf{8}_s,
 \mathbf{8}_c$. Because the $\ZZ_3$ eigenspaces $\{1,\omega,\omega^2\}$
-($\omega=e^{2\pi i/3}$) are mutually orthogonal, the three zero modes are independent.
-We conjecture $N_{\mathrm{gen}}=3\times 1=3$ from three independent triality channels;
-making this rigorous requires constructing three explicit $G_2$-equivariant bundles
-(open problem; see \S\ref{sec:open}). The sign $\mathrm{sign}(\ind)=+1$ places the
+($\omega=e^{2\pi i/3}$) are mutually orthogonal, the associated zero-mode
+wavefunctions are linearly independent as functions on the total space.
+We \emph{conjecture} $N_{\mathrm{gen}}=3\times 1=3$ from this triality structure;
+whether the three channels correspond to physically independent generations,
+rather than one physical structure with orthogonal but not independently
+meaningful multiplicity, remains open --- Theorem~\ref{thm:elb3}
+(\S\ref{sec:bundle-obstruction}) shows this cannot be settled by any
+$G_2$-equivariant construction and requires $\mathrm{Spin}(8)$ fibre symmetry as
+external physical input (\S\ref{sec:open}, item L3b). The sign $\mathrm{sign}(\ind)=+1$ places the
 zero mode in $D^+$ (left-handed), geometrically fixing the chirality of the weak
 interaction.
 
@@ -506,16 +517,21 @@ $\mathrm{Spin}(8)$-level input (Theorem~\ref{thm:elb3}, \S\ref{sec:bundle-obstru
 proves no $G_2$-equivariant invariant can distinguish the three channels) and is the
 remaining open component of L3.
 
-\begin{corollary}[Family universality, G75]
+\begin{corollary}[Family universality, conditional on L3b, G75]
+This corollary's physical reading --- that the three orthogonal channels constitute
+three independent generations --- is conditional on channel independence (L3b, open;
+\S\ref{sec:open}); the orthogonality itself (Lemma L3) is unconditionally proved.
 The $\ZZ_3$ eigenspaces with eigenvalues $\{1,\omega,\omega^2\}$ are mutually orthogonal
-under the $L^2(S^3\times S^6)$ inner product. Therefore the off-diagonal gauge kinetic
-terms between generations vanish identically:
+under the $L^2(S^3\times S^6)$ inner product, so the corresponding channel-space integrals
+vanish identically:
 \begin{equation}
   \int_{S^3\times S^6} \psi_\alpha^\dagger\,\Gamma^M\,\psi_\beta\,d\mathrm{Vol} = 0
   \qquad\text{for } \alpha\neq\beta.
 \end{equation}
-Family-universal gauge interactions follow geometrically from $\ZZ_3$ eigenspace orthogonality.
-No phenomenological ``flavor-blindness'' assumption is required.
+\textbf{If} the three $\ZZ_3$ channels are confirmed as independent physical generations
+(L3b), family-universal gauge interactions follow geometrically with no additional
+phenomenological ``flavor-blindness'' assumption needed; absent that confirmation, this
+states only that the three channel-space integrals vanish identically.
 \end{corollary}
 
 \subsection{The bundle obstruction to channel independence}
@@ -818,10 +834,14 @@ vanishing rigorously, while the exact trivial-sector kernel dimension remains op
 \subsection{Left-handed chirality (Lemma L5)}
 \label{sec:chirality}
 
-\begin{lemma}[Geometric chirality, L5]\label{lem:chirality}
-  All three Dirac zero modes $\psi^{(\alpha)}$ ($\alpha \in \{v,s,c\}$) are left-handed.
-  The chirality of the weak interaction is fixed by the orientation of $S^6$
-  up to a single $\ZZ_2$ choice; no additional discrete inputs are required.
+\begin{lemma}[Geometric chirality, L5 --- unconditional net asymmetry; full statement conditional on L4B]\label{lem:chirality}
+  The net chirality is left-handed: $\mathrm{sign}(\ind)=+1$ forces a left-handed excess
+  among the three Dirac zero modes $\psi^{(\alpha)}$ ($\alpha\in\{v,s,c\}$), unconditionally.
+  Under the working L4B rank hypothesis ($\dim\ker(D^+|_{\mathbf 1})=1$, \S\ref{sec:kernel},
+  open), all three zero modes are purely left-handed; if instead rank$=0$, two modes are
+  left-handed and one right-handed, with the same net asymmetry. Either way, the chirality
+  of the weak interaction is fixed by the orientation of $S^6$ up to a single $\ZZ_2$
+  choice; no additional discrete inputs are required.
 \end{lemma}
 
 The sign of the index determines which chirality carries zero modes:
@@ -849,7 +869,9 @@ independent of L4B). The Kostant--Parthasarathy formula rigorously rules out zer
 every non-trivial $G_2$-isotypic component \emph{for Kostant's cubic Dirac operator}; for the
 Levi-Civita operator used for the physical zero-mode count, this has now been directly verified
 for the two smallest (most exposed) non-trivial representations, $\rho=\mathbf{7}$ (established)
-and $\rho=\mathbf{14}$ (strongly supported) --- see the caveat in \S\ref{sec:schur} for scope.
+and $\rho=\mathbf{14}$ (strongly supported by direct computation, and now additionally
+certified --- along with every other nontrivial representation --- by the general bound
+of \S\ref{sec:schur}, which requires no further case-by-case computation).
 On the remaining trivial component, it
 is \emph{assumed} (not proved) that $\dim\ker(D^+_{S^-})=1$ and $\dim\mathrm{coker}(D^+_{S^-})=0$
 rather than $2$ and $1$ respectively --- see \S\ref{sec:kernel} (L4B, open). $\ind=1$ for each of the three SO(8)
@@ -1347,7 +1369,10 @@ and for the foundational framework of~\cite{Lawrence2022}.
 
 The author acknowledges the use of Claude (Anthropic) as a computational and drafting
 assistant throughout this work, including symbolic and numerical verification of the
-derivations (implemented as a Python/\texttt{sympy} test suite, 2484 tests, all passing),
+derivations (implemented as a Python/\texttt{sympy} test suite, 2488 tests: 2483
+passing, 4 skipped, and 1 known pre-existing failure unrelated to this paper's
+claims --- a naming-convention lint check in an unrelated experiment directory,
+tracked separately),
 literature cross-checks, and manuscript drafting assistance. All mathematical claims,
 proofs, and numerical results were independently reviewed and verified by the author,
 who takes full responsibility for the content of this paper, consistent with arXiv's
