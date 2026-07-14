@@ -86,9 +86,10 @@ SM quantum numbers on $S^3\times S^6$, though the algebra itself remains an inpu
 reconstructed to match the known CCM structure. The Yukawa
 parameter count reduces to~4 via SU(3)-orbit degeneracy on~$S^6$.
 A geometric obstruction (Theorem~\ref{thm:yukawa-deg}) shows that all
-inter-generation Yukawa couplings are equal on $S^6$ (conditional on the L4B
-kernel-rank assumption, \S\ref{sec:kernel}); mass hierarchy requires
-the non-geometric $D_F$ freedom of the finite spectral triple.
+inter-generation Yukawa couplings are equal on $S^6$ (relying on the L4B
+kernel rank, \S\ref{sec:kernel}, verified by explicit computation with
+independent internal certification; external review outstanding); mass
+hierarchy requires the non-geometric $D_F$ freedom of the finite spectral triple.
 
 We prove that the Atiyah--Singer index of the twisted Dirac operator on
 $S^6 = G_2/\mathrm{SU}(3)$ equals exactly one. The negative-chirality spinor bundle
@@ -775,7 +776,8 @@ by this single general bound} --- no further case-by-case computation is require
 remaining fundamental block $\rho=(1,0)=\mathbf{7}$ is treated separately, by the explicit
 finite-dimensional computation above (established, not by this general bound).
 
-\textbf{Trivial $G_2$-representation $\mathbf{1}$ --- open.}
+\textbf{Trivial $G_2$-representation $\mathbf{1}$ --- resolved by explicit
+computation, independently certified (external review outstanding).}
 The trivial $G_2$-representation $(0,0)$ appears with multiplicity $2$ in $S^+\otimes S^-$
 and multiplicity $1$ in $S^-\otimes S^-$ (the target of $D^+$).
 On the $G_2$-trivial isotypic component, $D^+$ restricts to a linear map:
@@ -794,52 +796,72 @@ Casimir-difference formula used above is a theorem for symmetric spaces and for 
 cubic Dirac operator, but $S^6=G_2/\mathrm{SU}(3)$ is naturally reductive and
 \emph{not} symmetric: the physically relevant Levi-Civita Dirac operator differs from the
 cubic one by a torsion term (Clifford multiplication by the $G_2$-invariant associative
-$3$-form), which could in principle couple the two copies of $(0,0)$ off-diagonally. We
-therefore \textbf{do not claim rank$=1$ is proved}; it is assumed by analogy with the
-naive count, pending an explicit torsion-term computation (see experiment
-\texttt{20260708-dolan-casimir-g2su3}, parked). Rank~$0$ (giving $\dim\ker(D^+)=2$) is an
-open, unexcluded alternative.
+$3$-form), which could in principle couple the two copies of $(0,0)$ off-diagonally.
+The question is therefore settled by explicit computation, not by the naive count: on
+orthonormalized bases of the two invariant subspaces, the Levi-Civita twisted operator
+acts as $D^+u_1 = -\,\hat w$, $D^+u_2 = -\sqrt{3}\,\hat w$ with identically zero
+component outside the target invariant --- exact symbolic arithmetic, giving
+$\mathrm{rank}(D^+|_{\mathbf 1})=1$ and excluding the rank-$0$ alternative
+(internal verification, experiments \texttt{20260708-dolan-casimir-g2su3} and
+\texttt{20260714-round59-trivial-rank-certification}, this work). The result carries
+three mutually reinforcing certifications: (i)~a from-scratch reimplementation written
+without access to the original code, with all structure constants re-transcribed
+directly from the primary source~\cite{AgrHofLawn2023} and gated on reproducing their
+Theorem~5.1 Killing-spinor identity exactly; (ii)~a full-fibre completeness audit
+confirming the domain and target invariant subspaces have dimensions exactly $(2,1)$
+with no missed invariants, plus exact Hermiticity $D^-=(D^+)^\dagger$; and (iii)~a
+closed-form analytic derivation: the amplitude $-\sqrt{3}$ \emph{is} the Killing-spinor
+Dirac eigenvalue ($D\psi_\pm=\mp\sqrt{3}\,\psi_\pm$, saturating the Friedrich bound),
+while the twisting correction vanishes identically because $\Lambda^2\otimes\Lambda^2 =
+\mathbf{3}\otimes\mathbf{3}$ contains no $\mathrm{SU}(3)$ singlet --- so the nonzero rank
+is forced by the existence of Killing spinors, not a numerical accident of this coset.
+The positivity of the certificate survives every sign/phase convention consistent with
+the calibration anchor. External review of this computation remains outstanding.
 
-\textbf{Cokernel (same caveat applies).}
+\textbf{Cokernel (same status).}
 By adjoint duality $D^- = (D^+)^\dagger$, we have
 $\dim\mathrm{coker}(D^+) = \dim\ker(D^-)$.
 The same KP gap argument applies to the target bundle:
 $S^-\otimes S^-|_{\mathrm{SU}(3)} = (2,0)\oplus(0,1)\oplus 2\times(1,0)\oplus(0,0)$,
 so $\ker(D^-)\cap\Gamma_\rho = 0$ for all $\rho\neq\mathbf{1}$.
 On the trivial component, $D^-|_{\mathbf{1}}: \mathbb{C}^1\to\mathbb{C}^2$ has
-$\mathrm{rank}(D^-) = \mathrm{rank}(D^+)$ by adjoint symmetry, so this inherits the same
-open rank question: \textbf{if} rank$=1$ (assumed, not proved), $\dim\ker(D^-|_{\mathbf{1}}) = 0$
-and $\dim\mathrm{coker}(D^+_{S^-}) = 0$; if rank$=0$, $\dim\ker(D^-|_{\mathbf{1}})=1$ and
-$\dim\mathrm{coker}(D^+_{S^-})=1$. \quad\textbf{(L4B, open --- see above)}
+$\mathrm{rank}(D^-) = \mathrm{rank}(D^+)$ by adjoint symmetry (verified exactly:
+$\langle\hat w, D^+u_i\rangle = \overline{\langle u_i, D^-\hat w\rangle}$ for $i=1,2$),
+so with rank$=1$ as computed above, $\dim\ker(D^-|_{\mathbf{1}}) = 0$
+and $\dim\mathrm{coker}(D^+_{S^-}) = 0$. \quad\textbf{(L4B rank: internally certified
+--- see above; external review outstanding)}
 
-\begin{corollary}[Exact kernel --- conditional on L4B]
-\textbf{This corollary is conditional on the open rank question above (L4B) and is not
-an unconditional proof.} Assuming rank$(D^+|_{\mathbf 1})=1$ (the working hypothesis
-carried through the rest of this paper, not yet independently verified):
+\begin{corollary}[Exact kernel --- L4B rank internally certified]
+\textbf{This corollary relies on the trivial-sector rank result above (L4B), which is
+established by explicit computation with independent internal certification; external
+review of that computation remains outstanding.} With rank$(D^+|_{\mathbf 1})=1$
+(computed and certified above):
 \begin{align}
   \dim\ker(D^+) - \dim\mathrm{coker}(D^+) &= 1 \quad\text{(index, proved)},\\
-  \dim\mathrm{coker}(D^+) = \dim\ker(D^-) &= 0 \quad\text{(L4B, assumed, not proved)},\\
-  \Rightarrow\;\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0. \quad\textbf{(conditional on L4B rank assumption)}
+  \dim\mathrm{coker}(D^+) = \dim\ker(D^-) &= 0 \quad\text{(L4B rank, computed above)},\\
+  \Rightarrow\;\; \dim\ker(D^+) &= 1,\quad \dim\ker(D^-)=0.
 \end{align}
-\textbf{If} the rank assumption above holds, the kernel of the twisted Dirac operator
+The kernel of the twisted Dirac operator
 $D^+_{S^-}$ is exactly one-dimensional, and combined with L3 (three independent triality
-channels, open problem), this gives $N_{\mathrm{gen}}=3\times 1=3$. If instead
-rank$(D^+|_{\mathbf 1})=0$, $\dim\ker(D^+_{S^-})=2$ and the zero-mode count per channel,
-and everything downstream of it (Lemma L5 chirality below, the Yukawa degeneracy argument
-of \S\ref{sec:yukawa-deg}), would need to be re-derived for a two-dimensional kernel.
-This corollary should be read as establishing the index and the non-trivial-sector
-vanishing rigorously, while the exact trivial-sector kernel dimension remains open.
+channels, open problem), this gives $N_{\mathrm{gen}}=3\times 1=3$. For transparency we
+record the excluded contingency: had the rank been $0$, $\dim\ker(D^+_{S^-})=2$ and the
+zero-mode count per channel, and everything downstream of it (Lemma L5 chirality below,
+the Yukawa degeneracy argument of \S\ref{sec:yukawa-deg}), would have needed re-derivation
+for a two-dimensional kernel --- the certified computation above excludes this.
+This corollary establishes the index and the non-trivial-sector
+vanishing rigorously; the exact trivial-sector kernel dimension rests on the certified
+computation above.
 \end{corollary}
 
 \subsection{Left-handed chirality (Lemma L5)}
 \label{sec:chirality}
 
-\begin{lemma}[Geometric chirality, L5 --- unconditional net asymmetry; full statement conditional on L4B]\label{lem:chirality}
+\begin{lemma}[Geometric chirality, L5 --- unconditional net asymmetry; full statement under the certified L4B rank]\label{lem:chirality}
   The net chirality is left-handed: $\mathrm{sign}(\ind)=+1$ forces a left-handed excess
   among the three Dirac zero modes $\psi^{(\alpha)}$ ($\alpha\in\{v,s,c\}$), unconditionally.
-  Under the working L4B rank hypothesis ($\dim\ker(D^+|_{\mathbf 1})=1$, \S\ref{sec:kernel},
-  open), all three zero modes are purely left-handed; if instead rank$=0$, two modes are
-  left-handed and one right-handed, with the same net asymmetry. Either way, the chirality
+  With the L4B rank result ($\dim\ker(D^+|_{\mathbf 1})=1$, \S\ref{sec:kernel}, verified by
+  explicit computation with independent internal certification; external review
+  outstanding), all three zero modes are purely left-handed. Either way, the chirality
   of the weak interaction is fixed by the orientation of $S^6$ up to a single $\ZZ_2$
   choice; no additional discrete inputs are required.
 \end{lemma}
@@ -848,12 +870,13 @@ The sign of the index determines which chirality carries zero modes:
 \begin{equation}
   \mathrm{sign}(\ind) = \mathrm{sign}(c_3(S^-)) = \mathrm{sign}(+2) = +1.
 \end{equation}
-A positive index means $\dim\ker(D^+)>\dim\ker(D^-)$, \emph{regardless} of the open L4B
-rank question above: $\ind=1>0$ forces a net left-handed excess whether the trivial-sector
-rank is $0$ or $1$. With the working assumption $\dim\ker(D^-)=0$ (rank$=1$, see
-\S\ref{sec:kernel}), all three zero modes are in $D^+$ --- they are \textbf{left-handed} ---
-and this is the version carried through the rest of the paper. If instead rank$=0$, there
-is a subdominant right-handed partner ($\dim\ker(D^-)=1$) alongside two left-handed modes,
+A positive index means $\dim\ker(D^+)>\dim\ker(D^-)$, \emph{regardless} of the L4B
+trivial-sector rank: $\ind=1>0$ forces a net left-handed excess whether the trivial-sector
+rank is $0$ or $1$. With the verified $\dim\ker(D^-)=0$ (rank$=1$, computed and internally
+certified, see \S\ref{sec:kernel}), all three zero modes are in $D^+$ --- they are
+\textbf{left-handed} --- and this is the version carried through the rest of the paper.
+The excluded rank$=0$ contingency would have given a subdominant right-handed partner
+($\dim\ker(D^-)=1$) alongside two left-handed modes,
 still giving the correct net chiral asymmetry but not the clean ``all three purely
 left-handed'' picture stated here. Matching the $S^6$ orientation
 convention to the SM convention for $\mathrm{SU}(2)_L$, the left-handed Dirac zero mode
@@ -872,9 +895,10 @@ for the two smallest (most exposed) non-trivial representations, $\rho=\mathbf{7
 and $\rho=\mathbf{14}$ (strongly supported by direct computation, and now additionally
 certified --- along with every other nontrivial representation --- by the general bound
 of \S\ref{sec:schur}, which requires no further case-by-case computation).
-On the remaining trivial component, it
-is \emph{assumed} (not proved) that $\dim\ker(D^+_{S^-})=1$ and $\dim\mathrm{coker}(D^+_{S^-})=0$
-rather than $2$ and $1$ respectively --- see \S\ref{sec:kernel} (L4B, open). $\ind=1$ for each of the three SO(8)
+On the remaining trivial component, $\dim\ker(D^+_{S^-})=1$ and
+$\dim\mathrm{coker}(D^+_{S^-})=0$ are established by explicit computation with
+independent internal certification --- see \S\ref{sec:kernel} (L4B rank; external review
+outstanding). $\ind=1$ for each of the three SO(8)
 triality channels follows from the $G_2$ branching rule $\mathbf{8}_\alpha|_{G_2}=7\oplus 1$
 (E-L3-PARTIAL, this work; partial L3, proved).
 The conjecture $N_{\mathrm{gen}}=3$ requires the one remaining open problem:
@@ -891,9 +915,10 @@ Theorem~\ref{thm:elb3}, yields a stronger --- and phenomenologically sobering --
 statement: $S^6$ geometry alone cannot generate a mass hierarchy between the three
 generations.
 
-\begin{theorem}[Yukawa Degeneracy, conditional on the L4B rank assumption]\label{thm:yukawa-deg}
-  Assume the L4B rank hypothesis $\dim\ker(D^{(\alpha)}|_{\Sigma^+})=1$
-  (\S\ref{sec:kernel}; open, not proved). Let $\psi^{(\alpha)}$ denote the (then unique)
+\begin{theorem}[Yukawa Degeneracy, under the L4B rank result]\label{thm:yukawa-deg}
+  Take the L4B rank result $\dim\ker(D^{(\alpha)}|_{\Sigma^+})=1$
+  (\S\ref{sec:kernel}; verified by explicit computation with independent internal
+  certification, external review outstanding). Let $\psi^{(\alpha)}$ denote the (then unique)
   positive-chirality zero mode of $D^{(\alpha)}$
   for $\alpha\in\{v,s,c\}$ on $S^6 = G_2/\mathrm{SU}(3)$. Then
   $Y_{vs} = Y_{vc} = Y_{sc}$,
@@ -901,7 +926,7 @@ generations.
 \end{theorem}
 
 \begin{proof}
-  By the L4B rank hypothesis (\S\ref{sec:kernel}; the Lichnerowicz--Weitzenb\"ock analysis of
+  By the L4B rank result (\S\ref{sec:kernel}; the Lichnerowicz--Weitzenb\"ock analysis of
   \S\ref{sec:lichnerowicz} is consistent with, but does not by itself establish, this),
   each $\ker(D^{(\alpha)}|_{\Sigma^+})$
   is one-dimensional. By $G_2$-equivariance of $D^{(\alpha)}$, this kernel is $G_2$-invariant,
@@ -1240,9 +1265,10 @@ work.
   $S^2, S^4, \mathbb{CP}^2$ and $\mathrm{SU}(3)/U(1)^2$ but not yet to
   $G_2/\mathrm{SU}(3)=S^6$.
 
-\item \textbf{L4B --- $G_2$-equivariant character computation (\emph{partially resolved; rank
-  on the trivial component supported by explicit computation, pending independent
-  confirmation; non-trivial-sector vanishing for the Levi-Civita operator directly
+\item \textbf{L4B --- $G_2$-equivariant character computation (\emph{resolved at
+  internal-certification level; rank on the trivial component verified by explicit
+  computation and certified by three independent verification routes, external review
+  outstanding; non-trivial-sector vanishing for the Levi-Civita operator directly
   verified for $\rho=\mathbf{7}$ (established) and $\rho=\mathbf{14}$ (strongly supported),
   and now certified for every other nontrivial representation by a proven general bound}).}
   The Kostant--Parthasarathy formula (\S\ref{sec:schur}) proves a positive spectral gap on
@@ -1263,13 +1289,23 @@ work.
   Theorem~5.1 Killing-spinor eigenvalue, then applied to the twisted operator) gives rank$=1$
   ($\dim\ker(D^+_{S^-})=1$) directly, without relying on the naive Casimir formula that fails
   on this naturally reductive (non-symmetric) coset. This computation has passed calibration
-  and two independent stress tests but has not yet received a final independent sign-off, so
-  we report it as strong supporting evidence rather than a proved fact. See experiment
+  and two independent stress tests, and has since been certified by three independent
+  verification routes: a from-scratch reimplementation written without access to the
+  original code (all structure constants re-transcribed from the primary
+  source~\cite{AgrHofLawn2023}, gated on reproducing their Theorem~5.1 exactly); a
+  full-fibre completeness and Hermiticity audit (confirming the invariant subspaces have
+  dimensions exactly $(2,1)$ with no missed invariants); and a closed-form analytic
+  derivation identifying the amplitude as the Killing-spinor Dirac eigenvalue $-\sqrt{3}$
+  with the twisting correction vanishing by representation theory (no $\mathrm{SU}(3)$
+  singlet in $\mathbf{3}\otimes\mathbf{3}$). We report it as an internally certified
+  result; external review remains outstanding. See experiment
   \texttt{20260708-dolan-casimir-g2su3} (trivial-component rank computed; non-trivial-component
-  torsion correction directly verified for $\rho=\mathbf{7},\mathbf{14}$) and experiments
+  torsion correction directly verified for $\rho=\mathbf{7},\mathbf{14}$), experiments
   \texttt{20260713-round52-growing-gap-premise-audit} through
   \texttt{20260713-round56-exceptional-set-registration} (a certified general bound now closes
-  every remaining nontrivial representation; see \S\ref{sec:schur} for the full statement).
+  every remaining nontrivial representation; see \S\ref{sec:schur} for the full statement),
+  and experiment \texttt{20260714-round59-trivial-rank-certification} (the three-route
+  certification of the trivial-component rank).
   The representation-theoretic setup builds on~\cite{AgrHofLawn2023,Agricola2002}.
 
 \item \textbf{Integrability of $J$ [verified for the constructions used in this paper].}
