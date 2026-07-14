@@ -31,8 +31,9 @@ This repository contains two independent research projects on compact geometries
 **Track B** derived N_gen = 3 Standard Model generations from the Atiyah-Singer index theorem on S³×S⁶, using three independent routes:
 - G73: ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels = 3
 - G74A: Lichnerowicz gap + G₂-Schur → dim ker = 1 on every non-trivial sector
-  (certified); trivial-component rank is a working hypothesis pending
-  independent sign-off (L4B, see below)
+  (certified); trivial-component rank = 1 verified by three independent internal
+  routes incl. a closed-form analytic derivation (Round 59, 2026-07-14);
+  external review outstanding (L4B, see below)
 - G74B: sign(ind) = +1 → left-handed excess → SM chirality
 
 **Open dependency (honestly flagged in G67/G68/G73 themselves):** the "×3 channels" step
@@ -119,15 +120,18 @@ See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2210 tests
 different scope, not a discrepancy).
 
 - **N_gen = 3 exactly:** Atiyah-Singer index ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels (G73, PROMOTE 29/29)
-- **dim ker = 1, conditional:** Lichnerowicz spectral gap + G₂-Schur certify no
-  extra zero modes on every non-trivial isotypic component (G74A +
+- **dim ker = 1, internally certified:** Lichnerowicz spectral gap + G₂-Schur
+  certify no extra zero modes on every non-trivial isotypic component (G74A +
   `20260713-round52`→`round56` general bound, PROMOTE); the trivial-component
-  rank is a working hypothesis with strong computational evidence (calibrated,
-  2 stress tests passed), pending independent sign-off — see L4B in
-  `tom_s3_spinor_toy/preprint.tex` Open Problems
+  rank = 1 is verified by three independent internal routes — a from-scratch
+  reimplementation blind to the original code, a full-fibre completeness +
+  Hermiticity audit, and a closed-form analytic derivation (the amplitude IS
+  the Killing-spinor Dirac eigenvalue −√3; twisting correction vanishes by rep
+  theory) — see `tom_s3_spinor_toy/experiments/20260714-round59-trivial-rank-certification/`;
+  external review outstanding (L4B in `tom_s3_spinor_toy/preprint.tex` Open Problems)
 - **SM chirality:** sign(ind) = +1 → net left-handed excess, unconditional; all
-  three modes purely left-handed under the same L4B rank hypothesis above
-  (G74B, PROMOTE 31/31)
+  three modes purely left-handed under the same internally-certified L4B rank
+  result above (G74B, PROMOTE 31/31)
 - **SM fermion content:** 3+3̄+1+1 per generation from three independent routes — SO(8) triality (G67), CSDR on G₂/SU(3) (G69), SO(4)×G₂ rep theory (G24)
 - **Exact arithmetic:** `fractions.Fraction` throughout — zero floating-point operations in the core index chain
 

@@ -92,6 +92,22 @@ machinery. Impact 6/10.
 2. Root README/CLAIMS sync after preprint edit (same pass).
 3. L3b memo for Tom — unchanged next external item, per the standing plan.
 
+## Applied (Round 60, 2026-07-14)
+
+User confirmed. Recommendation 1 applied to `preprint.tex`: abstract clause,
+sec:kernel trivial-block paragraph (header "open" → "resolved by explicit
+computation, independently certified (external review outstanding)"; full
+three-route description with the Killing-eigenvalue mechanism), cokernel
+paragraph, Exact-kernel corollary (retitled, rank-0 contingency kept as an
+explicitly-excluded transparency note), Lemma L5 (conditional clause →
+certified-result clause), Yukawa-degeneracy theorem hypothesis wording, Open
+Problems L4B entry (status header + body + round59 experiment citation).
+Root `README.md` synced (2 spots from commit `dbeeaff`). Nothing upgraded to
+unconditional "proved" — every touched passage carries "external review
+outstanding" explicitly. Compiled clean (pdflatex ×2, exit 0, 25 pages, no
+undefined refs); arXiv tarball rebuilt as `arxiv_submission_20260714.tar.gz`
+(replaces the 20260713 one); PDF re-saved to Desktop.
+
 ## Files
 
 - `claim.md` — frozen BEFORE the run (kill criteria intact, none fired)
