@@ -110,7 +110,11 @@ Best verdict                DISCRETIZATION_SENSITIVE / GEOMETRY_AGNOSTIC
 
 ## Track B — What the Algebraic Project Establishes
 
-See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2210 tests.
+See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2210 tests
+(`pytest tom_s3_spinor_toy/tests/` only; running the full directory including
+`experiments/` gives 2488 collected as of 2026-07-13, see
+`tom_s3_spinor_toy/experiments/20260713-round58-readiness-audit/decision.md` —
+different scope, not a discrepancy).
 
 - **N_gen = 3 exactly:** Atiyah-Singer index ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels (G73, PROMOTE 29/29)
 - **dim ker = 1 exactly:** Lichnerowicz spectral gap + G₂-Schur → no extra zero modes (G74A, PROMOTE 30/30)
