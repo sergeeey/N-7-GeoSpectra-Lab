@@ -55,7 +55,7 @@
 | 20 | H2 flux killed | **H²(S⁶)=0** | **L1** | `physics_rescue_track.py` | VERIFIED-DETERMINISTIC |
 | 21 | H3 orbifold killed | **χ=0** | **L1** | `physics_rescue_track.py` | VERIFIED-DETERMINISTIC |
 | 22 | H4 NCG killed | **KO-dim=1** | **L1** | `physics_rescue_track.py` | VERIFIED-DETERMINISTIC |
-| 23 | Physics: S³×S⁶ → SM | — | **L4** | — | **KILLED** (H0 wins) |
+| 23 | Physics: S³×S⁶ → SM | — | **L4** | — | **KILLED** (H0 wins)¹ |
 | **24** | **Phase 4C T4 baseline** | **N-DEPENDENT** | **L1** | **`phase4c_t4_baseline.py`** | **VERIFIED** |
 | **25** | **Phase 4D cross-geometry** | **3/3 DISTINCT** | **L1** | **`phase4d_cross_geometry.py`** | **VERIFIED** |
 | 26 | Tom theory implications | — | **L4** | — | SPECULATIVE |
@@ -79,6 +79,19 @@ All previously pending items now verified:
 | H3 Orbifold | χ(S³×S⁶)=0 | ❌ KILLED |
 | H4 NCG | KO-dim=1 mod 8 | ❌ KILLED |
 | **H0 No-go** | **All blocked** | ✅ **CONFIRMED** |
+
+¹ **Scope note (added 2026-07-14):** claim #23 and this Physics Rescue table
+cover only four specific, narrow numerical mechanisms (gauge bundle, flux,
+orbifold, NCG) tested via `physics_rescue_track.py` within **Track A**
+(the numerical GeoSpectra harness, this directory). They do **not** cover
+**Track B** — the separate, later, algebraic/index-theoretic program in
+[`tom_s3_spinor_toy/`](tom_s3_spinor_toy/), which derives a conditional
+$N_{\mathrm{gen}}=3$ mechanism via the Atiyah–Singer index theorem on
+$S^6=G_2/\mathrm{SU}(3)$ (see root [`README.md`](README.md)'s Track A/Track B
+table, and `tom_s3_spinor_toy/preprint.tex`). "S³×S⁶ → SM: KILLED" here means
+only that these four specific mechanisms failed — not that the S³×S⁶ → SM
+research direction as a whole is closed; Track B remains an active, distinct,
+conditional program with its own honest open-problems list.
 
 ---
 
