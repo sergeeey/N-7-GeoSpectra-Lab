@@ -264,26 +264,66 @@ entangles the $S^3$ frame index with the $S^6$ triality index in a way that
 does not factor as above (a nontrivial fibration, a Chern-Simons-type
 coupling linking the two curvatures, or similar) — this specific argument
 does not apply, since it assumes the block-diagonal/product structure.
-Whether such entanglement exists is not something this project's currently
-published results settle either way, and this project's own related search
-(`G86B`, warp factor $\Omega(y)$ between $S^3$ and $S^6$: found to be
-trivial/polynomial with no extra structure, `null_results/INDEX.md`) is a
-mild discouraging sign for finding one without new (unpublished) input, but
-addressed a different question (the $\lambda$-origin, not channel
-distinguishability) and is not a proof that no entangling structure exists
-for *this* purpose.
+
+**Checked directly this round: does `G86B` (warp factor $\Omega(y)$ on
+$S^6$, `experiments/20260622-g86b-warp-factor/`) provide grounds for or
+against such an entangling structure?** Read the experiment's own script and
+decision.md. Two findings, one narrow and one broader:
+
+1. *Categorical mismatch.* $\Omega(y)=e^{2A(y)}$ is a pure scalar rescaling
+   of the 10D metric ($ds^2 = e^{2A(y)}\eta_{\mu\nu}dx^\mu dx^\nu +
+   g_{mn}(y)dy^mdy^n$), not indexed by representation at all — it multiplies
+   $\mathbf8_v,\mathbf8_s,\mathbf8_c$ identically by construction, the same
+   categorical problem as G32-B1/G39. As literally defined, it could never
+   have been the entangling ingredient regardless of its $y$-dependence.
+
+2. *A broader, more relevant point, from G86B's own G1 gate.* G86B's warp
+   equation is $\nabla^2_{S^6}e^{4A(y)} = |F(y)|^2 - \langle|F|^2\rangle$.
+   Under this project's standing assumption of $G_2$-invariant flux,
+   $|F(y)|^2=\text{const}$, so the RHS vanishes identically and $e^{4A}$ is
+   *harmonic* on compact $S^6$ — hence constant (Hopf/Liouville: a harmonic
+   function on a compact, boundaryless Riemannian manifold is constant; this
+   step needs compactness alone, not $G_2$-invariance specifically —
+   $G_2$-invariance is what forces the *source* to be constant in the first
+   place). This is not a fact about warp factors specifically: **any scalar
+   quantity on $S^6$ sourced by a $G_2$-invariant background is forced
+   constant by the same argument.** Combined with E-L3B/G102 (no
+   $G_2$-equivariant *tensorial* structure — bundle map or connection —
+   distinguishes the channels either, since their canonical connections are
+   identical and $\dim\mathfrak{c}_{\mathfrak{so}(8)}(\mathfrak{g}_2)=0$),
+   this closes the **entire $G_2$-invariant class** of candidate entangling
+   structures, scalar or tensorial, not merely the specific warp-factor
+   instance G86B checked.
+
+**Consequence for the kill criterion:** an entangling structure that
+survives this can only come from a construction that explicitly **breaks**
+$G_2$-invariance (an ansatz that is not $G_2$-symmetric). This is a
+qualitatively larger ask than "find some $y$-dependence" — every index-theorem
+result this project's $N_{\mathrm{gen}}=3$ claim currently rests on (G73,
+E-L3B, G102, and §1's whole table) assumes $G_2$-equivariant bundles
+throughout. A $G_2$-breaking entangling term would need its own justification
+that it does not simultaneously invalidate that machinery — it is not a free
+escape route, and nothing checked so far (G86B included) says whether one
+exists; G86B addressed a different question (the $\lambda$-origin) using a
+$G_2$-invariant ansatz throughout, so it neither rules a $G_2$-breaking
+construction in nor out.
 
 **Kill criterion, narrowed a third time:** this route requires the physical
-$S^3\times S^6$ construction to be **non-product** in a way that mixes the
-$S^3$ frame index with the $S^6$ triality index at the level of the Dirac
-operator itself — not merely "$S^3$ contributes its own separate quantum
-numbers." Absent Part 5's actual content (unpublished, not solicited per
-standing project constraint), this cannot be checked further from inside
-this project. The naive product-structure version of "S³ spin-connection +
-Part 5 SU(4)" is now closed, for a reason (representation inheritance from
-SO(7)) that is strictly more general than — and supersedes for this
-specific combination — the earlier $\mathfrak{so}(8)$-centralizer (G102) and
-canonical-connection (E-L3B) closures.
+$S^3\times S^6$ construction to be **non-product AND $G_2$-symmetry-breaking**
+— mixing the $S^3$ frame index with the $S^6$ triality index at the level of
+the Dirac operator itself, in a way that is not itself forced constant by
+the same Hopf/Liouville argument that kills every $G_2$-invariant candidate
+(scalar or tensorial) checked so far. Absent Part 5's actual content
+(unpublished, not solicited per standing project constraint), this cannot be
+checked further from inside this project, and any candidate meeting it would
+need to independently justify not undermining the $G_2$-equivariant
+index-theorem machinery (G73, E-L3B, G102) the rest of $N_{\mathrm{gen}}=3$
+rests on. The naive product-structure version of "S³ spin-connection + Part
+5 SU(4)" is now closed, for a reason (representation inheritance from SO(7),
+sharpened by the $G_2$-invariant-class closure above) that is strictly more
+general than — and supersedes for this specific combination — the earlier
+$\mathfrak{so}(8)$-centralizer (G102) and canonical-connection (E-L3B)
+closures.
 
 ---
 
