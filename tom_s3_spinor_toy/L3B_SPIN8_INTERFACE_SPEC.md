@@ -24,6 +24,7 @@ framework, and if so, what are its defining equations?*
 | No $G_2$-invariant operation — including nearly-Kähler instanton connections — can distinguish the three channels | **Proved**, same theorem | §3.5 |
 | No continuous symmetry inside $\mathfrak{so}(8)$ at all commutes with the geometric $G_2$ action on the octonion fibre: $\dim\,\mathfrak{c}_{\mathfrak{so}(8)}(\mathfrak{g}_2) = 0$ exactly | **Proved** (gate G102, this work) | Open Problems, item L3b |
 | Trivial-block kernel rank $\dim\ker(D^+_{S^-})=1$ per channel | **Internally certified**, 3 independent routes, external review outstanding | §sec:kernel, experiment `20260714-round59-trivial-rank-certification` |
+| No single irreducible $\mathrm{SU}(3)$ representation-theoretic twist gives index exactly $3$ (index jumps $1\to 7\to 27\to\dots$), and no standard $G_2$-invariant-connection reducible bundle combining twists gives an exact $(3,0)$ kernel without extra mirror zero modes — block-diagonality is *forced*, not chosen, for any such connection | **Proved** | experiments `20260715-index-formula-s-tensor-t-candidate`, `20260715-round-su3-index-map-audit` |
 
 **The consequence of G102 specifically:** this is not a limitation of the
 $G_2$-equivariant framework alone — the *entire* internal search space
@@ -32,6 +33,21 @@ not just the $G_2$-equivariant subcase) has been exhausted and contains no
 candidate. Distinguishing the three channels is therefore **not a computation
 this framework can be pushed further to produce internally.** It requires an
 object that is not already implicit in $S^3\times S^6$ geometry.
+
+**A second, independent route is now also closed (2026-07-15).** G102 ruled
+out a hidden *symmetry* (centralizer) route; the representation-ring /
+index-arithmetic route is a logically separate possibility — could some
+$\mathrm{SU}(3)$-equivariant twist bundle, built from the representation ring
+alone rather than from any new symmetry, realize a clean index-3 construction
+by numerology? This is now also closed: no single irreducible twist gives
+index 3 (the index sequence jumps straight from $1$ to $7$), and no standard
+reducible combination realizes an exact $(3,0)$ kernel without extra mirror
+zero modes for any $G_2$-invariant connection. Symmetric to G102's exhaustion
+of the centralizer route, this exhausts the invariant-connection
+representation-ring route. **The only remaining door is a genuinely
+non-invariant, symmetry-breaking extension** (an explicit background field or
+coupling $\Phi$ with its own physical justification) — which is exactly the
+external input this document specifies.
 
 ---
 
