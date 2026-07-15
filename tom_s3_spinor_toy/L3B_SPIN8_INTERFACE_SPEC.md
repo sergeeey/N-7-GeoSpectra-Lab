@@ -812,3 +812,58 @@ This specification concerns **only** L3b (channel independence). It does
 open problem (gate G97 — B-L is not among the isometries of $S^3\times S^6$)
 or the $\lambda$ non-perturbative-origin open problem — those are independent
 questions, not entangled with this one.
+
+---
+
+## 7. Reference checklist for when Part 5 (or any physical input) becomes
+available — "when is a projector physical, not just a math label?"
+
+Recorded 2026-07-15 from an external methodology review of today's
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ candidate. Not a new result — a
+checklist to apply *once physical input exists*, since most of its gates
+(2, 5, 6 below) are unanswerable from pure geometry and were the reason
+today's pure-math thread on this candidate stopped here.
+
+**Core principle:** a mathematical projector $P_k$ (however elegant its
+Hilbert-space splitting) is *physical* only if the splitting survives gauge
+identification and has an operational (measurable) consequence — not merely
+because $U^3=1$, $[D,U]=0$, and the $P_k$ are orthogonal. An arbitrary
+$V\in\mathrm{U}(3)$ would produce an equally "valid" set of projectors
+unless something pins the basis down.
+
+**Two architectures — do not conflate them:**
+- *Architecture I, exact triality:* $U^3=1$, $[D_{\mathrm{full}},U]=0$
+  throughout. Requires proving $U$ is not a gauge redundancy, is
+  non-anomalous, and is compatible with masses/mixing (risk: exact
+  conservation can forbid CKM/PMNS-type mixing).
+- *Architecture II, triality as a high-energy organizer:* $[D_0,U]=0$ at the
+  geometric level, but $[D_{\mathrm{full}},U]\ne0$ once an order parameter or
+  Yukawa coupling is turned on. $U$ explains the *origin* of the
+  3-dimensional space; physical distinguishability then comes from the
+  *broken*-symmetry spectral projectors of the mass/Yukawa operators instead
+  ($M_uM_u^\dagger$, $M_dM_d^\dagger$, $M_eM_e^\dagger$), not from $U$ itself.
+  This project's own G74A finding (Lemma B needs *exact* $G_2$, does not
+  survive breaking) is a concrete instance of exactly this tension — Note:
+  if $\Phi=\sum_k\phi_kP_k$ where $P_k$ are $U$'s *own* spectral projectors,
+  $\Phi$ trivially commutes with $U$ (it is a function of $U$) — a genuine
+  breaking term must be off-diagonal in $U$'s eigenbasis or permute distinct
+  slot-projectors, not merely be diagonal with unequal eigenvalues.
+
+**Gates to check once physical input exists (not attemptable from pure
+geometry alone):**
+
+| Gate | Question |
+|---|---|
+| 1 | Are $\mathbf8_v,\mathbf8_s,\mathbf8_c$ algebraically distinguished as $K=\mathrm{Spin}(4)^2$-branchings? — **already done today**, verified. |
+| 2 | Does $K$ act *globally* (a principal-bundle reduction over the actual compactification, not just the fiber)? — **the blocker**, needs Part 5. |
+| 3 | Gauge-orbit audit: is $K$ (or $U$) a gauge redundancy or a genuine global symmetry? |
+| 4 | Zero-mode map: does $P_k\cap\ker D$ have the right dimension *and* chirality once $K$ acts on the full construction? |
+| 5 | Is a 4D effective action (Yukawa operators $Y_u,Y_d,Y_e$ or equivalent) *derived*, not postulated? |
+| 6 | Basis-invariant observables only: $\mathrm{spec}(Y_fY_f^\dagger)$, not raw matrix entries. |
+| 7 | Anti-circularity: is "three" ever hand-inserted (three copies, $\mathbb{Z}_3^{\mathrm{family}}$, three Yukawa coefficients) rather than derived? |
+
+**Caution carried over from today's own work:** do *not* require a
+nontrivial common commutant of $Y_u,Y_d,Y_e$ as a success criterion — CKM/PMNS
+mixing exists precisely *because* $[Y_uY_u^\dagger,Y_dY_d^\dagger]\ne0$; a
+family symmetry exact enough to force a shared eigenbasis for all Yukawa
+matrices risks forbidding the observed mixing entirely.
