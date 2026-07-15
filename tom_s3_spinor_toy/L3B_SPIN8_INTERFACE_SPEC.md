@@ -439,11 +439,79 @@ not a physical one):**
    whether this $\mathrm{SO}(4)\times\mathrm{SO}(4)$-adapted description is
    merely a convenient basis with no such symmetry manifest in it.
 
+**Attempted 2026-07-15 (same day, continued further) — checked point 3
+directly. Result: `[VERIFIED]` positive, at the vector-representation
+level — the SO(4)×SO(4) subalgebra itself is genuinely triality-invariant,
+not merely a convenient basis.**
+
+*Construction* (Baez, "The Octonions," §2.4 "Spinors and Trialities" —
+read from the primary source already extracted this session): for $n=8$,
+the normed triality trilinear map is realized by octonion multiplication
+itself, $t_8:V_8\times S_8^+\times S_8^-\to\mathbb{R}$. Differentiating the
+corresponding group-level covariance relation gives the infinitesimal
+condition: for $a,b,c\in\mathfrak{so}(8)$ acting respectively on $V=S^+=
+S^-=\mathbb{O}$,
+$$a(x)\cdot y + x\cdot b(y) = c(x\cdot y) \quad \forall\, x,y\in\mathbb{O}.$$
+For any fixed $a$, this is a linear system in $(b,c)$, solved numerically
+using this session's own octonion multiplication table.
+
+*Sanity check, `[VERIFIED]`:* for a known $\mathfrak{g}_2$ element (a
+derivation, satisfying $a(xy)=a(x)y+xa(y)$ by definition), the equation is
+solved by $b=c=a$ — reproducing $G_2=\mathrm{Fix}(\text{triality})$ exactly
+(residual $\sim10^{-15}$), confirming the construction before trusting it on
+new cases.
+
+*Main result, `[VERIFIED]`:* solved for $(b,c)$ for all 12 basis generators
+of $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ (the vector-representation
+version of the candidate found above). **All 12 partners $b$ (and $c$) land
+back inside the same 12-dimensional subalgebra** (residual $\sim10^{-15}$ in
+every case) — i.e. $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ is mapped to
+itself by triality, not to some unrelated subalgebra. Built the explicit
+$12\times12$ matrix $T$ representing the $a\mapsto b$ assignment restricted
+to this subalgebra: its eigenvalues are exactly $\{+1$ (×6)$,\ \omega$
+(×3)$,\ \bar\omega$ (×3)$\}$ ($\omega=e^{2\pi i/3}$), and $T^3=I$ exactly
+(residual $\sim10^{-15}$) — a genuine order-3 automorphism, not an artifact.
+The 6-dimensional $+1$-eigenspace matches, dimension-for-dimension, the
+already-computed $\dim\,\mathrm{Stab}_{G_2}(H)=6$ (consistent cross-check:
+$G_2$-elements must be triality-fixed, i.e. eigenvalue $+1$ under this map).
+
+**Consequence:** $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ is not an
+arbitrary or convenient basis choice — it is a genuinely
+triality-*compatible* structure: the $G_2$-part (6-dim) is fixed pointwise
+as required, and the remaining, non-$G_2$ 6 dimensions (the part
+responsible for breaking $G_2$-invariance and distinguishing $s$ from $c$ at
+the spinor level) organize into three independent 120°-rotation planes under
+the SAME order-3 symmetry already used throughout this project. This
+substantially strengthens point 3 of the prior "what remains open" list —
+it is no longer merely unchecked, it is confirmed at the vector-rep level.
+
+**What is still NOT done, honestly:**
+- The precise cyclic bookkeeping across all three roles simultaneously
+  (does relabeling $(a,b,c)\to(b,c,a)$ satisfy the *same* covariance
+  equation) was not resolved — naive relabeling failed, and the correct
+  fix (almost certainly an octonion-conjugation twist) was not tracked
+  down. This does not affect the main finding (order-3 invariance of the
+  subalgebra, verified independently via the $a\mapsto b$ matrix $T$
+  alone), but the full three-role symmetry bookkeeping remains open.
+- This check was done at the **vector representation** level (how the
+  Lie algebra $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ itself transforms
+  under triality). It has NOT yet been connected back to the **spinor-level**
+  finding above ($\Gamma_A,\Gamma_B$ same-vs-opposite chirality distinguishing
+  $8_s$ from $8_c$) — i.e. whether this order-3 symmetry, expressed on the
+  spinor side, is what actually correlates with (or explains) the
+  same/opposite chirality split. That connection is the natural next step.
+- Points 1 and 2 of the "what remains open" list above (physical
+  identification with $S^3$, dynamical consistency with G73/E-L3B/G102) are
+  entirely unaffected by this check and remain fully open.
+
 **Kill criterion, narrowed a fourth time:** the mathematical obstacle (no
 subgroup can distinguish $s$ from $c$) is no longer absolute —
-$\mathrm{SO}(4)\times\mathrm{SO}(4)$ is a concrete counterexample. The
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ is a concrete counterexample, and it is
+now confirmed to be a genuine triality-compatible structure (order-3
+invariant as a subalgebra), not merely a convenient basis. The
 remaining gap is now purely about *physical realization and dynamical
-consistency* (points 1–3 above), not about representation-theoretic
+consistency* (points 1–2 above) plus completing the cyclic bookkeeping and
+the vector-to-spinor connection — not about representation-theoretic
 possibility. This is the most promising open thread from today's work, and
 the most concrete starting point if/when Part 5's content becomes available.
 
