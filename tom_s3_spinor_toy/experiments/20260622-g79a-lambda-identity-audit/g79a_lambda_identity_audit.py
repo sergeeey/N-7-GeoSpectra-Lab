@@ -123,6 +123,7 @@ SPECTRAL_PATH_MARKERS = (
     "reports/s3_dirac",
     "reports/tom_s3_spinor",
     "reports/eigenvalue",
+    "phase4e",
 )
 NP_LINE_MARKERS = (
     "lambda_np",
@@ -182,9 +183,7 @@ def iter_text_files(root: Path):
         capture_output=True,
     )
     relative_paths = sorted(
-        item.decode("utf-8", errors="replace")
-        for item in completed.stdout.split(b"\0")
-        if item
+        item.decode("utf-8", errors="replace") for item in completed.stdout.split(b"\0") if item
     )
     for rel in relative_paths:
         path = root / rel
@@ -235,7 +234,9 @@ def classify_occurrence(rel_path: str, line: str) -> tuple[str, str]:
     if re.search(r"\blam(?:bda)?[_a-z0-9]*\s*=", line_lower):
         return "NUMERICAL_PLACEHOLDER", "local numerical/symbolic variable"
     if "lambda" in line_lower or "λ" in line:
-        if any(token in line_lower for token in ("regularization", "wavelength", "poisson", "rate")):
+        if any(
+            token in line_lower for token in ("regularization", "wavelength", "poisson", "rate")
+        ):
             return "UNRELATED", "non-coupling lambda terminology"
         return "AMBIGUOUS", "no sector marker or known unrelated context"
     return "UNRELATED", "matched contextual term without lambda identity content"
@@ -277,8 +278,7 @@ def audit(root: Path = ROOT) -> dict:
     cross_sector_references = [
         item
         for item in occurrences
-        if "lambda_np" in item["text"].lower()
-        and "lambda_v_operator" in item["text"].lower()
+        if "lambda_np" in item["text"].lower() and "lambda_v_operator" in item["text"].lower()
     ]
 
     has_v = counts["V_OPERATOR_COUPLING"] > 0
