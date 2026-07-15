@@ -506,62 +506,84 @@ license any claim about the spinor-rep ($\Gamma_A,\Gamma_B$) structure.
 
 **Attempted 2026-07-15 (same day, continued once more) — tried to connect
 the vector-rep triality-invariance result above to the spinor-rep
-$(\Gamma_A,\Gamma_B)$ finding directly. Found a genuine, informative
-obstruction: the two constructions are not yet shown to be the same
-embedding, and there is concrete evidence they are structurally different.**
+$(\Gamma_A,\Gamma_B)$ finding directly. First pass found an apparent
+obstruction (below); a follow-up pass the same round corrected it. Read
+both — the correction is the standing result.**
 
-*What was checked:* the two Cl(8) realizations used today — the Pauli-tensor
-construction ($\Gamma_1,\dots,\Gamma_8$, used for $\Gamma_A,\Gamma_B$) and the
-octonion-covariance construction (V=S+=S-=$\mathbb{O}$, used for the
-triality map $T$) — were built independently and never shown to be related
-by an explicit change of basis. To test whether they nonetheless encode the
-"same" $\mathfrak{so}(4)_1$ acting the same way on the spinor role, computed
-how the triality-*transported* image of $\mathfrak{so}(4)_1$ (i.e. the
-6-dimensional span of the $b$-partners of $\mathfrak{so}(4)_1$'s 6 basis
-generators — a genuine, closed Lie subalgebra, `[VERIFIED]` by checking
-$[b_i,b_j]$ stays in the span, residual $\sim10^{-15}$) acts on the $S^+$
-representation, compared to how the *untransported* $\mathfrak{so}(4)_1$
-acts on $V$:
+*First pass (superseded below, kept for the record):* computed the
+triality-*transported* image of $\mathfrak{so}(4)_1$ (the 6-dim span of the
+$b$-partners of its basis generators — confirmed a genuine closed Lie
+subalgebra) and found its Casimir eigenvalues *degenerate* (all 8 equal),
+unlike the untransported $\mathfrak{so}(4)_1$ on $V$ (2 distinct
+eigenvalues: nonzero on $H$, zero on $H\ell$). This was read as "the
+transported algebra does not preserve the $H/H\ell$ split." **That reading
+was wrong** — a degenerate Casimir is exactly what two *isotypic* (same
+representation type) invariant 4-dim blocks would also produce, and this
+was not checked before concluding "no split."
 
-| Check | Untransported $\mathfrak{so}(4)_1$ on $V$ | Transported $\mathfrak{so}(4)_1$ on $S^+$ |
-|---|---|---|
-| Casimir $\sum_i b_i^2$ eigenvalues | Two distinct values (nonzero on $H$, zero on $H\ell$ — trivially block-split) | **All 8 equal** — no visible block split |
-| $\dim(\text{commutant})$ | 17 (inflated by the trivial/zero action on $H\ell$) | 8 (smaller — less degenerate, more "spread") |
+*Corrected result, `[VERIFIED]` via explicit isomorphism:* the two Cl(8)
+realizations used today — Pauli-tensor ($\Gamma_1,\dots,\Gamma_8$, used for
+$\Gamma_A,\Gamma_B$) and octonion-covariance (V=S+=S-=$\mathbb{O}$, used for
+the triality map) — are representations of the *same* abstract
+$\mathfrak{so}(8)$. By Schur's lemma, if "$8_s$" and "$S^+$ (via $b$)" are
+genuinely the same real-type irrep, there is a **unique** (up to scalar)
+intertwiner. Built it directly: solved $P\,M_a = b_a\,P$ for all **28**
+basis generators of the *full* $\mathfrak{so}(8)$ (not just the
+$\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ subalgebra, to pin down
+uniqueness genuinely) — found nullity exactly 1, residual $\sim10^{-16}$
+over all 28 generators. Built the analogous $Q$ for "$8_c$"$\leftrightarrow$"$S^-$
+(via $c$)", same result.
 
-The transported algebra does **not** preserve the same $H$/$H\ell$ (block1/
-block2) split that defines it on the vector side — it acts across all 8
-dimensions in an entangled way. This means the "same-vs-opposite chirality"
-structure found via $\Gamma_A,\Gamma_B$ (built *directly* on the spinor
-representation, using a block split defined independently of any triality
-transport) is a **different mathematical construction** from "$\mathfrak{so}
-(4)_1\oplus\mathfrak{so}(4)_2$ transported to the spinor role by triality."
-Both are individually well-verified; asserting they are the *same* object
-would be an overclaim not yet earned by either computation.
+Used $P,Q$ to transport $\Gamma_A$ (which commutes with $\Gamma_9$, hence
+genuinely acts within each of $8_s,8_c$ separately) into the octonion
+language:
+$$P\,(\Gamma_A|_{8_s})\,P^{-1} = D_A := \mathrm{diag}(+1,+1,+1,+1,-1,-1,-1,-1),
+\qquad Q\,(\Gamma_A|_{8_c})\,Q^{-1} = -D_A,$$
+exactly (residual $\sim10^{-15}$, both real to machine precision) — i.e.
+$\Gamma_A$ *is*, under this explicit identification, precisely the $H$-vs-$H\ell$
+block-sign operator. $\Gamma_B$ transports to $+D_A$ on **both** $S^+$ and
+$S^-$ (consistent with $\Gamma_A=\Gamma_B$ on $8_s$ and $\Gamma_A=-\Gamma_B$
+on $8_c$ by construction — a clean internal consistency check).
 
-**Honest correction to the record:** the "Consequence" paragraph above
-(vector-rep triality-invariance) must be read as a standalone result about
-the vector representation. It does **not**, without further work, strengthen
-or explain the $(\Gamma_A,\Gamma_B)$ finding — that would require an
-explicit isomorphism between the two Cl(8) constructions used today (a
-concrete, doable, but nontrivial next step, not attempted).
+**Then, checked directly whether $D_A$ commutes with all 12 transported
+$\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ generators — the test the first
+pass skipped.** It does, exactly (residual $\sim10^{-15}$ for every
+generator). This means the $H/H\ell$ block split **is** an invariant
+structure of the triality-transported algebra — confirmed by direct
+commutation, not inferred from a Casimir spectrum that could not
+distinguish "irreducible" from "two isotypic blocks."
 
-**Kill criterion, narrowed a fourth time:** the mathematical obstacle (no
-subgroup can distinguish $s$ from $c$) is no longer absolute — on the
-**spinor representation**, $\mathrm{SO}(4)\times\mathrm{SO}(4)$ (via
-$\Gamma_A,\Gamma_B$) is a concrete counterexample. Separately, on the
-**vector representation**, the analogously-constructed
-$\mathrm{SO}(4)\times\mathrm{SO}(4)$ is confirmed to be genuinely
-triality-compatible (order-3 invariant as a subalgebra). These two facts do
-**not** yet combine into one statement about a single object — see the
-correction above. The remaining gap is therefore: (a) physical realization
-and dynamical consistency (points 1–2), (b) completing the cyclic
-bookkeeping, and (c) — the one added this round — actually connecting the
-vector-rep and spinor-rep pictures via an explicit Cl(8)-to-Cl(8) change of
-basis, none of which is representation-theoretically foreclosed. This
-remains the most promising open thread from today's work, and the most
-concrete starting point if/when Part 5's content becomes available — but
-"promising" describes two separately-solid partial results, not yet one
-unified one.
+**Consequence — this closes the gap the prior "honest correction" left
+open.** The vector-rep triality-invariance finding and the spinor-rep
+$(\Gamma_A,\Gamma_B)$ finding are now shown, via an explicit, machine-verified
+isomorphism, to be **the same structure**: the $H/H\ell$ block-sign operator
+$D_A$ (equivalently, $\Gamma_A/\Gamma_B$) is preserved by the entire
+triality-invariant $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ — both its
+$G_2$-fixed part and its order-3-rotating part — consistently across $V$,
+$S^+$, and $S^-$.
+
+**What this does NOT yet establish:** the connection is now solid at the
+representation-theory level, but points 1–2 from before (physical
+identification of either $\mathrm{SO}(4)$ factor with $S^3$'s actual gauge
+fields; dynamical consistency with G73/E-L3B/G102 once $G_2$ is broken this
+way) remain exactly as open as before — this round closed a mathematical
+bookkeeping gap, not a physical one. The precise cyclic $(a,b,c)\to(b,c,a)$
+bookkeeping across all three roles (flagged earlier as unresolved) also
+remains open, though it did not block this result (only pairwise $a\to b$
+and $a\to c$ relations were needed).
+
+**Kill criterion, narrowed a fourth time (now on solid combined footing):**
+the mathematical obstacle (no subgroup can distinguish $s$ from $c$) is no
+longer absolute, and this is now a **single, unified** finding, not two
+separately-solid ones: $\mathrm{SO}(4)\times\mathrm{SO}(4)$ genuinely
+distinguishes $s$ from $c$ (via $\Gamma_A,\Gamma_B$ $\equiv$ $D_A$), is a
+genuine order-3-triality-invariant subalgebra of $\mathfrak{so}(8)$, and
+these are verified to be the same object across $V,S^+,S^-$ via an explicit
+intertwiner. The remaining gap is entirely points 1–2: physical realization
+and dynamical consistency — not representation-theoretic possibility, and
+not (any longer) a bookkeeping gap between two unconnected pictures. This is
+the most promising open thread from today's work, and the most concrete
+starting point if/when Part 5's content becomes available.
 
 ---
 
