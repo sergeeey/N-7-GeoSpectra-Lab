@@ -1,0 +1,15 @@
+{
+  "positive_control_pass": true,
+  "surviving_c_eff_range": [
+    -1.246075451374054,
+    0.0
+  ],
+  "rho6_min_range": [
+    1.199700521481887,
+    1.3399877718391136
+  ],
+  "established_rho6_min": 1.1790597996,
+  "closest_offset_pct": 1.7506085686993578,
+  "bifurcation_offset_pct": 13.648838870912991,
+  "verdict": "PROMOTE_WEAKENED_CORRECTED"
+}
