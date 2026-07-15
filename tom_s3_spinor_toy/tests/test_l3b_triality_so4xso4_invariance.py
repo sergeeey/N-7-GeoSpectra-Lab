@@ -18,9 +18,13 @@ sys.path.insert(0, _exp_dir)
 from triality_so4xso4_invariance import (  # noqa: E402
     build_so4xso4_basis,
     build_triality_matrix_T,
+    casimir_eigenvalues,
+    commutant_dim,
     g2_sanity_check_residual,
+    is_closed_lie_subalgebra,
     residual_in_span,
     solve_triality_partners,
+    transported_so4_1_generators,
 )
 
 
@@ -71,3 +75,48 @@ def test_fixed_subspace_dimension_matches_stab_g2_h():
     n_plus_one = sum(1 for ev in evals if abs(ev.real - 1) < 1e-6 and abs(ev.imag) < 1e-6)
     dim_stab_g2_h = 6  # verified independently in test_l3b_so4xso4_candidate.py's sibling check
     assert n_plus_one == dim_stab_g2_h
+
+
+def test_transported_so4_1_is_a_closed_lie_subalgebra():
+    """The 6 b-partners of so(4)_1's generators form a genuine (closed) Lie
+    subalgebra -- a well-defined object, even though (per the next tests) it
+    is NOT the same embedding as the untransported so(4)_1.
+    """
+    transported = transported_so4_1_generators()
+    is_closed, resid = is_closed_lie_subalgebra(transported)
+    assert is_closed
+    assert resid < 1e-8
+
+
+def test_transported_so4_1_does_not_preserve_the_block_split():
+    """The triality-transported so(4)_1 acts on S+ with a DEGENERATE Casimir
+    (all 8 eigenvalues equal) -- unlike the untransported so(4)_1 on V, which
+    trivially splits (nonzero on H, zero on Hl). This is the concrete
+    evidence that the vector-rep SO(4)xSO(4) (triality-invariant) and the
+    spinor-rep SO(4)xSO(4) (Gamma_A/Gamma_B, distinguishes s from c) are not
+    yet shown to be the same embedding -- see
+    L3B_SPIN8_INTERFACE_SPEC.md SS1.5, "Attempted 2026-07-15, continued once more".
+    """
+    original_so4_1 = build_so4xso4_basis()[0:6]
+    transported = transported_so4_1_generators()
+
+    original_casimir = casimir_eigenvalues(original_so4_1)
+    transported_casimir = casimir_eigenvalues(transported)
+
+    # original: block split gives two distinct eigenvalues (nonzero on H, zero on Hl)
+    assert len(set(np.round(original_casimir, 6))) == 2
+
+    # transported: no such split -- all eigenvalues equal
+    assert len(set(np.round(transported_casimir, 6))) == 1
+
+
+def test_transported_so4_1_has_smaller_commutant():
+    """The transported so(4)_1's commutant (8) is smaller than the untransported
+    one's (17, inflated by the trivial/zero action on Hl) -- confirming the
+    transported algebra acts less degenerately, i.e. genuinely differently.
+    """
+    original_so4_1 = build_so4xso4_basis()[0:6]
+    transported = transported_so4_1_generators()
+
+    assert commutant_dim(original_so4_1) == 17
+    assert commutant_dim(transported) == 8
