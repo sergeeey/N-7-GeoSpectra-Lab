@@ -187,6 +187,104 @@ transformations. Absent such a reason, this route is closed at the same
 place the $\mathfrak{so}(8)$-internal search closed: it requires new physical
 input, not a computation this framework can supply internally.
 
+**Attempted 2026-07-15 (same day, continued) — the S³-spin-connection +
+Part-5-SU(4) combination was tried directly. It sharpens the obstruction
+further rather than closing it, and finds a NEW, more general reason the
+naive version fails — one that subsumes E-L3B's own canonical-connection
+argument.**
+
+*Setup.* Part 5 is unpublished (per this project's own standing rule, not
+solicited), so the only thing that can be checked is: does *this project's
+own already-established* $S^3$ spin-connection $\cong \mathrm{SU}(2)_L\times
+\mathrm{SU}(2)_R$ result (Tom-confirmed, G6–G9), combined with the
+Spin(6)$\cong$SU(4) structure Part 5 is expected to relate to (per this
+project's own G10/G10b $\mathrm{SO}(6)\cong\mathrm{SU}(4)\to
+\mathrm{SU}(3)\times\mathrm{U}(1)$ embedding, and already used explicitly in
+this project's own `20260621-g69-csdr-coset` CSDR argument: "Spin(6)=SU(4):
+spinor $4+\bar4$ under SU(3) $\to 3+1+\bar3+1$"), supply the missing
+"genuine reason to combine."
+
+*Finding, verified this round:* it cannot, for a reason stronger than E-L3B.
+
+$\mathrm{Spin}(6)\subset\mathrm{Spin}(7)$ (stabilizer of a point/vector — the
+*same* embedding CSDR already uses to restrict $S^6$'s tangent-frame spinor)
+is a **subgroup of $\mathrm{Spin}(7)$**. E-L3B already proved $\mathbf8_s
+\cong \mathbf8_c$ as $\mathrm{Spin}(7)$-representations (Spin(7) has a
+*unique* 8-dim spinor rep). Restriction of an identical representation to
+*any* subgroup stays identical — so $\mathbf8_s|_{\mathrm{Spin}(6)} \cong
+\mathbf8_c|_{\mathrm{Spin}(6)}$ is **inherited automatically**, with no
+further computation needed. Concretely (checked against this project's own
+G69 numbers): $\mathbf8_v|_{\mathrm{Spin}(6)} = \mathbf6\oplus\mathbf1\oplus
+\mathbf1$, while $\mathbf8_s|_{\mathrm{Spin}(6)} = \mathbf8_c|_{\mathrm{Spin}(6)}
+= \mathbf4\oplus\bar{\mathbf4}$ (matching G69's own $4+\bar4$ line) — SU(4)
+distinguishes $v$ from $\{s,c\}$ (different rep type), same partial result
+SO(7) already gave, but **cannot** distinguish $s$ from $c$.
+
+**This is a stronger obstruction than E-L3B's, not a repeat of it.** E-L3B's
+theorem was specifically about the *canonical* $G_2$-equivariant connection
+(it leaves open, in principle, whether a *non-canonical* connection could
+differ). The argument here does not depend on which connection is chosen at
+all — canonical, or an independent dynamical gauge field exactly as "Part
+5's local SU(4) transformations with nonzero field strength" would be. A
+gauge field valued in $\mathfrak{su}(4)$ couples to a mode through *which
+representation* that mode sits in; since $\mathbf8_s$ and $\mathbf8_c$ are
+the *same* $\mathrm{SU}(4)$-representation (not merely connected by the same
+canonical connection), **any** $\mathrm{SU}(4)$ gauge field — dynamical or
+geometric — necessarily acts on them identically. The obstruction is
+representation-theoretic, not connection-theoretic.
+
+This also explains, from a different angle, this project's own prior NULL
+result `null_results/INDEX.md` entry **G39-B1** ("Spin(6)≅SU(4): $\Lambda^2
+(T^{0,1})$ has $c_3=2$, not 6; factor 3 unaccounted") — that gate killed an
+$\mathrm{SU}(4)$ Pati-Salam gauge-bundle-on-$S^6$ construction via an
+index/Chern-class mismatch. The finding here is a different, more general
+argument against the same class of construction: even setting the
+Chern-class problem aside entirely, $\mathrm{SU}(4)$ alone on the $S^6$ side
+cannot carry the needed information regardless of bundle topology, because
+the *representation content* is already identical.
+
+**Does tensoring with the $S^3$ factor rescue it?** No, not in the simplest
+(product-manifold, block-diagonal Dirac operator $D = D_{S^3}\otimes
+\mathbb{1} + \gamma\otimes D_{S^6}$) case. Tensoring a fixed $\mathrm{SU}(2)_L
+\times\mathrm{SU}(2)_R$ representation onto an $S^6$-sector that is already
+$\mathrm{SU}(4)$-blind to the $s/c$ distinction leaves that blindness
+untouched — the operator's action on the $S^6$ factor is unchanged by what
+it is tensored with on the $S^3$ factor. The obstruction is not "not enough
+quantum numbers," it is "the two specific quantum numbers this construction
+supplies ($v/\{s,c\}$ split from Spin(6), and whatever $S^3$ contributes) do
+not, and structurally cannot, resolve $\{s,c\}$ regardless of how they are
+combined multiplicatively." Combining the two known ingredients through a
+plain tensor product is therefore ruled out as a route, not merely
+unconstructed.
+
+**What remains genuinely open, and cannot be settled without Part 5's
+(unpublished) content:** if the actual $S^3\times S^6$ construction is *not*
+a simple product — i.e. the physical connection/Dirac operator genuinely
+entangles the $S^3$ frame index with the $S^6$ triality index in a way that
+does not factor as above (a nontrivial fibration, a Chern-Simons-type
+coupling linking the two curvatures, or similar) — this specific argument
+does not apply, since it assumes the block-diagonal/product structure.
+Whether such entanglement exists is not something this project's currently
+published results settle either way, and this project's own related search
+(`G86B`, warp factor $\Omega(y)$ between $S^3$ and $S^6$: found to be
+trivial/polynomial with no extra structure, `null_results/INDEX.md`) is a
+mild discouraging sign for finding one without new (unpublished) input, but
+addressed a different question (the $\lambda$-origin, not channel
+distinguishability) and is not a proof that no entangling structure exists
+for *this* purpose.
+
+**Kill criterion, narrowed a third time:** this route requires the physical
+$S^3\times S^6$ construction to be **non-product** in a way that mixes the
+$S^3$ frame index with the $S^6$ triality index at the level of the Dirac
+operator itself — not merely "$S^3$ contributes its own separate quantum
+numbers." Absent Part 5's actual content (unpublished, not solicited per
+standing project constraint), this cannot be checked further from inside
+this project. The naive product-structure version of "S³ spin-connection +
+Part 5 SU(4)" is now closed, for a reason (representation inheritance from
+SO(7)) that is strictly more general than — and supersedes for this
+specific combination — the earlier $\mathfrak{so}(8)$-centralizer (G102) and
+canonical-connection (E-L3B) closures.
+
 ---
 
 ## 2. The precise question
