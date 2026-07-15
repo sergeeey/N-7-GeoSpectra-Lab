@@ -325,6 +325,52 @@ general than — and supersedes for this specific combination — the earlier
 $\mathfrak{so}(8)$-centralizer (G102) and canonical-connection (E-L3B)
 closures.
 
+**Attempted 2026-07-15 (same day, continued further) — tested the single
+most natural, minimal-assumption candidate for a genuinely entangling,
+$G_2$-breaking construction. It is dead too, and for a sharper reason than
+expected: it inherits $G_2$'s blindness rather than escaping it.**
+
+*Candidate:* $\mathbb{O}$ is built from $\mathbb{H}$ by Cayley-Dickson
+doubling ($\mathbb{O}=\mathbb{H}\oplus\mathbb{H}\ell$), so the most natural,
+parameter-free way to identify "$S^3$'s own $\mathrm{SU}(2)_L\times
+\mathrm{SU}(2)_R}$" with something already inside the octonion structure used
+for $S^6$ is: let $H=\mathrm{span}(e_0,e_1,e_2,e_3)\subset\mathbb{O}$ be the
+quaternion subalgebra, and take the $S^3$ gauge group to be
+$\mathrm{Stab}_{G_2}(H)$ — the subgroup of $G_2$ that maps $H$ to itself.
+
+*Checked this round, `[VERIFIED]` by direct computation* (using the same
+from-scratch $\mathfrak{g}_2$ basis built earlier this session — the
+14-dimensional null space of the derivation equation): the subspace of
+$\mathfrak{g}_2$ mapping $H$ into itself is exactly
+**6-dimensional** — matching $\dim\mathfrak{so}(4)=6$ exactly, confirming
+$\mathrm{Stab}_{G_2}(H)\cong\mathrm{SO}(4)$ (a standard fact, here computed,
+not cited).
+
+*Why this fails, and fails worse than the SO(6) case above:*
+$\mathrm{Stab}_{G_2}(H)$ is, by construction, a **subgroup of $G_2$**. Since
+$G_2=\mathrm{Fix}(\mathbb{Z}_3)$ (triality-invariant by definition) and
+E-L3B already proved $\mathbf8_v,\mathbf8_s,\mathbf8_c$ restrict to
+*identical* $G_2$-modules ($\mathbf7\oplus\mathbf1$ in all three cases, not
+just the $\mathrm{SU}(3)$-level content), **any** subgroup of $G_2$
+automatically inherits this identical restriction — restriction of an
+identical representation to a subgroup stays identical, the same inheritance
+principle used against the $\mathrm{Spin}(6)$ case above, one level further
+down. So this specific candidate does not merely fail to distinguish $s$
+from $c$ (the SO(6) case's failure) — it fails to distinguish **any** of the
+three channels from each other, a strictly weaker result than SO(6) alone
+already gave.
+
+**Consequence:** the single most natural, assumption-free way to embed
+$S^3$'s quaternionic structure into the octonion algebra already used for
+$S^6$ is closed. For the Pati-Salam/$\mathrm{Spin}(10)$ idea to survive at
+all, $S^3$'s $\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ must be realized as
+something that is **not** a subgroup of $G_2$ — i.e. a structure visible
+only at the level of the full $\mathrm{Spin}(8)$ (or larger), genuinely
+entangled with the $\mathrm{SO}(6)$ that already distinguishes $v$ from
+$\{s,c\}$. Nothing in this project's current geometry specifies such a
+structure; this narrows "what Part 5 would need to supply" one step further
+without resolving it.
+
 ---
 
 ## 2. The precise question
