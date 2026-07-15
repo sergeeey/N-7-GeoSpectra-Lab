@@ -371,6 +371,82 @@ $\{s,c\}$. Nothing in this project's current geometry specifies such a
 structure; this narrows "what Part 5 would need to supply" one step further
 without resolving it.
 
+**Attempted 2026-07-15 (same day, continued further) — found the FIRST
+candidate this entire investigation that mathematically distinguishes all
+three channels, not just $v$ from $\{s,c\}$.** This is a genuine, non-trivial
+advance at the pure representation-theory level — but not yet a physical
+solution; the gap between the two is now precisely localized.
+
+*Construction, `[VERIFIED]` this round by explicit Clifford-algebra
+computation* (built 8 anticommuting $16\times16$ matrices $\Gamma_1,\dots,
+\Gamma_8$ realizing $\mathrm{Cl}(8)$, verified $\{\Gamma_i,\Gamma_j\}=2\delta_{ij}$
+directly): split $\mathbb{O}=\mathbb{R}^8$ into two 4-dimensional blocks
+($H=\mathrm{span}(e_0,\dots,e_3)$, $H\ell=\mathrm{span}(e_4,\dots,e_7)$) and
+take the *full* $\mathrm{SO}(4)\times\mathrm{SO}(4)$ (rotating each block
+independently — **not** restricted to octonion automorphisms, unlike every
+candidate above). Defining the block-chirality operators
+$\Gamma_A=\Gamma_1\Gamma_2\Gamma_3\Gamma_4$,
+$\Gamma_B=\Gamma_5\Gamma_6\Gamma_7\Gamma_8$ (verified $\Gamma_A\Gamma_B=
+\Gamma_9$, the full Spin(8) chirality operator, and $[\Gamma_A,\Gamma_B]=0$),
+direct diagonalization gives, with all four sectors confirmed
+4-dimensional numerically:
+
+$$\mathbf8_v=(\mathbf4,\mathbf1)\oplus(\mathbf1,\mathbf4), \qquad
+\mathbf8_s=(\mathbf2,\mathbf1;\mathbf2,\mathbf1)\oplus(\mathbf1,\mathbf2;\mathbf1,\mathbf2),
+\qquad
+\mathbf8_c=(\mathbf2,\mathbf1;\mathbf1,\mathbf2)\oplus(\mathbf1,\mathbf2;\mathbf2,\mathbf1)$$
+
+— i.e. $\mathbf8_s$ is the *same-block-chirality* ($\Gamma_A=\Gamma_B$)
+sector, $\mathbf8_c$ is the *opposite-block-chirality* ($\Gamma_A=-\Gamma_B$)
+sector. **This genuinely distinguishes $s$ from $c$**, the first candidate
+in this entire document to do so at the representation-theory level.
+
+*Why this succeeds where every earlier candidate failed:*
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ has rank $2+2=4$, equal to
+$\mathrm{rank}(\mathrm{SO}(8))=4$. $\mathrm{SO}(7)$ (which contained every
+earlier candidate — $G_2$, the $\mathrm{SO}(6)$ tangent-frame group,
+$\mathrm{Stab}_{G_2}(H)$) has rank 3. A rank-4 subgroup cannot embed inside a
+rank-3 one (a subgroup's maximal torus must fit inside the ambient group's),
+so $\mathrm{SO}(4)\times\mathrm{SO}(4)$ is **structurally incapable** of
+being a subgroup of $\mathrm{SO}(7)$ — it escapes the "Spin(7) has a unique
+8-dim spinor" argument that killed everything above, categorically, not by
+degree.
+
+*The honest price, verified consistent with everything found so far:*
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ intersects $G_2$ only in the
+already-dead 6-dimensional $\mathrm{Stab}_{G_2}(H)$ found above — so using
+the full 12-dimensional group **necessarily breaks $G_2$-invariance**. This
+is not a new problem; it is exactly the door the kill criterion already
+identified as the only remaining live option, now given a concrete,
+computable shape instead of an abstract requirement.
+
+**What remains completely open (this is a mathematical existence result,
+not a physical one):**
+1. *Physical identification.* Nothing establishes that either
+   $\mathrm{SO}(4)$ factor corresponds to $S^3$'s actual $\mathrm{SU}(2)_L
+   \times\mathrm{SU}(2)_R}$ gauge fields — this is a hypothesis about how the
+   two known ingredients (S³ gauge fields, S⁶ octonion fiber) would need to
+   relate, not a derivation. What the *other* $\mathrm{SO}(4)$ factor would
+   correspond to physically is entirely unaddressed.
+2. *Dynamics.* No argument shows the actual physical Dirac operator, once
+   $G_2$ is broken this way, remains consistent with the index-theorem
+   results (G73, E-L3B, G102) the rest of $N_{\mathrm{gen}}=3$ rests on —
+   this needs independent verification, not assumption.
+3. *Triality consistency.* Not yet checked: whether the known $\mathbb{Z}_3$
+   triality action (which must send $v\to s\to c\to v$) is compatible with
+   this specific $(\Gamma_A,\Gamma_B)$ sign structure — i.e. whether a single
+   order-3 symmetry actually cyclically permutes these three sectors, or
+   whether this $\mathrm{SO}(4)\times\mathrm{SO}(4)$-adapted description is
+   merely a convenient basis with no such symmetry manifest in it.
+
+**Kill criterion, narrowed a fourth time:** the mathematical obstacle (no
+subgroup can distinguish $s$ from $c$) is no longer absolute —
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ is a concrete counterexample. The
+remaining gap is now purely about *physical realization and dynamical
+consistency* (points 1–3 above), not about representation-theoretic
+possibility. This is the most promising open thread from today's work, and
+the most concrete starting point if/when Part 5's content becomes available.
+
 ---
 
 ## 2. The precise question
