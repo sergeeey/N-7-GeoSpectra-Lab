@@ -51,6 +51,51 @@ external input this document specifies.
 
 ---
 
+## 1.5. A specific candidate route not yet explored: F4 (added 2026-07-15)
+
+Section 1 above states that no continuous symmetry inside $\mathfrak{so}(8)$ can
+distinguish the three channels (G102: $\dim\,\mathfrak{c}_{\mathfrak{so}(8)}(\mathfrak{g}_2)=0$,
+and even the weaker $\dim\,\mathfrak{c}_{\mathfrak{so}(8)}(\mathfrak{su}(3))=2$ consists
+of generators that are themselves inner to $\mathfrak{so}(8)$ and hence cannot
+implement triality's *outer* automorphism action). A `/cross-domain` +
+`skeptic` pass (2026-07-15) on this exact argument found that this conclusion,
+while correct, is **narrower than it first appears**: it only rules out
+mechanisms built purely from $\mathfrak{so}(8)$ itself. It says nothing about
+a strictly larger ambient Lie algebra containing $\mathfrak{so}(8)$.
+
+**Verified (arithmetic, this round):**
+$F_4 = \mathrm{Aut}(J_3(\mathbb{O}))$ — the automorphism group of the
+exceptional Jordan algebra, the same object at the center of Singh
+(arXiv:2508.10131, §pearl_registry) — contains $\mathrm{Spin}(8)$ via the chain
+$F_4 \supset \mathrm{Spin}(9) \supset \mathrm{Spin}(8)$, with adjoint branching
+$52 = 28 + 8_v + 8_s + 8_c$ (dimension count confirmed exactly: $\dim\mathfrak{so}(9)=36=28+8$,
+$\dim(\text{spinor}(9))=16=8+8$, total $28+8+8+8=52$). Independently,
+$|W(F_4)|/|W(D_4)| = 1152/192 = 6 = |S_3|$ **exactly** — triality is realized
+as part of $F_4$'s own Weyl group, i.e. by honest conjugation with $F_4$
+elements. This means triality **is** an inner automorphism once the ambient
+algebra is enlarged from $\mathfrak{so}(8)$ to $\mathfrak{f}_4$. This is
+standard, textbook Lie theory (the $F_4$/$D_4$ folding relationship) — not
+speculative — and $\mathfrak{f}_4=\mathrm{Der}(J_3(\mathbb{O}))$ is a natural
+extension of $\mathfrak{g}_2=\mathrm{Der}(\mathbb{O})$ already used throughout
+this project ($\mathbb{O}\to J_3(\mathbb{O})$ is exactly the octonion →
+exceptional-Jordan-algebra extension).
+
+**What remains genuinely open (this is a candidate ROUTE, not a solution):**
+whether this project's own $S^3\times S^6$ compactification naturally carries
+a *physically realized* $F_4$ structure acting on the relevant fiber, such
+that (a) $G_2$ (already the isotropy of $S^6$) sits inside this $F_4$ in the
+standard way, (b) the resulting triality-realizing $F_4$ element acts on the
+actual field content, not just the abstract Lie algebra, and (c) this action
+commutes with the physical Dirac operator (condition 2 of §3). None of (a)–(c)
+is established — only the underlying pure-math fact that the obstruction is
+not absolute once the ambient algebra is enlarged.
+
+**Kill criterion:** if no explicit construction of (a)–(c) can be produced
+within a bounded effort, this route is no more actionable than the closed
+$\mathfrak{so}(8)$-internal search and should be marked closed too, alongside it.
+
+---
+
 ## 2. The precise question
 
 $S^6 = G_2/\mathrm{SU}(3)$'s triality automorphism $\ZZ_3 \subset \mathrm{Aut}(\mathrm{SO}(8))$
@@ -122,13 +167,55 @@ that:
 
 ---
 
+## 3.5. Anti-circularity screening (added 2026-07-15, after reviewing Furey–Hughes arXiv:2409.17948)
+
+A candidate can *look* like it satisfies §3 while actually begging the
+question. Before evaluating anything against §3/§4, apply this screening
+test first:
+
+> Does the candidate **derive** three distinguishable sectors as a
+> *consequence* of acting on the single, already-existing $S^3\times S^6$
+> structure — via the triality automorphism $U$ already fixed in condition 1
+> — or does it **postulate** $N$ separate copies/sectors matching the desired
+> generation count from the outset, and merely check that each copy's
+> *content* looks right?
+
+Only the first kind can close L3b. The second kind answers a different
+question (representation-**content** matching per generation-slot, the same
+category as this project's own G69/G24 results) and must not be mistaken for
+channel-**distinguishability**, however similar the algebra looks.
+
+**Concrete case this test catches:** Furey & Hughes, "Three Generations and a
+Trio of Trialities" (arXiv:2409.17948, *Phys. Lett. B* 2025) build three
+generations from three *separately postulated* copies of $\CC\otimes\HH\otimes\OO$
+— $(\CC_+\otimes\HH_+\otimes\OO_+)\oplus(\CC_-\otimes\HH_-\otimes\OO_-)\oplus(\CC_V\otimes\HH_V\otimes\OO_V)$
+— each copy carrying its *own* internal $(V,\Psi_+,\Psi_-)$ triality triple
+(9 total pieces across the 3 copies), with **no operator relating the three
+copies to each other**. The authors state plainly that they adopt this
+three-copy structure "as a working hypothesis" motivated by the observed fact
+of three generations, not derived from a deeper symmetry principle. This is
+the same ansatz-driven circularity this project already identified and
+rejected once before, in gate G33-A1 (`null_results/INDEX.md`: "A1 requires
+$N_{\mathrm{gen}}=3$ as input, circular"). It is a genuine, peer-reviewed
+result about representation content — not a counterexample to §1's
+established facts, and not a closure (or even a partial closure) of L3b.
+
+**Rule:** an object $(F,U,\rho)$ only counts toward §3/§4 if the "three" in
+$F=\mathbf{8}_v\oplus\mathbf{8}_s\oplus\mathbf{8}_c$ refers to the *same*
+three channels this project already derived from $S^3\times S^6$'s own
+triality automorphism (condition 1) — not to three independently-introduced
+copies of a similarly-shaped algebraic structure.
+
+---
+
 ## 4. PASS / FAIL criteria (for whoever evaluates a candidate construction)
 
 | Outcome | Condition |
 |---|---|
-| **PASS — L3b closes** | An object $(F, U, \rho)$ satisfying all five conditions in §3 is exhibited, with $\rho$ genuinely extending $U$ to a full Spin(8) action that commutes with the physical dynamics (not just the bare $S^6$ Dirac operator), and condition 5 (projectors survive compactification) is argued explicitly, not assumed. |
+| **PASS — L3b closes** | An object $(F, U, \rho)$ satisfying all five conditions in §3 is exhibited, with $\rho$ genuinely extending $U$ to a full Spin(8) action that commutes with the physical dynamics (not just the bare $S^6$ Dirac operator), and condition 5 (projectors survive compactification) is argued explicitly, not assumed. Must also pass the §3.5 anti-circularity screen. |
 | **PARTIAL** | Conditions 1–3 hold (a genuine Spin(8) symmetry commuting with $D$ exists) but condition 4 or 5 is not established — e.g. the symmetry exists but no argument shows the three sectors remain distinguishable after compactification, or no physical coupling actually depends on the label. This would be a real step forward but not yet a closure of L3b. |
 | **NO — Spin(8) is not physically realized** | The physical construction's fermions are strictly associated to the $S^6$ frame bundle alone (i.e. no symmetry beyond what geometry already supplies) — this would CONFIRM G102's implication rather than contradict it, and means the third channel needs a fundamentally different mechanism, not a Spin(8) postulate. This is itself a useful, publishable answer (see §5). |
+| **DISQUALIFIED — fails anti-circularity screen (§3.5)** | The candidate postulates $N$ separate copies/sectors matching the desired generation count instead of deriving them from the single existing structure. Answers a content-matching question, not this document's question. Not a PASS, PARTIAL, or NO — it simply does not address L3b. |
 
 ---
 
