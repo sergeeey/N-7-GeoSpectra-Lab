@@ -44,11 +44,12 @@ Since 3 is neither 1 nor ≥7, I(p,q)≠3 for all (p,q).
 2. Confirmed strict monotonic increase of I(p,0) for p=1..9 (exact sympy
    values: 1,7,27,77,182,378,714,1254,2079 — matches the "p≥2 increasing"
    step of the proof).
-3. Searched q≥1, p≥q+1 branch over q=1..14, p up to q+14 (210 pairs): global
+3. Searched q≥1, p≥q+1 branch over q=1..14, p up to q+14 (196 pairs): global
    minimum found is exactly I(2,1)=14, no value below 14 found — consistent
    with (not a substitute for) the claimed minimum-at-boundary argument.
 4. Sign-structure sweep over (p,q)∈[0,15]²: I(p,q)>0 ⟺ p>q holds with zero
-   exceptions (168 pairs checked in the p>q region).
+   exceptions (120 pairs checked in the p>q region, out of 256 total; the
+   remaining 136 split as 120 p<q + 16 p=q, both correctly ≤0).
 
 This is a wide numerical control, not a proof of the general monotonicity
 argument for all p — but it is consistent with the proof step-by-step and
