@@ -136,6 +136,57 @@ within a bounded effort, this route closes at condition 2, not condition 1 —
 still alongside the closed $\mathfrak{so}(8)$-internal search, but one step
 further along than previously recorded.
 
+**Attempted 2026-07-15 (same day) — hit an ALREADY-PROVEN wall, and the
+reason why is itself the useful result.** The naive approach — build $U$ as a
+map $\Phi_{v\to s}: E_v \to E_s$ between the three *separately labeled*
+canonical zero-mode bundles, and check $[D,\Phi]=0$ — is not merely
+unconstructed, it is **provably impossible**, by a theorem this project
+already proved before the F4 exploration began: **E-L3B**
+(`experiments/20260625-l3b-bundle-obstruction/`, 2026-06-25). Its proof:
+$\mathbf{8}_v,\mathbf{8}_s,\mathbf{8}_c$ restrict to the *identical*
+$\mathrm{SU}(3)$-module ($3\oplus\bar3\oplus1\oplus1$); by the homogeneous
+bundle correspondence theorem, $E_v\cong E_s\cong E_c$ as $G_2$-equivariant
+bundles *with identical canonical connections* — "the twisted Dirac operators
+$D\otimes E_v, D\otimes E_s, D\otimes E_c$ (with canonical connections) are
+THE SAME OPERATOR." Working through *why* a naive $\Phi$ fails clarifies the
+real obstruction precisely: any such $\Phi$ built purely from this canonical,
+$G_2$-only data is automatically **not** $\mathrm{Spin}(8)$-equivariant — if
+it were, it would be a nonzero element of
+$\mathrm{Hom}_{\mathrm{Spin}(8)}(\mathbf{8}_v,\mathbf{8}_s)$, which Schur's
+lemma forces to be exactly zero (§2 below), since $\mathbf{8}_v,\mathbf{8}_s$
+are inequivalent as $\mathrm{Spin}(8)$-representations. So a $\Phi$ satisfying
+$[D,\Phi]=0$ *can* be built at the $G_2$-only level (E-L3B's own corollary
+already gives one, trivially, since the operators are literally identical) —
+but that very success is exactly why it fails condition 3: it is a
+"coincidental" intertwiner that exists **because** $G_2$ cannot tell the
+channels apart, not evidence that a genuine $\mathrm{Spin}(8)$/$F_4$ structure
+is present. It is condition 4's "bookkeeping, not physics" concern, made concrete.
+
+**This reframes what "realizing $U$" actually requires.** $U$ must NOT be
+modeled as a map *between* three separately-labeled Hilbert spaces (that
+model is Schur-forbidden the moment it's asked to be genuinely
+$\mathrm{Spin}(8)$/$F_4$-equivariant, and physically empty the moment it
+isn't). The $F_4$/Jordan-algebra picture in this section models $U$ correctly:
+as an automorphism of *one* combined 24-real-dimensional object
+$F=\mathbf{8}_v\oplus\mathbf{8}_s\oplus\mathbf{8}_c$, permuting its three
+summands *as summands of a single representation* — not as an intertwiner
+between separate copies. This is not Schur-forbidden (permuting summands of
+one bigger representation is a different question from mapping between
+inequivalent irreps). But it requires the physical fiber to genuinely **be**
+this combined 24-dimensional $F_4$-natural object — which is a structural
+change from the current construction (three separately-labeled copies of one
+8-dimensional canonical bundle), not a re-derivation from what is already there.
+
+**Kill criterion, revised again:** the open question is no longer "does an
+intertwining $\Phi$ exist" (a wrong question — E-L3B answers it, and the
+answer doesn't help). It is: **does this project's physical construction
+have any independent reason to combine the three channels into one physical
+fiber object (rather than three separate sectors)** — e.g. from the
+$S^3$-spin-connection extension to $S^3\times S^6$, or Part 5's SU(4)
+transformations. Absent such a reason, this route is closed at the same
+place the $\mathfrak{so}(8)$-internal search closed: it requires new physical
+input, not a computation this framework can supply internally.
+
 ---
 
 ## 2. The precise question
