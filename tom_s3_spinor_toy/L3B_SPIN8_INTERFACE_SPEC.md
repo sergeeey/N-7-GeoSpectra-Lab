@@ -475,15 +475,15 @@ The 6-dimensional $+1$-eigenspace matches, dimension-for-dimension, the
 already-computed $\dim\,\mathrm{Stab}_{G_2}(H)=6$ (consistent cross-check:
 $G_2$-elements must be triality-fixed, i.e. eigenvalue $+1$ under this map).
 
-**Consequence:** $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ is not an
-arbitrary or convenient basis choice — it is a genuinely
-triality-*compatible* structure: the $G_2$-part (6-dim) is fixed pointwise
-as required, and the remaining, non-$G_2$ 6 dimensions (the part
-responsible for breaking $G_2$-invariance and distinguishing $s$ from $c$ at
-the spinor level) organize into three independent 120°-rotation planes under
-the SAME order-3 symmetry already used throughout this project. This
-substantially strengthens point 3 of the prior "what remains open" list —
-it is no longer merely unchecked, it is confirmed at the vector-rep level.
+**Consequence:** $\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$, *as it acts on
+the vector representation*, is not an arbitrary or convenient basis choice —
+it is a genuinely triality-*compatible* structure: the $G_2$-part (6-dim) is
+fixed pointwise as required, and the remaining, non-$G_2$ 6 dimensions
+organize into three independent 120°-rotation planes under the SAME order-3
+symmetry already used throughout this project. This substantially
+strengthens point 3 of the prior "what remains open" list, at the
+vector-rep level specifically — see below for why it does **not** yet
+license any claim about the spinor-rep ($\Gamma_A,\Gamma_B$) structure.
 
 **What is still NOT done, honestly:**
 - The precise cyclic bookkeeping across all three roles simultaneously
@@ -504,16 +504,64 @@ it is no longer merely unchecked, it is confirmed at the vector-rep level.
   identification with $S^3$, dynamical consistency with G73/E-L3B/G102) are
   entirely unaffected by this check and remain fully open.
 
+**Attempted 2026-07-15 (same day, continued once more) — tried to connect
+the vector-rep triality-invariance result above to the spinor-rep
+$(\Gamma_A,\Gamma_B)$ finding directly. Found a genuine, informative
+obstruction: the two constructions are not yet shown to be the same
+embedding, and there is concrete evidence they are structurally different.**
+
+*What was checked:* the two Cl(8) realizations used today — the Pauli-tensor
+construction ($\Gamma_1,\dots,\Gamma_8$, used for $\Gamma_A,\Gamma_B$) and the
+octonion-covariance construction (V=S+=S-=$\mathbb{O}$, used for the
+triality map $T$) — were built independently and never shown to be related
+by an explicit change of basis. To test whether they nonetheless encode the
+"same" $\mathfrak{so}(4)_1$ acting the same way on the spinor role, computed
+how the triality-*transported* image of $\mathfrak{so}(4)_1$ (i.e. the
+6-dimensional span of the $b$-partners of $\mathfrak{so}(4)_1$'s 6 basis
+generators — a genuine, closed Lie subalgebra, `[VERIFIED]` by checking
+$[b_i,b_j]$ stays in the span, residual $\sim10^{-15}$) acts on the $S^+$
+representation, compared to how the *untransported* $\mathfrak{so}(4)_1$
+acts on $V$:
+
+| Check | Untransported $\mathfrak{so}(4)_1$ on $V$ | Transported $\mathfrak{so}(4)_1$ on $S^+$ |
+|---|---|---|
+| Casimir $\sum_i b_i^2$ eigenvalues | Two distinct values (nonzero on $H$, zero on $H\ell$ — trivially block-split) | **All 8 equal** — no visible block split |
+| $\dim(\text{commutant})$ | 17 (inflated by the trivial/zero action on $H\ell$) | 8 (smaller — less degenerate, more "spread") |
+
+The transported algebra does **not** preserve the same $H$/$H\ell$ (block1/
+block2) split that defines it on the vector side — it acts across all 8
+dimensions in an entangled way. This means the "same-vs-opposite chirality"
+structure found via $\Gamma_A,\Gamma_B$ (built *directly* on the spinor
+representation, using a block split defined independently of any triality
+transport) is a **different mathematical construction** from "$\mathfrak{so}
+(4)_1\oplus\mathfrak{so}(4)_2$ transported to the spinor role by triality."
+Both are individually well-verified; asserting they are the *same* object
+would be an overclaim not yet earned by either computation.
+
+**Honest correction to the record:** the "Consequence" paragraph above
+(vector-rep triality-invariance) must be read as a standalone result about
+the vector representation. It does **not**, without further work, strengthen
+or explain the $(\Gamma_A,\Gamma_B)$ finding — that would require an
+explicit isomorphism between the two Cl(8) constructions used today (a
+concrete, doable, but nontrivial next step, not attempted).
+
 **Kill criterion, narrowed a fourth time:** the mathematical obstacle (no
-subgroup can distinguish $s$ from $c$) is no longer absolute —
-$\mathrm{SO}(4)\times\mathrm{SO}(4)$ is a concrete counterexample, and it is
-now confirmed to be a genuine triality-compatible structure (order-3
-invariant as a subalgebra), not merely a convenient basis. The
-remaining gap is now purely about *physical realization and dynamical
-consistency* (points 1–2 above) plus completing the cyclic bookkeeping and
-the vector-to-spinor connection — not about representation-theoretic
-possibility. This is the most promising open thread from today's work, and
-the most concrete starting point if/when Part 5's content becomes available.
+subgroup can distinguish $s$ from $c$) is no longer absolute — on the
+**spinor representation**, $\mathrm{SO}(4)\times\mathrm{SO}(4)$ (via
+$\Gamma_A,\Gamma_B$) is a concrete counterexample. Separately, on the
+**vector representation**, the analogously-constructed
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ is confirmed to be genuinely
+triality-compatible (order-3 invariant as a subalgebra). These two facts do
+**not** yet combine into one statement about a single object — see the
+correction above. The remaining gap is therefore: (a) physical realization
+and dynamical consistency (points 1–2), (b) completing the cyclic
+bookkeeping, and (c) — the one added this round — actually connecting the
+vector-rep and spinor-rep pictures via an explicit Cl(8)-to-Cl(8) change of
+basis, none of which is representation-theoretically foreclosed. This
+remains the most promising open thread from today's work, and the most
+concrete starting point if/when Part 5's content becomes available — but
+"promising" describes two separately-solid partial results, not yet one
+unified one.
 
 ---
 

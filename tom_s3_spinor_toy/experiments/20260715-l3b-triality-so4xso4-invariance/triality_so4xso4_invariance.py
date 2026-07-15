@@ -216,6 +216,52 @@ def build_triality_matrix_T():
     return t_matrix, max_partner_residual
 
 
+# ---------------------------------------------------------------------------
+# Does the triality-transported so(4)_1 preserve the same H/Hl block split
+# it has on the vector representation? (checked 2026-07-15, continued)
+# ---------------------------------------------------------------------------
+
+
+def transported_so4_1_generators():
+    """The 6 b-partners of so(4)_1's 6 basis generators (span(0,1,2,3) block)."""
+    basis = build_so4xso4_basis()
+    return np.array([solve_triality_partners(basis[i])[0] for i in range(6)])
+
+
+def is_closed_lie_subalgebra(generators, tol=1e-8):
+    """Check [g_i, g_j] lies in span(generators) for every pair -- a genuine Lie subalgebra."""
+    flat = generators.reshape(len(generators), -1)
+    max_resid = 0.0
+    for i in range(len(generators)):
+        for j in range(i + 1, len(generators)):
+            bracket = generators[i] @ generators[j] - generators[j] @ generators[i]
+            coeffs, _, _, _ = np.linalg.lstsq(flat.T, bracket.reshape(-1), rcond=None)
+            recon = flat.T @ coeffs
+            max_resid = max(max_resid, np.max(np.abs(recon - bracket.reshape(-1))))
+    return max_resid < tol, max_resid
+
+
+def casimir_eigenvalues(generators):
+    """Eigenvalues of sum_i g_i^2 -- constant across an irreducible invariant subspace."""
+    casimir = sum(g @ g for g in generators)
+    return np.linalg.eigvalsh(casimir)
+
+
+def commutant_dim(generators, tol=1e-8):
+    """dim of {M : [M, g_i] = 0 for all i} -- larger commutant means more degenerate/reducible."""
+    n = generators.shape[-1]
+    rows = []
+    for g in generators:
+        for i in range(n):
+            for j in range(n):
+                row = np.zeros((n, n))
+                row[i, :] += g[:, j]
+                row[:, j] -= g[i, :]
+                rows.append(row.reshape(-1))
+    _u, s, _vt = np.linalg.svd(np.array(rows))
+    return n * n - int(np.sum(s > tol))
+
+
 if __name__ == "__main__":
     print(
         "Octonion table is a division algebra (|xy|=|x||y| spot check):",
@@ -239,3 +285,27 @@ if __name__ == "__main__":
     print("\nT^3 == I:", np.allclose(T3, np.eye(12), atol=1e-6))
     n_plus1 = int(round(sum(1 for ev in evals if abs(ev.real - 1) < 1e-6 and abs(ev.imag) < 1e-6)))
     print("Number of +1 eigenvalues:", n_plus1, "(expect 6, matching dim Stab_G2(H))")
+
+    print("\n--- Does the transported so(4)_1 preserve the H/Hl block split? ---")
+    original_so4_1 = build_so4xso4_basis()[0:6]
+    transported = transported_so4_1_generators()
+
+    is_closed, closed_resid = is_closed_lie_subalgebra(transported)
+    print(
+        "transported so(4)_1 is a closed Lie subalgebra:", is_closed, f"(resid {closed_resid:.2e})"
+    )
+
+    print(
+        "Casimir eigenvalues, original so(4)_1 on V:      ",
+        np.round(casimir_eigenvalues(original_so4_1), 4),
+    )
+    print(
+        "Casimir eigenvalues, transported so(4)_1 on S+:  ",
+        np.round(casimir_eigenvalues(transported), 4),
+    )
+
+    print("commutant dim, original so(4)_1 on V:     ", commutant_dim(original_so4_1))
+    print("commutant dim, transported so(4)_1 on S+: ", commutant_dim(transported))
+    print("(smaller/different commutant + degenerate Casimir => transported algebra")
+    print(" does NOT preserve the same block split -- vector-rep and spinor-rep")
+    print(" SO(4)xSO(4) constructions are not yet shown to be the same embedding)")
