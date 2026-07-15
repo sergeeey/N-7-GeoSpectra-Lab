@@ -1,0 +1,65 @@
+STEP 1: built 14 generators (3 SU(2)_L + 3 SU(2)_R + 8 SU(3)_c) on 32x32.
+STEP 1: verified J_F^2 = I (so J_F^{-1} = J_F) and J_F Hermitian/symmetric.
+STEP 2a: complex commutant of {J,K} on S3 (4x4): dim = 2
+STEP 2a: complex commutant of {C_i} on S6 (8x8): dim = 6
+STEP 2b: full 32x32 complex commutant dim = dim(S3)*dim(S6) = 12
+STEP 2c: closure check — every complex-commutant basis element verified to commute with all 14 32x32 generators directly: PASS
+
+STEP 2 RESULT: commutant_dim_before_chirality (real, Hermitian) = 12
+STEP 2: verified every Hermitian commutant basis element is Hermitian and commutes with all 14 generators: PASS
+
+STEP 3: [T,gamma_F]=0 gives 0 nonzero equation(s) on 12 parameters.
+STEP 3 RESULT: commutant_dim_after_chirality = 12
+
+STEP 4: J_F*T*J_F=-T gives 40 nonzero equation(s) on 12 parameters.
+STEP 4 RESULT: commutant_dim_after_real_structure = 6
+STEP 4: verified all 6 basis elements of the reduced commutant satisfy constraints 1-3 exactly: PASS
+
+STEP 5: classification (derived from generator action, not hand-typed): 24 color-charged, 16 SU(2)_L-doublet-member, 16 SU(2)_R-doublet-member (of 32 states).
+
+[Primary reading — literal sum_{i=1}^{32}, exactly as specified in the task]
+  grav^2-U(1)    sum_i T_ii        = 0
+  SU(3)^2-U(1)   sum_color T_ii    = 0
+  SU(2)_L^2-U(1) sum_Ldbl T_ii     = -2*r0 - 6*r1 - 6*r2 - 2*r4
+  SU(2)_R^2-U(1) sum_Rdbl T_ii     = 2*r0 + 6*r1 + 6*r2 + 2*r4
+  U(1)^3         sum_i T_ii^3      = 0
+
+[Adversarial cross-check — standard one-chirality (L-sector-only) convention, matches Route B / textbook SM anomaly literature]
+  grav^2-U(1) (L-only)  = -2*r0 - 6*r1 - 6*r2 - 2*r4
+  SU(3)^2-U(1) (L-only) = -6*r1 - 6*r2
+
+STEP 5: primary (literal all-32) anomaly linear system rank = 1 (of 6 unknowns)
+STEP 5: grav^2-U(1) identically 0 given real-structure alone: True
+STEP 5: SU(3)^2-U(1) identically 0 given real-structure alone: True
+STEP 5: U(1)^3 identically 0 given real-structure alone (BEFORE imposing a,c,d,e): True
+STEP 5: cubic condition on the a/c/d/e-surviving space: 0  (redundant: True)
+
+STEP 5 RESULT (primary/official, literal all-32 reading): final_solution_dim = 5
+STEP 5 CROSS-CHECK (standard one-chirality convention): rank = 2, final_solution_dim_crosscheck = 4
+
+Primary (literal sum_i=1^32) reading: 5-real-parameter family survives constraints 1-4. Basis directions (in r0..r5 coordinates of the real-structure-reduced commutant): dir0=[-3, 1, 0, 0, 0, 0]; dir1=[-3, 0, 1, 0, 0, 0]; dir2=[0, 0, 0, 1, 0, 0]; dir3=[-1, 0, 0, 0, 1, 0]; dir4=[0, 0, 0, 0, 0, 1]. Of these 6 coordinates, r3 and r5 (in this script's basis ordering) are PURELY OFF-DIAGONAL 'flavor-mixing' directions (zero diagonal identically — they connect the SU(3)xSU(2)_L-isomorphic lepton-doublet/antilepton-doublet pair, and its CPT image) that do not appear in ANY of the 5 anomaly conditions (all 5 are literally diagonal-entry sums), so they remain completely unconstrained. Cross-check under the standard one-chirality convention gives 4-dimensional family instead (still >=2, same FAIL verdict).
+
+STEP 6 — reading BmL_32 (ONLY now) and comparing
+BmL_32 is diagonal: True
+BmL_32 expressed in (r0..r5) coordinates: [{r0: -1, r1: -1/3, r2: 1/3, r3: 0, r4: 1, r5: 0}]
+
+matches_BmL32 = False
+match_detail: final_solution_dim=5 != 1, so T is NOT unique — cannot be 'proportional to BmL_32' in the PASS sense. BmL_32 DOES lie within the surviving family, at the specific point {r0: -1, r1: -1/3, r2: 1/3, r3: 0, r4: 1, r5: 0} (mixing parameters zero: True; satisfies the primary anomaly system: True). This is a genuine additional structural fact (B-L is A member of a larger anomaly-free family, not singled out by constraints 1-4 alone), but it is NOT the PASS/PASS-DIFFERENT claim (uniqueness fails).
+
+STEP 7 — closure check on a representative solution
+Closure report (representative T, all constraints re-verified exactly): True
+  ALL constraints (14 commutators, Hermitian, chirality, real-structure, 5 anomaly conditions) hold EXACTLY on the representative solution: PASS
+
+======================================================================
+ROUND 61 ROUTE A — SUMMARY
+======================================================================
+commutant_dim_before_chirality       = 12
+commutant_dim_after_chirality        = 12
+commutant_dim_after_real_structure    = 6
+final_solution_dim (primary, all-32)  = 5
+final_solution_dim_crosscheck (L-only)= 4
+matches_BmL32                         = False
+closure check all-pass                = True
+VERDICT                               = FAIL
+
+Saved: E:\Проверка Гипотез\работаю над проверкой гипотез\N-7-GeoSpectra-Lab\tom_s3_spinor_toy\experiments\20260714-round61-bl-commutant-audit\results_round61_route_a.json
