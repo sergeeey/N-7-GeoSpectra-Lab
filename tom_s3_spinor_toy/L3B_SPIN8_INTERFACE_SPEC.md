@@ -585,6 +585,48 @@ not (any longer) a bookkeeping gap between two unconnected pictures. This is
 the most promising open thread from today's work, and the most concrete
 starting point if/when Part 5's content becomes available.
 
+**Attempted 2026-07-15 (same day, checked against an external literature-search
+proposal) — tried to verify whether an "exact-kernel-stability radius" argument
+(index invariance + this project's own existing spectral gap) could upgrade
+the lower bound $N_{\mathrm{gen}}\ge3$ to an exact $N_{\mathrm{gen}}=3$ under a
+$G_2$-breaking $\mathrm{SO}(4)\times\mathrm{SO}(4)$ perturbation. Found this
+does NOT work as hoped, for a reason specific to this project's own prior
+result, not a new derivation.**
+
+*Index-invariance half (sound, cheap):* for a continuous deformation of the
+connection on a fixed bundle, $\mathrm{ind}\,D_{\alpha,t}^+$ is homotopy-invariant
+(standard index theory — the index depends only on the stable symbol class,
+not the connection). This gives, for free, that $\dim\ker D_{\alpha,t}^+\ge1$
+per channel survives any continuous $\mathrm{SO}(4)\times\mathrm{SO}(4)$-type
+deformation — $N_{\mathrm{gen}}\ge3$ is robust.
+
+*Exact-kernel half (does NOT survive, `[VERIFIED]` by re-reading this
+project's own G74A):* this project already has a Lichnerowicz-type spectral
+gap establishing $\dim\ker=1$ *exactly* per channel (not just $\ge1$) — see
+`experiments/20260621-g74a-lichnerowicz-gap/decision.md`. But that result is
+**two independent lemmas**, not one: Lemma A (Lichnerowicz/Weitzenböck gap,
+safety factor $45/8$) bounds *accidental* zero modes and is the kind of
+spectral-gap argument expected to survive small perturbations; Lemma B
+(G$_2$-Schur cap, giving $\dim\ker\le1$ — the part that makes the bound
+*exact*, not just a lower bound) is explicitly recorded in that same
+decision.md as depending on **exact** $G_2$-symmetry: *"Does NOT apply if
+$S^6$ is deformed away from the round metric... Lemma B depends on exact
+$G_2$ symmetry"* (G74A's own "What this does NOT mean," point 2, written
+2026-06-21, a month before today's $\mathrm{SO}(4)\times\mathrm{SO}(4)$ work).
+
+**Consequence:** the moment a $G_2$-breaking perturbation is turned on — which
+is not optional, it is the entire mechanism's premise — Lemma B's proof
+method (Schur's lemma applied to an *exact* symmetry) does not degrade
+gradually with perturbation size; it simply no longer applies, at any
+nonzero perturbation. This is not a "stability radius" question (as the
+external proposal framed it) — there is no radius to compute, because the
+tool itself requires exactness. So: $N_{\mathrm{gen}}\ge3$ survives (via
+index invariance, cheaply); the "$=3$, not more" upper bound does **not**
+automatically survive, and would need an independent argument (e.g. a
+$K=\mathrm{Spin}(4)\times\mathrm{Spin}(4)$-equivariant analogue of Lemma B,
+not yet attempted) before this project could claim the exact zero-mode count
+is protected under the very perturbation this whole route requires.
+
 ---
 
 ## 2. The precise question
