@@ -80,19 +80,61 @@ extension of $\mathfrak{g}_2=\mathrm{Der}(\mathbb{O})$ already used throughout
 this project ($\mathbb{O}\to J_3(\mathbb{O})$ is exactly the octonion →
 exceptional-Jordan-algebra extension).
 
-**What remains genuinely open (this is a candidate ROUTE, not a solution):**
-whether this project's own $S^3\times S^6$ compactification naturally carries
-a *physically realized* $F_4$ structure acting on the relevant fiber, such
-that (a) $G_2$ (already the isotropy of $S^6$) sits inside this $F_4$ in the
-standard way, (b) the resulting triality-realizing $F_4$ element acts on the
-actual field content, not just the abstract Lie algebra, and (c) this action
-commutes with the physical Dirac operator (condition 2 of §3). None of (a)–(c)
-is established — only the underlying pure-math fact that the obstruction is
-not absolute once the ambient algebra is enlarged.
+**Upgraded to an EXPLICIT construction (2026-07-15, follow-up check):**
+Two independent verifications, not just the abstract Weyl-group argument above:
 
-**Kill criterion:** if no explicit construction of (a)–(c) can be produced
-within a bounded effort, this route is no more actionable than the closed
-$\mathfrak{so}(8)$-internal search and should be marked closed too, alongside it.
+1. **From scratch (this round):** built the octonion multiplication table via
+   Cayley-Dickson doubling, solved the derivation equation
+   $D(xy)=D(x)y+xD(y)$ as a linear system over the 64 entries of an $8\times8$
+   real matrix $D$ — the null space is exactly 14-dimensional
+   (rank 50 of 64, confirmed by SVD), i.e. $\mathfrak{g}_2=\mathrm{Der}(\mathbb{O})$
+   computed directly, not cited. Every one of the 14 basis derivations
+   annihilates the real unit $e_0$ exactly (residual $\sim10^{-15}$) and acts
+   skew-symmetrically on $\mathrm{Im}(\mathbb{O})$: confirms
+   $\mathbf{8}_v = \mathbf{1}\oplus\mathbf{7}$ under $\mathfrak{g}_2$ directly,
+   matching G102's own $\mathrm{Hom}_{\mathfrak{g}_2}=2$ finding by Schur-count
+   ($1^2+1^2=2$, multiplicity-free two-irrep decomposition).
+
+2. **Primary source (Baez, "The Octonions," arXiv:math/0105155, §3.4/4.2 —
+   read in full, pymupdf extraction):** confirms, verbatim, that
+   $J_3(\mathbb{O})\cong\RR^3\oplus V_8\oplus S_8^+\oplus S_8^-$ (his eq. 7 —
+   exactly the $\mathbf{8}_v\oplus\mathbf{8}_s\oplus\mathbf{8}_c$ split via the
+   three off-diagonal octonion entries $x,y,z$), that
+   $\mathrm{Spin}(8)\subseteq\mathrm{Aut}(J_3(\mathbb{O}))$, that $\dim\,\mathrm{Aut}(J_3(\mathbb{O}))=52$
+   ("it goes by the name of $F_4$"), and — the load-bearing sentence —
+   *"there are other automorphisms coming from the permutation group on 3
+   letters, which acts on $(\alpha,\beta,\gamma)\in\RR^3$ and $(x,y,z)\in\mathbb{O}^3$
+   in an obvious way."* This is an **explicit, named, primary-source-confirmed**
+   $S_3\subset F_4$ permuting the three octonion slots $(x,y,z)$ that literally
+   host $\mathbf{8}_v,\mathbf{8}_s,\mathbf{8}_c$ — not an abstract existence
+   argument from Weyl-group order division.
+
+**Direct consequence (this project's own deduction, not stated by Baez):**
+define a "diagonal" $\mathfrak{g}_2\subset F_4$ by applying the *same*
+automorphism $g\in\mathrm{Aut}(\mathbb{O})$ to each of $x,y,z$ simultaneously.
+Since the $S_3$ slot-permutation and this diagonal action operate on
+independent structures (which slot vs. what happens inside each slot), they
+commute *by construction* — the permutation does not merely normalize this
+$\mathfrak{g}_2$, it **centralizes** it. Condition 1 below (a $U$ with $U^3=1$)
+is therefore explicitly realized: $U$ = cyclic permutation of $(x,y,z)$,
+$U^3=\mathbb{1}$ exactly, and $U$ commutes with the diagonal $\mathfrak{g}_2$
+already present in this project's own $S^6=G_2/\mathrm{SU}(3)$ construction.
+
+**What STILL remains genuinely open (this is a candidate ROUTE, not a
+solution — conditions 2–5 of §3, not condition 1):** whether this abstract
+$U$ (an automorphism of the algebraic object $J_3(\mathbb{O})$) corresponds to
+an operator on the *physical* field content of this project's actual
+$S^3\times S^6$ Dirac construction, and whether it commutes with the *physical*
+Dirac operator $D$ — conditions 2–5 are entirely about this translation from
+algebra to physics, and none of it is done. Condition 1 is now closed;
+conditions 2–5 are the real remaining work.
+
+**Kill criterion (narrowed accordingly):** if no explicit physical
+realization of $U$ (acting on actual zero-mode wavefunctions, not just the
+abstract $J_3(\mathbb{O})$ automorphism) commuting with $D$ can be produced
+within a bounded effort, this route closes at condition 2, not condition 1 —
+still alongside the closed $\mathfrak{so}(8)$-internal search, but one step
+further along than previously recorded.
 
 ---
 
