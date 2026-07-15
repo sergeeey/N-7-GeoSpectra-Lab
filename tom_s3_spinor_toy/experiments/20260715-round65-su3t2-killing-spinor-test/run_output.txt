@@ -1,0 +1,83 @@
+==============================================================================
+STEP 0  Transcription check: C1,C2,C3 from CH2016 eq.(35)
+==============================================================================
+  C1 = E_12   (matrix [[0, 1, 0], [0, 0, 0], [0, 0, 0]])
+  C2 = E_23   (matrix [[0, 0, 0], [0, 0, 1], [0, 0, 0]])
+  C3 = E_31   (matrix [[0, 0, 0], [0, 0, 0], [1, 0, 0]])
+
+==============================================================================
+STEP 1  Weights of all 6 root vectors under (H1,H2), cross-checked
+        against CH2016's own stated m*_C weight list
+==============================================================================
+  weight(E_12) = (2, -1)
+  weight(E_13) = (1, 1)
+  weight(E_21) = (-2, 1)
+  weight(E_23) = (-1, 2)
+  weight(E_31) = (-1, -1)
+  weight(E_32) = (1, -2)
+
+  CH2016-stated m*_C weight set : [(-2, 1), (-1, -1), (-1, 2), (1, -2), (1, 1), (2, -1)]
+  computed weight set (all 6 E_ij): [(-2, 1), (-1, -1), (-1, 2), (1, -2), (1, 1), (2, -1)]
+  match: True
+
+==============================================================================
+STEP 2  m^{1,0}_C = weights of {E12,E23,E31}  (CH2016 eq.35 basis)
+==============================================================================
+  W10 = [(2, -1), (-1, 2), (-1, -1)]
+  sum(W10) = (0, 0)   (must be (0,0) for the top wedge Lambda^3(m^1,0)
+             to be T^2-invariant -- forced by det=1, m^{1,0} subset su(3))
+
+==============================================================================
+STEP 3  Exterior powers of m^{1,0}_C (weights)
+==============================================================================
+  Lambda^0 = [(0, 0)]
+  Lambda^1 = [(2, -1), (-1, 2), (-1, -1)]
+  Lambda^2 = [(1, 1), (1, -2), (-2, 1)]
+  Lambda^3 = [(0, 0)]
+  Sigma_even (Lambda^0+Lambda^2) = [(0, 0), (1, 1), (1, -2), (-2, 1)]   dim=4
+  Sigma_odd  (Lambda^1+Lambda^3) = [(2, -1), (-1, 2), (-1, -1), (0, 0)]    dim=4
+
+==============================================================================
+STEP 4  T^2-invariant (weight-0) subspaces  (analog of Round 59's
+        SU(3)-invariant domain/target)
+==============================================================================
+  domain = (Sigma_odd (x) Sigma_even)^(T^2) weight-0 pairs:
+    (2, -1) (x) (-2, 1)
+    (-1, 2) (x) (1, -2)
+    (-1, -1) (x) (1, 1)
+    (0, 0) (x) (0, 0)
+  dim(domain) = 4   (Round 59's SU(3) analog had dim 2 --
+               a genuine structural difference for abelian isotropy,
+               see decision.md)
+  target = (Sigma_even (x) Sigma_even)^(T^2) weight-0 pairs:
+    (0, 0) (x) (0, 0)
+  dim(target) = 1   (Round 59's SU(3) analog also had dim 1)
+
+  v_b analog = (top-wedge)(x)(1) has weight ((0, 0), (0, 0)) -- confirmed in domain.
+  Since dim(target)=1, ANY nonzero component of D+(v_b) along the target
+  forces rank(D+|trivial-block) = 1 (cannot exceed 1, target is 1-dim).
+
+==============================================================================
+STEP 5  Term2-analog vanishing: does Lambda^2(x)Lambda^2 contain a
+        T^2-weight-(0,0) ("no singlet" analog) term?
+==============================================================================
+  Lambda^2 weights: [(1, 1), (1, -2), (-2, 1)]
+  Lambda^2 (x) Lambda^2 weight-0 pairs found: []
+  count = 0
+  => Term2-analog structurally forced to vanish (no weight-0 term): True
+
+==============================================================================
+SUMMARY
+==============================================================================
+  transcription/weight cross-check vs CH2016 stated m*_C list : True
+  Lambda^3(m^1,0) T^2-invariant (top wedge exists)            : True
+  dim(domain, Sigma_odd(x)Sigma_even)^(T^2)                    : 4
+  dim(target, Sigma_even(x)Sigma_even)^(T^2)                   : 1
+  v_b analog lies in domain                                    : True
+  Term2-analog forced to vanish (no weight-0 in Lam2(x)Lam2)   : True
+
+  VERDICT: PROMOTE-consistent -- Term1 nonzero (general nearly-Kahler
+  Killing-spinor fact, source-stated for SU(3)/U(1)^2 by CH2016 Sec.4,
+  see decision.md) + Term2-analog vanishes by an honestly-rechecked
+  T^2 weight computation (this script) => rank(D+|trivial-block) = 1
+  by the same two-line argument, target space being 1-dimensional.
