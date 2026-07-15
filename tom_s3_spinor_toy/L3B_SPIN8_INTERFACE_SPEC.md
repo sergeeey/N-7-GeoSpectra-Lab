@@ -627,6 +627,47 @@ $K=\mathrm{Spin}(4)\times\mathrm{Spin}(4)$-equivariant analogue of Lemma B,
 not yet attempted) before this project could claim the exact zero-mode count
 is protected under the very perturbation this whole route requires.
 
+**Attempted 2026-07-15 (same day, continued) — tried to build the
+$K$-equivariant analogue of Lemma B directly. Found a structural obstruction
+to the whole approach, not a number.**
+
+*Computed, `[VERIFIED]`:* the joint kernel of all 12
+$\mathfrak{so}(4)_1\oplus\mathfrak{so}(4)_2$ generators, acting on each of
+$\mathbf8_v$ (directly, vector rep) and $\mathbf8_s,\mathbf8_c$ (via the
+spin-lift, i.e. restricting $\sigma_{ij}=\tfrac14[\Gamma_i,\Gamma_j]$ to each
+chirality eigenspace) is **zero-dimensional in all three channels** —
+$\mathrm{SO}(4)\times\mathrm{SO}(4)$ has no invariant vector anywhere in the
+fiber (consistent with the branching computed earlier: none of the pieces
+$(4,1),(1,4),(2,1;2,1),\dots$ is the fully trivial $(1,1;1,1)$).
+
+*Why this number does NOT give an upper bound the way it did for $G_2$
+(the actual finding):* Lemma B's mechanism is not "count singlets in the
+fiber" in the abstract — it relies on a specific fact about **homogeneous
+bundles**: since $G_2$ acts *transitively on the base* $S^6=G_2/\mathrm{SU}(3)$,
+Frobenius reciprocity gives $\{G_2\text{-invariant sections}\}\cong
+\{\mathrm{SU}(3)\text{-invariant vectors in the fiber}\}$ — this is what
+turns a fiber-representation count into a statement about zero modes (which
+are sections). $K=\mathrm{Spin}(4)\times\mathrm{Spin}(4)$, as constructed
+today, acts **only on the fiber, uniformly at every point of $S^6$** — it
+does not act on the base at all. Without a $K$-action on the base, there is
+no analogous invariant-sections-to-invariant-fiber-vectors correspondence to
+invoke, so the computed "$0$" above is a real, verified fact about the fiber
+but does **not** translate into "$\dim\ker\le0$" (or any other bound) for a
+hypothetical $K$-equivariant Dirac operator — the inference step itself is
+unavailable, not merely the number.
+
+**Consequence:** a direct $K$-equivariant analogue of Lemma B does not exist
+with current tools — not from insufficient computation, but because Lemma
+B's proof technique structurally requires a symmetry acting on the *base*,
+and $K$ currently does not. This sharpens (again) exactly what "Global
+$K$-reduction" (§6, Round 67 in the literature-search proposal) would need
+to supply: not merely *some* base action, but one specific enough that a
+Frobenius-reciprocity-type argument applies — and even then, the relevant
+invariant-counting question would be relative to whatever isotropy subgroup
+of that base action is, not to $K$ itself. This is not resolvable without
+new input (Part 5, or an explicit choice of how $K$ might act on $S^3\times
+S^6$ jointly) and is not attempted further here.
+
 ---
 
 ## 2. The precise question
