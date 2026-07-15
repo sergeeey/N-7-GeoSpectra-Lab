@@ -160,6 +160,21 @@ worth naming explicitly since it recurred here in a new guise.
    (3 skeptics, context-blind per the workflow's own design) and is what
    caught this — no further skeptic round needed before reporting.
 
+## Retroactive code review (Step per pre-commit checklist, run after commit `8da8c6b` — process gap, closed here)
+
+`Agent(reviewer)` on all three Python files (`round63_corrected_v2.py`,
+`round63_route_a_critical_points.py`, `round63_route_b_independent_check.py`):
+**LGTM, P2 only** (0 blockers, 0 must-fix). Verified independently: both
+routes' positive controls check against the correct `tests/test_g62_observables.py`
+reference constants; the bifurcation-search bisection's monotonicity
+assumption holds (tested directly); the 3 ruff-lint fixes in Route B (two
+`lambda`→`def` conversions) did not introduce a late-binding closure bug —
+confirmed the `lf=lam_func` default-argument pattern correctly captures each
+loop iteration's value (15 distinct survivor `rho6_min` values in the output,
+not 15 copies of one). 3 P2 notes recorded (unused `route2_confirmed` filter
+field, a cosmetic print-column mismatch, a docstring/code grid-spacing
+mismatch) — none affect any reported number.
+
 ## Files
 
 - `claim.md` — frozen before running (contains the FLAWED substitution
