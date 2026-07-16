@@ -30,6 +30,56 @@ Next diagnosis should test window width, quantile centering, seed stability,
 larger `L`, open-vs-periodic boundaries, and dense/sparse eigensolver
 consistency.
 
+## Dense/sparse eigensolver consistency — Findings 1-2 (2026-07-17)
+
+Reference: `reports/TRACK_A_NUMERICAL_AUDIT_2026-07-17.md`.
+
+The `dense/sparse eigensolver consistency` item named above was never
+followed up between May and July 2026. It was checked directly by reading
+the solver code and running both paths on identical Hamiltonians at the
+project's own parameters.
+
+**Finding 1 — CONFIRMED and FIXED.** `cc_toy_lab/spectral/anderson.py`
+(`_central_eigensystem`, 1D module) switched at `size<=192` between dense
+(full spectrum, then windowed by energy fraction) and sparse (`eigsh`,
+truncated to `k` eigenvalues, *then* windowed by the same energy fraction) —
+the number of eigenvalues actually captured in the central window differed
+**2-4x** between the two paths (e.g. size=200, W=4, seed=2: 76 dense vs 18
+sparse eigenvalues in the window), with resulting r-statistic/IPR values
+differing beyond realization noise in the majority of tested cases (e.g.
+size=300, W=20, seed=3: IPR 0.663 dense vs 0.724 sparse). Fixed: the window
+half-width is now derived from a Gershgorin spectral bound computed on the
+matrix itself, independent of which solver path is taken; the sparse path
+requests a margin-adjusted `k` and falls back to dense at the window edge.
+Two regression tests were added (`tests/test_anderson_benchmark.py`)
+asserting no discontinuity in window population across the `size=192`
+solver-switch boundary. Existing suite (5/5 in-file, 19/19 anderson-related
+project-wide) still passes; `ruff check` clean.
+
+**Finding 2 — CONFIRMED and FIXED (same day, follow-up).**
+`cc_toy_lab/spectral/anderson_3d.py` (`central_eigensystem`) selected a
+*fixed count* of eigenvalues on both paths, but by different criteria: dense
+picked eigenvalues nearest the spectrum's index center, sparse picked
+eigenvalues nearest value 0. These coincide only for an exactly symmetric
+spectrum, which on-site disorder breaks. At the project's own L=7
+"final-size" point (343 sites, above the module's `size<=260` dense/sparse
+threshold), the two paths selected overlapping but not identical eigenvalue
+sets: 30-46 of 48 shared (62-96% overlap) across W in {4,24}, 5 seeds each,
+with some r/IPR differences exceeding the already-documented per-seed
+variance (e.g. W=24 seed=4: r=0.376 dense vs 0.354 sparse, IPR 0.319 vs
+0.299). Fixed: the dense branch now also selects by nearest-to-zero
+`|value|`, matching the sparse branch's criterion exactly. Re-verified on
+the same L=7/W/seed grid: eigenvalue-set overlap is now 48/48 (exact) in all
+10 cases, r/IPR match to <1e-6. Two regression tests were added
+(`tests/test_anderson_3d.py`). Existing suite (5/5 → 7/7 in-file, 21/21
+anderson-related project-wide) still passes; `ruff check` clean. The L=7
+"final-size" point no longer carries this solver-choice caveat.
+
+**Unaffected:** `scripts/benchmark_gate4b_true_ipr.py` (the flagship 7.07x
+IPR-contrast headline claim) uses `np.linalg.eigh` unconditionally — no
+sparse branch, no truncated-k, no windowing-after-truncation pattern. Not
+exposed to either finding above.
+
 ## Quantile_0.5 targeted follow-up
 
 Run directory: reports\RUNS\20260512-091720_anderson_quantile05_diagnostics
