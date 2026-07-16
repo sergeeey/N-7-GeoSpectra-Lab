@@ -367,3 +367,64 @@ proof), but it was only shown here for bundles built as Sym^k(V) or
 traceless(V⊗V*), not for an arbitrary (p,q) irrep constructed by a general
 plethysm — the representation-ring route (R(SU(3))→K⁰(S⁶)→ℤ) that
 claim-A-index-map.md names as the genuinely independent Path B remains untried.
+
+---
+
+## Independent second-pass verification of KT-4, KT-5, KT-6 (2026-07-16)
+
+At the user's request, KT-4, KT-5, and KT-6 were re-verified by fresh agents
+with no access to this report (or Round 1/2) and, for KT-6, no access to the
+first pass's own committed script — genuinely independent re-derivations, not
+re-runs of the same code. Per this project's own Independent Verification
+Strength Ladder, this moves the evidence for these three results from "same
+model, isolated context" toward "independently-written code" — a real step up,
+though still the same underlying model family, not a cross-model check.
+
+**KT-4 — CONFIRMED, with a new insight.** Independent construction (own Sym^p(V)
+and adjoint=V⊗V̄-minus-trivial code, Weyl-dimension-formula cross-check, 4-point
+numeric spot-check in addition to symbolic) reproduced I(1,1)=0 and I(3,0)=27
+exactly. New, genuinely additional finding: the adjoint's weight multiset is
+exactly invariant under negation, which forces ch3=0 by parity for *any*
+self-conjugate irrep (p,p) — a structural reason (not just this computation)
+that generalizes beyond the two checked points, independently derived, not in
+the first pass's writeup.
+
+**KT-6 — CONFIRMED.** Independent construction (own SU(2) generator matrices,
+own fermion-multiplet table built by tracing through the block-generator code
+rather than reading the first pass's script) reached the identical structural
+conclusion — Q_R=(u_R,d_R) and L_R=(ν_R,e_R) are genuine SU(2)_R doublets, no
+bidoublet fermion exists, 4 doublets (even) for the Witten check — and
+independently arrived at essentially the same meta-observation as the first
+pass (3 of 5 conditions are group-theoretic tautologies true for any content;
+only the bidoublet-absence fact and the doublet-parity count are actually
+informative about this specific geometric derivation).
+
+**KT-5 — CONFIRMED, after correctly catching a real process gap.** The second-pass
+agent first found *no trace* in the repository of the ρ=14 5-piece-decomposition
+check the first pass claimed to have run (no file, no decision.md entry) and
+flagged this honestly as a discrepancy rather than assuming the claim was true.
+Instructed to actually perform the reconstruction fresh, it did so and got an
+**exact symbolic match** on all 12 of 12 basis vectors of the ρ=14 multiplicity
+space (λ²_min=10/3, matching the first pass exactly) — plus a sign-convention
+control the first pass didn't report as explicitly: the opposite sign
+convention fails cleanly on all 12/12 vectors (6-23 nonzero residual entries
+each), confirming the match is a real, sensitive test, not a vacuous one.
+**Verdict: the first pass's claim was accurate — the work was real, it just was
+never persisted to the repository as a file.** This is a legitimate process
+lesson (see below), not a validation-theater finding.
+
+**New artifact created this pass:** `tom_s3_spinor_toy/experiments/20260708-dolan-casimir-g2su3/g2su3_v14_5piece_decomposition_check.py` —
+the ρ=14 decomposition-vs-ground-truth check, now actually saved to the repo
+(closing the gap the second-pass agent found). Not yet wired into a formal
+Round entry/decision.md — that would be a follow-up for the project itself if
+it wants to formally promote this into its own gate-tracker, separate from
+this audit.
+
+**Process lesson worth recording:** an agent that computes something real but
+doesn't save the artifact leaves the *project* unable to verify the claim was
+ever actually checked, even when the claim itself was true. "I ran it and got
+X" is weaker than "here is the file that ran and got X" — this matches the
+project's own Verification Substrate Gate concept (artifacts must be persisted
+to a file/log, not asserted only in conversation) and should be treated as a
+standing instruction for any future audit work: save the script, not just the
+reported number.
