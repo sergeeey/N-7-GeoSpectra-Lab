@@ -44,18 +44,51 @@ def build_anderson_hamiltonian(
     return matrix.tocsr()
 
 
-def _central_eigensystem(matrix: sparse.spmatrix, window_fraction: float = 0.4) -> tuple[np.ndarray, np.ndarray]:
+def _gershgorin_half_width(matrix: sparse.spmatrix, window_fraction: float) -> float:
+    """Window half-width from the matrix's own Gershgorin spectral bound.
+
+    WHY: the window used to be defined from `values[-1] - values[0]` of
+    whatever eigenvalues had already been computed. That range is the full
+    spectrum for the dense path but only the `k` eigenvalues nearest zero
+    for the sparse path, so the two paths applied `window_fraction` to two
+    different ranges and captured a different number of eigenvalues (2-4x
+    apart in testing) -- see reports/TRACK_A_NUMERICAL_AUDIT_2026-07-17.md.
+    Deriving the bound from the matrix itself instead makes the window
+    definition identical regardless of which eigensolver path is taken.
+    """
+    csr = matrix.tocsr()
+    diagonal = np.asarray(csr.diagonal(), dtype=float)
+    row_abs_sum = np.asarray(np.abs(csr).sum(axis=1)).ravel()
+    off_diag_radius = row_abs_sum - np.abs(diagonal)
+    lower = float(np.min(diagonal - off_diag_radius))
+    upper = float(np.max(diagonal + off_diag_radius))
+    return (upper - lower) * window_fraction / 2.0
+
+
+def _central_eigensystem(
+    matrix: sparse.spmatrix, window_fraction: float = 0.4
+) -> tuple[np.ndarray, np.ndarray]:
     size = matrix.shape[0]
+    half_width = _gershgorin_half_width(matrix, window_fraction)
+
     if size <= 192:
         values, vectors = np.linalg.eigh(matrix.toarray())
     else:
-        k = min(max(48, size // 4), size - 2)
+        # Request enough eigenvalues near zero that the window is unlikely
+        # to be truncated by k, not just a fixed fraction of size.
+        expected_in_window = max(8, int(size * window_fraction) + 1)
+        k = min(max(48, 2 * expected_in_window, size // 4), size - 2)
         values, vectors = eigsh(matrix, k=k, sigma=0.0, which="LM")
         order = np.argsort(values)
         values = values[order]
         vectors = vectors[:, order]
+        # Defensive check: if the window would reach the edge of what we
+        # actually computed, the sparse path may be truncating it (the same
+        # failure mode this fix targets) -- fall back to dense rather than
+        # silently return an incomplete window.
+        if half_width >= min(abs(values[0]), abs(values[-1])):
+            values, vectors = np.linalg.eigh(matrix.toarray())
 
-    half_width = (float(values[-1]) - float(values[0])) * window_fraction / 2.0
     mask = (values >= -half_width) & (values <= half_width)
     if np.count_nonzero(mask) < 8:
         return values, vectors
@@ -77,7 +110,9 @@ def analyze_anderson_once(
 
 def run_anderson_sweep(
     sizes: list[int] | tuple[int, ...] = (512,),
-    disorder_values: list[float] | np.ndarray | tuple[float, ...] = tuple(np.linspace(0.5, 30.0, 30)),
+    disorder_values: list[float] | np.ndarray | tuple[float, ...] = tuple(
+        np.linspace(0.5, 30.0, 30)
+    ),
     realizations: int = 30,
     seed: int = 42,
     window_fraction: float = 0.4,
@@ -105,9 +140,13 @@ def run_anderson_sweep(
                 AndersonPoint(
                     disorder=float(disorder),
                     mean_r=float(np.mean(r_arr)),
-                    stderr_r=float(np.std(r_arr, ddof=1) / np.sqrt(max(len(r_arr), 1))) if len(r_arr) > 1 else 0.0,
+                    stderr_r=float(np.std(r_arr, ddof=1) / np.sqrt(max(len(r_arr), 1)))
+                    if len(r_arr) > 1
+                    else 0.0,
                     mean_ipr=float(np.mean(ipr_arr)),
-                    stderr_ipr=float(np.std(ipr_arr, ddof=1) / np.sqrt(max(len(ipr_arr), 1))) if len(ipr_arr) > 1 else 0.0,
+                    stderr_ipr=float(np.std(ipr_arr, ddof=1) / np.sqrt(max(len(ipr_arr), 1)))
+                    if len(ipr_arr) > 1
+                    else 0.0,
                     realizations=len(r_arr),
                 )
             )

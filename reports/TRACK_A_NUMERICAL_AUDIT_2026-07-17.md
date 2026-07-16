@@ -47,6 +47,22 @@ averaged over the seed count the project normally uses).
 and `tests/test_anderson_benchmark.py` — a 1D diagnostic module, not the
 flagship claim (see Finding 3).
 
+**FIXED (2026-07-17):** `_central_eigensystem` now derives the window
+half-width from a Gershgorin spectral bound computed directly on the matrix
+(`_gershgorin_half_width`), so the window definition no longer depends on
+which eigensolver path was taken. The sparse path also requests a
+margin-adjusted `k` (double the uniform-density estimate of eigenvalues
+expected in the window) and falls back to dense if the window would still
+reach the edge of what was computed. Re-ran the same size/W/seed grid as
+this finding used originally: window population now scales smoothly across
+the size=192 boundary (e.g. size=180→~87-91, 192→~90-98, 193→~90-98,
+200→~93-105 — previously ~74-84 dense vs ~17-24 sparse, a 3-4x discontinuity).
+Added two regression tests (`tests/test_anderson_benchmark.py`) that assert
+the window population doesn't jump discontinuously across the solver switch
+and that r/IPR statistics agree within noise on either side of it. Existing
+test suite (5/5 in this file, 19/19 across all anderson-related tests
+project-wide) still passes; `ruff check` clean.
+
 ## Finding 2 — MILDER, WORTH TRACKING: `anderson_3d.py`'s dense/sparse eigenvalue-set selection differs modestly at the project's own L=7 "final-size" parameters
 
 `anderson_3d.py:central_eigensystem` is architecturally different from the 1D
@@ -93,14 +109,10 @@ but numerically the safest possible choice — full spectrum, no truncation bias
    reads as an open, unaddressed call from May 2026. Recommend updating it to
    record Findings 1–2 above (partially checked, one real issue found, one
    milder one flagged) rather than leaving it as a silent gap indefinitely.
-2. Finding 1 (`anderson.py`) is a genuine numerical bug in the 1D toy module's
-   window-then-truncate ordering — the fix is mechanical (compute the energy
-   window's bounds from a coarse estimate first, or request enough sparse
-   eigenvalues to guarantee the window is fully populated, then confirm
-   equivalence). Low priority given this module isn't behind any currently-cited
-   headline claim, but worth fixing before this module is reused for anything
-   claim-bearing.
-3. Finding 2 (`anderson_3d.py`) does not require an urgent fix, but the
+2. ~~Finding 1 (`anderson.py`) is a genuine numerical bug...~~ **DONE (2026-07-17)**
+   — see the "FIXED" note under Finding 1 above.
+3. Finding 2 (`anderson_3d.py`) does not require an urgent fix (not requested,
+   not applied this pass), but the
    systematic multi-seed dense-vs-sparse check `ISSUES_SCIENTIFIC.md` asked for
    should actually be run before the L=7 "final-size" point is cited again as
    the strongest evidence in any future write-up — right now it rests on a
