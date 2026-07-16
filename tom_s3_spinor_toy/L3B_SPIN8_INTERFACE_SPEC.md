@@ -6,6 +6,22 @@ reaches out when Part 4/5 are ready. This document exists so that, when
 contact happens, the single open technical question can be handed over as a
 precise specification instead of a vague "we need Spin(8) symmetry."
 
+**Queued follow-up (2026-07-15, Project 360° Scientific Red Team audit —
+`reports/PROJECT_360_ROUND3_SYNTHESIS.md`):** KT-3 in that audit's kill-table is
+exactly this document's condition 1 — whether the diagonal 𝔤₂⊂F₄ (24-dim,
+acting on 𝕆³, §1.5 below) is actually identifiable with the geometric G₂
+acting on S⁶'s single 8-dim fibre — flagged there as *assumed, not yet
+constructed* (a differential-geometry lens found the 24-dim vs 8-dim rep
+mismatch is a real gap, not just a labeling issue). That audit also closed
+KT-2 the same day: triality acts as the literal identity on S⁶ as a base
+isometry (verified over the full 28-dim 𝔰𝔬(8), Fix(T)=𝔤₂ exactly) — this
+does not close the F4/fibre route below, but it does mean the "symmetric
+escape at the base level" some readers might reach for is foreclosed; the
+remaining question really is the fibre-level one this document specifies.
+KT-3 itself is queued, not run — it needs Tom's own framework input, not more
+internal compute (see this file's own §1.5 close: "conditions 2-5... require
+an object that is not already implicit in S³×S⁶ geometry").
+
 **Purpose:** this is the ONE remaining gap in the paper's headline claim
 $N_{\mathrm{gen}}=3$. Everything else in the three-generation argument is
 either proved or internally certified (see status table below). This
