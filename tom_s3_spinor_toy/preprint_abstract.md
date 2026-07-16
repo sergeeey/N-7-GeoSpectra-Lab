@@ -3,6 +3,18 @@
 **Draft:** 2026-06-21 (revised)
 **Status:** Major revision — G73/G74A/G74B results incorporated; N_gen=3 now positive geometric result
 
+> **⚠️ STALE — this file predates gate G102 (2026-07-05) and the L4B rank
+> certification / F4 route work (through 2026-07-15).** `preprint.tex` is the
+> authoritative, current source; its §sec:open correctly labels `N_gen=3` as
+> *conjectured*, conditional on the open L3b channel-independence problem (an
+> external Spin(8) fiber-symmetry input, not yet derived — see
+> `L3B_SPIN8_INTERFACE_SPEC.md`). Two claims below are stronger than
+> `preprint.tex` currently supports and should not be cited as-is: "We prove
+> N_gen = 3 exactly" (line 20) and "zero-parameter prediction" (line 48, should
+> read "zero-fit" and is itself conditional on `(λ, ρ₆*)` being fixed — see
+> `preprint.tex` §sec:moduli). Flagged in `reports/CLAIM_BOUNDARY_AUDIT_2026-06-25.md`
+> (HIGH-3) and reconfirmed in `reports/PROJECT_360_ROUND3_SYNTHESIS.md` (2026-07-15).
+
 ---
 
 ## Abstract
@@ -17,7 +29,8 @@ within 4.3%. The KO-dimension 6 spectral triple structure A_F = ℂ⊕ℍ⊕M₃
 emerges from representation theory rather than being postulated, and Yukawa
 parameter count reduces to dim=4 via SU(3)-orbit degeneracy on S⁶.
 
-We prove N_gen = 3 exactly by the Atiyah-Singer index theorem on the internal
+We conjecture N_gen = 3, conditional on an open channel-independence problem
+(L3b — see `preprint.tex` §sec:open), by the Atiyah-Singer index theorem on the internal
 space S⁶ = G₂/SU(3). The negative-chirality spinor bundle S⁻ = T^{1,0}S⁶ ⊕ trivial
 has c₃(S⁻) = χ(S⁶) = 2 (Chern–Gauss–Bonnet) and Â(S⁶) = 1 (since H⁴(S⁶;ℤ)=0),
 giving ind(D_{S⁶}⊗S⁻) = Â(S⁶)·c₃(S⁻)/2 = 1 per triality channel. The three
@@ -45,8 +58,8 @@ cover and what G73/G74A/G74B address.
 The compactification radius ρ₆ is fixed at ρ_min ≈ 1.179 (in string units) by a
 zero-fit condition: Casimir and flux contributions to V(ρ₃, ρ₆) balance at a
 minimum with moduli-to-KK mass ratio m_mod/m_KK ≈ 2% and κ = ρ_min/ρ* = √(7/6)
-analytically (n = dim S⁶ = 6). This is a zero-parameter prediction: no SM input
-is used to locate ρ_min. The coupling ratio c_{1/2} = 0 along the SM constraint
+analytically (n = dim S⁶ = 6). This is a zero-fit prediction once (λ, ρ₆*) are
+fixed: no SM input is used to locate ρ_min. The coupling ratio c_{1/2} = 0 along the SM constraint
 (open problem; depends on Tom Lawrence's framework).
 
 ---

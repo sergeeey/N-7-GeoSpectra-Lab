@@ -22,7 +22,7 @@ This repository contains two independent research projects on compact geometries
 | **Method** | Eigensolver + IPR / r-stat | Index theory (Atiyah-Singer) + exact arithmetic |
 | **Verdict** | `DISCRETIZATION_SENSITIVE` | N_gen = 3 (arithmetic exact; depends on open gate G67-C3, see below) |
 | **Key result** | 7.07× signal; geometry-agnostic | Three SM generations from Atiyah-Singer index |
-| **Tests** | ~500 regression tests | **2210 tests** (fractions.Fraction, zero float ops) |
+| **Tests** | ~500 regression tests | **2500+ tests** (fractions.Fraction, zero float ops; 2512 passed/4 skipped independently reproduced 2026-07-15) |
 | **Directory** | `cc_toy_lab/`, `scripts/`, `tests/` | [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) |
 | **Entry point** | `reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md` | `tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md` |
 

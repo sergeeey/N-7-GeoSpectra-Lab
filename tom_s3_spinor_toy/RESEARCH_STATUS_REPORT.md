@@ -318,7 +318,7 @@ requiring a UV completion beyond the geometric framework studied here.
 
 ## Open Questions
 
-1. **Three generations** — RESOLVED (G73+G74A+G74B). N_gen=3 exactly from twisted Atiyah-Singer index. SM left-handed chirality geometric. See gate table above.
+1. **Three generations** — N_gen=3 CONDITIONAL, not resolved (updated 2026-07-15, was stale since 2026-06-22): G73+G74A+G74B establish ind=1 per channel and dim ker=1 internally certified (external review outstanding); the "×3 channels" step depends on gate G67-C3, which G102 (2026-07-05) proved is NOT internally derivable — it requires an external Spin(8) fiber-symmetry postulate (see `L3B_SPIN8_INTERFACE_SPEC.md`). SM left-handed chirality (sign of index) is unconditional. See gate table above and `preprint.tex` §sec:open for the current, correct framing.
 2. **Majorana mass** for right-handed neutrino
 3. **λ coupling** — TRACK B COMPLETE: free parameter, non-perturbative origin. No geometric derivation found (G83–G86B exhausted).
 4. **Canonical mass scale** — requires normalized 4D reduction, `M4/Ms`, and the full two-modulus Hessian.
@@ -345,4 +345,4 @@ tom_s3_spinor_toy/
 
 ---
 
-*Updated 2026-06-22. CSDR 5/5 + N_gen=3 EXACTLY (G73-G74B) + SM chirality + G62 zero-fit + Track B λ-map EXHAUSTED (G83-G86B). 2217 tests. For resume: `git checkout main && python -m pytest tests/ -q`.*
+*Updated 2026-06-22 (footer wording corrected 2026-07-15 — see Open Questions item 1 above; this footer previously said "N_gen=3 EXACTLY," predating G102). CSDR 5/5 + N_gen=3 CONDITIONAL (G73-G74B established, G67-C3 open per G102) + SM chirality + G62 zero-fit + Track B λ-map EXHAUSTED (G83-G86B). 2217 tests as of 2026-06-22; 2516 collected as of 2026-07-15 (independent pytest reproduction, `reports/PROJECT_360_ROUND3_SYNTHESIS.md`). For resume: `git checkout main && python -m pytest tests/ -q`.*
