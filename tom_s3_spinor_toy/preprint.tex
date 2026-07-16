@@ -65,8 +65,14 @@
 
 %% ---- Abstract ----
 \begin{abstract}
-We derive the Standard Model gauge structure and fermion quantum numbers
-for one generation from the geometry of $S^3\times S^6$. By identifying the
+We construct a candidate mechanism for the Standard Model gauge structure and
+fermion quantum numbers of one generation from the geometry of $S^3\times S^6$,
+built from an exact index computation on the $S^6$ factor; whether this mechanism
+also yields a genuine massless 4D zero mode of the \emph{full} nine-dimensional
+internal Dirac operator on $S^3\times S^6$ --- as required under standard
+Kaluza--Klein reduction --- is a separate question, shown \emph{not} to hold for
+the product construction used in this paper (\S\ref{sec:open}, ``full-operator
+zero-mode gap''). By identifying the
 spin connection with gauge fields (following Lawrence~\cite{Lawrence2022}), we obtain
 the gauge group $\mathrm{SU}(3)\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ geometrically;
 the $\mathrm{U}(1)_{B-L}$ factor needed to complete the Pati--Salam algebra is identified
@@ -110,8 +116,10 @@ is ruled out: $E_v\cong E_s\cong E_c$ as $G_2$-equivariant bundles on $S^6$;
 distinguishing the channels requires $\mathrm{Spin}(8)$ fibre symmetry.
 
 The sign $\mathrm{sign}(\ind)=\mathrm{sign}(c_3)=+1$ gives a left-handed zero-mode
-excess, geometrically fixing SM chirality with a single discrete input: the $S^6$
-orientation.
+excess of the twisted $S^6$-factor operator $D_{S^6}\otimes S^-$, fixing a discrete
+chirality label with a single input: the $S^6$ orientation. Whether this excess
+survives as an actual zero mode of the full internal operator on $S^3\times S^6$ is
+addressed below and shown not to, for the product ansatz used throughout this paper.
 
 Proposition~T1 (structural) closes five mechanism classes for single-bundle
 $N_{\mathrm{gen}}$ selection: the $\chi$-lemma ($H^2=H^4=0$ forces $c_1=c_2=0$,
@@ -121,8 +129,17 @@ brane-flux quantization, $\mathrm{SO}(8)$ triality (single-bundle), and stable
 HYM bundles. The twisted-index mechanism circumvents~T1 not by contradicting it
 but by using three bundles of $c_3=2$ rather than one bundle of $c_3=6$:
 three channels $\times\,\mathrm{ind}=1=3$. Proposition~T2 (untwisted Dirac on
-$S^a\times S^b$ has minimum eigenvalue $a/2>0$) remains valid for the trivial bundle;
-the twisted bundle~$S^-$ is precisely what T2 does not cover.
+$S^a\times S^b$ has minimum eigenvalue $a/2>0$) is evaded by the twisted bundle
+$S^-$ \emph{only on the $S^6$ factor}. For the product ansatz used throughout this
+paper (product metric, product connection, twist pulled back from $S^6$ alone),
+the full operator decouples exactly as $D_{\mathrm{full}}^2 = D_{S^3}^2\otimes
+\mathbf{1} + \mathbf{1}\otimes D_{S^6,S^-}^2$ (verified independently three times,
+\S\ref{sec:open}, ``full-operator zero-mode gap''), so the untwisted $S^3$ factor's strictly positive
+spectral floor $(3/2\rho_3)^2$ survives unconditionally: $\ker D_{\mathrm{full}}=0$
+regardless of the $S^6$-factor's twisted index. The three-channel index computation
+is therefore an exact statement about $D_{S^6}\otimes S^-$ alone, not --- without a
+further physical ingredient acting on the $S^3$ factor --- about a massless 4D
+fermion mode of the full construction.
 
 The compactification radius $\rho_6$ is fixed at $\rho_{\min}\approx 1.179$ (in
 string units) by a zero-fit condition: Casimir and flux contributions to
@@ -1338,10 +1355,13 @@ work.
 \begin{enumerate}
 \setcounter{enumi}{3}
 \item \textbf{Physical origin of the twisted operator $D\otimes S^-$ [open --- no parent
-  action identified].} The entire three-generation count follows from twisting the
-  internal Dirac operator by $S^-$ specifically (\S\ref{sec:ngen}); Proposition~T2
+  action identified].} The three-channel index count follows from twisting the
+  $S^6$-factor Dirac operator by $S^-$ specifically (\S\ref{sec:ngen}); Proposition~T2
   (untwisted Dirac on $S^a\times S^b$ has strictly positive minimum eigenvalue, i.e.\
-  index $0$) shows this twist choice does all of the work. No higher-dimensional parent
+  index $0$) is evaded \emph{on the $S^6$ factor} by this twist choice --- but, per
+  the ``full-operator zero-mode gap'' item below, is \emph{not} evaded on the full
+  nine-dimensional operator, whose kernel remains empty regardless of the $S^6$
+  twist. No higher-dimensional parent
   action --- an explicit 10D/11D Lagrangian, background flux, or gauge bundle from which
   this specific twist would follow by dimensional reduction --- is stated anywhere in
   this paper or its cited sources. The nearest structural analogue, the heterotic
@@ -1355,6 +1375,46 @@ work.
   resolved, the twisted-index construction is best read as a mathematically
   well-motivated candidate mechanism --- selected because its index is computable and
   nonzero --- rather than a derived consequence of a stated physical action.
+
+\item \textbf{Full-operator zero-mode gap [REFUTED within the stated product
+  ansatz --- blocking].} The three-channel construction above computes
+  $\ind(D_{S^6}\otimes S^-)=1$ on the $S^6$ factor alone. The physical claim that
+  this yields a massless 4D fermion requires a genuine zero mode of the \emph{full}
+  nine-dimensional internal operator $D_{\mathrm{full}}$ on $S^3\times S^6$, under
+  standard Kaluza--Klein reduction. For the product metric and product spin
+  connection used throughout this paper, with the twist pulled back from $S^6$
+  alone and no additional structure on $S^3$, the Clifford product construction is
+  forced: $\Gamma_{\mathrm{full}}(e_j)=\Gamma^{S^3}_j\otimes\chi_{S^6}$ for the
+  three $S^3$ directions and $\Gamma_{\mathrm{full}}(f_i)=\mathbf{1}\otimes
+  \Gamma^{S^6}_i$ for the six $S^6$ directions, matching the standard construction
+  for a Riemannian product with an even-dimensional factor (e.g.\
+  Sire--Xu~\cite{SireXu2020}, Eq.~(2.2)--(2.3), derived from the graded
+  Clifford-algebra structure of $\mathrm{Cl}(V\oplus W)$, with no separate
+  curvature-correction term). Because a chirality operator always anticommutes
+  with its own factor's Dirac operator and squares to the identity, the cross-term
+  vanishes identically:
+  \[
+    D_{\mathrm{full}}^2 = D_{S^3}^2\otimes\mathbf{1} + \mathbf{1}\otimes
+    D_{S^6,S^-}^2.
+  \]
+  The round $S^3$ Dirac spectrum is $\pm(n+3/2)/\rho_3$ (established in this
+  project's own earliest gate on this question, \S\ref{sec:ngen}; ``the Witten
+  problem''), so $D_{S^3}^2\geq (3/2\rho_3)^2>0$ unconditionally. Consequently
+  $D_{\mathrm{full}}^2\geq(3/2\rho_3)^2$ and $\ker D_{\mathrm{full}}=0$,
+  \emph{regardless of whether} $D_{S^6,S^-}$ itself has a zero mode. This was
+  verified independently three times --- two from-scratch matrix constructions
+  (this work) and one independent symbolic $2\times2$ spectral-block derivation by
+  an external reviewer, all in quantitative agreement --- and cross-checked
+  against the published Clifford-product formula above; see
+  \texttt{reports/PROJECT\_360\_ROUND3\_SYNTHESIS.md}, ``KT-8,'' for the full
+  certificates. \textbf{This is a blocking gap, not merely an open question}: the
+  representation-theoretic quantum numbers derived elsewhere in this paper
+  (\S\ref{sec:framework}) are not currently shown to correspond to an actual zero
+  mode of the physical internal Dirac operator. Resolving it requires a new
+  physical ingredient acting on the $S^3$ factor specifically --- e.g.\ a
+  gauge/torsion twist on $S^3$ with a nonzero kernel, derived from a stated parent
+  action, compatible with the $S^6$ twist and the gauge quantum numbers already
+  fixed --- not a further analysis of the $S^6$ factor alone.
 
 \item \textbf{$\rho_3$ modulus stabilization [mechanism identified, not fully pinned down].}
   The potential $V_{\mathrm{total}}$ depends on $\rho_3$ only through $C^3$, creating no
@@ -1393,7 +1453,11 @@ work.
   this degeneracy is now closed: in the construction that defines $N_{\mathrm{gen}}=3$
   (\S\ref{sec:three-channels}), the $S^3$ spinor factor is a fixed, generation-independent
   block, and the generation index lives entirely within the $S^6$/octonion triality
-  structure --- so no such cross-term can exist.
+  structure --- so no such cross-term can exist. This statement is about mode
+  \emph{splitting}, conditional on a physical zero mode existing at all; per the
+  ``full-operator zero-mode gap'' item above, no such mode is currently shown to
+  exist for the full internal operator, so this item's conclusion should be read as
+  conditional on that gap being closed.
 
 \item \textbf{Universality.} Whether the Lichnerowicz--$G_2$-Schur mechanism (L4) applies to other
   nearly K\"ahler 6-manifolds (such as $\mathbb{CP}^3$ or $\mathrm{SU}(3)/T^2$) is an open question.
@@ -1593,6 +1657,15 @@ B.P.~Dolan,
 arXiv:hep-th/0304037 (2003).
 (Casimir operator method for Dirac spectra on compact $G/H$; explicit results for
 $S^2, S^4, \mathbb{CP}^2, \mathrm{SU}(3)/U(1)^2$; method applies to any compact coset.)
+
+\bibitem{SireXu2020}
+Y.~Sire and T.~Xu,
+\textit{A variational analysis of the spinorial Yamabe equation on product manifolds},
+arXiv:2005.01448 (2020).
+(Clifford multiplication and the Dirac operator on a Riemannian product $M_1\times M_2$
+with $M_1$ even-dimensional, Eq.~(2.2)--(2.3): $M_2$'s generators are twisted by
+$M_1$'s chirality operator, with no separate curvature-correction term, following
+directly from the graded Clifford-algebra structure of $\mathrm{Cl}(V\oplus W)$.)
 
 \end{thebibliography}
 

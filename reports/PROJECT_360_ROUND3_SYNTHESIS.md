@@ -428,3 +428,215 @@ project's own Verification Substrate Gate concept (artifacts must be persisted
 to a file/log, not asserted only in conversation) and should be treated as a
 standing instruction for any future audit work: save the script, not just the
 reported number.
+
+---
+
+## KT-8 (2026-07-16/17) — Does the full 9D product Dirac operator on S³×S⁶ have a zero mode at all?
+
+**Origin:** an external adversarial review (pasted in full by the user, "RDR 2.1"
+framework, claim ledger C1-C28) raised a concern its own author labeled KT-2
+(unrelated to this report's KT-2 above — different numbering scheme, same slug
+collision the project's own methodology names as a Type-1 error class, see
+`~/.claude/rules/research-methodology.md` § Классификатор): the paper's own
+earliest gate (`experiments/20260615-g8-chirality-obstruction/`, 2026-06-15)
+already established that the bare S³ Dirac operator has spectrum ±(m+3/2)/ρ —
+strictly bounded away from zero — and explicitly named this "the Witten
+problem." The reviewer's claim: since the physical, 4D-mass-determining object
+is the *full* 9-dimensional internal Dirac operator on the product S³×S⁶, not
+the S⁶ factor alone, and S³'s own factor never has a zero mode, does the full
+product operator have a zero mode at all — regardless of what the S⁶-only
+twisted operator D_{S⁶}⊗S⁻ does?
+
+Per this project's own external-agent-findings rule (external review "VERIFIED"
+= this audit's "INFERRED" until independently tool-verified — see
+`feedback-external-agent-findings-gate.md`), the reviewer's claim was *not*
+accepted at face value. Two independent steps were taken:
+
+**Step 1 — delegated construction (general-purpose agent, first pass).** Built
+the explicit Clifford-algebra product structure required for an odd (dim 3) ⊗
+even (dim 6) factorization: Γ_M(e_j) = Γ³_j ⊗ χ₆ for the three S³ directions,
+Γ_M(f_i) = I₂ ⊗ Γ⁶_i for the six S⁶ directions (the only construction that
+satisfies the Clifford relations across the product — verified to machine
+precision). Reused the project's own established S³ eigenvalue (1.5 = 3/2·ρ₃,
+from G8) and 20,000 random S⁶-side test operators, including near-zero-
+eigenvalue ones mimicking the actual twisted zero mode. Result: D_full² =
+D₁²⊗I + I⊗D₂² exactly, zero cross-term (~1e-15), min|eig(D_full)| = 1.5
+regardless of D₂'s spectrum.
+
+**Step 2 — independent from-scratch re-verification (this session, direct
+Bash tool call, no agent, no reuse of the first pass's script).** Built Cl(3)
+from Pauli matrices, Cl(6) via an independent Jordan-Wigner construction (3
+fermionic modes → 6 gammas on an 8-dim rep), verified both satisfy the
+Clifford anticommutation relations exactly, built the chirality operator χ₆
+(χ₆²=I, Hermitian, anticommutes with all 6 gammas — all confirmed), assembled
+the full 9-generator, 16-dim Cl(9) representation and verified all 81
+anticommutation relations exactly. Set D₁ = 1.5·σ_z (matching G8's floor) and
+D₂ = a random Hermitian combination of the 6 gammas scaled to produce a
+near-zero eigenvalue (got ±0.185, i.e., deliberately small to stress-test the
+claim). Computed D_full directly and squared it.
+
+**[VERIFIED-tool], independently reproduced twice with different code:**
+```
+max|Dfull^2 - (D1^2 (x) I + I (x) D2^2)| residual: 4.44e-16   (machine epsilon)
+min |eigenvalue| of Dfull: 1.5114                              (D2's near-zero mode: 0.185)
+expected floor from D1 alone: 1.5
+```
+The product operator's spectral gap is bounded below by S³'s own gap (3/2·ρ₃)
+**regardless of what the S⁶ factor's spectrum does** — confirmed with an
+S⁶-side operator specifically chosen to have a near-zero eigenvalue, and the
+full-operator floor still came out at 1.5, not near zero. **ker(D_{S³×S⁶}) = 0**
+for the actual construction this project uses (twist applied only on S⁶, S³
+left round/untwisted) — the external reviewer's KT-2 concern is CONFIRMED, not
+merely plausible.
+
+**What this does and does not mean:**
+- It does **not** contradict G73/G74A/G74B, G8, or any existing gate — those
+  compute the index/kernel of D_{S⁶}⊗S⁻ *alone* on the S⁶ factor, and that
+  computation is untouched by this finding.
+- It **does** mean the "zero modes" counted by the headline N_gen=3 mechanism
+  are zero modes of the S⁶-factor operator alone, not of the true 9D internal
+  Dirac operator that would set 4D fermion masses in a standard Kaluza-Klein
+  spectroscopy sense (massless 4D fermion ⟺ zero mode of the *full* internal
+  operator, not one factor of a product). No file in the repository (`g8`
+  through the current preprint, checked by grep for "massless", "4D mass",
+  "KK tower") states or defends an alternative physical mechanism that would
+  let a per-factor zero mode still yield a genuinely massless 4D state despite
+  the full operator being gapped.
+- This is a **structural gap upstream of, and independent of, KT-1** (parent
+  action for the twist) — KT-1 asks "why this twist," KT-8 asks "even granting
+  the twist, does the resulting *full* operator do what a KK zero mode needs to
+  do." Both are now confirmed real, both are currently absent from
+  `preprint.tex`'s own open-problems list (KT-1 was added 2026-07-16, see
+  below; KT-8 is not yet added — this is the immediate open action item).
+
+**Confidence grading (per this audit's own evidence policy):**
+- The matrix computation itself (Clifford relations, D_full² decoupling,
+  spectral floor) — **[VERIFIED-tool]**, high confidence, independently
+  reproduced twice with different code by two different actors (delegated
+  agent + this session directly) on the same underlying math.
+- That Γ_M(e_j)=Γ³_j⊗χ₆, Γ_M(f_i)=I₂⊗Γ⁶_i is *the* standard/unique way to build
+  a Dirac operator on a product of an odd- and an even-dimensional factor —
+  **[INFERRED]** from first principles (it is the only assignment that
+  satisfies the Clifford relations across the product, checked directly), not
+  yet cross-checked against an external canonical reference (e.g.
+  Lawson–Michelsohn, *Spin Geometry*, Ch. II) for whether some other
+  convention or a nontrivial connection term could reintroduce a cross-term.
+  This is the one remaining gap before treating KT-8 as fully closed rather
+  than "closed under the standard construction."
+- The claim that no alternative physical mechanism is stated anywhere in the
+  paper — **[VERIFIED-tool]** via grep (exhaustive keyword search, zero hits),
+  not exhaustive prose-reading of every paragraph for an unnamed argument.
+
+**Not yet done (explicit, not a silent gap):** integrating this finding into
+`preprint.tex`'s open-problems section (mirroring how KT-1 was added
+2026-07-16); updating the recomposition verdict above to reflect that the
+"ind=1 per channel" input to N_gen=3 is now known to be an S⁶-factor-only
+statement, not a full-operator zero-mode statement; the remaining ~24 claims
+in the external reviewer's C1-C28 ledger beyond KT-1/KT-2(theirs)/KT-4 have not
+been individually re-verified.
+
+### Literature cross-check (2026-07-17) — closes the remaining [INFERRED] gap
+
+At the user's explicit request, the one open item above (uniqueness of the
+Clifford product construction) was checked against the published literature
+rather than left as a first-principles inference.
+
+**[VERIFIED-tool, external source]** Sire & Xu, "A variational analysis of the
+spinorial Yamabe equation on product manifolds," arXiv:2005.01448, Eq.
+(2.2)-(2.3): for a Riemannian product M₁×M₂ with M₁ even-dimensional, Clifford
+multiplication on S(M₁)⊗S(M₂) is
+
+```
+(ξ⊕ζ)·(ψ⊗φ) = (ξ·ψ)⊗φ + (ω_C^{M1}·ψ)⊗(ζ·φ)
+```
+
+i.e. M₁'s own generators act plainly (⊗Id), while M₂'s generators are twisted
+by ω_C^{M1}, M₁'s chirality/volume element — giving the product Dirac operator
+
+```
+D = D_{M1}⊗Id_{S(M2)} + ω_C^{M1}⊗D_{M2}
+```
+
+with, per the paper's own text, **no separate curvature-correction term** — the
+formula "arises naturally from the Clifford algebra structure of V⊕W" alone
+(their §2.1, the standard `Cl(V⊕W)` graded-tensor-product construction, the
+same one underlying Lawson–Michelsohn Ch. I). Substituting M₁=S⁶ (even,
+χ_C^{S6}=χ6), M₂=S³ reproduces **exactly** the construction used in both of
+this audit's independent computations (Γ_M(e_j)=Γ³_j⊗χ6 for the S³
+generators, Γ_M(f_i)=I⊗Γ⁶_i for the S⁶ generators) — this was not an arbitrary
+or convenient choice, it is *the* standard construction for a product with an
+even-dimensional factor, confirmed against an independent published source.
+
+**This also upgrades the decoupling from a numerical spot-check to an
+algebraic identity.** Expanding D² directly from the formula above:
+```
+D² = D_{M1}²⊗I + (D_{M1}ω_{M1} + ω_{M1}D_{M1})⊗D_{M2} + ω_{M1}²⊗D_{M2}²
+```
+The cross-term vanishes identically because a chirality operator always
+anticommutes with its own manifold's Dirac operator (`{ω_{M1}, D_{M1}}=0` is
+general, not S⁶-specific — it is the defining property of a chirality
+operator) and `ω_{M1}²=Id` (also general) — giving `D² = D_{M1}²⊗I +
+I⊗D_{M2}²` as an algebraic fact, not a coincidence that happened to hold to
+1e-16 in this particular numerical test. The earlier numerical residual
+(4.4e-16) is now understood as floating-point noise around an exact zero,
+not an approximately-small quantity.
+
+**KT-8 status: CLOSED, no remaining gap.** Both open items from the initial
+write-up are now resolved: (1) the construction is confirmed standard against
+an independent published source, not merely self-consistent, and (2) the
+vanishing cross-term is now an algebraic theorem, not a numerical observation.
+ker(D_{S³×S⁶})=0 for the project's actual construction stands as a fully
+verified, tool-and-literature-confirmed result.
+
+### Third independent confirmation (2026-07-17, external reviewer, different model)
+
+A second external adversarial review (different AI system, RDR-2.1-style
+framework) independently re-derived the same result via a simplified symbolic
+2×2 spectral-block argument (generic eigenvalue pair λ on S³, ±μ on S⁶,
+block `[[λ,μ],[μ,-λ]]`, exact SymPy diagonalization) rather than the full
+16-dimensional Clifford construction used in this audit's own two passes.
+**Cross-checked quantitatively, not just narratively:** `sqrt(1.5²+0.185²) =
+1.51137` against this audit's own from-scratch computation's `1.5113689` —
+agreement to 5 significant figures (the reviewer's D2-eigenvalue input was
+reported rounded to 0.185, accounting for the 6th-digit difference). Per this
+project's own Independent Verification Strength Ladder, a genuinely different
+AI model reaching the same quantitative result is a real step up from
+"same model, isolated context," though this audit's own external-agent-findings
+rule was still applied: the reviewer's own sweeping claim-ledger relabeling
+(REFUTED across C1-C28) was *not* accepted at face value — only the specific,
+independently-checkable KT-8 mathematics was treated as confirmed.
+
+### Integration into preprint.tex (2026-07-17)
+
+At the user's explicit direction (choosing the "full status rebuild" option
+over a narrower open-problems-only addition), KT-8 has now been written
+directly into `preprint.tex`, not just recorded in this audit report:
+
+1. **Abstract** — the opening claim ("We derive the Standard Model gauge
+   structure...") softened to "We construct a candidate mechanism...", with an
+   explicit forward-reference to the full-operator gap; the chirality/zero-mode
+   sentence and the Proposition~T2 sentence both corrected to state that the
+   twist evades T2 only on the S⁶ factor, not on the full 9D operator.
+2. **Existing open-problems item 4 (KT-1, added 2026-07-16)** — corrected: it
+   previously asserted Prop. T2 "does all of the work" / is fully evaded by the
+   twist; this was itself an overclaim that KT-8 refutes. Now correctly scoped
+   to "evaded on the S⁶ factor" with a forward-reference.
+3. **New open-problems item, "Full-operator zero-mode gap"** — added
+   immediately after item 4, marked **REFUTED within the stated product
+   ansatz — blocking** (not merely "open"), with the full derivation, the
+   Sire–Xu literature citation, and an explicit statement that resolving it
+   requires new physical input on the S³ factor specifically.
+4. **"Fermion mass hierarchy" item** — cross-referenced: its "S³ factor is a
+   fixed, generation-independent block" claim is now flagged as conditional on
+   a physical zero mode existing at all, which the new item shows is not
+   currently the case.
+5. **Bibliography** — added `SireXu2020` entry (arXiv:2005.01448).
+
+**Verified:** `pdflatex -interaction=nonstopmode -halt-on-error` run twice
+(to resolve cross-references) — exit 0 both times, 27 pages (was 26), zero
+"Undefined reference" or LaTeX-error lines in either log.
+
+**Not yet done:** git commit (nothing committed for KT-8 or this preprint
+edit yet — awaiting explicit commit instruction per this session's established
+workflow); the remaining ~24 claims in the external reviewers' ledgers beyond
+KT-1/KT-2(theirs)/KT-4/KT-8 have not been individually re-verified.
