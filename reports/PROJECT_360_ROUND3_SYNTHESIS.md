@@ -23,28 +23,30 @@ count).
 |---|---|---|---|---|---|---|
 | **KT-1** Parent-action origin of D⊗S⁻ (R2-1) | D⊗S⁻ falls out of a stated reduction | No parent action stated | Days | **Highest** | If ambiguous after 1 honest attempt, mark `BLOCKED-INFRASTRUCTURE`, not FAIL | **EXECUTED — BLOCKED-EXTERNAL, corrected from an earlier "FAIL/(B)" mislabel** (this session's own predefined stop rule says exactly this case — "reduction ambiguous" — should be marked BLOCKED, not FAIL, and the first write-up of this result didn't follow its own rule). What was actually shown: no parent higher-dimensional action producing D⊗S⁻ is stated anywhere in `preprint.tex` or its references; the twist is a mathematically-motivated choice (computable nonzero index), and the reduction is *under-specified* (no background field/flux/gauge-bundle is named that would source the S⁻ twist) — the agent could not complete a derivation because the input needed to attempt one doesn't exist in the project's own sources, which is a BLOCKED verdict, not a demonstrated FAIL of the physical idea. Closest real analog (heterotic "standard embedding," Candelas-Horowitz-Strominger-Witten 1985) requires a pre-existing independent 10D gauge sector this project's framework structurally lacks (`preprint.tex:1400-1401`). **Not currently on the paper's own open-problems list**, unlike every other comparably load-bearing assumption — this is the actionable finding, independent of the PASS/FAIL/BLOCKED label question. See "Executed kill-tests" below. |
 | **KT-2** Does triality ℤ₃ descend to a nontrivial isometric action on S⁶=G₂/SU(3)? (convergent finding, geometry+index lenses) | Yes → Atiyah-Bott-Lefschetz closes L3b | No (expected) → equivariant-index escape closed | Cheap | High | One clean answer either way ends this sub-question | **EXECUTED — FAIL confirmed, tool-verified, but narrower in scope than first written up.** Built the full octonion algebra + 𝔤₂=Der(𝕆) (14-dim, SVD-confirmed; independently spot-checked by a second, from-scratch construction — see Verification section, dim=14 reproduced at machine precision, 7.1e-15) and the complete 28×28 triality operator T on 𝔰𝔬(8). Fix(T) = 𝔤₂ exactly (residuals ~1e-15). Since S⁶=G₂/SU(3) is built from G₂'s transitive action, triality is the literal identity **on the base manifold S⁶ as a diffeomorphism**. **Scope correction (this was under-stated in the first write-up):** this closes ONLY the "triality as a nontrivial *geometric/isometric* action on the base S⁶" escape route — it does NOT close, and does NOT render moot, "triality as an external symmetry acting on the *fibre* / multiplicity space / zero-mode Hilbert space," which is exactly what the F4/J₃(𝕆) route (KT-3) is trying to construct. Those are logically distinct claims — a base-isometry no-go says nothing about an operator-level symmetry that never claims to move points of S⁶. The earlier "priority order" note below that this "may make KT-3 moot" is retracted as overstated. |
-| **KT-3** F4/J₃(𝕆) route condition 1: is the diagonal 𝔤₂⊂F₄ (24-dim, acting on 𝕆³) actually identifiable with the geometric G₂ acting on S⁶'s single 8-dim fibre? | Explicit map constructed, consistent with S⁶'s actual bundle structure | No consistent identification exists (24-dim vs 8-dim rep mismatch is real) | Moderate | High for the F4 route specifically — **NOT diminished by KT-2**, which operates at a different logical level (base isometry vs. fibre/operator symmetry, see corrected KT-2 row) | Already the project's own next planned step; don't duplicate | Pending |
+| **KT-3** F4/J₃(𝕆) route condition 1: is the diagonal 𝔤₂⊂F₄ (acting on 𝕆³) actually identifiable with the geometric G₂ acting on S⁶'s physical fibre/operator content? | Explicit map constructed, consistent with S⁶'s actual bundle structure | No consistent identification exists | Moderate | High for the F4 route specifically — **NOT diminished by KT-2**, which operates at a different logical level (base isometry vs. fibre/operator symmetry, see corrected KT-2 row) | If the check requires Tom's own framework input, mark `BLOCKED-EXTERNAL`, not FAIL | **EXECUTED — BLOCKED-EXTERNAL, run at the user's explicit request even with no new input from Tom (correspondence log checked first: nothing new since 2026-06-22; a 2026-07-13 public post about Part 4 is not a reply to us).** New tool-verified check (not just re-reading the project's own prose): built the diagonal g₂ embedded in 𝕆³ and the S₃ slot-permutation U explicitly — U centralizes the diagonal g₂ exactly (residual 0), restricted to one slot the diagonal action literally *is* the ordinary G₂ action already used in the paper — but this is a tautology of block-repeating one matrix three times, carrying no information about whether the physical construction actually has this combined fibre. Cross-checked against `preprint.tex`'s actual construction: the real physical content is **three separately-existing 8-dim bundles/operators, one per channel** — no combined 24-dim fibre or combined operator exists anywhere in the current construction. **Precision correction the agent caught in its own task framing** (worth recording): 𝕆³ decomposes as one copy each of 8_v⊕8_s⊕8_c (per the project's own quoted primary source, Baez), not three copies of 8_v as an earlier framing assumed — doesn't change the verdict but sharpens why the route looks promising and where exactly it stops. **Precise boundary:** last checkable-without-Tom fact = the diagonal-g₂/F₄ algebra is internally consistent; first fact requiring Tom = whether the actual physical field content should be reorganized into this combined fibre, which nothing internal to the project supplies independent grounds for. See "Executed kill-tests" below. |
 | **KT-4** L3B-INDEXARITH general formula — additional test points (1,1) and (3,0) | Predicted I=0 and I=27 match independent Chern-root computation | Mismatch at either point | ~15 min sympy | Low-medium | Two points settle it | **EXECUTED — PASS, both points, genuinely independent construction.** Self-check first: rebuilt Sym²(V) via an explicit multiset-of-2 root construction (not reusing the original script's `T⊕(T⊗T)` trick) and reproduced I(2,0)=7 by a different route — method validated before trusting it on new points. Then: adjoint=(1,1), built as traceless(V⊗V*) (8 roots, 2 zero-weights — correct for su(3)'s rank-2 Cartan, not an error), ch3=0 identically (each nonzero root cancels its negative under the odd cube) → index=0, matching prediction exactly. Sym³(V)=(3,0), 10 roots (all degree-3 multisets of {x,y,z}), ch3 = (27/2)·c3_T exactly (residual 0) → index=27, matching prediction exactly. Formula substitution was never used in either construction — only in stating what the prediction was. **Honest scope, unchanged from before:** this raises the point count from 3 to 5, it does not prove the general formula — status remains `SUPPORTED ON CONTROLS — GENERAL PROOF OPEN`, per the project's own claim-A-index-map.md. One partial insight surfaced: the proportionality ch3∝c3_T held in both new cases because degree-3 Weyl(S₃)-invariant polynomials in {x,y,z} (x+y+z=0) form a 1-dimensional space — a real partial argument toward the general proof's crux (step 2 in claim-A-index-map.md), but not shown here to cover an arbitrary (p,q) irrep in general. See "Executed kill-tests" below. |
 | **KT-5** ρ=14 decomposition completeness | True λ²_min comfortably positive | True λ²_min near zero or negative | Cheap | Medium | One completeness check settles it | **EXECUTED — PASS, clean.** Rebuilt the ρ=14 analog of the 5-piece decomposition (reusing `g2su3_v14_adjoint_full_matrix.py` + `g2su3_nomizu_crossterms.py`'s generic Clifford/structure data, substituting ρ=14 `ADE`/`AD_RAW` for ρ=7's `rho7_ep`/`rho7_nuk`) and checked it against ground-truth D²_14 on **all 12 of 12** basis vectors of the ρ=14 multiplicity space (Round 22's own ρ=7 check only covered 2 of 16 — this is stronger coverage). Exact match everywhere, `sympy` symbolic throughout, no numerical fallback. True λ²_min = 10/3 (native basis) ≈ 3.33, i.e. ≈9–17× the 0.381 norm-bound floor — the bound was never close to tight, no hidden near-zero mode. **Bonus finding:** this exact eigenvalue set was already computed once before, in Round 20 (2026-07-09), four days *before* the norm-bound program (Round 55/56) existed — so "no zero mode at ρ=14" was independently established earlier; what this test adds is specifically confirming the *decomposition* (not just the eigenvalues) generalizes. See "Executed kill-tests" below. |
 | **KT-6** SU(2)_R (+ Witten global) anomaly check without assuming B-L | Anomaly-free without B-L input | Anomaly-free only after B-L added | Hours | Medium | Binary outcome | **EXECUTED — PASS on the letter, but sharpens R2-5 rather than resolving it.** All checkable non-abelian conditions vanish ([SU(2)_R]³, mixed [SU(2)_L]²[SU(2)_R], [SU(2)_R]²[SU(2)_L], [SU(2)_R]²[Grav]) — but these are forced to vanish for *any* fermion content by the traceless-generator argument, not a nontrivial confirmation specific to this geometry. Witten global anomaly: 4 SU(2)_R doublets (even, safe) — true because N_c=3 is odd, a numerical fact rather than a deep cancellation. **The real finding:** the four genuinely content-dependent conditions from the existing check ([U(1)_Y]³, [SU(2)]²U(1)_Y, [SU(3)]²U(1)_Y, [Grav]²U(1)_Y) *cannot even be formulated* without a U(1) charge to plug in as the third leg — removing B-L doesn't just weaken the test, it makes the interesting question unaskable. Genuine positive side-result: the geometry gives an unambiguous SU(2)_R doublet/singlet split for all 16 Weyl states, with no bidoublet fermion — a real, non-trivial, checked fact, independent of B-L. See "Executed kill-tests" below. |
 | **KT-7** Independent test-suite reproduction (R2-7) | Pass/fail counts match documented count | Discrepancy found | Minutes | Low probability of surprise, closes a process gap | One run sufficient unless it disagrees | **EXECUTED — PASS.** 2512 passed, 4 skipped, 0 failed, exit 0 (see Verification section). |
 
-**Priority order, final for this pass — six of seven now executed:** ~~KT-1~~,
-~~KT-2~~, ~~KT-4~~, ~~KT-5~~, ~~KT-6~~, ~~KT-7~~ all executed and tool-verified
-(see results above/below). Only **KT-3** remains — and it is the one test that
-cannot be run from inside this audit: it needs Tom Lawrence's own framework
-input (per this project's standing constraint of not initiating contact with
-him), not just more compute.
+**All seven kill-tests are now executed and tool-verified.** ~~KT-1~~, ~~KT-2~~,
+~~KT-3~~, ~~KT-4~~, ~~KT-5~~, ~~KT-6~~, ~~KT-7~~ (see results above/below).
+KT-3 was run at the user's explicit request even with no new input from Tom
+Lawrence (checked the correspondence log first — nothing new since
+2026-06-22), specifically to document precisely what is and isn't checkable
+without him, rather than leave it untried. It correctly came back
+BLOCKED-EXTERNAL, not FAIL — the project's own standing constraint (don't
+initiate contact) means the remaining piece genuinely cannot be resolved by
+more compute from inside this audit.
 
-**Six of seven items have now actually been run, not just designed** — across
-three passes this session, all tool-verified, not literature-reasoned. KT-1/KT-2
-came back negative/BLOCKED (see corrected labels above, after a self-caught
-overclaim); KT-4 and KT-5 came back clean PASSes, strengthening two separate
-parts of the project's own results (the index-formula point count, and the L4B
-ρ=14 certification); KT-6 came back "PASS on the letter" but with a sharper,
-more precise version of the R2-5 concern than originally stated. The only test
-this audit could not execute is KT-3, and that's a structural fact about the
-project (external-input-dependent), not a scoping choice of this audit.
+**All seven items have now actually been run, across four passes this
+session, all tool-verified, not literature-reasoned.** KT-1/KT-2/KT-3 came
+back negative/BLOCKED (KT-1 and KT-2 after a self-caught overclaim in the
+first write-up — see corrected labels above); KT-4 and KT-5 came back clean
+PASSes, strengthening two separate parts of the project's own results (the
+index-formula point count, and the L4B ρ=14 certification); KT-6 came back
+"PASS on the letter" but with a sharper, more precise version of the R2-5
+concern than originally stated.
 
 ---
 
@@ -283,6 +285,53 @@ B-L/Y assignment, not as an independent confirmation of it — the distinction
 matters for exactly the same reason KT-1 mattered (a claim resting on an input
 that's separately still open should say so at the point it's used, not just in
 a different section's open-problems list).
+
+### KT-3 — F4/J₃(𝕆) route condition 1: BLOCKED-EXTERNAL, run anyway on request
+
+Executed at the user's explicit instruction ("run KT-3 anyway, without new
+input from Tom") after confirming via the correspondence log that nothing new
+relevant to L3b/Spin(8) has arrived since 2026-06-22 (the most recent update,
+2026-07-13, is a public Part-4 video post, not a reply to this project).
+
+**What was newly tool-verified, not just re-read from the spec document:**
+built the diagonal g₂ (14-dim) embedded in 𝕆³ and the S₃ cyclic slot-
+permutation U explicitly, from scratch. U centralizes the diagonal g₂ exactly
+(residual 0 to machine precision); restricted to a single slot, the diagonal
+action literally *is* the ordinary G₂ action already used elsewhere in the
+paper's S⁻ construction. **But this is a tautology** — block-repeating one
+8×8 matrix three times and permuting the blocks commute by elementary linear
+algebra; it carries zero information about whether the actual physical
+construction has this combined 24-dim fibre. Cross-checked directly against
+`preprint.tex`'s real content (not the spec document's description of it):
+the construction has **three separately-existing 8-dimensional bundles, one
+per channel, each with its own independent twisted Dirac operator** — no
+combined fibre or combined operator exists anywhere in the current paper.
+
+**A genuine, useful correction surfaced during this check:** the task as
+originally framed described 𝕆³ as "three copies of the vector rep 8_v" — the
+project's own quoted primary source (Baez) actually gives one copy each of
+8_v, 8_s, 8_c. This doesn't change the BLOCKED verdict, but it explains more
+precisely why the F4 route looks structurally promising (it's one copy of
+each real channel, not three redundant copies) and sharpens exactly where the
+gap is.
+
+**The precise boundary (this is the actionable output of KT-3):** the last
+thing checkable without Tom Lawrence's input is that the diagonal-g₂/F₄
+algebra is internally self-consistent. The first thing that genuinely
+requires his framework is whether the actual S³×S⁶ physical field content
+should be reorganized into this single combined fibre with a combined,
+block-diagonal Dirac operator — nothing internal to the project (the S³
+spin-connection gates, the SU(4) branching, the warp-factor checks, or the
+same-day SO(4)×SO(4) route, which independently hit its own structural wall)
+supplies grounds for that reorganization. This is exactly the question
+`L3B_SPIN8_INTERFACE_SPEC.md` was written to hand to Tom, precisely worded,
+whenever he responds.
+
+With KT-3 now run, **all 7 kill-tests in this audit are executed.** KT-3's
+BLOCKED-EXTERNAL status does not change — it was already the expected
+outcome per the project's own standing constraint — but it is now backed by
+a fresh, independently tool-verified check rather than resting only on the
+project's own same-day self-assessment.
 
 ### KT-4 — index formula at (1,1) and (3,0): PASS, both, genuinely independent
 
