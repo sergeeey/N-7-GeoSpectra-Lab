@@ -97,7 +97,9 @@ def build_anderson_3d_hamiltonian(
                         matrix[i, j] = hopping
                         matrix[j, i] = hopping
                     elif periodic:
-                        j = site_index(nx % lattice_size, ny % lattice_size, nz % lattice_size, lattice_size)
+                        j = site_index(
+                            nx % lattice_size, ny % lattice_size, nz % lattice_size, lattice_size
+                        )
                         matrix[i, j] = hopping
                         matrix[j, i] = hopping
     return matrix.tocsr()
@@ -107,21 +109,29 @@ def central_eigensystem(
     hamiltonian: sparse.spmatrix,
     eigen_count: int = 48,
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Compute eigenpairs nearest the band center.
+    """Compute eigenpairs nearest the band center (value 0).
 
     Dense diagonalization is used for the small quick-mode lattices. Sparse
-    shift-invert is available for larger full-mode lattices.
+    shift-invert is available for larger full-mode lattices. Both paths
+    select the same criterion -- the `eigen_count` eigenvalues nearest 0 by
+    |value| -- so the choice of solver does not change what "central" means.
+
+    WHY: the dense path used to pick eigenvalues nearest the spectrum's
+    INDEX center, which only coincides with "nearest value 0" when the
+    spectrum is exactly symmetric; on-site disorder breaks that symmetry,
+    so dense and sparse could select different (though overlapping,
+    62-96% in testing) eigenvalue sets with occasionally-diverging r/IPR
+    statistics. See reports/TRACK_A_NUMERICAL_AUDIT_2026-07-17.md, Finding 2.
     """
     size = hamiltonian.shape[0]
     if eigen_count < 8:
         raise ValueError("eigen_count must be >= 8")
     if size <= 260 or eigen_count >= size - 1:
         values, vectors = np.linalg.eigh(hamiltonian.toarray())
-        center = len(values) // 2
-        half = min(eigen_count // 2, center, len(values) - center)
-        start = max(0, center - half)
-        stop = min(len(values), center + half)
-        return values[start:stop], vectors[:, start:stop]
+        count = min(eigen_count, len(values))
+        nearest_zero = np.argsort(np.abs(values))[:count]
+        order = nearest_zero[np.argsort(values[nearest_zero])]
+        return values[order], vectors[:, order]
 
     k = min(eigen_count, size - 2)
     values, vectors = eigsh(hamiltonian, k=k, sigma=0.0, which="LM")
@@ -186,7 +196,8 @@ def run_anderson_3d_benchmark(
     strong_poisson_distance = abs(strong_point.mean_r - POISSON_R)
     weak_closer_to_goe = weak_goe_distance < weak_poisson_distance
     strong_closer_to_poisson_than_weak = (
-        strong_poisson_distance < weak_poisson_distance and strong_poisson_distance < strong_goe_distance
+        strong_poisson_distance < weak_poisson_distance
+        and strong_poisson_distance < strong_goe_distance
     )
     ipr_increases = strong_point.mean_ipr > weak_point.mean_ipr
     result = Anderson3DBenchmarkResult(
@@ -199,14 +210,18 @@ def run_anderson_3d_benchmark(
         weak_closer_to_goe=weak_closer_to_goe,
         strong_closer_to_poisson_than_weak=strong_closer_to_poisson_than_weak,
         ipr_increases=ipr_increases,
-        quick_basic_checks_passed=weak_closer_to_goe and strong_closer_to_poisson_than_weak and ipr_increases,
+        quick_basic_checks_passed=weak_closer_to_goe
+        and strong_closer_to_poisson_than_weak
+        and ipr_increases,
     )
     if output_dir is not None:
         save_anderson_3d_artifacts(result=result, output_dir=output_dir)
     return result
 
 
-def _make_point(lattice_size: int, disorder: float, r_values: list[float], ipr_values: list[float]) -> Anderson3DPoint:
+def _make_point(
+    lattice_size: int, disorder: float, r_values: list[float], ipr_values: list[float]
+) -> Anderson3DPoint:
     r_arr = np.asarray(r_values, dtype=float)
     ipr_arr = np.asarray(ipr_values, dtype=float)
     return Anderson3DPoint(
@@ -216,7 +231,9 @@ def _make_point(lattice_size: int, disorder: float, r_values: list[float], ipr_v
         mean_r=float(np.mean(r_arr)),
         stderr_r=float(np.std(r_arr, ddof=1) / np.sqrt(len(r_arr))) if len(r_arr) > 1 else 0.0,
         mean_ipr=float(np.mean(ipr_arr)),
-        stderr_ipr=float(np.std(ipr_arr, ddof=1) / np.sqrt(len(ipr_arr))) if len(ipr_arr) > 1 else 0.0,
+        stderr_ipr=float(np.std(ipr_arr, ddof=1) / np.sqrt(len(ipr_arr)))
+        if len(ipr_arr) > 1
+        else 0.0,
         realizations=len(r_arr),
     )
 
@@ -226,7 +243,11 @@ def _nearest_disorder_point(points: list[Anderson3DPoint], disorder: float) -> A
 
 
 def _basic_checks_passed(result: Anderson3DBenchmarkResult) -> bool:
-    return result.weak_closer_to_goe and result.strong_closer_to_poisson_than_weak and result.ipr_increases
+    return (
+        result.weak_closer_to_goe
+        and result.strong_closer_to_poisson_than_weak
+        and result.ipr_increases
+    )
 
 
 def save_anderson_3d_artifacts(result: Anderson3DBenchmarkResult, output_dir: Path) -> None:
@@ -238,12 +259,16 @@ def save_anderson_3d_artifacts(result: Anderson3DBenchmarkResult, output_dir: Pa
     _save_data_npz(result, output_dir / "data.npz")
     _save_r_plot(result, figures_dir / "anderson_3d_r_statistics.png")
     _save_ipr_plot(result, figures_dir / "anderson_3d_ipr.png")
-    write_summary(output_dir / "summary.md", "3D Anderson Benchmark Run", _summary_lines(result, output_dir))
+    write_summary(
+        output_dir / "summary.md", "3D Anderson Benchmark Run", _summary_lines(result, output_dir)
+    )
 
 
 def _metrics_payload(result: Anderson3DBenchmarkResult) -> dict:
     return {
-        "points": [asdict(point) for size in sorted(result.by_size) for point in result.by_size[size]],
+        "points": [
+            asdict(point) for size in sorted(result.by_size) for point in result.by_size[size]
+        ],
         "weak_reference_r": result.weak_reference_r,
         "strong_reference_r": result.strong_reference_r,
         "weak_reference_ipr": result.weak_reference_ipr,
