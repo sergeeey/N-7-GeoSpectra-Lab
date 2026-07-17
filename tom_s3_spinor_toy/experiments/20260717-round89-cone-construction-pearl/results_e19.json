@@ -1,0 +1,159 @@
+{
+  "step0_clifford_ok": true,
+  "step1_torsion_check": {
+    "torsion_entries_sample": [
+      {
+        "i": 1,
+        "j": 1,
+        "k": 1,
+        "T": "0",
+        "matches_c_times_2t_minus_1_times_eps": true
+      },
+      {
+        "i": 1,
+        "j": 1,
+        "k": 2,
+        "T": "0",
+        "matches_c_times_2t_minus_1_times_eps": true
+      },
+      {
+        "i": 1,
+        "j": 1,
+        "k": 3,
+        "T": "0",
+        "matches_c_times_2t_minus_1_times_eps": true
+      }
+    ],
+    "all_entries_match_c_times_2t_minus_1_times_eps_form": true,
+    "roots_of_2t_minus_1": [
+      "1/2"
+    ],
+    "torsion_zero_iff_t_half": true
+  },
+  "step2_diff_formula_check": {
+    "per_i": [
+      {
+        "i": 1,
+        "diff": "Matrix([[0, I*c*(1 - 2*t)/4], [I*c*(1 - 2*t)/4, 0]])",
+        "predicted": "Matrix([[0, I*c*(1 - 2*t)/4], [I*c*(1 - 2*t)/4, 0]])",
+        "match": true
+      },
+      {
+        "i": 2,
+        "diff": "Matrix([[0, c*(1 - 2*t)/4], [c*(2*t - 1)/4, 0]])",
+        "predicted": "Matrix([[0, c*(1 - 2*t)/4], [c*(2*t - 1)/4, 0]])",
+        "match": true
+      },
+      {
+        "i": 3,
+        "diff": "Matrix([[I*c*(1 - 2*t)/4, 0], [0, I*c*(2*t - 1)/4]])",
+        "predicted": "Matrix([[I*c*(1 - 2*t)/4, 0], [0, I*c*(2*t - 1)/4]])",
+        "match": true
+      }
+    ],
+    "diff_formula_matches": true
+  },
+  "step3_t0_killing_check": {
+    "t0_parallel_reverified": true,
+    "lambda_candidates_per_i": [
+      {
+        "i": 1,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda0": true
+      },
+      {
+        "i": 2,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda0": true
+      },
+      {
+        "i": 3,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda0": true
+      }
+    ],
+    "t0_killing_check": true,
+    "lambda0_symbolic_in_c": "-c/4",
+    "lambda0_at_c2": "-1/2",
+    "lambda0_at_c0_minus2": "1/2"
+  },
+  "step4_t1_killing_check": {
+    "c0_found": "-2",
+    "t1_parallel_reverified_using_c0": true,
+    "parallel_checks": [
+      {
+        "i": 1,
+        "is_zero": true
+      },
+      {
+        "i": 2,
+        "is_zero": true
+      },
+      {
+        "i": 3,
+        "is_zero": true
+      }
+    ],
+    "lambda1_symbolic_in_c0": "-1/2",
+    "route1_direct_residuals": [
+      {
+        "i": 1,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda1": true
+      },
+      {
+        "i": 2,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda1": true
+      },
+      {
+        "i": 3,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda1": true
+      }
+    ],
+    "route1_all_match": true,
+    "route2_shortcut_residuals": [
+      {
+        "i": 1,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda1": true
+      },
+      {
+        "i": 2,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda1": true
+      },
+      {
+        "i": 3,
+        "residual": "Matrix([[0, 0]])",
+        "matches_lambda1": true
+      }
+    ],
+    "route2_all_match": true,
+    "two_independent_routes_agree": true,
+    "t1_killing_check": true
+  },
+  "step5_sign_structure_check": {
+    "lambda_t_formula": "(c/2)*(t-1/2)",
+    "lambda0_symbolic": "-c/4",
+    "lambda1_symbolic": "c/4",
+    "lambda1_equals_minus_lambda0_symbolic": true
+  },
+  "verdict": {
+    "clifford_ok": true,
+    "torsion_zero_iff_t_half": true,
+    "diff_formula_matches": true,
+    "t0_killing_check": true,
+    "t1_killing_check": true,
+    "lambda0_at_c0_minus2": "1/2",
+    "lambda1_at_c0_minus2": "-1/2",
+    "lambda0_magnitude_is_half": true,
+    "lambda1_magnitude_is_half": true,
+    "signs_opposite_numeric": true,
+    "lambda1_equals_minus_lambda0_symbolic": true,
+    "bridge_ok": true,
+    "magnitudes_match_half": true,
+    "label": "PARTIAL_OPPOSITE_SIGN_STRUCTURAL"
+  }
+}
