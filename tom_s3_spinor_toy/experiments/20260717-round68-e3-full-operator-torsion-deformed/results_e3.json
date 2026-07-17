@@ -1,0 +1,256 @@
+{
+  "step1_cl3_clifford": {
+    "pairwise_residuals": {
+      "0_0": 0.0,
+      "0_1": 0.0,
+      "0_2": 0.0,
+      "1_1": 0.0,
+      "1_2": 0.0,
+      "2_2": 0.0
+    },
+    "all_ok": true,
+    "max_residual": 0.0
+  },
+  "step2_cl6_clifford": {
+    "pairwise_residuals": {
+      "0_0": 0.0,
+      "0_1": 0.0,
+      "0_2": 0.0,
+      "0_3": 0.0,
+      "0_4": 0.0,
+      "0_5": 0.0,
+      "1_1": 0.0,
+      "1_2": 0.0,
+      "1_3": 0.0,
+      "1_4": 0.0,
+      "1_5": 0.0,
+      "2_2": 0.0,
+      "2_3": 0.0,
+      "2_4": 0.0,
+      "2_5": 0.0,
+      "3_3": 0.0,
+      "3_4": 0.0,
+      "3_5": 0.0,
+      "4_4": 0.0,
+      "4_5": 0.0,
+      "5_5": 0.0
+    },
+    "all_ok": true,
+    "max_residual": 0.0
+  },
+  "step3_chi6": {
+    "omega_anti_hermitian": true,
+    "omega_squared_is_minus_I": true,
+    "chi6_hermitian": true,
+    "chi6_squared_is_I": true,
+    "chi6_anticommutes_with_all_6_generators": true,
+    "max_anticommutator_residual_vs_generators": 0.0,
+    "all_ok": true
+  },
+  "step4_cl9_assembly_clifford": {
+    "pairwise_residuals": {
+      "0_0": 0.0,
+      "0_1": 0.0,
+      "0_2": 0.0,
+      "0_3": 0.0,
+      "0_4": 0.0,
+      "0_5": 0.0,
+      "0_6": 0.0,
+      "0_7": 0.0,
+      "0_8": 0.0,
+      "1_1": 0.0,
+      "1_2": 0.0,
+      "1_3": 0.0,
+      "1_4": 0.0,
+      "1_5": 0.0,
+      "1_6": 0.0,
+      "1_7": 0.0,
+      "1_8": 0.0,
+      "2_2": 0.0,
+      "2_3": 0.0,
+      "2_4": 0.0,
+      "2_5": 0.0,
+      "2_6": 0.0,
+      "2_7": 0.0,
+      "2_8": 0.0,
+      "3_3": 0.0,
+      "3_4": 0.0,
+      "3_5": 0.0,
+      "3_6": 0.0,
+      "3_7": 0.0,
+      "3_8": 0.0,
+      "4_4": 0.0,
+      "4_5": 0.0,
+      "4_6": 0.0,
+      "4_7": 0.0,
+      "4_8": 0.0,
+      "5_5": 0.0,
+      "5_6": 0.0,
+      "5_7": 0.0,
+      "5_8": 0.0,
+      "6_6": 0.0,
+      "6_7": 0.0,
+      "6_8": 0.0,
+      "7_7": 0.0,
+      "7_8": 0.0,
+      "8_8": 0.0
+    },
+    "all_ok": true,
+    "max_residual": 0.0
+  },
+  "construction_verified": true,
+  "d_s6_test_operator_spectra": {
+    "single_generator_0.185": [
+      -0.18500000000000005,
+      -0.185,
+      -0.185,
+      -0.1849999999999999,
+      0.1849999999999999,
+      0.18499999999999997,
+      0.185,
+      0.185
+    ],
+    "projector_seed20260717": [
+      -3.2551494199233795,
+      -1.4853089686537688,
+      -1.1652030080948321,
+      -0.20876582285742135,
+      0.20876582285742176,
+      1.1652030080948317,
+      1.4853089686537695,
+      3.2551494199233795
+    ]
+  },
+  "per_t_results": {
+    "t=0.5_LevCivita_regression_check": {
+      "t": 0.5,
+      "d_s3_eigenvalues": [
+        -1.5,
+        1.5
+      ],
+      "single_generator_0.185": {
+        "decoupling_residual": 4.440892098500626e-16,
+        "min_abs_eig_d_full": 1.511365276827543,
+        "max_abs_eig_d_full": 1.5113652768275458,
+        "predicted_min_from_decoupling_formula": 1.5113652768275445,
+        "prediction_matches_actual": true
+      },
+      "projector_seed20260717": {
+        "decoupling_residual": 1.7763568394002505e-15,
+        "min_abs_eig_d_full": 1.5144580445800857,
+        "max_abs_eig_d_full": 3.5841313795712786,
+        "predicted_min_from_decoupling_formula": 1.5144580445800855,
+        "prediction_matches_actual": true
+      }
+    },
+    "t=0_E2_crossing_n0": {
+      "t": 0.0,
+      "d_s3_eigenvalues": [
+        -3.0,
+        0.0
+      ],
+      "single_generator_0.185": {
+        "decoupling_residual": 1.3877787807814457e-17,
+        "min_abs_eig_d_full": 0.18499999999999936,
+        "max_abs_eig_d_full": 3.005698754033746,
+        "predicted_min_from_decoupling_formula": 0.1849999999999999,
+        "prediction_matches_actual": true
+      },
+      "projector_seed20260717": {
+        "decoupling_residual": 1.7763568394002505e-15,
+        "min_abs_eig_d_full": 0.2087658228574209,
+        "max_abs_eig_d_full": 4.426736692647028,
+        "predicted_min_from_decoupling_formula": 0.20876582285742135,
+        "prediction_matches_actual": true
+      }
+    },
+    "t=1_E2_crossing_n0": {
+      "t": 1.0,
+      "d_s3_eigenvalues": [
+        0.0,
+        3.0
+      ],
+      "single_generator_0.185": {
+        "decoupling_residual": 1.3877787807814457e-17,
+        "min_abs_eig_d_full": 0.18499999999999953,
+        "max_abs_eig_d_full": 3.005698754033747,
+        "predicted_min_from_decoupling_formula": 0.1849999999999999,
+        "prediction_matches_actual": true
+      },
+      "projector_seed20260717": {
+        "decoupling_residual": 1.7763568394002505e-15,
+        "min_abs_eig_d_full": 0.20876582285742154,
+        "max_abs_eig_d_full": 4.426736692647023,
+        "predicted_min_from_decoupling_formula": 0.20876582285742135,
+        "prediction_matches_actual": true
+      }
+    },
+    "t=0.25_generic_noncrossing": {
+      "t": 0.25,
+      "d_s3_eigenvalues": [
+        -2.25,
+        0.75
+      ],
+      "single_generator_0.185": {
+        "decoupling_residual": 8.881784197001252e-16,
+        "min_abs_eig_d_full": 0.7724797731979772,
+        "max_abs_eig_d_full": 2.2575927444957835,
+        "predicted_min_from_decoupling_formula": 0.7724797731979782,
+        "prediction_matches_actual": true
+      },
+      "projector_seed20260717": {
+        "decoupling_residual": 1.7763568394002505e-15,
+        "min_abs_eig_d_full": 0.7785134352041309,
+        "max_abs_eig_d_full": 3.957081973630004,
+        "predicted_min_from_decoupling_formula": 0.7785134352041307,
+        "prediction_matches_actual": true
+      }
+    }
+  },
+  "arbitrary_d_s3_structural_check": {
+    "d_s3_random_matrix_real": [
+      [
+        0.7656489025899215,
+        -1.2736785526712904
+      ],
+      [
+        -1.2736785526712904,
+        -0.0062305917499472134
+      ]
+    ],
+    "d_s3_random_matrix_imag": [
+      [
+        0.0,
+        -0.1094777793371016
+      ],
+      [
+        0.1094777793371016,
+        0.0
+      ]
+    ],
+    "per_d_s6_variant": {
+      "single_generator_0.185": {
+        "decoupling_residual": 2.220446049250313e-16
+      },
+      "projector_seed20260717": {
+        "decoupling_residual": 1.7763568394002505e-15
+      }
+    },
+    "all_residuals_negligible": true
+  },
+  "kt8_regression_check": {
+    "reproduced_min_abs_eig": 1.511365276827543,
+    "kt8_published_value": 1.5113689,
+    "abs_diff": 3.623172456945767e-06,
+    "matches_kt8_within_1e-4": true
+  },
+  "verdict": {
+    "construction_verified": true,
+    "decoupling_survives_torsion_deformation": true,
+    "kt8_regression_matches": true,
+    "s3_floor_removed_at_t0": true,
+    "min_abs_eig_d_full_at_t0_single_gen_test": 0.18499999999999936,
+    "logical_conclusion_ker_d_full_nonzero_at_t0": "IF the decoupling formula holds (verified above) AND D_S3(0) has an exact zero eigenvalue (E2, [VERIFIED-sympy]) AND the real curvature-twisted D_S6 operator has an exact zero eigenvalue (G73/G74A, [VERIFIED-sympy], NOT reconstructed in this script), THEN D_full has an exact zero eigenvalue too (0^2+0^2=0). This script verifies the first conjunct in full generality; the second and third conjuncts are cited from prior gates, not re-derived here.",
+    "label": "PASS_DECOUPLING_SURVIVES_TORSION_DEFORMATION"
+  }
+}

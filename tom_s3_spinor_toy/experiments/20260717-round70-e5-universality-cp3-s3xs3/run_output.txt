@@ -1,0 +1,54 @@
+==============================================================================
+PART 1: S^3 x S^3 = SU(2)^3/SU(2)  (isotropy H = SU(2)_diag)
+==============================================================================
+  m_star_C_pieces: [2, 2]
+  m_star_C_total_dim: 6
+  cas_V2: -4
+  m10_pieces: [2]
+  V2_tensor_V2: [0, 2, 4]
+  lambda3_m10_is_trivial: True
+  lambda2_m10: [2]
+  lambda2_tensor_lambda2: [0, 2, 4]
+  contains_trivial: True
+  s_minus_pieces: [2, 0]
+  schur_bound_dim_ker: 1
+
+==============================================================================
+PART 2: CP^3 = Sp(2)/(Sp(1) x U(1))  (isotropy H = Sp(1) x U(1))
+==============================================================================
+  m_star_C_pieces: [(1, 1), (1, -1), (0, 2), (0, -2)]
+  m_star_C_total_dim: 6
+  cas_values_on_m_star_C: [-4]
+  lambda3_candidates: {'same_sign': (0, 4), 'mixed_sign': (0, 0)}
+  chosen_split: mixed_sign
+  m10_pieces: [(1, 1), (0, -2)]
+  lambda2_m10: [(0, 2), (1, -1)]
+  lambda2_tensor_lambda2: [(0, -2), (0, 4), (1, 1), (2, -2)]
+  contains_trivial: False
+  s_minus_pieces: [(1, 1), (0, -2), (0, 0)]
+  schur_bound_dim_ker: 1
+
+==============================================================================
+PART 3: S^6 = G2/SU(3) calibration (reusing established facts)
+==============================================================================
+  m10: (1,0) dim3
+  lambda2_m10: (0,1) dim3 [3bar]
+  lambda2_tensor_lambda2_contains_trivial: False
+  schur_bound_dim_ker: 1
+
+==============================================================================
+PART 4: Euler characteristics chi(M) = c_3(T^{1,0}M) (general fact)
+==============================================================================
+  chi(S6) = 2
+  chi(S3xS3) = 0
+  chi(CP3) = 4
+  chi(SU3_over_T2_flag) = 6
+
+==============================================================================
+SUMMARY TABLE
+==============================================================================
+Space           Route-C (no singlet in L2xL2)?  Schur bound dim ker <=  chi(M)  
+S^6             PASS (established)              1                       2       
+SU(3)/T^2       PASS (Round 65, re-cited)       1                       6       
+CP^3            PASS                            1                       4       
+S^3xS^3         FAIL (singlet available)        1                       0       
