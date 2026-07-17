@@ -1,0 +1,202 @@
+{
+  "part1_explicit_LR_frames_and_sign_flip": {
+    "clifford_ok": true,
+    "quaternion_norm_check": {
+      "g_gbar_equals_norm2_I": true,
+      "product": "Matrix([[x0**2 + x1**2 + x2**2 + x3**2, 0], [0, x0**2 + x1**2 + x2**2 + x3**2]])"
+    },
+    "XL": [
+      [
+        "-x1",
+        "x0",
+        "-x3",
+        "x2"
+      ],
+      [
+        "-x2",
+        "x3",
+        "x0",
+        "-x1"
+      ],
+      [
+        "-x3",
+        "-x2",
+        "x1",
+        "x0"
+      ]
+    ],
+    "XR": [
+      [
+        "-x1",
+        "x0",
+        "x3",
+        "-x2"
+      ],
+      [
+        "-x2",
+        "-x3",
+        "x0",
+        "x1"
+      ],
+      [
+        "-x3",
+        "x2",
+        "-x1",
+        "x0"
+      ]
+    ],
+    "tangency_L_all": true,
+    "tangency_R_all": true,
+    "c0_left_found": "-2",
+    "left_bracket_check_all_pairs_ok": true,
+    "left_bracket_mismatches": [],
+    "c0_right_found_independently": "2",
+    "right_bracket_matches_minus_c0L_all_pairs": true,
+    "right_bracket_mismatches": [],
+    "c0_right_equals_minus_c0_left": true
+  },
+  "part2_mirror_of_e9_recipe": {
+    "so3_valued_right": true,
+    "so3_valued_left_crossref": true,
+    "Omega_right_i_str": [
+      "Matrix([[0, I*c*t/2], [I*c*t/2, 0]])",
+      "Matrix([[0, c*t/2], [-c*t/2, 0]])",
+      "Matrix([[I*c*t/2, 0], [0, -I*c*t/2]])"
+    ],
+    "Omega_left_i_str_crossref": [
+      "Matrix([[0, -I*c*t/2], [-I*c*t/2, 0]])",
+      "Matrix([[0, -c*t/2], [c*t/2, 0]])",
+      "Matrix([[-I*c*t/2, 0], [0, I*c*t/2]])"
+    ],
+    "crosscheck_sum_Zi_OmegaRi": "Matrix([[-3*c*t/2, 0], [0, -3*c*t/2]])",
+    "crosscheck_matches_plus_tH": false,
+    "crosscheck_matches_minus_tH": true,
+    "crosscheck_matches_tH_either_sign": true,
+    "t0_omega_right_all_zero": true,
+    "t0_parallel_checks": {
+      "e1": true,
+      "e2": true,
+      "generic_(a,b)": true
+    },
+    "t0_D_psi_is_zero": true,
+    "t1_only_trivial_via_solve": true,
+    "t1_nullspace_dim": 0,
+    "t1_only_trivial_via_nullspace": true,
+    "t1_nonzero_solution_exists": false,
+    "H_right_at_c2": "Matrix([[-3, 0], [0, -3]])",
+    "theorem_style_crosscheck_confirms_trivial_only": true,
+    "det_Omega1_right_symbolic": "c**2*t**2/4",
+    "roots_of_det_Omega1_right_in_t": [
+      "0"
+    ],
+    "t0_is_unique_root_right_frame": true
+  },
+  "part3_true_connection_vs_naive_recipe": {
+    "representative_k": 1,
+    "b_j_functions_str": [
+      "(x0**2 + x1**2 - x2**2 - x3**2)/(x0**2 + x1**2 + x2**2 + x3**2)",
+      "2*(x0*x3 + x1*x2)/(x0**2 + x1**2 + x2**2 + x3**2)",
+      "2*(-x0*x2 + x1*x3)/(x0**2 + x1**2 + x2**2 + x3**2)"
+    ],
+    "I2_component_of_conjugation_is_zero": true,
+    "reconstruction_of_fk_from_b_and_ZL_matches_part1_XR": true,
+    "c0_used_concrete": "-2",
+    "per_i_nabla1_fk_results": [
+      {
+        "i": 1,
+        "coeff_l_symbolic_t_str": [
+          "0",
+          "4*(-t*x0*x2 + t*x1*x3 + x0*x2 - x1*x3)/(x0**2 + x1**2 + x2**2 + x3**2)",
+          "4*(-t*x0*x3 - t*x1*x2 + x0*x3 + x1*x2)/(x0**2 + x1**2 + x2**2 + x3**2)"
+        ],
+        "coeff_l_at_t1_str": [
+          "0",
+          "0",
+          "0"
+        ],
+        "vanishes_at_t1": true
+      },
+      {
+        "i": 2,
+        "coeff_l_symbolic_t_str": [
+          "4*(t*x0*x2 - t*x1*x3 - x0*x2 + x1*x3)/(x0**2 + x1**2 + x2**2 + x3**2)",
+          "0",
+          "2*(t*x0**2 + t*x1**2 - t*x2**2 - t*x3**2 - x0**2 - x1**2 + x2**2 + x3**2)/(x0**2 + x1**2 + x2**2 + x3**2)"
+        ],
+        "coeff_l_at_t1_str": [
+          "0",
+          "0",
+          "0"
+        ],
+        "vanishes_at_t1": true
+      },
+      {
+        "i": 3,
+        "coeff_l_symbolic_t_str": [
+          "4*(t*x0*x3 + t*x1*x2 - x0*x3 - x1*x2)/(x0**2 + x1**2 + x2**2 + x3**2)",
+          "2*(-t*x0**2 - t*x1**2 + t*x2**2 + t*x3**2 + x0**2 + x1**2 - x2**2 - x3**2)/(x0**2 + x1**2 + x2**2 + x3**2)",
+          "0"
+        ],
+        "coeff_l_at_t1_str": [
+          "0",
+          "0",
+          "0"
+        ],
+        "vanishes_at_t1": true
+      }
+    ],
+    "nabla1_fk_vanishes_for_all_i": true
+  },
+  "part4_explicit_t1_spinor_candidate": {
+    "candidate_psi": "gbar(x) * psi_0  (quaternion-conjugate of g times constant psi_0)",
+    "c0_used": "-2",
+    "H_c0": "Matrix([[-3, 0], [0, -3]])",
+    "parallel_checks_using_c0_all_i": [
+      {
+        "i": 1,
+        "residual": "Matrix([[0, 0]])",
+        "is_zero": true
+      },
+      {
+        "i": 2,
+        "residual": "Matrix([[0, 0]])",
+        "is_zero": true
+      },
+      {
+        "i": 3,
+        "residual": "Matrix([[0, 0]])",
+        "is_zero": true
+      }
+    ],
+    "psi_is_nabla1_parallel_using_c0": true,
+    "D1_psi_using_c0": "Matrix([[0, 0]])",
+    "D1_psi_is_zero_using_c0": true,
+    "crossref_parallel_checks_using_E9_abstract_c2": [
+      {
+        "i": 1,
+        "residual": "Matrix([[-2*a_*x1 - 2*I*a_*x2 - 2*I*b_*x0 + 2*b_*x3, -2*I*a_*x0 - 2*a_*x3 - 2*b_*x1 + 2*I*b_*x2]])",
+        "is_zero": false
+      },
+      {
+        "i": 2,
+        "residual": "Matrix([[2*I*a_*x1 - 2*a_*x2 - 2*b_*x0 - 2*I*b_*x3, 2*a_*x0 - 2*I*a_*x3 - 2*I*b_*x1 - 2*b_*x2]])",
+        "is_zero": false
+      },
+      {
+        "i": 3,
+        "residual": "Matrix([[-2*I*a_*x0 - 2*a_*x3 - 2*b_*x1 + 2*I*b_*x2, 2*a_*x1 + 2*I*a_*x2 + 2*I*b_*x0 - 2*b_*x3]])",
+        "is_zero": false
+      }
+    ],
+    "psi_is_nabla1_parallel_using_E9_abstract_c2": false
+  },
+  "verdict": {
+    "core_part1_pass": true,
+    "core_part2_pass": true,
+    "t1_naive_ansatz_fails_symmetrically_to_e9": true,
+    "part3_reveals_frame_ambiguity_discrepancy": true,
+    "explicit_t1_spinor_found_using_concrete_c0": true,
+    "explicit_spinor_fails_under_e9_abstract_c2": true,
+    "label": "PASS_MIRROR_NULL__PLUS_EXPLICIT_T1_SPINOR_UNDER_SIGN_CAVEAT"
+  }
+}

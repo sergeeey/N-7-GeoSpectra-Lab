@@ -1,0 +1,128 @@
+{
+  "clifford_relations_ok": true,
+  "section_A_peter_weyl_derivation": {
+    "sanity_X_half_equals_Z": true,
+    "spectrum_by_peter_weyl_j": {
+      "0": [
+        [
+          1.5,
+          2
+        ]
+      ],
+      "0.5": [
+        [
+          0.5,
+          3
+        ],
+        [
+          4.5,
+          1
+        ]
+      ],
+      "1": [
+        [
+          -0.5,
+          4
+        ],
+        [
+          5.5,
+          2
+        ]
+      ],
+      "1.5": [
+        [
+          -1.5,
+          5
+        ],
+        [
+          6.5,
+          3
+        ]
+      ],
+      "2": [
+        [
+          -2.5,
+          6
+        ],
+        [
+          7.5,
+          4
+        ]
+      ],
+      "2.5": [
+        [
+          -3.5,
+          7
+        ],
+        [
+          8.5,
+          5
+        ]
+      ]
+    },
+    "n0_level_eigenvalue_is_1p5": true,
+    "n0_level_multiplicity": 2,
+    "n0_multiplicity_matches_(n+1)(n+2)_at_n=0": true,
+    "j_half_block_raw": [
+      [
+        0.5,
+        3
+      ],
+      [
+        4.5,
+        1
+      ]
+    ],
+    "j_half_naive_extension_matches_expected_tower_(n=1)": false,
+    "honest_note": "The n=0 (j=0) level of this direct Peter-Weyl construction reproduces the established eigenvalue +3/2 with multiplicity 2 EXACTLY and independently of E2/E9's own citation -- this is the crux fact this experiment depends on, and it is confirmed. The SAME naive extension of Agricola's D^{1/2}=sum Z_i.Z_i(psi)+(3/2)psi formula to j=0.5 (candidate n=1) does NOT reproduce +-(2.5) with multiplicity 6 -- see 'j_half_block_raw' for the actual computed values. This is reported honestly as an OPEN discrepancy in extending the naive shift-operator picture beyond constant spinors (consistent with E2's own claim.md flagging the n=0-to-n>=1 extension as '[DEDUCTION, low-risk]', not independently verified beyond n=0 there either). It does NOT weaken the n=0 finding, which is the ONLY level this experiment's physics question (t=0,1 torsion crossings) depends on, and which is additionally confirmed by the completely independent, exact symbolic kernel construction in Section B below. The general (n+1)(n+2) formula for n>=1 is separately corroborated by standard literature [DOCS/WEAK, not re-fetched this session]: Hitchin (1974, 'Harmonic spinors', Adv. Math.), Bar (1996, 'The Dirac operator on homogeneous spaces and its spectrum on 3-dimensional lens spaces'), and Camporesi & Higuchi (1996, J. Geom. Phys. 20, 'On the eigenfunctions of the Dirac operator on spheres and real hyperbolic spaces') -- the SAME Camporesi-Higuchi reference already cited (for S^6, not S^3) in this project's own G74A/E4 chain (see experiments/20260717-round69-e4-representation-free-kernel-check/decision.md line 58-59). This experiment does not claim to have re-verified these citations by re-fetching the papers this session; it flags them as standard, previously-used-in-this-project sources, not as newly [VERIFIED-external-source] here."
+  },
+  "section_B_t0_kernel_recheck": {
+    "omega_i_at_t0_all_zero": true,
+    "generic_ab_parallel_at_t0": true,
+    "D0_psi_zero_for_generic_ab": true,
+    "conclusion": "dim_C ker(D_S3, t=0) = 2 EXACTLY (full (a,b) in C^2, not a subspace)"
+  },
+  "section_B_t1_kernel_recheck_right_frame": {
+    "quaternion_norm_identity_ok": true,
+    "psi1_generic_ab_parallel_at_t1_c0": true,
+    "D1_psi_zero_for_generic_ab_c0": true,
+    "conclusion": "dim_C ker(D_S3, t=1, right-invariant frame, c0=-2) = 2 EXACTLY (full (a_,b_) in C^2, not a single spinor) -- caveat: only under c0=-2 (E10's concrete Pauli-realization sign), NOT under this project's own abstractly-calibrated c=+2 (E10 Part 4 already found the single-vector candidate fails under c=+2; this experiment does not re-attempt the c=+2 search)."
+  },
+  "section_C_toy_tensor_product_kernel": {
+    "A_hermitian": true,
+    "B_hermitian": true,
+    "dim_ker_A": 1,
+    "dim_ker_B": 1,
+    "dim_ker_of_sum_of_squares": 1,
+    "dim_ker_A_times_dim_ker_B": 1,
+    "dimensions_match": true,
+    "explicit_kernel_vector_matches_kron(kerA,kerB)": true,
+    "conclusion": "Toy example confirms, by EXPLICIT nullspace computation (not just asserted algebra), that ker(A^2 (x) I + I (x) B^2) = ker(A) (x) ker(B) both in DIMENSION and as an actual subspace (the found kernel vector is proportional to the predicted kron(kerA,kerB) vector). This grounds the general sum-of-squares argument used to compute dim ker(D_full) below."
+  },
+  "section_D_total_zero_mode_count": {
+    "dim_ker_S3_t0_or_t1": 2,
+    "dim_ker_S6_twisted_per_channel_(G74A)": 1,
+    "n_triality_channels_(G67/G73)": 3,
+    "dim_ker_full_per_channel": 2,
+    "total_internal_zero_modes_across_channels": 6,
+    "needed_for_N_gen=3": 3,
+    "excess_factor": "2"
+  },
+  "section_E_reduction_investigation": {
+    "majorana_reality_weyl_condition_search_preprint_tex": {
+      "Majorana": false,
+      "reality condition": false,
+      "Weyl condition": false,
+      "Weyl spinor": false
+    },
+    "su2_doublet_counting_note": "E11 (experiments/20260717-round77-su2lr-correspondence-test/decision.md) already tool-verified [VERIFIED-tool, reused here by citation, not re-derived]: psi^(0) (t=0, the SAME 2-dim constant-spinor space this experiment re-confirms in Section B) is an EXACT SU(2)_L singlet and a GENUINE (non-degenerate) SU(2)_R doublet -- i.e. the 'multiplicity 2' is not two unrelated states, it is ONE irreducible SU(2)_R doublet. This is a real, tool-verified structural fact, not a re-labeling trick. However, whether 'one SU(2) doublet = one physical generation slot' resolves the x2 excess found in Section D requires checking against THIS PROJECT'S OWN existing generation-counting convention -- see 'existing_32_state_convention_check' below.",
+    "existing_32_state_convention_check": "preprint.tex section 'Standard Model fermion content for one generation' (Sec 289-298) states: 'the Dirac spinor on S3xS6 decomposes under SO(4)xG2 into (rep_S3) (x) (rep_S6) pairs, with rep_S3 the 4-COMPONENT SO(4) spinor representation and rep_S6 the 8-component G2 spinor representation... Restricting to one generation, the 32 complex spinor components decompose into exactly the particle content of one SM generation.' This '4-component SO(4) spinor' is the FULL, reducible Spin(4) Dirac-spinor fiber, (2,1)+(1,2) under SU(2)_LxSU(2)_R -- i.e. it ALREADY contains BOTH an SU(2)_L doublet (2 states) AND an SU(2)_R doublet (2 states) SIMULTANEOUSLY, for a total of 4 real S3-side states per generation -- and this '32-state' bookkeeping is applied identically at EVERY KK level (G7's own g7_kk_spectrum.py: 'all 32 SM states appear at every (m,n) level'), i.e. it is a representation-content decomposition of the UNTWISTED, Levi-Civita (t=1/2) spinor bundle FIBER, done independently of whether any specific ker(D_S3(t)) is realized. This is a DIFFERENT object from ker(D_S3(t=0 or 1)), which (Section B) is only a SINGLE 2-dim SU(2) doublet (either SU(2)_L-singlet/SU(2)_R-doublet at t=0, or the mirror at t=1 under c0=-2 -- E11's own table), not both doublets simultaneously. Reconciling 'one generation needs the FULL 4-dim SO(4) spinor' with 'the torsion-escape zero mode supplies only a 2-dim SU(2) doublet at a SINGLE fixed t' is NOT done anywhere in this project, and is not attempted here -- it would require either (a) showing the other 2 states are supplied by some OTHER mechanism not yet identified, or (b) showing the '32-state' bookkeeping's role (representation/quantum-number assignment) is logically independent of the zero-mode-KERNEL-counting role (mass/existence), in which case the SU(2)-doublet fact, while real, does NOT by itself license reducing the Section D excess from 2 to 1 -- the two frameworks have not been shown to be talking about the same count.",
+    "orbifold_projection_check": "G27 (experiments/.../g27*, cited in docs/load_bearing_formulas.md: 'chi(S6)=2, Smith theory: 3\u2224(n+1)=7 -- single number kills the Z3-orbifold route') searched a Z3-orbifold projection SPECIFICALLY for the S6 factor (to try to explain N_gen=3 via an S6-side quotient) and found it NULL/inapplicable there. No orbifold or discrete-projection construction targeting the S3 FACTOR's spinor kernel appears anywhere in this project's experiments/ tree (grepped for 'orbifold' project-wide as part of this experiment); this escape route is not merely unresolved, it has not been attempted."
+  },
+  "verdict": {
+    "core_multiplicity_2_confirmed_at_t0": true,
+    "multiplicity_2_confirmed_at_t1_under_c0": true,
+    "natural_physical_reduction_found": false,
+    "label": "FAIL_MULTIPLICITY_2_CONFIRMED__NO_NATURAL_PROJECTION_FOUND"
+  }
+}

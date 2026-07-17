@@ -952,3 +952,605 @@ $t=0,1$ — H1's actual claim, not yet tested. Until then, do not cite
 "$t=0,1$ are physically selected" anywhere — only "independently
 geometrically distinguished (Cartan–Schouten flat connections), a
 necessary but not sufficient condition for H1."
+
+### Recomposition (2026-07-17, same day, accepted) — H1 splits into three distinct claims, one of them PROVED
+
+A follow-up review correctly identified that "H1 (Killing spinor)" as
+originally frozen conflated three logically distinct claims. Verified
+independently before accepting (re-derived $F'(t)$ below directly in sympy;
+the holonomy argument itself is a standard theorem, checked for gaps —
+none found, since $S^3$ simply-connected kills any $\mathbb{Z}_2$ spin-lift
+ambiguity outright). Full derivation in
+`experiments/20260717-round72-e7-t-selection-principle/decision.md`.
+
+- **H1a (ordinary Riemannian Killing spinor selects $t$): REFUTED as a
+  selector.** Round $S^3$'s Killing spinors exist w.r.t. Levi-Civita
+  ($t=1/2$) regardless of the $\nabla^t$ family — this criterion cannot
+  distinguish $t=0,1$ from anything else. Wrong formalization of H1 from
+  the start.
+- **H1b ($\nabla^t$-parallel spinor $\Rightarrow$ zero mode of $D^t$):
+  PROVED, not merely supported.** Chain: $R^t=0$ at $t=0,1$ (already
+  established) $\Rightarrow$ $\nabla^t$ metric-compatible for every $t$
+  (general fact for the canonical family) $\Rightarrow$ flat +
+  metric-compatible + $S^3$ simply-connected ($\pi_1=0$) $\Rightarrow$
+  trivial holonomy in both $\mathrm{SO}(3)$ and its $\mathrm{Spin}(3)$ lift
+  (standard holonomy theorem — no monodromy obstruction since there is no
+  nontrivial loop at all) $\Rightarrow$ global $\nabla^t$-parallel spinor
+  exists at $t=0,1$ $\Rightarrow$ $D^t\psi=\sum_ie_i\cdot\nabla^t_{e_i}\psi=0$
+  **identically** for that spinor, by definition of $D^t$ as the Dirac
+  operator of $\nabla^t$. The $n=0$ crossings are therefore a **structural
+  consequence**, not a spectral coincidence.
+- **H1c (physics selects one of $\{0,1\}$): OPEN, unchanged.** Flatness
+  picks the *pair* $\{0,1\}$ (opposite-sign torsion, Cartan–Schouten
+  $(\mp)$-connections) symmetrically; distinguishing one requires an
+  additional, $t\leftrightarrow1-t$-asymmetric physical input (orientation/flux
+  sign, SUSY equation, parent-theory chirality convention, boundary
+  condition) not present in the purely geometric argument.
+
+**E8 gate registered (preliminary analytic test done, not a full
+experiment):** does an independently-motivated action select $t=0$ or $t=1$
+(H2)? For the simplest candidate $F(t)=a|R^t|^2+b|T^t|^2$
+($|R^t|^2\propto t^2(t-1)^2$, $|T^t|^2\propto(2t-1)^2$):
+$F'(t)=2(2t-1)[aA\,t(t-1)+2bB]$ — **re-derived and confirmed in sympy this
+session**, giving $F'(0)=-4bB$, $F'(1)=4bB$, $F'(1/2)=0$ exactly. $t=1/2$ is
+*always* stationary; $t=0,1$ are stationary only if $b=0$ (the torsion-energy
+term is dropped by hand) or under special cancellation. **Preliminary
+status: `BLOCKED/UNDERDETERMINED`** — no parent action is frozen, and a
+generic curvature+torsion functional does not robustly select $t=0,1$.
+PASS/FAIL criteria for a future full E8 recorded in the experiment's own
+`decision.md`.
+
+**Updated summary:**
+```text
+Flatness selector: PROVED for t=0,1.
+Torsion-parallel spinor existence: PROVED for t=0,1 (simply-connected holonomy).
+Zero mode of matching Dirac operator: PROVED.
+Ordinary Killing-spinor criterion (H1a): REFUTED as selector.
+Physical selection of one t (H1c): OPEN.
+Equations of motion (H2, E8 preliminary): BLOCKED/UNDERDETERMINED.
+Anomaly cancellation (H3): OPEN, not attempted.
+Higher-mode crossings (n=1,2): UNEXPLAINED, H4 active there.
+```
+This is a real strengthening: the $n=0$ torsion escape route is no longer
+just a supported candidate mechanism — it is a **mathematically explained
+Cartan–Schouten zero-mode mechanism**. Still not a physical resolution:
+which sign is realized, and why nature would select this deformation over
+Levi-Civita at all, remain open (H1c, H2, H3). Does not promote KT-8; does
+not touch E3's own scope caveat; does not explain the $n=1,2$ crossings.
+
+---
+
+## E9 (2026-07-17) — direct construction of the parallel spinor (mechanical verification of H1b)
+
+**Origin:** H1b's recomposition (above) argued via an abstract holonomy
+theorem that a global $\nabla^t$-parallel spinor exists at $t=0,1$. This
+experiment (`experiments/20260717-round73-e9-explicit-parallel-spinor/`)
+builds it explicitly rather than resting on the abstract argument alone.
+
+**Result — `PASS_T0_ONLY__T1_NAIVE_ANSATZ_FAILS_PARTIAL`.** Derived the
+explicit spin connection $\Omega_i(t)=(1/4)\sum\Gamma^k_{ij}(t)Z_j Z_k$ from
+$\nabla^t_XY=t[X,Y]$ directly (not assumed) and found, exactly,
+$\Omega_i(t)=-(tc/2)Z_i$ — independently re-verified this session in sympy.
+Cross-check: $\sum_i Z_i\Omega_i(t)=t\cdot H$ matches E2's own Kostant element
+$H$ exactly, a non-circular confirmation.
+
+**$t=0$: clean PASS, no caveats.** $\Omega_i(0)=0$ for all $i$
+(re-verified), so any constant left-invariant spinor is exactly
+$\nabla^0$-parallel, and substituting into Agricola's $D^t$ formula gives
+$D^0\psi=0$ exactly — a direct, mechanical confirmation of H1b at $t=0$, not
+merely an application of the abstract theorem.
+
+**$t=1$: honest PARTIAL, not forced.** The same left-invariant ansatz gives
+**only** the trivial solution $\psi=0$ at $t=1$ — independently re-verified
+this session (`sympy.solve` reproduced exactly: solving
+$\Omega_i(1)\psi=0$ for all $i$ gives $\psi=0$ only). This does **not**
+contradict H1b's abstract argument for $t=1$: the left-invariant frame
+itself is $\nabla^t$-parallel only at $t=0$ ($\Gamma^k_{ij}(t)=0$ iff
+$t=0$, shown to be the unique root), while at $t=1$ the connection is still
+flat as an operator but the natural parallel trivialization is plausibly the
+**right**-invariant frame instead (the classical left/right duality of the
+two Cartan–Schouten connections) — **not constructed here**, flagged
+`[INFERRED, NOT verified]`, a well-scoped, cheap-ish follow-up.
+
+**What this does and does not mean:** strengthens $t=0$'s zero mode from
+"proved via general theorem" to "proved via general theorem **and**
+explicitly exhibited." Does not claim $t=1$'s parallel spinor fails to
+exist — only that this project's established left-invariant convention does
+not realize it; H1b's abstract argument for $t=1$ is untouched. Does not
+touch H1c/H2/H3, does not promote E2/E3, does not resolve the $n=1,2$
+crossings.
+
+**Follow-up (not attempted):** construct the explicit right-invariant frame
+for $S^3=\mathrm{SU}(2)$ and repeat this same check at $t=1$ to complete
+the symmetric picture — would require introducing group-coordinate
+machinery (Euler angles or the exponential map) not previously used in this
+line of work.
+
+---
+
+## E10 (2026-07-17) — does an existing convention link S³'s torsion sign (H1c) to S⁶'s already-fixed chirality?
+
+**Origin:** H1c (which of $t=0,1$ is physically realized) remains open;
+this project already fixes SM chirality via a single discrete input (S⁶'s
+orientation, `preprint.tex:889-891`: "the chirality of the weak interaction
+is fixed by the orientation of $S^6$ ... no additional discrete inputs are
+required"). Explored whether an analogous, already-implicit consistency
+requirement links S³'s torsion sign to this.
+
+**Result (`experiments/20260717-round74-e10-chirality-sign-link/`) —
+`OPEN` on all three sub-questions, honest negative, verified.** (1) Product
+orientability: both S³ and S⁶ are simply connected, so the product spin
+structure is unique regardless of either factor's orientation — no link
+possible via this route (consistent with `preprint.tex:889-891`'s own "no
+additional discrete inputs" statement, independently spot-checked, exact
+match). (2) Chirality-matching: **structurally blocked** by this project's
+own KT-8/E3 result — the product-decoupling identity's cross-term
+cancellation depends *only* on the S⁶ factor's chirality operator
+(`preprint.tex:1479-1482`, spot-checked, exact match), so $t$ cannot touch
+the chirality grading at all. (3) No existing S³ orientation convention is
+fixed anywhere in the paper. One **[SPECULATIVE]** synthesis was flagged
+(not an existing convention, not a PASS): a possible correspondence between
+$t=0/1$'s left/right-invariant parallelization (E9) and the
+$\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$ gauge identification already used
+for S³'s isometry group — requires two unverified steps, named as a cheap
+future test, not pursued further here.
+
+---
+
+## E11 (2026-07-17) — is the existing Freund-Rubin flux on S³ the physical source of the torsion parameter $t$?
+
+**Origin:** `preprint.tex`'s own Modulus Stabilization section already uses
+a Freund-Rubin 3-form flux on S³ (`V_{\mathrm{flux}}\propto C^3/\rho_6^{12}$,
+line 987). Since $S^3$'s torsion $T^t$ is itself structurally a 3-form
+(the only invariant one, as $\dim\Lambda^3(\mathbb{R}^3)^*=1$), explored
+whether the two are — or could naturally be — the same object.
+
+**Result (`experiments/20260717-round75-e11-freund-rubin-torsion-link/`) —
+mixed, no overreach.** **Q1 (dimension-forced structural match): PASS,
+but near-tautological** — verified $T^t(e_i,e_j,e_k)=(2t-1)c$ times the
+same Levi-Civita/volume symbol the flux's own magnitude traces to; since
+$\dim(S^3)=3$ forces any invariant 3-form to be a multiple of the same
+generator, this is close to automatic, not by itself informative. **Q2
+(flux as physical torsion source): OPEN** — `preprint.tex` uses the flux
+purely as a **scalar** in the potential (spot-checked line 985-989, exact
+match: "$V_{\mathrm{flux}}\propto C^3/\rho_6^{12}$" with no 3-form indices
+or connection coupling anywhere) — zero wiring currently exists between the
+flux and any connection/torsion object; instantiating the standard
+NS-NS-flux-sources-contorsion mechanism would require a new normalization
+convention not derivable from anything in the paper.
+
+**Q3, status calibration (2026-07-17, accepted) — "FAIL-AS-POSED" was too
+strong; split into bosonic vs fermionic sensitivity.** The original finding
+(a quadratic bosonic flux-energy functional $V_{\mathrm{flux}}\propto q^2$
+is blind to the sign of $q$) is correct and stands as
+**`Bosonic flux potential selects sign($q$): FAIL`** — the existing EOM
+($dV/d\rho_6=0$) fixes $\rho_6$, not the flux quantum, and a quadratic
+functional cannot distinguish $\pm q$ by construction, directly consistent
+with E7/KT-12's own E8-gate finding (a torsion-energy term of this type
+needs $b=0$ for $t=0,1$ to be stationary at all). **However,** the
+*fermionic* sector is not generally bound by this: in the standard
+connections-with-skew-torsion literature this project already draws on
+(Agricola's own paper, already cited throughout E2/E7/E9, is titled
+"...their Dirac operator and homogeneous models in **string theory**"),
+the torsionful connection coupling to a Killing spinor is typically
+**linear** in the flux, e.g. $\nabla^{\pm}=\nabla^{\mathrm{LC}}\pm\frac18 H$
+in one standard normalization — so flipping $\mathrm{sign}(q)$ swaps
+$\nabla^+\leftrightarrow\nabla^-$, meaning the fermionic/parallel-spinor
+sector **can** distinguish the two torsion signs even where the bosonic
+potential cannot. Corrected split:
+```text
+Bosonic flux potential selects sign(q): FAIL.
+Fermionic torsionful connection distinguishes sign(q): PASS structurally.
+Full parent theory selects one sign: OPEN.
+```
+This does **not** establish that heterotic supergravity literally applies
+to this project's 13D ansatz — it only shows the general no-go argument
+("$q^2$ is blind to sign, therefore no flux mechanism can ever select
+$t=0$ or $1$") is false as a *general* claim; the specific bosonic
+functional tested by E7's E8-gate remains a real, valid finding for that
+functional alone.
+
+**Net effect of E9/E10/E11:** none resolve H1c, H2, or H3. E9 strengthens
+$t=0$'s zero mode from abstract to explicitly-constructed; E10 and E11 both
+independently and honestly rule out two natural candidate routes to
+resolving H1c/H2 using only what already exists in this paper — a
+consistency-based selection principle would need genuinely new physical
+input, not a repackaging of existing structure.
+
+---
+
+## E9-followup (2026-07-17) — right-invariant frame at $t=1$, completing E9's own flagged next step
+
+**Status calibration (2026-07-17, accepted):** the verdict label below is
+retitled from "PARTIAL" to **"PASS geometrically; CONVENTION RECONCILIATION
+OPEN."** The literal Pauli-matrix commutator $[Z_1,Z_2]=-2Z_3$ is
+`[VERIFIED-tool]` — but this does **not** by itself establish that this
+project uses "the wrong sign" for anything physical. The tangent-bundle
+structure constant $c_{\mathrm{tan}}$ (in $[e_i,e_j]=c_{\mathrm{tan}}
+\epsilon_{ijk}e_k$) and the Clifford-representation matrix commutator sit on
+opposite sides of several unreconciled conventions: the Clifford-algebra sign
+convention itself, frame orientation, the specific spin-lift map used, the
+left-frame$\leftrightarrow$right-frame transition, and a possible
+$e_i\mapsto-e_i$ relabeling. Two flat Cartan–Schouten connections with
+opposite-sign torsion existing on any Lie group with a bi-invariant metric,
+one trivialized by the left-invariant frame and the other by the
+right-invariant frame, is the standard, expected structure (Cartan &
+Schouten 1926; see also arXiv:0911.1602 on flat metric connections with
+antisymmetric torsion) — not a new numerical anomaly. Correct registration:
+"literal Pauli commutator: VERIFIED; mapping to tangent structure constants:
+UNRECONCILED; physical sign error: NOT ESTABLISHED." See E13 below for the
+proposed convention-reconciliation gate.
+
+**Origin:** E9 (above) explicitly left open whether $t=1$'s parallel spinor
+lives in the right-invariant frame instead of the left-invariant one used
+throughout E2/E7/E9.
+
+**Result (`experiments/20260717-round76-e9followup-right-invariant-frame/`)
+— `PASS_MIRROR_NULL__PLUS_EXPLICIT_T1_SPINOR_UNDER_SIGN_CAVEAT`, mixed,
+genuinely subtle, no overreach.**
+
+1. **Literal task, mechanically reapplying E9's recipe to the
+   right-invariant bracket: clean mirror NULL.** Built explicit left/right
+   -invariant vector fields on SU(2) via the concrete unit-quaternion model
+   and verified, by direct differentiation, that right-invariant fields
+   carry the exact opposite-sign structure constant of the left-invariant
+   ones. Mechanically re-deriving $\Omega_i^{\mathrm{right}}(t)$ the same
+   way E9 built $\Omega_i^{\mathrm{left}}(t)$ gives the mirror image — and
+   at $t=1$ this **still** gives only the trivial solution $\psi=0$. Taken
+   alone, this would say E9's hypothesis is not rescued by "the same recipe,
+   flipped frame."
+
+2. **Deeper check — does E9's own, already-defined $t=1$ connection (not a
+   freshly-built one) make the right-invariant fields fully parallel?
+   Yes, exactly.** Expressing the right-invariant field via its honest,
+   group-element-dependent adjoint-action coefficients in the left-invariant
+   basis and applying E9's *original* Leibniz-extended connection gives
+   $\nabla^1 f_i=0$ identically for every $i$ — a genuinely different, and
+   stronger, question than (1), and it comes back positive. **Independently
+   re-verified this session:** the literal matrix commutator
+   $[Z_1,Z_2]=-2Z_3$ for this project's own Clifford generators
+   ($Z_i=i\sigma_i$) — confirming the crux discrepancy below directly, not
+   just accepting the agent's report.
+
+3. **The crux, previously-invisible discovery: two different notions of
+   the structure constant "$c$" disagree in sign.** This project's own
+   abstract bookkeeping calibrates $c=+2$ (via the unrelated physics fact
+   $h_H=3$), but the literal matrix commutator of the same Clifford
+   generators used throughout E2/E7/E9 gives $c_0=-2$ — **confirmed by
+   direct computation** ($[Z_1,Z_2]=-2Z_3$, verified independently this
+   session). An explicit parallel spinor at $t=1$ ($\psi(x)=\bar g(x)\psi_0$
+   on the quaternion model) was found and verified exactly — **but only
+   under $c_0=-2$; the identical candidate demonstrably fails under this
+   project's own calibrated $c=+2$.**
+
+**What this does and does not mean:** does **not** affect E2/E7's own
+headline results (the $t=0,1$ crossing values and $R^t=0$ flatness hold for
+generic/symbolic $c$, regardless of sign — E7's own claim.md already states
+this explicitly). Does **not** resolve H1c/H2/H3. **Does** mean: an
+explicit $t=1$ parallel spinor should not be cited without stating which
+sign convention it uses — "an explicit parallel spinor exists for $t=1$ in
+the sign convention matching the concrete Clifford realization directly; it
+has not been shown to exist, and by this same computation demonstrably
+fails as tested, in this project's own calibrated sign." A different
+candidate spinor under $c=+2$ was not tried and remains a cheap open
+follow-up.
+
+**Two pearl-registry candidates flagged (not yet promoted):** (1) a
+"frame-recipe-reapplication trap" — mechanically reapplying a
+connection-defining recipe to a new frame does not, in general, reproduce
+an already-defined connection's restriction to that frame; these can be
+different connections sharing the same formula pattern. (2) the abstract-c-
+vs-concrete-$c_0$ sign gap itself, as a standing caveat for any future
+computation in this line of work that mixes symbolic structure-constant
+bookkeeping with an actual concrete matrix/manifold realization.
+
+---
+
+## E10-followup (2026-07-17) — testing the speculative $\mathrm{SU}(2)_{L,R}$ correspondence flagged by E10
+
+**Status calibration (2026-07-17, accepted):** split into two separate
+claims with different confidence. The **mathematical transformation
+pattern** (constant spinor in the left-invariant trivialization is invariant
+under left translations and transforms as a genuine spinor under right
+translations, with the roles exchanged in the right-invariant
+trivialization) is `SUPPORTED / likely provable` as a clean theorem once
+conventions are fixed — expected: $\ker D^{t=0}\sim(\mathbf1,\mathbf2)$,
+$\ker D^{t=1}\sim(\mathbf2,\mathbf1)$ under $\mathrm{SU}(2)_L\times
+\mathrm{SU}(2)_R$ — not a coincidence with the paper's own notation. The
+**physical claim** that $(\mathbf2,\mathbf1)$ corresponds to an actual 4D
+left-handed weak fermion remains `OPEN`: it requires the full
+thirteen-dimensional spinor, its decomposition under both the external and
+internal spin groups, an explicit identification of the geometric
+$\mathrm{SU}(2)_L$ with the physical weak $\mathrm{SU}(2)_L$, reality/
+projection conditions, and the full zero-mode space — none of which is
+established. Additionally: E10's own claim that S⁶'s orientation
+"structurally cannot" influence $t$ is correct **only within the frozen,
+decoupled product-operator ansatz** — in an as-yet-unknown parent theory,
+fluxes, orientations, and torsion signs could in principle be linked by
+shared equations of motion (this qualifies, not reverses, E10's finding).
+
+**Result (`experiments/20260717-round77-su2lr-correspondence-test/`) —
+`CLEAN_COMPLEMENTARY_REP_PATTERN_FOUND__SPECULATIVE_CONVENTION_DEPENDENT`.**
+The representation-theory computation itself is clean and exact:
+
+| | $\mathrm{SU}(2)_L$ (left translation) | $\mathrm{SU}(2)_R$ (right translation) |
+|---|---|---|
+| $\psi^{(0)}=$ const ($t=0$) | singlet | doublet |
+| $\psi^{(1)}(x)=\bar g(x)\psi_0$ ($t=1$, only under $c_0=-2$) | doublet | singlet |
+
+Cross-referenced against this project's own conventions
+(spot-checked, exact): `preprint.tex:332` states
+"$\mathrm{SU}(2)_L$ singlet ... the right-handed neutrino $\nu_R$" (i.e.
+$\mathrm{SU}(2)_L$ doublet $\leftrightarrow$ left-handed, singlet
+$\leftrightarrow$ right-handed, standard SM convention) — $\psi^{(1)}$'s
+$\mathrm{SU}(2)_L$-doublet content matches exactly what this project
+independently calls "left-handed."
+
+**Reported as `SPECULATIVE-ONLY`, explicitly not a PASS — three
+independent, unresolved assumptions are stacked:**
+1. `preprint.tex` never states $\mathrm{SU}(2)_L=$ left-translation
+   specifically (confirmed by direct search) — reversing this convention
+   flips every label in the table above.
+2. $\psi^{(1)}$ only exists under $c_0=-2$; the E9-followup above already
+   showed it fails under this project's own calibrated $c=+2$.
+3. No physical principle requires an S³-factor mode to match S⁶'s
+   chirality label at all — and per KT-8, no zero mode of the full 9D
+   operator currently exists in the round, untwisted ansatz actually used;
+   the entire $t=0,1$ torsion family remains "physically unmotivated, not
+   a resolution" (the item above).
+
+**Net effect:** a clean, internally-consistent, but convention-dependent
+representation-theoretic pattern, recorded for future reference — does not
+promote H1c, KT-8, or any preprint.tex claim.
+
+---
+
+## KT-13 / E12 (2026-07-17) — full-kernel multiplicity gate
+
+**Origin:** a follow-up review correctly flagged, as priority #1 ahead of
+any further work on H1c/H2/H3, that E2's own `claim.md` already recorded
+(as an `[INFERRED]` identification device, not a flagged physical concern)
+that the $n=0$ level of the round S³ Dirac spectrum has complex
+multiplicity 2, not 1 — `dim=(0+1)(0+2)=2`. If real and unresolved, this
+means the torsion-escape-route program's zero mode is not one physical
+state but a 2-dimensional space, giving 6 internal zero modes across the
+3 postulated triality channels, not the needed 3.
+
+**Result (`experiments/20260717-round78-e12-multiplicity-gate/`) —
+`FAIL_MULTIPLICITY_2_CONFIRMED__NO_NATURAL_PROJECTION_FOUND`. Real,
+unresolved. Independently re-verified this session** (given the
+significance, not merely accepted): since $\Omega_i(0)=0$ identically for
+*every* $i$ (already established, this session, independent of $\psi$),
+$D^0\psi=\sum_iZ_i\cdot Z_i(\psi)+0=0$ holds trivially for the **entire**
+2-dimensional space of constant spinors $(a,b)$, not a single vector — this
+follows immediately from what was already verified, not a new subtle
+computation, and confirms the crux number directly.
+
+**Two independent routes (both tool-verified in the experiment):**
+Peter–Weyl representation theory (spin-$j$ angular-momentum matrices,
+$j=0$ level: eigenvalue $+3/2$, multiplicity 2 exactly) and direct
+symbolic reconstruction (the full generic constant-spinor family at $t=0$,
+and the full generic $\psi(x)=\bar g(x)\psi_0$ family at $t=1$ under
+$c_0=-2$) agree exactly. The tensor-product kernel identity
+$\ker(D_{\mathrm{full}})=\ker(D_{S^3,t})\otimes\ker(D_{S^6,S^-})$ for a
+decoupled sum-of-squares operator was grounded in an explicit toy
+computation, not just asserted algebra.
+
+$$\dim\ker(D_{S^3,t=0\text{ or }1})=2,\quad \dim\ker(D_{S^6,\mathrm{twisted}})=1
+\text{ (G74A)}\implies\dim\ker(D_{\mathrm{full}})=2\text{ per channel},
+\quad 3\times2=6\text{ total},\quad\text{not }3.$$
+
+**Three possible reductions investigated, none found to resolve it (not
+forced):** (1) no Majorana/reality/Weyl condition exists anywhere in
+`preprint.tex`'s spinor content that could halve this. (2) The kernel is
+confirmed (reusing E10-followup) to be one irreducible $\mathrm{SU}(2)$
+doublet, not unstructured — but `preprint.tex:292-298`'s own existing "one
+generation = 32 states" convention requires the **full** 4-component
+$(\mathbf2,\mathbf1)\oplus(\mathbf1,\mathbf2)$ SO(4) representation
+simultaneously, at *every* KK level, regardless of any $\ker(D_{S3,t})$ —
+whether "one doublet = one generation slot" is even a valid re-reading of
+that convention is **not settled anywhere in this project**; concluding it
+resolves the excess would be exactly the kind of manufactured resolution
+this experiment was told not to produce. (3) No existing orbifold/
+projection result in this project (G27, G31) targets this specific object.
+
+**What this does and does not mean:** does **not** invalidate E7's
+flatness result or E9/E10's explicit parallel-spinor constructions as
+mathematical facts about $\ker(D^t)$ — those stand exactly as established.
+**Does** kill the implicit treatment, throughout E2/E3/E7/E9/E9-followup,
+of "the $t=0$ (or $t=1)$ constant spinor" as a single physical zero mode —
+it is a genuine 2-dimensional space. Does not touch G74A's own S⁶-side
+result. **Recommended prerequisite, before any further H1c/H2/H3 work:**
+determine whether `preprint.tex`'s "32-states = one generation" convention
+and the torsion-crossing kernel-dimension count are talking about the same
+object at all — this project has not yet asked, let alone answered, that
+question.
+
+---
+
+## KT-13 follow-up (2026-07-17) — attempting to reconcile the multiplicity excess
+
+**Origin:** at the user's request, attempted the first item of KT-13/E12's
+own Relaxation Map: reconcile the existing "32 states = one generation +
+CPT conjugates" convention with the newly-found 2-dimensional torsion
+kernel, before proceeding to any further gates.
+
+**Result (`experiments/20260717-round79-multiplicity-reconciliation-attempt/`)
+— `STRUCTURAL_A_CONFIRMED__B_REFUTED__PHYSICAL_MECHANISM_STILL_OPEN`.**
+
+**A genuine, non-manufactured structural match found and independently
+verified this session:** `experiments/20260615-g6-s3xs6-spinor-content/
+g6_spinor_decomposition.py` — an experiment dated **2026-06-15, one month
+before today's torsion-deformation program existed** — already splits the
+S³-side 4-component representation into two 2-dimensional chirality blocks:
+`chir_s3="+"` ($T_{3L}=\pm\tfrac12,T_{3R}=0$ — $\mathrm{SU}(2)_L$
+doublet/$\mathrm{SU}(2)_R$ singlet) and `chir_s3="-"`
+($T_{3L}=0,T_{3R}=\pm\tfrac12$ — $\mathrm{SU}(2)_R$ doublet/
+$\mathrm{SU}(2)_L$ singlet) — **verified directly this session, exact
+match, source code lines cited.** This is exactly E10-followup's $t=1$ and
+$t=0$ kernels respectively. Because G6 predates the torsion program
+entirely, this correspondence was not built to order.
+
+**Reading (a), structural half: CONFIRMED.** The kernel structure found
+today is not new or arbitrary — it reproduces a chirality split this
+project already used, independently, a month ago.
+
+**Reading (a), physical half: still OPEN.** Nothing establishes *why* the
+S³ connection would need two different torsion values ($t=0$ **and** $t=1$)
+simultaneously in different chirality sectors — this project's own text
+(`preprint.tex`) already states there is no physical principle for
+selecting even *one* crossing value over $t=1/2$; a simultaneous,
+sector-dependent pair is a strictly larger, currently unmotivated
+postulate.
+
+**Reading (b): REFUTED, not merely unsupported.** All 8 checked particle/
+antiparticle pairs in G6's own table share the *same* `chir_s3` label —
+CPT/antiparticle doubling in this project's own existing bookkeeping is
+carried entirely by the S⁶ factor ($B-L$ sign), not the S³ factor.
+Relabeling the $\mathrm{SU}(2)$ doublet found today as "particle +
+antiparticle" content directly contradicts the project's own existing
+table.
+
+**What this does not do:** does not supply the missing physical mechanism
+for why both torsion values would be simultaneously realized; does not
+reconcile the S³-side count with the S⁶-side/triality-channel counting in
+full ($4\times1\times3=12$ vs. the needed 3 vs. G6's own 32); does not
+touch H1c or KT-8. **Minor correction surfaced and applied:** KT-13/E12's
+own text paraphrased an earlier gate (G7) as claiming the 32-state content
+"appears at every $(m,n)$ level" — the actual source states this only for
+the lightest level; corrected here.
+
+**Net effect:** the multiplicity excess is now understood to correspond to
+a real, previously-known structural pattern (not noise), but remains
+physically unresolved — a genuine partial result, not a full reconciliation.
+
+---
+
+### E14 (round80) — $\mathbb{Z}_2$ left-right symmetry search
+
+Per the user's instruction to continue searching for a physical mechanism
+after the reconciliation attempt above. Tested whether group inversion
+$\iota: g \mapsto g^{-1}$ on $S^3=\mathrm{SU}(2)$ realizes the $t
+\leftrightarrow 1-t$ symmetry as a genuine geometric isometry, and whether
+this could force both $t=0,1$ to be simultaneously physically present.
+
+**Verdict:** `PASS_GEOMETRIC_Z2_CONFIRMED__PHYSICAL_MECHANISM_STILL_OPEN`
+— independently re-run and re-verified by me (`python
+e14_z2_left_right_symmetry.py`, matched the agent's own output exactly).
+
+**Geometric result (tool-verified, real strengthening of E7):** $\iota(g)
+:=g^{-1}$, concretely $\Phi(x_0,x_1,x_2,x_3)=(x_0,-x_1,-x_2,-x_3)$ on this
+project's own quaternion model, is an isometry of the round metric,
+exactly realizes group inversion, exchanges left- and right-invariant
+frames exactly ($d\iota(Z_i^L)=-Z_i^R$ and vice versa), and — via one new
+computed identity (the "cross product of $\mathrm{SO}(3)$-rotated
+vectors" identity, verified for all 27 $(i,j,m)$ combinations) — pulls
+back the *whole* Cartan-Schouten connection family exactly,
+$\iota^*(\nabla^t)=\nabla^{1-t}$ for **all** $t$, not just $t=0,1$ as E7
+showed at the curvature-eigenvalue level alone. $\iota$ is
+orientation-reversing ($\det J=-1$), has exactly 2 fixed points ($g=\pm1$),
+and lies outside the connected $\mathrm{SO}(4)$ this project's gauge group
+is built from.
+
+**Physical mechanism: NOT established.** Three readings tried, none closes
+the gap in the needed direction:
+1. "Same physics, different labels" → argues for *under*-counting (2
+   states total, not 4), the wrong direction.
+2. "Gauge $\iota$ as an orbifold $S^3/\langle\iota\rangle$" → requires
+   $t=1-t$, i.e. $t=1/2$ uniquely — the torsion-free Levi-Civita value
+   KT-8 already shows has **no** zero modes. This *collapses* the escape
+   route rather than doubling it — a clean, decisive negative sub-result.
+3. "Left-Right-symmetric model building requires both doublets" → the
+   only reading pointing the right direction, but it is a phenomenological
+   *choice*, not a geometric consequence, and sits in unreconciled tension
+   with this project's own Lemma L5 (`preprint.tex:884–912`), which derives
+   an explicitly *asymmetric* (non-parity-symmetric) chirality result for
+   the S⁶ factor.
+
+Grep of `preprint.tex` confirms no existing use of $\iota$ or any S³-side
+involution anywhere; the only existing discrete choice is a *different*
+$\mathbb{Z}_2$ (S⁶ orientation, Lemma L5), not shown or expected to be
+linked to this one.
+
+**Does not resolve:** H1c, KT-8, or E12/E13's 6-vs-3 gap. **Does
+establish:** a new, genuine geometric fact (stronger than E7), and rules
+out the orbifold-descent reading specifically as a route to the needed
+doubling.
+
+---
+
+### E15 (round81) — Chirality-grading check on the S³ doublet
+
+Direct follow-up: does the S³ Clifford volume element $\omega=Z_1Z_2Z_3$
+(this project's own $Z_i=i\sigma_i$ convention) split the 2-dimensional
+E12 kernel into two 1-dimensional eigenspaces, supplying a natural
+"pick one" mechanism?
+
+**Verdict:** `NULL_OMEGA_PROPORTIONAL_TO_IDENTITY__NO_SPLITTING_POSSIBLE`
+— independently re-run and re-verified by me, matched exactly.
+
+$\omega=Z_1Z_2Z_3$ computes to **exactly the $2\times2$ identity matrix**
+(the standard Pauli identity $\sigma_x\sigma_y\sigma_z=iI$, confirmed
+directly, not merely cited). It is central (commutes with all $Z_i$), has
+a single eigenvalue ($+1$, multiplicity 2), and acts as this same scalar
+on the full kernel at both $t=0$ and $t=1$ — no splitting at either value.
+
+**This is not a computational accident — it generalizes.** For any
+odd-dimensional Clifford algebra ($n=3$ here) the volume element
+$e_1\cdots e_n$ is always central, and Schur's lemma forces a central
+operator to act as a scalar on any *irreducible* representation. E14
+already established the doublet is irreducible under the surviving
+$\mathrm{SU}(2)$. **This rules out the entire class of $\mathrm{SU}(2)$-
+covariant, S³-internal operators as a source of the needed 2→1
+reduction** — not just $\omega$ specifically. A side-check confirmed a
+generic degree-1 element does split $\mathbb{C}^2$, but this is
+basis-dependent (transforms as a vector under the same $\mathrm{SU}(2)$)
+and carries no invariant meaning — reproduces E14's obstruction from an
+independent angle, not a counterexample to it.
+
+**Does not touch:** E12's multiplicity finding, E14's result, or
+G74A/G74B (S⁶ is even-dimensional — a structurally different case,
+untouched here).
+
+---
+
+### Round82 — Multiplicity-gap scope reconciliation
+
+Given E14 and E15 both closed off natural mechanisms without resolving
+the gap, the next cheapest test (per E12's own flagged, previously-
+unattempted prerequisite) was to check whether the "6 vs 3" excess
+actually threatens the *published* $N_{gen}=3$ headline (G73/G74A/G74B) at
+all, or is internal only to the separate, exploratory torsion-escape-route
+line (E1–E15) patching a *different*, later-discovered gap (KT-8).
+
+**Verdict:** `ORTHOGONAL_EXPLORATORY_LINE` — the multiplicity excess does
+**not** threaten the published headline.
+
+**Verified by direct citation, independently spot-checked:**
+- G74A's `dim ker = 1 EXACTLY` (`experiments/20260621-g74a-lichnerowicz-gap/decision.md:8-24`)
+  is proved for the operator $D_{S^6}\otimes S^-$ — **S⁶-side only**. The
+  S³ factor does not appear in G73/G74A/G74B at all (confirmed by reading
+  the operator definition directly, not by citing a summary).
+- The torsion program exists only because KT-8 (discovered 2026-07-16/17,
+  a month **after** G73/G74A/G74B, 2026-06-21) found the *untwisted, full*
+  $S^3\times S^6$ product operator has zero kernel — an unrelated question
+  from a different discovery date.
+- E7, E12, and KT-8's own text each independently already state this
+  scoping in their own words (e.g. E12: *"a real, unresolved problem for
+  the torsion-escape-route program... G74A's own S⁶-side result... survive
+  completely intact"*).
+- Checked the public claim surface for leakage: `preprint.tex:1468`
+  ("candidate mechanism --- physically unmotivated, not a resolution"),
+  confirmed directly by grep — no overclaim found; the torsion route was
+  never presented as necessary for $N_{gen}=3$.
+
+**One low-priority completeness gap, not an overclaim:** `preprint.tex`'s
+torsion open-problems item does not yet mention the specific 6-vs-3
+finding — flagged for a future one-sentence addition, not urgent, since
+the existing wording already tells readers not to rely on this route.
+
+**Practical consequence:** continuing to search for a 6→1 (or 6→3)
+reduction mechanism remains legitimate research into whether KT-8 can ever
+be resolved via this route, but the stakes are lower than E12's own
+framing implied — nothing already published or certified is at risk
+either way.
