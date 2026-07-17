@@ -2381,3 +2381,67 @@ flagged: the Leibniz-lift technique used here is a general, reusable
 pattern for extending any central/abelian charge from a single fibre to a
 twisted/tensor-product fibre — worth reusing before inventing new
 machinery next time a similar extension is needed.
+
+---
+
+### Round95 — Lemma L5 vs. Pati-Salam tension: same invariant or different?
+
+The last remaining conceptual obstacle repeatedly flagged (E14 Reading 3,
+round90 Section 5c) but never directly tested: does Lemma L5's $S^6$-side
+asymmetric chirality result genuinely conflict with round90's
+$S^3$-side Pati-Salam "both sectors needed" requirement?
+
+**Verdict:** `TENSION_DISSOLVES__CONTINGENT_ON_H1C_KT8_STAYING_OPEN` —
+independently re-verified: read `preprint.tex:886–912` (Lemma L5's exact
+current text) and `preprint.tex:135–140` (the decoupled-operator
+disclaimer) directly, both confirmed word-for-word.
+
+**Why the tension dissolves:** L5's $\mathrm{sign}(\mathrm{ind})=+1$ is an
+exact statement about $D_{S^6}\otimes S^-$ **alone** — this project's own
+text says so explicitly: "the three-channel index computation is
+therefore an exact statement about $D_{S^6}\otimes S^-$ alone, not —
+without a further physical ingredient acting on the $S^3$ factor — about
+a massless 4D fermion mode of the full construction" (`preprint.tex:135–140`).
+Round90's Pati-Salam requirement, by contrast, concerns the $S^3$ factor's
+own $\mathrm{SU}(2)_L$/$\mathrm{SU}(2)_R$ representation content
+(governed by $t$, per E17). L5's own "left-handed = SM $\mathrm{SU}(2)_L$
+doublet" sentence (`preprint.tex:908-912`) is an interpretive LABEL for
+what the S6-sector would become, not an already-derived cross-factor
+statement — the actual pairing rule (which S6 triality-channel links to
+which S3 $t$-sector) is exactly H1c, still open. Different invariants, no
+established bridge — the apparent conflict was reading a label as if it
+were a derivation.
+
+**A genuine refinement worked out fresh, not just cited:** round90's own
+framing of the cubic anomaly's "sum condition" as weaker than requiring
+$n_L=n_R$ is correct in general gauge theory, but — given round90's own
+cited coefficients ($A(4,2,1)=+2$, $A(4̄,1,2)=-2$) and E17's own
+established fact that this project's S3-content contains ONLY these two
+representation types — the sum condition $n_L\cdot(+2)+n_R\cdot(-2)=0$ is
+mathematically EQUIVALENT to $n_L=n_R$ for this project specifically, not
+a weaker escape hatch.
+
+**Honest contingency, not a permanent resolution:** if H1c/KT-8 is ever
+closed by a pairing rule assigning ALL 3 generations to one $t$-sector
+(matching a literal, non-aspirational reading of L5's "all three purely
+left-handed"), the tension becomes sharp and concrete: $n_L=3$, $n_R=0$,
+violating round90's $n_L=n_R$ directly. **New pearl, independently
+flagged:** this scenario would ALSO independently violate Witten's
+$\mathrm{SU}(2)$ global anomaly for $\mathrm{SU}(2)_L$ alone (3 is odd) —
+a stronger, more immediate inconsistency than the cubic-anomaly
+violation, worth checking FIRST in any future H1c-closing attempt.
+
+**Honest self-assessment (per the task's own instruction to judge, not
+excuse):** E14's original caution was reasonable given what was known at
+the time. Round90 Section 5c, however, already had E17's representation
+table and the exact `preprint.tex:135-140` disclaimer in hand and could
+have made this same count-vs-content distinction one round earlier — a
+resolvable oversight, not a new fact this experiment had to discover from
+scratch.
+
+**Net effect:** closes the Lemma-L5 tension flagged repeatedly since E14
+— not permanently, but with the exact condition under which it would
+revive stated precisely. Does not resolve H1c or KT-8, does not affect
+$N_{\mathrm{gen}}=3$, does not overturn round90's own `BLOCKED` verdict
+on the separate SU(4)-incompleteness and anomaly-check gaps (Sections
+5a/5b of that round stand unchanged).
