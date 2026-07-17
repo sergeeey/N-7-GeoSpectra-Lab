@@ -1,5 +1,15 @@
 # decision.md — Round 82: Multiplicity-Scope Reconciliation
 
+> **⚠️ Provenance correction (2026-07-17, added after this file was written):**
+> this file's citations of "G74A: dim ker=1 EXACTLY" point to a superseded
+> argument (G74A's own two lemmas are now known to be insufficient, per
+> `preprint.tex`'s own current text) — the $\dim\ker=1$ NUMBER is correct
+> and this file's verdict is unaffected, but the correct citation is the
+> later `dolan-casimir-g2su3`+`round59` computation, not G74A. See
+> `reports/PROJECT_360_ROUND3_SYNTHESIS.md`, "Provenance correction"
+> section, and the superseding note now added to
+> `experiments/20260621-g74a-lichnerowicz-gap/decision.md`.
+
 **Date:** 2026-07-17
 **Verdict:** **ORTHOGONAL_EXPLORATORY_LINE** — the E12/E13 (KT-13) 6-vs-3
 multiplicity excess does **not** threaten the published G73/G74A/G74B

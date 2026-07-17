@@ -1,5 +1,29 @@
 # G74A decision — PROMOTE (dim ker = 1 EXACTLY per channel)
 
+> **⚠️ SUPERSEDED NOTE (2026-07-17, added retroactively — original text below
+> unchanged):** Both lemmas in this file, taken as literally stated, are now
+> known to be insufficient/invalid. **Lemma A** (Lichnerowicz-dominance,
+> "safety factor 5.625") is exactly the naive uniform-bound argument
+> `preprint.tex` (§sec:lichnerowicz, lines 685–688) itself flags as broken:
+> such a bound would force `ker(D⊗S⁻)=0`, contradicting `ind=1≠0` — it is
+> labeled **L4A, an open problem** in the current preprint, not a resolved
+> result. **Lemma B** (G₂-Schur "pins" `dim ker≤1`) is also contradicted by
+> the current text (`preprint.tex:815–819`): the trivial G₂-rep has
+> multiplicity **2**, not 1, and Schur's lemma alone does not fix the rank
+> of `D+|_1` on that 2-dim space — only explicit computation does. **The
+> $\dim\ker=1$ NUMBER this file concludes is still correct** — but it is
+> actually established by later, independent work
+> (`experiments/20260708-dolan-casimir-g2su3` +
+> `experiments/20260714-round59-trivial-rank-certification`, both
+> post-dating this file), not by the two lemmas below. Future citations of
+> "dim ker=1 EXACTLY" should point to that later chain (or to
+> `preprint.tex`'s own "L4B, internally certified, external review
+> outstanding" framing), not to this file. Caught via a user critique,
+> independently verified by direct re-reading of `preprint.tex`, during the
+> 2026-07-17 session (see `reports/PROJECT_360_ROUND3_SYNTHESIS.md`,
+> "Provenance correction" section). This note is additive; nothing below
+> has been altered.
+
 **Date:** 2026-06-21
 **Verdict:** PROMOTE — N_gen = 3 EXACTLY (not just ≥ 3)
 

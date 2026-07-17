@@ -1554,3 +1554,213 @@ reduction mechanism remains legitimate research into whether KT-8 can ever
 be resolved via this route, but the stakes are lower than E12's own
 framing implied — nothing already published or certified is at risk
 either way.
+
+---
+
+### E16 (round83) — Joint representation decomposition: is the doublet malignant or benign?
+
+The decisive question round82 left open: does the 2-dimensional
+$\ker(D_{S^3,t})\otimes\ker(D_{S^6,\text{twisted}})$ per channel represent
+two independent copies of a full generation's gauge content (genuine
+doubling, $N_{\rm family}=6$) or the two $T_3$-components of a single
+weak-isospin doublet (benign — multiplicity 2 is not a defect)?
+
+**Verdict:** `PASS__ONE_WEAK_ISOSPIN_DOUBLET__NARROW_SCOPE` —
+independently re-verified: re-ran the script (identical output), and
+directly re-checked the three load-bearing citations myself (G6's
+`s3_states` dicts, lines 29–36, carry only `T3L,T3R,chir_s3` — no
+SU(3)/B-L field, confirmed by reading the file directly; `bl_charge()`/
+`su3_label()` take only the S⁶ weight as argument; `preprint.tex:1533–1536`
+states verbatim, in the construction that defines $N_{\rm gen}=3$, "the
+$S^3$ spinor factor is a fixed, generation-independent block, and the
+generation index lives entirely within the $S^6$/octonion triality
+structure").
+
+**The argument, in one line:** since $\ker(D_{S^6,\text{twisted}})$ is
+exactly 1-dimensional (G74A), both joint-kernel basis vectors are (their
+own $S^3$ vector) $\otimes$ (the SAME single fixed $S^6$ vector) — so any
+quantum number that is a property of the $S^6$ factor alone
+(triality-channel/SU(3), $B{-}L$, the $\mathrm{sign}(\mathrm{ind})=+1$
+chirality of G74B) is necessarily IDENTICAL for both states, while the two
+states differ only in $T_3$ (`+1/2` vs. `-1/2`, reconfirmed independently
+here on this project's own concrete matrix family) under the one surviving
+$\mathrm{SU}(2)$ factor. This is exactly the standard structure of a weak
+doublet (e.g. $u_L/d_L$), not two copies of one particle — FAIL (identical
+full quantum numbers including $T_3$) is cleanly ruled out, not merely
+unconfirmed.
+
+**Scope, stated precisely (per the experiment's own "what this does NOT
+mean"):** this resolves only the specific malignant-vs-benign reading of
+the multiplicity-2 finding. It does **not** resolve H1c (physical
+selection of $t$), does **not** touch KT-8 (whether the untwisted
+full-operator zero mode exists at all), and does **not** address whether
+the torsion-escape route needs BOTH the $t=0$ and $t=1$ doublets
+simultaneously to supply a complete generation's full
+$(2,1)\oplus(1,2)$ content (E12 Section E.2 / E14 Reading 3 — still open).
+The dimension-2 finding itself (E12/E13) is unchanged; what changes is its
+representation-theoretic reading.
+
+---
+
+### Provenance correction (2026-07-17) — G74A's own argument is superseded; the number it not the citation survives
+
+A user critique, independently verified by direct re-reading of
+`preprint.tex` (not merely re-checked against the cited experiment file),
+found that **E12/round82/round83's repeated citation of "G74A: dim
+ker$(D_{S^6}\otimes S^-)=1$ EXACTLY" points to a stale, superseded
+argument** — the underlying $\dim\ker=1$ *fact* is correct and still
+holds, but `experiments/20260621-g74a-lichnerowicz-gap/decision.md`'s own
+two lemmas, taken as literally stated, are **both** now known to be
+insufficient/invalid, and the CURRENT `preprint.tex` (§\ref{sec:kernel},
+§\ref{sec:lichnerowicz}, §\ref{sec:schur}, lines 649–873) already says so
+explicitly, in its own words:
+
+- **G74A's Lemma A** (the "8/45 Lichnerowicz-dominance / safety factor
+  5.625" argument) is exactly the naive bound `preprint.tex:685–688`
+  itself flags as broken: *"A uniform lower bound $R/4+F_{S^-}>0$... would
+  force $\ker(D\otimes S^-)=0$ — contradicting $\mathrm{ind}=1\neq0$."*
+  This is labeled **L4A, an open problem**, not a result — the opposite of
+  G74A's own "PROMOTE" framing.
+- **G74A's Lemma B** (G₂-equivariance + Schur's lemma "pins" $\dim\ker\leq
+  1$) is also directly contradicted by the current text
+  (`preprint.tex:815–819`): the trivial $G_2$-representation appears with
+  multiplicity **2**, not 1, in the relevant fibre, and *"Schur's lemma
+  only forces $D^+|_{\mathbf1}$ to be some linear map on this 2-dimensional
+  space — it does not fix which one."* Settling rank 0 vs. 1 requires
+  explicit computation, not Schur's lemma alone.
+
+**What actually establishes $\dim\ker=1$ EXACTLY, per the current,
+authoritative `preprint.tex`:** an explicit, later computation —
+`experiments/20260708-dolan-casimir-g2su3` (2026-07-08) and
+`experiments/20260714-round59-trivial-rank-certification` (2026-07-14),
+**both post-dating G74A** (2026-06-21) — constructs the Levi-Civita
+twisted Dirac operator directly and diagonalizes it, giving
+$\mathrm{rank}(D^+|_{\mathbf1})=1$ by three mutually-reinforcing routes
+(independent reimplementation, full-fibre completeness audit, closed-form
+analytic derivation from the Killing-spinor eigenvalue), status
+`[VERIFIED-INDEPENDENT-INTERNAL]`, external review outstanding.
+
+**Net effect:** every load-bearing use of "$\dim\ker(D_{S^6}\otimes
+S^-)=1$" in E12/round82/round83 above is **unaffected in substance** —
+the number is correct, and round82's core verdict (the S³ multiplicity gap
+does not threaten the published headline) and round83's core verdict (the
+doublet is benign, not two family copies) both survive unchanged, since
+neither depended on *which specific argument* proves $\dim\ker=1$, only on
+the fact that it equals 1. What changes is citation accuracy only: future
+citations of this fact should point to
+`dolan-casimir-g2su3`+`round59` (or simply "L4B, internally certified,
+external review outstanding" as `preprint.tex` itself now says), not to
+G74A's decision.md, whose own two lemmas are superseded. A superseding note
+has been added to `experiments/20260621-g74a-lichnerowicz-gap/decision.md`
+itself (history preserved, not rewritten) to prevent this stale citation
+from recurring in future sessions.
+
+---
+
+### Round84 (convention table, labeled "E13" per the user's original plan — do not confuse with round79's internal script name) — Convention reconciliation
+
+Six recurring sign/orientation/labeling ambiguities, flagged across E9/E10/
+E11/E12/E14/E15/E16, reconciled into one table
+(`experiments/20260717-round84-e13-convention-reconciliation-table/CONVENTION_TABLE.md`),
+independently spot-checked (grep counts on `preprint.tex` for
+"$\mathrm{SU}(2)_L$"/"$\mathrm{SU}(2)_R$"/"left-invariant"/"right-invariant"
+matched exactly: 12/9/0/0).
+
+**Verdict:** `PASS_5_OF_6_RECONCILED__1_CONFIRMED_AMBIGUOUS`.
+
+| # | Topic | Status |
+|---|---|---|
+| 1 | $S^3$ orientation | FIXED (implicit, by universal reuse of $\{Z_i=i\sigma_i\}$) |
+| 2 | Structure-constant sign ($c=+2$ abstract vs. $c_0=-2$ concrete) | CONVENTION CHOICE, both valid — rule: use $c_0=-2$ for any concrete directional-derivative computation, $c=+2$ only for scalar Kostant-calibration bookkeeping |
+| 3 | Clifford convention $Z_i=i\sigma_i$ | FIXED — byte-identical across all 8 scripts (E2/E9/E10/E11/E12/E14/E15/E16) |
+| 4 | Spin lift $\Omega_i(t)=-(tc/2)Z_i$ | FIXED formula; numeric substitution governed by item 2 |
+| 5 | $t=0/t=1$ ↔ left/right-invariant | FIXED for $t=0$ unconditionally; $t=1$ correspondence established **only** under $c_0=-2$ |
+| 6 | $\mathrm{SU}(2)_L/\mathrm{SU}(2)_R$ geometric identification | **AMBIGUOUS — confirmed genuinely unresolvable** from existing project text (0 hits for "left-invariant"/"right-invariant"/"translation" anywhere in `preprint.tex`) |
+
+**Recommendation applied to E17 (below):** test both labeling conventions
+explicitly rather than assuming one, since item 6 cannot be closed from
+existing text.
+
+---
+
+### Round85 (E17) — $t=0/t=1$ sector-coexistence gate
+
+The decisive remaining question in the E12→E16 chain: does the physical
+construction need BOTH the $t=0$ and $t=1$ torsion sectors simultaneously
+to supply one full generation's $(2,1)\oplus(1,2)$ content, or is this
+undetermined without deeper input?
+
+**Verdict:** `BLOCKED__REPRESENTATION_CONTENT_CONSISTENT__PHYSICAL_COEXISTENCE_UNDECIDABLE_WITHOUT_PARENT_ACTION`
+— independently spot-checked (`preprint.tex:291–298`, `g6_spinor_decomposition.py:29-36`
+both confirmed exactly as cited).
+
+**Positive, necessary-condition finding:** under BOTH tried
+$\mathrm{SU}(2)_L/R$ labelings (per round84's mandate — the ambiguity from
+item 6 does not affect this part), $\ker D^{t=0}$ and $\ker D^{t=1}$ are
+convention-independently the mirror pair $\{(1,2),(2,1)\}$ — never two
+copies of the same piece. Their union would reproduce exactly the 4-state
+$S^3$-side content `preprint.tex:291–292` already requires ("4-component
+$\mathrm{SO}(4)$ spinor representation"), matching G6's own pre-existing
+4-state table (2×$(2,1)$+2×$(1,2)$), with **no double-counting** against
+the "32 states + CPT conjugates" convention (`preprint.tex:296–298`) —
+CPT doubling is carried entirely by the S⁶ factor (E13/round79), an
+orthogonal axis untouched by this question.
+
+**What remains genuinely undecidable:** whether both sectors actually
+coexist physically (sufficient condition), as opposed to being two
+mutually exclusive values of one connection parameter on one $S^3$ factor.
+E14's three tried mechanisms all still fail to force coexistence (Reading
+1: under-counting; Reading 2: collapses to $t=1/2$, killed by KT-8;
+Reading 3: unadopted phenomenological choice, in tension with Lemma L5's
+asymmetric chirality). E11/round75's Freund-Rubin exploration found no
+flux-torsion coupling that could settle this either way. **The missing
+ingredient is identified precisely: a stated 13D parent action specifying
+how many independent Dirac fields/connections the compactification
+actually contains** — nothing short of that closes this gate.
+
+**Net status of the full torsion-escape-route investigation (E1→E17, this
+session) — calibrated (2026-07-17, per user review):** "the mechanism is
+proved" is too broad a claim; the honest three-part status is:
+
+```
+Mathematical torsion-escape mechanism (Cartan-Schouten flatness,
+ker D_{S3}^{t=0,1} != 0):          PROVED, within the frozen product ansatz.
+Representation content
+(one SU(2) doublet per sector,
+(1,2)+(2,1) mirror pair, no
+double-counting vs. the 32-state
+convention):                        CONSISTENT, internally verified.
+Physical realization (does the
+theory actually contain/select
+t=0, t=1, or both):                 BLOCKED — needs a parent action.
+```
+
+This entire line remains, as established in round82, **orthogonal to and
+non-threatening of** the already-published $G73$/$G74A$/$G74B$
+$N_{\mathrm{gen}}=3$ headline. The corrected provenance for that headline's
+own exact-kernel step (per the G74A correction above) is stated precisely
+as: **the scientific conclusion ($\dim\ker=1$) SURVIVES, certified through
+`round59`; G74A's own original proof route (Lemma A + Lemma B) is
+SUPERSEDED/invalid as stated** — the result and its proof are not the same
+thing, and only the latter needed replacing.
+
+**Updated claim ledger (E1→E17, this session):**
+
+| Claim | Status |
+|---|---|
+| $S^6$ index $=1$ | `PROVED` (G73) |
+| Local $S^6$ kernel $=(1,0)$ | `INTERNALLY CERTIFIED` — Round59 (survives; G74A's own proof route superseded) |
+| Baseline (untwisted, Levi-Civita) full $S^3\times S^6$ kernel | `REFUTED` — KT-8 |
+| Torsion ($t=0,1$) produces $S^3$ zero modes | `PROVED` — E2/E7/E9 |
+| Multiplicity 2 = two generations | `REFUTED` — E16 |
+| Multiplicity 2 = one $\mathrm{SU}(2)$ doublet | `PASS` — narrow, factorized scope (E16) |
+| $t=0,1$ give the mirror $(1,2)/(2,1)$ pair | `PASS` — up to $L/R$ labeling (E17) |
+| Both sectors physically coexist | `BLOCKED` — needs parent action (E17) |
+| Gauge $\mathrm{SU}(2)_L/R$ derived from geometry | `OPEN` — round84 |
+| Physical $N_{\mathrm{gen}}=3$ | `BLOCKED` |
+
+**Bottom line:** the representation-content problem this sub-investigation
+set out to resolve is closed; the coexistence problem has been reduced,
+precisely, to the absence of a stated parent action — the chain E1→E17 is
+**executed, not "fully closed"**; its final state is an exact `BLOCKED` at
+the parent-action level, not an open-ended unknown.
