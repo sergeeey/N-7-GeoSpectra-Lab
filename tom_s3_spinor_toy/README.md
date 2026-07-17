@@ -8,6 +8,41 @@
 
 ---
 
+## ⚠️ Status correction (2026-07-17) — read before the line above
+
+The status line above (dated 2026-07-05) predates a blocking finding and is
+now overstated as a statement about physical N_gen=3. What actually holds,
+verified since:
+
+- **Unchanged and correct:** G73+G74A+G74B establish ind(D_{S⁶}⊗S⁻)=1 per
+  channel with an internally-certified 1-dimensional local kernel on the S⁶
+  factor — a real, tool-verified mathematical result.
+- **New, blocking (KT-8, tool-and-literature-verified independently three
+  times):** for the round, untwisted Levi-Civita S³ construction actually
+  used throughout this project (product metric, product connection, twist
+  pulled back from S⁶ only), the *full* nine-dimensional internal Dirac
+  operator on S³×S⁶ has **no zero mode** —
+  $D_{\mathrm{full}}^2=D_{S^3}^2\otimes1+1\otimes D_{S^6,S^-}^2\geq
+  (3/2\rho_3)^2>0$, regardless of the S⁶ factor's own index. **N_gen=3 is
+  therefore not yet an established physical result** — only a mathematical
+  index on one factor, not a demonstrated massless 4D fermion.
+- **Candidate (mathematical, not physical) escape route found the same
+  day:** a torsion-deformed S³ connection removes this obstruction at
+  computable parameter values, but no physical principle is known for
+  selecting them over the standard connection used elsewhere. Not a
+  resolution.
+- **Dimension correction:** total spacetime dimension of the ansatz actually
+  used is **13** (4+3+6), not 10 as earlier phrasing implied.
+
+Full derivations: `reports/PROJECT_360_ROUND3_SYNTHESIS.md` (KT-8 through
+KT-11), `preprint.tex` §Open Problems, `reports/SESSION_REPORT_2026-07-17.md`.
+This status correction is authoritative over the line above and over any
+"N_gen=3" statement elsewhere in this file that does not carry this same
+caveat — those statements about G73/G74A/G74B's own results remain correct
+as statements about the S⁶ factor alone.
+
+---
+
 ## ⚠️ Where to Start (for reviewers)
 
 **The root `.py` files** (`alpha_dependence_comparison.py`, `reference_spinor_harmonics.py`,

@@ -581,12 +581,24 @@ I⊗D_{M2}²` as an algebraic fact, not a coincidence that happened to hold to
 (4.4e-16) is now understood as floating-point noise around an exact zero,
 not an approximately-small quantity.
 
-**KT-8 status: CLOSED, no remaining gap.** Both open items from the initial
+**KT-8 status: CLOSED, no remaining gap — for the round, untwisted
+Levi-Civita $S^3$ ansatz specifically.** Both open items from the initial
 write-up are now resolved: (1) the construction is confirmed standard against
 an independent published source, not merely self-consistent, and (2) the
 vanishing cross-term is now an algebraic theorem, not a numerical observation.
-ker(D_{S³×S⁶})=0 for the project's actual construction stands as a fully
-verified, tool-and-literature-confirmed result.
+$\ker(D_{S^3\times S^6})=0$ for that specific construction stands as a fully
+verified, tool-and-literature-confirmed result. **Scope calibration
+(2026-07-17, accepted):** after KT-9/E2/E3 (below), this must not be quoted
+as "the full operator on $S^3\times S^6$ has no zero mode" without
+qualification — that statement is refuted only for the round/Levi-Civita
+$S^3$ factor. KT-9's own product-decoupling identity shows
+$\ker D_{S^3}(t)\neq0 \wedge \ker D_{S^6,S^-}\neq0 \Rightarrow
+\ker D_{\mathrm{full}}(t)\neq0$ for a torsion-deformed $S^3$ factor at
+computable $t$ — a mathematical escape route from this exact no-go, not a
+physical resolution of it (no parent-action selection principle for $t$ is
+known). The no-go stands for the specific ansatz actually used in this
+paper's results; it does not extend to the full class of possible
+$S^3$-factor modifications.
 
 ### Third independent confirmation (2026-07-17, external reviewer, different model)
 
@@ -735,7 +747,17 @@ vs the standard Riemannian $-I$), not attempted here.
 
 ---
 
-## KT-10 (2026-07-17) — Does the S⁶ index/kernel construction generalize to the other 3 homogeneous nearly-Kähler 6-manifolds?
+## KT-10 (2026-07-17) — Do the other 3 homogeneous nearly-Kähler 6-manifolds pass the same Route-C structural prefilter as S⁶?
+
+**Scope calibration (2026-07-17, accepted):** this section's title is
+deliberately narrower than "does the S⁶ construction generalize" or
+"is universality confirmed on 3/4 spaces" — Route C is a necessary-condition
+prefilter (an isotropy-Schur bound plus a no-singlet check), not a
+sufficient demonstration of a twist's existence, a nonzero index, an exact
+one-dimensional kernel, three generations, or a lift to the full operator.
+Passing Route C means only: no obstruction of this specific,
+representation-theoretic kind was found. `ROUTE_C_PASS` is the correct and
+complete status; "universality confirmed for 3 of 4" would be an overclaim.
 
 **Origin:** this project's own "Universality" open item (\S\ref{sec:open})
 asks whether the Lichnerowicz–$G_2$-Schur mechanism (L4) applies to
@@ -798,7 +820,21 @@ this repo).
 
 **Result (`experiments/20260717-round71-e6-s3xs3-nomizu-torsion-audit/`) — `ILL-POSED`,
 one of four pre-registered kill criteria, not a PASS/FAIL/BLOCKED.**
-CH2016's own page-18 basis data is **not internally Hermitian-consistent**:
+**Scope calibration (2026-07-17, accepted):** attribution below is to "the
+set of formulas extracted from CH2016 page 18 and combined under the
+conventions used in this experiment," not to a claim that CH2016 itself
+contains an error — without a dedicated source-level audit, several
+explanations remain open and undistinguished: an actual typo/error in the
+source; a missing scale factor; different normalizations used on nearby
+pages of the same source; a mismatched/miscombined basis; a transcription
+error on this project's side (checked once, see below, but not exhaustively
+ruled out); or the two formulas (the Killing form $B$ and the almost-complex-
+structure action $J$) describing different metrics or reductive splittings
+that should not have been combined directly. The finding below is that
+\emph{this specific combination}, as used, is inconsistent — not a verdict
+on CH2016 as a source.
+The formulas extracted from CH2016's page 18 and combined under this
+experiment's conventions are **not internally Hermitian-consistent**:
 their stated Killing form gives $B(X_1,X_1)=5/3$ but $B(Y_1,Y_1)=2$, though
 $J(X_i)=Y_i$ (their own literal statement) requires these to be equal.
 **Independently hand-verified this session** (30 seconds, sympy-free):
@@ -825,6 +861,23 @@ construction of $S^3\times S^3$'s complex structure that sidesteps this
 specific basis ambiguity by construction, rather than requiring a choice
 between two ad hoc repairs.
 
+**Diagnostic table for the next pass (distinguishes the competing
+explanations above, not yet filled in):**
+
+| Formula | Page | Convention | Checkable invariant | Result |
+|---|---|---|---|---|
+| Reductive splitting | — | — | $[\mathfrak{h},\mathfrak{m}]\subset\mathfrak{m}$ | |
+| Metric coefficients | — | — | positive definiteness | |
+| $B(X,X)$ | — | — | consistent basis normalization | |
+| Nomizu map | — | — | metric compatibility | |
+| Torsion | — | — | skew symmetry | |
+| $\mathbb{Z}_3$-action | — | — | automorphism and invariance | |
+
+Filling this table (cheap, reuses CH2016 pages already partially read) would
+distinguish source error / missing scale factor / normalization mismatch /
+basis mismatch / transcription error / different-metric-context before any
+further Nomizu-construction attempt.
+
 ---
 
 **KT-9/10/11 status update:** none of these three have been integrated into
@@ -835,3 +888,67 @@ candidate mechanism) were integrated as dedicated open-problems items
 in their own experiment folders and in this report only. Full derivations:
 `reports/E1_E5_VERIFICATION_ROUND_2026-07-17.md` and the individual
 `experiments/20260717-round69/70/71-.../decision.md` files.
+
+---
+
+## KT-12 (2026-07-17) — Is there an independent physical/geometric selection principle for E2/E3's torsion parameter $t$?
+
+**Origin:** E2/E3's own explicit caveat — the torsion-deformed $S^3$
+connection removes KT-8's obstruction at computable crossing values (e.g.
+$t=0,1$ at the lowest level), but no physical principle was known for
+selecting any of them over the Levi-Civita value $t=1/2$. Per this
+project's own Adaptive Iteration Branch Rule, four rival hypotheses were
+frozen **before** running any test:
+
+| Hypothesis | Content |
+|---|---|
+| H1 | $t$ fixed by requiring existence of a Killing spinor on $S^3$ under $\nabla^t$ |
+| H2 | $t$ fixed by background/gravitational equations of motion for the torsion-sourcing field |
+| H3 | $t$ fixed by anomaly cancellation in the resulting 4D effective theory |
+| H4 | $t$ is a free parameter; the zero-mode value is fine-tuning |
+
+**Result (`experiments/20260717-round72-e7-t-selection-principle/`) — `PASS_H1_SUBQUESTION_INDEPENDENT_CRITERION_FOUND`, H1's cheapest sub-question only.**
+Reading Agricola (arXiv:math/0202094) §2 — established via curvature/Ricci
+computations, entirely **before** her §3 introduces the Dirac operator at
+all — $t=0$ is her "canonical connection" (Ambrose–Singer: the unique
+connection with $\nabla T=\nabla R=0$) and $t=1$ is her "anticanonical
+connection" (same Ricci tensor). **Independently re-derived this session**
+(direct symbolic computation, Jacobi identity, confirmed on a non-vacuous
+basis triple — not just citing the paper): for $S^3=\mathrm{SU}(2)/\{e\}$,
+the full curvature tensor factors exactly as
+$R^t(X,Y)Z=t(t-1)\cdot S(X,Y,Z)$ and vanishes identically **iff** $t\in\{0,1\}$
+— the classical Cartan–Schouten flat connections on any Lie group with a
+bi-invariant metric, a fact with **zero reference to spinors or zero
+modes**. Cross-referencing E2's own `results_e2.json` (read-only): the
+$n=0$ zero-mode crossing set is **exactly** $\{0,1\}$ — matching this
+independent, purely-geometric criterion precisely — while the $n=1,2$
+crossings ($\{-1/3,4/3\}$, $\{-2/3,5/3\}$) are confirmed **not** in that set.
+
+**What this does and does not mean:**
+- Supports H1's necessary sub-question: $t=0,1$ are not arbitrary — a real,
+  independent geometric distinction exists.
+- Does **not** prove H1's actual claim (Killing spinor existence at
+  $t=0,1$) — that requires a further, unattempted spinorial computation.
+- Explains only 2 of 6 crossings; H4 remains the honest default for the
+  $n=1,2$ crossings.
+- H2 and H3 remain completely untested (each would require a
+  background-field EOM setup or a 4D anomaly computation this project does
+  not have — comparable in scope to a new multi-round investigation).
+- **Does not promote E2/E3** or change KT-8's status in any way.
+
+**Verdict table:**
+
+| Hypothesis | Status after KT-12 |
+|---|---|
+| H1 | Sub-question PASS (independent geometric distinction found); full claim untested |
+| H2 | OPEN — not attempted |
+| H3 | OPEN — not attempted |
+| H4 | Downgraded for $t=0,1$ specifically; still the honest default for $n=1,2$ crossings |
+
+**Recommended next action (cheapest first):** build the explicit
+Killing-spinor equation for $\nabla^t$ on $S^3$ (reusing Agricola's Theorem
+4.2 apparatus, already partially used by E2) and check it directly at
+$t=0,1$ — H1's actual claim, not yet tested. Until then, do not cite
+"$t=0,1$ are physically selected" anywhere — only "independently
+geometrically distinguished (Cartan–Schouten flat connections), a
+necessary but not sufficient condition for H1."
