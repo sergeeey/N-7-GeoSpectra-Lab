@@ -1764,3 +1764,72 @@ set out to resolve is closed; the coexistence problem has been reduced,
 precisely, to the absence of a stated parent action — the chain E1→E17 is
 **executed, not "fully closed"**; its final state is an exact `BLOCKED` at
 the parent-action level, not an open-ended unknown.
+
+---
+
+### Round86 (E18) — Parent-action discriminator
+
+Frozen claim: does a single action/field construction exist in which
+$t=0$ and $t=1$ arise as two NECESSARY left/right sectors (not two
+mutually exclusive values of one free parameter)? PASS required producing
+one of three concrete constructions (a physically-derived two-sector
+Hilbert space; two parity-related connections $\nabla_L,\nabla_R$ with an
+action and equations of motion; a single sign-selecting dynamical/
+topological field) with an action, fields, symmetry, EOMs, and an
+explanation for *why* both sectors are present, with no manual doubling.
+
+**Verdict:** `BLOCKED__NO_PARENT_ACTION_FOUND_IN_PROJECT_OR_CITED_LITERATURE__MISSING_INGREDIENT_NAMED`
+— independently spot-checked (`preprint.tex:408–409`, and AHL2023
+Corollary 3.14/p.48 via direct PDF text extraction) both confirmed exactly
+as cited.
+
+**Literature check (this project's own three cited geometry references,
+searched systematically, not merely re-cited):** Agricola 2002 (the
+literal source of this project's $\nabla^t$ family) studies $t$ pointwise
+throughout — $t=1$ even has its own name ("anticanonical connection,"
+p.5, sharing $t=0$'s Ricci tensor) but is never combined with $t=0$ into
+one joint object anywhere in the paper. Agricola-Hofmann-Lawn 2023
+contains the single closest analogue found — a genuine, structurally
+motivated PAIR of Killing spinors on round $S^3=\mathrm{SU}(2)$
+(eigenvalues $\pm1/2$, Corollary 3.14) — but this is a different
+mathematical object (one Levi-Civita connection, split by Killing
+*eigenvalue* sign) from this project's $t=0/t=1$ question (two different
+*connections*, both torsionful); conflating them would repeat exactly the
+kind of symbol-overload error this project's own methodology is designed
+to catch. Charbonneau-Harland 2016 (nearly-Kähler instanton rigidity on
+$S^6$) contains no relevant construction at all.
+
+**This project's own prior work re-examined for the same purpose:**
+E11/round75's Freund-Rubin flux potential remains quadratic in the flux
+quantum (blind to sign, candidate 3 fails); `preprint.tex`'s one
+"left-right symmetry of $S^3$" mention (line 409) is a phenomenological
+gauge-coupling-equality assumption for the Weinberg-angle formula, with
+zero cross-reference to the torsion question anywhere in the paper
+(candidate 2 fails) — independently reconfirming E14/E17's own prior
+identification of this exact reading.
+
+**Why BLOCKED, not FAIL** (a distinction the experiment itself argues for
+carefully): this is an absence-of-evidence result — a systematic search of
+the sources actually available to this project — not a proof that no such
+construction CAN exist. The missing ingredient is precisely nameable:
+`preprint.tex:1370–1419` (item KT-1) already flags the SAME class of gap
+("no parent action identified") for the structurally analogous S⁶-twist
+question, and separately notes that Nahm's theorem caps standard
+supergravity at 11 dimensions, so a literal 13D parent action "is not
+available off the shelf" — this is a substantial, named missing
+ingredient, not an unlooked-up citation.
+
+**Pearl candidate flagged (project-internal, not registered globally):**
+AHL2023's $\pm1/2$ Killing-spinor pair on $S^3$ is a genuine coexisting
+structure on the exact manifold this project studies, on the wrong
+parameter axis. IF the standard cone-construction correspondence between
+Killing spinors on $S^n$ and parallel spinors on the flat cone $C(S^n)$
+could be shown to relate this $\lambda=\pm1/2$ split to the project's
+$t=0/1$ split, it might supply exactly candidate 1 — flagged
+`[CANDIDATE]`, impact ~4, not adopted, `next_check`: if the
+torsion-escape-route program is revisited.
+
+**This closes the E1→E18 chain for this session** with the parent-action
+question left open exactly as precisely as it can be stated: not "we
+don't know," but "here is exactly what's missing, and here is confirmation
+it isn't sitting unread in this project's own already-cited sources."
