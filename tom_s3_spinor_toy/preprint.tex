@@ -186,8 +186,11 @@ independence (\S\ref{sec:open}, item L3b), without using SM fermion data as inpu
 We build on the Kaluza--Klein framework of Lawrence~\cite{Lawrence2022}, who established
 that in product manifolds the spin connection of the compact factor acts as a gauge
 potential (demonstrated for $\mathrm{U}(1)$ in six dimensions and $\mathrm{SO}(3)\cong
-\mathrm{SU}(2)$ in seven dimensions). We extend this mechanism to the ten-dimensional
-product $S^3\times S^6$: the $S^3$ spin connection yields $\mathrm{SU}(2)_L\times
+\mathrm{SU}(2)$ in seven dimensions). We extend this mechanism to the nine-dimensional
+internal
+product $S^3\times S^6$ (together with the four-dimensional external spacetime, a
+thirteen-dimensional product ansatz overall --- \S\ref{sec:open}, ``Total dimension is
+13, not 10''): the $S^3$ spin connection yields $\mathrm{SU}(2)_L\times
 \mathrm{SU}(2)_R$ from the bi-invariant metric on $S^3$ (isometry group $\mathrm{SO}(4)
 \cong \mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$), while the $G_2$ holonomy of
 $S^6=G_2/\mathrm{SU}(3)$ provides $\mathrm{SU}(3)_c$ --- together giving the Pati--Salam
@@ -286,8 +289,11 @@ left open (\S\ref{sec:open}).
 \subsection{Standard Model fermion content for one generation}
 \label{sec:sm-content}
 
-The 10-dimensional Dirac spinor on $S^3\times S^6$ decomposes under $\mathrm{SO}(4)\times G_2$
-into $(rep_{S^3})\otimes(rep_{S^6})$ pairs. Restricting to one generation, the 32 complex
+The Dirac spinor on $S^3\times S^6$ decomposes under $\mathrm{SO}(4)\times G_2$
+into $(rep_{S^3})\otimes(rep_{S^6})$ pairs, with $\mathrm{rep}_{S^3}$ the 4-component
+$\mathrm{SO}(4)$ spinor representation and $\mathrm{rep}_{S^6}$ the 8-component $G_2$
+spinor representation (\emph{representation} dimensions, not a spacetime dimension count
+--- see \S\ref{sec:open}, ``Total dimension is 13, not 10''). Restricting to one generation, the 32 complex
 spinor components decompose into exactly the particle content of one SM generation (quarks
 and leptons), plus their CPT conjugates.
 
@@ -970,8 +976,13 @@ coupled-mode mechanism can lift this degeneracy (\S\ref{sec:open}).
 
 \subsection{Effective potential structure}
 
-We work in the 10D SUGRA limit of the $S^3\times S^6$ compactification. The flux-induced
-potential from a Freund--Rubin 3-form flux on $S^3$ is:
+We use a supergravity-inspired effective potential for the $S^3\times S^6$
+compactification, borrowing the structural form of flux-induced and non-perturbative
+potentials from standard supergravity constructions by analogy; no consistent
+supergravity theory in the ansatz's own literal thirteen dimensions is claimed or used
+here (standard supergravity is capped at eleven dimensions, Nahm's theorem
+\cite{Nahm1978}; see \S\ref{sec:open}, ``Total dimension is 13, not 10''). The
+flux-induced potential from a Freund--Rubin 3-form flux on $S^3$ is:
 \begin{equation}
   V_{\mathrm{flux}}(\rho_3,\rho_6) \propto C^3/\rho_6^{12},
 \end{equation}
@@ -1356,6 +1367,34 @@ work.
 
 \begin{enumerate}
 \setcounter{enumi}{3}
+\item \textbf{Total dimension is 13, not 10 [textual/bookkeeping correction, confirmed
+  --- no consistent parent theory claimed].} The construction uses a four-dimensional
+  external spacetime together with the compact factors $S^3\times S^6$, and therefore
+  corresponds, under a literal Kaluza--Klein interpretation, to a
+  \emph{thirteen-dimensional} product ansatz ($4+3+6=13$). Earlier references in this
+  paper to a ``ten-dimensional'' spacetime or spinor conflated two unrelated
+  quantities: the dimension of the $\mathrm{SO}(4)$ spinor representation on $S^3$ (4
+  complex components) with an actual spacetime dimension count, and separately borrowed
+  the language of standard ten-dimensional supergravity for the modulus-stabilization
+  potential without that framework actually applying to a thirteen-dimensional ansatz.
+  Checked directly against three load-bearing usages of $S^3$ in this paper --- the
+  spin-connection-as-gauge-field mechanism (\S\ref{sec:intro}), the Freund--Rubin flux
+  compactification (\S\ref{sec:moduli}), and the full internal Dirac operator
+  (\S\ref{sec:ngen}, the ``full-operator zero-mode gap'' item below) --- all three
+  require $S^3$ to be a genuine physical Kaluza--Klein factor, not a gauge-fibre,
+  parameter space, or part of the finite noncommutative-geometry algebra; no
+  inconsistency between these three usages was found (internal verification, experiment
+  \texttt{20260717-round66-e1-dimension-role-decision}, this work). \textbf{What is
+  established: the written geometric ansatz is thirteen-dimensional. What is
+  \emph{not} established: that a consistent thirteen-dimensional parent theory exists}
+  --- standard supergravity is capped at eleven spacetime dimensions
+  (Nahm's theorem~\cite{Nahm1978}), so a literal thirteen-dimensional supergravity
+  completion is not available off the shelf and the parent-action question (the item
+  below) must be understood as seeking a thirteen-dimensional --- not ten- or
+  eleven-dimensional --- action, or else a reduction of the ansatz itself (e.g.\ treating
+  $S^3$ as a fibre rather than an independent factor) that would restore a
+  standard-dimension count.
+
 \item \textbf{Physical origin of the twisted operator $D\otimes S^-$ [open --- no parent
   action identified].} The three-channel index count follows from twisting the
   $S^6$-factor Dirac operator by $S^-$ specifically (\S\ref{sec:ngen}); Proposition~T2
@@ -1364,7 +1403,8 @@ work.
   the ``full-operator zero-mode gap'' item below, is \emph{not} evaded on the full
   nine-dimensional operator, whose kernel remains empty regardless of the $S^6$
   twist. No higher-dimensional parent
-  action --- an explicit 10D/11D Lagrangian, background flux, or gauge bundle from which
+  action --- an explicit thirteen-dimensional Lagrangian (matching the ansatz's own
+  literal dimension, see the item above), background flux, or gauge bundle from which
   this specific twist would follow by dimensional reduction --- is stated anywhere in
   this paper or its cited sources. The nearest structural analogue, the heterotic
   ``standard embedding'' (setting an $E_8$ gauge connection equal to the spin connection;
@@ -1668,6 +1708,13 @@ arXiv:2005.01448 (2020).
 with $M_1$ even-dimensional, Eq.~(2.2)--(2.3): $M_2$'s generators are twisted by
 $M_1$'s chirality operator, with no separate curvature-correction term, following
 directly from the graded Clifford-algebra structure of $\mathrm{Cl}(V\oplus W)$.)
+
+\bibitem{Nahm1978}
+W.~Nahm,
+\textit{Supersymmetries and their representations},
+Nucl.\ Phys.\ B \textbf{135} (1978) 149--166.
+(Classification of supersymmetry algebras; establishes that consistent supergravity
+theories are capped at eleven spacetime dimensions.)
 
 \end{thebibliography}
 

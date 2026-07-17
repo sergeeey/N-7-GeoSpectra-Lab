@@ -185,15 +185,48 @@ construction of S³×S³'s complex structure that sidesteps this specific
 basis ambiguity by construction, rather than requiring a choice between
 two ad hoc repairs.
 
+## E1 integrated into preprint.tex (2026-07-17)
+
+Applied the safe wording drafted above, plus a new dedicated open-problems
+item (following the KT-1/KT-8 precedent — positioned immediately before the
+KT-1 item, since dimension is logically prior to the parent-action search):
+
+- **Introduction** (spin-connection mechanism): "the ten-dimensional product
+  S³×S⁶" → "the nine-dimensional internal product S³×S⁶ (together with the
+  four-dimensional external spacetime, a thirteen-dimensional product ansatz
+  overall)".
+- **SM fermion content section**: removed "The 10-dimensional Dirac spinor"
+  framing; now explicitly states the 4 and 8 are *representation* dimensions
+  (SO(4) spinor rep on S³, G₂ spinor rep on S⁶), not a spacetime count.
+- **Modulus stabilization section**: "We work in the 10D SUGRA limit" →
+  reworded to state this is a supergravity-*inspired* effective potential
+  borrowed by analogy, with an explicit note that no consistent supergravity
+  theory exists in the ansatz's own literal 13 dimensions (standard SUGRA is
+  capped at 11D, Nahm's theorem — new citation added, verified via WebSearch:
+  Nahm, Nucl. Phys. B 135 (1978) 149–166, DOI 10.1016/0550-3213(78)90218-3).
+- **New open-problems item, "Total dimension is 13, not 10"**: full
+  derivation (the 3 load-bearing S³ usages checked in E1), explicit
+  established-vs-not-established scope statement, and the Nahm's-theorem
+  caveat that a literal 13D parent theory has no off-the-shelf supergravity
+  completion.
+- **Existing KT-1 item**: "10D/11D Lagrangian" → "thirteen-dimensional
+  Lagrangian (matching the ansatz's own literal dimension)".
+- Bibliography: added `Nahm1978`.
+
+**Verified:** `pdflatex -interaction=nonstopmode -halt-on-error` run twice
+(new citation needed a second pass to resolve) — exit 0 both times, 0
+undefined references after the second pass.
+
 ## Not yet done
 
-- None of E1-E5's findings have been written into `preprint.tex` or
-  `reports/PROJECT_360_ROUND3_SYNTHESIS.md`'s main kill-table — this file is
-  a standalone summary. Integration is a separate decision (particularly E1's
-  dimension correction, which is the highest-priority candidate for that).
-- Nothing in this round has been committed to git.
+- **E1 is now integrated into `preprint.tex`** (see section above) — the only
+  one of E1-E6 written into the paper so far. E2-E6 remain standalone
+  experiment-folder findings, not yet written into `preprint.tex` or
+  `reports/PROJECT_360_ROUND3_SYNTHESIS.md`'s main kill-table.
+- The `preprint.tex` E1 integration itself has not been committed to git yet.
 - E2/E3's candidate KT-8 escape route needs a physical selection principle
   before it could be considered for promotion — not attempted here.
 - E5's S³×S³ open question needs the explicit torsion/Nomizu-connection
-  computation (scoped in E5's own decision.md as comparable in cost to the
-  original L4A/L4B derivation) — not attempted here.
+  computation, which E6 attempted and found ill-posed with the primary
+  source's own stated basis — remains open, per E6's own Relaxation Map
+  (check CH2016 pp.7-12 for a cyclic/ℤ₃-eigenspace construction).
