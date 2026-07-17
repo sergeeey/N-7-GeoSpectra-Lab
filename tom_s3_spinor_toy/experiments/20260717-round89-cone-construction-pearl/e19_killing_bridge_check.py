@@ -374,7 +374,9 @@ def check_t1_killing(Z: list[sp.Matrix]) -> dict[str, object]:
 
 
 def check_sign_structure() -> dict[str, object]:
-    lam = lambda tv: sp.simplify((c * HALF) * (tv - HALF))
+    def lam(tv):
+        return sp.simplify((c * HALF) * (tv - HALF))
+
     lam0 = lam(0)
     lam1 = lam(1)
     opposite_sign_identity = sp.simplify(lam1 + lam0) == 0  # lam1 == -lam0 for ALL c
