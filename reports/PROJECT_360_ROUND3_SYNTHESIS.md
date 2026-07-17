@@ -680,7 +680,158 @@ directly into `preprint.tex`, not just recorded in this audit report:
 (to resolve cross-references) — exit 0 both times, 27 pages (was 26), zero
 "Undefined reference" or LaTeX-error lines in either log.
 
-**Not yet done:** git commit (nothing committed for KT-8 or this preprint
-edit yet — awaiting explicit commit instruction per this session's established
-workflow); the remaining ~24 claims in the external reviewers' ledgers beyond
-KT-1/KT-2(theirs)/KT-4/KT-8 have not been individually re-verified.
+**Status update (2026-07-17):** KT-8 and its literature cross-check, the
+abstract retightening, and the E1/E2/E3 preprint integrations below have
+all since been committed, merged (`--no-ff`), and pushed to `origin/main`
+(commits `744b53b`, `3b818a4`, `c2a65c4`, `ec32211`). The remaining ~24
+claims in the external reviewers' ledgers beyond KT-1/KT-2(theirs)/KT-4/KT-8
+have not been individually re-verified.
+
+---
+
+## KT-9 (2026-07-17) — Is there a representation-theory-independent verification of dim ker(D_{S⁶}⊗S⁻)=1?
+
+**Origin:** the 100-directions-brainstorm critique (item 82's correction,
+`reports/100_DIRECTIONS_BRAINSTORM_2026-07-17.md`) flagged that this
+project's existing "independent" passes on the exact-kernel result (G73
+index theorem, G74A Lichnerowicz/Schur, Round59's three routes) all share
+the same underlying SU(3)/G₂ representation-theoretic branching-rule
+machinery at some point — implementation-independent, not
+mathematically-independent.
+
+**Attempt (`experiments/20260717-round69-e4-representation-free-kernel-check/`):**
+built an explicit ambient Cl(7)-trivialization + Gauss–Weingarten hypersurface
+connection + exact sphere-moment Galerkin projection — genuinely
+representation-theory-free (no SU(3)/G₂ weights, characters, or Casimir
+values invoked anywhere in the construction). Before attempting the actual
+twisted claim, the method was calibrated against the already-published
+UNTWISTED baseline spectrum $\pm(k+3)$ as a mandatory positive control.
+
+**Result — `BLOCKED_BASELINE_CALIBRATION_FAILED`.** The calibration scan
+found a clean, reproducible algebraic relation (eigenvalue$^2=K(K+6)$,
+confirmed at 30+ independently-scanned values of the free normalization
+constant $K$) — but no natural $K$ reproduces the required baseline
+eigenvalue 3 (the textbook-motivated $K=3$ predicts $3\sqrt3\approx5.196$
+instead). Because the untwisted baseline could not be certified, the
+twisted operator (the actual claim) was correctly never attempted — extending
+uncalibrated machinery would produce unverified code, not a trustworthy
+check.
+
+**Status calibration note:** this was originally reported as a "NULL /
+inconclusive" result and has been corrected. Per this project's own
+Verification Substrate Gate (`falsification-ladder.md` Step 2a — "test
+could not run ≠ claim failed"), the target claim was never actually tested;
+only the tooling failed at baseline calibration. The headline
+`dim ker=1` claim's status is **unchanged, untested by this method** — not
+weakened, not strengthened.
+
+**What this does mean:** a real, currently-unclosed methodological gap —
+this project's exact-kernel result for S⁶ has no
+representation-theory-independent verification yet. Not a defect in the
+result itself, but a real limitation on how independently it has actually
+been checked. Relaxation Map (in the experiment's own `decision.md`): the
+most likely fix is a Clifford-signature convention mismatch ($\Gamma_a^2=+I$
+vs the standard Riemannian $-I$), not attempted here.
+
+---
+
+## KT-10 (2026-07-17) — Does the S⁶ index/kernel construction generalize to the other 3 homogeneous nearly-Kähler 6-manifolds?
+
+**Origin:** this project's own "Universality" open item (\S\ref{sec:open})
+asks whether the Lichnerowicz–$G_2$-Schur mechanism (L4) applies to
+$\mathbb{CP}^3$, $\mathrm{SU}(3)/T^2$, and $S^3\times S^3$, the other three
+Butruille-classified homogeneous nearly-Kähler 6-manifolds. Prior state:
+$\mathrm{SU}(3)/T^2$ rank-one established (Round 65); $\mathbb{CP}^3$
+found "ill-posed, no computation possible" (Round 64, via
+Charbonneau–Harland 2016's instanton-deformation machinery); $S^3\times S^3$
+untested.
+
+**Result (`experiments/20260717-round70-e5-universality-cp3-s3xs3/`) — mixed, both parts diagnosed carefully:**
+
+**Part A ($\mathbb{CP}^3$) — `ROUTE_C_PASS`, corrects Round 64 without reversing it.**
+Round 64's finding is confirmed and *reinforced* with a second, independent
+reason (CH2016's own instanton operator only reaches
+$\Lambda^1\oplus\Lambda^2$ of the spinor bundle, never the full $S\otimes S^-$
+this project's mechanism needs — an operator-type mismatch on top of Round
+64's representation-type mismatch). But Round 64 overgeneralized this into
+"no computation is possible on $\mathbb{CP}^3$ at all": a *different*
+mechanism (Route C — the same isotropy-Schur/no-singlet check already
+validated for S⁶/SU(3)-$T^2$) is directly computable from CH2016's own
+already-published isotropy data (verified: $\mathfrak{m}^{1,0}=V(1,1)\oplus
+V(0,-2)$, $\Lambda^2(\mathfrak{m}^{1,0})\otimes\Lambda^2(\mathfrak{m}^{1,0})$
+excludes the trivial rep, same crux structure as S⁶/SU(3)-$T^2$) and DOES
+pass. **Important scope caveat:** Route C is a necessary-condition/
+isotropy-Schur-bound check ($\dim\ker\leq1$) — it does **not** establish the
+exact kernel $(\dim\ker D^+,\dim\ker D^-)=(1,0)$ for the physically-relevant
+operator, which remains a separate, unclosed L4A/L4B-style calculation for
+$\mathbb{CP}^3$ (this project's own L4A/L4B tension for S⁶ itself — Kostant–
+Parthasarathy proved only at $t=1/3$, not the physical $t=1/2$ — was not
+attempted to be resolved here or transported to $\mathbb{CP}^3$; doing so was
+explicitly scoped out as comparable in cost to the original 21-round
+`dolan-casimir-g2su3` derivation).
+
+**Part B ($S^3\times S^3$) — `OPEN_STRUCTURALLY_DISTINCT`, not a gap in effort.**
+$\mathfrak{m}^{1,0}=V2$ (single copy of the 3-dim adjoint of
+$\mathrm{SU}(2)_{\mathrm{diag}}$), and
+$\Lambda^2(\mathfrak{m}^{1,0})\otimes\Lambda^2(\mathfrak{m}^{1,0})=V0\oplus
+V2\oplus V4$ — this **does** contain the isotropy-trivial $V0$, the opposite
+finding from S⁶, SU(3)-$T^2$, and $\mathbb{CP}^3$. Route C's cheap
+no-singlet argument therefore does not decide $S^3\times S^3$ either way
+(not NULL, not PASS — the coefficient on that slot is genuinely unknown, a
+real structural difference, not unfinished work). The isotropy-Schur bound
+($\dim\ker\leq1$) still holds independently regardless.
+
+**Pearl candidate noted (not promoted):** the three Route-C-PASS spaces all
+have $\chi(M)\neq0$ (2, 6, 4); the one open space has $\chi(S^3\times
+S^3)=0$ — a testable but unconfirmed correlation, `impact_score` 4/10, `n=4`
+too small to distinguish from coincidence.
+
+---
+
+## KT-11 (2026-07-17) — Explicit S³×S³ Nomizu/torsion construction to resolve KT-10's open $\mathrm{Term2}$ coefficient
+
+**Origin:** direct follow-up to KT-10 Part B — attempting to compute the
+actual coefficient on the isotropy-trivial slot, using
+Charbonneau–Harland 2016's own explicit basis for $S^3\times S^3=
+\mathrm{SU}(2)^3/\mathrm{SU}(2)_{\mathrm{diag}}$ (page 18 of the PDF, in
+this repo).
+
+**Result (`experiments/20260717-round71-e6-s3xs3-nomizu-torsion-audit/`) — `ILL-POSED`,
+one of four pre-registered kill criteria, not a PASS/FAIL/BLOCKED.**
+CH2016's own page-18 basis data is **not internally Hermitian-consistent**:
+their stated Killing form gives $B(X_1,X_1)=5/3$ but $B(Y_1,Y_1)=2$, though
+$J(X_i)=Y_i$ (their own literal statement) requires these to be equal.
+**Independently hand-verified this session** (30 seconds, sympy-free):
+$B(X_1,X_1)=\tfrac16[(1+\sqrt2)^2+(1-\sqrt2)^2+4]=\tfrac16(10)=\tfrac53$;
+$B(Y_1,Y_1)=6\cdot[\tfrac16+\tfrac16]=2$. Confirmed exactly. Two
+structurally different repairs were attempted (Hermitize the metric to fit
+the stated $J$; or keep the metric and solve for the metric-compatible
+$J_B$ instead) — they disagree with each other, and a built-in control
+check confirmed the natural-reductivity checker code itself is correct (raw,
+unmodified $B$ passes by a fully general theorem). The whole finding was
+then independently reproduced within the same session via a *different*
+CH2016 basis (Appendix C) and a *different* method (general 3-parameter
+metric sweep) — identical numbers.
+
+**What survives:** KT-10's isotropy-Schur bound ($\dim\ker\leq1$) and Route-C
+crux finding — neither depends on the Nomizu-map construction that hit the
+obstruction. **What remains open:** $\mathrm{Term2}$'s actual coefficient —
+the substrate needed to compute it was never certified trustworthy, so
+no claim (zero, nonzero, or otherwise) is made about it either way.
+
+**Concrete next step (not attempted):** CH2016 pages 7–12 (not consulted
+this round) may contain a direct cyclic/$\mathbb{Z}_3$-eigenspace
+construction of $S^3\times S^3$'s complex structure that sidesteps this
+specific basis ambiguity by construction, rather than requiring a choice
+between two ad hoc repairs.
+
+---
+
+**KT-9/10/11 status update:** none of these three have been integrated into
+`preprint.tex` — E1 (dimension correction) and E2/E3 (S³ torsion deformation
+candidate mechanism) were integrated as dedicated open-problems items
+(commits `c2a65c4`, `ec32211`); KT-9/E4 (methodological gap), KT-10/E5
+(universality, mixed), and KT-11/E6 (ill-posed) remain standalone findings
+in their own experiment folders and in this report only. Full derivations:
+`reports/E1_E5_VERIFICATION_ROUND_2026-07-17.md` and the individual
+`experiments/20260717-round69/70/71-.../decision.md` files.
