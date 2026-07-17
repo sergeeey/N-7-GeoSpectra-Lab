@@ -1,0 +1,73 @@
+{
+  "step1_clifford_relations": {
+    "pairwise": {
+      "Z1Z1": true,
+      "Z1Z2": true,
+      "Z1Z3": true,
+      "Z2Z2": true,
+      "Z2Z3": true,
+      "Z3Z3": true
+    },
+    "all_ok": true
+  },
+  "step1_2_omega_scalar_and_central": {
+    "omega_matrix": "Matrix([[1, 0], [0, 1]])",
+    "is_scalar_times_identity": true,
+    "scalar_value": "1",
+    "off_diagonal_entries_zero": true,
+    "diagonal_entries_equal": true,
+    "centrality_checks": {
+      "omega_commutes_Z1": true,
+      "omega_commutes_Z2": true,
+      "omega_commutes_Z3": true
+    },
+    "all_central": true,
+    "omega_squared": "Matrix([[1, 0], [0, 1]])",
+    "omega_squared_equals_identity": true
+  },
+  "step2_exact_eigenstructure_of_omega": {
+    "n_distinct_eigenvalues": 1,
+    "eigen_report": [
+      {
+        "eigenvalue": "1",
+        "algebraic_multiplicity": 2,
+        "eigenvectors": [
+          "Matrix([[1, 0]])",
+          "Matrix([[0, 1]])"
+        ]
+      }
+    ],
+    "splits_into_two_1dim_eigenspaces": false,
+    "single_eigenspace_is_all_of_C2": true
+  },
+  "step3_action_on_generic_kernel_t0": {
+    "psi_generic": "(a, b)",
+    "omega_psi": "Matrix([[a, b]])",
+    "single_lambda_solves_omega_psi_eq_lambda_psi_for_all_a_b": true,
+    "lambda_value": "1",
+    "verdict_kernel_is_single_eigenspace_at_t0": true
+  },
+  "step4_action_on_generic_kernel_t1": {
+    "psi_t1_generic": "gbar(x)*(a_,b_)",
+    "omega_psi_t1": "Matrix([[a_*x0 - I*a_*x3 - I*b_*x1 - b_*x2, -I*a_*x1 + a_*x2 + b_*x0 + I*b_*x3]])",
+    "single_lambda_solves_for_all_x_a_b": true,
+    "lambda_value": "1",
+    "verdict_kernel_is_single_eigenspace_at_t1": true
+  },
+  "step6_side_note_vector_type_element": {
+    "M_generic": "alpha*Z1+beta*Z2+gamma*Z3",
+    "M_at_alpha_beta_gamma_eq_1": "Matrix([[I, 1 + I], [-1 + I, -I]])",
+    "n_distinct_eigenvalues_at_111": 2,
+    "splits_generically": true,
+    "caveat": "This is a DEGREE-1 (vector-type) Clifford element, not a chirality/grading operator. It transforms as a vector under the SU(2) that E14/round80 already showed acts irreducibly on this same C^2 doublet -- i.e. 'splitting' here is basis-dependent and not a natural, SU(2)-invariant statement, unlike a genuine central grading operator. Included only for completeness, not as a candidate resolution."
+  },
+  "verdict": {
+    "clifford_ok": true,
+    "omega_is_scalar_times_identity": true,
+    "omega_all_central": true,
+    "omega_single_eigenspace": true,
+    "kernel_splits_at_t0_or_t1": false,
+    "omega_is_trivial_grading_on_C2": true,
+    "label": "NULL_OMEGA_PROPORTIONAL_TO_IDENTITY__NO_SPLITTING_POSSIBLE"
+  }
+}

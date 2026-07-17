@@ -1,0 +1,39 @@
+{
+  "part1_setup": {
+    "g_quaternion_norm_identity_holds": true,
+    "h_quaternion_norm_identity_holds": true
+  },
+  "part2_psi0_transformation": {
+    "action_L_psi0_equals_psi0_exactly": true,
+    "action_R_psi0_equals_psi0_exactly_for_all_h": false,
+    "action_R_psi0_minus_psi0_at_concrete_h": "Matrix([[2*a_ - I*a_ + 2*b_ + I*b_, -2*a_ + I*a_ + 2*b_ + I*b_]])",
+    "action_R_psi0_nontrivial_at_concrete_h": true,
+    "action_R_psi0_str": "Matrix([[a_*y0 + I*a_*y3 + I*b_*y1 + b_*y2, I*a_*y1 - a_*y2 + b_*y0 - I*b_*y3]])",
+    "verdict_psi0": "SU(2)_L SINGLET (exact invariance under left-translation pullback), SU(2)_R DOUBLET/fundamental (h acts by left matrix multiplication, nontrivial for generic h, exact identity only at h=+-I)"
+  },
+  "part3_psi1_transformation": {
+    "psi1_at_g_str": "Matrix([[(a_*(x0 - I*x3) - b_*(I*x1 + x2))/(x0**2 + x1**2 + x2**2 + x3**2), (-a_*(I*x1 - x2) + b_*(x0 + I*x3))/(x0**2 + x1**2 + x2**2 + x3**2)]])",
+    "action_L": {
+      "inverse_identity_hinv_g_holds": true,
+      "psi1_action_L_str": "Matrix([[(a_*(x0*y0 + I*x0*y3 + x1*y1 + I*x1*y2 - I*x2*y1 + x2*y2 - I*x3*y0 + x3*y3) + b_*(I*x0*y1 + x0*y2 - I*x1*y0 - x1*y3 - x2*y0 + I*x2*y3 + x3*y1 - I*x3*y2))/(x0**2 + x1**2 + x2**2 + x3**2), (a_*(I*x0*y1 - x0*y2 - I*x1*y0 + x1*y3 + x2*y0 + I*x2*y3 - x3*y1 - I*x3*y2) + b_*(x0*y0 - I*x0*y3 + x1*y1 - I*x1*y2 + I*x2*y1 + x2*y2 + I*x3*y0 + x3*y3))/(x0**2 + x1**2 + x2**2 + x3**2)]])",
+      "matches_closed_form_g_inv_times_h_psi0": true,
+      "is_singlet_exact_for_all_h": false,
+      "diff_from_original_at_concrete_h": "Matrix([[(a_*x0*(2 - I) + a_*x1*(1 + 2*I) + a_*x2*(2 - I) - a_*x3*(1 + 2*I) + b_*x0*(2 + I) + b_*x1*(1 - 2*I) - b_*x2*(2 + I) + b_*x3*(1 - 2*I))/(x0**2 + x1**2 + x2**2 + x3**2), (a_*x0*(-2 + I) - a_*x1*(1 + 2*I) + a_*x2*(2 - I) - a_*x3*(1 + 2*I) + b_*x0*(2 + I) + b_*x1*(1 - 2*I) + b_*x2*(2 + I) + b_*x3*(-1 + 2*I))/(x0**2 + x1**2 + x2**2 + x3**2)]])",
+      "nontrivial_at_concrete_h": true
+    },
+    "action_R": {
+      "psi1_action_R_str": "Matrix([[(a_*x0 - I*a_*x3 - I*b_*x1 - b_*x2)/(x0**2 + x1**2 + x2**2 + x3**2), (-I*a_*x1 + a_*x2 + b_*x0 + I*b_*x3)/(x0**2 + x1**2 + x2**2 + x3**2)]])",
+      "is_singlet_exact_for_all_h_and_all_x": true
+    },
+    "verdict_psi1": "SU(2)_L DOUBLET/fundamental (transforms via psi_0 -> h*psi_0 on the 2-dim solution space, nontrivial for generic h), SU(2)_R SINGLET (EXACT invariance, h cancels identically via h*(gh)^{-1}=g^{-1})"
+  },
+  "verdict": {
+    "core_setup_ok": true,
+    "psi0_is_SU2L_singlet": true,
+    "psi0_is_SU2R_doublet_not_singlet": true,
+    "psi1_is_SU2L_doublet_not_singlet": true,
+    "psi1_is_SU2R_singlet": true,
+    "clean_complementary_rep_pattern_found": true,
+    "label": "CLEAN_COMPLEMENTARY_REP_PATTERN_FOUND__SPECULATIVE_CONVENTION_DEPENDENT"
+  }
+}

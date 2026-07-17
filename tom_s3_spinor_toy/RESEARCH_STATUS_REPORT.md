@@ -6,6 +6,22 @@
 
 ---
 
+## ⚠️ Status correction (2026-07-17)
+
+The "Main result" and "Three-generation result" below (dated 2026-07-07 /
+2026-07-05) predate a blocking finding and now overstate N_gen=3 as physical.
+**Unchanged and correct:** G73+G74A+G74B's ind=1/dim ker=1 result on the S⁶
+factor. **New, blocking (KT-8):** the full internal Dirac operator on
+S³×S⁶ — for the round, untwisted Levi-Civita S³ actually used — has **no
+zero mode**, so this index does not (yet) establish a massless 4D fermion;
+**N_gen=3 is not yet an established physical result**. A torsion-deformed S³
+connection gives a mathematical (not physical) candidate escape route, no
+selection principle known. Total dimension of the ansatz is **13** (4+3+6),
+not 10. Full derivations: `reports/PROJECT_360_ROUND3_SYNTHESIS.md` (KT-8
+through KT-11), `preprint.tex` §Open Problems.
+
+---
+
 ## Overview
 
 **Main result:** S³×S⁶ geometry reproduces the complete fermion sector of the Standard Model

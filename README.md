@@ -20,30 +20,56 @@ This repository contains two independent research projects on compact geometries
 |---|---|---|
 | **Geometry** | S³×S¹ finite lattice | S³×S⁶ spectral triple |
 | **Method** | Eigensolver + IPR / r-stat | Index theory (Atiyah-Singer) + exact arithmetic |
-| **Verdict** | `DISCRETIZATION_SENSITIVE` | N_gen = 3 (arithmetic exact; depends on open gate G67-C3, see below) |
-| **Key result** | 7.07× signal; geometry-agnostic | Three SM generations from Atiyah-Singer index |
+| **Verdict** | `DISCRETIZATION_SENSITIVE` | Exact S⁶ index (=1), internally-certified 1D kernel — but the full S³×S⁶ operator has **no zero mode** for the round/Levi-Civita S³ construction actually used (KT-8, 2026-07-17); N_gen=3 is **not yet established** as a physical result |
+| **Key result** | 7.07× signal; geometry-agnostic | ind(D_{S⁶}⊗S⁻)=1 per channel — a mathematical index, not yet shown to be a massless 4D fermion mode |
 | **Tests** | ~500 regression tests | **2500+ tests** (fractions.Fraction, zero float ops; 2512 passed/4 skipped independently reproduced 2026-07-15) |
 | **Directory** | `cc_toy_lab/`, `scripts/`, `tests/` | [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) |
 | **Entry point** | `reports/GATE4B_SPECIFICITY_VERDICT_v0.1.24.md` | `tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md` |
 
 **Track A** explored whether a lattice product structure produces a robust spectral signal. It does — but the signal is DISCRETIZATION_SENSITIVE, not specific to S³×S¹ physics.
 
-**Track B** derived N_gen = 3 Standard Model generations from the Atiyah-Singer index theorem on S³×S⁶, using three independent routes:
-- G73: ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels = 3
+**Track B** constructs an exact Atiyah-Singer index computation on the S⁶ factor
+of S³×S⁶ geometry, with an internally-certified one-dimensional local kernel:
+- G73: ind(D_{S⁶}⊗S⁻) = 1 per triality channel
 - G74A: Lichnerowicz gap + G₂-Schur → dim ker = 1 on every non-trivial sector
   (certified); trivial-component rank = 1 verified by three independent internal
   routes incl. a closed-form analytic derivation (Round 59, 2026-07-14);
   external review outstanding (L4B, see below)
-- G74B: sign(ind) = +1 → left-handed excess → SM chirality
+- G74B: sign(ind) = +1 → left-handed excess → SM chirality label
 
-**Open dependency (honestly flagged in G67/G68/G73 themselves):** the "×3 channels" step
-assumes three geometrically distinct octonion-multiplication channels (L_p, R_p, T_p)
-each appear in the S³×S⁶ Dirac action — gate **G67-C3, 2/3 closed**. G68 (2026-06-21)
-proves L and R are genuinely inequivalent Clifford(0,7) representations (pseudoscalar
-Ω_L=+I≠Ω_R=−I). The third (vector, 8_v) channel remains open, needs G72/Tom input. G44
-(2026-06-20) shows G₂ (S⁶'s isotropy group) cannot distinguish the three SO(8) triality
-reps by G₂-content alone (8_v≅8_s≅8_c as G₂-modules) — the same fact G73 uses, for a
-different purpose. See `TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7 for the full reconciliation.
+**Blocking gap, tool-and-literature-verified (KT-8, 2026-07-17):** the physical
+claim requires a zero mode of the *full* nine-dimensional internal Dirac
+operator on S³×S⁶, not the S⁶ factor alone. For the round, untwisted
+Levi-Civita S³ actually used throughout this project (product metric, product
+connection, twist pulled back from S⁶ only), the full operator provably has
+**no zero mode**: $D_{\mathrm{full}}^2=D_{S^3}^2\otimes1+1\otimes D_{S^6,S^-}^2
+\geq(3/2\rho_3)^2>0$ regardless of the S⁶ factor's own index. **N_gen=3 is
+therefore not yet an established physical result** — the index above computes
+a mathematical object (zero modes of the S⁶-factor operator alone), not a
+demonstrated massless 4D fermion. A torsion-deformed S³ connection provides a
+mathematical (not physical) candidate escape route: the obstruction is
+removable at computable parameter values, but no physical principle is known
+for selecting them over the standard connection used elsewhere in this
+project. See `reports/PROJECT_360_ROUND3_SYNTHESIS.md` (KT-8 through KT-11)
+and `tom_s3_spinor_toy/preprint.tex` §Open Problems for full derivations.
+
+**Dimension correction:** the total spacetime dimension of the ansatz actually
+used is **13** (4 external + 3 + 6), not 10 as earlier phrasing implied — "10D"
+conflated a spinor representation's dimension with a spacetime dimension count.
+No consistent 13-dimensional parent theory is claimed (standard supergravity
+is capped at 11D).
+
+**Open dependency (honestly flagged in G67/G68/G73 themselves, independent of
+the KT-8 gap above):** even granting a resolution of KT-8, the "×3 channels ⟹
+N_gen=3" step assumes three geometrically distinct octonion-multiplication
+channels (L_p, R_p, T_p) each appear in the S³×S⁶ Dirac action — gate
+**G67-C3, 2/3 closed**. G68 (2026-06-21) proves L and R are genuinely
+inequivalent Clifford(0,7) representations (pseudoscalar Ω_L=+I≠Ω_R=−I). The
+third (vector, 8_v) channel remains open, needs G72/Tom input. G44 (2026-06-20)
+shows G₂ (S⁶'s isotropy group) cannot distinguish the three SO(8) triality reps
+by G₂-content alone (8_v≅8_s≅8_c as G₂-modules) — the same fact G73 uses, for a
+different purpose. See `TOM_RECONSTRUCTION_ACH_MATRIX.md` Case 7 for the full
+reconciliation.
 
 ---
 
@@ -119,7 +145,12 @@ See [`tom_s3_spinor_toy/`](tom_s3_spinor_toy/) for full details and 2210 tests
 `tom_s3_spinor_toy/experiments/20260713-round58-readiness-audit/decision.md` —
 different scope, not a discrepancy).
 
-- **N_gen = 3 exactly:** Atiyah-Singer index ind(D_{S⁶}⊗S⁻) = 1 per triality channel × 3 channels (G73, PROMOTE 29/29)
+- **ind(D_{S⁶}⊗S⁻) = 1 per triality channel exactly** (G73, PROMOTE 29/29) — a
+  mathematical index on the S⁶ factor alone. **"N_gen = 3" is NOT yet an
+  established physical result:** the full internal Dirac operator on S³×S⁶ has
+  no zero mode for the round Levi-Civita S³ construction actually used (KT-8,
+  2026-07-17, tool-and-literature-verified three times) — see "Status
+  correction" below
 - **dim ker = 1, internally certified:** Lichnerowicz spectral gap + G₂-Schur
   certify no extra zero modes on every non-trivial isotypic component (G74A +
   `20260713-round52`→`round56` general bound, PROMOTE); the trivial-component
@@ -135,7 +166,11 @@ different scope, not a discrepancy).
 - **SM fermion content:** 3+3̄+1+1 per generation from three independent routes — SO(8) triality (G67), CSDR on G₂/SU(3) (G69), SO(4)×G₂ rep theory (G24)
 - **Exact arithmetic:** `fractions.Fraction` throughout — zero floating-point operations in the core index chain
 
-Track B does NOT: claim S³×S⁶ is the physical compactification; derive the SM gauge group; fix coupling constant λ (free parameter, enforced by test suite).
+Track B does NOT: claim S³×S⁶ is the physical compactification; derive the SM
+gauge group; fix coupling constant λ (free parameter, enforced by test suite);
+**establish that the full internal Dirac operator has a zero mode (KT-8:
+it provably does not, for the round Levi-Civita S³ construction used here)**;
+claim the ansatz is 10-dimensional (it is 13-dimensional, 4+3+6).
 
 ---
 

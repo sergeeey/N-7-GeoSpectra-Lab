@@ -7,6 +7,16 @@
 preprint_abstract.md). These lemmas are a candidate mathematical construction requiring
 independent external review.
 
+**⚠️ Status correction (2026-07-17):** these five lemmas establish the index/kernel
+result on the S⁶ factor alone (unchanged, correct). A blocking finding since this
+pack was written (KT-8): the full internal Dirac operator on S³×S⁶ — for the round,
+untwisted Levi-Civita S³ actually used throughout this project — has **no zero
+mode**, so these lemmas do not (yet) establish a massless 4D fermion or N_gen=3 as
+a physical result. A torsion-deformed S³ connection gives a mathematical (not
+physical) candidate escape route; no selection principle known. Total dimension
+of the ansatz is 13 (4+3+6), not 10. See `reports/PROJECT_360_ROUND3_SYNTHESIS.md`
+(KT-8 through KT-11).
+
 ---
 
 ## Five Lemmas

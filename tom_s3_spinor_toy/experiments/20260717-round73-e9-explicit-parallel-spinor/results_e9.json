@@ -1,0 +1,94 @@
+{
+  "step1_clifford_relations_ok": true,
+  "step2_so3_valued": {
+    "per_i": [
+      {
+        "i": 1,
+        "so3_valued": true
+      },
+      {
+        "i": 2,
+        "so3_valued": true
+      },
+      {
+        "i": 3,
+        "so3_valued": true
+      }
+    ],
+    "so3_valued_all_i": true
+  },
+  "step3_omega_and_H": {
+    "omega": "Matrix([[1, 0], [0, 1]])",
+    "H": "Matrix([[3*c/2, 0], [0, 3*c/2]])"
+  },
+  "step4_crosscheck_against_agricola_H": {
+    "omega": "Matrix([[1, 0], [0, 1]])",
+    "H": "Matrix([[3*c/2, 0], [0, 3*c/2]])",
+    "sum_Zi_Omega_i": "Matrix([[3*c*t/2, 0], [0, 3*c*t/2]])",
+    "matches_plus_tH": true,
+    "matches_minus_tH": false,
+    "crosscheck_matches_tH": true,
+    "sign_convention": "+tH",
+    "Omega_i_str": [
+      "Matrix([[0, -I*c*t/2], [-I*c*t/2, 0]])",
+      "Matrix([[0, -c*t/2], [c*t/2, 0]])",
+      "Matrix([[-I*c*t/2, 0], [0, I*c*t/2]])"
+    ]
+  },
+  "step5_t0_explicit_parallel_spinor": {
+    "Omega_i_at_t0": [
+      "Matrix([[0, 0], [0, 0]])",
+      "Matrix([[0, 0], [0, 0]])",
+      "Matrix([[0, 0], [0, 0]])"
+    ],
+    "t0_omega_all_zero": true,
+    "parallel_checks": {
+      "e1": true,
+      "e2": true,
+      "generic_(a,b)": true
+    },
+    "t0_D_psi_is_zero": true,
+    "D0_checks_per_candidate": {
+      "e1": true,
+      "e2": true,
+      "generic_(a,b)": true
+    }
+  },
+  "step6_t1_attempt": {
+    "Omega_i_at_t1_c2": [
+      "Matrix([[0, -I], [-I, 0]])",
+      "Matrix([[0, -1], [1, 0]])",
+      "Matrix([[-I, 0], [0, I]])"
+    ],
+    "solve_result": "[{a: 0, b: 0}]",
+    "t1_only_trivial_solution_via_solve": true,
+    "t1_nullspace_dimension": 0,
+    "t1_only_trivial_solution_via_nullspace": true,
+    "t1_nonzero_solution_exists": false,
+    "H_at_c2": "Matrix([[3, 0], [0, 3]])",
+    "D1_generic_constant_psi": "Matrix([[3*a, 3*b]])",
+    "theorem42_cross_check_confirms_trivial_only": true,
+    "two_independent_routes_agree": true
+  },
+  "step7_uniqueness_of_t0_symbolic": {
+    "det_Z1": "1",
+    "det_Z1_equals_1": true,
+    "Omega_1_symbolic": "Matrix([[0, -I*c*t/2], [-I*c*t/2, 0]])",
+    "det_Omega_1_symbolic": "c**2*t**2/4",
+    "roots_of_det_Omega_1=0_in_t": [
+      "0"
+    ],
+    "t0_is_the_unique_root_given_c_nonzero": true
+  },
+  "verdict": {
+    "clifford_ok": true,
+    "so3_valued_all_i": true,
+    "crosscheck_matches_tH": true,
+    "t0_omega_all_zero": true,
+    "t0_D_psi_is_zero": true,
+    "core_claim_t0_pass": true,
+    "t1_nonzero_solution_exists": false,
+    "t0_is_unique_root_symbolic": true,
+    "label": "PASS_T0_ONLY__T1_NAIVE_ANSATZ_FAILS_PARTIAL"
+  }
+}

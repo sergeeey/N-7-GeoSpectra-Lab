@@ -14,6 +14,12 @@
 > read "zero-fit" and is itself conditional on `(λ, ρ₆*)` being fixed — see
 > `preprint.tex` §sec:moduli). Flagged in `reports/CLAIM_BOUNDARY_AUDIT_2026-06-25.md`
 > (HIGH-3) and reconfirmed in `reports/PROJECT_360_ROUND3_SYNTHESIS.md` (2026-07-15).
+>
+> **Additionally stale as of 2026-07-17:** predates KT-8 (full internal Dirac
+> operator on S³×S⁶ has no zero mode for the round Levi-Civita S³ construction
+> — see `reports/PROJECT_360_ROUND3_SYNTHESIS.md`, KT-8 through KT-11) and the
+> dimension correction (total spacetime dimension is 13, not 10). The abstract
+> below should not be cited for either point.
 
 ---
 

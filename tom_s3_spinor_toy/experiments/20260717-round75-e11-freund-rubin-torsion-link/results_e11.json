@@ -1,0 +1,32 @@
+{
+  "q1_torsion_is_volume_form_multiple": {
+    "all_components_match_multiple_of_eps": true,
+    "mismatches": [],
+    "totally_antisymmetric": true,
+    "nonzero_example_T123": {
+      "triple": [
+        1,
+        2,
+        3
+      ],
+      "value": "4*t - 2"
+    },
+    "dim_Lambda3_R3_star": 1
+  },
+  "q2_flux_volume_ratio_check": {
+    "Vol_S3_formula": "2*pi**2*rho3**3",
+    "Vol_S6_formula": "16*pi**3*rho6**6/15",
+    "Vol_S3_over_2Vol_S6": "15*rho3**3/(16*pi*rho6**6)",
+    "paper_C_formula": "15*rho3**3/(16*pi*rho6**6)",
+    "ratio_equals_paper_C_exactly": true
+  },
+  "verdict": {
+    "q1_T_is_multiple_of_volume_form": true,
+    "q2_flux_C_equals_volume_ratio_exactly": true,
+    "label": "STRUCTURAL_TYPE_MATCH_CONFIRMED_MECHANISM_LINK_NOT_ESTABLISHED"
+  },
+  "notes": {
+    "interpretation": "Q1 PASS is expected and is a near-tautological consequence of dim(S^3)=3 (dim Lambda^3((R^3)*) = C(3,3) = 1): ANY invariant 3-form on S^3, whatever its physical origin (flux or torsion), must be a multiple of the same volume-form generator. This does NOT by itself establish a dynamical link between the two objects.",
+    "q2_context": "Confirms G54-A's own decision.md claim that V_flux(q=1) traces back to Vol(S^3)/(2*Vol(S^6)) exactly -- i.e. the flux magnitude used in the paper's potential is built from the SAME Vol(S^3) (integral of vol_{S^3}) that T^t is a pointwise multiple of. This is the strongest concrete link this experiment can verify computationally; whether it amounts to a physical torsion-sourcing mechanism is a textual/definitional question, addressed in decision.md, not here."
+  }
+}
