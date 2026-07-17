@@ -606,6 +606,50 @@ rule was still applied: the reviewer's own sweeping claim-ledger relabeling
 (REFUTED across C1-C28) was *not* accepted at face value — only the specific,
 independently-checkable KT-8 mathematics was treated as confirmed.
 
+**Calibration correction to the above (2026-07-17, same day, user-provided):**
+two refinements to how this third pass should actually be graded, both accepted.
+
+1. **The numeric match certifies the spectral-block arithmetic, not the
+   underlying operator-algebra step.** `sqrt(1.5²+0.185²)=1.51137` matching
+   this audit's `1.5113689` is a strong catch for sign errors, wrong linear
+   combinations, bad diagonalization, or normalization mistakes in the block
+   realization — but it cannot, by itself, verify the actual claim that
+   `D_full² = D1²⊗I + I⊗D2²` (the two inputs 1.5 and 0.185 and the target
+   formula were shared across all three passes, not independently arrived
+   at). Real independence for *that* step comes from the combination of three
+   genuinely different derivations already on record: the full 16-dim
+   Clifford construction, the 2×2-block symbolic derivation, and the
+   invariant analytic proof from chirality-operator anticommutation
+   (`{ω,D_own}=0`, `ω²=Id` — both dimension-general facts, not S⁶-specific).
+   The numeric match is a consistency certificate *on top of* those three,
+   not a fourth independent derivation of the central step.
+2. **"Different AI model" is not the same rung as a blind external review.**
+   Downgrade the confidence label from "a real step up toward 'different
+   model'" to the more precise **"implementation-independent and
+   derivation-diverse verification"** — models can share the same standard
+   construction, the same question framing, and (critically, as happened
+   here) the same expected answer and input numbers, none of which a truly
+   independent check would have. The next rung up, per this project's own
+   Independent Verification Strength Ladder, would require handing an
+   external reviewer *only*: the frozen claim, the product-ansatz
+   assumptions, the two factor-operator definitions, and the PASS/FAIL
+   criterion — withholding both the expected result (`ker D_full=0`) and the
+   specific number (`1.51137`).
+
+### Abstract wording tightened further (2026-07-17, same day)
+
+The initial abstract fix (above) still used the phrase "candidate mechanism,"
+which risked being read as an already-existing (if caveated) 4D-generation
+mechanism. Retightened per the same feedback to a more precise formulation:
+the $S^6$-level index mechanism is stated first and scoped explicitly to
+"one net chiral mode per postulated triality channel"; the positive $S^3$
+spectral gap is stated as the reason these modes cannot become zero modes of
+the full internal operator; and an explicit sentence now reads "The
+gauge-structure and fermion-quantum-number results below should be read at
+the level of this $S^6$-factor mechanism, not as an established 4D physical
+spectrum." Recompiled (`pdflatex -halt-on-error`, exit 0, no undefined
+references).
+
 ### Integration into preprint.tex (2026-07-17)
 
 At the user's explicit direction (choosing the "full status rebuild" option
