@@ -2236,3 +2236,81 @@ a numeric $B{-}L$/hypercharge assignment for the twisted $S^6$ kernel,
 plus resolution of which of the two hypercharge formulas actually applies
 — a genuine, previously-unnoticed internal inconsistency this round
 surfaces as a byproduct, independent of the main anomaly-audit question.
+
+---
+
+### Round93 — Charge-operator and representation-lift gate (user's recalibration of round92)
+
+Per the user's own precise recalibration: round92's blocker is broader
+than "missing numeric $B{-}L$" — it is the absence of an explicit map
+from torsion-endpoint zero modes to independent 4D Weyl fields with
+well-defined charge operators. Ran the user's exact 4-part design (A:
+operator provenance table; B: resolve the two $Y$ formulas; C:
+all-left-handed census excluding CPT duplicates; D: $\mathrm{SU}(4)$ lift).
+
+**Verdict:** `BLOCKED` — narrower and sharper than round92's, because
+Part B reached a genuine, tool-verified **positive** resolution.
+
+**Part B, the headline finding, independently re-verified:** $K_3=T_{3R}$
+is **proven**, not merely argued — direct matrix computation
+(re-run myself, `K3_equals_T3R_as_32x32_operator=True`,
+`no_s6_side_k3_construction_found_in_code=True`) shows they are the
+identical operator in every piece of this project's own code that
+computes with it (10 files: G11, G12, G16, G17, G19, G21–G24, KT-6). The
+"two distinct, unreconciled $Y$-formulas" round92 flagged traces to a
+**documentation propagation error**, not a physical ambiguity:
+$K_3$-as-defined-in-code is built entirely from the S³-side
+$\mathrm{SU}(2)_R$ generator (`g11_block_generators.py`, "trivial on
+$S^6$"), and `g16_t3r_k3.py`'s own docstring frames the whole experiment
+as testing whether "$K_3$ eigenvalues give $T3R=\pm1/2$" — i.e. $K_3$ and
+$T_{3R}$ were never meant to be different quantities. But **G16's own
+`decision.md:9`** (written the same day as its own script) states "$K_3$
+is the Cartan generator of $\mathrm{SO}(6)\supset\mathrm{SU}(3)$ on
+$S^6$" — directly contradicting its own code, confirmed word-for-word by
+direct read. This wrong description propagated verbatim into
+`preprint_draft.md:125–126` and then into `preprint.tex:304–305`,
+**surviving three independent citation-only rounds** (90, 91, 92) that
+each read the paper's prose without tracing back to the underlying code.
+The paper's own already-verified anomaly computation
+(`g12_anomaly_check.py`, underlying `preprint.tex:309–320`) already used
+$T_{3R}$ consistently the whole time — there is no internal
+inconsistency in the published anomaly result itself, only a mislabeled
+one-line prose description of $K_3$'s geometric origin.
+
+**Part A/C, what remains blocked:** $B{-}L$ has never been constructed as
+an operator on the twisted torsion-endpoint kernel's Hilbert space at
+all — it exists only as a post-hoc LABEL on G6's untwisted, per-KK-level
+8-state weight space. This is a genuinely different, deeper gap than
+Part B's (a missing *operator on the relevant space*, not a formula
+ambiguity), untouched by the $K_3=T_{3R}$ resolution — the sole remaining
+blocker, stated in its sharpest form yet.
+
+**Part D:** an explicit $\mathrm{SU}(4){\cong}\mathrm{SO}(6)$ action does
+close the untwisted $S^6$ spinor into complete $4\oplus\bar4$
+representations (re-verified: `chirality_split_is_4_plus_4bar=True`) —
+but is confirmed neither an isometry (gate G97) nor $B{-}L$-preserving
+for the full 15-generator algebra (gate G98, re-verified with a
+basis-dependence clarification: commutes with the 9-dim
+$\mathfrak{su}(3)\oplus\mathfrak{u}(1)$ subalgebra, not the full 15) —
+gauging the full $\mathrm{SU}(4)$ would erase the very $B{-}L$
+distinction the hypercharge program depends on. `SU4_ANOMALY_ROUTE:
+NOT_APPLICABLE`, correctly not computed further.
+
+**Pearl flagged (impact ~6, worth a general sweep):** a `decision.md`
+summary written the same day as its own script, contradicting that
+script's own code, survived undetected through three later rounds that
+each cited `preprint.tex`'s downstream prose without grepping the
+underlying source. Before promoting any future "unreconciled formula" or
+"apparent inconsistency" finding based on prose alone, grep the
+underlying script's own construction first — a ~15-minute check that
+here overturned what three prior rounds had treated as an open physical
+question.
+
+**Net effect on the parent-action search (rounds 86–93):** the hypercharge
+formula ambiguity is resolved (closed, positively); the sole remaining
+blocker on the $B{-}L$/anomaly line is now named as precisely as
+possible — not "no numeric value assigned" but "no operator exists
+anywhere relating the twisted kernel's Hilbert space to any weight-labeled
+basis where a $B{-}L$ charge would even be well-defined." Round85/E17's
+$t=0/t=1$ coexistence question and round91's System-A/System-B
+reconciliation remain untouched, exactly as before.

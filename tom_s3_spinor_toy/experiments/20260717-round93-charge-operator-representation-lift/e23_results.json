@@ -1,0 +1,22 @@
+{
+  "T3L_G11_matches_G6_on_shared_basis": true,
+  "T3R_G11_matches_G6_on_shared_basis": true,
+  "K3_equals_T3R_as_32x32_operator": true,
+  "no_s6_side_k3_construction_found_in_code": true,
+  "J3_K3_commute": true,
+  "K3_commutes_with_all_8_su3_generators": true,
+  "BmL_commutes_with_all_8_su3_generators": true,
+  "BmL_commutes_with_S6_chirality": true,
+  "BmL_commutes_with_n_of_15_raw_so6_basis_generators": 3,
+  "BmL_commutes_with_su3_plus_u1_subalgebra_dim9": true,
+  "BmL_commutes_with_full_so6_su4": false,
+  "BL_commutator_with_D_S6_twisted_computable": false,
+  "s_plus_dim": 4,
+  "s_minus_dim": 4,
+  "chirality_split_is_4_plus_4bar": true,
+  "full_so6_preserves_chirality_split": true,
+  "su4_needs_all_15_generators_to_act_on_s_plus": true,
+  "su4_is_isometry_of_s6": false,
+  "su4_preserves_bl_charge_fully": false,
+  "su4_anomaly_route": "NOT_APPLICABLE"
+}
