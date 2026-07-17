@@ -1833,3 +1833,186 @@ torsion-escape-route program is revisited.
 question left open exactly as precisely as it can be stated: not "we
 don't know," but "here is exactly what's missing, and here is confirmation
 it isn't sitting unread in this project's own already-cited sources."
+
+---
+
+### Round87 — Gates-Hull-Roček bi-Hermitian sigma-model candidate
+
+Per continued instruction to search for a physical parent-action mechanism,
+tested the single most concrete external candidate round86's own
+Relaxation Map flagged: does the Gates-Hull-Roček (1984) construction —
+`(2,2)`-supersymmetric torsionful sigma models requiring two connections
+$\nabla^\pm=\nabla^{LC}\pm\tfrac12H$, tied to independent left-/right-moving
+worldsheet chiralities — supply the missing action?
+
+**Verdict: `FAIL`** (for this specific candidate only — does not re-open
+round86's overall `BLOCKED`). Independently re-verified: downloaded and
+grepped `arXiv:1111.0551` (Sevrin-Staessens-Terryn, cites Gates-Hull-Roček
+1984 directly) myself; confirmed word-for-word the quote "an
+$N=(2,2)$ supersymmetry provided $G$ is an **even-dimensional** reductive
+Lie group," and confirmed the paper's only two worked group-manifold
+examples are $\mathrm{SU}(2)\times\mathrm{U}(1)$ (4D) and
+$\mathrm{SU}(2)\times\mathrm{SU}(2)$ (6D) — standalone $\mathrm{SU}(2)$
+(3D, this project's $S^3$) never appears, for an elementary reason: odd-
+dimensional manifolds admit no almost-complex structure at all, and the
+construction is fundamentally built on one. A second, independent
+obstruction: the construction's own reason for needing both signs (closing
+$(2,2)$ SUSY on independent left/right *2D worldsheet* sectors) has no
+counterpart in this project's spacetime Kaluza-Klein compactification,
+which has no worldsheet.
+
+**Net effect:** forecloses an entire class of future candidates (any
+generalized-complex-geometry / Hitchin-pair mechanism) for this project's
+odd-dimensional factors ($S^3$, and the full 9D $S^3\times S^6$ internal
+space) — a genuine, useful negative result, not merely "this one paper
+doesn't apply." The remaining most concrete untried path (per the
+Relaxation Map) is candidate 3's non-complex-structure route: a direct
+Strominger-Hull-system flux/Killing-spinor sign-selection search, not yet
+attempted beyond this project's own citations.
+
+---
+
+### Round88 — Strominger-Hull flux sign-selection (two sub-questions)
+
+Pursued round86/87's flagged remaining path directly. Split into two
+distinct questions: **A** (does flux/level quantization SELECT one sign of
+`t`, resolving H1c?) and **B** (does anything require BOTH signs to
+COEXIST, the original parent-action question?).
+
+**Structural check first (per round87's precedent):** the classical
+Strominger-Hull system requires a 6-real-dimensional, $\mathrm{SU}(3)$-
+structure manifold — confirmed via Fiset's PhD thesis (arXiv:1909.07936,
+`[Hul86b, Str86]` cited directly) plus independent WebSearch corroboration
+across 3 modern papers. $S^3$ (3D, odd) cannot carry an almost-complex
+structure at all (elementary fact: $J^2=-1$ requires even dimension) — the
+classical system does not apply, for the identical class of reason
+round87 found for Gates-Hull-Roček. This forces an explicit pivot to
+$\mathrm{SU}(2)_k$ WZW-model / general $(1,1)$-sigma-model-with-torsion
+literature, confirmed as the structurally correct target via Hull's own
+statement (arXiv:hep-th/9610103): "WZW-models on even dimensional groups
+are particular examples of $(2,2)$ σ-models" — independently re-verified
+by me directly from the downloaded PDF, word for word, line 303.
+
+**Verdict A:** `FAIL__UNITARITY_BOUND_IS_ORIENTATION_RELATIVE_NOT_AN_ABSOLUTE_SELECTION`.
+The WZW level bound $k\in\mathbb{Z}_{>0}$ (unitarity, a real, tool-verified
+Kac-Moody representation-theory derivation) looked promising, but three
+converging facts show it selects nothing absolute: the level's sign is
+tied to a free choice of orientation of the 3-manifold extension of the
+Wess-Zumino term; reversing orientation is compensated by $g\mapsto g^{-1}$
+(exactly this project's own $\iota$); and $k<0$ is explicitly "definable,
+just non-unitary" in that convention, not physically excluded. This is
+structurally the SAME unresolved convention this project's own
+`CONVENTION_TABLE.md` (row 1, $S^3$ orientation) already flags — using it
+to claim a physical selection of $t=0$ over $t=1$ would repeat exactly the
+"condition without stated condition" error this project's own methodology
+is designed to catch.
+
+**Verdict B:** `FAIL__WORLDSHEET_CHIRALITY_MECHANISM_DOES_NOT_TRANSFER_TO_SPACETIME_KK_COMPACTIFICATION__BROADER_AND_CLEANER_THAN_ROUND87`.
+A genuinely new finding: the base $(1,1)$-SUSY sigma-model-with-torsion
+(NOT the $(2,2)$/Gates-Hull-Roček system round87 already ruled out) —
+independently verified via direct extraction of Hull's arXiv:hep-th/9610103
+(eq. 3.1-3.3) — has NO complex-structure or even-dimension requirement, and
+genuinely contains BOTH $\nabla^+$ and $\nabla^-=\nabla^{LC}\pm\tfrac12H$
+simultaneously in one action, free of round87's dimensional obstruction.
+**But** the reason both signs coexist there is that a 2D string worldsheet
+has two independent light-cone chiralities ($D_+,D_-$), each assigned one
+fermion superpartner of the SAME target-space map — a fact about the
+worldsheet $\Sigma$, not about the target manifold in isolation. This
+project's $S^3$ is used throughout as a spacetime Kaluza-Klein internal
+factor with no 2D string worldsheet anywhere — transferring the argument
+would require asserting this compactification secretly has two
+independent worldsheet-chirality sectors, which nothing in this project's
+framework supports. This closes off a strictly BROADER literature class
+than round87 (which needed both an even-dimension AND a chirality
+argument; this shows the chirality mismatch alone already suffices, even
+without the dimension obstruction).
+
+**Pearl candidate, independently verified on both sides:** E14/round80's
+own $\iota:g\mapsto g^{-1}$ (orientation-reversing, exactly 2 fixed points
+at $g=\pm1$) has a genuine, independently-tool-verified counterpart in the
+WZW-orientifold literature (arXiv:hep-th/0110267, independently re-checked
+by me, word for word, lines 418-420): "the standard orientifold symmetry
+$g\mapsto g^{-1}$ is a reflection through the axis of rotation with fixed
+points at the poles" — the identical map, on the identical manifold, with
+the identical fixed-point count and location, there used to compensate
+worldsheet parity. Flagged `[CANDIDATE]`, impact ~5, not adopted:
+falsifiable next check (not run) — is $\iota$ composed with $t\leftrightarrow1-t$
+a genuine symmetry of the full $D_{S^3,t}$ operator or action, reusing
+E14's own script infrastructure.
+
+**Net effect:** round86/E18's Relaxation Map item "broaden the literature
+search... Strominger-Hull flux-compactification literature" is now
+CLOSED — both the classical system and its natural non-complex-structure
+generalization fail, for two distinct, precisely-named reasons. Remaining
+open paths: a genuinely new parent-action derivation, or pursuing the
+$\iota$-composed-with-$t\leftrightarrow1-t$ pearl check.
+
+---
+
+### Round89 — Cone-construction / Killing-spinor pearl (round86's flagged item)
+
+Pursued the pearl round86 flagged but never attempted: does AHL2023's
+`S³=SU(2)` Killing-spinor pair ($\lambda=\pm1/2$, Corollary 3.14) connect
+to this project's own $t=0/t=1$ parallel-spinor pair via a genuine bridge,
+rather than being "the wrong parameter axis" as round86 assumed without
+checking?
+
+**Verdict: `PARTIAL_OPPOSITE_SIGN_STRUCTURAL`** — independently re-verified:
+re-ran the script (byte-identical output), inspected every field of
+`results_e19.json` directly, and re-checked the AHL2023 PDF text myself
+(confirmed word-for-word: "the round metric admits a pair of invariant
+Killing spinors for **the** constant $1/2$" — singular, same-sign, for the
+`n=1` case).
+
+**The bridge is real** (round86's "wrong axis" dismissal was itself an
+unchecked assumption): using only this project's own already-established
+formulas (E9's spin-lift $\Omega_i(t)=-(tc/2)Z_i$, E7's
+$t{=}1/2{=}$Levi-Civita identification), substituting a $\nabla^t$-parallel
+spinor into the connection-difference formula gives an EXACT Riemannian
+Killing-spinor equation $\nabla^{LC}_X\psi=\lambda(t)\cdot X\cdot\psi$ with
+$\lambda(t)=(c/2)(t-1/2)$ — freshly derived and tool-verified, not
+previously written down anywhere in this project. At this project's own
+$c_0=-2$: $\lambda(0)=+1/2$, $\lambda(1)=-1/2$ — an **exact magnitude
+match** to AHL2023's stated Killing constant, no rescaling needed.
+
+**But the sign structure is a hard mismatch, not a convention artifact:**
+$\lambda(t)=(c/2)(t-1/2)$ forces $\lambda(1)=-\lambda(0)$ identically, for
+**every** value of $c$ — this project's $t=0/t=1$ pair is structurally
+incapable of being anything but an opposite-sign Killing pair. AHL2023's
+own most-specific statement for exactly this case ($S^3=\mathrm{SU}(2)$,
+$n=1$, p.48) gives a **same-sign** pair ("the constant $1/2$," singular) —
+the opposite structure. It only matches the general Corollary 3.14 wording
+("constants $1/2,-1/2$ — or $1/2,1/2$, depending on $n$"), which AHL2023
+itself assigns to a different $n$, not $n=1$.
+
+**Net effect:** sharpens, rather than rescues, round86's original
+dismissal — not "these look like different objects" (round86's untested
+guess) but "the actual bridge, built explicitly, produces an exact
+magnitude match and a precise, unavoidable sign mismatch." A genuine new
+mathematical fact about this project's own $\nabla^t$ family (promotable
+as a pearl) that does **not** narrow E18's parent-action/coexistence gap
+— even a full sign-match would only ever have supplied a mathematical
+coexistence fact, not the missing physical action. Flagged as a pearl
+(impact ~3, project-internal): if the cone-construction bridge itself is
+ever built explicitly (still not attempted), check whether it reproduces
+the same $\lambda=\pm1/2$ result or resolves the sign mismatch
+differently, before assuming the coexistence question is fully closed
+either way. Self-caught and reported: a sign bug in a redundant
+verification helper (not the substantive derivation), fixed and re-run
+before this verdict was reached.
+
+**Calibrated summary of rounds 86–89, stated precisely (per user review,
+2026-07-17):** the Cartan-Schouten family on $S^3$ and the torsionful
+connections $\nabla^\pm=\nabla^{LC}\pm\tfrac12H$ of two-dimensional
+supersymmetric sigma models coincide algebraically after normalization.
+This coincidence establishes that the two flat Cartan-Schouten endpoints
+admit a standard torsionful-connection interpretation. It does **not**,
+however, transfer the sigma-model's reason for retaining both signs: in
+the latter, the pair is forced by the two chiral directions of an
+external worldsheet. The present Kaluza-Klein construction contains no
+such worldsheet or corresponding pair of chiral sectors. Thus the
+simultaneous physical inclusion of $t=0$ and $t=1$ remains unmotivated
+within the current parent structure. Algebraic match: verified. Geometric
+analogy: verified. Mechanism transfer: refuted. Simultaneous $t=0,1$ in
+the current KK model: open. A parent string/worldsheet extension remains
+a possible NEW theory to build, not a result this project currently has.
