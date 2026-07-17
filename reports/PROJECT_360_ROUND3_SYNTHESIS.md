@@ -2016,3 +2016,81 @@ within the current parent structure. Algebraic match: verified. Geometric
 analogy: verified. Mechanism transfer: refuted. Simultaneous $t=0,1$ in
 the current KK model: open. A parent string/worldsheet extension remains
 a possible NEW theory to build, not a result this project currently has.
+
+---
+
+### Round90 — Pati-Salam gauge-completeness (spacetime-native candidate)
+
+Given rounds 87-89 all failed for the SAME root reason (the "why both
+signs" justification lived in an external, string-worldsheet structure
+with no counterpart in this project's spacetime KK compactification), this
+round tested a genuinely different, **spacetime-native** candidate: does
+this project's own commitment to a Pati-Salam-type gauge structure
+(`SU(3)_c\times SU(2)_L\times SU(2)_R`) require both `t=0` and `t=1`
+content via ordinary gauge-theory consistency (Witten's `SU(2)` global
+anomaly — an even number of gauged `SU(2)` doublets required for
+consistency), rather than any borrowed string-theoretic mechanism?
+
+**Verdict:** `BLOCKED__SU2R_GAUGING_IS_GENUINE_AND_STRONGER_THAN_PRIOR_ROUNDS_CREDITED__BUT_FULL_SU4xSU2LxSU2R_COMBINATION_IS_SELF-ADMITTED_INCOMPLETE`
+— independently spot-checked (`preprint.tex:355–374`, `:305–320`,
+`:1586–1601`, all three confirmed exactly as cited).
+
+**The genuine new finding:** `preprint.tex` commits `\mathrm{SU}(2)_R` as
+an actual GAUGED 4D symmetry — not merely a `T_{3R}` bookkeeping label —
+via the same Kaluza-Klein spin-connection mechanism (Lawrence 2022)
+already used for `\mathrm{SU}(2)_L` and `\mathrm{SU}(3)_c`, reinforced by
+an actual computed gauge-kinetic term from the spectral action
+($g_2^2\propto 1/\mathrm{Vol}(S^3)$, giving the coupling-ratio prediction
+already in the paper) and a Higgs-bidoublet assignment under
+$\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$. **This is a materially
+stronger and earlier claim than the narrow $g_{2R}=g_{2L}$ coupling-VALUE
+assumption** that rounds 86/E17 already correctly found insufficient —
+the gauging commitment itself is independent of, and prior to, that later
+numerical assumption. Grounded externally via Wikipedia's Pati-Salam
+summary and, more rigorously, Witten's independent 1982 `SU(2)` global
+anomaly (an odd number of gauged `SU(2)` doublets is mathematically
+inconsistent) — a gauged $\mathrm{SU}(2)_R$ with charged matter genuinely
+requires complete doublets, in an even number, supplying a real,
+spacetime-native reason (not a string-worldsheet borrowing) to need both
+an $\mathrm{SU}(2)_L$-doublet's and an $\mathrm{SU}(2)_R$-doublet's worth
+of matter — mapping cleanly onto E17's already-established
+$t{=}1\leftrightarrow(2,1)$, $t{=}0\leftrightarrow(1,2)$ identification.
+
+**Why it stops at BLOCKED, not PASS — three independent, self-admitted
+gaps:** (a) the full $\mathrm{SU}(4)\times\mathrm{SU}(2)_L\times
+\mathrm{SU}(2)_R$ unification this argument is normally checked against is
+NOT geometrically realized here — `preprint.tex` itself states (gate G97)
+that no $\mathrm{SU}(4)$ subgroup exists in
+$\mathrm{Iso}(S^3\times S^6)=\mathrm{SO}(4)\times\mathrm{SO}(7)$ at all,
+with $\mathrm{U}(1)_{B-L}$ patched in from fermion charges, not gauged;
+(b) this project's own explicit, already-verified anomaly-cancellation
+computation checks only the Standard Model's own broken-phase conditions
+(`U(1)_Y`-based), never a manifestly-`\mathrm{SU}(2)_R`-gauged or
+Witten-global-anomaly condition — a previously-unexamined verification
+gap this round surfaces, not previously flagged by any prior round; (c)
+Lemma L5's asymmetric $S^6$-chirality tension (already flagged in E17
+Section 5) remains unresolved — a more solidly-grounded "both sectors
+needed" argument sharpens, rather than dissolves, the puzzle of why the
+identical logic wouldn't also force a symmetric (rather than the paper's
+own asymmetric) result on the $S^6$ factor. No stated parent action
+(E18/KT-1's core gap) is supplied either way.
+
+**Pearl flagged:** the general distinction this round turned on — a gauge
+symmetry's mere EXISTENCE (a structural commitment) is categorically
+different from, and can be much stronger than, a SPECIFIC coupling-value
+or numerical-equality assumption used downstream for one phenomenological
+estimate — is worth re-checking wherever a prior round rejected a
+"left-right symmetric" reading on the basis of a narrow downstream
+assumption, before assuming the broader underlying claim was covered too.
+
+**Net effect on the parent-action search (rounds 86-90):** narrows the
+open question from "is there ANY real, non-borrowed argument for
+Pati-Salam-style coexistence" to a specific, nameable remaining gap:
+resolve gate G97's $\mathrm{SU}(4)$-incompleteness (or show the narrower
+$\mathrm{SU}(2)_R$-only Witten-anomaly argument suffices without full
+$\mathrm{SU}(4)$), verify the manifestly-$\mathrm{SU}(2)_R$-gauged anomaly
+condition using this project's own already-existing 32-state bookkeeping,
+and reconcile with Lemma L5's asymmetric chirality. This is the closest
+any of rounds 86-90 have come to a genuine, spacetime-native resolution —
+still short of PASS, but for the first time with concrete, addressable
+next steps rather than a closed-off literature class.
