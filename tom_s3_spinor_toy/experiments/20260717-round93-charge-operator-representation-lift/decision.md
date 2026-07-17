@@ -411,7 +411,7 @@ would even be well-defined" (Part A.7).
 
 | Option | What it would require |
 |---|---|
-| Fix `preprint.tex:304-305`'s prose (and G16's own `decision.md:9`) to say `K_3` is the S³-side `SU(2)_R` generator, not an S⁶-side "SU(3)-harmonic" quantity | A one-line wording correction in each location; NOT attempted here per this task's constraint not to modify existing files — flagged for a future documentation-only round |
+| Fix `preprint.tex:304-305`'s prose (and G16's own `decision.md:9`) to say `K_3` is the S³-side `SU(2)_R` generator, not an S⁶-side "SU(3)-harmonic" quantity | **DONE (2026-07-17, same day, follow-up commit):** `preprint.tex:304-305` corrected directly (formula unchanged, only the prose description of `K_3` fixed); G16's own `decision.md:9` left unchanged with an additive superseding note added above it (history preserved, matching this project's G74A-correction precedent) |
 | Construct `B-L` (or ANY charge operator) on the twisted kernel's ambient space | Locate the specific `dim ker(D_{S6,twisted})=1` `G₂`-singlet vector (`dolan-casimir-g2su3`/round59) within a weight-labeled basis, exactly as round92's own Relaxation Map already specified — this experiment does not narrow that requirement further, only confirms it is the SOLE remaining blocker for the `U(1)_Y` side of Part C's census |
 | Resolve `t=0`/`t=1` coexistence (round85/E17) | Still requires a stated 13D parent action (KT-1/E18), unaffected by this experiment |
 | Reconcile System A and System B (round91) | Still open; this experiment's System B table (Part C) is reproduced only for contrast, not as a proposed resolution |
