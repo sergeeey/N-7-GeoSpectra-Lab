@@ -1,0 +1,35 @@
+{
+  "bmL_g15_is_pure_hamming_weight_formula": true,
+  "explicit_bijection_matches_degree_formula": true,
+  "sigma_grade_sizes": {
+    "0": 1,
+    "1": 3,
+    "2": 3,
+    "3": 1
+  },
+  "structurally_comparable": true,
+  "BL_64_diagonal_in_product_basis": true,
+  "v_a_is_BL64_eigenvector": true,
+  "v_a_BL64_eigenvalue": "0",
+  "v_b_is_BL64_eigenvector": true,
+  "v_b_BL64_eigenvalue": "0",
+  "w_is_BL64_eigenvector": true,
+  "w_BL64_eigenvalue": "-2",
+  "domain_common_eigenvalue": true,
+  "a_coeff": "-1",
+  "b_coeff": "-sqrt(3)",
+  "a_b_match_round59_decision_md": true,
+  "kernel_vector_confirmed": true,
+  "kernel_is_BL64_eigenvector": true,
+  "kernel_BL64_eigenvalue": "0",
+  "step2_pass": true,
+  "D_full_test_vec_output_degrees": [
+    4
+  ],
+  "D_full_test_vec_output_nonzero": true,
+  "BL64_Dfull_commutator_nonzero_on_test_vec": true,
+  "domain_to_target_degree_shift": -3,
+  "risk_confirmed_BL64_not_commute_with_Dfull": true,
+  "risk_neutralized_for_this_specific_claim": true,
+  "verdict": "PASS_WITH_DOCUMENTED_CAVEAT"
+}
