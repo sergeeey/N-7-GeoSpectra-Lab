@@ -217,15 +217,34 @@ KT-1 item, since dimension is logically prior to the parent-action search):
 (new citation needed a second pass to resolve) — exit 0 both times, 0
 undefined references after the second pass.
 
+## E2/E3 integrated into preprint.tex (2026-07-17)
+
+Added a new open-problems item, "S³ torsion deformation: a candidate escape
+route for the full-operator zero-mode gap [candidate mechanism — physically
+unmotivated, not a resolution]", positioned immediately after the KT-8
+item (a direct, natural continuation of that item's own final sentence,
+which asks for exactly this kind of gauge/torsion twist on S³). States:
+Agricola's naturally-reductive connection family, the exact scalar-shift
+result (h_H=3, calibrated against the known n=0 eigenvalue), the computable
+zero-crossings, and — independently verified this session to be *more general*
+than the torsion family itself — that the product-decoupling identity
+survives for any S³-factor operator. Explicitly labeled **not a
+resolution**: no physical principle for selecting any specific crossing
+over Levi-Civita (t=1/2) is known; flagged as the same FITTED-vs-DERIVED
+trap this project's methodology avoids elsewhere. Crossing values flagged
+as convention-dependent, always to be quoted with the full frozen
+convention.
+
+**Verified:** `pdflatex -halt-on-error` — exit 0, 0 undefined references
+(no new citation needed; `Agricola2002` was already in the bibliography).
+
 ## Not yet done
 
-- **E1 is now integrated into `preprint.tex`** (see section above) — the only
-  one of E1-E6 written into the paper so far. E2-E6 remain standalone
-  experiment-folder findings, not yet written into `preprint.tex` or
-  `reports/PROJECT_360_ROUND3_SYNTHESIS.md`'s main kill-table.
-- The `preprint.tex` E1 integration itself has not been committed to git yet.
-- E2/E3's candidate KT-8 escape route needs a physical selection principle
-  before it could be considered for promotion — not attempted here.
+- E4-E6 remain standalone experiment-folder findings, not yet written into
+  `preprint.tex` or `reports/PROJECT_360_ROUND3_SYNTHESIS.md`'s main
+  kill-table.
+- The E2/E3 `preprint.tex` integration itself has not been committed to git
+  yet.
 - E5's S³×S³ open question needs the explicit torsion/Nomizu-connection
   computation, which E6 attempted and found ill-posed with the primary
   source's own stated basis — remains open, per E6's own Relaxation Map
