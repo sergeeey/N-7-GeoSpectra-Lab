@@ -1,5 +1,29 @@
 # E21 (round90) — Decision
 
+> **⚠️ CORRECTION (2026-07-17, added retroactively after user review — original
+> text below unchanged):** the specific claim in Section 3a/4 below that
+> **Witten's `SU(2)` global anomaly** requires "an even number of gauged
+> `SU(2)` doublets" and thereby forces both `F_L~(4,2,1)` and `F_R^c~(4̄,1,2)`
+> to coexist is **REFUTED**. Verified directly (elementary group theory,
+> independently checked): each Pati-Salam multiplet ALONE already contains
+> **4** `SU(2)`-doublets (the `4` of `SU(4)` supplies the multiplicity), which
+> is even — so `F_L` alone (or `F_R^c` alone) is already Witten-anomaly-free
+> on its own; Witten's criterion does NOT single-handedly force the pair.
+> **The correct, standard mechanism is the PERTURBATIVE (cubic) `SU(4)^3`
+> gauge anomaly instead**: `F_L~(4,2,1)` contributes anomaly coefficient
+> `A=+2` (`A(4)×\dim(2)×\dim(1)=1×2×1`), `F_R^c~(4̄,1,2)` contributes `A=-2`
+> (`A(4̄)×\dim(1)×\dim(2)=(-1)×1×2`) — **only their SUM vanishes**, so a
+> genuinely gauged, CHIRAL `SU(4)_{\mathrm{PS}}` (not merely `SU(2)_R`
+> alone) requires both pieces for anomaly cancellation. This does NOT
+> overturn the section's overall `BLOCKED` verdict — it sharpens it: the
+> correct anomaly mechanism is tied even MORE directly to `SU(4)` gauging
+> specifically (Section 5a's `SU(4)`-incompleteness, gate G97, is now the
+> single dispositive gap, not one of three loosely-related concerns). All
+> other findings in this file (Section 1: `SU(2)_R` genuinely gauged in
+> `preprint.tex`, not a bookkeeping label) are UNAFFECTED by this
+> correction. See `reports/PROJECT_360_ROUND3_SYNTHESIS.md` "Round90
+> correction" for the full registration (R90-A through R90-E).
+
 **Date:** 2026-07-17
 **Verdict:** `BLOCKED__SU2R_GAUGING_IS_GENUINE_AND_STRONGER_THAN_PRIOR_ROUNDS_CREDITED__BUT_FULL_SU4xSU2LxSU2R_COMBINATION_IS_SELF-ADMITTED_INCOMPLETE`
 **Go/no-go:** This experiment finds a genuine, previously under-credited

@@ -2094,3 +2094,145 @@ and reconcile with Lemma L5's asymmetric chirality. This is the closest
 any of rounds 86-90 have come to a genuine, spacetime-native resolution —
 still short of PASS, but for the first time with concrete, addressable
 next steps rather than a closed-off literature class.
+
+---
+
+### Round91 — SU(2)_R doublet-parity count (round90's own flagged next step)
+
+Round90's Relaxation Map flagged the cheapest concrete next step: does
+this project's own already-established fermion content actually have an
+EVEN or ODD count of gauged $\mathrm{SU}(2)_R$ doublets, checked using only
+this project's own bookkeeping (not imported Standard Model conventions)?
+If $t=0$'s content is the ONLY source of $\mathrm{SU}(2)_R$-doublet matter
+and completing an otherwise-odd count, that would sharpen round90's
+`BLOCKED` toward a genuine `PASS`.
+
+**Verdict:** `BLOCKED__ONLY_T-INDEXED_METHODOLOGY_GIVES_ODD_COUNT_BUT_FAILS_ITS_OWN_SU2L_CROSSCHECK__RIVAL_BOOKKEEPING_GIVES_EVEN_BUT_IS_NOT_ESTABLISHED_AS_APPLICABLE`
+— independently re-run and re-verified (script output matched exactly;
+directly confirmed `g6_spinor_decomposition.py` contains zero occurrences
+of `t`/torsion — a genuinely separate bookkeeping system; directly
+confirmed G74A's own "$G_2$-singlet" characterization, lines 65/72/92).
+
+**A genuinely valuable finding, via a clean self-administered kill-test:**
+this project contains exactly ONE bookkeeping system actually indexed by
+the connection parameter $t$ (the E9–E17 zero-mode chain: $\dim\ker
+D_{S^3,t}=2$, $\dim\ker D_{S^6,\mathrm{twisted}}=1$ per channel, $\times 3$
+triality channels, with G74A's own $G_2$-singlet characterization implying
+NO further color multiplicity). Applying this ("System A") to $t=0$ alone
+gives **1 doublet/channel $\times$ 3 channels = 3, ODD**. But applying the
+*identical* methodology, as a required cross-check, to the
+$\mathrm{SU}(2)_L$/$t=1$ sector ALSO gives 3, ODD — directly contradicting
+the independently well-established fact (real Standard Model physics,
+and this project's own SEPARATE `G6` color-carrying bookkeeping) that the
+true $\mathrm{SU}(2)_L$ doublet count is EVEN (12: 3 generations $\times$
+4 color/lepton doublets). **A counting methodology that gives a wrong
+answer on the one case where the true answer is already known cannot be
+trusted on the case where it is not.**
+
+The rival bookkeeping (`g6_spinor_decomposition.py`, color-carrying,
+predates the $t$-parameter program entirely) WOULD give self-consistent
+even totals (24 including CPT-conjugates, 12 excluding) — but its
+applicability to the actual $t=0/t=1$ zero-mode split is exactly the
+reconciliation gap E12 Section E.2 / E17 Section 2 already flagged as
+open and unattempted. This round shows that gap has concrete, blocking
+consequences for the specific question round90 raised, not just an
+abstract loose end.
+
+**Net effect:** round90's Relaxation Map item is not closed — this
+project's own established fermion content is not yet precise enough, on
+its own terms, to determine the $\mathrm{SU}(2)_R$ doublet parity. The
+missing ingredient is now named precisely: reconcile the topological
+zero-mode count (System A) against the physical color/family multiplicity
+(System B), or supply the parent action that would fix which one governs
+the actual physical spectrum. This is a well-argued, honest `BLOCKED`, not
+a dead end — it identifies a concrete prerequisite question (System A vs.
+System B reconciliation) that sits upstream of the SU(2)_R parity question
+itself.
+
+---
+
+### Round90 correction (2026-07-17, user review) — Witten anomaly REFUTED as the mechanism; correct mechanism identified
+
+Independently re-verified: round90's central claim that **Witten's `SU(2)`
+global anomaly** forces both Pati-Salam sectors is **REFUTED**. Each
+multiplet ($F_L\sim(4,2,1)$ or $F_R^c\sim(4̄,1,2)$) already contains 4
+$\mathrm{SU}(2)$-doublets on its own (the `4` of $\mathrm{SU}(4)$ supplies
+the multiplicity) — an EVEN count, so either piece alone is already
+Witten-anomaly-free; the criterion never singled out the pair.
+
+**The correct mechanism, verified independently:** the perturbative
+(cubic) $\mathrm{SU}(4)^3$ gauge anomaly. $A(F_L)=A(4)\times\dim(2)\times
+\dim(1)=+2$; $A(F_R^c)=A(4̄)\times\dim(1)\times\dim(2)=-2$ — only their
+**sum** vanishes. A genuinely gauged, chiral $\mathrm{SU}(4)_{\mathrm{PS}}$
+(not $\mathrm{SU}(2)_R$ alone) requires both pieces for consistency.
+
+**Registered status (R90-A through R90-E, per user's framing):**
+
+| ID | Claim | Status |
+|---|---|---|
+| R90-A | `preprint.tex` treats $\mathrm{SU}(2)_R$ as a genuine gauge factor | VERIFIED TEXTUALLY; physical derivation from geometry alone OPEN |
+| R90-B | Witten `SU(2)` anomaly forces both Pati-Salam multiplets | **REFUTED** — each multiplet has an even (4) doublet count alone |
+| R90-C | Genuinely gauged chiral $\mathrm{SU}(4)_{\mathrm{PS}}$ requires both $(4,2,1)$ and $(4̄,1,2)$ for cubic anomaly cancellation | SUPPORTED / algebraically verified ($+2-2=0$) |
+| R90-D | This project has the required gauged $\mathrm{SU}(4)_{\mathrm{PS}}$ (or $\mathrm{SU}(3)_c\times\mathrm{U}(1)_{B-L}$) completion | OPEN — blocked by gate G97 and $B{-}L$ geometric origin |
+| R90-E | $t=0$ and $t=1$ map to the two Pati-Salam matter sectors | OPEN — no explicit map constructed |
+
+**Overall:** promising internal gauge-consistency lead (a genuine advance
+over rounds 87-89's external-analogy dead ends), the original Witten-anomaly
+sub-claim refuted, physical $t$-selection still blocked. Round91's own
+SU(2)_R doublet-parity investigation is superseded in its specific framing
+(it checked the wrong anomaly type) but its System-A-vs-System-B
+bookkeeping finding stands independently. Corrections applied additively to
+`experiments/20260717-round90-.../decision.md` and
+`experiments/20260717-round91-.../decision.md` — history preserved, not
+rewritten, matching this project's own G74A-correction precedent.
+
+---
+
+### Round92 — Endpoint-to-representation anomaly audit (user's frozen-$G_{\mathrm{eff}}$ design)
+
+Ran the user's own precisely-specified experiment: freeze
+$G_{\mathrm{eff}}=\mathrm{SU}(3)_c\times\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$
+(Option i — the geometrically-realized group, per round90; explicitly
+NOT switching to the unrealized $\mathrm{SU}(4)_{\mathrm{PS})$ option
+after seeing results), determine each endpoint's representation, and
+compute the anomaly coefficients for real, checking whether only the
+union cancels.
+
+**Verdict:** `BLOCKED` — independently re-verified a key new finding:
+`preprint.tex` contains **two distinct, unreconciled hypercharge
+formulas**: $Y=K_3+(B{-}L)/2$ (line 302/309, the one actually used in the
+paper's own verified anomaly-cancellation computation) versus
+$Y=T_{3R}+(B{-}L)/2$ (line 408, used only in the self-flagged-illustrative
+Weinberg-angle section) — confirmed by direct grep, both exactly as
+cited.
+
+**What succeeded:** both endpoints ($t{=}0\leftrightarrow(1,2)$,
+$t{=}1\leftrightarrow(2,1)$) are independently re-derived (from
+$\mathrm{SU}(3)\subset G_2$ combined with the kernel living in the
+$G_2$-trivial isotypic component) to be $\mathrm{SU}(3)_c$ SINGLETS at
+BOTH endpoints — new confirmation, traced to the *current* authoritative
+source rather than the superseded G74A lemma, of round91's own inference.
+$[\mathrm{SU}(3)_c]^3$ is trivially computable (zero for both endpoints
+and their union, since both are singlets) — shows no forcing, not the
+PASS pattern. Witten $\mathrm{SU}(2)_L/\mathrm{SU}(2)_R$ parity is also
+computable (reusing round91): each endpoint is a total singlet under the
+*other* $\mathrm{SU}(2)$ factor, so the union changes neither parity —
+no cross-endpoint cancellation there either.
+
+**What blocked:** the $U(1)_Y$-mixed anomaly conditions
+($[U(1)_Y]^3$, $[\mathrm{SU}(3)_c]^2 U(1)_Y$, $[\mathrm{grav}]^2 U(1)_Y$)
+require a numeric $B{-}L$/hypercharge value for the twisted $S^6$-kernel
+that has never been assigned anywhere in this project (a gap already
+flagged in round83) — and even if it were, it is unclear WHICH of the
+two hypercharge formulas above would apply, since `g6_spinor_decomposition.py`
+uses the second (Weinberg-only) formula, not the one actually verified for
+anomaly cancellation in the paper's own text.
+
+**Net effect:** neither PASS nor a clean FAIL is supported — 3 of 4
+required anomaly conditions cannot be computed from this project's own
+current content, and the one that can be computed ($[\mathrm{SU}(3)_c]^3$)
+shows no forcing on its own. `BLOCKED` precisely names the missing piece:
+a numeric $B{-}L$/hypercharge assignment for the twisted $S^6$ kernel,
+plus resolution of which of the two hypercharge formulas actually applies
+— a genuine, previously-unnoticed internal inconsistency this round
+surfaces as a byproduct, independent of the main anomaly-audit question.
