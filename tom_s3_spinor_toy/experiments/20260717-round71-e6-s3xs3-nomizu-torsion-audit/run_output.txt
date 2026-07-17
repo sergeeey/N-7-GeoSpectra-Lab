@@ -1,0 +1,111 @@
+==============================================================================
+STEP 0  Transcription + orthogonality checks (CH2016 p.14, p.18)
+==============================================================================
+  B(H_1, X_1) = 0   B(H_1, Y_1) = 0
+  B(H_2, X_2) = 0   B(H_2, Y_2) = 0
+  B(H_3, X_3) = 0   B(H_3, Y_3) = 0
+  m = span{X_i,Y_i} is B-orthogonal to h = span{H_i}: CONFIRMED
+  [H_i,H_j] = eps_ijk H_k (isotropy is genuinely su(2)): True
+  ad(H_i)(X_j) = eps_ijk X_k, re-derived from bracket_g (matches CH2016 p.18): True
+
+==============================================================================
+STEP 1  Metric-compatibility check of CH2016's literal (X_i,Y_i) basis
+==============================================================================
+  B(X_1,X_1) = 5/3
+  B(Y_1,Y_1) = 2
+  B(X_1,Y_1) = 2*sqrt(3)/3
+  B(X,X) == B(Y,Y) (required for J to be B-Hermitian)?  False
+  => CONFIRMED INCONSISTENCY: raw B is NOT Hermitian w.r.t. J(X_i)=Y_i.
+     Repairing via the FORCED (not arbitrary) Hermitization
+     g_H(V,W) := (1/2)[B(V,W) + B(JV,JW)]  (general fact for any (form,J) pair).
+
+  g_H matrix (basis X1,Y1,X2,Y2,X3,Y3):
+⎡11/6   0     0     0     0     0  ⎤
+⎢                                  ⎥
+⎢ 0    11/6   0     0     0     0  ⎥
+⎢                                  ⎥
+⎢ 0     0    11/6   0     0     0  ⎥
+⎢                                  ⎥
+⎢ 0     0     0    11/6   0     0  ⎥
+⎢                                  ⎥
+⎢ 0     0     0     0    11/6   0  ⎥
+⎢                                  ⎥
+⎣ 0     0     0     0     0    11/6⎦
+  g_H is diagonal: True
+  g_H diagonal values (should be a single constant kappa): {11/6}
+  kappa = 11/6
+
+==============================================================================
+STEP 2  Natural-reductivity check of g_H  (decisive gate)
+==============================================================================
+
+  CONTROL: is raw B (unmodified, no Hermitization) naturally reductive?
+  (general theorem predicts YES automatically -- sanity-checks the CODE)
+  [raw B] g([U,V]_m,W) + g(V,[U,W]_m) = 0 for all U,V,W in m-basis: True
+  CONTROL PASSED: checker code is correct (raw B is naturally reductive, as it must be).
+
+  ACTUAL TEST: is the Hermitized g_H naturally reductive?
+  [Hermitized g_H] g([U,V]_m,W) + g(V,[U,W]_m) = 0 for all U,V,W in m-basis: False
+
+  => g_H (the FORCED Hermitization needed to repair CH2016's literal
+     J-vs-B incompatibility) is NOT naturally reductive w.r.t. m.
+     Consequence: the standard naturally-reductive Levi-Civita Nomizu
+     formula Lambda(V)(W)=(1/2)[V,W]_m is NOT valid for g_H, because g_H
+     is only Ad(H)-invariant (built from J, which only H preserves), NOT
+     the restriction of an Ad(g)-invariant form on the WHOLE Lie algebra
+     g (which is what the general naturally-reductive theorem requires).
+     Raw B (control, above) IS naturally reductive -- but raw B is NOT
+     Hermitian w.r.t. CH2016's own literal stated J (Step 1). There is NO
+     forced, canonical way to have BOTH properties simultaneously from
+     CH2016's own stated page-18 data alone: fixing metric-compatibility
+     (Hermitization) breaks natural reductivity; keeping natural
+     reductivity (raw B) breaks metric-compatibility with the stated J.
+     This is a GENUINE, VERIFIED OBSTRUCTION, not a computational slip.
+
+==============================================================================
+STEP 3  SECOND independent repair attempt: B-compatible J_B (keep B fixed,
+        solve for the compatible complex structure instead of Step 1's
+        'keep J fixed, repair the metric' direction)
+==============================================================================
+  B restricted to span{X_i,Y_i} (basis order X,Y):
+⎡      2⋅√3⎤
+⎢5/3   ────⎥
+⎢       3  ⎥
+⎢          ⎥
+⎢2⋅√3      ⎥
+⎢────   2  ⎥
+⎣ 3        ⎦
+  J_B (matrix acting on (X,Y)-coefficient vectors) =
+⎡-√6      ⎤
+⎢────  -√2⎥
+⎢ 3       ⎥
+⎢         ⎥
+⎢5⋅√2  √6 ⎥
+⎢────  ── ⎥
+⎣ 6    3  ⎦
+  J_B^2 == -I:  True
+  J_B^T . Mxy . J_B == Mxy (B-compatibility):  True
+
+  CH2016's literal stated J (X->Y, Y->-X), same coordinate convention:
+⎡0  -1⎤
+⎢     ⎥
+⎣1  0 ⎦
+  J_B == +/- J_literal (i.e. same map, up to the standard orientation sign)?  False
+  => J_B has NONZERO diagonal entries (J_literal's diagonal is identically zero) --
+     this is NOT a rescaling or orientation-flip of CH2016's literal J; it is a
+     GENUINELY DIFFERENT linear map on span{X_i,Y_i}. CONFIRMS: no forced,
+     canonical single resolution exists from CH2016's own stated page-18 data --
+     the 'repair-the-metric' path (Step 1-2) and the 'repair-the-complex-
+     structure' path (this step) give two DIFFERENT, mutually incompatible fixes,
+     neither preferred by the primary source text over the other.
+
+==============================================================================
+SUMMARY (2 independent repair attempts, both FAIL to give a forced,
+unique construction -- per claim.md's escape route, this now settles the
+verdict rather than continuing indefinitely)
+==============================================================================
+  Attempt 1 (Hermitize metric, keep literal J): naturally reductive? False
+  Attempt 2 (keep raw B, solve for compatible J): matches literal J? False
+  VERDICT: ILL-POSED for building the Levi-Civita Nomizu map / Clifford module
+  directly from CH2016's own stated page-18 (X_i,Y_i,J) data without an
+  additional, non-forced choice. See decision.md for full writeup.

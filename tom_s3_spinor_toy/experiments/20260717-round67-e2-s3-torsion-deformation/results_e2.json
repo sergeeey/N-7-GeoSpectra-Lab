@@ -1,0 +1,88 @@
+{
+  "step1_clifford_relations": {
+    "Z1Z1_anticommutator_matches": true,
+    "Z1Z2_anticommutator_matches": true,
+    "Z1Z3_anticommutator_matches": true,
+    "Z2Z2_anticommutator_matches": true,
+    "Z2Z3_anticommutator_matches": true,
+    "Z3Z3_anticommutator_matches": true
+  },
+  "step1_clifford_relations_all_ok": true,
+  "step2_omega": {
+    "matrix": "Matrix([[1, 0], [0, 1]])",
+    "is_scalar_times_identity": true,
+    "scalar_value": "1",
+    "centrality_checks": {
+      "omega_commutes_Z1": true,
+      "omega_commutes_Z2": true,
+      "omega_commutes_Z3": true
+    },
+    "omega_squared": "Matrix([[1, 0], [0, 1]])",
+    "omega_squared_is_identity": true
+  },
+  "step2_omega_ok": true,
+  "step3_h_H_calibrated": "3",
+  "step4_closed_form_crossings_sorted_by_t": [
+    {
+      "n": 2,
+      "sigma": 1,
+      "t_star_exact": "-2/3",
+      "t_star_float": -0.6666666666666666
+    },
+    {
+      "n": 1,
+      "sigma": 1,
+      "t_star_exact": "-1/3",
+      "t_star_float": -0.3333333333333333
+    },
+    {
+      "n": 0,
+      "sigma": 1,
+      "t_star_exact": "0",
+      "t_star_float": 0.0
+    },
+    {
+      "n": 0,
+      "sigma": -1,
+      "t_star_exact": "1",
+      "t_star_float": 1.0
+    },
+    {
+      "n": 1,
+      "sigma": -1,
+      "t_star_exact": "4/3",
+      "t_star_float": 1.3333333333333333
+    },
+    {
+      "n": 2,
+      "sigma": -1,
+      "t_star_exact": "5/3",
+      "t_star_float": 1.6666666666666667
+    }
+  ],
+  "step5_numeric_scan_cross_check": {
+    "numeric_t_stars_sorted": [
+      -0.6666666666666666,
+      -0.33333333333333337,
+      0.0,
+      1.0,
+      1.3333333333333333,
+      1.6666666666666667
+    ],
+    "exact_t_stars_sorted": [
+      -0.6666666666666666,
+      -0.3333333333333333,
+      0.0,
+      1.0,
+      1.3333333333333333,
+      1.6666666666666667
+    ],
+    "max_abs_error_numeric_vs_exact": 5.551115123125783e-17
+  },
+  "verdict": {
+    "clifford_and_omega_verified": true,
+    "numeric_exact_cross_check_passed": true,
+    "any_t_gives_S3_zero_mode": true,
+    "label": "PASS_CANDIDATE_MECHANISM_FOUND"
+  }
+}
