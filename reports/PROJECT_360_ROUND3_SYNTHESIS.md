@@ -3160,3 +3160,49 @@ does not itself supply a parent action (OB1's central question is
 untouched) — it removes a real, if ultimately benign, prerequisite risk
 before either OB1 or OB2 proceeds. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+### Round114 — OB1 mechanism search: a claimed literature cross-check,
+`FALSIFIED` — the elaborate computation was a citation in disguise
+
+User selected OB1 (mechanism search among untried candidates) over OB2 at
+an explicit checkpoint. `100_DIRECTIONS_BRAINSTORM_2026-07-17.md`'s own
+adversarial critique flagged items 21/25 (compare the whole torsion-
+connection family, check whether coefficients originate from an action) as
+highest-priority. Found `Agricola_Hofmann_Lawn_2023_invariant_spinors.pdf`
+(arXiv:2203.02961) — already downloaded in this repo, never read in
+rounds 67-113 — classifying invariant/Killing spinors on
+`S^{2n+1}=SU(n+1)/SU(n)`, including `n=1` (`S³=SU(2)/{e}`, round67's own
+presentation), with an explicit 1-parameter torsion-connection family
+(`Proposition 3.17`).
+
+**Computed** [VERIFIED-tool, sympy]: the Clifford representation from this
+paper's own §2.1 formulas, confirmed `{eᵢ,eⱼ}=-2δᵢⱼ`, built
+`D^s(ψ_+)=s/2-3/2` from the paper's own `Theorem 3.13`/`Proposition 3.17`
+— magnitude `3/2` at `s=0`, matching round67's own cited Levi-Civita
+eigenvalue; zero crossing at `s=3`. First-draft label: "genuine independent
+cross-check."
+
+**Skeptic review: `FALSIFIED`, the strongest correction of any round this
+session — not merely narrowed.** The construction `D=Σeᵢ·A(eᵢ)·ψ`
+algebraically collapses to `-tr(A)` regardless of any Clifford-
+representation convention choice (since `A` is diagonal in this basis and
+`eᵢ²=-1` always) — meaning the entire matrix-building apparatus was
+**decorative**: the computed `3/2` is derivable in one line directly from
+the paper's own `Corollary 3.14` (`λ₁=λ₂=1/2`, itself a restatement of the
+classical Friedrich 1980 round-`S³` Killing constant, the same fact
+round67 already cites via this project's own G4/G8 gates). **Two sources
+correctly stating the same textbook number is not two independent
+computations agreeing** — no new evidence was actually produced.
+
+**Net effect:** relabeled `REPRODUCTION_OF_FRIEDRICH_1980_VIA_AHL2023_
+KILLING_CONSTANT`, logged in `null_results/INDEX.md` (`Round114-AHL2023`).
+One disconnected minor fact survives (zero-crossing `s=3` in AHL2023's own
+parameter, not linked to round67's `t`). New standing methodological
+lesson recorded in `pearl_registry/INDEX.md`: before accepting any future
+"literature cross-check" round, verify the result is NOT derivable in one
+line directly from the cited source's own stated theorem — if it is, the
+elaborate surrounding computation adds no evidence regardless of its own
+internal correctness. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.

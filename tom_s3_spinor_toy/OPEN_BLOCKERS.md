@@ -35,6 +35,18 @@ question) is now RESOLVED (round113): `preprint.tex`'s `D_{S³}(t)`
 Dirac-shift and round99/111's Cartan-Schouten `∇^t` are the same
 connection, cite directly rather than re-deriving.
 
+**Attempted, FALSIFIED (round114):** a claimed "independent cross-check"
+of round67's `h_H=3` calibration via
+`Agricola_Hofmann_Lawn_2023_invariant_spinors.pdf` (arXiv:2203.02961, a
+real, previously-unused, already-downloaded source in this repo) turned
+out to reduce algebraically to citing that paper's own already-stated
+Killing constant (`Cor 3.14`, itself the classical Friedrich 1980 round-S³
+value) — no independent evidence. See `null_results/INDEX.md`
+`Round114-AHL2023` and `pearl_registry/INDEX.md`'s new entry (the
+"one-line-reducibility test" for future literature cross-checks). Genuine
+literature searches in this direction remain worthwhile — this specific
+round's SPECIFIC computation, not the whole approach, was the failure.
+
 ---
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple?
