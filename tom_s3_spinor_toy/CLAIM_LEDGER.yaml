@@ -247,7 +247,16 @@ claims:
       direction but is an explicit MODEL-BUILDING CHOICE in unreconciled
       tension with this project's own established asymmetric chirality
       mechanism (Lemma L5, preprint.tex:884-912).
-    notes: "Directly relevant to PARENT_ACTION_GATE.md field F4 (t-selection mechanism) -- should be listed among already-tried-and-insufficient candidates there. Reading 3's tension with Lemma L5 is the one genuinely open thread this round did not close."
+    notes: >
+      Directly relevant to PARENT_ACTION_GATE.md field F4 (t-selection
+      mechanism) -- listed among already-tried-and-insufficient candidates
+      there. Reading 3's tension with Lemma L5 is the one genuinely open
+      thread this round did not close. Round117 (2026-07-17) attempted a
+      reconciliation via "gauged S3 vs ungauged S6" -- FALSIFIED by
+      skeptic (tested isometry-group component membership, not
+      action-symmetry; wrong proxy for the real question). Tension
+      remains fully open, untouched, see null_results/INDEX.md
+      Round117-L5Reconciliation.
 
   - id: C11_D4_PRODUCT_ANSATZ_FORK
     statement: "t=0 and t=1 sector coexistence, as a product-ansatz spectral-triple question (does 'two D's' make sense at all)"
