@@ -2936,5 +2936,55 @@ under either reading. The ONE genuinely open route left for gate G97 is
 now precisely named: a cross-factor/diagonal embedding combining S³-side
 and S⁶-side generators together — not attempted here or in round102.
 Does NOT close gate G97. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+### Round109 — the diagonal-embedding question, closed by a general
+argument, with two honesty corrections
+
+Attempted the ONE remaining route flagged by rounds 102 and 108: does a
+"diagonal" `SU(4)` embedding, combining `S³`-side (`so(4)`, 6-dim) and
+`S⁶`-side (`so(7)`/`g₂`/`su(3)`) generators TOGETHER, exist?
+
+**Method — a general argument, not an exhaustive search:** any
+Lie-algebra homomorphism `φ:g→h` FROM a SIMPLE algebra `g` is either
+zero or injective (`ker(φ)` is an ideal; simple algebras have only
+`{0}` and themselves as ideals — confirmed correct by skeptic review
+without reservation). `su(4)` is simple (`A₃`); `dim(so(4))=6<15=
+dim(su(4))` makes an injective map `su(4)→so(4)` impossible by dimension
+count alone. Combining: for ANY homomorphism
+`φ=(φ₁,φ₂):su(4)→so(4)⊕X`, `φ₁` is FORCED to be the zero map — for
+every possible embedding, no case-by-case search needed. Every `su(4)`
+embedding into `so(4)⊕X` therefore collapses entirely to a same-factor
+embedding into `X` alone, already closed by rounds 102/108.
+
+**Skeptic review: `WEAKENED`, two honesty corrections accepted, core
+argument unchanged:**
+1. The script's own Killing-form check (non-degenerate) establishes
+   `su(4)` is SEMISIMPLE, not SIMPLE — a genuine gap, caught via a clean
+   counter-example (5 copies of `su(2)`, dim 15 total, also semisimple
+   but not simple). `su(4)`'s actual simplicity is a standard,
+   well-established classification fact (`A₃`), cited here, not
+   independently derived by this round's own computation.
+2. The proof rigorously closes ONLY the Lie-algebra-homomorphism reading
+   of "diagonal embedding" (exactly what the Killing-vector algebra of a
+   genuine PRODUCT manifold with product metric gives) — it does NOT
+   address field-dependent/point-dependent identifications, bundle-
+   twisted constructions, or any construction leaving the strict `S³×S⁶`
+   product ansatz. **This connects directly to round103's own finding**
+   (a block-diagonal/dynamical-torsion construction leaving the product
+   ansatz is a standard, legitimate NCG move, not ruled out there) — this
+   round's clean no-go, by its own honest scope, does not automatically
+   extend to such a construction.
+
+**Net effect — the actual product of rounds 102+108+109 together:**
+within the standard `S³×S⁶` product-manifold framework, gate G97's
+original conclusion ("no `SU(4)` gauge-algebra realization exists") is
+now fully, rigorously, and GENERALLY established — closed for both
+same-factor (102/108) and diagonal (109) readings — with the honest
+remaining caveat that this framework-internal closure does not extend to
+genuinely non-product/twisted constructions, which remains round103's
+own still-open fork. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
 committed to git.
