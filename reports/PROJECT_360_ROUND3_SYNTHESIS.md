@@ -3652,3 +3652,47 @@ where skeptic review corrected a first-draft consolidation claim — this
 time a meta-level audit auditing itself. Does not affect
 $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+## Round123 — Preprint rewrite (item 8, final): L3b updated, skeptic catches structural-obstruction euphemism
+
+**Gauge/Hilbert/Triality closure program, item 8 — final item.** Executed
+round122's one concrete punch-list item: added a paragraph to
+`preprint.tex`'s L3b Open Problems entry describing the `SO(4)×SO(4)`
+block-chirality candidate (round119) that algebraically distinguishes all
+three triality channels for the first time in this investigation.
+
+**Skeptic review of the new manuscript text** (held to the same bar as
+internal files, arguably higher since this is public-facing) found every
+mathematical claim accurate against source, but caught real information
+loss in the compression: the first draft's "physical Dirac operator
+remains consistent... once G₂ is broken" read as an ordinary future-work
+caveat, when the actual situation is sharper — the existing proof of the
+*exact* kernel dimension (G74A's Lemma B) uses Schur's lemma on *exact*
+`G₂` symmetry, a technique that doesn't merely need re-checking once `G₂`
+breaks but **structurally no longer applies at any nonzero breaking**, with
+no `Spin(4)×Spin(4)`-equivariant analogue available. Skeptic's own framing:
+"promoting a structural obstruction... to a procedural caveat... these read
+the same to a skimming reader but mean different things to a careful one,
+and preprints get read carefully." Also caught a compressed physical-
+identification gap (which `SO(4)` factor, if either, is `S³`'s actual gauge
+group is entirely unaddressed by the construction) and undefined notation
+(`H`, `ℓ`) that the internal spec's thicker context could get away with but
+a standalone public paragraph could not.
+
+Fixed directly, not deferred — rewrote the closing section of the new
+paragraph to name both obstructions precisely. Compiled clean:
+`pdflatex` ×2, exit 0 both passes, 30 pages, no undefined references.
+
+**This completes the entire 8-step gauge/Hilbert/triality closure
+program** (park OB1 → `SPIN13_TO_SPIN4_DECOMPOSITION.md` → matter-
+generation factorization → `TRIALITY_DISTINGUISHABILITY_GATE.md` →
+`GAUGE_HILBERT_RECOMPOSITION.md` → independent round59 reconstruction
+attempt → `GLOBAL_RECOMPOSITION_AUDIT.md` → this preprint update).
+`N_gen=3` remains exactly as `CONDITIONAL` as it was at the start of this
+arc — six rounds (118-123) of substantial work, zero change to the
+headline claim's logical status, one genuine editorial gap closed, one
+ledger-accuracy gap found and fixed, and six consecutive rounds where
+mandatory skeptic review caught something a first draft missed. Does not
+affect `lambda=FREE_COUPLING_PARAMETER` or `safe_for_runtime=False`.
