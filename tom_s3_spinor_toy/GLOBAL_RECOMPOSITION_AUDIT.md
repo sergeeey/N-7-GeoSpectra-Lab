@@ -139,12 +139,13 @@ rewrite), not applied pre-emptively here.
 
 ## 5. Punch list for item 8 (preprint rewrite) — precise, not applied here
 
-1. **`preprint.tex` L3b entry (~line 1271-1296):** add a paragraph after
-   the existing `G102` discussion, citing `L3B_SPIN8_INTERFACE_SPEC.md`'s
-   `SO(4)×SO(4)` candidate and round119's `GATE 1 OF 7 DONE / GATES 2-6
-   OPEN` status — algebraic distinguishability found, physical realization
-   remains the open item pending Part 5. Do not claim L3b is closer to
-   resolved than `GATE 1 OF 7` warrants.
+1. **[DONE, round123, 2026-07-17]** ~~`preprint.tex` L3b entry (~line
+   1271-1296): add a paragraph...~~ Applied. Paragraph added, mandatory
+   skeptic review corrected two compressed nuances (the G74A Lemma B
+   structural obstruction, the physical-identification gap) before
+   finalizing. Compiled clean, `pdflatex` ×2, exit 0, no undefined
+   references. See
+   `experiments/20260717-round123-preprint-l3b-update/decision.md`.
 2. **Cross-reference check (not yet done, scoped for item 8):**
    `docs/gates_tracker.md`'s coverage stops at `G106` (2026-07-06, per
    round120's own finding) — decide whether to fold `G97` and
