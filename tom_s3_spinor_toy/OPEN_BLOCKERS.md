@@ -30,10 +30,10 @@ untried candidates (non-geometric flux, generalized/doubled/exceptional field
 theory, discrete torsion, cobordism invariants — see the skill's own
 2026-07-17 report) are the next place to look if the Pati-Salam route (OB2)
 doesn't reopen. **Any future attempt: check against
-`PARENT_ACTION_GATE.md` first**, whose F3 field flags a specific,
-currently-unchecked risk — this project has TWO different `t`-parameter
-conventions in play (`preprint.tex`'s `D_{S³}(t)` Dirac-shift vs round99/111's
-Cartan-Schouten `∇^t`) that have never been shown equivalent.
+`PARENT_ACTION_GATE.md` first** — its F3 field (the `t`-convention
+question) is now RESOLVED (round113): `preprint.tex`'s `D_{S³}(t)`
+Dirac-shift and round99/111's Cartan-Schouten `∇^t` are the same
+connection, cite directly rather than re-deriving.
 
 ---
 

@@ -3123,3 +3123,40 @@ scoped to the mixed-`U(1)_Y` class only — cubic non-abelian channels
 (`[SU(2)_L]³`, `[SU(2)_R]³`) remain untested. Does not affect
 $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+### Round113 — reconciling the two `t`-parameter conventions
+(`PARENT_ACTION_GATE.md` field F3): resolved, not a symbol-overload error
+
+A newly-drafted `PARENT_ACTION_GATE.md` (a pre-registered checklist for any
+future OB1/OB2 attempt, per the user's own requested next step) flagged a
+specific, concrete risk in its own F3 field: `preprint.tex`/round67-68's
+Kostant Dirac-operator shift `D_{S³}(t)=D_{S³}^{\mathrm{LC}}+(t-\tfrac12)h_H`
+and round99/round111's Cartan-Schouten curvature
+`R^t(X,Y)Z=t(t-1)[[X,Y],Z]` had never been shown to use the same `t`.
+
+**Computed** [VERIFIED-tool, sympy]: built round67's own stated connection
+`∇^t_X Y := t[X,Y]` directly, derived the standard curvature tensor from
+it, and checked it against round99/111's own formula on all 27 independent
+basis triples — **exact match**, plus the torsion definition matches
+round67's own stated `T^t=(2t-1)[X,Y]`, plus an independent Jacobi-identity
+hand-derivation confirms the same result.
+
+**Skeptic review: `WEAKENED`, load-bearing gap identified and closed by a
+direct follow-up, not smoothed over.** The initial check only verified one
+direction — that round67's connection PRODUCES round99/111's curvature
+formula — not that round99/111's own construction actually USED that
+connection (the map connection→curvature is not injective in general, so
+agreement alone doesn't prove identity). **Closed directly**: reading
+round99's own original script (not round111's later reuse) shows it
+explicitly defines `nabla_t(X,Y,tt)=tt*[X,Y]` and derives its `R^t` from it
+— the literal same construction, confirmed by source-read, not assumed.
+
+**Net effect:** F3 is resolved, not a live risk — round67/68's Dirac-
+operator zero modes and round99/111's curvature computation describe the
+SAME connection family, usable together without a translation step. This
+does not itself supply a parent action (OB1's central question is
+untouched) — it removes a real, if ultimately benign, prerequisite risk
+before either OB1 or OB2 proceeds. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.

@@ -41,32 +41,30 @@ dolan-casimir), `S³` left untwisted in the paper's own baseline
 twist in the candidate construction, and whether this matches or departs
 from the frozen baseline.
 
-### F3 — Torsion family — CONVENTION MUST BE FROZEN FIRST
+### F3 — Torsion family [RESOLVED, round113, 2026-07-17]
 
-**Two DIFFERENT parameterizations already exist in this project and must
-not be silently conflated:**
-- `preprint.tex` §Open Problems: `D_{S³}(t) = D_{S³}^{\mathrm{LC}} +
-  (t-\tfrac12)h_H`, `h_H=3` calibrated against the known Levi-Civita
-  eigenvalue `3/2`. Zero modes at `t=0,1` (Dirac-operator-level shift).
-- round99/round111: Cartan-Schouten connection family `∇^t`, curvature
-  `R^t(X,Y)Z=t(t-1)[[X,Y],Z]`, torsion `T^t=(2t-1)c·vol`. `t=0`↔left-
-  invariant frame, `t=1`↔right-invariant frame (only under `c0=-2`).
-  `Scal(t)=Scal_LC-6(2t-1)²` (round111).
+~~Two DIFFERENT parameterizations already exist in this project and must
+not be silently conflated~~ — **resolved: they are the same connection.**
+`preprint.tex`/round67-68's `D_{S³}(t)=D_{S³}^{\mathrm{LC}}+(t-\tfrac12)h_H`
+(Kostant Dirac-operator shift) and round99/round111's curvature
+`R^t(X,Y)Z=t(t-1)[[X,Y],Z]` are both built from the **literal same
+connection**, `∇^t_X Y = t[X,Y]` — round113 verified this directly by
+reading round99's own script (`e26_toy_Vt_curvature_double_well.py` lines
+63-89), which explicitly defines `nabla_t(X,Y,tt)=tt*[X,Y]` and derives its
+`R^t` from it — not a coincidental match of two independently-asserted
+formulas. Mandatory skeptic review initially found this only one-
+directionally verified (round113's own script showed `∇^t⟹R^t`, not that
+round99 itself used that `∇^t`); closed by the direct source-read above.
+`t=0,1` in both conventions refer to the SAME physical (flat,
+left/right-invariant) configuration; `t=1/2` in both is the SAME
+Levi-Civita point. See
+`experiments/20260717-round113-t-convention-reconciliation/decision.md`
+for the full verification chain and the residual bi-invariant-metric-
+compatibility caveat (stated explicitly in both original sources, not
+independently re-verified here).
 
-**These may or may not be the same family under a reparameterization** —
-this has never been explicitly checked. **A candidate construction MUST
-state which convention it uses, and if it claims equivalence to the other,
-must show the explicit reparameterization map, not assert it.**
-
-**Pass criterion:** convention named explicitly; if claiming to unify both,
-an explicit map is given and checked (e.g. does `h_H` correspond to `c` up
-to a computable constant, and do the zero-mode/critical-point locations
-`t=0,1` vs `t=1/2` actually refer to the same physical point under the map,
-or are "t=0,1" in one convention and "t=1/2" in the other actually
-describing DIFFERENT physical configurations that happen to share a
-label?). **This is very plausibly a live, currently-undetected Type-1
-error (symbolic overload, per `research-methodology.md`'s classifier) —
-flag prominently in any future round that touches this.**
+**Pass criterion (now satisfied by citation):** any future construction
+may cite round113 directly rather than re-deriving this reconciliation.
 
 ### F4 — t-selection mechanism (the central question)
 
