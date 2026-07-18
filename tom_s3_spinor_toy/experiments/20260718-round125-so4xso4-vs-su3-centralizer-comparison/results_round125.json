@@ -1,0 +1,8 @@
+{
+  "round": 125,
+  "dim_A_so4xso4": 12,
+  "dim_B_su3_plus_centralizer": 10,
+  "dim_A_union_B": 19,
+  "dim_A_intersect_B": 3,
+  "verdict": "PARTIAL_OVERLAP"
+}

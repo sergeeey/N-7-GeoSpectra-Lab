@@ -155,7 +155,7 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 
 ---
 
-## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-18, round124]
+## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-18, round125]
 
 **What's open, current status (`GATE 1 OF 7 DONE / GATES 2-6 OPEN`, per
 `TRIALITY_DISTINGUISHABILITY_GATE.md`):** G102 found no fiber symmetry inside
@@ -193,6 +193,19 @@ ideal commuting with its own `su(3)`), so it requires the identical
 `G₂`-breaking and hits the identical G74A Lemma B obstruction. Two
 independent, structurally different candidates now both reach Gate 1 —
 strengthens confidence Gate 1 is robust, does not touch Gates 2-6.
+
+**Are the two candidates secretly the same structure? Checked, answer no
+(round125, 2026-07-18):** `SO(4)×SO(4)` (12-dim) and `su(3)⊕u(1)⊕u(1)`
+(10-dim), both as subspaces of `so(8)`'s 8-dim vector representation,
+share an exact 3-dimensional intersection (two independent SVD methods
+agree, tolerance-swept 1e-4 to 1e-12, skeptic-reviewed CONFIRMED). The
+shared 3-dim subalgebra is abelian (`u(1)³`, all pairwise commutators
+zero to ~1e-15) — genuinely non-generic (generic expectation for a 12-dim
+and 10-dim subspace of a 28-dim ambient is exactly 0, not "small"), but
+**not** the same structure: `PARTIAL_OVERLAP`, neither identical nor one
+containing the other. Does not touch Gates 2-6; does not identify the
+shared `u(1)³` with any known physical charge. See
+`experiments/20260718-round125-so4xso4-vs-su3-centralizer-comparison/decision.md`.
 
 **Owner / next step:** genuinely blocked without new input; flagged as one of
 the two irreducible open premises in `DERIVATION_GRAPH.yaml`'s D2 chain. See
