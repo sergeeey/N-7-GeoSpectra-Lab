@@ -133,6 +133,45 @@ corrected framing as of this entry's date.
 
 ---
 
+## SR6 — This registry's own Phase 0 error: OB3 claimed something round94 already did
+
+**What changed:** `OPEN_BLOCKERS.md`'s original OB3 entry (written during
+this session's own Phase 0 pass, before round112) stated "no construction
+of B-L directly on the twisted kernel exists." **This was false at the
+time it was written** — round94 (E24), already committed to this repo
+before Phase 0's registry files were created, constructs exactly that:
+`BL_64=leibniz64(BmL)` on the 64-dim twisted `Σ⊗Σ` fibre, with the physical
+kernel vector confirmed an exact eigenvector, `B-L=0`.
+
+**Root cause:** OB3 was written from a recollection of an earlier
+in-session `/multi-lens` exercise on this same question, without
+re-verifying that recollection against round94's own `decision.md` at
+write time — an `audit-verification-gate.md` lapse in the registry's own
+construction (agent's own [MEMORY] treated as [VERIFIED] without a fresh
+Read/Grep check).
+
+**Caught by:** direct re-reading of round94's `decision.md` while
+formalizing OB3 per the user's own recommended next step ("завершить OB3
+как дешёвую формализацию") — the act of writing the formal canonical
+statement surfaced the registry's own error.
+
+**Fix:** `OPEN_BLOCKERS.md` OB3 and `CLAIM_LEDGER.yaml`'s `C9` caveat both
+corrected in place (not silently rewritten — the original wrong text is
+struck through / marked CORRECTED, not deleted). New file
+`BL_TWISTED_KERNEL_CANONICAL_STATEMENT.md` supplies the accurate,
+consolidated statement.
+
+**Generalizable lesson:** a registry built to consolidate "what's already
+known" is itself a claim that needs the same verification discipline as
+any other — writing consolidation files from session memory without a
+fresh grep/read pass against the underlying decision.md files can
+introduce exactly the kind of error the registry exists to prevent.
+
+**Source:** `tom_s3_spinor_toy/BL_TWISTED_KERNEL_CANONICAL_STATEMENT.md`;
+`tom_s3_spinor_toy/experiments/20260717-round94-bl-twisted-kernel-eigenvalue/decision.md`.
+
+---
+
 ## Standing pattern (not a single entry, but load-bearing for how to read the above)
 
 Across rounds 96-111, mandatory context-asymmetric skeptic review corrected 9
