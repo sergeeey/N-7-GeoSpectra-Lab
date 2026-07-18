@@ -126,16 +126,42 @@ round105's cross-model audit; neither requires new infrastructure.
 
 ---
 
-## OB7 — round111 uncommitted
+## OB7 — round111 uncommitted [RESOLVED 2026-07-17]
 
-**What's open:** `tom_s3_spinor_toy/experiments/20260717-round111-codex-item6-scalar-curvature-action/`
-(claim.md, decision.md, script) plus the corresponding
-`reports/PROJECT_360_ROUND3_SYNTHESIS.md` round111 section are written to disk
-but not yet committed to git — no explicit "закоммить это" was given for
-round111 before the MASTER_TZ document arrived and redirected this session
-into the Phase 0 track.
+~~What's open: round111 + the Phase 0 deliverable set written but not
+committed.~~ **Resolved:** committed (`6e7c5ac`), merged (`bd4363f`), and
+pushed to `origin/main` on 2026-07-17, same day. Kept here (struck through,
+not deleted) so anyone reading this file's history sees the item was real
+and closed, not silently dropped — matches this registry's own purpose of
+tracking status changes honestly (see `SUPERSEDED_RESULTS.md` for the
+general pattern this follows).
 
-**Owner / next step:** commit alongside (or before) this Phase 0 deliverable
-set, on the next explicit user commit instruction. Not a research blocker —
-purely a git-hygiene item, listed here so Phase 0's own freeze snapshot isn't
-mistaken for reflecting a fully-committed repo state.
+---
+
+## OB8 — round96's mixed-Y anomaly sweep is incomplete: two channels never computed
+
+**What's open:** round96 (`FAIL__ALL_THREE_CONDITIONS_COMPUTABLE_NONE_SHOW_FORCING`)
+only computed three mixed-anomaly conditions — `[SU(3)_c]²U(1)_Y`,
+`[U(1)_Y]³`, `[grav]²U(1)_Y` — for both `t=0,1` endpoints. Its own
+correction note (added after Codex's round105 review) records that
+**`[SU(2)_L]²U(1)_Y` and `[SU(2)_R]²U(1)_Y` were never computed at all**,
+neither in round96 nor in round92 before it. This means round100's own
+"E1 sweep" framing of the anomaly/gauge-symmetry route as fully exhausted
+is, strictly, an overclaim by exactly these two channels — the FAIL verdict
+for the three channels actually computed stands, but "no anomaly channel
+shows forcing" is not yet true by direct computation for the full set.
+
+**What would resolve it:** compute `[SU(2)_L]²U(1)_Y` and `[SU(2)_R]²U(1)_Y`
+for both `t=0,1` endpoints separately, the same way round96 did for the
+other three — using the same now-unambiguous `Y=T₃R+(B-L)/2`
+(round93+round94). Mechanically identical to round96's own method, no new
+infrastructure needed.
+
+**Owner / next step:** cheap, ready-to-run follow-up round (same script
+pattern as `e25_mixed_y_anomaly_with_bl0.py`); surfaced 2026-07-17 during a
+currency re-check of the external-summary-table correction (row 17), not
+previously logged in this registry.
+
+**Source:** `tom_s3_spinor_toy/experiments/20260717-round96-mixedY-anomaly-with-bl0/decision.md`
+(correction note, top of file); `CLAIM_LEDGER.yaml` entry `C10_MIXED_Y_ANOMALY_FAIL`
+(already scoped correctly to "three conditions," not "all").
