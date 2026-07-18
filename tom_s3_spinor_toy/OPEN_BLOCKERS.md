@@ -7,9 +7,33 @@ changed). Ordered roughly by how directly each blocks the `N_gen=3` headline.
 
 ---
 
-## OB1 — KT-8: no zero mode for the full S3xS6 Dirac operator (blocking)
+## OB1 — KT-8: no zero mode for the full S3xS6 Dirac operator [PARKED 2026-07-17]
 
-**What's open:** the untwisted (Levi-Civita) S³ connection gives the full
+```
+STATUS: PARKED — REOPEN ONLY ON NEW EXTERNAL INPUT
+```
+
+**Why parked, not closed:** after rounds 114-117 (4 independent mechanism
+attempts, all honestly null/falsified — see below) plus the earlier
+round62-113 arc, the search has reached the point of diminishing returns.
+Continuing to sweep more internally-generated candidates
+(non-geometric flux, doubled/exceptional field theory, cobordism
+invariants, `F₄`, `Spin(10)`, etc.) without a new external constraint is
+not a good use of further effort right now. Not falsified — the parent
+action may well exist — just not found by anything triable from inside
+this project's current toolkit.
+
+**Reopen condition (any one of):**
+1. A concrete candidate action is found (external literature or new
+   internal insight).
+2. A directly relevant parent mechanism is published somewhere new.
+3. A new derivation map linking geometry → Dirac operator → torsion
+   emerges from OTHER work in this project (e.g. the gauge/Hilbert/
+   triality closure program below).
+4. Any candidate MUST pass `PARENT_ACTION_GATE.md`'s checklist before
+   being attempted, not just be "interesting."
+
+**What's open (original framing, preserved):** the untwisted (Levi-Civita) S³ connection gives the full
 internal Dirac operator on `S³×S⁶` zero zero-modes. A torsion-deformed S³
 connection (`t≠0`) is a mathematically available escape route, but **no
 selection principle** is known for *which* `t` (or whether both `t=0,1`
