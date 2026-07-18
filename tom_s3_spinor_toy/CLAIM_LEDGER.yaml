@@ -327,6 +327,32 @@ claims:
     depends_on: [C2_ROUND59_KERNEL_DIM1]
     notes: "Textbook case of 'conclusion survives, proof route superseded' -- see feedback-promote-staleness-gate memory."
 
+  - id: C19_SPINOR_DECOMPOSITION_AUDIT
+    statement: "32-component internal S3xS6 spinor per generation = 16 (particle content) + 16 (CPT conjugates), matching the standard CCM finite-triple convention; chirality (Lemma L5) is geometrically forced but conditional on the still-open zero-mode question; triality channels (8_v,8_s,8_c) are genuinely separate bundle constructions, not internal relabelings of the 32-state block; geometric spinor bundle's OWN reality/Majorana condition (distinct from the finite algebra's J_F) is a newly-identified, confirmed-after-broad-search open gap"
+    truth_status: CONDITIONAL
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/SPIN13_TO_SPIN4_DECOMPOSITION.md"
+    depends_on: [C3_KT8_NO_ZERO_MODE, C_G67C3_THIRD_CHANNEL]
+    caveat: >
+      Reframed from the originally-requested "Spin(1,12) decomposition"
+      per explicit user decision -- no Spin(1,12) structure exists in this
+      project (preprint.tex's own "Total dimension 13, not 10" correction
+      already flagged this exact conflation risk). Mandatory skeptic
+      review corrected the first draft on 3 of 5 checklist items:
+      downgraded chirality from standalone PASS to CONDITIONAL (inherits
+      C3/KT-8's status, sign(ind) is not meaningful if ind=0); demanded
+      and received reconciling arithmetic for the 32=16+16 count (marked
+      [WEAK], not independently tool-verified against Connes' own papers);
+      demanded and received cited mechanism evidence (G73) for the
+      triality-channel-independence claim. The reality-condition gap
+      (item 2) survived a broadened 12-term search (up from an
+      insufficient 4-term first pass) -- genuinely confirmed, not
+      asserted from under-searching.
+    notes: "New open item logged: OPEN_BLOCKERS.md OB10 (geometric spinor bundle reality condition)."
+
 notes_on_this_ledger:
   - "~15-20 target met with 16 entries -- deliberately not exhaustive over the ~157 experiments."
   - "Every evidence_file reference above was Read/Grep-confirmed this session or the session that produced the file, per audit-verification-gate.md."

@@ -3357,3 +3357,59 @@ methodological Pearl: isometry-group component membership is an
 insufficient proxy for physical symmetry/mechanism relevance. Does not
 affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+### OB1 parked; new phase begins — 13D→4D spinor decomposition audit
+
+Per the user's own strategic assessment of the master-TZ status, OB1 was
+formally marked `PARKED` (not closed — reopen conditions specified in
+`OPEN_BLOCKERS.md` OB1 and `parked/INDEX.md`), and the project moved to a
+new phase: the gauge/Hilbert/triality closure program, starting with a
+13D→4D spinor decomposition audit.
+
+**Reframing caught before writing anything:** the task's own proposed
+framing ("`Spin(1,12)→Spin(1,3)×Spin(3)×Spin(6)`") was checked against
+`preprint.tex`'s own "Total dimension is 13, not 10" open-problems entry
+— which had ALREADY caught and corrected exactly this conflation (no
+`Spin(1,12)` structure exists; standard supergravity caps at 11D; no
+consistent 13D parent theory is claimed). Flagged to the user before
+writing; user confirmed reframing to what the project actually has: a KK
+product ansatz (4D spacetime × S³ internal × S⁶ internal), not a unified
+higher-D spacetime.
+
+**`SPIN13_TO_SPIN4_DECOMPOSITION.md` written**, consolidating already-
+established facts (no new computation) against the requested 5-item
+checklist. **Mandatory skeptic review corrected 3 of 5 items on first
+draft, all accepted:**
+1. Item 1 (32-state dimension): first draft asserted "matches CCM" without
+   showing the reconciling arithmetic — added: `32=16 (particle content)
+   +16 (CPT conjugates)`, the standard CCM finite-triple convention
+   (flagged `[WEAK]`, not independently tool-verified against primary CCM
+   sources).
+2. Item 2 (reality conditions): first draft's "gap found" rested on a
+   4-term grep — skeptic correctly called this insufficient negative
+   evidence. Broadened to 12 terms across `preprint.tex` AND every
+   `experiments/` file; the gap **survived** the broader search (found
+   hits are about a different question — `SU(2)` gauge-representation
+   pseudo-reality for anomaly cancellation, not the geometric spinor
+   bundle's own reality-type classification). Logged as new
+   `OPEN_BLOCKERS.md` OB10.
+3. Item 3 (chirality): first draft claimed Lemma L5 stands as a
+   standalone `ESTABLISHED` PASS — skeptic correctly noted `sign(ind)=+1`
+   is only physically meaningful if `ind≠0`, and the FULL operator (not
+   just S⁶'s) has no zero mode at all (KT-8) — **downgraded to
+   CONDITIONAL**, inheriting KT-8's own status.
+4. Item 4 (particle/antiparticle vs. generation counting): first draft
+   asserted the 3 triality channels are "structurally distinct" from the
+   32-state content without evidence — skeptic flagged this as exactly
+   the project's own known "index-to-count jump" trap. Checked directly
+   (`experiments/20260621-g73-three-channel-dirac/decision.md`): the 3
+   channels ARE genuinely separate bundle constructions (`ind(D_{S⁶}⊗E)`
+   computed independently for `E=8_v,8_s,8_c`), not internal relabelings
+   — PASS confirmed, now with cited evidence.
+
+**Net effect:** revised overall verdict is PASS on 2 of 5 (down from the
+first draft's overclaimed 3), CONDITIONAL on 2, OPEN on 1 (new). Logged
+as `CLAIM_LEDGER.yaml` C19. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
