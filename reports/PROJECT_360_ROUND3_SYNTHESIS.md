@@ -2445,3 +2445,201 @@ revive stated precisely. Does not resolve H1c or KT-8, does not affect
 $N_{\mathrm{gen}}=3$, does not overturn round90's own `BLOCKED` verdict
 on the separate SU(4)-incompleteness and anomaly-check gaps (Sections
 5a/5b of that round stand unchanged).
+
+---
+
+### Rounds 96-100 — `/boyko-goal-expansion-100` follow-through: Pati-Salam
+route exhausted within `G_eff`; curvature double-well found (weakened);
+Friedrich-Ivanov no-go inconclusive
+
+Following a `/boyko-goal-expansion-100` (deep mode) solution-space search
+for the parent-action mechanism (34 non-duplicate candidates, saved
+separately — see memory), the top-ranked, cheapest candidates were
+executed in sequence.
+
+**Round96 (E25) — `FAIL__ALL_THREE_CONDITIONS_COMPUTABLE_NONE_SHOW_FORCING`.**
+Round93's `K_3≡T_{3R}` finding collapses round92's "two unreconciled
+$Y$-formulas" into one (`Y=T_{3R}+(B{-}L)/2`), and round94's `B{-}L=0`
+makes it fully computable. Tool-verified (`sympy`): all three previously-
+BLOCKED mixed-$U(1)_Y$ anomaly conditions (`[SU(3)_c]^2U(1)_Y`,
+`[U(1)_Y]^3`, `[\mathrm{grav}]^2U(1)_Y`) evaluate to **zero for `t=0`
+alone, `t=1` alone, AND the union** — not just the union. `t=0` alone is
+zero due to an internal $\pm1/2$ cancellation within its own doublet
+(robust to whatever `B-L` turns out to be); `t=1` alone is zero
+specifically because `B-L=0`. Either way, no forcing pattern is available
+from this channel.
+
+**Round97 — `NO-GO_CONFIRMED__ROUND90_EXHAUSTIVENESS_HOLDS`.** Direct
+grep of `preprint.tex` for every fermion/singlet/`SU(4)` mention confirms
+round90's `(4,2,1)`/`(4̄,1,2)` cubic-anomaly analysis rests on a complete
+field list — the only other `SU(4)`-adjacent object (the Higgs bidoublet
+$(2,2)_0$) is a scalar, structurally irrelevant to a fermion-triangle
+gauge anomaly regardless of its own charge.
+
+**Round98 (C5) — `INCONCLUSIVE__SOURCE_ACCESS_INSUFFICIENT_HONEST_UNKNOWN`.**
+Friedrich & Ivanov (2002, arXiv:math/0102142, confirmed real via
+`WebFetch`) prove "at most one connection with totally skew-symmetric
+torsion" for almost-contact-metric/almost-Hermitian/$G_2$-structures,
+with string-theory applications in dimension $n=5,6,7$. Whether this
+uniqueness theorem's actual hypotheses (not just its stated applications)
+extend to $n=3$/$S^3$=SU(2) could **not** be determined — the PDF did not
+render as readable text via `WebFetch`, and a related survey
+(Agricola, arXiv:math/0606705) gave only an abstract. Reported honestly
+as `<unknown>`, not guessed either way, per this project's own Evidence
+Policy (`[UNKNOWN] > false [INFERRED]`).
+
+**Round99 (B4) — `WEAKENED__CLASSICAL_MATH_CONFIRMED_PHYSICAL_FRAMING_OVERREACHED`.**
+Reproduced (not novel — Cartan & Schouten, 1926) the classical curvature
+formula $R^t(X,Y)Z=t(t-1)[[X,Y],Z]$ for this project's own generator
+convention, tool-verified for all 27 index triples: flat at $t=0,1$,
+curved at $t=1/2$, and a genuinely nonzero curvature-norm component
+(`R^t(Z_1,Z_2)Z_1`) gives a double-well $V(t)\propto[t(t-1)]^2$ with
+minima exactly at $t=0,1$. **Self-caught bug before presenting:** the
+first script version used a degenerate, identically-zero index triple
+(`R^t(Z_1,Z_2)Z_3\equiv0$ for all $t$, since `[Z_1,Z_2]\propto Z_3$
+already) — corrected before this was reported. **Skeptic review
+(context-asymmetric, claim+code only) verdict: WEAKENED** — the pure math
+is correct, but `V(t)` is a bare kinematic tensor-component norm, not a
+derived term of the actual spectral action; no volume integral, kinetic
+term for $t$, or equations of motion were constructed. This shows the
+double-well shape is available "for free" from classical geometry alone
+**if** such a term appears in the real action — a plausibility ingredient
+for B1's full (unattempted) spectral-action derivation, not a mechanism
+or a derivation in itself.
+
+**Round100 (E1) — `CONSISTENT__NO_CONTRADICTION__ONE_SHARPENED_SUMMARY_SIGNAL`.**
+A constraint-satisfaction sweep collecting all of rounds 86-99's
+established facts into one table found no contradiction, and one useful
+sharpening: **every perturbative and global anomaly channel computable
+within the geometrically-realized `G_eff=SU(3)_c\times SU(2)_L\times
+SU(2)_R` has now been checked (round92, round96, round91/92) and shows no
+forcing** — the Pati-Salam/anomaly route (rounds 90-97) is exhausted for
+its own internal method. The ONE channel that would force coexistence
+(round90's cubic $SU(4)_{PS}^3$) remains blocked by the single, precisely
+-named gate G97 (`SU(4)` not geometrically realized) — not a diffuse
+"needs more checking," but a sharp, single remaining structural question.
+
+**Net effect of rounds 96-100:** the Pati-Salam/anomaly parent-action
+route is now fully exhausted within the frozen `G_eff` — nothing left to
+check there except gate G97 itself (alternative `SU(4)` realizations,
+goal-expansion-100 candidates A1/E2, unattempted). A new, independent,
+not-yet-conclusive candidate (curvature-double-well/`t`-as-modulus, B1)
+was opened but not resolved (round99, `WEAKENED`) — its full
+spectral-action derivation remains open. The Friedrich-Ivanov structural
+no-go (C5) remains a genuinely open literature question, not resolved
+either way. Does not affect $N_{\mathrm{gen}}=3$
+(G73/G74A/G74B, S⁶-only), `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`. Not yet committed to git.
+
+---
+
+### Rounds 101-102 — A6 (spin-connection equivariance) and A1 (gate G97
+precision check, self-corrected after skeptic review)
+
+**Round101 (A6) —
+`NAIVE_APPROACH_BLOCKED__X_DEPENDENT__INHOMOGENEOUS_TERM_NEEDED`.** The
+one item explicitly flagged as unattempted in round80/E14's own
+Relaxation Map ("full spin-connection-level check... `[INFERRED]`, not
+independently verified") was attempted: the naive component-substitution
+analogue of round80's own torsion-tensor pullback trick
+(`Ω_i^R(t)(x):=Σ_j b_i^j(x)Ω_j(t)`, reusing E9/round73's spin connection
+and round80's own `b_i^j(x)` coefficients unchanged) was tool-verified to
+be genuinely `x`-dependent, not constant — the mathematically correct
+reason being that a connection 1-form is not a tensor and acquires an
+inhomogeneous (Maurer-Cartan-type) term under a non-constant frame change,
+which torsion (a genuine tensor) does not. This is an honest, informative
+negative result, not a failure: it correctly identifies exactly what a
+full spin-level check would need to add (the `g⁻¹dg`-type term), narrower
+than before, not resolved.
+
+**Round102 (A1) —
+`WEAKENED__NARROW_ALGEBRA_LEVEL_OPEN_QUESTION__NOT_A_REOPENING`,
+self-corrected after mandatory skeptic review.** Given gate G97's status
+as the single most heavily-cited blocker in the entire rounds 90-101
+chain, this round attempted a precision check of its literal wording
+("no `SU(4)` subgroup in `Iso(S³×S⁶)=SO(4)×SO(7)`") — noting
+`so(6)⊂so(7)` is a genuine, tool-verified Lie-algebra fact (isotropy
+subalgebra of a point on `S⁶`), and `so(6)≅su(4)` (D₃=A₃). **First-draft
+proposal (WITHDRAWN after skeptic review, recorded honestly, not
+smoothed over):** argued this made G97's wording imprecise, but that
+substituting the `G₂`-holonomy group (14-dim, `dim<15=dim(su(4))`, the
+mechanism `preprint.tex` actually cites for deriving `SU(3)_c`) as "the
+relevant ambient" repaired the conclusion. **Skeptic (Step 8a,
+context-asymmetric) verdict: WEAKENED**, catching two real errors: (1)
+`SO(6)≠SU(4)` as GROUPS (`SU(4)` is the double cover `Spin(6)`) — G97's
+literal GROUP-level wording is actually defensible as written, i.e. I had
+the direction of the imprecision backwards; (2) substituting `G₂`-
+holonomy for `SO(7)`-isometry is a **category error** (isometries and
+holonomy are logically distinct notions) — the dimension argument only
+rules out `su(4)⊂g₂` alone, and does NOT address the literally-cited
+`SO(4)×SO(7)`, where `so(6)⊂so(7)` still sits unaddressed at the pure
+ALGEBRA level. **What genuinely survives, narrowly:** a previously-
+unasked, well-defined, unresolved question — does the algebra-level
+`so(6)⊂so(7)` embedding correspond to Killing vectors of `S⁶` that are
+actually consistent with this project's already-fixed `SU(3)_c`/fermion
+content, or not? Flagged, not answered. **Does NOT reopen gate G97**,
+does NOT supply a working `SU(4)` alternative, does NOT license
+revisiting any downstream round's conclusions.
+
+**Net effect of rounds 101-102:** both items from goal-expansion-100's
+"queued next steps" (A6, A1) are now attempted; A6 gives a clean,
+correctly-explained negative result; A1's headline finding is its own
+self-correction process working exactly as designed (skeptic catching a
+category error before it reached the user as an overclaim) — the
+substantive open question it narrows down to (algebra-level `so(6)`
+realizability) is new, but unresolved. Neither round changes any
+established verdict in rounds 86-100. Does not affect
+$N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`. Not yet committed to git.
+
+---
+
+### Round103 — D4 (moonshot): is the product-decoupling ansatz
+structurally incompatible with `t=0`/`t=1` coexistence?
+
+**Verdict:** `FALSIFIED__MY_REFRAMING_ATTEMPT_FAILED__QUESTION_GENUINELY_OPEN`
+(skeptic verdict, context-asymmetric review). The explicit "moonshot"
+tier item from goal-expansion-100: attempt to prove/disprove whether
+`D_full²=D_{S3,t}²⊗I+I⊗D_{S6,twisted}²` (E2/E12, presupposed throughout
+E1-E102) structurally forbids ANY mechanism forcing `t=0`/`t=1`
+coexistence.
+
+**Proposed dissolution (WITHDRAWN after skeptic review):** argued
+coexistence is trivially ALLOWED — just postulate two separate fermion
+multiplets, one coupling to `D_{S3,0}`, one to `D_{S3,1}`, "analogous to
+chiral gauge coupling." **Skeptic verdict: FALSIFIED** — this analogy is
+a category error: `t` parametrizes the SPIN connection (part of the
+geometric datum defining the internal space in the Connes-style spectral
+triple `(A,H,D)` framework this project uses elsewhere), not a gauge
+representation choice layered on a fixed geometry. "Two different `D`'s
+for different fields on the same internal manifold" is either (a) an
+admission the spectral triple is under-specified, or (b) an implicit
+redefinition of the internal geometry itself into a genuinely different
+object (doubled `S³`, or dynamical torsion à la Einstein-Cartan-Sciama-
+Kibble) — not a free-lunch bypass.
+
+**Net effect:** the moonshot does not resolve either way — no formal
+incompatibility proof, no formal compatibility demonstration survives.
+What DOES survive as this round's actual product: a sharper statement of
+what "coexistence" concretely requires — either (i) a spectral triple on
+`S³` admitting multiple consistent Dirac operators (a specific, checkable
+NCG-axiom question, unattempted), or (ii) explicitly leaving the
+`S³×S⁶` product ansatz for a doubled/dynamical-torsion geometry (linking
+to round99's B1 "t-as-modulus" direction). This is an honest report of a
+failed attempt at a genuinely hard question, per this round's own
+pre-registered acknowledgment that moonshot items carry real non-
+resolution risk — not a forced conclusion. Does not affect
+$N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`. Not yet committed to git.
+
+**Session status after rounds 96-103:** all three items the user
+requested this turn ("продолжай к A6, D4, A1") are now attempted — A6
+(round101, clean negative result), D4 (round103, genuinely open, honest
+non-resolution), A1 (round102, self-corrected, narrow open question
+flagged). Combined with rounds 96-100, the Pati-Salam/anomaly route is
+exhausted within the frozen `G_eff`; the sole remaining structural
+question for an alternative `SU(4)` realization is now precisely the
+algebra-level `so(6)` question round102 identified; the `t`-as-dynamical-
+-modulus direction (B1/round99) and this round's spectral-triple fork are
+the two most promising NOT-yet-closed avenues for a genuine future
+follow-up.
