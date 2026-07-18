@@ -62,6 +62,17 @@ future, non-coupling-conditional `ρ₃`-stabilization result appears),
 `pearl_registry/INDEX.md`. See
 `experiments/20260717-round115-flux-quantization-torsion-selection/decision.md`.
 
+**Attempted, equivalent-restatement (round116):** applied brainstorm item
+28 ("spectral flow") in modest form to round67's own crossing family —
+proved (general closed form, not spot-check) that `t=0,1` are the unique
+innermost, symmetric pair closest to the Levi-Civita point, for all `n`.
+Skeptic: this is an **equivalent restatement** of `D^t` being affine with
+scalar slope, not new information — and silently drops the `(n+1)(n+2)`
+eigenspace multiplicity, a real gap if "spectral flow" is ever invoked
+more formally. Logged as a methodological Pearl (multiplicity must be
+tracked in any future formal spectral-flow attempt). See
+`experiments/20260717-round116-minimal-crossing-pair-structure/decision.md`.
+
 ---
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple?
