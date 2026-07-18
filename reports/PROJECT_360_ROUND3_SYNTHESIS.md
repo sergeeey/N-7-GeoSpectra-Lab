@@ -3291,3 +3291,69 @@ honestly, not oversold. The multiplicity gap is recorded as a
 methodological Pearl for any future formal spectral-flow attempt. Does
 not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+### Round(s) — Phase-0 registry gap fix: round80/E14's `Z2` left-right
+isometry result, missing entirely, now added
+
+While searching OB1 for a new candidate (does a discrete `Z2` symmetry
+force `t=0,1` coexistence), found that round80 (E14) — a substantial,
+already-completed exploration of EXACTLY this idea, done earlier in this
+same long session before the Phase 0 registry was written — was **entirely
+absent** from `CLAIM_LEDGER.yaml`/`PARENT_ACTION_GATE.md`. This is the
+second such omission this session (see round94/OB3, `SUPERSEDED_RESULTS.md`
+SR6). Round80's own genuine result: a tool-verified isometry
+`iota(g)=g^{-1}` pulls back the WHOLE Cartan-Schouten family exactly
+(`iota*(∇^t)=∇^{1-t}` for all `t`), but gauging it as an orbifold
+identification forces `t=1/2` uniquely — killing that specific route.
+Three physical readings tried, none succeed; Reading 3 (Left-Right-
+symmetric model-building analogy) is the only one pointing the right
+direction but sits in unreconciled tension with Lemma L5. Fixed: added
+`CLAIM_LEDGER.yaml` `C18`, a `PARENT_ACTION_GATE.md` F4 entry, and
+`SUPERSEDED_RESULTS.md` SR7 (sharpening SR6's lesson: substantial rounds
+completed BEFORE the registry-writing pass are the ones most likely to be
+missed — grep `experiments/` first). Also flagged, not fixed
+(`OPEN_BLOCKERS.md` OB9): the preceding E7-E12 chain (rounds 72-78) is
+committed but not individually registered either.
+
+---
+
+### Round117 — attempting to reconcile round80's own flagged tension
+(Reading 3 vs Lemma L5): the attempt tested the wrong question
+
+Tried to resolve round80/E14's one genuinely open thread — does S³'s
+`iota`-parity (Reading 3) really conflict with Lemma L5's unconditional S⁶
+chirality fixing? — via a candidate distinction: `SU(2)_L×SU(2)_R` is
+gauged (round90), `S⁶`'s orientation is not, so "demand parity" applies
+to one but not the other.
+
+**Computed** [VERIFIED-tool]: `S⁶`'s orientation-flip, mirrored directly
+against round80's own `iota` construction, lies in the SAME disconnected
+`O(7)\SO(7)` component that `iota` occupies in `O(4)\SO(4)` — both
+"ungauged" in the narrow sense of not being in the connected isometry
+group this project's gauge construction uses.
+
+**Skeptic review: `FALSIFIED`, the "resolution attempt fails" label was
+not an earned conclusion.** "In the disconnected component of the
+isometry group" is **not** the same question as "is a symmetry of the
+physical action" (the actual criterion Reading 3's Left-Right-symmetric-
+model logic needs — real parity in physics is exactly the counterexample:
+never gauged, still a genuine action-symmetry with real consequences).
+Separately, the two `Z2`'s act on structurally different data — `iota`
+exchanges frame/gauge-multiplet labels; `S⁶`'s orientation sets a
+chirality-OPERATOR sign — which may not even be comparable objects.
+Round80's own Section D also found `iota` is never invoked by any
+established mechanism, while `S⁶`'s orientation IS (Lemma L5 cites it
+directly) — a possibly more relevant asymmetry this round's test never
+checked.
+
+**Net effect:** this round kills only a narrow strawman ("`iota` is
+literally inside the gauged continuous `SO(4)`") that nobody was actually
+defending — round80's real tension (Reading 3 vs Lemma L5) remains
+**exactly as open as before**, genuinely untouched, not advanced. Logged
+honestly (`null_results/INDEX.md` `Round117-L5Reconciliation`), with a new
+methodological Pearl: isometry-group component membership is an
+insufficient proxy for physical symmetry/mechanism relevance. Does not
+affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
