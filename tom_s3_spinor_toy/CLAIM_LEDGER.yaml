@@ -174,6 +174,26 @@ claims:
       later found FALSE by direct sympy computation (round105 cross-check) and
       corrected via an additive CORRECTION note -- see SUPERSEDED_RESULTS.md.
 
+  - id: C16_REMAINING_MIXED_Y_CHANNELS_FAIL
+    statement: "[SU(2)_L]^2 U(1)_Y and [SU(2)_R]^2 U(1)_Y (the 2 mixed-Y channels round96/round92 never computed) also vanish for both t=0,1 endpoints and in union -- extends C10's FAIL to the full 5-condition mixed-U(1)_Y set"
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round112-remaining-mixed-y-anomaly-channels/decision.md"
+    depends_on: [C10_MIXED_Y_ANOMALY_FAIL]
+    caveat: >
+      Arithmetic CONFIRMED-REAL by skeptic (matches independent hand
+      re-derivation + SM sanity check). Framing WEAKENED: skeptic found each
+      of the 4 zeros (this claim's 2, retroactively also C10's 3 at t=1) is
+      forced by ONE shared structural fact -- Y=T3R+(B-L)/2 is identically 0
+      at t=1 given round94's B-L=0 -- not by a nontrivial cancellation
+      between competing rep content. Closure is near-tautological given
+      round94's own input, not strong new evidence. Does not extend to
+      cubic non-abelian anomaly channels ([SU(2)_L]^3, [SU(2)_R]^3),
+      genuinely untested.
+
   - id: C11_D4_PRODUCT_ANSATZ_FORK
     statement: "t=0 and t=1 sector coexistence, as a product-ansatz spectral-triple question (does 'two D's' make sense at all)"
     truth_status: OPEN

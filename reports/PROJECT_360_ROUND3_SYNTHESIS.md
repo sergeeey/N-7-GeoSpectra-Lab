@@ -3079,5 +3079,47 @@ the actual torsion-squared coefficient from a real action principle).
 **Net effect:** a clean, doubly-cross-validated mathematical result with
 an honestly narrowed physics conclusion — sharper than round99, not a
 final closure. Does not affect $N_{\mathrm{gen}}=3$,
-`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
-committed to git.
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+### Round112 — closing OB8: the 2 mixed-`U(1)_Y` channels round96 never
+computed; skeptic finds the closure is near-tautological, not new evidence
+
+MASTER_TZ_RDR22 Phase 0 (Freeze) produced a `CLAIM_LEDGER.yaml`/
+`OPEN_BLOCKERS.md`/`DERIVATION_GRAPH.yaml`/`SUPERSEDED_RESULTS.md`/
+`CURRENT_STATE_ROUND111.md` registry (5 files, `tom_s3_spinor_toy/`), and a
+currency re-check of an externally-pasted summary table's row 17 surfaced
+that round96's own correction note (added after Codex's round105 review)
+already recorded `[SU(2)_L]²U(1)_Y` and `[SU(2)_R]²U(1)_Y` were never
+computed — logged as `OPEN_BLOCKERS.md`'s OB8.
+
+**Computed** [VERIFIED-tool, sympy]: both conditions, for `t=0` alone,
+`t=1` alone, and union, reusing round92's per-endpoint representation
+content and round93+round94's `Y=T3R+(B-L)/2`, `B-L=0` unchanged. **All
+four values are exactly 0.** A sanity check (same formula applied to the
+known SM field content) reproduces the SM's own known
+`[SU(2)_L]²U(1)_Y` cancellation exactly, confirming the formula itself.
+
+**Skeptic review: arithmetic `CONFIRMED-REAL`, framing `WEAKENED`.** The
+skeptic independently re-derived all four values by hand and found the
+formula correctly applied — but identified that each zero traces to a
+**different, individually trivial** mechanism (an `SU(2)` factor being a
+singlet, or `U(1)_Y` degenerating into an internal `SU(2)_R` Cartan
+generator once `B-L=0`), not a nontrivial cancellation between competing
+rep content. Sharpened finding: at `t=1`, `Y≡0` identically given round94's
+own `B-L=0` — so **every** mixed-`U(1)_Y` anomaly condition (round96's
+three plus this round's two) is forced to zero there by one shared
+structural fact, not five independent confirmations (see
+`SUPERSEDED_RESULTS.md` SR5 — round96's own three `t=1` zeros are
+retroactively reread this way, nothing computational retracted).
+
+**Net effect:** OB8 closes as `FAIL`, extending round96's verdict to the
+full 5-condition mixed-`U(1)_Y` set — but the skeptic's correction means
+this closure carries less new discriminating power than the pre-registered
+kill criterion implied; it mostly confirms what round94's `B-L=0` already
+entailed. Round100's "anomaly route exhausted" framing remains correctly
+scoped to the mixed-`U(1)_Y` class only — cubic non-abelian channels
+(`[SU(2)_L]³`, `[SU(2)_R]³`) remain untested. Does not affect
+$N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.

@@ -160,30 +160,46 @@ general pattern this follows).
 
 ---
 
-## OB8 — round96's mixed-Y anomaly sweep is incomplete: two channels never computed
+## OB8 — round96's mixed-Y anomaly sweep is incomplete: two channels never computed [RESOLVED 2026-07-17]
 
-**What's open:** round96 (`FAIL__ALL_THREE_CONDITIONS_COMPUTABLE_NONE_SHOW_FORCING`)
-only computed three mixed-anomaly conditions — `[SU(3)_c]²U(1)_Y`,
-`[U(1)_Y]³`, `[grav]²U(1)_Y` — for both `t=0,1` endpoints. Its own
-correction note (added after Codex's round105 review) records that
-**`[SU(2)_L]²U(1)_Y` and `[SU(2)_R]²U(1)_Y` were never computed at all**,
-neither in round96 nor in round92 before it. This means round100's own
-"E1 sweep" framing of the anomaly/gauge-symmetry route as fully exhausted
-is, strictly, an overclaim by exactly these two channels — the FAIL verdict
-for the three channels actually computed stands, but "no anomaly channel
-shows forcing" is not yet true by direct computation for the full set.
+~~What's open: round96 only computed three of five mixed-anomaly
+conditions...~~ **Resolved by round112 (E26):** computed
+`[SU(2)_L]²U(1)_Y` and `[SU(2)_R]²U(1)_Y` for both `t=0,1` endpoints —
+both vanish identically at both endpoints and in union
+(`FAIL__BOTH_REMAINING_CONDITIONS_COMPUTABLE_NONE_SHOW_FORCING__EXTENDS_ROUND96`).
+SM sanity check confirms the formula itself is correctly stated.
 
-**What would resolve it:** compute `[SU(2)_L]²U(1)_Y` and `[SU(2)_R]²U(1)_Y`
-for both `t=0,1` endpoints separately, the same way round96 did for the
-other three — using the same now-unambiguous `Y=T₃R+(B-L)/2`
-(round93+round94). Mechanically identical to round96's own method, no new
-infrastructure needed.
+**Important scope correction, per mandatory skeptic review (kept, not
+smoothed over):** the skeptic found this closure carries **far less
+discriminating power** than it first appears — each of the four zeros
+(this round's two + it retroactively applies to round96's three at `t=1`)
+traces to `U(1)_Y` being either identically zero or degenerate with an
+internal `SU(2)` Cartan generator at the relevant endpoint, **given the
+current frozen inputs** (round94's `B-L=0` specifically) — not to a
+nontrivial cancellation between competing, independently-charged states.
+Sharpened conclusion: at `t=1`, `Y≡0` identically, so **every** mixed-`U(1)_Y`
+anomaly condition (all 5, not just these 2) is forced to zero there for one
+shared structural reason, not five separate confirmations. Round100's
+"anomaly route exhausted" framing must still **not** be broadened beyond the
+mixed-`U(1)_Y` class — cubic non-abelian channels (`[SU(2)_L]³`, `[SU(2)_R]³`)
+remain a genuinely untested class.
 
-**Owner / next step:** cheap, ready-to-run follow-up round (same script
-pattern as `e25_mixed_y_anomaly_with_bl0.py`); surfaced 2026-07-17 during a
-currency re-check of the external-summary-table correction (row 17), not
-previously logged in this registry.
+**Full detail:** `tom_s3_spinor_toy/experiments/20260717-round112-remaining-mixed-y-anomaly-channels/decision.md`.
 
-**Source:** `tom_s3_spinor_toy/experiments/20260717-round96-mixedY-anomaly-with-bl0/decision.md`
+**New, smaller follow-up surfaced by this closure (not logged as its own
+OB — low priority):** a cleaner test of the code's own discriminating power
+would use an adversarial input (`B-L≠0` at one endpoint) to confirm the
+formula would actually flag forcing if present, since the current FAIL
+can't distinguish "no forcing exists" from "the inputs make forcing
+undetectable by construction" — a Validation-Theater-Guard-style concern,
+not required to accept this closure but worth naming.
+
+**Original description (superseded, kept for history):** round96 only
+computed three mixed-anomaly conditions — `[SU(3)_c]²U(1)_Y`, `[U(1)_Y]³`,
+`[grav]²U(1)_Y` — for both `t=0,1` endpoints; `[SU(2)_L]²U(1)_Y` and
+`[SU(2)_R]²U(1)_Y` were never computed, in round96 or round92.
+
+**Source:** `tom_s3_spinor_toy/experiments/20260717-round96-mixedY-anomaly-with-bl0/decision.md`;
+`tom_s3_spinor_toy/experiments/20260717-round112-remaining-mixed-y-anomaly-channels/decision.md`
 (correction note, top of file); `CLAIM_LEDGER.yaml` entry `C10_MIXED_Y_ANOMALY_FAIL`
 (already scoped correctly to "three conditions," not "all").
