@@ -135,16 +135,38 @@ minor wording item above.
 
 ---
 
-## OB6 — Codex items 5 and 8 (never attempted)
+## OB6 — Codex items 5 and 8 (item 8 re-scoped 2026-07-17; not yet well-posed)
 
 **What's open:**
 - **Item 5:** promote `t` to a finite matrix-valued order parameter with
   internal Z2 exchange symmetry (see OB2 above — same underlying question).
-- **Item 8:** separate global-vs-local anomaly conditions after the spin-lift
-  construction (round107) — not attempted at all.
+  Still genuinely ready to attempt whenever OB2 is picked up — no premise
+  issue found.
+- **Item 8 — re-scoped, NOT ready-to-run as originally logged:** Codex's
+  exact wording (`codex_review_2026-07-17.md:172-174`) is "If the actual
+  gauge group is `SO(6)`, `Spin(6)`, or a quotient of
+  `SU(4)×SU(2)_L×SU(2)_R`, global anomalies and permitted representations
+  depend on that quotient... The precise global group should be derived
+  after the spin lift rather than assumed." **This presupposes `SU(4)` is
+  realized as an actual local gauge symmetry of the construction** — but
+  gate G97's closure (rounds 102/108/109, `CLAIM_LEDGER.yaml` `C7`) already
+  established it is **not**, within the standard `S³×S⁶` product-manifold
+  framework (only `su(3)⊕u(1)`, 9/15 generators, is geometrically realized;
+  the full `su(4)` doesn't preserve `B-L`, gate G98). Item 8's question is
+  therefore contingent on round103's still-open non-product-ansatz fork
+  (`C11_D4_PRODUCT_ANSATZ_FORK`) actually succeeding first — attempting it
+  now, against the current closed-G97 state, risks the same
+  answering-the-wrong-question trap round102's and round103's first drafts
+  fell into (see `SUPERSEDED_RESULTS.md` SR4). Surfaced this scoping issue
+  during a 2026-07-17 re-read of Codex's exact wording, before starting a
+  round — not attempted, deliberately, rather than forced through a shaky
+  premise.
 
-**Owner / next step:** both are explicit, named, ready-to-run next steps from
-round105's cross-model audit; neither requires new infrastructure.
+**Owner / next step:** item 5 remains ready whenever OB2 is picked up. Item
+8 should be re-attempted only after (or explicitly conditional on) OB2/C11
+progress — re-read Codex's wording again at that point to confirm the
+premise then holds, rather than assuming this note's conclusion is still
+current.
 
 ---
 
