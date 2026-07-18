@@ -1,0 +1,108 @@
+# DERIVATION_GRAPH.yaml
+#
+# Phase 0 (Freeze) deliverable per MASTER_TZ_RDR22 Section 9 schema
+# (derivation_id / premises / conclusion / defeaters). NOT exhaustive --
+# 3 key chains only, matching the Phase 0 plan's scope decision:
+#   1. KT-8 chain (why N_gen=3 is blocked from being physical)
+#   2. N_gen=3 headline chain (full dependency tree)
+#   3. Pati-Salam/G97 chain (the parent-action search)
+#
+# Each defeater is a specific claim from CLAIM_LEDGER.yaml (or an external
+# fact) that, if false, breaks the conclusion. This is the graph's actual
+# falsifiability surface -- check these before trusting the conclusion.
+
+derivations:
+
+  - derivation_id: D1_KT8_BLOCKS_NGEN3
+    conclusion: "N_gen=3 is not yet an established PHYSICAL result"
+    premises:
+      - claim: C1_S6_INDEX_1
+        role: "index=1 per channel on S6 factor alone"
+      - claim: C2_ROUND59_KERNEL_DIM1
+        role: "dim ker=1 exactly, not just >=1"
+      - claim: C3_KT8_NO_ZERO_MODE
+        role: "full 13D Dirac operator (untwisted S3 x twisted S6) has NO zero mode"
+    inference: >
+      An index/kernel-dimension result computed on the S6 factor ALONE does
+      not automatically transfer to the full product Dirac operator on
+      S3xS6 -- the full operator's actual spectrum must be checked, and
+      KT-8 checked it: no zero mode with the untwisted (Levi-Civita) S3
+      connection. Without a zero mode, there is no massless 4D fermion, so
+      the S6-only index result cannot yet be read as "3 generations of the
+      Standard Model."
+    defeaters:
+      - "If C3 (KT-8's own zero-mode computation) is wrong -- re-verify the Dirac operator construction and eigenvalue computation directly."
+      - "If a torsion-deformed S3 connection (t != 0, standard Levi-Civita) DOES produce a zero mode with a principled selection of t -- this is exactly the open KT-8-escape-route search (D3 below), still unresolved."
+    status: "Premises PROVED/SUPPORTED individually; inference itself not contested. This is the current blocking finding."
+
+  - derivation_id: D2_NGEN3_FULL_CHAIN
+    conclusion: "N_gen = 3 (three Standard Model generations, headline claim)"
+    premises:
+      - claim: C1_S6_INDEX_1
+        role: "ind=1 per channel"
+      - claim: C2_ROUND59_KERNEL_DIM1
+        role: "dim ker=1 exactly per channel"
+      - claim: C_G67C3_THIRD_CHANNEL
+        role: "3 geometrically distinct triality channels all physically realized"
+      - claim: C3_KT8_NO_ZERO_MODE
+        role: "BLOCKS this chain -- included as the load-bearing negative premise"
+    inference: >
+      "ind=1 per channel (proved) + dim ker=1 per channel (proved) +
+      sign(ind)=+1 (proved, G74B) + 3 channels (conditional on
+      C_G67C3's postulate)" is the sub-claim structure the project's own
+      docs use to state N_gen=3. Recomposition check (per
+      falsification-ladder.md's Recomposition Gate): does the conjunction
+      of individually-verified sub-claims license "N_gen=3, three SM
+      generations" as CURRENTLY WORDED in public files -- or does the
+      recomposition silently add the still-open C_G67C3 assumption AND
+      silently drop the C3/KT-8 caveat? The project's own
+      RESEARCH_STATUS_REPORT.md 2026-07-17 correction already performs
+      this exact check and answers: public wording in some files (see
+      reports/CLAIM_BOUNDARY_AUDIT_2026-06-25.md HIGH-2) predates this
+      correction and may still overclaim -- flagged in OPEN_BLOCKERS.md,
+      not re-verified file-by-file in this Phase 0 pass.
+    defeaters:
+      - "If C_G67C3 (third-channel postulate) is never resolved -- chain stays CONDITIONAL indefinitely, not PROVED."
+      - "If C3 (KT-8) is not resolved by a torsion-selection principle -- chain stays blocked regardless of C_G67C3's outcome."
+      - "If any public-facing file states N_gen=3 as unconditional -- that specific file is out of sync with this ledger and needs a wording fix (see OPEN_BLOCKERS.md)."
+    status: "CONDITIONAL, two independent open premises (C_G67C3, C3/KT-8) both required to close."
+
+  - derivation_id: D3_PATI_SALAM_PARENT_ACTION_SEARCH
+    conclusion: >
+      Within the standard S3xS6 product-manifold framework, no anomaly- or
+      gauge-symmetry-based mechanism forces t=0 and t=1 torsion sectors to
+      coexist. The only remaining route is leaving the product ansatz
+      entirely (round103's fork).
+    premises:
+      - claim: C5_SU2R_GAUGED
+        role: "SU(2)_R genuinely gauged, not just labeled"
+      - claim: C6_CUBIC_SU4_ANOMALY_MECHANISM
+        role: "correct anomaly mechanism identified (cubic SU(4)^3, not Witten SU(2))"
+      - claim: C7_GATE_G97_CLOSED
+        role: "SU(4) gauge-algebra realization ruled out (same-factor AND diagonal) within product framework"
+      - claim: C8_K3_EQUIV_T3R
+        role: "hypercharge formula consistency fixed"
+      - claim: C9_BL_ZERO_TWISTED_KERNEL
+        role: "B-L computed on twisted kernel"
+      - claim: C10_MIXED_Y_ANOMALY_FAIL
+        role: "mixed-Y anomaly conditions computed for both endpoints -- no forcing found"
+      - claim: C11_D4_PRODUCT_ANSATZ_FORK
+        role: "the one remaining open route, explicitly not closed"
+    inference: >
+      Since C6's mechanism requires C7's SU(4) gauge realization to apply,
+      and C7 is now closed (three independent proofs: 102, 108, 109) within
+      the standard product-manifold Killing-vector-algebra framework, the
+      cubic-anomaly mechanism cannot be realized there. C10 independently
+      confirms no forcing shows up even in the directly-computable mixed-Y
+      anomaly conditions. The chain therefore concludes the WHOLE anomaly/
+      gauge-symmetry class of mechanisms is exhausted within the product
+      framework (matches round100's own "E1 sweep" conclusion), leaving
+      only C11 (non-product / twisted / field-dependent construction) as
+      an open route -- which round105 (independent cross-model audit)
+      argued is NOT automatically closed by the same Lie-algebra argument,
+      since block-diagonal Dirac operators are standard NCG practice.
+    defeaters:
+      - "If C7's closure is found to NOT generalize the way rounds 102/108/109 claim (e.g. a construction they didn't anticipate) -- the whole D3 conclusion weakens back to 'not yet found', not 'exhausted'."
+      - "If C11 (the open fork) is itself closed negatively by some future round -- the entire Pati-Salam/anomaly line becomes a full NULL, and the KT-8 escape-route search would need a genuinely different family of mechanisms (see ALIVE_BRANCHES.md / the goal-expansion-100 report's other ~90 candidates, not yet attempted)."
+      - "If C9's B-L construction (post-hoc label on untwisted weight space) is shown invalid on the twisted kernel where it actually matters -- C10's computation would need re-doing on whatever the correct twisted-kernel B-L operator turns out to be (open per multi-lens analysis, see OPEN_BLOCKERS.md)."
+    status: "SUPPORTED for the product-manifold framework specifically; genuinely OPEN beyond it (C11)."

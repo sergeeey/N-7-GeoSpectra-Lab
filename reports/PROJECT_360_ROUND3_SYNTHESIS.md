@@ -3026,4 +3026,58 @@ algebra/real-structure/off-diagonal-coupling/first-order-condition/
 spectral-action-coefficient parts remain genuinely open, honestly not
 filled in with invented, unjustified choices. Does not affect
 $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
-`safe_for_runtime=False`. Not yet committed to git.
+`safe_for_runtime=False`.
+
+---
+
+### Round111 — Codex item 6: the actual scalar curvature `Scal(t)`, not
+a toy norm — a clean Einstein-Cartan decomposition falls out, physics
+conclusion honestly narrowed
+
+Attempted Codex/round105's item 6 (full spectral-action computation) at
+its most tractable, always-present leading order: the actual Ricci
+tensor and scalar curvature of `∇^t`, replacing round99's own
+acknowledged-as-a-toy curvature-NORM-SQUARED quantity.
+
+**Computed** [VERIFIED-tool, cross-validated two independent ways]:
+using round99's own `R^t(X,Y)Z=t(t-1)[[X,Y],Z]` and the metric making
+`{Z_i}` orthonormal, `Ricci^t` is proportional to the metric (Einstein,
+as symmetry predicts) and `Scal(t)=24t(1-t)` — zero at `t=0,1` (matching
+the already-established "flat" fact) and MAXIMIZED, not minimized, at
+`t=1/2` (value 6). **Mandatory cross-check** against a completely
+independent, textbook route (`Ric_LC=-¼·`Killing-form, standard
+bi-invariant-metric formula, confirmed correct by skeptic) gives the
+SAME value (`Scal_LC=6`) at `t=1/2` — strong evidence the computation
+itself is right.
+
+**Genuine structural finding, found by skeptic review, kept as this
+round's actual headline:** the numbers decompose EXACTLY as
+`Scal(t)=Scal_LC-6·(2t-1)²` — the constant Levi-Civita scalar curvature
+of the fixed metric, MINUS a term proportional to `(2t-1)²`, and
+`(2t-1)` is exactly this project's own established torsion coefficient
+(`T^t=(2t-1)c·vol`). A clean, physically-recognizable Einstein-Cartan-
+type split (curvature-of-metric minus torsion-squared), not a
+coincidence.
+
+**Skeptic correction — physics conclusion narrowed, not the math:**
+first draft claimed this refutes round99's double-well hope for "any"
+gravitational/spectral action — skeptic correctly rejected this as
+overreach: the genuine Einstein-Hilbert term of the metric ALONE is the
+CONSTANT `Scal_LC=6` (the metric itself doesn't change with `t,` only
+the connection does); a real Einstein-Cartan action treats the metric-
+curvature and torsion-squared pieces as SEPARATE terms with
+INDEPENDENTLY-determined coefficients this project has never derived
+from an actual action. The bare `Scal(∇^t)` computed here corresponds to
+one specific (not obviously privileged) choice of that coefficient — a
+genuinely different sign choice could still produce a double well.
+**Corrected scope:** this round shows `Scal(∇^t)` itself is single-
+humped; it does NOT close off every possible gravitational-action
+reading of round99's hope, but it DOES replace a vague "compute the full
+spectral action" task with a precise, well-defined open question (derive
+the actual torsion-squared coefficient from a real action principle).
+
+**Net effect:** a clean, doubly-cross-validated mathematical result with
+an honestly narrowed physics conclusion — sharper than round99, not a
+final closure. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
+committed to git.
