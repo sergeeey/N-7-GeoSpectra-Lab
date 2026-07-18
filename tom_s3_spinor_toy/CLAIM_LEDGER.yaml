@@ -199,6 +199,28 @@ claims:
       cubic non-abelian anomaly channels ([SU(2)_L]^3, [SU(2)_R]^3),
       genuinely untested.
 
+  - id: C17_T_CONVENTION_RECONCILED
+    statement: "preprint.tex/round67-68's Kostant Dirac-operator shift D_S3(t)=D_LC+(t-1/2)h_H and round99/round111's Cartan-Schouten curvature R^t=t(t-1)[[X,Y],Z] are built from the literal same connection Nabla^t_XY=t[X,Y] -- not two independently-asserted formulas that coincidentally match"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round113-t-convention-reconciliation/decision.md"
+    depends_on: []
+    caveat: >
+      Skeptic pass1 WEAKENED: round113's own script only verified one
+      direction (A's connection produces B's curvature formula), not that
+      B's own construction actually used that connection. Closed by direct
+      follow-up: read round99's own script
+      (e26_toy_Vt_curvature_double_well.py lines 63-89), which explicitly
+      derives R^t from nabla_t(X,Y,tt)=tt*[X,Y] -- the identical
+      construction, confirmed by source-read not assumption. Residual
+      caveat (accepted, not independently re-verified): both sources
+      assume bi-invariant-metric compatibility, stated explicitly in both
+      original sources.
+    notes: "Resolves PARENT_ACTION_GATE.md field F3. Does not itself supply a parent action -- unifies two prior results' vocabulary, prerequisite not solution."
+
   - id: C11_D4_PRODUCT_ANSATZ_FORK
     statement: "t=0 and t=1 sector coexistence, as a product-ansatz spectral-triple question (does 'two D's' make sense at all)"
     truth_status: OPEN
