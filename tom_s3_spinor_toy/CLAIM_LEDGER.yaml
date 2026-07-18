@@ -353,6 +353,30 @@ claims:
       asserted from under-searching.
     notes: "New open item logged: OPEN_BLOCKERS.md OB10 (geometric spinor bundle reality condition)."
 
+  - id: C20_MATTER_GENERATION_FACTORIZATION_THREE_WAY
+    statement: "User's H_physical=H_matter(x)H_generation hypothesis splits into a STRONG reading (genuine gauged SU(4) Pati-Salam H_matter) which is BLOCKED by gate G97, and a WEAK reading (H_matter=already-realized SU(3)xSU(2)LxSU(2)R content, H_generation=3-dim triality-channel label) whose necessary condition (charge-formula channel-independence) is grep-VERIFIED but whose full sufficiency (identical internal block structure, no Dirac-operator channel-mixing, triality acting purely on the generation factor) is UNVERIFIED"
+    truth_status: CONDITIONAL
+    test_outcome: CONFLICTING
+    execution_status: READY
+    evidence_status: PARTIAL
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round118-matter-generation-factorization-test/decision.md"
+    depends_on: [C7_GATE_G97_CLOSED, C19_SPINOR_DECOMPOSITION_AUDIT]
+    caveat: >
+      Two mandatory skeptic passes, both found real problems, both
+      corrected. Pass 1: first draft conflated the STRONG and WEAK
+      readings, applied G97 (an SU(4)-specific no-go) too broadly, and
+      attacked a strawman dimension-counting argument. Pass 2 (on the
+      revision): caught a genuine audit-verification-gate violation --
+      a claim was asserted in a code comment as "not independently
+      grepped" and then used as load-bearing evidence anyway. Fixed with
+      an actual grep (zero hits for a channel-indexed charge formula,
+      confirming the necessary condition) before finalizing. The deeper
+      sufficiency question (no channel-mixing in the Dirac operator) was
+      NOT resolved -- logged as OPEN_BLOCKERS.md OB11, not asserted
+      either way.
+    notes: "Most heavily-revised decision of the gauge/Hilbert/triality closure program so far (2 full skeptic passes). STRONG reading closure logged null_results/INDEX.md Round118-STRONG-reading."
+
 notes_on_this_ledger:
   - "~15-20 target met with 16 entries -- deliberately not exhaustive over the ~157 experiments."
   - "Every evidence_file reference above was Read/Grep-confirmed this session or the session that produced the file, per audit-verification-gate.md."
