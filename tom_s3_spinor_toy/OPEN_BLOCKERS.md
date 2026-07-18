@@ -29,7 +29,11 @@ yet derived from first principles)?
 untried candidates (non-geometric flux, generalized/doubled/exceptional field
 theory, discrete torsion, cobordism invariants — see the skill's own
 2026-07-17 report) are the next place to look if the Pati-Salam route (OB2)
-doesn't reopen.
+doesn't reopen. **Any future attempt: check against
+`PARENT_ACTION_GATE.md` first**, whose F3 field flags a specific,
+currently-unchecked risk — this project has TWO different `t`-parameter
+conventions in play (`preprint.tex`'s `D_{S³}(t)` Dirac-shift vs round99/111's
+Cartan-Schouten `∇^t`) that have never been shown equivalent.
 
 ---
 
@@ -49,7 +53,11 @@ ansatz genuinely cannot be left this way, closing the route negatively.
 
 **Owner / next step:** Codex's own item 5 (promote `t` to a finite
 matrix-valued order parameter with internal Z2 exchange symmetry) — proposed,
-never attempted.
+never attempted. **Any future attempt: check against
+`PARENT_ACTION_GATE.md` first** (6 additional fields for a non-product
+spectral triple — algebra, Hilbert space, Dirac operator, grading, real
+structure, physical interpretation — round110's own toy only partially
+addressed 2 of the 6).
 
 ---
 
