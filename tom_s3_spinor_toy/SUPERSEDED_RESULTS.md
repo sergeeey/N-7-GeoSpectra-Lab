@@ -108,6 +108,31 @@ sections; each round's own `decision.md`.
 
 ---
 
+## SR5 — Round96's three `t=1_alone` zeros, reread as one shared fact (round112)
+
+**Conclusion (unchanged, re-explained):** round96's `t=1_alone` zeros for
+`[SU(3)_c]²U(1)_Y`, `[U(1)_Y]³`, and `[grav]²U(1)_Y` are all still correctly
+zero — nothing computational is retracted.
+
+**What changed:** round112 (closing OB8) found, via mandatory skeptic
+review, that all `t=1_alone` mixed-`U(1)_Y` anomaly zeros — round96's three
+plus round112's own two (`[SU(2)_L]²U(1)_Y`, `[SU(2)_R]²U(1)_Y`) — trace to
+a **single shared structural fact**: `Y=T3R+(B-L)/2` is identically zero at
+`t=1` given round94's own `B-L=0`. Reading round96's three `t=1` zeros as
+three independent confirmations (as the original framing implicitly
+suggested) overstates the evidence; they are one fact, computed five times.
+
+**Where the stale framing might still live:** any file or summary describing
+round96's `t=1_alone` results as "three separate FAIL confirmations" rather
+than "one shared structural zero, computed in three (now five) different
+anomaly channels" is using the pre-round112 framing. `CLAIM_LEDGER.yaml`'s
+`C10`/`C16` entries and `OPEN_BLOCKERS.md`'s OB8 entry already carry the
+corrected framing as of this entry's date.
+
+**Source:** `tom_s3_spinor_toy/experiments/20260717-round112-remaining-mixed-y-anomaly-channels/decision.md`.
+
+---
+
 ## Standing pattern (not a single entry, but load-bearing for how to read the above)
 
 Across rounds 96-111, mandatory context-asymmetric skeptic review corrected 9
