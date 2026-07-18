@@ -3206,3 +3206,48 @@ line directly from the cited source's own stated theorem — if it is, the
 elaborate surrounding computation adds no evidence regardless of its own
 internal correctness. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+### Round115 — OB1 continued: does the S³ flux quantization (already
+established, Hodge corollary) select `t=0,1`? Circular for unconditional
+selection, but a genuine, honest near-miss pearl surfaces along the way
+
+Tested whether identifying the S³ torsion `T^t` with this project's own
+already-established, topologically-quantized `H³(S³)` flux
+(`lambda-dim-gate/decision.md`'s Hodge corollary, also `preprint.tex`
+line 1117) supplies a parent-action-level selection principle, applying
+round114's own lesson (check for circularity BEFORE building elaborate
+machinery) up front, pre-registered in `claim.md`.
+
+**Computed** [VERIFIED-tool]: `Vol(S³_ρ)=2π²ρ³` (direct integration);
+schematic flux-quantization condition `(2t-1)cVol(S³)=2πnQ`; **circularity
+test** — a real positive `ρ₃` solving this condition exists for `t=0`,
+`t=1`, **and** for `t=1/3` and `t=7` alike, confirming the mechanism
+cannot distinguish `t=0,1` from arbitrary other targets without an
+independent fix on `ρ₃`.
+
+**Skeptic review: `CONFIRMED` the NULL, with two documented weakenings and
+one factual gap — all addressed, not smoothed over.** (1) The round had
+skipped the sharper, physically relevant numerical check at a *naturally
+motivated* `ρ₃` — added: using `c=-2` (directly recomputed, same frame as
+round99/111/113) and this project's own candidate stabilization value
+(**G94, `ρ₃≈1.93`**, gates G94-G102) with a standard NS-NS quantization
+normalization, `K=|c|πρ₃³/Q ≈ 1.1408` — 14% from the nearest integer.
+(2) The round's original "restates F6, does not close it" framing
+undersold real, non-vacuous content: a falsifiable `(t,ρ₃)` correlation
+formula. (3) **The round's original claim that `ρ₃` is a "fully free,
+unstabilized modulus" was itself too strong and grep-corrected**: a
+candidate mechanism (G94) does exist, though it is itself conditional on
+an admittedly free coupling (`c_S3`, its own decision.md line 76) — the
+circularity concern is not resolved, only pushed back and compounded (the
+`K≈1.14` near-miss now rests on three stacked, independently-unverified
+inputs).
+
+**Net effect:** genuine NULL for unconditional `t`-selection — but a
+precise, falsifiable `(t,ρ₃)` relationship and an honestly-caveated
+`K≈1.14` near-miss are logged as a Pearl (`pearl_registry/INDEX.md`),
+worth recomputing if a future, non-coupling-conditional `ρ₃`-stabilization
+result ever appears. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`; does not
+reopen the already-closed `λ`-origin question (same flux, different role).
