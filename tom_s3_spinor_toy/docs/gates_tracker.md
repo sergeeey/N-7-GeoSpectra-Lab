@@ -26,7 +26,7 @@ python scripts/export_results.py --all     → both
 | G7 | Fermion Chain | KK mass spectrum on S³×S⁶ from Lichnerowicz | PASS | M²_{mn} = (n+3/2)²/ρ₃² + m²/ρ₆²; gap confirmed | 8/8 | 2026-06-15 |
 | G8 | Fermion Chain | Chirality obstruction on round S³×S⁶ | PASS | b₁=b₂=0; Atiyah-Singer index=0 on untwisted bundle | 6/6 | 2026-06-15 |
 | G9 | Fermion Chain | Coset chirality: G₂/SU(3) gives SU(3) action on S⁶ | PASS | G₂/SU(3) = S⁶; SU(3) acts isometrically | 4/4 | 2026-06-15 |
-| G10 | Gauge Structure | S⁶ spin connection → SO(6) gauge field | PASS | so(6)≅su(4); 15 generators; cross-spectator effect | 6/6 | 2026-06-17 |
+| G10 | Gauge Structure | S⁶ spin connection → SO(6) gauge field | PASS | so(6)≅su(4); 15 generators; cross-spectator effect. **Caveat (added 2026-07-17, round120, per gate G97):** this is the spin-connection's structure algebra, not a claim that all 15 generators are realized as an isometry-derived gauge symmetry — only SU(3)_c×SU(2)_L×SU(2)_R (9 generators) is; full SU(4)/SO(6) as a gauge group is BLOCKED (G97, `CLAIM_LEDGER.yaml` C7_GATE_G97_CLOSED). | 6/6 | 2026-06-17 |
 | G10b | Gauge Structure | SU(3) embedded in SO(6) explicitly | PASS | J-preserving traceless subalgebra; dim=8 | 5/5 | 2026-06-18 |
 | G11 | Gauge Structure | 32×32 block generators SU(2)_L, SU(2)_R, SU(3) | PASS | Algebras close with correct structure constants | 12/12 | 2026-06-18 |
 | G12 | Gauge Structure | All 5 SM anomaly cancellations | PASS | ΣY³=0, ΣY=0, all mixed anomalies=0 | 5/5 | 2026-06-18 |

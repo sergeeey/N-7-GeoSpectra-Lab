@@ -3523,3 +3523,43 @@ before picking a label; "no discrepancy found" is itself a claim requiring
 verification, not a safe default. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, `safe_for_runtime=False`, or L3b's overall
 open status (unchanged either way).
+
+---
+
+## Round120 — Frame-to-gauge audit: consolidates the gauge/isometry/holonomy mechanism table, catches a genuine tracker staleness and two of its own overclaims
+
+**Gauge/Hilbert/Triality closure program, item 5.** Built
+`GAUGE_HILBERT_RECOMPOSITION.md`: a consolidated table naming the exact
+geometric mechanism behind each gauge factor this project claims
+(`SU(2)_L×SU(2)_R` — isometry-derived, Tom-confirmed; `SU(3)_c` — holonomy-
+derived, `G₂/SU(3)` coset; `U(1)_{B-L}` — open, not an isometry generator;
+full `SU(4)_{PS}` — blocked, gate G97). Found and fixed a genuine registry
+staleness: `docs/gates_tracker.md` (its own header: "Source of truth") had
+carried its G10 row ("S⁶ spin connection → SO(6) gauge field... 15
+generators") unchanged since 2026-06-17, with no cross-reference to gate
+G97's later finding that full `SU(4)`/`SO(6)` as a gauge symmetry is
+blocked — read in isolation, the row risks implying a working 15-generator
+gauge sector that does not exist. Fixed with an inline caveat citing G97.
+
+**Two of the audit's own first-draft claims were themselves overclaims,
+caught by the mandatory skeptic pass:** (1) a claim that round102's
+flagged "which metric" subtlety was fully "resolved" by `preprint.tex:464`
+— skeptic found this resolves only the metric-identity question (round vs.
+not-round), not a separate, genuine framing question (is `SO(7)` or `G₂`
+the physically correct ambient isometry group, given the physics depends on
+the compatible structure `J`) — corrected to state the narrower, accurate
+scope (consequential impact low regardless, since `G97`'s `SO(7)` result
+implies the `G₂` case a fortiori by dimension count). (2) a claim that
+`docs/gates_tracker.md`'s coverage "stops at the early gates" — directly
+checked (`grep -n "^| G9[0-9]\|^| G10[0-9]\|Last updated"
+docs/gates_tracker.md`) and found factually wrong: the tracker was kept
+current through G106 (2026-07-06); only G97 and its round102/108/109
+corroborations (dated 2026-07-17, this session, after the tracker's last
+update) are missing — an ordinary same-day lag, not a stopped tracker.
+
+**Standing lesson:** third consecutive round (118, 119, 120) where a
+first-draft consolidation claim was more confident than its cited source
+supports — consolidation/audit work carries its own overclaim risk,
+distinct from new-physics work, and needs the same skeptic discipline.
+Does not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
