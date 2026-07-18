@@ -2826,3 +2826,62 @@ location is now independently triangulated three ways (round101, Codex/
 round105, round106) — a real, if modest, sharpening, not a resolution.
 Does not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`,
 or `safe_for_runtime=False`. Not yet committed to git.
+
+---
+
+### Round107 — Codex items 2+3: the physical twisted-kernel vector IS a
+genuine `SU(4)` singlet, not merely an `SU(3)_c` singlet
+
+Directly attempted Codex/round105's items 2 ("construct the explicit
+spin lift, branch the twisted kernel under `Spin(6)≅SU(4)`") and 3
+("audit whether the `G₂`-trivial kernel can represent Pati-Salam `4`/`4̄`
+at all"). Reused round93's own already-constructed `so6_spin_gens` (15
+generators, `SU(4)=SO(6)` acting on the 8-dim `S⁶` spinor space `Σ`) and
+round94's own `k_vec` (the explicit physical zero mode in the 64-dim
+`Σ⊗Σ` fibre). New computation: Leibniz-lifted all 15 generators to the
+64-dim fibre and applied them to `k_vec` directly.
+
+**Result [VERIFIED-tool, two rounds of skeptic review]:** all 15
+generators annihilate `k_vec` exactly — `span{k_vec, G_1·k_vec,...,
+G_15·k_vec}` has rank **1**. A real basis-convention subtlety had to be
+handled explicitly (round93's `so6_spin_gens` use a different 8-dim basis
+convention — a "3-qubit kron-index" convention shared with `G6`/`G15` —
+than the `Σ⊗Σ` machinery's own `SUBSETS`/exterior-algebra convention): an
+explicit permutation matrix `P` was constructed and validated. **Skeptic
+pass 1 (`WEAKENED`)** correctly flagged that validating `P` against `B-L`
+alone (a DIAGONAL matrix with degenerate eigenvalue multiplicities
+`1,3,3,1`) is too weak — a wrong permutation within a degenerate
+eigenspace would still pass. **Fixed:** added a stronger cross-check
+using the 8 NON-diagonal `SU(3)_c` generators, permuted via `P` and
+compared against an INDEPENDENTLY-built reference (`su3_matrix_on_sigma`,
+a different module, no kron/qubit convention at all) — individual
+generators don't match one-to-one (different labeling convention,
+expected) but a span-rank check confirms both sets span the IDENTICAL
+8-dimensional subspace. **Skeptic pass 2** confirmed this span check is
+logically sufficient for the 9-dim `su(3)+u(1)` piece, but honestly
+flagged that the remaining 6 "extra" `so(6)` generators rest on
+`lift_to_spinor`'s internal consistency, not an independent third
+construction — reported as an explicit residual caveat, not smoothed
+over.
+
+**Honest framing correction (both skeptic passes):** this does NOT
+establish Pati-Salam-incompatibility from scratch — round92 already
+showed `k_vec` is `SU(3)_c`-singlet, which alone rules out identifying it
+with a Pati-Salam `4`/`4̄`. What this round adds specifically: under the
+standard `4⊗4̄=1⊕15` branching, the adjoint `15` ALSO contains an
+`SU(3)`-singlet piece (`15=8⊕3⊕3̄⊕1`), so the known 2-dim `SU(3)`-trivial
+block `k_vec` lives in could a priori have been the genuine `SU(4)`-
+singlet OR the singlet-inside-the-adjoint. This round determines WHICH:
+`k_vec` sits exactly along the pure `SU(4)`-singlet direction —
+**strengthening**, not solely establishing, round92's conclusion, and
+closing off the entire `1⊕15` branching (not just the singlet piece) as
+a possible rescue for the Pati-Salam-matter-content assumption.
+
+**Net effect:** directly and constructively answers Codex/round105's
+item 3 concern with a concrete, twice-adversarially-reviewed computation
+— the twisted kernel cannot represent Pati-Salam matter under any
+reading of the `SU(4)=SO(6)` action already available in this project's
+own machinery. Does NOT reopen or resolve gate G97 (a logically separate,
+geometric-realization question). Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
+committed to git.
