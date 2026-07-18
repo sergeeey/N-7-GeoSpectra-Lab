@@ -155,19 +155,36 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 
 ---
 
-## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived
+## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-17, round119]
 
-**What's open:** G102 found no fiber symmetry large enough for a Spin(8)-Schur
-argument to coexist with the S⁶ geometry — the third channel required for
-`N_gen=3`'s "×3" step is a **model postulate** for Tom Lawrence's specific
-framework, not internally derivable from this project's own geometry alone.
+**What's open, current status (`GATE 1 OF 7 DONE / GATES 2-6 OPEN`, per
+`TRIALITY_DISTINGUISHABILITY_GATE.md`):** G102 found no fiber symmetry inside
+`so(8)` alone large enough for a Spin(8)-Schur argument to coexist with the
+S⁶ geometry. But `L3B_SPIN8_INTERFACE_SPEC.md`'s own later work (same day,
+2026-07-15) found a genuine advance beyond that: the `SO(4)×SO(4)`
+block-chirality construction **algebraically distinguishes all three
+channels** (`8_v,8_s,8_c`, not just `v` from `{s,c}`) and is itself
+triality-invariant — a rank-4 structure that categorically escapes the
+rank-3 `SO(7)` ceiling every earlier candidate hit. This is genuinely more
+than "no candidate found" — it is "an algebraic candidate exists; its
+physical realization does not." What remains a **model postulate** for Tom
+Lawrence's specific framework is narrower than before: whether `SO(4)×SO(4)`
+(or an equivalent structure) acts *globally* on the actual compactification
+(not just the fiber), and whether the physical Dirac operator is consistent
+with it once `G₂` is broken (mandatory for this route) — both explicitly
+named "the blocker, needs Part 5" in the source document itself.
 
-**What would resolve it:** either an independent physical argument for why
-the postulate should hold (not attempted), or accepting `N_gen=3` as
-conditional on this specific, named, falsifiable assumption indefinitely.
+**What would resolve it:** Part 5's actual content (unpublished, not
+solicited per this project's standing constraint), or an independent
+`G₂`-breaking-compatible spectral-gap argument (no such tool currently
+exists — this project's own G74A Lemma B explicitly requires exact `G₂`
+symmetry and does not degrade gradually).
 
 **Owner / next step:** genuinely blocked without new input; flagged as one of
-the two irreducible open premises in `DERIVATION_GRAPH.yaml`'s D2 chain.
+the two irreducible open premises in `DERIVATION_GRAPH.yaml`'s D2 chain. See
+`TRIALITY_DISTINGUISHABILITY_GATE.md` for the full gate application and
+`experiments/20260717-round119-triality-distinguishability-gate/decision.md`
+for the skeptic-reviewed correction history.
 
 ---
 
