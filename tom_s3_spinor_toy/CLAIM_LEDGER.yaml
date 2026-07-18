@@ -391,7 +391,25 @@ claims:
       either way.
     notes: "Most heavily-revised decision of the gauge/Hilbert/triality closure program so far (2 full skeptic passes). STRONG reading closure logged null_results/INDEX.md Round118-STRONG-reading."
 
+  - id: C21_G74B_CHIRALITY_SIGN
+    statement: "sign(ind(D+_{S6}(x)S-)) = sign(c3(S-)) = +1, and combined with C2's dim ker=1 per channel, gives the UNIQUE solution dim ker(D+)=1, dim ker(D-)=0 per channel -- purely left-handed zero modes, matching observed SM chirality"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260621-g74b-chirality-from-index/decision.md:8-40 (G74B, 31/31 tests)"
+    depends_on: [C1_S6_INDEX_1, C2_ROUND59_KERNEL_DIM1]
+    notes: >
+      [ADDED 2026-07-17, round122] Round122's own global recomposition
+      audit found this result was cited by name in
+      DERIVATION_GRAPH.yaml's D2 inference text ("sign(ind)=+1, proved,
+      G74B") but had no dedicated ledger entry and was missing from D2's
+      own premises list -- exactly the "hidden ingredient" failure mode
+      the Recomposition Gate exists to catch. Caught by mandatory skeptic
+      review of round122 itself, fixed here and in D2's premises list.
+
 notes_on_this_ledger:
-  - "~15-20 target met with 16 entries -- deliberately not exhaustive over the ~157 experiments."
+  - "22 entries as of round122 (2026-07-17) -- deliberately not exhaustive over the ~157 experiments. Prior '~15-20 target met with 16 entries' note was itself stale (miscounted); corrected here. NOTE: an earlier version of this same correction said '21 entries' -- also wrong (off-by-one, missed that C_G67C3_THIRD_CHANNEL has no numeric Cn prefix); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 22) before finalizing this note."
   - "Every evidence_file reference above was Read/Grep-confirmed this session or the session that produced the file, per audit-verification-gate.md."
   - "Track A (cc_toy_lab) and Track C (WHEN_GEOMETRY_BECOMES_UNRECOVERABLE) claims deliberately excluded -- both already have closed, non-controversial verdicts (see CURRENT_STATE_ROUND111.md)."

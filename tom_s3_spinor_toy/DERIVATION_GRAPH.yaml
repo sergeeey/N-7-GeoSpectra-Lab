@@ -44,11 +44,13 @@ derivations:
         role: "dim ker=1 exactly per channel"
       - claim: C_G67C3_THIRD_CHANNEL
         role: "3 geometrically distinct triality channels all physically realized"
+      - claim: C21_G74B_CHIRALITY_SIGN
+        role: "sign(ind)=+1 forces the unique (dim ker(D+)=1, dim ker(D-)=0) split per channel -- previously cited by name in this inference text without a premises-list entry; added 2026-07-17 round122 after mandatory skeptic review of the recomposition audit itself caught the omission"
       - claim: C3_KT8_NO_ZERO_MODE
         role: "BLOCKS this chain -- included as the load-bearing negative premise"
     inference: >
       "ind=1 per channel (proved) + dim ker=1 per channel (proved) +
-      sign(ind)=+1 (proved, G74B) + 3 channels (conditional on
+      sign(ind)=+1 (proved, G74B, now C21) + 3 channels (conditional on
       C_G67C3's postulate)" is the sub-claim structure the project's own
       docs use to state N_gen=3. Recomposition check (per
       falsification-ladder.md's Recomposition Gate): does the conjunction

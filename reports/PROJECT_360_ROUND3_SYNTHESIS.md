@@ -3606,3 +3606,49 @@ first-draft claim needed a skeptic-caught correction, this time on a
 negative/cautionary finding rather than a positive one — the discipline
 holds either way. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+## Round122 — Global recomposition audit: headline claim confirmed unchanged, audit catches its own overclaim and a real hidden premise
+
+**Gauge/Hilbert/Triality closure program, item 7** (last audit before item
+8, preprint rewrite). Applied the project's own Recomposition Gate to
+`CLAIM_LEDGER.yaml` and `DERIVATION_GRAPH.yaml`'s `D2_NGEN3_FULL_CHAIN`,
+checking whether the two newest claims (`C19` spinor decomposition, `C20`
+matter-generation factorization) needed to be added as premises, and
+whether `preprint.tex`'s public text still accurately reflects the
+project's internal state.
+
+**Core finding: `N_gen=3` remains `CONDITIONAL`, unchanged.** `C19` and
+`C20` are correctly parallel/explanatory investigations, not premises the
+counting argument (`ind=1`, `dim ker=1`, channel count) depends on — `OB11`
+(C20's open sufficiency question) is absorbed by `C_G67C3`'s own already-
+open status, not a separate new gap. Found `preprint.tex`'s L3b Open
+Problems text is stale (understates, doesn't overclaim) — it never
+mentions the `SO(4)×SO(4)` partial advance from round119, queued as a
+precise punch-list item for item 8, not applied here.
+
+**Skeptic review of the audit itself caught two real problems:** (1) the
+first draft claimed "no smuggling found anywhere in the ledger" when only
+4 of 22 claims (`C19`, `C20`, `C_G67C3`, plus the newly-added `C21`) were
+actually traced against `D2` — corrected to the narrower, accurate scope.
+(2) A genuine hidden premise: `DERIVATION_GRAPH.yaml`'s own `D2` inference
+text cited `sign(ind)=+1 (proved, G74B)` as part of the counting argument,
+but this had no `CLAIM_LEDGER.yaml` entry and was missing from `D2`'s own
+premises list — exactly the "hidden ingredient" failure mode the
+Recomposition Gate exists to catch, missed by the audit's own first pass.
+Fixed directly (added `C21_G74B_CHIRALITY_SIGN`), not deferred, since it's
+a ledger-accuracy fix rather than a public-facing edit.
+
+**A second self-correction, caught only by direct tool verification:**
+the fix's own first attempt said "21 entries" (an off-by-one miscount,
+missing that `C_G67C3_THIRD_CHANNEL` has no numeric prefix) — caught by
+running `grep -c "^  - id:"` before finalizing rather than trusting the
+recount, giving the correct 22.
+
+**Standing lesson:** a recomposition audit is itself subject to the
+overclaim risk it exists to catch. Fifth consecutive round (118-122)
+where skeptic review corrected a first-draft consolidation claim — this
+time a meta-level audit auditing itself. Does not affect
+$N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
