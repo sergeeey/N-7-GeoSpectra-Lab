@@ -3472,3 +3472,54 @@ distinct failure mode from simply forgetting to check — the caveat
 itself should trigger the check, not excuse skipping it. Does not affect
 $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+## Round119 — Triality distinguishability gate: applying an already-built rubric surfaces a registry overclaim, caught by skeptic
+
+**Gauge/Hilbert/Triality closure program, item 4.** Rather than build a new
+gate from scratch, recognized that `tom_s3_spinor_toy/L3B_SPIN8_INTERFACE_
+SPEC.md` (drafted 2026-07-15, extended same day through an `SO(4)×SO(4)`
+block-chirality candidate) already **is** a fully-built triality
+distinguishability gate — precise question, five-condition existence spec,
+anti-circularity screen, PASS/PARTIAL/NO/DISQUALIFIED rubric all present.
+The genuine gap was that this rubric had never been formally applied to its
+own most-advanced result, and the project's registries (`OPEN_BLOCKERS.md`
+OB4, `CLAIM_LEDGER.yaml` `C_G67C3_THIRD_CHANNEL`) still described the state
+as flatly "not internally derivable," understating the `SO(4)×SO(4)` finding.
+
+**First draft applied the rubric and landed on `PARTIAL`.** Mandatory
+context-asymmetric skeptic review (claim.md + gate document only, no
+reasoning chain) returned `WEAKENED`, with three concrete findings:
+
+1. Condition 2 (`[D,U]=0` for the *physical* Dirac operator) was downgraded
+   to "not independently re-verified" — understating that the source's own
+   G74A discussion shows the relevant proof technique (Lemma B) "does not
+   degrade gradually with perturbation size; it simply no longer applies, at
+   any nonzero perturbation" once `G₂` breaks, which the `SO(4)×SO(4)` route
+   requires. Not merely unchecked — the source's own tooling cannot check it.
+2. Condition 3 was claimed "Holds, verified" in full, conflating the
+   algebraic-distinguishability half (genuinely done, per the source's own
+   §7 gate 1) with the global/physical half (§7 gate 2, explicitly "the
+   blocker, needs Part 5"). Only the algebraic half is established.
+3. The cross-connection to round118 contained a hard arithmetic/category
+   error: `SU(3)×SU(2)×SU(2)` was claimed to have rank 3 and to "embed inside
+   `SO(6)`" — actually rank 4, and `SU(2)_L×SU(2)_R` lives on the `S³`
+   factor, not as an `S⁶`-side `SO(6)` subgroup at all. Corrected to a much
+   more modest, explicitly unresolved connection.
+
+**Fixed all three inline** in `TRIALITY_DISTINGUISHABILITY_GATE.md` (marked
+`[skeptic correction]`, original claims kept visible, not silently
+rewritten). **Corrected verdict:** not a flat `PARTIAL` — `GATE 1 OF 7 DONE
+/ GATES 2-6 OPEN`, using the source's own sharper §7 gate numbering rather
+than forcing the finding into one of the coarser §4 bins. Updated
+`OPEN_BLOCKERS.md` OB4 and `CLAIM_LEDGER.yaml` `C_G67C3_THIRD_CHANNEL` to
+this corrected, narrower status — avoiding propagating the overclaim into
+project state. **Standing lesson:** a generous rubric label sitting next to
+already-hedged narrative ("Spin(8)-adjacent", "bare-geometry level") does
+not by itself prevent the *label* from overclaiming — check a document's
+finer internal framing (here, §7) against its coarser one (§3/§4) directly
+before picking a label; "no discrepancy found" is itself a claim requiring
+verification, not a safe default. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, `safe_for_runtime=False`, or L3b's overall
+open status (unchanged either way).
