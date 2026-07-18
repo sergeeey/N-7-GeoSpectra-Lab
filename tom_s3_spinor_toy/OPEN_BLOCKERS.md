@@ -47,6 +47,21 @@ value) — no independent evidence. See `null_results/INDEX.md`
 literature searches in this direction remain worthwhile — this specific
 round's SPECIFIC computation, not the whole approach, was the failure.
 
+**Attempted, NULL-with-a-pearl (round115):** tested whether this project's
+own already-established quantized `H³(S³)` flux (Hodge corollary,
+`lambda-dim-gate/decision.md`) could select `t=0,1` via standard flux
+quantization, if the torsion is identified with a genuine NS-NS-type flux.
+**Confirmed circular for unconditional selection** (any target `t` admits
+some `ρ₃`) — but found, along the way, that `ρ₃` is not actually "fully
+free" as first assumed: a candidate stabilization mechanism exists (G94,
+`ρ₃≈1.93`, itself conditional on an admittedly free coupling). Plugging
+G94's value into the flux-quantization formula gives `K≈1.14` — 14% from
+an integer, suggestive but explicitly **not** treated as evidence (rests
+on 3 stacked unverified inputs). Logged as a genuine Pearl (recompute if a
+future, non-coupling-conditional `ρ₃`-stabilization result appears),
+`pearl_registry/INDEX.md`. See
+`experiments/20260717-round115-flux-quantization-torsion-selection/decision.md`.
+
 ---
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple?
