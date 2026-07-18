@@ -85,11 +85,12 @@ claims:
       tom_s3_spinor_toy/RESEARCH_STATUS_REPORT.md:34-40 (G102);
       L3B_SPIN8_INTERFACE_SPEC.md (SO(4)xSO(4) candidate, section 1);
       TRIALITY_DISTINGUISHABILITY_GATE.md (round119 gate application,
-      skeptic-reviewed);
-      experiments/20260717-round119-triality-distinguishability-gate/decision.md
+      skeptic-reviewed, plus round124 second candidate);
+      experiments/20260717-round119-triality-distinguishability-gate/decision.md;
+      experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md
     depends_on: []
     notes: >
-      [UPDATED 2026-07-17, round119] G68 (28/28) closes 2/3 (L!=R via
+      [UPDATED 2026-07-18, round124] G68 (28/28) closes 2/3 (L!=R via
       pseudoscalar). Vector channel 8_v: G102 already showed no fiber
       symmetry inside so(8) alone is large enough for Spin(8)-Schur to
       coexist with S6 geometry -- but L3B_SPIN8_INTERFACE_SPEC.md's own
@@ -100,9 +101,18 @@ claims:
       corrected from an initial overclaimed "PARTIAL" label): GATE 1 OF 7
       DONE (algebraic distinguishability, verified) / GATES 2-6 OPEN
       (global/physical realization, explicitly "the blocker, needs Part 5"
-      per the source document itself). Remains a falsifiable model
-      postulate for Tom Lawrence's framework specifically, narrower in
-      scope than before but not resolved.
+      per the source document itself). Round124 (2026-07-18) found a
+      SECOND, independent, structurally different candidate: su(3) plus
+      its own 2-dim abelian centralizer in so(8) gives Hom=0 for all three
+      off-diagonal channel pairs (clean Schur non-isomorphism) and fixes
+      zero vectors in 8_v (also escapes SO(7) confinement) -- tool-verified
+      including basis-rotation invariance. Shares the identical physical-
+      realization obstruction as SO(4)xSO(4) (also outside g2, also
+      triggers the G74A Lemma B exact-G2 requirement). Two independent
+      routes to Gate 1 strengthens confidence in that milestone but does
+      not touch Gates 2-6. Remains a falsifiable model postulate for Tom
+      Lawrence's framework specifically, narrower in scope than before but
+      not resolved.
 
   - id: C5_SU2R_GAUGED
     statement: "SU(2)_R is genuinely gauged in preprint.tex (real KK boson + kinetic term + Higgs bidoublet, not just a label)"

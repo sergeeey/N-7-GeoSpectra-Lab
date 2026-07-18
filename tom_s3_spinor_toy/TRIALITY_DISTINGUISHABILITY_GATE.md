@@ -47,6 +47,48 @@ triality-invariant (eigenvalues of the transport matrix `T` are exactly
 findings are the *same* structure (explicit intertwiners `P, Q` built,
 residuals ~1e-15).
 
+## 2b. A second, independent candidate found (round124, 2026-07-18)
+
+**User-requested new route via `SU(3)`-representation coordinates**, not
+the octonion `H⊕Hℓ` split above. Combining `su(3)` (the isotropy
+subalgebra of `S⁶=G₂/SU(3)`) with its OWN centralizer in `so(8)`
+(2-dimensional, abelian — already computed by gate G102, `[VERIFIED]`
+`dim=2`) gives a rank-4 algebra `su(3)⊕u(1)⊕u(1)` (rank `2+1+1=4`, the
+same rank-escape mechanism as `SO(4)×SO(4)`). Result, `[VERIFIED-tool]`,
+independently re-run and checked for basis-rotation invariance (two
+different rotated bases of the same 2-dim centralizer span give identical
+results):
+
+| Quantity | `su(3)` alone (G102) | `su(3)⊕u(1)⊕u(1)` (round124) |
+|---|---|---|
+| `Hom(α,α)`, all three | 6 | 4 |
+| `Hom(α,β)`, `α≠β`, all three pairs | 6 | **0** |
+| Fixed vectors in `8_v` | 2 | **0** |
+
+`Hom=0` for all three off-diagonal pairs is a direct Schur-lemma proof of
+pairwise non-isomorphism — arguably cleaner than the `SO(4)×SO(4)`
+route's explicit same/opposite-block-chirality matching argument. Zero
+fixed vectors in `8_v` confirms this algebra also escapes confinement to
+`SO(7)`, the same structural signature that let `SO(4)×SO(4)` work.
+
+**Same remaining obstruction, not a further advance:** `g₂` is simple
+(zero center), so it has no room for an abelian ideal commuting with its
+own `su(3)` subalgebra beyond `su(3)` itself — the 2-dim centralizer used
+here sits OUTSIDE `g₂`, in the larger `so(8)`. Realizing `su(3)⊕u(1)⊕u(1)`
+physically would therefore ALSO require breaking `G₂`, triggering the
+identical G74A Lemma B obstruction (§3 below) as `SO(4)×SO(4)`. Physical
+identification of the two `u(1)` charges with any known quantum number is
+also unattempted, the same gap as `SO(4)×SO(4)`'s unidentified factors.
+
+**Consequence:** two independent, structurally different rank-4 algebras
+now both achieve algebraic distinguishability (`GATE 1 OF 7`'s
+prerequisite) via two different mechanisms (octonion block-chirality vs.
+isotropy-group centralizer) — this strengthens confidence that Gate 1 is
+genuinely, robustly satisfied, but does not touch Gates 2-6, which remain
+exactly as open as before. See
+`experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
+for full detail.
+
 ## 3. Applying the gate
 
 **First-draft table (below) was skeptic-reviewed; two cells corrected, not
@@ -180,5 +222,7 @@ one.**
   (gate table)
 - `tom_s3_spinor_toy/experiments/20260717-round118-matter-generation-factorization-test/decision.md`
 - `tom_s3_spinor_toy/experiments/20260705-g102-spin8-fiber-obstruction/decision.md` (G102)
+- `tom_s3_spinor_toy/experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
+  (second independent candidate, `su(3)⊕u(1)⊕u(1)`)
 - `tom_s3_spinor_toy/OPEN_BLOCKERS.md` OB4, OB11
 - `tom_s3_spinor_toy/CLAIM_LEDGER.yaml` `C_G67C3_THIRD_CHANNEL`
