@@ -3251,3 +3251,43 @@ worth recomputing if a future, non-coupling-conditional `ρ₃`-stabilization
 result ever appears. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`; does not
 reopen the already-closed `λ`-origin question (same flux, different role).
+
+---
+
+### Round116 — OB1 continued: the minimal-crossing-pair structure — an
+equivalent restatement, not new information, with one real gap surfaced
+
+Applied brainstorm item 28 ("spectral flow, `N_gen=SF{D(u)}`") in a
+modest, honest form directly to round67's own already-computed `D^t`
+crossing values (`t*∈{-2/3,-1/3,0,1,4/3,5/3}`) — not a new technique, a
+structural reading of numbers already on record.
+
+**Computed** [VERIFIED-tool]: generalized round67's tabulation to a
+symbolic closed form for all `n≥0`: `t*(n,+1)=-n/3`, `t*(n,-1)=n/3+1`.
+Proved (not spot-checked) that the six crossings are evenly spaced at
+exactly `1/3`, symmetric about `t=1/2`, and that `t=0,1` (the `n=0` pair)
+are the UNIQUE innermost crossings, with no crossing strictly between
+them, for all `n`.
+
+**Skeptic review: `WEAKENED`, three findings.** (1) The round's own
+`n=0..19` spot-check for "no interior crossing" was redundant — the
+general closed form already proves it for all `n` in one line of algebra;
+methodologically weaker presentation than the argument already available,
+though not wrong. (2) **Real content gap, accepted:** the `(n,σ)`
+parametrization silently drops the `(n+1)(n+2)` eigenspace multiplicity at
+each crossing — matters the moment "spectral flow" (inherently
+multiplicity-weighted) is invoked even informally, as this round's own
+title does. (3) **Framing overclaim, corrected:** everything in the
+structural claims follows in one line from `D^t` being affine in `t` with
+SCALAR slope `h_H=3` — this is an **equivalent restatement**, not a
+"sharper characterization" as first framed; symmetry, even spacing, and
+"n=0 innermost" are generic consequences of any monotonic affine family,
+not new derived content.
+
+**Net effect:** the numerical facts stand (correctly, for all `n`, not
+just spot-checked values), but the round adds essentially no new
+information beyond repackaging round67's own tabulation — logged
+honestly, not oversold. The multiplicity gap is recorded as a
+methodological Pearl for any future formal spectral-flow attempt. Does
+not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
