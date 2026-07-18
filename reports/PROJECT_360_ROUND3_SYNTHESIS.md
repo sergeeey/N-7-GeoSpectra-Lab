@@ -3413,3 +3413,62 @@ draft, all accepted:**
 first draft's overclaimed 3), CONDITIONAL on 2, OPEN on 1 (new). Logged
 as `CLAIM_LEDGER.yaml` C19. Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+### Round118 — matter-generation factorization test: two skeptic passes,
+one genuine audit-gate violation self-caught and fixed
+
+Item 3 of the gauge/Hilbert/triality closure program. Tested the user's
+own proposed hypothesis (`H_physical=H_matter⊗H_generation`, `S⁶`-kernel
+in the generation factor, `(4,4̄)` in a separate matter factor, triality
+on generation, gauge on matter) against the user's own pre-registered
+kill-test.
+
+**First draft:** concluded `BLOCKED_AT_CONSTRUCTION_STAGE` — citing gate
+G97 and a dimension-counting argument (the 1-dim twisted kernel can't
+factor nontrivially).
+
+**Skeptic pass 1: `FALSIFIED` the severity.** G97 is specifically about
+GAUGED `SU(4)` Pati-Salam unification — the round applied it too broadly
+to a hypothesis that could equally be read via the ALREADY-realized
+`SU(3)_c×SU(2)_L×SU(2)_R` gauge group (untouched by G97). Also attacked a
+strawman reading of "kernel lives in the generation factor" (as if
+`H_generation` IS the 1-dim kernel, rather than a 3-dim space with one
+slot per triality channel). Recommended splitting into STRONG (genuine
+`SU(4)`) and WEAK (already-realized gauge group) readings.
+
+**Revision:** added a direct test of the WEAK reading — but asserted, in
+a code comment, that the charge formula has no per-channel index
+"without independently re-grepping it in this script," then used that
+unverified assertion as load-bearing evidence for "the WEAK reading is
+already true."
+
+**Skeptic pass 2: `FALSIFIED` this new claim on the project's own
+audit-verification-gate rule.** An honestly-labeled "not verified"
+assertion is still an assertion — it should have been a stop sign to
+actually check, not a license to proceed with the caveat attached.
+Separately found a deeper, independent gap: even granting charge-
+uniformity, this is **necessary, not sufficient** for genuine tensor
+factorization — also needing identical internal block structure, no
+Dirac-operator channel-mixing, and triality acting with no admixture on
+the matter factor. None of these three are checked anywhere in this
+project.
+
+**Fixed directly:** `grep -n "8_v\|8_s\|8_c" preprint.tex | grep "Q\s*=\|
+Y\s*=\|T_{3"` → zero hits, confirming the charge formula has no
+per-channel index — the necessary condition IS now genuinely verified,
+not asserted.
+
+**Final honest verdict, three-way, per skeptic's own recommended
+fallback:** STRONG reading (genuine gauged `SU(4)` `(4,4̄)`) —
+`BLOCKED` by G97 (`null_results/INDEX.md` `Round118-STRONG-reading`).
+WEAK reading's necessary condition (charge uniformity) — `VERIFIED`.
+WEAK reading's full sufficiency (tensor factorization) — `UNVERIFIED`,
+genuinely open, not a dead end (`OPEN_BLOCKERS.md` OB11). **Standing
+lesson:** asserting a claim in a code comment with an honest "not
+verified" caveat, then treating it as load-bearing anyway, is its own
+distinct failure mode from simply forgetting to check — the caveat
+itself should trigger the check, not excuse skipping it. Does not affect
+$N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.

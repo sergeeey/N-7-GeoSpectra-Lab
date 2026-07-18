@@ -362,3 +362,35 @@ realizations already used throughout rounds 67-117.
 **Owner / next step:** surfaced during `SPIN13_TO_SPIN4_DECOMPOSITION.md`
 (gauge/Hilbert/triality closure program, item 2 of that audit). Genuinely
 new — not previously logged anywhere in this project's registries.
+
+---
+
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open
+
+**What's open:** the user's own proposed hypothesis
+(`H_physical=H_matter⊗H_generation`, WEAK reading: `H_matter`=32-dim
+already-realized `SU(3)_c×SU(2)_L×SU(2)_R` content, `H_generation`=3-dim
+triality-channel label) has one necessary condition **verified**
+(`grep`-confirmed, `preprint.tex`): the charge formula `Q=T₃L+Y` has no
+per-channel index, so the gauge group acts uniformly across all 3
+triality channels. **But this is necessary, not sufficient** — a genuine
+tensor factorization also requires (i) identical internal block
+structure of the 3 32-dim blocks, not just identical charges, (ii) no
+channel-mixing terms in the full Dirac operator, (iii) triality acting
+purely as `1⊗t` with no admixture on the matter factor. **None of these
+three are checked anywhere in this project.**
+
+**Note — the STRONG reading (genuine gauged `SU(4)` Pati-Salam matter,
+`(4,4̄)`) is separately BLOCKED** by gate G97 (see
+`null_results/INDEX.md` `Round118-STRONG-reading`) — this OB is only
+about the WEAK reading, which remains a live, partially-checked
+candidate, not a dead end.
+
+**What would resolve it:** check the Dirac operator's block structure
+across the 3 triality channels (`8_v`,`8_s`,`8_c`) for cross-channel
+mixing terms — likely extractable from round107/round110's own existing
+matrix computations, not necessarily requiring new construction.
+
+**Owner / next step:** cheap, well-scoped follow-up (`round118`'s own
+Relaxation Map). Full detail:
+`experiments/20260717-round118-matter-generation-factorization-test/decision.md`.
