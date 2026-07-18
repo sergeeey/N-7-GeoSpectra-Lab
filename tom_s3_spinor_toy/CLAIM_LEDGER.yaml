@@ -152,11 +152,16 @@ claims:
     evidence_file: "tom_s3_spinor_toy/experiments/20260717-round94-bl-twisted-kernel-eigenvalue/"
     depends_on: [C8_K3_EQUIV_T3R]
     caveat: >
-      PASS_WITH_CAVEAT per RESEARCH_STATUS_REPORT.md wording. B-L itself is
-      only defined as a post-hoc label on the UNTWISTED S6 weight space
-      (commutes with su(3)+u(1), 9/15 of so(6), not the full algebra) -- no
-      construction of B-L directly ON the twisted kernel exists. See
-      OPEN_BLOCKERS.md.
+      PASS_WITH_CAVEAT per RESEARCH_STATUS_REPORT.md wording. CORRECTED
+      2026-07-17 (this line previously said "no construction of B-L
+      directly ON the twisted kernel exists" -- FALSE, round94 itself
+      constructs exactly that, BL_64=leibniz64(BmL) on the 64-dim twisted
+      fibre, k an exact eigenvector, B-L=0). Genuine residual caveats:
+      BL_64 does not commute with the full so(6)/D_full (G98, reconfirmed
+      round94 Part 4, shown irrelevant to this specific eigenvalue); B-L is
+      one member of a dim>=3 admissible U(1) family (round61), not uniquely
+      singled out by this project's own geometry. Full canonical statement:
+      BL_TWISTED_KERNEL_CANONICAL_STATEMENT.md. See OPEN_BLOCKERS.md OB3.
 
   - id: C10_MIXED_Y_ANOMALY_FAIL
     statement: "All three anomaly conditions ([SU(3)_c]^2 U(1)_Y, [U(1)_Y]^3, [grav]^2 U(1)_Y) computed for BOTH t=0,1 endpoints separately using Y=T3R+(B-L)/2 -- none show forcing of both sectors together"

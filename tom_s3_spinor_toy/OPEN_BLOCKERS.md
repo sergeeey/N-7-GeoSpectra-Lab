@@ -53,25 +53,35 @@ never attempted.
 
 ---
 
-## OB3 — B-L operator on the twisted kernel (not constructed)
+## OB3 — B-L operator on the twisted kernel [CORRECTED + FORMALIZED 2026-07-17]
 
-**What's open:** B-L is only defined as a post-hoc label on the *untwisted*
-S⁶ weight space (`bl_charge()` in `g6_spinor_decomposition.py`; the `BmL`
-matrix in `g15_hypercharge.py` commutes with `su(3)⊕u(1)`, 9 of the full
-15-dim `so(6)` algebra, not the whole algebra — gate G98). No construction of
-B-L directly on the twisted kernel (the physical, dim-1-per-channel,
-G2-singlet Hilbert space) exists.
+**This entry's own original text was WRONG, not just incomplete — flagged
+honestly, not smoothed over.** It claimed "no construction of B-L directly
+on the twisted kernel exists." This is false: **round94 (E24), already
+committed BEFORE this Phase 0 registry was written, constructs exactly
+that** — `BL_64 = leibniz64(BmL)` on the 64-dim twisted `Σ⊗Σ` fibre, with
+the physical kernel vector `k` confirmed an exact `BL_64` eigenvector,
+`B-L=0`. The multi-lens exercise this entry originally referenced was run
+BEFORE round94's own result was cross-checked against it, and the
+resulting stale framing was carried into this registry without re-verifying
+against round94's own decision.md at write time — an audit-verification-
+gate lapse in this registry's own construction, corrected here.
 
-**What would resolve it:** a multi-lens pass on this exact question was run
-this session (`/multi-lens` on "can B-L be built as an operator directly on
-the twisted kernel"); its findings were not yet folded into a formal
-experiment round as of this Phase 0 pass — check the multi-lens output (in
-this session's transcript, not yet written to a file) before re-deriving from
-scratch.
+**Now formalized:** `BL_TWISTED_KERNEL_CANONICAL_STATEMENT.md`
+(`tom_s3_spinor_toy/`) consolidates round94+round107+G98+round61 into one
+canonical statement with 5 explicit scope constraints (the specific lifted
+operator, the specific zero mode, confirmed-but-irrelevant non-
+commutativity with `D_full`, B-L as a constructed not physically-derived
+label, and the mode being a genuine `SU(4)` singlet not Pati-Salam matter).
+**Nothing new computed** — pure consolidation of already-adjudicated
+results, correcting this registry's own error in the process.
 
-**Owner / next step:** write up the multi-lens findings as a proper
-`experiments/<id>/claim.md`+`decision.md` round; currently only exists as
-conversational output.
+**Residual genuinely open items** (per the canonical statement's own "what
+this does NOT mean"): whether the physical zero mode should be interpreted
+as one particle in a tensor-product bundle vs. a different physical
+identification of the two `Σ` factors (round94's own Relaxation Map, still
+open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
+(round61) — no additional physical principle singles it out.
 
 ---
 
