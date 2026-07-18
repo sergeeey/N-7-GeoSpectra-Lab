@@ -91,25 +91,47 @@ the two irreducible open premises in `DERIVATION_GRAPH.yaml`'s D2 chain.
 
 ---
 
-## OB5 — Public-wording consistency check (not re-verified this pass)
+## OB5 — Public-wording consistency check [RESOLVED 2026-07-17]
 
-**What's open:** `reports/CLAIM_BOUNDARY_AUDIT_2026-06-25.md` found `N_gen=3`
-stated as unconditional/derived in several files (`README.md`,
-`tom_s3_spinor_toy/README.md`, `RESEARCH_STATUS_REPORT.md`) as of 2026-06-25.
-`RESEARCH_STATUS_REPORT.md` itself was since patched (its own 2026-07-17
-correction section, verified present this session). Whether `README.md` (root
-and `tom_s3_spinor_toy/`) and `preprint.tex`'s headline sections were
-similarly patched was verified for the **abstract/headline sync specifically**
-(memory record `p0-headline-sync-2026-07-17`, done 2026-07-17, not committed
-at that time) but a fresh, complete re-grep against the June 25 audit's exact
-HIGH-1/HIGH-2/MEDIUM-1/MEDIUM-2 findings was **not** re-run in this Phase 0
-pass.
+**Re-verified directly** (grep + read, `README.md`, `tom_s3_spinor_toy/README.md`,
+`tom_s3_spinor_toy/preprint.tex`, `tom_s3_spinor_toy/preprint_abstract.md`)
+against the exact June 25 `CLAIM_BOUNDARY_AUDIT` findings:
 
-**What would resolve it:** a focused grep pass — `grep -rn "N_gen.*=.*3\|three generations" README.md tom_s3_spinor_toy/README.md tom_s3_spinor_toy/preprint.tex` — checking each hit against the current conditional status, plus re-checking HIGH-1 (the "in collaboration with Tom Lawrence" phrasing).
+- **HIGH-1 (author-line "in collaboration with Tom Lawrence")** —
+  **FIXED.** `preprint.tex`'s current author block (line ~55-58) reads only
+  "Sergey Boyko, Independent researcher, Ronin Institute for Independent
+  Scholarship" — no co-authorship/collaboration claim at the author level.
+  `tom_s3_spinor_toy/README.md`'s own Attribution section (line 341-344) is
+  unambiguous: "Developed independently by Sergey Boyko... All errors and
+  interpretations are entirely my own," plus an explicit "**This is NOT:**...
+  Endorsed by Tom Lawrence or affiliated with his research group" fence
+  (line 337).
+- **HIGH-2 (N_gen=3 stated as unconditional/derived)** — **FIXED** in every
+  file checked. Root `README.md`'s own Verdict line (line 23) and
+  `tom_s3_spinor_toy/README.md`'s top-of-file correction (lines 11-42)
+  both carry the full KT-8 caveat. Every later "N_gen=3" restatement in
+  `tom_s3_spinor_toy/README.md` (lines 85, 144, 236 — inside the
+  Three-Generation Investigation section) sits under an explicit blanket
+  override (line 39-42: "This status correction is authoritative... over any
+  'N_gen=3' statement elsewhere in this file that does not carry this same
+  caveat") — a deliberate, honest design choice rather than an oversight.
+  `preprint.tex`'s own abstract (lines 70-77) states the full-operator
+  zero-mode gap caveat inline, in the abstract itself, not just in a later
+  section.
+- **Residual, minor (not a HIGH-1 violation, but adjacent language worth
+  naming):** `preprint.tex:434` and `:1294` still use the phrase
+  "collaboration with T. Lawrence" / "to be addressed in collaboration with
+  T. Lawrence" to describe an open question awaiting his input. This is
+  materially weaker than the original HIGH-1 finding (no co-authorship
+  implied, correctly scoped to "his expertise would resolve this"), but given
+  the project's own hard "DO NOT INITIATE CONTACT" fence and that no
+  confirmed collaboration exists, the word "collaboration" itself is
+  slightly more definite than warranted — a candidate one-word wording fix
+  ("input from" or "clarification from" rather than "collaboration with"),
+  not urgent, not a fence violation.
 
-**Owner / next step:** natural Round-2-style follow-up task, cheap (grep +
-read, no new computation) — flagged rather than done here to keep Phase 0
-strictly a consolidation pass, not a new audit.
+**Verdict: substantially resolved.** No overclaim found beyond the one
+minor wording item above.
 
 ---
 
