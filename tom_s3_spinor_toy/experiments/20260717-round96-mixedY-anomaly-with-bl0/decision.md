@@ -1,5 +1,25 @@
 # Round96 (E25) — Decision
 
+> **⚠️ CORRECTION (2026-07-17, added after independent Codex/GPT
+> cross-review, round105 — original text below unchanged):** the claim
+> below that "t=0 alone is zero due to the `T_{3R}=±1/2` internal
+> cancellation (**robust to any `B-L` value**, would hold even if
+> `B-L≠0`)" is **WRONG**, confirmed by direct hand computation
+> (`sympy`, this correction): with `B-L=b` general, `Y_±=±1/2+b/2`, so
+> `Y_++Y_-=b` and `Y_+³+Y_-³=b(b²+3)/4` — **neither vanishes for general
+> `b`**, only at `b=0` specifically. The round96 SCRIPT's own numerical
+> output is unaffected (it only ever evaluated at the correct,
+> established `B-L=0`, round94) — only this decision.md's INTERPRETIVE
+> prose overclaimed general robustness that the arithmetic does not
+> support. The FAIL verdict itself (all three conditions zero AT
+> `B-L=0`) stands correctly; only the "why" explanation is corrected.
+> Codex also flagged that the mixed `[SU(2)_L]²U(1)_Y` and
+> `[SU(2)_R]²U(1)_Y` anomaly conditions were never computed in this round
+> (or round92) at all — a real gap in the "every anomaly channel
+> exhausted" claim (round100), not attempted here, flagged for a future
+> round. Full Codex review: `codex_review_2026-07-17.md`, this
+> experiment tree's parent directory.
+
 **Date:** 2026-07-17
 **Verdict:** `FAIL__ALL_THREE_CONDITIONS_COMPUTABLE_NONE_SHOW_FORCING`
 **Go/no-go:** NO-GO for the mixed-`U(1)_Y` anomaly route as a parent-action

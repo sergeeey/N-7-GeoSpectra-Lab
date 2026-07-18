@@ -2643,3 +2643,186 @@ algebra-level `so(6)` question round102 identified; the `t`-as-dynamical-
 -modulus direction (B1/round99) and this round's spectral-triple fork are
 the two most promising NOT-yet-closed avenues for a genuine future
 follow-up.
+
+---
+
+### Round104 — A2 (anomaly inflow at ι's fixed points):
+`NOT_APPLICABLE__CODIMENSION_MISMATCH`
+
+Cheap, purely dimensional check: Callan-Harvey-style anomaly inflow
+requires a codimension-1 interface; round80/E14's `ι` fixed-point locus
+on `S³` (`{g=±1}`, 2 isolated points) is codimension-3 — a structural
+mismatch with the mechanism's own applicability requirement, settled
+without needing the full inflow computation. On inspection, A2 and A6
+(round101) turn out to be the SAME underlying equivariant-index question
+in two different physics vocabularies, not independent candidates — A2
+does not need separate future pursuit.
+
+### Remaining goal-expansion-100 candidates — honest status, not pursued
+further this session
+
+Of the 34 non-duplicate candidates in the original report, 9 have now
+been attempted with real verification (A1, A2, A3/A4, A6, A7, B4, C5, D4,
+E1). The remaining ~25 (C1/C2/C3/C6 non-geometric-flux/DFT/ExFT/twistor
+variants; D1/D2 bordism/TQFT-categorical framings; B1's full
+spectral-action derivation, B2/B3/B5 modulus-dynamics variants; A5
+Green-Schwarz-without-strings; E2 full GAP/LiE computational search; E3
+Lean/Coq formalization) were **not** pursued further this session — an
+honest accounting, not silent abandonment:
+
+- **B1's full task (deriving `V(t)` from the actual spectral action)**
+  remains the single most promising NOT-yet-attempted item — round99
+  showed the double-well shape is at least plausible from classical
+  curvature alone, and round103's spectral-triple fork independently
+  points at the same direction (does the spectral triple admit dynamical
+  torsion). This is a substantially larger undertaking than any single
+  round attempted so far, correctly flagged as such in both places.
+- **E2 (full GAP/LiE search)** was partially subsumed by round102's own
+  explicit `so(6)⊂so(7)` construction and its correction — a full
+  systematic Lie-subalgebra classification search remains open but the
+  highest-value single sub-question it would need to answer (does
+  `so(6)` embed via Killing vectors consistent with the fixed `SU(3)_c`)
+  is now precisely named, not vague.
+- **C1/C2/C3/C6/D1/D2/A5/E3** remain at their original low
+  `confidence` scores (0.05–0.2) from the goal-expansion-100 report —
+  no new information surfaced this session to change that assessment;
+  pursuing them further without a stronger prior would not be a good use
+  of effort relative to sharpening B1 or the round102 algebra-level
+  question.
+
+**Session status after round104:** per user's explicit request, this
+project's own rounds 90-104 chain (Pati-Salam/anomaly route + literature
+no-go + curvature-modulus + spin-equivariance + ansatz-incompatibility +
+anomaly-inflow) is queued for an independent cross-model review (Codex/
+GPT via `codex-companion.mjs task`) — specifically checking whether the
+Claude-based skeptic overcorrected anywhere (round102's G97 finding,
+round103's D4 finding), and whether a viable path is being missed. See
+next section for the result.
+
+---
+
+### Round105 — Independent cross-model audit (Codex/GPT): skeptic
+OVERCORRECTED on both flagged cases; new gaps found; one arithmetic
+overclaim self-confirmed and corrected
+
+Per user's explicit request, ran Codex (`codex-cli`, updated
+0.142.4→0.144.5 to fix a model-compatibility error) as a genuinely
+independent reviewer of rounds 90-104 — "different model" review, rated
+Medium independence on this project's own Independent Verification
+Strength Ladder, stronger than same-model-different-prompt. Full
+transcript: `experiments/20260717-round105-codex-cross-model-audit/
+codex_review_2026-07-17.md`.
+
+**Headline: Codex judged the internal Claude-based skeptic to have
+OVERCORRECTED on BOTH of the two high-stakes cases it was asked to
+scrutinize hardest** (round102's gate-G97 finding, round103's D4
+moonshot) — `[INFERRED]`-level claims from Codex, not yet independently
+spot-checked at the deep-NCG/group-theory level, per this project's own
+evidence discipline (Codex's `[VERIFIED]` = this project's `[INFERRED]`
+until tool-checked).
+
+**Case 1 (G97):** Codex agrees the skeptic's "G₂-holonomy is a category
+error" point was correct, but argues its second point (`SU(4)≠SO(6)` as
+GROUPS) does not, by itself, rescue G97's physical conclusion — because
+KK gauge bosons come from Lie-ALGEBRA elements (Killing-vector
+commutators), and `so(6)≅su(4)` being present as an algebra is the
+physically relevant fact for gauge-boson counting, group topology
+notwithstanding. Codex's verdict: *"G97, as a physical
+no-`SU(4)`-gauge-algebra gate, is not established... round102 should
+have reopened G97 conditionally."* Also flags `preprint.tex`'s own
+"`G₂` holonomy of `S⁶=G₂/SU(3)`" phrasing as conflating coset-isotropy
+with holonomy-of-the-cone (citing Foscolo-Haskins, arXiv:1501.07838 —
+**not independently verified this round**).
+
+**Case 2 (D4):** Codex agrees "two multiplets" doesn't FORCE coexistence
+and agrees `t` genuinely indexes a spin connection (geometric datum,
+not a free gauge choice) — but argues a block-diagonal Dirac operator
+`D=diag(D_{t=0},D_{t=1})` is standard NCG practice for a multiplicity
+bundle, not an under-specified/redefined geometry. Verdict: *"round103's
+original 'coexistence is allowed' was basically correct... the skeptic
+confused 'not dynamically motivated' with 'not a standard legitimate
+construction.'"* Cites Dąbrowski-Sitarz, arXiv:1012.3055 — **not
+independently verified this round.**
+
+**One concrete claim WAS independently spot-checked and confirmed**
+[VERIFIED-tool, direct `sympy`, done before accepting Codex's claim]:
+round96's decision.md prose ("t=0's cancellation is robust to any `B-L`
+value") is **false** — `Y_++Y_-=b`, `Y_+³+Y_-³=b(b²+3)/4`, neither zero
+for general `b`, only at `b=0` specifically. **Corrected via an additive
+note in round96/decision.md** (this project's standard pattern). The
+round96 script's own numerical output (evaluated only at the correct
+`B-L=0`) is unaffected — only the interpretive prose overclaimed.
+
+**New gaps Codex found, not previously flagged by any Claude-run round**
+(all `[INFERRED]`, not independently checked this round): round92/96
+never computed `[SU(2)_L]²U(1)_Y`/`[SU(2)_R]²U(1)_Y` (narrower
+"exhausted" claim than round100 stated); the computed `G₂`-trivial
+(`SU(3)_c`-SINGLET) twisted kernel may be structurally in tension with
+identifying it as Pati-Salam `4`/`4̄` matter (a Pati-Salam `4` restricts
+to `3⊕1`, not a pure singlet) — flagged as needing an explicit
+intertwiner, not just imported representation labels; round97's grep
+check proves manuscript-text completeness, not KK-spectrum
+representation-theoretic exhaustiveness.
+
+**Codex's 8 concrete proposed next steps** (not yet attempted): (1)
+compute the stabilizer of the FULL background (metric+torsion+`J`+twist,
+not just the round metric — the decisive calculation neither round97 nor
+round102 performed), (2) construct the explicit `Spin(6)⊂Spin(7)` spin
+lift and branch the twisted kernel under it, (3) audit the `G₂`-trivial-
+kernel-vs-Pati-Salam-`4` tension, (4) build/test the block spectral
+triple against actual NCG axioms, (5) promote `t` to a finite
+matrix-valued order parameter with internal `ℤ₂`, (6) full Seeley-DeWitt
+spectral-action computation for `D_t²` (round99 only computed one
+curvature norm), (7) complete round101 by explicitly computing the
+missing `U⁻¹dU` inhomogeneous term — Codex calls this "a finite symbolic
+calculation," the cheapest of the eight, (8) separate global-vs-local
+anomaly conditions once the spin lift determines the correct global
+group.
+
+**Codex's own overall confidence rating on the whole rounds 90-104
+chain: 4/10** — *"The existing chain has not found a parent action. It
+also has not established a no-go."*
+
+**Net effect and honest calibration:** this round's job was to report
+Codex's findings, not to unilaterally accept them — per this project's
+own audit-verification-gate discipline, one concrete, cheaply-checkable
+claim was independently spot-checked and confirmed correct (calibration
+point: the review is substantive, not hallucinated), while the deeper
+NCG/group-theory arguments and both external citations remain `[INFERRED]`,
+flagged for future verification, not treated as settling gate G97 or D4.
+Neither gate is re-closed nor finally reopened by this round alone — both
+are flagged for a future round using Codex's own concrete next steps.
+Does not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`,
+or `safe_for_runtime=False`. Not yet committed to git.
+
+---
+
+### Round106 — Codex item 7 attempted: `PARTIAL`, harder than "finite
+symbolic calculation," third self-correction this session
+
+Attempted Codex/round105's cheapest proposed next step (complete
+round101's spin-connection check). Two genuine, uncontested sharpenings
+survive [VERIFIED-tool]: (1) `b(x)` is exactly the `Ad(g(x)⁻¹)` matrix in
+the `{Z_i}` basis; (2) round101's "naive" `Σb·Ω` computation IS the
+correct value of `ω^t(Z_i^R)`, by linearity of 1-forms — not a shortcut
+missing a term at THAT step; the real gap is a different, unaddressed
+one (how `ι` acts on the spinor FIBER, i.e. which spinors are "constant"
+in which frame). A third claim — that `H=(3c/2)I₂` being scalar means
+"no spin-lift conjugation of any kind" can relate the `t`/`1-t`
+eigenvalues — was **`WEAKENED`** by skeptic review: "constant spinor" is
+itself frame-dependent (`ι` induces a point-dependent frame twist,
+`S(x)⁻¹ψ` generically isn't constant in the new frame even if `ψ` was in
+the old one), so the argument answers a narrower question than intended,
+and "no conjugation" ≠ "no mechanism of any kind" (pullback isn't
+restricted to pure conjugation). Narrow form survives: a globally
+constant conjugation cannot relate the two scalar values except at
+`t=1/2`.
+
+**Session-level note:** this is the THIRD time this session (rounds 102,
+103, 106) that a confident claim in this exact territory (spin lifts,
+connection pullbacks) required a skeptic-driven correction — the mandated
+escalation discipline caught a real issue each time, and the gap's
+location is now independently triangulated three ways (round101, Codex/
+round105, round106) — a real, if modest, sharpening, not a resolution.
+Does not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`,
+or `safe_for_runtime=False`. Not yet committed to git.
