@@ -2885,3 +2885,56 @@ own machinery. Does NOT reopen or resolve gate G97 (a logically separate,
 geometric-realization question). Does not affect $N_{\mathrm{gen}}=3$,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
 committed to git.
+
+---
+
+### Round108 — Codex item 1: the physically-relevant ambient group for
+gate G97 is `G₂` (14-dim) or `SU(3)` (8-dim), NOT the full `SO(7)`
+(21-dim) — directly computed, both readings confirmed `<15=dim(su(4))`
+
+Directly computed, rather than merely cited, Codex/round105's own
+top-ranked "decisive calculation" — the stabilizer of the FULL background
+(not just the round metric) within `so(7)`.
+
+**Method:** built the standard associative 3-form `φ₀` (Bryant 2005
+convention, confirmed standard by skeptic review) and all 21 `so(7)`
+generators; validated the tensor-action formula against the metric first
+(all 21 generators must preserve `g=δ` — confirmed, independently
+re-derived by hand by skeptic review too); computed the TRUE stabilizer
+dimension of `φ` as the nullspace of the full `35×21` linear map
+`X↦X·φ` — **exactly 14**, a UNIQUE dimensional fingerprint for `g₂`
+among `so(7)`'s subalgebras (Dynkin classification: `so(6)=15`,
+`g₂=14`, `so(5)⊕so(2)=11`, `so(4)⊕so(3)=9`).
+
+**Skeptic pass 1 correctly flagged an overreach:** "stabilizer of `φ`"
+(`G₂`) ≠ "stabilizer of the FULL background including the almost-complex
+structure `J`" specifically, since `J` is POINT-DEPENDENT
+(`J_x(v)=x×v`) — fixing `φ` everywhere doesn't fix a point. **Fixed:**
+computed the further subalgebra of the 14-dim `G₂` that ALSO fixes a
+base point `x₀` — dimension **8**, matching `SU(3)` (`G₂`'s isotropy at a
+point, directly matching `S⁶=G₂/SU(3)`). Skeptic pass 2 independently
+re-derived this via the orbit-stabilizer theorem
+(`dim(G₂)-dim(orbit)=14-6=8`, since `G₂` acts transitively on `S⁶`) and
+confirmed dimension 8 is similarly a unique fingerprint (`G₂` has rank 2,
+so any subalgebra has rank ≤2; `su(3)` is the only compact rank-≤2
+algebra of dimension 8) — **`CONFIRMED-REAL`**, with an explicit,
+retained overreach guard (below).
+
+**Overreach guard, per skeptic pass 2, load-bearing — retained
+verbatim:** *"this rules out `SU(4)⊂`Stab(background restricted to the
+`S⁶` factor) by naive dimension, but does NOT rule out diagonal
+embeddings `SU(4)→G_iso(S³)×G_iso(S⁶)` that split generators across the
+product... closes the naive same-factor embedding; diagonal/product
+embeddings remain the actual G97 question."** This is exactly round102's
+own earlier-flagged "diagonal embedding" possibility, still unaddressed.
+
+**Net effect:** BOTH plausible readings of "the physically relevant
+ambient group" (`G₂`=14-dim, or `SU(3)`=8-dim if `J` is required too)
+are now directly computed, not merely cited — and both are smaller than
+`dim(su(4))=15`, so the same-factor `SU(4)` embedding question is closed
+under either reading. The ONE genuinely open route left for gate G97 is
+now precisely named: a cross-factor/diagonal embedding combining S³-side
+and S⁶-side generators together — not attempted here or in round102.
+Does NOT close gate G97. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
+committed to git.
