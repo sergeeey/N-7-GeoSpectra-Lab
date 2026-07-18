@@ -2986,5 +2986,44 @@ same-factor (102/108) and diagonal (109) readings — with the honest
 remaining caveat that this framework-internal closure does not extend to
 genuinely non-product/twisted constructions, which remains round103's
 own still-open fork. Does not affect $N_{\mathrm{gen}}=3$,
-`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`. Not yet
-committed to git.
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+### Round110 — Codex item 4: build and test the block spectral triple;
+one wrong question corrected, one overclaim honestly downgraded
+
+Attempted Codex/round105's item 4: build `D_block=diag(D^0,D^1)` on
+`H_block=ℂ²⊕ℂ²` and test the NCG-axiom checklist (bounded, compact
+resolvent, grading, real structure, first-order condition, off-diagonal
+terms, spectral-action coefficients, block-exchange symmetry).
+
+**Constructed** [VERIFIED-tool]: `D_block=diag(0,0,3c/2,3c/2)`, reusing
+E9's own `H=(3c/2)ω` (scalar) — self-adjoint; boundedness/compact
+resolvent trivially hold (any finite matrix), honestly scoped as a
+finite-dimensional-model artifact, not a claim about the intended
+continuum triple.
+
+**Skeptic correction 1:** first draft tested whether a unitary conjugates
+`D^0` directly into `D^1` — flagged as the WRONG, needlessly elaborate
+question (`D^0=0`, so `T·0·T⁻¹=0` for ANY invertible `T`, trivially).
+**Corrected** to the physically meaningful question — does a block-swap
+unitary `S=[[0,I],[I,0]]` satisfy `S·D_block·S⁻¹=D_block`? Computed:
+`S·D_block·S⁻¹=diag(3c/2·I,0)≠D_block` — confirms no block-exchange
+symmetry, via the correct formulation this time.
+
+**Skeptic correction 2 [honest downgrade, not smoothed over]:** this
+round's conclusion rests on the SAME two inputs round106 already
+established (`H` scalar; `D^0=0`, `D^1=3c/2`) — restated in NCG/block-
+spectral-triple language, correctly answering Codex's own checklist item,
+but NOT independent confirming evidence beyond round106, despite the
+first draft's "genuine cross-check" framing.
+
+**Net effect:** Codex's item-4 checklist is now directly, correctly
+answered for the parts this project's own finite/discrete modeling
+choice can address (construction, basic properties, swap-symmetry); the
+algebra/real-structure/off-diagonal-coupling/first-order-condition/
+spectral-action-coefficient parts remain genuinely open, honestly not
+filled in with invented, unjustified choices. Does not affect
+$N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`. Not yet committed to git.
