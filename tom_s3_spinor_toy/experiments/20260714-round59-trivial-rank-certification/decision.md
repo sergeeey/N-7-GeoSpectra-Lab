@@ -108,6 +108,26 @@ outstanding" explicitly. Compiled clean (pdflatex ×2, exit 0, 25 pages, no
 undefined refs); arXiv tarball rebuilt as `arxiv_submission_20260714.tar.gz`
 (replaces the 20260713 one); PDF re-saved to Desktop.
 
+## Addendum (Round121, 2026-07-17) — one candidate "different primary
+source" rung checked and closed, honestly
+
+Investigated whether `Agricola_2002_Dirac_naturally_reductive.pdf`
+(arXiv:math/0202094, already sitting in the repo root) could serve as the
+"different primary source" rung named in this decision's own "Residual
+shared legs" section above. Found it cannot: it is already `preprint.tex`'s
+own cited source for the Kostant-Parthasarathy formula used in §sec:schur —
+sufficient by itself to disqualify it as "independent." A narrower
+additional observation: the ONE simplified Casimir-difference formula
+`preprint.tex` reuses (`λ²(ρ,σ)=C₂(G₂;ρ)-C₂(SU(3);σ)`) is vacuous on the
+trivial sector this round's claim concerns — but Agricola2002's separate
+Theorem 4.2 (constant-spinor non-vanishing) was NOT checked against this
+round's claim and remains a genuinely open, distinct avenue (see round121's
+decision.md §Relaxation Map). No alternative CAS (Sage/Maple/Mathematica)
+is available in this environment either. Full detail:
+`experiments/20260717-round121-independent-round59-agricola2002-crosscheck/decision.md`.
+This round's own `[VERIFIED-INDEPENDENT-INTERNAL]` status is unchanged —
+neither strengthened nor weakened.
+
 ## Files
 
 - `claim.md` — frozen BEFORE the run (kill criteria intact, none fired)

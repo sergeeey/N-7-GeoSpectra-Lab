@@ -3563,3 +3563,46 @@ supports — consolidation/audit work carries its own overclaim risk,
 distinct from new-physics work, and needs the same skeptic discipline.
 Does not affect $N_{\mathrm{gen}}=3$, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+## Round121 — Independent Round59 reconstruction: candidate source disqualified, near-miss caught, one open avenue surfaced
+
+**Gauge/Hilbert/Triality closure program, item 6.** Investigated whether
+`Agricola_2002_Dirac_naturally_reductive.pdf` (arXiv:math/0202094, already
+sitting untracked in the repo) could serve as round59's own named
+"different primary source" independent-verification rung for its
+`rank(D⁺|₁)=1` trivial-sector claim. Found it cannot: a direct grep of
+`preprint.tex`'s own bibliography shows this source is already cited
+throughout §sec:schur (L4B) for the Kostant-Parthasarathy formula — not
+independent of round59's existing derivation chain. Caught this at the
+investigation stage, before drafting any claim of independent confirmation
+— a near-miss of exactly the "evidence laundering" anti-pattern
+`perelman-audit.md` names explicitly.
+
+**A narrower additional observation** (not, as first drafted, an
+independently-sufficient second reason — corrected by skeptic review): the
+one simplified Casimir-difference formula `preprint.tex` reuses from this
+source (`λ²(ρ,σ)=C₂(G₂;ρ)-C₂(SU(3);σ)`) is structurally vacuous on the
+trivial sector round59's claim concerns (`C₂(G₂;trivial)=0` gives no useful
+bound) — precisely why round59 needed its own dedicated computation. But
+skeptic correctly flagged that Agricola2002's *separate* Theorem 4.2
+(constant-spinor non-vanishing, `H·ψ≠0`) was never checked against this
+specific question — a genuinely open, distinct avenue, not folded into the
+"vacuous" conclusion. Deliberately not pursued this round (would require
+careful `(g₂,su(3))` root-system computation, risking a rushed derivation
+error).
+
+Confirmed no alternative CAS (Sage/Maple/Mathematica) is available in this
+environment — only Python/sympy, the same interpreter round59's own three
+routes already used.
+
+**Honest conclusion:** none of round59's own three named verification
+rungs (different CAS, different primary source, external human review) is
+currently available or applicable within this session. Round59's
+`[VERIFIED-INDEPENDENT-INTERNAL]` status is unchanged — neither
+strengthened nor weakened. Fourth consecutive round (118-121) where a
+first-draft claim needed a skeptic-caught correction, this time on a
+negative/cautionary finding rather than a positive one — the discipline
+holds either way. Does not affect $N_{\mathrm{gen}}=3$,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
