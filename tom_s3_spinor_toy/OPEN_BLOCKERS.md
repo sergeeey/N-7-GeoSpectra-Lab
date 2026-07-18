@@ -332,3 +332,33 @@ OB1 mechanism search) should read rounds 72-78 in full and add proper
 `CLAIM_LEDGER.yaml` entries + a `DERIVATION_GRAPH.yaml` chain for
 "H1a/H1b/H1c t-selection," cross-checked against round80/E14's own summary
 of them (already read, this session) for consistency.
+
+---
+
+## OB10 — geometric spinor bundle's own reality/Majorana condition [new, confirmed]
+
+**What's open:** the finite/NCG algebra's real structure `J_F` is
+established (`J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).
+But whether the GEOMETRIC `S³×S⁶` spinor bundle itself — independent of
+the separately-reconstructed finite algebra `A_F` — satisfies a
+compatible reality/Majorana condition is **not addressed anywhere** in
+`preprint.tex` or `experiments/`. Confirmed after a 12-term search
+(`Killing spinor`, `KO-dimension`, `quaternionic`, `pseudo-real`,
+`nearly-Kähler`, `parallel spinor`, `symplectic Majorana`,
+`spectrum-symmetric`, and others) across both the paper and every
+experiment file — the only hits found are about a DIFFERENT question
+(`SU(2)` gauge-representation pseudo-reality, used for anomaly
+cancellation; Killing-spinor existence/multiplicity arguments), not the
+geometric spinor bundle's own reality-type classification.
+
+**What would resolve it:** determine the KO-dimension of the GEOMETRIC
+factor (`S³` has KO-dim 3, `S⁶` has KO-dim 6; product KO-dim would be
+`3+6=9 ≡ 1 mod 8` — the quaternionic/symplectic-Majorana regime in the
+standard 8-fold KO-periodicity table) and check whether this project's
+own spinor bundle construction is consistent with that regime, or derive
+the reality structure directly from the explicit Clifford/Pauli
+realizations already used throughout rounds 67-117.
+
+**Owner / next step:** surfaced during `SPIN13_TO_SPIN4_DECOMPOSITION.md`
+(gauge/Hilbert/triality closure program, item 2 of that audit). Genuinely
+new — not previously logged anywhere in this project's registries.
