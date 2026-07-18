@@ -155,7 +155,7 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 
 ---
 
-## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-17, round119]
+## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-18, round124]
 
 **What's open, current status (`GATE 1 OF 7 DONE / GATES 2-6 OPEN`, per
 `TRIALITY_DISTINGUISHABILITY_GATE.md`):** G102 found no fiber symmetry inside
@@ -180,11 +180,27 @@ solicited per this project's standing constraint), or an independent
 exists — this project's own G74A Lemma B explicitly requires exact `G₂`
 symmetry and does not degrade gradually).
 
+**Second, independent candidate found (round124, 2026-07-18):**
+`su(3)⊕u(1)⊕u(1)` — `su(3)` combined with its own 2-dim abelian
+centralizer in `so(8)` (already computed by G102) — gives `Hom=0` for
+*all three* off-diagonal channel pairs (direct Schur-lemma non-
+isomorphism, arguably cleaner than `SO(4)×SO(4)`'s explicit chirality-
+matching argument) and fixes zero vectors in `8_v` (also escapes `SO(7)`
+confinement). Verified tool-side, including basis-rotation invariance.
+**Same remaining obstruction, not a further advance:** this candidate is
+also outside `g₂` (which has zero center, hence no room for an abelian
+ideal commuting with its own `su(3)`), so it requires the identical
+`G₂`-breaking and hits the identical G74A Lemma B obstruction. Two
+independent, structurally different candidates now both reach Gate 1 —
+strengthens confidence Gate 1 is robust, does not touch Gates 2-6.
+
 **Owner / next step:** genuinely blocked without new input; flagged as one of
 the two irreducible open premises in `DERIVATION_GRAPH.yaml`'s D2 chain. See
-`TRIALITY_DISTINGUISHABILITY_GATE.md` for the full gate application and
+`TRIALITY_DISTINGUISHABILITY_GATE.md` for the full gate application,
 `experiments/20260717-round119-triality-distinguishability-gate/decision.md`
-for the skeptic-reviewed correction history.
+for the skeptic-reviewed correction history, and
+`experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
+for the second candidate.
 
 ---
 

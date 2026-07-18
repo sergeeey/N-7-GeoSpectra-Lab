@@ -3696,3 +3696,49 @@ headline claim's logical status, one genuine editorial gap closed, one
 ledger-accuracy gap found and fixed, and six consecutive rounds where
 mandatory skeptic review caught something a first draft missed. Does not
 affect `lambda=FREE_COUPLING_PARAMETER` or `safe_for_runtime=False`.
+
+---
+
+## Round124 — SU(3)-coordinate triality distinguishability candidate: a second, cleaner route to Gate 1
+
+**User-requested follow-up** to the gauge/Hilbert/triality closure
+program: a new distinguishing-structure candidate built from `SU(3)`
+representation-theoretic coordinates (per the user's explicit choice
+among several candidate interpretations), not the octonion `H⊕Hℓ` split
+used by round119's `SO(4)×SO(4)` construction.
+
+**Found:** `su(3)⊕u(1)⊕u(1)` — `SU(3)` (the isotropy group of
+`S⁶=G₂/SU(3)`) combined with its own 2-dimensional abelian centralizer in
+`so(8)` (already computed by gate G102, dimension only, never combined
+with `su(3)` before) — gives `Hom=0` for **all three** off-diagonal pairs
+among the triality representations `8_v,8_s,8_c` (a direct Schur-lemma
+proof of pairwise non-isomorphism, cleaner than the `SO(4)×SO(4)` route's
+explicit chirality-matching argument) and fixes **zero** vectors in `8_v`
+(also escapes confinement to `SO(7)`, the rank ceiling that killed every
+`su(3)`/`g₂`/`so(6)`/`so(7)`-subgroup candidate up to now).
+
+**Verification, tool-side and independent of the skeptic pass:** re-ran
+the computation myself (the skeptic agent used for review lacked Bash
+access and could only trace the code analytically — per this project's
+own `audit-verification-gate.md`, that alone wasn't accepted as
+sufficient). Directly confirmed: `su(3)` alone fixes exactly 2 vectors in
+`8_v` (the expected control), and — the one thing the skeptic pass
+flagged as needing empirical rather than analytical confirmation — the
+`Hom=0` result is invariant under rotating the 2-dimensional centralizer
+basis (checked with two independently-chosen rotation angles), confirming
+it depends only on the centralizer's linear span, not on an arbitrary
+choice of orthonormal basis.
+
+**Same remaining obstruction as `SO(4)×SO(4)`, not a further advance
+toward closing L3b:** `g₂` is simple (zero center), so this centralizer
+sits outside `g₂` — realizing it physically would also require breaking
+`G₂`, triggering the identical G74A Lemma B obstruction documented in
+round119's own gate application. Two independent, structurally different
+candidates now both reach the same milestone (`GATE 1 OF 7 DONE`) —
+strengthens confidence that this gate is robust, but Gates 2-6 (physical
+identification, dynamical consistency) remain exactly as open as before.
+
+Updated `TRIALITY_DISTINGUISHABILITY_GATE.md`, `OPEN_BLOCKERS.md` OB4, and
+`CLAIM_LEDGER.yaml`'s `C_G67C3_THIRD_CHANNEL` to cite the second candidate.
+Does not affect $N_{\mathrm{gen}}=3$'s `CONDITIONAL` status,
+`lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.

@@ -1,0 +1,32 @@
+{
+  "round": 124,
+  "n_su3_generators": 8,
+  "centralizer_dim": 2,
+  "centralizer_abelian": true,
+  "commute_residual_su3_vs_centralizer": 1.254829864032196e-15,
+  "hom_su3_alone": {
+    "v-v": 6,
+    "v-s": 6,
+    "v-c": 6,
+    "s-v": 6,
+    "s-s": 6,
+    "s-c": 6,
+    "c-v": 6,
+    "c-s": 6,
+    "c-c": 6
+  },
+  "hom_su3_plus_centralizer": {
+    "v-v": 4,
+    "v-s": 0,
+    "v-c": 0,
+    "s-v": 0,
+    "s-s": 4,
+    "s-c": 0,
+    "c-v": 0,
+    "c-s": 0,
+    "c-c": 4
+  },
+  "su3_alone_matches_g102_baseline_all6": true,
+  "n_fixed_vectors_in_8v_under_combined_algebra": 0,
+  "verdict": "CANDIDATE_FOUND"
+}
