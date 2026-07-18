@@ -182,3 +182,38 @@ instances of this). Two rounds (107, 108) saw the opposite: the claim survived
 found anywhere in the raw experiment logs as provisional by default — the
 `decision.md`'s final verdict section, not the script's own printed headline,
 is the authoritative statement.
+
+---
+
+## SR7 — Second Phase-0 registry omission: round80/E14 was missing entirely
+
+**What changed:** while searching OB1 for a genuinely new candidate
+mechanism (a `Z2` left-right isometry forcing `t=0,1` coexistence), found
+that round80 (E14) — a substantial, already-completed, honest exploration
+of EXACTLY this idea, done earlier in this same long session, before the
+Phase 0 registry was written — was **entirely absent** from
+`CLAIM_LEDGER.yaml`, `PARENT_ACTION_GATE.md`, and every other Phase 0
+file. This is the SECOND such omission this session (see SR6, round94/OB3).
+
+**Root cause (same as SR6):** Phase 0 was written from session memory of
+"what's been tried" without a systematic grep/read pass over every
+existing `experiments/` folder against the specific question each Phase 0
+field addresses. Rounds done earlier in a long session, before the
+registry itself was written, are exactly the ones most likely to be missed
+this way.
+
+**Fix:** added `CLAIM_LEDGER.yaml` `C18` and a `PARENT_ACTION_GATE.md` F4
+entry, both citing round80/E14 directly.
+
+**Generalizable lesson (sharpens SR6's, doesn't just repeat it):** the
+risk isn't random — it specifically targets **substantial results
+completed before the registry-writing pass itself**, which won't appear
+in the registry-writer's own recent-session memory the way freshly-run
+rounds do. **Before starting a NEW attempt at any open item (OB1-OB4),
+grep `experiments/` for related keywords FIRST** (as was done here,
+finding round80 before building a duplicate `Z2`-isometry round) — this
+is now the third time in this session a grep-before-build step caught
+something a memory-only check would have missed (see also OB6 item 8's
+premise check, and OB3's own discovery).
+
+**Source:** `tom_s3_spinor_toy/experiments/20260717-round80-z2-left-right-symmetry-search/decision.md`.

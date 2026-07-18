@@ -78,7 +78,23 @@ rather than leaving it as an arbitrary choice.
 anomaly forcing (rounds 90-112, fully computed within `G_eff`, no forcing
 found in any mixed-`U(1)_Y` channel; cubic non-abelian channels
 `[SU(2)_{L,R}]³` still untested); gate G97 closes the standard product-
-manifold SU(4) realization entirely (rounds 102/108/109).
+manifold SU(4) realization entirely (rounds 102/108/109); flux-quantization
+torsion-selection (round115, circular for unconditional selection, one
+honest near-integer pearl); "spectral flow"/innermost-crossing-pair
+structure (round116, equivalent restatement, no new content).
+**Round80/E14 (found missing from this registry, added retroactively):**
+a genuine, tool-verified geometric `Z2` isometry `iota(g)=g^{-1}` pulls
+back the WHOLE Cartan-Schouten family exactly, `iota*(∇^t)=∇^{1-t}` for
+all `t` — but gauging it as an orbifold identification `S³/⟨iota⟩` forces
+`t=1/2` UNIQUELY (the zero-mode-free Levi-Civita value), killing that
+specific route. Three readings tried for whether this forces `t=0,1`
+together: two point toward under-counting/collapse, the third
+(Left-Right-symmetric model-building analogy) is the only one pointing
+the right direction but is an explicit model-building CHOICE in
+unreconciled tension with this project's own asymmetric chirality
+mechanism (Lemma L5). **This tension (Reading 3 vs Lemma L5) is the one
+genuinely open thread from this line — a candidate starting point for a
+future F4 attempt, not yet resolved.** See `CLAIM_LEDGER.yaml` `C18`.
 
 **Pass criterion:** names a mechanism NOT already in the above list, or
 explicitly names which item above it is extending and states the new

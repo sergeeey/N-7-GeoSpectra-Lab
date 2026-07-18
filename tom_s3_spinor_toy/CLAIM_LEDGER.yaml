@@ -221,6 +221,34 @@ claims:
       original sources.
     notes: "Resolves PARENT_ACTION_GATE.md field F3. Does not itself supply a parent action -- unifies two prior results' vocabulary, prerequisite not solution."
 
+  - id: C18_Z2_LEFT_RIGHT_ISOMETRY_CONFIRMED_ORBIFOLD_ROUTE_KILLED
+    statement: "iota(g):=g^-1 is a genuine, tool-verified isometry of S3=SU(2) that pulls back the WHOLE Cartan-Schouten connection family exactly: iota*(Nabla^t)=Nabla^{1-t} for ALL t, not just t=0,1 -- but gauging iota as an orbifold identification S3/<iota> forces t=1/2 UNIQUELY (the torsion-free, zero-mode-free Levi-Civita value), killing this specific route to a t=0,1 doubling mechanism"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round80-z2-left-right-symmetry-search/decision.md (round80, E14)"
+    depends_on: []
+    caveat: >
+      MISSING FROM PHASE 0 REGISTRY when originally written -- this round
+      predates the Phase 0 pass (done earlier in this same long session,
+      before context compaction) and was never cross-checked against it.
+      Second such omission this session (see C9/OB3's round94 case,
+      SUPERSEDED_RESULTS.md SR6) -- surfaced while searching OB1 for a
+      genuinely new candidate and finding this one already existed.
+      Geometric half (isometry, frame exchange, connection pullback) is
+      PROVED, tool-verified on all 27 basis-triple identities. Physical
+      half (does this force BOTH t=0,1 present) tried 3 readings, NONE
+      succeed: Reading 1 (same-physics-different-labels) argues for
+      UNDER-counting not doubling; Reading 2 (orbifold gauging) collapses
+      to t=1/2 exactly, killing the escape route; Reading 3 (Left-Right-
+      symmetric model-building analogy) is the only one pointing the right
+      direction but is an explicit MODEL-BUILDING CHOICE in unreconciled
+      tension with this project's own established asymmetric chirality
+      mechanism (Lemma L5, preprint.tex:884-912).
+    notes: "Directly relevant to PARENT_ACTION_GATE.md field F4 (t-selection mechanism) -- should be listed among already-tried-and-insufficient candidates there. Reading 3's tension with Lemma L5 is the one genuinely open thread this round did not close."
+
   - id: C11_D4_PRODUCT_ANSATZ_FORK
     statement: "t=0 and t=1 sector coexistence, as a product-ansatz spectral-triple question (does 'two D's' make sense at all)"
     truth_status: OPEN
