@@ -281,3 +281,30 @@ computed three mixed-anomaly conditions — `[SU(3)_c]²U(1)_Y`, `[U(1)_Y]³`,
 `tom_s3_spinor_toy/experiments/20260717-round112-remaining-mixed-y-anomaly-channels/decision.md`
 (correction note, top of file); `CLAIM_LEDGER.yaml` entry `C10_MIXED_Y_ANOMALY_FAIL`
 (already scoped correctly to "three conditions," not "all").
+
+---
+
+## OB9 — E7-E13 chain deserves its own Phase-0-style consolidation pass [flagged, not done]
+
+**What's open:** while fixing round80/E14's registry omission
+(`SUPERSEDED_RESULTS.md` SR7), confirmed that the whole preceding chain —
+round72 (E7, t-selection principle), round73 (E9, explicit parallel
+spinor), round74 (E10, chirality sign link), round75 (E11, Freund-Rubin
+torsion link), round78 (E12, multiplicity gate) — is committed to git
+(`92e5fb2`) but **not individually represented** in `CLAIM_LEDGER.yaml` or
+`DERIVATION_GRAPH.yaml`. Per a global-memory note from earlier in this
+session, this chain found: H1 split (H1a REFUTED / H1b PROVED via
+holonomy / H1c OPEN), explicit parallel spinors at `t=0,1`, and E12's own
+multiplicity gate (`FAIL`, giving 6 not 3 internal modes, no natural
+projection) — directly relevant to OB1/`PARENT_ACTION_GATE.md` F4/F7.
+
+**Why not fixed now:** this is a larger consolidation task (5+ rounds,
+each needing its own accurate re-citation) than the single-round fixes in
+SR6/SR7 — doing it properly means reading each `decision.md` in full, not
+a quick registry patch. Flagging rather than rushing a shallow fix.
+
+**Owner / next step:** a dedicated future pass (not part of the current
+OB1 mechanism search) should read rounds 72-78 in full and add proper
+`CLAIM_LEDGER.yaml` entries + a `DERIVATION_GRAPH.yaml` chain for
+"H1a/H1b/H1c t-selection," cross-checked against round80/E14's own summary
+of them (already read, this session) for consistency.
