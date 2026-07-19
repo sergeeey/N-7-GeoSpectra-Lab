@@ -3742,3 +3742,69 @@ Updated `TRIALITY_DISTINGUISHABILITY_GATE.md`, `OPEN_BLOCKERS.md` OB4, and
 `CLAIM_LEDGER.yaml`'s `C_G67C3_THIRD_CHANNEL` to cite the second candidate.
 Does not affect $N_{\mathrm{gen}}=3$'s `CONDITIONAL` status,
 `lambda=FREE_COUPLING_PARAMETER`, or `safe_for_runtime=False`.
+
+---
+
+## Round125 — SO(4)×SO(4) vs su(3)+centralizer: genuinely different, but share a non-generic 3-dim core
+
+Answers round124's own flagged question: are the two independent Gate-1
+triality-distinguishing candidates (`SO(4)×SO(4)`, round119;
+`su(3)⊕u(1)⊕u(1)`, round124) the same subalgebra of `so(8)` in different
+language, or genuinely different? Computed `dim(A)=12`, `dim(B)=10`,
+`dim(A∩B)=3` via two independent SVD-based routes (rank identity and
+principal angles), tolerance-swept `1e-4` to `1e-12` with identical
+results. **Verdict: `PARTIAL_OVERLAP`** — neither identical nor nested,
+but sharing an exact, non-generic 3-dimensional abelian (`u(1)³`)
+subalgebra (all pairwise commutators zero to machine precision). Skeptic
+review corrected an initial misjudgment of genericity: for a 12-dim and
+10-dim subspace of a 28-dim ambient, the GENERIC intersection is `0` (a
+negative expected overlap floors at zero), so an observed `3` is a real,
+non-generic algebraic coincidence, not "as unremarkable as 0 would have
+been." New pearl logged: report the generic-intersection floor
+alongside any observed subspace-overlap dimension before interpreting it.
+Does not identify the shared `u(1)³` with any known physical charge, does
+not touch Gates 2-6.
+
+## Round126 — U(1)×U(1) charges vs B-L/Y/Q: a self-corrected near-null result
+
+**User-requested follow-up to round124:** check the physical
+identification of the `su(3)`-centralizer's `u(1)×u(1)` charges against
+this project's established `B-L`/`Y`/`Q` formulas. Scanned all
+combinations of the 2 centralizer generators for a charge-ratio match to
+`B-L`'s `3:1` singlet:triplet pattern on `8_v`'s own `su(3)`-content, and
+found a crossing at machine-precision-exact `√3/2` (singlet), `√3/6`
+(triplet) — initially presented as a striking coincidence.
+
+**Skeptic review, decisively corrected, independently re-verified:** the
+clean algebraic values are a **tautological consequence** of the scan's
+own unit-Frobenius-norm parametrization (the two centralizer generators
+are exactly orthogonal, each with norm `√2`) combined with the imposed
+target ratio — `q_t=1/√(r²+3)`, `q_s=r·q_t` is a forced closed-form value
+for **any** target ratio `r`, not a special property of `r=3`. Separately,
+hitting *some* ratio-3 crossing at all is unremarkable: the ratio function
+spans roughly `[0.077, 38.8]` continuously across the scan, so by the
+intermediate value theorem essentially any established charge's ratio
+would register a "match" somewhere in that range. Verified this
+derivation myself directly (Frobenius norms, orthogonality, the forced-
+value formula for several target ratios), not just accepting the
+skeptic's analytical claim.
+
+Before this round, a basis-identification risk was flagged and confirmed
+up front (by direct grep): G15's own established `B-L` formula is built
+on an 8-dim object ("the `S⁶` spinor," constructed via qubit/Pauli-tensor
+operators, dated 2026-06-19, predating the `G67`+ octonion-triality
+formalism) that is never explicitly identified with `8_v`, `8_s`, or `8_c`
+anywhere in this project — so even a genuine ratio match would not, by
+itself, establish literal identity with G15's specific matrix.
+
+**Final verdict: `NO_INDEPENDENT_EVIDENCE`** — the physical-identification
+question remains genuinely open; this scan methodology cannot close it
+even in principle (the sign-structure kill criterion pre-registered in
+`claim.md` is structurally unreachable by a magnitude-only eigenvalue
+computation). **Standing lesson, a sharper instance of round125's own
+pearl:** before interpreting any "found a matching ratio" result, compute
+the achievable ratio RANGE first — a target sitting inside a wide,
+generic range carries little evidential weight regardless of how clean
+the resulting numbers look. Does not affect round124's own `Hom=0`
+finding, `N_gen=3`'s status, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
