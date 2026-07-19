@@ -101,7 +101,7 @@ it is not here.
 
 | Option | What it would require |
 |---|---|
-| Resolve the `8_v` vs G15-"`S⁶` spinor" basis-identification gap directly | Construct an explicit isomorphism (or prove none exists) between round124's octonion-table basis and G14/G15's qubit/Pauli-tensor basis — the prerequisite for ANY literal charge comparison, not attempted in either round |
+| Resolve the `8_v` vs G15-"`S⁶` spinor" basis-identification gap directly | **[ATTEMPTED, round127, 2026-07-18]** Established, with high numerical confidence, that `ℂ⊗8_v` and `Σ` are the same abstract `su(3)`-module (`1⊕1⊕3⊕3̄`, pinned down by the `Hom(V,V)=6` End-dimension identity on both sides). Did NOT construct the explicit intertwiner `S` — the two constructions' generator bases are not aligned to the same abstract Lie algebra elements, and finding that alignment (Cartan-Weyl root matching) remains open. See `experiments/20260718-round127-8v-vs-s6-spinor-isomorphism/decision.md`. |
 | Test against a NULL/random-direction baseline instead of a single target ratio | Scan many RANDOMLY chosen established-charge ratios (not just `B-L`'s `3`) against the SAME centralizer and report what fraction "match" by the same criterion — would make the IVT/genericity problem visible as a control, rather than being caught only by skeptic review after the fact |
 | Check sign structure properly | Would require an eigenvector-based (not `-M@M`-based) charge extraction preserving the `+iλ`/`−iλ` labeling, plus an EXTERNAL physical labeling of which eigenvector is "quark" vs "antiquark" (not derivable from round124's construction alone) |
 
