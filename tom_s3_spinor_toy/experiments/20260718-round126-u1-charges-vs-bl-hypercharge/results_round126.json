@@ -1,0 +1,47 @@
+{
+  "round": 126,
+  "n_singlet": 2,
+  "n_triplet": 6,
+  "su3_on_singlet_residual": 1.3868048833748883e-16,
+  "gen1_eigvals_singlet": [
+    0.04458567993412938
+  ],
+  "gen1_eigvals_triplet": [
+    0.5767761313672204
+  ],
+  "gen2_eigvals_singlet": [
+    0.9990055641210474
+  ],
+  "gen2_eigvals_triplet": [
+    0.025741554311972087
+  ],
+  "triplet_block_degenerate_for_gen1": true,
+  "n_theta_matches_ratio3": 2,
+  "matches": [
+    {
+      "theta": 1.0917978887443327,
+      "a": 0.460890563714603,
+      "b": 0.8874569782692767,
+      "singlet_charge": [
+        0.8660253400506192
+      ],
+      "triplet_charges": [
+        0.2886751983286234
+      ],
+      "ratio": 2.9999991168785805
+    },
+    {
+      "theta": 2.138995694842651,
+      "a": -0.5381152209390258,
+      "b": 0.8428712885095467,
+      "singlet_charge": [
+        0.8660253400673845
+      ],
+      "triplet_charges": [
+        0.2886751983118579
+      ],
+      "ratio": 2.9999991171108893
+    }
+  ],
+  "verdict": "RATIO_3_FOUND"
+}

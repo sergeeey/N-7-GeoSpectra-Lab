@@ -105,9 +105,9 @@ Confirmed by code trace and independent arithmetic:
 
 | Option | What it would require |
 |---|---|
-| Physical identification of the `u(1)×u(1)` charges | Check against already-established charge assignments (`Q`, `Y`, `B-L`) for a match — not attempted, a concrete, cheap next check given this project already has explicit charge formulas |
+| Physical identification of the `u(1)×u(1)` charges | **[ATTEMPTED, round126, 2026-07-18]** Scanned all combinations of the 2 centralizer generators for a charge-ratio match to `B-L`'s `3:1` singlet:triplet pattern — found a crossing, but skeptic review (independently re-verified) showed it is a **tautological consequence** of the scan's own Frobenius-norm normalization convention (any target ratio would produce an equally "clean" closed-form value; hitting ratio 3 at all is guaranteed by IVT over the achieved range `[0.077,38.8]`), not independent evidence. Verdict: `NO_INDEPENDENT_EVIDENCE` — genuinely still open, needs a fundamentally different method (see `experiments/20260718-round126-u1-charges-vs-bl-hypercharge/decision.md` Relaxation Map). |
 | Resolve the shared G74A Lemma B obstruction | Same as round119 — no `K`-equivariant analogue of Lemma B exists with current tools, since this candidate (like `SO(4)×SO(4)`) acts only on the fiber, not the base |
-| Cross-check against `SO(4)×SO(4)`: are these two candidates the SAME underlying structure in different language, or genuinely different? | Not checked this round — a natural next question given both are rank-4, both escape `SO(7)`/fix-zero-vectors, both emerge from breaking `G₂` |
+| Cross-check against `SO(4)×SO(4)`: are these two candidates the SAME underlying structure in different language, or genuinely different? | **[ATTEMPTED, round125, 2026-07-18 — see `experiments/20260718-round125-so4xso4-vs-su3-centralizer-comparison/decision.md`]** `PARTIAL_OVERLAP` — genuinely different (12-dim vs 10-dim) but share an exact, non-generic 3-dim abelian `u(1)³` core. |
 
 ## What survives, honestly stated
 
