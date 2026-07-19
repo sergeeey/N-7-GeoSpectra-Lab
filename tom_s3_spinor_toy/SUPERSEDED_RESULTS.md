@@ -217,3 +217,59 @@ something a memory-only check would have missed (see also OB6 item 8's
 premise check, and OB3's own discovery).
 
 **Source:** `tom_s3_spinor_toy/experiments/20260717-round80-z2-left-right-symmetry-search/decision.md`.
+
+---
+
+## SR8 — Round127's explicit-`S` search: provenance clarified, not
+invalidated (2026-07-19, P1 hardening pass)
+
+**Conclusion (survives, unchanged):** round127's `STRUCTURE_MISMATCH`
+verdict for the naive (unaligned-generator) pairing — `Hom_ℂ(ℂ⊗8_v,Σ)=4`,
+no invertible intertwiner found — is correct and **not** affected by the
+reshape-order bug found in round128 (below). Round127's SEPARATE abstract-
+isomorphism argument (`Hom(V,V)=6` on both `8_v` and `Σ` individually,
+forcing the `1⊕1⊕3⊕3̄` decomposition via the End-dimension identity) is
+also unaffected — it is a pure nullspace-rank computation, which is
+basis/vec-convention-independent by construction.
+
+**What was clarified (not "fixed", because nothing was wrong in round127's
+own reported result):** round128 found that its OWN Sylvester-equation
+code (`hom_space_nullspace`, copied unmodified from round127's
+`e44_8v_vs_s6_spinor_isomorphism.py`) reconstructs candidate intertwiner
+matrices via `S_flat.reshape(8, 8)` — row-major (C order) — when the
+underlying Kronecker-product identity requires column-major (Fortran)
+vectorization. This bug matters ONLY when an invertible element must be
+*reconstructed and its determinant/residual checked* from a Hom space of
+dimension ≥6ish (large enough that the ambiguity can flip a genuine
+solution into a spurious non-solution or vice versa). **Round127's own
+`results_round127.json` shows `hom_dim=4`, `isomorphism_found=false`,
+`iso_residual=null`** — no candidate `S` was ever found or reconstructed
+there, so the reshape convention was never load-bearing for round127's
+actual reported conclusion. `best_det_found=4.96e-91` (genuinely no
+invertible element in a 4-dimensional space, matching round128's own
+pre-fix diagnostic on an equally-too-small Hom space) is consistent
+regardless of reshape convention.
+
+**Provenance rule for citation (this is the actual, actionable fix):**
+round127 must never be cited as an **independent corroboration** of
+round128's explicit intertwiner `S` — round127 never found or claimed
+one. Round127's sole surviving, independent contribution to the `ℂ⊗8_v≅Σ`
+claim is the abstract End-dimension argument; the explicit, machine-
+precision-verified `S` is round128's alone. Any manuscript or summary
+citing "round127 and round128 independently confirm the isomorphism" is
+imprecise — write instead: "round127 establishes the abstract isomorphism
+type (End-dimension argument); round128 constructs and verifies the
+explicit intertwiner (a distinct, later step, not a second confirmation
+of the same fact)."
+
+**Where the imprecise version might still appear:** `paper/P1_FROZEN_
+VERDICTS_TABLE.md` row 4 and `paper/P1_NOGO_MANUSCRIPT_OUTLINE.md`
+Section 5 were checked during this same hardening pass and already state
+the roles correctly (round127 = abstract argument only, round128 = the
+explicit `S`) — flagged here so future citations elsewhere in the project
+inherit the same discipline, not because those two files were found to
+have the error.
+
+**Source:** `tom_s3_spinor_toy/experiments/20260718-round127-8v-vs-s6-spinor-isomorphism/results_round127.json`;
+`tom_s3_spinor_toy/experiments/20260718-round128-cartan-weyl-alignment/decision.md`
+("Bug history", bug 2).
