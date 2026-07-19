@@ -155,7 +155,38 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 
 ---
 
-## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-18, round125]
+## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-19, round128 + boyko-agent disposition review]
+
+**Disposition, made explicit (2026-07-19):** this OB conflates two
+sub-branches with different correct status — splitting them out, per
+`boyko-agent`'s go/no-go review of the whole line:
+
+- **Gate 1 (algebraic distinguishability of `8_v/8_s/8_c`) — DONE.** Two
+  structurally independent routes reach it (`SO(4)×SO(4)` block-chirality,
+  round119; `su(3)⊕u(1)⊕u(1)`, round124, `Hom=0` for all three off-diagonal
+  pairs). Round127→128 went further and constructed + verified (machine
+  precision, `iso_residual~1e-15`, exhaustive over all 12 members of
+  `Aut(su(3))`) an explicit isomorphism `ℂ⊗8_v ≅ Σ`. This is a completed
+  **positive** result, not open work — do not re-list it under "open."
+- **Gates 2-6 (physical realization) — formally `PARKED`, not open-in-
+  progress and NOT `REJECT`/falsified.** Per this project's own Substrate
+  Gate (`falsification-ladder.md`: "test could not run ≠ claim failed"),
+  a block on unpublished external input (Tom Lawrence's Part 5, which the
+  project's own hard constraint forbids soliciting) must never be recorded
+  as evidence against the claim. Revival condition: Part 5's actual
+  content, or an independent `G₂`-breaking-compatible spectral-gap argument
+  (none currently exists). Directly precedented by OB1/KT-8's own park
+  decision ("not falsified, just not found — reopen only on new external
+  input").
+- **B-L physical-identification sub-thread — near-closed.** round126
+  (`NO_INDEPENDENT_EVIDENCE`, tautology) + round128 (`NO_LITERAL_MATCH` for
+  the first of 12 `Aut(su(3))` candidates) leave one live kill criterion
+  (`S_NOT_UNIQUE_UP_TO_SCALE`, only 1/12 checked) — see round128's own
+  decision.md Relaxation Map for the cheap follow-up.
+
+Original 2026-07-18 entry preserved below for the detailed derivation
+history.
+
 
 **What's open, current status (`GATE 1 OF 7 DONE / GATES 2-6 OPEN`, per
 `TRIALITY_DISTINGUISHABILITY_GATE.md`):** G102 found no fiber symmetry inside
@@ -434,9 +465,25 @@ candidate, not a dead end.
 
 **What would resolve it:** check the Dirac operator's block structure
 across the 3 triality channels (`8_v`,`8_s`,`8_c`) for cross-channel
-mixing terms — likely extractable from round107/round110's own existing
-matrix computations, not necessarily requiring new construction.
+mixing terms.
 
-**Owner / next step:** cheap, well-scoped follow-up (`round118`'s own
-Relaxation Map). Full detail:
+**Substrate check (2026-07-19, `boyko-agent` disposition review) — the
+"likely extractable from round107/round110" claim below does NOT hold,
+verified by direct read:** round110's Dirac object is a 4×4 constant-
+spinor toy (`D_block=diag(0,0,3c/2,3c/2)`) for the `t=0/t=1` torsion
+block — it contains no `8_v/8_s/8_c` channel structure at all. round107
+computes the 15 `so(6)=su(4)` generators Leibniz-lifted onto the 64-dim
+`Σ⊗Σ` fibre (the SU(4)-orbit of the twisted kernel) — a different
+construction from the Cl(0,8)-built `v/s/c` reps where the triality
+channels actually live (G102/round124/127/128). **Neither file contains a
+channel-decomposed physical Dirac operator with off-diagonal
+`8_v↔8_s↔8_c` blocks.** This OB's own "cheap, well-scoped follow-up"
+label below is therefore substrate-unverified and should not be treated
+as ready — resolving it requires *assembling* a channel-decomposed
+physical Dirac operator (a new, not-yet-costed construction), which is
+also entangled with the still-open OB1/KT-8 full-operator question.
+
+**Owner / next step:** NOT cheap as originally labeled (see substrate
+check above) — requires scoping as its own SMALL–LARGE round if pursued,
+not a quick extraction. Full detail (superseded "cheap" framing):
 `experiments/20260717-round118-matter-generation-factorization-test/decision.md`.

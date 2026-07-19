@@ -3914,6 +3914,23 @@ review, then a second, self-caught bug on top of that:**
 physical-identification question is now answered `NO`, cleanly and
 honestly, rather than left open.
 
+**Follow-up same day (2026-07-19), prompted by an independent
+`boyko-agent` go/no-go review of the whole triality-distinguishability
+line:** the agent flagged that round128 had only checked 1 of the 12
+valid `S` candidates against `BmL`, leaving its own `S_NOT_UNIQUE_UP_TO_
+SCALE` kill criterion open — and separately caught that `OB11`'s registry
+entry claimed a "cheap" follow-up test was "likely extractable from
+round107/round110's existing matrices," which direct verification showed
+false (neither file contains a channel-decomposed physical Dirac
+operator). Extended the existing candidate loop to record `bml_fit_
+relative` for all 12 — **zero clean matches across all 12** (residuals
+`0.53` to `1.00`), closing the kill criterion definitively: round124's
+`su(3)`-centralizer is not `B-L` under any valid intertwiner, not just the
+first one tried. `OPEN_BLOCKERS.md`'s OB4 and OB11 entries updated to
+reflect the corrected dispositions (Gate 1 done / Gates 2-6 formally
+parked, not open-in-progress; OB11's "cheap extraction" claim corrected
+to flag it needs its own scoped round).
+
 **Standing lesson (new, general):** a clean, exhaustive negative result
 (12/12 candidates, every intermediate sub-check passing to machine
 precision) is not immune to a bug — it can mean every candidate hit the

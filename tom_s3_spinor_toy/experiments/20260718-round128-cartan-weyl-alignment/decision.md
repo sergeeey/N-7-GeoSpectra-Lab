@@ -13,6 +13,16 @@ G15's `BmL` gives **no literal match** (relative residual `0.53`, not small)
 — the isomorphism is real, but this specific centralizer direction is not
 `B-L`.
 
+**Update (2026-07-19, same day): the `S_NOT_UNIQUE_UP_TO_SCALE` kill
+criterion, left open in the first pass (only 1 of 12 valid `S` checked),
+is now closed.** All 12 members of `Aut(su(3))` were fit against `BmL`:
+relative residuals `{0.529, 0.891, 0.959, 0.826, 0.646, 0.909, 0.729,
+0.691, 0.751, 0.998, 0.762, 0.679}` — **zero clean matches (threshold
+`1e-4`) across all 12.** `bml_verdict: NO_LITERAL_MATCH_ANY_OF_12`. This
+is a genuinely closed negative, not a partially-checked one: round124's
+`su(3)`-centralizer is not `B-L` under *any* valid choice of the
+intertwiner, not just the first one tried.
+
 **This verdict was reached only after two rounds of self-caught and
 skeptic-caught computational bugs, both now fixed and independently
 re-verified — see "Bug history" below. The first pass through this round's
@@ -125,19 +135,19 @@ resolved.**
   centralizer transported through it does NOT match any linear combination
   of `BmL`... report honestly; the abstract isomorphism exists but the
   specific centralizer direction isn't `B-L`."*
-- **The `S_NOT_UNIQUE_UP_TO_SCALE` kill criterion is also live here:** all
-  12 members of `Aut(su(3))` give a VALID (different) `S`, each with its
-  own `bml_fit_relative` — this round reports only the first
-  (lowest-hexagon-residual) candidate's fit; a full scan of the `B-L` fit
-  quality across all 12 was not performed (see Relaxation Map).
+- **The `S_NOT_UNIQUE_UP_TO_SCALE` kill criterion — `[CLOSED, same day,
+  2026-07-19]`:** all 12 members of `Aut(su(3))` were checked (not just the
+  first). All 12 give `bml_fit_relative` in `[0.53, 1.00]` — zero clean
+  matches. round126's original physical-identification question is
+  answered `NO`, definitively (not just for one candidate `S`).
 
 ## Relaxation Map
 
-| Option | What it would require |
-|---|---|
-| Check `bml_fit_relative` across all 12 valid `S` candidates, not just the first | Extend the existing candidate loop in `e45_cartan_weyl_alignment.py` to record `bml_fit_relative` for every candidate, not just `best_result` |
-| Independently re-verify round127's own `results_round127.json` `isomorphism_found`/`best_det_found` fields with the `order="F"` fix applied | Patch `e44_8v_vs_s6_spinor_isomorphism.py` line 100, re-run, confirm `Hom_dim=4` result and `isomorphism_found` conclusion are unchanged (expected, per the argument above, but not yet checked) |
-| If no `S` (across all 12) gives a clean `B-L` match, the physical-identification question (round126's original goal) is answered `NO` — write this up as its own honest closure rather than leaving it open | Requires completing the "check across all 12" item first |
+| Option | What it would require | Status |
+|---|---|---|
+| Check `bml_fit_relative` across all 12 valid `S` candidates, not just the first | Extend the existing candidate loop in `e45_cartan_weyl_alignment.py` to record `bml_fit_relative` for every candidate, not just `best_result` | **[DONE, 2026-07-19]** — zero clean matches across all 12; see update at top of this file |
+| Independently re-verify round127's own `results_round127.json` `isomorphism_found`/`best_det_found` fields with the `order="F"` fix applied | Patch `e44_8v_vs_s6_spinor_isomorphism.py` line 100, re-run, confirm `Hom_dim=4` result and `isomorphism_found` conclusion are unchanged (expected, per the argument above, but not yet checked) | Open |
+| If no `S` (across all 12) gives a clean `B-L` match, the physical-identification question (round126's original goal) is answered `NO` — write this up as its own honest closure rather than leaving it open | Requires completing the "check across all 12" item first | **[DONE, 2026-07-19]** — see update at top of this file |
 
 ## What this does NOT mean
 
@@ -182,4 +192,6 @@ Expect: `Found 12 distinct exact-hexagon-match candidates`, `Candidates
 achieving Hom_dim>=6: 12 / 12`, `iso_residual` in the `~1e-15` range for
 every candidate (shown via `[diag]` lines), `Hom_dim(Phi-aligned, best
 candidate) = 6`, `Isomorphism residual: ~1e-15`, `B-L fit relative
-residual: ~0.53`, `VERDICT: ALIGNMENT_SUCCESSFUL`.
+residual: ~0.53`, `B-L fit across ALL 12 valid-S candidates:` a list of 12
+values all in `[0.53, 1.00]`, `Clean matches (relative residual < 0.0001):
+0 / 12`, `VERDICT: ALIGNMENT_SUCCESSFUL`.

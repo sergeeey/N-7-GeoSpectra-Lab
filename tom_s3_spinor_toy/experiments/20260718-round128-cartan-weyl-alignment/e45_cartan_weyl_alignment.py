@@ -439,6 +439,14 @@ def main() -> None:
     n_candidates_tried = len(all_candidates)
     n_candidates_with_hom6 = sum(1 for r in all_results if r["hom_dim"] >= 6)
 
+    # Step 6b: B-L fit across ALL 12 candidates, not just the best-hexagon one
+    # -- closes round128's own pre-registered S_NOT_UNIQUE_UP_TO_SCALE kill
+    # criterion (only 1/12 was checked in the original run).
+    all_bml_fits = [r["bml_fit_relative"] for r in all_results if r["found_S"]]
+    bml_clean_threshold = 1e-4
+    n_bml_clean_matches = sum(1 for x in all_bml_fits if x is not None and x < bml_clean_threshold)
+    best_bml_fit = min((x for x in all_bml_fits if x is not None), default=None)
+
     if max_hexagon_resid > 1e-6:
         verdict = "ALIGNMENT_FAILED"
     elif hom_dim < 6:
@@ -465,6 +473,12 @@ def main() -> None:
         "iso_residual": iso_residual,
         "bml_fit_relative": bml_fit_relative,
         "bml_fit_coeffs": [str(x) for x in bml_fit_coeffs] if bml_fit_coeffs is not None else None,
+        "all_12_bml_fit_relative": all_bml_fits,
+        "n_bml_clean_matches_of_12": n_bml_clean_matches,
+        "best_bml_fit_relative_of_12": best_bml_fit,
+        "bml_verdict": "LITERAL_MATCH_FOUND"
+        if n_bml_clean_matches > 0
+        else "NO_LITERAL_MATCH_ANY_OF_12",
         "verdict": verdict,
     }
 
@@ -484,6 +498,14 @@ def main() -> None:
         print(f"Isomorphism residual: {iso_residual:.3e}")
         print(f"B-L fit relative residual: {bml_fit_relative:.6e}")
         print(f"B-L fit coeffs: {bml_fit_coeffs}")
+    print()
+    print(
+        f"B-L fit across ALL {len(all_bml_fits)} valid-S candidates: {[f'{x:.4f}' for x in all_bml_fits]}"
+    )
+    print(
+        f"Clean matches (relative residual < {bml_clean_threshold}): {n_bml_clean_matches} / {len(all_bml_fits)}"
+    )
+    print(f"Best B-L fit found across all candidates: {best_bml_fit:.6e}")
     print()
     print(f"VERDICT: {verdict}")
 
