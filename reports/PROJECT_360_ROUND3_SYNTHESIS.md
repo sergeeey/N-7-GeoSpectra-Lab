@@ -3867,3 +3867,62 @@ differ. Does not affect round124's `Hom=0` finding, round125's
 `PARTIAL_OVERLAP`, round126's `NO_INDEPENDENT_EVIDENCE`, `N_gen=3`'s
 `CONDITIONAL` status, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+## Round128 — Explicit Cartan-Weyl alignment constructed: abstract isomorphism confirmed with an explicit intertwiner, B-L comparison closes NO_LITERAL_MATCH
+
+**User-requested:** complete round127's own flagged remaining task — find
+the explicit Cartan-Weyl alignment `Φ` between `su3_v` and `su3_sigma`.
+
+**Method (fully executed):** independently found the 2-dim Cartan
+subalgebra on each side, extracted both root systems (`su3_v`: regular
+unit hexagon; `su3_sigma`: irregular hexagon, `1,1,1,1,√2,√2`, from
+G10-B's non-orthonormal Cartan choice), matched the two root systems
+exactly (residual `3.3e-16`) via the algebraic sum-relation each side's
+root triple satisfies, and — going further than the pre-registered method
+required — **exhaustively enumerated all 12 members of `Aut(su(3)) =
+Weyl(A2)⋊Z2`** rather than stopping at the first match.
+
+**A first full pass gave a clean, exhaustive, but entirely WRONG negative
+result (`Hom_dim=4` for all 12 candidates) — caught by mandatory skeptic
+review, then a second, self-caught bug on top of that:**
+1. Skeptic review (context-asymmetric, code + results only) found a
+   one-symbol bug: the CSA-restricted part of `Φ` used the **inverse** of
+   the root-coordinate map `M` instead of `M` itself — re-derived
+   independently from the eigenvalue-preservation condition before
+   accepting the fix, confirming the skeptic's diagnosis exactly.
+2. Applying that fix flipped `Hom_dim` to 6 for all 12 candidates as
+   predicted, but a NEW anomaly appeared: an "invertible" `S` with a large
+   raw residual (`~0.2`–`0.9`) despite coming from a numerically clean
+   6-dimensional nullspace (verified via a sharp singular-value gap,
+   `1e-15` vs `1.15`, ruling out a threshold artifact). Traced to a
+   **`vec()` convention mismatch**: the Sylvester-equation nullspace uses
+   the standard Kronecker identity, which requires column-major (Fortran)
+   vectorization, but the code reconstructed matrices via numpy's default
+   row-major `.reshape(8,8)`. Verified directly via an isolated 3×3 test
+   case before fixing (`order='F'` residual `~1.7e-15`; `order='C'`
+   residual `~8.4`). **The same bug is also present in round127's own
+   `e44` script**, flagged there but not independently re-verified (very
+   likely inconsequential for round127's own conclusion, since its
+   `Hom_dim=4` result — a rank computation, convention-independent — makes
+   a random invertible element unlikely regardless of reshape order).
+
+**Final verdict, after both fixes, independently re-verified:**
+`ALIGNMENT_SUCCESSFUL` — an invertible intertwiner `S` verified to
+`iso_residual~1e-15` across all 12 candidates. Transporting round124's
+`su(3)`-centralizer through `S` and comparing to `G15.BmL` gives
+`NO_LITERAL_MATCH` (relative residual `0.53`) — round126's original
+physical-identification question is now answered `NO`, cleanly and
+honestly, rather than left open.
+
+**Standing lesson (new, general):** a clean, exhaustive negative result
+(12/12 candidates, every intermediate sub-check passing to machine
+precision) is not immune to a bug — it can mean every candidate hit the
+SAME bug, not that the claim is false. The tell was that a "verified"
+intermediate quantity (a nullspace vector) failed a cheaper, more direct
+alternative check (the raw pre-inverse residual) — when that happens,
+trust the direct check over the accumulated pipeline. Reused code
+(`hom_space_nullspace`, copied from round127) inherits round127's own
+untested assumptions — code reuse across one's own rounds needs the same
+skepticism as code reuse across agents. Does not affect `N_gen=3`'s
+`CONDITIONAL` status, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
