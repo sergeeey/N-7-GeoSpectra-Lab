@@ -1,0 +1,37 @@
+{
+  "round": 128,
+  "v_sum_triple": [
+    0,
+    4,
+    1
+  ],
+  "s_sum_triple": [
+    0,
+    3,
+    5
+  ],
+  "M_matrix": [
+    [
+      -0.020876279902853092,
+      -0.8762748079801402
+    ],
+    [
+      0.9997820667212529,
+      0.4818116446282412
+    ]
+  ],
+  "hexagon_match_residual": 3.3306690738754696e-16,
+  "n_candidates_tried": 12,
+  "n_candidates_with_hom6": 12,
+  "mu_fit_residual_of_best_candidate": 1.1102230246251565e-16,
+  "hom_dim": 6,
+  "best_det_found": 0.03297106463157366,
+  "isomorphism_found": true,
+  "iso_residual": 1.0960337365100126e-15,
+  "bml_fit_relative": 0.5287608655276268,
+  "bml_fit_coeffs": [
+    "(-0.0029425582375302403-0.6117378230747794j)",
+    "(0.06593220191742874+0.7576248673403833j)"
+  ],
+  "verdict": "ALIGNMENT_SUCCESSFUL"
+}
