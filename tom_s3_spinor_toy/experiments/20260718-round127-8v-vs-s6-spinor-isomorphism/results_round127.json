@@ -1,0 +1,12 @@
+{
+  "round": 127,
+  "hom_dim": 4,
+  "best_det_found": 4.962716369777067e-91,
+  "isomorphism_found": false,
+  "iso_residual": null,
+  "max_commute_residual_of_transported_centralizer": null,
+  "bml_fit_coeffs_real": null,
+  "bml_fit_coeffs_imag": null,
+  "bml_fit_residual_relative": null,
+  "verdict": "STRUCTURE_MISMATCH"
+}

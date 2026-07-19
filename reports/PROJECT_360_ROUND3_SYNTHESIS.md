@@ -3808,3 +3808,62 @@ generic range carries little evidential weight regardless of how clean
 the resulting numbers look. Does not affect round124's own `Hom=0`
 finding, `N_gen=3`'s status, `lambda=FREE_COUPLING_PARAMETER`, or
 `safe_for_runtime=False`.
+
+---
+
+## Round127 — Resolving the 8_v vs S⁶-spinor basis-identification gap: abstract isomorphism established, explicit construction still open
+
+**User-requested:** resolve the basis-identification gap flagged since
+round126 — is `8_v` (round124's octonion vector rep of `SO(8)`) the same
+object as G14/G15's "`S⁶` spinor" `Σ` (used to define this project's
+established `B-L`/`Y` formulas)?
+
+**Precisely characterized first:** `8_v` is a genuinely **real** 8-dim
+space; `Σ=Λ•(ℂ³)` (the `Spin(6)` Dirac spinor, built by Clifford-lifting
+`su(3)`'s action on `S⁶`'s 6-dim tangent space) is a genuinely **complex**
+8-dim space — categorically different objects, not just different bases
+of the same space. The correct comparison is between `ℂ⊗8_v`
+(complexification) and `Σ`, both complex `su(3)`-modules.
+
+**First naive attempt failed (`Hom=4`, not the predicted `6`) — traced
+through three layers of self-correction, each caught before being
+accepted:**
+1. Sanity-checked the Hom-space tool on known self-Hom cases first
+   (`Hom(ℂ⊗8_v,ℂ⊗8_v)=6`, `Hom(Σ,Σ)=6`, both correct) — ruled out a tool
+   bug.
+2. A first Casimir-spectrum check appeared to show a genuine structural
+   mismatch (`{0,0,4/3×6}` vs `{0,0,5×4,6×2}`) — traced this to an
+   invalid formula: G10-B's `su3_generators()` uses plain sympy
+   `.nullspace()`, which does not orthonormalize (confirmed: its Gram
+   matrix has an off-diagonal coupling), so the naive `ΣXᵢ†Xᵢ` Casimir
+   was invalid for that side. Fixed using the proper inverse-Gram-matrix
+   metric — spectra then matched **exactly**.
+3. Skeptic review caught that Casimir-spectrum matching alone cannot
+   distinguish `1⊕1⊕3⊕3̄` from `1⊕1⊕3⊕3` or `1⊕1⊕3̄⊕3̄` (`3` and `3̄`
+   always share the same Casimir). **The actually rigorous argument,
+   verified this round:** the End-dimension identity
+   `Hom(V,V)=4+a²+b²` with `a+b=2` — both sides having `Hom=6` forces the
+   unique solution `a=b=1`, pinning the decomposition to `1⊕1⊕3⊕3̄`
+   specifically. Also verified `[C₂,Xᵢ]=0` to machine precision (confirms
+   the Casimir formula is a genuine invariant, not a coincidence).
+
+**Final verdict:** the abstract isomorphism between `ℂ⊗8_v` and `Σ` is
+established with high confidence (same decomposition, rigorously pinned
+down, not just Casimir-compatible with it) — resolving the CONCEPTUAL
+part of the gap. The EXPLICIT intertwiner was not constructed: the
+persisting `Hom=4` (rather than 6) in the naive computation is explained
+by the two constructions' generator bases never having been aligned to
+the same abstract Lie algebra elements — a genuine, well-scoped remaining
+task (Cartan-Weyl root matching), correctly flagged by skeptic review as
+a live check that could still falsify the abstract-isomorphism claim if
+the alignment turns out to be impossible, not merely a formality.
+
+**Standing lesson:** two independently-built representations sharing a
+generator count does not mean the generators are expressed in a common
+basis — pairing them by list index is a silent, generally false
+assumption. Caught by testing a basis-independent invariant (the properly
+normalized, commutator-verified Casimir) before concluding the objects
+differ. Does not affect round124's `Hom=0` finding, round125's
+`PARTIAL_OVERLAP`, round126's `NO_INDEPENDENT_EVIDENCE`, `N_gen=3`'s
+`CONDITIONAL` status, `lambda=FREE_COUPLING_PARAMETER`, or
+`safe_for_runtime=False`.
