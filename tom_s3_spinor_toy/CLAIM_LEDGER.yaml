@@ -419,7 +419,106 @@ claims:
       the Recomposition Gate exists to catch. Caught by mandatory skeptic
       review of round122 itself, fixed here and in D2's premises list.
 
+  - id: C22_H1A_KILLING_SPINOR_REFUTED
+    statement: "The ordinary Riemannian Killing-spinor equation (nabla^LC psi = kappa X.psi) does NOT select t=0/1 -- round S3 already has Killing spinors w.r.t. the Levi-Civita connection (t=1/2) regardless of anything about the nabla^t family"
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round72-e7-t-selection-principle/decision.md:18-25"
+    depends_on: []
+    notes: >
+      [OB9 consolidation, 2026-07-19] H1a of the frozen H1/H2/H3/H4
+      hypothesis set from the E2/E7 torsion-escape-route program. This
+      refutation was itself a same-day recomposition correction, splitting
+      the originally-conflated "H1 (Killing spinor)" into H1a/H1b/H1c.
+
+  - id: C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED
+    statement: "R^t=0 (Cartan-Schouten flatness) at exactly t in {0,1}, on simply-connected S3, forces a globally nabla^t-parallel spinor which is automatically a zero mode of D^t -- PROVED via a general holonomy theorem, and independently CONFIRMED by explicit construction: at t=0 unconditionally, for any sign of the structure constant; at t=1 ONLY under the concrete Pauli-realization sign c0=-2, in the right-invariant frame"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round72-e7-t-selection-principle/decision.md:27-56; tom_s3_spinor_toy/experiments/20260717-round73-e9-explicit-parallel-spinor/decision.md:44-89; tom_s3_spinor_toy/experiments/20260717-round76-e9followup-right-invariant-frame/decision.md:129-168"
+    depends_on: []
+    notes: >
+      [OB9 consolidation, 2026-07-19] Mathematical core of the torsion-
+      escape-route program -- why t=0,1 give zero modes at all. The n=0
+      zero-mode crossings independently found by an earlier round (E2)
+      exactly equal the flat-connection set {0,1}, verified as a genuine
+      cross-check (round72/E7), not a re-derivation. Carries the sign
+      caveat in C24 for the t=1 half of this claim.
+
+  - id: C24_SIGN_CONVENTION_GAP
+    statement: "This project's own physics-calibrated structure constant (c=+2, fixed via h_H=3) has the OPPOSITE sign from the literal geometric bracket constant of the concrete Pauli/quaternion realization used to explicitly construct spinors (c0=-2). The explicit t=1 parallel spinor (C23) exists ONLY under c0=-2 and DEMONSTRABLY FAILS under this project's own calibrated c=+2 -- no alternative t=1 candidate has been found under c=+2 anywhere in this project"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round76-e9followup-right-invariant-frame/decision.md:146-168"
+    depends_on: [C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED]
+    notes: >
+      [OB9 consolidation, 2026-07-19] Genuinely unresolved open item, not
+      confirmed concretely before round76 built an actual manifold
+      realization (E9's own claim.md had already called the sign a
+      "convention artifact, not physical" but without a concrete check).
+
+  - id: C25_H1C_PHYSICAL_SELECTION_OPEN
+    statement: "Which of t=0 or t=1 (not both, not neither) is physically realized remains completely OPEN. A later round (round80/E14) found a genuine isometry iota(g)=g^-1 on S3 that pulls back the WHOLE Cartan-Schouten connection family nabla^t to nabla^(1-t) EXACTLY (not just at t=0,1) -- a real strengthening of E7's algebraic t<->1-t symmetry to an actual geometric diffeomorphism. This does NOT resolve H1c: on the two most concrete readings tried, the symmetry points toward UNDER-counting (t=0 and t=1 are the same physics in different coordinates) or collapses the connection back to Levi-Civita (t=1/2, the value the whole program exists to escape) if gauged as an orbifold identification"
+    truth_status: OPEN
+    test_outcome: NOT_RUN
+    execution_status: READY
+    evidence_status: PARTIAL
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round72-e7-t-selection-principle/decision.md:58-67; tom_s3_spinor_toy/experiments/20260717-round80-z2-left-right-symmetry-search/decision.md:6-44"
+    depends_on: [C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED]
+    notes: >
+      [OB9 consolidation, 2026-07-19] No equations-of-motion argument (H2)
+      or anomaly-cancellation argument (H3) has been found to select t=0
+      or t=1 specifically -- round72/E7's own E8 gate found a generic
+      curvature+torsion action pushes the stationary point AWAY from
+      t=0,1 toward t=1/2, absent an unmotivated coefficient cancellation.
+
+  - id: C26_SU2LR_REP_PATTERN_SPECULATIVE
+    statement: "The t=0 spinor is an exact SU(2)_L singlet / genuine SU(2)_R doublet; the t=1 spinor (existing only under c0=-2, see C24) is an exact SU(2)_L doublet / SU(2)_R singlet -- a clean, tool-verified, unambiguous complementary representation pattern. This pattern matches this project's OWN SU(2)_L-doublet=left-handed convention (t=1 doublet corresponds to S6's independently-fixed left-handed label) -- but the physical correspondence is SPECULATIVE-ONLY, resting on 3 stacked, unverified assumptions: (1) SU(2)_L=left-translation is imported, never stated in preprint.tex; (2) the t=1 spinor only exists under c0=-2, not this project's own c=+2 (C24); (3) no physical principle requires the S3-factor zero mode to match S6's label, and no zero mode of the FULL operator currently exists at all in the untwisted ansatz (KT-8, C3)"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round77-su2lr-correspondence-test/decision.md:63-153"
+    depends_on: [C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED, C24_SIGN_CONVENTION_GAP]
+    notes: >
+      [OB9 consolidation, 2026-07-19] The representation-labeling
+      computation itself is a clean, unconditional PASS; only the physical
+      correspondence to S6's chirality convention is SPECULATIVE. Directly
+      relevant if Tom Lawrence's own independent chirality/isospin
+      harmonic-decomposition analysis is ever compared against this
+      project's own S3-side representation content.
+
+  - id: C27_MULTIPLICITY_2_FAIL
+    statement: "dim_C ker(D_{S3,t=0}) = 2, not 1 -- confirmed by two independent methods (Peter-Weyl representation theory; direct symbolic construction). The same holds at t=1 in the right-invariant frame under c0=-2 (C24). Combined with dim ker(D_{S6,twisted})=1 per channel (C2) and the tensor-product kernel identity for a decoupled sum-of-squares operator, this gives dim ker(D_full)=2 per triality channel, 6 total across 3 channels -- NOT the 3 the torsion-escape-route program needs. The frozen assumption ('exactly one physical internal mode per S6 zero mode') is FALSE as stated. No Majorana/reality condition, no orbifold projection, and no already-established gauge-multiplet-counting convention in this project currently resolves this gap"
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260717-round78-e12-multiplicity-gate/decision.md:10-96"
+    depends_on: [C2_ROUND59_KERNEL_DIM1, C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED]
+    notes: >
+      [OB9 consolidation, 2026-07-19] The single most consequential
+      negative finding of the whole E7-E12 chain -- independent of
+      whether H1c (C25) is EVER resolved, the torsion-escape-route
+      program as currently constructed cannot deliver exactly 3 zero
+      modes without new physical input (a reality condition, a
+      projection, or a reconciliation with preprint.tex's own 32-state
+      SO(4)-spinor convention, none of which exist in this project yet).
+
 notes_on_this_ledger:
+  - "28 entries as of the OB9 consolidation (2026-07-19) -- deliberately not exhaustive over the ~157 experiments. C22-C27 added to close OPEN_BLOCKERS.md's OB9 (the E7-E12 t-selection/multiplicity chain lacked ledger entries despite being committed since 2026-07-17). Prior count was 22 (round122); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 28) before finalizing this note."
   - "22 entries as of round122 (2026-07-17) -- deliberately not exhaustive over the ~157 experiments. Prior '~15-20 target met with 16 entries' note was itself stale (miscounted); corrected here. NOTE: an earlier version of this same correction said '21 entries' -- also wrong (off-by-one, missed that C_G67C3_THIRD_CHANNEL has no numeric Cn prefix); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 22) before finalizing this note."
   - "Every evidence_file reference above was Read/Grep-confirmed this session or the session that produced the file, per audit-verification-gate.md."
   - "Track A (cc_toy_lab) and Track C (WHEN_GEOMETRY_BECOMES_UNRECOVERABLE) claims deliberately excluded -- both already have closed, non-controversial verdicts (see CURRENT_STATE_ROUND111.md)."

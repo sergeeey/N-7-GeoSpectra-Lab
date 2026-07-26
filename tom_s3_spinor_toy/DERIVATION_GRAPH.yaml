@@ -108,3 +108,29 @@ derivations:
       - "If C11 (the open fork) is itself closed negatively by some future round -- the entire Pati-Salam/anomaly line becomes a full NULL, and the KT-8 escape-route search would need a genuinely different family of mechanisms (see ALIVE_BRANCHES.md / the goal-expansion-100 report's other ~90 candidates, not yet attempted)."
       - "If C9's B-L construction (post-hoc label on untwisted weight space) is shown invalid on the twisted kernel where it actually matters -- C10's computation would need re-doing on whatever the correct twisted-kernel B-L operator turns out to be (open per multi-lens analysis, see OPEN_BLOCKERS.md)."
     status: "SUPPORTED for the product-manifold framework specifically; genuinely OPEN beyond it (C11)."
+
+  - derivation_id: D4_TORSION_ESCAPE_ROUTE_MULTIPLICITY_BLOCKED
+    conclusion: "The torsion-escape-route program (deforming the S3 connection away from Levi-Civita to give the full S3xS6 Dirac operator a zero mode) cannot currently deliver N_gen=3, independent of whether H1c (which of t=0/1 is physically selected) is ever resolved"
+    premises:
+      - claim: C22_H1A_KILLING_SPINOR_REFUTED
+        role: "rules out the simplest candidate selection mechanism for t"
+      - claim: C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED
+        role: "establishes WHY t=0,1 give zero modes at all (flatness + trivial holonomy)"
+      - claim: C25_H1C_PHYSICAL_SELECTION_OPEN
+        role: "no mechanism selects t=0 or t=1 specifically; a later symmetry (iota) even suggests they may be the same physics doubled, or collapse to Levi-Civita under gauging"
+      - claim: C27_MULTIPLICITY_2_FAIL
+        role: "even granting a zero mode at t=0 or t=1, its dimension is 2, not 1 -- giving 6 total zero modes across 3 channels, not the needed 3"
+    inference: >
+      Even in the best case for this program (H1c resolved, one of t=0/t=1
+      selected by some future physical input), C27 independently shows the
+      resulting zero-mode count is wrong by a factor of 2 (6 vs 3 needed).
+      Resolving H1c alone is therefore NOT sufficient to complete the
+      torsion-escape-route program -- a SEPARATE, currently entirely
+      unaddressed problem (reconciling the SU(2) doublet structure of the
+      zero mode with the required generation count) must ALSO be solved.
+      These are logically independent blockers, not one problem in two
+      guises.
+    defeaters:
+      - "If a Majorana/reality condition or an SU(2)-doublet-counting convention is found that legitimately halves the multiplicity from 2 to 1 (round78/E12's own Relaxation Map names this as the cheapest live option) -- C27 would need re-evaluation, though C25 (H1c) would remain open independently."
+      - "If preprint.tex's own 32-state SO(4)-spinor convention is shown to be the correct frame for counting (i.e. '1 doublet = 1 generation slot' is validated) rather than a separate, unconnected bookkeeping exercise -- this is explicitly flagged as unresolved in round78/E12 itself."
+    status: "C22/C23/C27 individually PROVED/REFUTED as stated; C25 genuinely OPEN. This derivation's conclusion (the program is blocked pending 2 independent open problems, not 1) is a new synthesis from the OB9 consolidation (2026-07-19), cross-checked against round80/E14 for consistency with its later Z2-symmetry finding."

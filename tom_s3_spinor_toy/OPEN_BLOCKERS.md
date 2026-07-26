@@ -385,30 +385,42 @@ computed three mixed-anomaly conditions — `[SU(3)_c]²U(1)_Y`, `[U(1)_Y]³`,
 
 ---
 
-## OB9 — E7-E13 chain deserves its own Phase-0-style consolidation pass [flagged, not done]
+## OB9 — E7-E13 chain deserves its own Phase-0-style consolidation pass [RESOLVED 2026-07-19]
 
-**What's open:** while fixing round80/E14's registry omission
+~~What's open: while fixing round80/E14's registry omission
 (`SUPERSEDED_RESULTS.md` SR7), confirmed that the whole preceding chain —
 round72 (E7, t-selection principle), round73 (E9, explicit parallel
 spinor), round74 (E10, chirality sign link), round75 (E11, Freund-Rubin
 torsion link), round78 (E12, multiplicity gate) — is committed to git
-(`92e5fb2`) but **not individually represented** in `CLAIM_LEDGER.yaml` or
-`DERIVATION_GRAPH.yaml`. Per a global-memory note from earlier in this
-session, this chain found: H1 split (H1a REFUTED / H1b PROVED via
-holonomy / H1c OPEN), explicit parallel spinors at `t=0,1`, and E12's own
-multiplicity gate (`FAIL`, giving 6 not 3 internal modes, no natural
-projection) — directly relevant to OB1/`PARENT_ACTION_GATE.md` F4/F7.
+(`92e5fb2`) but not individually represented in `CLAIM_LEDGER.yaml` or
+`DERIVATION_GRAPH.yaml`.~~
 
-**Why not fixed now:** this is a larger consolidation task (5+ rounds,
-each needing its own accurate re-citation) than the single-round fixes in
-SR6/SR7 — doing it properly means reading each `decision.md` in full, not
-a quick registry patch. Flagging rather than rushing a shallow fix.
+**Resolved:** read rounds 72-78 in full (`decision.md` for each), added 6
+new `CLAIM_LEDGER.yaml` entries (`C22`-`C27`, covering H1a/REFUTED,
+H1b/PROVED-with-sign-caveat, the sign-convention gap itself, H1c/OPEN, the
+SU(2)_L/R representation pattern, and the multiplicity-2 FAIL) and one new
+`DERIVATION_GRAPH.yaml` chain (`D4_TORSION_ESCAPE_ROUTE_MULTIPLICITY_
+BLOCKED`), cross-checked against round80/E14's own Z2-symmetry finding for
+consistency — the iota isometry strengthens E7's algebraic `t<->1-t`
+symmetry to a genuine geometric diffeomorphism but does not resolve H1c.
 
-**Owner / next step:** a dedicated future pass (not part of the current
-OB1 mechanism search) should read rounds 72-78 in full and add proper
-`CLAIM_LEDGER.yaml` entries + a `DERIVATION_GRAPH.yaml` chain for
-"H1a/H1b/H1c t-selection," cross-checked against round80/E14's own summary
-of them (already read, this session) for consistency.
+**Headline synthesis (new, from this consolidation, not previously stated
+anywhere as a single claim):** the torsion-escape-route program has TWO
+independent, currently unresolved blockers, not one — (1) H1c (which of
+`t=0`/`t=1` is physically selected, C25, OPEN) and (2) the multiplicity-2
+gap (C27, REFUTED as stated — even a selected `t=0` or `t=1` zero mode is
+2-dimensional, giving 6 total internal modes across 3 triality channels,
+not the needed 3). Resolving (1) alone would NOT complete the program;
+(2) is a logically separate problem requiring new physical input (a
+reality/Majorana condition, an orbifold projection, or a reconciliation
+with `preprint.tex`'s own 32-state SO(4)-spinor convention — none of
+which exist in this project yet).
+
+**Prompted by:** external correspondence with Tom Lawrence (2026-07,
+message batch referencing his own independent harmonics-on-S³/chirality/
+Dirac-to-Weyl-massless-reduction analysis) — this consolidation exists so
+a future technical exchange can cite the project's own established
+results precisely rather than re-deriving them under time pressure.
 
 ---
 
