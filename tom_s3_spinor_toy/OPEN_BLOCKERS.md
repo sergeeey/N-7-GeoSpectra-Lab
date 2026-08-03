@@ -424,9 +424,30 @@ results precisely rather than re-deriving them under time pressure.
 
 ---
 
-## OB10 — geometric spinor bundle's own reality/Majorana condition [new, confirmed]
+## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03]
 
-**What's open:** the finite/NCG algebra's real structure `J_F` is
+**Resolved:** built the 16-dim product Clifford module from this repo's own
+already-established S³ (`Cl(0,3)`, round67) and S⁶ (`Cl(6,0)`, s6-harm-g0/G13)
+generators, per preprint.tex:1467-1480's own stated tensor-product formula.
+Found the product signature is actually **mixed, `Cl(6,3)`** (not the uniform
+`Cl(9,0)`/`Cl(0,9)` the "3+6=9≡1 mod 8" text below implicitly assumed — the
+two established sub-constructions use opposite Clifford sign conventions).
+Despite that correction, a direct, adversarially-widened search (256
+candidates, `{I,σ1,σ2,σ3}⁴` factorized ansatz) found a unique, Hermitian,
+unitary charge-conjugation operator `B`, `B·conj(B)=-I` → **PSEUDOREAL
+(quaternionic) type** — matching, not contradicting, the finite algebra's own
+`J_F²=-1` (also pseudo-real). No-collapse-checked (reproduced under an
+independent, equally-valid Clifford-factor ordering). See
+`experiments/20260803-ob10-ko-dimension-majorana-check/decision.md`.
+
+**What this does NOT mean:** does not check `[D_full,B]`/`{D_full,B}` against
+the actual differential Dirac operator (only the algebraic Clifford-module
+type was checked); does not construct a combined `J=B⊗J_F`; does not touch
+OB1/OB2/OB4/OB11 or the `N_gen=3` headline (confirmed free-standing per
+`GLOBAL_RECOMPOSITION_AUDIT.md`'s own C19 audit).
+
+**Original description (superseded framing, kept for history):** the
+finite/NCG algebra's real structure `J_F` is
 established (`J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).
 But whether the GEOMETRIC `S³×S⁶` spinor bundle itself — independent of
 the separately-reconstructed finite algebra `A_F` — satisfies a
