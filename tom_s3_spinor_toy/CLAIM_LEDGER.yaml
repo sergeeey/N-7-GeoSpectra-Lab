@@ -552,7 +552,35 @@ claims:
       comparison-method bug. See
       experiments/20260728-transpose-artifact-audit-round77-78/decision.md.
 
+  - id: C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL
+    statement: "The 16-dim geometric S3xS6 Clifford module (built from this repo's own established Cl(0,3) S3 and Cl(6,0) S6 generators, per preprint.tex's own stated product formula) admits a unique (within a 256-candidate {I,s1,s2,s3}^4 factorized search) Hermitian+unitary charge-conjugation operator B with B*conj(B)=-I -- PSEUDOREAL (quaternionic) type, matching the finite algebra's own pseudo-real J_F^2=-1. The product's actual signature is mixed Cl(6,3), not the uniform Cl(9,0)/Cl(0,9) that OPEN_BLOCKERS.md's own OB10 text's '3+6=9=1 mod 8' proposal assumed."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260803-ob10-ko-dimension-majorana-check/decision.md"
+    depends_on: []
+    notes: >
+      [OB10 resolution, 2026-08-03] Genuinely new claim, not a re-run of any
+      prior round (Prior Result Gate: grep for KO-dim/Majorana/quaternionic
+      across the whole repo found only G18/G20/G23/G26's KO-dim-6 postulate
+      for the FINITE algebra A_F -- a different object -- plus OB10's own
+      already-logged gap statement, confirmed via GLOBAL_RECOMPOSITION_
+      AUDIT.md's own C19 audit to be genuinely new and NOT feeding D2's
+      zero-mode-counting argument). Adversarially widened the search from a
+      naive 16-candidate {I,s2}^4 guess (found nothing) to the full 256
+      candidates before accepting a negative -- this is what surfaced the
+      one true solution. No-collapse checked: reproduced under an
+      independent, equally-valid re-ordering of the S6 Clifford factors,
+      confirming the PSEUDOREAL verdict is a basis-independent property of
+      the construction, not an artifact of one arbitrary matrix ordering.
+      Evidence tier is INTERNALLY_CERTIFIED (same session, sympy-verified,
+      not yet cross-model or externally reconstructed) per this project's
+      own Independent Verification Strength Ladder.
+
 notes_on_this_ledger:
+  - "29 entries as of the OB10 resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C28 added to close OPEN_BLOCKERS.md's OB10 (geometric spinor bundle reality/Majorana type). Prior count was 28 (OB9 consolidation); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 29) before finalizing this note."
   - "28 entries as of the OB9 consolidation (2026-07-19) -- deliberately not exhaustive over the ~157 experiments. C22-C27 added to close OPEN_BLOCKERS.md's OB9 (the E7-E12 t-selection/multiplicity chain lacked ledger entries despite being committed since 2026-07-17). Prior count was 22 (round122); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 28) before finalizing this note."
   - "22 entries as of round122 (2026-07-17) -- deliberately not exhaustive over the ~157 experiments. Prior '~15-20 target met with 16 entries' note was itself stale (miscounted); corrected here. NOTE: an earlier version of this same correction said '21 entries' -- also wrong (off-by-one, missed that C_G67C3_THIRD_CHANNEL has no numeric Cn prefix); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 22) before finalizing this note."
   - "Every evidence_file reference above was Read/Grep-confirmed this session or the session that produced the file, per audit-verification-gate.md."
