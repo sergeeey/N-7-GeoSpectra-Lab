@@ -579,7 +579,31 @@ claims:
       not yet cross-model or externally reconstructed) per this project's
       own Independent Verification Strength Ladder.
 
+  - id: C29_OB11_CONDITION_I_SU3_BLOCK_STRUCTURE
+    statement: "OB11 condition (i) [SU(3)_c part -- the only non-trivial part, since SU(2)_L x SU(2)_R lives on S3 only and never acts on the S6-side 8_v/8_s/8_c fiber]: the quadratic Casimir of G102's own established su(3) action gives an IDENTICAL spectrum (2 zero + 6 equal-nonzero eigenvalues, matching 1+1+3+3bar) for all three triality channels 8_v, 8_s, 8_c -- verified by direct diagonalization, not just G102's own equal-dimension Hom-count."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260803-ob11-internal-block-structure-check/decision.md"
+    depends_on: []
+    notes: >
+      [OB11 partial resolution, 2026-08-03] Only condition (i) of OB11's
+      three sufficiency conditions attempted; (ii) (no channel-mixing in
+      the Dirac operator) and (iii) (triality acting purely as 1(x)t)
+      remain open, per the 2026-07-19 substrate-check confirming (ii)
+      requires a genuinely new channel-decomposed differential Dirac
+      operator entangled with the still-open OB1 -- not attempted here.
+      Scope-clarifying finding: SU(2)_L x SU(2)_R never acts on the
+      S6-side fiber at all (round119), so condition (i)'s SU(2) part is
+      vacuous; only the SU(3)_c part has substantive content, and that
+      part is now directly verified (not just inferred from an
+      equal-dimension Hom count, round127's own argument). Evidence tier
+      INTERNALLY_CERTIFIED (same session, numpy-verified).
+
 notes_on_this_ledger:
+  - "30 entries as of the OB11 (condition i) partial resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C29 added, closing condition (i) of OPEN_BLOCKERS.md's OB11 (conditions ii/iii remain open). Prior count was 29 (OB10 resolution); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 30) before finalizing this note."
   - "29 entries as of the OB10 resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C28 added to close OPEN_BLOCKERS.md's OB10 (geometric spinor bundle reality/Majorana type). Prior count was 28 (OB9 consolidation); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 29) before finalizing this note."
   - "28 entries as of the OB9 consolidation (2026-07-19) -- deliberately not exhaustive over the ~157 experiments. C22-C27 added to close OPEN_BLOCKERS.md's OB9 (the E7-E12 t-selection/multiplicity chain lacked ledger entries despite being committed since 2026-07-17). Prior count was 22 (round122); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 28) before finalizing this note."
   - "22 entries as of round122 (2026-07-17) -- deliberately not exhaustive over the ~157 experiments. Prior '~15-20 target met with 16 entries' note was itself stale (miscounted); corrected here. NOTE: an earlier version of this same correction said '21 entries' -- also wrong (off-by-one, missed that C_G67C3_THIRD_CHANNEL has no numeric Cn prefix); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 22) before finalizing this note."

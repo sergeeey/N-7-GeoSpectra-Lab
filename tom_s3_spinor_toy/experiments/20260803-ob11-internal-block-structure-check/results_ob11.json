@@ -1,0 +1,43 @@
+{
+  "ob": "OB11_condition_i",
+  "su3_generator_count": 8,
+  "spectra_by_channel": {
+    "v": [
+      [
+        -1.333333333333334,
+        6
+      ],
+      [
+        7.632783294297949e-17,
+        2
+      ]
+    ],
+    "s": [
+      [
+        -1.3333333333333337,
+        6
+      ],
+      [
+        1.387778780781567e-17,
+        2
+      ]
+    ],
+    "c": [
+      [
+        -1.3333333333333341,
+        6
+      ],
+      [
+        0.0,
+        2
+      ]
+    ]
+  },
+  "pattern_ok_by_channel": {
+    "v": true,
+    "s": true,
+    "c": true
+  },
+  "cross_channel_casimir_identical": "True",
+  "verdict": "VERIFIED"
+}

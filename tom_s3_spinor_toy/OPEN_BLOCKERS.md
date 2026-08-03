@@ -475,9 +475,29 @@ new — not previously logged anywhere in this project's registries.
 
 ---
 
-## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03]
 
-**What's open:** the user's own proposed hypothesis
+**Condition (i) now VERIFIED, (ii)/(iii) still open.** Scope-clarifying
+finding first: `SU(2)_L×SU(2)_R` lives entirely on the S³ factor of
+`H_matter` (round90, `preprint.tex:292-310`) and never acts on the
+S⁶-side `8_v/8_s/8_c` fiber at all (round119 corrected an earlier false
+`SU(3)×SU(2)×SU(2)`-in-`SO(6)` embedding claim) — so condition (i)'s
+`SU(2)_L×SU(2)_R` part is vacuous (the S³-side factor is identical
+across channels by construction); the only substantive part is
+`SU(3)_c`. Directly verified by diagonalizing the quadratic Casimir of
+G102's own already-established `su(3)` action on each channel: all three
+(`8_v,8_s,8_c`) give an IDENTICAL spectrum (2 zero + 6 equal-nonzero
+eigenvalues, matching the predicted `1⊕1⊕3⊕3̄` pattern), not just an
+equal-dimension `Hom`-count as before. See
+`experiments/20260803-ob11-internal-block-structure-check/decision.md`.
+Conditions (ii) (no channel-mixing in the Dirac operator) and (iii)
+(triality acting purely as `1⊗t`) remain open — (ii) specifically
+requires assembling a genuinely new channel-decomposed differential
+Dirac operator, entangled with the still-open OB1 (per the 2026-07-19
+substrate-check below), not attempted this round.
+
+**Original description (superseded framing for condition (i) alone, kept
+for history — (ii)/(iii) below are unaffected and still fully open):** the user's own proposed hypothesis
 (`H_physical=H_matter⊗H_generation`, WEAK reading: `H_matter`=32-dim
 already-realized `SU(3)_c×SU(2)_L×SU(2)_R` content, `H_generation`=3-dim
 triality-channel label) has one necessary condition **verified**
