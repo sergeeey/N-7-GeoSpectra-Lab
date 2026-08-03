@@ -602,7 +602,31 @@ claims:
       equal-dimension Hom count, round127's own argument). Evidence tier
       INTERNALLY_CERTIFIED (same session, numpy-verified).
 
+  - id: C30_OB2_MATRIX_T_Z2_EXCHANGE_PARTIAL
+    statement: "Codex item 5 (OB2/OB6): promoting t from a discrete label to a general rank-1 Hermitian projector T (Bloch-sphere parametrized) admits the internal Z2 exchange T<->1-T Codex's proposal describes -- D(T)=T(x)H and D(1-T) are unitarily equivalent via S_n=m.sigma (m perpendicular to T's own axis n), verified exactly for the diagonal case (round110's T=diag(0,1)) and numerically (8 random Bloch-sphere points, residual ~1e-16) for the general case. Round110's own prior test asked a DIFFERENT, stronger question (literal self-invariance of D_block under one fixed swap) and correctly found it false -- not contradicted here, just shown to be the wrong question. Grading (naive candidate FAILS {gamma,D}=0), real structure, and the physical action (F6) remain open."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260803-ob2-t-matrix-order-parameter-z2/decision.md"
+    depends_on: []
+    notes: >
+      [OB2/OB6 item 5 partial progress, 2026-08-03] First attempt at
+      Codex's own item 5 (proposed round105, never attempted until now).
+      Reused E9's own H=(3c/2)*omega=3*I2 unchanged. An initial fully
+      symbolic generalization attempt hit a sympy exp(I*phi)/cos(phi)
+      simplification artifact (hand-verified the residual is truly zero
+      via Euler's formula); switched to a numeric spot-check, equally
+      rigorous and side-stepping the representation issue. Per
+      PARENT_ACTION_GATE.md's own rule, a construction with some fields
+      supplied and others not is accurately PARTIAL, not rounded up to
+      PROMOTE -- grading explicitly FAILS for the one candidate tried,
+      real structure not attempted, physical action (F6) untouched (as
+      Codex's own text already flagged as still needed).
+
 notes_on_this_ledger:
+  - "31 entries as of the OB2/OB6 item 5 partial progress (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C30 added, first attempt at Codex's item 5 (Z2 exchange verified; grading/real structure/physical action remain open). Prior count was 30 (OB11 condition i); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 31) before finalizing this note."
   - "30 entries as of the OB11 (condition i) partial resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C29 added, closing condition (i) of OPEN_BLOCKERS.md's OB11 (conditions ii/iii remain open). Prior count was 29 (OB10 resolution); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 30) before finalizing this note."
   - "29 entries as of the OB10 resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C28 added to close OPEN_BLOCKERS.md's OB10 (geometric spinor bundle reality/Majorana type). Prior count was 28 (OB9 consolidation); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 29) before finalizing this note."
   - "28 entries as of the OB9 consolidation (2026-07-19) -- deliberately not exhaustive over the ~157 experiments. C22-C27 added to close OPEN_BLOCKERS.md's OB9 (the E7-E12 t-selection/multiplicity chain lacked ledger entries despite being committed since 2026-07-17). Prior count was 22 (round122); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 28) before finalizing this note."

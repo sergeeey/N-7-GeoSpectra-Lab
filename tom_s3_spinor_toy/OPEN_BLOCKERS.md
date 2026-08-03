@@ -99,9 +99,29 @@ tracked in any future formal spectral-flow attempt). See
 
 ---
 
-## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple?
+## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL PROGRESS 2026-08-03]
 
-**What's open:** round103 found this genuinely unresolved, not closed. `t`
+**Codex's item 5 now attempted — genuine partial progress, not full
+resolution.** Round110's own attempt tested the WRONG question (literal
+self-invariance of `D_block` under a fixed swap — correctly found
+`False`, but that's not the Z2 statement Codex's proposal actually
+describes). Promoted `t` to a general rank-1 Hermitian projector `T`
+(Bloch-sphere parametrized, not restricted to the diagonal `T=diag(0,1)`
+case) and confirmed the CORRECT Z2 statement holds: `D(T)=T⊗H` and
+`D(1-T)` are unitarily equivalent via an internal `SU(2)` conjugation
+`S_n=m̂·σ` (`m̂⊥n̂`), verified exactly for the diagonal case and via a
+numeric spot-check (8 random Bloch-sphere points, residual ~1e-16) for
+the general case — realizing Codex's own "off-diagonal fluctuations
+possible" language. See
+`experiments/20260803-ob2-t-matrix-order-parameter-z2/decision.md`.
+**Still open per `PARENT_ACTION_GATE.md`'s 6-field OB2 checklist:** a
+naive grading candidate (`γ=(I-2T)⊗I₂`) explicitly FAILS `{γ,D}=0`
+(reported honestly, not smoothed over); real structure `J` not
+attempted; the physical action (F6) remains entirely unaddressed, as
+Codex's own text already flagged.
+
+**Original description (superseded framing, kept for history):**
+round103 found this genuinely unresolved, not closed. `t`
 indexes the spin connection, a spectral-triple geometric datum; a
 block-diagonal `D=diag(D^0,D^1)` construction (round110's toy) is a
 legitimate NCG move per round105's cross-model audit, but nothing yet shows
@@ -113,13 +133,13 @@ spectral triple that satisfies the standard NCG axiom checklist (only
 partially checked so far, round110), or (b) an argument that the product
 ansatz genuinely cannot be left this way, closing the route negatively.
 
-**Owner / next step:** Codex's own item 5 (promote `t` to a finite
-matrix-valued order parameter with internal Z2 exchange symmetry) — proposed,
-never attempted. **Any future attempt: check against
+**Owner / next step:** grading and real structure remain genuinely open
+(see 2026-08-03 update above); the physical action (F6) is the harder,
+still fully open task. **Any future attempt: check against
 `PARENT_ACTION_GATE.md` first** (6 additional fields for a non-product
 spectral triple — algebra, Hilbert space, Dirac operator, grading, real
-structure, physical interpretation — round110's own toy only partially
-addressed 2 of the 6).
+structure, physical interpretation — now 3 of 6 supplied, 1 attempted-
+and-failed, 1 not attempted, 1 stated as interpretation).
 
 ---
 
@@ -295,10 +315,12 @@ minor wording item above.
 ## OB6 — Codex items 5 and 8 (item 8 re-scoped 2026-07-17; not yet well-posed)
 
 **What's open:**
-- **Item 5:** promote `t` to a finite matrix-valued order parameter with
-  internal Z2 exchange symmetry (see OB2 above — same underlying question).
-  Still genuinely ready to attempt whenever OB2 is picked up — no premise
-  issue found.
+- **Item 5 [PARTIAL PROGRESS 2026-08-03, see OB2 above]:** promote `t` to
+  a finite matrix-valued order parameter with internal Z2 exchange
+  symmetry — attempted; the Z2 exchange itself is verified (via the
+  correct statement, unitary equivalence of `D(T)` and `D(1-T)`, not
+  round110's mis-posed self-invariance test), but grading, real
+  structure, and the physical action remain open. Not fully resolved.
 - **Item 8 — re-scoped, NOT ready-to-run as originally logged:** Codex's
   exact wording (`codex_review_2026-07-17.md:172-174`) is "If the actual
   gauge group is `SO(6)`, `Spin(6)`, or a quotient of
