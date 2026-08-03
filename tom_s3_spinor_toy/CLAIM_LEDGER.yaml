@@ -498,6 +498,17 @@ claims:
       relevant if Tom Lawrence's own independent chirality/isospin
       harmonic-decomposition analysis is ever compared against this
       project's own S3-side representation content.
+      [Audit 2026-07-28] Checked against the matrix-vs-transpose comparison
+      artifact found in Tom's own 2026-07-28 PDF calculation (see
+      experiments/20260728-tom-so3-harmonics-sign-check/decision.md) --
+      NOT vulnerable: every check here tests a single spinor's
+      transformation law under a defined group action, never a combined
+      vector of distinct basis functions against an abstractly-relabeled
+      matrix. Does not upgrade this claim's evidence tier (still
+      internally-certified) -- an actual independent re-derivation via
+      Tom's own explicit-diagonalization method, not just this audit,
+      would be needed for that. See
+      experiments/20260728-transpose-artifact-audit-round77-78/decision.md.
 
   - id: C27_MULTIPLICITY_2_FAIL
     statement: "dim_C ker(D_{S3,t=0}) = 2, not 1 -- confirmed by two independent methods (Peter-Weyl representation theory; direct symbolic construction). The same holds at t=1 in the right-invariant frame under c0=-2 (C24). Combined with dim ker(D_{S6,twisted})=1 per channel (C2) and the tensor-product kernel identity for a decoupled sum-of-squares operator, this gives dim ker(D_full)=2 per triality channel, 6 total across 3 channels -- NOT the 3 the torsion-escape-route program needs. The frozen assumption ('exactly one physical internal mode per S6 zero mode') is FALSE as stated. No Majorana/reality condition, no orbifold projection, and no already-established gauge-multiplet-counting convention in this project currently resolves this gap"
@@ -516,6 +527,16 @@ claims:
       modes without new physical input (a reality condition, a
       projection, or a reconciliation with preprint.tex's own 32-state
       SO(4)-spinor convention, none of which exist in this project yet).
+      [Audit 2026-07-28] Checked against the matrix-vs-transpose artifact
+      found in Tom Lawrence's own 2026-07-28 PDF calculation -- NOT
+      vulnerable: the multiplicity-2 finding rests on (i) Hermitian
+      eigenvalue multiplicity (basis-independent by construction) and
+      (ii) a genuine single-spinor zero-matrix argument, neither of which
+      has the "combined vector of distinct basis functions vs abstract
+      matrix" shape that caused Tom's sign confusion. CONFIRMS (does not
+      weaken) this claim -- multiplicity-2 is real physics, not a
+      comparison-method bug. See
+      experiments/20260728-transpose-artifact-audit-round77-78/decision.md.
 
 notes_on_this_ledger:
   - "28 entries as of the OB9 consolidation (2026-07-19) -- deliberately not exhaustive over the ~157 experiments. C22-C27 added to close OPEN_BLOCKERS.md's OB9 (the E7-E12 t-selection/multiplicity chain lacked ledger entries despite being committed since 2026-07-17). Prior count was 22 (round122); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 28) before finalizing this note."
