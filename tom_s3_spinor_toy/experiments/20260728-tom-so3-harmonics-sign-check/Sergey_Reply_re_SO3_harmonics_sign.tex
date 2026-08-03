@@ -3,7 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{array}
 
-\title{Re: harmonics on the three-sphere --- how the ``honest'' matrices were built}
+\title{Re: the $SO(3)$, $l=1$ warm-up for the three-sphere harmonics problem --- how the ``honest'' matrices were built}
 \author{Sergey}
 \date{}
 
@@ -127,11 +127,11 @@ triple $(x,y,z)$ gives, for \emph{all three} generators at once:
   \hat L_i\,(x,y,z)^{\mathsf T} \;=\; -\,T_i\,(x,y,z)^{\mathsf T},
 \]
 using your \emph{original} (un-diagonalized) generators $T_x,T_y,T_z$ from
-equations (14)--(16). This is a single, uniform sign --- the standard fact
-that a differential operator realizing a rotation of \emph{functions}
-carries the opposite sign to the same rotation acting on the coordinates
-themselves. It is not itself the source of the asymmetry between $x$ and
-$y,z$.
+equations (14)--(16). This is a single, uniform sign --- with the
+active/passive convention used in your equations, a differential operator
+realizing a rotation of \emph{functions} carries the opposite sign to the
+same rotation acting on the coordinates themselves. It is not itself the
+source of the asymmetry between $x$ and $y,z$.
 
 The asymmetry comes from matching your $S$-diagonalized ordering to the
 $(\psi_{1,1},\psi_{1,0},\psi_{1,-1})$ ordering you actually compare
@@ -181,8 +181,8 @@ the \emph{correct} inverse, so nothing needs to be revisited there.
 I'd be very interested to see why you were expecting
 $\hat L_i\psi = T'_i\psi$ to hold identically for all three generators ---
 if there's a different, perhaps more physically natural convention where
-that holds exactly (rather than up to the transpose above), that would be
-worth understanding properly before we go further with the three-sphere
-case.
+that holds exactly (rather than with the same basis ordering, phase
+choices, and action convention used above), that would be worth
+understanding properly before we go further with the three-sphere case.
 
 \end{document}
