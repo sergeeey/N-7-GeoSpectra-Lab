@@ -10,6 +10,12 @@
 \begin{document}
 \maketitle
 
+\noindent\emph{This note only addresses the $SO(3)$ / $l=1$ harmonic
+sign--transpose question raised in your PDF. It is a warm-up calculation on
+$S^2$, isolating the operator/generator convention issue before we move to
+the full $S^3$ spinor-harmonic construction --- it does not yet say
+anything about that larger question.}
+
 \section{The two comparisons, side by side}
 
 Your own check computes, for a candidate abstract matrix $T'_i$ and the
@@ -41,10 +47,13 @@ $\hat L_z = T'_z$ check gave a clean match --- $T'_z=\mathrm{diag}(1,0,-1)$
 is trivially symmetric. It is not a coincidence that the one clean
 component was the diagonal one.
 
-\section{Building $M$ three independent ways}
+\section{Building $M$ three separate computational routes}
 
 I built the honest matrix $M_x$ (and $M_y$, $M_z$) three separate ways, to
-make sure the conclusion did not depend on which technique was used.
+make sure the conclusion did not depend on which technique was used ---
+these are three computational cross-checks rather than three fully
+independent derivations, since all three use the same operators, basis
+functions, and conventions throughout.
 
 \textbf{Method A --- direct solve.} Apply $\hat L_x$ to each of
 $\psi_{1,1}=\sin\theta\,e^{i\phi}$, $\psi_{1,0}=\cos\theta$,
@@ -67,7 +76,12 @@ the three, and the one I would recommend as the standard going forward:
 \]
 This is exactly the ordinary quantum-mechanical way of reading off a
 matrix element, and it sidesteps the row/column ambiguity entirely, since
-each entry of $M$ is defined by its own independent integral.
+each entry of $M$ is defined by its own independent integral. The simple
+form above (dividing by $\langle\psi_{1,m'}\mid\psi_{1,m'}\rangle$ alone)
+relies on $\{\psi_{1,1},\psi_{1,0},\psi_{1,-1}\}$ being an orthogonal set,
+which they are here; for a non-orthogonal basis one would need the full
+Gram-matrix inversion, $M=G^{-1}A$ with $A_{m'm}=\langle\psi_{m'}|\hat
+L_i|\psi_m\rangle$ and $G_{m'm}=\langle\psi_{m'}|\psi_m\rangle$.
 
 All three methods gave, for your specific choice
 $\chi_{1,1}=\chi_{1,-1}=\sin\theta$, $\chi_{1,0}=\cos\theta$, exactly:
@@ -89,18 +103,71 @@ of your note):
 each an exact identity (zero residual), independent of which of the three
 methods above produced $M$.
 
-\section{Why $y$ and $z$ looked clean and $x$ did not}
+\section{Why $y$ and $z$ looked clean and $x$ did not --- the real reason}
 
-$T'_z$ is diagonal, hence symmetric, so transpose is invisible there. For
-$T'_y$, the specific entries happen to satisfy
-$(T'_i\cdot v)_{row}=M_{row,\cdot}\,v$ numerically for this particular $v$
---- a coincidence of these specific matrix entries, not a general fact
-about $T'_y$ (it is not itself symmetric or antisymmetric). $T'_x$'s
-entries do not share that coincidence, which is exactly where the
-apparent $-1$ appears. In short: your arithmetic in equations (1)--(29) is
-correct throughout --- I rechecked every one of them independently and
-found no error --- the $-1$ has this precise, structural origin rather
-than being a mistake anywhere in the calculation.
+A clarification on terminology first: $M$ above is the matrix acting on
+\emph{coefficient} columns (if $\Psi=(\psi_{1,1},\psi_{1,0},\psi_{1,-1})$ is
+treated as the basis itself and a state is a coefficient vector $c$ in that
+basis, $M$ sends $c\mapsto Mc$). Your own comparison instead treats
+$\Psi$ as the column being acted on directly, so it tests $M^{\mathsf T}$,
+not $M$ --- consistent with Section 1.
+
+I initially described the match for $y,z$ as ``coincidental,'' which was
+sloppy and not quite right. Since $\psi_{1,1},\psi_{1,0},\psi_{1,-1}$ are
+linearly independent, an exact match across all three rows is a genuine
+matrix identity, not a numerical accident tied to one test vector. The
+real explanation is more structural, and traces back to your own $S$
+matrix directly.
+
+Identify $\psi_{1,1}=x+iy$, $\psi_{1,0}=z$, $\psi_{1,-1}=x-iy$ (exactly,
+with $x=\sin\theta\cos\phi$, $y=\sin\theta\sin\phi$, $z=\cos\theta$ --- no
+extra normalization needed). Applying $\hat L_i$ to the plain Cartesian
+triple $(x,y,z)$ gives, for \emph{all three} generators at once:
+\[
+  \hat L_i\,(x,y,z)^{\mathsf T} \;=\; -\,T_i\,(x,y,z)^{\mathsf T},
+\]
+using your \emph{original} (un-diagonalized) generators $T_x,T_y,T_z$ from
+equations (14)--(16). This is a single, uniform sign --- the standard fact
+that a differential operator realizing a rotation of \emph{functions}
+carries the opposite sign to the same rotation acting on the coordinates
+themselves. It is not itself the source of the asymmetry between $x$ and
+$y,z$.
+
+The asymmetry comes from matching your $S$-diagonalized ordering to the
+$(\psi_{1,1},\psi_{1,0},\psi_{1,-1})$ ordering you actually compare
+against. Writing $X=(x,y,z)^{\mathsf T}$, direct computation gives
+$S X = (-\psi_{1,-1},\,\psi_{1,0},\,-\psi_{1,1})^{\mathsf T}$ --- the
+\emph{same} three functions as $\Psi=(\psi_{1,1},\psi_{1,0},\psi_{1,-1})^{\mathsf T}$,
+but reordered and with two sign flips. That reordering is exactly the
+matrix
+\[
+  C=\begin{pmatrix}0&0&-1\\0&1&0\\-1&0&0\end{pmatrix},
+  \qquad C^2=I,\qquad \Psi = C\,S X .
+\]
+Combining the uniform sign above with this reordering gives, for every
+generator at once,
+\[
+  \hat L_i\,\Psi \;=\; -\,C\,T'_i\,C^{-1}\,\Psi ,
+\]
+which I have checked directly matches $\hat L_i\Psi$ exactly for
+$i=x,y,z$. The point is what $C$-conjugation does to each $T'_i$:
+\[
+  C\,T'_x\,C^{-1} = T'_x \quad(\text{unchanged}), \qquad
+  C\,T'_y\,C^{-1} = -T'_y, \qquad
+  C\,T'_z\,C^{-1} = -T'_z .
+\]
+Combined with the uniform ``$-1$'' from the active/passive sign, $x$ picks
+up $(-1)(+1)=-1$ relative to $T'_x$, while $y,z$ pick up
+$(-1)(-1)=+1$ relative to $T'_y,T'_z$ --- exactly reproducing
+$M_x=-(T'_x)^{\mathsf T}$, $M_y=+(T'_y)^{\mathsf T}$, $M_z=T'_z$. The
+$x$-generator is singled out because $C$ (forced by the specific ordering
+and sign convention you used for $\psi_{1,\pm1}$) happens to commute with
+$T'_x$ but anti-commute with $T'_y$ and $T'_z$ --- a systematic consequence
+of the basis reordering, not an accident of specific numerical entries.
+
+In short: your arithmetic in equations (1)--(29) is correct throughout --- I
+rechecked every one of them independently and found no error --- and the
+$-1$ on $x$ alone has this precise, traceable origin, not an arbitrary one.
 
 \section{One small, unrelated thing, for completeness}
 
