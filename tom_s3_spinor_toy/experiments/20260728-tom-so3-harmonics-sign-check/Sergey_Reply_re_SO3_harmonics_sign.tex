@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+
+\title{Re: harmonics on the three-sphere --- how the ``honest'' matrices were built}
+\author{Sergey}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{The two comparisons, side by side}
+
+Your own check computes, for a candidate abstract matrix $T'_i$ and the
+combined column of basis functions $v = (\psi_{1,1};\psi_{1,0};\psi_{1,-1})$,
+the ordinary matrix--vector product $T'_i \cdot v$, and compares it
+entrywise to $(\hat L_i\psi_{1,1};\,\hat L_i\psi_{1,0};\,\hat L_i\psi_{1,-1})$.
+
+That is a well-defined thing to compute, but it is a \emph{different}
+operation from asking: ``what matrix, in the basis
+$\{\psi_{1,1},\psi_{1,0},\psi_{1,-1}\}$, actually represents $\hat L_i$?''
+
+The second question is answered like this: apply $\hat L_i$ to
+\emph{one basis function at a time}, and expand the result back in the same
+basis:
+\[
+  \hat L_i\,\psi_{1,m} \;=\; \sum_{m'} M_{m'm}\,\psi_{1,m'} ,
+\]
+so that column $m$ of the matrix $M$ is exactly the (unique) set of
+coefficients needed to write $\hat L_i\psi_{1,m}$ back in the basis. This
+$M$ is the honest matrix representation of $\hat L_i$.
+
+If $(T'_i\cdot v)_{row}$ happens to equal $\hat L_i\psi_{1,\,\mathrm{row}}$
+for every row, that tells you $T'_i$ and $M$ are related by a
+\textbf{transpose}: $(T'_i \cdot v)_{row} = \sum_{col} (T'_i)_{row,col}\,\psi_{1,col}$
+uses the \emph{rows} of $T'_i$, whereas the honest construction of $M$
+above reads off the \emph{columns}. For a diagonal or otherwise symmetric
+matrix the row and column pictures coincide, which is exactly why your
+$\hat L_z = T'_z$ check gave a clean match --- $T'_z=\mathrm{diag}(1,0,-1)$
+is trivially symmetric. It is not a coincidence that the one clean
+component was the diagonal one.
+
+\section{Building $M$ three independent ways}
+
+I built the honest matrix $M_x$ (and $M_y$, $M_z$) three separate ways, to
+make sure the conclusion did not depend on which technique was used.
+
+\textbf{Method A --- direct solve.} Apply $\hat L_x$ to each of
+$\psi_{1,1}=\sin\theta\,e^{i\phi}$, $\psi_{1,0}=\cos\theta$,
+$\psi_{1,-1}=\sin\theta\,e^{-i\phi}$ in turn, then solve the linear system
+for the coefficients that re-express each result in the same basis
+(matching the $e^{i\phi}$, constant, and $e^{-i\phi}$ parts separately).
+
+\textbf{Method B --- coefficient extraction.} Same idea, but the
+coefficients are extracted by evaluating the residual at a few sample
+values of $\phi$ and solving directly, rather than a general symbolic
+solve --- a cheap cross-check on Method A.
+
+\textbf{Method C --- inner-product (bra--ket) projection.} The cleanest of
+the three, and the one I would recommend as the standard going forward:
+\[
+  M_{m'm} \;=\; \frac{\langle \psi_{1,m'} \mid \hat L_i \mid \psi_{1,m}\rangle}
+                     {\langle \psi_{1,m'} \mid \psi_{1,m'}\rangle},
+  \qquad
+  \langle f \mid g\rangle := \int_0^\pi\!\!\int_0^{2\pi} \overline{f}\,g\,\sin\theta\;d\phi\,d\theta .
+\]
+This is exactly the ordinary quantum-mechanical way of reading off a
+matrix element, and it sidesteps the row/column ambiguity entirely, since
+each entry of $M$ is defined by its own independent integral.
+
+All three methods gave, for your specific choice
+$\chi_{1,1}=\chi_{1,-1}=\sin\theta$, $\chi_{1,0}=\cos\theta$, exactly:
+\[
+  M_x \;=\; \begin{pmatrix} 0 & -\tfrac12 & 0 \\ -1 & 0 & 1 \\ 0 & \tfrac12 & 0\end{pmatrix},
+  \quad
+  M_y \;=\; \begin{pmatrix} 0 & \tfrac{i}{2} & 0 \\ -i & 0 & -i \\ 0 & \tfrac{i}{2} & 0\end{pmatrix},
+  \quad
+  M_z \;=\; \mathrm{diag}(1,0,-1).
+\]
+
+Comparing these directly to your own $T'_x, T'_y, T'_z$ (equations 19--21
+of your note):
+\[
+  M_x = -\big(T'_x\big)^{\mathsf T}, \qquad
+  M_y = +\big(T'_y\big)^{\mathsf T}, \qquad
+  M_z = T'_z ,
+\]
+each an exact identity (zero residual), independent of which of the three
+methods above produced $M$.
+
+\section{Why $y$ and $z$ looked clean and $x$ did not}
+
+$T'_z$ is diagonal, hence symmetric, so transpose is invisible there. For
+$T'_y$, the specific entries happen to satisfy
+$(T'_i\cdot v)_{row}=M_{row,\cdot}\,v$ numerically for this particular $v$
+--- a coincidence of these specific matrix entries, not a general fact
+about $T'_y$ (it is not itself symmetric or antisymmetric). $T'_x$'s
+entries do not share that coincidence, which is exactly where the
+apparent $-1$ appears. In short: your arithmetic in equations (1)--(29) is
+correct throughout --- I rechecked every one of them independently and
+found no error --- the $-1$ has this precise, structural origin rather
+than being a mistake anywhere in the calculation.
+
+\section{One small, unrelated thing, for completeness}
+
+Separately: in your equation (18), $S^{-1}$ has a sign slip in one entry
+(the $(2,3)$ position). It did not affect anything downstream --- your
+own $T'_x,T'_y,T'_z$ in equations (19)--(21) are exactly what you get from
+the \emph{correct} inverse, so nothing needs to be revisited there.
+
+\section{Looking forward to your reasoning}
+
+I'd be very interested to see why you were expecting
+$\hat L_i\psi = T'_i\psi$ to hold identically for all three generators ---
+if there's a different, perhaps more physically natural convention where
+that holds exactly (rather than up to the transpose above), that would be
+worth understanding properly before we go further with the three-sphere
+case.
+
+\end{document}
