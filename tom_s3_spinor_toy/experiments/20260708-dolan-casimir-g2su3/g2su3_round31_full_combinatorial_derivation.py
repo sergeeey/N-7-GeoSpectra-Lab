@@ -1,4 +1,8 @@
 """
+NOTE (label only, 2026-08-10): "Cl(7,0)" throughout this file should read
+Cl(0,7) -- the generators it refers to square to -1. Naming inversion only,
+no result affected. See docs/clifford_convention_registry.md.
+
 Round 31 (2026-07-11): finish "Phase 2" -- derive Round 29's coefficients
 (1,-1/2,-7/4) using ONLY dict lookups, 6-vector arithmetic, and pure
 sympy symbolic algebra in STEPs A-C -- with ZERO calls to

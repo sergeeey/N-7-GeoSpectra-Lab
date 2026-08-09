@@ -20,6 +20,14 @@ reference for the Fano-plane octonion multiplication table used here).
 
 CORE ARGUMENT:
 
+  [LABEL CORRECTION 2026-08-10, repo-wide Clifford convention audit: every
+   "Cl(7,0)" in this file should read Cl(0,7). Note that item (1) below is
+   self-contradictory as written -- it names Cl(7,0) and then defines it as
+   "generators squaring to -1", which is Cl(0,7) under the convention round67
+   and s6-harm-g0 use. The DEFINITION in the parenthesis is right and the code
+   below matches it (-2*sp.eye); only the name is inverted. No result changes.
+   See docs/clifford_convention_registry.md.]
+
   (1) Cl(7,0) (7 anticommuting generators squaring to -1) is, as an
       ungraded real algebra, isomorphic to M_8(R) (+) M_8(R) -- exactly
       TWO inequivalent real 8-dimensional irreducible Clifford modules,

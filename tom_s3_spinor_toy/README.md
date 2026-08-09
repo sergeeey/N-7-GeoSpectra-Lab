@@ -55,7 +55,7 @@ transitional falsification — NOT the main result of this project.
 ```
 experiments/
 ├── 20260621-g67-octonion-triality/     ← SO(8) Z₃ triality → 3 independent channels
-├── 20260621-g68-octonion-channels/     ← L/R inequivalence in Cl(7,0)
+├── 20260621-g68-octonion-channels/     ← L/R inequivalence in Cl(0,7)
 ├── 20260621-g69-csdr-coset/            ← CSDR: 3+3̄+1+1 independent route
 ├── 20260621-g73-three-channel-dirac/   ← N_gen = 3 from Atiyah-Singer  ← START HERE
 ├── 20260621-g74a-lichnerowicz-gap/     ← dim ker = 1 exactly (not just ≥ 1)

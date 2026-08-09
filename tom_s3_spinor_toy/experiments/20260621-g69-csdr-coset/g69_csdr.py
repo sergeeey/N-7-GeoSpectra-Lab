@@ -120,8 +120,15 @@ FRAME_GROUP_S6 = "SU(4) = Spin(6)"
 
 # The Clifford algebra of ℝ⁶: Cl(6,0) ≅ M₈(ℝ) (unique 8-dim real rep)
 # → This gives the SINGLE 8-dim spinor of S⁶ (consistent with Cl(6) ≅ M₈(ℝ))
+# ⚠️ LABEL CORRECTION 2026-08-10 (repo-wide Clifford convention audit): the
+#    M₈(ℝ) isomorphism is Cl(0,6)'s, not Cl(6,0)'s. Computed, not recited: with
+#    e²=+1 the commuting antilinear J has J²=−1 → M₄(ℍ); with e²=−1 it has
+#    J²=+1 → M₈(ℝ). These constants are documentary (no generators are built
+#    here and nothing downstream branches on the name), so the 8 and the real
+#    dimension stand — only the label is inverted. See
+#    docs/clifford_convention_registry.md.
 CL6_REAL_DIM = 8
-CL6_IS_MATRIX = "M8(R)"  # Cl(6,0) ≅ M₈(ℝ)
+CL6_IS_MATRIX = "M8(R)"  # Cl(6,0) ≅ M₈(ℝ)  [label: should read Cl(0,6), see above]
 
 # ─── G69-E6: N_gen interpretation ─────────────────────────────────────────────
 

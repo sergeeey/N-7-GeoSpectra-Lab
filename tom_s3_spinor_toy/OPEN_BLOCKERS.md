@@ -506,6 +506,18 @@ results precisely rather than re-deriving them under time pressure.
 > Correct finding, misread as geometry instead of as a codebase fact. Any
 > future round tensoring S³ and S⁶ constructions hits the same trap.
 >
+> **AUDITED REPO-WIDE 2026-08-10 (C34).** 370 `.py` files scanned by asserted
+> anticommutator sign: **no second instance of the mixing exists** — OB10's own
+> two files are the only ones that ever combine the conventions, and **zero**
+> cross-directory import edges cross the boundary. The audit did find a
+> distinct, systematic **label** inversion (the octonion sub-project names its
+> `e²=−1` generators `Cl(7,0)`; `g69` hardcodes `Cl(6,0) ≅ M₈(ℝ)`, which is
+> `Cl(0,6)`'s isomorphism) — naming only, no result affected, and `g101`/`g102`
+> already write the correct `Cl(0,7)`/`Cl(0,8)` for the same object.
+> **Canonical reference now exists: `docs/clifford_convention_registry.md`** —
+> read it before tensoring or labelling any Clifford construction. See
+> `experiments/20260810-clifford-convention-repo-audit/decision.md`.
+>
 > Found by an EXTERNAL audit, not internally: the error survived this
 > experiment's own checks, a ledger entry, a `decision.md` with an explicit
 > "what this does NOT mean" section, and a merge. See

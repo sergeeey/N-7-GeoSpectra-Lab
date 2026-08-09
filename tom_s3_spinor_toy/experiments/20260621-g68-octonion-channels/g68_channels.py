@@ -1,5 +1,17 @@
 """G68: Octonion L/R channels — two distinct Clifford-7 modules (G67-C3 partial closure).
 
+⚠️ LABEL CORRECTION 2026-08-10 (repo-wide Clifford convention audit).
+    Every "Cl(7,0)" below should read **Cl(0,7)**. This file's own generators
+    satisfy L_i² = −1 ({L_i,L_j} = −2δ, asserted at check_clifford_relations
+    below, whose docstring already says Cl(0,7)), and the M₈(ℝ)⊕M₈(ℝ) split
+    claimed here is available only for e² = −1 — verified by computing the
+    pseudoscalar invariant, not by citing a table. NOTHING BELOW IS WRONG
+    mathematically; the matrices, Ω_L/Ω_R, and every result stand. Only the
+    NAME is inverted, and G101/G102 (which build on these matrices) already
+    write Cl(0,7)/Cl(0,8) correctly. See docs/clifford_convention_registry.md —
+    this repo uses Cl(p,q) with two opposite meanings, which is how OB10 went
+    wrong. Left in place rather than rewritten, per the retract-in-place rule.
+
 CLAIM: Left (L) and Right (R) octonion multiplications give TWO INEQUIVALENT
 8-dimensional representations of Cl(7,0) ≅ M₈(ℝ)⊕M₈(ℝ). Each restricts to
 7+1 under G₂ (same as G67). The pseudoscalar Ω₇ distinguishes them:
