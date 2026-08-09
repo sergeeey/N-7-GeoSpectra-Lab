@@ -563,6 +563,20 @@ claims:
       C27 itself remains REFUTED/unresolved -- one candidate solution was
       removed, none supplied. See
       experiments/20260806-ob10-c27-majorana-halving/decision.md.
+      [Relaxation Map re-update 2026-08-10, C33 -- READ THIS INSTEAD OF THE
+      PARAGRAPH ABOVE] That row is still CLOSED, but not for the reason C31
+      gave. C31's premise (the 9-dim product is pseudo-real) was a Clifford-
+      convention artifact (C32). C32 then inferred the row was OPEN; C33
+      showed that was an over-correction -- true of the 16-dim MODULE, false
+      of the 2-dim ZERO MODE, which is what this claim is about. The correct
+      reason: the module's reality is (S3 quaternionic) x (S6 quaternionic),
+      and restricting to ker(D_S3) (x) ker(D_S6,twisted) collapses the S6
+      factor to a scalar, which cannot supply the second minus sign -- the
+      induced structure on the 2-dim kernel is quaternionic again. NET EFFECT
+      OF THE ENTIRE OB10 EPISODE ON THIS CLAIM: ZERO. Multiplicity-2 intact,
+      6 modes across 3 channels, and the 32-state reconciliation is still the
+      thing round78 said to tackle first. See
+      experiments/20260810-majorana-vs-multiplicity2/decision.md.
 
   - id: C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL
     statement: "[RETRACTED 2026-08-09 -- SEE C32.] Original claim: the 16-dim geometric S3xS6 Clifford module is PSEUDOREAL (B*conj(B)=-I), with mixed signature Cl(6,3). BOTH parts are WRONG. The Cl(6,3) signature was an artifact of gluing two sub-projects that carry OPPOSITE Clifford sign conventions (S3/round67 uses Cl(0,3); S6/s6-harm-g0 uses Cl(6,0)) -- not a geometric fact. S3xS6 is a 9-dim RIEMANNIAN product and requires ONE uniform convention; under uniform Cl(0,9) the signature is (0,9) and the type is REAL (B*conj(B)=+I), matching Spin(9)'s Delta_9=R^16 (9 mod 8 = 1). Superseded by C32."
@@ -681,7 +695,7 @@ claims:
       recorded as plausible and UNTESTED, not adopted.
 
   - id: C31_C27_MAJORANA_BRANCH_CLOSED
-    statement: "[RETRACTED 2026-08-09 -- VERDICT INVERTED, SEE C32.] Original claim: the 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED, because the relevant factor is pseudo-real so no Majorana condition can exist. The PREMISE (C28's pseudo-reality) is a Clifford-convention artifact -- see C32. On the geometrically correct uniform-convention structure the Majorana condition psi=B*conj(psi) admits a 16-real-dimensional solution space (exactly half of 32), i.e. it EXISTS and halves the module. That Relaxation Map row is therefore OPEN, not closed -- the opposite of this claim. NOTE what survives: the sub-fact that the S3 FACTOR ALONE is quaternionic remains true and convention-independent (Spin(3)=SU(2) fundamental, 3 mod 8 = 3); the error was propagating it to the 9-dim product across a signature mismatch."
+    statement: "[REASONING RETRACTED 2026-08-09 (C32); CONCLUSION REINSTATED 2026-08-10 (C33).] Original claim: the 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED, because the relevant factor is pseudo-real so no Majorana condition can exist. The PREMISE (C28's pseudo-reality of the 9-dim product) is a Clifford-convention artifact -- see C32 -- so this claim's REASONING is wrong and stays retracted. C32 then inferred the row was OPEN; C33 showed that inference was itself an over-correction (true of the 16-dim MODULE, false of the 2-dim ZERO MODE, which is what C27 is about). NET: the row is CLOSED, as this claim said, but for a reason this claim did not give -- restricting a (quaternionic (x) quaternionic) structure to (full S3 factor) (x) (1-dim S6 kernel) leaves the S3 quaternionic factor alone, and a scalar cannot flip the sign back. NOTE what always survived: the sub-fact that the S3 FACTOR ALONE is quaternionic is true and convention-independent (Spin(3)=SU(2) fundamental, 3 mod 8 = 3) -- and it is exactly that sub-fact which C33 shows was load-bearing all along; the error was routing it through the 9-dim product across a signature mismatch."
     truth_status: REFUTED
     test_outcome: FAIL
     execution_status: READY
@@ -716,9 +730,15 @@ claims:
       [RETRACTION NOTE 2026-08-09] Everything above is preserved as written
       for the record, but the claim's VERDICT is inverted by C32. The
       reasoning chain was internally sound; its input (C28) was not.
+      [SECOND NOTE 2026-08-10, C33] C32's inversion was itself wrong. This
+      claim's CONCLUSION (row CLOSED) is correct after all; its stated REASON
+      is not, which is why truth_status stays REFUTED and lifecycle stays
+      SUPERSEDED -- superseded now by C33, which reaches the same conclusion
+      from the zero mode rather than the module. Read C33 for the live
+      statement; this entry is history.
 
   - id: C32_OB10_CORRECTED_TYPE_IS_REAL
-    statement: "CORRECTION of C28 and C31. The geometric S3xS6 spinor module's reality type is REAL, not pseudo-real. C28's mixed Cl(6,3) signature was an artifact of gluing two sub-projects with OPPOSITE Clifford sign conventions -- S3/round67 uses Cl(0,3) ({Z,Z}=-2d), S6/s6-harm-g0 uses Cl(6,0) ({G,G}=+2d) -- and OB10 was the first round ever to combine them. S3xS6 is a 9-dim RIEMANNIAN product requiring ONE uniform convention; uniformising (G'_a = i*G_a) gives signature (0,9) and a unique charge conjugation B = s2(x)s1(x)s2(x)s1 with B*conj(B)=+I -> REAL, independently matching Spin(9)'s Delta_9 = R^16 (9 mod 8 = 1). CONSEQUENCE: the Majorana condition, which C31 declared impossible, admits a 16-real-dimensional solution space (exactly half of 32) on the correct structure -- so that row of C27's Relaxation Map is OPEN, not closed."
+    statement: "CORRECTION of C28 and C31. The geometric S3xS6 spinor module's reality type is REAL, not pseudo-real. C28's mixed Cl(6,3) signature was an artifact of gluing two sub-projects with OPPOSITE Clifford sign conventions -- S3/round67 uses Cl(0,3) ({Z,Z}=-2d), S6/s6-harm-g0 uses Cl(6,0) ({G,G}=+2d) -- and OB10 was the first round ever to combine them. S3xS6 is a 9-dim RIEMANNIAN product requiring ONE uniform convention; uniformising (G'_a = i*G_a) gives signature (0,9) and a unique charge conjugation B = s2(x)s1(x)s2(x)s1 with B*conj(B)=+I -> REAL, independently matching Spin(9)'s Delta_9 = R^16 (9 mod 8 = 1). CONSEQUENCE: the Majorana condition, which C31 declared impossible, admits a 16-real-dimensional solution space (exactly half of 32) on the correct MODULE. [PARTIALLY CORRECTED 2026-08-10 by C33 -- see below: this claim then went on to say 'so that row of C27's Relaxation Map is OPEN, not closed', which was an OVER-CORRECTION. True of the 16-dim module, FALSE of the 2-dim zero mode. The row is CLOSED after all. Everything else in this claim stands.]"
     truth_status: SUPPORTED
     test_outcome: PASS
     execution_status: READY
@@ -751,8 +771,49 @@ claims:
       METHODOLOGICAL: this error survived its own experiment's internal
       checks, a ledger entry, a decision.md with an explicit "what this does
       NOT mean" section, and a merge. Caught only from outside.
+      [SELF-CORRECTED 2026-08-10, C33] This claim's OWN "that row is OPEN"
+      sentence was an over-correction, caught by running the very follow-up
+      this note called for. See C33.
+
+  - id: C33_MAJORANA_DOES_NOT_RESOLVE_MULTIPLICITY_2
+    statement: "The Majorana condition does NOT resolve C27's multiplicity-2, and C32's inference that the corresponding Relaxation Map row is OPEN was an over-correction. C27's zero mode is ker(D_S3) (x) ker(D_S6,twisted) = C^2 (x) 1-dim, NOT the 16-dim module. Under the uniform convention the module's reality is a product of TWO quaternionic factors (B_S3 conj(B_S3) = -I and B_S6 conj(B_S6) = -I, giving (-1)(-1) = +1 REAL). Restricting to C^2 (x) span(k) collapses the S6 factor to a SCALAR lambda, which cannot supply the second minus sign: the induced map psi -> lambda*B_S3*conj(psi) squares to -|lambda|^2*I, quaternionic again, so it has only the trivial fixed vector. Verified for nine values of lambda spanning phase and scale -- solution dimension 0 in every case. The other branch (B_S6 does NOT preserve span(k)) gives the same answer for a different reason: B then maps the zero mode out of itself, so the condition cannot be imposed on ker(D_full) at all. NET: C31's CONCLUSION survives (row CLOSED), C31's REASONING was still wrong, and C32's inversion of it was wrong too."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-majorana-vs-multiplicity2/decision.md"
+    depends_on: [C27_MULTIPLICITY_2_FAIL, C32_OB10_CORRECTED_TYPE_IS_REAL]
+    notes: >
+      [2026-08-10] Deliberately k-INDEPENDENT: no explicit S6 twisted kernel
+      vector exists in this project (dim ker = 1 is established
+      index-theoretically by dolan-casimir + round59, not by an explicit
+      vector), so the argument is run over general lambda and both branches
+      of the preservation question. It does assume the kernel is
+      1-dimensional, which is exactly what those rounds establish.
+      NEGATIVE CONTROL: the same solver on a genuinely real structure
+      (B = sigma_1) returns dimension 2, not 0 -- it is not vacuously
+      returning zero.
+      SCOPE: the genuine zero mode lives in the TWISTED bundle D_S6 (x) S^-,
+      while OB10's 16-dim module is the UNTWISTED product. This uses the
+      untwisted module as a proxy. The load-bearing step (S3 factor is
+      quaternionic; a scalar cannot flip a sign) is untouched by the twist,
+      which acts on the S6 side -- but a fully rigorous version would work
+      in the twisted bundle directly. ONE NAMED LOOPHOLE: the argument
+      assumes the charge conjugation FACTORIZES as (S3) (x) (S6/twist). It
+      does for the B found here; a non-factorizing antilinear structure on
+      the twisted bundle is not excluded.
+      NET EFFECT OF THE WHOLE OB10 EPISODE ON C27: ZERO. The reality type
+      was corrected and a real codebase inconsistency exposed, but the
+      blocker that briefly appeared to unlock never moved. C27 stands: 6
+      internal modes across 3 channels, not 3.
+      METHODOLOGICAL: I corrected an error (C28/C31) and in doing so
+      introduced a new one in the opposite direction (C32's "row is OPEN"),
+      caught by running the follow-up C32 itself flagged as necessary.
+      Over-correction after a retraction is its own failure mode.
 
 notes_on_this_ledger:
+  - "34 entries as of the Majorana/multiplicity-2 follow-through (2026-08-10). C33 added, correcting C32's own over-correction. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 34)."
   - "33 entries as of the OB10 convention correction (2026-08-09). C32 added; C28 and C31 RETRACTED (truth_status REFUTED, lifecycle SUPERSEDED) after an external red-team audit showed C28's pseudo-real verdict was a Clifford-convention artifact and C31's no-go inherited the bad premise. Both kept in place with their original text and reasoning preserved -- retracted, never deleted, per this registry's own convention. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 33)."
   - "32 entries as of the OB10->C27 Majorana-branch closure (2026-08-06) -- deliberately not exhaustive over the ~157 experiments. C31 added, closing one of the three rows of C27's Relaxation Map (the other two remain open; C27 itself is NOT resolved). Prior count was 31 (OB2/OB6 item 5); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 32) before finalizing this note."
   - "31 entries as of the OB2/OB6 item 5 partial progress (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C30 added, first attempt at Codex's item 5 (Z2 exchange verified; grading/real structure/physical action remain open). Prior count was 30 (OB11 condition i); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 31) before finalizing this note."
