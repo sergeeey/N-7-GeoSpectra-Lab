@@ -468,6 +468,19 @@ type was checked); does not construct a combined `J=B⊗J_F`; does not touch
 OB1/OB2/OB4/OB11 or the `N_gen=3` headline (confirmed free-standing per
 `GLOBAL_RECOMPOSITION_AUDIT.md`'s own C19 audit).
 
+**Downstream consequence found 2026-08-06 (C31) — this result was NOT
+free-standing after all, in one specific direction.** `B` factorizes exactly
+as `B_{S³}⊗B_{S⁶}` with the S³ slot pseudo-real (`−I₂`) and the S⁶ slot real
+(`+I₈`) — i.e. the pseudo-reality sits entirely in the S³ factor, which is
+also exactly where C27's multiplicity-2 excess lives. That closes the
+"new reality/Majorana condition" row of C27's Relaxation Map as a positive
+no-go (exhaustive: no compatible REAL antilinear structure exists on that
+factor at all). C27 itself remains unresolved. See
+`experiments/20260806-ob10-c27-majorana-halving/decision.md`. Note this
+does not contradict the C19 audit above, which correctly found OB10 does not
+feed `D2`'s zero-mode COUNTING argument — the link found here is to C27's
+option space, a different object.
+
 **Original description (superseded framing, kept for history):** the
 finite/NCG algebra's real structure `J_F` is
 established (`J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).

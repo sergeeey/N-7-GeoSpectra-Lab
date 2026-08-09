@@ -1,0 +1,26 @@
+{
+  "B_factorizes_S3_tensor_S6": true,
+  "S3_factor_pseudoreal": true,
+  "S6_factor_real": true,
+  "full_module_pseudoreal": true,
+  "S3_majorana_free_params": 0,
+  "S3_majorana_impossible": true,
+  "exhaustive_antilinear_search": {
+    "eta=+1": {
+      "scalar_multiple_of_I": true,
+      "M_conj(M)_coefficient": "-mi2**2 - mr2**2",
+      "reading": "indeterminate: -mi2**2 - mr2**2",
+      "proven_negative_definite": true
+    },
+    "eta=-1": "only M=0 (trivial)"
+  },
+  "no_real_structure_exists_on_S3_factor": true,
+  "control_is_real_type": true,
+  "control_majorana_free_params": 4,
+  "control_discriminates": true,
+  "phase_cannot_rescue": true,
+  "t1_reduces_to_t0": true,
+  "n_triality_channels": 3,
+  "symplectic_pairing_possible_symmetrically": false,
+  "verdict": "MAJORANA_BRANCH_CLOSED"
+}
