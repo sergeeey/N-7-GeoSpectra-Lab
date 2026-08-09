@@ -551,6 +551,18 @@ claims:
       weaken) this claim -- multiplicity-2 is real physics, not a
       comparison-method bug. See
       experiments/20260728-transpose-artifact-audit-round77-78/decision.md.
+      [Relaxation Map update 2026-08-06, C31] The FIRST of this claim's three
+      Relaxation Map rows -- "new reality/Majorana condition" -- is now
+      CLOSED, not merely unexplored: the S3 spinor factor where the excess
+      lives is pseudo-real, exhaustively (no compatible REAL antilinear
+      structure exists at all), so no Majorana condition can halve the 2-dim
+      kernel, with or without a phase, at t=0 or t=1; the symplectic
+      workaround is blocked by the odd (3) channel count. This claim's own
+      statement above ("no Majorana/reality condition ... CURRENTLY resolves
+      this gap") stays literally true and is now STRENGTHENED to "cannot".
+      C27 itself remains REFUTED/unresolved -- one candidate solution was
+      removed, none supplied. See
+      experiments/20260806-ob10-c27-majorana-halving/decision.md.
 
   - id: C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL
     statement: "The 16-dim geometric S3xS6 Clifford module (built from this repo's own established Cl(0,3) S3 and Cl(6,0) S6 generators, per preprint.tex's own stated product formula) admits a unique (within a 256-candidate {I,s1,s2,s3}^4 factorized search) Hermitian+unitary charge-conjugation operator B with B*conj(B)=-I -- PSEUDOREAL (quaternionic) type, matching the finite algebra's own pseudo-real J_F^2=-1. The product's actual signature is mixed Cl(6,3), not the uniform Cl(9,0)/Cl(0,9) that OPEN_BLOCKERS.md's own OB10 text's '3+6=9=1 mod 8' proposal assumed."
@@ -625,7 +637,42 @@ claims:
       real structure not attempted, physical action (F6) untouched (as
       Codex's own text already flagged as still needed).
 
+  - id: C31_C27_MAJORANA_BRANCH_CLOSED
+    statement: "The 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED as a route to halving the multiplicity-2 zero mode: OB10's charge conjugation B factorizes exactly as B_S3 (x) B_S6 with B_S3*conj(B_S3)=-I2 (PSEUDO-REAL) and B_S6*conj(B_S6)=+I8 (REAL), so the pseudo-reality sits in the SAME S3 factor where C27's excess factor of 2 lives. The Majorana condition psi=B_S3*conj(psi) has 0 free real parameters (only psi=0), holds with any phase, and reduces identically at t=1 via B_S3*conj(gbar(x))=gbar(x)*B_S3. EXHAUSTIVE search over all compatible antilinear J=M.conj shows every such structure has M*conj(M) = minus an explicit sum of squares -- no REAL structure exists at all, so the no-go is a property of the 2-dim Cl(0,3) module, not of OB10's particular B. The symplectic-Majorana workaround is separately blocked: it needs an EVEN flavor count and this project has 3 triality channels."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260806-ob10-c27-majorana-halving/decision.md"
+    depends_on: [C27_MULTIPLICITY_2_FAIL, C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL]
+    notes: >
+      [2026-08-06] Connects two results produced 20 days apart and never
+      previously linked (round78's C27, 2026-07-17; OB10's C28, 2026-08-03).
+      Round78 had only established the Majorana route is NOT CURRENTLY
+      IMPOSED (a grep-absence); this establishes it CANNOT be imposed (a
+      positive no-go). NEGATIVE CONTROL run and passed: the identical solver
+      on a genuinely real structure (B=sigma_1) finds 4 free parameters vs 0
+      here -- the test discriminates.
+      HONEST SCOPING, stated in the decision.md and repeated here so it
+      cannot be lost: the CORE algebraic fact (SU(2) fundamental is
+      quaternionic => no Majorana) is TEXTBOOK. Checked explicitly against
+      this project's own one-line-reducibility test (added to
+      pearl_registry after round114 was falsified for exactly the failure
+      mode of a "cross-check" that collapsed into restating the source's own
+      theorem). What is NOT reducible: that OB10's B factorizes so the
+      textbook fact applies to THIS construction; that C27's excess sits in
+      that same factor; the t=1 reduction; and the odd-channel-count
+      obstruction, which is specific to this project's 3-channel structure.
+      The contribution is the CONNECTION and the closure of one listed
+      escape route -- NOT a new mathematical fact.
+      DOES NOT RESOLVE C27: the multiplicity-2 excess is fully intact. Two
+      Relaxation Map rows remain open (S3-specific projection; 32-state
+      reconciliation), and round78's own recommendation that the 32-state
+      reconciliation be tackled FIRST is strengthened, not weakened.
+
 notes_on_this_ledger:
+  - "32 entries as of the OB10->C27 Majorana-branch closure (2026-08-06) -- deliberately not exhaustive over the ~157 experiments. C31 added, closing one of the three rows of C27's Relaxation Map (the other two remain open; C27 itself is NOT resolved). Prior count was 31 (OB2/OB6 item 5); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 32) before finalizing this note."
   - "31 entries as of the OB2/OB6 item 5 partial progress (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C30 added, first attempt at Codex's item 5 (Z2 exchange verified; grading/real structure/physical action remain open). Prior count was 30 (OB11 condition i); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 31) before finalizing this note."
   - "30 entries as of the OB11 (condition i) partial resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C29 added, closing condition (i) of OPEN_BLOCKERS.md's OB11 (conditions ii/iii remain open). Prior count was 29 (OB10 resolution); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 30) before finalizing this note."
   - "29 entries as of the OB10 resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C28 added to close OPEN_BLOCKERS.md's OB10 (geometric spinor bundle reality/Majorana type). Prior count was 28 (OB9 consolidation); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 29) before finalizing this note."
