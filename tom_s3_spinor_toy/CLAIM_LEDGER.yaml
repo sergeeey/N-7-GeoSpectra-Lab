@@ -565,12 +565,12 @@ claims:
       experiments/20260806-ob10-c27-majorana-halving/decision.md.
 
   - id: C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL
-    statement: "The 16-dim geometric S3xS6 Clifford module (built from this repo's own established Cl(0,3) S3 and Cl(6,0) S6 generators, per preprint.tex's own stated product formula) admits a unique (within a 256-candidate {I,s1,s2,s3}^4 factorized search) Hermitian+unitary charge-conjugation operator B with B*conj(B)=-I -- PSEUDOREAL (quaternionic) type, matching the finite algebra's own pseudo-real J_F^2=-1. The product's actual signature is mixed Cl(6,3), not the uniform Cl(9,0)/Cl(0,9) that OPEN_BLOCKERS.md's own OB10 text's '3+6=9=1 mod 8' proposal assumed."
-    truth_status: SUPPORTED
-    test_outcome: PASS
+    statement: "[RETRACTED 2026-08-09 -- SEE C32.] Original claim: the 16-dim geometric S3xS6 Clifford module is PSEUDOREAL (B*conj(B)=-I), with mixed signature Cl(6,3). BOTH parts are WRONG. The Cl(6,3) signature was an artifact of gluing two sub-projects that carry OPPOSITE Clifford sign conventions (S3/round67 uses Cl(0,3); S6/s6-harm-g0 uses Cl(6,0)) -- not a geometric fact. S3xS6 is a 9-dim RIEMANNIAN product and requires ONE uniform convention; under uniform Cl(0,9) the signature is (0,9) and the type is REAL (B*conj(B)=+I), matching Spin(9)'s Delta_9=R^16 (9 mod 8 = 1). Superseded by C32."
+    truth_status: REFUTED
+    test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
-    lifecycle_status: ACTIVE
+    lifecycle_status: SUPERSEDED
     evidence_file: "tom_s3_spinor_toy/experiments/20260803-ob10-ko-dimension-majorana-check/decision.md"
     depends_on: []
     notes: >
@@ -638,12 +638,12 @@ claims:
       Codex's own text already flagged as still needed).
 
   - id: C31_C27_MAJORANA_BRANCH_CLOSED
-    statement: "The 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED as a route to halving the multiplicity-2 zero mode: OB10's charge conjugation B factorizes exactly as B_S3 (x) B_S6 with B_S3*conj(B_S3)=-I2 (PSEUDO-REAL) and B_S6*conj(B_S6)=+I8 (REAL), so the pseudo-reality sits in the SAME S3 factor where C27's excess factor of 2 lives. The Majorana condition psi=B_S3*conj(psi) has 0 free real parameters (only psi=0), holds with any phase, and reduces identically at t=1 via B_S3*conj(gbar(x))=gbar(x)*B_S3. EXHAUSTIVE search over all compatible antilinear J=M.conj shows every such structure has M*conj(M) = minus an explicit sum of squares -- no REAL structure exists at all, so the no-go is a property of the 2-dim Cl(0,3) module, not of OB10's particular B. The symplectic-Majorana workaround is separately blocked: it needs an EVEN flavor count and this project has 3 triality channels."
-    truth_status: SUPPORTED
-    test_outcome: PASS
+    statement: "[RETRACTED 2026-08-09 -- VERDICT INVERTED, SEE C32.] Original claim: the 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED, because the relevant factor is pseudo-real so no Majorana condition can exist. The PREMISE (C28's pseudo-reality) is a Clifford-convention artifact -- see C32. On the geometrically correct uniform-convention structure the Majorana condition psi=B*conj(psi) admits a 16-real-dimensional solution space (exactly half of 32), i.e. it EXISTS and halves the module. That Relaxation Map row is therefore OPEN, not closed -- the opposite of this claim. NOTE what survives: the sub-fact that the S3 FACTOR ALONE is quaternionic remains true and convention-independent (Spin(3)=SU(2) fundamental, 3 mod 8 = 3); the error was propagating it to the 9-dim product across a signature mismatch."
+    truth_status: REFUTED
+    test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
-    lifecycle_status: ACTIVE
+    lifecycle_status: SUPERSEDED
     evidence_file: "tom_s3_spinor_toy/experiments/20260806-ob10-c27-majorana-halving/decision.md"
     depends_on: [C27_MULTIPLICITY_2_FAIL, C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL]
     notes: >
@@ -670,8 +670,47 @@ claims:
       Relaxation Map rows remain open (S3-specific projection; 32-state
       reconciliation), and round78's own recommendation that the 32-state
       reconciliation be tackled FIRST is strengthened, not weakened.
+      [RETRACTION NOTE 2026-08-09] Everything above is preserved as written
+      for the record, but the claim's VERDICT is inverted by C32. The
+      reasoning chain was internally sound; its input (C28) was not.
+
+  - id: C32_OB10_CORRECTED_TYPE_IS_REAL
+    statement: "CORRECTION of C28 and C31. The geometric S3xS6 spinor module's reality type is REAL, not pseudo-real. C28's mixed Cl(6,3) signature was an artifact of gluing two sub-projects with OPPOSITE Clifford sign conventions -- S3/round67 uses Cl(0,3) ({Z,Z}=-2d), S6/s6-harm-g0 uses Cl(6,0) ({G,G}=+2d) -- and OB10 was the first round ever to combine them. S3xS6 is a 9-dim RIEMANNIAN product requiring ONE uniform convention; uniformising (G'_a = i*G_a) gives signature (0,9) and a unique charge conjugation B = s2(x)s1(x)s2(x)s1 with B*conj(B)=+I -> REAL, independently matching Spin(9)'s Delta_9 = R^16 (9 mod 8 = 1). CONSEQUENCE: the Majorana condition, which C31 declared impossible, admits a 16-real-dimensional solution space (exactly half of 32) on the correct structure -- so that row of C27's Relaxation Map is OPEN, not closed."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260809-ob10-convention-correction/decision.md"
+    depends_on: []
+    supersedes: [C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL, C31_C27_MAJORANA_BRANCH_CLOSED]
+    notes: >
+      [2026-08-09] Found by an EXTERNAL red-team audit, not internally. Per
+      audit-verification-gate.md its claims were treated as hypotheses and
+      re-derived here rather than accepted; all three of its substantive
+      claims verified. NEGATIVE CONTROL run: the test must distinguish the
+      two cases at all -- signature (6,3) vs (0,9), type PSEUDO-REAL vs REAL,
+      Majorana solution dimension 0 vs 16. It discriminates.
+      WHAT SURVIVES FROM C28/C31: the S3 factor alone IS quaternionic
+      (Spin(3)=SU(2) fundamental, convention-independent), and C31's
+      exhaustive antilinear search over that 2-dim module remains valid FOR
+      THAT FACTOR. The error was propagating a per-factor result to the
+      9-dim product across a signature mismatch.
+      WHAT OB10 DID CONTRIBUTE, correctly: it surfaced a genuine latent
+      inconsistency -- two long-standing sub-projects carrying incompatible
+      Clifford conventions. That finding is real and has downstream reach
+      (any future round tensoring S3 and S6 constructions hits the same
+      trap); it was simply misread as geometry instead of as a codebase fact.
+      SCOPE, load-bearing: this does NOT show the Majorana condition
+      resolves C27. It shows the condition is ALGEBRAICALLY AVAILABLE on the
+      module. Whether it halves ker(D_full) specifically -- and whether it is
+      compatible with D_full at all -- is a separate, not-yet-run round.
+      METHODOLOGICAL: this error survived its own experiment's internal
+      checks, a ledger entry, a decision.md with an explicit "what this does
+      NOT mean" section, and a merge. Caught only from outside.
 
 notes_on_this_ledger:
+  - "33 entries as of the OB10 convention correction (2026-08-09). C32 added; C28 and C31 RETRACTED (truth_status REFUTED, lifecycle SUPERSEDED) after an external red-team audit showed C28's pseudo-real verdict was a Clifford-convention artifact and C31's no-go inherited the bad premise. Both kept in place with their original text and reasoning preserved -- retracted, never deleted, per this registry's own convention. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 33)."
   - "32 entries as of the OB10->C27 Majorana-branch closure (2026-08-06) -- deliberately not exhaustive over the ~157 experiments. C31 added, closing one of the three rows of C27's Relaxation Map (the other two remain open; C27 itself is NOT resolved). Prior count was 31 (OB2/OB6 item 5); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 32) before finalizing this note."
   - "31 entries as of the OB2/OB6 item 5 partial progress (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C30 added, first attempt at Codex's item 5 (Z2 exchange verified; grading/real structure/physical action remain open). Prior count was 30 (OB11 condition i); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 31) before finalizing this note."
   - "30 entries as of the OB11 (condition i) partial resolution (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C29 added, closing condition (i) of OPEN_BLOCKERS.md's OB11 (conditions ii/iii remain open). Prior count was 29 (OB10 resolution); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 30) before finalizing this note."

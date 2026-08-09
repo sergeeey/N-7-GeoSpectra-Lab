@@ -446,7 +446,34 @@ results precisely rather than re-deriving them under time pressure.
 
 ---
 
-## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03]
+## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03, then CORRECTED 2026-08-09]
+
+> **⚠️ CORRECTION 2026-08-09 — read this before anything below.** The
+> 2026-08-03 resolution reached the WRONG ANSWER. It concluded the bundle is
+> PSEUDO-REAL from a mixed `Cl(6,3)` signature; both were artifacts of gluing
+> two sub-projects with OPPOSITE Clifford sign conventions (S³/round67 uses
+> `Cl(0,3)`; S⁶/s6-harm-g0 uses `Cl(6,0)`), which OB10 was the first round
+> ever to combine. S³×S⁶ is a 9-dim RIEMANNIAN product and needs ONE uniform
+> convention. Under uniform `Cl(0,9)`: signature `(0,9)`, unique
+> `B = σ₂⊗σ₁⊗σ₂⊗σ₁`, `B·conj(B) = +I` → **REAL**, independently matching
+> `Spin(9)`'s `Δ₉ = ℝ¹⁶` (`9 mod 8 = 1`).
+>
+> **Downstream:** C31's "Majorana branch CLOSED" is INVERTED — on the correct
+> structure the Majorana condition admits a 16-real-dimensional solution
+> space (exactly half of 32). That row of C27's Relaxation Map is **OPEN**
+> and is now a live candidate mechanism.
+>
+> **What OB10 genuinely found:** a real latent inconsistency — two
+> long-standing sub-projects carrying incompatible Clifford conventions.
+> Correct finding, misread as geometry instead of as a codebase fact. Any
+> future round tensoring S³ and S⁶ constructions hits the same trap.
+>
+> Found by an EXTERNAL audit, not internally: the error survived this
+> experiment's own checks, a ledger entry, a `decision.md` with an explicit
+> "what this does NOT mean" section, and a merge. See
+> `experiments/20260809-ob10-convention-correction/decision.md` (C32).
+>
+> Original 2026-08-03 text preserved below for the record.
 
 **Resolved:** built the 16-dim product Clifford module from this repo's own
 already-established S³ (`Cl(0,3)`, round67) and S⁶ (`Cl(6,0)`, s6-harm-g0/G13)

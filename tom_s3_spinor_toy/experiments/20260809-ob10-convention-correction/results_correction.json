@@ -1,0 +1,26 @@
+{
+  "step1_s3_is_Cl03": true,
+  "step1_s6_is_Cl60": true,
+  "step1_conventions_are_opposite": true,
+  "step2_mixed_signature": [
+    6,
+    3
+  ],
+  "step2_mixed_type": [
+    "PSEUDO-REAL"
+  ],
+  "step3_uniform_signature": [
+    0,
+    9
+  ],
+  "step3_uniform_type": [
+    "REAL"
+  ],
+  "step3_type_flipped_under_uniformisation": true,
+  "step4_control_discriminates": true,
+  "step5_majorana_real_solution_dim": 16,
+  "step5_majorana_admits_nonzero": true,
+  "step5_majorana_halves_module": true,
+  "step5_majorana_dim_under_old_mixed_B": 0,
+  "verdict": "OB10_CORRECTED__TYPE_IS_REAL__C31_INVERTED"
+}

@@ -273,3 +273,60 @@ have the error.
 **Source:** `tom_s3_spinor_toy/experiments/20260718-round127-8v-vs-s6-spinor-isomorphism/results_round127.json`;
 `tom_s3_spinor_toy/experiments/20260718-round128-cartan-weyl-alignment/decision.md`
 ("Bug history", bug 2).
+
+---
+
+## SR9 — OB10's reality-type verdict: not superseded, WRONG
+
+**Conclusion (does NOT survive):** OB10 (2026-08-03, `C28`) concluded the
+geometric S³×S⁶ spinor module is **PSEUDO-REAL**, with mixed signature
+`Cl(6,3)`. Both parts are wrong. This is the first entry in this registry
+recording a **reversed verdict** rather than a changed proof route or
+narrowed scope — the distinction matters, and is why it is spelled out.
+
+**What changed:** the `Cl(6,3)` signature was never a geometric fact. It came
+from gluing two sub-projects that carry OPPOSITE Clifford sign conventions:
+
+| source | convention |
+|---|---|
+| S³ — `experiments/20260717-round67-e2-s3-torsion-deformation/` | `Z_i = i·σ_i`, `{Z_i,Z_j} = −2δ` → `Cl(0,3)` |
+| S⁶ — `experiments/20260615-s6-harm-g0/` | `Γ_a` hermitian, `{Γ_a,Γ_b} = +2δ` → `Cl(6,0)` |
+
+S³×S⁶ is a 9-dimensional **Riemannian** product; its spinor bundle requires
+one uniform convention. Uniformising (`Γ'_a = i·Γ_a`) gives signature `(0,9)`
+and reality type **REAL** (`B·conj(B) = +I`), independently matching
+`Spin(9)`'s `Δ₉ = ℝ¹⁶` (`9 mod 8 = 1`).
+
+**Where the stale version still lives / has been fixed:**
+- `CLAIM_LEDGER.yaml` `C28` — retracted in place (`REFUTED`/`SUPERSEDED`),
+  original text preserved, points to `C32`.
+- `CLAIM_LEDGER.yaml` `C31` — retracted in place; its verdict is **inverted**,
+  not merely weakened (see below).
+- `OPEN_BLOCKERS.md` OB10 — correction banner added above the original text.
+- `experiments/20260803-ob10-ko-dimension-majorana-check/` and
+  `experiments/20260806-ob10-c27-majorana-halving/` — left as-written; both
+  are superseded by `experiments/20260809-ob10-convention-correction/`.
+
+**Downstream inversion (the consequential part):** `C31` argued the Majorana
+row of `C27`'s Relaxation Map was CLOSED because no Majorana condition could
+exist. On the corrected structure it *does* exist and halves the module
+(16 of 32 real d.o.f.). That row is **OPEN**, and is now a live candidate
+mechanism against the multiplicity-2 blocker — the opposite of the recorded
+conclusion.
+
+**What survives:** the S³ factor alone genuinely is quaternionic
+(`Spin(3) = SU(2)` fundamental, `3 mod 8 = 3`, convention-independent), and
+`C31`'s exhaustive antilinear search over that 2-dim module is valid *for
+that factor*. The error was propagating a per-factor result across a
+signature mismatch to the 9-dim product.
+
+**What OB10 did contribute correctly:** it surfaced a genuine latent
+inconsistency — two long-standing sub-projects with incompatible Clifford
+conventions, never combined until OB10 combined them. Real finding, misread
+as geometry rather than as a fact about the codebase.
+
+**How it was caught:** an external red-team audit, 2026-08-09. Recorded
+plainly because it bears on this registry's purpose: the error survived the
+experiment's own internal checks, a full ledger entry, a `decision.md` with
+an explicit "what this does NOT mean" section, and a merge to main. No
+internal gate caught it.
