@@ -613,6 +613,21 @@ claims:
       part is now directly verified (not just inferred from an
       equal-dimension Hom count, round127's own argument). Evidence tier
       INTERNALLY_CERTIFIED (same session, numpy-verified).
+      [EVIDENCE CORRECTED 2026-08-09, external audit] The CONCLUSION above
+      stands, but the sentence "not just inferred from an equal-dimension
+      Hom count" had it exactly backwards. C2(3) = C2(3bar) = 4/3
+      IDENTICALLY, so the quadratic-Casimir spectrum this claim rests on
+      CANNOT distinguish 1+1+3+3bar from 1+1+3+3 or 1+1+3bar+3bar -- it was
+      never sufficient evidence. The Hom count it dismissed is the thing
+      that actually carries the result: Hom(V,V) = sum of squared
+      multiplicities gives 6 for 1+1+3+3bar but 8 for both alternatives, and
+      G102 S7 measured 6 on all nine pairs back on 2026-07-05. Negative
+      control run (explicit 1+1+3+3bar -> 6, explicit 1+1+3+3 -> 8):
+      the criterion discriminates. Nothing recomputed, only re-cited. See
+      experiments/20260809-ob11-weight-spectrum-correction/decision.md.
+      Right answer, wrong justification -- a weaker failure than C28's
+      (wrong ANSWER) but the same shape: a check incapable of separating the
+      claimed outcome from its alternatives was reported as if it had.
 
   - id: C30_OB2_MATRIX_T_Z2_EXCHANGE_PARTIAL
     statement: "Codex item 5 (OB2/OB6): promoting t from a discrete label to a general rank-1 Hermitian projector T (Bloch-sphere parametrized) admits the internal Z2 exchange T<->1-T Codex's proposal describes -- D(T)=T(x)H and D(1-T) are unitarily equivalent via S_n=m.sigma (m perpendicular to T's own axis n), verified exactly for the diagonal case (round110's T=diag(0,1)) and numerically (8 random Bloch-sphere points, residual ~1e-16) for the general case. Round110's own prior test asked a DIFFERENT, stronger question (literal self-invariance of D_block under one fixed swap) and correctly found it false -- not contradicted here, just shown to be the wrong question. Grading (naive candidate FAILS {gamma,D}=0), real structure, and the physical action (F6) remain open."
@@ -636,6 +651,34 @@ claims:
       PROMOTE -- grading explicitly FAILS for the one candidate tried,
       real structure not attempted, physical action (F6) untouched (as
       Codex's own text already flagged as still needed).
+      [CORRECTED 2026-08-09, external audit] The word "symmetry" above is
+      too strong and is hereby DEMOTED to ORBIT EQUIVALENCE. This claim
+      built, for each projector T(n), a unitary S_n = m.sigma whose axis m
+      DEPENDS ON n -- that puts D(T) and D(1-T) on a common unitary orbit,
+      which is weaker than a symmetry (one fixed operator for all T). No
+      single global unitary exists: verified by exhaustive search over the
+      factorized Pauli set AND 40000 random 2x2 unitaries, both empty. The
+      structural reason: T(n)->T(-n) is the antipodal map, R = -I_3 with
+      det = -1, and unitary conjugation of Paulis induces only proper
+      SO(3) rotations. Topological corollary the original missed: choosing
+      m perpendicular to n continuously over all of S^2 is a nonvanishing
+      tangent field on the 2-sphere, forbidden by hairy-ball -- and this
+      claim's own code silently patched two charts via a case split on
+      |n_z| < 0.9.
+      THE UPGRADE, not merely a demotion: the genuine global operator is
+      ANTIUNITARY, Theta = i*sigma_2*K, satisfying Theta T Theta^-1 = 1-T
+      at every point with Theta^2 = -I (negative control: the wrong
+      candidate i*sigma_1 is correctly rejected). That fills
+      PARENT_ACTION_GATE's "real structure J" field, listed above as NOT
+      ATTEMPTED, and it EXPLAINS the grading failure recorded above: the
+      exchange is order-two on the projector space but lifts PROJECTIVELY
+      to spinors (Theta^2 = -1), so a linear Z2 grading was the wrong
+      object to search for. See
+      experiments/20260809-ob2-antiunitary-correction/decision.md.
+      NOT imported: C32 establishes the GEOMETRIC S3xS6 bundle is REAL;
+      the Theta^2 = -1 here is on the INTERNAL order-parameter space. The
+      audit hypothesised these may have been conflated project-wide --
+      recorded as plausible and UNTESTED, not adopted.
 
   - id: C31_C27_MAJORANA_BRANCH_CLOSED
     statement: "[RETRACTED 2026-08-09 -- VERDICT INVERTED, SEE C32.] Original claim: the 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED, because the relevant factor is pseudo-real so no Majorana condition can exist. The PREMISE (C28's pseudo-reality) is a Clifford-convention artifact -- see C32. On the geometrically correct uniform-convention structure the Majorana condition psi=B*conj(psi) admits a 16-real-dimensional solution space (exactly half of 32), i.e. it EXISTS and halves the module. That Relaxation Map row is therefore OPEN, not closed -- the opposite of this claim. NOTE what survives: the sub-fact that the S3 FACTOR ALONE is quaternionic remains true and convention-independent (Spin(3)=SU(2) fundamental, 3 mod 8 = 3); the error was propagating it to the 9-dim product across a signature mismatch."
