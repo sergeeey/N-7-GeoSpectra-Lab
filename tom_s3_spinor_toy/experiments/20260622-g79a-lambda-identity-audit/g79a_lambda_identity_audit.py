@@ -141,6 +141,10 @@ NP_LINE_MARKERS = (
 V_LINE_MARKERS = (
     "lambda_v_operator",
     "free_coupling_parameter",
+    # Prose form of the same thing. The underscored token above is the CODE
+    # identifier; a manuscript naturally writes it with spaces, and the audit
+    # (written 2026-06-22, before paper/ existed) only knew the code form.
+    "free coupling parameter",
     "v-operator",
     "v_operator",
     "λ_v",
@@ -158,6 +162,14 @@ V_LINE_MARKERS = (
     "tom's λ",
     "coupling constant λ",
     "λ-dependent",
+)
+SCOPE_FENCE_MARKERS = (
+    "safe_for_runtime",
+    "standing project fence",
+    "standing project",
+    "scope fence",
+    "scope-fence",
+    "n_gen=3",
 )
 SPECTRAL_MARKERS = (
     "eigenvalue",
@@ -206,6 +218,16 @@ def classify_occurrence(rel_path: str, line: str) -> tuple[str, str]:
         return "NP_EXPONENT", "explicit lambda_np symbol"
     if PYTHON_LAMBDA_RE.search(line):
         return "NUMERICAL_PLACEHOLDER", "Python anonymous-function syntax"
+    # LaTeX CAPITAL \Lambda is a different standard symbol entirely (exterior
+    # algebra, wedge powers, cosmological constant) -- not this project's
+    # coupling lambda. MATCH_RE uses \blambda\b with re.IGNORECASE, so it
+    # matches "\Lambda" too: a genuine false positive, found on
+    # paper/P1_THEOREM_STATEMENTS.md:91 where `\Sigma = \Lambda^\bullet(\C^3)`
+    # denotes the exterior algebra. Guarded case-SENSITIVELY, and only when
+    # the line carries no lowercase \lambda and no bare λ -- a line containing
+    # both must still be classified on the real lambda's merits.
+    if "\\Lambda" in line and "\\lambda" not in line and "λ" not in line:
+        return "UNRELATED", "LaTeX capital \\Lambda (exterior algebra etc.), not the coupling"
     if any(marker in path_lower for marker in V_PATH_MARKERS):
         return "V_OPERATOR_COUPLING", "V-sector path provenance"
     if any(marker in path_lower for marker in NP_PATH_MARKERS):
@@ -229,6 +251,18 @@ def classify_occurrence(rel_path: str, line: str) -> tuple[str, str]:
         return "UNRELATED", "toy-project spectral, representation-weight, or local symbol"
     if rel_path == "README.md" and "coupling" in line_lower:
         return "V_OPERATOR_COUPLING", "root project coupling statement"
+    # Scope-fence statements ("does not address lambda", "out of scope",
+    # "standing project fence") name the V-sector coupling in order to EXCLUDE
+    # it. Previously this was recognized only inside tom_s3_spinor_toy/ (the
+    # coupling_words branch above); manuscript files under paper/ make the same
+    # declaration and were falling through to AMBIGUOUS. Requires BOTH a fence
+    # phrase AND a scope verb, so an ordinary sentence mentioning lambda is not
+    # swallowed -- see the negative controls in the test file.
+    if any(phrase in line_lower for phrase in SCOPE_FENCE_MARKERS) and any(
+        verb in line_lower
+        for verb in ("does not", "not addressed", "out of scope", "never a premise")
+    ):
+        return "V_OPERATOR_COUPLING", "explicit scope-fence exclusion of the coupling lambda"
     if any(marker in line_lower for marker in SPECTRAL_MARKERS):
         return "UNRELATED", "spectral eigenvalue notation"
     if re.search(r"\blam(?:bda)?[_a-z0-9]*\s*=", line_lower):
