@@ -1,0 +1,12 @@
+{
+  "step1_pointwise_unitary_exists": true,
+  "step2_single_global_unitary_exists": false,
+  "step3_antipodal_det": -1.0,
+  "step3_antipodal_in_SO3": false,
+  "step4_theta_works_globally": true,
+  "step4_theta_squared_is_minus_I": true,
+  "step4_theta_flips_all_paulis": true,
+  "step5_wrong_antiunitary_rejected": true,
+  "step6_construction_used_a_case_split": true,
+  "verdict": "C30_DEMOTED_TO_ORBIT_EQUIVALENCE__THETA_IS_THE_SYMMETRY"
+}

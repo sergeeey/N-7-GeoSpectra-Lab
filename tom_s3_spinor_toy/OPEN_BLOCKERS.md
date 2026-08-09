@@ -99,7 +99,28 @@ tracked in any future formal spectral-flow attempt). See
 
 ---
 
-## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL PROGRESS 2026-08-03]
+## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
+
+> **CORRECTION 2026-08-09 (external audit).** The 2026-08-03 entry below
+> claims an "internal Z2 exchange symmetry". That is **too strong** — it is
+> **pointwise orbit equivalence**. The construction built `S_n = m̂·σ` with
+> `m̂` depending on `n`; a symmetry needs one fixed operator for all `T`. No
+> single global unitary exists (exhaustive Pauli search + 40 000 random
+> unitaries, both empty; structurally, `T(n)→T(−n)` is `R = −I₃`, `det = −1`,
+> outside `SO(3)`). The original code also silently patched two charts via a
+> `|n_z| < 0.9` case split — the hairy-ball obstruction, unnamed.
+>
+> **UPGRADE, not just a demotion:** the genuine global operator is
+> **antiunitary**, `Θ = i·σ₂·K`, with `Θ T Θ⁻¹ = 1−T` everywhere and
+> `Θ² = −I` (negative control: `i·σ₁` correctly rejected). This **fills the
+> "real structure `J`" field** that the checklist below lists as NOT
+> ATTEMPTED, and it **explains** the recorded grading failure: the exchange
+> is order-two on the projector space but lifts *projectively* to spinors, so
+> a linear `Z₂` grading was the wrong object. See
+> `experiments/20260809-ob2-antiunitary-correction/decision.md`.
+>
+> Still open regardless: the physical action (`F6`), and `Θ` against the full
+> NCG real-structure axioms. Original text preserved below.
 
 **Codex's item 5 now attempted — genuine partial progress, not full
 resolution.** Round110's own attempt tested the WRONG question (literal
@@ -446,7 +467,34 @@ results precisely rather than re-deriving them under time pressure.
 
 ---
 
-## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03]
+## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03, then CORRECTED 2026-08-09]
+
+> **⚠️ CORRECTION 2026-08-09 — read this before anything below.** The
+> 2026-08-03 resolution reached the WRONG ANSWER. It concluded the bundle is
+> PSEUDO-REAL from a mixed `Cl(6,3)` signature; both were artifacts of gluing
+> two sub-projects with OPPOSITE Clifford sign conventions (S³/round67 uses
+> `Cl(0,3)`; S⁶/s6-harm-g0 uses `Cl(6,0)`), which OB10 was the first round
+> ever to combine. S³×S⁶ is a 9-dim RIEMANNIAN product and needs ONE uniform
+> convention. Under uniform `Cl(0,9)`: signature `(0,9)`, unique
+> `B = σ₂⊗σ₁⊗σ₂⊗σ₁`, `B·conj(B) = +I` → **REAL**, independently matching
+> `Spin(9)`'s `Δ₉ = ℝ¹⁶` (`9 mod 8 = 1`).
+>
+> **Downstream:** C31's "Majorana branch CLOSED" is INVERTED — on the correct
+> structure the Majorana condition admits a 16-real-dimensional solution
+> space (exactly half of 32). That row of C27's Relaxation Map is **OPEN**
+> and is now a live candidate mechanism.
+>
+> **What OB10 genuinely found:** a real latent inconsistency — two
+> long-standing sub-projects carrying incompatible Clifford conventions.
+> Correct finding, misread as geometry instead of as a codebase fact. Any
+> future round tensoring S³ and S⁶ constructions hits the same trap.
+>
+> Found by an EXTERNAL audit, not internally: the error survived this
+> experiment's own checks, a ledger entry, a `decision.md` with an explicit
+> "what this does NOT mean" section, and a merge. See
+> `experiments/20260809-ob10-convention-correction/decision.md` (C32).
+>
+> Original 2026-08-03 text preserved below for the record.
 
 **Resolved:** built the 16-dim product Clifford module from this repo's own
 already-established S³ (`Cl(0,3)`, round67) and S⁶ (`Cl(6,0)`, s6-harm-g0/G13)
@@ -511,6 +559,16 @@ new — not previously logged anywhere in this project's registries.
 ---
 
 ## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03]
+
+> **EVIDENCE CORRECTED 2026-08-09 (external audit).** Condition (i)'s
+> conclusion stands, but the evidence cited below does not carry it:
+> `C₂(3) = C₂(3̄) = 4/3` identically, so the quadratic-Casimir spectrum
+> cannot separate `1⊕1⊕3⊕3̄` from `1⊕1⊕3⊕3`. The sufficient evidence was
+> already in the repo since **G102**: `Hom(V,V) = 6` excludes the
+> alternatives (which give 8), and round127 had already made this argument.
+> Nothing recomputed — only re-cited. Negative control: explicit
+> `1⊕1⊕3⊕3̄` → 6, explicit `1⊕1⊕3⊕3` → 8. See
+> `experiments/20260809-ob11-weight-spectrum-correction/decision.md`.
 
 **Condition (i) now VERIFIED, (ii)/(iii) still open.** Scope-clarifying
 finding first: `SU(2)_L×SU(2)_R` lives entirely on the S³ factor of

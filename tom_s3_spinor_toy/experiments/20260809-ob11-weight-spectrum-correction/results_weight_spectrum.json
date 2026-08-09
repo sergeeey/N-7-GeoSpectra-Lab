@@ -1,0 +1,28 @@
+{
+  "step1_C2_cannot_separate_3_from_3bar": true,
+  "step2_hom_predictions": {
+    "1+1+3+3bar": 6,
+    "1+1+3+3": 8,
+    "1+1+3bar+3bar": 8
+  },
+  "step2_only_candidate_at_hom6": [
+    "1+1+3+3bar"
+  ],
+  "step3_hom_measured": {
+    "v-v": 6,
+    "v-s": 6,
+    "v-c": 6,
+    "s-v": 6,
+    "s-s": 6,
+    "s-c": 6,
+    "c-v": 6,
+    "c-s": 6,
+    "c-c": 6
+  },
+  "step3_all_pairs_are_6": true,
+  "step3_diagonal_hom_is_6": true,
+  "step4_hom_explicit_33bar": 6,
+  "step4_hom_explicit_33": 8,
+  "step4_negative_control_passes": true,
+  "verdict": "C29_CONCLUSION_STANDS__EVIDENCE_CORRECTED"
+}
