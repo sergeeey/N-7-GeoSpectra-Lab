@@ -1,0 +1,50 @@
+{
+  "step1_S3_factor_quaternionic": true,
+  "step1_S6_factor_quaternionic": true,
+  "step1_product_real": true,
+  "step1_module_majorana_dim": 16,
+  "step2_per_lambda": {
+    "1": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "-1": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "1j": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "(-0-1j)": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "2.5": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "(0.3+0.7j)": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "(-0-1.4j)": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "0.01": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    },
+    "100.0": {
+      "solution_dim": 0,
+      "square_is_minus_mod2": true
+    }
+  },
+  "step2_zero_mode_majorana_trivial_only": true,
+  "step3_reason": "restricting a (quaternionic (x) quaternionic = real) structure to (full factor) (x) (1-dim subspace) leaves the quaternionic factor alone",
+  "step4_control_real_structure_dim": 2,
+  "step4_control_passes": true,
+  "step5_both_branches_agree": true,
+  "verdict": "MAJORANA_DOES_NOT_RESOLVE_MULTIPLICITY_2__C32_OVERCORRECTED"
+}

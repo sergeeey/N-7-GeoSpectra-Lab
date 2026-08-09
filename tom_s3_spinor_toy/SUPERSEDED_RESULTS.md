@@ -307,12 +307,13 @@ and reality type **REAL** (`B·conj(B) = +I`), independently matching
   `experiments/20260806-ob10-c27-majorana-halving/` — left as-written; both
   are superseded by `experiments/20260809-ob10-convention-correction/`.
 
-**Downstream inversion (the consequential part):** `C31` argued the Majorana
-row of `C27`'s Relaxation Map was CLOSED because no Majorana condition could
-exist. On the corrected structure it *does* exist and halves the module
-(16 of 32 real d.o.f.). That row is **OPEN**, and is now a live candidate
-mechanism against the multiplicity-2 blocker — the opposite of the recorded
-conclusion.
+**Downstream inversion (the consequential part) — ⚠️ ITSELF CORRECTED
+2026-08-10, see SR10.** As written on 2026-08-09 this read: "`C31` argued the
+Majorana row of `C27`'s Relaxation Map was CLOSED because no Majorana
+condition could exist. On the corrected structure it *does* exist and halves
+the module (16 of 32 real d.o.f.). That row is **OPEN**." The first two
+sentences stand. The conclusion does not: the 16-dim solution space is a fact
+about the **module**, and `C27` is about the **zero mode**. See SR10 below.
 
 **What survives:** the S³ factor alone genuinely is quaternionic
 (`Spin(3) = SU(2)` fundamental, `3 mod 8 = 3`, convention-independent), and
@@ -330,3 +331,61 @@ plainly because it bears on this registry's purpose: the error survived the
 experiment's own internal checks, a full ledger entry, a `decision.md` with
 an explicit "what this does NOT mean" section, and a merge to main. No
 internal gate caught it.
+
+---
+
+## SR10 — SR9's own downstream inversion: over-corrected
+
+**This is the registry's first entry about a previous entry.** SR9 recorded
+that OB10's reality-type verdict was WRONG and was corrected on 2026-08-09.
+That correction was right about the reality type and wrong about what followed
+from it.
+
+**Conclusion (survives, unchanged from SR9):** the geometric `S³×S⁶` spinor
+module is **REAL** under a uniform Clifford convention. The `Cl(6,3)`
+signature was an artifact. The two-sub-projects-with-opposite-conventions
+finding is a real codebase fact.
+
+**What changed:** SR9's stated *downstream consequence* — "that row of C27's
+Relaxation Map is **OPEN**, and is now a live candidate mechanism against the
+multiplicity-2 blocker". It is **CLOSED**.
+
+**Why.** The 16-real-dimensional Majorana solution space is a property of the
+16-dim **module**. `C27` is a statement about the **zero mode**:
+
+```
+ker(D_full) = ker(D_S³) ⊗ ker(D_S⁶,twisted) = ℂ² ⊗ (1-dim)
+```
+
+The module's reality is a product of TWO quaternionic factors
+(`B_S³ conj(B_S³) = −I`, `B_S⁶ conj(B_S⁶) = −I`, and `(−1)(−1) = +1`).
+Restricting to `ℂ² ⊗ span(k)` collapses the S⁶ factor to a **scalar** `λ`,
+and a scalar cannot supply the second minus sign — the induced antilinear map
+`ψ ↦ λ·B_S³·conj(ψ)` squares to `−|λ|²·I`, quaternionic again, so it has only
+the trivial fixed vector. Verified over nine `λ` spanning phase and scale:
+solution dimension **0** every time; negative control (`B = σ₁`, genuinely
+real) returns **2**.
+
+**Net effect of the entire OB10 episode on C27: zero.** The reality type was
+corrected (real gain: it exposed the convention inconsistency), but the
+blocker that briefly appeared to unlock never moved. C27 stands — 6 internal
+modes across 3 channels, not 3.
+
+**Where the stale version has been fixed:**
+- `SUPERSEDED_RESULTS.md` SR9 — the "Downstream inversion" paragraph now
+  points here; original wording preserved.
+- `CLAIM_LEDGER.yaml` `C32` — statement annotated as partially corrected.
+- `CLAIM_LEDGER.yaml` `C31` — statement rewritten: conclusion reinstated,
+  reasoning still retracted. Stays `REFUTED`/`SUPERSEDED`.
+- `CLAIM_LEDGER.yaml` `C27` — its Relaxation Map note re-updated.
+- `OPEN_BLOCKERS.md` OB10 — narrowing banner added; the 2026-08-06 paragraph
+  annotated (its `+I₈` for the S⁶ slot was itself the convention artifact).
+- New: `CLAIM_LEDGER.yaml` `C33`,
+  `experiments/20260810-majorana-vs-multiplicity2/`.
+
+**How it was caught:** internally, by running the follow-up that `C32`'s own
+notes named as necessary ("whether it halves `ker(D_full)` specifically is a
+separate, not-yet-run round"). Worth recording next to SR9's "caught only from
+outside": correcting an error is itself an operation that can introduce one,
+in the opposite direction, and the moment right after a retraction is exactly
+when a compensating over-correction is easiest to believe.

@@ -458,6 +458,9 @@ not the needed 3). Resolving (1) alone would NOT complete the program;
 reality/Majorana condition, an orbifold projection, or a reconciliation
 with `preprint.tex`'s own 32-state SO(4)-spinor convention — none of
 which exist in this project yet).
+**Update 2026-08-10 (C33):** the first of those three — a reality/Majorana
+condition — is now positively CLOSED, not merely absent. Two remain. See
+the OB10 section below for the full C31→C32→C33 correction chain.
 
 **Prompted by:** external correspondence with Tom Lawrence (2026-07,
 message batch referencing his own independent harmonics-on-S³/chirality/
@@ -467,7 +470,7 @@ results precisely rather than re-deriving them under time pressure.
 
 ---
 
-## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03, then CORRECTED 2026-08-09]
+## OB10 — geometric spinor bundle's own reality/Majorana condition [RESOLVED 2026-08-03, CORRECTED 2026-08-09, CORRECTION NARROWED 2026-08-10]
 
 > **⚠️ CORRECTION 2026-08-09 — read this before anything below.** The
 > 2026-08-03 resolution reached the WRONG ANSWER. It concluded the bundle is
@@ -479,10 +482,24 @@ results precisely rather than re-deriving them under time pressure.
 > `B = σ₂⊗σ₁⊗σ₂⊗σ₁`, `B·conj(B) = +I` → **REAL**, independently matching
 > `Spin(9)`'s `Δ₉ = ℝ¹⁶` (`9 mod 8 = 1`).
 >
-> **Downstream:** C31's "Majorana branch CLOSED" is INVERTED — on the correct
-> structure the Majorana condition admits a 16-real-dimensional solution
-> space (exactly half of 32). That row of C27's Relaxation Map is **OPEN**
-> and is now a live candidate mechanism.
+> **Downstream — SUPERSEDED 2026-08-10, see the next block.** This originally
+> read: "C31's 'Majorana branch CLOSED' is INVERTED — that row of C27's
+> Relaxation Map is OPEN and is now a live candidate mechanism." The first
+> half stands (C31's *reasoning* was wrong); the second half does not.
+>
+> **⚠️ NARROWING 2026-08-10 (C33) — the correction above over-corrected.**
+> The 16-real-dimensional Majorana solution space is a fact about the 16-dim
+> **module**. C27 is about the **zero mode**,
+> `ker(D_S³) ⊗ ker(D_S⁶,twisted) = ℂ² ⊗ (1-dim)`. The module's reality is a
+> product of TWO quaternionic factors (`B_S³ conj(B_S³) = −I` and
+> `B_S⁶ conj(B_S⁶) = −I`, so `(−1)(−1) = +1`); restricting to the zero mode
+> collapses the S⁶ factor to a **scalar**, which cannot supply the second
+> minus sign. The induced structure is quaternionic again → **no Majorana
+> condition on the zero mode, solution dimension 0** (verified over nine λ;
+> negative control returns 2). **That row of C27's Relaxation Map is CLOSED
+> after all** — C31's conclusion survives, its reasoning does not. Net effect
+> of the whole OB10 episode on C27: **zero**. See
+> `experiments/20260810-majorana-vs-multiplicity2/decision.md` (C33).
 >
 > **What OB10 genuinely found:** a real latent inconsistency — two
 > long-standing sub-projects carrying incompatible Clifford conventions.
@@ -528,6 +545,14 @@ factor at all). C27 itself remains unresolved. See
 does not contradict the C19 audit above, which correctly found OB10 does not
 feed `D2`'s zero-mode COUNTING argument — the link found here is to C27's
 option space, a different object.
+
+> **Status of that 2026-08-06 paragraph, as of 2026-08-10 (C33):** its
+> CONCLUSION (row closed) is right; its stated reason is not. Under the
+> uniform convention the S⁶ slot is quaternionic too (`−I₈`, not `+I₈` —
+> that `+I₈` was the convention artifact), so the closure does not come from
+> "pseudo-reality sits entirely in the S³ factor". It comes from the S⁶
+> factor collapsing to a **scalar** on a 1-dim kernel, leaving the S³
+> quaternionic factor unopposed. Same verdict, different mechanism.
 
 **Original description (superseded framing, kept for history):** the
 finite/NCG algebra's real structure `J_F` is
