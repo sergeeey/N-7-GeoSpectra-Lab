@@ -1,0 +1,215 @@
+{
+  "n_files_scanned": 371,
+  "pass1_counts": {
+    "MIXED": 9,
+    "NEG_Cl(0,n)": 20,
+    "POS_Cl(n,0)": 3
+  },
+  "pass1_by_convention": {
+    "MIXED": [
+      "experiments/20260621-g68-octonion-channels/g68_channels.py",
+      "experiments/20260621-g69-csdr-coset/g69_csdr.py",
+      "experiments/20260708-dolan-casimir-g2su3/g2su3_round31_full_combinatorial_derivation.py",
+      "experiments/20260708-dolan-casimir-g2su3/g2su3_round32_curvh_combinatorial.py",
+      "experiments/20260708-dolan-casimir-g2su3/g2su3_round34_octonion_derivation.py",
+      "experiments/20260803-ob10-ko-dimension-majorana-check/ob10_reality_structure.py",
+      "experiments/20260809-ob10-convention-correction/convention_correction.py",
+      "experiments/20260810-clifford-convention-repo-audit/clifford_convention_scan.py",
+      "experiments/20260810-clifford-convention-repo-audit/label_vs_code_check.py"
+    ],
+    "NEG_Cl(0,n)": [
+      "experiments/20260705-g102-spin8-fiber-obstruction/g102_spin8_fiber.py",
+      "experiments/20260708-dolan-casimir-g2su3/g2su3_round29_clifford_reduce.py",
+      "experiments/20260717-round113-t-convention-reconciliation/e35_t_convention_reconciliation.py",
+      "experiments/20260717-round114-ahl2023-torsion-killing-spinor-crosscheck/e36_ahl2023_crosscheck.py",
+      "experiments/20260717-round115-flux-quantization-torsion-selection/e37_flux_quantization_check.py",
+      "experiments/20260717-round67-e2-s3-torsion-deformation/e2_s3_torsion_deformation.py",
+      "experiments/20260717-round73-e9-explicit-parallel-spinor/e9_explicit_parallel_spinor.py",
+      "experiments/20260717-round76-e9followup-right-invariant-frame/e10_right_invariant_frame.py",
+      "experiments/20260717-round77-su2lr-correspondence-test/e11_su2lr_representation_check.py",
+      "experiments/20260717-round78-e12-multiplicity-gate/e12_multiplicity_gate.py",
+      "experiments/20260717-round80-z2-left-right-symmetry-search/e14_z2_left_right_symmetry.py",
+      "experiments/20260717-round81-chirality-grading-check/e15_chirality_grading_check.py",
+      "experiments/20260717-round83-joint-representation-decomposition/e16_joint_representation_check.py",
+      "experiments/20260717-round89-cone-construction-pearl/e19_killing_bridge_check.py",
+      "experiments/20260717-round99-toy-Vt-curvature-double-well/e26_toy_Vt_curvature_double_well.py",
+      "experiments/20260718-round124-su3-centralizer-triality-candidate/e41_su3_centralizer_triality_candidate.py",
+      "experiments/20260806-ob10-c27-majorana-halving/ob10_c27_majorana_halving.py",
+      "experiments/20260806-tom-reply-eq9-and-s3-ambiguity/verify_reply_claims.py",
+      "experiments/20260809-tom-s3-harmonics-solution-packet/tom_s3_solution_packet.py",
+      "tests/test_g102_spin8_fiber.py"
+    ],
+    "POS_Cl(n,0)": [
+      "experiments/20260717-round68-e3-full-operator-torsion-deformed/e3_full_operator_torsion_deformed.py",
+      "tests/test_g68_octonion_channels.py",
+      "tests/test_g69_csdr_coset.py"
+    ]
+  },
+  "pass2_mixed_files": {
+    "experiments/20260621-g68-octonion-channels/g68_channels.py": {
+      "combines_tensor_or_matmul": false,
+      "neg_example": [
+        4,
+        "Every \"Cl(7,0)\" below should read **Cl(0,7)**. This file's own generators"
+      ],
+      "pos_example": [
+        4,
+        "Every \"Cl(7,0)\" below should read **Cl(0,7)**. This file's own generators"
+      ],
+      "n_neg": 9,
+      "n_pos": 3
+    },
+    "experiments/20260621-g69-csdr-coset/g69_csdr.py": {
+      "combines_tensor_or_matmul": false,
+      "neg_example": [
+        124,
+        "#    M\u2088(\u211d) isomorphism is Cl(0,6)'s, not Cl(6,0)'s. Computed, not recited: with"
+      ],
+      "pos_example": [
+        121,
+        "# The Clifford algebra of \u211d\u2076: Cl(6,0) \u2245 M\u2088(\u211d) (unique 8-dim real rep)"
+      ],
+      "n_neg": 2,
+      "n_pos": 3
+    },
+    "experiments/20260708-dolan-casimir-g2su3/g2su3_round31_full_combinatorial_derivation.py": {
+      "combines_tensor_or_matmul": false,
+      "neg_example": [
+        3,
+        "Cl(0,7) -- the generators it refers to square to -1. Naming inversion only,"
+      ],
+      "pos_example": [
+        2,
+        "NOTE (label only, 2026-08-10): \"Cl(7,0)\" throughout this file should read"
+      ],
+      "n_neg": 1,
+      "n_pos": 5
+    },
+    "experiments/20260708-dolan-casimir-g2su3/g2su3_round32_curvh_combinatorial.py": {
+      "combines_tensor_or_matmul": false,
+      "neg_example": [
+        3,
+        "Cl(0,7) -- the generators it refers to square to -1. Naming inversion only,"
+      ],
+      "pos_example": [
+        2,
+        "NOTE (label only, 2026-08-10): \"Cl(7,0)\" throughout this file should read"
+      ],
+      "n_neg": 1,
+      "n_pos": 8
+    },
+    "experiments/20260708-dolan-casimir-g2su3/g2su3_round34_octonion_derivation.py": {
+      "combines_tensor_or_matmul": false,
+      "neg_example": [
+        24,
+        "\"Cl(7,0)\" in this file should read Cl(0,7). Note that item (1) below is"
+      ],
+      "pos_example": [
+        24,
+        "\"Cl(7,0)\" in this file should read Cl(0,7). Note that item (1) below is"
+      ],
+      "n_neg": 3,
+      "n_pos": 6
+    },
+    "experiments/20260803-ob10-ko-dimension-majorana-check/ob10_reality_structure.py": {
+      "combines_tensor_or_matmul": true,
+      "neg_example": [
+        7,
+        "- S3: Z_i = i*sigma_i, Cl(0,3), {Z_i,Z_j}=-2delta_ij"
+      ],
+      "pos_example": [
+        9,
+        "- S6: Gamma_1..6, Cl(6,0), {Gamma_a,Gamma_b}=+2delta_ab, hermitian, 8x8"
+      ],
+      "n_neg": 6,
+      "n_pos": 5
+    },
+    "experiments/20260809-ob10-convention-correction/convention_correction.py": {
+      "combines_tensor_or_matmul": true,
+      "neg_example": [
+        9,
+        "S3  (round67, e2_s3_torsion_deformation.py):  Z_i = i*sigma_i,"
+      ],
+      "pos_example": [
+        12,
+        "{Gamma_a,Gamma_b} = +2 delta_ab    -> Cl(6,0)"
+      ],
+      "n_neg": 8,
+      "n_pos": 3
+    },
+    "experiments/20260810-clifford-convention-repo-audit/clifford_convention_scan.py": {
+      "combines_tensor_or_matmul": true,
+      "neg_example": [
+        6,
+        "S3 side  (round67 and descendants):  Z_i = i*sigma_i,  {Z_i,Z_j} = -2 delta   -> Cl(0,n)"
+      ],
+      "pos_example": [
+        7,
+        "S6 side  (s6-harm-g0, dolan-casimir): Gamma_a hermitian, {G_a,G_b} = +2 delta -> Cl(n,0)"
+      ],
+      "n_neg": 8,
+      "n_pos": 3
+    },
+    "experiments/20260810-clifford-convention-repo-audit/label_vs_code_check.py": {
+      "combines_tensor_or_matmul": true,
+      "neg_example": [
+        11,
+        "round67 (S3):        Z_i = i*sigma_i,  Z_i^2 = -1,  labeled  Cl(0,3)"
+      ],
+      "pos_example": [
+        12,
+        "s6-harm-g0 (S6):     Gamma_a hermitian, Gamma_a^2 = +1, labeled Cl(6,0)"
+      ],
+      "n_neg": 4,
+      "n_pos": 12
+    }
+  },
+  "pass3_boundary_crossing_imports": [],
+  "negative_control_known_mixed": {
+    "experiments/20260803-ob10-ko-dimension-majorana-check/ob10_reality_structure.py": "MIXED",
+    "experiments/20260809-ob10-convention-correction/convention_correction.py": "MIXED"
+  },
+  "negative_control_passes": true,
+  "ast_kron_args_in_mixed_files": {
+    "experiments/20260621-g68-octonion-channels/g68_channels.py": [],
+    "experiments/20260621-g69-csdr-coset/g69_csdr.py": [],
+    "experiments/20260708-dolan-casimir-g2su3/g2su3_round31_full_combinatorial_derivation.py": [],
+    "experiments/20260708-dolan-casimir-g2su3/g2su3_round32_curvh_combinatorial.py": [],
+    "experiments/20260708-dolan-casimir-g2su3/g2su3_round34_octonion_derivation.py": [],
+    "experiments/20260803-ob10-ko-dimension-majorana-check/ob10_reality_structure.py": [
+      "G6[]",
+      "G6_alt[]",
+      "Gamma7",
+      "Gamma7_alt",
+      "I2",
+      "Z[]",
+      "candidates[]",
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "experiments/20260809-ob10-convention-correction/convention_correction.py": [
+      "G6_use[]",
+      "G7",
+      "I2",
+      "Z[]",
+      "m",
+      "out",
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "experiments/20260810-clifford-convention-repo-audit/clifford_convention_scan.py": [],
+    "experiments/20260810-clifford-convention-repo-audit/label_vs_code_check.py": [
+      "a",
+      "b",
+      "c",
+      "m",
+      "out",
+      "s0",
+      "s1",
+      "s2",
+      "s3"
+    ]
+  }
+}

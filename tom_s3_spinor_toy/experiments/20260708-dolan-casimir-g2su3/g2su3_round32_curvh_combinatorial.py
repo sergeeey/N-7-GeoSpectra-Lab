@@ -1,4 +1,8 @@
 """
+NOTE (label only, 2026-08-10): "Cl(7,0)" throughout this file should read
+Cl(0,7) -- the generators it refers to square to -1. Naming inversion only,
+no result affected. See docs/clifford_convention_registry.md.
+
 Round 32 (2026-07-11): eliminate the LAST remaining 8x8 Clifford-matrix
 construction Round 31 left untouched -- `build_curvature_h_table()`'s
 own Cl(7,0)-side machinery (`RHO`/`NU` matrix products, `bracket_e`

@@ -1,0 +1,33 @@
+{
+  "s3_round67_square_sign": -1,
+  "s6_harm_g0_square_sign": 1,
+  "octonion_g68_square_sign": -1,
+  "octonion_anticommute_ok": true,
+  "octonion_pseudoscalar_sq_is_plus_I": true,
+  "octonion_pseudoscalar_is_pm_identity": true,
+  "true_pos_definite_square_sign": 1,
+  "true_pos_definite_pseudoscalar_sq_is_plus_I": false,
+  "n6_commutant_pos": {
+    "n_found": 1,
+    "squares": [
+      -1
+    ]
+  },
+  "n6_commutant_neg": {
+    "n_found": 1,
+    "squares": [
+      1
+    ]
+  },
+  "g69_cl6_equals_M8R_verified": false,
+  "n6_pos_signs": [
+    -1
+  ],
+  "n6_neg_signs": [
+    1
+  ],
+  "s3_s6_conventions_genuinely_differ": true,
+  "octonion_label_is_wrong": true,
+  "octonion_math_is_correct": true,
+  "verdict": "THREE_NAMING_STATES_FOUND__ONE_LABEL_BUG__NO_NEW_MATH_ERROR"
+}

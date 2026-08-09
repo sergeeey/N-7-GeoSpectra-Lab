@@ -812,8 +812,49 @@ claims:
       caught by running the follow-up C32 itself flagged as necessary.
       Over-correction after a retraction is its own failure mode.
 
+  - id: C34_CLIFFORD_CONVENTION_REPO_AUDIT
+    statement: "Repo-wide audit for the convention mixing OB10 hit: NO SECOND INSTANCE EXISTS, but a distinct systematic LABEL inversion does. Scanned 370 .py files across experiments/ + scripts/ + tests/ by ASSERTED anticommutator sign (not docstring prose). Only two files in the repo ever combine the two conventions -- OB10's original and OB10's correction -- and zero cross-directory import edges cross the convention boundary. SEPARATE FINDING: the label Cl(p,q) carries TWO OPPOSITE MEANINGS in this repo. round67 (Z_i^2=-1, 'Cl(0,3)') and s6-harm-g0 (Gamma^2=+1, 'Cl(6,0)') are both correct and are genuinely opposite -- that is the real pair. But the octonion sub-project (g68, g2su3_round31/32/34) labels its e^2=-1 generators 'Cl(7,0)', and g69 hardcodes 'Cl(6,0) = M8(R)' which is the Cl(0,6) isomorphism. Both are LABEL bugs with NO math or result consequence. Adjudicated by computation, not by periodicity table: for n=7 the pseudoscalar omega=e1..e7 has omega^2=-eps^7, so the M8(R)(+)M8(R) split g68-D4 and round34 both claim is available ONLY at eps=-1 (verified: rebuilt Fano L_i give L_i^2=-1, 21 pairs anticommuting, omega=+-I; contrast control i*L_i gives omega^2 != +I). For n=6 the pseudoscalar cannot discriminate, so the commutant does: eps=+1 -> J^2=-1 -> M4(H); eps=-1 -> J^2=+1 -> M8(R). Deliverable: docs/clifford_convention_registry.md."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-clifford-convention-repo-audit/decision.md"
+    depends_on: [C32_OB10_CORRECTED_TYPE_IS_REAL]
+    notes: >
+      [2026-08-10] Closes the open next-check on the 2026-08-09 pearl ("repo-wide
+      convention audit NOT yet run") and item (a) of activeContext's open list.
+      NOT HYPOTHETICAL: g101 and g102, which build directly on g68's matrices,
+      already write Cl(0,7)/Cl(0,8) -- correctly. The label was silently fixed
+      downstream and never fixed at the source, so the repo contains both names
+      for one object. g102's own comment records it caught an anti-homomorphism
+      from the sign on its first run (residual 9.4).
+      NEAR-MISS RECORDED: the n=6 result LOOKED like it contradicted C33, which
+      found B_S6 conj(B_S6) = -I on the same uniformised generators where this
+      audit finds J^2 = +1. Checked before writing either down -- C33's B
+      ANTI-INTERTWINES (B conj(Gamma) = -Gamma B, measuring the MODULE's reality
+      type) while the audit's J COMMUTES (measuring the ALGEBRA's type). Verified
+      explicitly: different objects, different questions, both correct.
+      MY OWN SCANNER'S FALSE POSITIVE, fixed and recorded: the first pass flagged
+      g102 as MIXED. Its check reads `{G,G} + 2*delta == 0`, which asserts
+      {G,G} = -2*delta -- a RESIDUAL-FORM check reads BACKWARDS despite the
+      visible +2. Caught by opening the file the scanner accused rather than
+      trusting the accusation. An audit tool's verdict needs the same
+      verification discipline as the thing it audits.
+      NEGATIVE CONTROL: the scanner independently re-finds both known-mixed OB10
+      files as MIXED. A scan reporting zero would have been a broken scanner,
+      not a clean repo.
+      SCOPE: heuristic over files that ASSERT their Clifford relation (30 found).
+      A construction that builds generators and never checks its own algebra is
+      invisible to this scan -- a different and worse problem, not covered.
+      tests/test_g68_octonion_channels.py (10 occurrences) and
+      test_g69_csdr_coset.py (3) carry the inverted label in prose while
+      asserting the CORRECT relation; tests/ is write-protected this session and
+      is listed in the registry for a future pass.
+      NO RESULT ANYWHERE CHANGES. Label corrections are naming only.
+
 notes_on_this_ledger:
-  - "34 entries as of the Majorana/multiplicity-2 follow-through (2026-08-10). C33 added, correcting C32's own over-correction. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 34)."
+  - "35 entries as of the repo-wide Clifford convention audit (2026-08-10). C33 (Majorana/multiplicity-2, correcting C32's over-correction) and C34 (convention audit) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 35)."
   - "33 entries as of the OB10 convention correction (2026-08-09). C32 added; C28 and C31 RETRACTED (truth_status REFUTED, lifecycle SUPERSEDED) after an external red-team audit showed C28's pseudo-real verdict was a Clifford-convention artifact and C31's no-go inherited the bad premise. Both kept in place with their original text and reasoning preserved -- retracted, never deleted, per this registry's own convention. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 33)."
   - "32 entries as of the OB10->C27 Majorana-branch closure (2026-08-06) -- deliberately not exhaustive over the ~157 experiments. C31 added, closing one of the three rows of C27's Relaxation Map (the other two remain open; C27 itself is NOT resolved). Prior count was 31 (OB2/OB6 item 5); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 32) before finalizing this note."
   - "31 entries as of the OB2/OB6 item 5 partial progress (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C30 added, first attempt at Codex's item 5 (Z2 exchange verified; grading/real structure/physical action remain open). Prior count was 30 (OB11 condition i); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 31) before finalizing this note."
