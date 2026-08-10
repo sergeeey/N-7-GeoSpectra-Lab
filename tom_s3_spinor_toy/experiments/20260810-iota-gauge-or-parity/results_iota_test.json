@@ -1,0 +1,7 @@
+{
+  "step1_iota_is_coordinate_flip": true,
+  "step2_tangent_det_all_negative": true,
+  "step2_is_isometry": true,
+  "step3_control_left_translation_positive": true,
+  "verdict": "IOTA_IS_ORIENTATION_REVERSING__PARITY_NOT_GAUGE"
+}
