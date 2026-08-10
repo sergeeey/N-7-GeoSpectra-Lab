@@ -1,0 +1,46 @@
+{
+  "y1a_identity_s1": true,
+  "y1a_identity_s2": true,
+  "y1_asymmetry_no_mass_for_diagonal": true,
+  "y1d_candidates": {
+    "f = x0  (iota-EVEN, with s1)": {
+      "min_sampled": 1.0000000000863207,
+      "matches_closed_form": true,
+      "vanishes_somewhere": false
+    },
+    "g = x1  (iota-ODD, with s2)": {
+      "min_sampled": 1.000000001130016,
+      "matches_closed_form": true,
+      "vanishes_somewhere": false
+    }
+  },
+  "y1d_invertible": true,
+  "y1e_no_swap_unitary": true,
+  "y1c_lambda_tests": {
+    "lambda = x0": {
+      "grad_sq_at_maximiser": 7.436154944828902e-70,
+      "max_grad_sq_over_starts": 8.87624423599506e-69,
+      "lambda_max": 1.0
+    },
+    "lambda = x0^2": {
+      "grad_sq_at_maximiser": 5.199517597855261e-140,
+      "max_grad_sq_over_starts": 1.1236169788812206e-131,
+      "lambda_max": 1.0
+    },
+    "lambda = x0*x1": {
+      "grad_sq_at_maximiser": 2.465190328815662e-32,
+      "max_grad_sq_over_starts": 1.3040856839434851e-29,
+      "lambda_max": 0.5000000000000001
+    },
+    "lambda = x0^3 - x1^2": {
+      "grad_sq_at_maximiser": 1.8315143531803865e-214,
+      "max_grad_sq_over_starts": 2.745814558004413e-09,
+      "lambda_max": 1.0
+    }
+  },
+  "y1c_critical_points": true,
+  "y1f_degenerate_min": 4.316034466277445e-11,
+  "y1f_discriminates": true,
+  "control_subsumes_c50": true,
+  "verdict": "Y1_CLOSED__MIXING_WITHOUT_A_UNITARY_IS_ALSO_EXCLUDED"
+}
