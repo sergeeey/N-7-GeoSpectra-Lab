@@ -1176,6 +1176,22 @@ claims:
       - "that the doubling is impossible -- it is UNEARNED, which is a different and weaker statement; escape route W1 (non-factoring J) is untested"
       - "that a Yukawa-like sector coupling is impossible in general -- only the minimal admissible family tested in C47 is killed"
 
+  - id: C49_EVEN_INDEX_PAIRING_VANISHES_PD_FAILS
+    statement: "The doubled even triple's index pairing vanishes IDENTICALLY, so a NECESSARY condition for Poincare duality FAILS: the fundamental class it defines is trivial. [VERIFIED-numpy] ker(D^0) is the level (n=0, sigma=+1) of dim 2 and ker(D^1) is (n=0, sigma=-1) of dim 2; U_iota sends (n,sigma) -> (n,-sigma) and s1 swaps sectors, so gamma maps ker(D^0) ONTO ker(D^1) and gamma|ker is purely OFF-DIAGONAL, with eigenvalues +1,+1,-1,-1 and Tr = 0. Hence ind(D_block) = 0. THE MECHANISM IS NOT A COINCIDENCE: gamma MUST be off-diagonal in the sector index -- that is exactly what made it exist at all (C45: both factors needed, U_iota flips D^{1/2} and s1 flips s3) -- and an off-diagonal involution has zero trace on the kernel it permutes. The grading and the vanishing pairing are two faces of one structure. A TAUTOLOGICAL TEST WAS CAUGHT AND REPLACED IN THIS FILE: the first version sampled 200 block-diagonal diag(P,P) against a purely off-diagonal gamma|ker, where Tr = 0 holds BY SHAPE for any algebra whatsoever. Replaced by (a) every p in A is sector-block-diagonal [C48], (b) gamma|ker is off-diagonal [S1], (c) so Tr(gamma p) = 0 as a one-line consequence, and (d) the DISCRIMINATING counter-case: sector-MIXING projections give Tr = 0, 0.7788, 1.6829, 1.9271, NON-zero. (d) is what gives (c) content -- the pairing vanishes BECAUSE J forced the algebra to be sector-diagonal, and the crossed product J excluded would NOT have vanished. CONTRAST: one sector alone is an ODD triple (no grading, C35/C43) pairing with K_1 by spectral flow, and spec(D^0) = {0,1,2,...} u {-3,-4,...} IS asymmetric -- so doubling does not merely fail to earn itself, on this probe it CANCELS the very asymmetry an odd triple pairs with."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-step6-index-pairing/decision.md"
+    depends_on: [C48_J_FORCES_ALPHA_BETA_ZERO_BUT_KILLS_THE_MAXIMAL_ALGEBRA, C43_BLOCK_SUPPLIES_THE_GRADING]
+    convention: "Same as C47/C48. Inherits ASSUMPTION A1 (U_iota D^{1/2} U_iota^dag = -D^{1/2}) and ANSATZ J1 (J = J_M (x) j factorises). Index convention: ind(D) = Tr(gamma|ker D) for an even triple, i.e. dim ker(D|_+) - dim ker(D|_-)."
+    does_not_imply:
+      - "that S^3 fails Poincare duality -- it does not, classically it holds in the odd/KO-3 sense, and THIS triple is not S^3"
+      - "anything about the S^6 index that produces N_gen = 3 -- different operator, different manifold; step 7 is untouched by agreement"
+      - "a complete characterisation of how PD fails or could be repaired -- only that one NECESSARY condition fails"
+      - "that a non-factorising J (escape W1) would also give a vanishing pairing -- W1 could readmit a sector-mixing algebra and is UNTESTED"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1222,6 +1238,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "50 entries as of C11 step 6 (2026-08-10). C49 added: the even index pairing vanishes identically, so Poincare duality fails for the doubled triple. The agreed 7-step C11 portfolio is complete except step 7 (N_gen=3), deferred by agreement. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 50)."
   - "49 entries as of C11 steps 3+4+5 (2026-08-10). C47 (the 4-dim kernel is an isolated point) and C48 (the axioms force alpha = beta = 0, but J kills the maximal algebra) added; C45's Relaxation Map variant V2 superseded. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 49)."
   - "47 entries as of C11 step 1, the algebra search (2026-08-10). C45 added and REFUTED as worded (the algebra does not earn the doubling); C46 added and PROVED (if taken, the doubling is a PARITY doubling). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 47)."
   - "45 entries as of C11 step 0 (2026-08-10). C44 added, partially deflating C43 the same day; C43 amended in place. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 45)."

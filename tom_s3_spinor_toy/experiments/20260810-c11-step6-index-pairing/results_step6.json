@@ -1,0 +1,36 @@
+{
+  "ker0": [
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "ker1": [
+    [
+      0,
+      -1,
+      2
+    ]
+  ],
+  "s1_gamma_offdiagonal_on_kernel": true,
+  "s2_index": 0,
+  "s2_gamma_ker_eigenvalues": [
+    -1.0,
+    -1.0,
+    1.0,
+    1.0
+  ],
+  "s2_balanced": true,
+  "s3_max_abs_trace_in_A": 0.0,
+  "s3_traces_sector_mixing": [
+    0.0,
+    0.778836684617301,
+    1.682941969615793,
+    1.927116370834386
+  ],
+  "s3_discriminates": true,
+  "s3_pairing_vanishes_for_all_p": true,
+  "s4_single_sector_spectrum_asymmetric": true,
+  "verdict": "EVEN_INDEX_PAIRING_VANISHES_IDENTICALLY__PD_FAILS_FOR_THIS_TRIPLE"
+}
