@@ -179,6 +179,23 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **STEP 6 RUN, 2026-08-10 (C49). PORTFOLIO COMPLETE except step 7 (deferred).
+> Poincaré duality FAILS: the even index pairing vanishes identically.**
+> `γ` must be sector-OFF-diagonal (that is what made it exist), so it maps
+> `ker(D^0)` onto `ker(D^1)` and `Tr(γ|ker) = 0` → `ind(D_block) = 0`. The
+> pairing vanishes for every `p ∈ A` **because C48 forced `A` sector-diagonal** —
+> and the discriminating counter-case confirms it: sector-*mixing* projections
+> give `Tr = 0.78, 1.68, 1.93`, non-zero. *A tautological test was caught here
+> too: the first version compared block-diagonal `p` against an off-diagonal
+> `γ`, where `Tr=0` holds by shape for any algebra at all.*
+> **The grading and the vanishing pairing are two faces of one structure**, so
+> the doubling does not merely fail to earn itself — it cancels the very
+> spectral asymmetry an odd (single-sector) triple would pair with.
+> **Gate: `H`,`D`,`γ`,`A`,`J` supplied · `PD` FAILS · physics NOT.**
+> Highest-value open question is now escape **W1** (a `J` that does not factor
+> as `J_M ⊗ j`), which could readmit a sector-mixing algebra.
+> See `experiments/20260810-c11-step6-index-pairing/`.
+>
 > **STEPS 3+4+5 RUN, 2026-08-10 (C47/C48). The doubling is UNEARNED from THREE
 > independent directions now — but the axioms do force `(α,β) = (0,0)`.**
 >
