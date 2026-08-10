@@ -179,6 +179,29 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **⚠️ NARROWED 2026-08-10 (C42) — and this blocker's ORIGINAL NAME was right.**
+> The one-operator escape is closed: **no member of the Cartan–Schouten family
+> has a 4-dimensional kernel** [VERIFIED-sympy]. Solving round67's closed form
+> exactly, `n=0,σ=+1` vanishes at `t=0` and `n=0,σ=−1` at `t=1`, and **no `t`
+> zeroes two levels at once** — structurally, because the torsion shift
+> `(t−½)·h_H` is the *same for every level* while the levels are separated by
+> `2σ(n+3/2)`. A uniform shift cannot zero two distinct levels.
+>
+> So "both `t` are realized" **cannot** mean one operator with a bigger kernel.
+> Since C27 and C25 both reduce to C11 (C38/C39), and C11's only alternative
+> reading is now gone, **the question this section's title already asks is the
+> whole remaining question.**
+>
+> Not incoherent from the kernel side, though: the two sectors are **independent
+> subspaces of one section space** — `dim(V₀+V₁) = 4`, `dim(V₀∩V₁) = 0`
+> [VERIFIED-numpy, negative control passing]. They are not rival descriptions of
+> the same states.
+>
+> **Constraints the two-operator construction must now satisfy are already on
+> record, not hypothetical:** C35 showed the grading **cannot** exist for the toy
+> `D` (non-symmetric spectrum) and that `J` exists only pointwise. See
+> `experiments/20260810-c11-first-cut/decision.md`.
+
 > **CORRECTION 2026-08-09 (external audit).** The 2026-08-03 entry below
 > claims an "internal Z2 exchange symmetry". That is **too strong** — it is
 > **pointwise orbit equivalence**. The construction built `S_n = m̂·σ` with
