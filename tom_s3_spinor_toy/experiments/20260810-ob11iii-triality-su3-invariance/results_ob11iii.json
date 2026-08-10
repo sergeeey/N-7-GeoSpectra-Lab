@@ -1,0 +1,57 @@
+{
+  "experiment": "ob11iii_triality_su3_invariance",
+  "n_su3_generators": 8,
+  "p1_dim_su3_is_8": true,
+  "su3_triality_residuals": [
+    {
+      "b_deviation_from_a": 1.5810674662895856e-15,
+      "c_deviation_from_a": 1.3308336048799311e-15,
+      "lstsq_residual": 2.0559480178382365e-15
+    },
+    {
+      "b_deviation_from_a": 1.1790769571867966e-15,
+      "c_deviation_from_a": 1.1102230246251565e-15,
+      "lstsq_residual": 1.1544399830406769e-15
+    },
+    {
+      "b_deviation_from_a": 5.387895479697208e-16,
+      "c_deviation_from_a": 5.988936322698701e-16,
+      "lstsq_residual": 8.326672684688674e-16
+    },
+    {
+      "b_deviation_from_a": 6.164582673127789e-16,
+      "c_deviation_from_a": 7.502679033599691e-16,
+      "lstsq_residual": 1.3793410917985376e-15
+    },
+    {
+      "b_deviation_from_a": 8.673617379884035e-16,
+      "c_deviation_from_a": 6.938893903907228e-16,
+      "lstsq_residual": 1.065828044498758e-15
+    },
+    {
+      "b_deviation_from_a": 1.0624299127093118e-15,
+      "c_deviation_from_a": 8.743006318923108e-16,
+      "lstsq_residual": 1.2343742532161084e-15
+    },
+    {
+      "b_deviation_from_a": 7.452805733665357e-16,
+      "c_deviation_from_a": 5.58797799699029e-16,
+      "lstsq_residual": 9.502530190013223e-16
+    },
+    {
+      "b_deviation_from_a": 1.1934897514720433e-15,
+      "c_deviation_from_a": 5.551115123125783e-16,
+      "lstsq_residual": 1.2490009027033011e-15
+    }
+  ],
+  "max_b_deviation": 1.5810674662895856e-15,
+  "max_c_deviation": 1.3308336048799311e-15,
+  "p2_all_su3_triality_fixed": true,
+  "generic_element_antisym_residual": 2.4424906541753444e-15,
+  "generic_element_perp_norm": 1.6206605870136044,
+  "generic_b_deviation": 4.5323928542361145,
+  "generic_c_deviation": 2.9117322672225114,
+  "generic_lstsq_residual": 6.8833827526759706e-15,
+  "p3_negative_control_pass": true,
+  "verdict": "SU3_TRIALITY_FIXED_CONFIRMED_INDEPENDENT_CONSTRUCTION"
+}

@@ -1163,7 +1163,26 @@ new — not previously logged anywhere in this project's registries.
 
 ---
 
-## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) narrowed 2026-08-10]
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) narrowed, (iii) partly confirmed 2026-08-10]
+
+> **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
+> structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
+> construction (Baez's octonion trilinear-covariance realization,
+> `solve_triality_partners`), not just G102's Cl(0,8) route: all 8 `su(3)`
+> generators satisfy `solve_triality_partners(a)=(a,a)` exactly (residual
+> ~1e-15), while a generic non-`g2` element does not (negative control,
+> deviation ~3-4.5) — the machinery genuinely discriminates. This is a real,
+> if narrow, positive result: the matter/gauge content is represented by the
+> **identical matrix** across all three triality channels, independently of
+> which construction realizes them. **What remains open, and is the harder
+> half of condition (iii):** an explicit state-level operator `t` (mapping an
+> actual vector in `8_v` to a vector in `8_s`) has **not** been constructed —
+> this is a genuinely unresolved question in the pure-math literature itself
+> (pearl entry #29, McRae 2025, arXiv:2502.14016 — Euclidean-signature
+> triality "has no intertwining action upon the representation space," left
+> open by that paper too). Condition (iii), as originally posed, stays open
+> on that half. See
+> `experiments/20260810-ob11iii-triality-su3-invariance/decision.md`.
 
 > **UPDATE 2026-08-10 (C61).** The cheapest possible route to proving condition
 > (ii) — bare `SU(3)`-representation theory alone forcing `X_ij=0` — is now
