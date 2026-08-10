@@ -179,6 +179,31 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **CAVEAT O′ RUN AND DISSOLVED, 2026-08-10 (C54). The LAST open door in the
+> C11 line is closed — and the chain's single unverified input is now named.**
+>
+> **The worry was not empty:** cancellation is real — `U_ι` and `I − U_ι` both
+> have `‖[D_M,·]‖ = 67.0` at N=32 and growing, their sum has `0.0`.
+> **But it aimed at a step the proof does not take.** It presupposes a
+> *decomposition* argument; orientability needs a **span** argument, which is
+> immune to cancellation. With `𝔅 = {Z bounded : [D_M,Z] bounded}`:
+> `𝔅` is a linear subspace and an algebra (Leibniz, 200 random pairs);
+> `U_ι ∉ 𝔅` (`[D_M,U_ι] = 2D_M U_ι`, norms `11→19→35→67`);
+> **every available operator is in `𝔅`**. So everything reachable is in `𝔅` and
+> `U_ι` is not. **Cancellation would have to happen *inside* `𝔅`, and a sum of
+> `𝔅`-elements is a `𝔅`-element.** `U_ι` is precisely the *unavailable* operator.
+> *Sixth cannot-fail check of the session written out here too — the obvious
+> control was `I @ γ == γ`; replaced by a two-directional soundness test of the
+> growth detector (level shift `n→n+1`: bounded ✓; long range `n→2n`: unbounded ✓).*
+>
+> **⚠️ WHAT THE WHOLE CHAIN NOW RESTS ON — `ASSUMPTION A1`
+> (`U_ι D^{1/2} U_ι† = −D^{1/2}`), inherited from C39 and NEVER re-derived here.**
+> It is exactly what makes `[D_M,U_ι]` unbounded, so C50, C51, C53 and C54 all
+> depend on it. If A1 were false, `U_ι` could lie in `𝔅` and all four would need
+> rebuilding. **The most valuable remaining check in this line is A1 itself, not
+> another escape route.**
+> See `experiments/20260810-c11-caveat-o-prime-cancellation/`.
+>
 > **CAVEAT O RUN AND CLOSED, 2026-08-10 (C53). `J` cannot supply the `U_ι`.
 > Only CAVEAT O′ (a fine-tuned cancellation) is left in the whole C11 line.**
 >

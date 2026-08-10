@@ -1263,6 +1263,23 @@ claims:
       - "that the doubling is WRONG -- only that nothing in this framework requires it"
       - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
 
+  - id: C54_CAVEAT_O_PRIME_DISSOLVED_SPAN_NOT_DECOMPOSITION
+    statement: "REFUTES the proposed C54 and closes CAVEAT O' -- the LAST technically open door in the C11 line. THE WORRY WAS NOT EMPTY: cancellation is real. [VERIFIED-numpy] Z1 = U_iota and Z2 = I - U_iota both have ||[D_M,.]|| = 67.0 at N=32 and growing, while their sum Z1+Z2 = I has ||[D_M,.]|| = 0. Two unbounded commutators with a bounded sum. BUT THE WORRY WAS AIMED AT A STEP THE PROOF DOES NOT TAKE. It presupposes a DECOMPOSITION argument (split T into a U_iota part and a rest, bound each piece); what orientability needs is a SPAN argument, which is immune to cancellation. With B := {Z bounded : [D_M,Z] bounded}: (P1) [VERIFIED-numpy over 200 random pairs] B is a LINEAR SUBSPACE and an algebra -- [D_M, aZ1+bZ2] = a[D_M,Z1]+b[D_M,Z2] and the Leibniz rule both hold exactly; (P2) [VERIFIED-numpy] U_iota is NOT in B, because [D_M, U_iota] = 2 D_M U_iota holds exactly at every cutoff with norms 11, 19, 35, 67; (P3) [VERIFIED-numpy] every AVAILABLE operator is in B -- the H_M factors of a, of [D,a] and of each block of J b* J^-1 all have non-growing commutators; (P4) therefore everything reachable lies in B and U_iota does not, so gamma is unreachable. CANCELLATION CANNOT HELP because it would have to happen INSIDE B, and a sum of B-elements is a B-element. Z1 = U_iota is precisely the operator that is NOT AVAILABLE -- not in A, not a [D,a], not a J b* J^-1. CONTROL, replacing a trivial one: the obvious check 'admit U_iota and see gamma return' is I @ gamma == gamma, true by construction (the SIXTH cannot-fail check this session, and a duplicate of C53's O4) -- it was written out and replaced by a two-directional soundness test of the growth detector, which correctly reports False for a level shift n -> n+1 (constant gap, bounded) and True for a long-range n -> 2n map (growing gap, unbounded). THE CAVEAT DISSOLVED rather than being defeated: it was a correct observation about operators aimed at an argument that never decomposes anything."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-caveat-o-prime-cancellation/decision.md"
+    depends_on: [C53_A_TENSOR_AOP_DOES_NOT_REPAIR_ORIENTABILITY, C52_ORIENTABILITY_FAILS_BY_LOCALITY]
+    supersedes: "CAVEAT O', the residual recorded in C53's does_not_imply"
+    convention: "Same as C45-C53. B = {Z bounded : [D_M,Z] bounded}, the Lipschitz operators. Boundedness is operationalised in the truncated model as 'the norm does not grow with the cutoff' -- [INFERRED-analytic] where it stands for a genuine operator-norm statement. ASSUMPTION R (regularity) needed for [D,a] in B, but NOT when B = C*1 where the H_M factor is exactly I. ASSUMPTION A1 (U_iota D^{1/2} U_iota^dag = -D^{1/2}) inherited and STILL NOT RE-DERIVED -- and it is exactly what makes [D_M,U_iota] unbounded, so this round DEPENDS on it."
+    does_not_imply:
+      - "that ASSUMPTION A1 is verified -- it is not, and it is the SINGLE load-bearing input of the entire J/orientability chain (C50, C51, C53, C54). If A1 were false, U_iota would commute with D_M up to bounded terms, U_iota could lie in B, and all four claims would need rebuilding. The most valuable remaining check in this line is A1 itself, not another escape route."
+      - "that the doubling is WRONG -- only that nothing in this framework requires it"
+      - "that boundedness was verified as an operator-norm statement -- it is operationalised as non-growth with the cutoff, marked [INFERRED-analytic]"
+      - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1309,6 +1326,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "55 entries as of the CAVEAT O-prime test (2026-08-10). C54 added: the cancellation objection DISSOLVES, because the proof is a SPAN argument (B is a linear subspace, U_iota is outside it) and not a decomposition argument. LAST open door in the C11 line closed; ASSUMPTION A1 now explicitly named as the single load-bearing unverified input. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 55)."
   - "54 entries as of the CAVEAT O test (2026-08-10). C53 added: the A (x) A^op formulation does NOT repair orientability -- J cannot supply the U_iota, because any U_iota-carrying part makes [D, J b* J^-1] order one. CAVEAT O closed; CAVEAT O' (fine-tuned cancellation) recorded as the one open door. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 54)."
   - "53 entries as of the Y2 escape-route test (2026-08-10). C52 added: the ORIENTABILITY axiom fails by a LOCALITY obstruction, for every admissible A and independently of J -- retiring Y2, Y1' and the Lipschitz residual together. CAVEAT O (the A(x)A^op formulation) recorded as open. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 53)."
   - "52 entries as of the Y1 escape-route test (2026-08-10). C51 added: sector-mixing without a swap unitary is ALSO excluded, and C50 becomes its f == 1 special case. Cost named: ASSUMPTION R (regularity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 52)."
