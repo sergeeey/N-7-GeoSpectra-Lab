@@ -1382,6 +1382,23 @@ claims:
       - "any consequence for whether the doubled triple is a geometry -- C49 (Poincare duality fails) and C52 (orientability fails) already settled that independent of KO-dimension; this is bookkeeping on bookkeeping on a non-geometry"
       - "anything about N_gen = 3 -- closed at C58, untouched here"
 
+  - id: C61_OB11II_MIXING_NOT_EXCLUDED_BY_SU3_NECESSARY_CONDITION
+    statement: "OB11(ii) (no channel-mixing terms in the Dirac operator) tested at the cheapest tractable level -- the S6-restricted, pointwise SU(3)-equivariance NECESSARY CONDITION for a first-order (Dirac-operator-shaped) mixing term X_ij between distinct triality channels to exist at all. Built m = g2/su3 (6-dim tangent/isotropy representation, Frobenius-orthogonal complement of su3 within g2, extracted from G102's own der/su3 bases; reductivity [su3,m] subset m VERIFIED not assumed, max leakage 4.2e-16) and computed dim Hom_su3(m (x) channel_i, channel_j) for all 9 ordered pairs using G102's unmodified restrict_to_subalgebra/hom_dim machinery. [VERIFIED-numpy] P0: dim(m)=6 exactly. [VERIFIED-numpy] P1 (sanity): C_2(m) gives all 6 eigenvalues at -4/3 exactly, one cluster not two -- CONSISTENT with C29's own established fact that C_2(3)=C_2(3bar)=4/3 identically, confirming m is the expected 3+3bar tangent rep. [VERIFIED-numpy] P2 (harness control): diagonal Hom_su3(m(x)channel_i,channel_i)=10 for all three channels, nonzero -- harness sound (round59's own real single-channel Dirac operator IS a nonzero element of exactly this Hom-space). [VERIFIED-numpy] P3 (the question): OFF-DIAGONAL Hom_su3(m(x)channel_i,channel_j)=10 for ALL SIX i!=j pairs -- EXACTLY equal to the diagonal, not smaller, not zero. REFUTES the strong form (that bare SU(3)-equivariance forces X_ij=0) -- this cheapest-possible route to proving OB11(ii) is now closed, not merely untried. The finding is the direct, predictable consequence of two already-established facts (OB11 condition i / C29: all three channels have IDENTICAL su(3) block structure; G102 S6/S7: su(3) alone gives Hom=6 for ALL pairs including off-diagonal, i.e. su(3) genuinely cannot distinguish the channel labels) -- extends this from the bare fiber level to the tangent-twisted, Dirac-operator-relevant level, closing off the possibility that folding in the tangent representation might have broken the degeneracy where the bare fiber didn't."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-ob11ii-channel-mixing-necessary-condition/decision.md"
+    depends_on: [C29_OB11_CONDITION_I_SU3_BLOCK_STRUCTURE, C_G67C3_THIRD_CHANNEL]
+    convention: "su(3) generators as returned by G102.stabilizer_basis(derivation_basis()) -- 8 real 8x8 antisymmetric matrices, Frobenius/trace inner product throughout (matches G102's own restrict_to_subalgebra/hom_dim conventions, reused unmodified). m built as the SVD-projected orthogonal complement of su3's span within g2's span in the ambient 64-dim (8x8 matrix) Euclidean space, not re-derived from an independent geometric construction."
+    does_not_imply:
+      - "that X_ij != 0 -- absence of a necessary-condition obstruction is not existence of a term, only removal of the cheapest reason it could not exist"
+      - "anything about condition (iii) (triality acting as 1(x)t) -- untouched, separately scoped, not attempted"
+      - "that OB1/t-selection is resolved or bypassed -- this round is S6-only by explicit scope choice; the 2026-08-03 note's OB1-entanglement claim for the FULL 4D differential-operator version of (ii) is not independently re-verified or refuted here, only sidestepped for this necessary-condition sub-question"
+      - "that the actual G2-invariant differential Dirac operator was built -- the Hom-space found here is a fiber-level algebraic precondition, not the operator itself"
+      - "any change to N_gen=3's CONDITIONAL status -- neither strengthened nor further weakened, the open question is narrowed, not resolved"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1428,6 +1445,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "62 entries as of the OB11(ii) necessary-condition check (2026-08-10). C61 added: the cheapest route to proving OB11(ii) (bare SU(3)-equivariance forcing X_ij=0) is REFUTED and closed -- Hom_su3(m(x)channel_i,channel_j)=10 for all 9 pairs, diagonal and off-diagonal identical. OB11(ii) stays OPEN, narrowed to the harder G2-invariant-section question. First round after the user's explicit pivot away from C11 toward the N_gen=3 headline mechanism. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 62)."
   - "61 entries as of the KO-split gauge-or-real check (2026-08-10). C60 added: the KO-2/KO-4 split is REAL, not a gauge artifact -- proved (not merely asserted) via a sector-automorphism orbit computation. C57's characterization confirmed as final. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 61)."
   - "60 entries as of the A1-lift Schur argument (2026-08-10). C59 added: ASSUMPTION A1-lift is a THEOREM (Schur's lemma on SU(2)xSU(2)), not an assumption -- verified numerically, with a real dual-generator sign bug caught and fixed along the way. C55's chain now rests on zero named assumptions about the lift. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 60)."
   - "59 entries as of the OB1 cross-reference check (2026-08-10). C58 added: the C11 chain (C41-C57) does NOT meet any of OB1's four reopen conditions; OB1 stays PARKED; C41-C57 logged as a fifth independent null attempt via a mechanism rounds 114-117 did not try. N_gen=3 status unchanged. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 59)."

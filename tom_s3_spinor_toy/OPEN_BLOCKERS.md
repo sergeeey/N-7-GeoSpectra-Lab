@@ -1163,7 +1163,25 @@ new — not previously logged anywhere in this project's registries.
 
 ---
 
-## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03]
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) narrowed 2026-08-10]
+
+> **UPDATE 2026-08-10 (C61).** The cheapest possible route to proving condition
+> (ii) — bare `SU(3)`-representation theory alone forcing `X_ij=0` — is now
+> **closed, refuted, not merely untried**. Built `m=g2/su3` (the tangent/
+> isotropy representation, the object the actual Dirac operator is built
+> from) and computed `dim Hom_su3(m⊗channel_i,channel_j)` for all 9 pairs
+> using G102's own unmodified machinery: **10 for every pair, diagonal and
+> off-diagonal alike** — no distinction whatsoever. This is the direct,
+> predictable consequence of already-established facts (condition (i)/C29:
+> identical `su(3)` block structure; G102 S6/S7: `su(3)` alone cannot tell
+> the channels apart even at the bare fiber level) — it closes off the
+> possibility that folding in the tangent bundle might have broken that
+> degeneracy. It doesn't. Condition (ii) stays **open**, narrowed to a
+> genuinely harder question: whether the actual **G2-invariant differential
+> operator** (not bare pointwise equivariance) picks a nonzero element out of
+> this now-confirmed 10-dimensional Hom-space. See
+> `experiments/20260810-ob11ii-channel-mixing-necessary-condition/decision.md`.
+> Condition (iii) untouched, separately scoped, not attempted this round.
 
 > **EVIDENCE CORRECTED 2026-08-09 (external audit).** Condition (i)'s
 > conclusion stands, but the evidence cited below does not carry it:
