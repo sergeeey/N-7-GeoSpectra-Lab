@@ -179,6 +179,27 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **W1 RUN AND CLOSED, 2026-08-10 (C50). The last escape route is gone, and
+> C48/C49 are now ANSATZ-FREE.**
+> The expectation going in was that W1 would **succeed** — the crossed product's
+> Tomita–Takesaki conjugation *is* non-factorizing and satisfies order-zero for
+> free. It fails for an unrelated reason. Chain: `A'`'s off-diagonal blocks all
+> carry `U_ι` → those have **unbounded** commutator with `D` → but `[D,u] =
+> −3i(I⊗s₂)` is **bounded**, so `JuJ⁻¹` must be sector-**diagonal** `= h⊗I`
+> (**this step uses boundedness alone — no factorization assumption**) →
+> `J(I⊗s₂)J⁻¹ ∝ [D_M,h]⊗I` must be a unitary involution, so `[D_M,h]` invertible
+> → but bounded `[D_M,h]` forces `h` to commute with all Clifford multiplication,
+> whose commutant is 1-dim and scalar, so `h = ±I` and `[D_M,h] = 0`. **Contradiction.**
+> **No `J`, factorizing or not, admits a sector-mixing algebra containing the
+> sector swap.** Discrimination: it does **not** kill sector-diagonal `T7` (step 5's
+> `J` still stands); control: same code reproduces C48's factorizing no-go.
+> *Two more of my own weak checks were caught here — `W1b` v1 grew by construction,
+> v2's "bounded" comparison side was exactly 0.*
+> **Net: the doubling is unearned from FOUR directions, the last ansatz-free.**
+> Remaining slivers: a sector-mixing algebra with **no** swap unitary (Y1), and a
+> diagonal part smaller than the twisted diagonal (Y2). Neither is the crossed
+> product. See `experiments/20260810-c11-w1-nonfactorizing-J/`.
+>
 > **STEP 6 RUN, 2026-08-10 (C49). PORTFOLIO COMPLETE except step 7 (deferred).
 > Poincaré duality FAILS: the even index pairing vanishes identically.**
 > `γ` must be sector-OFF-diagonal (that is what made it exist), so it maps

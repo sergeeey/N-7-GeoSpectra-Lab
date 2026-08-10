@@ -1192,6 +1192,24 @@ claims:
       - "a complete characterisation of how PD fails or could be repaired -- only that one NECESSARY condition fails"
       - "that a non-factorising J (escape W1) would also give a vanishing pairing -- W1 could readmit a sector-mixing algebra and is UNTESTED"
 
+  - id: C50_NO_J_ADMITS_A_SECTOR_MIXING_ALGEBRA
+    statement: "REFUTES the proposed C50 ('a non-factorizing J readmits a sector-mixing algebra') and thereby UPGRADES C48's result 2 and C49 from ANSATZ-LIMITED to ANSATZ-FREE. No antiunitary J with J D = +-D J admits a sector-mixing algebra containing the sector swap u = 1 (x) s1 -- factorizing or not. THE CHAIN: (W1a) [VERIFIED-numpy, finite model] A''s sector-off-diagonal blocks all factor as m*U_iota, because they must satisfy T01 (f o iota) = f T01 -- commutant computed by SVD and checked against 8 random f per basis element. (W1b) [VERIFIED-numpy] the identity [D_M, m U_iota] = {D_M, m} U_iota holds exactly, and its norm grows LINEARLY in the cutoff (ratio -> 2.00); the order-counting that makes this unbounded ({D_M,m} = [D_M,m] + 2 m D_M is order ONE while a bundle endomorphism's [D_M,m] = Clifford.dm is order ZERO) is [INFERRED-analytic], NOT verified, because the toy has no locality structure. (W1c) [VERIFIED-numpy] [D,u] = -3i (I (x) s2) is BOUNDED, so [D, J u J^-1] is bounded, so the off-diagonal part of J u J^-1 must VANISH: J u J^-1 = h (x) I. THIS STEP USES BOUNDEDNESS ALONE AND NO FACTORIZATION ASSUMPTION -- that is what makes the result stronger than C48. (W1d) J(I (x) s2)J^-1 ~ [D_M,h] (x) I must be a unitary involution, so [D_M,h] is INVERTIBLE. (W1e) but [D_M,h] bounded forces h to commute with all Clifford multiplication, and [VERIFIED-numpy] the commutant of the Clifford action on the 2-dim spinor space is 1-dimensional and SCALAR, so h = +-I and [D_M,h] = 0 -- not invertible. CONTRADICTION. DISCRIMINATION: the argument does NOT kill the sector-DIAGONAL T7, for which step 5 exhibited a J -- the chain enters through [D,u] for an off-diagonal u, and T7's sector parts {I, s3} are both diagonal. CONTROL: the same code reproduces C48's factorizing no-go (admissible k = NONE for T4). TWO OF MY OWN WEAK CHECKS WERE CAUGHT AND REPLACED IN THIS FILE: W1b v1 printed 2*max(n+3/2) for rising truncations (grows by construction); W1b v2 compared it against ||[D_M,m]|| for a level-preserving m, which came out EXACTLY 0 because such m commutes with D_M in the toy -- the bounded side was degenerate and the comparison still could not fail."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-w1-nonfactorizing-J/decision.md"
+    depends_on: [C48_J_FORCES_ALPHA_BETA_ZERO_BUT_KILLS_THE_MAXIMAL_ALGEBRA, C49_EVEN_INDEX_PAIRING_VANISHES_PD_FAILS, C46_DOUBLING_IF_TAKEN_IS_A_PARITY_DOUBLING]
+    supersedes: "ANSATZ J1 as a scope limit on C48's result 2 and on C49 -- both are now ansatz-free"
+    convention: "Same as C47/C48/C49. ASSUMPTION A1 (U_iota D^{1/2} U_iota^dag = -D^{1/2}) still inherited and still not re-derived. Finite model: X = {a,b,c,c'} with iota = (a)(b)(c c') -- two fixed points and one free orbit, matching the shape of iota(g) = g^-1 on S^3 whose fixed set is {+-1}; H_model = C^X (x) C^2_spin (x) C^2_sector. The model captures the ALGEBRAIC structure of the iota-action, not the analysis."
+    does_not_imply:
+      - "that the doubling is WRONG -- it shows nothing in this framework REQUIRES it, a weaker and different statement"
+      - "anything about a sector-mixing algebra with NO sector-swap unitary -- the argument enters through u, so that sliver (Y1) is untested; it is not the crossed product and the portfolio produced no such candidate"
+      - "anything about algebras whose diagonal part is smaller than the full twisted diagonal, which would enlarge A' (sliver Y2)"
+      - "that the order-counting step is verified -- it is [INFERRED-analytic] and marked as such; the toy cannot represent [D_M,m] = Clifford.dm"
+      - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1238,6 +1256,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "51 entries as of the W1 escape-route test (2026-08-10). C50 added: no J, factorizing or not, admits a sector-mixing algebra -- which UPGRADES C48 result 2 and C49 from ansatz-limited to ansatz-free. ANSATZ J1 retired as a scope limit. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 51)."
   - "50 entries as of C11 step 6 (2026-08-10). C49 added: the even index pairing vanishes identically, so Poincare duality fails for the doubled triple. The agreed 7-step C11 portfolio is complete except step 7 (N_gen=3), deferred by agreement. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 50)."
   - "49 entries as of C11 steps 3+4+5 (2026-08-10). C47 (the 4-dim kernel is an isolated point) and C48 (the axioms force alpha = beta = 0, but J kills the maximal algebra) added; C45's Relaxation Map variant V2 superseded. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 49)."
   - "47 entries as of C11 step 1, the algebra search (2026-08-10). C45 added and REFUTED as worded (the algebra does not earn the doubling); C46 added and PROVED (if taken, the doubling is a PARITY doubling). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 47)."
