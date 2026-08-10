@@ -112,15 +112,41 @@ tracked in any future formal spectral-flow attempt). See
 >
 > **UPGRADE, not just a demotion:** the genuine global operator is
 > **antiunitary**, `Θ = i·σ₂·K`, with `Θ T Θ⁻¹ = 1−T` everywhere and
-> `Θ² = −I` (negative control: `i·σ₁` correctly rejected). This **fills the
-> "real structure `J`" field** that the checklist below lists as NOT
-> ATTEMPTED, and it **explains** the recorded grading failure: the exchange
-> is order-two on the projector space but lifts *projectively* to spinors, so
-> a linear `Z₂` grading was the wrong object. See
+> `Θ² = −I` (negative control: `i·σ₁` correctly rejected). ~~This **fills the
+> "real structure `J`" field**~~ **← RETRACTED 2026-08-10, see below.** It does
+> **explain** the recorded grading failure: the exchange is order-two on the
+> projector space but lifts *projectively* to spinors, so a linear `Z₂` grading
+> was the wrong object. See
 > `experiments/20260809-ob2-antiunitary-correction/decision.md`.
 >
-> Still open regardless: the physical action (`F6`), and `Θ` against the full
-> NCG real-structure axioms. Original text preserved below.
+> **⚠️ CORRECTION 2026-08-10 (C35) — `Θ` does NOT fill the `J` field.** The
+> claim above was written as a plausible next step and is false. `Θ` was built
+> to satisfy `Θ T Θ⁻¹ = 1−T` — it **exchanges** the algebra's two minimal
+> projectors — while a real structure must satisfy the **order-zero axiom**
+> `[a, J b* J⁻¹] = 0`, i.e. **commute** with the algebra. An operator built to
+> exchange `A`'s generators cannot commute with them. Verified: `Θ` lifted as
+> `(iσ₂)⊗I₂` is a valid `J` at **0 of 12** Bloch points. `Θ` is a symmetry *of*
+> the algebra; `J` is *spectral data*. **The checklist field below stays
+> `NOT ATTEMPTED`.**
+>
+> Three further facts about the toy triple, from the same round:
+> - **No grading `γ` can exist** — `spec(D) = {0,0,3,3}` is not symmetric under
+>   `λ→−λ` while `{γ,D}=0` requires it. Stronger than "the naive `γ` failed":
+>   *none exists*. The triple is necessarily **odd**, and the `D`-sign is
+>   **forced** to `+1` before any search.
+> - **`J` exists pointwise (12/12, forced tuple `(J²,JDJ⁻¹/D)=(+1,+1)`) but
+>   never globally** — blocked by the *same determinant obstruction* as `Θ`:
+>   `J` is antilinear, so `T ↦ JTJ⁻¹` is a reflection (`det=−1`) composed with
+>   a rotation (`det=+1`), and the composite can never be the identity a global
+>   `J` needs. One obstruction, two casualties.
+> - **The first-order condition is vacuous** — `D = 3(T⊗I₂)` lies *inside*
+>   `A = span{T,1−T}⊗I₂`, so `[D,a]=0` identically and `Ω¹ = 0`.
+>
+> See `experiments/20260810-ob2-theta-ncg-axioms/decision.md` (C35).
+>
+> Still open regardless: the physical action (`F6`); orientability and Poincaré
+> duality; and whether a `D` that does **not** commute with `A` would give the
+> axiom checks any content at all. Original text preserved below.
 
 **Codex's item 5 now attempted — genuine partial progress, not full
 resolution.** Round110's own attempt tested the WRONG question (literal
@@ -569,6 +595,17 @@ option space, a different object.
 **Original description (superseded framing, kept for history):** the
 finite/NCG algebra's real structure `J_F` is
 established (`J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).
+> ⚠️ **`J_F² = −1` IS WRONG — 2026-08-10, C36.** G18's actual `J_F` is 16 real
+> transpositions; loading it and squaring gives `J_F conj(J_F) = +I₃₂`, and
+> `g18_ncg.py` itself **asserts** `J_F**2 == eye(32)` with its docstring saying
+> `J_F² = I`. **The correct value is `+1`.** The `−1` propagated into
+> `docs/gates_tracker.md:38`, `g18/decision.md:9`, `g26/claim.md` (×2), OB10's
+> `claim.md` (×2) and `decision.md`, this file (×2), and **`preprint.tex:349,354`**.
+> Consequence for OB10: its pseudo-real verdict was justified as "matching the
+> finite algebra's own pseudo-real `J_F²=−1`" — wrong twice over, since C32
+> already showed OB10's verdict was a convention artifact AND the value it was
+> matched against is `+1`. **NOT fixed yet — touches the manuscript, needs its
+> own pass.** See `experiments/20260810-ob2-theta-ncg-axioms/decision.md`.
 But whether the GEOMETRIC `S³×S⁶` spinor bundle itself — independent of
 the separately-reconstructed finite algebra `A_F` — satisfies a
 compatible reality/Majorana condition is **not addressed anywhere** in
