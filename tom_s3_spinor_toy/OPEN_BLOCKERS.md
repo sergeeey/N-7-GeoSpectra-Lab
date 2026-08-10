@@ -179,6 +179,30 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **Y2 RUN AND CLOSED, 2026-08-10 (C52) — and it retires Y1′ and the Lipschitz
+> residual with it. `γ` is built from a DIFFEOMORPHISM, and that is fatal.**
+>
+> Y2 **is** a real escape from the `J` chain, exactly as predicted: with
+> `B = C·1`, `A = C⊕C` is sector-mixing, `dim A' = 128`, `u = 1⊗s₁` sits in its
+> **own** commutant, `[D,u]` is bounded — C50's W1a/W1c do not apply at all.
+>
+> **A different axiom closes it.** Every `a ∈ A` and every `[D,a]` is **LOCAL**
+> (`g·T·f = 0` for disjoint supports). `γ = U_ι⊗s₁` is **NOT** — witness
+> `‖1_c·γ·1_{c'}‖ = 2.0`. Products of local operators are local (400/400), so
+> `π_D(c)` is local for **every** Hochschild chain and can never equal `γ`.
+> **ORIENTABILITY FAILS.** The argument never mentions `B`, `J`, or `A'`.
+> Counter-case (so the lemma can fail): smuggle one `U_ι` in → **400/400
+> non-local**, and `γ` becomes reachable exactly. Discrimination: any **local**
+> replacement for `U_ι` removes the obstruction — but C45 already showed a local
+> `γ` cannot anticommute with `D_block`. **Anticommutation demands `ι`;
+> orientability forbids it.**
+>
+> This also **explains C49**: orientability produces the fundamental class, PD
+> needs it non-degenerate, both fail for one reason. **Only CAVEAT O remains** —
+> the `A⊗A°` formulation, where `π_D` also carries `Ja*J⁻¹`; local iff `JAJ⁻¹`
+> is, which C50/C51 gave only for `A ⊇` twisted diagonal.
+> See `experiments/20260810-c11-y2-smaller-diagonal/`.
+>
 > **Y1 RUN AND CLOSED, 2026-08-10 (C51). Mixing without a swap unitary is
 > excluded too, and C50 becomes its `f ≡ 1` special case. Only Y2 is left.**
 > The sliver was real and had a concrete inhabitant: `A = ⟨twisted diagonal,
