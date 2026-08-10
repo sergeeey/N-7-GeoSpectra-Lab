@@ -1,0 +1,33 @@
+{
+  "y2a_dim_commutant": 128,
+  "y2a_escape_is_real": true,
+  "y2b_local_checks": {
+    "f (x) I": true,
+    "f (x) s1": true,
+    "f (x) s2": true,
+    "f (x) s3": true,
+    "[D,a] = c(df) (x) sector": true
+  },
+  "y2b_all_local": true,
+  "y2c_gamma_local": false,
+  "y2c_witness_norm": 2.0,
+  "y2c_gamma_nonlocal": true,
+  "y2d_products_local": true,
+  "y2d_counter_case_nonlocal": 400,
+  "y2d_gamma_reachable_with_U_iota": true,
+  "y2d_orientability_fails": true,
+  "y2e_local_replacements": {
+    "identity": {
+      "local": true
+    },
+    "sign(x)*I  (bundle endo)": {
+      "local": true
+    },
+    "random bundle endo": {
+      "local": true
+    }
+  },
+  "y2e_discriminates": true,
+  "control_identity_local": true,
+  "verdict": "Y2_CLOSED__ORIENTABILITY_FAILS_BY_LOCALITY_FOR_EVERY_ADMISSIBLE_A"
+}

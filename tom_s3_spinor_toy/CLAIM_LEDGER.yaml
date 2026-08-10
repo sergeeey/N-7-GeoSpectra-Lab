@@ -1228,6 +1228,24 @@ claims:
       - "that the doubling is WRONG -- only that nothing here REQUIRES it"
       - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
 
+  - id: C52_ORIENTABILITY_FAILS_BY_LOCALITY
+    statement: "REFUTES the proposed C52 and closes Y2 by a route that owes NOTHING to the C48-C51 J-chain. Y2 IS a real escape from that chain, as predicted before running: with B = C*1 the algebra A = span{1 (x) I, 1 (x) s1} = C (+) C is unital, gamma-even, closed and sector-mixing; [VERIFIED-numpy] dim A' = 128 in the 16-dim model, u = 1 (x) s1 lies in ITS OWN commutant, its off-diagonal block does NOT factor as m*U_iota, and [D,u] = -3i(I (x) s2) is bounded -- so C50's W1a/W1c do not apply at all. BUT A DIFFERENT AXIOM CLOSES IT. [VERIFIED-numpy] every a in A and every [D,a] is LOCAL in the operational sense g T f = 0 for functions f, g of disjoint support (A's symbols are multiplication times a constant sector matrix; [D,f] = c(df) is a bundle endomorphism -- that identity is used as [VERIFIED-analytic], not re-derived). gamma = U_iota (x) s1 is NOT local: the witness ||1_c . gamma . 1_{c'}|| = 2.0 on the free orbit c <-> c' = iota(c), and iota's fixed set in the model is 2 points, exactly as iota(g) = g^-1 on S^3 fixes only +-1. CLOSURE LEMMA [VERIFIED-numpy]: 400 random Hochschild 3-chains built from local factors give a LOCAL pi_D(c), every time. Therefore pi_D(c) != gamma for EVERY chain and the ORIENTABILITY axiom FAILS. THE CHECK WAS BUILT TO BE ABLE TO FAIL: counting how many random chains equal gamma is 0 by genericity and confirms nothing (the fourth instance of that disease this session), so instead -- (i) the closure lemma, (ii) a COUNTER-CASE smuggling ONE U_iota factor into the same chains, which makes 400/400 NON-local, and (iii) the observation that with U_iota admitted gamma is reachable EXACTLY via a0 = U_iota (x) s1. So the obstruction is precisely that U_iota is not in the algebra. DISCRIMINATION: replacing U_iota by a LOCAL bundle map (identity, a sign field, a random bundle endomorphism) makes gamma local every time and the obstruction disappears; the odd-case target 1 is also local. The obstruction fires ONLY on a gamma built from a DIFFEOMORPHISM. Since the argument never mentions B, J or the size of A', it retires Y2, Y1' and the Lipschitz loophole together. It also EXPLAINS C49: orientability produces the fundamental class, Poincare duality needs it non-degenerate, and both fail for the same reason. WHAT IT MAKES EXPLICIT: gamma here is built from a diffeomorphism, while every gamma in an ordinary even spectral triple is built from the Clifford algebra and is local by construction -- and C45 showed a local gamma cannot anticommute with D_block, so anticommutation demands iota while orientability forbids it."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-y2-smaller-diagonal/decision.md"
+    depends_on: [C51_MIXING_WITHOUT_A_UNITARY_IS_ALSO_EXCLUDED, C45_ALGEBRA_DOES_NOT_EARN_THE_DOUBLING, C49_EVEN_INDEX_PAIRING_VANISHES_PD_FAILS]
+    supersedes: "the Y2, Y1' and Lipschitz residuals named by C50/C51 -- all three are retired by an argument independent of J"
+    convention: "Same as C45-C51. Orientability in the A-valued formulation: a Hochschild n-cycle c with pi_D(c) = gamma, pi_D(a0 (x) a1 (x) ... (x) an) = a0 [D,a1]...[D,an]. Locality is the operational definition g T f = 0 for disjoint supports. Finite model: X = {a,b,c,c'} with iota = (a)(b)(c c'), H = C^X (x) C^2_spin (x) C^2_sector; the spinor part of the iota-lift is trivial in the toy, which does not affect locality. ASSUMPTION A1 inherited, still not re-derived."
+    does_not_imply:
+      - "that S^3 is non-orientable -- S^3's own ODD triple has no gamma and needs pi_D(c) = 1, which IS local; what fails is the doubled EVEN triple with a diffeomorphism-built gamma"
+      - "CAVEAT O: it does not settle the A (x) A^op formulation of orientability, where pi_D also carries J a* J^-1 factors -- those are local PROVIDED J A J^-1 is local, which C50/C51 established only when A contains the twisted diagonal, and NOT for a smaller B. That is a genuine open sub-point, stated not assumed."
+      - "that the doubling is WRONG -- only that nothing in this framework requires it, and that the even triple it would need is not a geometry"
+      - "that [D,f] = c(df) was re-derived here -- it is used as [VERIFIED-analytic]; the toy checks the support bookkeeping that follows from it"
+      - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1274,6 +1292,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "53 entries as of the Y2 escape-route test (2026-08-10). C52 added: the ORIENTABILITY axiom fails by a LOCALITY obstruction, for every admissible A and independently of J -- retiring Y2, Y1' and the Lipschitz residual together. CAVEAT O (the A(x)A^op formulation) recorded as open. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 53)."
   - "52 entries as of the Y1 escape-route test (2026-08-10). C51 added: sector-mixing without a swap unitary is ALSO excluded, and C50 becomes its f == 1 special case. Cost named: ASSUMPTION R (regularity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 52)."
   - "51 entries as of the W1 escape-route test (2026-08-10). C50 added: no J, factorizing or not, admits a sector-mixing algebra -- which UPGRADES C48 result 2 and C49 from ansatz-limited to ansatz-free. ANSATZ J1 retired as a scope limit. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 51)."
   - "50 entries as of C11 step 6 (2026-08-10). C49 added: the even index pairing vanishes identically, so Poincare duality fails for the doubled triple. The agreed 7-step C11 portfolio is complete except step 7 (N_gen=3), deferred by agreement. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 50)."
