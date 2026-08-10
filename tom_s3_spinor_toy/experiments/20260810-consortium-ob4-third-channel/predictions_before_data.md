@@ -73,3 +73,16 @@ and to "not degrade gradually". That is a statement about *that proof*, not
 necessarily about the fact. **Is there a quantitative version of Lemma B with a
 margin under `G₂`-breaking?** If yes, both rank-4 candidates pass without needing
 Tom at all, and this whole blocker dissolves. Cheap, internal, untried.
+
+
+---
+
+## Correction, same day (2026-08-10), after external review
+
+The consortium run that produced this file also asserted that Witten 1981 /
+Atiyah–Hirzebruch is *"the same tension, not an analogy"*. **Withdrawn.** That
+would require showing this setup satisfies the hypotheses of the relevant index
+theorem, and it may well not: the operator here is **twisted** (`D_{S⁶} ⊗ S⁻`),
+and twisting by a non-trivial bundle is the *standard escape* from Witten's
+no-go. Correct status: **structural relative** — a source of candidate escape
+routes, not a derivation. The four worlds M1–M4 above are unaffected.

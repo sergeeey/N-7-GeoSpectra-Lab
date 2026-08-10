@@ -1,0 +1,24 @@
+{
+  "step0_gbar_is_inverse": true,
+  "step0_g_in_su2": true,
+  "step1_spin_lift_cancellation": true,
+  "step2": {
+    "V0_t0_constant": {
+      "closed_under_a": true,
+      "closed_under_b": true,
+      "a_acts_trivially": true,
+      "b_acts_trivially": false,
+      "label": "(1,2) : singlet of SU(2)_a, doublet of SU(2)_b"
+    },
+    "V1_t1_gbar_twisted": {
+      "closed_under_a": true,
+      "closed_under_b": true,
+      "a_acts_trivially": false,
+      "b_acts_trivially": true,
+      "label": "(2,1) : doublet of SU(2)_a, singlet of SU(2)_b"
+    }
+  },
+  "step3_control_passes": true,
+  "verdict": "KERNELS_ARE_THE_TWO_HALVES_OF_THE_SPIN4_SPINOR",
+  "complementary": true
+}

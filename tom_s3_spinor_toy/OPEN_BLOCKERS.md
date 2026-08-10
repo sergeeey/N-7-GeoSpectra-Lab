@@ -101,6 +101,15 @@ tracked in any future formal spectral-flow attempt). See
 
 ## OB13 — C25/H1c: the two searches for a `t`-selector were in a provably blind parity sector [OPENED 2026-08-10, C37]
 
+> **⚠️ NARROWED SAME DAY (C38).** The `t=0` and `t=1` kernels are the **two chiral
+> halves of one 4-dimensional `Spin(4)` spinor** — `(1,2)` and `(2,1)`, verified
+> under the `SO(4)` isometry action with the frame lift, negative control passing.
+> So "which `t` is selected" is very likely **ill-posed: both are needed**, which
+> is precisely the inversion branch this blocker flagged. `C27`, `C25`/`H1c` and
+> `C11` collapse into **one** question — is the product ansatz with both `t`
+> simultaneously realized coherent? (`C11`, OPEN.) See
+> `experiments/20260810-c27-bundle-equivalence/decision.md`.
+
 `t → 1−t` is exactly `(t−½) → −(t−½)`, so **any even function of `(t−½)` is
 identically blind** to the `t=0` vs `t=1` question. Checked [VERIFIED-sympy]:
 round111's `Scal(t) = Scal_LC − 6(2t−1)²` **EVEN**; round99's curvature-norm toy
@@ -292,14 +301,31 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 > pearl) are recorded **before** the reply in
 > `experiments/20260810-consortium-ob4-third-channel/predictions_before_data.md`.
 >
-> **Historical framing found (external, verified):** Witten 1981 + Atiyah–Hirzebruch
-> is not an analogy but the *same tension* — the character-valued index of the Dirac
-> operator **vanishes on any manifold with a continuous symmetry group**, i.e. the very
-> `G₂` that makes G74A Lemma B work is what obstructs chirality. Historically this was
-> resolved only by adding physical structure, and two of the four canonical escapes —
-> **metric connections with topologically non-trivial torsion** and **orbifold
-> projections** — are already present in this project under other names (the `t`-family;
-> C27's open Relaxation Map row).
+> **Historical framing (external, verified) — STRUCTURAL RELATIVE, not identity
+> [CORRECTED 2026-08-10, same day].** Witten 1981 + Atiyah–Hirzebruch: the
+> character-valued index of the Dirac operator **vanishes on any manifold with a
+> continuous symmetry group** [VERIFIED-WebSearch]. This *rhymes* with the local
+> tension here — the `G₂` that makes G74A Lemma B work is the same continuous
+> symmetry that obstructs chirality.
+>
+> **It was first written here as "the same tension, not an analogy". That was an
+> overclaim and is withdrawn.** Establishing identity would require showing this
+> setup satisfies the hypotheses of the relevant index theorem — and it plainly
+> may not: the operator here is **twisted** (`D_{S⁶} ⊗ S⁻`), and twisting by a
+> non-trivial bundle is precisely the *standard escape* from Witten's no-go. So
+> the theorem quite possibly does **not** apply, and the resemblance is a
+> structural relative until someone checks the hypotheses. Treat it as a source
+> of candidate escape routes, never as a derivation.
+>
+> **Precedent for exactly this failure mode in this project:** round114's
+> AHL2023 "cross-check" was FALSIFIED because the computation collapsed to
+> restating the source's own theorem. A literature parallel is not evidence
+> until its hypotheses are checked against the local setup.
+>
+> **What survives, and is genuinely useful:** the historical escape routes are
+> real and two of the four are already present here under other names —
+> **metric connections with topologically non-trivial torsion** (the `t`-family)
+> and **orbifold projections** (C27's open Relaxation Map row).
 >
 > **One test needing no reply at all:** G74A Lemma B is stated to require *exact* `G₂`
 > and to "not degrade gradually" — that is a claim about *that proof*, not necessarily
