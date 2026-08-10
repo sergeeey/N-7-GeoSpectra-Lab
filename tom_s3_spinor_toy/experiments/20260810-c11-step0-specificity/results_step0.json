@@ -1,0 +1,68 @@
+{
+  "p1_mirror_identity_in_t": true,
+  "p2_grading_generic_in_t": true,
+  "p2_sweep": {
+    "0.0": {
+      "mirror": true,
+      "grading": true
+    },
+    "1.0": {
+      "mirror": true,
+      "grading": true
+    },
+    "0.25": {
+      "mirror": true,
+      "grading": true
+    },
+    "0.5": {
+      "mirror": true,
+      "grading": true
+    },
+    "-0.3333": {
+      "mirror": true,
+      "grading": true
+    },
+    "1.3333": {
+      "mirror": true,
+      "grading": true
+    },
+    "2.7": {
+      "mirror": true,
+      "grading": true
+    },
+    "-1.1206": {
+      "mirror": true,
+      "grading": true
+    }
+  },
+  "p3_kernel_by_t": {
+    "0.0": 4,
+    "1.0": 4,
+    "0.5": 0,
+    "0.25": 0,
+    "-0.3333": 12,
+    "1.3333": 12,
+    "0.7": 0,
+    "2.0": 40
+  },
+  "p4_controls": {
+    "(0.0,0.7)": {
+      "mirror": false,
+      "grading": false
+    },
+    "(0.0,0.0)": {
+      "mirror": false,
+      "grading": false
+    },
+    "(0.25,0.9)": {
+      "mirror": false,
+      "grading": false
+    },
+    "(1.0,2.0)": {
+      "mirror": false,
+      "grading": false
+    }
+  },
+  "p4_control_passes": true,
+  "verdict": "C43_GRADING_IS_GENERIC__DOUBLING_NOT_YET_EARNED"
+}
