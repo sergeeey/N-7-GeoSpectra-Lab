@@ -106,7 +106,12 @@ precisely because the two looked like a contradiction at first sight.
    Riemannian product → one uniform negative-definite convention), not by
    whichever sub-project's matrices were nearest to hand.
 4. **Store KO-dimension as the full tuple** `(J², JDJ⁻¹/D, JγJ⁻¹/γ)` **plus the
-   sign convention**, never as a bare "KO-dim N".
+   sign convention**, never as a bare "KO-dim N". **As of 2026-08-10 this is
+   enforced**: `docs/ko_dimension_registry.md` is the only place a KO number may
+   be introduced, and `hooks/claim_scope_gate.py` nudges on any ledger claim
+   whose statement is convention-sensitive but carries no `convention` field.
+   Rule 4 was written 2026-08-04 and violated on 2026-08-10 (C36's
+   "KO-dim 6 relations verified") — a rule without a gate is a preference.
 5. **A residual-form check reads backwards.** `{Γ_a,Γ_b} + 2δ_ab I == 0` asserts
    `{Γ,Γ} = −2δ`, the *negative* convention, despite the visible `+2`. This
    audit's own first scanner pass misread exactly that in `g102` and had to be

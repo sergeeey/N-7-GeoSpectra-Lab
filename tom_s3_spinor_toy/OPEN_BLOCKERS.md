@@ -99,6 +99,37 @@ tracked in any future formal spectral-flow attempt). See
 
 ---
 
+## OB12 — KO-dimension mapping: the sign tuple is verified, the NUMBER is not [OPENED 2026-08-10, C36 fallout]
+
+**The gap, stated precisely.** G18's finite triple has the tuple
+`(J², JDJ⁻¹/D, JγJ⁻¹/γ) = (+1, +1, −1)`, all three **computed in this repo**
+[VERIFIED-sympy]. The label `KO-dim 6` attached to it is **inherited from CCM**
+and has never been derived here — this repo holds no sign-triple table, no CCM
+source file, and no internal mapping. `G26`'s own comparison already marked
+CCM's KO-6 as `[DOCS] postulated`, so *both* sides of "same KO-dim
+independently" (its original wording, corrected 2026-08-10) were inherited.
+
+**Status:** `BLOCKED_BY_EXTERNAL_INPUT` — a dependency, not a failure.
+
+**What closes it** (either one): a cited primary source for the sign-triple ↔
+KO-dimension table, transcribed with *its own* convention stated — in particular
+which sign that source calls `ε`, `ε′`, `ε″`, since G18's docstring ordering and
+the common literature ordering do not obviously agree; **or** an internal
+derivation over `n mod 8` for the model Clifford triple. The machinery for the
+reality-type half already exists (`label_vs_code_check.py`), but the
+finite-geometry conventions relating `J` to `D` are subtle enough that this must
+be derived, not assembled by analogy.
+
+**Until then:** quote the tuple, never the number. Registry:
+`docs/ko_dimension_registry.md`. Enforced by `hooks/claim_scope_gate.py`.
+
+**Do not fold this into the geometric side.** `C32`/`C33`'s reality types are
+for the **geometric** `S³×S⁶` module — a different object. Combining finite and
+geometric KO-dimensions is a theorem with hypotheses, not arithmetic; OB10's
+original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
+
+---
+
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
 > **CORRECTION 2026-08-09 (external audit).** The 2026-08-03 entry below
