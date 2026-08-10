@@ -179,6 +179,34 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **✅ FIRST POSITIVE RESULT ON THIS LINE — 2026-08-10 (C43). GATE NOW 3/6.**
+> The block `D⁰ ⊕ D¹` **supplies the grading C35 proved impossible for a single
+> operator**. `spec(D¹) = −spec(D⁰)` **exactly**, multiplicities included — an
+> identity, not a truncation artifact: the pairing is level-by-level at
+> *identical* `n` (`−[n] = −n` ↔ `D¹`'s `σ=−1`; `−[−n−3] = n+3` ↔ `D¹`'s `σ=+1`,
+> same `(n+1)(n+2)` each), confirmed at `N_MAX = 3, 6, 12, 20`. So the block
+> spectrum is symmetric where each alone is not, an explicit `γ` was built
+> (`γ²=I`, `γ=γ†`, `{γ,D}=0` all verified), and `dim ker = 4` matches C38's
+> `Spin(4)` spinor. **Negative control:** the identical logic on `D⁰` alone
+> **fails** — that control *is* C35's result.
+>
+> **Not a coincidence.** C39 showed `ι` is orientation-**reversing**, and
+> reversing orientation flips a Dirac operator's sign. The mirror spectra are
+> that fact expressed spectrally — the same structure reached a third time.
+>
+> | gate field | status |
+> |---|---|
+> | Hilbert space `H` | ✅ `L²(S³,S) ⊕ L²(S³,S)` |
+> | Dirac `D` | ✅ `D⁰ ⊕ D¹`, round67's closed form |
+> | **Grading `γ`** | ✅ **NEW** |
+> | Algebra `A` | ❌ round110's `ℂ⊕ℂ` was a toy |
+> | Real structure `J` | ❌ C35: pointwise only |
+> | Physical interpretation | ❌ **why two copies at all** |
+>
+> **Cheapest remaining field: the algebra `A`** — first-order, orientability and
+> Poincaré duality are all defined relative to it, so it gates three checks at
+> once. See `experiments/20260810-c11-block-construction/decision.md`.
+>
 > **⚠️ NARROWED 2026-08-10 (C42) — and this blocker's ORIGINAL NAME was right.**
 > The one-operator escape is closed: **no member of the Cartan–Schouten family
 > has a 4-dimensional kernel** [VERIFIED-sympy]. Solving round67's closed form

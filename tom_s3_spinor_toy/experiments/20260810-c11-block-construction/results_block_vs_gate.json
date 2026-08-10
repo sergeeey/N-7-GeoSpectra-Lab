@@ -1,0 +1,21 @@
+{
+  "mirror_spectra": true,
+  "dim_per_block": 336,
+  "single_block_symmetric": false,
+  "block_symmetric": true,
+  "grading_exists": true,
+  "ker_block": 4,
+  "ker_matches_spin4": true,
+  "single_operator_grading": false,
+  "control_passes": true,
+  "parent_action_gate": {
+    "Algebra A": "NOT SUPPLIED \u2014 no algebra is specified for the block; round110's C(+)C was a toy and does not follow from the two-operator structure",
+    "Hilbert space H": "SUPPLIED \u2014 L2(S3,S) (+) L2(S3,S), truncated here to 672 states; the two copies are the t=0 and t=1 sectors",
+    "Dirac operator D": "SUPPLIED \u2014 D_block = D^0 (+) D^1, both from round67's closed form, self-adjoint by construction (real diagonal)",
+    "Grading gamma": "SUPPLIED (new) \u2014 exists, verified",
+    "Real structure J": "NOT SUPPLIED \u2014 C35 found J only pointwise on the toy; nothing here extends it to the block",
+    "Physical interpretation": "NOT SUPPLIED \u2014 nothing here motivates WHY two copies should coexist; that is the physics C11 asks for"
+  },
+  "fields_supplied": 3,
+  "verdict": "BLOCK_SUPPLIES_THE_GRADING_C35_PROVED_IMPOSSIBLE_FOR_ONE_OPERATOR"
+}
