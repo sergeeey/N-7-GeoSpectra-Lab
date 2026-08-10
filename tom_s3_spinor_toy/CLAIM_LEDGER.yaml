@@ -1416,6 +1416,21 @@ claims:
       - "anything about OB1 or the S3-side torsion parameter t -- unrelated object with an unfortunate name collision with condition (iii)'s triality generator t"
       - "any change to N_gen=3's CONDITIONAL status -- neither strengthened nor weakened at the headline level, though this is a genuine positive (not merely narrowing) result for the necessary-condition layer of condition (iii)"
 
+  - id: C63_THREE_CHANNELS_PROVABLY_NOT_REDUNDANT
+    statement: "Step-4 red-team (user-posed): can a change of basis reduce the three triality channels to one physical degree of freedom -- is N_gen=3 secretly triple-counting? Re-verified G102's own S5 computation directly and extended it with an explicit, constructed demonstration rather than an abstract Hom-dimension count. [VERIFIED-numpy] P1: Hom_so8(vec,sp)=Hom_so8(vec,sm)=Hom_so8(sp,sm)=0 exactly (positive control Hom_so8(vec,vec)=1, Schur) -- the three channels are provably INEQUIVALENT as Spin(8) representations, reproducing G102's own prior S5 result independently. [VERIFIED-numpy] Built the 'coincidental' su(3)-level identification Phi: vec->sp explicitly (a concrete 8x8 matrix, drawn from the 6-dim Hom_su3(vec,sp) space that C61 already showed exists) and tested it: intertwines su(3) itself essentially exactly (residual 5.13e-16, P3, load-bearing control confirming Phi is genuinely su(3)-equivariant), but FAILS DECISIVELY against a generic so(8) element (residual 3.22, element norm 2.71, P2) -- not a marginal failure, order-1. The apparent redundancy (channels 'look the same' under su(3)/g2) is confined entirely to that restricted view and does not survive contact with the full Spin(8) structure; any basis change collapsing the channels together necessarily breaks Spin(8), which is not a legitimate symmetry of the construction. Answer: NO, the three channels cannot be reduced to one via any basis change respecting the actual geometric symmetry -- N_gen=3 is not triple-counting."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-step4-channel-redundancy-redteam/decision.md"
+    depends_on: [C_G67C3_THIRD_CHANNEL]
+    convention: "Cl(0,8)-chirality-splitting realization (G102's vec/sp/sm, the same construction C61 used), standard so(8) F_ab basis (28 generators), Frobenius/trace inner product throughout, reused unmodified."
+    does_not_imply:
+      - "that the Spin(8)-inequivalence fact (Hom_so8 offdiag=0) is newly discovered -- reused from G102's own already-PASSING S5 computation (2026-07-05) and a pearl_registry entry (2026-07-15) that reasoned through the same conclusion qualitatively in the course of a different investigation; this round independently re-verifies and adds the first concrete Phi construction/demonstration"
+      - "that the compactification's actual physical fiber structure realizes the full Spin(8) action -- that remains OB11(iii)'s harder, still-open half (C_G67C3_THIRD_CHANNEL gates 2-6); this round shows the distinction, IF present, cannot be undone by relabeling, not that the distinction is physically realized"
+      - "any change to N_gen=3's CONDITIONAL status -- this defends against one specific way it could have been undermined, it does not newly establish the headline result"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1462,6 +1477,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "64 entries as of the step-4 red-team check (2026-08-10). C63 added: the three triality channels are PROVABLY not redundant -- no basis change respecting the actual Spin(8) structure can reduce them to one physical degree of freedom (Hom_so8 offdiagonal=0, re-verified directly, plus a concrete constructed intertwiner shown to fail decisively against a generic so(8) element). Third round of the post-C11 pivot. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 64)."
   - "63 entries as of the OB11(iii) triality cross-construction check (2026-08-10). C62 added: su(3)'s matter/gauge action is triality-fixed, confirmed by an INDEPENDENT octonion-trilinear construction (not just G102's Cl(0,8) route) -- a genuine positive result for condition (iii)'s necessary generator-level piece, though the harder state-level operator construction (McRae 2025's own open problem) remains untouched. Second round of the post-C11 pivot. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 63)."
   - "62 entries as of the OB11(ii) necessary-condition check (2026-08-10). C61 added: the cheapest route to proving OB11(ii) (bare SU(3)-equivariance forcing X_ij=0) is REFUTED and closed -- Hom_su3(m(x)channel_i,channel_j)=10 for all 9 pairs, diagonal and off-diagonal identical. OB11(ii) stays OPEN, narrowed to the harder G2-invariant-section question. First round after the user's explicit pivot away from C11 toward the N_gen=3 headline mechanism. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 62)."
   - "61 entries as of the KO-split gauge-or-real check (2026-08-10). C60 added: the KO-2/KO-4 split is REAL, not a gauge artifact -- proved (not merely asserted) via a sector-automorphism orbit computation. C57's characterization confirmed as final. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 61)."

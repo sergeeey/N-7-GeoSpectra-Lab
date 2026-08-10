@@ -1,0 +1,16 @@
+{
+  "experiment": "step4_channel_redundancy_redteam",
+  "hom_so8_vec_sp": 0,
+  "hom_so8_vec_sm": 0,
+  "hom_so8_sp_sm": 0,
+  "hom_so8_vec_vec_positive_control": 1,
+  "p1_all_offdiag_zero": true,
+  "hom_dim_su3_vec_sp": 6,
+  "phi_norm": 1.0274194334805347,
+  "su3_intertwine_residual": 5.134341928655911e-16,
+  "p3_su3_control_pass": true,
+  "generic_intertwine_residual": 3.2189992242904806,
+  "generic_element_norm": 2.7111624789659685,
+  "p2_generic_fails_as_predicted": true,
+  "verdict": "THREE_CHANNELS_PROVABLY_NOT_REDUNDANT"
+}
