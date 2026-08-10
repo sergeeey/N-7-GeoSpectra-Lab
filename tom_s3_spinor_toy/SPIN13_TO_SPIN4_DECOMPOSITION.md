@@ -70,7 +70,8 @@ source check if this becomes load-bearing for a future claim.
 ### 2. Reality conditions — gap CONFIRMED after a broader search (skeptic demanded, done)
 
 - **Finite/NCG algebra `J_F`:** established (`preprint.tex:349`):
-  `J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0` — verified.
+  `J_F²=+1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0` — verified. [sign corrected
+  2026-08-10, C36: this line said `J_F²=-1`; G18's own code asserts +1]
 - **Geometric `S³×S⁶` spinor bundle itself:** first draft grepped only 4
   terms and declared the gap on that basis — skeptic correctly called
   this insufficient (negative evidence from an under-searched space).

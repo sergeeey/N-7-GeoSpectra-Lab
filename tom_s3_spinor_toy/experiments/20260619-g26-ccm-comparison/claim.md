@@ -23,7 +23,7 @@ arXiv:hep-th/0610241 [DOCS]
 | **D_F Yukawa count** | 4 free parameters {Y_ν, Y_e, Y_u, Y_d} [DOCS] | 4 free parameters — derived from |Q|-uniqueness [VERIFIED] | ✅ exact | CCM postulates 4; we prove 4 is forced |
 | **D_F structure** | Off-diagonal Yukawa block, explicit matrices [DOCS] | S⁶-diagonal + CPT-orbit classification [VERIFIED] | ✅ same block, different constraint | Our cascade 256→16→4 explains WHY 4 params |
 | **Chirality γ_F** | Postulated as Z₂ grading on H_F [DOCS] | Derived: Witten index=0, SU(2)_L vs SU(2)_R sectors (G23) [VERIFIED] | ✅ same result, different origin | CCM puts in by hand; we derive from gauge sectors |
-| **Real structure J_F** | KO-dimension 6 (mod 8), postulated [DOCS] | KO-dim 6 verified (G18): J_F²=−1, {J_F,γ_F}=0 [VERIFIED] | ✅ exact | Same KO-dim independently |
+| **Real structure J_F** | KO-dimension 6 (mod 8), postulated [DOCS] | relations verified (G18): J_F²=**+1**, {J_F,γ_F}=0, [D_F,J_F]=0 [VERIFIED]; the KO-dim **label** follows CCM, not independently derived [DOCS] | ✅ relations match | *sign corrected 2026-08-10, C36 — this cell said −1; and "Same KO-dim independently" overstated: the RELATIONS were verified, the KO-dimension NUMBER was inherited* |
 | **Electric charge Q** | From algebra representation A_F [DOCS] | Q = T3L + Y = T3L + K₃ + (B−L)/2, fully geometric (G17) [VERIFIED] | ✅ same eigenvalues | CCM algebraic; ours from S³×S⁶ isometry |
 | **Gauge group** | Inner automorphisms of A_F = ℂ⊕ℍ⊕M₃(ℂ) → U(1)×SU(2)×SU(3) [DOCS] | S³ isometry → SU(2)_L×SU(2)_R; S⁶ holonomy → SU(3) [VERIFIED] | ✅ same group, different origin | CCM: algebraic; ours: geometric |
 | **B−L charge** | Via unimodularity condition on A_F [DOCS] | K₃ on S⁶: geometric Casimir of SO(6)⊃SU(3) [VERIFIED] | ✅ same quantum numbers | We get B−L without unimodularity |
@@ -73,7 +73,7 @@ prior work and must be cited in any publication.
 
 2. **Exactly 4 Yukawa parameters** — {Y_ν, Y_e, Y_u, Y_d}, same symbols, same count.
 
-3. **KO-dimension 6** — J_F²=−1, {J_F,γ_F}=0, [D_F,J_F]=0; same anticommutation relations.
+3. **KO-dimension 6** — J_F²=+1, {J_F,γ_F}=0, [D_F,J_F]=0; same anticommutation relations. [sign corrected 2026-08-10, C36 — said −1]
 
 4. **Q eigenvalues** — {0, −1, +2/3, −1/3} and conjugates; identical spectrum.
 

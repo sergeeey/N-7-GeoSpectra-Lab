@@ -561,7 +561,10 @@ Despite that correction, a direct, adversarially-widened search (256
 candidates, `{I,σ1,σ2,σ3}⁴` factorized ansatz) found a unique, Hermitian,
 unitary charge-conjugation operator `B`, `B·conj(B)=-I` → **PSEUDOREAL
 (quaternionic) type** — matching, not contradicting, the finite algebra's own
-`J_F²=-1` (also pseudo-real). No-collapse-checked (reproduced under an
+`J_F²=-1` (also pseudo-real) [BOTH HALVES WRONG, C32 + C36: OB10's own
+pseudo-real verdict was a Clifford-convention artifact, AND `J_F²` is `+1`, not
+`-1` — so this "corroboration" was void twice over]. No-collapse-checked
+(reproduced under an
 independent, equally-valid Clifford-factor ordering). See
 `experiments/20260803-ob10-ko-dimension-majorana-check/decision.md`.
 
@@ -594,7 +597,8 @@ option space, a different object.
 
 **Original description (superseded framing, kept for history):** the
 finite/NCG algebra's real structure `J_F` is
-established (`J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).
+established (`J_F²=`**`+1`**` [sign corrected 2026-08-10, C36 — this line said
+`-1``], `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).
 > ⚠️ **`J_F² = −1` IS WRONG — 2026-08-10, C36.** G18's actual `J_F` is 16 real
 > transpositions; loading it and squaring gives `J_F conj(J_F) = +I₃₂`, and
 > `g18_ncg.py` itself **asserts** `J_F**2 == eye(32)` with its docstring saying
@@ -604,8 +608,13 @@ established (`J_F²=-1`, `{J_F,γ_F}=0`, `[D_F,J_F]=0`, `preprint.tex:349`).
 > Consequence for OB10: its pseudo-real verdict was justified as "matching the
 > finite algebra's own pseudo-real `J_F²=−1`" — wrong twice over, since C32
 > already showed OB10's verdict was a convention artifact AND the value it was
-> matched against is `+1`. **NOT fixed yet — touches the manuscript, needs its
-> own pass.** See `experiments/20260810-ob2-theta-ncg-axioms/decision.md`.
+> matched against is `+1`. **FIXED 2026-08-10** across all 11 documents
+> including `preprint.tex` (which now also states that the KO-dimension
+> *label* follows CCM rather than being independently derived — the three
+> relations are what this project verifies). Manuscript recompiles clean
+> (`pdflatex` exit 0, 0 errors). See
+> `experiments/20260810-ob2-theta-ncg-axioms/decision.md` and
+> `experiments/20260810-c36-jf-square-propagation-fix/decision.md`.
 But whether the GEOMETRIC `S³×S⁶` spinor bundle itself — independent of
 the separately-reconstructed finite algebra `A_F` — satisfies a
 compatible reality/Majorana condition is **not addressed anywhere** in

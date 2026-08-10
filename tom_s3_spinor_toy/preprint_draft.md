@@ -169,8 +169,10 @@ Connes-Chamseddine-Marcolli axioms with:
 - **A_F = ℂ ⊕ ℍ ⊕ M₃(ℂ)** — the SM finite algebra, derived from S³×S⁶ spinor
   decomposition (G18–G22). It is not postulated.
 - **H_F** — the 32-dimensional SM NCG Hilbert space of one generation (G18)
-- **D_F** — the finite Dirac operator with Yukawa structure; J_F² = −1,
-  {J_F, γ_F} = 0, [D_F, J_F] = 0 (KO-dim 6 relations verified, G18)
+- **D_F** — the finite Dirac operator with Yukawa structure; J_F² = +1,
+  {J_F, γ_F} = 0, [D_F, J_F] = 0. These three relations are verified explicitly
+  (G18); identifying the resulting sign triple with KO-dimension 6 follows CCM
+  [2006] and is not independently derived here.
 - **4 free Yukawa parameters**: the SU(3)-orbit structure of S⁶ restricts Yukawa
   couplings to 4 independent real parameters — the same count as CCM [2006] at
   GUT scale (G20, G25)

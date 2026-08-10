@@ -901,9 +901,28 @@ claims:
       and the record disagreed with itself. Third instance this week of the
       same shape (prose vs code): the Clifford Cl(7,0)/Cl(0,7) label inversion
       (C34) and g69's Cl(6,0)=M8(R) constant were the first two.
-      NOT FIXED IN THIS ROUND -- deliberately. It touches preprint.tex and
-      deserves its own pass rather than being swept in as a side-edit of an
-      unrelated experiment. Flagged in OPEN_BLOCKERS.md.
+      FIXED 2026-08-10 across all 11 documents including preprint.tex; see
+      experiments/20260810-c36-jf-square-propagation-fix/decision.md. Manuscript
+      recompiles clean (pdflatex exit 0, `grep -cE "^!" preprint.log` = 0).
+      THE FIX EXPOSED A SECOND, DISTINCT OVERCLAIM in the same sentences:
+      "(KO-dim 6 relations verified)" conflates VERIFYING THE THREE RELATIONS
+      (which G18 does) with DERIVING THE KO-DIMENSION NUMBER (which it does not
+      -- this repo has no KO table, no CCM source file, and no internal
+      sign-tuple-to-number derivation; G26's own table already marks CCM's KO-6
+      as [DOCS] postulated). Corrected in preprint.tex, preprint_draft.md and
+      g26/claim.md, per docs/clifford_convention_registry.md rule 4 (store the
+      TUPLE, never a bare "KO-dim N") -- written six days earlier by the
+      convention audit for this exact failure mode.
+      THE TYPO NEVER TOUCHED A COMPUTATION: 4 code locations assert +I,
+      including a test literally named test_J_F_squares_to_identity, and
+      round61 DEPENDS on it (J_F^-1 = J_F). Every derived result stands.
+      TWO OB10 SENTENCES MARKED VOID rather than corrected -- OB10's
+      "matching the finite algebra's own pseudo-real J_F^2=-1" fails on both
+      sides (the value is +1, AND C32 showed OB10's own verdict was a
+      convention artifact); a void corroboration is not repaired by fixing one
+      of its two broken halves.
+      preprint.pdf NOT rebuilt -- already stale by 3 weeks, untracked, and
+      regenerating a distributable artifact is a separate deliberate act.
       WHAT IS NOT ESTABLISHED: which KO-dimension the corrected tuple
       corresponds to. Per docs/clifford_convention_registry.md rule 4 (store
       the TUPLE, never a bare "KO-dim N"), that mapping needs a cited external
