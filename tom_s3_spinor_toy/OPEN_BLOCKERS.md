@@ -179,6 +179,27 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **STEP 1 RUN, 2026-08-10 (C45/C46). The algebra does NOT earn the doubling
+> either — but it does constrain its FORM.** C45 as worded is **REFUTED**: three
+> typed candidates are admissible and nested (`A+⊗I ⊂ twisted-diagonal ⊂ crossed
+> product`), because admissibility is inherited by every unital subalgebra. The
+> maximal one, `C^∞(S³) ⋊_ι Z₂`, **is** unique up to a sector-preserving unitary —
+> but only *given maximality*, which NCG does not supply (the algebra is input
+> data, not derived). Two supporting facts: `D^0 − D^1 = −3·Id` is **bounded**, so
+> the bounded-commutator axiom **cannot see the sector index at all**; and the
+> grading moduli are ~5·10⁴-dimensional, so `γ` needs the extra demand of being
+> *geometric* before "the algebra selected by the grading" even parses.
+>
+> **What survives is C46, and it does not need maximality:** if the doubling is
+> taken it is a **parity doubling** — `odd⊗I` is `γ`-forbidden, so the second
+> sector necessarily carries `f∘ι`. `A₀⊗I` (duplicate) and `A₀⊗{I,s₃}`
+> (independent copies) are both closed unital algebras and both **fail**.
+> Controls: `I⊗s₁`, `U_ι⊗I`, `U_ι⊗s₃` all fail to anticommute; `U_ι⊗s₂` passes.
+> **`ι` is load-bearing.** Gate → **3.5/6**. Next: `J` + first-order (step 5),
+> which could exclude the small subalgebras and earn the maximal one *without* an
+> axiom of convenience. See
+> `experiments/20260810-c11-step1-algebra-search/decision.md`.
+>
 > **⚠️ DEFLATED SAME DAY (C44) — the grading is GENERIC. Read this before the
 > C43 block below.** `spec(D^{1−t}) = −spec(D^t)` is an **identity in `t`** (the
 > family is affine, `spec(D^{1/2})` already symmetric), so the grading exists for

@@ -1109,6 +1109,39 @@ claims:
       - "that no algebra exists -- this decides what the grading may be cited for, not whether the construction can be completed"
       - "that (0,1) is selected -- its kernel being the smallest non-zero one is an observation about crossings, not a derivation"
 
+  - id: C45_ALGEBRA_DOES_NOT_EARN_THE_DOUBLING
+    statement: "REFUTED AS WORDED. The proposed C45 was: 'there is a natural algebra A on (H, D_block, gamma) satisfying the axioms available at this stage, AND its existence makes the doubling structurally necessary.' The second conjunct FAILS. [VERIFIED-exact] Of seven typed candidates, THREE are admissible (closed + unital + gamma-even) and they are NESTED: T6 (A+ (x) I) subset T7 (twisted diagonal) subset T4 (crossed product C^inf(S3) |x|_iota Z2). SELF-CHECK ON THE CRITERION, recorded not hidden: red-flag RF4 (>=2 admissible) is NEAR-TAUTOLOGICAL, because admissibility is inherited by every unital subalgebra. The informative question is whether the MAXIMAL gamma-even algebra is forced, and the answer is: it is unique up to a SECTOR-PRESERVING unitary over the geometric family gamma_theta = U_iota (x) (cos th s1 + sin th s2) [VERIFIED-numpy], but nothing forces maximality -- in a spectral triple the algebra is INPUT DATA, not derived. TWO SUPPORTING FACTS. (1) [VERIFIED-sympy] D^t - D^t' = 3(t-t') independent of BOTH n and sigma, so D^0 - D^1 = -3*Identity is BOUNDED and the bounded-commutator axiom imposes ZERO constraint on the sector index -- C42's own observation turned around. (2) [VERIFIED-numpy] the grading moduli sum_{lambda>0} d_lambda^2 = 54900 real dimensions at N_MAX=8, so gamma is massively non-unique and 'the algebra selected by the grading' is undefined without demanding gamma be GEOMETRIC. CONTROLS: gamma = I (x) s1 (iota dropped), U_iota (x) I (swap dropped) and U_iota (x) s3 (wrong Pauli) all FAIL to anticommute with D_block; U_iota (x) s2 PASSES -- so iota is genuinely load-bearing and the test is not vacuous."
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-step1-algebra-search/decision.md"
+    depends_on: [C44_C43_GRADING_IS_GENERIC_IN_T, C42_C11_FORCED_ONTO_TWO_OPERATOR_READING]
+    convention: "round67 Cartan-Schouten t-parameterization, rho3 = 1, h_H = 3. Sector Pauli basis with s3 = diag(-1,+1) so sector 0 <-> t=0. gamma^2 = I, gamma = gamma^dag, {gamma, D} = 0. ASSUMPTION A1, inherited not re-derived: U_iota D^{1/2} U_iota^dag = -D^{1/2} (C39 orientation-reversal + standard consequence). OPEN: whether the Pin-lift gives U_iota^2 = +1, required for gamma^dag = gamma."
+    does_not_imply:
+      - "that NO algebra can earn the doubling -- only that no axiom AVAILABLE AT THIS STAGE does; J + first-order (portfolio step 5) is untested and could exclude the small subalgebras"
+      - "that the crossed product is wrong or unnatural -- it survives as the maximal admissible algebra and is essentially unique"
+      - "that RF4's firing is itself a discovery -- it is near-tautological and is recorded as a WEAK criterion"
+      - "anything about non-tensor gradings (the bulk of the 54900-dim moduli), which are not analysable in the 8-symbol space at all"
+      - "anything about N_gen = 3, explicitly deferred to portfolio step 7"
+
+  - id: C46_DOUBLING_IF_TAKEN_IS_A_PARITY_DOUBLING
+    statement: "If the doubling is taken, it is a PARITY doubling: the second sector necessarily carries f o iota, not a free second copy and not a duplicate. [VERIFIED-exact] With gamma_geo = U_iota (x) s1, the gamma-even symbols are {even (x) I, even (x) s1, odd (x) s2, odd (x) s3} and the ODD (x) I symbol is FORBIDDEN -- an iota-odd function may not act as the SAME function on both sectors. Checked across ALL THREE admissible candidates: the sector-diagonal part of every one lies inside span{even (x) I, odd (x) s3} = {diag(f, f o iota)}. The two natural alternatives are both rejected on gamma-evenness alone, not on closure or unitality: T1 = A0 (x) I (same function on both, RF2-duplicate) and T2 = A0 (x) {I, s3} (independent sectors, RF1-gratuitous) are both closed unital algebras and both FAIL. Sanity: A+ and A- are both non-trivial (x0 is iota-even, x1 is iota-odd on 500 sampled points), so the structure is not vacuous. This is INDEPENDENT of the maximality assumption that C45 needed."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-step1-algebra-search/decision.md"
+    depends_on: [C39_IOTA_IS_PARITY_NOT_GAUGE, C43_BLOCK_SUPPLIES_THE_GRADING]
+    convention: "Same as C45. The statement is conditional on gamma being the GEOMETRIC grading U_iota (x) s_k with k in {1,2}; it says nothing under a non-geometric gamma. Inherits ASSUMPTION A1."
+    does_not_imply:
+      - "that there MUST be two sectors -- this constrains HOW the copies relate, not that they exist; C44 already showed the grading does not force t=0,1"
+      - "that iota-odd functions are excluded from the algebra -- they appear, but only paired with a sector-mixing or sector-flipping Pauli"
+      - "that the physical interpretation is supplied -- 'why two copies at all' remains the NOT-SUPPLIED field of PARENT_ACTION_GATE"
+      - "that a real structure J compatible with this algebra exists -- untested, portfolio step 5"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1155,6 +1188,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "47 entries as of C11 step 1, the algebra search (2026-08-10). C45 added and REFUTED as worded (the algebra does not earn the doubling); C46 added and PROVED (if taken, the doubling is a PARITY doubling). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 47)."
   - "45 entries as of C11 step 0 (2026-08-10). C44 added, partially deflating C43 the same day; C43 amended in place. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 45)."
   - "44 entries as of the C11 block construction (2026-08-10). C43 added: the block supplies the grading; PARENT_ACTION_GATE 3/6. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 44)."
   - "43 entries as of the C11 first cut (2026-08-10). C42 added: the one-operator escape is closed. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 43)."
