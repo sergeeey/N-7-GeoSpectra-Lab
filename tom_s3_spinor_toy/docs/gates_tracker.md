@@ -35,7 +35,7 @@ python scripts/export_results.py --all     → both
 | G15 | Quantum Numbers | Hypercharge Y from S⁶ geometry | PASS | Y = T₃R + (B−L)/2 for all 8 S⁶ states | 8/8 | 2026-06-19 |
 | G16 | Quantum Numbers | Y = K₃ + (B−L)/2 fully geometric | PASS | Right-handed generation + CPT conjugates correct | 8/8 | 2026-06-19 |
 | G17 | Quantum Numbers | Q = T₃L + Y; ΣQ=0 for all 32 states | PASS | Electric charge geometric; ΣQ=0 exact | 10/10 | 2026-06-19 |
-| G18 | NCG Structure | Spectral triple KO-dim=6; 4 free Yukawa | PASS | J_F²=−1, {J_F,γ_F}=0, [D_F,J_F]=0 | 8/8 | 2026-06-19 |
+| G18 | NCG Structure | Spectral triple KO-dim=6; 4 free Yukawa | PASS | J_F²=**+1**, {J_F,γ_F}=0, [D_F,J_F]=0 (sign corrected 2026-08-10, C36 — this cell said −1; G18's code asserts +1) | 8/8 | 2026-06-19 |
 | G19 | NCG Structure | (2,2)₀ Higgs bidoublet from D_F | PASS | dBL=0 geometric; Pati-Salam structure | 6/6 | 2026-06-19 |
 | G20 | NCG Structure | Yukawa intertwiner dim=4 (8→4 via CPT) | PASS | 4 = dim(SU(3)-orbits on S⁶) via CPT folding | 6/6 | 2026-06-19 |
 | G21 | NCG Structure | S⁶ necessary: Extended Schur dim check | PASS | dim=12 without B-L, dim=8 with B-L | 5/5 | 2026-06-19 |

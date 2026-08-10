@@ -57,7 +57,9 @@ The geometric S³×S⁶ spinor bundle, built purely from this project's own
 already-established, independently-verified gamma-matrix conventions,
 **does carry a genuine charge-conjugation structure**, and it is of
 **pseudo-real (quaternionic) type** — the same general type as the
-finite algebra's own established `J_F²=−1` (also pseudo-real). The two
+finite algebra's own established `J_F²=−1` (also pseudo-real). [VOID
+2026-08-10, C36 + C32 — `J_F²` is `+1`; and OB10's own verdict was a convention
+artifact. This "matching" was wrong on both sides.] The two
 parts of the construction (geometric and finite/NCG) are therefore
 **consistent in reality type**, not contradictory, even though the naive
 "KO-dimension 9 mod 8 = 1" arithmetic that `OPEN_BLOCKERS.md`'s own OB10

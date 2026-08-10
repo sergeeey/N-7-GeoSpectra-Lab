@@ -16,7 +16,8 @@
    [x] done — hits reviewed: `experiments/20260619-g18-ncg-dirac-df/`,
    `g20-yukawa-intertwiner/`, `g23-chirality/`, `g26-ccm-comparison/` all
    concern **KO-dim 6 postulated for the FINITE algebra A_F only**
-   (`J_F²=-1,{J_F,γ_F}=0,[D_F,J_F]=0`, preprint.tex:354-355) — a different
+   (`J_F²=+1,{J_F,γ_F}=0,[D_F,J_F]=0` [sign corrected 2026-08-10, C36 — this
+   line said `-1`], preprint.tex:354-355) — a different
    object from the GEOMETRIC bundle this claim is about. Non-transfer
    noted explicitly (Gate 1, artifact-provenance-gates.md): G18's verdict
    does not extend to this claim.
@@ -61,7 +62,7 @@ Dirac operator's gamma matrices on S³×S⁶, as already constructed in this
 project's own code (not a new bundle).
 **Intervention:** none (descriptive/structural, not an intervention study).
 **Comparator:** the finite NCG algebra A_F's own already-established real
-structure J_F (KO-dim 6, J_F²=-1).
+structure J_F (KO-dim 6, J_F²=+1 [corrected 2026-08-10, C36 — said -1]).
 **Endpoint:** existence and type (real / pseudo-real / complex, i.e.
 B·conj(B) = +I / −I / no consistent B) of a charge-conjugation matrix B
 satisfying B·Γ_a·B⁻¹ = η·conj(Γ_a) for all 9 generators simultaneously,
@@ -80,6 +81,10 @@ The product Clifford module built from this repo's own established S³
 stated tensor-product formula admits a genuine charge-conjugation
 structure, and it is of **pseudo-real (quaternionic) type**, matching —
 not contradicting — the finite algebra's own pseudo-real J_F²=−1.
+   [VOID 2026-08-10, C36 + C32: this corroboration fails twice over. J_F² is
+   **+1**, not −1, so the finite algebra is NOT pseudo-real in the sense claimed;
+   and OB10's own pseudo-real verdict was itself a Clifford-convention artifact
+   (C32). Two independent reasons this sentence supports nothing.]
 
 Supporting sub-claims:
 1. The naturally-constructed 9-generator product Clifford algebra has

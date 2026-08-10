@@ -115,7 +115,7 @@ Hard fences active: sm_derivation_claimed = False.
 
 | Gate | Claim | Verdict | Key result |
 |------|-------|---------|------------|
-| G18 | NCG spectral triple, KO-dim=6, 4 Yukawa | PASS | J_F²=−1, {J_F,γ_F}=0, [D_F,J_F]=0 |
+| G18 | NCG spectral triple, KO-dim=6, 4 Yukawa | PASS | J_F²=**+1**, {J_F,γ_F}=0, [D_F,J_F]=0 (sign corrected 2026-08-10, C36) |
 | G19 | (2,2)₀ Higgs bidoublet from D_F | PASS | dBL=0 geometric; Pati-Salam structure |
 | G20 | Yukawa intertwiner dim=4 | PASS | 8→4 via CPT symmetry |
 | G21 | S⁶ necessity (Extended Schur) | PASS (5/5) | dim=12 without B-L, dim=8 with B-L |
