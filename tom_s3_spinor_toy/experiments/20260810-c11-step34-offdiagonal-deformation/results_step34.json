@@ -1,0 +1,64 @@
+{
+  "q1_grading_by_T": {
+    "even(x)I": "commutes",
+    "even(x)s1": "anticommutes",
+    "odd (x)s2": "anticommutes",
+    "odd (x)s3": "commutes"
+  },
+  "q1_even_part_is_twisted_diagonal": true,
+  "q2_admissible_offdiagonal": {
+    "D^{1/2} (iota-ODD) (x) s1": true,
+    "D^{1/2} (iota-ODD) (x) s2": false,
+    "Identity (iota-EVEN) (x) s1": false,
+    "Identity (iota-EVEN) (x) s2": true
+  },
+  "q2_pattern_confirmed": true,
+  "q3_closed_form": [
+    "mu + sqrt(4*alpha**2 + 4*beta**2*mu**2 + 9)/2",
+    "mu - sqrt(4*alpha**2 + 4*beta**2*mu**2 + 9)/2"
+  ],
+  "q3_matches_prediction": true,
+  "q4a_exact_isolation": true,
+  "q4b_scaling": {
+    "0.001": {
+      "min_abs_eig": 3.3333329629630454e-07,
+      "ratio_to_alpha2_over_3": 0.9999998888889137
+    },
+    "0.01": {
+      "min_abs_eig": 3.333296297119319e-05,
+      "ratio_to_alpha2_over_3": 0.9999888891357956
+    },
+    "0.1": {
+      "min_abs_eig": 0.0033296378372908277,
+      "ratio_to_alpha2_over_3": 0.9988913511872481
+    }
+  },
+  "q4_kernel_table": {
+    "(0.0,0.0)": 4,
+    "(0.1,0.0)": 0,
+    "(0.0,0.1)": 0,
+    "(0.3,0.2)": 0,
+    "(0.0,0.8)": 12
+  },
+  "q4_kernel_is_isolated": true,
+  "q5_curves": {
+    "n=0": {
+      "beta_at_alpha0": 0.0,
+      "ker_dim": 4
+    },
+    "n=1": {
+      "beta_at_alpha0": 0.8,
+      "ker_dim": 12
+    },
+    "n=2": {
+      "beta_at_alpha0": 0.903508,
+      "ker_dim": 24
+    },
+    "n=3": {
+      "beta_at_alpha0": 0.942809,
+      "ker_dim": 40
+    }
+  },
+  "q5_confirmed": true,
+  "verdict": "FOUR_DIM_KERNEL_IS_UNSTABLE__STEP5_NOW_DECISIVE"
+}

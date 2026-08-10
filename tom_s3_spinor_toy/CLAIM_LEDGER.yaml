@@ -1142,6 +1142,40 @@ claims:
       - "that the physical interpretation is supplied -- 'why two copies at all' remains the NOT-SUPPLIED field of PARENT_ACTION_GATE"
       - "that a real structure J compatible with this algebra exists -- untested, portfolio step 5"
 
+  - id: C47_FOUR_DIM_KERNEL_IS_AN_ISOLATED_POINT
+    statement: "The 4-dim kernel matching C38's Spin(4) spinor is an ISOLATED POINT of the admissible off-diagonal deformation family, not a stable feature of the two-operator structure. [VERIFIED-sympy] Self-adjointness plus {gamma,D}=0 with gamma = U_iota (x) s1 admit exactly D(alpha,beta) = D_block + alpha(I (x) s2) + beta(D^{1/2} (x) s1), the two coefficients constrained in OPPOSITE ways because conjugation by s1 fixes s1 and flips s2 (X (x) s1 needs X iota-ODD, Y (x) s2 needs Y iota-EVEN; I (x) s1 and D^{1/2} (x) s2 are the built-in negative controls and both FAIL). Eigenvalues become mu +- sqrt(9/4 + beta^2 mu^2 + alpha^2) with mu = sigma(n+3/2). At the n=0 level the kernel condition reduces to alpha^2 + (9/4)beta^2 = 0, a POSITIVE-DEFINITE real quadratic form (eigenvalues 1 and 9/4), so over the reals its only zero is the ORIGIN. [VERIFIED-numpy] dim ker = 4 at (0,0) and 0 at (0.1,0), (0,0.1), (0.3,0.2); higher levels reappear on real curves with dim 12, 24, 40 at alpha=0, beta = 0.800, 0.9035, 0.9428 -- over-production, the same pattern C44 found at t=-1/3, 4/3. Scaling check: min|lambda|/(alpha^2/3) = 1.0000, 1.0000, 0.9989 at alpha = 1e-3, 1e-2, 1e-1, so the kernel moves off zero QUADRATICALLY and never stays. BUG FOUND AND FIXED IN THIS FILE: the first version probed alpha = 1e-6, where the surviving eigenvalue is ~3e-13, INSIDE its own atol=1e-9 -- it measured the tolerance, not the operator, and would have reported the kernel as robust. Replaced by the exact positive-definiteness argument plus the scaling check. NOTE the portfolio's step 3 ([T,a] vs {T,a}) is a ONE-LINE COROLLARY of C46's symbol table (A is Z2-graded by T = s3 with T-even part exactly the twisted diagonal) and is recorded as a corollary, NOT as independent support."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-step34-offdiagonal-deformation/decision.md"
+    depends_on: [C46_DOUBLING_IF_TAKEN_IS_A_PARITY_DOUBLING, C43_BLOCK_SUPPLIES_THE_GRADING]
+    convention: "round67 Cartan-Schouten t-parameterization, rho3 = 1, h_H = 3. Sector Pauli basis with s3 = diag(-1,+1). gamma = U_iota (x) s1. Inherits ASSUMPTION A1 (U_iota D^{1/2} U_iota^dag = -D^{1/2}) from C45."
+    does_not_imply:
+      - "that the deformation is PHYSICAL -- no action principle is involved anywhere in this test"
+      - "that the 4-dim kernel is wrong or accidental -- isolation becomes a SELECTION once C48 forces alpha = beta = 0, and that is how it should be read"
+      - "that the whole deformation space was swept -- only the MINIMAL admissible family (X = D^{1/2}, Y = I) was tested; general X iota-odd and Y iota-even is larger and untested"
+      - "anything about N_gen = 3, deferred to portfolio step 7"
+
+  - id: C48_J_FORCES_ALPHA_BETA_ZERO_BUT_KILLS_THE_MAXIMAL_ALGEBRA
+    statement: "TWO results pulling in opposite directions, both recorded. (1) THE DEFORMATION IS KILLED. [VERIFIED-numpy] beta = 0 by BOUNDEDNESS: [beta D^{1/2}(x)s1, f(x)m] = beta([D^{1/2},f](x)s1 m + f D^{1/2}(x)[s1,m]) and the second term carries the UNBOUNDED factor f D^{1/2}, so [D,a] is unbounded unless [s1,m] = 0 for every m; both T4 and T7 contain s3 and [s1,s3] != 0. alpha = 0 by FIRST-ORDER: for A = T7 the condition alpha[[s2,m],m''] = 0 is violated by the pair [[s2,s3],s3''] for EVERY admissible k (diag(1,1), diag(1,i), diag(1,-1), s1, s2, s3). DISCRIMINATION CHECK: the UNdeformed first-order condition [[s3,m],m''] = 0 HOLDS for all six k, so the test kills alpha without killing the undeformed triple. Consequence: (alpha,beta) = (0,0) is FORCED, and C47's isolation of the 4-dim kernel is a SELECTION, not a fragility -- the favourable branch, named in advance before this ran. NOTE the SAME bounded-commutator axiom that C45 found COMPLETELY BLIND to the sector index becomes SHARP here; the axiom was never weak, the undeformed question was invisible to it. (2) J EXCLUDES THE MAXIMAL ALGEBRA, not the small ones -- the OPPOSITE of C45's recorded hope V2. Order-zero [m, k m'^T k^-1] = 0 has NO solution for T4, whose sector part is all of M2(C) and whose commutant is only C*I (an M2 bimodule needs a 4-dim sector space, i.e. ANOTHER doubling); it HOLDS for T7 and T6. What survives is the TWISTED DIAGONAL, which acts sector-DIAGONALLY. So with J imposed the algebra does not mix the sectors at all and cannot force the doubling in any form. SCOPE BOUNDARY, surfaced not buried: alpha = 0 is NOT forced for T6 (sector part {I}, so [s2,I] = 0); the forcing needs the algebra to be at least the twisted diagonal."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-step5-real-structure/decision.md"
+    depends_on: [C47_FOUR_DIM_KERNEL_IS_AN_ISOLATED_POINT, C45_ALGEBRA_DOES_NOT_EARN_THE_DOUBLING]
+    supersedes: "C45's Relaxation Map variant V2 ('first-order could exclude the small subalgebras and earn the maximal one') -- the opposite is true"
+    convention: "Same as C47. ANSATZ J1, flagged not assumed: J = J_M (x) j is a simple tensor; a general antilinear J on H_M (x) C^2 need not factor and the non-factoring ones are NOT ruled out. INPUTS from S^3 KO-dimension 3, declared not re-derived: J_M^2 = -1, J_M D_M = D_M J_M. Sector-factor sign tuples (j^2, eps_D, eps_gamma) are computed but deliberately NOT combined with S^3's own tuple into a KO-dimension -- that combination is exactly what C36 showed is easy to get wrong, and it is left OPEN."
+    does_not_imply:
+      - "a KO-dimension for the doubled triple -- only sector-factor signs are computed, and the combination step is explicitly left OPEN"
+      - "that no J exists at all -- J exists for T7 and T6; what fails is J for the MAXIMAL algebra"
+      - "that the T4 negative is proved over all of GL(2,C) -- the k search covers 7 representative matrices, though the underlying commutant argument (M2's commutant is C*I) is basis-free and does hold generally"
+      - "that the doubling is impossible -- it is UNEARNED, which is a different and weaker statement; escape route W1 (non-factoring J) is untested"
+      - "that a Yukawa-like sector coupling is impossible in general -- only the minimal admissible family tested in C47 is killed"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1188,6 +1222,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "49 entries as of C11 steps 3+4+5 (2026-08-10). C47 (the 4-dim kernel is an isolated point) and C48 (the axioms force alpha = beta = 0, but J kills the maximal algebra) added; C45's Relaxation Map variant V2 superseded. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 49)."
   - "47 entries as of C11 step 1, the algebra search (2026-08-10). C45 added and REFUTED as worded (the algebra does not earn the doubling); C46 added and PROVED (if taken, the doubling is a PARITY doubling). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 47)."
   - "45 entries as of C11 step 0 (2026-08-10). C44 added, partially deflating C43 the same day; C43 amended in place. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 45)."
   - "44 entries as of the C11 block construction (2026-08-10). C43 added: the block supplies the grading; PARENT_ACTION_GATE 3/6. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 44)."

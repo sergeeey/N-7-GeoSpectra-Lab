@@ -1,0 +1,112 @@
+{
+  "r1": {
+    "T4 crossed product": {
+      "elements_not_commuting_with_s1": [
+        "s2",
+        "s3"
+      ],
+      "beta_forced_zero": true
+    },
+    "T7 twisted diagonal": {
+      "elements_not_commuting_with_s1": [
+        "s3"
+      ],
+      "beta_forced_zero": true
+    },
+    "T6 A+ (x) I": {
+      "elements_not_commuting_with_s1": [],
+      "beta_forced_zero": false
+    }
+  },
+  "r1_beta_forced_zero": true,
+  "order_zero_admissible_k": {
+    "T4 crossed product": [],
+    "T7 twisted diagonal": [
+      "diag(1,1)",
+      "diag(1,i)",
+      "diag(1,-1)",
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "T6 A+ (x) I": [
+      "diag(1,1)",
+      "diag(1,i)",
+      "diag(1,-1)",
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "r2_J_excludes_maximal": true,
+  "r3_J_keeps_small": true,
+  "r4_alpha_violations": {
+    "diag(1,1)": [
+      "[[s2,s3],s3'']"
+    ],
+    "diag(1,i)": [
+      "[[s2,s3],s3'']"
+    ],
+    "diag(1,-1)": [
+      "[[s2,s3],s3'']"
+    ],
+    "s1": [
+      "[[s2,s3],s3'']"
+    ],
+    "s2": [
+      "[[s2,s3],s3'']"
+    ],
+    "s3": [
+      "[[s2,s3],s3'']"
+    ]
+  },
+  "r4_alpha_forced_zero": true,
+  "scope_alpha_forced_for_T6": false,
+  "undeformed_first_order_holds": {
+    "diag(1,1)": true,
+    "diag(1,i)": true,
+    "diag(1,-1)": true,
+    "s1": true,
+    "s2": true,
+    "s3": true
+  },
+  "sign_tuples_sector_only": {
+    "diag(1,1)": {
+      "j^2": "+1",
+      "J^2_total": "-1",
+      "eps_D_sector": "+1",
+      "eps_gamma_sector": "+1"
+    },
+    "diag(1,i)": {
+      "j^2": "+1",
+      "J^2_total": "-1",
+      "eps_D_sector": "+1",
+      "eps_gamma_sector": "?"
+    },
+    "diag(1,-1)": {
+      "j^2": "+1",
+      "J^2_total": "-1",
+      "eps_D_sector": "+1",
+      "eps_gamma_sector": "-1"
+    },
+    "s1": {
+      "j^2": "+1",
+      "J^2_total": "-1",
+      "eps_D_sector": "-1",
+      "eps_gamma_sector": "+1"
+    },
+    "s2": {
+      "j^2": "-1",
+      "J^2_total": "+1",
+      "eps_D_sector": "-1",
+      "eps_gamma_sector": "-1"
+    },
+    "s3": {
+      "j^2": "+1",
+      "J^2_total": "-1",
+      "eps_D_sector": "+1",
+      "eps_gamma_sector": "-1"
+    }
+  },
+  "verdict": "AXIOMS_FORCE_ALPHA_BETA_ZERO__BUT_J_KILLS_THE_MAXIMAL_ALGEBRA"
+}
