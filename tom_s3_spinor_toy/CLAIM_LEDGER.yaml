@@ -1008,6 +1008,22 @@ claims:
       - "that N_gen=3 is restored -- if anything it strengthens the category-error reading, under which the representation-content half and the index half of the derivation were computed in different bundles and must be re-joined"
       - "which of the two frameworks is the physically correct bookkeeping -- only that they count different objects"
 
+  - id: C39_IOTA_IS_PARITY_NOT_GAUGE
+    statement: "iota(g) = g^-1 is an ORIENTATION-REVERSING isometry of S3, hence a parity-like discrete symmetry and NOT a gauge redundancy. [VERIFIED-numpy] In quaternion coordinates iota is (x0, x) -> (x0, -x) (verified as g(x)^-1 = g(iota x) at 200 random unit x, not assumed); the induced map on T_x S3 has determinant -1.000 at all 200 sampled points, with |det| = 1 (isometry). NEGATIVE CONTROL: left translation g -> a g gives +1 at all 100 sampled points. CONSEQUENCE 1: C37/OB13's branch 'H1c may be ill-posed because iota is a gauge symmetry' is DEAD -- a gauge symmetry is connected to the identity and therefore orientation-preserving. CONSEQUENCE 2: C38 stands -- ker(t=0)=(1,2) and ker(t=1)=(2,1) are genuinely distinct physical states exchanged by PARITY, which is exactly how SU(2)_L and SU(2)_R relate in the SM. CONSEQUENCE 3: C37's 'a selector must be ODD in (t-1/2)' and this result are THE SAME STATEMENT reached independently -- one from the polynomial parity of computed invariants, one from the orientation of a diffeomorphism. A parity-odd term is what breaks a parity pair."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-iota-gauge-or-parity/decision.md"
+    depends_on: [C37_T_SELECTION_REQUIRES_TORSION_ODD_TERM, C38_T_KERNELS_ARE_THE_TWO_SPIN4_HALVES]
+    convention: "Quaternion model g(x) = x0 I + x1 Z1 + x2 Z2 + x3 Z3 with Z_i = i*sigma_i (Cl(0,3), E2/E9/E12's own). Orientation is measured on T_x S3 against a tangent basis pinned by det([normal | basis]) = +1; an unpinned QR basis makes the determinant sign meaningless, which is one of the two bugs this round's negative control caught."
+    does_not_imply:
+      - "that any particular term in an action selects an endpoint -- that is C11, OPEN, and still the live question"
+      - "that C27 is resolved -- this removes one branch from the consolidated question, it does not answer it"
+      - "that the parity-odd term EXISTS or has been identified -- it says one is needed and is expected on SM grounds; an expectation is not a construction"
+      - "anything about the S6-side factor-8 mismatch, which is C38's own open half"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1054,6 +1070,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "40 entries as of the iota parity test (2026-08-10). C39 added; the gauge/ill-posed branch of C37/OB13 is KILLED. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 40)."
   - "39 entries as of the C27 bundle-equivalence test (2026-08-10). C38 added; C27/C25/C11 consolidated into one question. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 39)."
   - "38 entries as of the consortium triple-run (2026-08-10). C37 added (t-selection parity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 38)."
   - "37 entries as of OB2 item (b) (2026-08-10). C33 (Majorana/multiplicity-2), C34 (Clifford convention audit), C35 (Theta is not a real structure), C36 (J_F^2 = +1, not -1) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 37)."

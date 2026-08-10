@@ -101,6 +101,18 @@ tracked in any future formal spectral-flow attempt). See
 
 ## OB13 — C25/H1c: the two searches for a `t`-selector were in a provably blind parity sector [OPENED 2026-08-10, C37]
 
+> **✅ ONE BRANCH KILLED SAME DAY (C39).** `ι` is an **orientation-reversing**
+> isometry of `S³` (tangent determinant −1.000 at all 200 sampled points;
+> negative control: left translation gives +1 at all 100). A gauge symmetry is
+> connected to the identity and hence orientation-preserving, so **`ι` is NOT
+> gauge — it is parity.** The "H1c is ill-posed" branch this blocker opened is
+> therefore **dead**, and C38 stands: `(1,2)` and `(2,1)` are genuinely distinct
+> states exchanged by parity, exactly as `SU(2)_L`/`SU(2)_R` relate in the SM.
+> **C37 and C39 are the same statement reached two ways** — "the selector must be
+> odd in `(t−½)`" and "the endpoints are a parity pair". The question is not
+> ill-posed; it is *what breaks parity*, and in the SM parity is broken. See
+> `experiments/20260810-iota-gauge-or-parity/decision.md`.
+>
 > **⚠️ NARROWED SAME DAY (C38).** The `t=0` and `t=1` kernels are the **two chiral
 > halves of one 4-dimensional `Spin(4)` spinor** — `(1,2)` and `(2,1)`, verified
 > under the `SO(4)` isometry action with the frame lift, negative control passing.
