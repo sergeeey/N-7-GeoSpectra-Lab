@@ -991,6 +991,23 @@ claims:
       - "a theorem that all conceivable t-invariants are even -- parity was checked for the THREE quantities this project actually computed, not for all possible ones"
       - "that C25 is resolved or closed -- it identifies an unrepresented branch (the question may be ill-posed if iota is a gauge symmetry), it does not settle it"
 
+  - id: C38_T_KERNELS_ARE_THE_TWO_SPIN4_HALVES
+    statement: "ker(D_S3, t=0) and ker(D_S3, t=1) are the two chiral halves of ONE 4-dimensional Spin(4) spinor, not two competing 2-dimensional kernels. [VERIFIED-numpy] Under the isometry group SO(4) = (SU(2)_a x SU(2)_b)/Z2 acting as g -> a g b^-1 with the frame lift (T psi)(g) = rho(b) psi(a^-1 g b): the t=0 kernel (constant spinors, left-invariant frame, E12 section_B_t0) is closed under both factors with SU(2)_a acting TRIVIALLY and SU(2)_b as the FUNDAMENTAL -> (1,2); the t=1 kernel (gbar-twisted, psi = g^-1 v, right-invariant frame, E12 section_B_t1_right_frame) is closed under both with the roles EXACTLY SWAPPED -> (2,1). Their direct sum is (2,1)+(1,2), which is exactly g24's Spin(4)_spinor. CONSEQUENCE FOR C27: its '6 modes vs 3 needed' compared a FIXED-t count against a BOTH-t requirement. CONSOLIDATION: C27, C25/H1c and C11 are one question -- whether both t are simultaneously realized (C11's product-ansatz fork, OPEN). C25's 'which t is selected' is ill-posed if the answer is 'both'."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c27-bundle-equivalence/decision.md"
+    depends_on: [C27_MULTIPLICITY_2_FAIL, C11_D4_PRODUCT_ANSATZ_FORK, C37_T_SELECTION_REQUIRES_TORSION_ODD_TERM]
+    convention: "Cl(0,3) with Z_i = i*sigma_i (E2/E9/E12's own). The crux is that for SU(2) the spin representation IS the fundamental, so the frame lift rho(b) equals the matrix b and rho(b)*b^-1 = I -- verified over 200 random b, not assumed. The result is stated for the isometry action g -> a g b^-1; a different convention for which factor is 'left' swaps the labels (1,2)<->(2,1) but not the conclusion."
+    does_not_imply:
+      - "that C27 is resolved -- matching REPRESENTATION CONTENT is bookkeeping, not dynamics; C27 status is unchanged (REFUTED as stated)"
+      - "that both t are simultaneously physically realized -- that is C11's product-ansatz fork and it is OPEN; this claim makes C11 load-bearing, it does not settle it"
+      - "anything about the S6-side mismatch, which is the SAME pattern and is NOT explained: framework A's 8-dim G2 spinor vs ker(D_S6,twisted)=1, a factor of 8 with no analogue of t on that side"
+      - "that N_gen=3 is restored -- if anything it strengthens the category-error reading, under which the representation-content half and the index half of the derivation were computed in different bundles and must be re-joined"
+      - "which of the two frameworks is the physically correct bookkeeping -- only that they count different objects"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1037,6 +1054,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "39 entries as of the C27 bundle-equivalence test (2026-08-10). C38 added; C27/C25/C11 consolidated into one question. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 39)."
   - "38 entries as of the consortium triple-run (2026-08-10). C37 added (t-selection parity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 38)."
   - "37 entries as of OB2 item (b) (2026-08-10). C33 (Majorana/multiplicity-2), C34 (Clifford convention audit), C35 (Theta is not a real structure), C36 (J_F^2 = +1, not -1) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 37)."
   - "33 entries as of the OB10 convention correction (2026-08-09). C32 added; C28 and C31 RETRACTED (truth_status REFUTED, lifecycle SUPERSEDED) after an external red-team audit showed C28's pseudo-real verdict was a Clifford-convention artifact and C31's no-go inherited the bad premise. Both kept in place with their original text and reasoning preserved -- retracted, never deleted, per this registry's own convention. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 33)."
