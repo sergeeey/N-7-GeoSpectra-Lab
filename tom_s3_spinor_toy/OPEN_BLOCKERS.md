@@ -179,6 +179,32 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **A1 VERIFIED, 2026-08-10 (C55). After ten rounds as an inherited assumption,
+> it is DERIVED — and it independently reproduces round67's own spectrum.**
+>
+> Peter–Weyl on `SU(2)`: label each isotypic piece `(j,k)` = (left spin, right
+> spin), `k = j ± ½`. Then
+> **`λ(j,k) = (j+k+1)·sign(k−j)`, mult `(2j+1)(2k+1)`** — and with `n = 2j` on the
+> `+` branch, `n = 2j−1` on the `−` branch this reproduces `±(n+3/2)` with
+> `(n+1)(n+2)` **exactly**, for both branches. That is an **independent derivation
+> of the spectral data this project has used since round67.**
+> `ι(g) = g⁻¹` exchanges left and right translations, so `ι*` maps `(j,k) → (k,j)`.
+> The swap **preserves** `j+k+1` and **flips** `sign(k−j)`, so
+> **`λ(k,j) + λ(j,k) = 0` identically**, with symmetric multiplicities — a
+> bijection from each `D`-eigenspace onto the `(−D)`-eigenspace. **That is A1.**
+> **Cross-check:** A1 ⟹ `U_ι D^t U_ι† = −D^{1−t}` = C44's mirror relation, which
+> C44 got from the closed form. Two routes now corroborate instead of sharing a
+> source. **Control** (same code path, opposite answers): `ι`'s swap flips `λ`;
+> left translation's identity map does not. **Discrimination:** drop `sign(k−j)`
+> and nothing flips. *Seventh cannot-fail check written out here too — the first
+> control was `λ(j,k) − λ(j,k) == 0`.*
+>
+> **What the chain inherits now is the strictly weaker `A1-lift`** (the geometric
+> lift may differ by a unitary preserving the isotypic decomposition — a phase,
+> not the sign of `D`). **`U_ι² = ±1` remains OPEN since C45** and is now the only
+> named unknown in this line.
+> See `experiments/20260810-c11-a1-iota-flips-dirac/`.
+>
 > **CAVEAT O′ RUN AND DISSOLVED, 2026-08-10 (C54). The LAST open door in the
 > C11 line is closed — and the chain's single unverified input is now named.**
 >

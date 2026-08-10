@@ -1,0 +1,100 @@
+{
+  "a1a_reproduces_round67": true,
+  "a1a_table": [
+    {
+      "j": "0",
+      "k_plus": "1/2",
+      "lambda_plus": "3/2",
+      "mult_plus": 2
+    },
+    {
+      "j": "1/2",
+      "k_plus": "1",
+      "lambda_plus": "5/2",
+      "mult_plus": 6,
+      "k_minus": "0",
+      "lambda_minus": "-3/2",
+      "mult_minus": 2
+    },
+    {
+      "j": "1",
+      "k_plus": "3/2",
+      "lambda_plus": "7/2",
+      "mult_plus": 12,
+      "k_minus": "1/2",
+      "lambda_minus": "-5/2",
+      "mult_minus": 6
+    },
+    {
+      "j": "3/2",
+      "k_plus": "2",
+      "lambda_plus": "9/2",
+      "mult_plus": 20,
+      "k_minus": "1",
+      "lambda_minus": "-7/2",
+      "mult_minus": 12
+    },
+    {
+      "j": "2",
+      "k_plus": "5/2",
+      "lambda_plus": "11/2",
+      "mult_plus": 30,
+      "k_minus": "3/2",
+      "lambda_minus": "-9/2",
+      "mult_minus": 20
+    }
+  ],
+  "a1b_flips_identically": true,
+  "a1b_dims_symmetric": true,
+  "a1c_levels": [
+    {
+      "n": 0,
+      "from": "(0,1/2)",
+      "to": "(1/2,0)",
+      "lambda": "3/2",
+      "image_lambda": "-3/2",
+      "mult": 2
+    },
+    {
+      "n": 1,
+      "from": "(1/2,1)",
+      "to": "(1,1/2)",
+      "lambda": "5/2",
+      "image_lambda": "-5/2",
+      "mult": 6
+    },
+    {
+      "n": 2,
+      "from": "(1,3/2)",
+      "to": "(3/2,1)",
+      "lambda": "7/2",
+      "image_lambda": "-7/2",
+      "mult": 12
+    },
+    {
+      "n": 3,
+      "from": "(3/2,2)",
+      "to": "(2,3/2)",
+      "lambda": "9/2",
+      "image_lambda": "-9/2",
+      "mult": 20
+    },
+    {
+      "n": 4,
+      "from": "(2,5/2)",
+      "to": "(5/2,2)",
+      "lambda": "11/2",
+      "image_lambda": "-11/2",
+      "mult": 30
+    }
+  ],
+  "a1c_bijection": true,
+  "a1d_implies_c44_mirror": true,
+  "nc_flip_by_map": {
+    "iota:  (j,k) -> (k,j)   [orientation-REVERSING]": true,
+    "L_a:   (j,k) -> (j,k)   [orientation-PRESERVING]": false
+  },
+  "nc_orientation_preserving_no_flip": true,
+  "disc_abs_does_not_flip": true,
+  "verdict": "A1_VERIFIED__IOTA_FLIPS_THE_DIRAC_OPERATOR"
+}
