@@ -1,0 +1,27 @@
+{
+  "crossings": {
+    "n=0,sigma=+1": "0",
+    "n=0,sigma=-1": "1",
+    "n=1,sigma=+1": "-1/3",
+    "n=1,sigma=-1": "4/3",
+    "n=2,sigma=+1": "-2/3",
+    "n=2,sigma=-1": "5/3",
+    "n=3,sigma=+1": "-1",
+    "n=3,sigma=-1": "2"
+  },
+  "t0_levels": [
+    "n=0,sigma=+1"
+  ],
+  "t1_levels": [
+    "n=0,sigma=-1"
+  ],
+  "coincident_t": {},
+  "one_operator_4dim_kernel_possible": false,
+  "dim_V0": 2,
+  "dim_V1": 2,
+  "dim_span": 4,
+  "dim_intersection": 0,
+  "control_intersection": 1,
+  "control_passes": true,
+  "verdict": "C11_FORCED_ONTO_THE_TWO_OPERATOR_READING"
+}

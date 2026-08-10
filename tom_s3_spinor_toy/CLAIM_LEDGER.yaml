@@ -1058,6 +1058,22 @@ claims:
       - "that dim ker(D_S6,twisted) = 1 is verified here -- that is G74A's Lemma A + Lemma B, used as given"
       - "that the zero mode OCCUPIES the singlet slot -- the counts are for the FIBRE representations; occupancy is Lemma A's separate metric-dependent question"
 
+  - id: C42_C11_FORCED_ONTO_TWO_OPERATOR_READING
+    statement: "The one-operator escape from C11 is closed: NO member of the Cartan-Schouten family has a 4-dimensional kernel, so 'both t are realized' cannot mean one operator with a bigger kernel. [VERIFIED-sympy] Solving round67's closed form D^t(n,sigma) = sigma*(n+3/2) + (t-1/2)*h_H exactly (h_H = 3, reproduced here) gives n=0,sigma=+1 vanishing at t=0 and n=0,sigma=-1 at t=1, and NO value of t where two levels vanish simultaneously. The reason is structural rather than numerical: the torsion shift (t-1/2)*h_H is the SAME for every level while the levels are separated by 2*sigma*(n+3/2), and a uniform shift cannot zero two distinct levels at once -- so this holds for the whole family, not at sampled points. [VERIFIED-numpy] SEPARATELY, the two kernels DO share a home: expressed in one trivialization and sampled at 60 points of S3, dim V0 = 2, dim V1 = 2, dim(V0+V1) = 4, dim(V0 n V1) = 0 -- linearly independent, spanning exactly the 4 dimensions C38 predicted. NEGATIVE CONTROL: fed V0 against a span containing one of its own vectors the method reports intersection 1, so it detects overlap when overlap exists. NET: C11 is forced onto the two-operator reading, which is exactly what its own original name asked ('does two coexisting D's even make sense as a spectral triple'). The framing was right; what closes is the escape route that would have dissolved the question."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-first-cut/decision.md"
+    depends_on: [C11_D4_PRODUCT_ANSATZ_FORK, C38_T_KERNELS_ARE_THE_TWO_SPIN4_HALVES]
+    convention: "round67's Cartan-Schouten t-parameterization with rho3 = 1 and h_H = 3 (its own calibration D^{1/2}(constant) = 3/2). See round113's t-convention reconciliation before combining with any external torsion parameter. Q2's trivialization is the left-invariant frame, Cl(0,3) with Z_i = i*sigma_i."
+    does_not_imply:
+      - "that C11 is answered -- whether two D's coexist as ONE spectral triple is untouched; this narrows the question, it does not decide it"
+      - "that both t are physically realized -- Q2 is about section spaces, not dynamics"
+      - "that no 4-dim kernel exists ANYWHERE -- the algebra covers the Cartan-Schouten family only; a different connection, or an added torsion-odd symmetry-breaking term (C37), is not excluded"
+      - "anything about the S6 side or the 3-channel structure"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1104,6 +1120,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "43 entries as of the C11 first cut (2026-08-10). C42 added: the one-operator escape is closed. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 43)."
   - "42 entries as of the S6 factor-8 test (2026-08-10). C41 added, withdrawing my own same-day factor-8 claim. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 42)."
   - "41 entries as of the Lemma B quantitative test (2026-08-10). C40 added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 41)."
   - "40 entries as of the iota parity test (2026-08-10). C39 added; the gauge/ill-posed branch of C37/OB13 is KILLED. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 40)."
