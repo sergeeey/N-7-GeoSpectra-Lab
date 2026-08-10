@@ -975,6 +975,22 @@ claims:
       table and is not asserted here from memory. The claim is only that the
       code says +1 and eight documents say -1.
 
+  - id: C37_T_SELECTION_REQUIRES_TORSION_ODD_TERM
+    statement: "Any t-dependent quantity that is an EVEN function of (t-1/2) is identically blind to the t=0 vs t=1 question, because t -> 1-t is exactly (t-1/2) -> -(t-1/2). Checked [VERIFIED-sympy] for the three t-dependent invariants this project has actually computed: round111's Scal(t) = Scal_LC - 6(2t-1)^2 EVEN; round99's curvature-norm toy V(t) EVEN; E2/round67's Dirac family D^t(n,sigma) = sigma*(n+3/2) + (t-1/2)*h_H ODD in the shift term. CONSEQUENCE: both curvature-based searches for a t-selection principle (round99, round111) were structurally incapable of selecting -- their null results were necessary and carry NO information about whether a selector exists. A selection principle, if one exists, must be LINEAR (odd) in the torsion, never quadratic. Round80/E14 makes this a symmetry statement rather than an algebraic accident: the isometry iota(g)=g^-1 pulls the whole Cartan-Schouten family nabla^t back to nabla^(1-t) EXACTLY, so t<->1-t is a genuine symmetry of the geometry and can only be broken by an odd term."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-consortium-c25-parity-of-t-selection/decision.md"
+    depends_on: [C25_H1C_PHYSICAL_SELECTION_OPEN]
+    convention: "Parity is taken in the variable (t-1/2), i.e. under the substitution t -> 1-t. The Cartan-Schouten family nabla^t is this project's own t-parameterization -- see round113's t-convention reconciliation before combining with any external torsion parameter."
+    does_not_imply:
+      - "that a t-selection principle exists -- this constrains WHERE one could live, not whether it does"
+      - "that no even invariant could ever matter -- an even quantity can still be physically important, it just cannot DISTINGUISH t=0 from t=1"
+      - "a theorem that all conceivable t-invariants are even -- parity was checked for the THREE quantities this project actually computed, not for all possible ones"
+      - "that C25 is resolved or closed -- it identifies an unrepresented branch (the question may be ill-posed if iota is a gauge symmetry), it does not settle it"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1021,6 +1037,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "38 entries as of the consortium triple-run (2026-08-10). C37 added (t-selection parity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 38)."
   - "37 entries as of OB2 item (b) (2026-08-10). C33 (Majorana/multiplicity-2), C34 (Clifford convention audit), C35 (Theta is not a real structure), C36 (J_F^2 = +1, not -1) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 37)."
   - "33 entries as of the OB10 convention correction (2026-08-09). C32 added; C28 and C31 RETRACTED (truth_status REFUTED, lifecycle SUPERSEDED) after an external red-team audit showed C28's pseudo-real verdict was a Clifford-convention artifact and C31's no-go inherited the bad premise. Both kept in place with their original text and reasoning preserved -- retracted, never deleted, per this registry's own convention. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 33)."
   - "32 entries as of the OB10->C27 Majorana-branch closure (2026-08-06) -- deliberately not exhaustive over the ~157 experiments. C31 added, closing one of the three rows of C27's Relaxation Map (the other two remain open; C27 itself is NOT resolved). Prior count was 31 (OB2/OB6 item 5); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 32) before finalizing this note."
