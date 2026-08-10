@@ -1074,6 +1074,23 @@ claims:
       - "that no 4-dim kernel exists ANYWHERE -- the algebra covers the Cartan-Schouten family only; a different connection, or an added torsion-odd symmetry-breaking term (C37), is not excluded"
       - "anything about the S6 side or the 3-channel structure"
 
+  - id: C43_BLOCK_SUPPLIES_THE_GRADING
+    statement: "The block D^0 (+) D^1 supplies the grading that C35 proved impossible for a single operator, and it does so because the two sectors are a parity pair. [VERIFIED-sympy] With h_H = 3, round67's closed form gives spec(D^0) = {0,1,2,...} u {-3,-4,...} and spec(D^1) = {0,-1,-2,...} u {3,4,...}, so spec(D^1) = -spec(D^0) EXACTLY, multiplicities included. This is an IDENTITY, not a truncation artifact: the pairing is level-by-level at IDENTICAL n -- -[n] = -n matches D^1's sigma=-1 at the same n with the same multiplicity (n+1)(n+2), and -[-n-3] = n+3 matches D^1's sigma=+1 likewise -- confirmed at N_MAX = 3, 6, 12, 20 (up to 7084 states per block). [VERIFIED-numpy] Consequently spec(D^0 (+) D^1) IS symmetric under lambda -> -lambda where spec(D^0) alone is NOT (C35's obstruction, reproduced), an explicit gamma was constructed with gamma^2 = I, gamma = gamma^dag and {gamma, D_block} = 0 all holding, and dim ker(D^0 (+) D^1) = 2 + 2 = 4, matching C38's Spin(4) spinor. NEGATIVE CONTROL: the identical matching logic on D^0 alone FAILS to construct a grading. NOT A COINCIDENCE: C39 showed iota is orientation-REVERSING and reversing orientation flips a Dirac operator's sign -- the mirror spectra are that fact expressed spectrally, the same structure C37 reached from polynomial parity and C39 from a diffeomorphism's orientation, appearing a third time. FIRST POSITIVE structural result for the two-operator reading; every prior result on C11's line was a closure or a narrowing. PARENT_ACTION_GATE now 3 of 6 fields supplied (H, D, gamma); algebra A, real structure J and physical interpretation remain NOT SUPPLIED."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-block-construction/decision.md"
+    depends_on: [C42_C11_FORCED_ONTO_TWO_OPERATOR_READING, C35_THETA_IS_NOT_A_REAL_STRUCTURE, C39_IOTA_IS_PARITY_NOT_GAUGE]
+    convention: "round67's Cartan-Schouten t-parameterization, rho3 = 1, h_H = 3; eigenspace multiplicity (n+1)(n+2) as recorded by round116. Grading convention: gamma^2 = I, gamma = gamma^dag, {gamma, D} = 0 -- the standard even-spectral-triple grading, NOT the KO sign triple (see docs/ko_dimension_registry.md, which remains BLOCKED_BY_EXTERNAL_INPUT)."
+    does_not_imply:
+      - "that C11 is resolved -- a grading is ONE of six gate fields; the three still missing are the substance, and the last (why two copies exist at all) is the physics C11 actually asks"
+      - "that both t are physically realized -- it shows that IF they are, the pair is not obstructed the way the single operator is"
+      - "first-order, orientability or Poincare duality -- all three are defined relative to the algebra, which is unsupplied"
+      - "that the grading is UNIQUE -- any relabelling within a degenerate level gives another, and nothing here selects one; a physical gamma would have to"
+      - "an infinite-dimensional statement about gamma -- the MIRROR is proved level-by-level and survives the limit, but the explicit matrix is finite-dimensional"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1120,6 +1137,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "44 entries as of the C11 block construction (2026-08-10). C43 added: the block supplies the grading; PARENT_ACTION_GATE 3/6. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 44)."
   - "43 entries as of the C11 first cut (2026-08-10). C42 added: the one-operator escape is closed. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 43)."
   - "42 entries as of the S6 factor-8 test (2026-08-10). C41 added, withdrawing my own same-day factor-8 claim. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 42)."
   - "41 entries as of the Lemma B quantitative test (2026-08-10). C40 added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 41)."
