@@ -179,6 +179,25 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **⚠️ DEFLATED SAME DAY (C44) — the grading is GENERIC. Read this before the
+> C43 block below.** `spec(D^{1−t}) = −spec(D^t)` is an **identity in `t`** (the
+> family is affine, `spec(D^{1/2})` already symmetric), so the grading exists for
+> **every** mirror pair `(t, 1−t)` — confirmed at `t = 0, 1, ¼, ½, −⅓, 4/3, 2.7`
+> and a random `−1.12`; non-mirror pairs all fail (control). **It therefore says
+> nothing about `t=0,1` and must NOT be cited as evidence that the doubling is
+> structurally motivated.** What survives: the grading is not *obstructed* for the
+> block where C35 showed it is for one operator — a **removed obstacle, not a
+> positive reason to double**.
+>
+> **The specificity lives in the KERNEL:** `dim ker(D^t ⊕ D^{1−t})` = 0 generic,
+> **4 at `t=0,1`**, 12 at `−⅓,4/3`, 40 at `t=2`. So `(0,1)` is not just the
+> innermost crossing pair but the one with the **smallest non-zero kernel** —
+> a minimality observation, **not** a selection principle.
+>
+> **Net: the doubling is NOT yet earned, and the algebra now carries the full
+> weight** without the grading as support. See
+> `experiments/20260810-c11-step0-specificity/decision.md`.
+>
 > **✅ FIRST POSITIVE RESULT ON THIS LINE — 2026-08-10 (C43). GATE NOW 3/6.**
 > The block `D⁰ ⊕ D¹` **supplies the grading C35 proved impossible for a single
 > operator**. `spec(D¹) = −spec(D⁰)` **exactly**, multiplicities included — an
