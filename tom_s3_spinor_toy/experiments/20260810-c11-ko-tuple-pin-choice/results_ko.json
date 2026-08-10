@@ -1,0 +1,76 @@
+{
+  "ctrl_s3_ko": [
+    3
+  ],
+  "ctrl_passes": true,
+  "k4_rows": {
+    "Pin+ : U^2 = +1": {
+      "U_iota_sq": "+I",
+      "c": "(1+0j)",
+      "eta = J_M U_iota J_M^-1 / U_iota": "+1+0j",
+      "conj(c)/c": "+1-0j",
+      "gamma is real": true
+    },
+    "Pin- : U^2 = -1": {
+      "U_iota_sq": "-I",
+      "c": "-1j",
+      "eta = J_M U_iota J_M^-1 / U_iota": "-1+0j",
+      "conj(c)/c": "-1+0j",
+      "gamma is real": true
+    }
+  },
+  "k4_pin_cancels": true,
+  "k_rows": {
+    "I": {
+      "eps": -1,
+      "eps_prime": 1,
+      "eps_pp": 1,
+      "KO": [
+        4
+      ]
+    },
+    "s3": {
+      "eps": -1,
+      "eps_prime": 1,
+      "eps_pp": -1,
+      "KO": [
+        2
+      ]
+    },
+    "diag(1,i)": {
+      "eps": -1,
+      "eps_prime": 1,
+      "eps_pp": 0,
+      "KO": []
+    },
+    "diag(1,-1)": {
+      "eps": -1,
+      "eps_prime": 1,
+      "eps_pp": -1,
+      "KO": [
+        2
+      ]
+    },
+    "s1": {
+      "eps": -1,
+      "eps_prime": 0,
+      "eps_pp": 1,
+      "KO": []
+    },
+    "s2": {
+      "eps": 1,
+      "eps_prime": 0,
+      "eps_pp": -1,
+      "KO": []
+    }
+  },
+  "k1_nondiagonal_fails": true,
+  "k2_diag1i_fails": true,
+  "k3_eps_always_minus": true,
+  "k5_achievable_ko": [
+    2,
+    4
+  ],
+  "k5_two_choices": true,
+  "verdict": "C57_REFUTED_AS_WORDED__PIN_CHOICE_CANCELS__C56_U5_CORRECTED"
+}

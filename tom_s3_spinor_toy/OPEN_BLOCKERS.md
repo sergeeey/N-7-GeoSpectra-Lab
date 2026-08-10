@@ -179,6 +179,32 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **KO TUPLE COMPUTED, 2026-08-10 (C57) — and it CORRECTS C56. The Pin choice
+> cancels. `(ε,ε',ε'') = (−1,+1,±1)`, KO-dim 2 or 4 by an internal choice in `J`.**
+>
+> **C56's `U5` was WRONG** and is amended in place: it said `ε''` flips with the
+> Pin choice, from `J(cX)J⁻¹ = c̄·JXJ⁻¹`. That accounting never asked what `J_M`
+> does to `U_ι`. With `U_ι = c'·W` (`W` = the **real** swap), C56's own condition
+> `c·c' = ±1` makes **`γ = ±(W⊗s₁)` — the same real operator for both Pin
+> choices** — and a real `γ` picks up no phase under `J` at all. The `c̄/c` flip is
+> compensated exactly by `η = J_M U_ι J_M⁻¹/U_ι = c̄'/c'`: `(+1)(+1)` vs
+> `(−1)(−1)`. **Two flips, no net effect.** Second red herring of the session,
+> after `U_ι²` itself.
+>
+> **The tuple:** `ε = −1` for every diagonal `k` (from `J_M² = −1`); `ε' = +1` is
+> **forced** and forces `k` diagonal — `s₁`,`s₂` fail outright; `Jγ = ε''γJ`
+> narrows `k` to `{I, s₃}` — `diag(1,i)` fails. So `k=I → KO 4`, `k=s₃ → KO 2`,
+> and `diag(1,−1) = −s₃` reproduces `s₃` (phase-of-`k` coherence check).
+> **The KO 2 / KO 4 choice is internal to `J`, not geometric.** Metric dim is 3,
+> so the mismatch is 7 or 1 mod 8 — reported, not interpreted.
+> **Control:** the machinery recovers `S³`'s own KO-dim 3 from its declared
+> inputs. *Scope fix recorded: `K3` was asserted over all `k` but claimed only for
+> diagonal `k`; `s₂` is imaginary so `s₂·conj(s₂) = −I` gives `ε = +1`. Claim
+> right, test wider than the claim.*
+> **The KO table is `[DOCS]`, not re-derived** — C36's lesson. And C49/C52 still
+> stand: this is bookkeeping on a **non-geometry**.
+> See `experiments/20260810-c11-ko-tuple-pin-choice/`.
+>
 > **`U_ι² = ±1` RETIRED, 2026-08-10 (C56). The C45 flag was a FALSE ALARM,
 > carried for ten rounds. Every named unknown in this line is now closed.**
 >
