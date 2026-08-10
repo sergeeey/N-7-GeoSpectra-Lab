@@ -921,8 +921,16 @@ claims:
       sides (the value is +1, AND C32 showed OB10's own verdict was a
       convention artifact); a void corroboration is not repaired by fixing one
       of its two broken halves.
-      preprint.pdf NOT rebuilt -- already stale by 3 weeks, untracked, and
-      regenerating a distributable artifact is a separate deliberate act.
+      preprint.pdf REBUILT 2026-08-10 (3x pdflatex, exit 0, 0 errors, 0
+      unresolved citations, 30 pages -- unchanged count). Previous build kept
+      as preprint_PREV_20260718.pdf.bak. CORRECTION to this note's first
+      version, which said the July-18 PDF was "already stale by 3 weeks":
+      only its TIMESTAMP was old. A pdftotext diff of old vs new shows the
+      only content differences are this fix plus the page reflow it causes
+      (section 2.5 moves 7->8, TOC updated) -- the old build was
+      content-current with the .tex, it simply predated this change.
+      preprint.pdf remains UNTRACKED, per this repo's existing convention of
+      not versioning built artifacts.
       WHAT IS NOT ESTABLISHED: which KO-dimension the corrected tuple
       corresponds to. Per docs/clifford_convention_registry.md rule 4 (store
       the TUPLE, never a bare "KO-dim N"), that mapping needs a cited external
