@@ -1210,6 +1210,24 @@ claims:
       - "that the order-counting step is verified -- it is [INFERRED-analytic] and marked as such; the toy cannot represent [D_M,m] = Clifford.dm"
       - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
 
+  - id: C51_MIXING_WITHOUT_A_UNITARY_IS_ALSO_EXCLUDED
+    statement: "REFUTES the proposed C51 ('a sector-mixing algebra containing no sector-swap unitary admits a J') and SUBSUMES C50 as its f == 1 special case. THE SLIVER WAS REAL: A = <twisted diagonal, x0 (x) s1> is sector-mixing, x0 is iota-even, and every off-diagonal element G*x0 (x) s1 VANISHES on the equator {x0 = 0}, so none is invertible and none is unitary -- C50's chain, which enters through [D,u] for the swap unitary u = 1 (x) s1, has no entry point there. (A nowhere-vanishing f would not be a sliver: on the connected S^3 it has constant sign, |f| is smooth, and stability under holomorphic functional calculus returns f/|f| (x) s1 = +-u to A.) THE MECHANISM -- A MASS TERM ONLY MIXING ELEMENTS GET. [VERIFIED-numpy, 300 random (f,df) each] |[D, f (x) s1]|^2 = (|df|^2 + 9 f^2) (x) I and |[D, g (x) s2]|^2 = (|dg|^2 + 9 g^2) (x) I, while for a sector-DIAGONAL h = lambda*I, |[D, h (x) I]|^2 = |d lambda|^2 (x) I with NO mass term -- because (3/2) I (x) s3 COMMUTES with anything diagonal. C50's boundedness step forces J to send mixing elements to diagonal ones, so J would have to carry an operator bounded below onto c(d lambda). On S^3 the mixing side is bounded below: |grad x_i|^2 = 1 - x_i^2 gives |df|^2 + 9f^2 = 1 + 8 x_i^2 >= 1 EVERYWHERE [VERIFIED-numpy, closed form matched on 200k samples] for both f = x0 (with s1) and g = x1 (with s2); the diagonal side must VANISH, because every smooth lambda on a compact manifold without boundary attains a maximum where d lambda = 0 -- [VERIFIED-numpy] at the maximiser found by projected gradient ascent, |d lambda|^2 = 7e-70, 5e-140, 2e-32, 2e-214 for four test functions. CONTRADICTION. RANDOM-SAMPLING TRAP CAUGHT IN THIS FILE (third of this shape this session): the first version took min |d lambda|^2 over 200k RANDOM points and got 5.5e-04 for lambda = x0, reporting FALSE for a true statement -- |grad x0|^2 = 1 - x0^2 vanishes only at the two poles, a measure-zero set random sampling never hits. It measured the sampler, not the mathematics. Replaced by ascent to the actual maximiser. DISCRIMINATION: f = x0^2 vanishes to SECOND order on the equator and gives |df|^2 + 9f^2 -> 4.3e-11, NOT invertible -- so the criterion can fail and the residual is exactly identified. CONTROL: f == 1 gives 9 > 0, so C50 is this argument's f == 1 case."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-y1-mixing-without-unitary/decision.md"
+    depends_on: [C50_NO_J_ADMITS_A_SECTOR_MIXING_ALGEBRA, C46_DOUBLING_IF_TAKEN_IS_A_PARITY_DOUBLING]
+    supersedes: "the scope limit on C50 that restricted it to algebras containing a sector-swap unitary; C50 is now the f == 1 case"
+    convention: "Same as C47-C50. ASSUMPTION A1 (U_iota D^{1/2} U_iota^dag = -D^{1/2}) inherited, still not re-derived. NEW COST, named: ASSUMPTION R (regularity) -- lambda is smooth, i.e. Connes' regularity axiom applied to J A J^-1. C50's special case did NOT need it (it got h = +-I from h being a unitary involution). Clifford convention c(v)^2 = -|v|^2 with c(v) = i(v.sigma) on the 2-dim spinor space. Gradients are intrinsic to S^3: |grad_{S^3} x_i|^2 = 1 - x_i^2."
+    does_not_imply:
+      - "anything about Y2 -- an algebra whose DIAGONAL part is smaller than the full twisted diagonal, which would enlarge A'; that residual is untouched here and remains open"
+      - "that the residual Y1' is empty -- an algebra whose off-diagonal functions ALL vanish to SECOND order at a common point (f = x0^2 is the model) still has no entry point; it is not the crossed product and not any algebra the portfolio produced"
+      - "that the Lipschitz loophole is closed -- under ASSUMPTION R lambda is smooth, but a merely Lipschitz lambda can have |d lambda| = 1 a.e. (a distance function) and would evade the critical-point step; that requires J A J^-1 to violate Connes' own regularity axiom"
+      - "that the doubling is WRONG -- only that nothing here REQUIRES it"
+      - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1256,6 +1274,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "52 entries as of the Y1 escape-route test (2026-08-10). C51 added: sector-mixing without a swap unitary is ALSO excluded, and C50 becomes its f == 1 special case. Cost named: ASSUMPTION R (regularity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 52)."
   - "51 entries as of the W1 escape-route test (2026-08-10). C50 added: no J, factorizing or not, admits a sector-mixing algebra -- which UPGRADES C48 result 2 and C49 from ansatz-limited to ansatz-free. ANSATZ J1 retired as a scope limit. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 51)."
   - "50 entries as of C11 step 6 (2026-08-10). C49 added: the even index pairing vanishes identically, so Poincare duality fails for the doubled triple. The agreed 7-step C11 portfolio is complete except step 7 (N_gen=3), deferred by agreement. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 50)."
   - "49 entries as of C11 steps 3+4+5 (2026-08-10). C47 (the 4-dim kernel is an isolated point) and C48 (the axioms force alpha = beta = 0, but J kills the maximal algebra) added; C45's Relaxation Map variant V2 superseded. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 49)."

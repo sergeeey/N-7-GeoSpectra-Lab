@@ -179,6 +179,28 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **Y1 RUN AND CLOSED, 2026-08-10 (C51). Mixing without a swap unitary is
+> excluded too, and C50 becomes its `f ≡ 1` special case. Only Y2 is left.**
+> The sliver was real and had a concrete inhabitant: `A = ⟨twisted diagonal,
+> x₀⊗s1⟩` mixes sectors, and every off-diagonal element `G·x₀⊗s1` vanishes on
+> the equator, so none is unitary — C50 genuinely did not reach it.
+> **The mechanism is a mass term only mixing elements get:**
+> `|[D, f⊗s1]|² = (|df|² + 9f²)⊗I` but `|[D, λI⊗I]|² = |dλ|²⊗I` — no `9λ²`,
+> because `(3/2)I⊗s₃` commutes with anything diagonal. `J` must send mixing to
+> diagonal (C50), so it would carry an operator **bounded below by 1**
+> (`|df|²+9f² = 1+8x_i²` on `S³`) onto `c(dλ)`, which **must vanish** at a
+> maximum of `λ` — every smooth function on a compact boundaryless manifold has
+> one. Contradiction.
+> *Third random-sampling/tautology trap of the session caught here: `min |dλ|²`
+> over 200k random points gave `5.5e−04` and reported **False for a true
+> statement**, because `|∇x₀|²` vanishes only at the two poles. Replaced by
+> gradient ascent to the actual maximiser.*
+> **Cost named:** ASSUMPTION R (regularity, `λ` smooth) — C50's special case did
+> not need it. **Residuals:** Y1′ (off-diagonal functions all vanishing to
+> *second* order at a common point), the Lipschitz loophole, and **Y2**
+> (diagonal part smaller than the twisted diagonal) — the only untouched one.
+> See `experiments/20260810-c11-y1-mixing-without-unitary/`.
+>
 > **W1 RUN AND CLOSED, 2026-08-10 (C50). The last escape route is gone, and
 > C48/C49 are now ANSATZ-FREE.**
 > The expectation going in was that W1 would **succeed** — the crossed product's
