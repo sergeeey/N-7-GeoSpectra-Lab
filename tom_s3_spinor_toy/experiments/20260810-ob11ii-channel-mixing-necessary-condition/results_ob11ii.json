@@ -1,0 +1,56 @@
+{
+  "experiment": "ob11ii_channel_mixing_necessary_condition",
+  "n_su3_generators": 8,
+  "dim_m": 6,
+  "p0_dim_m_is_6": true,
+  "reductivity_max_su3_leak": 4.203313381754683e-16,
+  "reductivity_ok": true,
+  "C2_m_eigenvalues_sorted": [
+    -1.3333333333333357,
+    -1.3333333333333337,
+    -1.3333333333333335,
+    -1.333333333333333,
+    -1.3333333333333324,
+    -1.333333333333332
+  ],
+  "hom_dims": {
+    "v-v": 10,
+    "v-s": 10,
+    "v-c": 10,
+    "s-v": 10,
+    "s-s": 10,
+    "s-c": 10,
+    "c-v": 10,
+    "c-s": 10,
+    "c-c": 10
+  },
+  "diag_keys": [
+    "v-v",
+    "s-s",
+    "c-c"
+  ],
+  "diag_vals": [
+    10,
+    10,
+    10
+  ],
+  "offdiag_keys": [
+    "v-s",
+    "v-c",
+    "s-v",
+    "s-c",
+    "c-v",
+    "c-s"
+  ],
+  "offdiag_vals": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "p2_diagonal_all_nonzero": true,
+  "p3_all_offdiag_zero": false,
+  "verdict": "MIXING_NOT_EXCLUDED_BY_NECESSARY_CONDITION"
+}
