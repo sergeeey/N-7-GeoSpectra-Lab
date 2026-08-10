@@ -86,6 +86,24 @@ future, non-coupling-conditional `ρ₃`-stabilization result appears),
 `pearl_registry/INDEX.md`. See
 `experiments/20260717-round115-flux-quantization-torsion-selection/decision.md`.
 
+**Attempted, NULL-orthogonal-mechanism (2026-08-10, C41-C57 vs OB1, C58):**
+the day's C11 chain investigated a fifth candidate mechanism rounds 114-117 did
+not try: does forming a spectral triple from BOTH `t=0` and `t=1` together
+(as two sectors of one Hilbert space) satisfy NCG's own axioms — i.e. is the
+*combination itself* geometrically necessary? Full 14-round chain (C41-C57):
+algebra does not earn it (C45/C46), the axioms force the deformation family to
+`(0,0)` making the isolated kernel a selection rather than a fragility (C47/C48),
+no real structure `J` admits a sector-mixing algebra factorizing or not (C50/C51),
+and even taken as given, the resulting even triple fails orientability and
+Poincaré duality (C49/C52-C54) — closed on a **derived**, not assumed, input
+(C55/C56/C57). **Result: null, same shape as 114-117.** This rules out "the
+combination is NCG-necessary" as an answer to why nature might care about
+`t=0,1` together — but it is **orthogonal to OB1's actual question** (single `t`
+selection for KT-8's single-copy operator, not the two-sector combination), so
+it does not touch the zero-mode blocker itself. See
+`experiments/20260810-c11-vs-ob1-kt8-crossreference/decision.md`. **OB1 stays
+PARKED — no reopen condition met.**
+
 **Attempted, equivalent-restatement (round116):** applied brainstorm item
 28 ("spectral flow") in modest form to round67's own crossing family —
 proved (general closed form, not spot-check) that `t=0,1` are the unique
