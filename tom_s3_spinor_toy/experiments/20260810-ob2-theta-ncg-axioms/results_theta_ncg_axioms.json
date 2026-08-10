@@ -1,0 +1,202 @@
+{
+  "step0_g18_antilinear_square_is_plus_one": true,
+  "step0_prose_says_minus_one": true,
+  "step0_code_prose_disagree": true,
+  "step1_spectrum": [
+    -0.0,
+    0.0,
+    3.0,
+    3.0
+  ],
+  "step1_spectrum_symmetric": false,
+  "step1_gradings_found": [],
+  "step1_triple_is_necessarily_odd": true,
+  "step2_all_commutators_zero": true,
+  "step2_first_order_is_vacuous": true,
+  "step3_per_point": [
+    {
+      "n": [
+        -0.8764,
+        -0.3452,
+        -0.3358
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        -0.8575,
+        -0.4714,
+        -0.2061
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        0.814,
+        0.1864,
+        -0.5501
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        -0.1222,
+        0.982,
+        -0.144
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        -0.6676,
+        0.5642,
+        0.4857
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        0.8401,
+        -0.0673,
+        0.5382
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        0.0745,
+        0.6376,
+        -0.7668
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        0.8988,
+        0.3748,
+        0.2273
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        -0.2205,
+        0.1748,
+        0.9596
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        0.1357,
+        -0.7255,
+        0.6747
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        -0.0765,
+        0.9705,
+        -0.2285
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "n": [
+        -0.8779,
+        -0.217,
+        0.4269
+      ],
+      "n_valid_phi": 40,
+      "tuples": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "step3_points_with_solution": 12,
+  "step3_observed_tuples": [
+    [
+      1,
+      1
+    ]
+  ],
+  "step3_global_solutions": 0,
+  "step3_global_blocked_by_determinant": true,
+  "step4_theta_valid_points": 0,
+  "step4_theta_is_a_valid_J": false,
+  "step4_sign_tuple_forced": true,
+  "step5_control_rejects_non_antiunitary": true,
+  "step5_control_rejects_plain_conjugation": true,
+  "step5_control_passes": true,
+  "verdict": "THETA_IS_NOT_A_REAL_STRUCTURE__J_EXISTS_POINTWISE_ONLY__TRIPLE_IS_ODD_AND_DEGENERATE"
+}

@@ -853,8 +853,65 @@ claims:
       is listed in the registry for a future pass.
       NO RESULT ANYWHERE CHANGES. Label corrections are naming only.
 
+  - id: C35_THETA_IS_NOT_A_REAL_STRUCTURE
+    statement: "C30's antiunitary Theta = i*sigma_2*K does NOT fill the NCG real-structure slot, and structurally cannot. Theta was built to satisfy Theta T Theta^-1 = 1-T -- it EXCHANGES the algebra's two minimal projectors -- while a real structure must satisfy the ORDER-ZERO axiom [a, J b* J^-1] = 0, i.e. COMMUTE with the algebra. Theta is a symmetry OF the algebra; J is part of the SPECTRAL DATA. Verified: Theta lifted as (i*s2)(x)I2 is a valid J at 0 of 12 Bloch points. PARENT_ACTION_GATE.md's 'Real structure J: NOT ATTEMPTED' field remains unfilled. SEPARATELY, three facts about OB2's toy triple (H=C^4, A=span{T,1-T}(x)I2, D=3(T(x)I2)): (i) NO grading gamma can exist -- spec(D)={0,0,3,3} is not symmetric under lambda->-lambda while {gamma,D}=0 requires it, so the triple is necessarily ODD and the D-sign is FORCED to +1 before any search (this is stronger than OB2's original 'the naive gamma failed'); (ii) a real structure J DOES exist pointwise at 12/12 points with a unique forced sign tuple (J^2, JDJ^-1/D) = (+1,+1), but NO global J exists -- J is antilinear so T -> J T J^-1 is a reflection (n -> (n1,-n2,n3), det=-1) composed with a rotation (det=+1), total det=-1, which can never be the identity map a global J would require: the SAME determinant obstruction C30 found for the exchange operator; (iii) the first-order condition is VACUOUS -- D lies inside A, so [D,a]=0 identically and the one-form module Omega^1 is zero."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-ob2-theta-ncg-axioms/decision.md"
+    depends_on: [C30_OB2_MATRIX_T_Z2_EXCHANGE_PARTIAL]
+    notes: >
+      [2026-08-10] Closes C30's own next gate and item (b) of activeContext's
+      open list. The answer is a NEGATIVE for the checklist field, plus two
+      sharpenings and one vacuity.
+      TWO BUGS IN THIS ROUND'S OWN SCRIPT, both caught, both recorded, and the
+      second is a new failure mode for this project: (1) too-narrow ansatz --
+      first version searched 16 factorized Pauli products, found 0 even
+      per-point (OB10 already hit this exact trap); (2) SAMPLING A MEASURE-ZERO
+      SET -- second version solved the intertwiner equation correctly (real
+      16-dim space) then randomly sampled it for M with M conj(M) = +-I, which
+      is a measure-ZERO subvariety, so random draws essentially never land on
+      it. Both returned a confident "0 solutions"; both were wrong. Fixed by
+      CONSTRUCTING the solution from the geometry (the rotation carrying n_bar
+      to n has its axis in the xz-plane, hence M conj(M) = +I automatically for
+      the whole U(1) family) instead of searching for it.
+      NEGATIVE CONTROLS: a non-antiunitary impostor is rejected (no valid J^2
+      sign), and plain conjugation K is rejected as a global solution.
+      SCOPE: this is OB2's FINITE TOY (C^4, constant-spinor truncation, D inside
+      A). It says nothing about whether the S3xS6 geometry admits a real
+      structure -- C32/C33 are a different object and are untouched. Does NOT
+      check orientability or Poincare duality. Does NOT test whether a D that
+      does not commute with A would fix the vacuity -- that is the obvious next
+      construction and is not this round.
+
+  - id: C36_JF_SQUARE_IS_PLUS_ONE_NOT_MINUS_ONE
+    statement: "The project's recorded value J_F^2 = -1 for G18's finite spectral triple is WRONG in prose and RIGHT in code; the correct value is J_F^2 = +1. Loaded G18's actual J_F and squared it: 32x32, all entries real, antilinear square J_F conj(J_F) = +I32. J_F is 16 real transpositions, so for antilinear J = J_F.conj we have J^2 = J_F conj(J_F) = J_F^2, and g18_ncg.py ASSERTS `J_F**2 == sp.eye(32)` while its own docstring line 17 states `J_F^2 = I`. The value 'J_F^2 = -1' nevertheless appears in docs/gates_tracker.md:38, g18/decision.md:9, g26-ccm-comparison/claim.md (x2), ob10-ko-dimension-majorana-check/claim.md (x2) and its decision.md, OPEN_BLOCKERS.md (x2), and preprint.tex:349,354. DOWNSTREAM: OB10's claim.md justified its pseudo-real verdict as 'matching, not contradicting -- the finite algebra's own pseudo-real J_F^2=-1'. That corroboration was wrong twice over -- C32 already showed OB10's own verdict was a Clifford-convention artifact, and the value it was matched against is +1."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-ob2-theta-ncg-axioms/decision.md"
+    depends_on: []
+    notes: >
+      [2026-08-10] Found while GROUNDING C35 -- step 0 asked "what sign tuple
+      does this project already have on record?" before computing a new one,
+      and the record disagreed with itself. Third instance this week of the
+      same shape (prose vs code): the Clifford Cl(7,0)/Cl(0,7) label inversion
+      (C34) and g69's Cl(6,0)=M8(R) constant were the first two.
+      NOT FIXED IN THIS ROUND -- deliberately. It touches preprint.tex and
+      deserves its own pass rather than being swept in as a side-edit of an
+      unrelated experiment. Flagged in OPEN_BLOCKERS.md.
+      WHAT IS NOT ESTABLISHED: which KO-dimension the corrected tuple
+      corresponds to. Per docs/clifford_convention_registry.md rule 4 (store
+      the TUPLE, never a bare "KO-dim N"), that mapping needs a cited external
+      table and is not asserted here from memory. The claim is only that the
+      code says +1 and eight documents say -1.
+
 notes_on_this_ledger:
-  - "35 entries as of the repo-wide Clifford convention audit (2026-08-10). C33 (Majorana/multiplicity-2, correcting C32's over-correction) and C34 (convention audit) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 35)."
+  - "37 entries as of OB2 item (b) (2026-08-10). C33 (Majorana/multiplicity-2), C34 (Clifford convention audit), C35 (Theta is not a real structure), C36 (J_F^2 = +1, not -1) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 37)."
   - "33 entries as of the OB10 convention correction (2026-08-09). C32 added; C28 and C31 RETRACTED (truth_status REFUTED, lifecycle SUPERSEDED) after an external red-team audit showed C28's pseudo-real verdict was a Clifford-convention artifact and C31's no-go inherited the bad premise. Both kept in place with their original text and reasoning preserved -- retracted, never deleted, per this registry's own convention. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 33)."
   - "32 entries as of the OB10->C27 Majorana-branch closure (2026-08-06) -- deliberately not exhaustive over the ~157 experiments. C31 added, closing one of the three rows of C27's Relaxation Map (the other two remain open; C27 itself is NOT resolved). Prior count was 31 (OB2/OB6 item 5); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 32) before finalizing this note."
   - "31 entries as of the OB2/OB6 item 5 partial progress (2026-08-03) -- deliberately not exhaustive over the ~157 experiments. C30 added, first attempt at Codex's item 5 (Z2 exchange verified; grading/real structure/physical action remain open). Prior count was 30 (OB11 condition i); verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 31) before finalizing this note."
