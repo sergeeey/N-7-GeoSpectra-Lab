@@ -56,7 +56,20 @@ This also independently supports C37/OB13's inversion branch: if both `t` are
 required, asking *which one is selected* was ill-posed, and every even-parity
 null result was exactly what that predicts.
 
-## ⚠️ The same mismatch exists on the S⁶ side and is NOT explained
+## ⚠️ ~~The same mismatch exists on the S⁶ side and is NOT explained~~ — WITHDRAWN
+
+> **WITHDRAWN 2026-08-10, same day, by `experiments/20260810-s6-factor8/`.** The
+> section below compared `ker(D_{S⁶}⊗S⁻) = 1` against framework A's `8`. That is
+> the wrong pairing: G74A's own twist is `S⁻ = 3 ⊕ 1`, **four**-dimensional,
+> while `8 = S⁺ ⊕ S⁻` is the full Dirac spinor the twisted operator does not act
+> on. Computed: `SU(3)`-singlets are **2** in the full `8`, **1** in `S⁺`, **1**
+> in `S⁻`. The correct comparison is **1-of-4**, and it obeys the *same* rule as
+> the S³ side — kernel = the invariant subspace of the bundle actually used
+> (S³: 2 of 4; S⁶: 1 of 4). **There is no unexplained systematic residue**, and
+> the category-error reading (M3) is correspondingly weakened. Original text kept
+> below for the record.
+
+## ~~The same mismatch exists on the S⁶ side and is NOT explained~~ (original)
 
 Stated because the S³ result is otherwise easy to over-sell:
 

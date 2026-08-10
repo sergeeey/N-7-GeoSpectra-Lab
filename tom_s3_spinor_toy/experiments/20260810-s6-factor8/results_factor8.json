@@ -1,0 +1,12 @@
+{
+  "dim_full_spinor": 8,
+  "dim_S_plus": 4,
+  "dim_S_minus": 4,
+  "lift_bracket_residual": 0.0,
+  "su3_singlets_full_8": 2,
+  "su3_singlets_S_plus": 1,
+  "su3_singlets_S_minus": 1,
+  "so6_singlets_S_minus": 0,
+  "control_passes": true,
+  "verdict": "MY_FACTOR8_CLAIM_WAS_A_WRONG_PAIRING"
+}
