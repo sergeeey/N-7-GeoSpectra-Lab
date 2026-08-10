@@ -250,6 +250,28 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 > both and nothing here needs one. Recorded as a choice, not a fact.
 > See `experiments/20260810-c11-uiota-squared-sign/`.
 >
+> **W1-LIFT RUN, 2026-08-10 (C59). `A1-lift` is a THEOREM, not an assumption.**
+>
+> `ι(ag)=g⁻¹a⁻¹` (pure associativity) means `ι` intertwines `L_a` with `R_{a⁻¹}`.
+> Any unitary implementing `ι` **equivariantly** — the definition of "lift of an
+> isometry," independent of any convention — is forced by **Schur's lemma** to
+> map isotypic block `(j,k)` only to `(k,j)`, unique up to a phase, because
+> `V_j⊗V_k*` is one irrep per factor of a product group.
+> **[VERIFIED-numpy], not just cited:** built the equivariance condition from
+> explicit `su(2)` generators, solved as a linear system. `S2` matching pairs →
+> null dim exactly **1** (existence + uniqueness); `S3` **negative control**
+> (same dimension, label *not* swapped) → null dim **0** — dimension alone does
+> not force a solution, only the label match does; `S5` applied to C55's own
+> `(0,½)` pair reproduces exactly the phase freedom C56 already used.
+> *A real bug was caught here: the first `dual_generators` used `conj(J)`, which
+> flips the `su(2)` commutator's sign and isn't even a valid representation on
+> its own — caught by hand-checking `(0,½)` against Pauli matrices before
+> accepting the result. Correct contragredient generator: `J* = −conj(J)`.*
+> **Consequence: the whole `U_ι`-dependent chain (C50/C51/C53/C54/C57) now rests
+> on zero named assumptions about the lift** — only on what "lift of an isometry"
+> means, plus the already-used phase freedom.
+> See `experiments/20260810-c11-a1lift-schur-block-preservation/`.
+>
 > **A1 VERIFIED, 2026-08-10 (C55). After ten rounds as an inherited assumption,
 > it is DERIVED — and it independently reproduces round67's own spectrum.**
 >
