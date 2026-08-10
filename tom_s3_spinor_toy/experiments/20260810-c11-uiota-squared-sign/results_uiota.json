@@ -1,0 +1,85 @@
+{
+  "u1_canonical_omega_sq_plus": true,
+  "u2_other_convention_flips": true,
+  "conventions": {
+    "Cl(0,3): Z_i = i*sigma_i  [CANONICAL for S^3]": {
+      "e_squared": -1.0,
+      "omega": "[[1.+0.j 0.+0.j]\n [0.+0.j 1.+0.j]]",
+      "omega_sq_is_plus_I": true
+    },
+    "Cl(3,0): Gamma_i = sigma_i": {
+      "e_squared": 1.0,
+      "omega": "[[0.+1.j 0.+0.j]\n [0.+0.j 0.+1.j]]",
+      "omega_sq_is_plus_I": false
+    }
+  },
+  "u3_table": {
+    "U^2 = +1 (self-adjoint) | c = 1": {
+      "hermitian": true,
+      "square_is_I": true,
+      "anticommutes": true
+    },
+    "U^2 = +1 (self-adjoint) | c = -1": {
+      "hermitian": true,
+      "square_is_I": true,
+      "anticommutes": true
+    },
+    "U^2 = +1 (self-adjoint) | c = i": {
+      "hermitian": false,
+      "square_is_I": false,
+      "anticommutes": true
+    },
+    "U^2 = +1 (self-adjoint) | c = -i": {
+      "hermitian": false,
+      "square_is_I": false,
+      "anticommutes": true
+    },
+    "U^2 = -1 (anti-self-adjoint) | c = 1": {
+      "hermitian": false,
+      "square_is_I": false,
+      "anticommutes": true
+    },
+    "U^2 = -1 (anti-self-adjoint) | c = -1": {
+      "hermitian": false,
+      "square_is_I": false,
+      "anticommutes": true
+    },
+    "U^2 = -1 (anti-self-adjoint) | c = i": {
+      "hermitian": true,
+      "square_is_I": true,
+      "anticommutes": true
+    },
+    "U^2 = -1 (anti-self-adjoint) | c = -i": {
+      "hermitian": true,
+      "square_is_I": true,
+      "anticommutes": true
+    }
+  },
+  "u3_gamma_exists_either_sign": true,
+  "u3_disc_mismatch_fails": true,
+  "u4_norms": {
+    "U^2 = +1 (self-adjoint)": {
+      "4": 11.0,
+      "8": 19.0,
+      "16": 35.0,
+      "32": 67.0
+    },
+    "U^2 = -1 (anti-self-adjoint)": {
+      "4": 11.0,
+      "8": 19.0,
+      "16": 35.0,
+      "32": 67.0
+    }
+  },
+  "u4_phase_independent": true,
+  "u5": {
+    "c = 1 (real)": {
+      "conj(c)/c": "(1-0j)"
+    },
+    "c = i (imaginary)": {
+      "conj(c)/c": "(-1-0j)"
+    }
+  },
+  "u5_epsilon_flips": true,
+  "verdict": "QUESTION_MIS_SCOPED__SIGN_IS_A_CHOICE_AND_NOT_LOAD_BEARING"
+}

@@ -179,6 +179,33 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **`U_ι² = ±1` RETIRED, 2026-08-10 (C56). The C45 flag was a FALSE ALARM,
+> carried for ten rounds. Every named unknown in this line is now closed.**
+>
+> Saying the null plainly: **nothing was discovered except that the worry did not
+> apply.** `γ = c·U_ι⊗s₁` is a valid grading for **either** sign —
+> `c = ±1` when `U_ι² = +1` (self-adjoint), `c = ±i` when `U_ι² = −1`
+> (**anti**-self-adjoint, and the imaginary phase compensates:
+> `γ² = i²·(−1) = +1`, `γ† = γ`). **The mismatched pairings genuinely fail**, so
+> it is not a vacuous rescue; `{γ,D}=0` holds in all eight rows because it is
+> phase-blind — shown, not hidden.
+> *Why the freedom exists:* by C55 `U_ι` maps `(j,j±½)→(j±½,j)` and `j ≠ j±½`, so
+> it is **purely off-diagonal** — no fixed blocks — and `i` moves between the two
+> cases.
+>
+> **Phase-independent:** `‖[D_M,V]‖ = 11, 19, 35, 67` — *identical* for both
+> lifts. C50/C51/C53/C54's `V ∉ 𝔅`, C52's locality, C55's L↔R swap: all untouched.
+> **Where it does matter:** `J` is antilinear, so `c̄/c` = `+1` (real) / `−1`
+> (imaginary) — **the `ε''` sign of the KO tuple flips with the choice.** That is
+> exactly the combination C48 declined to make, and the abstention now has a
+> *reason*: it depends on a choice nothing in the construction fixes.
+> **Geometry:** in the canonical `S³` convention (`Z_i = i·σ_i`, `e²=−1`,
+> `Cl(0,3)` — per `docs/clifford_convention_registry.md`) `ω = +I`, `ω² = +I`; the
+> opposite convention gives `ω² = −I`. **The sign of `ω²` is the convention** —
+> C34's point, a third time. Pinning `U_ι²` is a **Pin⁺/Pin⁻ choice**; `S³` admits
+> both and nothing here needs one. Recorded as a choice, not a fact.
+> See `experiments/20260810-c11-uiota-squared-sign/`.
+>
 > **A1 VERIFIED, 2026-08-10 (C55). After ten rounds as an inherited assumption,
 > it is DERIVED — and it independently reproduces round67's own spectrum.**
 >

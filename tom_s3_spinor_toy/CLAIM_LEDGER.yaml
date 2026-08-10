@@ -1297,6 +1297,24 @@ claims:
       - "that the spinor lift was constructed explicitly as an operator -- what is established is the eigenspace bijection, which is what A1 is used for in C50/C51/C53/C54"
       - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
 
+  - id: C56_UIOTA_SQUARED_SIGN_IS_A_CHOICE_NOT_AN_OBSTRUCTION
+    statement: "THE C45 FLAG WAS A FALSE ALARM, carried for ten rounds. C45 recorded U_iota^2 = +-1 as OPEN and 'needed for gamma^dag = gamma'; after C55 discharged A1 it was the only named unknown left in the line. Nothing was discovered here except that the worry did not apply. gamma enters only through gamma^dag = gamma, gamma^2 = +1 and {gamma,D} = 0, and only ever up to a phase. [VERIFIED-numpy, explicit mirror-block model] with gamma = c * U_iota (x) s1: for U_iota^2 = +1 (U_iota self-adjoint) c = +-1 works and c = +-i FAILS; for U_iota^2 = -1 (U_iota ANTI-self-adjoint) c = +-i works and c = +-1 FAILS. In the second case the phase does both jobs at once -- gamma^2 = i^2 * (-1) = +1, and gamma^dag = gamma because the imaginary phase compensates the anti-self-adjointness. The MISMATCHED pairings genuinely fail, so this is not a vacuous rescue; {gamma,D} = 0 holds in all eight rows because it is phase-blind, which is shown rather than hidden. WHY THE PHASE FREEDOM EXISTS: by C55, U_iota maps (j, j+-1/2) onto (j+-1/2, j) and j != j+-1/2 always, so U_iota is PURELY OFF-DIAGONAL on the mirror pairs; an operator with no fixed blocks has U^2 = +1 iff self-adjoint, and multiplying by i moves between the two cases. WHAT THE SIGN DOES NOT AFFECT: [VERIFIED-numpy] ||[D_M,V]|| = 11.0, 19.0, 35.0, 67.0 at cutoffs 4, 8, 16, 32 -- IDENTICAL for both lifts, since [D_M, cV] = c[D_M,V]. So C50/C51/C53/C54's 'V not in B' is untouched, C52's locality argument never sees a phase, and C55's L<->R swap never sees a phase. WHAT IT DOES AFFECT: J is ANTILINEAR, so J(cX)J^-1 = conj(c) J X J^-1 and conj(c)/c is +1 for real c, -1 for imaginary c -- the eps'' sign of the KO-dimension tuple FLIPS with the choice. That is precisely the combination C48 declined to make, and the abstention now has a REASON rather than only a caution: the combination depends on a choice nothing in the construction fixes. GEOMETRIC SIDE: in the project's canonical S^3 convention (Z_i = i*sigma_i, e^2 = -1, Cl(0,3), which docs/clifford_convention_registry.md marks as correctly labelled) omega = Z1 Z2 Z3 = +I and omega^2 = +I, so the FIBRE part of the lift of d(iota)|_p = -Id at a fixed point squares to +1; the opposite convention (Gamma_i = sigma_i, e^2 = +1) gives omega = iI, omega^2 = -I. So the sign of omega^2 IS the convention, not a geometric fact -- C34's point arriving a third time."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-uiota-squared-sign/decision.md"
+    depends_on: [C55_A1_VERIFIED_IOTA_FLIPS_THE_DIRAC_OPERATOR, C45_ALGEBRA_DOES_NOT_EARN_THE_DOUBLING, C43_BLOCK_SUPPLIES_THE_GRADING]
+    supersedes: "the OPEN status of U_iota^2 = +-1 flagged in C45 -- retired as non-load-bearing rather than answered"
+    convention: "S^3 Clifford convention is the canonical one from docs/clifford_convention_registry.md: Z_i = i*sigma_i, e^2 = -1, Cl(0,3). gamma axioms as in C43: gamma^dag = gamma, gamma^2 = I, {gamma, D_block} = 0. Mirror-block model from C55: (j, j+-1/2) <-> (j+-1/2, j), i.e. +-(n+3/2) paired at equal |lambda|."
+    does_not_imply:
+      - "that U_iota^2 is DETERMINED -- it is not. Pinning it globally is a Pin+ / Pin- CHOICE; S^3 is parallelizable and admits both, and this round does not make the choice. What is shown is that nothing in the chain depends on it."
+      - "that the KO-dimension tuple is settled -- it remains OPEN, now with an explicit reason (the eps'' sign depends on the unfixed phase) rather than only C48's caution"
+      - "that the fixed-point computation pins the full U_iota -- it constrains the FIBRE map at iota's two fixed points; the full operator also carries the pullback, whose global phase is exactly the Pin choice"
+      - "that the doubling verdict is revisited -- C44-C55's conclusion is unchanged and this round does not touch it"
+      - "anything about N_gen = 3 -- step 7 remains untouched by agreement"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1343,6 +1361,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "57 entries as of the U_iota^2 sign check (2026-08-10). C56 added: the C45 flag was a FALSE ALARM -- a phase absorbs either sign (c = +-1 for U^2 = +1, c = +-i for U^2 = -1), the mismatched pairings fail so the test is not vacuous, and the whole C50-C55 chain is phase-independent. The sign matters only for the KO tuple's eps''. Every named unknown in the C11 line is now either derived (A1 -> C55) or shown non-load-bearing (U_iota^2 -> C56). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 57)."
   - "56 entries as of the A1 verification (2026-08-10). C55 added: ASSUMPTION A1 is DERIVED via Peter-Weyl -- lambda(j,k) = (j+k+1)sign(k-j), the iota-swap (j,k)->(k,j) flips it identically, and the formula independently reproduces round67's spectrum and multiplicities. C45-C54 now inherit the strictly weaker ASSUMPTION A1-lift. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 56)."
   - "55 entries as of the CAVEAT O-prime test (2026-08-10). C54 added: the cancellation objection DISSOLVES, because the proof is a SPAN argument (B is a linear subspace, U_iota is outside it) and not a decomposition argument. LAST open door in the C11 line closed; ASSUMPTION A1 now explicitly named as the single load-bearing unverified input. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 55)."
   - "54 entries as of the CAVEAT O test (2026-08-10). C53 added: the A (x) A^op formulation does NOT repair orientability -- J cannot supply the U_iota, because any U_iota-carrying part makes [D, J b* J^-1] order one. CAVEAT O closed; CAVEAT O' (fine-tuned cancellation) recorded as the one open door. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 54)."
