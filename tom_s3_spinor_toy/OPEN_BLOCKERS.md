@@ -179,6 +179,29 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
 
+> **STEPS 3+4+5 RUN, 2026-08-10 (C47/C48). The doubling is UNEARNED from THREE
+> independent directions now — but the axioms do force `(α,β) = (0,0)`.**
+>
+> **C47.** The block admits exactly one minimal off-diagonal family,
+> `α(I⊗s₂) + β(D^{1/2}⊗s₁)` (the parities are forced in *opposite* directions by
+> `{γ,D}=0`), with eigenvalues `μ ± √(9/4 + β²μ² + α²)`. The 4-dim kernel matching
+> C38's Spin(4) spinor survives **only at the origin** — the `n=0` condition is
+> `α² + (9/4)β² = 0`, positive-definite. Other crossings over-produce (12, 24, 40).
+> *A tolerance bug was caught here: probing `α=1e-6` gave "ker = 4" because the
+> eigenvalue `≈α²/3 ≈ 3e-13` sat inside my own `atol=1e-9`.*
+>
+> **C48.** `β = 0` by **boundedness** (the `β` term carries the unbounded `f·D^{1/2}`
+> unless `[s₁,m]=0`), `α = 0` by **first-order**. So the isolation is a **SELECTION**,
+> not a fragility — the branch named in advance. Note the same bounded-commutator
+> axiom that was *completely blind* in C45 is *sharp* here.
+> **But `J` excludes the MAXIMAL algebra**, the opposite of C45's hope V2: `T4`'s
+> sector part is all of `M₂(C)`, whose commutant is `C·I`, so order-zero has no
+> solution; `T7`/`T6` survive. **With `J` imposed the algebra is sector-DIAGONAL and
+> cannot force the doubling in any form.** Escape W1 (a `J` that does not factor as
+> `J_M ⊗ j`) is untested and is the one real route left.
+> See `experiments/20260810-c11-step34-offdiagonal-deformation/` and
+> `experiments/20260810-c11-step5-real-structure/`.
+>
 > **STEP 1 RUN, 2026-08-10 (C45/C46). The algebra does NOT earn the doubling
 > either — but it does constrain its FORM.** C45 as worded is **REFUTED**: three
 > typed candidates are admissible and nested (`A+⊗I ⊂ twisted-diagonal ⊂ crossed
