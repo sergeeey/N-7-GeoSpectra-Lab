@@ -1,0 +1,10 @@
+{
+  "g1_commutant_dim": 2,
+  "g1_diagonal_only": true,
+  "g2_only_I_or_s3": true,
+  "g34_orbits_are_disjoint_rays": true,
+  "g34_kprime_I": "Matrix([[exp(2*I*alpha), 0], [0, sigma**2*exp(2*I*alpha)]])",
+  "g34_kprime_s3": "Matrix([[-1.0*exp(2*I*alpha), 0], [0, 1.0*sigma**2*exp(2*I*alpha)]])",
+  "g5_finds_known_trivial_equivalence": true,
+  "verdict": "KO_SPLIT_IS_REAL_NOT_GAUGE__C57_CONFIRMED_AS_FINAL"
+}

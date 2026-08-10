@@ -250,6 +250,30 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 > both and nothing here needs one. Recorded as a choice, not a fact.
 > See `experiments/20260810-c11-uiota-squared-sign/`.
 >
+> **KO TUPLE, FINALLY, 2026-08-10 (C60). The KO-2/KO-4 split is REAL, not a
+> gauge artifact — C57's characterization is now a PROOF, not an assertion.**
+>
+> Transformation law: for sector-only `V=I_M⊗v` and `J=J_M⊗(k·conj)`,
+> `k' = v k v^T` (not `v k v†` — the extra transpose is from antilinearity).
+> **G1:** any `V` preserving `D_block` must be sector-diagonal (commutant of
+> `s3` = exactly the diagonals). **G2:** requiring it to send `γ` to a
+> phase-times-itself forces `v ~ I` or `v ~ s3`, nothing else. **G3/G4, proved
+> for ALL admissible `v` at once:** `k=I`'s orbit is exactly `{phase·I}`;
+> `k=s3`'s orbit is exactly `{phase·s3}` — two **disjoint** 1-dim rays, since
+> `I`,`s3` are linearly independent. **G5 discriminator:** the same machinery
+> correctly recovers the known trivial equivalence `k=I ∼ e^{iθ}I`.
+> *Two harness bugs caught before accepting the verdict, neither touching the
+> algebra: a sympy `==` that didn't know `σ²=1`; a grid search whose tolerance
+> was tighter than its own step size (fixed by solving `α=θ/2` exactly).*
+>
+> **Consequence: nothing in `(A,H,D_block,γ)` selects KO-4 over KO-2 — this is
+> now proven, not just observed.** Residual: only sector-only automorphisms
+> checked; a fuller `V_M⊗v` search remains untested but has little room to
+> matter given C59's own uniqueness result for `V_M`.
+> **Zero consequence for whether the object is a geometry** — C49/C52 already
+> settled that. Bookkeeping on bookkeeping on a non-geometry.
+> See `experiments/20260810-c11-ko-final-gauge-or-real/`.
+>
 > **W1-LIFT RUN, 2026-08-10 (C59). `A1-lift` is a THEOREM, not an assumption.**
 >
 > `ι(ag)=g⁻¹a⁻¹` (pure associativity) means `ι` intertwines `L_a` with `R_{a⁻¹}`.

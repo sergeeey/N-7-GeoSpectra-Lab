@@ -1366,6 +1366,22 @@ claims:
       - "that the V_j* (x) V_{1/2} = V_{j+1/2} (+) V_{j-1/2} Clebsch-Gordan step is re-derived -- used as given, exactly as C55 established it"
       - "anything about N_gen = 3 -- closed by C58, untouched here"
 
+  - id: C60_KO_SPLIT_IS_REAL_NOT_GAUGE
+    statement: "REFUTES the proposed C60 ('a sector-only automorphism relates k=I and k=s3, making the KO-2/KO-4 split of C57 a gauge artifact') and thereby PROVES, rather than merely asserts, C57's characterization ('the choice between KO 2 and KO 4 is internal to J, not geometric'). Derived transformation law: for V = I_M (x) v (sector-only unitary) and J = J_M (x) (k . conj), (V J V^-1)(x (x) y) = J_M x (x) [v k v^T] conj(y), so k' = v k v^T (NOT v k v^dagger -- the extra transpose comes from J's antilinearity). [VERIFIED-numpy] G1: the commutant of s3 (D_block's sector part) among general 2x2 v is EXACTLY the 2 diagonal directions (SVD null space) -- any V preserving D_block exactly must be sector-diagonal. [VERIFIED-sympy+numpy] G2: for diagonal v=diag(v1,v2), v s1 v^dagger is proportional to s1 IFF v1=+-v2 -- generic phases fail. [VERIFIED-sympy] G3/G4, proved for ALL admissible v = diag(e^{i alpha}, sigma e^{i alpha}), sigma=+-1, AT ONCE, not spot-checked: k=I's orbit stays EXACTLY {phase*I} and k=s3's orbit stays EXACTLY {phase*s3} -- sigma cancels (sigma^2=1) from both. Since I and s3 are linearly independent 2x2 matrices, these are two DISJOINT 1-complex-dimensional rays that can never meet. [VERIFIED] G5 discriminator: the same machinery correctly recovers the KNOWN TRIVIAL equivalence k=I ~ e^{i theta} I (exact solution alpha=theta/2), confirming the search is not simply failing to find anything. TWO HARNESS BUGS CAUGHT AND FIXED BEFORE ACCEPTING THE VERDICT, neither touching the underlying algebra: (1) G3/G4 initially compared symbolic matrices containing a free sigma via sympy's == , which does not know sigma^2=1 unless told, returning False despite correct algebra -- fixed by substituting sigma=+1 and sigma=-1 explicitly and requiring BOTH to match; (2) G5 initially grid-searched 2000 points over [0,2pi] with tolerance 1e-6, far tighter than the ~pi/1000 grid spacing, missing the exact solution alpha=0.45 -- fixed by solving e^{2i alpha}=e^{i theta} directly (alpha=theta/2) instead of searching."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-c11-ko-final-gauge-or-real/decision.md"
+    depends_on: [C57_KO_TUPLE_IS_PIN_INDEPENDENT_KO_2_OR_4, C59_A1LIFT_DISCHARGED_BY_SCHUR]
+    supersedes: "C57's 'internal to J, not geometric' characterization -- unchanged in content, upgraded from assertion to proof"
+    convention: "Same as C57/C59. Sector matrices s1, s3 as in C48/C57. V = I_M (x) v acts sector-only; a more general V = V_M (x) v mixing the S3 factor is NOT searched (named residual, not assumed closed)."
+    does_not_imply:
+      - "that the full automorphism group was searched -- only sector-only V = I_M (x) v; a more general V_M (x) v remains untested, though C59's own uniqueness-up-to-phase result for V_M leaves little room for it to matter"
+      - "any consequence for whether the doubled triple is a geometry -- C49 (Poincare duality fails) and C52 (orientability fails) already settled that independent of KO-dimension; this is bookkeeping on bookkeeping on a non-geometry"
+      - "anything about N_gen = 3 -- closed at C58, untouched here"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1412,6 +1428,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "61 entries as of the KO-split gauge-or-real check (2026-08-10). C60 added: the KO-2/KO-4 split is REAL, not a gauge artifact -- proved (not merely asserted) via a sector-automorphism orbit computation. C57's characterization confirmed as final. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 61)."
   - "60 entries as of the A1-lift Schur argument (2026-08-10). C59 added: ASSUMPTION A1-lift is a THEOREM (Schur's lemma on SU(2)xSU(2)), not an assumption -- verified numerically, with a real dual-generator sign bug caught and fixed along the way. C55's chain now rests on zero named assumptions about the lift. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 60)."
   - "59 entries as of the OB1 cross-reference check (2026-08-10). C58 added: the C11 chain (C41-C57) does NOT meet any of OB1's four reopen conditions; OB1 stays PARKED; C41-C57 logged as a fifth independent null attempt via a mechanism rounds 114-117 did not try. N_gen=3 status unchanged. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 59)."
   - "58 entries as of the KO-tuple computation (2026-08-10). C57 added: the tuple is PIN-INDEPENDENT (the conj(c)/c and eta flips cancel), (eps, eps', eps'') = (-1, +1, +-1) with KO-dim 2 or 4 selected by an INTERNAL choice of k in J. C56's U5 sub-claim amended in place as WRONG. C48's OPEN status on combining the sector signs is retired. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 58)."
