@@ -1,0 +1,16 @@
+{
+  "o1_dim_commutant": 24,
+  "o1_decomposes": true,
+  "o1_escape_is_real": true,
+  "o2_identity": true,
+  "o2_norm_growth": {
+    "4": 11.0,
+    "8": 19.0,
+    "16": 35.0,
+    "32": 67.0
+  },
+  "o2_closes": true,
+  "o3_H_M_always_identity": true,
+  "o4_reachable_if_allowed": true,
+  "verdict": "CAVEAT_O_CLOSED__J_CANNOT_SUPPLY_U_IOTA"
+}
