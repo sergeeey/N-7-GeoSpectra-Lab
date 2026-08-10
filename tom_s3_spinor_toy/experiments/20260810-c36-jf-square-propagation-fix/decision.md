@@ -70,8 +70,14 @@ their original text with an explicit VOID marker.
 - No unmarked `J_F² = −1` remains: every surviving occurrence is inside a
   correction annotation quoting the old value as wrong.
 - `pdflatex -halt-on-error preprint.tex` → **exit 0**, `grep -cE "^!" preprint.log` → **0**.
-- Build artifacts removed; `preprint.pdf` untouched (untracked, dated 2026-07-18,
-  already stale before this change — **it does not reflect this fix**).
+- `preprint.pdf` **rebuilt 2026-08-10** (3 × `pdflatex`, exit 0, 0 errors,
+  0 unresolved citations, 30 pages — same count as before). Build intermediates
+  removed. Previous build preserved as `preprint_PREV_20260718.pdf.bak`.
+  **Correction to this document's first draft:** it said the July-18 PDF was
+  "already stale by 3 weeks". Only its *timestamp* was old — a `pdftotext` diff
+  of old vs new shows the sole content differences are this fix and the page
+  reflow it causes (§2.5 moves 7→8, TOC updated). The old build was
+  content-current with the `.tex`; it simply predated this change.
 - Suite: 2512 passed, 4 skipped, 0 failed.
 
 ## What this does NOT do

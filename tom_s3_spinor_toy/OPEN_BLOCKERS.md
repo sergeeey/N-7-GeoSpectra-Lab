@@ -611,8 +611,8 @@ established (`J_F²=`**`+1`**` [sign corrected 2026-08-10, C36 — this line sai
 > matched against is `+1`. **FIXED 2026-08-10** across all 11 documents
 > including `preprint.tex` (which now also states that the KO-dimension
 > *label* follows CCM rather than being independently derived — the three
-> relations are what this project verifies). Manuscript recompiles clean
-> (`pdflatex` exit 0, 0 errors). See
+> relations are what this project verifies). Manuscript **rebuilt** 2026-08-10
+> (3 × `pdflatex`, exit 0, 0 errors, 0 unresolved citations, 30 pages). See
 > `experiments/20260810-ob2-theta-ncg-axioms/decision.md` and
 > `experiments/20260810-c36-jf-square-propagation-fix/decision.md`.
 But whether the GEOMETRIC `S³×S⁶` spinor bundle itself — independent of
