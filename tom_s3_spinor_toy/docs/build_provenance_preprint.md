@@ -53,7 +53,11 @@ target.
 
 - `preprint.pdf` — current build, **untracked** (this repo does not version
   built artifacts).
-- `preprint_PREV_20260718.pdf.bak` — the pre-C36 build, kept as a one-off
-  comparison baseline. **Delete once no longer needed**: two PDFs in a root
-  directory is exactly how an "which one is authoritative?" problem starts,
-  which is the same failure family as the Cl(7,0) label and the J_F² prose.
+- `preprint_PREV_20260718.pdf.bak` — **DELETED 2026-08-10.** It was a one-off
+  comparison baseline and its job is done: the old/new `pdftotext` diff is
+  recorded in the table above, and the pre-C36 build is reconstructible from
+  commit `4e37ed8` if ever needed. Removed rather than kept, because two PDFs
+  in a root directory is how an "which one is authoritative?" problem starts —
+  the same failure family as the `Cl(7,0)` label and the `J_F²` prose. Its
+  SHA256 is preserved in the table above, so a future rebuild can still be
+  checked against it.
