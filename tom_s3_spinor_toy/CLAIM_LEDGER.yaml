@@ -1024,6 +1024,23 @@ claims:
       - "that the parity-odd term EXISTS or has been identified -- it says one is needed and is expected on SM grounds; an expectation is not a construction"
       - "anything about the S6-side factor-8 mismatch, which is C38's own open half"
 
+  - id: C40_LEMMAB_DEGRADATION_IS_COMPUTABLE_AND_LOOSENS
+    statement: "G74A's Lemma B degrades DISCRETELY and COMPUTABLY under G2-breaking, and the degradation LOOSENS the bound rather than preserving it. Lemma B is a singlet count (g74a_lichnerowicz.py:129-151): ker(D (x) S^-) is the G2-invariant subspace, so by Schur dim ker = multiplicity of the trivial G2 rep = 1 per channel. Under G2 -> H the bound becomes a count of H-singlets, i.e. a joint-kernel dimension. [VERIFIED-numpy] reusing G102's own generators (dim Der(O) = 14, dim stab(e1) = 8): g2-singlets in O = 1 vs su(3)-singlets in O = 2; g2-singlets in the 7 = 0 vs su(3)-singlets in the 7 = 1 (matching 7 = 3 + 3bar + 1, obtained as a computed kernel dimension not cited). NEGATIVE CONTROL: five random 8-element so(8) subsets give [0,0,2,0,0], not uniformly matching su(3)'s 2. CONSEQUENCE: G74A's 'does not degrade gradually' is right -- the degradation is discrete -- but discrete is not unknowable, and the number is +1 singlet. An added singlet turns dim ker <= 1 into dim ker <= 2, which is the WRONG DIRECTION for OB4: the G2-breaking both rank-4 candidates require quantifiably COSTS the uniqueness that N_gen=3 per channel rests on. OB4's dependence on external input is NOT dissolved; it is made precise."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-lemmab-quantitative/decision.md"
+    depends_on: []
+    convention: "Singlet count = dim of the joint kernel of all generators acting on the module, computed by SVD rank with tol 1e-8. g2 and su(3) are G102's own derivation_basis() and stabilizer_basis(), i.e. Der(O) and the stabilizer of e1 -- NOT independently rebuilt, so this inherits G102's octonion-table conventions."
+    does_not_imply:
+      - "that the extra singlet is OCCUPIED by a zero mode -- a singlet is a slot; whether a mode sits in it is Lemma A's (Lichnerowicz) separate, metric-dependent question"
+      - "the count for OB4's actual candidate subgroups -- both SO(4)xSO(4) and su(3)+u(1)+u(1) lie partly OUTSIDE g2, so the relevant H is the intersection (round125's non-generic 3-dim abelian u(1)^3), and that count is NOT computed here"
+      - "that OB4 is closed or that Lemma B is invalid -- Lemma B remains exactly correct under exact G2; this quantifies what breaking costs"
+      - "anything about OB4's other half, whether the structure acts globally on the compactification"
+      - "any change to Lemma A, whose 8/45 safety factor carries its own margin and is untouched"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1070,6 +1087,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "41 entries as of the Lemma B quantitative test (2026-08-10). C40 added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 41)."
   - "40 entries as of the iota parity test (2026-08-10). C39 added; the gauge/ill-posed branch of C37/OB13 is KILLED. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 40)."
   - "39 entries as of the C27 bundle-equivalence test (2026-08-10). C38 added; C27/C25/C11 consolidated into one question. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 39)."
   - "38 entries as of the consortium triple-run (2026-08-10). C37 added (t-selection parity). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 38)."
