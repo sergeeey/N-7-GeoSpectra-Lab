@@ -339,10 +339,22 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 > **metric connections with topologically non-trivial torsion** (the `t`-family)
 > and **orbifold projections** (C27's open Relaxation Map row).
 >
-> **One test needing no reply at all:** G74A Lemma B is stated to require *exact* `G₂`
-> and to "not degrade gradually" — that is a claim about *that proof*, not necessarily
-> about the fact. Is there a quantitative Lemma B with a margin under `G₂`-breaking?
-> If yes, both candidates pass and this blocker dissolves. Cheap, internal, untried.
+> **That test has now been RUN (C40), and the answer goes the WRONG WAY.** Lemma B
+> is a singlet count, so under `G₂ → H` the bound becomes an `H`-singlet count —
+> a computable joint-kernel dimension. [VERIFIED-numpy, reusing G102's own
+> generators] `g₂`-singlets in `𝕆` = 1 vs `su(3)`-singlets = 2; in the `7`,
+> 0 vs 1. G74A's "does not degrade *gradually*" is right — the degradation is
+> **discrete** — but it is **not unknowable**, and it is **+1 singlet**, which
+> turns `dim ker ≤ 1` into `dim ker ≤ 2`. So the `G₂`-breaking both rank-4
+> candidates require does not merely make Lemma B's argument inapplicable: it
+> **quantifiably costs the uniqueness** that `N_gen=3` per channel rests on.
+> **This blocker is NOT dissolved — it is made precise.**
+>
+> **Next, and now a finite computation rather than a wait:** the relevant `H` for
+> the actual candidates is `g₂ ∩ (candidate)` — round125's non-generic 3-dim
+> abelian `u(1)³`. If its singlet count is also 1, the candidates survive Lemma B
+> and the blocker genuinely narrows; if larger, they need an independent
+> exclusion argument. See `experiments/20260810-lemmab-quantitative/decision.md`.
 
 **Disposition, made explicit (2026-07-19):** this OB conflates two
 sub-branches with different correct status — splitting them out, per

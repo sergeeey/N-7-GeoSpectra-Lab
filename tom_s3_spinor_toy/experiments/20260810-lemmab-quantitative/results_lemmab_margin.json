@@ -1,0 +1,18 @@
+{
+  "dim_g2": 14,
+  "dim_su3": 8,
+  "g2_singlets_in_O": 1,
+  "su3_singlets_in_O": 2,
+  "degradation_on_O": 1,
+  "g2_singlets_in_7": 0,
+  "su3_singlets_in_7": 1,
+  "control_random_counts": [
+    0,
+    0,
+    2,
+    0,
+    0
+  ],
+  "control_passes": true,
+  "verdict": "DEGRADATION_IS_DISCRETE_AND_COMPUTABLE"
+}
