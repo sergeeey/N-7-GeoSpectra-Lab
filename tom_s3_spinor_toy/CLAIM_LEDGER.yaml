@@ -1004,7 +1004,7 @@ claims:
     does_not_imply:
       - "that C27 is resolved -- matching REPRESENTATION CONTENT is bookkeeping, not dynamics; C27 status is unchanged (REFUTED as stated)"
       - "that both t are simultaneously physically realized -- that is C11's product-ansatz fork and it is OPEN; this claim makes C11 load-bearing, it does not settle it"
-      - "anything about the S6-side mismatch, which is the SAME pattern and is NOT explained: framework A's 8-dim G2 spinor vs ker(D_S6,twisted)=1, a factor of 8 with no analogue of t on that side"
+      - "[THIS BULLET WITHDRAWN 2026-08-10 by C41, same day. It read: 'anything about the S6-side mismatch, which is the SAME pattern and is NOT explained: framework A's 8-dim G2 spinor vs ker(D_S6,twisted)=1, a factor of 8 with no analogue of t on that side'. WRONG PAIRING: the twist is S^- = 3+1, FOUR-dimensional; 8 = S^+ + S^- is the full Dirac spinor the twisted operator does not act on. Computed SU(3)-singlets: 2 in the 8, 1 in S^+, 1 in S^-. The correct comparison is 1-of-4 and it obeys the SAME rule as the S3 side. No systematic residue exists.]"
       - "that N_gen=3 is restored -- if anything it strengthens the category-error reading, under which the representation-content half and the index half of the derivation were computed in different bundles and must be re-joined"
       - "which of the two frameworks is the physically correct bookkeeping -- only that they count different objects"
 
@@ -1040,6 +1040,23 @@ claims:
       - "that OB4 is closed or that Lemma B is invalid -- Lemma B remains exactly correct under exact G2; this quantifies what breaking costs"
       - "anything about OB4's other half, whether the structure acts globally on the compactification"
       - "any change to Lemma A, whose 8/45 safety factor carries its own margin and is untouched"
+
+  - id: C41_S6_FACTOR8_WAS_A_WRONG_PAIRING
+    statement: "The 'S6-side factor 8' I reported earlier the same day does not exist -- it was a wrong pairing, and the unified rule holds on BOTH factors. G74A's own twist is S^- = T^{1,0}S6 (+) trivial = 3 (+) 1 under SU(3), i.e. FOUR-dimensional; framework A's 8 is the full Dirac spinor of Spin(6), 8 = 4 (+) 4bar = S^+ (+) S^-, a bundle the twisted operator does not act on. [VERIFIED-numpy] Building the Spin(6) spinor module from s6-harm-g0's own gammas, splitting by chirality, and lifting g10b's explicit su(3) c so(6) (bracket-homomorphism residual 0.00e+00, ASSERTED): SU(3)-singlets are 2 in the full 8, 1 in S^+, and 1 in S^-. So the correct S6 comparison is 1-of-4, not 1-of-8. UNIFIED RULE, both factors: kernel = the invariant/singlet subspace of the bundle the operator ACTUALLY uses -- S3: 2 of 4 (invariant under one SU(2) factor of Spin(4), C38); S6: 1 of 4 (SU(3)-singlet of S^-). NEGATIVE CONTROL: the larger group so(6) has 0 singlets in S^- versus su(3)'s 1, so the method measures the group and not the generator count. CONSEQUENCE: the category-error reading (M3 in C38) is substantially WEAKENED -- its force came from the claim that the frameworks count incompatible objects on BOTH factors, and that claim is withdrawn."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260810-s6-factor8/decision.md"
+    depends_on: [C38_T_KERNELS_ARE_THE_TWO_SPIN4_HALVES]
+    supersedes: "the S6-factor-8 bullet in C38's does_not_imply, withdrawn in place"
+    convention: "Spin(6) spinor module built from s6-harm-g0's hermitian Gamma_a ({G,G} = +2delta, Cl(6,0)); chirality Gamma_7 = product of the six. The spinor lift is sigma(X) = sum_{a<b} X_ab (1/4)[Gamma_a,Gamma_b] -- the exact factor matters, since a SCALED rep is not a rep, and the first version carried a stray 1/2 giving residual 5.0e-01."
+    does_not_imply:
+      - "that C27 or C11 is resolved -- nothing about the S3-side multiplicity moved; this removes a threat to the headline, it does not advance it"
+      - "that N_gen=3 is correct -- it removes one specific objection to how its two halves relate"
+      - "that dim ker(D_S6,twisted) = 1 is verified here -- that is G74A's Lemma A + Lemma B, used as given"
+      - "that the zero mode OCCUPIES the singlet slot -- the counts are for the FIBRE representations; occupancy is Lemma A's separate metric-dependent question"
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
@@ -1087,6 +1104,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "42 entries as of the S6 factor-8 test (2026-08-10). C41 added, withdrawing my own same-day factor-8 claim. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 42)."
   - "41 entries as of the Lemma B quantitative test (2026-08-10). C40 added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 41)."
   - "40 entries as of the iota parity test (2026-08-10). C39 added; the gauge/ill-posed branch of C37/OB13 is KILLED. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 40)."
   - "39 entries as of the C27 bundle-equivalence test (2026-08-10). C38 added; C27/C25/C11 consolidated into one question. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 39)."
