@@ -1,0 +1,32 @@
+{
+  "w1a_dim_commutant": 32,
+  "w1a_offdiag_carries_U_iota": true,
+  "w1b_identity_exact": true,
+  "w1b_norm_growth": {
+    "4": {
+      "norm": 11.0,
+      "max_eig": 5.5
+    },
+    "8": {
+      "norm": 19.0,
+      "max_eig": 9.5
+    },
+    "16": {
+      "norm": 35.0,
+      "max_eig": 17.5
+    },
+    "32": {
+      "norm": 67.0,
+      "max_eig": 33.5
+    }
+  },
+  "w1b_unbounded": true,
+  "w1c_commutator_bounded": true,
+  "w1e_clifford_commutant_dim": 1,
+  "w1e_commutant_is_scalars": true,
+  "w1f_T7_has_offdiagonal": false,
+  "w1f_T4_has_offdiagonal": true,
+  "w1f_discriminates": true,
+  "control_c48_reproduced": true,
+  "verdict": "W1_CLOSED__NO_J_ADMITS_A_SECTOR_MIXING_ALGEBRA"
+}
