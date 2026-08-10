@@ -61,3 +61,10 @@ Toy-модель*
 
 # --- Binary research outputs (not versioned) ---
 *.xlsx
+
+# --- Correspondence with collaborators -----------------------------------
+# THIS REPOSITORY IS PUBLIC. Letters, drafts, and any material that quotes
+# private messages live here and are never committed. Added 2026-08-10 after
+# an unsent draft reply (plus two decision.md files quoting Discord verbatim)
+# was found staged for a push to the public remote.
+correspondence/
