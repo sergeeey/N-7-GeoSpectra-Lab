@@ -99,6 +99,32 @@ tracked in any future formal spectral-flow attempt). See
 
 ---
 
+## OB13 — C25/H1c: the two searches for a `t`-selector were in a provably blind parity sector [OPENED 2026-08-10, C37]
+
+`t → 1−t` is exactly `(t−½) → −(t−½)`, so **any even function of `(t−½)` is
+identically blind** to the `t=0` vs `t=1` question. Checked [VERIFIED-sympy]:
+round111's `Scal(t) = Scal_LC − 6(2t−1)²` **EVEN**; round99's curvature-norm toy
+**EVEN**; E2's Dirac family `σ(n+3/2) + (t−½)h_H` **ODD** in the shift.
+
+**Consequence:** both curvature-based searches were structurally incapable of
+selecting. Their nulls were *necessary* and carry **no** information about
+whether a selector exists — they were never tests of H1c. Any selector must be
+**linear (odd) in the torsion**, never quadratic. Round80/E14 makes this a
+symmetry statement: `ι(g)=g⁻¹` pulls the whole family `∇^t → ∇^(1−t)` exactly, so
+`t↔1−t` is a genuine symmetry and only an odd term can break it.
+
+**Unrepresented branch:** `C25` is recorded as OPEN, which presupposes an answer
+exists. If `ι` is a **gauge** symmetry rather than merely an isometry, "which
+endpoint" is like asking which gauge representative is physical — and every
+even-parity null to date is exactly what that predicts. **Cheapest test:** does
+`ι` act trivially on all physical observables (spectrum *and* zero-mode content)?
+Trivially → close `C25` as ill-posed (a result, not a failure). Moves something →
+that something is the selector, and it is necessarily torsion-odd.
+
+See `experiments/20260810-consortium-c25-parity-of-t-selection/decision.md`.
+
+---
+
 ## OB12 — KO-dimension mapping: the sign tuple is verified, the NUMBER is not [OPENED 2026-08-10, C36 fallout]
 
 **The gap, stated precisely.** G18's finite triple has the tuple
@@ -254,6 +280,31 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 ---
 
 ## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-19, round128 + boyko-agent disposition review]
+
+> **⚠️ 2026-08-10 — THE QUESTION QUEUED FOR TOM IS STALE. Re-ground before spending the contact.**
+> The pearl standing at `next_check: at next Tom contact` was written **2026-07-05**
+> and asks *"does Tom's framework carry an independent fiber Spin(8)?"* — rounds
+> 119-128 moved that target. Gate 1 is CLOSED (two independent routes + a verified
+> `ℂ⊗8_v ≅ Σ`), so the live question is narrower: does the rank-4 structure act
+> **globally on the compactification**, and does the Dirac operator survive the
+> `G₂`-breaking both candidates require? Four worlds (two of them — a `Φ`-background,
+> and *three generations as an input rather than an output* — **not** in the original
+> pearl) are recorded **before** the reply in
+> `experiments/20260810-consortium-ob4-third-channel/predictions_before_data.md`.
+>
+> **Historical framing found (external, verified):** Witten 1981 + Atiyah–Hirzebruch
+> is not an analogy but the *same tension* — the character-valued index of the Dirac
+> operator **vanishes on any manifold with a continuous symmetry group**, i.e. the very
+> `G₂` that makes G74A Lemma B work is what obstructs chirality. Historically this was
+> resolved only by adding physical structure, and two of the four canonical escapes —
+> **metric connections with topologically non-trivial torsion** and **orbifold
+> projections** — are already present in this project under other names (the `t`-family;
+> C27's open Relaxation Map row).
+>
+> **One test needing no reply at all:** G74A Lemma B is stated to require *exact* `G₂`
+> and to "not degrade gradually" — that is a claim about *that proof*, not necessarily
+> about the fact. Is there a quantitative Lemma B with a margin under `G₂`-breaking?
+> If yes, both candidates pass and this blocker dissolves. Cheap, internal, untried.
 
 **Disposition, made explicit (2026-07-19):** this OB conflates two
 sub-branches with different correct status — splitting them out, per
