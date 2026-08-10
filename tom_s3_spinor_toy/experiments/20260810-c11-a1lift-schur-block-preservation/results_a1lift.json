@@ -1,0 +1,26 @@
+{
+  "sanity_generators_ok": true,
+  "s2_matching_pairs": {
+    "(0.0,0.5)->(0.5,0.0)": 1,
+    "(0.5,1.0)->(1.0,0.5)": 1,
+    "(1.0,0.5)->(0.5,1.0)": 1,
+    "(1.5,1.0)->(1.0,1.5)": 1,
+    "(1.0,1.0)->(1.0,1.0)": 1
+  },
+  "s2_all_unique": true,
+  "s3_mismatched_same_dim": {
+    "(1.0,0.0)->(1.0,0.0)": 0,
+    "(0.5,1.5)->(0.5,1.5)": 0,
+    "(1.0,1.0)->(1.0,1.0)": 1,
+    "(0.5,0.5)->(0.5,0.5)": 1
+  },
+  "s3_discriminates": true,
+  "s4_different_dim": {
+    "(0.5, 0.0)->(1.0, 0.5)": 0,
+    "(1.0, 1.0)->(0.5, 0.0)": 0
+  },
+  "s4_ok": true,
+  "s5_c55_pair_null_dim": 1,
+  "s5_matches_c56_freedom": true,
+  "verdict": "A1_LIFT_IS_A_THEOREM_NOT_AN_ASSUMPTION__SCHUR_FORCES_BLOCK_PRESERVATION"
+}
