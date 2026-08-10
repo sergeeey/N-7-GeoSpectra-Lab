@@ -23,8 +23,39 @@ value is **`+1`**, and the project's own code has always said so.
 `J_F` is 16 real transpositions, so for antilinear `J = J_F∘conj` the antilinear
 square equals the linear one. **Nothing anywhere computes or depends on `−1`.**
 
-**The typo never touched a computation.** Every derived result stands unchanged.
-This was a reporting error that propagated for ~7 weeks through prose only.
+**The typo never touched a computation.** This was a reporting error that
+propagated for ~7 weeks through prose only.
+
+**Downstream semantic audit [VERIFIED-grep + VERIFIED-read, added 2026-08-10
+after external review].** The first version of this document said "every derived
+result stands unchanged" on the strength of a grep for the *sign*. An external
+review correctly objected that this is weaker than the claim: a file could
+depend on `J_F`'s reality *semantically* without containing the string `−1`. So
+the audit was actually run — every code site touching `J_F`, classified by what
+it uses:
+
+| site | what it uses | sensitive to the square? |
+|---|---|---|
+| `g20_yukawa_intertwiner.py` | `[D_F,J_F]=0` | no |
+| `g22_first_order.py` | **`J_F²=I`** (gate F5) + `R_k = J_F G_k J_F` | **requires +1** |
+| `g23_chirality.py` | `{J_F,γ_F}=0` | no |
+| `g25_yukawa_texture.py` | `[D_F,J_F]=0` | no |
+| `round61_route_a/_b` | `J_F⁻¹ = J_F` | **requires +1** |
+| `tests/` (4 files) | assertions | **requires +1** |
+
+Plus: **no code anywhere branches on a KO-dimension assumption** (grep for
+conditional/assert on `KO` → empty), which was the review's specific
+hypothetical.
+
+**The audit strengthens the conclusion rather than weakening it.** `g22` — the
+first-order-condition experiment — does not merely tolerate `+1`, it *depends*
+on it: `R_k = J_F G_k J_F` is only the right-action formula when `J_F⁻¹ = J_F`.
+Had `−1` been true, a load-bearing downstream experiment would have been
+silently wrong. **Zero sites require `−1`.**
+
+Stated at the strength the evidence supports: *no computational downstream
+dependence on `−1` exists, and two independent downstream constructions require
+`+1`.*
 
 ## The second overclaim, in the same sentences
 

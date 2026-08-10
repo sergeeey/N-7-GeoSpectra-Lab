@@ -746,6 +746,11 @@ claims:
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260809-ob10-convention-correction/decision.md"
     depends_on: []
+    convention: "uniform Cl(0,9): Gamma'_a = i*Gamma_a; {e,e} = -2delta. The verdict is convention-DEPENDENT -- this is the whole point of the claim."
+    does_not_imply:
+      - "that the ZERO MODE is real -- it is not; the module is real as a product of two quaternionic factors, and restricting to ker(D) leaves one of them unopposed (C33)"
+      - "that C27s Majorana Relaxation Map row is open -- that inference was made here and is retracted by C33"
+      - "a KO-dimension number -- only the reality type of the module was computed"
     supersedes: [C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL, C31_C27_MAJORANA_BRANCH_CLOSED]
     notes: >
       [2026-08-09] Found by an EXTERNAL red-team audit, not internally. Per
@@ -784,6 +789,11 @@ claims:
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260810-majorana-vs-multiplicity2/decision.md"
     depends_on: [C27_MULTIPLICITY_2_FAIL, C32_OB10_CORRECTED_TYPE_IS_REAL]
+    convention: "uniform Cl(0,9), same as C32. B is a CHARGE CONJUGATION (anti-intertwines: B conj(Gamma) = -Gamma B), NOT a commutant J -- see docs/clifford_convention_registry.md for why these give different signs on the same generators."
+    does_not_imply:
+      - "that C27 is resolved -- the multiplicity-2 blocker is entirely unchanged, 6 modes across 3 channels"
+      - "that no reality condition of ANY kind can halve the kernel -- only the factorizing charge conjugation was tested; a non-factorizing antilinear structure on the twisted bundle is a named, untested loophole"
+      - "a result about the TWISTED bundle -- the untwisted module was used as a proxy"
     notes: >
       [2026-08-10] Deliberately k-INDEPENDENT: no explicit S6 twisted kernel
       vector exists in this project (dim ker = 1 is established
@@ -821,6 +831,11 @@ claims:
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260810-clifford-convention-repo-audit/decision.md"
     depends_on: [C32_OB10_CORRECTED_TYPE_IS_REAL]
+    convention: "reports the ASSERTED anticommutator sign per file; deliberately does not convert any of it to a bare KO-dimension number"
+    does_not_imply:
+      - "that every file in the repo is convention-clean -- the scan only sees files that ASSERT their Clifford relation (30 of 370); a construction that builds generators and never checks its own algebra is invisible to it"
+      - "that any result changed -- the label corrections are naming only"
+      - "that the label inversion is now impossible to repeat -- nothing ENFORCES the registry; a future round can still write Cl(7,0) for e^2=-1 with no gate firing"
     notes: >
       [2026-08-10] Closes the open next-check on the 2026-08-09 pearl ("repo-wide
       convention audit NOT yet run") and item (a) of activeContext's open list.
@@ -862,6 +877,12 @@ claims:
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260810-ob2-theta-ncg-axioms/decision.md"
     depends_on: [C30_OB2_MATRIX_T_Z2_EXCHANGE_PARTIAL]
+    convention: "OB2s finite toy: H=C^4, A=span{T,1-T}(x)I2, D=3(T(x)I2). Sign tuple reported as (J^2, JDJ^-1/D); no third sign exists because the triple is odd."
+    does_not_imply:
+      - "that the S3xS6 GEOMETRY admits no real structure -- this is the finite toy only; C32/C33 are a different object and are untouched"
+      - "that OB2 is resolved -- the physical action F6 remains open, unchanged"
+      - "that the axiom checks that PASSED here mean anything -- the first-order condition is VACUOUS (D lies inside A, so Omega^1 = 0)"
+      - "orientability or Poincare duality -- neither was checked"
     notes: >
       [2026-08-10] Closes C30's own next gate and item (b) of activeContext's
       open list. The answer is a NEGATIVE for the checklist field, plus two
@@ -895,6 +916,11 @@ claims:
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260810-ob2-theta-ncg-axioms/decision.md"
     depends_on: []
+    convention: "antilinear J = J_F . conj, so J^2 = J_F conj(J_F); this equals the LINEAR square J_F^2 only because J_F is real (16 transpositions). Stating the square without stating this is exactly how the -1 survived."
+    does_not_imply:
+      - "which KO-dimension the corrected tuple corresponds to -- this repo has no KO table, no CCM source file, and no internal sign-tuple-to-number derivation; that mapping is inherited from CCM and is NOT verified here"
+      - "that KO-dim 6 is wrong -- its basis (CCM, [DOCS]) is unchanged by this fix; only the claim that this project independently derived it is withdrawn"
+      - "that any derived result changed -- no computational downstream dependence on -1 exists, and two independent downstream constructions (g22, round61) require +1"
     notes: >
       [2026-08-10] Found while GROUNDING C35 -- step 0 asked "what sign tuple
       does this project already have on record?" before computing a new one,
@@ -913,9 +939,21 @@ claims:
       g26/claim.md, per docs/clifford_convention_registry.md rule 4 (store the
       TUPLE, never a bare "KO-dim N") -- written six days earlier by the
       convention audit for this exact failure mode.
-      THE TYPO NEVER TOUCHED A COMPUTATION: 4 code locations assert +I,
-      including a test literally named test_J_F_squares_to_identity, and
-      round61 DEPENDS on it (J_F^-1 = J_F). Every derived result stands.
+      THE TYPO NEVER TOUCHED A COMPUTATION. [STRENGTHENED 2026-08-10 after an
+      external review objected that a grep for the SIGN is weaker than the claim
+      "every derived result stands" -- a file can depend on J_F's reality
+      SEMANTICALLY without containing "-1". Full downstream audit then run over
+      every code site touching J_F: g20 and g25 use [D_F,J_F]=0 (insensitive);
+      g23 uses {J_F,gamma_F}=0 (insensitive); g22 uses J_F^2=I as its own gate
+      F5 AND depends on it for R_k = J_F G_k J_F; round61 (x2) depends on
+      J_F^-1 = J_F; 4 test files assert it. No code anywhere branches on a
+      KO-dimension assumption (grep for conditional/assert on KO -> empty),
+      which was the review's specific hypothetical. THE AUDIT STRENGTHENS the
+      conclusion: g22, the first-order-condition experiment, does not merely
+      tolerate +1 -- it would have been silently wrong under -1. ZERO sites
+      require -1. Stated at the strength the evidence supports: no computational
+      downstream dependence on -1 exists, and two independent downstream
+      constructions require +1.]
       TWO OB10 SENTENCES MARKED VOID rather than corrected -- OB10's
       "matching the finite algebra's own pseudo-real J_F^2=-1" fails on both
       sides (the value is +1, AND C32 showed OB10's own verdict was a
@@ -936,6 +974,51 @@ claims:
       the TUPLE, never a bare "KO-dim N"), that mapping needs a cited external
       table and is not asserted here from memory. The claim is only that the
       code says +1 and eight documents say -1.
+
+schema:
+  # Added 2026-08-10 after an external review named a machine-readable claim
+  # registry as the highest-value next step. This ledger was ALREADY
+  # machine-readable YAML; what it lacked was two STRUCTURED fields for the
+  # thing that actually kept going wrong this week -- a locally-true fact
+  # silently inheriting the status of the interpretation printed next to it.
+  #
+  # Populated for C32-C36 (this session's claims), not retrofitted across all
+  # 37 -- backfilling scope limits onto older claims from memory would be the
+  # same guessing this field exists to prevent. Add them as claims are touched.
+  required:
+    - id
+    - statement
+    - truth_status        # PROVED | SUPPORTED | CONDITIONAL | OPEN | REFUTED
+    - test_outcome        # PASS | FAIL
+    - execution_status
+    - evidence_status
+    - lifecycle_status    # ACTIVE | SUPERSEDED
+    - evidence_file
+    - depends_on
+  optional:
+    - notes
+    - caveat
+    - supersedes
+    - convention:
+        why: >
+          Which sign/Clifford/operator convention the claim is stated in.
+          Required whenever the claim's TRUTH depends on it -- reality type,
+          signature, KO-dimension, any antilinear operator. Direct consequence
+          of C34: this repo used Cl(p,q) with two opposite meanings for months,
+          and OB10 tensored across the boundary without noticing. See
+          docs/clifford_convention_registry.md rule 3.
+    - does_not_imply:
+        why: >
+          Explicit list of what the claim does NOT license. This is the field
+          the week's failures needed most. Three separate incidents had the
+          same shape -- a verified local fact sitting next to an unverified
+          interpretation, and the interpretation inheriting the "verified"
+          status by adjacency: (1) Cl(7,0) label read as a computational fact
+          when only the anticommutator was checked; (2) "0 solutions found"
+          read as "no solutions exist" when the search could not have found
+          any; (3) "KO-dim 6 relations verified" read as "KO-dim 6 verified"
+          when only the three relations were. Prose caveats did not stop any of
+          them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
   - "37 entries as of OB2 item (b) (2026-08-10). C33 (Majorana/multiplicity-2), C34 (Clifford convention audit), C35 (Theta is not a real structure), C36 (J_F^2 = +1, not -1) added. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 37)."
