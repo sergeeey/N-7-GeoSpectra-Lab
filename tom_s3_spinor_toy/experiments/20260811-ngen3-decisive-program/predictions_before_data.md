@@ -222,3 +222,20 @@ channel-redundancy/permutation question itself remains exactly as open as
 C76 left it. This round is outside the closed P1-P5 program (not a P1-P5
 outcome, does not reopen the pre-commitment), a direct continuation of
 C76's own named next step.
+
+**Post-closure follow-up, C78 (2026-08-11):** user asked to try a genuinely
+new construction (not another candidate). Rather than testing a third
+hand-picked subalgebra, `experiments/20260811-c78-exhaustive-so8-commutant-
+of-physical-D/decision.md` computed the FULL commutant of round59's real D
+within all 28 dimensions of `so(8)` at once (one SVD null-space
+computation, not per-candidate guessing). Result: `commutant_dim=8`,
+exactly `su(3)`, no larger symmetry exists at all -- an exhaustive,
+theorem-level closure of the entire "does some so(8) subalgebra distinguish
+the channels and commute with D" question, superseding C75's and C77's
+individual negative results. This directly closes `L3B_SPIN8_INTERFACE_
+SPEC.md` section 1.5's own long-standing "Dynamics" open item. The one
+remaining door -- a structurally non-product, `G2`-breaking `D` -- is
+outside what any `so(8)`-symmetry search can address and needs content
+(Part 5) this project does not have. Same as C77: outside the closed P1-P5
+program, does not reopen the pre-commitment, does not change `N_gen=3`'s
+CONDITIONAL status.

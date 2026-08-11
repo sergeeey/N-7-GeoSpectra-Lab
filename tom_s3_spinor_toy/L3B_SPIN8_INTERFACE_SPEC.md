@@ -684,6 +684,31 @@ of that base action is, not to $K$ itself. This is not resolvable without
 new input (Part 5, or an explicit choice of how $K$ might act on $S^3\times
 S^6$ jointly) and is not attempted further here.
 
+**Update, 2026-08-11 (C75/C77/C78, `tom_s3_spinor_toy/experiments/20260811-c7[578]-*/decision.md`)
+— the "Dynamics" open item above (point 2 of the "what remains completely
+open" list, and the follow-up attempt just above) is now answered
+directly and exhaustively, not merely narrowed further.** This project
+did not have a real, non-surrogate physical Dirac operator when this
+section was written (round59's twisted $D_{S^6}$, characterized in C73/
+C73b, postdates this section by three weeks) nor a verified bridge into
+its representation space (C70's $U_v$, also later). With both now
+available: C75 tested round124's $\mathfrak{su}(3)+\mathfrak u(1)+
+\mathfrak u(1)$ candidate directly against the physical $D$ — fails. C77
+tested this section's own $\mathrm{SO}(4)\times\mathrm{SO}(4)$ candidate
+(§1.5 above) the same way — fails, all 12/12 generators, large clean
+violations. **C78 then computed the full commutant of $D$ within all 28
+dimensions of $\mathfrak{so}(8)$ at once (not a third candidate, an
+exhaustive search): the commutant equals $\mathfrak{su}(3)$ exactly,
+dimension 8.** This is the answer to "does the actual physical Dirac
+operator remain consistent, once $G_2$ is broken" that this section
+correctly identified as needed and could not supply: **no — breaking
+$G_2$ to reach any larger subalgebra of $\mathfrak{so}(8)$, including
+this section's own $\mathrm{SO}(4)\times\mathrm{SO}(4)$ candidate, is
+never consistent with the physical $D$**. The route closes for the same
+reason this section's own final kill criterion already anticipated
+(non-product, $G_2$-breaking construction needed) — now confirmed
+computationally rather than left as an open requirement.
+
 ---
 
 ## 2. The precise question
