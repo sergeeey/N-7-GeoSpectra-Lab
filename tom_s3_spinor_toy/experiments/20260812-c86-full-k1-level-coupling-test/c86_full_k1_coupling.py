@@ -188,6 +188,20 @@ def build_coupling_on_full_level(k: int, triple: np.ndarray, dim_pr: int) -> np.
 # ---------------------------------------------------------------------------
 
 
+def _real_eigvals(matrix: np.ndarray, is_hermitian: bool) -> tuple[np.ndarray, float]:
+    """Use eigvalsh when the matrix is genuinely Hermitian (fast, exact real
+    output); otherwise fall back to the general eigvals solver and report
+    the max imaginary part actually found -- eigvalsh SILENTLY only reads
+    the Hermitian part of a non-Hermitian matrix and must never be trusted
+    when herm_residual is not ~0 (found and fixed in C88, after C87's own
+    k=2 run used eigvalsh incorrectly)."""
+    if is_hermitian:
+        return np.linalg.eigvalsh(matrix), 0.0
+    raw = np.linalg.eigvals(matrix)
+    max_imag = float(np.max(np.abs(raw.imag)))
+    return np.sort(raw.real), max_imag
+
+
 def run_full_level_test(d_s3_full: np.ndarray, t_generator: np.ndarray, d_s6: np.ndarray) -> dict:
     dim_orb = d_s3_full.shape[0]
     I_orb = np.eye(dim_orb, dtype=complex)
@@ -197,6 +211,8 @@ def run_full_level_test(d_s3_full: np.ndarray, t_generator: np.ndarray, d_s6: np
     herm_residual_base = float(np.max(np.abs(d_joint_base - d_joint_base.conj().T)))
     herm_residual_t_raw = float(np.max(np.abs(t_generator - t_generator.conj().T)))
     t_hermitized = (t_generator + t_generator.conj().T) / 2
+    base_is_hermitian = herm_residual_base < 1e-8
+    max_imag_seen = 0.0
 
     d_s6_evals, d_s6_evecs = np.linalg.eigh(d_s6)
     kernel_mask = np.abs(d_s6_evals) < KERNEL_TOL
@@ -209,13 +225,20 @@ def run_full_level_test(d_s3_full: np.ndarray, t_generator: np.ndarray, d_s6: np
     compressed_basis = np.kron(I_orb, nonkernel_evecs)
     d_joint_base_compressed = compressed_basis.conj().T @ d_joint_base @ compressed_basis
     t_compressed = compressed_basis.conj().T @ t_hermitized @ compressed_basis
+    # base_is_hermitian was computed from the UNCOMPRESSED d_joint_base;
+    # compression by a unitary-columns basis preserves (non-)Hermiticity.
 
-    eigval_base_compressed = float(np.min(np.abs(np.linalg.eigvalsh(d_joint_base_compressed))))
+    ev0, imag0 = _real_eigvals(d_joint_base_compressed, base_is_hermitian)
+    max_imag_seen = max(max_imag_seen, imag0)
+    eigval_base_compressed = float(np.min(np.abs(ev0)))
 
     eps_values = np.linspace(-2.0, 2.0, 161)
     min_abs_compressed = []
     for eps in eps_values:
-        ev = np.linalg.eigvalsh(d_joint_base_compressed + eps * t_compressed)
+        ev, imag_eps = _real_eigvals(
+            d_joint_base_compressed + eps * t_compressed, base_is_hermitian
+        )
+        max_imag_seen = max(max_imag_seen, imag_eps)
         min_abs_compressed.append(float(np.min(np.abs(ev))))
     min_abs_compressed = np.array(min_abs_compressed)
     compressed_crossings = [
@@ -227,7 +250,12 @@ def run_full_level_test(d_s3_full: np.ndarray, t_generator: np.ndarray, d_s6: np
     full_crossings_nonartifact = []
     for eps in eps_values:
         d_joint = d_joint_base + eps * t_hermitized
-        evals, evecs = np.linalg.eigh(d_joint)
+        if base_is_hermitian:
+            evals, evecs = np.linalg.eigh(d_joint)
+        else:
+            evals_raw, evecs = np.linalg.eig(d_joint)
+            max_imag_seen = max(max_imag_seen, float(np.max(np.abs(evals_raw.imag))))
+            evals = evals_raw.real
         near_zero_idx = np.where(np.abs(evals) < 1e-4)[0]
         for idx in near_zero_idx:
             if abs(evals[idx]) >= CROSSING_TOL:
@@ -245,6 +273,9 @@ def run_full_level_test(d_s3_full: np.ndarray, t_generator: np.ndarray, d_s6: np
         "dim_joint": d_joint_base.shape[0],
         "herm_residual_base": herm_residual_base,
         "herm_residual_t_raw_before_hermitizing": herm_residual_t_raw,
+        "base_is_hermitian": base_is_hermitian,
+        "used_general_eigensolver": not base_is_hermitian,
+        "max_imaginary_part_seen": max_imag_seen,
         "d_s6_kernel_dim": kernel_dim,
         "d_s6_nonkernel_dim": nonkernel_dim,
         "compressed_eps0_min_abs_eigval": eigval_base_compressed,

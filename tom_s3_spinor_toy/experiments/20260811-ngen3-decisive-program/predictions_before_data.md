@@ -398,3 +398,30 @@ normalization question (likely Meier's `|p>` basis is not orthonormal)
 left for a future round. Outside the closed P1-P5 program; does not
 change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
 Part 5.
+
+**Post-closure follow-up, C88 + same-day correction to C87 (2026-08-12):**
+while scoping the round after C87, a direct check found C87's own
+`d_joint_base` was genuinely non-Hermitian at k=2 (residual `2.0`, not a
+numerical artifact) -- meaning C87's own `np.linalg.eigvalsh` call was
+INVALID there (silently reads only the Hermitian part, no error raised).
+Caught before being trusted, not after. Fixed the methodology (general
+eigensolver fallback when Hermiticity fails, verified imaginary parts
+stay at machine precision throughout); the corrected re-run reproduced
+C87's exact original numbers -- reassuring, but not something that could
+have been assumed in advance. C87's own decision.md and CLAIM_LEDGER.yaml
+entry were amended in place, same day, to record this.
+
+Separately, `experiments/20260812-c88-direct-selection-rule-matrix-
+elements/decision.md` replaced the indirect eps-sweep with the direct
+computation the external reviewer's own C84B framing originally asked
+for: matrix elements `<n',m'|T|n,m>`, no S6 factor, no Hermiticity
+assumption. Finding: **`Z_i` (the S3-side coupling generator) genuinely
+has nonzero matrix elements connecting adjacent Peter-Weyl eigenspaces,
+at every k=1,2,3,4 tested.** A real coupling channel exists. This does
+NOT overturn C86/C87's own "no crossing" results (a nonzero S3-side
+matrix element is necessary but not sufficient for the full S3xS6 joint
+operator to develop a zero eigenvalue) -- but it DID require correcting
+the imprecise "no evidence of mixing" phrasing in both C86's and C87's
+own decision.md files, amended in place, same day. Outside the closed
+P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does not
+solicit Tom Lawrence's Part 5.
