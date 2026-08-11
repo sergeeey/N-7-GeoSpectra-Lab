@@ -1233,6 +1233,24 @@ new — not previously logged anywhere in this project's registries.
 > open by that paper too). Condition (iii), as originally posed, stays open
 > on that half. See
 > `experiments/20260810-ob11iii-triality-su3-invariance/decision.md`.
+>
+> **UPDATE 2026-08-10 (C67), primary-source re-confirmation of the above.**
+> The McRae citation just above was independently re-verified against the
+> full 18-page primary source (not from memory, not secondhand — fetched
+> and read this round, saved to repo as
+> `McRae_2025_Exploring_Triality_Explicitly.pdf`). Confirmed, not
+> corrected: the 2026-07-15 pearl entry was already based on a full read.
+> Precisely characterized what was left implicit before: McRae's own
+> Section 5 states the state-level operator as an **open question the
+> paper's own author does not resolve** ("no novel research has been done
+> in this work"), not a proven no-go theorem. New: McRae's own `H`
+> (Euclidean) is structurally the SAME KIND of object as this project's own
+> `T` (C62, `triality_so4xso4_invariance.py`) — both algebra-level, not
+> state-level, automorphisms. This project's own construction independently
+> reaches exactly the primary literature's current state of the art, not
+> behind it. Attempting a state-level construction here would mean
+> attempting genuinely unresolved research — deliberately not attempted.
+> See `experiments/20260810-ob11iii-mcrae-primary-source-verification/decision.md`.
 
 > **UPDATE 2026-08-10 (C61).** The cheapest possible route to proving condition
 > (ii) — bare `SU(3)`-representation theory alone forcing `X_ij=0` — is now
