@@ -334,3 +334,30 @@ is NOT completed -- n=0 (both branches, one candidate pair) is now
 covered, n>=1 remains genuinely open.** Outside the closed P1-P5 program;
 does not change `N_gen=3`'s CONDITIONAL status; does not solicit Tom
 Lawrence's Part 5.
+
+**Post-closure follow-up, C85 (2026-08-12):** an external reviewer
+proposed restructuring the Peter-Weyl tower effort into staged
+certification (C84A) -> selection-rule computation (C84B) -> coupled
+spectral flow (C84C), with C84A requiring a real certification gate
+(bracket relations, Casimir identity, negative control), not just an
+eigenvalue-match check. `experiments/20260812-c85-peter-weyl-
+representation-certification/decision.md` executed C84A: found the
+"Sire & Xu" citation attached to round67's own multiplicity formula
+since 2026-06-20 (g34) does not actually support it (read directly, no
+S3 content in that paper) -- the real source is Meier (2011,
+arXiv:1103.4097). Building Meier's explicit construction, the LITERAL
+transcription of his eq 6.3 fails hard structural invariants (Lie
+brackets, Casimir, the quadratic Dirac identity) at k>=2. Tested and
+CONFIRMED a reviewer-supplied falsifiable repair hypothesis (a likely
+transcription typo, "p-1" for "p-k") exactly for k=0..10, with a working
+negative control. Independently cross-confirmed via a SECOND, unrelated
+source (Camporesi & Higuchi 1995/96) giving the identical closed-form
+formula via a completely different method (separation of variables, no
+representation theory). **round67's own long-uncited formula is now
+correctly sourced and independently confirmed twice over, and this
+codebase has its first explicit, certified S3 Peter-Weyl representation
+substrate for k>=1.** Named next step (C84B, not attempted): compute
+selection-rule matrix elements to determine whether the coupling
+operator is diagonal in Peter-Weyl level or genuinely mixes levels.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
