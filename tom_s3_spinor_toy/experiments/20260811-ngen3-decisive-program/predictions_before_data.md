@@ -271,3 +271,18 @@ produce new information. Named two genuinely different next steps (fix the
 test design by excluding the raw kernel; scale to the full Peter-Weyl
 tower) for a future round. Outside the closed P1-P5 program; does not
 change `N_gen=3`'s CONDITIONAL status.
+
+**Post-closure follow-up, C81 (2026-08-11):** user asked to implement
+C80's own named fix directly: "Fix the test design and re-run so(4)_1
+both halves." `experiments/20260811-c81-raw-kernel-excluded-retest/
+decision.md` compressed `D_joint` onto `Delta_m (x) D_S6`'s 28-dim
+non-kernel eigenspace (spectrally gapped at `|0.8165|`, confirmed by
+direct read of `D_S6`'s full spectrum), so the deterministic raw-kernel
+mechanism cannot occur by construction. Result: ZERO crossings for
+EITHER `so(4)_1` half; the closest approach was verified by a fine
+31-point scan to be a genuine avoided crossing (level repulsion), not a
+near-miss. A full-spectrum cross-check confirms no non-artifact signal
+was hidden by the compression. This specific postulate is now a clean,
+rigorously-confirmed NULL -- the fix worked exactly as C80 predicted it
+would. Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.

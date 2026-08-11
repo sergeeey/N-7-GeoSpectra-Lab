@@ -1,0 +1,81 @@
+{
+  "d_s6_eigenvalue_spectrum_rounded": [
+    -2.0,
+    -1.8257,
+    -0.8165,
+    -0.0,
+    0.8165,
+    1.8257,
+    2.0
+  ],
+  "self_dual": {
+    "label": "self_dual",
+    "d_s6_kernel_dim": 36,
+    "d_s6_nonkernel_dim": 28,
+    "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+    "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+    "compressed_n_crossings": 0,
+    "compressed_crossings": [],
+    "compressed_global_min": 7.89178101442405e-05,
+    "compressed_global_min_at_eps": 0.4750000000000001,
+    "full_spectrum_all_crossings": [
+      {
+        "eps": 1.5,
+        "eigval": -2.8998884216145468e-15,
+        "frac_in_raw_kernel": 0.9999999999999819
+      },
+      {
+        "eps": 1.5,
+        "eigval": -3.784868252287373e-16,
+        "frac_in_raw_kernel": 0.9999999999999992
+      },
+      {
+        "eps": 1.5,
+        "eigval": -9.085356265087835e-17,
+        "frac_in_raw_kernel": 0.9999999999999934
+      },
+      {
+        "eps": 1.5,
+        "eigval": 4.30465699287394e-17,
+        "frac_in_raw_kernel": 0.9999999999999991
+      }
+    ],
+    "full_spectrum_nonartifact_crossings": []
+  },
+  "anti_self_dual": {
+    "label": "anti_self_dual",
+    "d_s6_kernel_dim": 36,
+    "d_s6_nonkernel_dim": 28,
+    "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+    "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+    "compressed_n_crossings": 0,
+    "compressed_crossings": [],
+    "compressed_global_min": 7.8917810143728e-05,
+    "compressed_global_min_at_eps": -0.47499999999999987,
+    "full_spectrum_all_crossings": [
+      {
+        "eps": -1.5,
+        "eigval": -3.132738917364916e-15,
+        "frac_in_raw_kernel": 0.999999999999982
+      },
+      {
+        "eps": -1.5,
+        "eigval": -5.715588956949387e-16,
+        "frac_in_raw_kernel": 0.9999999999999936
+      },
+      {
+        "eps": -1.5,
+        "eigval": -4.623564655066886e-16,
+        "frac_in_raw_kernel": 0.9999999999999986
+      },
+      {
+        "eps": -1.5,
+        "eigval": -1.0792419170712559e-16,
+        "frac_in_raw_kernel": 0.9999999999999996
+      }
+    ],
+    "full_spectrum_nonartifact_crossings": []
+  },
+  "no_genuine_signal_found": true,
+  "conclusion": "With D_S6's raw 36-dim kernel excluded by construction (compressed test) and independently cross-checked (full-spectrum overlap filter), NEITHER so(4)_1 half produces any crossing outside the raw-kernel artifact mechanism. This confirms C79/C80's crossings were the ENTIRE signal, fully explained by the artifact -- with it properly excluded, this specific non-product postulate is a clean, honest NULL, not merely 'explained away.'"
+}
