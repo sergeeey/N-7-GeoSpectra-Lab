@@ -399,7 +399,31 @@ claims:
       sufficiency question (no channel-mixing in the Dirac operator) was
       NOT resolved -- logged as OPEN_BLOCKERS.md OB11, not asserted
       either way.
-    notes: "Most heavily-revised decision of the gauge/Hilbert/triality closure program so far (2 full skeptic passes). STRONG reading closure logged null_results/INDEX.md Round118-STRONG-reading."
+    notes: >
+      Most heavily-revised decision of the gauge/Hilbert/triality closure
+      program so far (2 full skeptic passes). STRONG reading closure logged
+      null_results/INDEX.md Round118-STRONG-reading.
+      [ADDED 2026-08-11, C71 follow-up / pearl_registry entry same date]
+      This claim's "necessary condition VERIFIED" (charge-formula
+      channel-independence, via grep on preprint.tex) rests on a deeper
+      provenance gap not caught by either skeptic pass: K3_32/T3L_32/J3_32
+      (the SU(2)_L/SU(2)_R piece of Y feeding that charge formula) are built
+      via `kron(K_S3, I8)` with `I8 = eye(8)` (g11_block_generators.py:57) --
+      a bare PLACEHOLDER for the S6 spinor factor, not any real geometric
+      construction, predating round59's actual twisted Dirac operator
+      (2026-07-14) and G102's triality channels (2026-07-05) by a month.
+      B-L is better-grounded (proportional to a real g10-derived geometric
+      object, [VERIFIED-tool] via g15's own T8) but via a DIFFERENT,
+      never-reconciled route than round59/G102. Net effect: the
+      "channel-independence" this claim verified was never actually TESTED
+      against a genuine channel-dependent alternative -- no such alternative
+      has ever been built, since the charge-operator chain has no
+      channel-index parameter at all. Does NOT retract this claim's own
+      verdict (the grep result is real and correctly reported) -- adds a
+      caveat on how much evidentiary weight that verdict can carry for the
+      sufficiency question this claim itself already left open. See
+      pearl_registry/INDEX.md 2026-08-11 entry and
+      experiments/20260811-c71-triality-bridge-extension-and-mixing-test/decision.md.
 
   - id: C21_G74B_CHIRALITY_SIGN
     statement: "sign(ind(D+_{S6}(x)S-)) = sign(c3(S-)) = +1, and combined with C2's dim ker=1 per channel, gives the UNIQUE solution dim ker(D+)=1, dim ker(D-)=0 per channel -- purely left-handed zero modes, matching observed SM chirality"

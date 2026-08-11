@@ -1350,6 +1350,43 @@ new — not previously logged anywhere in this project's registries.
 > explicitly declined, matching round110's own prior conclusion in a
 > structurally similar situation. See
 > `experiments/20260811-c71-triality-bridge-extension-and-mixing-test/decision.md`.
+>
+> **UPDATE 2026-08-11 (C71 follow-up) — "take stock" of the S⁶-embedding
+> gap: it is deeper than round118 itself realized.** Traced round118's
+> "necessary condition VERIFIED" (charge-formula channel-independence) back
+> to its actual construction. Found: `K3_32`/`T3L_32`/`J3_32` (the
+> `SU(2)_L`/`SU(2)_R` piece of `Y`, feeding that charge formula) are built
+> via `kron(K_S3, I8)` with `I8 = eye(8)` — **a bare identity-matrix
+> placeholder for the S⁶ spinor factor** (`g11_block_generators.py:57`),
+> not any actual curved-space construction, built 2026-06-17/18, a full
+> month before round59's real twisted Dirac operator (2026-07-14) or
+> G102's triality channels (2026-07-05) existed. `B-L` is better off —
+> `[VERIFIED-tool]`, via g15's own T8 check, genuinely proportional to
+> `lift_to_spinor(complex_structure())`, a real object from g10's `SO(6)`
+> tangent-bundle construction — but via a **different, never-reconciled**
+> geometric route than round59/G102's spinor module. Net effect: the
+> charge-uniformity round118 verified was never tested against a genuine
+> channel-dependent alternative, because the charge-operator chain feeding
+> `H_matter` has no channel-index parameter at all — "uniform" because
+> channel-dependence was never a variable, not because real per-channel
+> geometry was checked and found to agree. **Does not retract round118's
+> own verdict** (correctly reported at the time) — adds a caveat neither
+> round118's two skeptic passes nor any downstream citation caught.
+> **What closing this for real would require:** rebuild `K3_32`/`T3L_32`
+> using round59's real `Σ` (transported per-channel via C70/C71's
+> `U_v/U_s/U_c`) in place of `I8`; separately reconcile g10's
+> tangent-bundle-representation `su(3)` (acting on the 6-dim `3⊕3̄`) with
+> round59/G102's spinor-module `su(3)` (acting on the 8-dim `1⊕1⊕3⊕3̄`) —
+> different natural representations of what should be the same abstract
+> algebra, never explicitly bridged; then re-derive `G18`'s KO-dimension-6
+> structure and particle-content labeling from the result (not guaranteed
+> to survive). **Scope: comparable to redoing the entire G10-G19 program
+> (13 rounds, 2026-06-17 to 2026-06-19) plus reconciling it with the
+> round59/G102/C70/C71 chain (~15 more rounds)** — not a quick follow-up.
+> Logged as a pearl (`pearl_registry/INDEX.md`, 2026-08-11) and as a caveat
+> on `CLAIM_LEDGER.yaml`'s `C20_MATTER_GENERATION_FACTORIZATION_THREE_WAY`.
+> No new construction attempted this round — investigation/provenance-audit
+> only, per Gate 1/Gate 2 (`artifact-provenance-gates.md`) discipline.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
