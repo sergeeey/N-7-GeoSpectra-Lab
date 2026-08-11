@@ -239,3 +239,18 @@ outside what any `so(8)`-symmetry search can address and needs content
 (Part 5) this project does not have. Same as C77: outside the closed P1-P5
 program, does not reopen the pre-commitment, does not change `N_gen=3`'s
 CONDITIONAL status.
+
+**Post-closure follow-up, C79 (2026-08-11):** user asked to go for the
+non-product construction -- the one door C78 explicitly left open.
+`experiments/20260811-c79-nonproduct-s3s6-coupling-attempt/decision.md`
+built an actual off-diagonal S3-S6 coupling term (round67's `Z_i` + round119's
+`so(4)_1` self-dual triple, `S3`'s `n=0` sector), the first genuine joint
+operator this project has ever constructed explicitly. Result: NULL for
+this specific postulate -- an apparent zero-crossing was found and then
+fully explained as an artifact of `D_S6`'s already-known 36-dim raw kernel,
+unrelated to any new physics. Two valuable side-findings: `U_v` (C70's
+bridge, reused since) is not unitary (found, fixed, documented), and
+C75/C77/C78's own conclusions were confirmed ROBUST to this via an explicit
+check across multiple valid intertwiner choices. Does not solicit Tom
+Lawrence's Part 5; does not change `N_gen=3`'s CONDITIONAL status; does not
+close the non-product door in general, only for this one postulate.
