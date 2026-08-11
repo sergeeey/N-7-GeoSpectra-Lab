@@ -1324,6 +1324,32 @@ new — not previously logged anywhere in this project's registries.
 > representative and use it consistently. C65's existence guarantee is now
 > fully cashed out into an explicit, verified intertwiner. See
 > `experiments/20260811-c70-independent-bridge-fingerprint-and-direct-solve/decision.md`.
+>
+> **UPDATE 2026-08-11 (C71) — bridge extended to all 3 channels; a candidate
+> "no admixture" test turned out to be void, self-caught before being
+> reported.** C70's bridge extends cleanly to `channel_s` and `channel_c`
+> (same machine-precision signature: `hom_dim=6`, explicit intertwining
+> residual `~5e-16` both). Mid-round, found that
+> `experiments/20260717-round118-matter-generation-factorization-test/`
+> (a PRIOR round, 2026-07-17) had already precisely scoped the user's
+> `H_physical=H_matter⊗H_generation` hypothesis with `H_matter` being G18's
+> **32-dim** NCG finite spectral triple, not round59's 8-dim `Σ` — and had
+> already left three specific sufficiency conditions explicitly open. A
+> proposed shortcut (compose the three channel intertwiners around the
+> `v→s→c→v` cycle and check if the "monodromy" is a clean scalar, as a
+> candidate test of condition (iii), "triality acts with no admixture") gave
+> a suspiciously clean result — `monodromy = Identity` to machine precision,
+> robust across 4 independent random seeds — but is a **pure algebraic
+> tautology**: `V_cv·V_sc·V_vs=(U_v U_c⁻¹)(U_c U_s⁻¹)(U_s U_v⁻¹)=Identity` by
+> matrix cancellation alone, for ANY three invertible matrices, regardless of
+> su(3) content. Caught by direct algebraic inspection after the numerics
+> looked clean, before being reported as evidence. **Round118's sufficiency
+> conditions (i)-(iii), at the actual 32-dim level, remain genuinely open** —
+> answering them needs an S⁶-zero-mode-to-SM-content embedding this project
+> has not built anywhere; inventing one without physical motivation was
+> explicitly declined, matching round110's own prior conclusion in a
+> structurally similar situation. See
+> `experiments/20260811-c71-triality-bridge-extension-and-mixing-test/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT

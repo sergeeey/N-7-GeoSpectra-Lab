@@ -24,6 +24,25 @@ obstruction (cross-Hom = exactly singlet block; EEE+EH fit systematically incons
 across 48 candidates × 20 restarts), and identified the non-normal-`ad(H)`/Rayleigh-quotient
 suspect. C70 is the independent method that supersedes that pipeline entirely.
 
+## Correction note, added 2026-08-11 after C71
+
+**P2's premise needs revision, discovered mid-C71.** `D_59` (round59's `build_dirac()`) is
+64-dim (`Σ⊗Σ`, an S⁶-only construction for a different prior round's purpose), not
+transportable through the 8-dim `U` as literally described; no `J`/`γ` exists for it; no
+`P_i` projectors exist anywhere. Separately,
+`experiments/20260717-round118-matter-generation-factorization-test/` (a PRIOR round,
+2026-07-17) already precisely scoped this exact hypothesis with `H_matter` = G18's
+**32-dim** NCG finite spectral triple, not round59's `Σ` — and already found: STRONG
+reading (gauged SU(4)) BLOCKED by G97; WEAK reading necessary condition (charge
+uniformity) VERIFIED; WEAK reading sufficiency (identical 32-dim block structure per
+channel; no channel-mixing in D; triality acting with no admixture on the matter factor)
+left explicitly OPEN. C71 attempted a shortcut toward the "no admixture" sufficiency
+condition using C70's fresh channel intertwiners (a "monodromy" composition) — this turned
+out to be a pure algebraic tautology (self-caught, see C71 decision.md), supplying zero
+evidence. **P2, as originally worded, is superseded by round118's own more precise
+scoping — the actual open question is round118's sufficiency conditions (i)-(iii) at the
+32-dim level, still unresolved.** P1, P3, P4, P5 are unaffected by this correction.
+
 ## Predictions (falsifiable, frozen now)
 
 | # | Prediction | If it FAILS |
