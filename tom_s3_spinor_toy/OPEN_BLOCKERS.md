@@ -1217,7 +1217,7 @@ new — not previously logged anywhere in this project's registries.
 
 ---
 
-## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) narrowed + bridge started, (iii) partly confirmed 2026-08-10]
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) hard-half intertwiner FOUND 2026-08-11 (C70), Clifford-compatibility test still not attempted; (iii) partly confirmed 2026-08-10]
 
 > **UPDATE 2026-08-10 (C65), condition (ii) hard half, step 1 of a planned
 > bridge.** A correction first: C61's own framing that `Hom_su3≠0` is
@@ -1287,6 +1287,43 @@ new — not previously logged anywhere in this project's registries.
 > fails, and the hexagon check cannot detect this. C65's abstract existence
 > guarantee remains untouched throughout. See
 > `experiments/20260811-ob11ii-ground-truth-refutes-directionality-hypothesis/decision.md`.
+>
+> **UPDATE 2026-08-11 (C70) — condition (ii) hard half CLOSED. The
+> intertwiner is found.** Superseding the C68/C69 Cartan-Weyl root-matching
+> pipeline (shown genuinely obstructed by C69, not buggy) with an
+> independent, pipeline-free method: a direct global nonlinear solve for
+> the abstract Lie-algebra isomorphism `Phi: su(3)_r59 → su(3)_g102`
+> converges to **machine precision** (`max_residual ~1e-14`-`1e-15`,
+> `|det(Phi)|=1.0000`) on **15/15** random restarts. (A first, unconstrained
+> version of this solve had collapsed to the trivial `Phi=0` sink — always
+> an exact root of the quadratic-minus-linear bracket residual; a soft
+> non-triviality constraint fixed this.) Given `Phi`, the actual target — the
+> **representation-space intertwiner `U`** — was constructed and **verified
+> explicitly**: `hom_dim=6` (matching C69's own ground-truth benchmark
+> exactly, not the previously-stuck `4`), and direct re-verification
+> `max_k ‖U·M_k·U⁻¹ − Xk_g102‖ = 3.8e-16` to `4.4e-16` across two independent
+> runs. **Gate-3 controls both pass cleanly:** a positive control
+> (`g102`-vs-`g102` self-match) reproduces the identical signature; a
+> negative control (`r59` vs 8 random anti-Hermitian matrices with no
+> genuine `su(3)` structure) fails by **13 orders of magnitude**
+> (`max_residual` `0.17`-`0.27`, `det` collapses toward `~1e-6`) — the test
+> genuinely discriminates. C69's identified non-normality suspect was
+> independently retested and **REFUTED** (`ad(H)` commutator norm `3.0e-17`,
+> eigenvector residual `1.1e-15` — round59's `ad(H)` IS normal). A
+> basis-independent bracket-structure invariant also **matches** exactly
+> (`24.0` both sides), ruling out any structure-constant scale mismatch.
+> **Plausible but not independently confirmed diagnosis** for why
+> root-matching missed this: fixed-weight CSA root extraction
+> (`combo_weight=0.37123`) explores only one point in the CSA's continuous
+> re-parametrization freedom, while the genuine isomorphism needed a
+> continuous `Inn(su(3))` component (8-real-dimensional) the discrete
+> Weyl×Out×real-mu search structurally cannot reach — this does NOT
+> contradict C69's finding, it explains it. **Non-uniqueness is expected,
+> not a defect:** `Inn(su(3))` acts transitively on the solution family, so
+> the next round (transporting `D`, `J`, `γ`, `B-L` through `U`) must fix one
+> representative and use it consistently. C65's existence guarantee is now
+> fully cashed out into an explicit, verified intertwiner. See
+> `experiments/20260811-c70-independent-bridge-fingerprint-and-direct-solve/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
