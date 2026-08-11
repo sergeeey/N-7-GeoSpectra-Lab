@@ -215,6 +215,49 @@ one.**
   updated to cite the `SO(4)×SO(4)` candidate and this gate's corrected
   verdict, `truth_status` remains `OPEN` (conditions 4-5 unresolved).
 
+## 8. C75 update (2026-08-11) — Gate 2 tested directly, for round124's candidate: NO
+
+**What changed and why this was newly possible.** Row "2" of the §3 table
+above says Gate 2 (`[D,U]=0` for the *physical* `D`) is "Undetermined... the
+source's own tooling says it cannot be checked this way at all" — because at
+the time this document was written, no round had *both* a real, non-surrogate
+physical Dirac operator *and* a verified bridge into its representation
+space at the same time. Both pieces now exist independently of this document
+(round59's `D`, extensively characterized by C73/C73b this session; C70's
+verified intertwiner `U_v` bridging round59↔round124's `so(8)` construction),
+so C75 (`experiments/20260811-c75-gate2-physical-d-vs-extended-symmetry/`)
+ran the direct test for the first time.
+
+**Candidate tested:** round124's `su(3)+u(1)+u(1)` centralizer construction
+(§2b above) — the SPECIFIC Gate-1 candidate this document already treats as
+established, not the `SO(4)×SO(4)` route (§2), which was never bridgeable to
+a physical `D` at all.
+
+**Result: NO.** `[D, Leibniz(u1_a)]` and `[D, Leibniz(u1_b)]` (the two extra
+centralizer generators, transported to `Sigma` via `U_v`) are both large and
+nonzero — Frobenius norms `5.241` and `28.187` against `|D|_F=8.000` (65.5%
+and 352% relative violation respectively), many orders of magnitude above a
+positive-control noise floor of `2.8e-17` (confirmed via the genuine su(3)
+generators, which `D` IS known to commute with). This is not a small,
+perturbative effect — it computationally confirms this document's own §3 row
+2 reasoning (citing G74A's Lemma B: "does not degrade gradually with
+perturbation size; it simply no longer applies, at any nonzero perturbation")
+for the first time with an actual number, rather than as an abstract
+argument.
+
+**Updated status for this candidate:** `GATE 2: TESTED, NO` (was
+`Undetermined`). Gates 3–6 remain open regardless — Gate 2 failing for this
+candidate does not touch them, and no other candidate has been bridged to a
+physical `D` to re-attempt Gate 2 differently.
+
+**Explicit non-transfer, stated per this project's own Gate 1 provenance
+discipline:** this result says nothing about the `SO(4)×SO(4)` candidate's
+own Gate 2 status (§2, still untested — no bridge to a physical `D` exists
+for it) or about `predictions_before_data.md`'s separate, harder
+channel-permutation/redundancy commutant test (still fully open — see C75's
+own `decision.md` for why that is a different question this round does not
+attack).
+
 ## Sources
 
 - `tom_s3_spinor_toy/L3B_SPIN8_INTERFACE_SPEC.md` §1 (SO(4)×SO(4) candidate,
@@ -222,6 +265,7 @@ one.**
   (gate table)
 - `tom_s3_spinor_toy/experiments/20260717-round118-matter-generation-factorization-test/decision.md`
 - `tom_s3_spinor_toy/experiments/20260705-g102-spin8-fiber-obstruction/decision.md` (G102)
+- `tom_s3_spinor_toy/experiments/20260811-c75-gate2-physical-d-vs-extended-symmetry/decision.md` (§8, Gate 2 tested directly)
 - `tom_s3_spinor_toy/experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
   (second independent candidate, `su(3)⊕u(1)⊕u(1)`)
 - `tom_s3_spinor_toy/OPEN_BLOCKERS.md` OB4, OB11

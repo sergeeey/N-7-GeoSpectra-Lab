@@ -111,6 +111,28 @@ deferred to C75 by the round table's own division of labor. The pre-commitment (
 weaken N_gen=3") is NOT triggered, since nothing here constitutes a failure -- it is an honest
 "not yet resolved," to be closed by C75. P1, P2, P3, P4 are unaffected.
 
+## Correction note, added 2026-08-11 after C75
+
+**C75 did NOT run the redundancy/commutant attack this section specifies below --
+it ran a narrower, adjacent test that became newly possible: `TRIALITY_
+DISTINGUISHABILITY_GATE.md`'s own Gate 2 (does the physical `D` commute with
+the extended, channel-DISTINGUISHING `su(3)+u(1)+u(1)` symmetry that document's
+Gate 1 already constructed), for round124's specific candidate.** Result: NO --
+large, unambiguous violation (65.5% and 352% relative to `|D|_F`, against a
+positive-control noise floor of `2.8e-17`), computationally confirming G74A's
+Lemma B for the first time. **This is genuinely useful (closes a previously
+"cannot be checked this way at all" gate) but is NOT the channel-PERMUTATION
+commutant test described below.** That test needs an operator that maps
+`channel_v -> channel_s -> channel_c`; no non-tautological construction of one
+exists in this codebase (C71 showed the natural composition is a pure
+matrix-algebra tautology, `I=I` for any three invertible matrices built this
+way, reconfirmed fully general in C72) and none is built in C75. **The
+redundancy question below remains entirely open**, to be either attempted by a
+future round with a genuinely new construction, or carried forward as an
+explicit open question into C76's synthesis. C75 carries no pre-commitment in
+the P1-P5 table below (it was never one of the five), so nothing here weakens
+`N_gen=3`'s status either way -- it is an honest "still open," not a failure.
+
 ## Predictions (falsifiable, frozen now)
 
 | # | Prediction | If it FAILS |
