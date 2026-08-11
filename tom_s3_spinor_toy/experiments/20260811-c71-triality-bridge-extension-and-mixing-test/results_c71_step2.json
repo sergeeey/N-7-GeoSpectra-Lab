@@ -1,0 +1,32 @@
+{
+  "phi_v_residual": 1.7763568394002505e-14,
+  "channel_v": {
+    "hom_dim": 6,
+    "det": 0.06922393424603125,
+    "residual": 5.757191532588118e-16
+  },
+  "channel_s": {
+    "hom_dim": 6,
+    "det": 0.07255128865623035,
+    "residual": 5.946838538569096e-16
+  },
+  "monodromy_overall_scalar": "(1-4.163336342344337e-17j)",
+  "monodromy_exact_identity_residual": 1.1818140275312452e-15,
+  "channel_c": {
+    "hom_dim": 6,
+    "det": 0.057848288331095205,
+    "residual": 5.253434695803221e-16
+  },
+  "unitarity_defects": {
+    "V_vs": 5.071787841721107,
+    "V_sc": 0.220917181305237,
+    "V_cv": 4.733935284589344,
+    "monodromy": 1.3685637986285426e-15
+  },
+  "monodromy_block_scalar_defects": {
+    "triplet_3": 6.179337359652282e-16,
+    "antitriplet_3bar": 1.1105613745674682e-15,
+    "singlet_1_1": 1.0778315928076987e-15
+  },
+  "monodromy_off_block_diagonal_norm": 8.483631417132111e-16
+}
