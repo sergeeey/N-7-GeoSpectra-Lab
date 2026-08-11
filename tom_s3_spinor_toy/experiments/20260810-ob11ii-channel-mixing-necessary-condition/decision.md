@@ -1,5 +1,19 @@
 # decision — OB11(ii) necessary condition: mixing is NOT excluded by bare SU(3) equivariance
 
+> **CORRECTION 2026-08-10 (same-day follow-up, `20260810-ob11ii-round59-su3-bridge`).**
+> This file's own framing that `Hom_su3(m⊗channel_i,channel_j)≠0` is "necessary, not
+> sufficient" for a genuine G2-invariant mixing term to exist is **imprecise**. Standard
+> Frobenius-reciprocity theory for homogeneous vector bundles (sections of an invariant
+> bundle over `G/H` correspond exactly to `H`-equivariant maps on the fiber) means a
+> nonzero element of this Hom space **already suffices** to build a genuine G2-invariant
+> first-order differential operator term — existence was never really in question once the
+> Hom space is nonzero. The real remaining question, sharpened in the follow-up round, is
+> whether such a term can be part of a **Hermitian, genuinely Clifford-compatible** combined
+> operator (the physical requirement, not mere G-invariance) — a materially different, harder
+> question than what this file's own "does_not_imply" section stated. Not retracted — the
+> computed result (`Hom≠0` for all pairs) stands unchanged — only the interpretation of what
+> that result leaves open is corrected here.
+
 ## Verdict
 
 `MIXING_NOT_EXCLUDED_BY_NECESSARY_CONDITION` → **C61 (strong form) REFUTED; OB11(ii) stays

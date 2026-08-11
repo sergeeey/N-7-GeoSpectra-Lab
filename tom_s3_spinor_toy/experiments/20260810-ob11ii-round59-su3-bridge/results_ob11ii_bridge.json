@@ -1,0 +1,21 @@
+{
+  "experiment": "ob11ii_round59_su3_bridge",
+  "n_su3_generators": 8,
+  "max_closure_residual": 5.551115123125783e-17,
+  "p1_su3_closes": true,
+  "C2_eigenvalues_sorted": [
+    -1.3333333333333333,
+    -1.3333333333333333,
+    -1.3333333333333333,
+    -1.3333333333333333,
+    -1.3333333333333333,
+    -1.3333333333333333,
+    0.0,
+    0.0
+  ],
+  "n_zero_eigenvalues": 2,
+  "n_nonzero_eigenvalues": 6,
+  "nonzero_spread": 0.0,
+  "p2_matches_1_1_3_3bar_pattern": true,
+  "verdict": "SAME_MODULE_TYPE_CONFIRMED_BRIDGE_VIABLE"
+}
