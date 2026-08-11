@@ -1387,6 +1387,39 @@ new — not previously logged anywhere in this project's registries.
 > on `CLAIM_LEDGER.yaml`'s `C20_MATTER_GENERATION_FACTORIZATION_THREE_WAY`.
 > No new construction attempted this round — investigation/provenance-audit
 > only, per Gate 1/Gate 2 (`artifact-provenance-gates.md`) discipline.
+>
+> **UPDATE 2026-08-11 (C72) — the su(3)-level bridge survives to the full
+> `g2`, vanishes exactly at `so(8)`; `T³=1` confirmed vacuous at every
+> equivariance level, not just su(3).** Continuing the C70-C76 queue with
+> the S⁶-embedding gap explicitly left open per user direction. Extended
+> C70/C71's channel-bridge Hom-space computation from `su(3)` (dim 8,
+> `Hom=6`) to the full `g2` (dim 14, the whole `S6=G2/SU(3)`
+> isotropy+coset algebra) and to the ambient `so(8)` (dim 28). **Monotone
+> shrinkage, all `[VERIFIED-numpy]`: `6 → 2 → 0`.** `g2=2` matches Schur's
+> lemma exactly given the already-published (pearl #33, 2026-07-15)
+> `8_v=1+7` `g2`-branching — independently reconfirmed here via
+> `g2`-Casimir eigenvalues on `channel_v` (one `~0`, seven equal `=2.0`) —
+> not a new discovery by itself. **What IS new:** an explicit, invertible
+> cross-channel `g2`-equivariant isomorphism, constructed for all three
+> channel pairs (`det` `0.013`/`0.0018`/`0.0047`, intertwining residual
+> `5.0e-16`–`7.0e-16` across all 14 generators) — pearl #33 established the
+> branching for ONE channel symbolically, never a map BETWEEN channels.
+> `so(8)=0` independently re-verifies G102's own module-docstring assertion
+> (`g102_spin8_fiber.py:19`) directly, rather than trusting the citation —
+> the textbook statement that `8_v`,`8_s`,`8_c` are inequivalent
+> `so(8)`-representations, confirmed as the structural negative control.
+> **Separately, generalized C71's own methodological finding:** re-ran the
+> "chain three intertwiners through a common reference" `T³=1` check with
+> THREE INDEPENDENT RANDOM matrices (no `su(3)`/`g2` structure at all) —
+> `monodromy − I` residual `1.156e-14`, confirming the telescoping
+> tautology is fully general, not specific to `su(3)`. **OB11(iii)'s
+> state-level question remains open** — this stays entirely at the
+> algebra-equivariance level (necessary, not sufficient, for a genuine
+> state-level operator); a non-tautological `T³=1` test needs `τ` fixed
+> INDEPENDENTLY of the intertwiners under test (e.g. via Baez's explicit
+> `S3⊂F4` construction, pearl #33's own follow-up direction) — named, not
+> attempted. Compatibility with `D,J,γ` stays explicitly deferred. See
+> `experiments/20260811-c72-state-level-triality-g2-equivariance-test/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
