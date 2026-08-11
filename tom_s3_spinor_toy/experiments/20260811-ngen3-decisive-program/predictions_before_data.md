@@ -286,3 +286,16 @@ was hidden by the compression. This specific postulate is now a clean,
 rigorously-confirmed NULL -- the fix worked exactly as C80 predicted it
 would. Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C82 (2026-08-11):** user asked to test `so(4)_2`
+directly. `experiments/20260811-c82-so4-2-raw-kernel-excluded-test/
+decision.md` applied C81's corrected test unmodified to round119's
+second octonion block (`BLOCK2=[4,5,6,7]`, never before tested with this
+methodology). Both `su(2)` halves: zero crossings, closest approach
+verified genuine avoided crossings via fine scan (magnitude ~9x larger
+than `so(4)_1`'s own, unexplained, logged as a pearl). Full-spectrum
+cross-check: all near-zero eigenvalues classified as raw-kernel
+artifacts. **Both octonion blocks of round119's `SO(4)xSO(4)` candidate
+(all 4 `su(2)` halves) are now clean, rigorously-confirmed NULLs.**
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.

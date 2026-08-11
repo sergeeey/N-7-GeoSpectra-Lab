@@ -1,0 +1,140 @@
+{
+  "su2_closure_self_dual": {
+    "[g1,g2]_vs_g3": {
+      "coeff": -2.0,
+      "residual": 0.0
+    },
+    "[g2,g3]_vs_g1": {
+      "coeff": -2.0,
+      "residual": 0.0
+    },
+    "[g3,g1]_vs_g2": {
+      "coeff": -2.0,
+      "residual": 0.0
+    }
+  },
+  "su2_closure_anti_self_dual": {
+    "[g1,g2]_vs_g3": {
+      "coeff": 2.0,
+      "residual": 0.0
+    },
+    "[g2,g3]_vs_g1": {
+      "coeff": 2.0,
+      "residual": 0.0
+    },
+    "[g3,g1]_vs_g2": {
+      "coeff": 2.0,
+      "residual": 0.0
+    }
+  },
+  "self_dual": {
+    "label": "so4_2_self_dual",
+    "d_s6_kernel_dim": 36,
+    "d_s6_nonkernel_dim": 28,
+    "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+    "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+    "compressed_n_crossings": 0,
+    "compressed_crossings": [],
+    "compressed_global_min": 0.0007418583505521097,
+    "compressed_global_min_at_eps": -0.32499999999999996,
+    "full_spectrum_all_crossings": [
+      {
+        "eps": 0.75,
+        "eigval": -5.509543298820684e-16,
+        "frac_in_raw_kernel": 0.9999999999999999
+      },
+      {
+        "eps": 0.75,
+        "eigval": -6.946330199257662e-17,
+        "frac_in_raw_kernel": 1.0000000000000002
+      },
+      {
+        "eps": 1.5,
+        "eigval": -7.202412832219669e-16,
+        "frac_in_raw_kernel": 1.0000000000000004
+      },
+      {
+        "eps": 1.5,
+        "eigval": -4.084316065610393e-16,
+        "frac_in_raw_kernel": 1.0
+      },
+      {
+        "eps": 1.5,
+        "eigval": -4.00596800549901e-16,
+        "frac_in_raw_kernel": 0.9999999999999996
+      },
+      {
+        "eps": 1.5,
+        "eigval": -1.4374824422215388e-16,
+        "frac_in_raw_kernel": 1.0000000000000002
+      },
+      {
+        "eps": 1.5,
+        "eigval": 1.4247800754177528e-17,
+        "frac_in_raw_kernel": 0.9999999999999998
+      },
+      {
+        "eps": 1.5,
+        "eigval": 7.651480516846432e-16,
+        "frac_in_raw_kernel": 1.0
+      }
+    ],
+    "full_spectrum_nonartifact_crossings": []
+  },
+  "anti_self_dual": {
+    "label": "so4_2_anti_self_dual",
+    "d_s6_kernel_dim": 36,
+    "d_s6_nonkernel_dim": 28,
+    "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+    "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+    "compressed_n_crossings": 0,
+    "compressed_crossings": [],
+    "compressed_global_min": 0.0007418583505521449,
+    "compressed_global_min_at_eps": 0.3250000000000002,
+    "full_spectrum_all_crossings": [
+      {
+        "eps": -1.5,
+        "eigval": -9.726187781192742e-16,
+        "frac_in_raw_kernel": 1.0000000000000002
+      },
+      {
+        "eps": -1.5,
+        "eigval": -4.314099698479778e-16,
+        "frac_in_raw_kernel": 1.0000000000000007
+      },
+      {
+        "eps": -1.5,
+        "eigval": -3.9531883454423536e-16,
+        "frac_in_raw_kernel": 0.9999999999999999
+      },
+      {
+        "eps": -1.5,
+        "eigval": -2.7868570238985045e-16,
+        "frac_in_raw_kernel": 1.0
+      },
+      {
+        "eps": -1.5,
+        "eigval": 3.955878579713346e-16,
+        "frac_in_raw_kernel": 0.9999999999999998
+      },
+      {
+        "eps": -1.5,
+        "eigval": 6.35208051608423e-16,
+        "frac_in_raw_kernel": 0.9999999999999997
+      },
+      {
+        "eps": -0.75,
+        "eigval": 6.276231750072338e-16,
+        "frac_in_raw_kernel": 1.0
+      },
+      {
+        "eps": -0.75,
+        "eigval": 7.019414237094994e-16,
+        "frac_in_raw_kernel": 1.0
+      }
+    ],
+    "full_spectrum_nonartifact_crossings": []
+  },
+  "no_genuine_signal_found": true,
+  "conclusion": "so(4)_2, tested with C81's corrected (raw-kernel-excluded) methodology: NEITHER half produces any crossing outside the raw-kernel artifact mechanism, matching so(4)_1's own C81 result exactly. Both octonion blocks of round119's SO(4)xSO(4) candidate are now clean, rigorously-confirmed NULLs under the corrected test."
+}
