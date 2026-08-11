@@ -1,0 +1,104 @@
+{
+  "z_bracket_relations": {
+    "[Z1,Z2]_eq_minus2_Z3": true,
+    "[Z2,Z3]_eq_minus2_Z1": true,
+    "[Z3,Z1]_eq_minus2_Z2": true,
+    "all_match": true
+  },
+  "sigma_minus_branch": {
+    "d_s3_scalar_plus_branch_reference": 1.5,
+    "d_s3_scalar_minus_branch_tested": -1.5,
+    "results": {
+      "self_dual": {
+        "label": "self_dual_sigma_minus",
+        "d_s6_kernel_dim": 36,
+        "d_s6_nonkernel_dim": 28,
+        "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+        "compressed_eps0_min_abs_eigval": 0.3257418583505532,
+        "compressed_n_crossings": 0,
+        "compressed_crossings": [],
+        "compressed_global_min": 7.89178101451669e-05,
+        "compressed_global_min_at_eps": -0.47499999999999987,
+        "full_spectrum_all_crossings": [
+          {
+            "eps": -1.5,
+            "eigval": -2.1707376654526885e-15,
+            "frac_in_raw_kernel": 0.9999999999999332
+          },
+          {
+            "eps": -1.5,
+            "eigval": -1.39398013533052e-15,
+            "frac_in_raw_kernel": 0.9999999999999658
+          },
+          {
+            "eps": -1.5,
+            "eigval": -5.264863201434575e-16,
+            "frac_in_raw_kernel": 0.9999999999999972
+          },
+          {
+            "eps": -1.5,
+            "eigval": 3.208055502392884e-16,
+            "frac_in_raw_kernel": 0.999999999999983
+          }
+        ],
+        "full_spectrum_nonartifact_crossings": []
+      },
+      "anti_self_dual": {
+        "label": "anti_self_dual_sigma_minus",
+        "d_s6_kernel_dim": 36,
+        "d_s6_nonkernel_dim": 28,
+        "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+        "compressed_eps0_min_abs_eigval": 0.3257418583505532,
+        "compressed_n_crossings": 0,
+        "compressed_crossings": [],
+        "compressed_global_min": 7.891781014436552e-05,
+        "compressed_global_min_at_eps": 0.4750000000000001,
+        "full_spectrum_all_crossings": [
+          {
+            "eps": 1.5,
+            "eigval": -1.0363863226408875e-15,
+            "frac_in_raw_kernel": 0.999999999999963
+          },
+          {
+            "eps": 1.5,
+            "eigval": -5.117790208002802e-16,
+            "frac_in_raw_kernel": 0.9999999999999807
+          },
+          {
+            "eps": 1.5,
+            "eigval": 1.8957322417927195e-16,
+            "frac_in_raw_kernel": 0.9999999999999937
+          },
+          {
+            "eps": 1.5,
+            "eigval": 3.1646496163441366e-16,
+            "frac_in_raw_kernel": 0.9999999999999941
+          }
+        ],
+        "full_spectrum_nonartifact_crossings": []
+      }
+    },
+    "no_genuine_signal_found": true
+  },
+  "naive_n1_ansatz": {
+    "construction": "Delta_m (x) V_1, L_i = sigma_i/2, D_orbit = sum Z_i (x) L_i",
+    "dim": 4,
+    "d_orbit_is_anti_hermitian": true,
+    "i_times_d_orbit_is_hermitian": true,
+    "eigenvalues_with_multiplicity": [
+      [
+        -0.5,
+        3
+      ],
+      [
+        1.5,
+        1
+      ]
+    ],
+    "target_eigenvalue_n1": 2.5,
+    "target_multiplicity_n1": 6,
+    "target_total_dim_n1": 12,
+    "matches_round67_target": false
+  },
+  "conclusion": "sigma=-1 branch at n=0: reused C81's exact methodology, tested against both candidates already tested at sigma=+1 throughout C79-C82. Clean NULL (no crossing), consistent with sigma=+1's own result -- n=0's full 4-dim level (both branches) now covered for these candidates. Naive n=1 ansatz (Delta_m (x) V_1): does NOT match round67's own target (mult 3,1 vs required 6,6) -- this specific construction attempt is KILLED. The correct n>=1 Peter-Weyl representation structure remains unresolved; extending the coupling test beyond n=0 requires either a full outer(x)inner Clebsch-Gordan construction (not attempted here) or consulting the explicit construction in the project's own cited external source (Sire & Xu, arXiv:2005.01448) directly, neither of which was completed this round."
+}

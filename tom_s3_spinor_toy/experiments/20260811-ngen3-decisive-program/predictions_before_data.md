@@ -314,3 +314,23 @@ C78's 20-dim `so(8)` complement is now tested against the physical `D`
 -- no candidate anywhere has produced a genuine crossing.** Outside the
 closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status;
 does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C84 (2026-08-12):** user asked to try the full
+Peter-Weyl tower directly ("Continue with C84 -- try the full Peter-Weyl
+tower"). `experiments/20260812-c84-sigma-minus-branch-and-n1-ansatz-null/
+decision.md` first resolved a genuine internal ambiguity by tracing
+C74/C79-C83's own WORKING CODE (not docstrings): "sigma" has always meant
+a choice between two SEPARATE scalar*I2 constructions at n=0, never a
+subspace of one physical `Delta_m`. Built and tested `sigma=-1` at n=0 as
+a real extension (clean NULL for round119's `so(4)_1` pair, mirror-
+symmetric to `sigma=+1`). Attempted `n=1` honestly: the cheapest naive
+ansatz (`Delta_m (x) V_1`, standard spin-1/2 angular momentum) was built
+and diagonalized -- it does NOT match round67's own closed-form target
+(mult 3,1 found vs 6,6 required), an explicit, numerically-verified NULL
+for this specific construction, with a Kill Analysis + Relaxation Map
+recorded for the surviving attempts (full outer(x)inner Peter-Weyl block;
+consult Sire & Xu arXiv:2005.01448 directly). **The full Peter-Weyl tower
+is NOT completed -- n=0 (both branches, one candidate pair) is now
+covered, n>=1 remains genuinely open.** Outside the closed P1-P5 program;
+does not change `N_gen=3`'s CONDITIONAL status; does not solicit Tom
+Lawrence's Part 5.
