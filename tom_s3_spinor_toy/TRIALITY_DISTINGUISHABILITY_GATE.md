@@ -293,6 +293,37 @@ relate generators of a non-physical symmetry to each other. C77's own
 `decision.md` states this precisely rather than silently abandoning the
 lead.
 
+## 10. C78 update (2026-08-11) — the search is now exhaustive: commutant of D within so(8) equals su(3), dimension 8, no larger symmetry exists
+
+**Supersedes the candidate-by-candidate framing of §8 and §9.** Rather than
+testing another hand-picked subalgebra, C78
+(`experiments/20260811-c78-exhaustive-so8-commutant-of-physical-D/decision.md`)
+computed the full commutant of the physical `D` within *all* of `so(8)`
+(28 dimensions) at once, via a single SVD null-space computation on the
+transported generators (same `U_v` bridge as §8/§9).
+
+**Result: `commutant_dim = 8`, exactly `su(3)`.** The singular-value
+spectrum has exactly 8 zeros, well-separated from the smallest nonzero
+value (`2.64`). `su(3)`'s own generators reconstruct from the found
+null-space span to machine precision (`7.7e-15`).
+
+**This is exhaustive, not one more data point.** §8 and §9 each showed one
+specific candidate fails Gate 2. This shows there is **no candidate left
+to test** — `su(3)` (8-dim) is provably the *entire* symmetry the physical
+`D` has within `so(8)`; any subalgebra larger than `su(3)` that anyone
+might propose in the future is, by this result, already known to fail,
+since it necessarily lies in the 20-dimensional complement this round
+proved does not commute with `D`.
+
+**Updated status:** Gate 2, for the entire class "some subalgebra of
+`so(8)` distinguishes the channels and is respected by the physical `D`,"
+is now **CLOSED (NO), exhaustively.** The remaining door is exactly what
+`L3B_SPIN8_INTERFACE_SPEC.md` §1.5's own final kill criterion already
+named: a structurally different, non-product, `G2`-symmetry-breaking `D`
+— outside the scope of anything an `so(8)`-symmetry search (however
+exhaustive) can address, and requiring content (Part 5) this project does
+not have.
+
 ## Sources
 
 - `tom_s3_spinor_toy/L3B_SPIN8_INTERFACE_SPEC.md` §1 (SO(4)×SO(4) candidate,
@@ -303,6 +334,7 @@ lead.
 - `tom_s3_spinor_toy/experiments/20260811-c75-gate2-physical-d-vs-extended-symmetry/decision.md` (§8, Gate 2 tested directly)
 - `tom_s3_spinor_toy/experiments/20260718-round125-so4xso4-vs-su3-centralizer-comparison/decision.md` (candidates are genuinely different, share only a 3-dim abelian core)
 - `tom_s3_spinor_toy/experiments/20260811-c77-so4xso4-gate2-and-t-bridge-scoping/decision.md` (§9, Gate 2 tested for the second candidate)
+- `tom_s3_spinor_toy/experiments/20260811-c78-exhaustive-so8-commutant-of-physical-D/decision.md` (§10, exhaustive commutant, closes the entire so(8)-symmetry candidate class)
 - `tom_s3_spinor_toy/experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
   (second independent candidate, `su(3)⊕u(1)⊕u(1)`)
 - `tom_s3_spinor_toy/OPEN_BLOCKERS.md` OB4, OB11
