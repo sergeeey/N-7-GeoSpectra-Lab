@@ -1249,6 +1249,24 @@ new — not previously logged anywhere in this project's registries.
 > matching algorithm for a real/complex boundary — a genuine, non-trivial
 > extension, not a quick fix. Parked here given the rest of the queue. See
 > `experiments/20260810-ob11ii-round59-g102-explicit-isomorphism/decision.md`.
+>
+> **UPDATE 2026-08-11 (C68), directed follow-up to an external review of the
+> above.** Dropped the real-coefficient constraint (the fix identified
+> above) — **works**: complex CSA extraction now succeeds cleanly for both
+> `su(3)` presentations, 6 genuine roots each, exact root-matching. The
+> explicit intertwiner still isn't found, but a cheap control check (each
+> side's `Hom_su3(V,V)` computed alone, no cross-matching at all — both
+> give exactly `6`, as predicted) decisively rules out the shared machinery
+> and either individual construction as the source of the remaining gap.
+> **Localized precisely: the cross-construction correspondence pipeline
+> itself** (root-matching → Cartan-generator transport → root-vector
+> rescaling) gives a uniform, wrong `Hom_su3` dimension (`4`, not `6`)
+> across all 48 candidate correspondences tried — most likely a
+> directionality error in the Cartan-transport formula, the same step
+> round128's own source comments flag as needing independent verification
+> when first written for a different pair. Genuine progress in
+> localization, not a resolution — narrower than before, not yet positive.
+> See `experiments/20260811-ob11ii-complexification-bridge-test/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
