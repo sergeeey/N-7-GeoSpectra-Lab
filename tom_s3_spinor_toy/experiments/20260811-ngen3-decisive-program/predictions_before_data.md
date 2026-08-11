@@ -361,3 +361,22 @@ selection-rule matrix elements to determine whether the coupling
 operator is diagonal in Peter-Weyl level or genuinely mixes levels.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C86 (2026-08-12):** continuing C85's own
+named next step (C84B). `experiments/20260812-c86-full-k1-level-
+coupling-test/decision.md` built level k=1's full 8-dim S3 Hilbert
+space from C85's certified substrate and confirmed it contains BOTH
+physical n=0's sigma=+1 branch (D=1.5, mult 2) AND physical n=1's
+sigma=-1 branch (D=-2.5, mult 6) simultaneously -- the first time two
+different physical n's coexist in one properly-normalized, certified
+Hilbert space anywhere in this arc. C79-C83's own coupling operator T
+was tested on this genuinely richer 512-dim joint space (S3 x S6): a
+clean NULL for both round119 `so(4)_1` candidate triples, no evidence
+of n=0<->n=1 mixing for this specific construction. This was not
+decidable by inspection -- D-bar's own eigenspaces are genuine
+(r,p)-mixed combinations, so the numerical check was necessary, not a
+formality. Named next steps: k=2 (testing n=1<->n=2), the remaining
+`so(8)` complement candidates on this joint space, or a genuinely
+different orbital-generator-based coupling ansatz (not yet built).
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
