@@ -709,6 +709,28 @@ reason this section's own final kill criterion already anticipated
 (non-product, $G_2$-breaking construction needed) — now confirmed
 computationally rather than left as an open requirement.
 
+**Update, 2026-08-11 (C79, `tom_s3_spinor_toy/experiments/20260811-c79-nonproduct-s3s6-coupling-attempt/decision.md`)
+— a genuine attempt at the non-product door itself, not another
+`so(8)`-symmetry test.** This section's own final kill criterion named
+what would be needed: a construction that is non-product AND
+$G_2$-breaking, mixing the $S^3$ frame index with the $S^6$ triality
+index at the level of the Dirac operator itself. C79 built exactly this
+(round67's $\mathrm{Cl}(0,3)$ $Z_i$ generators coupled to a genuine
+$\mathfrak{su}(2)$ triple drawn from this section's own $\mathrm{SO}(4)
+\times\mathrm{SO}(4)$ candidate, restricted to $S^3$'s $n=0$ sector) —
+the first explicit joint $S^3\times S^6$ operator this project has ever
+constructed (even the original KT-8/round67 work never built one as an
+explicit matrix, only worked with spectra abstractly). Result: an
+apparent zero-mode crossing was found, then fully explained (not merely
+dismissed) as an artifact of $D_{S^6}$'s already-known, physically
+uninteresting 36-dimensional raw kernel — a clean NULL for this specific,
+explicitly-postulated construction, not a resolution of the door. **This
+section's own conclusion stands**: a route that survives needs content
+this project does not have (Part 5) — C79 demonstrates that a genuine,
+internally-derivable *attempt* is possible and testable, without
+requiring or soliciting that content, but does not overturn the need for
+it.
+
 ---
 
 ## 2. The precise question
