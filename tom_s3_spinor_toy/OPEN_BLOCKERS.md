@@ -1267,6 +1267,26 @@ new — not previously logged anywhere in this project's registries.
 > when first written for a different pair. Genuine progress in
 > localization, not a resolution — narrower than before, not yet positive.
 > See `experiments/20260811-ob11ii-complexification-bridge-test/decision.md`.
+>
+> **UPDATE 2026-08-11 (C69) — the "directionality error" hypothesis just
+> above is REFUTED, same arc, by a ground-truth control.** The identical
+> pipeline applied to G102-vs-G102 (self-match, two independent random-seed
+> extractions) reaches the predicted `hom_dim=6` cleanly — the pipeline is
+> correct, and the round59↔G102 obstruction is **real**, now sharply
+> characterized: (a) the 4-dim cross-Hom is **exactly** the singlet↔singlet
+> block — the `3⊕3̄` sectors contribute nothing under any correspondence;
+> (b) wholesale conjugation (`3↔3̄` swap) doesn't help — still 4; (c)
+> augmenting the fit with the `[E,E⁻]→Cartan` bracket relations (missing
+> from round128's original fit, automatically consistent in self-matches)
+> exposes a systematic ~2e-3 inconsistency across all 48 candidates × 20
+> restarts — genuinely obstructed, not under-constrained. **Next
+> single-variable suspect (identified, NOT yet tested):** round59's complex
+> CSA makes `ad(H)` non-normal, and the root extraction reads roots off
+> Rayleigh quotients — exact only for normal operators; G102's side IS
+> normal, which is exactly why the self-test passes while the cross-match
+> fails, and the hexagon check cannot detect this. C65's abstract existence
+> guarantee remains untouched throughout. See
+> `experiments/20260811-ob11ii-ground-truth-refutes-directionality-hypothesis/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT

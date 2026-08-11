@@ -1495,6 +1495,23 @@ claims:
       - "that the mixing-term/Clifford-compatibility test (the actual OB11(ii) hard-half question) has been attempted -- still two steps further out (find U, then transport and test)"
       - "any change to N_gen=3's CONDITIONAL status"
 
+  - id: C69_GROUND_TRUTH_REFUTES_C68_HYPOTHESIS_OBSTRUCTION_REAL
+    statement: "OB11(ii) follow-up, same arc as C68: ground-truthed the entire correspondence pipeline on a known case (G102's su(3) matched against ITSELF via two independent random-seed CSA extractions) -- [VERIFIED-numpy] reaches hom_dim=6 with mu-residual 3.3e-16, REFUTING C68's own parting hypothesis that the failure was 'most likely a directionality error in the Cartan-transport formula.' The pipeline (root matching, Cartan transport, mu-fit) is correct; the round59-G102 obstruction is REAL and is now sharply characterized by three further checks: (P2) [VERIFIED-numpy] the 4-dim cross-Hom space is EXACTLY the singlet-to-singlet block -- all 4 basis elements act as exactly 0 on the non-singlet (3+3bar) sector; (P3) [VERIFIED-numpy] wholesale conjugation of either side (3<->3bar swap) leaves the Hom dimension at 4 -- not a chirality mismatch; (P4) [VERIFIED-numpy] augmenting the mu-fit with the [E_alpha,E_-alpha]->Cartan bracket relations (absent from round128's original fit, internally clean on each side separately at ~1e-15) yields a SYSTEMATIC ~2.0e-3 inconsistency across all 48 candidates x 20 random restarts each -- genuinely obstructed, not under-constrained or local-minimum. The identified (NOT yet tested) suspect for the next round: round59's genuinely complex CSA makes ad(H) non-normal, and the root extraction reads root values off Rayleigh quotients, exact only for normal operators -- G102's side is normal (skew-Hermitian adjoint), which is exactly why the self-test passes while the cross-match fails; the hexagon check cannot detect this (it only checks internal consistency of the same possibly-shifted values)."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260811-ob11ii-ground-truth-refutes-directionality-hypothesis/decision.md"
+    depends_on: [C68_COMPLEXIFICATION_BRIDGE_LOCALIZED_NOT_RESOLVED]
+    supersedes: "C68's 'most likely a directionality error in the Cartan-transport formula' hypothesis -- refuted by the P1 ground-truth control; C68's other content (complex-CSA fix, localization to the correspondence pipeline) stands and is further validated by this round"
+    convention: "Identical to C68 -- all diagnostics are direct invocations of C68's own committed module (ob11ii_complexification_bridge.py), no new construction introduced."
+    does_not_imply:
+      - "that the intertwiner has been found -- still open"
+      - "that the non-normality/Rayleigh-quotient suspect is confirmed -- identified as the next single-variable test, deliberately not bundled into this round per the Minimal Relaxation Rule"
+      - "that C65's abstract existence guarantee is in doubt -- what fails is every correspondence THIS construction procedure generates, a statement about the procedure's blind spot, not about abstract existence"
+      - "any change to N_gen=3's CONDITIONAL status"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1541,6 +1558,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "69 entries as of the ground-truth control round (2026-08-11). C69 added: the correspondence pipeline is validated on a known case (G102 self-match reaches hom_dim=6), REFUTING C68's own directionality-error hypothesis one round after it was proposed -- a same-arc self-correction. The round59-G102 obstruction is real and precisely characterized: cross-Hom is exactly the singlet block, conjugation doesn't help, and the E-to-Cartan-augmented fit is systematically inconsistent (~2e-3) across all candidates and restarts. Next single-variable suspect identified (ad(H) non-normality breaking Rayleigh-quotient root values on round59's side only), not yet tested. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 69)."
   - "68 entries as of the complexification bridge test (2026-08-11). C68 added: dropping the real-coefficient constraint from the Cartan-Weyl matching algorithm resolves the earlier reality-type BLOCKED-SUBSTRATE finding (complex CSA extraction now works cleanly), but the explicit intertwiner is still not found -- localized to a specific, narrower gap in the cross-construction correspondence pipeline via a control check (each side's self-Hom independently gives the predicted 6, ruling out the shared machinery and either individual construction). Directed follow-up to an external review of the prior session's own work. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 68)."
   - "67 entries as of the McRae 2025 primary-source re-confirmation (2026-08-10). C67 added: OB11(iii)'s state-level triality operator is genuinely open in the primary literature itself (McRae's own algebra-level H/T, not a proven no-go theorem) -- independently re-confirmed (not corrected) from the 2026-07-15 pearl entry, newly cross-referenced to this project's own T (C62), and formally linked into OB11's registry entry for the first time. Seventh round of the post-C11 pivot. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 67)."
   - "66 entries as of OB11(ii) hard-half step 1 (2026-08-10). C65 added: round59's real, already-proved Clifford construction (Sigma) carries the SAME abstract su(3)-module (1+1+3+3bar, Casimir exactly -4/3) as G102's triality channels -- first step of a multi-step bridge toward the actual mixing-term construction. Also corrected C61's own decision.md same day: 'necessary not sufficient' was imprecise per Frobenius reciprocity; the real remaining question is Hermiticity/Clifford-compatibility, not mere existence. Fifth round of the post-C11 pivot, continuing through all remaining open items per explicit user instruction. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 66)."
