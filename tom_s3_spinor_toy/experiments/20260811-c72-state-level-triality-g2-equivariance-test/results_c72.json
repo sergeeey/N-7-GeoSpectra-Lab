@@ -1,0 +1,73 @@
+{
+  "su3": {
+    "v_s": {
+      "hom_dim": 6,
+      "invertible_found": true,
+      "best_det": 0.010160080337181967,
+      "explicit_residual": 2.7479421620466237e-15
+    },
+    "s_c": {
+      "hom_dim": 6,
+      "invertible_found": true,
+      "best_det": 0.03287310213889858,
+      "explicit_residual": 1.1888058841768519e-15
+    },
+    "c_v": {
+      "hom_dim": 6,
+      "invertible_found": true,
+      "best_det": 0.021926206299939157,
+      "explicit_residual": 2.457583428003691e-15
+    }
+  },
+  "g2": {
+    "v_s": {
+      "hom_dim": 2,
+      "invertible_found": true,
+      "best_det": 0.012902389083939406,
+      "explicit_residual": 4.996003610813204e-16
+    },
+    "s_c": {
+      "hom_dim": 2,
+      "invertible_found": true,
+      "best_det": 0.0017966852932008838,
+      "explicit_residual": 6.967976312962194e-16
+    },
+    "c_v": {
+      "hom_dim": 2,
+      "invertible_found": true,
+      "best_det": 0.004717779934097861,
+      "explicit_residual": 6.667118051786499e-16
+    }
+  },
+  "so8_negative_control": {
+    "v_s": {
+      "hom_dim": 0,
+      "invertible_found": false,
+      "best_det": 0.0,
+      "explicit_residual": null
+    },
+    "s_c": {
+      "hom_dim": 0,
+      "invertible_found": false,
+      "best_det": 0.0,
+      "explicit_residual": null
+    },
+    "c_v": {
+      "hom_dim": 0,
+      "invertible_found": false,
+      "best_det": 0.0,
+      "explicit_residual": null
+    }
+  },
+  "g2_casimir_eigenvalues_channel_v": [
+    1.0583850680182032e-31,
+    1.9999999999999982,
+    1.9999999999999991,
+    1.9999999999999996,
+    2.0,
+    2.000000000000001,
+    2.000000000000001,
+    2.000000000000001
+  ],
+  "t3_tautology_recheck_arbitrary_blocks": 1.1564338596935671e-14
+}

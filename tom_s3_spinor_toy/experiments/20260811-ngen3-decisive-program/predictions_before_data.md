@@ -43,6 +43,22 @@ evidence. **P2, as originally worded, is superseded by round118's own more preci
 scoping — the actual open question is round118's sufficiency conditions (i)-(iii) at the
 32-dim level, still unresolved.** P1, P3, P4, P5 are unaffected by this correction.
 
+## Correction note, added 2026-08-11 after C72
+
+**P3's `T^3=1` premise needs revision, discovered while attempting it.** Building `T` by
+chaining three independently-found pairwise channel intertwiners through a common reference
+(`V_vs=U_s U_v^-1` etc., C70/C71's own bridge) makes `T^3=1` a pure algebraic telescoping
+tautology -- proven, and re-confirmed for arbitrary random invertible blocks with zero
+su(3)/g2 structure (C72). It cannot discriminate genuine triality from arbitrary invertible
+relabeling at ANY equivariance level. **What C72 actually tested instead:** the other stated
+condition, `T*rho(a)*T^-1=rho(tau(a))`, as `a` ranges over successively larger algebras --
+`su(3)` (Hom=6, established) -> `g2` (Hom=2, invertible cross-channel isomorphism newly
+constructed) -> `so(8)` (Hom=0, structural negative control, matches triality's own
+definition). A genuine, non-tautological `T^3=1` test needs `tau` fixed independently of the
+intertwiners under test (e.g. Baez's explicit `S3 subset F4`) -- not attempted. Compatibility
+with `D,J,gamma` remains explicitly deferred (S6-embedding gap, 2026-08-11). P1, P2, P4, P5
+are unaffected by this correction.
+
 ## Predictions (falsifiable, frozen now)
 
 | # | Prediction | If it FAILS |
