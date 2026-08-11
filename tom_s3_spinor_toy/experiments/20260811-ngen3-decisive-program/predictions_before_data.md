@@ -95,6 +95,22 @@ like the first three, found NOT independent (same magnitude, consistent with a k
 symmetry) -- the negative-control gap persists, now across four attempts. P1, P2, P3, P5 are
 unaffected.
 
+## Correction note, added 2026-08-11 after C74
+
+**P5 is neither PASS nor FAIL -- genuinely inconclusive, not triggering the pre-commitment
+below.** Groundwork is rigorous: Clifford sign match confirmed for round59 x round67 (a real,
+previously-unchecked risk per OB10), S3's n=0 level cited exactly, S6's kernel vector explicit
+(residual 1.665e-16). Transporting this kernel content through C70/C71's independently-verified
+`U_v`/`U_s`/`U_c` (each used once, avoiding C71's tautology trap) gives NONZERO content in all
+three channels -- but this relies on a marginal-projection heuristic explicitly flagged as NOT
+rigorously derived (the kernel is a genuinely entangled bipartite state, not a simple product).
+**"Yields three physically distinguishable sectors" is NOT established either way** -- three
+formally-distinct constructed objects are not automatically three physically distinguishable
+generations; that determination requires an observable that tells them apart, explicitly
+deferred to C75 by the round table's own division of labor. The pre-commitment ("if P5 fails,
+weaken N_gen=3") is NOT triggered, since nothing here constitutes a failure -- it is an honest
+"not yet resolved," to be closed by C75. P1, P2, P3, P4 are unaffected.
+
 ## Predictions (falsifiable, frozen now)
 
 | # | Prediction | If it FAILS |

@@ -1,0 +1,71 @@
+{
+  "clifford_sign_check": {
+    "round59_E_k_squared_is_minus_I": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "round67_Z_i_squared_is_minus_I": [
+      true,
+      true,
+      true
+    ],
+    "all_match_Cl0_convention": true
+  },
+  "s3_lowest_kk_level": {
+    "n": 0,
+    "t_levi_civita": "1/2",
+    "h_H": "3",
+    "eigenvalues_by_sigma": {
+      "1": {
+        "eigenvalue": "3/2",
+        "multiplicity": 2
+      },
+      "-1": {
+        "eigenvalue": "-3/2",
+        "multiplicity": 2
+      }
+    },
+    "total_dim_n0_level": 4
+  },
+  "s6_kernel_vector_norm": 1.0,
+  "s6_kernel_residual": 1.6653345369377348e-16,
+  "channel_transport": {
+    "bridge_results": {
+      "v": {
+        "hom_dim": 6,
+        "u_found": true,
+        "u_det": 0.06922393424603113
+      },
+      "s": {
+        "hom_dim": 6,
+        "u_found": true,
+        "u_det": 0.07255128865623038
+      },
+      "c": {
+        "hom_dim": 6,
+        "u_found": true,
+        "u_det": 0.057848288331095274
+      }
+    },
+    "transported": {
+      "v": {
+        "norm": 1.0004914415573023,
+        "nonzero": true
+      },
+      "s": {
+        "norm": 0.8947237459264623,
+        "nonzero": true
+      },
+      "c": {
+        "norm": 0.8947237459264625,
+        "nonzero": true
+      }
+    }
+  },
+  "n_channels_with_nonzero_content": 3,
+  "candidate_total_lowest_sector_dim": 12
+}
