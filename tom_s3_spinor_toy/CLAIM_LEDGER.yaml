@@ -1850,6 +1850,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C87_FULL_K2_N1_N2_JOINT_COUPLING_TEST_CLEAN_NULL
+    statement: "Extends C86's joint-level coupling test one level deeper: level k=2's own full 18-dim S3 Hilbert space was [VERIFIED-numpy] confirmed to contain BOTH physical n=1's sigma=+1 branch (D=2.5, mult 6) AND physical n=2's sigma=-1 branch (D=-3.5, mult 12) simultaneously -- a SECOND, independent adjacent-n pair (n=1<->n=2), genuinely different from C86's n=0<->n=1 pair (k=2's own space does not contain n=0 at all). C79-C83's own coupling operator T was tested on this pair via C86's exact methodology (1152-dim joint space with S6, raw-kernel-excluded): [VERIFIED-numpy] CLEAN NULL for both round119 so(4)_1 candidate triples, extending the no-inter-level-mixing pattern one level deeper. A genuine caveat noted honestly, not smoothed over: D-bar's naive Euclidean Hermiticity residual grows from 0.0 at k=1 to 2.0 at k=2 -- does not affect the gated eigenvalue/multiplicity result (guaranteed real by Meier's own algebraic quadratic identity, independently certified in C85), but flags an open question about whether Meier's |p> basis is orthonormal, left for a future round to resolve properly rather than assumed away."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c87-full-k2-level-coupling-test/decision.md"
+    depends_on: [C86_FULL_K1_N0_N1_JOINT_COUPLING_TEST_CLEAN_NULL]
+    supersedes: "no prior claim -- extends C86's n=0<->n=1 test to the independent n=1<->n=2 pair"
+    convention: "Reuses C86's build_full_level_d_s3/check_d_s3_full_matches_target/build_coupling_on_full_level/run_full_level_test directly (parametrized K=2), and C85/C79/C73's underlying machinery, all unmodified."
+    does_not_imply:
+      - "that n=0<->n=2 (a non-adjacent pair) has been tested -- would require a joint construction spanning two non-adjacent k-levels, not attempted"
+      - "that the D-bar Hermiticity/normalization caveat is resolved -- flagged as open, not fixed"
+      - "that any coupling candidate beyond round119's so(4)_1 pair has been tested on this joint space"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1896,6 +1914,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "88 entries as of the second joint-level coupling test, n=1<->n=2 (2026-08-12). C87 added, extending C86's own named next step one level deeper: level k=2's full 18-dim S3 Hilbert space confirmed to contain physical n=1's sigma=+1 and n=2's sigma=-1 branches simultaneously; C79-C83's coupling operator tested on this pair (1152-dim joint space) -- clean NULL, both round119 so(4)_1 triples, extending the no-inter-level-mixing pattern one level deeper. Honestly flagged an open caveat (D-bar's naive Hermiticity residual grows with k, 0.0 at k=1 to 2.0 at k=2 -- does not affect the gated, algebraically-certified eigenvalue result, but is an open normalization question for a future round). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 88)."
   - "87 entries as of the first n=0<->n=1 joint coupling test (2026-08-12). C86 added, continuing the external reviewer's staged plan into C84B: built level k=1's full 8-dim S3 Hilbert space from C85's certified substrate, verified it contains BOTH physical n=0's sigma=+1 branch AND n=1's sigma=-1 branch simultaneously (the first joint test of two different physical n's anywhere in this arc). Tested C79-C83's own coupling operator T on this genuinely richer 512-dim joint space -- clean NULL for both round119 so(4)_1 candidate triples, no inter-level mixing found for this specific construction. Named next steps: k=2 (n=1<->n=2), remaining so(8) complement candidates on this joint space, or a genuinely different orbital-generator-based coupling ansatz. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 87)."
   - "86 entries as of the Peter-Weyl representation-substrate certification round (2026-08-12). C85 added, following an external reviewer's C84A/B/C restructuring proposal: found and read the REAL source for round67's S3 multiplicity formula (Meier 2011, arXiv:1103.4097 -- the previously-cited 'Sire & Xu' does not contain it, a Gate-1 provenance gap). Built Meier's explicit construction, found the literal transcription fails hard structural invariants (Lie brackets, Casimir, eq 6.4) at k>=2; tested and confirmed an external reviewer's falsifiable repair hypothesis ('p-1' should be 'p-k' in eq 6.3) exactly, k=0..10, with a working negative control. Independently cross-confirmed via a SECOND, structurally unrelated source (Camporesi & Higuchi 1995/96, gr-qc/9505009 -- separation of variables, no representation theory) giving the identical closed-form eigenvalue+degeneracy formula. First explicit, certified S3 Peter-Weyl representation substrate (k>=1) anywhere in this codebase. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 86)."
   - "85 entries as of the Peter-Weyl-tower first-step round (2026-08-12). C84 added, per user direction ('try the full Peter-Weyl tower'): scoping traced C74/C79-C83's own WORKING CODE (not docstrings) and found 'sigma' has always meant a choice between two SEPARATE scalar*I2 constructions, never a subspace of one physical Delta_m -- resolving an internal ambiguity before building anything. Built and tested sigma=-1 at n=0 as a genuine extension (clean NULL, mirror-symmetric to sigma=+1, for round119's so(4)_1 pair). Attempted the harder n=1 extension honestly: built the cheapest naive ansatz (Delta_m (x) V_1), diagonalized it, and found -- numerically, not by further hand-guessing -- that it does NOT match round67's own closed-form target (mult 3,1 vs required 6,6). Explicit Kill Analysis + Relaxation Map recorded for the surviving construction attempts. The full Peter-Weyl tower is NOT completed; n=0 (both branches, one candidate pair) now covered, n>=1 remains genuinely open. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 85)."
