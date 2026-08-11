@@ -1201,6 +1201,19 @@ new — not previously logged anywhere in this project's registries.
 > it, and then testing the actual Clifford-compatibility question, is the
 > next step, not yet attempted. See
 > `experiments/20260810-ob11ii-round59-su3-bridge/decision.md`.
+>
+> **Attempted, BLOCKED-SUBSTRATE (same day, step 2):** tried to find the
+> explicit isomorphism by directly reusing round128's Cartan-Weyl matching
+> algorithm. Hit a genuine reality-type mismatch, not a bug: round59's
+> `su(3)` (via `spin_lift`) is **complex, anti-Hermitian**; G102's (via
+> `stabilizer_basis`, embedded in `so(8)`) is **real, antisymmetric** —
+> round128's algorithm assumes a shared reality type between the two sides
+> it aligns, which this pair doesn't satisfy. C65's finding (isomorphism
+> exists) is untouched; this narrows only which *algorithm* applies.
+> Needed next: either realify round59's representation or adapt the
+> matching algorithm for a real/complex boundary — a genuine, non-trivial
+> extension, not a quick fix. Parked here given the rest of the queue. See
+> `experiments/20260810-ob11ii-round59-g102-explicit-isomorphism/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
