@@ -1182,7 +1182,25 @@ new — not previously logged anywhere in this project's registries.
 
 ---
 
-## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) narrowed, (iii) partly confirmed 2026-08-10]
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) narrowed + bridge started, (iii) partly confirmed 2026-08-10]
+
+> **UPDATE 2026-08-10 (C65), condition (ii) hard half, step 1 of a planned
+> bridge.** A correction first: C61's own framing that `Hom_su3≠0` is
+> "necessary, not sufficient" for a G2-invariant mixing term was imprecise
+> — by Frobenius reciprocity for homogeneous vector bundles, a nonzero Hom
+> space already suffices for *existence* of such a term; the real remaining
+> question is whether a Hermitian, genuinely Clifford-compatible combined
+> operator can be built (a materially different, harder question). Toward
+> that: round59's real, already-PROVED Clifford construction (`Σ`, the one
+> object in this project with an actual curvature-twisted Dirac operator,
+> not an abstract stand-in) carries the **same `su(3)`-module** as the
+> triality channels — Casimir spectrum exactly `2×0, 6×(-4/3)`, matching
+> C29/C61's own channels precisely, not just qualitatively. This confirms
+> (via general representation theory) that an explicit basis-alignment
+> isomorphism between round59's presentation and G102's *exists* — finding
+> it, and then testing the actual Clifford-compatibility question, is the
+> next step, not yet attempted. See
+> `experiments/20260810-ob11ii-round59-su3-bridge/decision.md`.
 
 > **UPDATE 2026-08-10 (C62), condition (iii).** The `SU(3)` gauge/charge
 > structure is genuinely **triality-fixed** — confirmed by an INDEPENDENT
