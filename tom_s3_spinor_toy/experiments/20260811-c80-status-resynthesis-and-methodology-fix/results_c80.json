@@ -1,0 +1,69 @@
+{
+  "anti_self_dual": {
+    "label": "anti_self_dual",
+    "su2_closure": {
+      "[g1,g2]_vs_g3": {
+        "coeff": 2.0,
+        "residual": 0.0
+      },
+      "[g2,g3]_vs_g1": {
+        "coeff": 2.0,
+        "residual": 0.0
+      },
+      "[g3,g1]_vs_g2": {
+        "coeff": 2.0,
+        "residual": 0.0
+      }
+    },
+    "bridge_sanity": {
+      "u_v_det": 0.06922393424603113,
+      "intertwining_residual": 4.443059973708341e-16
+    },
+    "hermiticity_residual_raw": 2.6223945290828072,
+    "raw_kernel_dim": 36,
+    "n_crossings": 1,
+    "crossings": [
+      {
+        "eps": -1.5,
+        "min_abs_eigval": 9.5961751726212e-17,
+        "frac_in_raw_kernel": 0.9999999999999996
+      }
+    ],
+    "global_min_abs_eigval": 9.5961751726212e-17,
+    "global_min_at_eps": -1.5
+  },
+  "self_dual_reproduction": {
+    "label": "self_dual",
+    "su2_closure": {
+      "[g1,g2]_vs_g3": {
+        "coeff": -2.0,
+        "residual": 0.0
+      },
+      "[g2,g3]_vs_g1": {
+        "coeff": -2.0,
+        "residual": 0.0
+      },
+      "[g3,g1]_vs_g2": {
+        "coeff": -2.0,
+        "residual": 0.0
+      }
+    },
+    "bridge_sanity": {
+      "u_v_det": 0.06922393424603113,
+      "intertwining_residual": 4.443059973708341e-16
+    },
+    "hermiticity_residual_raw": 2.6223945290828072,
+    "raw_kernel_dim": 36,
+    "n_crossings": 1,
+    "crossings": [
+      {
+        "eps": 1.5,
+        "min_abs_eigval": 1.4169837320003175e-15,
+        "frac_in_raw_kernel": 0.9999999999999991
+      }
+    ],
+    "global_min_abs_eigval": 1.4169837320003175e-15,
+    "global_min_at_eps": 1.5
+  },
+  "conclusion": "Both halves of round119's so(4)_1 (self-dual and anti-self-dual su(2) triples) produce exactly one crossing each, at eps=+1.5 and eps=-1.5 respectively (sign-mirrored, matching their opposite structure constants), and BOTH crossings sit essentially 100% inside D_S6's already-known 36-dim raw kernel. The same artifact mechanism governs both halves -- not a fluke of one specific choice. See decision.md for the methodological consequence: this means the 'sweep eps, look for any crossing in the full space' test design cannot distinguish genuine physics from this artifact for ANY generic coupling, not just these two."
+}

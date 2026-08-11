@@ -254,3 +254,20 @@ C75/C77/C78's own conclusions were confirmed ROBUST to this via an explicit
 check across multiple valid intertwiner choices. Does not solicit Tom
 Lawrence's Part 5; does not change `N_gen=3`'s CONDITIONAL status; does not
 close the non-product door in general, only for this one postulate.
+
+**Post-closure follow-up, C80 (2026-08-11, self-directed -- user left this
+round's scope open):** completed C79's self-dual/anti-self-dual pair
+(`experiments/20260811-c80-status-resynthesis-and-methodology-fix/
+decision.md`) -- the anti-self-dual half produces the SAME artifact
+(crossing at `eps=-1.5`, sign-mirrored, `99.9999999999996%` inside `D_S6`'s
+raw kernel). This upgrades C79's single-instance finding to a generalized
+conclusion: the test design itself (sweep coupling strength, look for any
+crossing in the full space) cannot discriminate genuine physics from this
+artifact for ANY generic coupling, not a fluke of one postulate. Re-
+synthesized C76-C79 given this and recommended pausing blind non-product
+postulate testing with the current design -- not because the door is
+closed, but because testing more candidates the same way is unlikely to
+produce new information. Named two genuinely different next steps (fix the
+test design by excluding the raw kernel; scale to the full Peter-Weyl
+tower) for a future round. Outside the closed P1-P5 program; does not
+change `N_gen=3`'s CONDITIONAL status.
