@@ -380,3 +380,21 @@ formality. Named next steps: k=2 (testing n=1<->n=2), the remaining
 different orbital-generator-based coupling ansatz (not yet built).
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C87 (2026-08-12):** extended C86's own named
+next step one level deeper. `experiments/20260812-c87-full-k2-level-
+coupling-test/decision.md` built level k=2's full 18-dim S3 Hilbert
+space and confirmed it contains physical n=1's sigma=+1 branch (D=2.5,
+mult 6) and n=2's sigma=-1 branch (D=-3.5, mult 12) simultaneously --
+the n=1<->n=2 pair, genuinely different from C86's n=0<->n=1 pair.
+C79-C83's coupling operator tested on the resulting 1152-dim joint
+space: clean NULL, both round119 `so(4)_1` triples, extending the no-
+inter-level-mixing pattern one level deeper. Honestly flagged, not
+smoothed over: D-bar's naive Euclidean Hermiticity residual grows with
+k (0.0 at k=1, 2.0 at k=2) -- does not affect the gated, algebraically-
+certified eigenvalue result (C85's own bracket/Casimir/eq-6.4 battery
+guarantees real eigenvalues independent of Hermiticity), but is an open
+normalization question (likely Meier's `|p>` basis is not orthonormal)
+left for a future round. Outside the closed P1-P5 program; does not
+change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
+Part 5.
