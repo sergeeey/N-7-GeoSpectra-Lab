@@ -8,6 +8,26 @@ for both physical n's). P2/P3 CONFIRMED (no crossing, both candidates).**
 **Date:** 2026-08-12 · L0: descriptive · script:
 `c86_full_k1_coupling.py`, results: `results_c86.json`.
 
+**Methodology note, added after C87/C88 (2026-08-12, same session):**
+C87 (k=2) found `D_S3` is genuinely non-Hermitian in the naive Euclidean
+sense for k>=2, which made `np.linalg.eigvalsh` invalid there (it
+silently reads only the Hermitian part of a non-Hermitian matrix).
+`run_full_level_test` was patched to detect this (`herm_residual_base`)
+and fall back to a general eigensolver when needed. This round (k=1) was
+already exactly Hermitian (`herm_residual_base=0.0`), so the ORIGINAL
+computation here was always valid -- confirmed by re-running after the
+patch: identical results (`compressed_n_crossings=0` both triples, same
+global minima). No correction needed for C86 itself; recorded here only
+so a reader of C87/C88 understands why C86 required no re-verification.
+Separately, C88 found `Z_i` (the S3-side coupling generator) DOES have
+genuine nonzero matrix elements connecting D-bar's own adjacent-n
+eigenspaces at k=1 -- so this round's "clean NULL" should be read
+precisely as "no eigenvalue crossing in the tested joint operator,
+eps in [-2,2]", not as "no S3-side coupling channel exists" (a channel
+does exist; it does not happen to produce a crossing in this specific
+joint operator, within the tested range). See C88 for the direct
+matrix-element analysis and the precise distinction.
+
 ---
 
 ## Results
