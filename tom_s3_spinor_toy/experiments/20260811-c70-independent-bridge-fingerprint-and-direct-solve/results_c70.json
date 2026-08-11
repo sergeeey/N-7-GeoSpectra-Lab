@@ -1,0 +1,170 @@
+{
+  "test1_normality": {
+    "commutator_norm": 2.9958528781297536e-17,
+    "is_normal": true,
+    "max_eigenvector_residual": 1.1403785029930695e-15,
+    "verdict": "REFUTED (ad(H) is normal, Rayleigh quotients are exact eigenvalues)"
+  },
+  "test2_bracket_invariant": {
+    "invariant_r59": 24.0,
+    "invariant_g102": 23.999999999999996,
+    "ratio": 1.0000000000000002,
+    "verdict": "MATCH (no structure-constant scale mismatch)"
+  },
+  "test3_unconstrained_solve_note": "A first, unconstrained version (Phi parametrized identically, no norm_weight term) collapsed to the trivial sink Phi=0 on all 15/15 random restarts (max_residual ~1e-324, det(Phi)=0.0 every trial). Not reproduced here -- deterministic given the missing constraint; see decision.md for the diagnosis.",
+  "test3_constrained_solve": {
+    "trials": [
+      {
+        "trial": 0,
+        "max_residual": 5.3290705182007514e-14,
+        "det_phi": 0.9999999999999973
+      },
+      {
+        "trial": 1,
+        "max_residual": 2.6645352591003757e-14,
+        "det_phi": 0.9999999999999974
+      },
+      {
+        "trial": 2,
+        "max_residual": 7.105427357601002e-14,
+        "det_phi": 0.999999999999998
+      },
+      {
+        "trial": 3,
+        "max_residual": 3.552713678800501e-14,
+        "det_phi": 0.9999999999999976
+      },
+      {
+        "trial": 4,
+        "max_residual": 4.440892098500626e-14,
+        "det_phi": 0.9999999999999971
+      },
+      {
+        "trial": 5,
+        "max_residual": 3.552713678800501e-14,
+        "det_phi": 0.9999999999999977
+      },
+      {
+        "trial": 6,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999977
+      },
+      {
+        "trial": 7,
+        "max_residual": 5.3290705182007514e-14,
+        "det_phi": 0.9999999999999986
+      },
+      {
+        "trial": 8,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999929
+      },
+      {
+        "trial": 9,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999973
+      },
+      {
+        "trial": 10,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999977
+      },
+      {
+        "trial": 11,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999971
+      },
+      {
+        "trial": 12,
+        "max_residual": 4.440892098500626e-15,
+        "det_phi": 0.999999999999995
+      },
+      {
+        "trial": 13,
+        "max_residual": 5.6288307348495437e-14,
+        "det_phi": 0.999999999999318
+      },
+      {
+        "trial": 14,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999973
+      }
+    ],
+    "best": {
+      "max_residual": 4.440892098500626e-15,
+      "det_phi": 0.999999999999995
+    }
+  },
+  "positive_control_g102_vs_g102": {
+    "trials": [
+      {
+        "trial": 0,
+        "max_residual": 3.552713678800501e-14,
+        "det_phi": 0.9999999999999998
+      },
+      {
+        "trial": 1,
+        "max_residual": 2.6645352591003757e-14,
+        "det_phi": 0.9999999999999987
+      },
+      {
+        "trial": 2,
+        "max_residual": 1.7763568394002505e-14,
+        "det_phi": 0.9999999999999983
+      },
+      {
+        "trial": 3,
+        "max_residual": 1.5987211554602254e-13,
+        "det_phi": 0.9999999999997192
+      },
+      {
+        "trial": 4,
+        "max_residual": 4.440892098500626e-14,
+        "det_phi": 0.9999999999999986
+      }
+    ],
+    "best": {
+      "max_residual": 1.7763568394002505e-14,
+      "det_phi": 0.9999999999999983
+    }
+  },
+  "negative_control_r59_vs_noise": {
+    "trials": [
+      {
+        "trial": 0,
+        "max_residual": 0.17453110928001098,
+        "det_phi": 1.6274475579754456e-06
+      },
+      {
+        "trial": 1,
+        "max_residual": 0.1790080795368333,
+        "det_phi": 1.6274745390871355e-06
+      },
+      {
+        "trial": 2,
+        "max_residual": 0.2382433388615699,
+        "det_phi": 4.6917735951968985e-06
+      },
+      {
+        "trial": 3,
+        "max_residual": 0.2564872231370329,
+        "det_phi": 4.691185272505136e-06
+      },
+      {
+        "trial": 4,
+        "max_residual": 0.26871426381788477,
+        "det_phi": 1.6276362288403226e-06
+      }
+    ],
+    "best": {
+      "max_residual": 0.17453110928001098,
+      "det_phi": 1.6274475579754456e-06
+    }
+  },
+  "test4_representation_intertwiner": {
+    "hom_dim": 6,
+    "nonzero_intertwiner_found": true,
+    "best_det_found": 0.06922393424603122,
+    "explicit_intertwining_residual": 3.7553457920377367e-16
+  }
+}
