@@ -206,3 +206,19 @@ round: `TRIALITY_DISTINGUISHABILITY_GATE.md`'s own `SO(4)×SO(4)` transport
 matrix `T` (already constructed, genuinely non-tautological, never bridged
 into round59's `D`) — see C76's decision.md for why this is real,
 nontrivial work, not a quick follow-up.
+
+**Post-closure follow-up, C77 (2026-08-11):** user asked to pursue the `T`
+lead directly. `experiments/20260811-c77-so4xso4-gate2-and-t-bridge-scoping/
+decision.md` found the actual `T`-bridge requires infrastructure that does
+not exist (an `SO(4)×SO(4)`-equivariant `Sigma`<->`8_s`/`8_c` identification,
+plus resolving round119's own open vector-vs-spinor consistency gap) and is
+not a same-round task -- so instead extended C75's Gate 2 methodology to
+round119's `SO(4)×SO(4)` candidate directly. Result: fails Gate 2
+comprehensively, all 12/12 generators, same pattern as round124's candidate
+in C75. Both known Gate-1 candidates now fail Gate 2 -- second, independent
+confirmation of G74A's Lemma B's generality. The `T`-bridge's motivation is
+correspondingly reduced (see `TRIALITY_DISTINGUISHABILITY_GATE.md` §9). The
+channel-redundancy/permutation question itself remains exactly as open as
+C76 left it. This round is outside the closed P1-P5 program (not a P1-P5
+outcome, does not reopen the pre-commitment), a direct continuation of
+C76's own named next step.
