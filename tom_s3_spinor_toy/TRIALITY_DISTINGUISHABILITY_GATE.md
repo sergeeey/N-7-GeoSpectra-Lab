@@ -324,6 +324,41 @@ named: a structurally different, non-product, `G2`-symmetry-breaking `D`
 exhaustive) can address, and requiring content (Part 5) this project does
 not have.
 
+## 11. C83 update (2026-08-11) — refines §9's own record; the full non-product coupling search across the entire complement is now complete
+
+**Refines, does not contradict, §9's own `SO(4)×SO(4)` record.** While
+scoping a systematic sweep of C78's 20-dim complement (C79-C82's own
+non-product coupling methodology, not the algebraic Gate-2 test of §8-10),
+this round found — computed, not assumed —
+that `so(4)_1+so(4)_2` (round119's full 12-generator candidate) has an
+**exact 1-dimensional intersection with `su(3)` itself**: a specific
+linear combination of the 12 basis generators (coefficients `-1/sqrt(6)`
+on `so(4)_1`'s `e23` and `so(4)_2`'s `e03`) commutes with the physical
+`D` exactly (`2.79e-16`, machine precision). §9's own claim — that all 12
+individual BASIS generators fail Gate 2 — is unaffected and remains
+correct; this is a fact about a linear *combination*, invisible to
+testing basis elements one at a time.
+
+**Consequence:** `so(4)_1+so(4)_2`'s effective coverage of the 20-dim
+complement is 11 dimensions, not 12, leaving a genuine 9-dimensional
+remainder that C79-C82 never tested. C83
+(`experiments/20260811-c83-remaining-complement-test/decision.md`)
+computed this remainder rank-aware, tested it in three systematic groups
+via C81's corrected (raw-kernel-excluded) methodology, and found no
+crossing in any group — all verified genuine avoided crossings, not
+near-misses.
+
+**Combining C75 (round124's 10-dim candidate), C77+C79-C82 (round119's
+12-dim candidate), and C83 (the remaining 9 dimensions): every dimension
+of the 20-dim complement has now been tested against the physical `D`
+under the corrected non-product coupling methodology.** No candidate
+anywhere in the complement has produced a genuine crossing, for the
+specific `Z_i`-coupling construction restricted to `S3`'s `n=0` sector.
+This is the non-product-coupling analogue of §10's own algebraic
+exhaustiveness — a different, complementary search (an actual coupling
+term, not just a commutator test), now itself complete across the full
+complement for this one construction.
+
 ## Sources
 
 - `tom_s3_spinor_toy/L3B_SPIN8_INTERFACE_SPEC.md` §1 (SO(4)×SO(4) candidate,
@@ -335,6 +370,7 @@ not have.
 - `tom_s3_spinor_toy/experiments/20260718-round125-so4xso4-vs-su3-centralizer-comparison/decision.md` (candidates are genuinely different, share only a 3-dim abelian core)
 - `tom_s3_spinor_toy/experiments/20260811-c77-so4xso4-gate2-and-t-bridge-scoping/decision.md` (§9, Gate 2 tested for the second candidate)
 - `tom_s3_spinor_toy/experiments/20260811-c78-exhaustive-so8-commutant-of-physical-D/decision.md` (§10, exhaustive commutant, closes the entire so(8)-symmetry candidate class)
+- `tom_s3_spinor_toy/experiments/20260811-c83-remaining-complement-test/decision.md` (§11, su(3) overlap found, full complement's non-product coupling coverage completed)
 - `tom_s3_spinor_toy/experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
   (second independent candidate, `su(3)⊕u(1)⊕u(1)`)
 - `tom_s3_spinor_toy/OPEN_BLOCKERS.md` OB4, OB11

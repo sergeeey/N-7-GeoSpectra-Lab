@@ -1,0 +1,85 @@
+{
+  "overlap_finding": {
+    "smallest_singular_value": 2.7887954351077003e-16,
+    "residual_check": 2.220446049250313e-16,
+    "c1_coeffs": [
+      -0.0,
+      5.551115123125783e-17,
+      -5.900762613442794e-17,
+      -5.343751495929363e-18,
+      4.7771695525263016e-17,
+      -0.4082482904638632,
+      1.0869301998501698e-17,
+      1.2520879295533455e-16,
+      -0.4082482904638628,
+      -1.2000349675122574e-16,
+      1.0021826362576777e-16,
+      1.9659142257866932e-16
+    ],
+    "commutator_with_D": 2.7865074434721934e-16
+  },
+  "complement_dim": 20,
+  "remaining_complement_info": {
+    "shadow_singular_values": [
+      1.4142135623730954,
+      1.4142135623730954,
+      1.4142135623730954,
+      1.4142135623730951,
+      1.4142135623730951,
+      1.4142135623730947,
+      1.0000000000000002,
+      1.0000000000000002,
+      1.0,
+      0.9999999999999998,
+      0.8164965809277259,
+      3.077041151209759e-16
+    ],
+    "rho": 11,
+    "remaining_dim": 9,
+    "overlap_check": 4.638171781942258e-16,
+    "gram_identity_residual": 5.498827159211281e-16
+  },
+  "group_results": {
+    "group_0_1_2": {
+      "label": "group_0_1_2",
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+      "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.00122850196802089,
+      "compressed_global_min_at_eps": -0.5,
+      "full_spectrum_all_crossings": [],
+      "full_spectrum_nonartifact_crossings": []
+    },
+    "group_3_4_5": {
+      "label": "group_3_4_5",
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+      "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.0008197444839452995,
+      "compressed_global_min_at_eps": 1.1,
+      "full_spectrum_all_crossings": [],
+      "full_spectrum_nonartifact_crossings": []
+    },
+    "group_6_7_8": {
+      "label": "group_6_7_8",
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "d_s6_nonkernel_min_abs_eigenvalue": 0.8164965809277254,
+      "compressed_eps0_min_abs_eigval": 0.32574185835055225,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.0003379918714377896,
+      "compressed_global_min_at_eps": -1.825,
+      "full_spectrum_all_crossings": [],
+      "full_spectrum_nonartifact_crossings": []
+    }
+  },
+  "no_genuine_signal_found": true,
+  "conclusion": "so(4)_1+so(4)_2 has an exact 1-dim overlap with su(3) (found, verified commutator 2.787e-16). Genuinely untested complement: 9 dims. Tested in 3 groups of 3 via C81's corrected methodology: NO genuine crossing in any group. This completes the FULL 20-dim so(8) complement's coverage for this specific Z_i-coupling construction on S3's n=0 sector -- every candidate tested, all clean nulls."
+}

@@ -299,3 +299,18 @@ artifacts. **Both octonion blocks of round119's `SO(4)xSO(4)` candidate
 (all 4 `su(2)` halves) are now clean, rigorously-confirmed NULLs.**
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C83 (2026-08-11):** user asked to test the
+remaining complement elements. `experiments/20260811-c83-remaining-
+complement-test/decision.md` found, while scoping (not guessing), that
+`so(4)_1+so(4)_2` has an EXACT 1-dim intersection with `su(3)` itself (a
+specific linear combination commutes with `D`, machine precision) --
+refines, does not contradict, C77's own basis-by-basis finding. This
+leaves a genuine 9-dim untested remainder (computed rank-aware after
+catching and fixing three flawed attempts during scoping), tested in 3
+systematic groups via C81's corrected methodology: zero crossings, all
+fine-scan-verified. **Combining C75+C77+C79-C83: every dimension of
+C78's 20-dim `so(8)` complement is now tested against the physical `D`
+-- no candidate anywhere has produced a genuine crossing.** Outside the
+closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status;
+does not solicit Tom Lawrence's Part 5.
