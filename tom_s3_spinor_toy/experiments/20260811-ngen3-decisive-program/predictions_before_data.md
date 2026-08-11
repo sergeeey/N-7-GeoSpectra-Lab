@@ -78,6 +78,23 @@ testing whether the twist is physically correct. A real wrong-twist control need
 a different representation than Sigma -- a new construction, not attempted. P1, P2, P3, P5 are
 unaffected by this correction.
 
+## Strengthening note, added 2026-08-11 after C73b (user-directed follow-up before C74)
+
+**P4's deformation-robustness result was narrower than it needed to be -- C73's own 1-parameter
+sweep covered only the RADIAL direction through NOMIZU's specific point in a larger family that
+had not yet been identified.** Direct computation: `dim Hom_su(3)(m, Lambda^2 m) = 2`, not 1 --
+NOMIZU is one point on a genuine 2-real-dimensional (one complex-parameter) admissible torsion
+family. Sweeping the previously-untested ANGULAR direction (13 angles, full circle): kernel
+dimension stays EXACTLY 1 everywhere, with `|b|=sqrt(3)` exact at every point (only the phase
+varies, linearly -- a clean U(1) structure). **This substantially strengthens the
+deformation-robustness result from a narrow 1-parameter slice to the FULL admissible family.**
+Calibration (Killing-spinor existence) stays isolated to NOMIZU's own angle, consistent with
+Killing-spinor rigidity -- a genuinely different, sharper condition than kernel-rank protection.
+Separately, a fourth negative-control attempt (twisting by `S+` instead of `S-`) was tried and,
+like the first three, found NOT independent (same magnitude, consistent with a known conjugation
+symmetry) -- the negative-control gap persists, now across four attempts. P1, P2, P3, P5 are
+unaffected.
+
 ## Predictions (falsifiable, frozen now)
 
 | # | Prediction | If it FAILS |

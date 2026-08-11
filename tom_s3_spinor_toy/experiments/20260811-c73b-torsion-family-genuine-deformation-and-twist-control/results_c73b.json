@@ -1,0 +1,104 @@
+{
+  "hom_su3_m_lambda2m_dim": 2,
+  "nomizu_reconstruction_residual": 5.582921227606494e-16,
+  "nomizu_coefficients": [
+    "(-0.998687671483349+0j)",
+    "(0.05121459584107953+0j)"
+  ],
+  "nomizu_angle_deg": 177.06433551104317,
+  "splus_twist": {
+    "domain_dim": 1,
+    "target_dim": 2,
+    "block": [
+      [
+        "(-1+0j)"
+      ],
+      [
+        "(-1.7320508075688772+0j)"
+      ]
+    ],
+    "rank": 1,
+    "kernel_dim": 0,
+    "note": "domain/target dims SWAPPED relative to S- (1,2) vs (2,1) -- matching the expected index sign flip ind(D(x)S+) = -ind(D(x)S-). Magnitudes match the S- case exactly (1, sqrt3), consistent with S+/S- being related by the same conjugation symmetry as round59's own psi_+/psi_- Killing-spinor branches (already known to give identical s) -- NOT independent evidence, but a genuinely new, honestly-reported cross-check, not a tautology or algebraic-forced-zero like C73's earlier attempts."
+  },
+  "torsion_angle_sweep": {
+    "0": {
+      "b": "(1.7297777879018186-0.08870628208585549j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "22.5": {
+      "b": "(1.5641598695341787-0.7439112195274542j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "45": {
+      "b": "(1.1604127901744863-1.2858624173679958j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "67.5": {
+      "b": "(0.5800033826788658-1.6320527185360998j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "90": {
+      "b": "(-0.08870628208585542-1.729777787901817j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "112.5": {
+      "b": "(-0.7439112195274546-1.5641598695341776j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "135": {
+      "b": "(-1.2858624173679964-1.1604127901744854j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "157.5": {
+      "b": "(-1.632052718536101-0.5800033826788654j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "180": {
+      "b": "(-1.7297777879018186+0.08870628208585528j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "202.5": {
+      "b": "(-1.5641598695341787+0.743911219527454j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "225": {
+      "b": "(-1.1604127901744865+1.2858624173679956j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "247.5": {
+      "b": "(-0.5800033826788652+1.6320527185360998j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    },
+    "270": {
+      "b": "(0.0887062820858552+1.729777787901817j)",
+      "rank": 1,
+      "kernel_dim": 1,
+      "calibration_passes": false
+    }
+  }
+}
