@@ -115,6 +115,25 @@ more formally. Logged as a methodological Pearl (multiplicity must be
 tracked in any future formal spectral-flow attempt). See
 `experiments/20260717-round116-minimal-crossing-pair-structure/decision.md`.
 
+**Attempted, consequence worked out (2026-08-10, C64, step-5 scoped
+sub-question):** round116 flagged the `(n+1)(n+2)` multiplicity gap but
+explicitly declined to justify its own claim that this "does NOT affect
+`N_gen=3`." This round verifies the multiplicity directly (explicit `D^t`
+matrix at `n=0`: exactly `3t·I₂`, exactly the zero matrix at `t=0`, `dim
+ker=2` not 1) and works out the consequence via E3's product-decoupling
+identity (`ker(D_full)=ker(D_S6)⊗ker(D_S3)`): round116's dismissal is
+correct **only** for the construction as it currently stands (Levi-Civita,
+`t=1/2`, `dim ker(D_S3)=0`) — if the torsion-deformation escape route is
+ever picked up to resolve OB1 itself, it would multiply the generation
+count by at least 2 at its cheapest crossing (multiplicities `2,2,6,6,12,12`
+across all six known crossings, none equal to 1). **New caveat for this
+blocker's own future record: the torsion-deformation mechanism is not just
+unselected (the existing problem) but also never multiplicity-safe (a
+second, independent problem any future attempt to use it would need to
+solve).** Does not meet any of OB1's 4 reopen conditions — OB1 stays
+PARKED. See
+`experiments/20260810-step5-s3-torsion-multiplicity-safety/decision.md`.
+
 ---
 
 ## OB13 — C25/H1c: the two searches for a `t`-selector were in a provably blind parity sector [OPENED 2026-08-10, C37]
