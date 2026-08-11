@@ -1,0 +1,71 @@
+{
+  "k": 1,
+  "d_s3_full_info": {
+    "k": 1,
+    "dim_pr": 4,
+    "dim_full": 8,
+    "dbar_pr_hermiticity_residual": 0.0,
+    "dbar_pr_eigenvalues_raw": [
+      -1.0,
+      -1.0,
+      -1.0,
+      3.0
+    ]
+  },
+  "target_crosscheck": {
+    "n_minus": 1,
+    "target_minus_eigenvalue": -2.5,
+    "target_minus_multiplicity": 6,
+    "found_minus_multiplicity": 6,
+    "minus_matches": true,
+    "n_plus": 0,
+    "target_plus_eigenvalue": 1.5,
+    "target_plus_multiplicity": 2,
+    "found_plus_multiplicity": 2,
+    "plus_matches": true,
+    "all_eigenvalues_with_multiplicity": [
+      [
+        -2.5,
+        6
+      ],
+      [
+        1.5000000000000004,
+        2
+      ]
+    ],
+    "both_match": true
+  },
+  "results": {
+    "self_dual": {
+      "dim_orb": 8,
+      "dim_joint": 512,
+      "herm_residual_base": 0.0,
+      "herm_residual_t_raw_before_hermitizing": 2.6223945290828072,
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "compressed_eps0_min_abs_eigval": 0.3257418583505522,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.00013736866726361618,
+      "compressed_global_min_at_eps": 0.2749999999999999,
+      "full_spectrum_nonartifact_crossings": [],
+      "full_spectrum_all_crossings_count": 0
+    },
+    "anti_self_dual": {
+      "dim_orb": 8,
+      "dim_joint": 512,
+      "herm_residual_base": 0.0,
+      "herm_residual_t_raw_before_hermitizing": 2.6223945290828072,
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "compressed_eps0_min_abs_eigval": 0.3257418583505522,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.0001373685597806119,
+      "compressed_global_min_at_eps": -0.2749999999999999,
+      "full_spectrum_nonartifact_crossings": [],
+      "full_spectrum_all_crossings_count": 0
+    }
+  },
+  "no_genuine_signal_found": true
+}
