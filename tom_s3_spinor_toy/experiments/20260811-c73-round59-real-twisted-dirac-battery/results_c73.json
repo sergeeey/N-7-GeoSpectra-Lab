@@ -1,0 +1,95 @@
+{
+  "ground_truth_reproduction": {
+    "a": "(-1+0j)",
+    "b": "(-1.7320508075688772+0j)",
+    "s": 3.9999999999999996,
+    "matches_round59": true
+  },
+  "chirality": {
+    "forward_domain_dim": 2,
+    "forward_target_dim": 1,
+    "forward_rank": 1,
+    "ker_D_plus": 1,
+    "backward_domain_dim": 1,
+    "backward_target_dim": 2,
+    "backward_rank": 1,
+    "ker_D_minus": 0,
+    "purely_left_handed": true,
+    "hermiticity_check_forward_is_adjoint_of_backward": 0.0
+  },
+  "scope_clarification": {
+    "raw_64dim_kernel": 36,
+    "full_odd_even_to_even_even_block_kernel": 9,
+    "su3_invariant_sector_kernel": 1,
+    "note": "raw and full-block kernel counts include non-su(3)-invariant content, addressed separately by Rounds 52-56's certified Casimir-difference bound (K_cert=2sqrt(6)/3, cited not re-derived here) -- NOT independently re-verified in this round"
+  },
+  "structural_parity_check": {
+    "max_abs_D_odd_even_to_odd_odd": 0.0,
+    "second_factor_parity_preserved_exactly": true
+  },
+  "deformation": {
+    "sweep": {
+      "-1.0": {
+        "b": "(1.7320508075688772+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": false
+      },
+      "0.0": {
+        "b": "0j",
+        "rank": 0,
+        "kernel_dim": 2,
+        "calibration_passes": false
+      },
+      "0.5": {
+        "b": "(-0.8660254037844386+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": false
+      },
+      "0.9": {
+        "b": "(-1.5588457268119895+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": false
+      },
+      "1.0": {
+        "b": "(-1.7320508075688772+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": true
+      },
+      "1.1": {
+        "b": "(-1.905255888325765+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": false
+      },
+      "1.5": {
+        "b": "(-2.598076211353316+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": false
+      },
+      "2.0": {
+        "b": "(-3.4641016151377544+0j)",
+        "rank": 1,
+        "kernel_dim": 1,
+        "calibration_passes": false
+      }
+    },
+    "linearity_residual_at_t=2": 0.0
+  },
+  "negative_control_attempts": {
+    "physical_pairing_ab": [
+      "(-1+0j)",
+      "(-1.7320508075688772+0j)"
+    ],
+    "alt_pairing_even_odd_to_odd_odd_ab": [
+      "(-1+0j)",
+      "(-1.7320508075688772+0j)"
+    ],
+    "alt_pairing_is_identical_not_independent": true,
+    "genuine_wrong_twist_control": "NOT ATTEMPTED -- requires twisting by a different representation than Sigma, a new construction beyond this round's scope"
+  }
+}

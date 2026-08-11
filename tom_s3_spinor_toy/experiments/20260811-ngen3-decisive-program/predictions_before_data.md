@@ -59,6 +59,25 @@ intertwiners under test (e.g. Baez's explicit `S3 subset F4`) -- not attempted. 
 with `D,J,gamma` remains explicitly deferred (S6-embedding gap, 2026-08-11). P1, P2, P4, P5
 are unaffected by this correction.
 
+## Correction note, added 2026-08-11 after C73
+
+**P4's target needed precise identification before testing -- a naive first attempt (raw
+kernel of round59's full 64-dim D) gave 36, not 1.** Resolved by reading `preprint.tex`
+sec:kernel directly: "kernel=1" refers to D restricted to the SU(3)-invariant sub-blocks
+specifically (domain_inv=2, target_inv=1), not the raw or full-bigrading-block kernel (which
+are larger, physically-broader quantities addressed separately by Rounds 52-56's certified
+Casimir bound). Once correctly scoped: ground-truth reproduction matches round59 exactly;
+chirality (ker(D+)=1, ker(D-)=0) verified DIRECTLY from round59's own matrix for the first
+time (G74B/C21's claim predates round59 by 3 weeks, was never cross-checked against it until
+now); deformation-robustness proven in closed form (D(t)=t*D(1) exactly, kernel=1 for every
+t!=0, degenerating only at the singular t=0). **Negative control genuinely FAILS, honestly
+reported, not smoothed over:** three attempts within round59's fixed construction (Nomizu
+sign flip, alternate bigrading pairing, mismatched-parity pairing) are each either
+non-independent (hidden even/odd duality) or algebraically forced (parity constraint), none
+testing whether the twist is physically correct. A real wrong-twist control needs twisting by
+a different representation than Sigma -- a new construction, not attempted. P1, P2, P3, P5 are
+unaffected by this correction.
+
 ## Predictions (falsifiable, frozen now)
 
 | # | Prediction | If it FAILS |
