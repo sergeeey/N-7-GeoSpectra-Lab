@@ -1,0 +1,23 @@
+{
+  "centralizer_sanity": {
+    "centralizer_dim": 2,
+    "abelian": true,
+    "u1_commutator_norm": 1.6202305335359943e-15,
+    "u1_a_centralizes_su3_on_channel_v": 2.7755575615628914e-16
+  },
+  "bridge_sanity": {
+    "u_v_det": 0.06922393424603113,
+    "intertwining_residual": 4.443059973708341e-16
+  },
+  "positive_control_su3_commutator": 2.7755575615628914e-17,
+  "u1_a_commutator_with_D": {
+    "max_abs_entry": 1.0393111036036289,
+    "frobenius_norm": 5.241159494627485
+  },
+  "u1_b_commutator_with_D": {
+    "max_abs_entry": 5.527254338871357,
+    "frobenius_norm": 28.187132335673567
+  },
+  "D_frobenius_norm": 7.999999999999999,
+  "conclusion": "Gate 2 (does the physical D commute with the extended, channel-distinguishing su(3)+u(1)+u(1) symmetry Gate 1 constructed) tested directly for the first time: NO, it does not -- large, unambiguous violation (O(1) relative to |D|), confirming G74A's Lemma B prediction computationally rather than abstractly. Does NOT resolve the separate channel-permutation/redundancy question, which needs a different, not-yet-constructible operator."
+}
