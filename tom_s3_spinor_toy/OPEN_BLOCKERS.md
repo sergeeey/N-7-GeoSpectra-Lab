@@ -156,8 +156,19 @@ PARKED. See
 > So "which `t` is selected" is very likely **ill-posed: both are needed**, which
 > is precisely the inversion branch this blocker flagged. `C27`, `C25`/`H1c` and
 > `C11` collapse into **one** question — is the product ansatz with both `t`
-> simultaneously realized coherent? (`C11`, OPEN.) See
+> simultaneously realized coherent? See
 > `experiments/20260810-c27-bundle-equivalence/decision.md`.
+>
+> **✅ `C11` ANSWERED (same day, later in the session): NO — not coherent as a
+> geometry.** The full C41-C60 chain (14 rounds) settled this exact question:
+> the axioms force the deformation family to a single isolated point (C47/C48),
+> no real structure admits a sector-mixing algebra (C50/C51), and even granting
+> the construction, it fails BOTH orientability (C52) and Poincaré duality (C49)
+> — independent of the KO-dimension question C54-C60 separately closed. **This
+> item's own "coherent?" question has a definite answer: no.** Cross-referenced
+> here since this note (written during the arc) predates that closure and would
+> otherwise read as still-open. See `experiments/20260810-c11-*/decision.md`
+> (C41 through C60) for the full chain; `CLAIM_LEDGER.yaml` C41-C60.
 
 `t → 1−t` is exactly `(t−½) → −(t−½)`, so **any even function of `(t−½)` is
 identically blind** to the `t=0` vs `t=1` question. Checked [VERIFIED-sympy]:
@@ -193,7 +204,12 @@ source file, and no internal mapping. `G26`'s own comparison already marked
 CCM's KO-6 as `[DOCS] postulated`, so *both* sides of "same KO-dim
 independently" (its original wording, corrected 2026-08-10) were inherited.
 
-**Status:** `BLOCKED_BY_EXTERNAL_INPUT` — a dependency, not a failure.
+**Status:** `BLOCKED_BY_EXTERNAL_INPUT` — a dependency, not a failure. Unchanged by this
+consolidation pass (2026-08-10) — still genuinely needs a cited primary source, nothing
+computable from inside this repo closes it. Noted for context, not as a substitute: C49/C52
+(OB2, below) already prove the specific `t=0,1` doubled construction this number would classify
+is not a valid geometry regardless of what the number turns out to be — low-stakes as things
+currently stand, not because the gap itself is resolved.
 
 **What closes it** (either one): a cited primary source for the sign-triple ↔
 KO-dimension table, transcribed with *its own* convention stated — in particular
@@ -214,7 +230,17 @@ original `3+6=9 ≡ 1 mod 8` is exactly the shape that needs that care.
 
 ---
 
-## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [PARTIAL 2026-08-03, CORRECTED + UPGRADED 2026-08-09]
+## OB2 — D4: does "two coexisting D's" even make sense as a spectral triple? [ANSWERED 2026-08-10 (C60): NO — see C11's full closure below]
+
+> **Header updated 2026-08-10, consolidation pass.** This item's own body
+> (below) already reaches a complete, final answer as of C60: the KO-2/KO-4
+> ambiguity is proven irreducible (not merely observed), and, independent of
+> that question entirely, C49/C52 already proved the doubled `t=0,1`
+> construction fails BOTH Poincaré duality and orientability — it is not a
+> valid NCG geometry. Everything below is genuine, verified content;
+> "bookkeeping on bookkeeping on a non-geometry" (C60's own words) is the
+> accurate, final characterization, not a hedge. No further work is expected
+> here absent new external input (matching OB1's own PARKED framing).
 
 > **KO TUPLE COMPUTED, 2026-08-10 (C57) — and it CORRECTS C56. The Pin choice
 > cancels. `(ε,ε',ε'') = (−1,+1,±1)`, KO-dim 2 or 4 by an internal choice in `J`.**
@@ -903,12 +929,21 @@ minor wording item above.
 ## OB6 — Codex items 5 and 8 (item 8 re-scoped 2026-07-17; not yet well-posed)
 
 **What's open:**
-- **Item 5 [PARTIAL PROGRESS 2026-08-03, see OB2 above]:** promote `t` to
-  a finite matrix-valued order parameter with internal Z2 exchange
-  symmetry — attempted; the Z2 exchange itself is verified (via the
-  correct statement, unitary equivalence of `D(T)` and `D(1-T)`, not
-  round110's mis-posed self-invariance test), but grading, real
-  structure, and the physical action remain open. Not fully resolved.
+- **Item 5 [UPDATED 2026-08-10, consolidation pass — grading and real
+  structure now extensively closed, physical action genuinely still open]:**
+  promote `t` to a finite matrix-valued order parameter with internal Z2
+  exchange symmetry — the Z2 exchange itself is verified (unitary
+  equivalence of `D(T)` and `D(1-T)`). Of the three originally-open pieces:
+  **grading** (`γ`) — closed by the C41-C60 chain (C50/C51/C53/C57/C60
+  exhaust the admissible `γ`-compatible structures for the doubled
+  construction). **Real structure** (`J`) — closed by the same chain
+  (C55/C56/C57/C59/C60 pin `J`'s admissible forms exactly, up to the
+  proven-irreducible KO-2/KO-4 choice). **Physical action** — genuinely
+  untouched by C41-C60 (a different kind of question — deriving an actual
+  Lagrangian/spectral-action functional, never attempted in that chain) and
+  remains open. Given C49/C52 already show the doubled construction is not
+  a valid geometry regardless, pursuing the physical action for THIS
+  specific construction would not be a productive use of effort.
 - **Item 8 — re-scoped, NOT ready-to-run as originally logged:** Codex's
   exact wording (`codex_review_2026-07-17.md:172-174`) is "If the actual
   gauge group is `SO(6)`, `Spin(6)`, or a quotient of
