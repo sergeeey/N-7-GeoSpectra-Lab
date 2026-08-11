@@ -60,6 +60,23 @@ is the reason that correction was needed, and is recorded in both C86's
 and C87's own decision.md files (methodology-note additions), not
 silently absorbed only here.
 
+## Addendum -- wide-range check, same session
+
+Given a real coupling channel is confirmed, the natural direct follow-up
+is whether it EVER produces a crossing for a larger coupling strength,
+not just within the originally-tested `eps in [-2,2]`. Tested on k=1
+(cleanly Hermitian, cheapest case), self-dual triple, `eps in [-50,50]`
+(401 points, 25x wider than the original range): **still zero
+crossings**, global minimum `0.00118` at `eps=3.25` (compare to the
+original range's global minimum `0.000137` at `eps=0.275` -- the
+operator's spectrum gets FARTHER from zero, not closer, as `eps` grows
+large). This strengthens, not merely repeats, C86's own "no crossing"
+finding for this specific candidate: the S3-side coupling channel
+(confirmed nonzero here) does not produce a joint eigenvalue crossing
+for this candidate even under a dramatically wider coupling-strength
+sweep, consistent with a genuine (not merely narrow-range-coincidental)
+absence of a physical zero mode for this specific postulate.
+
 ## Kill Analysis
 
 **Not killed, genuinely established:** a real S3-side coupling channel
