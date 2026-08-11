@@ -6,6 +6,34 @@
 
 ---
 
+## ⚠️ Status correction (2026-08-11)
+
+A full month of work sits between the 2026-07-17 correction below and now
+(the C11 arc, 34 claims closing most named open blockers; round118-128's
+triality-channel work; and a 6-round decisive-experiment program, C70-C76,
+explicitly targeting `N_gen=3` with predictions frozen before any
+computation). None of it is reflected below. The single most current,
+authoritative synthesis is
+`experiments/20260811-c76-status-synthesis-ngen3-regrade/decision.md`
+(the C70-C76 program's own closeout) — read that first, not this file, for
+the current headline status. Its honest posterior, in short: **`N_gen=3`
+remains CONDITIONAL, unweakened** (the program's own pre-commitment rule —
+"if P1, P3, or P5 fail, weaken this status" — did not fire), but the
+program substantially hardened the mathematical scaffolding (the round59↔
+G102 triality-channel bridge, S⁶ kernel robustness across the full
+admissible connection family) while leaving the single question it named
+most dangerous — physical channel-distinguishability vs. gauge redundancy
+of one degree of freedom — exactly as untested as before, not from a
+negative result but because no non-tautological way to construct the
+needed test operator has yet been found. `CURRENT_STATE_ROUND111.md` is
+similarly a month stale and is flagged, not fixed, by this correction —
+consolidating it into the current state is a separate, larger task not
+attempted here. This box is additive per this file's own established
+pattern; the 2026-07-17 correction below remains historically accurate for
+what it covers and is not retracted.
+
+---
+
 ## ⚠️ Status correction (2026-07-17)
 
 The "Main result" and "Three-generation result" below (dated 2026-07-07 /

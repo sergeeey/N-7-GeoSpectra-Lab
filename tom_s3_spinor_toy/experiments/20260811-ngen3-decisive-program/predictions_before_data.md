@@ -178,3 +178,31 @@ separates the channels, redundancy is excluded at the observable level — far s
 | **C74** | full product lowest sector (KT-8-aware framing) + unified Clifford convention asserted in-script both sides before tensoring (OB10 lesson) | direct product-level check |
 | **C75** | adversarial: observable-distinguishability / redundancy attack | the most dangerous alternative, attacked head-on |
 | **C76** | status synthesis: re-grade `N_gen=3` against P1-P5 outcomes | honest posterior update |
+
+## Program CLOSED, 2026-08-11 — final status
+
+**Pre-commitment does NOT fire.** P1 passed cleanly; P3's literal form
+proved a pure tautology at every equivariance level (inapplicable, not
+failed), its revised form passed as expected; P5 is genuinely inconclusive,
+not a failure. `N_gen=3` stays CONDITIONAL, unweakened by rule. Full
+synthesis, including an independent context-asymmetric skeptic review:
+`experiments/20260811-c76-status-synthesis-ngen3-regrade/decision.md`.
+
+**Honest posterior in one paragraph:** the program substantially hardened
+the mathematical scaffolding around the claim (the round59↔G102
+triality-channel bridge is now machine-precision-verified through the full
+`g2` algebra; round59's real S⁶ kernel=1 is now directly matrix-verified
+and robust across the entire admissible torsion family, not a narrow
+slice; G74A's Lemma B is now a computational fact via C75, not only an
+abstract argument) — while leaving the single question this document
+itself named most dangerous (§"The C75 adversarial round, made concrete":
+physical channel-distinguishability vs. gauge redundancy of one degree of
+freedom) exactly as untested as before the program started. Not from a
+negative result — because no non-tautological way to construct the needed
+channel-permuting operator has yet been found in this codebase (C71/C72
+proved the natural chained construction is a pure tautology at every
+equivariance level tried). One concrete, unattempted lead for a future
+round: `TRIALITY_DISTINGUISHABILITY_GATE.md`'s own `SO(4)×SO(4)` transport
+matrix `T` (already constructed, genuinely non-tautological, never bridged
+into round59's `D`) — see C76's decision.md for why this is real,
+nontrivial work, not a quick follow-up.
