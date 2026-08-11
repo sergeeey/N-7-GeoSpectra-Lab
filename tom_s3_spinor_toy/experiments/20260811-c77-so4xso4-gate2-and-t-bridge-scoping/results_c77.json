@@ -1,0 +1,68 @@
+{
+  "p1_basis_compatibility": {
+    "dim_A_so4xso4": 12,
+    "dim_B_su3_plus_centralizer": 10,
+    "dim_A_union_B": 19,
+    "dim_A_intersect_B": 3,
+    "matches_round125": true
+  },
+  "bridge_sanity": {
+    "u_v_det": 0.06922393424603113,
+    "intertwining_residual": 4.443059973708341e-16
+  },
+  "positive_control_su3_commutator": 2.7755575615628914e-17,
+  "so4xso4_per_generator_commutator_with_D": [
+    {
+      "max_abs_entry": 5.53275631025578,
+      "frobenius_norm": 28.24861380947565
+    },
+    {
+      "max_abs_entry": 1.5080524052492232,
+      "frobenius_norm": 10.65381859959748
+    },
+    {
+      "max_abs_entry": 1.5524578807557978,
+      "frobenius_norm": 10.653818668228343
+    },
+    {
+      "max_abs_entry": 2.3119027749946928,
+      "frobenius_norm": 14.791177759855799
+    },
+    {
+      "max_abs_entry": 2.379978089679558,
+      "frobenius_norm": 14.791177849826365
+    },
+    {
+      "max_abs_entry": 0.28990892639044585,
+      "frobenius_norm": 2.834115084415444
+    },
+    {
+      "max_abs_entry": 0.3349234071148988,
+      "frobenius_norm": 2.834115064286951
+    },
+    {
+      "max_abs_entry": 0.33492340711489893,
+      "frobenius_norm": 2.834115064286951
+    },
+    {
+      "max_abs_entry": 0.2899089263904458,
+      "frobenius_norm": 2.8341150844154446
+    },
+    {
+      "max_abs_entry": 0.577350269189626,
+      "frobenius_norm": 2.82842712474619
+    },
+    {
+      "max_abs_entry": 0.32534349057085,
+      "frobenius_norm": 2.8341150964797173
+    },
+    {
+      "max_abs_entry": 0.32534349057085,
+      "frobenius_norm": 2.8341150964797173
+    }
+  ],
+  "D_frobenius_norm": 7.999999999999999,
+  "min_relative_violation": 0.3535533905932738,
+  "max_relative_violation": 3.5310767261844567,
+  "conclusion": "Gate 2 tested for round119's SO(4)xSO(4) candidate for the first time. Does NOT constitute a T-to-D bridge -- see claim.md/decision.md for why that requires additional, not-yet-existing infrastructure (an SO(4)xSO(4)-equivariant identification of Sigma with 8_s and 8_c, and resolution of round119's own open vector-vs-spinor consistency gap)."
+}

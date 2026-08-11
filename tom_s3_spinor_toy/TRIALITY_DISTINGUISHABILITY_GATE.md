@@ -258,6 +258,41 @@ channel-permutation/redundancy commutant test (still fully open — see C75's
 own `decision.md` for why that is a different question this round does not
 attack).
 
+## 9. C77 update (2026-08-11) — Gate 2 tested for the SO(4)×SO(4) candidate too: also NO
+
+**Extends §8 to the OTHER Gate-1 candidate.** C75 (§8) tested Gate 2 only
+for round124's `su(3)+u(1)+u(1)` candidate. C77
+(`experiments/20260811-c77-so4xso4-gate2-and-t-bridge-scoping/decision.md`)
+ran the identical methodology for round119's `SO(4)×SO(4)` candidate (§2
+above) — genuinely different from round124's, per round125: the two share
+only a 3-dimensional abelian core out of 12/10 dimensions respectively, not
+one containing the other.
+
+**Result: NO, comprehensively.** All 12 of `SO(4)×SO(4)`'s generators,
+transported to `Sigma` via `U_v`, fail to commute with the physical `D` —
+Frobenius-norm violations of `2.83` to `28.25` against `|D|_F=8.00` (35.4%
+to 353% relative), every one far above the `2.8e-17` positive-control
+floor. No generator comes close to commuting.
+
+**Updated status for this candidate:** `GATE 2: TESTED, NO` (was
+`Undetermined`, same as round124's before C75). **Both of this document's
+two known, independently-constructed Gate-1 candidates now fail Gate 2** —
+this is stronger evidence for G74A's Lemma B's generality than either
+result alone, since the two candidates are genuinely different subalgebras,
+not restatements of each other.
+
+**Consequence for the `T`-bridge lead (named in C76's synthesis as the
+most promising next step):** `T` (§ above, `build_triality_matrix_T()`) is
+an automorphism specifically of the `SO(4)×SO(4)` structure. With that
+structure now shown NOT to be a symmetry of the physical `D` either, the
+motivation for building the missing infrastructure to use `T` (an
+`SO(4)×SO(4)`-equivariant identification of `Sigma` with `8_s`/`8_c`,
+which does not exist, plus resolving round119's own already-documented
+vector-vs-spinor consistency gap) is substantially reduced — `T` would
+relate generators of a non-physical symmetry to each other. C77's own
+`decision.md` states this precisely rather than silently abandoning the
+lead.
+
 ## Sources
 
 - `tom_s3_spinor_toy/L3B_SPIN8_INTERFACE_SPEC.md` §1 (SO(4)×SO(4) candidate,
@@ -266,6 +301,8 @@ attack).
 - `tom_s3_spinor_toy/experiments/20260717-round118-matter-generation-factorization-test/decision.md`
 - `tom_s3_spinor_toy/experiments/20260705-g102-spin8-fiber-obstruction/decision.md` (G102)
 - `tom_s3_spinor_toy/experiments/20260811-c75-gate2-physical-d-vs-extended-symmetry/decision.md` (§8, Gate 2 tested directly)
+- `tom_s3_spinor_toy/experiments/20260718-round125-so4xso4-vs-su3-centralizer-comparison/decision.md` (candidates are genuinely different, share only a 3-dim abelian core)
+- `tom_s3_spinor_toy/experiments/20260811-c77-so4xso4-gate2-and-t-bridge-scoping/decision.md` (§9, Gate 2 tested for the second candidate)
 - `tom_s3_spinor_toy/experiments/20260718-round124-su3-centralizer-triality-candidate/decision.md`
   (second independent candidate, `su(3)⊕u(1)⊕u(1)`)
 - `tom_s3_spinor_toy/OPEN_BLOCKERS.md` OB4, OB11
