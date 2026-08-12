@@ -47,6 +47,33 @@ def bracket_residuals_for(l1: sp.Matrix, l2: sp.Matrix, l3: sp.Matrix) -> dict:
     }
 
 
+def casimir_non_discrimination_check(k: int, l1: sp.Matrix, l2: sp.Matrix, l3: sp.Matrix) -> dict:
+    """[VERIFIED-sympy] Same-day correction check: this module's own
+    decision.md originally called a Casimir/so(4) check "the genuinely
+    decisive next test" for validating L_i. That overclaims: su(2) has a
+    unique irrep per dimension, so its Casimir eigenvalue is fully
+    determined by dimension alone -- C_L=C_R follows AUTOMATICALLY from
+    L_i=-l_{e_i}^T whenever C_R is scalar (since (A^2)^T=(A^T)^2, so
+    C_L=C_R^T, and C_R^T=C_R whenever C_R is already scalar). This does
+    NOT discriminate L_i from any other valid (k+1)-dim su(2)
+    representation -- confirmed directly here, not assumed."""
+    dim = k + 1
+    C_R = sp.simplify(l1 * l1 + l2 * l2 + l3 * l3)
+    L1, L2, L3 = -l1.T, -l2.T, -l3.T
+    C_L = sp.simplify(L1 * L1 + L2 * L2 + L3 * L3)
+    scalar_val = C_R[0, 0]
+    C_R_is_scalar = sp.simplify(C_R - scalar_val * sp.eye(dim)) == sp.zeros(dim, dim)
+    C_L_equals_C_R = sp.simplify(C_L - C_R) == sp.zeros(dim, dim)
+    C_L_equals_C_R_transpose_shortcut = sp.simplify(C_L - C_R.T) == sp.zeros(dim, dim)
+    return {
+        "k": k,
+        "casimir_eigenvalue": str(scalar_val),
+        "C_R_is_scalar": bool(C_R_is_scalar),
+        "C_L_equals_C_R": bool(C_L_equals_C_R),
+        "matches_transpose_shortcut": bool(C_L_equals_C_R_transpose_shortcut),
+    }
+
+
 def main() -> None:
     c85 = load_module(
         "c85_certification",
@@ -105,9 +132,30 @@ def main() -> None:
     print(f"P3 Hermiticity pattern (k -> L anti-Hermitian?): {p3_hermiticity_pattern}")
     print(f"P3 L's Hermiticity pattern matches R's own known pattern: {p3_matches_known_r_pattern}")
 
+    print("\n=== Same-day correction check: is the Casimir/so(4) test actually discriminating? ===")
+    casimir_results = {}
+    for k in range(1, 5):
+        l1, l2, l3 = c85.build_l_matrices(k, "repaired")
+        cr = casimir_non_discrimination_check(k, l1, l2, l3)
+        casimir_results[str(k)] = cr
+        print(
+            f"  k={k}: casimir_eigenvalue={cr['casimir_eigenvalue']}, "
+            f"C_R_is_scalar={cr['C_R_is_scalar']}, C_L_equals_C_R={cr['C_L_equals_C_R']} "
+            "(automatic once C_R is scalar -- confirms the check is NOT discriminating)"
+        )
+    casimir_all_automatic = all(
+        v["C_R_is_scalar"] and v["C_L_equals_C_R"] and v["matches_transpose_shortcut"]
+        for v in casimir_results.values()
+    )
+    print(f"\nCasimir match is automatic for every k tested: {casimir_all_automatic}")
+
     verdict = (
         "DUAL_REPRESENTATION_VALID_SU2_REP__HERMITICITY_MATCHES_KNOWN_R_PATTERN"
-        if p1_all_k_bracket_holds and p2_all_k_distinct and p3_matches_known_r_pattern
+        "__CASIMIR_CHECK_CONFIRMED_NON_DISCRIMINATING"
+        if p1_all_k_bracket_holds
+        and p2_all_k_distinct
+        and p3_matches_known_r_pattern
+        and casimir_all_automatic
         else "UNEXPECTED_RESULT_REQUIRES_MANUAL_REVIEW"
     )
 
@@ -117,6 +165,8 @@ def main() -> None:
         "p2_all_k_distinct": p2_all_k_distinct,
         "p3_hermiticity_pattern": p3_hermiticity_pattern,
         "p3_matches_known_r_pattern": p3_matches_known_r_pattern,
+        "casimir_same_day_correction_check": casimir_results,
+        "casimir_confirmed_non_discriminating": casimir_all_automatic,
         "verdict": verdict,
     }
     RESULTS_PATH.write_text(json.dumps(out, indent=2, default=str))
