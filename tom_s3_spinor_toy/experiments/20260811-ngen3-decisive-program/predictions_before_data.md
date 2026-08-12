@@ -485,3 +485,19 @@ construction (no natural 3rd generator exists for an abelian pair),
 flagged as weaker evidence than C83's genuine 3-generator triples.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C92 (2026-08-12):** first concrete groundwork
+step toward task #59's multiplication-operator build. Tested the most
+natural hypothesis for the `q`-side ("left-regular-representation")
+generator -- the same construction as C85's `right_mult_matrix_on_ab`,
+with the product order swapped (left instead of right quaternion
+multiplication).
+`experiments/20260812-c92-left-regular-generator-obstruction/decision.md`
+-- confirmed this naive analog is C-linear for `e1(i)` but genuinely NOT
+C-linear for `e2(j)`/`e3(k)` (nonzero symbolic residuals), reflecting a
+real algebraic fact (quaternions are a one-sided complex vector space,
+not two-sided). Falsifies the single most natural hypothesis; named the
+remaining candidates (opposite-handed complex structure, explicit
+antilinear treatment, or Meier's own primary source) without attempting
+them. Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.

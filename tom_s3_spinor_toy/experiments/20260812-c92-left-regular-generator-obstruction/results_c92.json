@@ -1,0 +1,54 @@
+{
+  "per_unit_results": {
+    "e1_i": {
+      "candidate_matrix": [
+        [
+          "I",
+          "0"
+        ],
+        [
+          "0",
+          "I"
+        ]
+      ],
+      "residual_a": "0",
+      "residual_b": "0",
+      "is_complex_linear": true
+    },
+    "e2_j": {
+      "candidate_matrix": [
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "residual_a": "-2*I*bx",
+      "residual_b": "2*I*ax",
+      "is_complex_linear": false
+    },
+    "e3_k": {
+      "candidate_matrix": [
+        [
+          "0",
+          "-I"
+        ],
+        [
+          "I",
+          "0"
+        ]
+      ],
+      "residual_a": "2*bx",
+      "residual_b": "-2*ax",
+      "is_complex_linear": false
+    }
+  },
+  "p1_e1_c_linear": true,
+  "p2_e2_e3_not_c_linear": true,
+  "e1_candidate_matches_l_e1_k1": false,
+  "e1_candidate_matches_neg_l_e1_k1": false,
+  "verdict": "NAIVE_LEFT_MULT_ANALOG_BLOCKED_FOR_J_K__ONE_SIDED_COMPLEX_STRUCTURE_CONFIRMED"
+}
