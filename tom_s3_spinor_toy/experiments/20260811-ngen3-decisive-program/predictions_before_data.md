@@ -425,3 +425,16 @@ the imprecise "no evidence of mixing" phrasing in both C86's and C87's
 own decision.md files, amended in place, same day. Outside the closed
 P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does not
 solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C89 (2026-08-12):** extended C86's own
+n=0<->n=1 joint methodology to round119's `so(4)_2`, previously tested
+only at n=0's scalar approximation (C82).
+`experiments/20260812-c89-so4-2-full-k1-level-coupling-test/decision.md`
+-- clean NULL for both self-dual and anti-self-dual triples, su(2)
+closure and `D_S3` target both confirmed exact, `k=1` exactly Hermitian
+throughout (no correction needed). Both octonion blocks of round119's
+`SO(4)xSO(4)` candidate are now clean on the joint test. Named next:
+C75's 10-dim centralizer candidate and C83's 9-dim remainder groups,
+neither yet tested on any joint-level space. Outside the closed P1-P5
+program; does not change `N_gen=3`'s CONDITIONAL status; does not
+solicit Tom Lawrence's Part 5.
