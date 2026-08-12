@@ -51,5 +51,36 @@
     "5": false
   },
   "p3_matches_known_r_pattern": true,
-  "verdict": "DUAL_REPRESENTATION_VALID_SU2_REP__HERMITICITY_MATCHES_KNOWN_R_PATTERN"
+  "casimir_same_day_correction_check": {
+    "1": {
+      "k": 1,
+      "casimir_eigenvalue": "-3",
+      "C_R_is_scalar": true,
+      "C_L_equals_C_R": true,
+      "matches_transpose_shortcut": true
+    },
+    "2": {
+      "k": 2,
+      "casimir_eigenvalue": "-8",
+      "C_R_is_scalar": true,
+      "C_L_equals_C_R": true,
+      "matches_transpose_shortcut": true
+    },
+    "3": {
+      "k": 3,
+      "casimir_eigenvalue": "-15",
+      "C_R_is_scalar": true,
+      "C_L_equals_C_R": true,
+      "matches_transpose_shortcut": true
+    },
+    "4": {
+      "k": 4,
+      "casimir_eigenvalue": "-24",
+      "C_R_is_scalar": true,
+      "C_L_equals_C_R": true,
+      "matches_transpose_shortcut": true
+    }
+  },
+  "casimir_confirmed_non_discriminating": true,
+  "verdict": "DUAL_REPRESENTATION_VALID_SU2_REP__HERMITICITY_MATCHES_KNOWN_R_PATTERN__CASIMIR_CHECK_CONFIRMED_NON_DISCRIMINATING"
 }

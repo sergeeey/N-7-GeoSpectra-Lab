@@ -521,3 +521,17 @@ correct for Meier's own construction; the decisive next check (full
 Peter-Weyl `G x G` bimodule/Casimir structure) is named, not attempted.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Same-day correction to the C93 entry above (2026-08-12):** found while
+scoping the next round, before running it: calling the "Casimir/so(4)
+check" the "decisive next test" was an overclaim. `su(2)` has a unique
+irrep per dimension, so ANY valid `(k+1)`-dim `su(2)` representation
+shares the same Casimir eigenvalue -- verified directly (`k=1..4`) that
+`C_L=C_R` follows automatically from `L_i=-l_{e_i}^T` whenever `C_R` is
+scalar, regardless of whether `L_i` is the physically correct choice. A
+Casimir-match check would pass for any candidate and discriminate
+nothing.
+`experiments/20260812-c93-dual-representation-q-side-generator/decision.md`
+amended in place with the correction and a tool-verified check
+confirming it; the actually-decisive test would need to work at the
+GROUP level (exponentiated generators), not attempted.

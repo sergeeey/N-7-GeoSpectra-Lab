@@ -50,11 +50,32 @@ cleanly.
 **Still open, explicitly:** whether `L_i` is the CORRECT construction
 for Meier's own specific `q`-index (as opposed to merely A valid `su(2)`
 representation) -- this round tests algebraic validity in the abstract,
-not physical correctness for this specific codebase's substrate. The
-genuinely decisive check (does embedding `L_i` on `q` and `R_i` on `p`
-together reproduce the correct Peter-Weyl `V_j (x) V_j*` bimodule
-structure under the full `G x G` action -- e.g. via a Casimir/`so(4)`
-check) was explicitly named in `claim.md` and NOT attempted this round.
+not physical correctness for this specific codebase's substrate.
+
+## Same-day correction (found while scoping the next round)
+
+This section originally named "a Casimir/`so(4)` check" as "the
+genuinely decisive next check." **That overclaimed what such a check
+would show.** Verified directly (sympy, `k=1..4`): `C_R := l1^2+l2^2+l3^2`
+is exactly scalar (`-k(k+2)` times identity, e.g. `-3,-8,-15,-24`), and
+because `L_i=-l_{e_i}^T`, `C_L := L1^2+L2^2+L3^2 = C_R^T = C_R`
+**automatically** -- this holds for ANY choice built via the
+`-(...)^T` construction, not specifically because `L_i` is correct.
+`su(2)` has a unique irrep per dimension, so its Casimir eigenvalue is
+fully determined by dimension alone -- EVERY valid `(k+1)`-dim `su(2)`
+representation has this same eigenvalue. A Casimir-match check would
+have passed for any candidate, discriminating nothing; treating a PASS
+as validation would have been a real error, caught before running it
+(not after, per this project's own Spot-Check discipline extended
+proactively rather than reactively here).
+
+**What would actually be decisive, corrected:** a check that works at
+the GROUP level, not just the infinitesimal Lie-algebra level -- e.g.
+verifying `g1 . D^j(g) . g2^-1 = D^j(g1 g g2^-1)`-type identities under
+EXPONENTIATED generators for concrete group elements, not just that the
+generators satisfy the right bracket relations and Casimir. This is a
+substantially larger undertaking than this round's algebraic checks and
+was not attempted.
 
 ## What this does NOT show
 
