@@ -434,10 +434,11 @@ only at n=0's scalar approximation (C82).
 closure and `D_S3` target both confirmed exact, `k=1` exactly Hermitian
 throughout (no correction needed). Both octonion blocks of round119's
 `SO(4)xSO(4)` candidate are now clean on the joint test. Named next:
-C75's 10-dim centralizer candidate and C83's 9-dim remainder groups,
-neither yet tested on any joint-level space. Outside the closed P1-P5
-program; does not change `N_gen=3`'s CONDITIONAL status; does not
-solicit Tom Lawrence's Part 5.
+C75's 2-dim centralizer (u1_a, u1_b -- part of round124's 10-dim
+su(3)+u(1)+u(1) candidate) and C83's 9-dim remainder groups, neither yet
+tested on any joint-level space. Outside the closed P1-P5 program; does
+not change `N_gen=3`'s CONDITIONAL status; does not solicit Tom
+Lawrence's Part 5.
 
 **Post-closure follow-up, C90 (2026-08-12):** an external reviewer
 proposed assembling C86/C87/C89's per-level tests into one
@@ -466,3 +467,21 @@ Clebsch-Gordan class to give nonzero coupling from level `k` to level
 operator is named as the next step but was deliberately NOT attempted
 this round. Outside the closed P1-P5 program; does not change
 `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C91 (2026-08-12):** tested the two remaining
+candidates C89's own decision.md named as next -- C83's 9-dim so(8)
+remainder (3 groups of 3) and C75's centralizer -- on C86's joint k=1
+space (n=0<->n=1 simultaneously), completing the joint-level test for
+every so(8)-adjacent candidate this project has built.
+`experiments/20260812-c91-remainder-and-centralizer-joint-k1-test/decision.md`
+-- both CLEAN NULL, k=1 exactly Hermitian throughout. **Same-day
+correction:** this file's own C89 entry above previously said "C75's
+10-dim centralizer candidate" -- corrected to "2-dim centralizer" (the
+`10` refers to round124's full su(3)+u(1)+u(1) candidate, 8+1+1
+generators, a different object the ORIGINAL C75 already tested against
+a different operator). C75's actual centralizer (`u1_a`, `u1_b`) is
+2-dim and abelian; tested here via an explicitly ad hoc zero-padded
+construction (no natural 3rd generator exists for an abelian pair),
+flagged as weaker evidence than C83's genuine 3-generator triples.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
