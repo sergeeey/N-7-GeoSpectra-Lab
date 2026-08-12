@@ -1887,6 +1887,23 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C89_SO4_2_FULL_K1_JOINT_TEST_CLEAN_NULL
+    statement: "Extends C86's n=0<->n=1 joint coupling test (level k=1's full certified Hilbert space) to round119's so(4)_2 (BLOCK2=[4,5,6,7], so4_all[6:12]), previously tested only at n=0's scalar approximation (C82, clean NULL there too, but unable to probe inter-level mixing). [VERIFIED-numpy] su(2) closure confirmed exact (matching C82's own result: [g1,g2]=-2*g3 self-dual, +2*g3 anti-self-dual, residual 0.0 both). [VERIFIED-numpy] D_S3 construction (reused unmodified from C86) reproduces round67's own target exactly -- as expected, this is candidate-independent (S3 side only). [VERIFIED-numpy] CLEAN NULL for both self-dual and anti-self-dual triples via C86's exact, now-Hermiticity-corrected methodology -- k=1 is exactly Hermitian (base_is_hermitian=True), no correction needed here. Both octonion blocks of round119's SO(4)xSO(4) candidate (so(4)_1, C86; so(4)_2, this round) are now clean NULLs on the genuinely richer n=0<->n=1 joint test. Per C88's own finding, the S3-side coupling channel is candidate-independent and was already known nonzero -- what this round establishes, genuinely candidate-specific, is that so(4)_2's own S6-side Leibniz factor does not combine with that channel to produce a crossing either."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c89-so4-2-full-k1-level-coupling-test/decision.md"
+    depends_on: [C86_FULL_K1_N0_N1_JOINT_COUPLING_TEST_CLEAN_NULL, C88_Z_I_HAS_NONZERO_MATRIX_ELEMENTS_BETWEEN_ADJACENT_N_EIGENSPACES]
+    supersedes: "extends C82's own n=0-only so(4)_2 result to the genuinely richer n=0<->n=1 joint test, the same way C86 extended C79-C81's so(4)_1 result"
+    convention: "Reuses C86's build_full_level_d_s3/check_d_s3_full_matches_target/build_coupling_on_full_level/run_full_level_test directly (K=1, so4_all[6:12]), and C79/C73's underlying machinery, all unmodified."
+    does_not_imply:
+      - "that k>=2 has been tested for so(4)_2"
+      - "that C75's 10-dim centralizer candidate or C83's 9-dim remainder groups have been tested on this joint space"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -1933,6 +1950,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "90 entries as of the so(4)_2 full-k1-level coupling test (2026-08-12). C89 added, extending C86's own n=0<->n=1 joint methodology to round119's so(4)_2 (previously n=0-only in C82) -- clean NULL, both triples, su(2) closure and D_S3 target both confirmed exact, k=1 exactly Hermitian throughout (no correction needed). Both octonion blocks of round119's SO(4)xSO(4) candidate are now clean on the joint test. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 90)."
   - "89 entries as of the direct selection-rule matrix-element round, and a same-day integrity correction (2026-08-12). C88 added after a real bug was found and fixed: C87's own eps-sweep used np.linalg.eigvalsh on a genuinely non-Hermitian matrix at k=2 (residual 2.0, not a numerical artifact) -- caught while scoping the NEXT round, not after being reported wrong. Fixed run_full_level_test to detect non-Hermiticity and fall back to a general eigensolver; corrected re-run reproduced the SAME numbers, verified trustworthy this time (imaginary parts confirmed at machine precision throughout). C87's own ledger entry (id C87_FULL_K2_N1_N2_JOINT_COUPLING_TEST_CLEAN_NULL) was AMENDED IN PLACE with this correction, per this ledger's own established same-day-correction convention -- not silently left standing. Separately, C88 itself found a genuine, real finding: Z_i (the S3-side coupling generator) DOES have nonzero matrix elements connecting adjacent Peter-Weyl eigenspaces at every k=1..4 tested -- a real coupling channel exists, which does NOT contradict C86/C87's own 'no crossing' results (necessary != sufficient for the full joint operator) but DOES require correcting the imprecise 'no evidence of mixing' language in both C86's and C87's own decision.md files (also amended in place, same day). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 89)."
   - "88 entries as of the second joint-level coupling test, n=1<->n=2 (2026-08-12). C87 added, extending C86's own named next step one level deeper: level k=2's full 18-dim S3 Hilbert space confirmed to contain physical n=1's sigma=+1 and n=2's sigma=-1 branches simultaneously; C79-C83's coupling operator tested on this pair (1152-dim joint space) -- clean NULL, both round119 so(4)_1 triples, extending the no-inter-level-mixing pattern one level deeper. Honestly flagged an open caveat (D-bar's naive Hermiticity residual grows with k, 0.0 at k=1 to 2.0 at k=2 -- does not affect the gated, algebraically-certified eigenvalue result, but is an open normalization question for a future round). Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 88)."
   - "87 entries as of the first n=0<->n=1 joint coupling test (2026-08-12). C86 added, continuing the external reviewer's staged plan into C84B: built level k=1's full 8-dim S3 Hilbert space from C85's certified substrate, verified it contains BOTH physical n=0's sigma=+1 branch AND n=1's sigma=-1 branch simultaneously (the first joint test of two different physical n's anywhere in this arc). Tested C79-C83's own coupling operator T on this genuinely richer 512-dim joint space -- clean NULL for both round119 so(4)_1 candidate triples, no inter-level mixing found for this specific construction. Named next steps: k=2 (n=1<->n=2), remaining so(8) complement candidates on this joint space, or a genuinely different orbital-generator-based coupling ansatz. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 87)."
