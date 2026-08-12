@@ -1,0 +1,55 @@
+{
+  "per_k": {
+    "1": {
+      "su2_bracket_holds": true,
+      "L_equals_R": false,
+      "L_equals_neg_R": false,
+      "L_distinct_from_R": true,
+      "R_anti_hermitian": true,
+      "L_anti_hermitian": true
+    },
+    "2": {
+      "su2_bracket_holds": true,
+      "L_equals_R": false,
+      "L_equals_neg_R": false,
+      "L_distinct_from_R": true,
+      "R_anti_hermitian": false,
+      "L_anti_hermitian": false
+    },
+    "3": {
+      "su2_bracket_holds": true,
+      "L_equals_R": false,
+      "L_equals_neg_R": false,
+      "L_distinct_from_R": true,
+      "R_anti_hermitian": false,
+      "L_anti_hermitian": false
+    },
+    "4": {
+      "su2_bracket_holds": true,
+      "L_equals_R": false,
+      "L_equals_neg_R": false,
+      "L_distinct_from_R": true,
+      "R_anti_hermitian": false,
+      "L_anti_hermitian": false
+    },
+    "5": {
+      "su2_bracket_holds": true,
+      "L_equals_R": false,
+      "L_equals_neg_R": false,
+      "L_distinct_from_R": true,
+      "R_anti_hermitian": false,
+      "L_anti_hermitian": false
+    }
+  },
+  "p1_all_k_bracket_holds": true,
+  "p2_all_k_distinct": true,
+  "p3_hermiticity_pattern": {
+    "1": true,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false
+  },
+  "p3_matches_known_r_pattern": true,
+  "verdict": "DUAL_REPRESENTATION_VALID_SU2_REP__HERMITICITY_MATCHES_KNOWN_R_PATTERN"
+}
