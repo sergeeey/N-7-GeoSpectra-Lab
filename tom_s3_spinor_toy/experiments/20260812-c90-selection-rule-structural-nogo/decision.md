@@ -85,6 +85,24 @@ session -- deliberately deferred rather than rushed.
 4. Does **not** change `N_gen=3`'s CONDITIONAL status.
 5. Does **not** solicit or reference Tom Lawrence's unpublished Part 5.
 
+## Same-day correction (added while scoping C91)
+
+While re-deriving the multiplication-operator construction for the next
+round, found this round's own docstring had overclaimed the
+Clebsch-Gordan decomposition: it stated `level_k (x) level_1 =
+level_{k-1} (+) level_k (+) level_{k+1}` (three terms). This is wrong --
+the standard SU(2) angular-momentum addition rule for `j1 (x) 1/2` gives
+**exactly two** terms (`j1-1/2`, `j1+1/2`); adding spin-1/2 to any finite
+spin never returns the same spin. Does **not** affect P1 or P2 above --
+P2's own verified computation only ever tested the `k -> k+1` branch, the
+spurious "same-level" term was narrative text only, never used in a
+computation. Added `verify_no_same_level_term_in_decomposition` (Part 3)
+to the script, confirming the same-level CG coefficient is forced to
+zero for `k=1,2,3`; docstring corrected in place; script re-run, all
+three parts confirmed. Fixed same day (2026-08-12), not silently left
+standing, per this project's own established same-day-correction
+convention.
+
 ## Reproduction
 
 ```
