@@ -501,3 +501,23 @@ remaining candidates (opposite-handed complex structure, explicit
 antilinear treatment, or Meier's own primary source) without attempting
 them. Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C93 (2026-08-12):** second groundwork step.
+Scoping resolved an apparent contradiction between two leads found while
+scoping C92's own follow-up: quaternion left-multiplication (C92) is
+inescapably antilinear because it conflates `q` with a literal matrix
+row tied to its conjugate row by unitarity -- a structural fact, not a
+coding artifact -- while the abstract Peter-Weyl `V_j (x) V_j*`
+decomposition avoids this entirely via the CONTRAGREDIENT
+representation (`sigma(X)=-rho(X)^T`, purely linear, no conjugation
+anywhere).
+`experiments/20260812-c93-dual-representation-q-side-generator/decision.md`
+-- tested `L_i=-l_{e_i}(k)^T` for `k=1..5`: satisfies the su(2) bracket
+exactly (every `k`), genuinely distinct from `+-l_{e_i}` (every `k`),
+and anti-Hermitian ONLY at `k=1` -- matching `l_{e_i}` ITSELF exactly,
+inheriting this project's already-known Hermiticity pattern (C87/C88)
+rather than a new problem. Does NOT yet prove `L_i` is physically
+correct for Meier's own construction; the decisive next check (full
+Peter-Weyl `G x G` bimodule/Casimir structure) is named, not attempted.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
