@@ -38,5 +38,22 @@
     },
     "all_nonzero_k_to_kplus1": true
   },
+  "part3_same_day_correction_check": {
+    "per_k": {
+      "1": {
+        "cg_targeting_same_level_k": "0",
+        "is_zero": true
+      },
+      "2": {
+        "cg_targeting_same_level_k": "0",
+        "is_zero": true
+      },
+      "3": {
+        "cg_targeting_same_level_k": "0",
+        "is_zero": true
+      }
+    },
+    "no_same_level_term_confirmed": true
+  },
   "verdict": "STRUCTURAL_NOGO_FOR_TRANSLATION_GENERATOR_COUPLINGS__MULTIPLICATION_OPERATOR_ALTERNATIVE_VERIFIED_VIABLE_NOT_YET_BUILT"
 }
