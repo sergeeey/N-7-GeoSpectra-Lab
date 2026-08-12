@@ -1,0 +1,42 @@
+{
+  "part1_structural_finding": {
+    "level_dimensions": {
+      "0": 2,
+      "1": 8,
+      "2": 18,
+      "3": 32,
+      "4": 50
+    },
+    "finding": "T_k is defined on level k's own (p,q,r) space alone (dimension 2*(k+1)^2, different for each k). Z_i acts as literal identity on (p,q) by construction, so it cannot, even in principle, map a state's (p,q) content into a different level's (p,q) range. This holds for l_{e_i} too (Meier's own construction: a (k+1)-dim matrix acting entirely within level k's own p-index). Both are infinitesimal generators of the group's own left/right regular representation; Peter-Weyl levels are the isotypic components of that same representation, invariant under left and right translation by definition -- so any operator built purely from these generators is necessarily block-diagonal across levels, structurally, not as a limitation of a specific postulate."
+  },
+  "part2_cg_verification": {
+    "per_k": {
+      "1": {
+        "source_level_k": 1,
+        "source_level_dim_2j1_plus_1": 2,
+        "target_level_k_plus_1": 2,
+        "target_level_dim": 3,
+        "cg_coefficient": "1",
+        "nonzero": true
+      },
+      "2": {
+        "source_level_k": 2,
+        "source_level_dim_2j1_plus_1": 3,
+        "target_level_k_plus_1": 3,
+        "target_level_dim": 4,
+        "cg_coefficient": "1",
+        "nonzero": true
+      },
+      "3": {
+        "source_level_k": 3,
+        "source_level_dim_2j1_plus_1": 4,
+        "target_level_k_plus_1": 4,
+        "target_level_dim": 5,
+        "cg_coefficient": "1",
+        "nonzero": true
+      }
+    },
+    "all_nonzero_k_to_kplus1": true
+  },
+  "verdict": "STRUCTURAL_NOGO_FOR_TRANSLATION_GENERATOR_COUPLINGS__MULTIPLICATION_OPERATOR_ALTERNATIVE_VERIFIED_VIABLE_NOT_YET_BUILT"
+}

@@ -438,3 +438,31 @@ C75's 10-dim centralizer candidate and C83's 9-dim remainder groups,
 neither yet tested on any joint-level space. Outside the closed P1-P5
 program; does not change `N_gen=3`'s CONDITIONAL status; does not
 solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C90 (2026-08-12):** an external reviewer
+proposed assembling C86/C87/C89's per-level tests into one
+block-tridiagonal Peter-Weyl Dirac matrix `D_PW` and testing truncation
+convergence as more levels are included. Before building it,
+`experiments/20260812-c90-selection-rule-structural-nogo/decision.md`
+found a structural obstruction by direct inspection of C86's own
+`build_coupling_on_full_level`: `T_k` lives entirely within level `k`'s
+own `(p,q,r)` space (dimension `2*(k+1)^2`, different for each `k`),
+and `Z_i` acts as literal identity on `(p,q)` -- there is no shared
+index for a cross-term `T_{k,k+1}` to act on. This generalizes: both
+`Z_i` and `l_{e_i}` are infinitesimal generators of S3's own left/right
+regular representation, and Peter-Weyl levels are exactly that
+representation's isotypic components -- invariant under translation by
+definition, so any operator built purely from these generators is
+necessarily block-diagonal across levels. The reviewer's literal
+proposal, built from the existing `T`, would therefore reduce to a
+direct sum of already-tested independent blocks and add no new
+information -- C86/C87/C89's per-level results were, for this
+construction family, an EXHAUSTIVE test, not three samples of a
+pattern. A genuinely different, viable alternative was identified and
+verified (not merely proposed): pointwise multiplication by a level-1
+matrix-coefficient function, confirmed via sympy's own exact
+Clebsch-Gordan class to give nonzero coupling from level `k` to level
+`k+1` for `k=1,2,3`. Building this into a certified, usable coupling
+operator is named as the next step but was deliberately NOT attempted
+this round. Outside the closed P1-P5 program; does not change
+`N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
