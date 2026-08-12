@@ -38,16 +38,29 @@ computational footing (k=1 is exactly Hermitian, no correction needed).
 **Killed:** so(4)_2's self-dual and anti-self-dual triples, as
 candidates for n=0<->n=1 mixing via C79-C89's coupling construction.
 
-**Not killed:** C75's 10-dim centralizer candidate and C83's 9-dim
+**Not killed:** C75's 2-dim centralizer candidate and C83's 9-dim
 remainder groups, not yet tested on any joint-level space.
 
 ## What this does NOT show
 
 1. Does **not** test k>=2 for so(4)_2.
 2. Does **not** test the remaining `so(8)` complement candidates
-   (C75's 10-dim, C83's 9-dim remainder) on this joint space.
+   (C75's 2-dim centralizer, C83's 9-dim remainder) on this joint space.
 3. Does **not** change `N_gen=3`'s CONDITIONAL status.
 4. Does **not** solicit or reference Tom Lawrence's unpublished Part 5.
+
+## Same-day correction (added when scoping C91)
+
+This section originally said "C75's 10-dim centralizer candidate" in
+both places above. That's imprecise: C75's actual centralizer (`u1_a`,
+`u1_b`) is 2-dim (`centralizer_dim=2`, abelian) -- the "10" refers to
+round124's full `su(3)+u(1)+u(1)` candidate symmetry (8+1+1=10
+generators), a different object the original C75 already tested (and
+found fails Gate 2, against round59's S6-only D, not this round's joint
+S3-S6 space). Corrected here and in `predictions_before_data.md` and
+`CLAIM_LEDGER.yaml`'s `does_not_imply` field for this claim; see C91's
+own claim.md/decision.md for the actual joint-level test of the 2-dim
+centralizer.
 
 ## Reproduction
 

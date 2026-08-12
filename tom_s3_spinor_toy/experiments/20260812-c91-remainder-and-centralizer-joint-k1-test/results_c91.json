@@ -1,0 +1,140 @@
+{
+  "k": 1,
+  "d_s3_full_info": {
+    "k": 1,
+    "dim_pr": 4,
+    "dim_full": 8,
+    "dbar_pr_hermiticity_residual": 0.0,
+    "dbar_pr_eigenvalues_raw": [
+      -1.0,
+      -1.0,
+      -1.0,
+      3.0
+    ]
+  },
+  "target_crosscheck": {
+    "n_minus": 1,
+    "target_minus_eigenvalue": -2.5,
+    "target_minus_multiplicity": 6,
+    "found_minus_multiplicity": 6,
+    "minus_matches": true,
+    "n_plus": 0,
+    "target_plus_eigenvalue": 1.5,
+    "target_plus_multiplicity": 2,
+    "found_plus_multiplicity": 2,
+    "plus_matches": true,
+    "all_eigenvalues_with_multiplicity": [
+      [
+        -2.5,
+        6
+      ],
+      [
+        1.5000000000000004,
+        2
+      ]
+    ],
+    "both_match": true
+  },
+  "p1_remainder_info": {
+    "shadow_singular_values": [
+      1.4142135623730954,
+      1.4142135623730954,
+      1.4142135623730954,
+      1.4142135623730951,
+      1.4142135623730951,
+      1.4142135623730947,
+      1.0000000000000002,
+      1.0000000000000002,
+      1.0,
+      0.9999999999999998,
+      0.8164965809277259,
+      3.077041151209759e-16
+    ],
+    "rho": 11,
+    "remaining_dim": 9,
+    "overlap_check": 4.638171781942258e-16,
+    "gram_identity_residual": 5.498827159211281e-16
+  },
+  "p1_results": {
+    "group_0_1_2": {
+      "dim_orb": 8,
+      "dim_joint": 512,
+      "herm_residual_base": 0.0,
+      "herm_residual_t_raw_before_hermitizing": 1.0522159260512605,
+      "base_is_hermitian": true,
+      "used_general_eigensolver": false,
+      "max_imaginary_part_seen": 0.0,
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "compressed_eps0_min_abs_eigval": 0.3257418583505522,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.00031282729189425037,
+      "compressed_global_min_at_eps": -1.275,
+      "full_spectrum_nonartifact_crossings": [],
+      "full_spectrum_all_crossings_count": 0
+    },
+    "group_3_4_5": {
+      "dim_orb": 8,
+      "dim_joint": 512,
+      "herm_residual_base": 0.0,
+      "herm_residual_t_raw_before_hermitizing": 1.097636841890787,
+      "base_is_hermitian": true,
+      "used_general_eigensolver": false,
+      "max_imaginary_part_seen": 0.0,
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "compressed_eps0_min_abs_eigval": 0.3257418583505522,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 0.00013423828557767282,
+      "compressed_global_min_at_eps": 0.9500000000000002,
+      "full_spectrum_nonartifact_crossings": [],
+      "full_spectrum_all_crossings_count": 0
+    },
+    "group_6_7_8": {
+      "dim_orb": 8,
+      "dim_joint": 512,
+      "herm_residual_base": 0.0,
+      "herm_residual_t_raw_before_hermitizing": 1.4257128076388383,
+      "base_is_hermitian": true,
+      "used_general_eigensolver": false,
+      "max_imaginary_part_seen": 0.0,
+      "d_s6_kernel_dim": 36,
+      "d_s6_nonkernel_dim": 28,
+      "compressed_eps0_min_abs_eigval": 0.3257418583505522,
+      "compressed_n_crossings": 0,
+      "compressed_crossings": [],
+      "compressed_global_min": 2.6355579685860902e-05,
+      "compressed_global_min_at_eps": -0.8999999999999999,
+      "full_spectrum_nonartifact_crossings": [],
+      "full_spectrum_all_crossings_count": 0
+    }
+  },
+  "p1_no_genuine_signal_found": true,
+  "p2_centralizer_sanity": {
+    "centralizer_dim": 2,
+    "abelian": true,
+    "u1_commutator_norm": 1.6202305335359943e-15,
+    "u1_a_centralizes_su3_on_channel_v": 2.7755575615628914e-16
+  },
+  "p2_result": {
+    "dim_orb": 8,
+    "dim_joint": 512,
+    "herm_residual_base": 0.0,
+    "herm_residual_t_raw_before_hermitizing": 2.622394529082807,
+    "base_is_hermitian": true,
+    "used_general_eigensolver": false,
+    "max_imaginary_part_seen": 0.0,
+    "d_s6_kernel_dim": 36,
+    "d_s6_nonkernel_dim": 28,
+    "compressed_eps0_min_abs_eigval": 0.3257418583505522,
+    "compressed_n_crossings": 0,
+    "compressed_crossings": [],
+    "compressed_global_min": 0.0009503053330933422,
+    "compressed_global_min_at_eps": -1.375,
+    "full_spectrum_nonartifact_crossings": [],
+    "full_spectrum_all_crossings_count": 0
+  },
+  "p2_no_genuine_signal_found": true
+}
