@@ -535,3 +535,21 @@ nothing.
 amended in place with the correction and a tool-verified check
 confirming it; the actually-decisive test would need to work at the
 GROUP level (exponentiated generators), not attempted.
+
+**Post-closure follow-up, C94 (2026-08-12):** directed by an external
+reviewer to stop hand-deriving the q-side generator sign and certify it
+directly from the group action's own defining formula.
+`experiments/20260812-c94-group-action-certification-q-side-generator/decision.md`
+-- certified the RIGHT-translation generator (`-l_{e_i}(1)^T`) and
+LEFT-translation generator (`+l_{e_i}(1)^T`), both uniform across all 3
+quaternion units, correcting C93's own `-l_{e_i}^T` sign. But an
+exploratory bracket-consistency check found the corrected `+l^T`
+candidate does NOT satisfy the bracket relation expected from the
+independently-confirmed group representation property -- three
+independent attempts to locate the source did not succeed. **Honest
+verdict: neither sign is currently trustworthy.** Per the reviewer's
+own instruction, C95 (multiplication-operator certification) and C96
+(spectral-flow experiment) are gated closed until this resolves -- no
+crossing scans until this passes. Outside the closed P1-P5 program;
+does not change `N_gen=3`'s CONDITIONAL status; does not solicit Tom
+Lawrence's Part 5.

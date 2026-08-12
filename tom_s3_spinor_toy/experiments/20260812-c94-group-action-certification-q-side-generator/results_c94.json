@@ -1,0 +1,49 @@
+{
+  "inverse_first_order_sanity": {
+    "e1_i": true,
+    "e2_j": true,
+    "e3_k": true
+  },
+  "per_unit": {
+    "e1_i": {
+      "right_translation_matches": [
+        "-l",
+        "-lT"
+      ],
+      "left_translation_matches": [
+        "+l",
+        "+lT"
+      ]
+    },
+    "e2_j": {
+      "right_translation_matches": [
+        "+l",
+        "-lT"
+      ],
+      "left_translation_matches": [
+        "+lT",
+        "-l"
+      ]
+    },
+    "e3_k": {
+      "right_translation_matches": [
+        "-l",
+        "-lT"
+      ],
+      "left_translation_matches": [
+        "+l",
+        "+lT"
+      ]
+    }
+  },
+  "p1_right_translation_consistent": true,
+  "right_translation_candidates": [
+    "-lT"
+  ],
+  "p2_left_translation_consistent": true,
+  "left_translation_candidates": [
+    "+lT"
+  ],
+  "p3_bracket_consistent_exploratory": false,
+  "verdict": "GROUP_ACTION_GENERATORS_CONSISTENT_ACROSS_UNITS_BUT_BRACKET_CHECK_UNRESOLVED"
+}
