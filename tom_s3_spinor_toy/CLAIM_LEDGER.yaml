@@ -2014,6 +2014,23 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C96_K2_REPLICATION_DIVERGES_L_R_ROLES_SWAP
+    statement: "Tests whether C95's k=1 q-side generator formula (L_i=+l_{e_i}(1) directly, R_i=-l_{e_i}(1)^T) generalizes to k=2 (spin-1), per the reviewer's own original requirement before trusting a k=1-derived result. It does NOT generalize in the specific form found at k=1 -- the L/R roles swap exactly: at k=2, L_i=-l_{e_i}(2)^T and R_i=+l_{e_i}(2) (both bracket-verified, [L1,L2]=2L3 and [R1,R2]=2R3 hold exactly). This round's own P0 calibration (uniform match of R to one of {+l,-l,+lT,-lT} with the bracket holding) PASSES cleanly, matching '+l' uniformly -- but NOT the specific candidate ('-lT') predicted in claim.md by carrying over the k=1 pattern; that specific prediction was an honest miss, recorded as such, not silently revised. Two genuine bugs in THIS round's own new construction (not in C85 or C95) were found and fixed before this result could be trusted: (1) [self-caught] coefficient_space_generator_general was first called with D2_generic (an explicit a,b-polynomial matrix) instead of an abstract free-symbol matrix D_sym -- after sp.expand, the compound entries were no longer recognizable as Poly generators, so coeff_monomial silently returned 0 for everything, producing all-zero L_op/R_op that passed [L1,L2]=2L3 only vacuously (0=0). Fixed by introducing D_sym (matching C95's own g00/g01/g10/g11 convention) as the abstract matrix the extraction acts on. (2) [self-caught, more serious] build_d2_matrix (the raw monomial-substitution construction of D^{(2)}(g)) was verified DIRECTLY (via two independent symbolic SU(2) elements) to be an ANTI-homomorphism: D(g1)*D(g2)=D(g2*g1), not D(g1)*D(g2)=D(g1*g2) -- the classic pullback-vs-pushforward sign trap of substituting transformed variables into a monomial and reading off coefficients in the original variables. This bug is structurally IMPOSSIBLE at k=1 (C95 used D^{(1)}(g):=g directly, a trivial identity map, automatically a genuine homomorphism -- no substitution trick, no possible pullback error), which is exactly why it surfaced only now, confirming this round's own claim.md rationale for why k=1 alone was insufficient. Fixed via the standard remedy D_correct(g):=D_raw(g^{-1}) (verified directly: D_raw(conj(a),-b) satisfies the genuine order-preserving homomorphism property for two independent symbolic SU(2) elements, both composition orders checked). After both fixes, [X1,X2]=2X3 holds for the bare 3x3 group-action generators themselves (not just the derived L_op/R_op), confirming the fix operates at the correct layer. Per this round's own pre-registered kill_criterion ('if P0 holds but P1 fails, C95's formula is k=1-specific, a real useful narrowing finding, not a null result') -- this is exactly the outcome obtained."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c96-k2-replication-q-side-generator/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C95_COEFFICIENT_SPACE_BRACKET_RESOLVED]
+    supersedes: "narrows C95's own scope -- C95's k=1 result (L=+l, R=-l^T) is UNCHANGED and unaffected (verified structurally immune to this round's own bug); what is superseded is the IMPLICIT assumption that C95's exact formula holds as a single fixed rule across all Peter-Weyl levels k"
+    does_not_imply:
+      - "that a clean k-dependent rule explaining the L/R role swap has been found -- this round deliberately does not speculate; the next-cheapest test would be a k=3 replication using this same (now-debugged) construction"
+      - "that C85's own certified l_{e_i}(2) matrices, or C95's own k=1 result, contain any error -- both verified unaffected; the bugs found were entirely in this round's own new D^{(2)}(g) construction"
+      - "that the multiplication-operator build (task #59, C90's reviewer-proposed next step) can proceed with a single fixed q-side generator formula -- it explicitly cannot, per this round's own result; a k-dependent formula or per-level certification is now required"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

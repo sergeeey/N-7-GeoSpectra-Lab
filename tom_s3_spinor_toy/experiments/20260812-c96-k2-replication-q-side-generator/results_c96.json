@@ -1,0 +1,138 @@
+{
+  "per_unit": {
+    "e1_i": {
+      "L_op": [
+        [
+          "2*I",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-2*I"
+        ]
+      ],
+      "R_op": [
+        [
+          "-2*I",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "2*I"
+        ]
+      ],
+      "L_matches": [
+        "-l",
+        "-lT"
+      ],
+      "R_matches": [
+        "+l",
+        "+lT"
+      ]
+    },
+    "e2_j": {
+      "L_op": [
+        [
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-2",
+          "0"
+        ]
+      ],
+      "R_op": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "-2",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ]
+      ],
+      "L_matches": [
+        "-lT"
+      ],
+      "R_matches": [
+        "+l"
+      ]
+    },
+    "e3_k": {
+      "L_op": [
+        [
+          "0",
+          "2*I",
+          "0"
+        ],
+        [
+          "I",
+          "0",
+          "I"
+        ],
+        [
+          "0",
+          "2*I",
+          "0"
+        ]
+      ],
+      "R_op": [
+        [
+          "0",
+          "-I",
+          "0"
+        ],
+        [
+          "-2*I",
+          "0",
+          "-2*I"
+        ],
+        [
+          "0",
+          "-I",
+          "0"
+        ]
+      ],
+      "L_matches": [
+        "-lT"
+      ],
+      "R_matches": [
+        "+l"
+      ]
+    }
+  },
+  "p0_calibration_ok_uniform_bracket_consistent_R": true,
+  "p0_matches_specific_prediction_minus_lT": false,
+  "p1_matches_specific_prediction_plus_l": false,
+  "p2_L_bracket_consistent": true,
+  "p2_R_bracket_consistent": true,
+  "verdict": "K2_REPLICATION_DIVERGES_FROM_K1__C95_FORMULA_IS_K_SPECIFIC"
+}
