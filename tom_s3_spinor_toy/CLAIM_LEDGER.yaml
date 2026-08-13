@@ -2082,6 +2082,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C100_FULL_CG_MULTIPLICATION_OPERATOR_ASSEMBLED_INJECTIVE_EMBEDDING
+    statement: "Builds the FULL (q,p)-only multiplication-type coupling operator matrix M_k, level k -> level k+1, for k=1,2,3, using the standard D^k_{q,p}(g)*D^1_{1/2,1/2}(g) product-of-matrix-elements identity and C99's own verified magnetic-number labeling -- extending C90's own single extremal-weight CG check (one coefficient per level) to every (q,p) pair, the exact gap C90's own decision.md named as the next step. All predictions verified: M_k has the correct (k+2)^2 x (k+1)^2 dimensions (P0); every nonzero entry independently cross-checked via the Wigner-3j relation (sympy.physics.wigner, a genuinely different code path from sympy.physics.quantum.cg.CG used to build the matrix, not a second call to the same function) -- exact match every entry, every k (P1); M_k reproduces C90's own extremal-weight result exactly as one entry inside the fully-assembled matrix (P2); matrix is nonzero and non-trivial (P3, coded criterion). PRECISE characterization beyond the coded P3 check: M_k has EXACTLY (k+1)^2 nonzero entries at every k -- exactly ONE nonzero entry per level-k input state, verified directly (nonzero_count == dim_k**2 exactly for k=1,2,3). This means, for this single fixed D^1_{1/2,1/2} component, the operator is an INJECTIVE EMBEDDING (monomial map) of level-k's (q,p)-space into a (k+1)^2-dim subspace of level-(k+1)'s (q,p)-space -- not a many-to-many mixing operator, but a genuine, nontrivial, nonzero level-BRIDGING map, qualitatively distinct from and strictly stronger than the entire C79-C89 translation-generator family (which C90 proved is EXACTLY ZERO across levels, for any assembly). This single-component structure is expected, not a red flag: D^k*D^1_{a,b} for FIXED (a,b) always lands in exactly one target multiplet by the CG formula itself; genuine multi-state superposition would require summing over MULTIPLE (a,b) components, not attempted this round."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c100-full-cg-multiplication-operator-assembly/decision.md"
+    depends_on: [C90_STRUCTURAL_NOGO_TRANSLATION_GENERATOR_COUPLINGS, C99_MAGNETIC_LABELING_VERIFIED_K1_EXTREMAL_INDEX_ANOMALY]
+    supersedes: "extends (does not correct or contradict) C90's own single-representative CG check to the full matrix; does not change C90's own extremal-weight result, which is reproduced exactly as one entry"
+    convention: "operator built for the SINGLE fixed D^1_{a=1/2,b=1/2} matrix-element component only, matching C90's own choice -- the other three (a,b) components, and any physically-motivated sum over components, are NOT built here"
+    does_not_imply:
+      - "that the full (p,q,r)-basis physical multiplication operator has been built -- r's role remains completely unaddressed, a genuinely open question no round has yet attempted"
+      - "that this operator produces multi-state mixing/superposition -- for this single fixed (a,b) component it is a clean injective embedding (one output per input), not a mixing matrix; multi-state mixing (if physically needed) would require summing over multiple (a,b) components, not attempted"
+      - "that the block-tridiagonal D_PW or any truncation-convergence test has been built or run -- both remain later steps in C90's own original scoping"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

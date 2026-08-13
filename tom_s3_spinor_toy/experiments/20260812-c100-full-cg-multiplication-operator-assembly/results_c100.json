@@ -1,0 +1,42 @@
+{
+  "per_k": {
+    "1": {
+      "matrix_shape": [
+        9,
+        4
+      ],
+      "p0_dims_ok": true,
+      "p1_independent_recheck_ok": true,
+      "p2_matches_c90_extremal": true,
+      "p3_nonzero_entry_count": 4,
+      "p3_non_degenerate": true
+    },
+    "2": {
+      "matrix_shape": [
+        16,
+        9
+      ],
+      "p0_dims_ok": true,
+      "p1_independent_recheck_ok": true,
+      "p2_matches_c90_extremal": true,
+      "p3_nonzero_entry_count": 9,
+      "p3_non_degenerate": true
+    },
+    "3": {
+      "matrix_shape": [
+        25,
+        16
+      ],
+      "p0_dims_ok": true,
+      "p1_independent_recheck_ok": true,
+      "p2_matches_c90_extremal": true,
+      "p3_nonzero_entry_count": 16,
+      "p3_non_degenerate": true
+    }
+  },
+  "all_p0_dims_ok": true,
+  "all_p1_recheck_ok": true,
+  "all_p2_matches_c90": true,
+  "all_p3_non_degenerate": true,
+  "verdict": "FULL_CG_MATRIX_ASSEMBLED_AND_VERIFIED__QP_ONLY_R_STILL_OPEN"
+}

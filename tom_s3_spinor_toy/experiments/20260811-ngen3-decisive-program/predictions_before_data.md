@@ -665,3 +665,22 @@ CG-assembly build; still open: full CG assembly across all (q,p)
 pairs, and r's role in the operator (unaddressed, genuinely open).
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**C100 (2026-08-12):** builds the full `(q,p)`-only multiplication
+operator matrix `M_k`, level k -> k+1, for k=1,2,3, extending C90's
+own single extremal-weight check to every `(q,p)` pair (the exact gap
+C90 named). `experiments/20260812-c100-full-cg-multiplication-operator-assembly/decision.md`
+-- all predictions verified: correct dimensions, every entry
+independently cross-checked via the Wigner-3j relation (a genuinely
+different sympy code path), C90's own extremal result reproduced
+exactly as one entry. **Precise finding beyond the coded checks:** for
+this single fixed `D^1_{1/2,1/2}` component, `M_k` has EXACTLY
+`(k+1)^2` nonzero entries -- an INJECTIVE EMBEDDING (one output per
+input), not a many-to-many mixing operator. Still a genuine, nonzero,
+level-bridging map -- qualitatively distinct from and stronger than
+the entire C79-C89 translation-generator family (proven exactly zero
+across levels by C90). Genuine multi-state mixing, if physically
+needed, would require summing over multiple `(a,b)` components -- not
+attempted. `r`'s role remains completely open. Outside the closed
+P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does
+not solicit Tom Lawrence's Part 5.
