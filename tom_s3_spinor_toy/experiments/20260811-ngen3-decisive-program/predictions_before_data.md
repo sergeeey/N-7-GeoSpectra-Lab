@@ -640,3 +640,28 @@ needed, though the bar for skepticism there is reasonably lower given
 the 3-point track record. Outside the closed P1-P5 program; does not
 change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
 Part 5.
+
+**Task #59 begins, C99 (2026-08-12):** first round actually working on
+the multiplication-operator build itself (not another k-generalization
+round). `experiments/20260812-c99-lr-commutativity-magnetic-labeling/decision.md`
+-- extracts the magnetic-number labeling `m_q(k,q)`, `m_p(k,p)`
+directly from the certified L_i/R_i generators; both form clean,
+evenly-spaced sequences at k=1,2,3,4. Cross-checked against C90's own
+extremal-weight CG check: finds the literal p-index for the extremal
+state is `p=0` at k=1 but `p=k` at k=2,3,4 -- the naive "p=k always
+extremal" assumption is FALSE specifically at k=1, a direct consequence
+of C95's own sign-flip finding. **Self-corrected mid-round:** the
+originally pre-registered P0 (raw `(k+1)x(k+1)` matrix commutator
+`[L_i,R_j]=0`) was found to be a category error before drawing any
+conclusion from it -- L_i, R_i act on DIFFERENT tensor factors, so
+their raw matrix forms have no reason to commute; the correctly-posed
+question (tensor-embedded commutativity) is guaranteed by matrix
+associativity for ANY L,R and needs no check. The flawed P0 DID fail
+when run (which would have produced a false "construction is broken"
+verdict had the error not been caught) -- replaced with a correct
+sanity-anchor, confirmed trivially true. Practical consequence: the
+correct magnetic-labeling tables are now available for the actual
+CG-assembly build; still open: full CG assembly across all (q,p)
+pairs, and r's role in the operator (unaddressed, genuinely open).
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.

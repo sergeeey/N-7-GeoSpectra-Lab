@@ -1,0 +1,90 @@
+{
+  "per_k": {
+    "1": {
+      "m_q_physical": [
+        "-1/2",
+        "1/2"
+      ],
+      "m_p_physical": [
+        "1/2",
+        "-1/2"
+      ],
+      "q_spacing_uniform": true,
+      "p_spacing_uniform": true,
+      "extremal_p_index_for_m_equals_j1": [
+        0
+      ],
+      "extremal_p_equals_k_naive_assumption": false,
+      "cg_coefficient_at_extremal": "1"
+    },
+    "2": {
+      "m_q_physical": [
+        "1",
+        "0",
+        "-1"
+      ],
+      "m_p_physical": [
+        "-1",
+        "0",
+        "1"
+      ],
+      "q_spacing_uniform": true,
+      "p_spacing_uniform": true,
+      "extremal_p_index_for_m_equals_j1": [
+        2
+      ],
+      "extremal_p_equals_k_naive_assumption": true,
+      "cg_coefficient_at_extremal": "1"
+    },
+    "3": {
+      "m_q_physical": [
+        "3/2",
+        "1/2",
+        "-1/2",
+        "-3/2"
+      ],
+      "m_p_physical": [
+        "-3/2",
+        "-1/2",
+        "1/2",
+        "3/2"
+      ],
+      "q_spacing_uniform": true,
+      "p_spacing_uniform": true,
+      "extremal_p_index_for_m_equals_j1": [
+        3
+      ],
+      "extremal_p_equals_k_naive_assumption": true,
+      "cg_coefficient_at_extremal": "1"
+    },
+    "4": {
+      "m_q_physical": [
+        "2",
+        "1",
+        "0",
+        "-1",
+        "-2"
+      ],
+      "m_p_physical": [
+        "-2",
+        "-1",
+        "0",
+        "1",
+        "2"
+      ],
+      "q_spacing_uniform": true,
+      "p_spacing_uniform": true,
+      "extremal_p_index_for_m_equals_j1": [
+        4
+      ],
+      "extremal_p_equals_k_naive_assumption": true,
+      "cg_coefficient_at_extremal": "1"
+    }
+  },
+  "p0_tensor_embedded_sanity_anchor_ok": true,
+  "p1_m_q_spacing_uniform_all_k": true,
+  "p2_m_p_spacing_uniform_all_k": true,
+  "p3_matches_c90_extremal_check": true,
+  "k1_extremal_p_sign_flip_found_relative_to_naive_p_equals_k": true,
+  "verdict": "ALL_VERIFIED__LABELING_READY_FOR_FULL_CG_ASSEMBLY"
+}

@@ -2064,6 +2064,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C99_MAGNETIC_LABELING_VERIFIED_K1_EXTREMAL_INDEX_ANOMALY
+    statement: "Prerequisite check before building the actual multiplication-type coupling operator (task #59, C90's own explicit next step): extracts the magnetic-number labeling m_q(k,q):=L_1(k)[q,q]/i, m_p(k,p):=R_1(k)[p,p]/i directly from the certified generators (C95 k=1; C96/C97/C98 k=2,3,4), rather than assuming it from l_{e1}(k)'s own raw index convention. Both m_q and m_p form clean, evenly-spaced sequences at every k=1,2,3,4 (P1/P2 PASS). Cross-checked against C90's own single-representative extremal-weight Clebsch-Gordan check: identifies which LITERAL p-index corresponds to the extremal state (m=j1=k/2) using the actual R_1(k) values, finding p=0 at k=1 but p=k at k=2,3,4 -- i.e. the naive 'p=k is always extremal' assumption is FALSE specifically at k=1, a direct numerical consequence of C95's own finding that R_i(1)=-l_{e_i}(1)^T is sign-flipped relative to l_{e1}(1) itself (unlike k>=2, where R_i(k)=+l_{e_i}(k) matches l_{e1}'s own convention with no flip). Recomputing C90's CG value at the CORRECTLY identified extremal index reproduces C90's own result (coefficient 1, exact) in every case (P3 PASSES). SELF-CORRECTED MID-ROUND: this round's own originally pre-registered P0 (raw (k+1)x(k+1) matrix commutator [L_i(k),R_j(k)]=0 for all i,j,k) was found, before drawing any conclusion from its result, to be a CATEGORY ERROR -- L_i and R_i act on DIFFERENT tensor factors (q,p) of the (k+1)^2-dim matrix-coefficient space, not the same (k+1)-dim space, so there is no reason their raw matrix forms should commute, and the correctly-posed tensor-embedded question (does (L_i⊗I) commute with (I⊗R_j^T)?) is GUARANTEED by plain matrix associativity for ANY choice of L,R, needing no empirical check at all. The flawed raw-matrix P0 was run first and DID fail (nonzero for all off-diagonal i,j at every k), which would have produced a false 'construction is broken, STOP' verdict had the category error not been caught -- caught by re-deriving from first principles what the correct question actually is, then verifying the correctly-posed tensor-embedded version directly (confirmed trivially true for a representative case, k=2) as an implementation sanity-anchor, not a criterion the round's own verdict depends on."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c99-lr-commutativity-magnetic-labeling/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C90_STRUCTURAL_NOGO_TRANSLATION_GENERATOR_COUPLINGS, C95_COEFFICIENT_SPACE_BRACKET_RESOLVED, C96_K2_REPLICATION_DIVERGES_L_R_ROLES_SWAP, C98_K4_CONFIRMS_K2_K3_STABILITY_HYPOTHESIS_3_POINTS]
+    supersedes: "does not supersede any prior claim's own content -- corrects only THIS round's own initial (never committed, never reported) mis-posed P0 test design before it could produce a misleading verdict"
+    convention: "m_q, m_p reported in PHYSICAL spin units (j1=k/2, m ranging -j1..j1 in integer steps) -- Meier's own raw l_{e1}(k) diagonal convention (2p-k) is 2x this; do not mix the two without the explicit /2 conversion used here"
+    does_not_imply:
+      - "that the multiplication operator has been built, or that its full set of Clebsch-Gordan coefficients (all q,p pairs, not just the extremal one) has been verified -- both remain the next, larger step"
+      - "any resolution of r's role in the multiplication operator (D^1_{ab}(g) is scalar-valued and does not obviously touch the Clifford index r that build_dbar uses) -- this is a genuinely open question, not addressed here"
+      - "that the su(2)_L x su(2)_R independence of L_i,R_i was ever genuinely in doubt -- it is guaranteed by matrix associativity once correctly (tensor-)embedded; the flawed raw-matrix test's own failure was never evidence against this, only evidence the test itself was mis-posed"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
