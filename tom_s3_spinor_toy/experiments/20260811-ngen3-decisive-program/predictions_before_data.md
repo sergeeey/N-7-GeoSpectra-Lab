@@ -709,3 +709,20 @@ establish r-untouched as physically correct, nor run a genuine 3+
 level convergence test. Outside the closed P1-P5 program; does not
 change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
 Part 5.
+
+**C102 (2026-08-12):** the cheap next check C101's own pearl-registry
+entry named -- does the exactly-real coupled spectrum replicate at
+k=2,3, or was k=1,2 a coincidence?
+`experiments/20260812-c102-k2k3-real-spectrum-replication/decision.md`
+-- **it replicates exactly.** Code reused verbatim from C101 (only
+level args changed). Coupled `D_PW` (k=2,3) again has an EXACTLY real
+spectrum (`max|Im|=0.0`), with a genuine spectral shift again found
+(max 7.0, larger than C101's 5.08). Same qualitative pattern both
+times: all of the lower level's eigenvalues shift completely, only a
+subset of the higher level's stay exactly protected (fractions differ
+between rounds, not fitted to a formula). Two independent, consistent
+data points now support a STRUCTURAL origin for the real-spectrum
+property over coincidence -- narrowed, not proven, and the underlying
+mechanism (a candidate similarity transform) remains unidentified.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
