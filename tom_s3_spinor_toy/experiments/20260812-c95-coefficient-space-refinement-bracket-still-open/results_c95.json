@@ -1,0 +1,101 @@
+{
+  "per_unit": {
+    "e1_i": {
+      "L_op": [
+        [
+          "-I",
+          "0"
+        ],
+        [
+          "0",
+          "I"
+        ]
+      ],
+      "R_op": [
+        [
+          "I",
+          "0"
+        ],
+        [
+          "0",
+          "-I"
+        ]
+      ],
+      "L_matches": [
+        "+l",
+        "+lT"
+      ],
+      "R_matches": [
+        "-l",
+        "-lT"
+      ]
+    },
+    "e2_j": {
+      "L_op": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "R_op": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "L_matches": [
+        "+l",
+        "-lT"
+      ],
+      "R_matches": [
+        "+l",
+        "-lT"
+      ]
+    },
+    "e3_k": {
+      "L_op": [
+        [
+          "0",
+          "-I"
+        ],
+        [
+          "-I",
+          "0"
+        ]
+      ],
+      "R_op": [
+        [
+          "0",
+          "I"
+        ],
+        [
+          "I",
+          "0"
+        ]
+      ],
+      "L_matches": [
+        "+l",
+        "+lT"
+      ],
+      "R_matches": [
+        "-l",
+        "-lT"
+      ]
+    }
+  },
+  "p1_left_equals_plus_l": true,
+  "p2_right_equals_minus_l_AS_PREDICTED": false,
+  "p2_right_equals_minus_lT_ACTUAL": true,
+  "p3_L_bracket_consistent": true,
+  "p3_R_bracket_consistent": true,
+  "fully_resolved": true,
+  "verdict": "P3_RESOLVED__L_EQUALS_PLUS_L__R_EQUALS_MINUS_L_TRANSPOSE__BOTH_BRACKET_CONSISTENT"
+}

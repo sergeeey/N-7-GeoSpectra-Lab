@@ -553,3 +553,25 @@ own instruction, C95 (multiplication-operator certification) and C96
 crossing scans until this passes. Outside the closed P1-P5 program;
 does not change `N_gen=3`'s CONDITIONAL status; does not solicit Tom
 Lawrence's Part 5.
+
+**Post-closure follow-up, C95 (2026-08-12, note: this round's own
+number is unrelated to the reviewer's proposed "C95" multiplication-
+operator round -- naming collision, not the same thing):** resolves
+C94's own P3 bracket-consistency contradiction.
+`experiments/20260812-c95-coefficient-space-refinement-bracket-still-open/decision.md`
+-- root cause was a function-vs-coefficient contragredience conflation
+in C94's left-translation side. Verified via THREE independent methods
+(technique pre-validated against the adjoint representation; fully
+symbolic coefficient extraction that caught and fixed a real
+factor-of-2 bug; independent numerical finite-difference cross-check
+against the true matrix exponential, clean `O(t)` convergence). Result:
+`q`-side generator `L_i=+l_{e_i}(1)` directly, `p`-side `R_i=-l_{e_i}(1)^T`
+(confirms C94's own right-translation finding). Both bracket-consistent
+exactly -- C94's specific blocker is resolved. This round's own P2
+prediction was itself wrong (recorded honestly). Fourth attempt at this
+sign determination this session; reported with explicit caution despite
+the stronger verification. Does NOT by itself authorize the actual
+multiplication-operator/spectral-flow work -- that remains a separate
+decision, deliberately not made in this same round. Outside the closed
+P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does not
+solicit Tom Lawrence's Part 5.
