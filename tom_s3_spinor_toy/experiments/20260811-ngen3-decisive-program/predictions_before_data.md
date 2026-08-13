@@ -575,3 +575,29 @@ multiplication-operator/spectral-flow work -- that remains a separate
 decision, deliberately not made in this same round. Outside the closed
 P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does not
 solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C96 (2026-08-12):** tests whether C95's k=1
+formula generalizes to k=2, per the reviewer's own requirement.
+`experiments/20260812-c96-k2-replication-q-side-generator/decision.md`
+-- **it does not, in the specific form found at k=1.** L/R roles swap
+exactly: `L_i=-l_{e_i}(2)^T`, `R_i=+l_{e_i}(2)` at k=2 (versus C95's
+`L_i=+l_{e_i}(1)`, `R_i=-l_{e_i}(1)^T` at k=1), both bracket-verified.
+Two genuine bugs in this round's OWN new construction (not C85's or
+C95's) were found and fixed before trusting this: (1) an abstract-vs-
+concrete symbol conflation producing an all-zero result that passed
+its own bracket check only vacuously (0=0); (2) `build_d2_matrix`
+verified to be a genuine ANTI-homomorphism (`D(g1)D(g2)=D(g2*g1)`, not
+`D(g1*g2)`) -- the classic pullback-vs-pushforward trap, structurally
+impossible at k=1 since C95 used the identity map `D^{(1)}(g):=g`
+directly. Fixed via the standard `D_correct(g):=D_raw(g^{-1})` remedy,
+verified directly against the true homomorphism property (not merely
+inferred from downstream checks passing). Per this round's own
+pre-registered kill_criterion, "P0 holds but P1 fails" was named in
+advance as meaning "C95's formula is k=1-specific, a real useful
+narrowing finding" -- exactly the outcome. Consequence: the
+multiplication-operator build (task #59) cannot assume a single fixed
+q-side generator formula across Peter-Weyl levels; needs either a
+k-dependent rule (not yet known, k=3 would be the next-cheapest test)
+or per-level certification. Outside the closed P1-P5 program; does not
+change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
+Part 5.
