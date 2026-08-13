@@ -2119,6 +2119,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C102_REAL_SPECTRUM_REPLICATES_AT_K2K3_STRUCTURAL_ORIGIN_SUPPORTED
+    statement: "Repeats C101's exact 2-level D_PW construction at k=2,3 (instead of k=1,2), code reused verbatim (only level arguments changed), to test whether C101's own exactly-real coupled spectrum was structural or a coincidence of that one level pair, per the pearl_registry/INDEX.md entry C101 itself added naming this as the cheapest next check. It replicates exactly: P0 (reuse sanity) passes cleanly, D-bar_2 and D-bar_3 individually reproduce C85's own certified eigenvalues ({-2:12,4:6} and {-3:20,5:12} respectively) with zero imaginary residual. P1 (the open question from C101): coupled D_PW at k=2,3 ALSO has an EXACTLY real spectrum (max|Im|=0.0 exactly, identical structure to C101's own result). P2: a genuine, substantial spectral shift found again (max 7.0, even larger than C101's ~5.08). Same qualitative pattern repeats: ALL of the lower level's eigenvalues (here, level 2's -2 and 4) shift completely, consistent with C100's own finding that M_k is an injective embedding touching all of the lower level; only a SUBSET of the higher level's eigenvalues (level 3's -3, 5) remain exactly protected (8/20 and 3/12 respectively) -- the exact fractions differ from C101's own (6/12, 2/6), reported as computed, not fitted to an unverified rank formula. Two independent, fully consistent data points now support the exactly-real-spectrum property as likely STRUCTURAL rather than coincidental, though the underlying mechanism (a candidate similarity transform S making D-bar Hermitian-equivalent, which M_k's construction might respect consistently across levels) remains unidentified -- this round explicitly does not attempt to derive it, a genuinely different, more analytical undertaking than numerical replication."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c102-k2k3-real-spectrum-replication/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C100_FULL_CG_MULTIPLICATION_OPERATOR_ASSEMBLED_INJECTIVE_EMBEDDING, C101_TWO_LEVEL_DPW_SPECTRAL_SHIFT_FOUND_REAL_SPECTRUM_UNEXPLAINED]
+    supersedes: "narrows (does not close) C101's own open question about the real-spectrum mechanism -- updates pearl_registry/INDEX.md's C101 entry in place with the replication result"
+    convention: "same r-untouched ansatz and single D^1_{1/2,1/2} component as C101 -- not re-verified or changed here"
+    does_not_imply:
+      - "that the real-spectrum property is proven for all k -- 2 consistent points, not a proof"
+      - "that the underlying mechanism (candidate similarity transform S) has been identified -- explicitly not attempted this round"
+      - "that r-untouched is the physically correct hypothesis -- unaffected by this round, still an explicitly flagged, unverified modeling choice"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
