@@ -622,3 +622,21 @@ pre-registration discipline: a new hypothesis needs a fresh falsifiable
 prediction, not a re-labeling of data already in hand). Outside the
 closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status;
 does not solicit Tom Lawrence's Part 5.
+
+**Post-closure follow-up, C98 (2026-08-12):** the independent k=4 check
+C97 named as its own next step -- does k=4 confirm the tentative
+"k=1 special, k>=2 stable" picture?
+`experiments/20260812-c98-k4-replication-stability-check/decision.md`
+-- **yes.** `L_i(k=4)=-l_{e_i}(4)^T`, `R_i(k=4)=+l_{e_i}(4)`, matching
+k=2 and k=3 exactly, both brackets exact. Construction reused verbatim
+from C96/C97 (only `K` changed, 3->4), minimizing fresh-bug risk. Three
+independent, consistent data points (k=2,3,4) now support the working
+rule `L_i=-l_{e_i}(k)^T`, `R_i=+l_{e_i}(k)` for `k>=2`, with `k=1`
+remaining a structurally distinct base case. Explicitly still NOT a
+formal/inductive proof for arbitrary `k` -- case-by-case verification
+at k=1,2,3,4 only. Sufficient to unblock task #59 for any level
+`k<=4`; `k>=5` should get its own cheap confirmation run if actually
+needed, though the bar for skepticism there is reasonably lower given
+the 3-point track record. Outside the closed P1-P5 program; does not
+change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
+Part 5.

@@ -2048,6 +2048,22 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C98_K4_CONFIRMS_K2_K3_STABILITY_HYPOTHESIS_3_POINTS
+    statement: "Tests whether the tentative 'k=1 is a distinct base case, k>=2 follows one fixed rule' picture (proposed in C97's decision.md after the parity hypothesis was falsified, then explicitly flagged there as '2 consistent points, not conclusive') holds at a THIRD independent data point, k=4. It does: L_i(k=4)=-l_{e_i}(4)^T, R_i(k=4)=+l_{e_i}(4), matching k=2 (C96) and k=3 (C97) exactly, both brackets ([L1,L2]=2L3, [R1,R2]=2R3) verified exactly (symbolic zero residual, 5x5 matrices), calibration passes cleanly matching '+l' uniformly (same candidate as k=2,k=3). Construction reused VERBATIM from C96/C97's own shared, twice-debugged code (D_correct(g):=D_raw(g^{-1}) anti-homomorphism fix; abstract-free-symbol D_sym coefficient extraction), only the dimension parameter k changed (3->4) -- no new construction logic introduced, minimizing the chance this round's own result is itself an artifact of a fresh, undiscovered bug. Three independent, consistent data points (k=2,3,4) now support the working rule L_i=-l_{e_i}(k)^T, R_i=+l_{e_i}(k) for k>=2, with k=1 (C95) remaining a structurally distinct base case (D^{(1)}(g):=g used directly, the trivial identity map, with no monomial-substitution construction and no possible anti-homomorphism bug). This is meaningfully stronger empirical support than C97's own 2-point result, but is EXPLICITLY NOT a formal/inductive proof for arbitrary k -- it is case-by-case verification at k=1,2,3,4 only. Sufficient to unblock task #59 (multiplication-operator build) for any Peter-Weyl level k<=4 without further replication rounds; k>=5 remains an open question the multiplication-operator build should treat as a reasonable working hypothesis, not a certainty, and re-check at the specific level actually needed if it exceeds k=4."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c98-k4-replication-stability-check/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C95_COEFFICIENT_SPACE_BRACKET_RESOLVED, C96_K2_REPLICATION_DIVERGES_L_R_ROLES_SWAP, C97_K3_MATCHES_K2_PARITY_HYPOTHESIS_FALSIFIED]
+    supersedes: "upgrades C97's own tentative 2-point 'k=1 special, k>=2 stable' picture to a 3-point-supported working rule -- still not a formal proof for arbitrary k, the upgrade is in empirical confidence only, not in logical status"
+    does_not_imply:
+      - "that the k>=2 rule is proven for arbitrary k -- 3 consistent points (k=2,3,4), not an inductive/structural proof; a k>=5 level actually needed by task #59 should still get its own cheap confirmation run before being trusted without question"
+      - "that C85's own certified l_{e_i}(k) matrices, or C95's/C96's/C97's own results, contain any error -- all fully unaffected; this round reused C96/C97's own debugged construction verbatim, changing only the k parameter"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
