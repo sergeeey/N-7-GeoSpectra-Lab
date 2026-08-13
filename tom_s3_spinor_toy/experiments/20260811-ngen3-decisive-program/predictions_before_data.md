@@ -601,3 +601,24 @@ k-dependent rule (not yet known, k=3 would be the next-cheapest test)
 or per-level certification. Outside the closed P1-P5 program; does not
 change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
 Part 5.
+
+**Post-closure follow-up, C97 (2026-08-12):** tests whether the L/R
+swap found between C95(k=1)/C96(k=2) follows a parity/alternating
+pattern -- does k=3 match k=1's odd-k pattern?
+`experiments/20260812-c97-k3-replication-parity-check/decision.md` --
+**no.** k=3 matches k=2's pattern exactly (`L_i=-l_{e_i}(3)^T`,
+`R_i=+l_{e_i}(3)`), a clean single-counterexample falsification of the
+parity hypothesis. Both brackets hold exactly; calibration passes
+cleanly. Construction reused verbatim from C96's own now-debugged code
+(generalized only in dimension), no new bugs introduced. Three data
+points now support a cleaner picture: `k=1` is a structurally distinct
+base case (`D^{(1)}(g):=g` used directly, no monomial-substitution
+construction, unlike every `k>=2` case); `k=2` and `k=3` (two
+independent, consistent points) tentatively support a single fixed
+rule for `k>=2`: `L_i=-l_{e_i}(k)^T`, `R_i=+l_{e_i}(k)`. Explicitly
+NOT proven -- 2 consistent points, not a proof; `k=4` is the
+next-cheapest independent check, deliberately not run this round (AOG-1
+pre-registration discipline: a new hypothesis needs a fresh falsifiable
+prediction, not a re-labeling of data already in hand). Outside the
+closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status;
+does not solicit Tom Lawrence's Part 5.
