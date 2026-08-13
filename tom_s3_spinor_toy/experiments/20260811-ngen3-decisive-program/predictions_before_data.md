@@ -684,3 +684,28 @@ needed, would require summing over multiple `(a,b)` components -- not
 attempted. `r`'s role remains completely open. Outside the closed
 P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does
 not solicit Tom Lawrence's Part 5.
+
+**C101 (2026-08-12):** builds the SMALLEST possible instance of the
+truncation-convergence/spectral-flow test C90's own decision.md named
+as the final endpoint of this arc -- a 2-level (k=1,2) `D_PW`, under
+the explicitly-flagged "r-untouched" ansatz (`M_1⊗I_r`).
+`experiments/20260812-c101-smallest-two-level-dpw-spectral-shift-test/decision.md`
+-- **same-day self-corrected bug:** first run used
+`np.linalg.eigvalsh` (Hermitian-assuming) on `D-bar`, which is
+real-spectrum but NOT itself symmetric as a raw matrix -- produced
+wrong eigenvalues for k=2, caught by this round's own P0 reuse-sanity
+check exactly as designed, fixed by switching to `np.linalg.eigvals`
+matching C85's own convention. Also caught and fixed an assumed
+"Hermitian by construction" framing that doesn't actually hold since
+`D-bar` isn't individually Hermitian. **Result after the fix:** the
+coupled `D_PW` has an EXACTLY real spectrum (striking, unexplained --
+flagged in `pearl_registry/INDEX.md`) and shows a genuine, substantial
+spectral shift (max ~5.08) relative to the uncoupled union -- ALL of
+level 1 shifts (consistent with C100's injective-embedding finding),
+only PART of level 2 shifts (consistent with the coupling's bounded
+rank). First genuine multi-level spectral result in the entire
+C90-C101 arc: proof the construction is NOT spectrally inert. Does NOT
+establish r-untouched as physically correct, nor run a genuine 3+
+level convergence test. Outside the closed P1-P5 program; does not
+change `N_gen=3`'s CONDITIONAL status; does not solicit Tom Lawrence's
+Part 5.
