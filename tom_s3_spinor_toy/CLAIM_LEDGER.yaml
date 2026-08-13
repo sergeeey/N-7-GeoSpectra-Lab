@@ -2031,6 +2031,23 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C97_K3_MATCHES_K2_PARITY_HYPOTHESIS_FALSIFIED
+    statement: "Tests whether the L/R role-swap found between C95 (k=1: L_i=+l_{e_i}(1), R_i=-l_{e_i}(1)^T) and C96 (k=2: L_i=-l_{e_i}(2)^T, R_i=+l_{e_i}(2), roles swapped) follows a parity/alternating pattern -- pre-registered prediction P1 asked whether k=3 (odd, like k=1) would match k=1's pattern. It does NOT: k=3 matches k=2's pattern exactly (L_i=-l_{e_i}(3)^T, R_i=+l_{e_i}(3)), a clean single-counterexample falsification of the parity hypothesis, not an ambiguous result. Both brackets ([L1,L2]=2L3, [R1,R2]=2R3) hold exactly at k=3 (symbolic zero residual); calibration (P0) passes cleanly, matching '+l' uniformly across e1,e2,e3 (same candidate as k=2). Construction reused VERBATIM from C96's own now-debugged code (D_correct(g):=D_raw(g^{-1}) fix for the anti-homomorphism bug, abstract-free-symbol D_sym extraction fixing the all-zero conflation bug), generalized only in the dimension parameter k -- no new logic introduced that could hide a fresh bug, and the reuse itself is a form of built-in verification (a bug specific to k=3 alone, rather than the shared construction, would show up as an isolated P0/P2 failure, which did not occur). Consequence -- three data points now support a CLEANER hypothesis than parity: k=1 is a structurally distinct/degenerate base case (it uses D^{(1)}(g):=g directly, the trivial identity map, with no monomial-substitution construction at all -- structurally different from every k>=2 case), while k=2 and k=3 (two independent, consistent data points) tentatively support a single fixed rule for k>=2: L_i=-l_{e_i}(k)^T, R_i=+l_{e_i}(k). This is explicitly NOT proven -- 2 consistent points after 1 falsified hypothesis is encouraging, not conclusive; a genuine confirmation needs an independent k=4 check (not run this round, kept as a separate, properly pre-registered round per Anti-Overfitting Gate AOG-1, to avoid fitting a new hypothesis to data already in hand without a fresh falsifiable prediction)."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c97-k3-replication-parity-check/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C95_COEFFICIENT_SPACE_BRACKET_RESOLVED, C96_K2_REPLICATION_DIVERGES_L_R_ROLES_SWAP]
+    supersedes: "kills the parity/alternating hypothesis implicitly suggested (not formally claimed) by C96's own two-data-point result; replaces it with the tentative 'k=1 is a distinct base case, k>=2 follows one fixed rule' picture -- itself not yet proven, pending an independent k=4 check"
+    does_not_imply:
+      - "that the 'k=1-special, k>=2-stable' hypothesis is proven -- 2 consistent points (k=2,k=3), not a proof; k=4 is the next-cheapest discriminating test, deliberately not run in this same round to avoid AOG-1 (pre-registration) violation"
+      - "that k>=4 follows the k=2/k=3 pattern -- explicitly unconfirmed; task #59 (multiplication-operator build) must not silently assume this without an independent check"
+      - "that C85's own certified l_{e_i}(k) matrices, or C95's/C96's own results, contain any error -- both fully unaffected; this round reused C96's own debugged construction verbatim"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
