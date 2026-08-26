@@ -726,3 +726,25 @@ property over coincidence -- narrowed, not proven, and the underlying
 mechanism (a candidate similarity transform) remains unidentified.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not solicit Tom Lawrence's Part 5.
+
+**C103 (2026-08-12, boyko-project-radar Chain 2):** builds the first
+genuinely block-tridiagonal `D_PW` (k=1,2,3, both `M_1` and `M_2`
+simultaneously) -- the literal construction C90's own decision.md
+named as this entire arc's endpoint -- and runs the actual
+truncation-convergence test C90 originally proposed, for the first
+time.
+`experiments/20260812-c103-three-level-block-tridiagonal-dpw/decision.md`
+-- construction code reused verbatim from C101/C102. **Real spectrum
+holds again** (`max|Im|=0.0` exactly), this time under a GENUINELY NEW
+condition neither C101 nor C102 tested: an indirect 1↔3 correlation
+(the (1,3) block is exactly zero by construction, so any such effect
+is purely level-2-mediated) -- qualitatively stronger support for the
+"structural, not coincidental" reading than a third adjacent-pair
+replication would have been. **Truncation appears to converge**: the
+lowest 5 eigenvalues shift by only `0.092` when level 3 is added on
+top of the k=1,2 system, against a ~8-unit spectral range -- not a
+rigorous asymptotic proof (only 2 truncation orders compared), raw
+shift reported explicitly rather than hidden behind a binary label.
+Mechanism for the real-spectrum property still not identified. Outside
+the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
+status; does not solicit Tom Lawrence's Part 5.

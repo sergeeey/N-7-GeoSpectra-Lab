@@ -2149,6 +2149,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C103_BLOCK_TRIDIAGONAL_DPW_BUILT_TRUNCATION_APPEARS_TO_CONVERGE
+    statement: "Builds the first genuinely block-tridiagonal D_PW (k=1,2,3, BOTH M_1 and M_2 simultaneously as adjacent-level off-diagonal couplings), the literal construction C90's own decision.md named as this entire arc's endpoint -- and runs the actual truncation-convergence test C90 originally proposed, for the first time in the arc. Reused C101/C102's own construction code verbatim (dbar_full, build_multiplication_matrix, certified_L_R, magnetic_labels), minimizing fresh-bug risk. P0 (reuse sanity) passes cleanly, all three diagonal blocks (D1,D2,D3) reproduce C85's own certified eigenvalues exactly. P1 (real spectrum): holds again (max|Im|=0.0 exactly) -- but under a GENUINELY NEW condition neither C101 (k=1,2 pairwise) nor C102 (k=2,3 pairwise) tested: an INDIRECT 1<->3 correlation, since the (1,3) block is exactly zero by construction (M_k only connects adjacent levels) and any such effect must be purely level-2-mediated. This is qualitatively stronger support for the 'structural, not coincidental' reading of the real-spectrum property than a third adjacent-pair replication would have been. P2 (the actual truncation-convergence question, answered for the first time): the lowest 5 eigenvalues (by |value|, the physically most relevant part of the spectrum) shift by only 0.092 when level 3 (and its coupling M_2) is added on top of the already-built k=1,2 system, against a spectral range spanning roughly 8 units (-3 to +5) -- truncation appears to converge at this order. Explicitly NOT a rigorous asymptotic convergence proof (only 2 truncation orders compared, not a sequence); the 1.0 tolerance used for the binary verdict label was a judgment call (O(1) relative to spectral scale), and the raw shift value is reported explicitly so this is not hidden behind the label."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c103-three-level-block-tridiagonal-dpw/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C90_STRUCTURAL_NOGO_TRANSLATION_GENERATOR_COUPLINGS, C100_FULL_CG_MULTIPLICATION_OPERATOR_ASSEMBLED_INJECTIVE_EMBEDDING, C101_TWO_LEVEL_DPW_SPECTRAL_SHIFT_FOUND_REAL_SPECTRUM_UNEXPLAINED, C102_REAL_SPECTRUM_REPLICATES_AT_K2K3_STRUCTURAL_ORIGIN_SUPPORTED]
+    supersedes: "extends (does not correct) C101/C102's own results -- both remain independently valid; this round is the arc's first genuine 3-level construction, not a correction of either 2-level round"
+    convention: "same explicitly-unverified 'r-untouched' ansatz (M_k(x)I_r) and single D^1_{1/2,1/2} component as C101/C102 -- neither resolved here"
+    does_not_imply:
+      - "that truncation convergence is rigorously proven -- only 2 truncation orders (2-level vs 3-level) compared, not a sequence; a genuine convergence claim needs at least one more data point (e.g. adding k=4) to see if the shift keeps shrinking"
+      - "that the real-spectrum mechanism (candidate similarity transform S) has been identified -- three independent confirmations now exist, still no derived mechanism"
+      - "that r-untouched is the physically correct hypothesis, or that the single-component D^1_{1/2,1/2} choice is physically complete -- both remain exactly as unverified as in C101/C102"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
