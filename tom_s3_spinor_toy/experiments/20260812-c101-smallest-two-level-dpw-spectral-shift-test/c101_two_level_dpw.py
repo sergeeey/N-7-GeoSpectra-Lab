@@ -180,6 +180,14 @@ def main() -> None:
     print(
         f"P1 (genuine check, NOT guaranteed): real spectrum = {p1_real_spectrum} (max|Im|={coupled_max_imag:.2e})"
     )
+    # Hard invariant gate (added: boyko-project-radar Chain 1, sci-code-audit
+    # Layer 5 finding) -- max_imag was previously only reported in JSON for a
+    # human to read later; a future edit that broke this without anyone
+    # re-reading the JSON would go unnoticed. Fail loudly instead.
+    assert coupled_max_imag < 1e-6, (
+        f"D_PW spectrum is not real (max|Im|={coupled_max_imag:.2e}) -- "
+        "this contradicts the round's own certified result; stop before writing results"
+    )
 
     # P2: the actual test -- does coupling shift the spectrum relative
     # to the uncoupled union?
