@@ -34,6 +34,35 @@ what it covers and is not retracted.
 
 ---
 
+## ⚠️ Status correction (2026-08-12) — the 2026-08-11 box below is itself now 26 rounds stale
+
+The 2026-08-11 correction below points to C76 as "the single most current,
+authoritative synthesis." It no longer is: C77-C90 exhaustively closed the
+so(8)-symmetric coupling class and proved the entire translation-generator
+operator family (used throughout C79-C89) is STRUCTURALLY incapable of
+connecting Peter-Weyl levels (`experiments/20260812-c90-selection-rule-structural-nogo/decision.md`).
+C91-C102 then built and verified the first genuinely level-bridging operator
+this project has produced (a multiplication-type coupling, not a
+translation generator), certified its generator formula across k=1-4, and
+found a real, substantial, twice-replicated spectral shift in a minimal
+2-level `D_PW`. **`N_gen=3` status is UNCHANGED — still CONDITIONAL,
+unweakened** — none of C77-C102 touches the P1-P5 program's own posterior;
+this is downstream structural/mathematical-apparatus work, not a new
+channel-distinguishability test. Current entry point:
+`experiments/20260811-ngen3-decisive-program/predictions_before_data.md`
+(full chronological log of C91-C102) and
+`reports/SESSION_REPORT_2026-08-12_C91-C102_MULTIPLICATION_OPERATOR.md`
+(condensed summary). This box is additive per this file's own established
+pattern; the 2026-08-11 correction below remains historically accurate for
+what it covers and is not retracted. **Known limitation of this pattern**
+(flagged, not fixed, here): each correction box itself goes stale as more
+rounds land — a `boyko-project-radar` scan on 2026-08-12 recommended wiring
+an automated staleness check (diff a file's last-modified date against
+HEAD's date) rather than relying on manual dated boxes indefinitely; not
+implemented yet.
+
+---
+
 ## ⚠️ Status correction (2026-07-17)
 
 The "Main result" and "Three-generation result" below (dated 2026-07-07 /

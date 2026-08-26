@@ -1,10 +1,22 @@
 # CLAIM_LEDGER.yaml
 #
-# Phase 0 (Freeze) deliverable per MASTER_TZ_RDR22 audit doc, Section 21.
-# ~15-20 LOAD-BEARING claims only -- NOT exhaustive over the project's ~157
-# experiments (see null_results/INDEX.md and pearl_registry/INDEX.md for the
-# full historical record). Each claim carries the 5 orthogonal status fields
-# from MASTER_TZ Section 5:
+# Originally a Phase 0 (Freeze) deliverable per MASTER_TZ_RDR22 audit doc,
+# Section 21, scoped as "~15-20 LOAD-BEARING claims only -- NOT exhaustive
+# over the project's experiments." That scope has since drifted: as of
+# 2026-08-12 this file holds 103 entries (verify with
+# `grep -c "^  - id:" CLAIM_LEDGER.yaml` -- don't trust a hardcoded count
+# here, it will go stale the same way this comment itself just did),
+# spanning the original G-series freeze plus the entire C-series (C1-C102)
+# added since. It is NOT exhaustive over the project's ~300+ experiment
+# rounds (see null_results/INDEX.md and pearl_registry/INDEX.md for the
+# fuller historical record) but is no longer the tightly-curated ~15-20
+# "load-bearing only" set the original design intended either -- flagged
+# here (boyko-project-radar scan, 2026-08-12), not re-scoped: re-curating
+# 103 evidence-backed entries down to a smaller "load-bearing" set is a
+# real editorial judgment call with information-loss risk, deliberately
+# left for a dedicated pass with explicit criteria, not done casually as
+# part of a documentation-accuracy fix. Each claim carries the 5 orthogonal
+# status fields from MASTER_TZ Section 5:
 #
 #   truth_status:      OPEN | SUPPORTED | CONDITIONAL | REFUTED | PROVED
 #   test_outcome:      NOT_RUN | PASS | FAIL | INCONCLUSIVE | CONFLICTING
