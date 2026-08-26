@@ -180,14 +180,6 @@ def main() -> None:
     print(
         f"P1 (genuine check, NOT guaranteed): real spectrum = {p1_real_spectrum} (max|Im|={coupled_max_imag:.2e})"
     )
-    # Hard invariant gate (added: boyko-project-radar Chain 1, sci-code-audit
-    # Layer 5 finding) -- max_imag was previously only reported in JSON for a
-    # human to read later; a future edit that broke this without anyone
-    # re-reading the JSON would go unnoticed. Fail loudly instead.
-    assert coupled_max_imag < 1e-6, (
-        f"D_PW spectrum is not real (max|Im|={coupled_max_imag:.2e}) -- "
-        "this contradicts the round's own certified result; stop before writing results"
-    )
 
     # P2: the actual test -- does coupling shift the spectrum relative
     # to the uncoupled union?
@@ -227,6 +219,19 @@ def main() -> None:
     RESULTS_PATH.write_text(json.dumps(out, indent=2, default=str))
     print(f"\nWrote {RESULTS_PATH}")
     print(f"\nVERDICT: {verdict}")
+
+    # Hard invariant gate (boyko-project-radar Chain 1, sci-code-audit
+    # Layer 5 finding), placed AFTER the JSON write on purpose: an earlier
+    # draft asserted before write_text, which would have discarded the P0
+    # sanity-check data and the informative "P1_COMPLEX_SPECTRUM..." verdict
+    # on a genuine future failure -- reviewer-caught, fixed (results must be
+    # persisted first, matching this project's own null-result discipline;
+    # the hard fail is for CI/automation, not to replace the recorded verdict).
+    assert coupled_max_imag < 1e-6, (
+        f"D_PW spectrum is not real (max|Im|={coupled_max_imag:.2e}) -- "
+        f"this contradicts the round's own certified result; see {RESULTS_PATH} "
+        "for the persisted verdict before investigating"
+    )
 
 
 if __name__ == "__main__":

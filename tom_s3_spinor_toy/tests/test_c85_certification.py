@@ -50,13 +50,29 @@ def test_quaternion_relations_hold(c85) -> None:
     assert checks["all_match"], checks
 
 
-def test_right_mult_matrix_is_complex_linear(c85) -> None:
-    """right_mult_matrix_on_ab already asserts this internally on
-    construction; re-check externally for e1,e2,e3 so a future edit
-    that removes/weakens the internal assert doesn't go unnoticed."""
+def test_right_mult_matrix_correctly_represents_hamilton_product(c85) -> None:
+    """right_mult_matrix_on_ab already asserts complex-linearity
+    internally on construction (c85_certification.py:122-124); this
+    independently re-derives the SAME correctness property from
+    scratch via hamilton_product directly, for a symbolic quaternion,
+    so a future edit that removes/weakens the internal assert doesn't
+    go unnoticed. (An earlier draft of this test only checked
+    `M.shape == (2, 2)`, which passes regardless of whether M actually
+    represents the right-multiplication map -- reviewer-caught,
+    fixed: shape alone does not test linearity or correctness.)"""
+    aw, ax, bw, bx = sp.symbols("aw ax bw bx", real=True)
+    q = (aw, ax, bw, bx)
+    a = aw + sp.I * ax
+    b = bw + sp.I * bx
     for unit in ((0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)):
         M = c85.right_mult_matrix_on_ab(unit)
-        assert M.shape == (2, 2)
+        w, x, y, z = c85.hamilton_product(q, unit)
+        expected_a = sp.expand(w + sp.I * x)
+        expected_b = sp.expand(y + sp.I * z)
+        got_a = sp.expand(M[0, 0] * a + M[0, 1] * b)
+        got_b = sp.expand(M[1, 0] * a + M[1, 1] * b)
+        assert sp.simplify(got_a - expected_a) == 0, unit
+        assert sp.simplify(got_b - expected_b) == 0, unit
 
 
 @pytest.mark.parametrize("k", [0, 1, 2, 3, 4])

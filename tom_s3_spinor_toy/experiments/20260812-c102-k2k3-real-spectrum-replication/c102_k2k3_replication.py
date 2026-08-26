@@ -159,12 +159,6 @@ def main() -> None:
         f"P1 (the open question from C101): real spectrum = {p1_real_spectrum} "
         f"(max|Im|={coupled_max_imag:.2e})"
     )
-    # Hard invariant gate (added: boyko-project-radar Chain 1, sci-code-audit
-    # Layer 5 finding) -- see C101's own copy of this comment for why.
-    assert coupled_max_imag < 1e-6, (
-        f"D_PW spectrum is not real (max|Im|={coupled_max_imag:.2e}) -- "
-        "this contradicts the round's own certified result; stop before writing results"
-    )
 
     uncoupled_union = sorted(eigs_low + eigs_high, key=lambda x: x[0])
     coupled_values = sorted(round(v, 6) for v, _m in coupled_eigs)
@@ -204,6 +198,17 @@ def main() -> None:
     RESULTS_PATH.write_text(json.dumps(out, indent=2, default=str))
     print(f"\nWrote {RESULTS_PATH}")
     print(f"\nVERDICT: {verdict}")
+
+    # Hard invariant gate (boyko-project-radar Chain 1, sci-code-audit
+    # Layer 5 finding) -- placed AFTER the JSON write; see C101's own copy
+    # of this comment for why (reviewer-caught: an earlier draft asserted
+    # before write_text, which would discard the P0/verdict data on a
+    # genuine future failure).
+    assert coupled_max_imag < 1e-6, (
+        f"D_PW spectrum is not real (max|Im|={coupled_max_imag:.2e}) -- "
+        f"this contradicts the round's own certified result; see {RESULTS_PATH} "
+        "for the persisted verdict before investigating"
+    )
 
 
 if __name__ == "__main__":
