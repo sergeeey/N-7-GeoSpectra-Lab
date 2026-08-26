@@ -748,3 +748,21 @@ shift reported explicitly rather than hidden behind a binary label.
 Mechanism for the real-spectrum property still not identified. Outside
 the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
 status; does not solicit Tom Lawrence's Part 5.
+
+**C104 (2026-08-12, boyko-project-radar Chain 2):** the other
+research-audit-named open item -- does summing all four `D^1_{a,b}`
+components produce genuine mixing, instead of C100's own
+single-component injective embedding?
+`experiments/20260812-c104-summed-components-mixing-test/decision.md`
+-- **yes, and cleanly.** Generalized C100's own CG-assembly to
+arbitrary `(a,b)`, built all four components (k=1,2,3), summed them.
+Mixing found at every `k`, with a striking, precise structure: EVERY
+column has EXACTLY 4 nonzero entries (`4×dim_k²` total, not more, not
+less) -- each of the four components independently injective, landing
+on four mutually distinct targets with zero collisions at any tested
+input. Not "generic messy mixing" but a clean, uniform, checkable
+4-fold structure. Does not establish this sum is the physically
+correct operator (exploratory alternative, same unverified-modeling-
+choice caveat as the single-component result it complements). Outside
+the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
+status; does not solicit Tom Lawrence's Part 5.

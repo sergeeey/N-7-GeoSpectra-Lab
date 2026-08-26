@@ -2167,6 +2167,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C104_SUMMED_COMPONENTS_PRODUCE_CLEAN_FOURFOLD_MIXING
+    statement: "Tests whether summing all four D^1_{a,b} components (a,b in {+1/2,-1/2}) produces genuine mixing, instead of C100's own single-component (a=b=1/2) injective embedding -- the exploratory alternative construction research-audit's own Q4 (boyko-project-radar scan) named as an independently-runnable next test, and C100's own decision.md explicitly flagged as untried. Generalized C100's own CG-assembly method to build M_k^{(a,b)} for each of the four (a,b) combinations (k=1,2,3), summed elementwise into M_k^sum. P0 (reuse sanity): the already-certified (1/2,1/2) component still cross-checks against the independent Wigner-3j path, exact match every k. P1 (the actual question): mixing IS found at every k tested. P2 (generic vs sparse): fully generic -- PRECISE finding beyond the coded checks: M_k^sum has EXACTLY 4*dim_k^2 nonzero entries at every k (k=1: 16 vs baseline 4; k=2: 36 vs 9; k=3: 64 vs 16) -- every column has EXACTLY 4 nonzero entries, confirming each of the four (a,b) components independently contributes exactly one nonzero entry to every input state's column, and NO TWO of the four components ever land on the same output position, at any k or input state tested. Not 'some messy generic mixing' but a clean, uniform, checkable 4-fold structure -- physically read as: the four (a,b) choices shift (m_q,m_p) by four genuinely different combinations of +-1/2, and these four shifted targets never coincide, a consequence of CG selection rules verified directly, not assumed."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c104-summed-components-mixing-test/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C100_FULL_CG_MULTIPLICATION_OPERATOR_ASSEMBLED_INJECTIVE_EMBEDDING]
+    supersedes: "does not correct C100 -- C100's own single-component (1/2,1/2) result is reused unchanged as one of the four components summed here; this round tests a DIFFERENT, additional construction (the sum), per C100's own explicitly-named next step"
+    convention: "Minimal Relaxation Rule applied -- changes exactly ONE assumption from C100-C103 (which D^1 component(s) to use), holds the r-untouched ansatz and all certified generators/labeling fixed"
+    does_not_imply:
+      - "that M_k^sum (summing all four components) is the physically correct multiplication operator -- one candidate among several, exactly as unverified as the single-component choice it replaces"
+      - "that a new D_PW has been built using M_k^sum, or that the exactly-real-spectrum property (C101-C103) would survive a genuinely mixing off-diagonal block -- natural follow-up, not attempted"
+      - "any resolution of r's role -- same untouched ansatz as C101-C103"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
