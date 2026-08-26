@@ -2185,6 +2185,24 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C105_BLOCK_DIAGONAL_S_RULED_OUT_LEVEL_LOCAL_FORMULA_CONFIRMED
+    statement: "Searches for the candidate similarity transform S (C101's own pearl-registry open question) explaining why the coupled D_PW spectrum is exactly real across three qualitatively different constructions (C101,C102,C103). Preliminary scratch exploration (disclosed in claim.md) found: l_{e_i}(k) is anti-Hermitian only at k=1 (confirms C96's own finding that C85's raw |p> basis is non-orthonormal for k>=2); rmult_i (the r-space generators) are ALREADY anti-Hermitian for all three units, no r-fix needed; the binomial-normalization S_p(k):=diag(1/sqrt(binomial(k,p))) -- the SAME formula independently derived (then discarded for an unrelated calibration reason) in C96's own build_d2_matrix draft -- simultaneously anti-Hermitianizes l_{e1}(k),l_{e2}(k),l_{e3}(k) for k=2,3,4, confirmed directly. This round formally re-derives these findings in a clean script (P0: PASSES for k=1,2,3) and tests the natural next question: does S_total:=blockdiag(S_p(1)(x)I_r, c*S_p(2)(x)I_r) (one free scalar c per level, forced unique-up-to-scale by Schur's lemma for the irreducible su(2) generators) ALSO correctly Hermitianize the off-diagonal M_1 coupling block of the full 2-level D_PW? RESULT: NO -- P1 FAILS genuinely. The cross-level compatibility condition c^2*P2*M1=M1*P1 produces 4 independent nonzero constraint equations requiring TWO DIFFERENT values of c (1 and sqrt(2)) at different matrix entries -- an exact algebraic inconsistency (verified via exact symbolic sympy computation, not numerical approximation), not underdetermination. The cleanest, most natural block-diagonal/r-untouched/single-scalar-per-level candidate mechanism is RULED OUT. The real-spectrum property itself remains completely intact and unaffected (C101,C102,C103 all stand unchanged) -- only this specific candidate explanation for it is killed. Per Anti-Overfitting Gate Kill Analysis: NOT killed are (a) the real-spectrum property itself, (b) the general similarity-to-Hermitian framing (only this block-diagonal special case tested), (c) the individual-level S_p(k) formula, confirmed correct and possibly still a necessary ingredient of whatever the true, more general S turns out to be."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260812-c105-similarity-transform-s-search/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C96_K2_REPLICATION_DIVERGES_L_R_ROLES_SWAP, C100_FULL_CG_MULTIPLICATION_OPERATOR_ASSEMBLED_INJECTIVE_EMBEDDING, C101_TWO_LEVEL_DPW_SPECTRAL_SHIFT_FOUND_REAL_SPECTRUM_UNEXPLAINED, C102_REAL_SPECTRUM_REPLICATES_AT_K2K3_STRUCTURAL_ORIGIN_SUPPORTED, C103_BLOCK_TRIDIAGONAL_DPW_BUILT_TRUNCATION_APPEARS_TO_CONVERGE]
+    supersedes: "does not correct C101/C102/C103's own real-spectrum finding -- that stands completely unaffected; kills only ONE specific candidate MECHANISM proposed to explain it (block-diagonal, r-untouched, single-scalar-per-level S)"
+    convention: "S_p(k) formula uses the SAME binomial normalization independently re-derived here from C96's own discarded build_d2_matrix draft -- a genuine cross-round convergence, not a coincidence of naming"
+    does_not_imply:
+      - "that no similarity transform S exists at all -- only this specific block-diagonal/r-untouched/scalar-freedom candidate is ruled out; a non-block-diagonal S, more-than-scalar per-level freedom, or an S with a nontrivial r-component remain untested (see decision.md's own Relaxation Map)"
+      - "that the real-spectrum property (C101-C103) is in any doubt -- it remains fully confirmed, three independent times, unaffected by this round"
+      - "that S_p(k) is wrong or useless -- confirmed correct as the level-local Hermitianizing transform, may still be a necessary component of the true (more general) S"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

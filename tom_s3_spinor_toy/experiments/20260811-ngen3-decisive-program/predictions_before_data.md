@@ -766,3 +766,24 @@ correct operator (exploratory alternative, same unverified-modeling-
 choice caveat as the single-component result it complements). Outside
 the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
 status; does not solicit Tom Lawrence's Part 5.
+
+**C105 (2026-08-12, boyko-project-radar Chain 2 continued):** the
+third research-audit-named item -- search for the candidate similarity
+transform S explaining the exactly-real coupled spectrum (C101-C103).
+`experiments/20260812-c105-similarity-transform-s-search/decision.md`
+-- tested the cleanest candidate: a block-diagonal, `r`-untouched
+transform built from anti-Hermitianizing each diagonal block
+individually. **P0 CONFIRMED**: `S_p(k):=diag(1/√C(k,p))` (the same
+formula independently re-derived from C96's own discarded
+`build_d2_matrix` draft) simultaneously anti-Hermitianizes all three
+`p`-space generators at every level; `r`-space generators are already
+anti-Hermitian, no fix needed. **P1 FAILS, genuinely**: no single
+scalar makes this also work for the off-diagonal coupling block -- the
+cross-level condition demands two different values (`1` and `√2`) at
+different entries, an exact algebraic inconsistency. The cleanest
+candidate mechanism is ruled out; the real-spectrum property itself
+remains fully intact, unaffected. Kill Analysis + Relaxation Map
+(non-block-diagonal S, more-than-scalar freedom, or revisiting r's
+role) recorded in decision.md, none pursued yet. Outside the closed
+P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does
+not solicit Tom Lawrence's Part 5.
