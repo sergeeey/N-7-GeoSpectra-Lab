@@ -1,7 +1,15 @@
 # ALIVE_BRANCHES — живые маршруты исследования
 
-**Обновлён:** 2026-06-22
+**Обновлён:** 2026-08-12
 **Дополняет:** `null_results/INDEX.md` (закрытые маршруты)
+
+> **Разрыв 2026-06-22 → 2026-08-12 (52 дня, ~250 раундов, G67 → C102) закрыт
+> boyko-project-radar скана: файл не отражал ни triality-closure (G109-128),
+> ни decisive-experiment программу (C70-C90), ни multiplication-operator
+> цепочку (C91-C102). Ниже добавлены только реально ОТКРЫТЫЕ ветки из
+> самого свежего слоя (C99-C102); полная хронология — см.
+> `experiments/20260811-ngen3-decisive-program/predictions_before_data.md`
+> и `reports/SESSION_REPORT_2026-08-12_C91-C102_MULTIPLICATION_OPERATOR.md`.
 
 > Canonical source: этот репо. Claude/ChatGPT контексты = производные.
 > Перед новым экспериментом: grep `null_results/INDEX.md` + проверить этот файл.
@@ -28,6 +36,10 @@
 | ~~G86A~~ | ~~Dual-modulus T∝ρ₆^α → exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: I=Γ(3)/T³~ρ₆^{−3α} for ALL α; structural theorem, 0/25 alpha give exp | — | G84A, G86A |
 | ~~G86B~~ | ~~Warp factor Ω(y) → exp(−λ/ρ₆²)~~ | **NULL** | — | Closed 2026-06-22: uniform flux→trivial A=const; localized→polynomial+free Q; postulated→circular; ALL fail PASS | — | G84A, G86B |
 | G72 | Geometric realization of 8_v triality bundle on S⁶ | PAUSED | 8_v construction требует explicit Tom input | — | TOM-BRIDGE PROMOTE → тогда открываем | — |
+| C99-R-ROLE | Multiplication-operator "r не затрагивается" (M_k⊗I_r) — постулат, не выведен | OPEN | `D^1_{ab}(g)` скалярна, не касается индекса r напрямую — нет естественной точки старта | Найти/опровергнуть альтернативную гипотезу (D^1 действует на r как на копии того же представления) | — | — |
+| C100-MULTI-COMPONENT | Даёт ли сумма по всем 4 компонентам D^1_{a,b} настоящее смешивание состояний (вместо инъективного вложения C100)? | OPEN | Не запускалось — C100 проверил только a=b=1/2 | Собрать все 4 M_k^{(a,b)}, сложить, перепроверить P0-P3 из C100 | — | — |
+| C102-3LEVEL | Настоящий truncation-convergence тест (3+ уровня), не только пара k,k+1 | OPEN | Построен только 2-уровневый D_PW (C101/C102) | k=1,2,3 D_PW, code reused verbatim из C101/C102 | — | — |
+| C102-REAL-SPECTRUM-S | Механизм точной вещественности связанного спектра D_PW (кандидат: D-bar подобен эрмитовой матрице через фикс. S) | OPEN | Численная replication (k=1,2 и k=2,3) есть, аналитический вывод S — нет | Построить/опровергнуть явное S для D-bar; см. pearl_registry/INDEX.md 2026-08-12 запись | — | — |
 
 ---
 

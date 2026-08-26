@@ -43,6 +43,30 @@ as statements about the S⁶ factor alone.
 
 ---
 
+## ⚠️ Status correction (2026-08-12) — test count stale, most recent work not reflected above
+
+The "2748 tests collected · 2026-07-05" figure in the top status line is
+stale: actual current count is **2516 tests** (`pytest --collect-only`,
+[VERIFIED]). N_gen=3's own status is UNCHANGED (still CONDITIONAL per the
+2026-07-17 correction above) — this note is about test-count accuracy and
+pointing to the most recent work, not a physics revision.
+
+Most recent substantive work (not reflected in the sections above, which
+predate it): rounds **C90 through C102** built and verified the first
+genuinely level-bridging operator this project has produced — a
+multiplication-type coupling operator connecting adjacent Peter-Weyl levels
+(the entire prior translation-generator family, C79-C89, was proven
+structurally incapable of this in C90). A minimal 2-level `D_PW` built from
+it shows a real, substantial spectral shift, replicated at two independent
+level pairs (C101, C102). This is exploratory structural work on the
+theory's mathematical apparatus — it does **not** change N_gen=3's
+CONDITIONAL status, and rests on an explicitly-flagged, unverified modeling
+choice (how the Clifford index `r` enters the operator). Full detail:
+`reports/SESSION_REPORT_2026-08-12_C91-C102_MULTIPLICATION_OPERATOR.md`,
+`experiments/20260811-ngen3-decisive-program/predictions_before_data.md`.
+
+---
+
 ## ⚠️ Where to Start (for reviewers)
 
 **The root `.py` files** (`alpha_dependence_comparison.py`, `reference_spinor_harmonics.py`,
