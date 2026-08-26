@@ -199,6 +199,17 @@ def main() -> None:
     print(f"\nWrote {RESULTS_PATH}")
     print(f"\nVERDICT: {verdict}")
 
+    # Hard invariant gate (boyko-project-radar Chain 1, sci-code-audit
+    # Layer 5 finding) -- placed AFTER the JSON write; see C101's own copy
+    # of this comment for why (reviewer-caught: an earlier draft asserted
+    # before write_text, which would discard the P0/verdict data on a
+    # genuine future failure).
+    assert coupled_max_imag < 1e-6, (
+        f"D_PW spectrum is not real (max|Im|={coupled_max_imag:.2e}) -- "
+        f"this contradicts the round's own certified result; see {RESULTS_PATH} "
+        "for the persisted verdict before investigating"
+    )
+
 
 if __name__ == "__main__":
     main()
