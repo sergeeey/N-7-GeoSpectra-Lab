@@ -1,0 +1,66 @@
+{
+  "per_k": {
+    "1": {
+      "p0_ok": true,
+      "dim_k_squared": 4,
+      "sum_nonzero_count": 16,
+      "per_column_nonzero_counts": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "max_entries_reached_from_one_input": 4,
+      "columns_with_mixing": 4,
+      "p1_mixing_found": true
+    },
+    "2": {
+      "p0_ok": true,
+      "dim_k_squared": 9,
+      "sum_nonzero_count": 36,
+      "per_column_nonzero_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "max_entries_reached_from_one_input": 4,
+      "columns_with_mixing": 9,
+      "p1_mixing_found": true
+    },
+    "3": {
+      "p0_ok": true,
+      "dim_k_squared": 16,
+      "sum_nonzero_count": 64,
+      "per_column_nonzero_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "max_entries_reached_from_one_input": 4,
+      "columns_with_mixing": 16,
+      "p1_mixing_found": true
+    }
+  },
+  "all_p0_ok": true,
+  "any_p1_mixing": true,
+  "verdict": "MIXING_FOUND_AT_ALL_K__SUMMING_COMPONENTS_PRODUCES_GENUINE_MIXING"
+}
