@@ -1,0 +1,29 @@
+{
+  "p0_reproduces_c108": true,
+  "p1_four_crossings_stable_at_8000pt_resolution": true,
+  "crossings_found": [
+    0.9662086885860732,
+    2.8884249406175773,
+    2.8964258407300916,
+    6.856871396424553
+  ],
+  "p2_ok": true,
+  "thresholds_positive_side": {
+    "t1": 0.9660948033007579,
+    "t2": 2.8876251468636065,
+    "t3": 2.8956501224413778,
+    "t4": 6.856157181497904
+  },
+  "p3_ok": true,
+  "thresholds_negative_side": {
+    "t1_neg": -0.9660948033007579,
+    "t2_neg": -2.8876251468636065,
+    "t3_neg": -2.8956501224413778,
+    "t4_neg": -6.856157181497904
+  },
+  "p4_ok": true,
+  "max_spectrum_diff_pos_vs_neg": 0.0,
+  "all_predictions_ok": true,
+  "verdict": "EXCEPTIONAL_POINT_MECHANISM_CONFIRMED__FOUR_SYMMETRIC_THRESHOLDS_ONE_NARROW_REAL_ISLAND",
+  "self_correction_note": "claim.md's original P1 predicted exactly 2 crossings (from a 161-point scratch scan). This script's own 400-point pass found 4 (a narrow real island near t~2.888-2.896 was missed by the coarser scratch scan); confirmed stable (still exactly 4, not more) at 8000-point resolution before this prediction was revised. Recorded here and in decision.md rather than silently editing away the original miss."
+}
