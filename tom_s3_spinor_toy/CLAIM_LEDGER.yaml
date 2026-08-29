@@ -2260,6 +2260,25 @@ claims:
       - "any connection to or reopening of OB1 / the C107 bridge-attempt line -- this round is a return to the pure mathematical exploration track"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C109_K1_ANOMALY_REQUIRES_FULL_4COMPONENT_INTERFERENCE_FRAGILE_TO_ANY_SINGLE_PERTURBATION
+    statement: "Diagnoses C108's own open pearl (why is k=1 anomalous under M_k^sum?) via targeted structural/symbolic diagnosis, not another numeric sweep. RESULT: all 5 predictions confirmed (after one self-caught, transparently-recorded classification bug in the round's own first script draft, fixed before finalizing -- see decision.md Verification). P0 CONFIRMED: j1=k/2 equals the fixed auxiliary j2=1/2 (used throughout C99-C108) only at k=1 -- at k=2,3, j1=1,3/2 != 1/2. P1 CONFIRMED: M_1^sum has exactly 1 fully-populated row (all 4 columns nonzero, value 1/2 each); M_2^sum, M_3^sum have zero such rows. P2 CONFIRMED: zeroing ANY single one of M_1^sum's 16 nonzero entries (tested individually, all 16) restores an exactly real spectrum in every case -- the effect is NOT localized to the fully-populated row or any other single feature. P3 CONFIRMED: all 14 proper subsets of the 4 (a,b) CG components (sizes 1,2,3) give exactly real spectra. P4 CONFIRMED: only the complete size-4 subset (all 4 components together) gives a non-real spectrum, matching C108's own max|Im|=0.10592470995283362 exactly bit-for-bit. Precise mechanistic characterization: the k=1 anomaly is a genuine INTERFERENCE phenomenon requiring the simultaneous, exact combination of ALL 4 CG channels together, contingent on (but not solely caused by) the k=1-specific j1=j2 structural coincidence. Extremely fragile/knife-edge -- opposite fragility direction from C106's own pearl (there, single-entry perturbation of a REAL coupling stayed real; here, single-entry perturbation of a NON-real coupling snaps back to real). Both observations together support: exact reality is the generic/default state in this whole family, non-real spectra are the rare, fine-tuned exception. Deeper group-theoretic WHY (relating M_1^sum to the non-covariant quantity sum_{a,b} D^1_{ab}(g)) remains undiagnosed, flagged as a new, more specific pearl."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c109-k1-anomaly-full-four-component-interference/decision.md"
+    depends_on: [C104_SUMMED_COMPONENTS_PRODUCE_CLEAN_FOURFOLD_MIXING, C108_SUMMED_MIXING_BREAKS_REALITY_AT_K1_ONLY_HOLDS_AT_K_GEQ_2]
+    supersedes: "does not correct C108's own finding (max|Im|=0.106 at k=1, real at k>=2) -- reproduces it exactly bit-for-bit as an internal consistency check; sharpens the mechanistic characterization from 'level-specific anomaly, cause unknown' to 'requires the full 4-component sum specifically, contingent on the j1=j2 coincidence'"
+    convention: "reuses C104's own build_multiplication_matrix_component verbatim; reuses C101's own 2-level D_PW assembly and eigen_multiplicities_general convention verbatim -- no new convention introduced"
+    does_not_imply:
+      - "a first-principles group-theoretic proof of why j1=j2 enables destructive interference -- empirically diagnosed (precise trigger identified), not derived from a covariance/representation-theoretic argument"
+      - "that an analogous resonance would recur at higher k under a matching auxiliary representation (e.g. j2=1 tested at k=2) -- a natural follow-up, not tested this round"
+      - "that the fully-populated row (P1) is itself sufficient or necessary for the anomaly -- P2 directly shows it is not the sole cause, only a structural precondition correlated with k=1"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to or reopening of OB1 / the C107 bridge-attempt line"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

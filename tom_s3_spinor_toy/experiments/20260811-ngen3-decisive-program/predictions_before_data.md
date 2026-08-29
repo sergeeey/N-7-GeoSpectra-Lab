@@ -850,3 +850,22 @@ directly falsify that broader reading. New open question (why is k=1
 anomalous) flagged as a pearl, not chased further this round. Outside
 the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
 status; does not touch OB1; does not solicit Tom Lawrence's Part 5.
+
+**C109 (2026-08-30):** diagnoses C108's own open pearl (user: "разбери
+аномалию k=1").
+`experiments/20260830-c109-k1-anomaly-full-four-component-interference/decision.md`
+-- **all 5 predictions CONFIRMED** (after one self-caught, transparently
+recorded classification bug in the round's own first script draft, fixed
+before finalizing). Precise trigger found: the k=1 anomaly requires the
+FULL simultaneous sum of all 4 `(a,b)` CG components -- every proper
+subset (size 1, 2, or 3 of 4) gives an exactly real spectrum; only the
+complete 4-sum breaks it, reproducing C108's own `max|Im|=0.106` exactly
+bit-for-bit. Contingent on a structural coincidence unique to k=1
+(`j1=k/2` equals the fixed auxiliary `j2=1/2` only there), but NOT
+caused by any single feature -- zeroing any one of the 16 nonzero
+entries individually restores exact reality, opposite fragility
+direction from C106's own pearl. Deeper group-theoretic "why" (relating
+`M_1^sum` to the non-covariant quantity `sum_{a,b} D^1_{ab}(g)`) flagged
+as a new, sharper pearl, not resolved. Outside the closed P1-P5 program;
+does not change `N_gen=3`'s CONDITIONAL status; does not touch OB1; does
+not solicit Tom Lawrence's Part 5.
