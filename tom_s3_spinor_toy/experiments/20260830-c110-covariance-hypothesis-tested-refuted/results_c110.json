@@ -1,0 +1,115 @@
+{
+  "rows": {
+    "M_sum (1,1,1,1)": {
+      "value": "2*aw + 2*I*bx",
+      "real_part": "2*aw",
+      "imag_part": "2*bx",
+      "imag_part_is_zero": false,
+      "max_imag_eig": 0.10592470995283362,
+      "spectrum_real": false
+    },
+    "aw (1/2,0,0,1/2)": {
+      "value": "aw",
+      "real_part": "aw",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 2.7755575615628914e-17,
+      "spectrum_real": true
+    },
+    "ax (i/2,0,0,-i/2)": {
+      "value": "-ax",
+      "real_part": "-ax",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 3.5041414214731503e-16,
+      "spectrum_real": true
+    },
+    "bw (0,1/2,-1/2,0)": {
+      "value": "bw",
+      "real_part": "bw",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 2.220446049250313e-16,
+      "spectrum_real": true
+    },
+    "bx (0,i/2,i/2,0)": {
+      "value": "-bx",
+      "real_part": "-bx",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 6.588558012121335e-16,
+      "spectrum_real": true
+    },
+    "aw+bw (1/2,1/2,-1/2,1/2)": {
+      "value": "aw + bw",
+      "real_part": "aw + bw",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 0.0,
+      "spectrum_real": true
+    },
+    "aw+i*bw (1/2,i/2,-i/2,1/2)": {
+      "value": "aw + I*bw",
+      "real_part": "aw",
+      "imag_part": "bw",
+      "imag_part_is_zero": false,
+      "max_imag_eig": 4.440892098500626e-16,
+      "spectrum_real": true
+    },
+    "aw+bx (1/2,-i/2,-i/2,1/2)": {
+      "value": "aw + bx",
+      "real_part": "aw + bx",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 6.948492425212301e-16,
+      "spectrum_real": true
+    },
+    "i*aw (i/2,0,0,i/2)": {
+      "value": "I*aw",
+      "real_part": "0",
+      "imag_part": "aw",
+      "imag_part_is_zero": false,
+      "max_imag_eig": 5.854687374010396e-16,
+      "spectrum_real": true
+    },
+    "arbitrary (1,2,3,4)": {
+      "value": "5*aw - 3*I*ax - bw + 5*I*bx",
+      "real_part": "5*aw - bw",
+      "imag_part": "-3*ax + 5*bx",
+      "imag_part_is_zero": false,
+      "max_imag_eig": 0.08368972369438687,
+      "spectrum_real": false
+    },
+    "alternating (1,-1,1,-1)": {
+      "value": "2*I*ax - 2*bw",
+      "real_part": "-2*bw",
+      "imag_part": "2*ax",
+      "imag_part_is_zero": false,
+      "max_imag_eig": 0.10592470995283071,
+      "spectrum_real": false
+    },
+    "(2,1,1,2)": {
+      "value": "4*aw + 2*I*bx",
+      "real_part": "4*aw",
+      "imag_part": "2*bx",
+      "imag_part_is_zero": false,
+      "max_imag_eig": 0.3303283945485835,
+      "spectrum_real": false
+    },
+    "Mmp-flipped (1,1,-1,1)": {
+      "value": "2*aw + 2*bw",
+      "real_part": "2*aw + 2*bw",
+      "imag_part": "0",
+      "imag_part_is_zero": true,
+      "max_imag_eig": 0.0,
+      "spectrum_real": true
+    }
+  },
+  "p0_ok": true,
+  "p1_ok": true,
+  "p2_ok": true,
+  "p3_ok": true,
+  "p4_ok": true,
+  "all_predictions_ok": true,
+  "verdict": "COVARIANCE_HYPOTHESIS_REFUTED__NO_SINGLE_CRITERION_FOUND_THIS_ROUND"
+}
