@@ -887,3 +887,28 @@ polynomial discriminant over 4 free complex parameters) rather than
 further hand-picking. Outside the closed P1-P5 program; does not change
 `N_gen=3`'s CONDITIONAL status; does not touch OB1; does not solicit
 Tom Lawrence's Part 5.
+
+**C111 (2026-08-30):** systematic sweep (user: "сделай систематический
+перебор"), following C110's own pearl.
+`experiments/20260830-c111-exceptional-point-systematic-sweep/decision.md`
+-- swept the single most natural 1-parameter slice (overall scale `t`
+of `M_1^sum`; a full 4-complex-parameter symbolic sweep judged
+computationally infeasible for a 26x26 matrix, stated explicitly rather
+than silently substituted). **All 5 (revised) predictions CONFIRMED,
+with an honest mid-round self-correction**: claim.md's own original P1
+("exactly 2 crossings") was WRONG (161-point scratch scan); this
+round's own 400-point formal-script pass found 4, not 2 -- a narrow
+real island near `t~2.888-2.896` had been missed. Confirmed stable
+(still exactly 4) at 8000-point resolution before finalizing; the
+script's own JSON output carries an explicit `self_correction_note`.
+Verified structure: real on `(0,0.966)`, complex on `(0.966,2.888)`,
+real (narrow) on `(2.888,2.896)`, complex on `(2.896,6.856)`, real again
+beyond -- a genuine eigenvalue-collision (exceptional point) mechanism,
+confirmed by inspecting colliding eigenvalues directly. The `t<->-t`
+symmetry is proven exactly and generally (block conjugation by
+`diag(I_8,-I_18)`, true for any matrix of this form). Closed-form
+thresholds remain open, flagged as a pearl recommending a
+Schur-complement reduction to a small effective eigenvalue problem.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not touch OB1; does not solicit Tom Lawrence's
+Part 5.

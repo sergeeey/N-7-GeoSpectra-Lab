@@ -2298,6 +2298,25 @@ claims:
       - "any connection to or reopening of OB1 / the C107 bridge-attempt line"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C111_EXCEPTIONAL_POINT_MECHANISM_CONFIRMED_FOUR_SYMMETRIC_THRESHOLDS_NARROW_REAL_ISLAND
+    statement: "Follows up on C110's own pearl (a full 4-complex-parameter symbolic sweep) via the single most natural 1-parameter slice: D_PW(t) with off-diagonal block t*M_1^sum(x)I_r, t a real scale (t=1 is the actual C104/C108-C110 certified construction). Full 4-complex-parameter symbolic characteristic-polynomial derivation judged computationally infeasible for a 26x26 matrix and not attempted -- scope correction stated explicitly. RESULT: all 5 (revised) predictions confirmed, with an honest, transparently-recorded mid-round self-correction. claim.md's original P1 ('exactly two threshold crossings') was WRONG, based on a 161-point scratch scan; this round's own first formal-script pass (400-point resolution) found 4 crossings, not 2 -- a narrow real island near t~2.888-2.896 (sandwiched inside what the coarser scan read as one continuous complex region) had been missed. Confirmed stable (same 4 crossings, no further structure) at 8000-point resolution (20x finer) before finalizing; claim.md's prediction was then revised to match, and the script's own JSON output (results_c111.json) carries an explicit self_correction_note documenting the miss and fix, not silently edited away. VERIFIED STRUCTURE (bisected to double precision): D_PW(t) is exactly real on (0, 0.9660948033007579), complex on (0.9660948033007579, 2.8876251468636065), real (narrow) on (2.8876251468636065, 2.8956501224413778), complex on (2.8956501224413778, 6.856157181497904), real again for t>6.856157181497904 -- and by an EXACTLY provable general symmetry (D_PW(t) and D_PW(-t) are related by conjugation with S=diag(I_8,-I_18) for ANY block matrix of this fixed-diagonal/scaled-off-diagonal form, not specific to M_1^sum), the negative-t side mirrors this exactly (confirmed bit-for-bit, and independently confirmed by directly comparing full sorted eigenvalue arrays, not just real/complex classification, max difference 0.00e+00 across 6 tested t). Inspecting eigenvalues at t=0.95 vs t=1.0 confirmed the mechanism is a genuine eigenvalue-collision (two distinct real eigenvalues near -1.834 and -1.687 merge into a complex-conjugate pair) -- a textbook non-Hermitian exceptional point, not a generic/diffuse breakdown. This is qualitatively sharper than C108-C110's own 'some couplings break it' characterization."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c111-exceptional-point-systematic-sweep/decision.md"
+    depends_on: [C104_SUMMED_COMPONENTS_PRODUCE_CLEAN_FOURFOLD_MIXING, C108_SUMMED_MIXING_BREAKS_REALITY_AT_K1_ONLY_HOLDS_AT_K_GEQ_2, C110_COVARIANCE_HYPOTHESIS_REFUTED_NO_SINGLE_CRITERION_FOUND]
+    supersedes: "does not correct C108's own finding (t=1 breaks reality) -- t=1 falls inside this round's own first complex window (0.966,2.888), fully consistent; embeds C108-C110's findings in a richer, now-precisely-characterized structure rather than replacing them"
+    convention: "reuses C104's own build_multiplication_matrix_component and FOUR_COMPONENTS verbatim; reuses C101's own 2-level D_PW assembly and eigen_multiplicities_general convention verbatim; the t-scaling convention (t=1 = certified construction) is introduced fresh this round, stated explicitly"
+    does_not_imply:
+      - "a closed-form/exact-algebraic derivation of t1,t2,t3,t4 -- converged numerically via bisection to double precision, not derived symbolically; the Schur-complement reduction to an effective <=8-dim eigenvalue problem is identified as the correct approach, not carried out"
+      - "that resolution beyond 8000 points would reveal no further narrow islands elsewhere in (0,8) or beyond t=8 -- confirmed stable under a 20x refinement, not an infinite-resolution guarantee; flagged as a residual pearl"
+      - "the full 4-complex-parameter sweep C110's own pearl originally envisioned -- only the single most natural 1-parameter slice (t*M_1^sum) was tested"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to or reopening of OB1 / the C107 bridge-attempt line"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
