@@ -1,0 +1,16 @@
+{
+  "p0_entrywise_real": true,
+  "p1_genuinely_different": true,
+  "max_imags_by_k": {
+    "1": 0.10592470995283362,
+    "2": 0.0,
+    "3": 6.661338147750939e-16,
+    "4": 4.095263841594855e-15
+  },
+  "p2_k1_nonreal": true,
+  "p3_k2_real": true,
+  "p4_k3_real": true,
+  "p5_k4_real": true,
+  "all_predictions_ok": true,
+  "verdict": "SUMMED_MIXING_BREAKS_REALITY_AT_K1_ONLY__HOLDS_AT_K_GEQ_2"
+}
