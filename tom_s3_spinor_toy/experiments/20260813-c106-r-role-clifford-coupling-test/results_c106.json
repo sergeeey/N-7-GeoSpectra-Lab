@@ -1,0 +1,82 @@
+{
+  "p0_L_eq_neg_rmult": true,
+  "p1_shape_match": true,
+  "p2_genuinely_different": true,
+  "p3_real_spectrum_gamma": true,
+  "p3_max_imag": 0.0,
+  "p3_eigenvalues": [
+    [
+      -2.7031649640921356,
+      2
+    ],
+    [
+      -2.4885676262045946,
+      2
+    ],
+    [
+      -2.223344355307465,
+      2
+    ],
+    [
+      -2.0484430399075175,
+      2
+    ],
+    [
+      -2.000000000000002,
+      4
+    ],
+    [
+      -0.8736910108824254,
+      2
+    ],
+    [
+      -0.5655712255957757,
+      2
+    ],
+    [
+      -0.30833788403150403,
+      2
+    ],
+    [
+      2.913353945276355,
+      2
+    ],
+    [
+      4.004229867039615,
+      2
+    ],
+    [
+      4.048248792951176,
+      2
+    ],
+    [
+      4.245287500754267,
+      2
+    ]
+  ],
+  "p4_negative_control_fully_asymmetric_max_imags": [
+    2.5746328521819852,
+    2.9860064335360725,
+    2.8271157431514524,
+    2.997517717207304
+  ],
+  "p4_ok": true,
+  "p5_negative_control_mirrored_max_imags": [
+    0.0,
+    0.1746124933544239,
+    0.08282944961965011,
+    4.0245584642661925e-16,
+    0.0,
+    0.1773166910130086,
+    0.1303805149578747,
+    0.10941675909033384
+  ],
+  "p5_n_real_of_total": [
+    3,
+    8
+  ],
+  "p5_ok": true,
+  "b_gamma_entrywise_real": true,
+  "all_predictions_ok": true,
+  "verdict": "R_COUPLED_CLIFFORD_ALTERNATIVE_ALSO_REAL__R_UNTOUCHED_NOT_LOAD_BEARING"
+}
