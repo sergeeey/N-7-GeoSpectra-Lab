@@ -869,3 +869,21 @@ direction from C106's own pearl. Deeper group-theoretic "why" (relating
 as a new, sharper pearl, not resolved. Outside the closed P1-P5 program;
 does not change `N_gen=3`'s CONDITIONAL status; does not touch OB1; does
 not solicit Tom Lawrence's Part 5.
+
+**C110 (2026-08-30):** tests C109's own pearl (user: "проверь
+ковариантность").
+`experiments/20260830-c110-covariance-hypothesis-tested-refuted/decision.md`
+-- **all 5 predictions CONFIRMED, hypothesis REFUTED cleanly**: several
+nonzero-symbolic-imaginary-part combinations (`i*aw`, `i*ax`, `i*bw`
+alone, `aw+i*bw`) stay exactly real, directly refuting "covariance
+predicts reality." A SECOND candidate pattern, noticed directly in this
+round's own data (breaking cases all involve `ax`/`bx` in the imaginary
+part; non-breaking-despite-nonzero-imag_part cases all involve
+`aw`/`bw`), was checked against `M_pp`/`M_pm` alone (certified real
+from C100/C101) BEFORE being written up -- also refuted. True criterion
+remains genuinely open after 13 hand-picked test cases; flagged as a
+sharper pearl recommending a systematic symbolic sweep (characteristic
+polynomial discriminant over 4 free complex parameters) rather than
+further hand-picking. Outside the closed P1-P5 program; does not change
+`N_gen=3`'s CONDITIONAL status; does not touch OB1; does not solicit
+Tom Lawrence's Part 5.

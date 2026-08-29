@@ -2279,6 +2279,25 @@ claims:
       - "any connection to or reopening of OB1 / the C107 bridge-attempt line"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C110_COVARIANCE_HYPOTHESIS_REFUTED_NO_SINGLE_CRITERION_FOUND
+    statement: "Tests C109's own pearl (does covariance -- a coupling corresponding to a genuine real quaternion coordinate function, zero symbolic imaginary part in the aw,ax,bw,bx decomposition -- predict whether the k=1 coupled spectrum stays real?), per user request ('проверь ковариантность'). RESULT: all 5 formal predictions confirmed -- the hypothesis is cleanly REFUTED. P0 CONFIRMED: reproduces the 4 single-coordinate (aw,ax,bw,bx) + M_sum baseline exactly. P1 CONFIRMED: aw+bw (zero imag_part) is real; aw+i*bw (nonzero imag_part=bw) is ALSO real -- direct counter-example to naive covariance. P2 CONFIRMED: every zero-imag_part case tested is real (no false negatives for that direction). P3 CONFIRMED: aw+i*bw, i*aw alone (nonzero imag_part) are STILL real -- false positives for the hypothesis. P4 CONFIRMED: M_sum, (1,2,3,4), (1,-1,1,-1), (2,1,1,2) (nonzero imag_part) genuinely break reality. Neither direction of the naive hypothesis holds. A SECOND candidate pattern, noticed directly in this round's own data table (breaking cases all have imag_part built from {ax,bx} only; non-breaking-despite-nonzero-imag_part cases all have imag_part built from {aw,bw} only), was checked BEFORE being written up as a finding -- tested against M_pp alone (=aw+i*ax, imag_part=ax) and M_pm alone (=bw+i*bx, imag_part=bx), both long-established single CG components with certified real spectra from C100/C101 -- both stayed exactly real, refuting this second pattern too. Matrix entrywise-realness (informally checked) also does not separate the groups. The true criterion distinguishing 'breaks' from 'preserves' among 4-component-CG linear combinations at k=1 remains genuinely open after two refuted candidates -- flagged as a sharper pearl for a future systematic (not hand-picked) sweep, e.g. treating (c1,c2,c3,c4) as 4 independent complex unknowns and solving directly for the exact algebraic reality condition via the characteristic polynomial."
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c110-covariance-hypothesis-tested-refuted/decision.md"
+    depends_on: [C108_SUMMED_MIXING_BREAKS_REALITY_AT_K1_ONLY_HOLDS_AT_K_GEQ_2, C109_K1_ANOMALY_REQUIRES_FULL_4COMPONENT_INTERFERENCE_FRAGILE_TO_ANY_SINGLE_PERTURBATION]
+    supersedes: "does not correct C108's or C109's own findings -- both fully unaffected; this round tested and refuted a proposed EXPLANATION for C109's finding, not the finding itself. C109's own pearl (covariance hypothesis, stated as a falsifiable prediction) is now resolved as REFUTED rather than left untested."
+    convention: "reuses c85's own hamilton_product/right_mult_matrix_on_ab quaternion coordinate convention (aw,ax,bw,bx) established since C85/C106; reuses C101's own 2-level D_PW assembly and eigen_multiplicities_general convention verbatim"
+    does_not_imply:
+      - "that no criterion exists distinguishing breaking from non-breaking combinations -- only that covariance (and a second, self-checked refinement) are not it; the true criterion is genuinely unresolved, not proven nonexistent"
+      - "that C108's or C109's own findings are in any doubt -- both fully confirmed, unaffected"
+      - "an endorsement of matrix entrywise-realness as the criterion -- also checked informally and found not to separate the groups"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to or reopening of OB1 / the C107 bridge-attempt line"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
