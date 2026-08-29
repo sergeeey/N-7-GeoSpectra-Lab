@@ -833,3 +833,20 @@ named in the Relaxation Map (nonlinear `n=f(k)`; native torsion
 deformation inside C85's own framework). Outside the closed P1-P5
 program; does not resolve OB1; does not change `N_gen=3`'s CONDITIONAL
 status; does not solicit Tom Lawrence's Part 5.
+
+**C108 (2026-08-30):** return to the pure C90-C106 numerical track (per
+user request, after C107's OB1-bridge line concluded).
+`experiments/20260830-c108-summed-mixing-operator-breaks-reality/decision.md`
+-- ran C104's own flagged-but-never-attempted follow-up: does the 2-level
+D_PW still have an exactly real spectrum when the off-diagonal block is
+C104's `M_k^sum` (genuine 4-fold CG mixing) instead of the
+single-component `M_k` used in C101-C103/C105/C106? **All 6 predictions
+CONFIRMED**: at k=1->2 the spectrum is clearly NOT real
+(`max|Im|=0.106`) -- the first coupling in the entire series to break
+this property -- but at k=2->3, k=3->4, k=4->5 it is exactly real to
+machine epsilon, all three confirmed. A sharp, level-SPECIFIC anomaly
+(k=1 only), not a general "mixing breaks reality" effect -- P3-P5
+directly falsify that broader reading. New open question (why is k=1
+anomalous) flagged as a pearl, not chased further this round. Outside
+the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
+status; does not touch OB1; does not solicit Tom Lawrence's Part 5.

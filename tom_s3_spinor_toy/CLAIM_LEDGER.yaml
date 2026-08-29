@@ -2241,6 +2241,25 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C108_SUMMED_MIXING_BREAKS_REALITY_AT_K1_ONLY_HOLDS_AT_K_GEQ_2
+    statement: "Returns to the pure C90-C106 numerical track (after the C107 OB1-bridge detour) and runs the test C104's own decision.md flagged as a natural follow-up, never attempted: does the 2-level D_PW construction (C101's own minimal setup) still have an exactly real coupled spectrum when the off-diagonal block is C104's M_k^sum (summed over all 4 (a,b) CG components -- genuine 4-fold mixing, 4*dim_k^2 nonzero entries) instead of C100-C103/C105/C106's single-component M_k (dim_k^2 nonzero entries)? RESULT: all 6 predictions confirmed exactly. P0 (M_1^sum entrywise real) CONFIRMED. P1 (M_1^sum genuinely differs from single-component M_1) CONFIRMED. P2 (k=1->2 clearly non-real) CONFIRMED -- max|Im(eig)|=0.106, far above any floating-point tolerance -- the FIRST coupling in the entire C101-C108 series to break the real-spectrum property. P3-P5 (k=2->3, k=3->4, k=4->5 exactly real) ALL CONFIRMED -- max|Im| = 0.0, 6.7e-16, 4.1e-15 respectively, machine epsilon at every higher level tested. This is a level-specific break, not a uniform one: P3-P5 directly falsify the reading 'mixing always breaks reality', while P2 falsifies 'reality is universally robust'. Whatever protects the real-spectrum property at k>=2 clearly does not depend on single-component vs summed coupling -- both work fine there; something specific to k=1 (dim_1=2, the smallest nontrivial level) makes it uniquely fragile under this particular coupling. New open question (not resolved, flagged as pearl): why is k=1 specifically anomalous?"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c108-summed-mixing-operator-breaks-reality/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C104_SUMMED_COMPONENTS_PRODUCE_CLEAN_FOURFOLD_MIXING, C101_TWO_LEVEL_DPW_SPECTRAL_SHIFT_FOUND_REAL_SPECTRUM_UNEXPLAINED, C102_REAL_SPECTRUM_REPLICATES_AT_K2K3_STRUCTURAL_ORIGIN_SUPPORTED]
+    supersedes: "does not correct C101/C102/C103/C105/C106's own real-spectrum findings -- all built on different (single-component or r-coupled) constructions, unaffected; this is the first genuine counterexample to a DIFFERENT construction (summed mixing), and only at k=1"
+    convention: "reuses C104's own build_multiplication_matrix_component and FOUR_COMPONENTS verbatim; reuses C101's own 2-level D_PW assembly and eigen_multiplicities_general convention (np.linalg.eigvals, not eigvalsh) verbatim -- no new convention introduced"
+    does_not_imply:
+      - "that summed/mixing couplings generally break reality -- P3-P5 directly show the opposite at k>=2; the break is specific to k=1"
+      - "that the real-spectrum property is fragile or in doubt at k>=2 -- if anything strengthened, now confirmed under a qualitatively different coupling structure at three independent higher-level pairs"
+      - "an explanation for WHY k=1 is anomalous -- flagged as an open pearl, not resolved this round"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to or reopening of OB1 / the C107 bridge-attempt line -- this round is a return to the pure mathematical exploration track"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
