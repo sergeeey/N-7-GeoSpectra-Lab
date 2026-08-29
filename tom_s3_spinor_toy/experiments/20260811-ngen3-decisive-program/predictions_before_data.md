@@ -812,3 +812,24 @@ exactly real spectrum) is flagged in pearl_registry/INDEX.md for a
 future properly-designed sweep, not asserted as established. Outside
 the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
 status; does not solicit Tom Lawrence's Part 5.
+
+**C107 (2026-08-29):** pivot round -- `/boyko-project-radar` full scan +
+`/tracy` converged on redirecting the C90-C106 apparatus at OB1 (never
+previously connected); user confirmed.
+`experiments/20260829-c107-meier-vs-kostant-bridge-attempt/decision.md`
+-- prerequisite check before building anything: is C85/Meier's certified
+`D-bar_k` the same object as round67/Agricola's already-certified `D^t`
+torsion family under `n=k`? **All 4 predictions CONFIRMED, verdict
+FALSIFIED exactly**: `D-bar_0` has an exact doubly-degenerate zero
+eigenspace that round67's own formula can *never* produce at n=0 for any
+single `t` (its two branches `3t`, `3t-3` are never simultaneously
+zero) -- a `t`-independent proof, not a search failure. Confirms this
+project has (>=3) independently-built S3-Dirac-operator conventions
+never cross-checked before this round -- flagged as a pearl
+(symbol-overload). Properly logged to `null_results/INDEX.md` and
+`OPEN_BLOCKERS.md`'s OB1 section (research-audit itself had just flagged
+missed syncs as a gap -- did not repeat it). Two untested relaxations
+named in the Relaxation Map (nonlinear `n=f(k)`; native torsion
+deformation inside C85's own framework). Outside the closed P1-P5
+program; does not resolve OB1; does not change `N_gen=3`'s CONDITIONAL
+status; does not solicit Tom Lawrence's Part 5.

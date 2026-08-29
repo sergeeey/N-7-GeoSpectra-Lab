@@ -1,0 +1,56 @@
+{
+  "p1_dbar0_double_zero": true,
+  "numeric_spectra": {
+    "0": {
+      "eigenvalues": [
+        0.0,
+        0.0
+      ],
+      "max_imag": 0.0
+    },
+    "1": {
+      "eigenvalues": [
+        -1.0,
+        -1.0,
+        -1.0,
+        3.0
+      ],
+      "max_imag": 0.0
+    },
+    "2": {
+      "eigenvalues": [
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        4.0,
+        4.0
+      ],
+      "max_imag": 0.0
+    },
+    "3": {
+      "eigenvalues": [
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "max_imag": 0.0
+    }
+  },
+  "p2_t_plus_branch": "2/3",
+  "p2_t_minus_branch": "1",
+  "p2_mismatch_confirmed": true,
+  "p4_alt_t_plus": "-2*k/3",
+  "p4_alt_t_minus": "2*k/3 + 5/3",
+  "p4_alt_mismatch_confirmed": true,
+  "p3_t_for_plus_zero_at_n0": "0",
+  "p3_t_for_minus_zero_at_n0": "1",
+  "p3_no_double_zero_possible": true,
+  "all_predictions_ok": true,
+  "verdict": "NAIVE_BRIDGE_FALSIFIED__MEIER_AND_KOSTANT_NOT_IDENTIFIABLE_UNDER_N_EQ_K"
+}

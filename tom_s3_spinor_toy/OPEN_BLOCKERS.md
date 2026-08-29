@@ -59,6 +59,26 @@ question) is now RESOLVED (round113): `preprint.tex`'s `D_{S³}(t)`
 Dirac-shift and round99/111's Cartan-Schouten `∇^t` are the same
 connection, cite directly rather than re-deriving.
 
+**Attempted, FALSIFIED exactly (C107, 2026-08-29):** following
+`/boyko-project-radar` + `/tracy`'s converged recommendation to point the
+C90-C106 Peter-Weyl multiplication-operator apparatus at OB1, this round
+first checked the necessary prerequisite: is C85/Meier's certified
+`D-bar_k` (the operator C90-C106 is built from) the SAME object as
+round67/Agricola's already-certified `D^t(n,sigma)` torsion family, under
+the natural `n=k` identification? Answer: no, exactly and provably — see
+`experiments/20260829-c107-meier-vs-kostant-bridge-attempt/decision.md`.
+`D-bar_0` has an exact doubly-degenerate zero eigenspace that round67's
+own family can never produce at `n=0` for any single `t` (its two
+branches `3t` and `3t-3` are never simultaneously zero). This means the
+C90-C106 apparatus cannot be trivially torsion-deformed by importing
+round67's already-known crossing values — no cheap shortcut exists. Two
+untested relaxations remain (a nonlinear `n=f(k)` map; building a torsion
+deformation natively inside C85's own Peter-Weyl framework via its
+certified `L_i(k)`/`R_i(k)` generators rather than importing round67's
+abstract Kostant-cubic result) — neither attempted yet. Does not affect
+KT-8's own established result or round67's own crossing values, both
+independently unaffected.
+
 **Attempted, FALSIFIED (round114):** a claimed "independent cross-check"
 of round67's `h_H=3` calibration via
 `Agricola_Hofmann_Lawn_2023_invariant_spinors.pdf` (arXiv:2203.02961, a

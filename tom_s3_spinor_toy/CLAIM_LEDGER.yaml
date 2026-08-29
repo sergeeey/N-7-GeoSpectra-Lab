@@ -2222,6 +2222,25 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C107_NAIVE_MEIER_KOSTANT_BRIDGE_FALSIFIED_EXACTLY
+    statement: "Following boyko-project-radar (full-project scan, 2026-08-29) and /tracy's converged recommendation -- the C90-C106 Peter-Weyl multiplication-operator apparatus has never been pointed at OB1 (KT-8's torsion-selection question) -- this round first checked the necessary prerequisite: is C85/Meier's certified D-bar_k (the operator every C90-C106 round builds on) the SAME object as round67/Agricola's already-certified one-parameter torsion family D^t(n,sigma)=sigma*(n+3/2)+(t-1/2)*h_H (h_H=3), under the simplest natural identification (Peter-Weyl level n=C85's level k)? RESULT: exactly and provably FALSE, in both possible branch assignments. P1 CONFIRMED: D-bar_0 (k=0) has an exact, doubly-degenerate zero eigenspace (both eigenvalues exactly 0.0), [VERIFIED-tool]. P2 CONFIRMED: under n=k, C85's two eigenvalue branches (-k, k+2) require DIFFERENT, k-independent t values in round67's own formula (t=2/3 vs t=1) -- an exact symbolic mismatch (sympy), not a numeric near-miss, identical at every k tested. P4 CONFIRMED: swapping which eigenvalue maps to which sigma branch does not fix this -- the alternate assignment gives K-DEPENDENT required t on both sides, strictly worse. P3 is the sharpest finding: at n=k=0 specifically, round67's own certified family can NEVER produce a doubly-degenerate zero at ANY single t -- its two n=0 branches are 3t and 3t-3, which vanish at t=0 and t=1 respectively but never simultaneously. This is a t-independent structural PROOF using round67's own formula, not a search failure. Confirms this project has (at least) three independently-built S3-Dirac-operator constructions (G8/G4, Agricola/Kostant via round67, Meier/Peter-Weyl via C85) that had never been fully cross-checked against each other -- grep-confirmed absent from docs/clifford_convention_registry.md and docs/load_bearing_formulas.md before this round. Answers this round's own immediate question: the C90-C106 apparatus cannot be trivially torsion-deformed by importing round67's already-known crossing values -- no cheap shortcut exists. Two untested relaxations remain (Relaxation Map in decision.md): a nonlinear n=f(k) identification map, or building a torsion deformation NATIVELY inside C85's own Peter-Weyl framework via its certified L_i(k)/R_i(k) generators (C91-C99) rather than importing round67's abstract Kostant-cubic result."
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260829-c107-meier-vs-kostant-bridge-attempt/decision.md"
+    depends_on: [C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED, C96_K2_REPLICATION_DIVERGES_L_R_ROLES_SWAP]
+    supersedes: "does not correct or affect C85's own certification, round67's own D^t crossing values, KT-8's own established result, or round113's own convention reconciliation -- all four stand completely unaffected; this round only tests whether C85's operator is a MEMBER of round67's family, which it is not, under the simplest identification"
+    convention: "reuses round67's own certified formula D^t(n,sigma)=sigma*(n+3/2)+(t-1/2)*h_H, h_H=3, verbatim from e2_s3_torsion_deformation.py -- no new convention introduced; C85's spectrum (-k mult k+2, k+2 mult k) reused from Meier eq 6.4 as already certified"
+    does_not_imply:
+      - "that no identification exists between C85/Meier and round67/Agricola's constructions at all -- only that the simplest one (n=k, either branch assignment, single global t) fails exactly; a nonlinear map or different calibration remain untested"
+      - "that round67's own D^t family or its zero-mode crossings are in any doubt -- entirely unaffected, this round only tested whether C85's D-bar_k is PART of that family"
+      - "that OB1 is resolved, closer to resolved, or further from resolution in any quantified sense -- this is a prerequisite-check null result, not a direct attempt on OB1 itself"
+      - "any challenge to KT-8's own established result (Levi-Civita S3 spectrum never zero) -- this round tests whether C85's operator IS the Levi-Civita-family operator in the first place, not whether that family has zero modes"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
