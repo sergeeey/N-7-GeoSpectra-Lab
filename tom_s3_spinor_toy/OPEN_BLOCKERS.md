@@ -79,6 +79,27 @@ abstract Kostant-cubic result) — neither attempted yet. Does not affect
 KT-8's own established result or round67's own crossing values, both
 independently unaffected.
 
+**Checked, nothing new (2026-08-29):** before pursuing either relaxation
+above, checked whether round68's own "recommended next action (a)" (plug
+the real G73/G74A-certified twisted `D_S6` into round68's Cl(9) framework
+and confirm `ker(D_full)=0` at `t=0`) could be done cheaply. Two findings,
+for the benefit of any future session tempted to retry this: (1) G73/G74A's
+own zero-mode result (`dim ker=1`) is established purely via Atiyah-Singer
+index theory + Lichnerowicz gap + G2-Schur argument -- **no explicit matrix
+realization of the real, curvature-twisted `D_S6` exists anywhere in this
+repo.** Building one (a Peter-Weyl-for-G2/SU(3) analog of what C85 did for
+SU(2)/S3) would be a genuinely new, multi-round research undertaking, not a
+quick plug-in. (2) The logical deduction itself -- decoupling (round68) +
+`D_S3(0)`'s zero eigenvalue (round67) + `D_S6,twisted`'s zero eigenvalue
+(G73/G74A) implies `D_full` has a zero eigenvalue at t=0 -- was **already
+written out explicitly**, with correct caveats, in round68's own
+`results_e3.json` (`verdict.logical_conclusion_ker_d_full_nonzero_at_t0`,
+2026-07-17). There is nothing to "formalize" -- it already exists,
+correctly scoped. The only two ways to move OB1 forward from here remain
+unchanged: (a) build the real `D_S6,twisted` matrix (large, novel
+undertaking, not attempted), or (b) find a physical selection principle
+for `t` (the already-PARKED, externally-blocked search).
+
 **Attempted, FALSIFIED (round114):** a claimed "independent cross-check"
 of round67's `h_H=3` calibration via
 `Agricola_Hofmann_Lawn_2023_invariant_spinors.pdf` (arXiv:2203.02961, a
