@@ -787,3 +787,28 @@ remains fully intact, unaffected. Kill Analysis + Relaxation Map
 role) recorded in decision.md, none pursued yet. Outside the closed
 P1-P5 program; does not change `N_gen=3`'s CONDITIONAL status; does
 not solicit Tom Lawrence's Part 5.
+
+**C106 (2026-08-13):** the "r's role" question named as open by C99-C104
+and by C105's own Relaxation Map.
+`experiments/20260813-c106-r-role-clifford-coupling-test/decision.md`
+-- found a new exact fact first: `L_i(1) = -rmult_i` identically
+(identity similarity transform), meaning `r`-space is literally (up to
+a global sign) the same 2-dim carrier as `q`-space at level 1, not an
+independent auxiliary space. Built a Clifford-type `r`-COUPLED
+alternative to the r-untouched off-diagonal coupling used throughout
+C101-C103/C105, mirroring D-bar's own vector-index-contraction pattern
+(exact Cartesian decomposition of C104's own 4 `(a,b)` CG components,
+no new construction). **All 6 predictions CONFIRMED**: the r-coupled
+alternative ALSO gives an exactly real spectrum -- r-untouched is
+demonstrated NOT load-bearing for this candidate. A negative-control
+suite (fully asymmetric random coupling reliably breaks reality;
+random B/B.T-mirrored coupling is real in only 3/8 of trials, not
+universal) confirms this is a genuine, non-generic finding, not a
+degenerate-spectrum or eigensolver artifact -- decision.md also
+transparently records two informally-flawed early negative-control
+attempts and their corrections. A surprising, unexplained side-finding
+(single-entry perturbation of the r-coupled block still gives an
+exactly real spectrum) is flagged in pearl_registry/INDEX.md for a
+future properly-designed sweep, not asserted as established. Outside
+the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
+status; does not solicit Tom Lawrence's Part 5.
