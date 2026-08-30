@@ -912,3 +912,23 @@ Schur-complement reduction to a small effective eigenvalue problem.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not touch OB1; does not solicit Tom Lawrence's
 Part 5.
+
+**C112 (2026-08-30):** follows up on C109's own pearl (does the k=1
+anomaly recur at higher spin under a matching auxiliary representation,
+`j2=k/2`). Two skeptic passes run this round -- DDD design review (full
+context, before any code) rejected the original single-diagonal design
+as confounding four locked-together variables with `k`, and found
+adjacent-level coupling is algebraically identical to `j2=1/2` under this
+construction's own convention, so no adjacent-coupling resonance can
+exist to recur at `k>1` at all. Redesigned as a 9-cell `(j1,j2)` grid.
+Result: `P0`/`P_shape` confirmed for all 9 cells; every non-anchor cell
+stays exactly real (machine epsilon), including the two genuine matched
+cells `(1,1)` and `(3/2,3/2)` -- `j1=j2` alone is falsified as sufficient
+at these 8 points. FL Step 8a artifact review (context-blind, after
+results) found the code correct but the conclusion over-scoped:
+`target_level=2` is reached by exactly one cell (the anchor), so `j1=j2`
+is not yet disentangled from `target_level=2` as the true trigger --
+verdict WEAKENED, caveat carried forward as a new pearl, not dropped.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
+status; does not touch S6/triality/OB1 (see `OPEN_BLOCKERS.md` OB11's
+2026-08-30 correction box); does not solicit Tom Lawrence's Part 5.

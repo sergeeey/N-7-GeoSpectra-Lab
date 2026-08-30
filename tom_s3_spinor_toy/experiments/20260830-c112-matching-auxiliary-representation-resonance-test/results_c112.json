@@ -1,0 +1,97 @@
+{
+  "cells": {
+    "j1=1/2,j2=1": {
+      "j1": "1/2",
+      "j2": "1",
+      "k_source": 1,
+      "target_level": 3,
+      "p_shape_ok": true,
+      "n_components": 9,
+      "max_imag": 0.0,
+      "breaks_reality": false
+    },
+    "j1=1/2,j2=1/2": {
+      "j1": "1/2",
+      "j2": "1/2",
+      "k_source": 1,
+      "target_level": 2,
+      "p_shape_ok": true,
+      "n_components": 4,
+      "max_imag": 0.10592470995283362,
+      "breaks_reality": true
+    },
+    "j1=1/2,j2=3/2": {
+      "j1": "1/2",
+      "j2": "3/2",
+      "k_source": 1,
+      "target_level": 4,
+      "p_shape_ok": true,
+      "n_components": 16,
+      "max_imag": 8.881784197001252e-16,
+      "breaks_reality": false
+    },
+    "j1=1,j2=1/2": {
+      "j1": "1",
+      "j2": "1/2",
+      "k_source": 2,
+      "target_level": 3,
+      "p_shape_ok": true,
+      "n_components": 4,
+      "max_imag": 0.0,
+      "breaks_reality": false
+    },
+    "j1=1,j2=1": {
+      "j1": "1",
+      "j2": "1",
+      "k_source": 2,
+      "target_level": 4,
+      "p_shape_ok": true,
+      "n_components": 9,
+      "max_imag": 0.0,
+      "breaks_reality": false
+    },
+    "j1=1,j2=3/2": {
+      "j1": "1",
+      "j2": "3/2",
+      "k_source": 2,
+      "target_level": 5,
+      "p_shape_ok": true,
+      "n_components": 16,
+      "max_imag": 0.0,
+      "breaks_reality": false
+    },
+    "j1=3/2,j2=1/2": {
+      "j1": "3/2",
+      "j2": "1/2",
+      "k_source": 3,
+      "target_level": 4,
+      "p_shape_ok": true,
+      "n_components": 4,
+      "max_imag": 6.661338147750939e-16,
+      "breaks_reality": false
+    },
+    "j1=3/2,j2=1": {
+      "j1": "3/2",
+      "j2": "1",
+      "k_source": 3,
+      "target_level": 5,
+      "p_shape_ok": true,
+      "n_components": 9,
+      "max_imag": 2.331559164700881e-15,
+      "breaks_reality": false
+    },
+    "j1=3/2,j2=3/2": {
+      "j1": "3/2",
+      "j2": "3/2",
+      "k_source": 3,
+      "target_level": 6,
+      "p_shape_ok": true,
+      "n_components": 16,
+      "max_imag": 3.1217002550592562e-15,
+      "breaks_reality": false
+    }
+  },
+  "p0_ok": true,
+  "all_shape_ok": true,
+  "verdict": "MIXED_PATTERN__SEE_FULL_GRID__NO_CLEAN_SINGLE_EXPLANATION"
+}
