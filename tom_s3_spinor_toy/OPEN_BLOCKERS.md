@@ -1267,6 +1267,27 @@ new — not previously logged anywhere in this project's registries.
 > this OB's own already-closed ground; the cross-check that caught this is
 > recorded here so it doesn't need repeating.**
 >
+> **CORRECTION, same session, 2026-08-30 (caught while responding to
+> "continue C90-C111"):** point 3 below, as originally written, claimed
+> "C90-C111 IS, structurally, that same non-product-coupling door." This
+> is WRONG, verified by directly reading `experiments/20260812-c90-
+> selection-rule-structural-nogo/decision.md` and `experiments/20260811-
+> ngen3-decisive-program/predictions_before_data.md`'s own C90 entry:
+> C90-C111 is entirely INTERNAL to the S³ factor -- a multiplication-
+> operator construction connecting S³'s own Peter-Weyl LEVELS (k=1, k=2,
+> k=3...), with no S⁶ or triality content whatsoever. Its own predictions
+> log states explicitly, on every entry: "Outside the closed P1-P5
+> program; does not change N_gen=3's CONDITIONAL status." C78/C79's
+> "non-product D" is a categorically different object -- an operator
+> entangling the S³-FRAME index with the S⁶-TRIALITY index across the two
+> DIFFERENT factors of the product manifold. C90-C111 touches neither
+> S⁶ nor triality; conflating the two was an error, not a finding. Point
+> 3 (and the pearl_registry row it motivated) is corrected below/there.
+> The rest of this synthesis (points 1, 2, 4) is unaffected -- C78's
+> exhaustive closure, C79's non-product-postulate NULL, and G44's root
+> cause all stand as originally written; only the claimed link to
+> C90-C111 is retracted.
+>
 > **1. Condition (iii)'s "hard half" (state-level triality intertwiner,
 > `T·D_v = D_s·T`) is now CLOSED, exhaustively, not just "still open."**
 > `experiments/20260811-c78-exhaustive-so8-commutant-of-physical-D/decision.md`
@@ -1293,19 +1314,20 @@ new — not previously logged anywhere in this project's registries.
 > C78's own conclusions are robust to `U_v`'s residual gauge freedom
 > (checked with 4 independently-seeded valid `U_v` choices).
 >
-> **3. C90-C111 (`experiments/20260811-ngen3-decisive-program/
-> predictions_before_data.md`, the multiplication-operator/Peter-Weyl
-> coupling chain, run 2026-08-11 through 2026-08-30) IS, structurally,
-> that same non-product-coupling door** — pursued independently, without
-> this connection ever being stated explicitly until now. Going forward,
-> any C90-C111-lineage round claiming a genuine cross-factor structure
-> (a zero mode, a symmetry, a resonance) connecting `S3` and `S6` MUST be
-> checked against **C79's own raw-kernel-artifact diagnostic** first
-> (project the candidate structure onto `D_S6`'s raw, physically-
-> irrelevant kernel; if it lies overwhelmingly inside that subspace, as
-> C79's `eps=1.5` crossing did at `99.9999997%`, it is an artifact, not
-> physics) before being trusted. See also `pearl_registry/INDEX.md`'s new
-> entry (2026-08-30) recording this as a falsifiable, checkable pearl.
+> **3. RETRACTED (see correction box above) — C90-C111 is NOT the same
+> door as C78/C79.** C90-C111 (`experiments/20260811-ngen3-decisive-
+> program/predictions_before_data.md`, run 2026-08-11 through 2026-08-30)
+> is a self-contained investigation of S³'s own internal Peter-Weyl LEVEL
+> structure (a multiplication operator connecting levels `k, k+1, k+2...`
+> of `S³`'s representation theory) — it never involves `S⁶` or triality
+> at all, and its own log states on every entry that it is "outside the
+> closed P1-P5 program" and does not touch `N_gen=3`. The actual
+> "non-product-`D` door" C78 names remains genuinely untouched since C79's
+> single NULL attempt — not silently being worked by a differently-scoped
+> investigation. No cross-check against C79's artifact diagnostic applies
+> to C90-C111's own findings (they concern only `D_S3`'s level structure,
+> not `D_S6`'s kernel at all); the pearl_registry row this point motivated
+> has been corrected to not claim otherwise.
 >
 > **4. The root cause both (1) and the external proposal's topological
 > variant trace back to is `G44` (2026-06-20,
@@ -1337,9 +1359,10 @@ new — not previously logged anywhere in this project's registries.
 >
 > **Net effect on this OB's own status:** condition (iii)'s so(8)-algebra
 > half is now CLOSED (item 1), not merely "confirmed 2026-08-10." The
-> non-product-`D` door remains the only live path (items 2-3), already
-> being worked (C90-C111), and now explicitly cross-referenced instead of
-> silently parallel. No change to `N_gen=3`'s CONDITIONAL status.
+> non-product-`D` door remains the only live path, still untouched beyond
+> C79's single NULL attempt — **not** being worked by C90-C111, which is a
+> genuinely separate, S³-internal investigation (see correction box
+> above). No change to `N_gen=3`'s CONDITIONAL status.
 
 > **UPDATE 2026-08-10 (C65), condition (ii) hard half, step 1 of a planned
 > bridge.** A correction first: C61's own framing that `Hom_su3≠0` is
