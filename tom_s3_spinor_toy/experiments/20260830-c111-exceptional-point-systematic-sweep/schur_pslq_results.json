@@ -1,0 +1,26 @@
+{
+  "thresholds": {
+    "t1": {
+      "value": "0.9660948033008",
+      "accurate_digits": 13
+    },
+    "t2": {
+      "value": "2.89",
+      "accurate_digits": 3
+    },
+    "t3": {
+      "value": "2.89565012244138356675762402821987",
+      "accurate_digits": 33
+    },
+    "t4": {
+      "value": "6.8561571814979061144293311045692",
+      "accurate_digits": 32
+    }
+  },
+  "pslq_minimal_polynomials_in_s_eq_t_squared": {
+    "t1": null,
+    "t2": null,
+    "t3": null,
+    "t4": null
+  }
+}
