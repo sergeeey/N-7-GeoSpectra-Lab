@@ -2317,6 +2317,24 @@ claims:
       - "any connection to or reopening of OB1 / the C107 bridge-attempt line"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C112_J1_EQ_J2_INSUFFICIENT_AT_TESTED_POINTS_TARGET_LEVEL_2_CONFOUND_NOT_BROKEN
+    statement: "Follows up on C109's own pearl (does an analogous resonance recur at higher spin under a matching auxiliary representation, j2=k/2). DDD design review (skeptic, full context, BEFORE any code) rejected the original single-diagonal design (j2=k/2 at increasing k) as confounding four things at once (j1=j2 relation, level-distance jumped, component count, ignored-CG-channel count all locked together with k), and found that under this construction's stretched-top-state convention, adjacent-level coupling (what C108-C111 always tested) is algebraically IDENTICAL to j2=1/2 -- so no adjacent-coupling resonance can exist to recur at k>1 at all. Redesigned as a 9-cell (j1,j2) in {1/2,1,3/2}^2 grid. RESULT: P0 CONFIRMED exactly (anchor cell (1/2,1/2) reproduces C108's own max|Im|=0.10592470995283362 bit-for-bit); P_shape CONFIRMED for all 9 cells (component counts match (2j2+1)^2, independent CG-via-Wigner-3j cross-check passes). Every non-anchor cell is exactly real (machine epsilon, 1e-16 to 3e-15), including the two genuine matched-diagonal cells (1,1) and (3/2,3/2) -- H_matching (j1=j2 alone reproduces the anomaly) is falsified at these 8 tested points. FL Step 8a artifact review (skeptic, context-blind, after results) found the code correct but the conclusion over-scoped: target_level=2 (j_target=1) is achieved by EXACTLY ONE cell in this grid -- the anchor -- so the grid cannot distinguish 'j1=j2 is the trigger' (falsified) from 'target_level=2 specifically is the trigger, and j1=j2 at the anchor was coincidental' (untested, would need a trivial/singlet j2=0 or j1=0 cell, itself a degenerate self-coupling case, not attempted). Verdict WEAKENED, not a clean kill -- caveat carried forward, not dropped."
+    truth_status: CONDITIONAL
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c112-matching-auxiliary-representation-resonance-test/decision.md"
+    depends_on: [C104_SUMMED_COMPONENTS_PRODUCE_CLEAN_FOURFOLD_MIXING, C108_SUMMED_MIXING_BREAKS_REALITY_AT_K1_ONLY_HOLDS_AT_K_GEQ_2, C109_K1_ANOMALY_REQUIRES_FULL_4COMPONENT_INTERFERENCE_FRAGILE_TO_ANY_SINGLE_PERTURBATION]
+    supersedes: "narrows, does not overturn, C108/C109's own findings -- the anchor cell IS C108's own certified point, reused not recomputed; C109's own j1=j2 framing of the k=1 precondition is confirmed necessary-but-shown-insufficient-alone (target_level=2 confound not yet broken)"
+    convention: "generalizes C104's own build_multiplication_matrix_component to arbitrary auxiliary spin j2 (was hardcoded 1/2); introduces fresh this round: target_level=2*(j1+j2) under the unchanged stretched-top-state convention, and the (2j2+1)^2-component sum generalizing C104's own 4-component sum"
+    does_not_imply:
+      - "that target_level=2 (rather than j1=j2) is NOT the true trigger -- genuinely untested by this grid, named as the concrete open follow-up, not attempted here"
+      - "an independent re-verification of the r-index (kron(...,eye(2))) treatment for j2>1/2 -- inherited unmodified from the j2=1/2 construction; C106's own R_UNTOUCHED_NOT_LOAD_BEARING result is prior support, not a direct check at higher j2"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question -- this entire C90-C111+ lineage stays entirely internal to S3, see OPEN_BLOCKERS.md OB11's 2026-08-30 correction box"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
