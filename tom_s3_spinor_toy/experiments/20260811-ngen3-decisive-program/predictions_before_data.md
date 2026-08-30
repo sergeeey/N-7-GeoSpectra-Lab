@@ -950,3 +950,24 @@ j1+j2` stretched-top-state convention entirely, a materially larger
 design change than scoped for this round. Outside the closed P1-P5
 program; does not change `N_gen=3`'s CONDITIONAL status; does not touch
 S6/triality/OB1; does not solicit Tom Lawrence's Part 5.
+
+**C114 (2026-08-30):** surfaced by running `narrow-discovery-engines`
+Engine 2 (Constraint Relaxation Search) against the C90-C113 family's
+own unquestioned assumptions -- highest-scoring candidate: does an
+analogous subset-sensitivity to C109's own k=1 finding exist at C112's
+matched-diagonal cells `(1,1)` and `(3/2,3/2)`, both certified real at
+the full sum? RESULT: yes -- specific proper subsets at BOTH cells DO
+break reality (corner components at `(1,1)`; 12/16 components at
+`(3/2,3/2)`), falsifying the implicit broad reading of C112 ("no
+coupling at k>=2 breaks reality") while C112's own explicit full-sum
+claim stands unmodified. FL Step 8a skeptic review (context-blind) ruled
+out the "trivial near-zero component" explanation (all component norms
+identical within each cell, checked directly) but left one diagnostic
+(anti-Hermitian projection) unresolved after a first attempt hit a
+genuine dimension-mismatch bug, not force-fixed. Two candidate mechanism
+rules checked same-session directly against the data and both refuted
+(`|a|=j2 AND |b|=j2` fits `(1,1)` perfectly but only half of `(3/2,3/2)`;
+an a-vs-b-asymmetric refinement fits `(3/2,3/2)` but fails on `(1,1)`).
+Mechanism remains genuinely open. Outside the closed P1-P5 program; does
+not change `N_gen=3`'s CONDITIONAL status; does not touch S6/triality/
+OB1; does not solicit Tom Lawrence's Part 5.

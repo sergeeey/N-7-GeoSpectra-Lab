@@ -2352,6 +2352,25 @@ claims:
       - "any connection to S6, triality, or the C78/C79 non-product-D question"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C114_SUBSET_BREAKS_REALITY_CONFIRMED_NOT_TRIVIAL_MECHANISM_OPEN
+    statement: "Surfaced by narrow-discovery-engines Engine 2 (Constraint Relaxation Search) run against the C90-C113 construction family's own unquestioned assumptions -- highest-scoring, cheapest testable candidate: whether an analogous subset-sensitivity to C109's own k=1 finding (any component removed restores reality) exists at C112's genuine matched-diagonal cells (1,1) and (3/2,3/2), both certified real at the full sum. RESULT: at BOTH cells, specific proper subsets DO break reality even though the full sum does not -- at (1,1), removing any 1 of 4 'corner' components {(1,1),(1,-1),(-1,1),(-1,-1)} breaks reality (max|Im|~0.00136), removing any of the other 5 stays exactly real; at (3/2,3/2), removing any 1 of 12/16 components breaks reality (3 magnitude clusters), removing the 4 (+-3/2,+-1/2)-type components stays real. FL Step 8a skeptic review (context-blind) raised two objections: (1) are 'safe' components just near-zero (trivial)? RESOLVED, ruled out -- all components within each cell have IDENTICAL norm (5/3 and 7/4 respectively) to floating-point precision; (2) do 'safe' components vanish on D2's own anti-Hermitian part (known consequence, not novel)? NOT resolved -- a first attempt hit a genuine dimension mismatch (M_ab is a rectangular coupling map, not embeddable in D2's own square space via kron(.,I_2) as attempted), removed rather than force-fixed, left as an open mechanism question. This falsifies the IMPLICIT broader reading of C112 ('no coupling at k>=2 in this family can break reality') while leaving C112's own explicit full-sum claim fully intact and unmodified."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c114-subset-analysis-matched-diagonal-cells/decision.md"
+    depends_on: [C109_K1_ANOMALY_REQUIRES_FULL_4COMPONENT_INTERFERENCE_FRAGILE_TO_ANY_SINGLE_PERTURBATION, C112_J1_EQ_J2_INSUFFICIENT_AT_TESTED_POINTS_TARGET_LEVEL_2_CONFOUND_NOT_BROKEN]
+    supersedes: "does not correct or contradict C112's own explicit claim (full sum at (1,1)/(3/2,3/2) is real) -- narrows the IMPLICIT broader reading of it; does not resolve C112's own target_level=2 vs j1=j2 confound, which is an orthogonal question (level/spin choice, not component subset)"
+    convention: "reuses C112's own build_M_ab_general unmodified; introduces fresh this round: structured (not exhaustive) subset sampling (remove-one, single-alone, pairing-group-respecting intermediate sizes) and the component_norms/hermitian_err diagnostics added mid-round after skeptic review"
+    does_not_imply:
+      - "a mechanistic explanation of WHY specific components are safe vs breaking -- establishes the phenomenon, not its cause; the anti-Hermitian-projection diagnostic that could test this remains open, attempted once, dimensionally incorrect, not force-fixed"
+      - "that the (1,1) cell's corner/edge pattern and the (3/2,3/2) cell's 3-cluster pattern are instances of the same underlying rule -- plausible, not verified"
+      - "an exhaustive subset search -- structured sample only (46 and 32 of 2^9-2 and 2^16-2 possible proper subsets respectively)"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
