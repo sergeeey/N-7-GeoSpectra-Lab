@@ -1258,7 +1258,88 @@ new — not previously logged anywhere in this project's registries.
 
 ---
 
-## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) hard-half intertwiner FOUND 2026-08-11 (C70), Clifford-compatibility test still not attempted; (iii) partly confirmed 2026-08-10]
+## OB11 — matter-generation tensor factorization: necessary condition verified, sufficiency open [PARTIAL, 2026-08-03; (ii) hard-half intertwiner FOUND 2026-08-11 (C70), Clifford-compatibility test still not attempted; (iii) partly confirmed 2026-08-10; (iii) hard half CLOSED EXHAUSTIVELY 2026-08-11 (C78) — see synthesis below, 2026-08-30]
+
+> **SYNTHESIS 2026-08-30 — connects C78/C79 (2026-08-11) to C90-C111
+> (2026-08-11 to 2026-08-30) and traces both to a single 2026-06-20 root
+> cause (G44). Written in response to an external (ChatGPT-generated)
+> proposal for a "triality bridge to N_gen=3" that substantially restated
+> this OB's own already-closed ground; the cross-check that caught this is
+> recorded here so it doesn't need repeating.**
+>
+> **1. Condition (iii)'s "hard half" (state-level triality intertwiner,
+> `T·D_v = D_s·T`) is now CLOSED, exhaustively, not just "still open."**
+> `experiments/20260811-c78-exhaustive-so8-commutant-of-physical-D/decision.md`
+> (verdict `EXHAUSTIVE_COMMUTANT_EQUALS_SU3_EXACTLY__DIM8`): the ENTIRE
+> `so(8)` commutant of the physical `D` is exactly `su(3)`, dimension 8,
+> proven via a single SVD of the full `4096×28` commutator map (rank 20,
+> exactly 8 zero singular values, no near-zero stragglers). This is not one
+> more failed candidate (C75/C77 tested two specific subalgebras and
+> failed) — it is a proof that **no candidate subalgebra of `so(8)`,
+> known or yet-to-be-proposed, can ever commute with the physical `D`**.
+> Condition (iii) as an so(8)-Lie-algebra-symmetry question is closed.
+>
+> **2. C78 itself names the one remaining door: a structurally different,
+> non-product `D`** (S³-frame index entangled with the S⁶-triality index
+> at the operator level, not as a tensor product). **C79, the SAME day**
+> (`experiments/20260811-c79-nonproduct-s3s6-coupling-attempt/decision.md`),
+> already tried ONE specific, honestly-postulated non-product coupling
+> (round119's `so(4)₁` self-dual triple + round67's `Z_i`, restricted to
+> `S3`'s `n=0` `+`-branch) — clean NULL (the one apparent zero-mode
+> crossing was fully explained as an artifact of `D_S6`'s own 36-dim raw
+> kernel, unrelated to the physically-relevant 1-dim `su(3)`-invariant
+> sector). Two valuable side-findings survived: C70's intertwiner `U_v` is
+> **not unitary** (found, fixed, `T=(T_raw+T_raw^dagger)/2`), and C75/C77/
+> C78's own conclusions are robust to `U_v`'s residual gauge freedom
+> (checked with 4 independently-seeded valid `U_v` choices).
+>
+> **3. C90-C111 (`experiments/20260811-ngen3-decisive-program/
+> predictions_before_data.md`, the multiplication-operator/Peter-Weyl
+> coupling chain, run 2026-08-11 through 2026-08-30) IS, structurally,
+> that same non-product-coupling door** — pursued independently, without
+> this connection ever being stated explicitly until now. Going forward,
+> any C90-C111-lineage round claiming a genuine cross-factor structure
+> (a zero mode, a symmetry, a resonance) connecting `S3` and `S6` MUST be
+> checked against **C79's own raw-kernel-artifact diagnostic** first
+> (project the candidate structure onto `D_S6`'s raw, physically-
+> irrelevant kernel; if it lies overwhelmingly inside that subspace, as
+> C79's `eps=1.5` crossing did at `99.9999997%`, it is an artifact, not
+> physics) before being trusted. See also `pearl_registry/INDEX.md`'s new
+> entry (2026-08-30) recording this as a falsifiable, checkable pearl.
+>
+> **4. The root cause both (1) and the external proposal's topological
+> variant trace back to is `G44` (2026-06-20,
+> `experiments/20260620-g44-d4-triality/decision.md`, REJECT, 34/34
+> tests, six weeks before C78/C79/C90 existed) — the oldest, and in
+> hindsight the most load-bearing, negative result on this whole
+> question.** G44's argument: `G₂` has NO 8-dimensional irreducible
+> representation (only `{1,7}` up to dim 8, next is 14) — so ANY 8-dim
+> `SO(8)` rep restricted to `G₂` decomposes uniquely as `7⊕1`, meaning
+> `8_v|_{G₂} = 8_s|_{G₂} = 8_c|_{G₂}` are IDENTICAL, not just
+> isomorphic-by-coincidence. G44's own conclusion, verbatim: **"S⁶ =
+> G₂/SU(3) cannot distinguish the three reps → triality invisible."**
+> This is the SAME branching identity the external proposal's Bridge A/D
+> cites as a positive enabling fact (`8_v↓SU(3) = 8_s↓SU(3) = 8_c↓SU(3) =
+> 3⊕3̄⊕1⊕1`, `SU(3)⊂G₂` so the `G₂`-level identity forces the `SU(3)`-level
+> one too) — G44 already showed six weeks before C78 that this identity is
+> the CAUSE of the collapse, not evidence a genuine distinguishing
+> structure exists to build an intertwiner or a triality-summed
+> topological invariant from. A 2026-08-30 novelty-check for a proposed
+> "Bridge F'" (does triality act non-trivially on the canonical `G₂→S⁶`
+> bundle's clutching map, summing three images to winding number 3 in
+> `π₅(SU(3))`?) found it sits on the identical branching data G44 already
+> showed collapses — assessed as high-risk-of-repeat, NOT built as a
+> round. See `experiments/20260830-triality-bridge-program/PROGRAM_TZ.md`
+> Part 1 for the full novelty-check trail (G32/G36/G40-B2/G41-B3/G43-B5/
+> G48/G52 — the `π₅(SU(3))→π₅(G₂)→π₅(S⁶)` machinery this would have
+> needed is already fully mapped in this project, going back to
+> 2026-06-20).
+>
+> **Net effect on this OB's own status:** condition (iii)'s so(8)-algebra
+> half is now CLOSED (item 1), not merely "confirmed 2026-08-10." The
+> non-product-`D` door remains the only live path (items 2-3), already
+> being worked (C90-C111), and now explicitly cross-referenced instead of
+> silently parallel. No change to `N_gen=3`'s CONDITIONAL status.
 
 > **UPDATE 2026-08-10 (C65), condition (ii) hard half, step 1 of a planned
 > bridge.** A correction first: C61's own framing that `Hom_su3≠0` is
