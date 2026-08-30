@@ -6,6 +6,60 @@
 
 ---
 
+## ⚠️ Status correction (2026-08-30) — the 2026-08-12 box below is itself now 18 rounds stale
+
+The 2026-08-12 correction below stops at C102. C103–C111 landed since (all still
+downstream structural/mathematical-apparatus work on the C91-C102 multiplication-
+operator construction, **not** a new channel-distinguishability test — `N_gen=3`
+status is UNCHANGED, still CONDITIONAL, unweakened, exactly as the 2026-08-12 box
+already states for C77-C102):
+
+- **C103-C106** — extended `D_PW` to a 3-level block-tridiagonal construction (k=1,2,3):
+  truncation appears to converge (lowest eigenvalues stable across 2-3 levels, C103);
+  the summed multiplication operator (all 4 CG `a,b` components) produces genuine
+  cross-level mixing at every tested k (C104 — this `M_k^sum` object is the central
+  construction used throughout C107-C111 below); a block-diagonal similarity
+  transform that would decouple levels was searched for and ruled out, cross-level
+  coupling is genuinely inconsistent with block-diagonalization (C105); the
+  "r-index untouched" simplification was tested against an r-coupled Clifford
+  alternative (also real) and found not load-bearing (C106).
+- **C107** — tested whether C85's certified Peter-Weyl `D-bar_k` and round67/Agricola's
+  `D^t(n,σ)` torsion family are the same object under the natural n=k identification
+  (following up on OB1) — **falsified exactly** (an algebraic proof, not a numerical
+  near-miss): `D-bar_0` has an exact doubly-degenerate zero eigenspace round67's
+  family can never produce at n=0, for any single t.
+- **C108** — `M_1^sum` (the C104 summed operator) breaks `D_PW`'s real-spectrum
+  property, but **only at k=1**; holds exactly (machine epsilon) at k≥2 — the first
+  reality-breaking coupling found anywhere in the C101-C111 series.
+- **C109** — diagnosed C108's k=1 anomaly precisely: requires the FULL 4-component
+  sum (all 15 proper subsets of the 4 CG components stay real; only the complete sum
+  breaks it); the structural precondition (j1=j2=1/2, unique to k=1) is necessary
+  but not sufficient alone.
+- **C110** — tested a "covariance" hypothesis (correspondence to a real quaternion
+  coordinate) as the discriminating criterion for the anomaly — **refuted** via
+  direct counter-examples; no single criterion found this round.
+- **C111** — systematic sweep of the coupling's overall scale `t` found a genuine
+  non-Hermitian **exceptional-point mechanism**: two real eigenvalues merge into a
+  complex-conjugate pair at 4 symmetric threshold values (mid-round self-correction,
+  transparently documented: an initial 161-point scratch scan missed a narrow real
+  island between two of the thresholds, caught and verified at 400- then 8000-point
+  resolution); proved a general `t↔-t` spectral symmetry for any block matrix of
+  this construction's shape. Strongest positive result of this window — a genuine,
+  non-trivial physical mechanism, not a null result.
+
+Current entry point for this specific sub-thread:
+`experiments/20260830-c111-exceptional-point-systematic-sweep/decision.md` and
+`experiments/20260811-ngen3-decisive-program/predictions_before_data.md` (full
+chronological log, C91 through C111). Whole-repo status (both tracks):
+`reports/RESEARCH_AUDIT_WHOLE_REPO_2026-08-30.md`. This box is additive per this
+file's own established pattern; the 2026-08-12 correction below remains
+historically accurate for what it covers and is not retracted. **Same known
+limitation as every prior box here:** this one will itself go stale as more rounds
+land — the automated-staleness-check idea the 2026-08-12 box already floated is
+still not implemented.
+
+---
+
 ## ⚠️ Status correction (2026-08-11)
 
 A full month of work sits between the 2026-07-17 correction below and now
