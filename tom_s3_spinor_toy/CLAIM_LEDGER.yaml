@@ -2335,6 +2335,23 @@ claims:
       - "any connection to S6, triality, or the C78/C79 non-product-D question -- this entire C90-C111+ lineage stays entirely internal to S3, see OPEN_BLOCKERS.md OB11's 2026-08-30 correction box"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C113_J2_ZERO_ALGEBRAICALLY_INCAPABLE_OF_BREAKING_REALITY_CONFOUND_ROUTE_CLOSED
+    statement: "C112's artifact review named j2=0 (trivial/singlet auxiliary) as the one way to reach target_level=2 with j1!=j2 inside the tested construction family, flagging it as a likely-degenerate self-coupling case. This round proves why, algebraically, before confirming numerically: at j2=0, j_target=j1 so target_level=2*j1=k_source, meaning D1=D2=dbar_full(k_source) (same operator on both diagonal blocks), and the single (a,b)=(0,0) CG component gives an off-diagonal block of exactly t*I (scaled identity, not a genuine mixing operator). For ANY square D and ANY scalar t, [[D,tI],[tI,D]] is similar via the D-independent basis change u=x+y,v=x-y to diag(D+tI,D-tI); since every dbar_full(k) has an EXACTLY real spectrum (confirmed 0.0 exactly, not merely small, for k=1,2,3), D+-tI stays exactly real for any real t. j2=0 is therefore algebraically INCAPABLE of ever breaking reality, for any k or t -- not a per-level coincidence, confirmed identically across all 3 tested levels. This closes off j2=0 as a way to disentangle C112's target_level=2-vs-j1=j2 confound; the confound itself remains genuinely open."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: FORMALLY_CHECKED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c113-j2-zero-self-coupling-degenerate/decision.md"
+    depends_on: [C112_J1_EQ_J2_INSUFFICIENT_AT_TESTED_POINTS_TARGET_LEVEL_2_CONFOUND_NOT_BROKEN]
+    supersedes: "does not resolve C112's own confound (target_level=2 vs j1=j2) -- only proves one proposed route (j2=0) cannot resolve it"
+    convention: "reuses dbar_full unchanged from every prior round in this series; the [[D,tI],[tI,D]] block-similarity argument (u=x+y,v=x-y) is introduced fresh this round, a general linear-algebra fact not specific to this project's operators"
+    does_not_imply:
+      - "that target_level=2 (rather than j1=j2) is confirmed or refuted as the anomaly's true trigger -- genuinely still open, a different construction (abandoning the stretched-top-state j_target=j1+j2 convention) would be needed to test it"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
