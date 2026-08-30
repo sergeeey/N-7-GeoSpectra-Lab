@@ -932,3 +932,21 @@ verdict WEAKENED, caveat carried forward as a new pearl, not dropped.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s CONDITIONAL
 status; does not touch S6/triality/OB1 (see `OPEN_BLOCKERS.md` OB11's
 2026-08-30 correction box); does not solicit Tom Lawrence's Part 5.
+
+**C113 (2026-08-30):** attempts to break C112's own confound
+(`target_level=2` vs `j1=j2`) via `j2=0` (a trivial/singlet auxiliary),
+the one route C112's decision.md named but flagged as likely-degenerate.
+Proves algebraically FIRST, confirms numerically second: at `j2=0`,
+`target_level=2*j1=k_source`, so `D1=D2` and the coupling is exactly
+`t*I` -- the block `[[D,tI],[tI,D]]` is similar (via a `D`-independent
+basis change) to `diag(D+tI,D-tI)`, which stays real for any real `t`
+whenever `D` itself is real-spectrum (true for every `dbar_full(k)` in
+this project, confirmed `0.0` exactly for k=1,2,3). `j2=0` is therefore
+provably incapable of ever breaking reality -- closes off the cheapest
+candidate confound-breaker rigorously, not empirically. The confound
+itself (does `target_level=2` alone trigger the anomaly?) remains
+genuinely open; a real test now requires abandoning the `j_target=
+j1+j2` stretched-top-state convention entirely, a materially larger
+design change than scoped for this round. Outside the closed P1-P5
+program; does not change `N_gen=3`'s CONDITIONAL status; does not touch
+S6/triality/OB1; does not solicit Tom Lawrence's Part 5.

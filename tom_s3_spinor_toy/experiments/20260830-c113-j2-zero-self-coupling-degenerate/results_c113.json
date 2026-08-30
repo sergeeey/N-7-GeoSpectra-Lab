@@ -1,0 +1,31 @@
+{
+  "per_level": {
+    "1": {
+      "dim": 8,
+      "max_im_D": 0.0,
+      "p0_ok": true,
+      "max_im_self_coupled": 1.1699418958431974e-16,
+      "p1_ok": true,
+      "p2_ok": true
+    },
+    "2": {
+      "dim": 18,
+      "max_im_D": 0.0,
+      "p0_ok": true,
+      "max_im_self_coupled": 0.0,
+      "p1_ok": true,
+      "p2_ok": true
+    },
+    "3": {
+      "dim": 32,
+      "max_im_D": 0.0,
+      "p0_ok": true,
+      "max_im_self_coupled": 0.0,
+      "p1_ok": true,
+      "p2_ok": true
+    }
+  },
+  "all_ok": true,
+  "verdict": "J2_ZERO_ALGEBRAICALLY_INCAPABLE_OF_BREAKING_REALITY__CONFOUND_ROUTE_CLOSED",
+  "t_scale": 1.0
+}
