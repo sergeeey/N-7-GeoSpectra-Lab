@@ -2371,6 +2371,42 @@ claims:
       - "any connection to S6, triality, or the C78/C79 non-product-D question"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C115_ASYMMETRIC_RULE_CONFIRMED_AT_J2_GEQ_3HALVES_TWO_REGIME_READING_ADMISSIBLE
+    statement: "Third matched-diagonal cell (j1=j2=2, 25 components) built as a third data point for C114's own open mechanism question. Full sum real (P0), component norms identical (P1). Re-testing the asymmetric rule 'stays real iff |a|=j2 AND |b|<j2' (which C114's own pearl described as failing on (1,1)) against all three cells: fits (2,2) PERFECTLY (25/25) and, on re-check, fits (3/2,3/2) PERFECTLY too (16/16) -- only (1,1) shows exceptions (6/9, all 3 at a=0). FL Step 8a skeptic review (context-blind) independently re-verified the arithmetic by hand (confirmed exact), confirmed the |b|<j2 clause is load-bearing (not reducible to |a|=j2 alone -- double-corner cases falsify that simpler rule at both j2=3/2 and j2=2), ruled out the confound that the j2=1 exception is really an untestable-elsewhere a=0 artifact (a=0 IS tested at j2=2, all 5 break, matching the asymmetric rule there), and found a genuine competing explanation: at j2=1 alone, a DIFFERENT symmetric rule ('stays real iff a=0 OR b=0') fits PERFECTLY (9/9, better than the asymmetric rule's 6/9 there). The data therefore admits two readings -- one universal asymmetric rule with a 3-case j2=1 exception, OR two distinct regimes (symmetric at j2=1, asymmetric at j2>=3/2) -- not resolved by this round. Decisive next test named: j2=3 (49 components), which re-tests a=0 with |b|<j2 resolution unavailable at j2=1."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c115-third-cell-2-2-mechanism-test/decision.md"
+    depends_on: [C112_J1_EQ_J2_INSUFFICIENT_AT_TESTED_POINTS_TARGET_LEVEL_2_CONFOUND_NOT_BROKEN, C114_SUBSET_BREAKS_REALITY_CONFIRMED_NOT_TRIVIAL_MECHANISM_OPEN]
+    supersedes: "corrects C114's own pearl-registry framing that BOTH tested mechanism rules were simply refuted -- the asymmetric rule is confirmed at 2 of 3 cells, not refuted; C114's own explicit results (per-cell breaks/no-break data) are unmodified, only the mechanism-rule interpretation is revised"
+    convention: "reuses C114's own run_cell, build_M_ab_general, magnetic_labels, certified_L_R unmodified via direct import"
+    does_not_imply:
+      - "that the one-rule-with-exception vs two-regime question is resolved -- explicitly requires the named j2=3 test, not run this round"
+      - "a mechanistic (group-theoretic) explanation of WHY the asymmetric rule holds where it does -- establishes the pattern precisely, not its cause"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
+  - id: C116_REALITY_PRESERVING_WINDOW_NARROW_J2_1_AND_J2_3_BOTH_FAIL_DIFFERENTLY
+    statement: "Decisive test named by C115's own FL Step 8a skeptic review: does the asymmetric rule's own prediction for a=0 removals hold at j2=3 (49 components), where |b|<j2 has real resolution unlike j2=1? Pre-registered decisive question answered cleanly: ALL 7 (0,b) removals break reality, including (0,0) -- directly favoring 'j2=1 is a low-spin regime' over the competing 'zero-specific structure' reading from C115, ruled out not just weakened. BUT running the full 49-cell sweep (not just the 7 decisive cases) revealed a sharper, unanticipated result: the asymmetric rule's 'breaks' predictions are 39/39 correct (100%) but its 'stays real' predictions are 0/10 correct (0%) -- ALL 49 of 49 remove-one tests at j2=3 break reality, none preserve it. Combined with C114/C115's own j2=1,3/2,2 results, the 4-cell picture is: reality-preservation-under-single-removal is a NARROW WINDOW (clean at j2=3/2,2 only), bounded on BOTH sides (j2=1, j2=3) by degradation -- but via two qualitatively DIFFERENT mechanisms: at j2=1 MOST removals stay real (symmetric a=0-or-b=0 protective structure); at j2=3 NONE stay real (protective structure vanishes entirely). Magnitudes checked (not discarded): the 10 j2=3 mismatches (1.0e-5 to 9.5e-5) are comparable in scale to correctly-predicted breaks, not numerical-noise-adjacent."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260830-c116-j2-3-decisive-kill-test/decision.md"
+    depends_on: [C114_SUBSET_BREAKS_REALITY_CONFIRMED_NOT_TRIVIAL_MECHANISM_OPEN, C115_ASYMMETRIC_RULE_CONFIRMED_AT_J2_GEQ_3HALVES_TWO_REGIME_READING_ADMISSIBLE]
+    supersedes: "resolves C115's own pre-registered ambiguity (one-rule-with-exception vs two-regime) in favor of neither exactly -- j2=1's own asymmetric-rule exception is confirmed non-recurring at j2=3 (favors low-spin-regime reading for THAT specific question), but the asymmetric rule itself is shown to NOT be the general rule for j2>=3/2 as C115 provisionally framed it -- it is accurate only in the narrow j2 in {3/2,2} window"
+    convention: "reuses C114's own run_cell unmodified via direct import; introduces fresh this round: explicit max|Im| magnitude reporting (per C115's own skeptic-flagged gap) and the pre-registered (0,b)-specific decisive-test framing"
+    does_not_imply:
+      - "an explanation of WHY the reality-preserving window exists only at j2 in {3/2,2}, or why it closes differently at each boundary -- a genuine, deferred mechanism question"
+      - "that j2>3 or non-matched cells follow any predictable extension of this pattern -- untested"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
