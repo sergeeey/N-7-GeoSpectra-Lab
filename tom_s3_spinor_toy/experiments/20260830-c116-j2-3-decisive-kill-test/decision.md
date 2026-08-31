@@ -139,40 +139,92 @@ about:
 | `2`   | 5 | 25 | 6 | 0.2400 |
 | `3`   | 7 | 49 | 0 | 0.0000 |
 
-(`j2=1`, `j2=3/2` re-extracted from `../20260830-c114-.../results_c114.json`,
+(`j2=1`, `j2=3/2` re-extracted from `experiments/20260830-c114-subset-analysis-matched-diagonal-cells/results_c114.json`,
 filtered to `type=='remove_one'` only -- C114's own `subsets` list also
-contains `single_alone`/`structured_intermediate` entries, which the
-original pearl's 5/9 and 4/16 numbers evidently already excluded
-correctly, confirmed by the count matching `n^2` exactly. `j2=2` from
-`results_c115.json`'s `remove_one_detail` (`breaks` field). `j2=3` from
-this round's own `all_remove_one_detail` (`actual_breaks` field).)
+contains `single`/`structured_pair_group` entries [corrected 2026-08-31,
+skeptic pass: this was originally misnamed `single_alone`/
+`structured_intermediate`, strings that do not exist in the file -- the
+filter itself was always correct, only the provenance note's naming was
+wrong], which the original pearl's 5/9 and 4/16 numbers evidently already
+excluded correctly, confirmed by the count matching `n^2` exactly. `j2=2`
+from `results_c115.json`'s `remove_one_detail` (`breaks` field). `j2=3`
+from this round's own `all_remove_one_detail` (`actual_breaks` field;
+NOTE -- that same JSON's `predicted_stays_real` field is serialized as a
+mix of Python bool and the literal strings `"True"`/`"False"` for
+different rows; `"False"` is truthy in Python, so any future re-analysis
+must use `actual_breaks`, not `predicted_stays_real`, or risk silently
+miscounting up to 10 of the 49 rows).
 
-**Answer to the pearl's own question ("threshold or smooth decay?"):
-the FRACTION is monotonically decreasing** across all 4 points --
-0.556 -> 0.250 -> 0.240 -> 0.000, with a near-plateau between `j2=3/2`
-and `j2=2` (0.250 vs 0.240) rather than a jump. This does NOT contradict
-this file's own "narrow window" language above -- that language was
-about a different quantity (how well the asymmetric RULE's predictions
-match outcomes: 100% at `j2 in {3/2,2}`, worse elsewhere), not the raw
-magnitude of the real fraction. Both are true at once: the rule
-describes the mechanism cleanly only in the plateau region, while the
-raw fraction of real cases simply decays throughout, with no rise
-anywhere in the tested range.
+**[CORRECTED 2026-08-31, FL Step 8a skeptic pass -- see "Skeptic
+response" subsection below for the full response matrix.]** The
+original text here claimed this table "answers" the pearl's own
+question ("threshold or smooth decay?") because the fraction is
+monotonically decreasing (0.556 -> 0.250 -> 0.240 -> 0.000). That
+claim is WRONG: a monotone sequence is equally consistent with a
+smooth decay AND with a step/threshold function -- monotonicity has
+**zero power to discriminate** between the two branches of the
+question it was offered as answering. The pearl_registry row has been
+reverted from `ANSWERED` back to open status; see below.
 
-**What this does NOT settle:** the raw REAL COUNT itself (5, 4, 6, 0)
-is not monotonic in `j2` -- it dips at `j2=3/2` before ticking back up
-at `j2=2`, then collapsing at `j2=3`. And the 4 tested cells skip
-`j2=5/2` (`n=6`) entirely, so whether the fraction's descent from 0.24
-to 0.00 is gradual through that gap or a cliff exactly at the
-`j2=2 -> j2=3` step cannot be read off the existing data -- the
-apparent "smoothness" of the fraction trend is partly an artifact of
-only 4 unevenly-spaced sample points. Per this file's own Cheapest
-Differentiating Test note above, this gap is NOT being closed with a
-new brute-force `j2=5/2` round absent a specific reason to test it --
-recorded here as a named, honest limit on the trend claim, not
-pursued further this session.
-- Re-verification method: direct `python -c` read of each round's own
-  `results_*.json`, cross-checked against `n^2` dimension formula as an
-  internal consistency check (all 4 counts matched exactly). No new
-  matrices computed, no test suite re-run needed (read-only analysis
-  of already-committed, already-tested JSON artifacts).
+Two further findings from the skeptic pass, kept for the record:
+
+1. **The "monotone decrease" is a property of the chosen
+   normalization (real count / `n^2`), not of the underlying system.**
+   Restricting the denominator to the `|a|=j2` sector where the
+   asymmetric rule permits reality at all (`2n` components, verified
+   via `addendum_verify.py`) gives real/sector-total = `2/6=0.3333`,
+   `4/8=0.5000`, `6/10=0.6000`, `0/14=0.0000` -- **NOT monotone**: it
+   rises from `j2=1` to `j2=2`, then collapses at `j2=3`. The raw real
+   COUNT itself (5, 4, 6, 0 total; 2, 4, 6, 0 within the `|a|=j2`
+   sector) moves the SAME direction in both normalizations (down then
+   up before collapsing) -- it is only the `n^2`-normalized fraction
+   that happens to read as monotone, because the denominator grows
+   faster than the numerator recovers. Whether "the" trend is
+   monotone is a choice of yardstick, not a finding.
+2. **The three regimes this file's own body already describes
+   (symmetric rule at `j2=1`, asymmetric rule at `j2 in {3/2,2}`,
+   total collapse at `j2=3`) are not one smooth process.** At `j2=3`
+   the asymmetric rule itself predicts real fraction `2*(n-2)/n^2 =
+   0.2041`; the observed value is `0.0000` -- the last step is the
+   rule being violated, not "more of the same decay." Gluing one point
+   from each of three admittedly-different mechanisms into a single
+   "trend" restates the individual cell results without adding
+   information beyond a single new bit (whether `4/16 > 6/25`, which
+   the "sector" normalization above shows is not robust either).
+
+**What remains genuinely open (unchanged, now correctly still
+`pending` in the pearl registry):** whether the reality-preserving
+window's boundary behavior between `j2=2` and `j2=3` is a threshold or
+a gradual decay is NOT settled by any statistic computed from the 4
+existing cells -- it requires the `j2=5/2` (`n=6`) data point, the
+only OTHER half-integer cell (structurally distinct from integer `j2`:
+no `b=0` component exists at half-integer spin, per C115's own
+decision.md). Per this file's own Cheapest Differentiating Test note
+above, that round is NOT being launched this session absent a specific
+reason beyond "fill the gap" -- recorded as an open item, not
+attempted further.
+
+## Skeptic response (2026-08-31, FL Step 8a, context-blind pass on
+this ADDENDUM specifically)
+
+Verdict: **WEAKENED**. Full response per the project's own Response
+Matrix (`falsification-ladder.md` Step 8a):
+
+| Concern | Response |
+|---|---|
+| "Monotonically decreasing" does not discriminate threshold vs. smooth decay -- the pearl row was closed on a non-answer | **Accepted, fixed.** Rewrote the headline above; reverted `pearl_registry/INDEX.md` row 109 status from `ANSWERED` to open/pending with the discriminating question restated explicitly. |
+| Trend is denominator-driven; alternate (`\|a\|=j2`-sector) normalization gives a non-monotone sequence | **Accepted, fixed.** Added `addendum_verify.py`, computes both normalizations; non-monotone result now stated above. |
+| The three cells are governed by three different mechanisms per this file's own text; concatenating one point from each is a category error | **Accepted, fixed.** Added the rule-violation-at-j2=3 point (predicted 0.2041, observed 0.0000) above. |
+| Missing `j2=5/2` caveat understates exposure -- it is the only other half-integer cell, structurally distinct, not merely "an extra data point" | **Accepted, fixed.** Reworded above to name the structural distinctness, citing C115's own decision.md. |
+| C115's own skeptic-flagged caveat (asymmetric rule's evidentiary weight dominated by one diagnostic cell) was dropped when re-asserting the "window" framing | **Accepted as a documented limitation** -- not re-litigated here (out of scope for this addendum, belongs to C115/C114's own text), but noted: readers should treat the "100% rule fit" language earlier in this file with that caveat attached, not as independent confirmation across two cells. |
+| Wrong JSON type names (`single_alone`/`structured_intermediate`) in the provenance note | **Accepted, fixed** -- corrected above to `single`/`structured_pair_group`. |
+| `results_c116.json`'s `predicted_stays_real` field mixes bool and truthy string types -- hazard for future readers | **Accepted, documented** above (not fixed in the committed JSON itself -- past round artifacts are not mutated after the fact; the hazard is now flagged in this file instead, and `all_remove_one_detail`'s `actual_breaks` field, which is NOT affected, remains the field to use). |
+| No persisted re-derivation script -- "independently re-derived" left no artifact | **Accepted, fixed.** `addendum_verify.py` committed alongside this correction; its output matches every number in the table above exactly, including the new sector-normalization figures. |
+| The four fractions themselves (0.5556/0.2500/0.2400/0.0000) and denominators (`n^2`) | **CONFIRMED-REAL by the skeptic's own independent recomputation** -- unchanged, no fix needed. |
+
+- Re-verification method: `addendum_verify.py` (committed), independently
+  re-derives all 4 `fraction_total` values (exact match to 4 decimal
+  places) plus the sector-restricted `fraction_sector` values used
+  above. No new matrices computed, no test suite re-run needed
+  (read-only analysis of already-committed, already-tested JSON
+  artifacts).
