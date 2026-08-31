@@ -1025,3 +1025,24 @@ operators, denser spectra, more perturbation-prone) was named as a
 pearl, not adjudicated. Outside the closed P1-P5 program; does not
 change `N_gen=3`'s CONDITIONAL status; does not touch S6/triality/OB1;
 does not solicit Tom Lawrence's Part 5.
+
+**C118 (2026-08-31, user-requested):** the cheap eigenvalue-density
+check named by C117's skeptic pass. v1 (global min eigenvalue gap):
+substrate failure -- `min_gap=0.0` exactly at all 5 cells, caused by
+an unrelated exact degeneracy in the `D1=D2=kron(I,dbar)` construction;
+deleted before commit. v2 (removal-fraction sweep for the always-
+breaking corner component): initially looked clean (`s*` decreasing
+0.639->0.073 with dimension), but FL Step 8a skeptic retracted the
+"density hypothesis supported" verdict: `max_im(s)` is non-monotone
+with real-restoration islands at EXACTLY `j2 in {3/2,2}` (the known
+narrow window) and nowhere else, making the 5 `s*` values
+non-comparable; the sole tolerated reversal was a single-grid-point
+artifact; no negative control was run so a content-free counting null
+cannot be ruled out; and C114's own already-committed data (16
+same-norm, same-dimension components spanning an 11-order-of-magnitude
+outcome range) directly refutes density as the mechanism. Two pearls
+recorded: the islands finding, and the correct (cheap, ~20-line, no
+symbolic construction) next step -- a random-matrix negative control,
+not yet run. Outside the closed P1-P5 program; does not change
+`N_gen=3`'s CONDITIONAL status; does not touch S6/triality/OB1; does
+not solicit Tom Lawrence's Part 5.

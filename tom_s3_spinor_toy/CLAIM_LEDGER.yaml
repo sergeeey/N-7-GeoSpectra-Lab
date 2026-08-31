@@ -2425,6 +2425,25 @@ claims:
       - "any connection to S6, triality, or the C78/C79 non-product-D question"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C118_DENSITY_HYPOTHESIS_TEST_RETRACTED_NOT_SUPPORTED_ISLANDS_FOUND
+    statement: "User requested the cheap eigenvalue-density check named by C117's own skeptic pass. v1 (global minimum eigenvalue gap vs component norm): substrate failure, min_gap=0.0 exactly at all 5 cells, caused by an exact degeneracy from D1=D2=kron(I,dbar), unrelated to the phenomenon; deleted before committing per Substrate Gate. v2 (continuous removal-fraction sweep s in [0,1] for the always-breaking corner component, locating s* where max|Im| first crosses 1e-9): produced a clean-looking s*=0.639,0.460,0.134,0.164,0.073 trend across j2=1,3/2,2,5/2,3 (dims 68,130,212,314,436), verdict initially DENSITY_HYPOTHESIS_SUPPORTED. FL Step 8a skeptic (context-blind) retracted this: (1) max_im(s) is non-monotone -- real-restoration islands occur ONLY at j2 in {3/2,2}, the exact two cells already known as the narrow reality-preservation window, meaning the 5 s* values are not comparable as one trend; (2) the sole 'tolerated' reversal (j2=2->j2=5/2) is caused by ONE grid point, an artifact; (3) skeptic proved ||Delta_H||_2=1 exactly at every cell (closing the perturbation-norm confound genuinely) but found non-normality/conditioning also grows with j2 and is unaddressed, predicting the same trend via Bauer-Fike; (4) no negative control was run, so the test cannot rule out a content-free extreme-value-counting null; (5) FATAL: C114's own already-committed data (j2=3/2, 16 components, IDENTICAL norm, fixed dimension) shows an 11-order-of-magnitude outcome spread with density held fixed -- density cannot be the mechanism the whole inquiry set out to explain. Two new pearls recorded: the islands-at-{3/2,2} free finding, and the cheap (~20-line, no symbolic construction) negative control as the correct next step."
+    truth_status: OPEN
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260831-c118-eigengap-density-check/decision.md"
+    depends_on: [C117_ASYMMETRIC_RULE_VERIFIED_SUPPORT_IS_N4_N5_ONLY_NOT_A_CLOSING_WINDOW]
+    supersedes: "retracts this round's own initial DENSITY_HYPOTHESIS_SUPPORTED verdict (script output, not a separately-ledgered claim) before it was ever recorded as SUPPORTED in this ledger -- caught by skeptic pass before promotion, not after"
+    convention: "reuses C114's own build_M_ab_general, magnetic_range unchanged via direct import; duplicates dbar_full's few lines (a closure, not module-level)"
+    does_not_imply:
+      - "that the density/spectral-conditioning hypothesis is FALSE -- only that this round's two crude attempts could not establish it; a negative control (named, not attempted) remains the correct next test"
+      - "that C114's own asymmetric-rule pattern has any explanation, mechanistic or otherwise -- remains genuinely open"
+      - "that the islands-at-{3/2,2} finding is confirmed real rather than a grid artifact -- explicitly flagged as unconfirmed, requiring the same fine-rescan caution that caught the s* reversal as an artifact"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
