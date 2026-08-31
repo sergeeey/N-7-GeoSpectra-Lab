@@ -119,3 +119,60 @@ own Cheapest Differentiating Test discipline. Recorded as a pearl.
   already-verified data, not a new inference requiring independent
   challenge.
 - Reused C114's own `run_cell` unmodified via direct import.
+
+## ADDENDUM (2026-08-31) -- fraction-real trend, the pearl's own named
+next-cheap-check, executed
+
+This pearl (`pearl_registry/INDEX.md`, C116 row) named an explicit
+zero-cost next step: read the raw fraction of remove-one tests that
+stay real at each of the 4 already-computed cells, straight from each
+round's own `results_*.json`, no new matrices built. Done here, with
+each number independently re-derived from source (not copied from
+prior prose) to guard against exactly the kind of silently-stale
+number this project's own Hindsight Distortion Gap Heuristic warns
+about:
+
+| `j2` | `n=2j2+1` | dim (`n^2`) | real | fraction |
+|---|---|---|---|---|
+| `1`   | 3 | 9  | 5 | 0.5556 |
+| `3/2` | 4 | 16 | 4 | 0.2500 |
+| `2`   | 5 | 25 | 6 | 0.2400 |
+| `3`   | 7 | 49 | 0 | 0.0000 |
+
+(`j2=1`, `j2=3/2` re-extracted from `../20260830-c114-.../results_c114.json`,
+filtered to `type=='remove_one'` only -- C114's own `subsets` list also
+contains `single_alone`/`structured_intermediate` entries, which the
+original pearl's 5/9 and 4/16 numbers evidently already excluded
+correctly, confirmed by the count matching `n^2` exactly. `j2=2` from
+`results_c115.json`'s `remove_one_detail` (`breaks` field). `j2=3` from
+this round's own `all_remove_one_detail` (`actual_breaks` field).)
+
+**Answer to the pearl's own question ("threshold or smooth decay?"):
+the FRACTION is monotonically decreasing** across all 4 points --
+0.556 -> 0.250 -> 0.240 -> 0.000, with a near-plateau between `j2=3/2`
+and `j2=2` (0.250 vs 0.240) rather than a jump. This does NOT contradict
+this file's own "narrow window" language above -- that language was
+about a different quantity (how well the asymmetric RULE's predictions
+match outcomes: 100% at `j2 in {3/2,2}`, worse elsewhere), not the raw
+magnitude of the real fraction. Both are true at once: the rule
+describes the mechanism cleanly only in the plateau region, while the
+raw fraction of real cases simply decays throughout, with no rise
+anywhere in the tested range.
+
+**What this does NOT settle:** the raw REAL COUNT itself (5, 4, 6, 0)
+is not monotonic in `j2` -- it dips at `j2=3/2` before ticking back up
+at `j2=2`, then collapsing at `j2=3`. And the 4 tested cells skip
+`j2=5/2` (`n=6`) entirely, so whether the fraction's descent from 0.24
+to 0.00 is gradual through that gap or a cliff exactly at the
+`j2=2 -> j2=3` step cannot be read off the existing data -- the
+apparent "smoothness" of the fraction trend is partly an artifact of
+only 4 unevenly-spaced sample points. Per this file's own Cheapest
+Differentiating Test note above, this gap is NOT being closed with a
+new brute-force `j2=5/2` round absent a specific reason to test it --
+recorded here as a named, honest limit on the trend claim, not
+pursued further this session.
+- Re-verification method: direct `python -c` read of each round's own
+  `results_*.json`, cross-checked against `n^2` dimension formula as an
+  internal consistency check (all 4 counts matched exactly). No new
+  matrices computed, no test suite re-run needed (read-only analysis
+  of already-committed, already-tested JSON artifacts).
