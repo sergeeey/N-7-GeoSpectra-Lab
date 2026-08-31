@@ -67,6 +67,42 @@ first checked the necessary prerequisite: is C85/Meier's certified
 round67/Agricola's already-certified `D^t(n,sigma)` torsion family, under
 the natural `n=k` identification? Answer: no, exactly and provably — see
 `experiments/20260829-c107-meier-vs-kostant-bridge-attempt/decision.md`.
+
+**Attempted, FAILED on PARENT_ACTION_GATE field F1 (C119, 2026-08-31):** a
+read-only literature search surfaced a genuinely new candidate not on the
+already-tried list below — the **Bismut-Ricci-flat condition**
+`Rc(g)=¼H_g²` from the generalized-Ricci-flow literature (Gutiérrez
+arXiv:2401.03332; Lauret-Will arXiv:2301.02335; Fusi-Lafuente-Stanfield
+arXiv:2608.25619, published 2026-08-26, proving dynamical stability for
+exactly this class on compact simply-connected semisimple Lie groups —
+`S³=SU(2)` qualifies). Applied to `S³` alone, the condition reproduces
+round111's `Ric^t=8t(1-t)δ` exactly and gives roots `t∈{0,1}` — but F1
+(geometric applicability to the FROZEN `S³×S⁶` background, not `S³` in
+isolation) **FAILS, three ways:** the frozen nearly-Kähler `S⁶` factor is
+never itself Bismut-Ricci-flat (`ρ_{S⁶}=5` exactly, radius-independent —
+a property of the whole nearly-Kähler class, not this specific `S⁶`);
+its characteristic torsion is co-closed but not closed (`dT≠0`, forced
+by `S⁶`'s own nearly-Kähler structure equations, not a choice); and —
+the round's main free finding — a topological (Künneth) argument shows
+`H³(S³×S⁶;ℝ)=ℝ` generated only by `vol_{S³}`, forcing any admissible
+harmonic `H` to vanish on `S⁶` entirely, hence `Ric(g_{S⁶})=0` —
+contradicted by the frozen `S⁶`'s `Ric>0` for ANY `t`, torsion, or
+radius. Scope, added after FL Step 8a skeptic review: this topological
+kill holds for the compact 9-dim internal factor with a strict product
+metric and exact (no-dilaton) closure — verified by the skeptic to
+extend to the full 13d background and to survive a non-constant dilaton
+too, so the scope qualifiers narrow the *documentation*, not the
+*result*. **The `S³`-only root is not new content at the equation
+level** (identical to round111/round99's already-certified `Ric^t`,
+`R^t`) — whether it is new content at the F4 justification level remains
+unassessed. Full record, including the FL Step 8a skeptic pass and nine
+corrections applied in place:
+`experiments/20260831-c119-bismut-ricci-flat-f1-test/decision.md`.
+**Reusable pre-filter this round adds to the "already tried" list below:**
+any future candidate parent action stated as a harmonic-form condition
+with a nonzero leg on the `S⁶` factor is dead-on-arrival for `S³×S⁶` (or
+any `M×S⁶`), because `b₁(S⁶)=b₂(S⁶)=b₃(S⁶)=0` — check this first, one
+line, before building anything.
 `D-bar_0` has an exact doubly-degenerate zero eigenspace that round67's
 own family can never produce at `n=0` for any single `t` (its two
 branches `3t` and `3t-3` are never simultaneously zero). This means the

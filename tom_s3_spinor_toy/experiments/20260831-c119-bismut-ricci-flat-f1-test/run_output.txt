@@ -1,0 +1,146 @@
+============================================================================================
+PART 0 -- S^3 factor, re-derived from scratch (NOT inherited)
+============================================================================================
+  metric <Z_i,Z_j> == I (orthonormal frame)? True
+  [Z_1,Z_2] = c0 * Z_3 with c0 = -2   (project convention c0 = -2)
+  H_{S3}(0,1,2) = 2 - 4*t   (= (2t-1)*c0 = -2(2t-1))
+  (H_S3^2)_ab = 8*(2*t - 1)**2 * delta   (off-diag zero: True)
+  Ric_LC(S^3) = 2 * delta ,  Scal_LC = 6  (round111: Scal_LC = 6)
+  Rc - (1/4)H^2  on S^3  =  -8*t*(t - 1) * delta
+  round111's Ric^t (from R^t route) = -8*t*(t - 1) * delta
+  *** Rc - (1/4)H^2  ==  Ric^t  EXACTLY?  True   (cross-check; FALSE => substrate failure, not a finding)
+  Bismut-Ricci-flat on S^3 alone  <=>  t in [0, 1]
+  rho_S3 = Rc / ((1/4)H^2) = (2*t - 1)**(-2)   (= 1 iff (2t-1)^2 = 1)
+
+============================================================================================
+PART 1 -- S^6 factor, from THIS PROJECT'S OWN certified data
+============================================================================================
+  imported 24 nonzero components; totally antisymmetric? True
+  nonzero i<j<k components:
+    T(1, 3, 6) = -sqrt(3)/3
+    T(1, 4, 5) = -sqrt(3)/3
+    T(2, 3, 5) = -sqrt(3)/3
+    T(2, 4, 6) = sqrt(3)/3
+  sum_{i,j,k} T^2 = 8 ;  sum_{i<j<k} T^2 = ||T||^2 = 4/3
+  (T_S6^2)_ab = 4/3 * delta   (off-diag zero: True; diagonal constant: True)
+  Ric(S^6) = 5/3 * delta ,  Scal = 10   [project's own, triple-verified Round 16, SAME normalization as the T table]
+  NK literature identity  ||T||^2 = (2/15) Scal^g :  4/3 vs 4/3  -> True
+  Rc - (1/4)T^2  on S^6  =  4/3 * delta
+  rho_S6 = Rc / ((1/4)T^2) = 5      <-- must equal 1 for Bismut-Ricci-flat
+  torsion rescaling that WOULD satisfy it: T -> sqrt(5) * T (NOT the characteristic connection)
+  literature cross-check (Agricola arXiv:math/0606705): Ric^{nabla-bar} = 2 Scal/15 = 4/3 ; computed defect = 4/3  -> agree? True
+  => the Bismut-Ricci of a nearly-Kaehler 6-manifold is 2 Scal/15 * g, NEVER zero for Scal > 0
+
+============================================================================================
+PART 2 -- structural identification: is the project's S^6 torsion the
+standard SU(3)-structure form psi^- ?  (independent check of PART 1)
+============================================================================================
+  lambda := 1/sqrt(3) = sqrt(3)/3
+  project's T_S6  ==  -lambda * psi^-  component-by-component?  True
+  (psi^+ ^2)_ab = 4 * delta ;  (psi^- ^2)_ab = 4 * delta
+  => (T^2) = lambda^2 * 4 * delta = 4/3 * delta (matches PART 1: True)
+  NK theory: Ric = 5 lambda^2 g = 5/3 * delta  (matches project's certified 5/3: True)
+  => rho_S6 = 5 lambda^2 / lambda^2 = 5, independent of lambda (i.e. of the S^6 radius)
+  Hodge:  *psi^- = +psi^+ ? False ;  *psi^- = -psi^+ ? True
+
+============================================================================================
+PART 3 -- is dT_{S^6} = 0 ?   TWO INDEPENDENT ROUTES
+============================================================================================
+  Route A -- Chevalley-Eilenberg differential for invariant forms on a
+             reductive homogeneous space, from the project's own
+             structure constants [Z_i,Z_j]_m = T(i,j,.)
+    d(omega) = -sqrt(3) * psi^+  ?  True   [NK structure equation d omega = 3 lambda psi^+ ; 3*lambda = sqrt(3)]
+    validity test  d(d omega) == 0 ?  True
+    d(psi^+) == 0 ?  True   (nonzero components: 0)
+    d(psi^-) == 0 ?  False   (nonzero components: 72)
+    d(psi^-) = 2*sqrt(3)/3 * (omega ^ omega) ?  True   [NK structure equation d psi^- = -2 lambda omega^omega ; -2*lambda = -2*sqrt(3)/3]
+    ==> d(T_S6) : 72 nonzero components  -> dT = 0 ?  False
+
+  Route B -- algebraic identity for PARALLEL skew torsion (Kirichenko:
+             the characteristic torsion of a nearly-Kaehler manifold IS
+             parallel):   dT = 2 sigma_T ,  sigma_T = 1/2 sum_i (e_i _| T) ^ (e_i _| T)
+    sigma_T : 72 nonzero components -> sigma_T = 0 ? False
+    dT (route A) = -2 * sigma_T (route B) ?  True   [identity predicts the constant 2]
+    d(*T) : 0 nonzero components -> T co-closed (delta T = 0) ?  True
+
+============================================================================================
+PART 4 -- the PRODUCT S^3 x S^6: explicit 9-dimensional index sums
+============================================================================================
+  H_tot built on 9 indices: 30 nonzero components (6 from S^3, 24 from S^6, 0 cross)
+  (H_tot^2) cross blocks (S^3 x S^6) all zero -- VERIFIED by explicit index sum, not assumed:  True
+  (H_tot^2) S^3 block == (H_S3^2)/c3^2 ? True
+  (H_tot^2) S^6 block == (T_S6^2)/c6^2 ? True
+  [Rc - (1/4)H^2]  S^3 block = -8*t*(t - 1)/c3**2 * delta_3
+  [Rc - (1/4)H^2]  S^6 block = 4/(3*c6**2) * delta_6
+  cross blocks:  Rc = 0 and (1/4)H^2 = 0 -> satisfied trivially
+  S^3 block = 0  <=>  t in [0, 1]   (independent of c3 -- the radius cancels)
+  S^6 block = 0  <=>  []   (EMPTY = no radius c6 satisfies it)
+  ==> product Bismut-Ricci-flat achievable ?  False
+
+============================================================================================
+PART 5 -- Bianchi / harmonicity of H_tot on the product
+============================================================================================
+  H_{S^3}: top-degree on the 3-dimensional factor and constant in the
+           product ON coframe, so d_{S^3}H = 0 (degree) and d_{S^6}H = 0
+           (no S^6 dependence)  =>  dH_{S^3} = 0.
+           *_9 H_{S^3} = (const) vol_{S^6}, also closed  =>  delta H_{S^3} = 0.
+  H_{S^6}: dT computed above -> dT = 0 ?  False
+  ==> dH_tot = 0 ?  False    (the definition REQUIRES H closed)
+
+============================================================================================
+PART 6 -- can ANY choice of H rescue it?  (a) exhaustion over all
+G2-invariant 3-forms on the frozen S^6;  (b) the topological argument
+============================================================================================
+  (psi^+ . psi^-)_ab := sum psi^+_acd psi^-_bcd  identically 0 ?  False
+  its SYMMETRIC part (the only part entering (H^2), which is symmetric) is 0 ?  True
+  (H^2)_aa for H = alpha psi^+ + beta psi^- :  4*(alpha**2 + beta**2)
+  condition Rc = (1/4)H^2  <=>  alpha**2 + beta**2 = 5/3   i.e. alpha^2 + beta^2 = 5/3
+  dH = 0        <=>  [{beta: 0}]
+  d(*H) = 0     <=>  [{alpha: 0}]
+  BOTH (H harmonic)  <=>  [{alpha: 0, beta: 0}]  -> forces H = 0
+  any (alpha,beta) satisfying Rc=(1/4)H^2 AND dH=0 AND d*H=0 ?  False
+
+  (b) TOPOLOGICAL argument -- independent of the invariance assumption,
+      independent of the torsion, independent of both radii:
+      The definition requires H CLOSED and g-HARMONIC, i.e. dH = 0 and
+      delta H = 0.  On a COMPACT oriented manifold, Hodge's theorem makes
+      the space of harmonic 3-forms isomorphic to H^3(M;R).
+      Kunneth:  H^3(S^3 x S^6; R) = H^3(S^3) (x) H^0(S^6)  = R ,
+      because H^1(S^3)=H^2(S^3)=0 and H^1..H^5(S^6)=0.
+      For a PRODUCT metric the harmonic representative is vol_{S^3}, so
+           H = h * vol_{S^3}   for some constant h,   H|_{S^6} = 0 .
+      Then the S^6 block of Rc = (1/4)H^2 reads  Ric(g_{S^6}) = 0 :
+      the S^6 factor would have to be RICCI-FLAT.
+      Frozen S^6: Ric = 5/3 * delta  (Einstein, positive) -> CONTRADICTION.
+      No choice of t, of the S^6 torsion, or of either radius can repair
+      this: b_3(S^6) = 0 is a topological fact about the frozen background.
+
+============================================================================================
+PART 7 -- ONE NAMED RELAXATION, scoped: the constant-lambda ('soliton-
+shaped') weakening  Rc - (1/4)H^2 = lambda g  instead of = 0.
+============================================================================================
+  NOT a generalized-Ricci-soliton computation.  The full soliton system
+  also constrains H; this is only its NECESSARY metric equation, and only
+  for a homogeneous background where the potential is constant (grad^2 f
+  = 0).  Recorded because it is the first relaxation a reader will
+  propose, and it is 3 lines.
+  Eliminating the common lambda between the two blocks gives one equation, d3 = d6:
+    Eq(4/(3*c6**2), 8*t*(1 - t)/c3**2)
+  => -8t(t-1)/c3^2 = 4/(3 c6^2)  =>  t(1-t) = c3^2/(6 c6^2) > 0
+     roots: t = [(c6/2 - sqrt(-6*c3**2 + 9*c6**2)/6)/c6, (c6/2 + sqrt(-6*c3**2 + 9*c6**2)/6)/c6]
+     Since c3, c6 > 0, t(1-t) > 0 STRICTLY, i.e. 0 < t < 1 and
+     t = 0, t = 1 are EXCLUDED -- the relaxation, if anything, selects
+     AGAINST the two values OB1 needs, and leaves a one-parameter curve
+     of solutions rather than a discrete selection.  It also does not
+     repair dH != 0.
+
+============================================================================================
+VERDICT
+============================================================================================
+  F1_pass: False
+  label: F1_FAIL__S3_FACTOR_ADMITS_t_IN_0_1_BUT_S6_FACTOR_VIOLATES_Rc_EQ_QUARTER_H2_BY_FACTOR_5_AND_H_NOT_CLOSED__AND_TOPOLOGICALLY_UNRESCUABLE_SINCE_b3_S6_EQ_0
+  rho_S3_condition: rho_S3 = 1 <=> (2t-1)^2 = 1 <=> t in {0,1}
+  rho_S6: 5
+  dT_S6_is_zero: False
+
+  written: E:\Проверка Гипотез\работаю над проверкой гипотез\N-7-GeoSpectra-Lab\tom_s3_spinor_toy\experiments\20260831-c119-bismut-ricci-flat-f1-test\results_c119.json

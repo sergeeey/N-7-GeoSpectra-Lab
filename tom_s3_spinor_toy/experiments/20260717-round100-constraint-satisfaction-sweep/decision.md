@@ -21,7 +21,7 @@
 | 12 | `SU(4)` NOT geometrically realized as isometry of `Iso(S³×S⁶)` | gate G97 |
 | 13 | Classical curvature `R^t=t(t-1)[[X,Y],Z]`: flat at `t=0,1`, curved at `t=1/2` — double-well shape available IF an action contains this term (NOT shown to) | round99, `WEAKENED` per skeptic |
 | 14 | Lemma L5 (S⁶-only asymmetry) does not conflict with S³-side content, contingent on H1c staying open | round95 |
-| 15 | Friedrich-Ivanov "at most one torsion connection" applicability to `S³`/n=3 | round98, `<unknown>` |
+| 15 | Friedrich-Ivanov "at most one torsion connection" applicability to `S³`/n=3 | **RESOLVED 2026-08-31**, superseding round98's `<unknown>` (its `WebFetch` on `arXiv:math/0102142` returned garbled binary at the time). Read directly from the paper's Introduction, verbatim: *"In dimension 3 the stabilizer of Spin(3) is trivial and therefore the connection is flat. It is well known (see e.g. [SSTV]) that in this case `(M³,g,∇,T)` carries (locally) a structure of a compact Lie group, `g` is a biinvariant metric and `∇` is the invariant connection with torsion given by the Lie bracket. In particular, on `SU(2)` there exists at least one `∇`-parallel spinor."* Answer: the `n=5,6,7` in the paper's abstract is the dimension of its string-theory applications, not a restriction of the framework — dimension 3 is handled explicitly, as a separate, trivially-resolved case. For `S³` this is exactly the Cartan-Schouten flat `±` connection already certified by round72/E7 (H1b) — **agrees with, and adds no new selection power beyond, what this project already has.** `[SSTV]` is Spindel-Sevrin-Troost-Van Proeyen, the same reference round87 already cites for `∇^± = ∇^{LC} ± ½H`. Surfaced as a byproduct of the C119 (2026-08-31) literature search for an OB1 t-selection mechanism; not itself a new OB1 candidate — recorded here purely as registry hygiene. |
 
 ## Consistency check
 
@@ -66,7 +66,9 @@ scope, not a new physics mechanism).
 - **What survives:** gate G97 (alternative `SU(4)` geometric realization)
   as the sole remaining structural question for this specific route; the
   curvature/modulus route (round99, `WEAKENED`, B1 unattempted); the
-  Friedrich-Ivanov no-go (round98, `<unknown>`).
+  Friedrich-Ivanov result (round98, **RESOLVED 2026-08-31** — agrees
+  with, adds no new selection power beyond, round72/E7's already-
+  certified `S³` flat `±` connection; see fact #15 above).
 
 ## What this does NOT mean
 
