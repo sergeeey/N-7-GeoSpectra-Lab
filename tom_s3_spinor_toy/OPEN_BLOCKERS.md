@@ -103,6 +103,27 @@ any future candidate parent action stated as a harmonic-form condition
 with a nonzero leg on the `S⁶` factor is dead-on-arrival for `S³×S⁶` (or
 any `M×S⁶`), because `b₁(S⁶)=b₂(S⁶)=b₃(S⁶)=0` — check this first, one
 line, before building anything.
+
+**Checked, gate-fill only, no computation (C120, 2026-09-01):** an
+externally-proposed candidate `I9 ∝ (2t−1)·Vol(S³)·Vol(S⁶)` (from a
+sibling research project's own summary, unverified beyond the chat
+description) does not clear F6 as literally stated — under this
+project's own already-established constraint surface (G51/G54A/G57
+SM-coupling ratio), it reduces to a linear function of `t` alone with
+its only zero at the wrong point (`t=1/2`, KT-8's already-known
+zero-mode-free point). FL Step 8a skeptic reconstructed a likely real
+referent for the proposal's unexplained `\|a\|=2\|b\|` criterion
+(`a=h_H=3`, `b=σ(3/2)=3/2`, from the already-assessed E2 Dirac family
+`σ(n+3/2)+(t-1/2)h_H`), redirecting the actual duplicate match from
+round115 to **round116** ("equivalent restatement, no new content").
+**The round's genuinely useful output:** skeptic surfaced an
+unattempted candidate, `η(D^t)` (eta-invariant / gravitational
+Chern-Simons level) at general `t` — structurally odd by C44's own
+spectral identity, radius-independent by construction, immune to
+round115's volume-circularity failure mode. Not computed this round.
+See `experiments/20260831-c120-i9-selector-gate-check/decision.md` and
+`pearl_registry/INDEX.md`.
+
 `D-bar_0` has an exact doubly-degenerate zero eigenspace that round67's
 own family can never produce at `n=0` for any single `t` (its two
 branches `3t` and `3t-3` are never simultaneously zero). This means the
