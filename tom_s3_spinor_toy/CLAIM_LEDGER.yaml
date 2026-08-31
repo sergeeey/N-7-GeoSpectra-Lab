@@ -2407,6 +2407,24 @@ claims:
       - "any connection to S6, triality, or the C78/C79 non-product-D question"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C117_ASYMMETRIC_RULE_VERIFIED_SUPPORT_IS_N4_N5_ONLY_NOT_A_CLOSING_WINDOW
+    statement: "User-requested resolution of the j2=5/2 (n=6) gap the C116-addendum skeptic pass had named. Built the matched-diagonal cell j1=j2=5/2 (k_source=5, target_level=10, 314x314 combined operator, 36 remove-one tests). Result: 0/36 stay real (min break magnitude 4.6e-5, ~10 decades above the ~1e-15 real-case scale and the 1e-9 threshold -- not a numerical artifact). All 8 cases the asymmetric rule predicted would stay real broke. Per claim.md's pre-registered kill criteria this is unambiguously FULL_COLLAPSE. FL Step 8a skeptic (context-blind) verdict WEAKENED on interpretation, not arithmetic: (1) the construction's exact a<->-a,b<->-b symmetry partitions the 36 tests into 9 independent orbits -- evidential resolution is 9 checks, not 36; (2) 'full collapse' overstates it -- all 36 size-1 (single-alone) subsets AND the full 36-component sum stay real at this SAME cell, only size-35 (remove-one) subsets break, so reality-preservation is non-monotone in subset size, not a collapsed window in general; (3) CRITICAL: the asymmetric rule ALREADY fails at j2=1 (6/9, known since C114/C115 but not connected to this specific question until this round) -- its verified support is n in {4,5} ONLY (j2 in {3/2,2}), bounded on BOTH sides, better described as a 2-cell coincidence than a law with a closing domain; (4) 28/36 rule-match is WORSE than the trivial always-predict-breaks baseline (36/36) at this cell. Skeptic also surfaced an untested, cheaper alternative (eigenvalue-density: bigger operators have denser spectra, more prone to perturbation-induced complex collision, no representation theory needed) -- recorded as a pearl, not adjudicated."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260831-c117-j2-5-2-gap-test/decision.md"
+    depends_on: [C114_SUBSET_BREAKS_REALITY_CONFIRMED_NOT_TRIVIAL_MECHANISM_OPEN, C115_ASYMMETRIC_RULE_CONFIRMED_AT_J2_GEQ_3HALVES_TWO_REGIME_READING_ADMISSIBLE, C116_REALITY_PRESERVING_WINDOW_NARROW_J2_1_AND_J2_3_BOTH_FAIL_DIFFERENTLY]
+    supersedes: "reframes C116's own 'narrow window bounded on both sides' language -- the boundary between j2=2 and j2=3 is now shown to be a cliff located at n=6 (j2=5/2), not a gradual transition through n=6 into n=7; also connects a fact already visible in C114/C115's own data (j2=1's 6/9, not 9/9, asymmetric-rule fit) to this question for the first time, showing the rule's verified support was always exactly 2 cells (n=4,5), not a window with fuzzy edges"
+    convention: "reuses C114's own run_cell unmodified via direct import (4th reuse, after C115/C116); fixes a serialization hazard found in results_c116.json (sympy Boolean vs Python bool mixing under json.dumps default=str) via explicit bool(...) casts"
+    does_not_imply:
+      - "that the asymmetric rule (or any single rule) is representation-theoretically derived -- its narrow 2-cell support is equally consistent with the untested eigenvalue-density alternative named in this round's pearl"
+      - "a general statement that 'the reality-preserving window has fully collapsed' -- single-component-alone subsets and the full sum both stay real at this same cell; only size-35 removal breaks"
+      - "any change to N_gen=3's CONDITIONAL status"
+      - "any connection to S6, triality, or the C78/C79 non-product-D question"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

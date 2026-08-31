@@ -1006,3 +1006,22 @@ discipline -- four well-characterized cells is a substantial dataset.
 Outside the closed P1-P5 program; does not change `N_gen=3`'s
 CONDITIONAL status; does not touch S6/triality/OB1; does not solicit
 Tom Lawrence's Part 5.
+
+**C117 (2026-08-31, user-requested):** fills the `j2=5/2` (`n=6`) gap
+the C116-addendum skeptic pass named. Result: 0/36 remove-one tests
+stay real -- the collapse is a cliff located between `n=5` (`j2=2`,
+clean) and `n=6` (`j2=5/2`, already 0/36), not a gradual decay through
+`n=6` into `n=7`. FL Step 8a skeptic reframed this (WEAKENED, not
+FALSIFIED): the 36 tests are really 9 independent orbits under the
+construction's own `a<->-a,b<->-b` symmetry; "full collapse" overstates
+it since size-1 (single-alone) subsets and the full sum both stay real
+at this same cell, only size-35 removal breaks; and critically, the
+asymmetric rule tested since C114 already fails at `j2=1` (6/9, known
+since C114/C115 but not connected to this question until now) -- its
+verified support is `n in {4,5}` ONLY, bounded on both sides, better
+read as a 2-cell coincidence than a "window" with a mechanism to
+explain. An untested, cheaper eigenvalue-density alternative (bigger
+operators, denser spectra, more perturbation-prone) was named as a
+pearl, not adjudicated. Outside the closed P1-P5 program; does not
+change `N_gen=3`'s CONDITIONAL status; does not touch S6/triality/OB1;
+does not solicit Tom Lawrence's Part 5.
