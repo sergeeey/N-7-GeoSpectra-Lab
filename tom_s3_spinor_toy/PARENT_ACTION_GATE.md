@@ -96,6 +96,32 @@ mechanism (Lemma L5). **This tension (Reading 3 vs Lemma L5) is the one
 genuinely open thread from this line — a candidate starting point for a
 future F4 attempt, not yet resolved.** See `CLAIM_LEDGER.yaml` `C18`.
 
+**Also tried and found insufficient (C119, 2026-08-31):** the
+Bismut-Ricci-flat condition `Rc(g)=¼H_g²` from the generalized-Ricci-
+flow literature -- reproduces round111's `Ric^t` exactly on `S³`
+alone, but F1 (applicability to the frozen `S³×S⁶` product) FAILS:
+the nearly-Kähler `S⁶` factor is never Bismut-Ricci-flat (`ρ=5`
+exactly, radius-independent), and a topological argument (Künneth,
+`b₁(S⁶)=b₂(S⁶)=b₃(S⁶)=0`) shows NO harmonic k-form (k≤3) on ANY
+product `M×S⁶` can have a leg on the `S⁶` factor -- a reusable
+pre-filter for future candidates of this shape. See `OPEN_BLOCKERS.md`
+OB1 and `pearl_registry/INDEX.md`.
+
+**Also checked, gate-fill only, no computation (C120, 2026-09-01):** an
+externally-proposed candidate `I9 ∝ (2t−1)·Vol(S³)·Vol(S⁶)` does not
+clear F6 as literally described -- under this project's own already-
+established constraint surface (G51/G54A/G57), it reduces to a linear
+function of `t` alone with its only zero at the wrong point (`t=1/2`).
+FL Step 8a skeptic reconstructed a likely real referent for the
+proposal's own unexplained `\|a\|=2\|b\|` criterion (`a=h_H=3`,
+`b=σ(3/2)=3/2`, from the already-assessed E2 Dirac family) pointing to
+**round116** ("equivalent restatement, no new content") as the actual
+duplicate, not round115. The skeptic pass also surfaced a genuinely
+new, unattempted candidate: `η(D^t)` (the eta-invariant / gravitational
+Chern-Simons level) at general `t`, structurally odd by C44's own
+identity and radius-independent by construction -- not yet computed,
+see `pearl_registry/INDEX.md`.
+
 **Pass criterion:** names a mechanism NOT already in the above list, or
 explicitly names which item above it is extending and states the new
 structural argument that distinguishes it from the already-failed version

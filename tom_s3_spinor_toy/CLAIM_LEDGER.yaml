@@ -2461,6 +2461,25 @@ claims:
       - "that no parent action exists for OB1 in general, or that generalized Ricci flow is irrelevant to this project -- only that this specific condition is unsatisfiable on this specific frozen background"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C120_I9_GATE_CHECK_REFERENT_RECONSTRUCTED_TO_ROUND116_NEW_ETA_INVARIANT_PEARL_SURFACED
+    statement: "User-requested gate-fill check (no computation) of an externally-proposed OB1 F4 candidate, 'I9 ∝ (2t-1)*Vol(S3)*Vol(S6)', described in a sibling research project's own chat summary with an unexplained 'non-circular criterion |a|=2|b|'. Original verdict (fails F6, same shape as round115's already-documented circular flux-quantization mechanism) was reviewed by FL Step 8a skeptic (context-blind) and found WEAKENED: the free-parameter-count argument for round115-style circularity was wrong -- ignored this project's own already-established G51/G54A/G57 SM-coupling constraint (rho3=0.986*rho6^2), which reduces the candidate to a function of t alone; under that correct constraint the candidate is LINEAR in t with its only zero at t=1/2 (the wrong, already-known zero-mode-free point), not circular. Also corrected: Vol(S3)*Vol(S6)=Vol(S3xS6) is the STANDARD total-internal-volume/spectral-action a0 term (already used in G28's own construction), not an exotic combination lacking precedent -- what lacks precedent is the (2t-1) factor specifically. Skeptic independently reconstructed a high-confidence hypothesis for the unexplained a/b: a=h_H=3, b=sigma(3/2)=3/2, from the already-assessed E2 Dirac family sigma(n+3/2)+(t-1/2)*h_H -- redirecting the actual duplicate match from round115 to round116 ('equivalent restatement, no new content'). The round's genuinely new output: skeptic surfaced an unattempted, structurally-motivated (not hand-built) candidate the round's own F6 search was looking for and initially missed -- eta(D^t), the eta-invariant/gravitational Chern-Simons level, odd in (t-1/2) by C44's own already-certified spectral identity spec(D^{1-t})=-spec(D^t), and radius-independent by construction (immune to round115's volume-circularity failure mode entirely). Not computed this round; recorded as a pearl."
+    truth_status: OPEN
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260831-c120-i9-selector-gate-check/decision.md"
+    depends_on: [C119_BISMUT_RICCI_FLAT_CANDIDATE_KILLED_ON_F1_S6_FACTOR_NOT_RICCI_FLAT_AND_TOPOLOGICALLY_UNRESCUABLE]
+    supersedes: "corrects this round's own original verdict (F4_GATE_FAIL, round115-circularity argument) before it was ledgered -- caught by skeptic pass before promotion, not after; does NOT supersede round115's or round116's own decision.md, cited as-is"
+    convention: "no S3/S6 torsion or metric convention invoked -- pure literature/registry comparison, no computation run"
+    does_not_imply:
+      - "that the a=h_H=3, b=3/2 reconstruction is confirmed correct -- [HYPOTHESIS], the most likely reading given this project's own record, not verified against the external sibling project's own source material"
+      - "that eta(D^t) at general t has been computed, or that it would select t in {0,1} if computed -- named as an unattempted next step only"
+      - "that I9/the reconstructed E2-family reading is definitively dead as a new F4 argument -- round116's own 'equivalent restatement' verdict is cited, not re-litigated here"
+      - "any change to N_gen=3's CONDITIONAL status or OB1's PARKED status -- a gate-fill check is not a gate decision"
+      - "any connection to S6, triality beyond what round119/round116 already establish"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

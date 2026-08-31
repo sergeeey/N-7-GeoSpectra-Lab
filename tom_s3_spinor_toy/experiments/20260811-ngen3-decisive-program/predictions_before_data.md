@@ -1046,3 +1046,22 @@ symbolic construction) next step -- a random-matrix negative control,
 not yet run. Outside the closed P1-P5 program; does not change
 `N_gen=3`'s CONDITIONAL status; does not touch S6/triality/OB1; does
 not solicit Tom Lawrence's Part 5.
+
+**C120 (2026-09-01, user-requested):** gate-fill check (no computation)
+on an externally-proposed OB1 F4 candidate, `I9 ∝ (2t-1)·Vol(S3)·Vol(S6)`,
+from a sibling project's own chat summary. FL Step 8a skeptic found the
+original round115-circularity argument wrong (ignored this project's
+own G51/G54A/G57 SM-coupling constraint) -- corrected: under that
+constraint the candidate is linear in `t`, zero only at the wrong point
+`t=1/2`. Skeptic reconstructed a likely referent for the proposal's
+unexplained `|a|=2|b|` criterion (the already-assessed E2 Dirac family,
+`h_H=3`), redirecting the duplicate match from round115 to round116.
+Most valuable output: skeptic surfaced `eta(D^t)` at general `t` -- an
+unattempted, structurally odd (C44's own identity), radius-independent
+candidate this round's own search was looking for and initially missed
+-- recorded as a pearl, not computed. This round DOES touch OB1 (a
+PARENT_ACTION_GATE F4 gate-fill check, explicitly not a gate decision
+per PARENT_ACTION_GATE.md's own scope note); does not change
+`N_gen=3`'s CONDITIONAL status or OB1's PARKED status; does not touch
+S6/triality beyond what round116/round119 already establish; does not
+solicit Tom Lawrence's Part 5.
