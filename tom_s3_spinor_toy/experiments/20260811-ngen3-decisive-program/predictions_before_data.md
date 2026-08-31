@@ -971,3 +971,38 @@ an a-vs-b-asymmetric refinement fits `(3/2,3/2)` but fails on `(1,1)`).
 Mechanism remains genuinely open. Outside the closed P1-P5 program; does
 not change `N_gen=3`'s CONDITIONAL status; does not touch S6/triality/
 OB1; does not solicit Tom Lawrence's Part 5.
+
+**C115 (2026-08-30):** third matched cell `(j1=j2=2)`, a third data
+point for C114's own open mechanism question. Re-tests the asymmetric
+rule C114 described as "refuted" -- found it actually fits `(2,2)`
+PERFECTLY (25/25) and, on re-check, `(3/2,3/2)` PERFECTLY too (16/16);
+only `(1,1)` shows exceptions (6/9, all at `a=0`). FL Step 8a skeptic
+(context-blind) independently re-verified the arithmetic by hand,
+confirmed the `\|b\|<j2` clause is load-bearing, ruled out an `a=0`-
+specific confound (tested and refuted directly), and found a genuine
+competing reading: at `j2=1` alone, a different SYMMETRIC rule ("real
+iff `a=0` OR `b=0`") fits 9/9, better than the asymmetric rule's own
+6/9 there. Two admissible readings, not resolved by 3 cells: one
+universal rule with a `j2=1` exception, or two distinct regimes.
+Decisive test named (`j2=3`, re-tests `a=0` with `\|b\|<j2` resolution),
+not yet run. Outside the closed P1-P5 program; does not change
+`N_gen=3`'s CONDITIONAL status; does not touch S6/triality/OB1; does
+not solicit Tom Lawrence's Part 5.
+
+**C116 (2026-08-30):** the decisive `j2=3` test named by C115's own
+skeptic review. Pre-registered question answered cleanly -- all 7
+`(0,b)` removals break (including `(0,0)`), confirming "j2=1 is a
+low-spin regime" over "zero-specific structure." But the full 49-cell
+sweep revealed a sharper, unanticipated result: the asymmetric rule's
+"breaks" predictions are 39/39 correct, its "stays real" predictions
+are 0/10 correct -- ALL 49 removals at `j2=3` break, none preserve
+reality. Combined four-cell picture: reality-preservation-under-single-
+removal is a NARROW WINDOW (`j2 in {3/2,2}` only), closing at both
+boundaries (`j2=1`, `j2=3`) via two qualitatively different mechanisms
+(mostly-real at `j2=1` vs never-real at `j2=3`). Mechanism (why the
+window exists and closes this way) remains open, recorded as a pearl;
+further brute-force cells deferred per Cheapest Differentiating Test
+discipline -- four well-characterized cells is a substantial dataset.
+Outside the closed P1-P5 program; does not change `N_gen=3`'s
+CONDITIONAL status; does not touch S6/triality/OB1; does not solicit
+Tom Lawrence's Part 5.
