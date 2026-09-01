@@ -124,6 +124,25 @@ round115's volume-circularity failure mode. Not computed this round.
 See `experiments/20260831-c120-i9-selector-gate-check/decision.md` and
 `pearl_registry/INDEX.md`.
 
+**Attempted, REJECTED (C121, 2026-09-01):** `η(D^t)`, the candidate
+C120 surfaced. Closed form found (`P(a)=a(3-4a^2)/6`, `a=3(t-1/2)`),
+independently confirmed via two separate derivation routes (Hurwitz
+zeta; heat-kernel Mellin transform, matching pole residues and the
+`dP/da=-2(a^2-1/4)` APS variation-formula identity). The round's own
+first draft declared the decisive multi-interval comparison "not yet
+evaluable" — FL Step 8a skeptic completed it in ~15 lines (independently
+re-derived by this session before trusting it): `η(a) = P(a) +
+2*sum_{n<=J}mu(n)` on each successive interval, the SAME polynomial
+shifted only by an even integer. `η mod 2` is therefore identical on
+every interval — nothing distinguishes `t in {0,1}` from any other
+crossing pair, the same underlying reason round116 already found for
+the `(n,sigma)` crossing family itself. One genuinely different,
+unattempted variant survives: the APS **reduced** eta `xi=(eta+h)/2
+mod 1` (mod 1, not mod 2 — materially different since the kernel
+dimension `h` also jumps at each crossing). See `null_results/INDEX.md`
+(C121-EtaInvariant) and
+`experiments/20260901-c121-eta-invariant-general-t/decision.md`.
+
 **Checked, external survey, no computation in N-7 itself (sibling
 project H-19 "Геометрия калибровки", 2026-08-31 — the source of C120's
 `I9` proposal above):** a targeted literature survey of 6 known

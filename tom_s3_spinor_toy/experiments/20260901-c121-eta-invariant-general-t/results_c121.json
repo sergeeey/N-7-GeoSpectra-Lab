@@ -1,0 +1,25 @@
+{
+  "eta_closed_form_expr": "a*(3 - 4*a**2)/6",
+  "degree": 3,
+  "odd_polynomial_confirmed": true,
+  "eta_at_a0_literature_fact": "0",
+  "bernoulli_vs_sympy_zeta_sanity_check": {
+    "zeta_H_0": {
+      "hand": "-3/2",
+      "sympy": "-3/2",
+      "match": true
+    },
+    "zeta_H_neg1": {
+      "hand": "-13/12",
+      "sympy": "-13/12",
+      "match": true
+    },
+    "zeta_H_neg2": {
+      "hand": "-1",
+      "sympy": "-1",
+      "match": true
+    }
+  },
+  "naive_heat_kernel_numerical_check": "ATTEMPTED_AND_ABANDONED_AS_INVALID -- see decision.md",
+  "base_interval_closed_form_at_a_3over2_boundary": -1.5
+}

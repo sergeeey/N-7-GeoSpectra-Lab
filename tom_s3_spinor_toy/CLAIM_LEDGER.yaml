@@ -2480,6 +2480,25 @@ claims:
       - "any connection to S6, triality beyond what round119/round116 already establish"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C121_ETA_INVARIANT_NULL_MOD2_IDENTICAL_ACROSS_INTERVALS
+    statement: "Computed eta(D^t) (eta-invariant / gravitational Chern-Simons level of the torsion-deformed S3 Dirac operator), the candidate C120's own skeptic pass surfaced, at general t. Closed form found and independently confirmed via two structurally different derivation routes (Hurwitz-zeta/Bernoulli-polynomial route this round used; a separate heat-kernel Mellin-transform route by FL Step 8a skeptic, matching pole residues and the dP/da=-2(a^2-1/4) APS variation-formula identity): P(a)=a(3-4a^2)/6, a=3(t-1/2), on the base interval t in (0,1). This round's own first draft declared the decisive multi-interval comparison (does t in (0,1) show a quantization property not shared by neighboring intervals) 'not yet evaluable', citing spectral-flow machinery as a materially larger undertaking. FL Step 8a skeptic completed the actual computation in approximately 15 lines -- independently re-derived by this session from scratch before being trusted, not merely accepted -- eta(a) = P(a) + 2*sum_{n<=J}mu(n) on the J-th interval past the base one (mu(n)=(n+1)(n+2) already-certified S3 Dirac multiplicity): the SAME polynomial shifted only by an even integer on every interval. eta mod 2 is therefore IDENTICAL as a function of a on every interval; nothing distinguishes t in {0,1} from any other crossing pair (t=-1/3,4/3; t=-2/3,5/3; etc). This is structurally the same finding as round116 (the (n,sigma) crossing family has no n-dependent structure privileging n=0), reached via an independent construction. Two further real defects self-corrected this round: the boundary value originally reported (-1.5 at t=1) was a one-sided limit, not the true value at the crossing point (+1/2, since a genuine zero eigenvalue there contributes sign(0)=0, not the +1 naive continuation silently assigns); and an abandoned naive numerical cross-check was in fact salvageable with standard pole-subtraction, prematurely abandoned rather than fixed. What survives: the closed form P(a) itself (new, reusable), the dP/da identity, and one named unattempted variant (the APS reduced eta xi=(eta+h)/2 mod 1, materially different since mod 1 not mod 2 and incorporating the kernel dimension h(t)'s own non-constant jump across different-multiplicity crossings)."
+    truth_status: REFUTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260901-c121-eta-invariant-general-t/decision.md"
+    depends_on: [C120_I9_GATE_CHECK_REFERENT_RECONSTRUCTED_TO_ROUND116_NEW_ETA_INVARIANT_PEARL_SURFACED]
+    supersedes: "retracts this round's own original verdict (NEIGHBOR_COMPARISON_BLOCKED_SUBSTRATE, PARTIAL status) before it was ever recorded as final in this ledger -- caught by skeptic pass and this session's own independent re-derivation before promotion, not after"
+    convention: "reuses round67's own certified D^t spectrum (sigma*(n+3/2)+3*(t-1/2), multiplicity (n+1)(n+2)) and C44's own certified spec(D^{1-t})=-spec(D^t) identity, both cited not re-derived"
+    does_not_imply:
+      - "that eta(D^t) is FALSE or wrongly computed -- the closed form P(a) itself is confirmed correct by two independent methods; only its use as a t-selection mechanism is rejected"
+      - "that the APS reduced eta xi=(eta+h)/2 mod 1 has been tested or would also fail -- explicitly named as unattempted, a materially different quantity"
+      - "that eta(D^t) has been computed on the full S3xS6 background -- S3 factor only"
+      - "any change to N_gen=3's CONDITIONAL status or OB1's PARKED status"
+      - "any connection to S6, triality beyond what round119/round120 already establish"
+      - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

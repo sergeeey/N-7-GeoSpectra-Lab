@@ -1065,3 +1065,21 @@ per PARENT_ACTION_GATE.md's own scope note); does not change
 `N_gen=3`'s CONDITIONAL status or OB1's PARKED status; does not touch
 S6/triality beyond what round116/round119 already establish; does not
 solicit Tom Lawrence's Part 5.
+
+**C121 (2026-09-01, user-requested):** computed `eta(D^t)`, the
+candidate C120's skeptic pass surfaced. Closed form `P(a)=a(3-4a^2)/6`
+found, confirmed via two independent derivation routes. The round's
+first draft declared the decisive multi-interval comparison "not yet
+evaluable" -- FL Step 8a skeptic completed it in ~15 lines (this
+session independently re-derived it before trusting it): `eta(a) =
+P(a) + 2*sum_{n<=J}mu(n)` on each interval, same polynomial shifted
+only by an even integer -- `eta mod 2` identical everywhere, nothing
+distinguishes `t in {0,1}` from any other crossing pair. Same
+underlying reason as round116. Also self-corrected: a reported
+boundary value was a one-sided limit, not the true crossing value; an
+abandoned numerical check was in fact salvageable. Verdict: NULL,
+routed to `null_results/`. One unattempted variant survives as a
+pearl: the APS reduced eta `xi=(eta+h)/2 mod 1`, materially different
+(mod 1, not mod 2). Outside the closed P1-P5 program; does not change
+`N_gen=3`'s CONDITIONAL status or OB1's PARKED status; does not touch
+S6/triality; does not solicit Tom Lawrence's Part 5.
