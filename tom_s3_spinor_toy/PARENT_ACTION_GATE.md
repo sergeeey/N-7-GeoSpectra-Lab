@@ -122,6 +122,22 @@ Chern-Simons level) at general `t`, structurally odd by C44's own
 identity and radius-independent by construction -- not yet computed,
 see `pearl_registry/INDEX.md`.
 
+**Also tried and found insufficient (C121, 2026-09-01):** `η(D^t)`,
+the candidate C120 surfaced. Closed form `P(a)=a(3-4a^2)/6` found and
+confirmed by two independent derivation routes. But the decisive
+multi-interval computation (initially thought too costly to attempt)
+turns out to be a short, exact correction: `η(a) = P(a) +
+2*sum_{n<=J}mu(n)` on the `J`-th interval -- the SAME polynomial on
+every interval, shifted only by an even integer. `η mod 2` is
+identical everywhere; nothing distinguishes `t in {0,1}` from any
+other crossing pair. Same underlying reason as round116: this whole
+`(n,sigma)` family has no `n`-dependent structure privileging `n=0`.
+One genuinely different, unattempted variant survives: the APS
+reduced eta `xi=(eta+h)/2 mod 1` (mod 1, not mod 2 -- a materially
+different quantity, since the kernel dimension `h` also jumps at each
+crossing). See `null_results/INDEX.md` (C121-EtaInvariant) and
+`experiments/20260901-c121-eta-invariant-general-t/decision.md`.
+
 **Pass criterion:** names a mechanism NOT already in the above list, or
 explicitly names which item above it is extending and states the new
 structural argument that distinguishes it from the already-failed version
