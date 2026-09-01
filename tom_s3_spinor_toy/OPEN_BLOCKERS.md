@@ -124,6 +124,40 @@ round115's volume-circularity failure mode. Not computed this round.
 See `experiments/20260831-c120-i9-selector-gate-check/decision.md` and
 `pearl_registry/INDEX.md`.
 
+**Checked, external survey, no computation in N-7 itself (sibling
+project H-19 "Геометрия калибровки", 2026-08-31 — the source of C120's
+`I9` proposal above):** a targeted literature survey of 6 known
+geometric-gauge/parameter-selection schemes, run specifically to look
+for a transferable OB1 mechanism — Randall-Sundrum/Goldberger-Wise
+(bulk-scalar radion stabilization), Calabi-Yau flux compactification
+(GKP/KKLT, plus its own generalization to `SU(3)`-structure manifolds
+without an integrable complex structure — the most-investigated
+candidate, see below), `G₂`-holonomy M-theory (Acharya-Witten), Horava-
+Witten heterotic M-theory (anomaly-fixed `E₈`+coupling, radius NOT
+fixed), and Coset Space Dimensional Reduction (CSDR — found to be a
+**kindred stuck problem**, not a solution: 45 years of literature never
+selected the isotropy embedding either). **None of the 6 transfers.**
+The `SU(3)`-structure generalization of GKP (Benmachiche-Louis-
+Martínez-Pedrera CQG 25 (2008) 135006) got the deepest check: its one
+torsion precondition (`𝒲₁≠0`) is satisfied EXACTLY by this project's own
+frozen `S⁶` (`\|𝒲₁\|²=4/3`, independently re-derived from the imported
+`build_T_table`, matching C119) — refuting the naive expectation that
+non-integrability alone would block it — but the mechanism still fails
+because it is a functional of purely 6-dimensional (`S⁶`-only) data,
+structurally blind to `t` (which lives on the `S³` factor), not because
+of non-integrability. Full write-up, including an FL Step 8a skeptic
+pass that corrected several overreaches in the original framing:
+`E:\Проверка Гипотез\работаю над проверкой гипотез\H- 19 geometria kalibrovki\phase2_transferable_patterns\gkp-su3-structure-generalization.md`
+and `phase3_red_team_recomposition\recomposition.md` (external to this
+repo — cited, not imported; verify independently before relying on it,
+per this project's own G2 rule for external-source GO/PROMOTE
+criteria). **The `I9` candidate checked as C120 above is that survey's
+own concrete proposed follow-up test — already run and superseded by
+the sharper `η(D^t)` lead**, so no further action item remains open
+from H-19 specifically; its main residual value is the negative result
+itself (6 independently-researched external schemes, zero transfers)
+as context for any *future* external-literature candidate.
+
 `D-bar_0` has an exact doubly-degenerate zero eigenspace that round67's
 own family can never produce at `n=0` for any single `t` (its two
 branches `3t` and `3t-3` are never simultaneously zero). This means the
