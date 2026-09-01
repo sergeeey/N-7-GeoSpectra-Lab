@@ -1083,3 +1083,31 @@ pearl: the APS reduced eta `xi=(eta+h)/2 mod 1`, materially different
 (mod 1, not mod 2). Outside the closed P1-P5 program; does not change
 `N_gen=3`'s CONDITIONAL status or OB1's PARKED status; does not touch
 S6/triality; does not solicit Tom Lawrence's Part 5.
+
+**C122 (2026-09-01, user-requested):** the random-matrix negative
+control C118's own skeptic pass named. THREE rounds within one
+experiment, each caught by a fresh FL Step 8a skeptic pass: v1 was a
+category error (complex perturbation on a real operator, s* was a pure
+search-grid artifact); v2 fixed the symmetry class but compared
+mismatched search instruments, silently satisfied its own
+pre-registered kill criterion without reporting it, and reported an
+arithmetically wrong headline figure; v3 attempted a symmetric-
+instrument fix but its own "fine" log-spaced grid had a hole WORSE
+than the original coarse grid in exactly the j2=3/2 region --
+independently re-verified by this session directly against C118's own
+already-committed data -- producing a wrong "corrected" value there
+(C118's ORIGINAL value was right all along), plus a kappa(V) analysis
+using the wrong variable and statistically underpowered at n=5, plus a
+random control never matched on distinct-eigenvalue count (real
+family has exact degeneracy, 16-40 distinct eigenvalues, vs random's
+68-436, a mismatch growing with dimension in exactly the direction
+that could explain the gap from density alone). Every specific
+quantitative claim from v2/v3 retracted; C118's own s*.dim values
+confirmed correct (not corrected) for 4 of 5 cells. PARKED, not
+resolved -- a valid negative control needs real design work
+(degeneracy-matched construction, per-eigenvalue conditioning, union
+search grid, multi-seed averaging), not the ~20-line quick test this
+was proposed as. Outside the closed P1-P5 program; does not change
+`N_gen=3`'s CONDITIONAL status or OB1's PARKED status; does not touch
+S6/
+triality; does not solicit Tom Lawrence's Part 5.

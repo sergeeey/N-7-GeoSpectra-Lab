@@ -1,0 +1,115 @@
+{
+  "seed": 20260901,
+  "real_rows": [
+    {
+      "j2": "1",
+      "dim": 68,
+      "kappa_V": 8.296214248776199,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.6392208024455749,
+      "s_star_fine_times_dim": 43.46701456629909
+    },
+    {
+      "j2": "3/2",
+      "dim": 130,
+      "kappa_V": 143.9918636254283,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.678970389235102,
+      "s_star_fine_times_dim": 88.26615060056326
+    },
+    {
+      "j2": "2",
+      "dim": 212,
+      "kappa_V": 243.43305545806237,
+      "islands_in_fine_scan": 1,
+      "s_star_fine": 0.13427520731173587,
+      "s_star_fine_times_dim": 28.466343950088003
+    },
+    {
+      "j2": "5/2",
+      "dim": 314,
+      "kappa_V": 9949.208107778384,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.16359994291740504,
+      "s_star_fine_times_dim": 51.370382076065184
+    },
+    {
+      "j2": "3",
+      "dim": 436,
+      "kappa_V": 3446.95280980114,
+      "islands_in_fine_scan": 1,
+      "s_star_fine": 0.012082059461156295,
+      "s_star_fine_times_dim": 5.267777925064144
+    }
+  ],
+  "random_rows": [
+    {
+      "dim": 68,
+      "kappa_S": 1974.2514641273265,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.003395408454343843,
+      "s_star_fine_times_dim": 0.23088777489538131
+    },
+    {
+      "dim": 130,
+      "kappa_S": 359.3106605918784,
+      "islands_in_fine_scan": 1,
+      "s_star_fine": 0.002683944350213611,
+      "s_star_fine_times_dim": 0.3489127655277694
+    },
+    {
+      "dim": 212,
+      "kappa_S": 948.9352840866856,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.008890167451225062,
+      "s_star_fine_times_dim": 1.884715499659713
+    },
+    {
+      "dim": 314,
+      "kappa_S": 1596.1533043134732,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.003240763054338745,
+      "s_star_fine_times_dim": 1.0175995990623659
+    },
+    {
+      "dim": 436,
+      "kappa_S": 2977.855605197894,
+      "islands_in_fine_scan": 0,
+      "s_star_fine": 0.0003766844027866985,
+      "s_star_fine_times_dim": 0.16423439961500053
+    }
+  ],
+  "real_s_star_fine_times_dim": [
+    43.46701456629909,
+    88.26615060056326,
+    28.466343950088003,
+    51.370382076065184,
+    5.267777925064144
+  ],
+  "random_s_star_fine_times_dim": [
+    0.23088777489538131,
+    0.3489127655277694,
+    1.884715499659713,
+    1.0175995990623659,
+    0.16423439961500053
+  ],
+  "real_kappa_V": [
+    8.296214248776199,
+    143.9918636254283,
+    243.43305545806237,
+    9949.208107778384,
+    3446.95280980114
+  ],
+  "random_kappa_V": [
+    1974.2514641273265,
+    359.3106605918784,
+    948.9352840866856,
+    1596.1533043134732,
+    2977.855605197894
+  ],
+  "real_power_law_exponent": -1.9157566017327408,
+  "random_power_law_exponent": -0.7634122161067847,
+  "real_islands_total": 2,
+  "random_islands_total": 1,
+  "ranges_overlap_same_instrument": false
+}
