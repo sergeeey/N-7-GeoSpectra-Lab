@@ -152,6 +152,20 @@ different quantity, since the kernel dimension `h` also jumps at each
 crossing). See `null_results/INDEX.md` (C121-EtaInvariant) and
 `experiments/20260901-c121-eta-invariant-general-t/decision.md`.
 
+**Also tried and found insufficient (C138, 2026-09-03):** the APS
+reduced eta invariant `ξ=(η+h)/2 mod 1` C121 itself left open.
+Algebraically NULL, not just numerically observed: `h(t)`'s own
+non-constant jump (`mu(n)=(n+1)(n+2)`, `2/6/12/...` across crossings —
+the exact mechanism hoped to break the symmetry) is EXACTLY what
+cancels `η`'s discontinuous `2*mu(n)` jump under division by 2, leaving
+`ξ mod 1 = P(a)/2 mod 1` smoothly everywhere, `t in {0,1}` included
+(general `n`-independent proof, independently re-derived this session
+from a fresh script, not just C138's own report). The `η`/`gravitational
+Chern-Simons` family is now closed in both raw (C121) and reduced
+(C138) forms for the same reason: nothing in this construction singles
+out `n=0`. See `null_results/INDEX.md` (C138-ReducedEtaInvariant) and
+`experiments/20260903-c138-aps-reduced-eta-invariant/decision.md`.
+
 **Also tried and found insufficient (C123, 2026-09-01):** two mechanisms
 extracted from an external multi-model panel review. (1) Yang-Mills
 curvature functional `S_YM=∫|R^t|²` -- duplicate of `round99`'s own
