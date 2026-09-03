@@ -143,6 +143,246 @@ dimension `h` also jumps at each crossing). See `null_results/INDEX.md`
 (C121-EtaInvariant) and
 `experiments/20260901-c121-eta-invariant-general-t/decision.md`.
 
+**Attempted, PARTIAL — neither mechanism promotes (C123, 2026-09-01):**
+two candidates extracted from an external multi-model panel review (7
+independent LLM responses to a homework framing of OB1). (1) Yang-Mills
+`S_YM=∫|R^t|²` — duplicate of `round99`'s own curvature-norm toy at F4
+(selection): `R^t=t(t-1)·T`, `T` t-independent, so every quadratic
+curvature invariant is `[t(t-1)]²` up to a positive constant, which
+cannot move a critical point. NOT a duplicate at F6 — round99 had no
+action framing. (2) Transgression `S_mix=k∫CS₃(ω_{S³})∧P₄(M₄)∧
+ch₃(E_{S⁶})`, reusing this project's own certified S⁶ twist topology
+(`c₃(S⁻)=2`, G73) — survives C119's topological pre-filter (`ch₃` is
+degree-6, filter only kills degree≤3) and does NOT collapse into C121's
+just-rejected `η(D^t)` (checked directly: cubic/linear coefficient
+ratios of the two odd functions differ by 9x, not proportional). **A
+naive `∫_{M₄}P₄(M₄)=0` kill (for curvature-based `P₄` only) was found
+OVERBROAD same day**: `P₄=vol₄` is always closed (no curvature needed)
+and survives, reducing the mechanism to a t-dependent 4D vacuum-energy
+term with the SAME shape as the bare CS mechanism — not new content,
+not fatally killed either. This open question was pre-registered as
+`C124` (six criteria, bottom-up search order, two negative controls,
+design-freeze against HARKing), then blindly executed the same day by
+a fresh agent with no memory of the pre-registering session, then FL
+Step 8a skeptic-confirmed. **Result: `STRUCTURAL_NO_GO` — the
+CS/transgression family, and a wider mismatched-curvature-contraction
+class beyond it, is CLOSED as an OB1 F4 mechanism** — class-qualified
+(local, polynomial, first-order, bosonic 13D-Lorentz-covariant
+invariants only, per same-day external review). **Does NOT close
+C123's separate Yang-Mills claim** (an S3-internal Hodge-star
+functional, never a 13D-covariant reduction, and dimensionally
+impossible to fit this classification's own epsilon-sector S3 leg
+anyway) — YM's own status stays `PARTIAL` per C123, not killed. Also
+does not close: extra covariant derivatives, non-polynomial
+functions, additional p-form fields, an enlarged gauge algebra beyond
+Lorentz, boundary/defect terms, nonlocal/quantum effective actions —
+all named explicitly, not left implicit. A 13D-Lorentz-
+covariant 13-form splits into two disjoint sectors by exact index/
+degree counting: the sector that can carry `ε` (needed for `vol₄` or
+any `S⁶` topological density) is forced exactly torsion-free — its full
+reduced 4D contribution is `A+B·t(1-t)`, stationary only at the
+zero-mode-free `t=1/2`, the wrong value — and the sector carrying
+torsion is forced to odd torsion count, but the available block degrees
+`{3,4,5,7,8,9,11,12,13}` are missing degree 6, so its `S⁶` leg is
+identically empty. No 13D Lorentz Chern-Simons form exists at all
+(Chern-Weil-ring generators sit at degree ≡0 mod 4; 14≡2 mod 4).
+Skeptic-confirmed independently, with two prose errors found and
+repaired (neither load-bearing) and L1 shown even stronger (adding a
+13D gauge field cannot rescue this route either, only a genuine
+degree-14 characteristic class could). Scope: bosonic, strict product
+background — leaves open a parent action with an independent 13D gauge
+field, a non-product background, or fermion bilinears (named,
+unattempted, in the Relaxation Map). See
+`experiments/20260901-c124-parent-invariant-classification-
+preregistration/decision.md`. **Also same day: a genuine
+new F4 finding on Yang-Mills** —
+`E(t)=Ct²(1-t)²` has `E''(0)=E''(1)=2C>0` (stable) and `E''(1/2)=-C<0`
+(unstable) along the 1-parameter family — Levi-Civita is a barrier top
+between two flat vacua, though only checked in this 1D slice, not the
+full fluctuation operator.
+
+**F6 completed same day (C126, 2026-09-01→02, blind execution +
+FL Step 8a skeptic pass, verdict `WEAKENED`, 9/9 skeptic findings
+accepted).** The full second variation (not just the 1D slice) of
+`S_YM` at `t=0,1` is positive semi-definite for general metric
+perturbations, kernel exactly the gauge orbit — **but the pre-
+registered kill criterion could not have fired**: `S_YM≥0` and `=0`
+at flat points is a theorem, not a finding, so stability there carries
+zero selection information. **Genuinely new content instead:** the
+exhaustive homogeneous critical set is `{0}⊔SO(3)` (5 flat points +
+4 saddles, 9 total, none newly stable) — the vacuum degeneracy is
+LARGER than the family reveals, making selection harder, not easier;
+the Levi-Civita saddle has Morse index exactly 1 (stable to `2j≤14`,
+with an analytic bound at every `j`), its unique unstable direction
+IS the family direction; and `∇^0`,`∇^1` are related by a LARGE gauge
+transformation of winding number `n=-1` — meaning they are ONE point
+of the full gauge-equivalence class `𝒜/𝒢` (so `S_YM` and every
+`𝒢`-invariant functional of the connection alone is structurally
+blind between them, a stronger reason than OB13's evenness argument)
+but DISTINCT points of `𝒜/𝒢₀` (identity component only) — and
+**the `t=1/2` barrier is therefore topologically FORCED, not an
+artifact of the chosen path**, since Chern-Simons is exactly a
+`𝒢₀`-invariant functional and already distinguishes them (`CS(0)=0≠
+CS(1)`, C123). As affine connections (with the soldering form/torsion
+kept) `t=0,1` remain genuinely distinct — nothing here revives C25's
+already-refuted M2 branch (`ι` is still orientation-reversing,
+C37-C39). Net: Yang-Mills is WEAKENED, not promoted, as an OB1
+F4/F6 candidate. See `experiments/20260901-c126-yang-mills-full-
+fluctuation-stability/decision.md`.
+**Unplanned byproduct, found defending Claim 1, not this round's own
+target: `OB13`'s own summary sentence below ("any selector must be
+linear, never quadratic... even functionals carry no information") is
+itself overstated** — an even functional cannot PREFER `t=0` over
+`t=1`, but it CAN select the set `{0,1}` uniquely (round99's `V(t)`
+does exactly this), which is real information toward the "forces `t=0`
+and `t=1` together" branch OB1/F4 already accept. The project's own
+later practice already contradicts the literal OB13 sentence: C119
+(three weeks later) took an even/quadratic condition seriously as a
+selector and killed it on geometry, not by a one-line parity dismissal.
+Corrected wording proposed, not yet applied to OB13's prose below —
+see `experiments/20260901-c123-ym-cs-transgression-panel-review/
+decision.md` for the full FL Step 8a skeptic pass, both re-derivations,
+and the Relaxation Map.
+
+**F4 bordism/global-anomaly route scoped, not closed (C127, 2026-09-02,
+run at explicit user request despite being the lowest-priority
+Relaxation Map item):** the Zero-Signal Gate splits cleanly into two
+readings `claim.md` itself pre-registers. SELECTING one `t in {0,1}` via
+any topological invariant of a single fixed background is structurally
+impossible — definitional, not a discovery: a bordism/characteristic-
+class datum is a lift of a classifying map, and a lift of a classifying
+map is not a connection. FORCING the pair (or a sign) is NOT excluded
+and is well-posed: the mapping torus of C126's own winding-`(-1)` large
+gauge transformation carries a genuinely nonzero class (`int c2=-1`),
+but evaluating the actual anomaly on it is blocked on a newly-surfaced,
+genuinely unrecorded gap — **this project has never reconciled whether
+`nabla^t` is C125's metric affine connection (torsion a tensor, no
+gauge relation between `t=0,1`) or C126's Yang-Mills connection
+(`t=0,1` one gauge orbit, related by winding `n=-1`)** — plus round95's
+already-known missing S6-S3 link. Both `Omega^Spin_13(pt)=0` and the two
+further degrees the Anderson-dual sequence actually needs
+(`Omega_14=Omega_15=0`) independently verified against a secondary
+literature table, structurally cross-checked against the rational free
+rank. Own FL Step 8a skeptic pass: `WEAKENED`, all 12 findings accepted
+and repaired (including withdrawal of the first draft's own overbroad
+universal no-go). OB1 stays `PARKED`; no reopen condition met. See
+`PARENT_ACTION_GATE.md` F4 and
+`experiments/20260901-c127-bordism-global-anomaly-scoping/decision.md`.
+
+**Ingredient 1 (X2) CLOSED, C125-vs-C126 conflict resolved, NOT a
+contradiction (C128, 2026-09-02, two independent skeptic passes,
+differently worded, both `WEAKENED`, concordant):** by Maurer-Cartan
+integrability, no smooth map of `S³` at all realizes C126's large gauge
+transformation `g` as a frame transition (`dΦ+Φ∧Φ=0` reduces to
+`λ(1+λ)=0`, roots only at `λ=0,-1`; `g` is `λ=+1`, non-integrable). C125
+and C126 turn out to be about two different configuration spaces, not
+in tension: this project's own frozen ansatz fixes the vielbein, which
+is a *complete* gauge-fixing of C126's `𝒢`, so the ansatz lives in `𝒜`
+itself (C125's category), not `𝒜/𝒢`. **Strengthened, not just
+reconciled**: any diffeomorphism (not only an isometry) carrying
+`∇⁰→∇¹` is automatically an orientation-reversing isometry — proven
+algebraically and confirmed by an independent exact symbolic (Groebner)
+computation. The apparent "different transformation groups" was an
+artifact of a central factor (`-I`) that cancels in the connection
+formalism; the real invariant is `det`, i.e. C125's already-certified
+parity `ℤ₂` — winding number is not trivialisation-invariant here and
+carries no obstruction. **X6 re-specified**: the mapping torus that
+actually matters (of the orientation-reversing relating map, not of
+`g`) is non-orientable, so `Ω^Spin` was the wrong functor; the honest
+question (`Y1`) is whether it admits a `Pin^±` structure at all, still
+gated on round95 for the fermion content's `Pin` type. See
+`experiments/20260902-c128-nabla-t-gauge-group-reconciliation/decision.md`.
+
+**Y1's existence question ANSWERED: both Pin types exist, so this route
+alone cannot discriminate (C129, 2026-09-02, two independent skeptic
+passes, concordant `CONFIRMED-REAL`/`WEAKENED` split):** the mapping
+torus of the relating map admits BOTH `Pin⁺` and `Pin⁻` (exactly two of
+each), because `H²(M;𝔽₂)=0` for the mapping torus of any self-map of
+`S³` — confirmed 5 independent ways, including one using no chain
+complex at all (`π₁`+`χ`+Poincaré duality). **Self-caught correction**:
+C128 §6c had stated the Pin⁺/Pin⁻ existence criteria backwards
+(contradicting its own Completeness section); fixed by consulting
+Kirby-Taylor directly, harmless for C128's own verdict, load-bearing
+downstream (`Ω^{Pin+}_4=ℤ/16` vs `Ω^{Pin-}_4=0` differ enormously). Via
+the bare tangential structure alone the manifold gives NO discriminating
+constraint — both types are always available on any such mapping torus.
+The live gate narrows to: does the TWISTED structure the fermion content
+actually needs exist (new item Z1, unevaluated, flagged as cheaper than
+round95), and round95 (ingredient 2) is still required to know which
+type is physically needed. See
+`experiments/20260902-c129-pin-structure-existence-mapping-torus/decision.md`.
+
+**Z1's twisted structure ANSWERED (also cannot discriminate), and a
+higher-priority scope problem found (C130, 2026-09-02, two independent
+skeptic passes, concordant `WEAKENED`):** the twisted structure
+`Pin^±×_{ℤ₂}G` exists on `M_ι` uniformly, for EVERY group `G` with a
+central order-2 element and every bundle — proved by a genuine transfer
+argument (not assumed from C129), and shown non-vacuous by exhibiting
+other manifolds where twisting flips the Pin verdict. So the twisted
+route, like the bare one, gives no `t=0`-vs-`t=1` discriminator. The
+frame-bundle's group (the only `G` this project's frozen content would
+otherwise supply) turns out to be a type error as a twisting group — it
+IS the tangential structure, not independent of it. **⚠️ New top-priority
+item, promoted AHEAD of round95 (`W1`, cheaper to resolve):** `M_ι` (a
+4-manifold) does not appear in C127's own already-verified dimension
+audit at all (13D terms need `Ω₁₃,Ω₁₄`; 13D's own anomaly needs
+`Ω₁₄,Ω₁₅`; the 4D effective theory's anomaly needs `Ω₅,Ω₆` — never `Ω₄`,
+which is the home of a *3-dimensional* theory's anomaly, and this
+project has none). The relevance of the manifold three consecutive
+rounds (C128 §6b, C129, C130) analyzed is therefore **adversely
+indicated**, not merely untested — either a reading exists where a
+4-manifold is the right object, or these rounds answer a well-posed
+question about the wrong one. See
+`experiments/20260902-c130-twisted-pin-structure-existence/decision.md`.
+
+**⚠️ W1 TESTED AND CORRECTED (C131, 2026-09-02; three drafts, four
+context-blind skeptic passes, two direction-reversals — this entry is
+this session's own synthesis after independently weighing all four
+passes, not a transcription of any one draft, since the round's own final
+draft was itself found internally inconsistent by its 4th, dedicated
+review).** C130's two premises above are both false as stated: C127 §4's
+list is non-exhaustive (omits the 4D-topological-terms row, which needs
+`Ω₄` and `Ω₅`); and "no 3D theory" cannot be shown by grepping for that
+string when the project's object is called `CS₃` — though the premise is
+true in substance, since `∫_{S³}CS₃(ω^t)` is a number (a 4D term's
+coefficient), not an actual 3D QFT's partition function. **The real
+reason `M_ι` fails C127 §5d's specific question is ORIENTABILITY, not
+dimension**: `H₄(M_ι;ℤ)=0` (re-derived independently twice, including
+from scratch via the Wang sequence, not just read off a table) — `M_ι`
+is closed and non-orientable, so `∫c₂` (the number C127 §5d needed) is
+literally undefined on it; every legitimate reading needs an orientable
+4-manifold and produces `S³×S¹` instead. **But `M_ι` is not homeless in
+every sense** — C128 §6c already named the right reformulation (a
+`Pin^±` class on a non-orientable 4-manifold, "textbook Dai-Freed
+practice"), and C129/C130 already established `M_ι` supports it. **New
+this round**: the UNTWISTED Pin route on `M_ι` is trivial —
+`[M_ι]=0` in `Ω^{Pin+}_4` for both structures (explicit null-bordism,
+`M_ι=∂(D⁴×_ι S¹)`) — so it also cannot discriminate anything. **The one
+surviving live question is the TWISTED Pin structure** (the actual
+swap-monodromy fermion bundle), needing group `G` — itself blocked on
+round95. Net: C128/C129/C130's mathematics stands, untouched; every
+route this program has tried now converges independently on round95 as
+the sole remaining blocker (the 4th such convergence). See
+`experiments/20260902-c131-mapping-torus-dimension-consistency/decision.md`
+(read critically, not at face value — see `PARENT_ACTION_GATE.md` F4 for
+the fuller account).
+
+**DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
+gap (C132, 2026-09-02, user-directed exploration, not a convergent
+verification — no candidate claimed correct):** 15 candidate mechanisms
+survived a Novelty Check + Zero-Signal-Gate screen, outside the class
+C124 already closed. Top-ranked after a skeptic pass corrected a real
+inversion (`G₂`-equivariance constrains nothing about the S6 triality-
+channel label; only an assumed triality `ℤ₃` symmetry buys full channel
+symmetry, and even that borrows N_gen=3's own un-derived credit line):
+(1) the symmetry-assumption ladder itself, cheap, ready to run as `C133`;
+(2)/(2) Einstein-Cartan torsion-as-auxiliary (fermion-sourced, ready to
+run as `C134`, must open against round72's own registered `E8` gate) and
+a joint 13D Killing-spinor constraint; (4) a diagonal `ℤ₃` orbifold of
+`S³`. Full ranked list, both ready-to-run sketches, and 4 pearls in
+`PARENT_ACTION_GATE.md` F4 and
+`experiments/20260902-c132-13d-parent-action-survey/decision.md`.
+
 **Checked, external survey, no computation in N-7 itself (sibling
 project H-19 "Геометрия калибровки", 2026-08-31 — the source of C120's
 `I9` proposal above):** a targeted literature survey of 6 known
@@ -301,6 +541,37 @@ PARKED. See
 > ill-posed; it is *what breaks parity*, and in the SM parity is broken. See
 > `experiments/20260810-iota-gauge-or-parity/decision.md`.
 >
+> **✅ STRENGTHENED INTO A THEOREM, FALSIFIED AS A DISSOLUTION (C125,
+> 2026-09-01, blind execution + TWO independent FL Step 8a skeptic
+> passes).** C125 asked whether the FULL 13D configuration (vielbein,
+> connection, S⁶ twist, fermion content) at `t=0` is gauge-equivalent to
+> `t=1` — not just the abstract S³ connection ι already knew about. Answer:
+> **no genuine gauge transformation exists, provably, not just "none found
+> yet".** Central theorem (one-line proof, independently re-verified
+> twice): on S³, torsion `T^t=(2t-1)[·,·]` **is** a constant multiple of
+> the volume tensor, so `φ_*T⁰=det(dφ)·T⁰`; since `T¹=-T⁰≠0`,
+> `{φ:φ_*∇⁰=∇¹}=O(4)\SO(4)` **exactly** — C39's finding for `ι` specifically
+> is now proven forced for *every* candidate map, not observed for one.
+> Extended to the full product via a de Rham argument (the torsion
+> 3-form's own cohomology class is non-zero and flips sign under any
+> candidate `g`, needing no product-map or `Isom`-factorization
+> assumption): **`(ii-gauge)` fails for all 8 sign-triple combinations of
+> per-factor orientation choices — compensating on `M₄` or `S⁶` cannot
+> rescue it.** So OB1/H1c does **not** dissolve into gauge redundancy —
+> `t=0` vs `t=1` remains a genuine physical choice. **One residual,
+> honestly UNDECIDED (not resolved either way, after a second skeptic
+> pass caught the first draft asserting incompatible answers to the same
+> open question):** the purely-orientation-compensated "Family C" (4D
+> parity composed with `ι`, S⁶ untouched) satisfies every condition except
+> "not parity" — whether this survives condition (iii) (fermion content)
+> depends on whether the relative M₄↔S⁶ orientation is a physical datum
+> or a labelling convention, which nothing currently certified in this
+> project decides (needs round95's missing S⁶↔S³ link) — and whether OB1
+> would even collapse if Family C survived is ITSELF conditional on that
+> same unresolved question, not an independent fact. See
+> `experiments/20260901-c125-full-gauge-equivalence-gate/decision.md` for
+> the full derivation and both skeptic passes.
+>
 > **⚠️ NARROWED SAME DAY (C38).** The `t=0` and `t=1` kernels are the **two chiral
 > halves of one 4-dimensional `Spin(4)` spinor** — `(1,2)` and `(2,1)`, verified
 > under the `SO(4)` isometry action with the frame lift, negative control passing.
@@ -329,7 +600,36 @@ round111's `Scal(t) = Scal_LC − 6(2t−1)²` **EVEN**; round99's curvature-nor
 **Consequence:** both curvature-based searches were structurally incapable of
 selecting. Their nulls were *necessary* and carry **no** information about
 whether a selector exists — they were never tests of H1c. Any selector must be
-**linear (odd) in the torsion**, never quadratic. Round80/E14 makes this a
+**linear (odd) in the torsion**, never quadratic.
+
+> **⚠️ CORRECTED 2026-09-01 (C123, FL Step 8a skeptic pass, found
+> defending an unrelated claim — not this section's own target).** The
+> paragraph above **overstates what evenness rules out**, on three
+> independent grounds. (1) It conflates "cannot PREFER `t=0` over `t=1`"
+> (true for any even functional) with "carries NO information about
+> whether a selector exists" (false — an even functional like
+> `V(t)=[t(t-1)]²`, `round99`'s own curvature-norm toy, selects the SET
+> `{0,1}` uniquely against every other `t`; that is information). (2) It
+> contradicts OB1/`PARENT_ACTION_GATE.md` F4's own stated pass criterion,
+> which explicitly accepts a mechanism that "forces `t=0` and `t=1`
+> together" — exactly the branch an even functional CAN serve. (3)
+> "Linear" conflates polynomial degree with parity: the correct
+> requirement is "has a nonzero component odd in `(t-1/2)`," which any
+> odd-degree term (cubic included — e.g. the Chern-Simons functional
+> every one of 4 independent derivations this project has now produced
+> gives) satisfies; "linear" wrongly excludes those. **The project's own
+> later practice already reflects this**: C119 (2026-08-31) took an
+> even/quadratic condition (`Rc=¼H²`) seriously as a candidate selector
+> and killed it on geometry, not by a one-line parity dismissal, which
+> the literal rule above would have made unnecessary. **Corrected
+> statement:** an even functional in `(t-1/2)` cannot break the residual
+> `t=0`-vs-`t=1` degeneracy (OB13's real, defensible content, and C37-C39
+> below stand unaffected) — but it CAN legitimately select `{0,1}` as a
+> set, and "round99's own null carries no information" was itself
+> mislabeled: `round99`'s script status is
+> `CONFIRMED__DOUBLE_WELL_PLAUSIBLE_FROM_CLASSICAL_CURVATURE`, not a
+> null. See `experiments/20260901-c123-ym-cs-transgression-panel-review/
+> decision.md` for the full derivation. Round80/E14 makes this a
 symmetry statement: `ι(g)=g⁻¹` pulls the whole family `∇^t → ∇^(1−t)` exactly, so
 `t↔1−t` is a genuine symmetry and only an odd term can break it.
 

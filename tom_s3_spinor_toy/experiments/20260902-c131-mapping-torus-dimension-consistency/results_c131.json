@@ -1,0 +1,354 @@
+{
+  "ALL_OK": true,
+  "GATES": {
+    "G01_factorisation_lemma_homology_agrees_F2_AND_Z": true,
+    "G02_factorisation_control_T3_differs_over_Z": true,
+    "G02b_control_provably_CANNOT_differ_over_F2": true,
+    "G02c_klein_bottle_torsion_reproduced": true,
+    "G03_product_is_14_dimensional": true,
+    "G04_14_equals_13_plus_1": true,
+    "G05_M_iota_alone_is_4_dimensional": true,
+    "G06_H2_of_product_vanishes_for_S4": true,
+    "G07_H2_of_product_NONZERO_for_CP2_T4_K3_RP4": true,
+    "G08_M_iota_alone_reproduces_C129_both_Pin_exist": true,
+    "G09_product_with_CP2_admits_NEITHER_Pin": true,
+    "G10_product_with_RP4_admits_NEITHER_Pin": true,
+    "G11_product_with_spin_M4_still_admits_BOTH": true,
+    "G12_product_is_non_orientable_for_every_orientable_M4": true,
+    "G13_injection_drop_cross_term_moves_headline": true,
+    "G14_injection_nonzero_H2_moves_headline": true,
+    "G15_two_encodings_of_H2_M_iota_agree": true,
+    "G16_exact_H2_dims_include_the_cross_term": true,
+    "G17_cross_term_is_load_bearing_for_T4_and_RP4": true,
+    "G18_F2_monodromy_block_discriminates_on_deg2": true,
+    "G19_third_encoding_of_w2_M_iota_agrees": true
+  },
+  "GATES_PASSED": "21 / 21",
+  "PART1_factorisation_lemma": {
+    "agree_F2": true,
+    "agree_Z": true,
+    "control_T3_integral_homology": [
+      "Z",
+      "Z^3",
+      "Z^3",
+      "Z"
+    ],
+    "control_differs_from_lhs_over_F2_EXPECTED_FALSE": false,
+    "control_differs_from_lhs_over_Z": true,
+    "control_mapping_torus_of_identity_is_T3_betti_F2": [
+      1,
+      3,
+      3,
+      1
+    ],
+    "klein_bottle_integral_homology": [
+      "Z",
+      "Z + Z/2",
+      "0"
+    ],
+    "lhs_integral_homology": [
+      "Z",
+      "Z^2 + Z/2",
+      "Z + Z/2",
+      "0"
+    ],
+    "lhs_mapping_torus_of_id_times_flip_on_T2_betti_F2": [
+      1,
+      3,
+      3,
+      1
+    ],
+    "rhs_S1_times_Klein_bottle_betti_F2": [
+      1,
+      3,
+      3,
+      1
+    ],
+    "rhs_integral_homology": [
+      "Z",
+      "Z^2 + Z/2",
+      "Z + Z/2",
+      "0"
+    ]
+  },
+  "PART2_kunneth_betti": {
+    "CP2": {
+      "betti_F2": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "cross_term_contribution": 0,
+      "dim_H2_F2": 1,
+      "dim_H2_without_cross_term": 1,
+      "dim_total": 14
+    },
+    "K3": {
+      "betti_F2": [
+        1,
+        1,
+        22,
+        23,
+        2,
+        23,
+        23,
+        2,
+        23,
+        23,
+        2,
+        23,
+        22,
+        1,
+        1
+      ],
+      "cross_term_contribution": 0,
+      "dim_H2_F2": 22,
+      "dim_H2_without_cross_term": 22,
+      "dim_total": 14
+    },
+    "RP4": {
+      "betti_F2": [
+        1,
+        2,
+        2,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3,
+        2,
+        2,
+        1
+      ],
+      "cross_term_contribution": 1,
+      "dim_H2_F2": 2,
+      "dim_H2_without_cross_term": 1,
+      "dim_total": 14
+    },
+    "S4": {
+      "betti_F2": [
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1
+      ],
+      "cross_term_contribution": 0,
+      "dim_H2_F2": 0,
+      "dim_H2_without_cross_term": 0,
+      "dim_total": 14
+    },
+    "S6_and_M_iota_only": {
+      "betti_F2": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "cross_term_contribution": 0,
+      "dim_H2_F2": 0,
+      "dim_H2_without_cross_term": 0,
+      "dim_total": 10
+    },
+    "T4": {
+      "betti_F2": [
+        1,
+        5,
+        10,
+        11,
+        10,
+        11,
+        11,
+        10,
+        11,
+        11,
+        10,
+        11,
+        10,
+        5,
+        1
+      ],
+      "cross_term_contribution": 4,
+      "dim_H2_F2": 10,
+      "dim_H2_without_cross_term": 6,
+      "dim_total": 14
+    }
+  },
+  "PART3_pin_obstructions": {
+    "CP2": {
+      "Pin_minus_exists": false,
+      "Pin_plus_exists": false,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [
+        "h*1*1"
+      ],
+      "pin_plus_obstruction_w2": [
+        "h*1*1"
+      ],
+      "w1": [
+        "1*1*b"
+      ],
+      "w1_squared": [],
+      "w2": [
+        "h*1*1"
+      ]
+    },
+    "M_iota_alone_C129_C130_case": {
+      "Pin_minus_exists": true,
+      "Pin_plus_exists": true,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [],
+      "pin_plus_obstruction_w2": [],
+      "w1": [
+        "1*1*b"
+      ],
+      "w1_squared": [],
+      "w2": []
+    },
+    "RP4": {
+      "Pin_minus_exists": false,
+      "Pin_plus_exists": false,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [
+        "a1*1*b",
+        "a2*1*1"
+      ],
+      "pin_plus_obstruction_w2": [
+        "a1*1*b"
+      ],
+      "w1": [
+        "1*1*b",
+        "a1*1*1"
+      ],
+      "w1_squared": [
+        "a2*1*1"
+      ],
+      "w2": [
+        "a1*1*b"
+      ]
+    },
+    "S4": {
+      "Pin_minus_exists": true,
+      "Pin_plus_exists": true,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [],
+      "pin_plus_obstruction_w2": [],
+      "w1": [
+        "1*1*b"
+      ],
+      "w1_squared": [],
+      "w2": []
+    },
+    "T4": {
+      "Pin_minus_exists": true,
+      "Pin_plus_exists": true,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [],
+      "pin_plus_obstruction_w2": [],
+      "w1": [
+        "x0000*1*b"
+      ],
+      "w1_squared": [],
+      "w2": []
+    }
+  },
+  "PART4_injections": {
+    "F2_monodromy_block_deg1_control": [
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "F2_monodromy_block_discriminates": true,
+    "F2_monodromy_block_exercised_deg2": [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "M_iota_with_nonzero_H2_S4": {
+      "Pin_minus_exists": false,
+      "Pin_plus_exists": true,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [
+        "1*1*e"
+      ],
+      "pin_plus_obstruction_w2": [],
+      "w1": [
+        "1*1*b"
+      ],
+      "w1_squared": [
+        "1*1*e"
+      ],
+      "w2": []
+    },
+    "M_iota_with_nonzero_H2_moves_headline": true,
+    "drop_cross_term_RP4": {
+      "Pin_minus_exists": false,
+      "Pin_plus_exists": true,
+      "non_orientable": true,
+      "pin_minus_obstruction_w2_plus_w1sq": [
+        "a2*1*1"
+      ],
+      "pin_plus_obstruction_w2": [],
+      "w1": [
+        "1*1*b",
+        "a1*1*1"
+      ],
+      "w1_squared": [
+        "a2*1*1"
+      ],
+      "w2": []
+    },
+    "drop_cross_term_RP4_moves_headline": true,
+    "kunneth_cross_term_changes_T4_and_RP4": true,
+    "kunneth_cross_term_dropped": {
+      "CP2": 1,
+      "K3": 22,
+      "RP4": 1,
+      "S4": 0,
+      "T4": 6
+    }
+  },
+  "VERDICT_INPUTS": {
+    "H2_vanishing_does_NOT_transfer_to_the_14_manifold": true,
+    "M_iota_is_a_4_dimensional_FACTOR_of_a_14_dimensional_object": true,
+    "PIN_EXISTENCE_ON_14_MANIFOLD_IS_PROBE_DEPENDENT_NOT_AUTOMATIC": true,
+    "non_orientability_DOES_transfer_so_C128_6b_survives": true
+  }
+}
