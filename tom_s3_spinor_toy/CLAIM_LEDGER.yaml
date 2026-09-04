@@ -2610,6 +2610,24 @@ claims:
       - "a retraction of C143's Lemma 1/2, C144, or C145 -- this round explains a mechanism underlying facts those rounds already established, it does not revise their verdicts"
       - "that the target-side (Sigma_even) branching was separately, independently re-verified as a standalone claim -- Check 2's full-row-range result already subsumes it, noted explicitly not left as a silent gap"
 
+  - id: C147_CONNECTION_COEFFICIENT_VANISHES_ONLY_AT_ZERO_CONNECTION
+    statement: "User (consortium message) named this the single highest-value next round: for the invariant-connection class C139 already used, WHEN does the connection coefficient c_W(nabla) vanish? Both outcomes pre-registered as valuable (nonvanishing = robustness theorem; nontrivial zero locus = a genuine geometrically-tunable zero-mode mechanism). Novelty check first: C139's own Section 7b ALREADY swept 13 angles across C73b's certified 2-dim admissible torsion family and found |c(theta)| constant, but its own code comment names the residual gap exactly -- 'a linear functional on a real 2-dim space GENERICALLY has a 1-dim zero locus', so 13 samples cannot exclude a missed zero locus. THIS round supplies the continuum statement, made cheap by C146: since C146 proves Term1 == 0 identically (Schur-forced, any equivariant connection), c(nabla) = Term2(nabla), which is R-LINEAR in nabla by construction -- so TWO evaluations at basis directions determine the ENTIRE continuum, and the zero locus is decided by one basis-independent criterion (nonsingularity of the real 2x2 matrix [[Re c1, Re c2],[Im c1, Im c2]]). RESULT: the matrix is not merely nonsingular but an EXACT SIMILARITY -- det = 4/3, both singular values = 2*sqrt(3)/3, condition number 1.000000, c2/c1 = i. Hence c(alpha,beta) = c1*(alpha + i*beta), |c| = (2*sqrt(3)/3)*sqrt(alpha^2+beta^2), and c = 0 ONLY at the zero connection (the degenerate non-metric point). C139's kernel=0 is therefore a THEOREM over the family, not a scan result; the hoped-for geometrically-tunable zero mode does NOT exist inside this family. Linearity applied at NOMIZU's own coordinates reproduces C139's own registered |c_exact| = 2*sqrt(3)/3 exactly. Context-blind skeptic pass: CONFIRMED-REAL on the headline, no fatal concern (kill criterion did not fire; det sits ~15 orders above the float64 noise floor), with two scope caveats -- BOTH then closed by a follow-up (c147b) rather than merely documented: the complex structure making c C-linear is identified explicitly as the NEARLY-KAHLER J of AHL2023's own eq.(5) convention (NOMIZU o J verified in the family, independent of NOMIZU, acting as an exact 90-degree rotation in the family's coordinates -- so not an SVD-basis artifact), and both coefficients recomputed in EXACT sympy: c(NOMIZU) = -2*sqrt(3)/3, c(NOMIZU o J) = -2*sqrt(3)*I/3, ratio = I exactly (not float64 0.9999999999999997j)."
+    truth_status: SUPPORTED
+    test_outcome: NULL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260904-c147-connection-coefficient-zero-locus/decision.md"
+    depends_on: [C146_TERM1_VANISHING_IS_SCHUR_FORCED_NOT_M_SPECIFIC, C139_ALTERNATE_TWIST_M_KERNEL_ZERO]
+    supersedes: "strengthens C139's own 13-angle numerical sweep to a continuum statement; does not change C139's own computed kernel=0 or its |c| value, both of which this round reproduces exactly"
+    convention: "reuses round59's Clifford/Nomizu machinery, C139's own invariant-sector and exact-sympy machinery, and C73b's own certified 2-dim admissible torsion basis, all unmodified; introduces no new geometric construction beyond applying AHL2023's own already-fixed nearly-Kahler J to NOMIZU"
+    does_not_imply:
+      - "anything about connection families OUTSIDE C73b's certified Hom_su3(m, Lambda^2 m) -- non-equivariant connections, or a different twist bundle's own admissible family, are untouched"
+      - "a value of c for twist bundles other than m -- the METHOD (2 evaluations + linearity => continuum) transfers, the coefficient does not"
+      - "any change to N_gen=3's CONDITIONAL status; C139's own kernel=0 value is reproduced exactly, only its EVIDENCE STATUS improves (13 samples -> theorem over the family)"
+      - "a resolution of C142's W_cand question -- that is an OPERATOR-level Hom-dimension 2, a different object from this round's CONNECTION-space dimension 2; the shared number 2 invites exactly this conflation and is named here to block it"
+      - "that the membership bridge is exact -- verifying T_B = NOMIZU o J lies in C73b's family remains NUMERICAL (residual 2.8e-16) because that family's basis itself exists only as an SVD nullspace; named as the one remaining non-exact link, not hidden"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

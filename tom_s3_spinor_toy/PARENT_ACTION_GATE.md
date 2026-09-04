@@ -190,6 +190,25 @@ dichotomy) — OB14 remains `BLOCKED-INTERNAL`. See `CLAIM_LEDGER.yaml`
 `C146_TERM1_VANISHING_IS_SCHUR_FORCED_NOT_M_SPECIFIC` and
 `experiments/20260904-c146-schur-forced-vanishing-theorem/decision.md`.
 
+**UPDATE (C147, 2026-09-04) — the connection-geometry route to a zero mode**
+**is closed, over the continuum, not just at sampled angles.** Using C146's
+`Term1 ≡ 0` theorem, `c(∇)` collapses to a manifestly `R`-linear functional,
+so TWO basis evaluations settle the whole 2-dim admissible family (C139
+needed 13 samples and its own comment still named the gap). Result: the
+real 2×2 matrix is an EXACT similarity — `det = 4/3`, both singular values
+`2√3/3`, condition number `1.000000`, `c₂/c₁ = i` — so
+`c(α,β) = c₁·(α+iβ)` and `c = 0` ONLY at the zero connection.
+**Consequence for this gate: varying the connection inside the admissible**
+**family can never produce `Δ_dyn > 0` for the `m` twist.** Post-skeptic
+strengthening (`c147b`): the complex structure making `c` holomorphic is
+explicitly the **nearly-Kähler `J`** of AHL2023's own eq.(5) convention
+(`NOMIZU∘J` verified in-family, acting as an exact 90° rotation in the
+family's coordinates), with both coefficients recomputed in EXACT sympy
+(`-2√3/3` and `-2√3·i/3`, ratio exactly `I`). Context-blind skeptic:
+`CONFIRMED-REAL`. See `CLAIM_LEDGER.yaml`
+`C147_CONNECTION_COEFFICIENT_VANISHES_ONLY_AT_ZERO_CONNECTION` and
+`experiments/20260904-c147-connection-coefficient-zero-locus/decision.md`.
+
 ### F3 — Torsion family [RESOLVED, round113, 2026-07-17]
 
 ~~Two DIFFERENT parameterizations already exist in this project and must
