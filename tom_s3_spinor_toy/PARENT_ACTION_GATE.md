@@ -37,6 +37,28 @@ twisting only on `S⁶` (`D_{S⁶,twisted}`, dim-1 kernel per channel, round59/
 dolan-casimir), `S³` left untwisted in the paper's own baseline
 (`D_{S³}^{\mathrm{LC}}`).
 
+**UPDATE (C139, 2026-09-04):** round59's kernel=1 result now has its
+first genuine wrong-twist `kernel≠1` result. Twisting `D_{S⁶}` by
+`m_C` (the tangent/isotropy representation, module type `3+3bar`,
+instead of `Sigma`'s `1+1+3+3bar`) gives kernel=0, robust across the
+whole admissible connection family (13-angle sweep, not a
+single-point accident) — after four prior attempts (C73/C73b) all
+failed to discriminate. Round59's specific twist choice (`Sigma`) is
+therefore not the unique construction giving a nontrivial invariant
+kernel; independent physical justification for `Sigma` is now a
+well-posed, testable open question, not previously even askable. Two
+independent skeptic passes qualified the strength of this finding: the
+kernel-value difference partly reflects a forced representation-theory
+shape (any zero-singlet twist bundle would show the same `Term1=0`),
+not purely dynamics — the genuinely load-bearing, non-forced content
+is `Term2`'s (the twist connection's own contribution) robust
+non-vanishing. The decisive follow-up (a matched-singlet-count twist
+bundle, e.g. `m⊕2·1`) remains unbuilt. Does NOT change `N_gen=3`'s
+CONDITIONAL status. See `CLAIM_LEDGER.yaml`
+`C139_ALTERNATE_TWIST_M_KERNEL_ZERO`, `pearl_registry/INDEX.md` row 89
+(closed), and
+`experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
+
 **Pass criterion:** states explicitly which factor(s) carry a nontrivial
 twist in the candidate construction, and whether this matches or departs
 from the frozen baseline.

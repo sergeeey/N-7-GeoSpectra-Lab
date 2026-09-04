@@ -2104,3 +2104,59 @@ also entangled with the still-open OB1/KT-8 full-operator question.
 check above) — requires scoping as its own SMALL–LARGE round if pursued,
 not a quick extraction. Full detail (superseded "cheap" framing):
 `experiments/20260717-round118-matter-generation-factorization-test/decision.md`.
+
+## OB14 — why `Sigma`, not `m` (or another twist bundle), is the physically
+correct twist for round59's `D_S6` construction [OPENED 2026-09-04, C139]
+
+**Background.** round59 certified `dim ker(D_{S6,twist=Sigma})=1`, a
+load-bearing input to `N_gen=3` (`CLAIM_LEDGER.yaml`
+`C2_ROUND59_KERNEL_DIM1`, 6 direct ledger dependents including
+`C4_NGEN3_HEADLINE`). Until C139, no wrong-twist negative control had
+ever discriminated — four attempts (C73/C73b) all gave the identical
+kernel or a result forced by construction. This meant the question "why
+`Sigma` specifically" could not even be posed as a real alternative: with
+no discriminating control, `Sigma` was the only twist bundle this
+project had ever tried, not a twist bundle shown to be privileged over
+any specific alternative.
+
+**What changed.** C139 built a genuinely different twist bundle
+(`m_C`, the tangent/isotropy representation, module type `3+3bar`,
+zero `su(3)` singlets, vs `Sigma`'s `1+1+3+3bar`, two singlets) using
+the identical `NOMIZU`/`ADNU` connection data and Leibniz-rule
+construction, and found `kernel=0`, not `1` — robust across the whole
+admissible connection family (13-angle sweep, not a single-point
+accident), verified two independent ways (numeric SVD, exact sympy),
+and independently re-verified by two context-blind skeptic passes plus
+the orchestrating session (script re-run, sign-convention bug
+independently re-derived from the Clifford algebra). This establishes,
+for the first time, that `Sigma` is NOT the unique twist bundle
+compatible with this project's own calibration discipline — an
+alternative WITH a different kernel genuinely exists.
+
+**What this does NOT do:** identify what the independent physical
+justification for `Sigma` actually is. `Sigma` remains Tom Lawrence's
+own construction, directly motivated by AHL2023's spinor-bundle
+framework — C139 does not argue `Sigma` is wrong, only that it is no
+longer the unique twist giving a nontrivial invariant kernel structure.
+Two independent skeptic passes also qualified C139's own result:
+`Term1=0` (part of the original justification for the result's
+significance) is FORCED by `su(3)` Schur's lemma for ANY zero-singlet
+twist bundle, not special to `m` — the genuinely load-bearing,
+non-forced fact is narrower (`Term2`'s robust non-vanishing). A more
+directly comparable test (a matched-singlet-count twist bundle, e.g.
+`m⊕2·1`, preserving `Sigma`'s own two-singlet shape) remains unbuilt
+and would more decisively test whether `D_S6` discriminates `Sigma`
+from a same-shape alternative, not merely a different-shape one.
+
+**Status:** `BLOCKED-EXTERNAL-OR-THEORETICAL`. Likely requires either a
+physical argument from Tom Lawrence's own framework for why the twist
+bundle must be another copy of the spinor bundle specifically (external,
+subject to this project's own "DO NOT INITIATE CONTACT" constraint), or
+an internal argument this project has not yet attempted (e.g. the
+matched-singlet-count follow-up named above).
+
+**Owner / next step:** build the matched-singlet-count twist bundle
+(`m⊕2·1` or similar) as the next concrete, internally-computable test —
+comparable in scope to C139's own build, not a large undertaking. Full
+detail:
+`experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
