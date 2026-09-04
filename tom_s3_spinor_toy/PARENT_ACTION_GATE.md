@@ -85,9 +85,47 @@ floor. See `CLAIM_LEDGER.yaml`
 `pearl_registry/INDEX.md` (2026-09-04 row, impact 9), and
 `experiments/20260904-c141-matched-singlet-count-twist-m-plus-2singlets/decision.md`.
 
+**UPDATE (C143, 2026-09-04, theorem synthesis, no new computation) —
+`Delta_dyn` pre-registration gate, MANDATORY for any future twisted-`D_S6`
+construction, added per the user's own explicit proposal:** C141's own
+graded-floor equality (`dim ker(D_rho) = floor(rho)`) is proved, not
+merely observed, whenever every `{connection}`-invariant summand has a
+1-dimensional `su(3)`-equivariant `Hom` space (Schur's lemma forces a
+single scalar; nonzero ⟹ full rank, zero ⟹ kernel exceeds floor by
+exactly that summand's dimension — no third option). This covers **all
+four** twist-bundle constructions ever built in this project (round59/T0,
+C139, C141, T1) — round59's own scalar nonvanishing has a GENERAL
+geometric reason, already registered as `pearl_registry` row 24
+(2026-07-14, *"MECHANISM-forced by Killing-spinor existence, not a
+coset-specific numerical accident"*), only newly connected to C141's
+framework here; C139/C141's `m`-type scalar nonvanishing is established
+only by direct computation, a genuinely weaker certainty, named honestly.
+**Before building ANY future twisted-`D_S6` round:**
+1. Compute the summand decomposition and each summand's `Hom_su3`
+   dimension from pure branching data alone — no connection needed.
+2. If every summand has `Hom` dimension `1`: the round is
+   `PRE-DETERMINED-UNINFORMATIVE` by this lemma. Do not build; report
+   the floor and stop, UNLESS a specific, pre-registered reason exists
+   to expect a summand's scalar to vanish (a real, checkable escape,
+   flagged explicitly per the Anti-Overfitting Gate).
+3. If at least one summand has `Hom` dimension `≥2`: the round is
+   `POTENTIALLY-INFORMATIVE` — pre-register `H0: Delta_dyn=0` vs
+   `H1: Delta_dyn>0` before computing anything, then build.
+`Delta_dyn := dim ker(D_rho) − floor(rho)` is `0` for all four existing
+constructions, forced by the lemma above — `Delta_dyn>0` would be the
+first genuinely dynamical result in this entire research line. The one
+candidate for a `Hom`-dimension-`≥2` summand (C142's
+`W_cand=3+3bar+3bar`) remains `BLOCKED-INTERNAL` (`OPEN_BLOCKERS.md`
+OB14) — no round can currently reach branch 3. See
+`pearl_registry/INDEX.md` (2026-09-04, impact 8) and
+`experiments/20260904-c143-graded-floor-equality-theorem/decision.md`.
+
 **Pass criterion:** states explicitly which factor(s) carry a nontrivial
 twist in the candidate construction, and whether this matches or departs
-from the frozen baseline.
+from the frozen baseline. **For any construction proposed after
+2026-09-04: additionally states its `Hom`-space dimension per summand and
+its `Delta_dyn` pre-registration branch (2 or 3 above), per the gate just
+added.**
 
 ### F3 — Torsion family [RESOLVED, round113, 2026-07-17]
 
