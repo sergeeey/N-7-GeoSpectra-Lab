@@ -2183,6 +2183,27 @@ weight placed on them as evidence of `D_S6`'s dynamics. See
 and
 `experiments/20260904-c141-matched-singlet-count-twist-m-plus-2singlets/decision.md`.
 
+**UPDATE (C142, 2026-09-04, design-only, no physics computation):**
+checked whether C141's own falsifiable escape route (a twist bundle
+whose kernel exceeds its graded floor) is currently buildable — **NOT
+with this project's existing content.** The one candidate C141's own
+exhaustive search surfaced (`W_cand=3+3bar+3bar`, the only module type
+besides `EVEN_IDX` itself achieving round59's own `(2,1)` shape) needs
+an independently-sourced SECOND copy of `3bar` to be a genuinely
+different kind of test (a multi-dimensional equivariant channel, unlike
+every prior test's single-scalar question) — none exists here. Two
+candidates checked and rejected for identifiable, non-arbitrary reasons:
+C70/C71's `U_v`/`U_s`/`U_c` triality intertwiners are basis-matching
+gauge freedom (`Inn(su(3))` orbit, non-unique by construction), not
+independent geometric data; G102's own three triality channels are
+forced identical under `su(3)` — the SAME `G44` branching-collapse
+mechanism (this project's oldest, most-recurring negative result) that
+has closed roughly a dozen other candidate mechanisms across this
+project's history. `BLOCKED-INTERNAL`, not `IMPOSSIBLE` — would require
+either new, independently-motivated geometric construction (high AOG-5
+risk) or external input. See `pearl_registry/INDEX.md` (2026-09-04) and
+`experiments/20260904-c142-graded-floor-candidate-scan/decision.md`.
+
 **Owner / next step:** build the matched-singlet-count twist bundle
 (`m⊕2·1` or similar) as the next concrete, internally-computable test —
 comparable in scope to C139's own build, not a large undertaking. Full
