@@ -2222,6 +2222,17 @@ there; C139's own value survives in full). Context-blind skeptic:
 `null_results/INDEX.md` `C145-TwistedNotKostant` and
 `experiments/20260904-c145-twisted-operator-vs-kostant-mu-block/decision.md`.
 
+**UPDATE (C146, 2026-09-04) — mechanism behind C145's finding now proven
+general, refining but not closing this OB:** Term1 (Kostant's contribution)
+is provably zero, in advance, for any zero-singlet/`3̄`-type twist summand
+(Schur's lemma + already-certified branching, skeptic-confirmed
+`CONFIRMED-REAL`) — and provably `=∓√3` for any singlet summand. This
+does NOT resolve `W_cand=3⊕3̄⊕3̄` (Hom-dimension 2, outside this binary
+dichotomy) but DOES mean any future candidate's Term1/Term2 split is
+predictable before building — a useful filter for evaluating future
+candidates cheaply. See `pearl_registry/INDEX.md` (2026-09-04, impact 7)
+and `experiments/20260904-c146-schur-forced-vanishing-theorem/decision.md`.
+
 **Owner / next step:** no internally-buildable test remains identified.
 The matched-singlet-count twist bundle (`m⊕2·1`) was already built (C141)
 and found `Delta_dyn=0`, same as every other tested case. The Kostant/

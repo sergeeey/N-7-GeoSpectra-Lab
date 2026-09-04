@@ -167,6 +167,29 @@ remains `BLOCKED-INTERNAL` (OB14), unresolved. See `CLAIM_LEDGER.yaml`
 `null_results/INDEX.md` (`C145-TwistedNotKostant`, REJECT), and
 `experiments/20260904-c145-twisted-operator-vs-kostant-mu-block/decision.md`.
 
+**UPDATE (C146, 2026-09-04) — WHY C145's Term1=0 happens, proven general,**
+**not specific to `m`.** `D_Σ` (round59's own operator) is `SU(3)`-
+equivariant (verified directly, `[D_Σ,ρ(a)]=0` for all 8 generators —
+previously implicit, never checked standalone). Given already-certified
+branching (`Σ_odd=3⊕1`, `Σ_even=1⊕3̄`), Schur's lemma FORCES `D_Σ`'s
+`Σ_odd`-"3"-block into `Σ_even` to be exactly zero (`Σ_even` has no `3`
+constituent) — confirmed directly on the matrix. Any zero-singlet twist
+bundle forces its domain invariant onto exactly this vanishing block
+(confirmed for `m`: its invariant has zero component along `Σ_odd`'s own
+"1"-part, all 6 entries). **Consequence: for ANY future twist bundle whose
+relevant summand is zero-singlet/`3̄`-type, Term1=0 is now PREDICTABLE IN
+ADVANCE from pure branching data, no Dirac-operator computation needed.**
+Free cross-check against C141's own already-registered result (no new
+computation): its `m⊕2·1` twist's 3 summands split exactly as predicted —
+the `m`-summand matches this theorem's non-singlet branch, its 2 decoupled
+singlets each exactly match the theorem's singlet branch
+(`Term1=-√3` each, `Term2=0` each). Context-blind skeptic: `CONFIRMED-REAL`.
+Does NOT give a general formula for Term2's specific value, and does NOT
+resolve C142's `W_cand` (Hom-dimension 2, not covered by this binary
+dichotomy) — OB14 remains `BLOCKED-INTERNAL`. See `CLAIM_LEDGER.yaml`
+`C146_TERM1_VANISHING_IS_SCHUR_FORCED_NOT_M_SPECIFIC` and
+`experiments/20260904-c146-schur-forced-vanishing-theorem/decision.md`.
+
 ### F3 — Torsion family [RESOLVED, round113, 2026-07-17]
 
 ~~Two DIFFERENT parameterizations already exist in this project and must
