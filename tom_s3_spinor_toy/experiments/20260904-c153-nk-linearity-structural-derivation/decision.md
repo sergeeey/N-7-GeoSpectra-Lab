@@ -1,8 +1,46 @@
-# C153 — Decision. Verdict: **PROMOTE, WEAKENED** (per FL Step 8a Response Matrix)
+# C153 — Decision. Verdict: **PROMOTE, WEAKENED, THEN DOWNGRADED BY NOVELTY CHECK**
 
 **Date:** 2026-09-04. **Tier:** FL Full. **L0:** descriptive.
-**Skeptic (Step 8a, context-blind, could not execute code — no Bash in that
-session, reasoned from source and pure algebra): WEAKENED.**
+**Skeptic (Step 8a, context-blind): WEAKENED. Novelty check (post-hoc,
+run before authorizing C154): NOT NEW on both fronts.**
+
+## ⚠️ CORRECTION, same day, run per user instruction before authorizing C154
+
+Before greenlighting a C154 built around "explain the per-plane law via the
+Weyl-group orbit", the user asked for a literature check first. Result
+(`novelty_check.md`, `skeptic-auditor` + WebSearch, full detail there):
+
+1. **The 6-vs-2 Weyl-orbit split is Borel–Hirzebruch (1958) §13.7 and
+   Burstall–Salamon (1987, Math. Ann. 277)**, stated explicitly for the `F₃`
+   flag manifold in arXiv:2411.07767 §5.2. This round's own `claim.md` item
+   1 named this as an unverified "candidate C154" — it did not need
+   verifying by a new round; it is 40-to-65-year-old classical geometry.
+2. **The per-plane law is entailed by Schur's lemma**, not a fact about this
+   operator: `m` splits into pairwise-inequivalent root-plane summands
+   (multiplicity one), the `±i`-per-plane action is Borel–Hirzebruch's own
+   *definition* of an invariant a.c.s., and any `T²`-equivariant map — `c`
+   is one, by construction — is therefore forced to respect the splitting,
+   before any of this round's computation ran.
+
+**Consequence:** this round's headline ("a genuinely surprising structural
+discovery") is downgraded to "an independent exact verification that a
+specific operator conforms to a generic, already-known pattern." The
+arithmetic below is unaffected — every number is still exactly correct —
+but the evidentiary WEIGHT the original framing claimed was wrong, in the
+same way, and for the same reason, C144's "algebraically forced by total
+antisymmetry" correction downgraded that round. See `claim.md`'s own
+correction for the reader-facing version; this file is left otherwise
+intact below, per this project's discipline of correcting in place.
+
+**What remains open, per the user's own framing ("если да, C154 надо
+формулировать вокруг недостающего звена"):** not "why does the sign factor
+per plane" (answered — it doesn't need explaining) but why the *values*
+`c(v_k)` (not just their `T²`-transformation signs) come out the way they
+do, and whether `S⁶` and `SU(3)/T²`'s coefficients are connected by
+anything beyond both having been computed exactly. No classical result
+found here addresses magnitude, only the sign/eigenvalue structure.
+
+---
 
 ## What was asked
 
@@ -155,11 +193,16 @@ prose around it claimed. No amount of re-running the same code would have
 caught it; it took an outside reader asking "does this actually test what
 it says it tests?"
 
-## What this does NOT establish (unchanged, see claim.md)
+## What this does NOT establish (see claim.md; superseded by the novelty check above)
 
-The plausible classical explanation (Weyl group `S₃` orbit of Borel
+~~The plausible classical explanation (Weyl group `S₃` orbit of Borel
 choices = the 6 integrable structures; the 2 all-agree tuples are the
-exceptional non-Weyl ones) remains **unverified** — candidate C154.
+exceptional non-Weyl ones) remains **unverified** — candidate C154.~~
+**No longer open — see the correction at the top of this file.** Borel–Hirzebruch
+(1958) and Burstall–Salamon (1987) already establish exactly this; confirmed
+by novelty check before any C154 was built. What remains open instead: the
+actual *values* `c(v_k)`, not their sign/eigenvalue structure — see the
+correction's final paragraph.
 
 ## Reproduce
 

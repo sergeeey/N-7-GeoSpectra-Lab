@@ -4,11 +4,45 @@
 of an already-computed object (C152's corrected `SU(3)/T²` sector); no
 counterfactual, no DAG required.
 
-**Revised after a context-blind FL Step 8a skeptic pass.** The original
+## ⚠️ CORRECTION 2026-09-04, same day — NOVELTY CHECK, run post-hoc before
+## authorizing C154, per user instruction. Downgrades this file's headline.
+
+A literature novelty check (`novelty_check.md`, `skeptic-auditor` + WebSearch)
+found that **both** halves of this round's headline are classical, not new:
+
+1. The 6-integrable/2-non-integrable split of the 8 invariant almost-complex
+   structures on `SU(3)/T²`, via the Weyl-group `S₃` orbit, is **Borel–Hirzebruch
+   (1958) §13.7** and **Burstall–Salamon (1987, Math. Ann. 277)** — exactly the
+   "candidate C154" hypothesis this round's own caveat named as unverified.
+   It did not need building; it already exists.
+2. The per-plane multiplicative law `c((J_eps)|_plane k) = i^{eps_k} · c(v_k)`
+   is **entailed by Schur's lemma alone**: `m` splits into pairwise-inequivalent
+   root-plane summands (multiplicity one), the `±i`-per-root-plane action is
+   the very definition of an invariant a.c.s. in Borel–Hirzebruch's own
+   parametrization, and any `T²`-equivariant map — `c` is one, by construction —
+   is therefore FORCED to respect the splitting. This was true before any
+   computation in this round ran; it is not a fact about this operator, about
+   twisted Dirac operators, or about nearly-Kähler geometry at all.
+
+**What survives:** an independent exact verification that this specific
+operator conforms to the generic pattern (real, but much weaker than
+"headline structural discovery"), and the located classical references. The
+Nijenhuis correlation (item 3 below) is now understood as the *composition*
+of two already-known facts, not new evidence linking this operator to NK
+geometry specifically.
+
+**Kept in place below, corrected in place, per this project's discipline —
+same class of correction as C144's "algebraically forced by total
+antisymmetry".** Read every claim below as "verified, not discovered."
+
+---
+
+**Earlier revision, same day, still valid as a correction (kept for
+continuity): after a context-blind FL Step 8a skeptic pass.** The original
 version of this file claimed "24 direct tests" and a relabelling-based
 Nijenhuis correlation. Both were real bugs in the *evidentiary weight*
 claimed, not in the underlying arithmetic — see decision.md's Response
-Matrix for the full account. This version states only what survives.
+Matrix for the full account.
 
 ## Claim (falsifiable)
 
@@ -73,14 +107,11 @@ regressions; they are not evidence for the sign choice.
 
 ## What this does NOT establish
 
-1. Does **not** derive, from a general Lie-theoretic argument, *why*
-   "all-agree" coincides with non-integrability rather than the other 6 sign
-   patterns. A plausible classical explanation exists (the 6 "mismatched"
-   tuples plausibly correspond to the 6 Weyl-group-`S₃`-related choices of
-   Borel/positive-root system, all integrable; the 2 "all-agree" tuples
-   would be the two structures outside any Weyl chamber) but was **not
-   verified** — no Weyl-chamber construction was built. Concrete next step
-   (candidate C154), not asserted.
+1. ~~Does **not** derive, from a general Lie-theoretic argument, *why*
+   "all-agree" coincides with non-integrability... Concrete next step
+   (candidate C154), not asserted.~~ **SUPERSEDED by the novelty check above
+   — this derivation already exists and did not need building: Borel–Hirzebruch
+   (1958) §13.7 and Burstall–Salamon (1987) both give it. See `novelty_check.md`.**
 2. Does **not** generalise beyond `SU(3)/T²`'s 8 invariant structures to
    arbitrary almost-complex structures, nor to other nearly-Kähler cosets.
 3. Does **not** bear on `S⁶`, where there is no analogous multi-`J` question
