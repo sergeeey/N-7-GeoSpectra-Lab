@@ -1,0 +1,197 @@
+==============================================================================
+Importing C152 Step 8 (aligned-basis C-linearity test)
+==============================================================================
+STEP 1  J-aligned m basis built (X<->Y swapped on planes with eps=-1)
+        EPS_NK = (-1, 1, -1)  ->  J_NK is the STANDARD J_0 in this basis
+STEP 1  basis is B-ORTHONORMAL: True   max|Gram - I| = 0.000e+00
+STEP 2  Nomizu Lambda(e_i) = (1/2)[e_i,.]_m built; max|L + L^T| = 0.000e+00
+STEP 3  round59's Clifford algebra reused unmodified (e_i^2 = -1 verified)
+
+==============================================================================
+STEP 4  CALIBRATION GATE (this gate CAN fail; it pins the geometry)
+==============================================================================
+  T^2-invariant spinors in Sigma : 2   (Stage 1b predicted 2)
+  D_Sigma on the invariant 2-plane, eigenvalues: [ 3.+0.j -3.+0.j]
+  both eigenvalues nonzero        : True
+  eigenvalues equal and opposite  : True   (CH2016 Sec.2: psi, Vol.psi carry +-lambda)
+  => CALIBRATION PASSED. |D-eigenvalue| on invariant spinors = 3.00000000
+     (S^6's own certified value under its normalisation was sqrt(3) = 1.73205081)
+
+==============================================================================
+STEP 5  Invariant sectors of Sigma (x) W  -- cross-check of Stage 1b
+==============================================================================
+  domain dim (Sigma_odd  (x) W)^T2 = 3   (Stage 1b predicted 3)
+  target dim (Sigma_even (x) W)^T2 = 3   (Stage 1b predicted 3)
+  MATCHES Stage 1b's weight-arithmetic prediction: True
+
+==============================================================================
+STAGE 2a VERDICT
+==============================================================================
+  metric/basis orthonormal under CH2016's B   : True
+  Nomizu operators are metric connections     : True
+  Killing-spinor calibration gate             : PASSED (|mu| = 3.000000)
+  sector dims reproduce Stage 1b's prediction : True
+
+  Geometry is built and independently calibrated. c is STILL NOT
+  COMPUTED -- extracting it is Stage 2b, a separate file.
+GATE  equivariance of D for the corrected generator: max|[D,G]| = 0.000e+00
+GATE  corrected sector dims: (3, 3)
+
+==============================================================================
+VACUITY GATE (first and dominant -- C151's own lesson)
+==============================================================================
+  max|c| on the 6 family basis vectors: ['1.0000', '1.0000', '1.0000', '1.0000', '1.0000', '1.0000']
+  every basis vector gives a NONZERO c : True
+
+==============================================================================
+THE FROZEN PREDICTION:  c(J.nabla) = +- i . c(nabla)   (as MATRICES)
+==============================================================================
+  draw 0: max|c| = 1.4142  max|c(Jv)| = 1.4142  C-LINEAR (+i)
+  draw 1: max|c| = 1.1546  max|c(Jv)| = 1.1546  C-LINEAR (+i)
+  draw 2: max|c| = 2.7343  max|c(Jv)| = 2.7343  C-LINEAR (+i)
+  draw 3: max|c| = 1.2717  max|c(Jv)| = 1.2717  C-LINEAR (+i)
+  draw 4: max|c| = 1.3760  max|c(Jv)| = 1.3760  C-LINEAR (+i)
+  draw 5: max|c| = 1.3327  max|c(Jv)| = 1.3327  C-LINEAR (+i)
+  draw 6: max|c| = 2.2855  max|c(Jv)| = 2.2855  C-LINEAR (+i)
+  draw 7: max|c| = 2.2536  max|c(Jv)| = 2.2536  C-LINEAR (+i)
+
+==============================================================================
+VERDICT ON C151's PRE-REGISTERED QUESTION
+==============================================================================
+  CONFIRMED on the corrected sector: c(J.nabla) = +i . c(nabla),
+  exactly, as matrices, on every draw. The C-linearity found on S^6
+  (C147) is therefore NOT a G2/SU(3) accident -- it recurs on the only
+  independent homogeneous nearly-Kahler test space available.
+
+==============================================================================
+N2  the 8 invariant almost-complex structures (J_NK is eps=(1,1,1) here,
+    because Stage 2a ALREADY aligned J_NK to the standard J_0)
+==============================================================================
+  eps=     (1, 1, 1)  C-linear: True   max rel. deviation = 1.813e-31
+  eps=    (1, 1, -1)  C-linear: False  max rel. deviation = 1.635e+00
+  eps=    (1, -1, 1)  C-linear: False  max rel. deviation = 1.936e+00
+  eps=   (1, -1, -1)  C-linear: False  max rel. deviation = 1.943e+00
+  eps=    (-1, 1, 1)  C-linear: False  max rel. deviation = 1.944e+00
+  eps=   (-1, 1, -1)  C-linear: False  max rel. deviation = 1.908e+00
+  eps=   (-1, -1, 1)  C-linear: False  max rel. deviation = 1.997e+00
+  eps=  (-1, -1, -1)  C-linear: True   max rel. deviation = 1.799e-31
+
+  C-linear for 2 of 8 invariant a.c.s.
+
+==============================================================================
+N1  random almost-complex structures (J'^2 = -1, no invariance imposed)
+==============================================================================
+  random J' #0:  C-linear: False  max rel. deviation = 1.322e+00
+  random J' #1:  C-linear: False  max rel. deviation = 8.278e-01
+  random J' #2:  C-linear: False  max rel. deviation = 8.810e-01
+  random J' #3:  C-linear: False  max rel. deviation = 9.071e-01
+  random J' #4:  C-linear: False  max rel. deviation = 1.027e+00
+
+==============================================================================
+N3  a random REAL-linear map of the same shape as c
+==============================================================================
+  random real-linear map #0:  C-linear: False  max dev = 1.828e+00
+  random real-linear map #1:  C-linear: False  max dev = 1.953e+00
+  random real-linear map #2:  C-linear: False  max dev = 1.476e+00
+
+==============================================================================
+N4  the OLD (C151, wrong-sign) sector -- must be vacuous
+==============================================================================
+  max|c| on the OLD sector, 6 basis vectors: ['1.42e-16', '7.05e-17', '1.67e-16', '2.46e-16', '3.89e-16', '1.70e-16']
+  OLD sector is vacuous (all zero): True
+
+==============================================================================
+IS STEP 7's CONFIRMATION FALSIFIABLE?
+==============================================================================
+  holds for 2/8 invariant a.c.s.        (if 8/8 -> J is irrelevant)
+  holds for 0/5 random a.c.s.         (if 5/5 -> the test is empty)
+  holds for 0/3 random linear maps    (if >0 -> criterion too weak)
+
+  -> FALSIFIABLE AND PASSED. The identity fails for random J, for the
+     other invariant a.c.s., and for generic linear maps of the same
+     shape. Step 7's confirmation carries information.
+
+==============================================================================
+Importing C151 Stage 1a (raw-basis Nijenhuis classification)
+==============================================================================
+STEP 0  m basis: 6 anti-Hermitian traceless 3x3 matrices  [OK]
+
+==============================================================================
+STEP 1  Classify all 8 invariant almost-complex structures by Nijenhuis
+==============================================================================
+  eps=(1, 1, 1)  product=+1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(1, 1, -1)  product=-1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(1, -1, 1)  product=-1  max|N| = 4.000e+00   non-integrable (NK candidate)
+  eps=(1, -1, -1)  product=+1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(-1, 1, 1)  product=-1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(-1, 1, -1)  product=+1  max|N| = 4.000e+00   non-integrable (NK candidate)
+  eps=(-1, -1, 1)  product=+1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(-1, -1, -1)  product=-1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+
+  integrable     : 6 of 8 -> [(1, 1, 1), (1, 1, -1), (1, -1, -1), (-1, 1, 1), (-1, -1, 1), (-1, -1, -1)]
+  non-integrable : 2 of 8 -> [(1, -1, 1), (-1, 1, -1)]
+
+==============================================================================
+STEP 2  Pin J_NK (rule fixed before any c exists)
+==============================================================================
+  RULE: J_NK is a non-integrable invariant a.c.s.; among those, take the
+  lexicographically first sign tuple. Any other non-integrable choice is
+  related to it by a Weyl/conjugation symmetry of the coset, so the rule
+  is a labelling convention, not a physical selection -- and it is fixed
+  here, with c uncomputed.
+  J_NK sign tuple = (-1, 1, -1)   (sign product +1)
+
+==============================================================================
+STEP 3  Does J_NK map the admissible connection family into itself?
+        (pre-committed: if NOT, verdict is BLOCKED-STRUCTURE)
+==============================================================================
+  dim of admissible family (Stage 0 regression) = 6  (expect 6)
+  worst residual of J-image against family span = 4.782e-16
+  J_NK PRESERVES the admissible family: True
+
+==============================================================================
+STAGE 1a VERDICT
+==============================================================================
+  J_NK maps the family into itself. The restated prediction
+  c(J.nabla) = +-i c(nabla) is WELL-POSED on this coset, and Stage 1b
+  (invariant-sector dimensions, still before c) may proceed.
+
+  c HAS STILL NOT BEEN COMPUTED anywhere in Stage 0 or Stage 1a.
+
+Stage 1a's own pinned J_NK (raw basis) = (-1, 1, -1)
+
+RAW non-integrable set (Nijenhuis != 0): [(-1, 1, -1), (1, -1, 1)]
+
+==============================================================================
+Re-running C152 Step 8's C-linearity test for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  C-LINEAR   max rel. deviation = 1.688e-31
+  aligned eps=    (1, 1, -1)  not        max rel. deviation = 1.701e+00
+  aligned eps=    (1, -1, 1)  not        max rel. deviation = 1.990e+00
+  aligned eps=   (1, -1, -1)  not        max rel. deviation = 1.671e+00
+  aligned eps=    (-1, 1, 1)  not        max rel. deviation = 1.718e+00
+  aligned eps=   (-1, 1, -1)  not        max rel. deviation = 1.872e+00
+  aligned eps=   (-1, -1, 1)  not        max rel. deviation = 1.677e+00
+  aligned eps=  (-1, -1, -1)  C-LINEAR   max rel. deviation = 1.340e-31
+
+ALIGNED C-linear set: [(-1, -1, -1), (1, 1, 1)]
+
+==============================================================================
+THE PREREGISTERED TEST
+==============================================================================
+  raw non-integrable set          : [(-1, 1, -1), (1, -1, 1)]
+  relabelled by eps_NK=(-1, 1, -1)     : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 8)    : [(-1, -1, -1), (1, 1, 1)]
+
+  SETS IDENTICAL: True
+
+==============================================================================
+VERDICT
+==============================================================================
+  Sets match -- but per a same-day skeptic pass, THIS SPECIFIC TEST
+  IS VACUOUS: relabelling any conjugate pair {b,-b} by b itself ALWAYS
+  gives {(1,1,1),(-1,-1,-1)}, regardless of what b is. This match was
+  therefore guaranteed by the relabelling arithmetic, not evidence about
+  Nijenhuis. See c153_step2_exact_rational_verification.py's Step 2g for
+  the non-tautological version (direct aligned-basis Nijenhuis, no
+  relabelling), which DOES genuinely confirm this correlation.
