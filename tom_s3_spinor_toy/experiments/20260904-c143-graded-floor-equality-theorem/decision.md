@@ -306,3 +306,64 @@ whether `su(3)` representation theory forces `Delta_dyn=0` even for
 Hom-dimension-`>=2` cases in this project's specific connection class
 (Section 3's closing paragraph). No claim in this document overstates
 what Lemmas 1/2 actually establish.
+
+## Addendum (2026-09-04, same day, post-publication) — literature novelty correction
+
+The user flagged, citing two specific arXiv papers, that Lemma 1's Schur's-lemma
+mechanism might already be established mathematics for the maximal-rank case
+(G2⊃SU(3), both rank 2) — specifically **B. Kostant, *A cubic Dirac operator and the
+emergence of Euler number multiplets of representations for equal rank subgroups*,
+Duke Math. J. 100 (1999), 447–501**, and its geometric exposition in **G. Landweber,
+arXiv:math/0005056, "Harmonic Spinors on Homogeneous Spaces"**. Per this project's
+own Mechanism-Transfer Gate discipline (`~/.claude/rules/falsification-ladder.md` §
+Anti-Patterns, "repeat of null_results without acknowledgment" / general novelty-check
+obligation): the citation was verified real (WebSearch + `mcp__arxiv__get_abstract` +
+full LaTeX source read, not abstract-only) and the concern is well-founded, not a
+false alarm.
+
+**Verified in `experiments/20260904-c144-kostant-cubic-dirac-identification/`
+(separate round, own claim.md/decision.md, symbolic SymPy verification, skeptic
+pass run):** round59's untwisted Dirac operator `D` (the base-case scalar this
+Lemma's Section 2a cites for the `round59/T0` block) is not merely "structurally
+analogous to" Kostant's cubic Dirac operator — it is EXACTLY proportional to it
+(scalar `√3/4`, verified on all 64 matrix entries), i.e. a genuine instance of it,
+not an independent construction that happens to share a shape.
+
+**What this changes about Lemma 1's own novelty claim, stated honestly:** Lemma 1's
+core mechanism (Schur's lemma ⟹ single scalar ⟹ full-rank iff nonzero, for a
+Hom-dimension-1 connection-invariant summand) is a special case of a MORE GENERAL,
+already-published theorem (Kostant 1999 / Slebarski, via Landweber's Theorem
+`th:slebarski`: for a maximal-rank pair H⊂G, the twisted kernel of the geometric
+cubic Dirac operator on `U_μ` is either the full multiplet `V_{w(μ+ρ_H)−ρ_G}` or
+zero — a clean 0/1 answer per irreducible summand, exactly Lemma 1's conclusion,
+reached by a wholly different, external route). **This round's own claimed novelty
+was therefore weaker than stated at C143's original write time** — Lemma 1 is a
+correct, self-contained, independently-derivable result (its proof stands
+unchanged), but it is NOT new mathematics; it is a rediscovery, from first
+principles, of a special case of Kostant/Slebarski's 1999/2000 theorem.
+
+**What is NOT yet resolved (see C144's own decision.md "what remains open"):**
+whether C139/C141's TWISTED constructions (twist by `m`, `m⊕2·1`) are themselves
+literal instances of Landweber's twisted operator `Ð_μ` — if so, Slebarski's theorem
+would give a general, proven answer for EVERY irreducible SU(3) summand, including
+Lemma 2's still-open Hom-dimension-≥2 case (`W_cand=3⊕3̄⊕3̄`), via the closed-form
+`‖λ+ρ_G‖²−‖μ+ρ_H‖²` criterion — potentially superseding this round's Lemma 2 entirely
+rather than merely explaining Lemma 1. This is flagged as the natural next round
+(C145 candidate), not executed as part of this addendum.
+
+**Evidence tier of this addendum: `[VERIFIED]`** for the Kostant/Landweber citation
+being real and for round59's exact algebraic proportionality to Kostant's cubic term
+(C144, symbolic, skeptic-reviewed). `[OPEN]`, explicitly, for whether the same holds
+for the twisted case — no claim is made here about C139/C141/C142 beyond what C144
+itself verified.
+
+**Post-skeptic correction to this addendum (2026-09-04, same session):** C144's own
+skeptic pass found that its numeric proportionality check, by itself, is an
+algebraically forced consequence of AHL2023's data being a genuine naturally-reductive
+Nomizu table (already established, more discriminatingly, by round59's own Step-1
+Killing-spinor calibration) — not new, independent, G2/SU(3)-specific evidence. This
+does NOT reverse the conclusion above (Lemma 1 is still a rediscovered special case of
+Kostant/Slebarski, and Kostant's framework still genuinely applies to this project's
+Dirac operators) — it only means the SPECIFIC symbolic check C144 ran was less
+discriminating than its own first framing claimed. See C144's decision.md, Skeptic
+Response Matrix, for the full correction.

@@ -2556,6 +2556,42 @@ claims:
       - "any change to N_gen=3's CONDITIONAL status"
       - "any solicitation of or reference to Tom Lawrence's unpublished Part 5 content"
 
+  - id: C144_ROUND59_UNTWISTED_DIRAC_PROPORTIONAL_TO_KOSTANT_CUBIC_TERM
+    statement: "Triggered by the user citing two specific arXiv papers (math/0005056 Landweber, math/0005057-referenced Kostant 1999) while critiquing C143's Lemma 1, questioning whether its Schur's-lemma mechanism was already established mathematics for the maximal-rank case (G2 superset SU(3), both rank 2). Verified real via WebSearch + arxiv MCP (full LaTeX read, not abstract). SYMBOLIC RESULT (SymPy, exact): round59's own untwisted Levi-Civita Dirac operator D (already independently certified in experiments/20260714-round59-trivial-rank-certification/) equals (sqrt(3)/4) times the Chevalley quantization of the fundamental-3-form data already present, unmodified, in AHL2023's own Remark-5.2 Nomizu table -- an exact match on all 64 matrix entries, not a numerical near-match. This is Kostant's algebraic cubic-Dirac-operator term v, restricted to the trivial-G2-representation block that is exactly round59's own setup (Sigma alone, no V_lambda tensor factor -- verified structurally from Landweber's own equations that r(X_i) vanishes identically on this block, independent of any connection choice). POST-SKEPTIC CORRECTION (context-blind Step 8a pass, same session): the specific proportionality check is algebraically FORCED by the already-passing total-antisymmetry test on AHL2023's own structure constants plus the absence of repeated indices in the Nomizu table -- itself a generic consequence of building a naturally-reductive metric from any Ad-invariant form, not a G2/SU(3)-specific surprise. A coherent antisymmetry-preserving sign perturbation of the whole table would still pass this specific check while breaking round59's own Killing-spinor calibration (the actually discriminating test). Verdict downgraded from 'confirms round59's operator IS Kostant's, surprisingly' to 'confirms Kostant/Slebarski's algebraic framework genuinely applies to this project's Dirac-operator family' -- still a real, previously-unconnected, citable fact, but a narrower one than first framed. Whether the TWISTED constructions (C139, C141, C142's open W_cand=3+3bar+3bar) are literal instances of Landweber's twisted operator D_mu (Theorem th:slebarski, a general closed-form kernel formula per irreducible SU(3) summand) remains explicitly OPEN and unattempted -- flagged as the natural C145 follow-up, not executed in this round."
+    truth_status: SUPPORTED
+    test_outcome: NULL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260904-c144-kostant-cubic-dirac-identification/decision.md"
+    depends_on: [C2_ROUND59_KERNEL_DIM1]
+    supersedes: "no prior claim -- adds an external-literature identification for round59's own already-certified operator; does not change round59's kernel result"
+    convention: "reuses round59's own E[i] Clifford algebra and Lam/NAB Nomizu-operator construction verbatim (diffed line-by-line against the original by the skeptic pass, confirmed faithful), so no new transcription risk from AHL2023's PDF was introduced"
+    does_not_imply:
+      - "that C139/C141/C142's TWISTED constructions are instances of Landweber's D_mu -- explicitly untested, the open follow-up this round identifies but does not attempt"
+      - "any change to N_gen=3's CONDITIONAL status, or to round59's own kernel=1 result -- both unchanged"
+      - "that C143's Lemma 1/2 are retracted -- they remain a correct, self-contained, first-principles derivation; this round shows Lemma 1's mechanism is a rediscovered special case of a published 1999/2000 theorem, which is a novelty correction, not a validity correction (see C143 decision.md addendum)"
+      - "that STEP 4's numeric proportionality check independently discovered anything beyond what round59's own Step-1 Killing-spinor calibration already established -- explicitly corrected post-skeptic, see this round's own decision.md Skeptic Response Matrix"
+      - "an independent root-system Casimir-norm cross-check (parallel(rho_g2)^2 - parallel(rho_su3)^2) -- not attempted"
+
+  - id: C145_TWISTED_DIRAC_NOT_KOSTANT_LANDWEBER_MU_BLOCK
+    statement: "User-authorized follow-up to C144 ('го C145'): does C139/C141's own physicist-style twisted Dirac operator D' (Leibniz rule, both Sigma AND the twist bundle W=m carry their own Levi-Civita/Nomizu connection) coincide with Kostant/Landweber's algebraic twisted operator D_mu restricted to the trivial G2-representation block lambda=0 -- the exact block round59/C139/C141 compute? REJECTED, symbolically exact: D' does NOT equal alpha*c(v) tensor Id_W (alpha=sqrt(3)/4, c(v) reused unmodified from C144, both re-verified as a regression before the comparison). The residual equals exactly the extra term Sum_i e_i tensor conn_W[i] (W's own Nomizu connection, which Kostant's own construction gives zero weight at lambda=0 since r(X_i) vanishes on constants regardless of which H-representation is twisted by, per Landweber math/0005056 Section 3's own D_mu definition -- U_mu enters ONLY as a Hom_H(U_mu*,-) projection label, confirmed by direct citation, not inherited from summary). Nonzero at 192/2304 (48x48) matrix entries, Frobenius-norm ratio 4/9 relative to the matched part -- not a small correction. A self-raised follow-up check (before the skeptic pass) found this is even more decisive on the ACTUAL physics-relevant sector: projected onto the 1-dim su(3)-invariant domain-to-target block C139/C141 use for their own kernel computation, the Kostant candidate evaluates to EXACTLY ZERO while C139's own D' reproduces its own already-registered headline value |c|=1.154701 exactly -- the entire physical signal comes from the extra term. Context-blind skeptic pass (Step 8a) returned CONFIRMED-REAL, independently finding an even stronger confirmation: C139's own script (Sections 6a/7b) already computes this exact decomposition internally and states 'term1 remains exactly zero across whole torsion family' -- C139 itself established this fact on 2026-09-04 without ever connecting it to Kostant/Landweber until this round did. One hardening note (not fatal) closed by direct primary-source citation."
+    truth_status: REFUTED
+    test_outcome: REJECT
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/null_results/C145-TwistedNotKostant.md"
+    depends_on: [C144_ROUND59_UNTWISTED_DIRAC_PROPORTIONAL_TO_KOSTANT_CUBIC_TERM, C139_ALTERNATE_TWIST_M_KERNEL_ZERO]
+    supersedes: "no prior claim -- first attempt at extending C144's untwisted-case identification to the twisted case; C144's own untwisted-case result is UNCHANGED and reused here as a verified regression"
+    convention: "reuses round59_route_a_independent.py's Clifford/Nomizu machinery and C139's own bivec_to_6x6_sympy/rho_vector_sympy formula verbatim, so no new transcription risk was introduced beyond what C144 and C139 already carry"
+    does_not_imply:
+      - "that C139/C141's own computed kernel values are wrong -- both independently established, untouched by this round; this round tests only an EXTERNAL identification against Kostant/Landweber, not the constructions' own internal correctness"
+      - "that C143's Lemma 1/2 (this project's OWN Schur's-lemma graded-floor mechanism) is affected -- it remains the correct explanation for this project's twisted-Dirac family and was never itself claimed to be Kostant's theorem"
+      - "that C142's W_cand=3+3bar+3bar question is now resolved by any route -- it remains BLOCKED-INTERNAL (OB14), unresolved by the Kostant/Landweber literature connection after all"
+      - "that NO reformulation could ever connect this project's twisted-Dirac family to Kostant's framework -- only that the DIRECT, lambda=0 identification tested here fails; a lambda!=0 relaxation is named as an open Relaxation Map option, explicitly not pursued (AOG discipline, no independent motivation offered)"
+      - "any change to N_gen=3's CONDITIONAL status"
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

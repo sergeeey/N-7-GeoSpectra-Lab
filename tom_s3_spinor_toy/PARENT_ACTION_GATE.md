@@ -127,6 +127,46 @@ from the frozen baseline. **For any construction proposed after
 its `Delta_dyn` pre-registration branch (2 or 3 above), per the gate just
 added.**
 
+**UPDATE (C144, 2026-09-04, external-literature identification, user-
+flagged via two cited arXiv papers):** round59's own untwisted `D_{S⁶}`
+is symbolically, exactly proportional (`√3/4`) to Kostant's algebraic
+cubic Dirac term, built from the same already-certified AHL2023 data —
+confirming Kostant/Slebarski's 1999/2000 framework (Landweber,
+arXiv:math/0005056) genuinely applies to this project's `D_{S⁶}` family.
+Post-skeptic correction: the specific numeric check is algebraically
+forced by AHL2023's data being a genuine naturally-reductive Nomizu table
+(itself a generic fact for maximal-rank pairs, not a G2/SU(3)-specific
+surprise) — round59's own Killing-spinor calibration remains the actually
+discriminating test. **Not yet checked: whether C139/C141's TWISTED
+constructions are literal instances of Landweber's `Ð_μ`** — if so,
+Slebarski's theorem gives a GENERAL, closed-form kernel formula per
+irreducible `su(3)` summand, potentially resolving branch 3 above
+(`Hom`-dim `≥2`, C142's `W_cand`) analytically without needing to reach
+`BLOCKED-INTERNAL` (OB14) at all. Flagged as the natural next round on
+this gate. Does NOT change `N_gen=3`'s CONDITIONAL status. See
+`CLAIM_LEDGER.yaml` `C144_ROUND59_UNTWISTED_DIRAC_PROPORTIONAL_TO_KOSTANT_CUBIC_TERM`,
+`pearl_registry/INDEX.md` (2026-09-04 row, impact 8), and
+`experiments/20260904-c144-kostant-cubic-dirac-identification/decision.md`.
+
+**UPDATE (C145, 2026-09-04, user-authorized follow-up "го C145") —
+answers C144's own open question: NO, C139/C141's twisted operator is NOT
+an instance of Kostant/Landweber's `Ð_μ`.** Symbolically exact REJECT:
+`D' ≠ α·c(v)⊗Id_W` — the residual is exactly `Σᵢ eᵢ⊗conn_W[i]` (the twist
+bundle's own Levi-Civita connection, which Kostant's construction gives
+zero weight at `λ=0` regardless of the twist representation, confirmed
+against Landweber's own `D_μ` definition, Section 3). On the actual
+1-dim `su(3)`-invariant sector C139/C141 use for their kernel computation,
+the Kostant candidate is EXACTLY ZERO while C139's own operator reproduces
+its full registered value — the entire physical signal comes from the part
+Kostant's framework doesn't have. Context-blind skeptic: `CONFIRMED-REAL`,
+independently corroborated by C139's own pre-existing internal Section
+6a/7b decomposition. **Consequence: Slebarski's closed-form kernel theorem
+does NOT resolve C142's `W_cand=3⊕3̄⊕3̄` question via this route.** C142
+remains `BLOCKED-INTERNAL` (OB14), unresolved. See `CLAIM_LEDGER.yaml`
+`C145_TWISTED_DIRAC_NOT_KOSTANT_LANDWEBER_MU_BLOCK`,
+`null_results/INDEX.md` (`C145-TwistedNotKostant`, REJECT), and
+`experiments/20260904-c145-twisted-operator-vs-kostant-mu-block/decision.md`.
+
 ### F3 — Torsion family [RESOLVED, round113, 2026-07-17]
 
 ~~Two DIFFERENT parameterizations already exist in this project and must

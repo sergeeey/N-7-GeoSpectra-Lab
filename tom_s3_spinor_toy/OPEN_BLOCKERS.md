@@ -2204,8 +2204,32 @@ either new, independently-motivated geometric construction (high AOG-5
 risk) or external input. See `pearl_registry/INDEX.md` (2026-09-04) and
 `experiments/20260904-c142-graded-floor-candidate-scan/decision.md`.
 
-**Owner / next step:** build the matched-singlet-count twist bundle
-(`m⊕2·1` or similar) as the next concrete, internally-computable test —
-comparable in scope to C139's own build, not a large undertaking. Full
+**UPDATE (C144→C145, 2026-09-04) — the external-literature escape route
+(Kostant/Landweber, user-flagged citation) was checked and closed:**
+C144 found round59's own untwisted operator IS an exact instance of
+Kostant's algebraic cubic Dirac term (`α=√3/4`, symbolically exact),
+raising hope that Landweber's twisted-operator theorem (Slebarski,
+closed-form kernel per irreducible `su(3)` summand) might resolve this
+OB's `W_cand` question analytically without needing new geometric
+content at all. C145 tested this directly: **C139/C141's own twisted
+operator is NOT an instance of Kostant/Landweber's `D_μ|_{V0}`** — the
+twist bundle's own Levi-Civita connection (which Kostant's construction
+gives zero weight at `λ=0`) carries the ENTIRE physical signal on the
+exact invariant sector these rounds compute (Kostant candidate = 0
+there; C139's own value survives in full). Context-blind skeptic:
+`CONFIRMED-REAL`. This closes the literature-shortcut route cleanly —
+`BLOCKED-INTERNAL` stands, unresolved by any route tried so far. See
+`null_results/INDEX.md` `C145-TwistedNotKostant` and
+`experiments/20260904-c145-twisted-operator-vs-kostant-mu-block/decision.md`.
+
+**Owner / next step:** no internally-buildable test remains identified.
+The matched-singlet-count twist bundle (`m⊕2·1`) was already built (C141)
+and found `Delta_dyn=0`, same as every other tested case. The Kostant/
+Landweber literature route (C144/C145) is now also closed. Remaining
+options are all higher-cost/higher-risk: (a) a genuinely new,
+independently-motivated geometric construction supplying a second copy
+of `3bar` (C142's named gap, high AOG-5 risk without independent
+motivation), or (b) external input from Tom Lawrence's own framework
+(subject to this project's "DO NOT INITIATE CONTACT" constraint). Full
 detail:
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
