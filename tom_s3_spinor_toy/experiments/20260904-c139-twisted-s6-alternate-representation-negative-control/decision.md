@@ -945,3 +945,85 @@ logged and left unaddressed), one via a full concession and reframing,
 the other via new computation that strengthened the result. Carried
 forward explicitly, not smoothed over, into the proposed
 `CLAIM_LEDGER.yaml` entry and pearl-registry closure text (§15).
+
+---
+
+## 17. ADDENDUM (2026-09-04, orchestrating session, post-registration) --
+    equivalence precheck for the recommended `m⊕2·1` follow-up, run
+    BEFORE building it
+
+Both skeptic passes (§11, §12) named a **matched-singlet-count** twist
+bundle (`m⊕2·1`, i.e. `3⊕3̄⊕1⊕1`, dim 8 -- same singlet count as `Σ`'s
+own `1+1+3+3̄`) as the single most decisive follow-up. Before committing
+to that build, the user raised a sharp, correct objection: **as an
+abstract `su(3)`-module, `m⊕2·1` and `Σ` have the IDENTICAL branching**
+(`3⊕3̄⊕1⊕1` vs `1⊕1⊕3⊕3̄` -- the same multiset of irreps). If the
+twisted Dirac construction only ever "sees" the abstract `su(3)`-module
+structure of the twist bundle (nothing more), then a unitary
+intertwiner `U` between the two representations would exist by
+construction, forcing `D'_{m⊕2·1} = (1⊗U) D'_Σ (1⊗U†)` and therefore
+`spec(D'_{m⊕2·1}) = spec(D'_Σ)`, `kernel = 1` -- **as a theorem, before
+any computation**, making a full C141 round a redundant regression
+test dressed up as a decisive experiment.
+
+**Resolution, checked directly (`c139_precheck_m_plus_2singlets.py`,
+this addendum, reuses `NAB_np`/`rho_vector`/`NOMIZU` from the main
+script unmodified):** the twisted Dirac construction does **not**
+depend on `su(3)`-branching alone -- it depends on the full,
+`so(6)`-valued `NOMIZU[i]` connection acting via `spin_lift` on `Σ`
+(the genuine `so(6)` SPIN representation) versus via `rho_vector` on
+`m` (the genuine `so(6)` VECTOR representation). `su(3)` is a
+*subgroup* of `so(6)`; two representations can be isomorphic as
+`su(3)`-modules while carrying inequivalent `so(6)`-level (or, more
+precisely, `{NOMIZU[i]}`-generated) actions. This is exactly what
+happens here.
+
+**The argument, using a fact this round ALREADY established (§3b,
+independently re-verified, not recomputed here):** under `{NAB_i}`
+(`Σ`'s own connection action), `Σ = EVEN_IDX ⊕ ODD_IDX` (`4+4`), and
+each `4`-dim piece is **irreducible** (commutant dimension `1` each,
+Schur's lemma). By complete reducibility, the *only* `{NAB_i}`-invariant
+subspace dimensions achievable inside `Σ` are `{0, 4, 4, 8}` --
+**`6` is not among them.**
+
+The *only* natural way to build a connection on `m⊕2·1` (there is no
+`NOMIZU`-derived data for the two "extra" singlets -- they do not come
+from any existing geometric construction) is to leave them **decoupled**
+(`conn_i = rho_vector(NOMIZU[i]) ⊕ 0₂`, block-diagonal by construction).
+Under that connection, `m` (`6`-dim) is manifestly an invariant
+subspace. If `D'_{m⊕2·1}` were unitarily equivalent to `D'_Σ`, `Σ`
+would need a matching `6`-dim `{NAB_i}`-invariant subspace -- which
+`§3b` already proves does not exist. **Contradiction: no such
+equivalence can hold.**
+
+**Verified directly, not just argued** `[VERIFIED-tool]`: an explicit
+intertwiner-nullspace search (`T` with `T·NAB_i = conn_i·T` for all
+`i=1..6` simultaneously, the same method §3c used for the `Σ→m` check)
+returns **nullspace dimension 0** -- no such `T` exists AT ALL (not
+merely "no unitary one"), confirming the dimension-counting argument
+computationally, independent of it.
+
+**Conclusion (Исход B, per the user's own framing): `D'_{m⊕2·1}` is
+NOT theorem-forced to reproduce `Σ`'s kernel=1.** The representations
+have identical `su(3)`-branching but genuinely inequivalent
+`{NOMIZU[i]}`-generated actions -- a full C141 round on `m⊕2·1`, using
+this natural (decoupled-singlet) construction, would be a real,
+non-redundant, decisive test, exactly as both skeptic passes intended.
+
+**Scope of this addendum, stated honestly:** this rules out equivalence
+for the natural, only-currently-motivated construction (extra singlets
+decoupled). It does **not** rule out that some OTHER, non-obvious
+connection on the extra singlets (deliberately coupling them to `m` via
+new, invented structure) could reproduce `Σ`'s spectrum -- but such a
+construction would require its own independent justification (exactly
+the kind of ad hoc addition §2 already rejected for the `su(3)`-adjoint
+alternative), not merely "any 8-dim, two-singlet twist bundle." Any
+future C141 build should state explicitly, per this addendum, that it
+uses the decoupled-singlet construction -- or, if it uses a different
+one, address this equivalence question freshly under that choice.
+
+**Not registered as a separate `CLAIM_LEDGER.yaml`/pearl_registry
+entry** -- this is a pre-build feasibility check, not a physics result
+in its own right; it clears the way for C141, it does not replace it.
+Kept here, in C139's own decision.md, as the load-bearing record for
+whoever builds C141 next.

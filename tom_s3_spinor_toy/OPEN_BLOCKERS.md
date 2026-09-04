@@ -2155,6 +2155,34 @@ subject to this project's own "DO NOT INITIATE CONTACT" constraint), or
 an internal argument this project has not yet attempted (e.g. the
 matched-singlet-count follow-up named above).
 
+**UPDATE (C141, 2026-09-04) — the matched-singlet-count follow-up
+named above was built, and found a more fundamental obstacle than
+expected.** After two successive context-blind skeptic passes each
+overturned the round's own prior verdict in the same session (`BLOCKED`
+→ `PROMOTE` → final), C141 found that the invariant-sector kernel of
+EVERY twisted-`D_S6` construction tested in this project's history
+(round59, C139, C141, and a newly-computed "`Σ` self-twisted,
+unrestricted" comparison) **exactly equals a graded rank-nullity floor
+computable from PURE `su(3)` branching data alone**, given only the
+already-established fact that individual connection channels are
+nonzero. Independently re-derived by hand by the orchestrating session
+before registration, matching the script's own computation exactly
+(4/4 cases). **This means the "kernel of `D_{S⁶}`" test family, as
+practiced so far, may not be able to discriminate `Sigma`'s specific
+geometric content from an alternative at all** — a more fundamental
+obstacle to this OB than any single twist-bundle result. The
+falsifiable escape route (a twist bundle whose kernel EXCEEDS its own
+graded floor) is named in `pearl_registry/INDEX.md` (2026-09-04, impact
+9) as the concrete next test — cheap to check BEFORE building, since
+the floor is computable from representation theory alone. Does NOT
+change `N_gen=3`'s CONDITIONAL status, and does NOT retroactively
+falsify round59's or C139's own computed kernel values (both
+independently re-confirmed here) — it questions the interpretive
+weight placed on them as evidence of `D_S6`'s dynamics. See
+`CLAIM_LEDGER.yaml` `C141_KERNEL_IS_GRADED_BRANCHING_FLOOR_NOT_DYNAMICS`
+and
+`experiments/20260904-c141-matched-singlet-count-twist-m-plus-2singlets/decision.md`.
+
 **Owner / next step:** build the matched-singlet-count twist bundle
 (`m⊕2·1` or similar) as the next concrete, internally-computable test —
 comparable in scope to C139's own build, not a large undertaking. Full

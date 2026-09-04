@@ -59,6 +59,32 @@ CONDITIONAL status. See `CLAIM_LEDGER.yaml`
 (closed), and
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
 
+**UPDATE (C141, 2026-09-04) — the both-skeptic-recommended matched-
+singlet-count follow-up (`m⊕2·1`) is now built, and its finding is
+more consequential than either provisional verdict along the way:**
+after TWO successive context-blind skeptic passes each overturned the
+round's own prior verdict in the same session (`BLOCKED` → `PROMOTE` →
+final), the round found that the invariant-sector kernel of EVERY
+twisted-`D_S6` construction ever computed in this project (round59,
+C139, C141, and a newly-built "`Σ` self-twisted, unrestricted"
+comparison) **exactly equals a graded rank-nullity floor computable
+from pure `su(3)` branching data alone** — given only the
+already-established fact that individual connection channels don't
+vanish. Verified 4/4, independently re-derived by hand (orchestrating
+session) before registration, not merely accepted from the round's own
+script or its skeptic passes. **This means the "kernel of `D_{S⁶}`"
+test family, as practiced so far, may not discriminate `Σ`'s specific
+geometric content from an alternative at all** — a more fundamental
+obstacle to "why `Σ`, not `m`" than any single twist-bundle result,
+including C139's own. Does NOT retroactively falsify round59's or
+C139's own computed kernel values (both independently re-confirmed
+here) — questions the INTERPRETIVE weight placed on them. Falsifiable
+escape route named: a twist bundle whose kernel exceeds its own graded
+floor. See `CLAIM_LEDGER.yaml`
+`C141_KERNEL_IS_GRADED_BRANCHING_FLOOR_NOT_DYNAMICS`,
+`pearl_registry/INDEX.md` (2026-09-04 row, impact 9), and
+`experiments/20260904-c141-matched-singlet-count-twist-m-plus-2singlets/decision.md`.
+
 **Pass criterion:** states explicitly which factor(s) carry a nontrivial
 twist in the candidate construction, and whether this matches or departs
 from the frozen baseline.
