@@ -1186,7 +1186,26 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 
 ---
 
-## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-19, round128 + boyko-agent disposition review]
+## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-19, round128 + boyko-agent disposition review; GATE ADDED 2026-09-04]
+
+> **📋 2026-09-04 — an operational filter now exists for proposals aimed at
+> this blocker: the G44 Information-Retention Gate** (`C150`,
+> `experiments/20260904-c150-g44-information-retention-gate/GATE.md`).
+> Before building ANY generation mechanism, ask: *does its observable factor
+> through `g₂`-restricted representation data?* If YES → closed without
+> computation (C72 constructed explicit invertible `g₂`-equivariant
+> isomorphisms between all three channels, so any `g₂`-functorial observable
+> is blind by Schur; C62 shows the trilinear/morphism-level route collapses
+> too). If NO → admissible, but the proposal must state WHICH datum escapes
+> the restriction and how it is realized here. If UNCLEAR → treat as YES.
+> **The gate is a synthesis of C62/C63/C72, explicitly NOT a new theorem** —
+> a novelty check found the underlying content already registered in a
+> stronger (quantitative-filtration) form. **Passing is necessary, not
+> sufficient; only failing is decisive.** The constructive half: C63 shows
+> distinguishing information genuinely survives at `so(8)` (order-1 failure
+> of an `su(3)`-level identification against a generic `so(8)` element), so
+> what this project lacks is not the existence of such data but a
+> construction realizing it — which is precisely this blocker.
 
 > **⚠️ 2026-08-10 — THE QUESTION QUEUED FOR TOM IS STALE. Re-ground before spending the contact.**
 > The pearl standing at `next_check: at next Tom contact` was written **2026-07-05**
@@ -1415,7 +1434,18 @@ minor wording item above.
   round — not attempted, deliberately, rather than forced through a shaky
   premise.
 
-**Owner / next step:** item 5 remains ready whenever OB2 is picked up. Item
+**Owner / next step:** *(stale-pointer correction, 2026-09-04 autonomous
+debt audit: the sentence below said "item 5 remains ready whenever OB2 is
+picked up" — but OB2's own header now reads **ANSWERED 2026-08-10 (C60): NO**,
+and this item's own body text two paragraphs above already concluded that
+pursuing item 5's physical action for this construction "would not be a
+productive use of effort" given C49/C52. The pointer promised forward work
+the same section had already judged moot, against a blocker that is no
+longer open. Corrected rather than left to mislead a future reader.)*
+**Item 5 is effectively MOOT, not merely waiting** — the doubled
+construction it concerns was shown not to be a valid geometry (C49/C52),
+so deriving its physical action answers a question about an object already
+excluded. Item
 8 should be re-attempted only after (or explicitly conditional on) OB2/C11
 progress — re-read Codex's wording again at that point to confirm the
 premise then holds, rather than assuming this note's conclusion is still
@@ -1791,6 +1821,32 @@ new — not previously logged anywhere in this project's registries.
 > it, and then testing the actual Clifford-compatibility question, is the
 > next step, not yet attempted. See
 > `experiments/20260810-ob11ii-round59-su3-bridge/decision.md`.
+>
+> **UPDATE 2026-09-04 (C149, autonomous debt audit) — the never-attempted
+> transport step is now known to be WELL-POSED for `D`, scoped.** The step
+> named above ("finding it, and then testing the actual Clifford-
+> compatibility question, is the next step, not yet attempted") had an
+> unexamined soundness question underneath it: `U` is non-unique by C70's
+> own admission (`Inn(su(3))` orbit, ~8-real-dim), and C142 (2026-09-04)
+> sharpened that to *gauge freedom, not independent data*. If the planned
+> test's outcome depended on which representative is picked, any round
+> built on it would produce a gauge artifact.
+> **Criterion (elementary):** `U' = U·g` ⟹ `U'OU'⁻¹ = U(gOg⁻¹)U⁻¹`, so
+> transport is representative-independent exactly when `[O, ρ_su3(a)] = 0`.
+> **Result:** `D_Σ` satisfies it (commutator exactly 0; negative control — a
+> random operator — fails at order 1, so the test discriminates). This was
+> only cheap because C146 (same session) had just proved `D_Σ` is
+> `SU(3)`-equivariant as a standalone fact.
+> **Scoped, per skeptic pass (verdict WEAKENED, all findings accepted):**
+> only the IDENTITY COMPONENT of the residual freedom was sampled; `γ`'s
+> passing result is NOT substantive (it is forced by `spin_lift`'s parity
+> type, as C139's own `nab_i_preserves_sigma_even_odd_parity` check already
+> knew); and **`J` remains unchecked** — it is not constructed in round59's
+> own file, and checking its `su(3)`-equivariance is a PREREQUISITE for
+> anyone resuming this step. **The transport test itself is still NOT run.**
+> See `CLAIM_LEDGER.yaml`
+> `C149_OB11II_TRANSPORT_STEP_IS_WELLPOSED_FOR_D_SIGMA_UNDER_IDENTITY_COMPONENT`
+> and `experiments/20260904-c149-transport-wellposedness-gate/decision.md`.
 >
 > **Attempted, BLOCKED-SUBSTRATE (same day, step 2):** tried to find the
 > explicit isomorphism by directly reusing round128's Cartan-Weyl matching

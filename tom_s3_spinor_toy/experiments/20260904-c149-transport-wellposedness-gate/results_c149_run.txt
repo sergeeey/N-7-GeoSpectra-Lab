@@ -1,0 +1,47 @@
+STEP 0  round59 machinery loaded, calibration re-verified  [OK]
+        EVEN_IDX=[0, 4, 5, 6]  ODD_IDX=[1, 2, 3, 7]
+
+STEP 0b NON-DEGENERACY GATE (skeptic-requested)
+        max|D_Sigma| = 1.732051  (round59 certifies eigenvalues -/+ sqrt3 = 1.732051)
+        rank(D_Sigma)= 2,  nonzero entries = 2/64
+        max|rho(1)|  = 0.500000
+        -> NOT degenerate. The exact 0.000e+00 spread below is explained by
+           extreme sparsity (2 nonzero entries), not by a silent zero.
+
+==============================================================================
+THE CRITERION:  transport well-posed  <=>  [O, rho_su3(a)] = 0 for all a
+==============================================================================
+
+  D_Sigma (round59's own untwisted Dirac)
+    role                      : positive control (C146 proved equivariant)
+    max_a ||[O, rho(a)]||     : 0.000e+00   -> su(3)-equivariant: True
+    spread of g.O.g^-1        : 0.000e+00   -> transport invariant: True
+    criterion and outcome AGREE: True
+
+  gamma (EVEN/ODD chirality grading)
+    role                      : NOT substantive -- forced by spin_lift parity
+    max_a ||[O, rho(a)]||     : 0.000e+00   -> su(3)-equivariant: True
+    spread of g.O.g^-1        : 4.464e-16   -> transport invariant: True
+    criterion and outcome AGREE: True
+
+  random non-equivariant operator
+    role                      : NEGATIVE control -- must FAIL
+    max_a ||[O, rho(a)]||     : 2.476e+00   -> su(3)-equivariant: False
+    spread of g.O.g^-1        : 5.175e+00   -> transport invariant: False
+    criterion and outcome AGREE: True
+
+==============================================================================
+VERDICT
+==============================================================================
+  D_Sigma transport is representative-independent : True
+  gamma   transport is representative-independent : True
+  negative control DOES show gauge-dependence     : True  (required)
+  criterion [O,rho]=0 <=> invariance, in all cases: True
+
+  => For D_Sigma and gamma the planned transport is WELL-POSED: the
+     ~8-real-dim Inn(su(3)) freedom in U does NOT reach them, because
+     they commute with exactly that freedom. OB11(ii)'s next step is
+     therefore not a gauge artifact for these two operators.
+  => J is NOT settled here -- it is not constructed in round59's own
+     file, and its su(3)-equivariance must be checked separately
+     before the same conclusion may be extended to it.
