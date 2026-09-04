@@ -1,0 +1,83 @@
+STEP 1  J-aligned m basis built (X<->Y swapped on planes with eps=-1)
+        EPS_NK = (-1, 1, -1)  ->  J_NK is the STANDARD J_0 in this basis
+STEP 1  basis is B-ORTHONORMAL: True   max|Gram - I| = 0.000e+00
+STEP 2  Nomizu Lambda(e_i) = (1/2)[e_i,.]_m built; max|L + L^T| = 0.000e+00
+STEP 3  round59's Clifford algebra reused unmodified (e_i^2 = -1 verified)
+
+==============================================================================
+STEP 4  CALIBRATION GATE (this gate CAN fail; it pins the geometry)
+==============================================================================
+  T^2-invariant spinors in Sigma : 2   (Stage 1b predicted 2)
+  D_Sigma on the invariant 2-plane, eigenvalues: [ 3.+0.j -3.+0.j]
+  both eigenvalues nonzero        : True
+  eigenvalues equal and opposite  : True   (CH2016 Sec.2: psi, Vol.psi carry +-lambda)
+  => CALIBRATION PASSED. |D-eigenvalue| on invariant spinors = 3.00000000
+     (S^6's own certified value under its normalisation was sqrt(3) = 1.73205081)
+
+==============================================================================
+STEP 5  Invariant sectors of Sigma (x) W  -- cross-check of Stage 1b
+==============================================================================
+  domain dim (Sigma_odd  (x) W)^T2 = 3   (Stage 1b predicted 3)
+  target dim (Sigma_even (x) W)^T2 = 3   (Stage 1b predicted 3)
+  MATCHES Stage 1b's weight-arithmetic prediction: True
+
+==============================================================================
+STAGE 2a VERDICT
+==============================================================================
+  metric/basis orthonormal under CH2016's B   : True
+  Nomizu operators are metric connections     : True
+  Killing-spinor calibration gate             : PASSED (|mu| = 3.000000)
+  sector dims reproduce Stage 1b's prediction : True
+
+  Geometry is built and independently calibrated. c is STILL NOT
+  COMPUTED -- extracting it is Stage 2b, a separate file.
+
+==============================================================================
+STAGE 2b  (Stage 2a's gates re-ran above and passed)
+==============================================================================
+  SIGN GATE: [spin_lift(L), e_j] = (-1) * sum_k L_kj e_k, consistently
+             across 36 generator/index pairs  -> vector-rep sign = -1
+  admissible family dim (J-aligned basis) = 6   (Stage 0 found 6)
+  J_NK in this basis is the STANDARD J_0 (that is what the alignment achieved)
+
+==============================================================================
+THE FROZEN PREDICTION:  c(J.nabla) = +-i c(nabla), as 3x3 matrices,
+                        one consistent sign across the whole family
+==============================================================================
+  family vector 0:  max|c| = 0.000000
+      rel.dev from  +i*c : 4.927e-16
+      rel.dev from  -i*c : 2.000e+00   -> closer: +i
+  family vector 1:  max|c| = 0.000000
+      rel.dev from  +i*c : 0.000e+00
+      rel.dev from  -i*c : 2.000e+00   -> closer: +i
+  family vector 2:  max|c| = 0.000000
+      rel.dev from  +i*c : 0.000e+00
+      rel.dev from  -i*c : 2.000e+00   -> closer: +i
+  family vector 3:  max|c| = 0.000000
+      rel.dev from  +i*c : 0.000e+00
+      rel.dev from  -i*c : 2.000e+00   -> closer: +i
+  family vector 4:  max|c| = 0.000000
+      rel.dev from  +i*c : 3.589e-16
+      rel.dev from  -i*c : 2.000e+00   -> closer: +i
+  family vector 5:  max|c| = 0.000000
+      rel.dev from  +i*c : 0.000e+00
+      rel.dev from  -i*c : 2.000e+00   -> closer: +i
+
+==============================================================================
+VERDICT
+==============================================================================
+  all c matrices nonzero (test not vacuous) : False
+  a SINGLE sign fits every family vector    : True  {'+i'}
+  worst relative deviation                  : 4.927e-16
+
+  *** VACUOUS -- NOT A CONFIRMATION. ***
+  c vanishes identically on the entire family, so c(J.nabla) = i c(nabla)
+  reduces to 0 = i*0 and carries no information about C-linearity.
+  Per the pre-registration's third pre-committed outcome, this is NOT
+  evidence either way for the prediction.
+
+  Diagnosed (see decision.md): the vanishing is STRUCTURAL, not a bug --
+  the Levi-Civita connection IS in the family (residual 3.3e-16), the
+  operator is nonzero elsewhere (max|Dv| = 6.38 on a random odd-block
+  vector, rank 15/24), yet it ANNIHILATES the whole invariant domain,
+  with Term1 and Term2 vanishing SEPARATELY rather than cancelling.

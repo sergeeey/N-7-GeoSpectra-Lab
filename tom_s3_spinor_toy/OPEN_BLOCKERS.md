@@ -143,6 +143,246 @@ dimension `h` also jumps at each crossing). See `null_results/INDEX.md`
 (C121-EtaInvariant) and
 `experiments/20260901-c121-eta-invariant-general-t/decision.md`.
 
+**Attempted, PARTIAL — neither mechanism promotes (C123, 2026-09-01):**
+two candidates extracted from an external multi-model panel review (7
+independent LLM responses to a homework framing of OB1). (1) Yang-Mills
+`S_YM=∫|R^t|²` — duplicate of `round99`'s own curvature-norm toy at F4
+(selection): `R^t=t(t-1)·T`, `T` t-independent, so every quadratic
+curvature invariant is `[t(t-1)]²` up to a positive constant, which
+cannot move a critical point. NOT a duplicate at F6 — round99 had no
+action framing. (2) Transgression `S_mix=k∫CS₃(ω_{S³})∧P₄(M₄)∧
+ch₃(E_{S⁶})`, reusing this project's own certified S⁶ twist topology
+(`c₃(S⁻)=2`, G73) — survives C119's topological pre-filter (`ch₃` is
+degree-6, filter only kills degree≤3) and does NOT collapse into C121's
+just-rejected `η(D^t)` (checked directly: cubic/linear coefficient
+ratios of the two odd functions differ by 9x, not proportional). **A
+naive `∫_{M₄}P₄(M₄)=0` kill (for curvature-based `P₄` only) was found
+OVERBROAD same day**: `P₄=vol₄` is always closed (no curvature needed)
+and survives, reducing the mechanism to a t-dependent 4D vacuum-energy
+term with the SAME shape as the bare CS mechanism — not new content,
+not fatally killed either. This open question was pre-registered as
+`C124` (six criteria, bottom-up search order, two negative controls,
+design-freeze against HARKing), then blindly executed the same day by
+a fresh agent with no memory of the pre-registering session, then FL
+Step 8a skeptic-confirmed. **Result: `STRUCTURAL_NO_GO` — the
+CS/transgression family, and a wider mismatched-curvature-contraction
+class beyond it, is CLOSED as an OB1 F4 mechanism** — class-qualified
+(local, polynomial, first-order, bosonic 13D-Lorentz-covariant
+invariants only, per same-day external review). **Does NOT close
+C123's separate Yang-Mills claim** (an S3-internal Hodge-star
+functional, never a 13D-covariant reduction, and dimensionally
+impossible to fit this classification's own epsilon-sector S3 leg
+anyway) — YM's own status stays `PARTIAL` per C123, not killed. Also
+does not close: extra covariant derivatives, non-polynomial
+functions, additional p-form fields, an enlarged gauge algebra beyond
+Lorentz, boundary/defect terms, nonlocal/quantum effective actions —
+all named explicitly, not left implicit. A 13D-Lorentz-
+covariant 13-form splits into two disjoint sectors by exact index/
+degree counting: the sector that can carry `ε` (needed for `vol₄` or
+any `S⁶` topological density) is forced exactly torsion-free — its full
+reduced 4D contribution is `A+B·t(1-t)`, stationary only at the
+zero-mode-free `t=1/2`, the wrong value — and the sector carrying
+torsion is forced to odd torsion count, but the available block degrees
+`{3,4,5,7,8,9,11,12,13}` are missing degree 6, so its `S⁶` leg is
+identically empty. No 13D Lorentz Chern-Simons form exists at all
+(Chern-Weil-ring generators sit at degree ≡0 mod 4; 14≡2 mod 4).
+Skeptic-confirmed independently, with two prose errors found and
+repaired (neither load-bearing) and L1 shown even stronger (adding a
+13D gauge field cannot rescue this route either, only a genuine
+degree-14 characteristic class could). Scope: bosonic, strict product
+background — leaves open a parent action with an independent 13D gauge
+field, a non-product background, or fermion bilinears (named,
+unattempted, in the Relaxation Map). See
+`experiments/20260901-c124-parent-invariant-classification-
+preregistration/decision.md`. **Also same day: a genuine
+new F4 finding on Yang-Mills** —
+`E(t)=Ct²(1-t)²` has `E''(0)=E''(1)=2C>0` (stable) and `E''(1/2)=-C<0`
+(unstable) along the 1-parameter family — Levi-Civita is a barrier top
+between two flat vacua, though only checked in this 1D slice, not the
+full fluctuation operator.
+
+**F6 completed same day (C126, 2026-09-01→02, blind execution +
+FL Step 8a skeptic pass, verdict `WEAKENED`, 9/9 skeptic findings
+accepted).** The full second variation (not just the 1D slice) of
+`S_YM` at `t=0,1` is positive semi-definite for general metric
+perturbations, kernel exactly the gauge orbit — **but the pre-
+registered kill criterion could not have fired**: `S_YM≥0` and `=0`
+at flat points is a theorem, not a finding, so stability there carries
+zero selection information. **Genuinely new content instead:** the
+exhaustive homogeneous critical set is `{0}⊔SO(3)` (5 flat points +
+4 saddles, 9 total, none newly stable) — the vacuum degeneracy is
+LARGER than the family reveals, making selection harder, not easier;
+the Levi-Civita saddle has Morse index exactly 1 (stable to `2j≤14`,
+with an analytic bound at every `j`), its unique unstable direction
+IS the family direction; and `∇^0`,`∇^1` are related by a LARGE gauge
+transformation of winding number `n=-1` — meaning they are ONE point
+of the full gauge-equivalence class `𝒜/𝒢` (so `S_YM` and every
+`𝒢`-invariant functional of the connection alone is structurally
+blind between them, a stronger reason than OB13's evenness argument)
+but DISTINCT points of `𝒜/𝒢₀` (identity component only) — and
+**the `t=1/2` barrier is therefore topologically FORCED, not an
+artifact of the chosen path**, since Chern-Simons is exactly a
+`𝒢₀`-invariant functional and already distinguishes them (`CS(0)=0≠
+CS(1)`, C123). As affine connections (with the soldering form/torsion
+kept) `t=0,1` remain genuinely distinct — nothing here revives C25's
+already-refuted M2 branch (`ι` is still orientation-reversing,
+C37-C39). Net: Yang-Mills is WEAKENED, not promoted, as an OB1
+F4/F6 candidate. See `experiments/20260901-c126-yang-mills-full-
+fluctuation-stability/decision.md`.
+**Unplanned byproduct, found defending Claim 1, not this round's own
+target: `OB13`'s own summary sentence below ("any selector must be
+linear, never quadratic... even functionals carry no information") is
+itself overstated** — an even functional cannot PREFER `t=0` over
+`t=1`, but it CAN select the set `{0,1}` uniquely (round99's `V(t)`
+does exactly this), which is real information toward the "forces `t=0`
+and `t=1` together" branch OB1/F4 already accept. The project's own
+later practice already contradicts the literal OB13 sentence: C119
+(three weeks later) took an even/quadratic condition seriously as a
+selector and killed it on geometry, not by a one-line parity dismissal.
+Corrected wording proposed, not yet applied to OB13's prose below —
+see `experiments/20260901-c123-ym-cs-transgression-panel-review/
+decision.md` for the full FL Step 8a skeptic pass, both re-derivations,
+and the Relaxation Map.
+
+**F4 bordism/global-anomaly route scoped, not closed (C127, 2026-09-02,
+run at explicit user request despite being the lowest-priority
+Relaxation Map item):** the Zero-Signal Gate splits cleanly into two
+readings `claim.md` itself pre-registers. SELECTING one `t in {0,1}` via
+any topological invariant of a single fixed background is structurally
+impossible — definitional, not a discovery: a bordism/characteristic-
+class datum is a lift of a classifying map, and a lift of a classifying
+map is not a connection. FORCING the pair (or a sign) is NOT excluded
+and is well-posed: the mapping torus of C126's own winding-`(-1)` large
+gauge transformation carries a genuinely nonzero class (`int c2=-1`),
+but evaluating the actual anomaly on it is blocked on a newly-surfaced,
+genuinely unrecorded gap — **this project has never reconciled whether
+`nabla^t` is C125's metric affine connection (torsion a tensor, no
+gauge relation between `t=0,1`) or C126's Yang-Mills connection
+(`t=0,1` one gauge orbit, related by winding `n=-1`)** — plus round95's
+already-known missing S6-S3 link. Both `Omega^Spin_13(pt)=0` and the two
+further degrees the Anderson-dual sequence actually needs
+(`Omega_14=Omega_15=0`) independently verified against a secondary
+literature table, structurally cross-checked against the rational free
+rank. Own FL Step 8a skeptic pass: `WEAKENED`, all 12 findings accepted
+and repaired (including withdrawal of the first draft's own overbroad
+universal no-go). OB1 stays `PARKED`; no reopen condition met. See
+`PARENT_ACTION_GATE.md` F4 and
+`experiments/20260901-c127-bordism-global-anomaly-scoping/decision.md`.
+
+**Ingredient 1 (X2) CLOSED, C125-vs-C126 conflict resolved, NOT a
+contradiction (C128, 2026-09-02, two independent skeptic passes,
+differently worded, both `WEAKENED`, concordant):** by Maurer-Cartan
+integrability, no smooth map of `S³` at all realizes C126's large gauge
+transformation `g` as a frame transition (`dΦ+Φ∧Φ=0` reduces to
+`λ(1+λ)=0`, roots only at `λ=0,-1`; `g` is `λ=+1`, non-integrable). C125
+and C126 turn out to be about two different configuration spaces, not
+in tension: this project's own frozen ansatz fixes the vielbein, which
+is a *complete* gauge-fixing of C126's `𝒢`, so the ansatz lives in `𝒜`
+itself (C125's category), not `𝒜/𝒢`. **Strengthened, not just
+reconciled**: any diffeomorphism (not only an isometry) carrying
+`∇⁰→∇¹` is automatically an orientation-reversing isometry — proven
+algebraically and confirmed by an independent exact symbolic (Groebner)
+computation. The apparent "different transformation groups" was an
+artifact of a central factor (`-I`) that cancels in the connection
+formalism; the real invariant is `det`, i.e. C125's already-certified
+parity `ℤ₂` — winding number is not trivialisation-invariant here and
+carries no obstruction. **X6 re-specified**: the mapping torus that
+actually matters (of the orientation-reversing relating map, not of
+`g`) is non-orientable, so `Ω^Spin` was the wrong functor; the honest
+question (`Y1`) is whether it admits a `Pin^±` structure at all, still
+gated on round95 for the fermion content's `Pin` type. See
+`experiments/20260902-c128-nabla-t-gauge-group-reconciliation/decision.md`.
+
+**Y1's existence question ANSWERED: both Pin types exist, so this route
+alone cannot discriminate (C129, 2026-09-02, two independent skeptic
+passes, concordant `CONFIRMED-REAL`/`WEAKENED` split):** the mapping
+torus of the relating map admits BOTH `Pin⁺` and `Pin⁻` (exactly two of
+each), because `H²(M;𝔽₂)=0` for the mapping torus of any self-map of
+`S³` — confirmed 5 independent ways, including one using no chain
+complex at all (`π₁`+`χ`+Poincaré duality). **Self-caught correction**:
+C128 §6c had stated the Pin⁺/Pin⁻ existence criteria backwards
+(contradicting its own Completeness section); fixed by consulting
+Kirby-Taylor directly, harmless for C128's own verdict, load-bearing
+downstream (`Ω^{Pin+}_4=ℤ/16` vs `Ω^{Pin-}_4=0` differ enormously). Via
+the bare tangential structure alone the manifold gives NO discriminating
+constraint — both types are always available on any such mapping torus.
+The live gate narrows to: does the TWISTED structure the fermion content
+actually needs exist (new item Z1, unevaluated, flagged as cheaper than
+round95), and round95 (ingredient 2) is still required to know which
+type is physically needed. See
+`experiments/20260902-c129-pin-structure-existence-mapping-torus/decision.md`.
+
+**Z1's twisted structure ANSWERED (also cannot discriminate), and a
+higher-priority scope problem found (C130, 2026-09-02, two independent
+skeptic passes, concordant `WEAKENED`):** the twisted structure
+`Pin^±×_{ℤ₂}G` exists on `M_ι` uniformly, for EVERY group `G` with a
+central order-2 element and every bundle — proved by a genuine transfer
+argument (not assumed from C129), and shown non-vacuous by exhibiting
+other manifolds where twisting flips the Pin verdict. So the twisted
+route, like the bare one, gives no `t=0`-vs-`t=1` discriminator. The
+frame-bundle's group (the only `G` this project's frozen content would
+otherwise supply) turns out to be a type error as a twisting group — it
+IS the tangential structure, not independent of it. **⚠️ New top-priority
+item, promoted AHEAD of round95 (`W1`, cheaper to resolve):** `M_ι` (a
+4-manifold) does not appear in C127's own already-verified dimension
+audit at all (13D terms need `Ω₁₃,Ω₁₄`; 13D's own anomaly needs
+`Ω₁₄,Ω₁₅`; the 4D effective theory's anomaly needs `Ω₅,Ω₆` — never `Ω₄`,
+which is the home of a *3-dimensional* theory's anomaly, and this
+project has none). The relevance of the manifold three consecutive
+rounds (C128 §6b, C129, C130) analyzed is therefore **adversely
+indicated**, not merely untested — either a reading exists where a
+4-manifold is the right object, or these rounds answer a well-posed
+question about the wrong one. See
+`experiments/20260902-c130-twisted-pin-structure-existence/decision.md`.
+
+**⚠️ W1 TESTED AND CORRECTED (C131, 2026-09-02; three drafts, four
+context-blind skeptic passes, two direction-reversals — this entry is
+this session's own synthesis after independently weighing all four
+passes, not a transcription of any one draft, since the round's own final
+draft was itself found internally inconsistent by its 4th, dedicated
+review).** C130's two premises above are both false as stated: C127 §4's
+list is non-exhaustive (omits the 4D-topological-terms row, which needs
+`Ω₄` and `Ω₅`); and "no 3D theory" cannot be shown by grepping for that
+string when the project's object is called `CS₃` — though the premise is
+true in substance, since `∫_{S³}CS₃(ω^t)` is a number (a 4D term's
+coefficient), not an actual 3D QFT's partition function. **The real
+reason `M_ι` fails C127 §5d's specific question is ORIENTABILITY, not
+dimension**: `H₄(M_ι;ℤ)=0` (re-derived independently twice, including
+from scratch via the Wang sequence, not just read off a table) — `M_ι`
+is closed and non-orientable, so `∫c₂` (the number C127 §5d needed) is
+literally undefined on it; every legitimate reading needs an orientable
+4-manifold and produces `S³×S¹` instead. **But `M_ι` is not homeless in
+every sense** — C128 §6c already named the right reformulation (a
+`Pin^±` class on a non-orientable 4-manifold, "textbook Dai-Freed
+practice"), and C129/C130 already established `M_ι` supports it. **New
+this round**: the UNTWISTED Pin route on `M_ι` is trivial —
+`[M_ι]=0` in `Ω^{Pin+}_4` for both structures (explicit null-bordism,
+`M_ι=∂(D⁴×_ι S¹)`) — so it also cannot discriminate anything. **The one
+surviving live question is the TWISTED Pin structure** (the actual
+swap-monodromy fermion bundle), needing group `G` — itself blocked on
+round95. Net: C128/C129/C130's mathematics stands, untouched; every
+route this program has tried now converges independently on round95 as
+the sole remaining blocker (the 4th such convergence). See
+`experiments/20260902-c131-mapping-torus-dimension-consistency/decision.md`
+(read critically, not at face value — see `PARENT_ACTION_GATE.md` F4 for
+the fuller account).
+
+**DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
+gap (C132, 2026-09-02, user-directed exploration, not a convergent
+verification — no candidate claimed correct):** 15 candidate mechanisms
+survived a Novelty Check + Zero-Signal-Gate screen, outside the class
+C124 already closed. Top-ranked after a skeptic pass corrected a real
+inversion (`G₂`-equivariance constrains nothing about the S6 triality-
+channel label; only an assumed triality `ℤ₃` symmetry buys full channel
+symmetry, and even that borrows N_gen=3's own un-derived credit line):
+(1) the symmetry-assumption ladder itself, cheap, ready to run as `C133`;
+(2)/(2) Einstein-Cartan torsion-as-auxiliary (fermion-sourced, ready to
+run as `C134`, must open against round72's own registered `E8` gate) and
+a joint 13D Killing-spinor constraint; (4) a diagonal `ℤ₃` orbifold of
+`S³`. Full ranked list, both ready-to-run sketches, and 4 pearls in
+`PARENT_ACTION_GATE.md` F4 and
+`experiments/20260902-c132-13d-parent-action-survey/decision.md`.
+
 **Checked, external survey, no computation in N-7 itself (sibling
 project H-19 "Геометрия калибровки", 2026-08-31 — the source of C120's
 `I9` proposal above):** a targeted literature survey of 6 known
@@ -301,6 +541,37 @@ PARKED. See
 > ill-posed; it is *what breaks parity*, and in the SM parity is broken. See
 > `experiments/20260810-iota-gauge-or-parity/decision.md`.
 >
+> **✅ STRENGTHENED INTO A THEOREM, FALSIFIED AS A DISSOLUTION (C125,
+> 2026-09-01, blind execution + TWO independent FL Step 8a skeptic
+> passes).** C125 asked whether the FULL 13D configuration (vielbein,
+> connection, S⁶ twist, fermion content) at `t=0` is gauge-equivalent to
+> `t=1` — not just the abstract S³ connection ι already knew about. Answer:
+> **no genuine gauge transformation exists, provably, not just "none found
+> yet".** Central theorem (one-line proof, independently re-verified
+> twice): on S³, torsion `T^t=(2t-1)[·,·]` **is** a constant multiple of
+> the volume tensor, so `φ_*T⁰=det(dφ)·T⁰`; since `T¹=-T⁰≠0`,
+> `{φ:φ_*∇⁰=∇¹}=O(4)\SO(4)` **exactly** — C39's finding for `ι` specifically
+> is now proven forced for *every* candidate map, not observed for one.
+> Extended to the full product via a de Rham argument (the torsion
+> 3-form's own cohomology class is non-zero and flips sign under any
+> candidate `g`, needing no product-map or `Isom`-factorization
+> assumption): **`(ii-gauge)` fails for all 8 sign-triple combinations of
+> per-factor orientation choices — compensating on `M₄` or `S⁶` cannot
+> rescue it.** So OB1/H1c does **not** dissolve into gauge redundancy —
+> `t=0` vs `t=1` remains a genuine physical choice. **One residual,
+> honestly UNDECIDED (not resolved either way, after a second skeptic
+> pass caught the first draft asserting incompatible answers to the same
+> open question):** the purely-orientation-compensated "Family C" (4D
+> parity composed with `ι`, S⁶ untouched) satisfies every condition except
+> "not parity" — whether this survives condition (iii) (fermion content)
+> depends on whether the relative M₄↔S⁶ orientation is a physical datum
+> or a labelling convention, which nothing currently certified in this
+> project decides (needs round95's missing S⁶↔S³ link) — and whether OB1
+> would even collapse if Family C survived is ITSELF conditional on that
+> same unresolved question, not an independent fact. See
+> `experiments/20260901-c125-full-gauge-equivalence-gate/decision.md` for
+> the full derivation and both skeptic passes.
+>
 > **⚠️ NARROWED SAME DAY (C38).** The `t=0` and `t=1` kernels are the **two chiral
 > halves of one 4-dimensional `Spin(4)` spinor** — `(1,2)` and `(2,1)`, verified
 > under the `SO(4)` isometry action with the frame lift, negative control passing.
@@ -329,7 +600,36 @@ round111's `Scal(t) = Scal_LC − 6(2t−1)²` **EVEN**; round99's curvature-nor
 **Consequence:** both curvature-based searches were structurally incapable of
 selecting. Their nulls were *necessary* and carry **no** information about
 whether a selector exists — they were never tests of H1c. Any selector must be
-**linear (odd) in the torsion**, never quadratic. Round80/E14 makes this a
+**linear (odd) in the torsion**, never quadratic.
+
+> **⚠️ CORRECTED 2026-09-01 (C123, FL Step 8a skeptic pass, found
+> defending an unrelated claim — not this section's own target).** The
+> paragraph above **overstates what evenness rules out**, on three
+> independent grounds. (1) It conflates "cannot PREFER `t=0` over `t=1`"
+> (true for any even functional) with "carries NO information about
+> whether a selector exists" (false — an even functional like
+> `V(t)=[t(t-1)]²`, `round99`'s own curvature-norm toy, selects the SET
+> `{0,1}` uniquely against every other `t`; that is information). (2) It
+> contradicts OB1/`PARENT_ACTION_GATE.md` F4's own stated pass criterion,
+> which explicitly accepts a mechanism that "forces `t=0` and `t=1`
+> together" — exactly the branch an even functional CAN serve. (3)
+> "Linear" conflates polynomial degree with parity: the correct
+> requirement is "has a nonzero component odd in `(t-1/2)`," which any
+> odd-degree term (cubic included — e.g. the Chern-Simons functional
+> every one of 4 independent derivations this project has now produced
+> gives) satisfies; "linear" wrongly excludes those. **The project's own
+> later practice already reflects this**: C119 (2026-08-31) took an
+> even/quadratic condition (`Rc=¼H²`) seriously as a candidate selector
+> and killed it on geometry, not by a one-line parity dismissal, which
+> the literal rule above would have made unnecessary. **Corrected
+> statement:** an even functional in `(t-1/2)` cannot break the residual
+> `t=0`-vs-`t=1` degeneracy (OB13's real, defensible content, and C37-C39
+> below stand unaffected) — but it CAN legitimately select `{0,1}` as a
+> set, and "round99's own null carries no information" was itself
+> mislabeled: `round99`'s script status is
+> `CONFIRMED__DOUBLE_WELL_PLAUSIBLE_FROM_CLASSICAL_CURVATURE`, not a
+> null. See `experiments/20260901-c123-ym-cs-transgression-panel-review/
+> decision.md` for the full derivation. Round80/E14 makes this a
 symmetry statement: `ι(g)=g⁻¹` pulls the whole family `∇^t → ∇^(1−t)` exactly, so
 `t↔1−t` is a genuine symmetry and only an odd term can break it.
 
@@ -886,7 +1186,26 @@ open); and `B-L`'s own non-uniqueness among a `dim≥3` admissible family
 
 ---
 
-## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-19, round128 + boyko-agent disposition review]
+## OB4 — C_G67C3: the third triality channel (8_v) is a model postulate, not derived [UPDATED 2026-07-19, round128 + boyko-agent disposition review; GATE ADDED 2026-09-04]
+
+> **📋 2026-09-04 — an operational filter now exists for proposals aimed at
+> this blocker: the G44 Information-Retention Gate** (`C150`,
+> `experiments/20260904-c150-g44-information-retention-gate/GATE.md`).
+> Before building ANY generation mechanism, ask: *does its observable factor
+> through `g₂`-restricted representation data?* If YES → closed without
+> computation (C72 constructed explicit invertible `g₂`-equivariant
+> isomorphisms between all three channels, so any `g₂`-functorial observable
+> is blind by Schur; C62 shows the trilinear/morphism-level route collapses
+> too). If NO → admissible, but the proposal must state WHICH datum escapes
+> the restriction and how it is realized here. If UNCLEAR → treat as YES.
+> **The gate is a synthesis of C62/C63/C72, explicitly NOT a new theorem** —
+> a novelty check found the underlying content already registered in a
+> stronger (quantitative-filtration) form. **Passing is necessary, not
+> sufficient; only failing is decisive.** The constructive half: C63 shows
+> distinguishing information genuinely survives at `so(8)` (order-1 failure
+> of an `su(3)`-level identification against a generic `so(8)` element), so
+> what this project lacks is not the existence of such data but a
+> construction realizing it — which is precisely this blocker.
 
 > **⚠️ 2026-08-10 — THE QUESTION QUEUED FOR TOM IS STALE. Re-ground before spending the contact.**
 > The pearl standing at `next_check: at next Tom contact` was written **2026-07-05**
@@ -1115,7 +1434,18 @@ minor wording item above.
   round — not attempted, deliberately, rather than forced through a shaky
   premise.
 
-**Owner / next step:** item 5 remains ready whenever OB2 is picked up. Item
+**Owner / next step:** *(stale-pointer correction, 2026-09-04 autonomous
+debt audit: the sentence below said "item 5 remains ready whenever OB2 is
+picked up" — but OB2's own header now reads **ANSWERED 2026-08-10 (C60): NO**,
+and this item's own body text two paragraphs above already concluded that
+pursuing item 5's physical action for this construction "would not be a
+productive use of effort" given C49/C52. The pointer promised forward work
+the same section had already judged moot, against a blocker that is no
+longer open. Corrected rather than left to mislead a future reader.)*
+**Item 5 is effectively MOOT, not merely waiting** — the doubled
+construction it concerns was shown not to be a valid geometry (C49/C52),
+so deriving its physical action answers a question about an object already
+excluded. Item
 8 should be re-attempted only after (or explicitly conditional on) OB2/C11
 progress — re-read Codex's wording again at that point to confirm the
 premise then holds, rather than assuming this note's conclusion is still
@@ -1492,6 +1822,32 @@ new — not previously logged anywhere in this project's registries.
 > next step, not yet attempted. See
 > `experiments/20260810-ob11ii-round59-su3-bridge/decision.md`.
 >
+> **UPDATE 2026-09-04 (C149, autonomous debt audit) — the never-attempted
+> transport step is now known to be WELL-POSED for `D`, scoped.** The step
+> named above ("finding it, and then testing the actual Clifford-
+> compatibility question, is the next step, not yet attempted") had an
+> unexamined soundness question underneath it: `U` is non-unique by C70's
+> own admission (`Inn(su(3))` orbit, ~8-real-dim), and C142 (2026-09-04)
+> sharpened that to *gauge freedom, not independent data*. If the planned
+> test's outcome depended on which representative is picked, any round
+> built on it would produce a gauge artifact.
+> **Criterion (elementary):** `U' = U·g` ⟹ `U'OU'⁻¹ = U(gOg⁻¹)U⁻¹`, so
+> transport is representative-independent exactly when `[O, ρ_su3(a)] = 0`.
+> **Result:** `D_Σ` satisfies it (commutator exactly 0; negative control — a
+> random operator — fails at order 1, so the test discriminates). This was
+> only cheap because C146 (same session) had just proved `D_Σ` is
+> `SU(3)`-equivariant as a standalone fact.
+> **Scoped, per skeptic pass (verdict WEAKENED, all findings accepted):**
+> only the IDENTITY COMPONENT of the residual freedom was sampled; `γ`'s
+> passing result is NOT substantive (it is forced by `spin_lift`'s parity
+> type, as C139's own `nab_i_preserves_sigma_even_odd_parity` check already
+> knew); and **`J` remains unchecked** — it is not constructed in round59's
+> own file, and checking its `su(3)`-equivariance is a PREREQUISITE for
+> anyone resuming this step. **The transport test itself is still NOT run.**
+> See `CLAIM_LEDGER.yaml`
+> `C149_OB11II_TRANSPORT_STEP_IS_WELLPOSED_FOR_D_SIGMA_UNDER_IDENTITY_COMPONENT`
+> and `experiments/20260904-c149-transport-wellposedness-gate/decision.md`.
+>
 > **Attempted, BLOCKED-SUBSTRATE (same day, step 2):** tried to find the
 > explicit isomorphism by directly reusing round128's Cartan-Weyl matching
 > algorithm. Hit a genuine reality-type mismatch, not a bug: round59's
@@ -1804,3 +2160,143 @@ also entangled with the still-open OB1/KT-8 full-operator question.
 check above) — requires scoping as its own SMALL–LARGE round if pursued,
 not a quick extraction. Full detail (superseded "cheap" framing):
 `experiments/20260717-round118-matter-generation-factorization-test/decision.md`.
+
+## OB14 — why `Sigma`, not `m` (or another twist bundle), is the physically
+correct twist for round59's `D_S6` construction [OPENED 2026-09-04, C139]
+
+**Background.** round59 certified `dim ker(D_{S6,twist=Sigma})=1`, a
+load-bearing input to `N_gen=3` (`CLAIM_LEDGER.yaml`
+`C2_ROUND59_KERNEL_DIM1`, 6 direct ledger dependents including
+`C4_NGEN3_HEADLINE`). Until C139, no wrong-twist negative control had
+ever discriminated — four attempts (C73/C73b) all gave the identical
+kernel or a result forced by construction. This meant the question "why
+`Sigma` specifically" could not even be posed as a real alternative: with
+no discriminating control, `Sigma` was the only twist bundle this
+project had ever tried, not a twist bundle shown to be privileged over
+any specific alternative.
+
+**What changed.** C139 built a genuinely different twist bundle
+(`m_C`, the tangent/isotropy representation, module type `3+3bar`,
+zero `su(3)` singlets, vs `Sigma`'s `1+1+3+3bar`, two singlets) using
+the identical `NOMIZU`/`ADNU` connection data and Leibniz-rule
+construction, and found `kernel=0`, not `1` — robust across the whole
+admissible connection family (13-angle sweep, not a single-point
+accident), verified two independent ways (numeric SVD, exact sympy),
+and independently re-verified by two context-blind skeptic passes plus
+the orchestrating session (script re-run, sign-convention bug
+independently re-derived from the Clifford algebra). This establishes,
+for the first time, that `Sigma` is NOT the unique twist bundle
+compatible with this project's own calibration discipline — an
+alternative WITH a different kernel genuinely exists.
+
+**What this does NOT do:** identify what the independent physical
+justification for `Sigma` actually is. `Sigma` remains Tom Lawrence's
+own construction, directly motivated by AHL2023's spinor-bundle
+framework — C139 does not argue `Sigma` is wrong, only that it is no
+longer the unique twist giving a nontrivial invariant kernel structure.
+Two independent skeptic passes also qualified C139's own result:
+`Term1=0` (part of the original justification for the result's
+significance) is FORCED by `su(3)` Schur's lemma for ANY zero-singlet
+twist bundle, not special to `m` — the genuinely load-bearing,
+non-forced fact is narrower (`Term2`'s robust non-vanishing). A more
+directly comparable test (a matched-singlet-count twist bundle, e.g.
+`m⊕2·1`, preserving `Sigma`'s own two-singlet shape) remains unbuilt
+and would more decisively test whether `D_S6` discriminates `Sigma`
+from a same-shape alternative, not merely a different-shape one.
+
+**Status:** `BLOCKED-EXTERNAL-OR-THEORETICAL`. Likely requires either a
+physical argument from Tom Lawrence's own framework for why the twist
+bundle must be another copy of the spinor bundle specifically (external,
+subject to this project's own "DO NOT INITIATE CONTACT" constraint), or
+an internal argument this project has not yet attempted (e.g. the
+matched-singlet-count follow-up named above).
+
+**UPDATE (C141, 2026-09-04) — the matched-singlet-count follow-up
+named above was built, and found a more fundamental obstacle than
+expected.** After two successive context-blind skeptic passes each
+overturned the round's own prior verdict in the same session (`BLOCKED`
+→ `PROMOTE` → final), C141 found that the invariant-sector kernel of
+EVERY twisted-`D_S6` construction tested in this project's history
+(round59, C139, C141, and a newly-computed "`Σ` self-twisted,
+unrestricted" comparison) **exactly equals a graded rank-nullity floor
+computable from PURE `su(3)` branching data alone**, given only the
+already-established fact that individual connection channels are
+nonzero. Independently re-derived by hand by the orchestrating session
+before registration, matching the script's own computation exactly
+(4/4 cases). **This means the "kernel of `D_{S⁶}`" test family, as
+practiced so far, may not be able to discriminate `Sigma`'s specific
+geometric content from an alternative at all** — a more fundamental
+obstacle to this OB than any single twist-bundle result. The
+falsifiable escape route (a twist bundle whose kernel EXCEEDS its own
+graded floor) is named in `pearl_registry/INDEX.md` (2026-09-04, impact
+9) as the concrete next test — cheap to check BEFORE building, since
+the floor is computable from representation theory alone. Does NOT
+change `N_gen=3`'s CONDITIONAL status, and does NOT retroactively
+falsify round59's or C139's own computed kernel values (both
+independently re-confirmed here) — it questions the interpretive
+weight placed on them as evidence of `D_S6`'s dynamics. See
+`CLAIM_LEDGER.yaml` `C141_KERNEL_IS_GRADED_BRANCHING_FLOOR_NOT_DYNAMICS`
+and
+`experiments/20260904-c141-matched-singlet-count-twist-m-plus-2singlets/decision.md`.
+
+**UPDATE (C142, 2026-09-04, design-only, no physics computation):**
+checked whether C141's own falsifiable escape route (a twist bundle
+whose kernel exceeds its graded floor) is currently buildable — **NOT
+with this project's existing content.** The one candidate C141's own
+exhaustive search surfaced (`W_cand=3+3bar+3bar`, the only module type
+besides `EVEN_IDX` itself achieving round59's own `(2,1)` shape) needs
+an independently-sourced SECOND copy of `3bar` to be a genuinely
+different kind of test (a multi-dimensional equivariant channel, unlike
+every prior test's single-scalar question) — none exists here. Two
+candidates checked and rejected for identifiable, non-arbitrary reasons:
+C70/C71's `U_v`/`U_s`/`U_c` triality intertwiners are basis-matching
+gauge freedom (`Inn(su(3))` orbit, non-unique by construction), not
+independent geometric data; G102's own three triality channels are
+forced identical under `su(3)` — the SAME `G44` branching-collapse
+mechanism (this project's oldest, most-recurring negative result) that
+has closed roughly a dozen other candidate mechanisms across this
+project's history. `BLOCKED-INTERNAL`, not `IMPOSSIBLE` — would require
+either new, independently-motivated geometric construction (high AOG-5
+risk) or external input. See `pearl_registry/INDEX.md` (2026-09-04) and
+`experiments/20260904-c142-graded-floor-candidate-scan/decision.md`.
+
+**UPDATE (C144→C145, 2026-09-04) — the external-literature escape route
+(Kostant/Landweber, user-flagged citation) was checked and closed:**
+C144 found round59's own untwisted operator IS an exact instance of
+Kostant's algebraic cubic Dirac term (`α=√3/4`, symbolically exact),
+raising hope that Landweber's twisted-operator theorem (Slebarski,
+closed-form kernel per irreducible `su(3)` summand) might resolve this
+OB's `W_cand` question analytically without needing new geometric
+content at all. C145 tested this directly: **C139/C141's own twisted
+operator is NOT an instance of Kostant/Landweber's `D_μ|_{V0}`** — the
+twist bundle's own Levi-Civita connection (which Kostant's construction
+gives zero weight at `λ=0`) carries the ENTIRE physical signal on the
+exact invariant sector these rounds compute (Kostant candidate = 0
+there; C139's own value survives in full). Context-blind skeptic:
+`CONFIRMED-REAL`. This closes the literature-shortcut route cleanly —
+`BLOCKED-INTERNAL` stands, unresolved by any route tried so far. See
+`null_results/INDEX.md` `C145-TwistedNotKostant` and
+`experiments/20260904-c145-twisted-operator-vs-kostant-mu-block/decision.md`.
+
+**UPDATE (C146, 2026-09-04) — mechanism behind C145's finding now proven
+general, refining but not closing this OB:** Term1 (Kostant's contribution)
+is provably zero, in advance, for any zero-singlet/`3̄`-type twist summand
+(Schur's lemma + already-certified branching, skeptic-confirmed
+`CONFIRMED-REAL`) — and provably `=∓√3` for any singlet summand. This
+does NOT resolve `W_cand=3⊕3̄⊕3̄` (Hom-dimension 2, outside this binary
+dichotomy) but DOES mean any future candidate's Term1/Term2 split is
+predictable before building — a useful filter for evaluating future
+candidates cheaply. See `pearl_registry/INDEX.md` (2026-09-04, impact 7)
+and `experiments/20260904-c146-schur-forced-vanishing-theorem/decision.md`.
+
+**Owner / next step:** no internally-buildable test remains identified.
+The matched-singlet-count twist bundle (`m⊕2·1`) was already built (C141)
+and found `Delta_dyn=0`, same as every other tested case. The Kostant/
+Landweber literature route (C144/C145) is now also closed. Remaining
+options are all higher-cost/higher-risk: (a) a genuinely new,
+independently-motivated geometric construction supplying a second copy
+of `3bar` (C142's named gap, high AOG-5 risk without independent
+motivation), or (b) external input from Tom Lawrence's own framework
+(subject to this project's "DO NOT INITIATE CONTACT" constraint). Full
+detail:
+`experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.

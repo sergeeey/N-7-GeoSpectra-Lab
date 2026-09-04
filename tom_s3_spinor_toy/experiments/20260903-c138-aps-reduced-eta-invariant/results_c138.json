@@ -1,0 +1,358 @@
+{
+  "checks": {
+    "P_at_a0_is_zero": true,
+    "P_is_odd_function_of_a": true,
+    "P_rederived_matches_C121_certified_closed_form": true,
+    "S_nminus1_plus_mu_n_is_integer_for_every_n": true,
+    "crossing_lattice_matches_claim_md_stated_t_values": true,
+    "dP_da_APS_variation_identity": true,
+    "eta_at_two_routes_agree_n=0,t=0": true,
+    "eta_at_two_routes_agree_n=0,t=1": true,
+    "eta_at_two_routes_agree_n=1,t=-1/3": true,
+    "eta_at_two_routes_agree_n=1,t=4/3": true,
+    "eta_at_two_routes_agree_n=2,t=-2/3": true,
+    "eta_at_two_routes_agree_n=2,t=5/3": true,
+    "every_n_gives_a_DISTINCT_unordered_xi_pair_ie_n0_would_be_unique": false,
+    "mu_n_always_even_product_of_consecutive_integers": true,
+    "mu_table_matches_claim_md_stated_values": true,
+    "raw_eta_jumps_by_exactly_2mu_n_at_each_crossing_contrast_case": true,
+    "spotcheck_eta_at_a0_is_zero_t_half": true,
+    "spotcheck_eta_at_a2_matches_C121_certified_minus_1_3": true,
+    "spotcheck_eta_at_t1_matches_C121_certified_plus_half": true,
+    "xi_mod1_equals_P_over_2_mod1_at_every_crossing": true,
+    "xi_mod1_is_continuous_through_every_crossing": true
+  },
+  "data": {
+    "P_closed_form": "-2*a**3/3 + a/2",
+    "S_table": {
+      "-1": 0,
+      "0": 2,
+      "1": 8,
+      "2": 20,
+      "3": 40,
+      "4": 70,
+      "5": 112
+    },
+    "continuity_detail": [
+      {
+        "continuous": true,
+        "t": "1",
+        "xi_at_mod1": "1/4",
+        "xi_far_mod1": "1/4",
+        "xi_near_mod1": "1/4"
+      },
+      {
+        "continuous": true,
+        "t": "0",
+        "xi_at_mod1": "3/4",
+        "xi_far_mod1": "3/4",
+        "xi_near_mod1": "3/4"
+      },
+      {
+        "continuous": true,
+        "t": "4/3",
+        "xi_at_mod1": "5/12",
+        "xi_far_mod1": "5/12",
+        "xi_near_mod1": "5/12"
+      },
+      {
+        "continuous": true,
+        "t": "-1/3",
+        "xi_at_mod1": "7/12",
+        "xi_far_mod1": "7/12",
+        "xi_near_mod1": "7/12"
+      },
+      {
+        "continuous": true,
+        "t": "5/3",
+        "xi_at_mod1": "7/12",
+        "xi_far_mod1": "7/12",
+        "xi_near_mod1": "7/12"
+      },
+      {
+        "continuous": true,
+        "t": "-2/3",
+        "xi_at_mod1": "5/12",
+        "xi_far_mod1": "5/12",
+        "xi_near_mod1": "5/12"
+      },
+      {
+        "continuous": true,
+        "t": "2",
+        "xi_at_mod1": "3/4",
+        "xi_far_mod1": "3/4",
+        "xi_near_mod1": "3/4"
+      },
+      {
+        "continuous": true,
+        "t": "-1",
+        "xi_at_mod1": "1/4",
+        "xi_far_mod1": "1/4",
+        "xi_near_mod1": "1/4"
+      },
+      {
+        "continuous": true,
+        "t": "7/3",
+        "xi_at_mod1": "11/12",
+        "xi_far_mod1": "11/12",
+        "xi_near_mod1": "11/12"
+      },
+      {
+        "continuous": true,
+        "t": "-4/3",
+        "xi_at_mod1": "1/12",
+        "xi_far_mod1": "1/12",
+        "xi_near_mod1": "1/12"
+      },
+      {
+        "continuous": true,
+        "t": "8/3",
+        "xi_at_mod1": "1/12",
+        "xi_far_mod1": "1/12",
+        "xi_near_mod1": "1/12"
+      },
+      {
+        "continuous": true,
+        "t": "-5/3",
+        "xi_at_mod1": "11/12",
+        "xi_far_mod1": "11/12",
+        "xi_near_mod1": "11/12"
+      }
+    ],
+    "crossing_table_n0_to_n2": [
+      {
+        "a_c": "3/2",
+        "n": 0,
+        "sign": 1,
+        "t": "1"
+      },
+      {
+        "a_c": "-3/2",
+        "n": 0,
+        "sign": -1,
+        "t": "0"
+      },
+      {
+        "a_c": "5/2",
+        "n": 1,
+        "sign": 1,
+        "t": "4/3"
+      },
+      {
+        "a_c": "-5/2",
+        "n": 1,
+        "sign": -1,
+        "t": "-1/3"
+      },
+      {
+        "a_c": "7/2",
+        "n": 2,
+        "sign": 1,
+        "t": "5/3"
+      },
+      {
+        "a_c": "-7/2",
+        "n": 2,
+        "sign": -1,
+        "t": "-2/3"
+      }
+    ],
+    "eta_at_table_n0_to_n5": {
+      "n=0,t=0": {
+        "route_average": "7/2",
+        "route_closed_form": "7/2"
+      },
+      "n=0,t=1": {
+        "route_average": "1/2",
+        "route_closed_form": "1/2"
+      },
+      "n=1,t=-1/3": {
+        "route_average": "115/6",
+        "route_closed_form": "115/6"
+      },
+      "n=1,t=4/3": {
+        "route_average": "5/6",
+        "route_closed_form": "5/6"
+      },
+      "n=2,t=-2/3": {
+        "route_average": "329/6",
+        "route_closed_form": "329/6"
+      },
+      "n=2,t=5/3": {
+        "route_average": "7/6",
+        "route_closed_form": "7/6"
+      },
+      "n=3,t=-1": {
+        "route_average": "237/2",
+        "route_closed_form": "237/2"
+      },
+      "n=3,t=2": {
+        "route_average": "3/2",
+        "route_closed_form": "3/2"
+      },
+      "n=4,t=-4/3": {
+        "route_average": "1309/6",
+        "route_closed_form": "1309/6"
+      },
+      "n=4,t=7/3": {
+        "route_average": "11/6",
+        "route_closed_form": "11/6"
+      },
+      "n=5,t=-5/3": {
+        "route_average": "2171/6",
+        "route_closed_form": "2171/6"
+      },
+      "n=5,t=8/3": {
+        "route_average": "13/6",
+        "route_closed_form": "13/6"
+      }
+    },
+    "mu_table": {
+      "0": 2,
+      "1": 6,
+      "2": 12,
+      "3": 20,
+      "4": 30,
+      "5": 42
+    },
+    "n0_pair_recurs_at_n": [
+      3
+    ],
+    "xi_pair_by_n": {
+      "0": [
+        "1/4",
+        "3/4"
+      ],
+      "1": [
+        "5/12",
+        "7/12"
+      ],
+      "2": [
+        "5/12",
+        "7/12"
+      ],
+      "3": [
+        "1/4",
+        "3/4"
+      ],
+      "4": [
+        "1/12",
+        "11/12"
+      ],
+      "5": [
+        "1/12",
+        "11/12"
+      ]
+    },
+    "xi_table_full": {
+      "-1": {
+        "a_c": "-9/2",
+        "eta_at": "237/2",
+        "h_at": 20,
+        "n": 3,
+        "sign": -1,
+        "xi_at_raw": "277/4",
+        "xi_mod1": "1/4"
+      },
+      "-1/3": {
+        "a_c": "-5/2",
+        "eta_at": "115/6",
+        "h_at": 6,
+        "n": 1,
+        "sign": -1,
+        "xi_at_raw": "151/12",
+        "xi_mod1": "7/12"
+      },
+      "-2/3": {
+        "a_c": "-7/2",
+        "eta_at": "329/6",
+        "h_at": 12,
+        "n": 2,
+        "sign": -1,
+        "xi_at_raw": "401/12",
+        "xi_mod1": "5/12"
+      },
+      "-4/3": {
+        "a_c": "-11/2",
+        "eta_at": "1309/6",
+        "h_at": 30,
+        "n": 4,
+        "sign": -1,
+        "xi_at_raw": "1489/12",
+        "xi_mod1": "1/12"
+      },
+      "-5/3": {
+        "a_c": "-13/2",
+        "eta_at": "2171/6",
+        "h_at": 42,
+        "n": 5,
+        "sign": -1,
+        "xi_at_raw": "2423/12",
+        "xi_mod1": "11/12"
+      },
+      "0": {
+        "a_c": "-3/2",
+        "eta_at": "7/2",
+        "h_at": 2,
+        "n": 0,
+        "sign": -1,
+        "xi_at_raw": "11/4",
+        "xi_mod1": "3/4"
+      },
+      "1": {
+        "a_c": "3/2",
+        "eta_at": "1/2",
+        "h_at": 2,
+        "n": 0,
+        "sign": 1,
+        "xi_at_raw": "5/4",
+        "xi_mod1": "1/4"
+      },
+      "2": {
+        "a_c": "9/2",
+        "eta_at": "3/2",
+        "h_at": 20,
+        "n": 3,
+        "sign": 1,
+        "xi_at_raw": "43/4",
+        "xi_mod1": "3/4"
+      },
+      "4/3": {
+        "a_c": "5/2",
+        "eta_at": "5/6",
+        "h_at": 6,
+        "n": 1,
+        "sign": 1,
+        "xi_at_raw": "41/12",
+        "xi_mod1": "5/12"
+      },
+      "5/3": {
+        "a_c": "7/2",
+        "eta_at": "7/6",
+        "h_at": 12,
+        "n": 2,
+        "sign": 1,
+        "xi_at_raw": "79/12",
+        "xi_mod1": "7/12"
+      },
+      "7/3": {
+        "a_c": "11/2",
+        "eta_at": "11/6",
+        "h_at": 30,
+        "n": 4,
+        "sign": 1,
+        "xi_at_raw": "191/12",
+        "xi_mod1": "11/12"
+      },
+      "8/3": {
+        "a_c": "13/2",
+        "eta_at": "13/6",
+        "h_at": 42,
+        "n": 5,
+        "sign": 1,
+        "xi_at_raw": "265/12",
+        "xi_mod1": "1/12"
+      }
+    }
+  }
+}

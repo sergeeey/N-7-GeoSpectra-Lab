@@ -1,0 +1,555 @@
+{
+  "GATES": {
+    "G01_klein_bottle_H1_is_Z_plus_Z2": true,
+    "G02_torus_H2_is_Z": true,
+    "G03_S2xS1_H2_nonzero": true,
+    "G04_CP2xS1_H2_nonzero": true,
+    "G05_minimal_d_squared_zero": true,
+    "G06_minimal_M_iota_H_is_Z_Z_0_Z2_0": true,
+    "G07_nonminimal_has_two_2cells": true,
+    "G08_nonminimal_agrees_with_minimal_AT_EVERY_DEGREE": true,
+    "G09_nonminimal_d_squared_zero": true,
+    "G09b_H2_zero_at_every_degree_in_the_NONMINIMAL_model": true,
+    "G09c_degrees_are_distinguishable_H3_differs_across_them": true,
+    "G10_H2_M_iota_vanishes_for_every_tested_coefficient": true,
+    "G11_H3_M_iota_Z_vanishes": true,
+    "G12_H3_M_iota_F2_is_NONzero_control": true,
+    "G13_UCT_pipeline_returns_nonzero_H2_on_control": true,
+    "G14_clifford_relations_hold_both_signatures": true,
+    "G15_reflection_is_a_reflection_both_signatures": true,
+    "G16_identification_subgroup_is_NORMAL_for_central_z": true,
+    "G16b_normality_check_FIRES_on_noncentral_z": true,
+    "G17_Q8_shows_a_central_extension_of_a_product_CAN_have_a_cross_term": true,
+    "G18_kernel_has_ORDER_2_computed_not_asserted": true,
+    "G18b_kernel_order_control_is_4_without_the_identification": true,
+    "G19_two_signatures_differ_by_vector_square": true,
+    "G21_su2_to_so3_is_double_cover": true,
+    "G22_RP2_is_pin_minus_only": true,
+    "G23_RP4_is_pin_plus_only": true,
+    "G24_RP2xRP2_admits_NEITHER": true,
+    "G25_TWIST_CAN_RESCUE_untwisted_fails_twisted_works": true,
+    "G26_TWIST_CAN_BREAK_untwisted_works_twisted_fails": true,
+    "G27_RP4_twist_flips_pin_minus_to_available": true,
+    "G28_M_iota_H2_F2_is_zero_dimensional_in_both_models": true,
+    "G29_H2_with_local_coefficients_vanishes_incl_swap": true,
+    "G29b_NONMINIMAL_model_H2_zero_for_both_monodromies": true,
+    "G29c_swap_and_trivial_monodromy_give_DIFFERENT_betti_vectors": true,
+    "G30_local_coeff_routine_returns_nonzero_on_control": true,
+    "G31_explicit_lift_covers_minus_Ad": true,
+    "G32_no_omega_control_FIRES": true
+  },
+  "GATE_SUMMARY": {
+    "ALL_OK": true,
+    "passed": 37,
+    "total": 37
+  },
+  "PART1_cohomology": {
+    "H2_M_iota_by_coefficient": {
+      "Z": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/16": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/2": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/3": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/4": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/5": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/8": {
+        "minimal": "0",
+        "nonminimal": "0"
+      },
+      "Z/9": {
+        "minimal": "0",
+        "nonminimal": "0"
+      }
+    },
+    "H3_M_iota_by_coefficient": {
+      "Z": "0",
+      "Z/16": "Z/2",
+      "Z/2": "Z/2",
+      "Z/3": "0",
+      "Z/4": "Z/2",
+      "Z/5": "0",
+      "Z/8": "Z/2",
+      "Z/9": "0"
+    },
+    "H3_Z_across_degrees": {
+      "deg_-1": "Z/2",
+      "deg_0": "0",
+      "deg_1": "Z",
+      "deg_2": "0",
+      "deg_7": "Z/6"
+    },
+    "control_CP2xS1_H": [
+      "Z",
+      "Z",
+      "Z",
+      "Z",
+      "Z",
+      "Z"
+    ],
+    "control_CP2xS1_H2_F2": "Z/2",
+    "control_S2xS1_H": [
+      "Z",
+      "Z",
+      "Z",
+      "Z"
+    ],
+    "control_klein_bottle_H": [
+      "Z",
+      "Z + Z/2",
+      "0"
+    ],
+    "control_torus_H": [
+      "Z",
+      "Z^2",
+      "Z"
+    ],
+    "minimal_model": {
+      "deg_-1": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "Z/2",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "betti_F3": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_0": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "0",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "betti_F3": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_1": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "Z",
+          "Z"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "betti_F3": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_2": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "0",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "betti_F3": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_7": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "Z/6",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "betti_F3": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      }
+    },
+    "nonminimal_model": {
+      "deg_-1": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "Z/2",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_0": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "0",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_1": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "Z",
+          "Z"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_2": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "0",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      },
+      "deg_7": {
+        "H_Z": [
+          "Z",
+          "Z",
+          "0",
+          "Z/6",
+          "0"
+        ],
+        "betti_F2": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_ranks_by_dim": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "d_squared_max_abs": 0.0
+      }
+    }
+  },
+  "PART2_extension": {
+    "Cl(0,4)": {
+      "clifford_relations_residual": 0.0,
+      "kernel_order_control_without_identification": 4,
+      "kernel_order_with_identification": 2,
+      "normality_deviation_central_z": 4.554046700252186e-16,
+      "normality_deviation_noncentral_z_MUST_BE_LARGE": 1.9933908531131317,
+      "reflection_image_residual": 0.0,
+      "reflection_square_e1_sq": -1.0
+    },
+    "Cl(4,0)": {
+      "clifford_relations_residual": 0.0,
+      "kernel_order_control_without_identification": 4,
+      "kernel_order_with_identification": 2,
+      "normality_deviation_central_z": 4.440892098500626e-16,
+      "normality_deviation_noncentral_z_MUST_BE_LARGE": 1.9888036538190892,
+      "reflection_image_residual": 0.0,
+      "reflection_square_e1_sq": 1.0
+    },
+    "control_Q8_commutator_pairing_MUST_BE_1": 1,
+    "cross_term_note": "vanishing of the cross term for (Pin x G)/<(-1,z)> is definitional (quotient of a DIRECT product), not measured; and for CONNECTED Gbar the cross-term group H^1(BGbar;F2) = Hom(pi_0 Gbar, F2) is itself zero, so there is nothing to compute.  Q8 shows the hypothesis is not vacuous.",
+    "su2_to_so3_minus_one_in_kernel": 0.0,
+    "su2_to_so3_residual": 8.881784197001252e-16
+  },
+  "PART3_twist_matters_controls": {
+    "CP2_twisted_by_w2E_eq_h": {
+      "obstruction_pin_minus": "0",
+      "obstruction_pin_plus": "0",
+      "pin_minus_exists": true,
+      "pin_plus_exists": true
+    },
+    "CP2_untwisted": {
+      "obstruction_pin_minus": "g0",
+      "obstruction_pin_plus": "g0",
+      "pin_minus_exists": false,
+      "pin_plus_exists": false,
+      "w1": "0",
+      "w2": "g0"
+    },
+    "M_iota_H2_F2_dimension_minimal": 0,
+    "M_iota_H2_F2_dimension_nonminimal": 0,
+    "M_iota_reasoning": "obstruction lies in H^2(M;Z/2); that group has dimension 0 (minimal model) / 0 (non-minimal model), so every twist class and both Pin conditions vanish simultaneously, for every G.",
+    "RP2_bare": {
+      "obstruction_pin_minus": "0",
+      "obstruction_pin_plus": "g0^2",
+      "pin_minus_exists": true,
+      "pin_plus_exists": false,
+      "w1": "g0",
+      "w2": "g0^2"
+    },
+    "RP2xRP2_bare": {
+      "obstruction_pin_minus": "g0g1",
+      "obstruction_pin_plus": "g1^2 + g0g1 + g0^2",
+      "pin_minus_exists": false,
+      "pin_plus_exists": false,
+      "w1": "g1 + g0",
+      "w2": "g1^2 + g0g1 + g0^2"
+    },
+    "RP4_bare": {
+      "obstruction_pin_minus": "g0^2",
+      "obstruction_pin_plus": "0",
+      "pin_minus_exists": false,
+      "pin_plus_exists": true,
+      "w1": "g0",
+      "w2": "0"
+    },
+    "RP4_twisted_by_w2E_eq_a2": {
+      "obstruction_pin_minus": "0",
+      "obstruction_pin_plus": "g0^2",
+      "pin_minus_exists": true,
+      "pin_plus_exists": false
+    },
+    "S2xS2_twisted_by_w2E_eq_a": {
+      "obstruction_pin_minus": "g0",
+      "obstruction_pin_plus": "g0",
+      "pin_minus_exists": false,
+      "pin_plus_exists": false
+    },
+    "S2xS2_twisted_by_w2E_eq_a_plus_b": {
+      "obstruction_pin_minus": "g1 + g0",
+      "obstruction_pin_plus": "g1 + g0",
+      "pin_minus_exists": false,
+      "pin_plus_exists": false
+    },
+    "S2xS2_untwisted": {
+      "obstruction_pin_minus": "0",
+      "obstruction_pin_plus": "0",
+      "pin_minus_exists": true,
+      "pin_plus_exists": true
+    }
+  },
+  "PART4_local_coefficients": {
+    "control_S2xS1_SWAP_monodromy": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "control_S2xS1_trivial_monodromy": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "swap_monodromy": {
+      "betti_F2_minimal": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "betti_F2_nonminimal": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ]
+    },
+    "trivial_monodromy": {
+      "betti_F2_minimal": [
+        2,
+        2,
+        0,
+        2,
+        2
+      ],
+      "betti_F2_nonminimal": [
+        2,
+        2,
+        0,
+        2,
+        2
+      ]
+    }
+  },
+  "PART5_constructive": {
+    "control_no_omega_residual_must_be_LARGE": 1.9931429165884333,
+    "explicit_lift_covers_minus_Ad_residual": 4.47545209131181e-16
+  },
+  "VERDICT_INPUTS": {
+    "H2_M_iota_vanishes_for_every_tested_abelian_coefficient": true,
+    "H2_M_iota_vanishes_for_local_coefficients_incl_swap": true,
+    "H2_zero_at_every_tested_degree_in_the_NONMINIMAL_model": true,
+    "H3_M_iota_Z_vanishes": true,
+    "TWISTED_Pin_minus_exists_on_M_iota": true,
+    "TWISTED_Pin_plus_exists_on_M_iota": true,
+    "constructive_route_lift_exhibited": true,
+    "identification_subgroup_normal_and_kernel_has_order_2": true,
+    "twist_can_change_the_answer_in_general": true
+  }
+}

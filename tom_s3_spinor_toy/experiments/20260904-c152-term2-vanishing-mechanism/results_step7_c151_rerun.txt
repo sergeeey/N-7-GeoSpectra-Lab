@@ -1,0 +1,61 @@
+STEP 1  J-aligned m basis built (X<->Y swapped on planes with eps=-1)
+        EPS_NK = (-1, 1, -1)  ->  J_NK is the STANDARD J_0 in this basis
+STEP 1  basis is B-ORTHONORMAL: True   max|Gram - I| = 0.000e+00
+STEP 2  Nomizu Lambda(e_i) = (1/2)[e_i,.]_m built; max|L + L^T| = 0.000e+00
+STEP 3  round59's Clifford algebra reused unmodified (e_i^2 = -1 verified)
+
+==============================================================================
+STEP 4  CALIBRATION GATE (this gate CAN fail; it pins the geometry)
+==============================================================================
+  T^2-invariant spinors in Sigma : 2   (Stage 1b predicted 2)
+  D_Sigma on the invariant 2-plane, eigenvalues: [ 3.+0.j -3.+0.j]
+  both eigenvalues nonzero        : True
+  eigenvalues equal and opposite  : True   (CH2016 Sec.2: psi, Vol.psi carry +-lambda)
+  => CALIBRATION PASSED. |D-eigenvalue| on invariant spinors = 3.00000000
+     (S^6's own certified value under its normalisation was sqrt(3) = 1.73205081)
+
+==============================================================================
+STEP 5  Invariant sectors of Sigma (x) W  -- cross-check of Stage 1b
+==============================================================================
+  domain dim (Sigma_odd  (x) W)^T2 = 3   (Stage 1b predicted 3)
+  target dim (Sigma_even (x) W)^T2 = 3   (Stage 1b predicted 3)
+  MATCHES Stage 1b's weight-arithmetic prediction: True
+
+==============================================================================
+STAGE 2a VERDICT
+==============================================================================
+  metric/basis orthonormal under CH2016's B   : True
+  Nomizu operators are metric connections     : True
+  Killing-spinor calibration gate             : PASSED (|mu| = 3.000000)
+  sector dims reproduce Stage 1b's prediction : True
+
+  Geometry is built and independently calibrated. c is STILL NOT
+  COMPUTED -- extracting it is Stage 2b, a separate file.
+GATE  equivariance of D for the corrected generator: max|[D,G]| = 0.000e+00
+GATE  corrected sector dims: (3, 3)
+
+==============================================================================
+VACUITY GATE (first and dominant -- C151's own lesson)
+==============================================================================
+  max|c| on the 6 family basis vectors: ['1.0000', '1.0000', '1.0000', '1.0000', '1.0000', '1.0000']
+  every basis vector gives a NONZERO c : True
+
+==============================================================================
+THE FROZEN PREDICTION:  c(J.nabla) = +- i . c(nabla)   (as MATRICES)
+==============================================================================
+  draw 0: max|c| = 1.4142  max|c(Jv)| = 1.4142  C-LINEAR (+i)
+  draw 1: max|c| = 1.1546  max|c(Jv)| = 1.1546  C-LINEAR (+i)
+  draw 2: max|c| = 2.7343  max|c(Jv)| = 2.7343  C-LINEAR (+i)
+  draw 3: max|c| = 1.2717  max|c(Jv)| = 1.2717  C-LINEAR (+i)
+  draw 4: max|c| = 1.3760  max|c(Jv)| = 1.3760  C-LINEAR (+i)
+  draw 5: max|c| = 1.3327  max|c(Jv)| = 1.3327  C-LINEAR (+i)
+  draw 6: max|c| = 2.2855  max|c(Jv)| = 2.2855  C-LINEAR (+i)
+  draw 7: max|c| = 2.2536  max|c(Jv)| = 2.2536  C-LINEAR (+i)
+
+==============================================================================
+VERDICT ON C151's PRE-REGISTERED QUESTION
+==============================================================================
+  CONFIRMED on the corrected sector: c(J.nabla) = +i . c(nabla),
+  exactly, as matrices, on every draw. The C-linearity found on S^6
+  (C147) is therefore NOT a G2/SU(3) accident -- it recurs on the only
+  independent homogeneous nearly-Kahler test space available.

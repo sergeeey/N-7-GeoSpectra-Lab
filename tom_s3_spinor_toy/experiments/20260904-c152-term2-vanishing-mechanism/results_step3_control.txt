@@ -1,0 +1,89 @@
+STEP 1  J-aligned m basis built (X<->Y swapped on planes with eps=-1)
+        EPS_NK = (-1, 1, -1)  ->  J_NK is the STANDARD J_0 in this basis
+STEP 1  basis is B-ORTHONORMAL: True   max|Gram - I| = 0.000e+00
+STEP 2  Nomizu Lambda(e_i) = (1/2)[e_i,.]_m built; max|L + L^T| = 0.000e+00
+STEP 3  round59's Clifford algebra reused unmodified (e_i^2 = -1 verified)
+
+==============================================================================
+STEP 4  CALIBRATION GATE (this gate CAN fail; it pins the geometry)
+==============================================================================
+  T^2-invariant spinors in Sigma : 2   (Stage 1b predicted 2)
+  D_Sigma on the invariant 2-plane, eigenvalues: [ 3.+0.j -3.+0.j]
+  both eigenvalues nonzero        : True
+  eigenvalues equal and opposite  : True   (CH2016 Sec.2: psi, Vol.psi carry +-lambda)
+  => CALIBRATION PASSED. |D-eigenvalue| on invariant spinors = 3.00000000
+     (S^6's own certified value under its normalisation was sqrt(3) = 1.73205081)
+
+==============================================================================
+STEP 5  Invariant sectors of Sigma (x) W  -- cross-check of Stage 1b
+==============================================================================
+  domain dim (Sigma_odd  (x) W)^T2 = 3   (Stage 1b predicted 3)
+  target dim (Sigma_even (x) W)^T2 = 3   (Stage 1b predicted 3)
+  MATCHES Stage 1b's weight-arithmetic prediction: True
+
+==============================================================================
+STAGE 2a VERDICT
+==============================================================================
+  metric/basis orthonormal under CH2016's B   : True
+  Nomizu operators are metric connections     : True
+  Killing-spinor calibration gate             : PASSED (|mu| = 3.000000)
+  sector dims reproduce Stage 1b's prediction : True
+
+  Geometry is built and independently calibrated. c is STILL NOT
+  COMPUTED -- extracting it is Stage 2b, a separate file.
+==============================================================================
+STRUCTURE OF THE CANCELLATION (what exactly is summing to zero)
+==============================================================================
+  entry (0, 1) of the block (the one with live per-direction terms):
+    i=1:  +0.000000 +0.000000j   |z| = 0.000000
+    i=2:  +0.000000 +0.000000j   |z| = 0.000000
+    i=3:  +0.000000 +0.500000j   |z| = 0.500000
+    i=4:  +0.000000 -0.500000j   |z| = 0.500000
+    i=5:  +0.000000 +0.000000j   |z| = 0.000000
+    i=6:  +0.000000 +0.000000j   |z| = 0.000000
+    SUM  :  +0.000e+00 +0.000e+00j
+
+==============================================================================
+CONTROLS
+==============================================================================
+  LEVI-CIVITA (baseline, C151's result)                      max|block| = 0.000000e+00   ZERO
+  A0  random T^2-EQUIVARIANT family element                  max|block| = 4.172578e-16   ZERO
+  A1  random T^2-EQUIVARIANT family element                  max|block| = 4.357714e-16   ZERO
+  A2  random T^2-EQUIVARIANT family element                  max|block| = 2.001483e-16   ZERO
+  A3  random T^2-EQUIVARIANT family element                  max|block| = 3.330669e-16   ZERO
+  A4  random T^2-EQUIVARIANT family element                  max|block| = 3.236829e-16   ZERO
+
+  REGRESSION: C151's own FULL coefficient (Term1+Term2) on the same draws
+    draw 0: |Term1| = 1.102e-31   |Term2| = 3.925e-16   |FULL| = 3.925e-16  C151-consistent
+    draw 1: |Term1| = 1.016e-31   |Term2| = 6.661e-16   |FULL| = 6.661e-16  C151-consistent
+    draw 2: |Term1| = 5.512e-32   |Term2| = 2.086e-16   |FULL| = 2.086e-16  C151-consistent
+    draw 3: |Term1| = 8.888e-32   |Term2| = 5.226e-16   |FULL| = 5.226e-16  C151-consistent
+    draw 4: |Term1| = 2.756e-32   |Term2| = 4.775e-16   |FULL| = 4.775e-16  C151-consistent
+  B   Levi-Civita with direction i=1 perturbed (antisym)     max|block| = 9.530303e-01   NONZERO
+  C0  all six random ANTISYMMETRIC (non-equivariant)         max|block| = 3.608406e+00   NONZERO
+  C1  all six random ANTISYMMETRIC (non-equivariant)         max|block| = 4.955303e+00   NONZERO
+  C2  all six random ANTISYMMETRIC (non-equivariant)         max|block| = 3.590497e+00   NONZERO
+  C3  all six random ANTISYMMETRIC (non-equivariant)         max|block| = 2.463083e+00   NONZERO
+  C4  all six random ANTISYMMETRIC (non-equivariant)         max|block| = 3.128470e+00   NONZERO
+
+  D   Levi-Civita, direction i=3 rescaled by s = +0.5        max|block| = 2.500000e-01   NONZERO
+  D   Levi-Civita, direction i=3 rescaled by s = +2.0        max|block| = 5.000000e-01   NONZERO
+  D   Levi-Civita, direction i=3 rescaled by s = -1.0        max|block| = 1.000000e+00   NONZERO
+  D   Levi-Civita, direction i=3 rescaled by s = +1.0        max|block| = 0.000000e+00   ZERO
+
+==============================================================================
+VERDICT: P1 or P2?
+==============================================================================
+  zero survives EQUIVARIANT perturbation (5 draws) : True
+  zero survives GENERIC   perturbation (5 draws) : False
+
+  -> NEITHER P1 nor P2 in their pure forms. The discriminator is not
+     'geometry vs representation' but EQUIVARIANCE:
+       * ANY T^2-equivariant connection gives zero (not just LC/NK),
+         so the zero does NOT use the special nearly-Kahler geometry;
+       * a NON-equivariant connection of the same tensorial shape
+         gives NONZERO, so the zero is not an identity of E_i and the
+         invariant sectors alone either.
+     The mechanism is: equivariance of the connection, combined with
+     the weight structure, forces the six per-direction amplitudes
+     into a configuration that always sums to zero.
