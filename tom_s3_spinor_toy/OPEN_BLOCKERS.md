@@ -367,6 +367,34 @@ the sole remaining blocker (the 4th such convergence). See
 (read critically, not at face value — see `PARENT_ACTION_GATE.md` F4 for
 the fuller account).
 
+**Cheap parity pre-check on round95's link, ESCAPE-FOUND, not PROMOTE
+(C159, 2026-09-05, independent context-blind skeptic pass run and
+corrections applied, verdict `WEAKENED` → fixed):** before attempting to
+actually construct a pairing rule (expensive), tested whether round95's
+own `n_L=n_R` derivation (§3) combined with `n_L+n_R=N_gen` (true if a
+pairing rule is required to be an EXCLUSIVE function assigning each of the
+3 triality channels to exactly one `t`-sector) gives a general parity
+impossibility (`2n_L=3`, no integer solution, since `N_gen=3` is odd) —
+which would have redirected this entire bordism/Pin-structure sub-program
+away from "find the right pairing rule" entirely. **Result: does NOT
+hold as a general proof.** `n_L+n_R=N_gen` is not forced: C132/C133 §9
+(2026-09-02/03) already exhibits `all→both` — a channel supplying content
+to BOTH `t`-sectors — as one of exactly 3 logically available support
+patterns of a channel-uniform coupling ansatz; under it `n_L+n_R=2·N_gen`
+(this round's own accounting bridge, not stated by C133 itself), with no
+parity obstruction. E17/round85 §4 (2026-07-17) is NOT itself a live
+non-exclusive candidate, as an earlier draft of this round claimed — it is
+`BLOCKED` with the missing ingredient named (two of its three readings
+point away from coexistence, the third is an unadopted, tension-carrying
+choice) — corrected after skeptic review. **Net: OB1/H1c unchanged —
+still PARKED/OPEN — but the specific parity route that would have closed
+this cheaply is now itself closed**, and the round's own `all→both`
+consolidation sharpens what "round95's link" would actually have to
+supply (a non-exclusive, all-3-channel coupling structure survives the
+anomaly filter; an exclusive one-channel-per-sector rule does not, for
+`N_gen=3` odd). See
+`experiments/20260905-c159-round95-link-scoping-parity-check/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
