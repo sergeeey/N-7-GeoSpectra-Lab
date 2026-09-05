@@ -1,0 +1,26 @@
+GATE  eps=(-1,1,-1) [C151's own J]: max|Term1| = 0.000e+00, max|Term2| = 0.000e+00
+GATE  C151 regression PASSED -- the rebuild is faithful
+==============================================================================
+SCAN OVER ALL 8 INVARIANT ALMOST-COMPLEX STRUCTURES ON SU(3)/T^2
+==============================================================================
+           eps  kind              dom  tgt    max|Term1|    max|Term2|
+     (1, 1, 1)  integrable          3    3     0.000e+00     0.000e+00
+    (1, 1, -1)  integrable          3    3     0.000e+00     0.000e+00
+    (1, -1, 1)  NON-INT (NK)        3    3     0.000e+00     0.000e+00
+   (1, -1, -1)  integrable          3    3     0.000e+00     0.000e+00
+    (-1, 1, 1)  integrable          3    3     0.000e+00     0.000e+00
+   (-1, 1, -1)  NON-INT (NK)        3    3     0.000e+00     0.000e+00
+   (-1, -1, 1)  integrable          3    3     0.000e+00     0.000e+00
+  (-1, -1, -1)  integrable          3    3     0.000e+00     0.000e+00
+
+==============================================================================
+VERDICT
+==============================================================================
+  Term2 block zero for the 2 NEARLY-KAHLER J : True
+  Term2 block zero for the 6 INTEGRABLE  J   : True
+
+  -> J IS IRRELEVANT. The Term2 block vanishes for every invariant
+     almost-complex structure on SU(3)/T^2, integrable or not. So the
+     cancellation is NOT a nearly-Kahler phenomenon; it is a property
+     of m itself on this coset. This SUPPORTS the root-type reading
+     and REMOVES the NK structure as the explanation.

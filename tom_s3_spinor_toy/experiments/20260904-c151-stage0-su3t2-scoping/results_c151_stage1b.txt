@@ -1,0 +1,39 @@
+STAGE 1b -- invariant-sector dimensions for SU(3)/T^2 (before c)
+
+  positive roots (H1,H2)      : r1=(2, -1)  r2=(1, 1)  r3=(-1, 2)
+  J_NK sign tuple (Stage 1a)  : (-1, 1, -1)
+  V = (1,0) space weights     : [(-2, 1), (1, 1), (1, -2)]
+
+  Sigma = Lambda^bullet V :
+    Lambda^0 weights = [(0, 0)]
+    Lambda^1 weights = [(-2, 1), (1, 1), (1, -2)]
+    Lambda^2 weights = [(-1, 2), (-1, -1), (2, -1)]
+    Lambda^3 weights = [(0, 0)]
+    Sigma_even (Lam^0+Lam^2) = [(0, 0), (-1, 2), (-1, -1), (2, -1)]
+    Sigma_odd  (Lam^1+Lam^3) = [(-2, 1), (1, 1), (1, -2), (0, 0)]
+    T^2-invariants inside Sigma itself: 2  (S^6 had 2)
+
+  W = m (x) C weights         : [(2, -1), (1, 1), (-1, 2), (-2, 1), (-1, -1), (1, -2)]
+    T^2-invariants inside W itself: 0  (m has no zero weight)
+
+==============================================================================
+INVARIANT SECTORS  (the criterion-#4 numbers, reported before c)
+==============================================================================
+  domain  dim (Sigma_odd  (x) W)^T2 = 3
+  target  dim (Sigma_even (x) W)^T2 = 3
+
+  For comparison, S^6 = G2/SU(3) with the SAME twist W = m (C139,
+  certified): domain = 1, target = 1 -- so there c was a single SCALAR.
+
+==============================================================================
+CONSEQUENCE FOR THE FROZEN RESTATEMENT
+==============================================================================
+  Sectors are (3,3), NOT (1,1). So c is MATRIX-VALUED here,
+  exactly as restatement consequence #1 pre-committed. The prediction
+  c(J.nabla) = +-i c(nabla) is therefore to be tested AS MATRICES,
+  entry-by-entry -- and explicitly NOT weakened to a statement about
+  norms or singular values, per that same pre-commitment.
+
+  c HAS STILL NOT BEEN COMPUTED. Stages 0, 1a and 1b are all
+  structure-only; every number above is fixed by the root system and
+  by J_NK, which was itself pinned by an objective computation.

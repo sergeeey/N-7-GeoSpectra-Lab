@@ -1,0 +1,31 @@
+==============================================================================
+V2  is the EVEN chirality split forced by N parity?  (skeptic Attack 4)
+==============================================================================
+  A_2  (N=3, odd): solutions = 2, parity split = {0: 1, 1: 1}, N odd (=> forced by eps<->-eps) : True
+     eps=(-1, -1, -1)  parity=0  -eps has SAME parity: False
+     eps=(1, 1, 1)  parity=1  -eps has SAME parity: False
+  G_2  (N=6, even): solutions = 4, parity split = {0: 2, 1: 2}, N odd (=> forced by eps<->-eps) : False
+     eps=(1, 1, 1, -1, 1, -1)  parity=0  -eps has SAME parity: True
+     eps=(-1, 1, -1, 1, 1, -1)  parity=1  -eps has SAME parity: True
+     eps=(1, -1, 1, -1, -1, 1)  parity=1  -eps has SAME parity: True
+     eps=(-1, -1, -1, 1, -1, 1)  parity=0  -eps has SAME parity: True
+  A_2xA_2 (N=6, even): solutions = 4, parity split = {0: 2, 1: 2}, N odd (=> forced by eps<->-eps) : False
+     eps=(-1, -1, -1, -1, -1, -1)  parity=0  -eps has SAME parity: True
+     eps=(1, 1, 1, -1, -1, -1)  parity=1  -eps has SAME parity: True
+     eps=(-1, -1, -1, 1, 1, 1)  parity=1  -eps has SAME parity: True
+     eps=(1, 1, 1, 1, 1, 1)  parity=0  -eps has SAME parity: True
+
+  => skeptic's parity argument is CONFIRMED if 'same parity' is True
+     exactly for the N-even cases and False for the N-odd ones.
+
+==============================================================================
+V1  NULL MODEL: is surjectivity onto the small target generic?
+     (skeptic Attack 2 -- the one it called the killer)
+==============================================================================
+  A_2 shape: random 2x6 integer maps surjective in 200/200 trials  (100.0%)
+  G_2 shape: random 4x30 integer maps surjective in 200/200 trials  (100.0%)
+  A_2xA_2 shape: random 4x12 integer maps surjective in 200/200 trials  (100.0%)
+
+  => if these are ~100%, then 'M is surjective onto Sigma^T_opp' is what
+     ANY map of these dimensions does, and HYPOTHESIS S's remaining
+     content (beyond the FORCED containment) is nil.

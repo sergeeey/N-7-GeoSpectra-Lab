@@ -1,0 +1,204 @@
+{
+  "clutching_sign_flipped": {
+    "gate": "48 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G10_M_iota_is_minus_Ad"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": []
+  },
+  "pin_criteria_swapped": {
+    "gate": "47 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G23_RP2_is_Pin_minus_not_plus",
+      "G24_RP4_is_Pin_plus_not_minus"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": []
+  },
+  "monodromy_term_dropped": {
+    "gate": "44 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G18_CONTROL_KleinBottle_H1_is_Z_plus_Z2",
+      "G19_CONTROL_KleinBottle_H2_vanishes",
+      "G21_M_iota_H4_Z_vanishes_nonorientable",
+      "G36_F2RANK_PROBE_deg2_H3_and_H4_vanish",
+      "G37_F2RANK_PROBE_matches_Z_computation"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": []
+  },
+  "f2_rank_always_zero": {
+    "gate": "45 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G35_f2_rank_unit_tests",
+      "G36_F2RANK_PROBE_deg2_H3_and_H4_vanish",
+      "G37b_nonminimal_model_gives_H2_zero",
+      "G37c_two_CW_models_agree_in_every_degree"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "(Z/2)^2",
+      "w2_zero": false,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": false,
+      "Pin_minus_exists": false,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": [
+      "w2_zero",
+      "Pin_plus_exists",
+      "Pin_minus_exists",
+      "H2_M_iota_F2_nonminimal_model"
+    ]
+  },
+  "embedding_sign_hardcoded": {
+    "gate": "47 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G28_rho_of_Spin_is_Ad",
+      "G29_explicit_lift_covers_minus_Ad_both_sigs"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": []
+  },
+  "boundary_of_b_generator_dropped": {
+    "gate": "47 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G37b_nonminimal_model_gives_H2_zero",
+      "G37c_two_CW_models_agree_in_every_degree"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "(Z/2)^1",
+      "w2_zero": false,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": false,
+      "Pin_minus_exists": false,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": [
+      "w2_zero",
+      "Pin_plus_exists",
+      "Pin_minus_exists",
+      "H2_M_iota_F2_nonminimal_model"
+    ]
+  },
+  "pin_verdict_forgets_mod2": {
+    "gate": "48 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G23_RP2_is_Pin_minus_not_plus"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": []
+  },
+  "pin_verdict_boolean_form_restored": {
+    "gate": "48 / 49",
+    "ALL_OK": false,
+    "caught": true,
+    "checks_that_fired": [
+      "G25b_RP2xRP2_admits_NEITHER_structure"
+    ],
+    "verdict_inputs_under_injection": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    },
+    "headline_fields_moved": []
+  },
+  "BASELINE_uncorrupted": {
+    "gate": "49 / 49",
+    "ALL_OK": true,
+    "VERDICT_INPUTS": {
+      "w1_nonzero": true,
+      "H2_M_iota_F2_minimal_model": "0",
+      "H2_M_iota_F2_nonminimal_model": "0",
+      "w2_zero": true,
+      "w1_squared_zero": true,
+      "Pin_plus_exists": true,
+      "Pin_minus_exists": true,
+      "answer_depends_on_choice_of_relating_map": false
+    }
+  },
+  "ALL_INJECTIONS_CAUGHT": true,
+  "AT_LEAST_ONE_INJECTION_MOVES_THE_HEADLINE": true,
+  "INJECTIONS_THAT_MOVE_THE_HEADLINE": {
+    "f2_rank_always_zero": [
+      "w2_zero",
+      "Pin_plus_exists",
+      "Pin_minus_exists",
+      "H2_M_iota_F2_nonminimal_model"
+    ],
+    "boundary_of_b_generator_dropped": [
+      "w2_zero",
+      "Pin_plus_exists",
+      "Pin_minus_exists",
+      "H2_M_iota_F2_nonminimal_model"
+    ]
+  }
+}

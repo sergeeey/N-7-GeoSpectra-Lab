@@ -1,0 +1,178 @@
+{
+  "bracket_err": 0.0,
+  "bracket_wrong_sign_control": 1.0,
+  "bracket_ok": true,
+  "gram_err": 0.0,
+  "Ad_orthogonality_err": 8.881784197001252e-16,
+  "Ad_det_minus_one_err": 1.1102230246251565e-15,
+  "Ad_control_random_matrix_orth_err": 2.904178699996383,
+  "Ad_ok": true,
+  "ad_matrix_err": 0.0,
+  "C1_M_iota_equals_minus_Ad_err": 1.8018586622758903e-11,
+  "C1_control_vs_plus_Ad_min_dev": 1.4218342645076025,
+  "C1_ok": true,
+  "C2_M_fab_equals_Ad_b_err": 2.3790747150087554e-11,
+  "C2_control_vs_Ad_a_median_dev": 1.417326547652149,
+  "C2_control_vs_Ad_a_min_dev": 0.5082463413640883,
+  "C2_max_spread_over_x_SO4": 3.357114586322041e-11,
+  "C2_ok": true,
+  "C3_M_fab_iota_equals_minus_Ad_bx_err": 2.5693891458899998e-11,
+  "C3_control_vs_minus_Ad_xb_median_dev": 1.399618059758275,
+  "C3_control_vs_minus_Ad_xb_min_dev": 0.06109604308450195,
+  "C3_min_spread_over_x_reversing_coset": 1.598971847382344,
+  "C3_ok": true,
+  "P2_counts": {
+    "pp_const": 250,
+    "pp_nonconst": 0,
+    "mm_const": 0,
+    "mm_nonconst": 250
+  },
+  "P2_det_abs_dev_from_one": 2.1817991857631114e-11,
+  "P2_min_spread_nonconstant_branch": 1.7062052798539358,
+  "P2_max_spread_constant_branch": 4.4908188279180195e-11,
+  "P2_ok": true,
+  "P3_isometry_MtM_minus_I_err": 4.5323522712692466e-11,
+  "P3_nonisometric_falsifier": {
+    "lam_0.05": {
+      "max_MtM_minus_I": 0.04732557805403559,
+      "det_range": [
+        0.9760504197653728,
+        1.0229869221552867
+      ]
+    },
+    "lam_0.2": {
+      "max_MtM_minus_I": 0.18924472001582548,
+      "det_range": [
+        0.9004195022162499,
+        1.0886952942991373
+      ]
+    },
+    "lam_0.5": {
+      "max_MtM_minus_I": 0.5406942829355634,
+      "det_range": [
+        0.7815179856809759,
+        1.2412470676316902
+      ]
+    }
+  },
+  "P3_ok": true,
+  "C6_Adinv_dAd_equals_ad_T_err": 3.011568772137707e-11,
+  "C6_control_wrong_sign_min_dev": 1.9999999999711815,
+  "C6_ok": true,
+  "C7_det_g_range": [
+    0.9999999999999989,
+    1.0000000000000013
+  ],
+  "C7_det_M_iota_range": [
+    -0.9999999999971181,
+    -0.999999999972639
+  ],
+  "C8_M_iota_equals_minusI_times_g_err": 1.600253263234208e-11,
+  "C9_eps_tr_TTT": [
+    -1.5,
+    0.0
+  ],
+  "C9_sectional_curvature": 0.25,
+  "C9_radius": 2.0,
+  "C9_volume_over_pi2": 16.0,
+  "C9_winding_n": -1.0,
+  "C9_ok": true,
+  "P5_etilde_closed_form_err": 1.3877787807814457e-16,
+  "P5_etilde_minus_e_median": 0.6002918223181306,
+  "P5_etilde_minus_e_at_center_plus": 0.0,
+  "P5_etilde_minus_e_at_center_minus": 0.0,
+  "P5_etilde_minus_e_near_center_control": 0.09784339500725572,
+  "P5_center_test_discriminates": true,
+  "P5_etilde_orthonormality_err": 1.5543122344752192e-15,
+  "P5_ok": true,
+  "P6_SO3_leaves_eps_fixed_err": 6.661338147750939e-16,
+  "P6_O3minus_sends_eps_to_minus_eps_err": 6.661338147750939e-16,
+  "P6_control_SO3_vs_minus_eps_min_dev": 1.9999999999999998,
+  "P6_ok": true,
+  "P7_left_structure_constants_plus_eps_err": 1.032863378158666e-11,
+  "P7_right_structure_constants_minus_eps_err": 1.351607714639158e-11,
+  "P7_nabla1_right_frame_parallel_err": 2.7924773604581787e-11,
+  "P7_rootfind_n_nondegenerate_solutions": 181,
+  "P7_rootfind_n_violating_O3minus": 0,
+  "P7_rootfind_det_range": [
+    -1.0000000000112736,
+    -0.999999999999939
+  ],
+  "P7_rootfind_max_orthogonality_dev": 1.1245226971823286e-11,
+  "P7_c_minus_I_residual": 0.0,
+  "P7_c_plus_I_residual": 4.898979485566356,
+  "P7_iota_pushforward_X_equals_minus_Y_err": 8.028183804019786e-12,
+  "P7_ok": true,
+  "P8_Y_in_X_frame_err": 2.2591401799415137e-16,
+  "P8_control_wrong_inverse_median_dev": 0.44707996479842516,
+  "P8_control_wrong_inverse_min_dev": 0.004946605220286725,
+  "P8_c_max_spread_over_x": 3.797528957960594e-11,
+  "P8_c_in_O3minus_count": 60,
+  "P8_c_det_range": [
+    -1.0000000000157676,
+    -0.9999999999657911
+  ],
+  "P8_M_equals_Ad_finv_times_c_err": 7.771561172376096e-16,
+  "P8_ok": true,
+  "P9_lambda_sweep": {
+    "lam=-2.0": {
+      "residual": 0.9903211907843302,
+      "predicted": 0.9903211907481375
+    },
+    "lam=-1.5": {
+      "residual": 0.37137044655817736,
+      "predicted": 0.37137044653055157
+    },
+    "lam=-1.0": {
+      "residual": 2.2928509078632265e-11,
+      "predicted": 0.0
+    },
+    "lam=-0.5": {
+      "residual": 0.12379014883446902,
+      "predicted": 0.12379014884351719
+    },
+    "lam=+0.0": {
+      "residual": 0.0,
+      "predicted": 0.0
+    },
+    "lam=+0.5": {
+      "residual": 0.37137044652150347,
+      "predicted": 0.37137044653055157
+    },
+    "lam=+1.0": {
+      "residual": 0.9903211907300413,
+      "predicted": 0.9903211907481375
+    },
+    "lam=+2.0": {
+      "residual": 2.9709635722082197,
+      "predicted": 2.9709635722444125
+    }
+  },
+  "P9_max_deviation_from_closed_form": 4.497380245993554e-11,
+  "P9_residual_at_minus_Ad_is_iota": 2.2928509078632265e-11,
+  "P9_residual_at_plus_Ad_is_C126_g": 0.9903211907300413,
+  "P9_ok": true,
+  "P10_swap_nabla0_to_nabla1_n_solutions": 108,
+  "P10_swap_nabla0_to_nabla1_det_range": [
+    -1.0000000001485554,
+    -0.9999999999999971
+  ],
+  "P10_swap_nabla0_to_nabla1_n_nonorthogonal": 0,
+  "P10_preserve_nabla0_n_solutions": 108,
+  "P10_preserve_nabla0_det_range": [
+    0.9999999999999741,
+    1.0000000006888483
+  ],
+  "P10_preserve_nabla0_n_nonorthogonal": 0,
+  "P10_ok": true,
+  "VERDICT_INPUTS": {
+    "g_equals_Ad_is_realizable_as_df": false,
+    "minus_Ad_IS_realizable_and_is_M_iota": true,
+    "M_iota_equals_minus_I_times_g": true,
+    "det_M_f_is_minus_one_for_every_relating_diffeo": true,
+    "theorem_does_not_prove_too_much": true,
+    "geometric_image_det_plus_one_part_is_constant": true,
+    "reason": "Maurer-Cartan: d(Phi)+Phi^Phi = lambda(1+lambda)*eps != 0 at lambda=+1, so NO smooth map has M_f = +Ad; = 0 at lambda=-1, which is M_iota.  The operative obstruction is det (C125's Z2), NOT winding -- see PART 6."
+  },
+  "ALL_OK": true
+}
