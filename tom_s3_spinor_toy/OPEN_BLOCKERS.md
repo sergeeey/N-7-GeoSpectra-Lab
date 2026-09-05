@@ -2354,14 +2354,46 @@ predictable before building — a useful filter for evaluating future
 candidates cheaply. See `pearl_registry/INDEX.md` (2026-09-04, impact 7)
 and `experiments/20260904-c146-schur-forced-vanishing-theorem/decision.md`.
 
+**UPDATE (C162, 2026-09-06) — the ONE currently-buildable instantiation
+of C142's named candidate (`W_cand=3⊕3̄⊕3̄`, built as `m⊕3̄_extra` with a
+decoupled connection on the extra summand) was tested, and `Delta_dyn=0`
+is FORCED regardless of that connection's value.** Not merely at the
+natural zero-connection choice: a genericity probe plus a structural
+argument (Term1 of the Dirac Leibniz rule never touches the extra
+summand's own connection; Term2 stays within whatever block the input
+vector occupies, for ANY block-diagonal connection) show this holds for
+every decoupled connection `3̄_extra` could carry. The load-bearing fact
+is a plain `su(3)` branching count, verified two independent ways (exact
+nullspace computation on concrete matrices, and abstract Frobenius-
+reciprocity counting via C141's own `trivial_mult()`): `Sigma_even⊗3̄_extra`
+has zero invariants, so no decoupled connection on `3̄_extra` has any
+invariant target to map into. Independent context-blind skeptic pass
+(2026-09-06): `CONFIRMED-REAL`, including an independent by-hand
+re-derivation of the branching claim via standard CG rules
+(`Sigma_even⊗3̄ = 3̄⊕3⊕6̄` → 0 singlets; `Sigma_odd⊗3̄ = 1⊕8⊕3̄` → 1
+singlet) — no corrections needed. **Verdict: `PROMOTE-AS-NECESSARY-
+CONDITION`**, honestly scoped: this does NOT show `W_cand` can never
+give `Delta_dyn>0`, only that the one buildable (decoupled) instantiation
+cannot, for any connection. It sharpens C142's own two named escape
+options into two more specific sub-paths: **(i')** find a `W_cand`
+construction that avoids `m` entirely (so the zero-invariant obstruction
+found here does not apply), or **(ii')** find independent geometric data
+(not merely a decoupled default) coupling a new summand's connection to
+`m`'s own tangent bundle, which C142's search found does not currently
+exist in this project. See
+`experiments/20260906-c162-ob14-w-cand-scoping/decision.md`.
+
 **Owner / next step:** no internally-buildable test remains identified.
 The matched-singlet-count twist bundle (`m⊕2·1`) was already built (C141)
 and found `Delta_dyn=0`, same as every other tested case. The Kostant/
-Landweber literature route (C144/C145) is now also closed. Remaining
-options are all higher-cost/higher-risk: (a) a genuinely new,
-independently-motivated geometric construction supplying a second copy
-of `3bar` (C142's named gap, high AOG-5 risk without independent
-motivation), or (b) external input from Tom Lawrence's own framework
-(subject to this project's "DO NOT INITIATE CONTACT" constraint). Full
-detail:
+Landweber literature route (C144/C145) is now also closed. C162 further
+confirmed that `W_cand=3⊕3̄⊕3̄`'s own only-buildable instantiation is
+also forced to `Delta_dyn=0`, narrowing (not closing) the remaining
+options to the two sub-paths named above: (i') a `W_cand` construction
+that avoids `m`, or (ii') a genuinely new, independently-motivated
+geometric construction supplying real (non-decoupled) coupling data for
+a second copy of `3bar` (C142's named gap, high AOG-5 risk without
+independent motivation) — or (c) external input from Tom Lawrence's own
+framework (subject to this project's "DO NOT INITIATE CONTACT"
+constraint). Full detail:
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.

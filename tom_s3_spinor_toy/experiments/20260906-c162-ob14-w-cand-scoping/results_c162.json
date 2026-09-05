@@ -1,0 +1,103 @@
+{
+  "checks_total": 15,
+  "checks_passed": 15,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "step1_domain_target_matches_c141_f7_solution",
+      "ok": true,
+      "detail": "got (domain,target)=(2,1), expected (2,1) -- C141's own F7 exhaustive search (script line ~318) found (mult_1,mult_3,mult_3bar)=(0,1,2) is one of exactly two module types giving shape (2,1); this re-derives it via the identical trivial_mult() function, not a new formula."
+    },
+    {
+      "name": "step2_wcand_su3_action_block_diagonal",
+      "ok": true,
+      "detail": "W_cand's 9x9 su(3) action has exactly zero cross-blocks between m (rows/cols 0-5) and 3bar_extra (rows/cols 6-8) for all 8 generators -- confirms 3bar_extra is genuinely decoupled from m, per C139 Section 17's own 'no NOMIZU-derived data for an extra summand, only buildable as decoupled' reasoning (there quoted for m(+)2*1's extra singlets; applied here to W_cand's extra 3bar summand, one assumption transferred by direct analogy, not re-derived from new geometric content -- see decision.md's self-adversarial pass for why this transfer is checked, not merely assumed)."
+    },
+    {
+      "name": "step4_load_bearing_no_singlet_in_sigma_even_tensor_3bar_extra",
+      "ok": true,
+      "detail": "got 0 su(3)-invariant vectors in Sigma_even (x) 3bar_extra (12-dim ambient) -- the load-bearing claim: no su(3)-invariant target vector exists for a decoupled 3bar_extra connection to map into, forcing its own contribution to target_inv to be zero REGARDLESS of what connection it carries."
+    },
+    {
+      "name": "step4_sigma_odd_tensor_3bar_extra_has_exactly_one_singlet",
+      "ok": true,
+      "detail": "got 1 su(3)-invariant vectors in Sigma_odd (x) 3bar_extra (12-dim ambient) -- consistent with Step 1's domain=2: one dimension from m's own 3bar (already C139-certified), one from 3bar_extra's own singlet channel (3 (x) 3bar_extra -> 1)."
+    },
+    {
+      "name": "step4_cross_validation_trivial_mult_matches_explicit_nullspace",
+      "ok": true,
+      "detail": "abstract branching-count method (trivial_mult) gives (0,1); explicit su(3)-invariant-subspace computation gives (0,1) -- two independent methods must agree, and do."
+    },
+    {
+      "name": "step5_domain_inv_dim_matches_step1_prediction",
+      "ok": true,
+      "detail": "got 2, predicted 2"
+    },
+    {
+      "name": "step5_target_inv_dim_matches_step1_prediction",
+      "ok": true,
+      "detail": "got 1, predicted 1"
+    },
+    {
+      "name": "step3_target_inv_avoids_3bar_extras_own_block",
+      "ok": true,
+      "detail": "target_inv's basis vector has exactly zero components in 3bar_extra's own 3-dim W-slot -- confirms Step 3: target_inv is entirely m's own channel."
+    },
+    {
+      "name": "domain_on_splits_cleanly_into_m_channel_and_extra_channel",
+      "ok": true,
+      "detail": "the 2 domain_inv basis vectors should decouple into one purely-m-block vector and one purely-extra-block vector, since W_cand's su(3) action and connection are both block-diagonal (Step 2) -- checked directly, not assumed."
+    },
+    {
+      "name": "step5_d_extra_is_zero_at_the_natural_zero_connection",
+      "ok": true,
+      "detail": "got d_extra=0 at the natural (decoupled, zero-connection) instantiation -- expected exactly 0."
+    },
+    {
+      "name": "step5_d_m_matches_c139s_own_certified_c_magnitude",
+      "ok": true,
+      "detail": "|d_m|=1.1547005383792515, |C139.c_exact|=1.1547005383792515 -- must match (up to the already-documented gauge phase freedom, C139 Section 6): target_inv here is literally the same 1-dim invariant C139 already certified."
+    },
+    {
+      "name": "step4b_d_extra_vanishes_identically_for_arbitrary_nonzero_connection",
+      "ok": true,
+      "detail": "d_extra(t)=0 -- must be IDENTICALLY zero as a function of t (not merely at t=0) to support claim.md's 'regardless of what connection' clause. Scope caveat (see decision.md): this uses ONE fixed antisymmetric 3x3 shape scaled by a single symbol t (uniform across i=1..6), not the FULL space of possible decoupled connections -- a genuine, honestly-scoped limitation, not a claim of full generality."
+    },
+    {
+      "name": "step4b_d_m_is_independent_of_3bar_extras_own_connection_t",
+      "ok": true,
+      "detail": "d_m(t)=-2*sqrt(3)/3, d(d_m)/dt=0 -- m's own channel must not depend on 3bar_extra's connection at all, confirming the block-diagonal decoupling holds all the way through the Dirac operator, not just the su(3) action."
+    },
+    {
+      "name": "step6_rank_is_exactly_1",
+      "ok": true,
+      "detail": "got rank=1, expected 1 (d_m!=0, d_extra=0, so a 1x2 nonzero row has rank 1)"
+    },
+    {
+      "name": "step6_delta_dyn_is_forced_zero",
+      "ok": true,
+      "detail": "Delta_dyn = kernel(1) - floor(1) = 0, expected 0 -- the claim's central conclusion."
+    }
+  ],
+  "data": {
+    "step1_domain": 2,
+    "step1_target": 1,
+    "step4_even_extra_invariant_dim": 0,
+    "step4_odd_extra_invariant_dim": 1,
+    "step6_domain_dim": 2,
+    "step6_target_dim": 1,
+    "step6_rank": 1,
+    "step6_floor": 1,
+    "step6_kernel_dim": 1,
+    "step6_delta_dyn": 0,
+    "step5_d_m": "-2*sqrt(3)/3",
+    "step5_d_extra_zero_conn": "0",
+    "step4b_d_extra_generic_t": "0"
+  },
+  "delta_dyn_result": {
+    "delta_dyn": 0,
+    "rank": 1,
+    "kernel_dim": 1,
+    "floor": 1
+  }
+}
