@@ -2410,17 +2410,61 @@ found here does not apply), or **(ii')** find independent geometric data
 exist in this project. See
 `experiments/20260906-c162-ob14-w-cand-scoping/decision.md`.
 
-**Owner / next step:** no internally-buildable test remains identified.
-The matched-singlet-count twist bundle (`m⊕2·1`) was already built (C141)
-and found `Delta_dyn=0`, same as every other tested case. The Kostant/
-Landweber literature route (C144/C145) is now also closed. C162 further
-confirmed that `W_cand=3⊕3̄⊕3̄`'s own only-buildable instantiation is
-also forced to `Delta_dyn=0`, narrowing (not closing) the remaining
-options to the two sub-paths named above: (i') a `W_cand` construction
-that avoids `m`, or (ii') a genuinely new, independently-motivated
-geometric construction supplying real (non-decoupled) coupling data for
-a second copy of `3bar` (C142's named gap, high AOG-5 risk without
-independent motivation) — or (c) external input from Tom Lawrence's own
-framework (subject to this project's "DO NOT INITIATE CONTACT"
-constraint). Full detail:
+**UPDATE (C164→C165, 2026-09-06, user-authorized attempt to pick between
+sub-paths (i')/(ii'), both skeptic-passed):** C164 scoped which of the two
+sub-paths has a cheaper next test, re-verifying C142's own C70/C71 and
+G102 rejections from primary source (both hold up) and extending the
+search to two new candidates C142 never considered (C134's ECSK torsion
+tensor; the `S⁶⊂ℝ⁷` shape operator). First-draft verdict
+`BOTH-HIGH-RISK-NO-CHEAP-DIFFERENTIATOR` was withdrawn to `INCONCLUSIVE`
+by an independent skeptic pass (deliberately hunting for under-claiming,
+not over-claiming — the opposite failure mode this project's skeptic
+passes usually guard against): the C134 dismissal was misframed ("off-
+domain" corrected to "in-domain but zero by 4D-Weyl-chirality dynamics" —
+operational conclusion unchanged), and a genuine third candidate was
+missed — the canonical `NOMIZU`/`ADNU` connection's own curvature 2-form
+`R^c`, conflated in the original draft with the Levi-Civita Riemann tensor
+(correctly ruled out) but actually a distinct, torsion-carrying, never-
+separately-computed object. **C165 computed `R^c` directly** (reusing
+`G96`'s certified octonion-derivation `g2=su(3)⊕m` construction) and found
+its restriction to the `3⊕3̄` (fundamental) Casimir-eigenspace of `Λ²(m)`
+vanishes at machine precision (`1.7e-15`) — exactly matching a Schur's-
+Lemma prediction PRE-REGISTERED before the computation ran (`su(3)_C`,
+the 8-dim adjoint, and `3̄`, dim 3, are non-isomorphic irreducibles, so
+any equivariant map between them is forced to zero, independent of the
+specific geometry). Independent skeptic pass: `CONFIRMED-REAL` — also
+noted (methodological, not a defect) that this result is essentially
+representation-theoretic: ANY connection with holonomy in `H=SU(3)` has
+this property, nothing `S⁶`-specific was needed. **This closes the third
+candidate C164's own skeptic pass surfaced** — all five candidates ever
+considered for either sub-path (C70/C71, G102, C134 torsion, the shape
+operator, and now `R^c`) are rejected. See
+`experiments/20260906-c164-ob14-path-i-vs-ii-scoping/decision.md` and
+`experiments/20260906-c165-canonical-connection-curvature-check/decision.md`.
+
+**Owner / next step:** no internally-buildable test remains identified,
+now checked more thoroughly than at any prior point in this OB's history
+(five independent candidate classes tried and rejected, two of them —
+C134 torsion and `R^c` — found only after this project's own skeptic
+convention specifically hunted for missed cheap paths, not just for
+overclaims). The matched-singlet-count twist bundle (`m⊕2·1`) was already
+built (C141) and found `Delta_dyn=0`, same as every other tested case.
+The Kostant/Landweber literature route (C144/C145) is now also closed.
+C162 further confirmed that `W_cand=3⊕3̄⊕3̄`'s own only-buildable
+instantiation is also forced to `Delta_dyn=0`. Remaining options: (i') a
+`W_cand` construction that avoids `m` entirely, or (ii') a genuinely new,
+independently-motivated geometric construction supplying real (non-
+decoupled) coupling data for a second copy of `3bar` — both C142's and
+C164's own searches found NO currently-buildable candidate for either,
+so both remain high-AOG-5-risk, requiring either a not-yet-conceived
+mathematical construction (out of this project's current scope per
+C164's own AOG-5 assessment) or (c) external input from Tom Lawrence's
+own framework (subject to this project's "DO NOT INITIATE CONTACT"
+constraint). One honest scope gap remains, named by C164's own skeptic
+pass but not yet acted on: AHL2023 (a published paper already cited
+elsewhere in this project, e.g. `round114-ahl2023-torsion-killing-spinor-
+crosscheck`) has never been grepped for OB14-specific coupling data —
+reading an already-published, already-cited paper does not violate the
+"DO NOT INITIATE CONTACT" constraint, and this is a cheap check not yet
+performed. Full detail:
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
