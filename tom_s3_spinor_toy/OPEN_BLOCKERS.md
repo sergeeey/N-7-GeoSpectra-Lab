@@ -673,34 +673,40 @@ See `experiments/20260810-consortium-c25-parity-of-t-selection/decision.md`.
 
 ---
 
-## OB12 — KO-dimension mapping: the sign tuple is verified, the NUMBER is not [OPENED 2026-08-10, C36 fallout]
+## OB12 — KO-dimension mapping: RESOLVED [OPENED 2026-08-10, C36 fallout; CLOSED 2026-09-05, C160]
 
-**The gap, stated precisely.** G18's finite triple has the tuple
+**✅ RESOLVED (C160, 2026-09-05).** G18's finite triple has the tuple
 `(J², JDJ⁻¹/D, JγJ⁻¹/γ) = (+1, +1, −1)`, all three **computed in this repo**
-[VERIFIED-sympy]. The label `KO-dim 6` attached to it is **inherited from CCM**
-and has never been derived here — this repo holds no sign-triple table, no CCM
-source file, and no internal mapping. `G26`'s own comparison already marked
-CCM's KO-6 as `[DOCS] postulated`, so *both* sides of "same KO-dim
-independently" (its original wording, corrected 2026-08-10) were inherited.
+[VERIFIED-sympy]. The label `KO-dim 6` was previously **inherited from CCM**
+without ever being independently checked against a cited primary source's own
+stated sign-triple ↔ KO-dimension table — that gap is now closed. C160 fetched
+(not recalled) two real sources: A. Connes, arXiv:hep-th/9603053 (axiom 7,
+"Reality," general `n mod 8` table) and Chamseddine-Connes-Marcolli,
+arXiv:hep-th/0610241 (Definition 2.7, restating the same table, PLUS §2.4
+eq. (2.19), the direct concrete statement for CCM's own `H_F` — their literal
+`N=3`-generation object this project's `H_F` is modeled on): "`J_F²=1`,
+`J_F γ_F = −γ_F J_F`. The relation (2.19), together with the commutation of
+`J_F` with the Dirac operators, is characteristic of KO-dimension equal to 6
+modulo 8." Convention checked, not assumed — CCM's own `(ε, ε′, ε″)` ordering
+is identical to this repo's `(J², JDJ⁻¹/D, JγJ⁻¹/γ)` ordering, so all three
+slots match exactly with no reordering needed. Independently re-verified
+directly by the orchestrating session (not just accepted from the agent):
+fetched hep-th/0610241 itself via `mcp__arxiv__read_paper` and confirmed the
+exact quoted text at the source. One honest data-quality note: the general
+table's `ε″` row renders incomplete past `n=3` in arXiv's HTML extraction (a
+rendering artifact of 1996/2006-era plain-TeX tables, confirmed independently
+in both fetches) — NOT extrapolated (a naive period-2 extrapolation would give
+the WRONG value at `n=6`); the resolution instead rests on CCM's own explicit
+`n=6`-specific statement (eq. 2.19), which does not depend on the damaged row.
+Full record: `experiments/20260905-c160-ob12-ko-dimension-table-citation/decision.md`.
+Registry updated: `docs/ko_dimension_registry.md` Entry 1,
+`mapping_status: RESOLVED`.
 
-**Status:** `BLOCKED_BY_EXTERNAL_INPUT` — a dependency, not a failure. Unchanged by this
-consolidation pass (2026-08-10) — still genuinely needs a cited primary source, nothing
-computable from inside this repo closes it. Noted for context, not as a substitute: C49/C52
-(OB2, below) already prove the specific `t=0,1` doubled construction this number would classify
-is not a valid geometry regardless of what the number turns out to be — low-stakes as things
-currently stand, not because the gap itself is resolved.
-
-**What closes it** (either one): a cited primary source for the sign-triple ↔
-KO-dimension table, transcribed with *its own* convention stated — in particular
-which sign that source calls `ε`, `ε′`, `ε″`, since G18's docstring ordering and
-the common literature ordering do not obviously agree; **or** an internal
-derivation over `n mod 8` for the model Clifford triple. The machinery for the
-reality-type half already exists (`label_vs_code_check.py`), but the
-finite-geometry conventions relating `J` to `D` are subtle enough that this must
-be derived, not assembled by analogy.
-
-**Until then:** quote the tuple, never the number. Registry:
-`docs/ko_dimension_registry.md`. Enforced by `hooks/claim_scope_gate.py`.
+**Historical note (superseded by the above):** previously `BLOCKED_BY_EXTERNAL_INPUT`
+— a dependency, not a failure. C49/C52 (OB2, below) already prove the specific
+`t=0,1` doubled construction this number would classify is not a valid geometry
+regardless of what the number turned out to be — this was low-stakes even while
+blocked, and remains so now that it is resolved.
 
 **Do not fold this into the geometric side.** `C32`/`C33`'s reality types are
 for the **geometric** `S³×S⁶` module — a different object. Combining finite and
