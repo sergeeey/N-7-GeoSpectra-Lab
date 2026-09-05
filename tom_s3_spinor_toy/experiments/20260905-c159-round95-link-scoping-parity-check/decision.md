@@ -116,6 +116,16 @@ inconsistency between round90's corrected text and round95's Section 5,
 worth a future round's attention. Not pursued further here (out of scope,
 per claim.md's own "do not proceed" instruction).
 
+**Update, 2026-09-05, same day, follow-up round:** confirmed and corrected
+directly in `round95/decision.md` itself (its own Section 5 point 2 and
+Pearl-registry candidate section, both retracted in place, never-delete
+discipline). `n_L` (generation count) was conflated with `SU(2)_L` doublet
+count; round90's own correction gives `4·n_L` doublets per `n_L`
+generations, even for every integer `n_L` — Witten's anomaly is never
+violated by this construction, regardless of pairing outcome. Only
+round90's own `n_L=n_R` cubic-anomaly condition (used throughout this
+file, unaffected) applies.
+
 ### 1b. E17/round85 (`experiments/20260717-round85-e17-sector-coexistence-gate/decision.md`)
 
 Read in full. Confirmed: Section 1 (`decision.md:50-93`) establishes, under
