@@ -426,6 +426,33 @@ mostly-unsuccessful attempt) remains unattempted and undiminished in
 priority if pursued. See
 `experiments/20260905-c161-all-to-both-construction-scoping/decision.md`.
 
+**C161's own INCOMPLETE-MACHINERY-vs-ILL-POSED question audited directly
+(C163, 2026-09-06, independent skeptic pass run, verdict `WEAKENED`,
+corrections applied):** per C161's own named next step ("audit whether the
+identification was ever licensed" before building any frame-selection
+round), checked C133, C132, and C38 (via C125) for ANY textual license —
+literal or synonymous — tying `λ₀,λ₁` to a computed quantity like C136's
+`α`. **Found none, under exhaustive keyword and synonym search** (`Killing`,
+`gravitino`, `torsion`, `equation of motion`, `dynamically`, `field
+equation`, all zero hits in C133's 916 lines; C132 grepped for
+`λ₀`/`λ₁`/`lambda_0`/`lambda_1` AND for synonyms — "coupling coefficient",
+"mixing constant", "modulus", `w₀`/`w₁`, "sector space" — also zero
+relevant hits). **Skeptic-corrected disposition**: the round's own first
+draft called this `ILL-POSED` (a category error), but the skeptic pass
+found that framing overclaimed — C133's "free 2-parameter continuum"
+language (§9) is neutral toward future dynamical fixing, not a denial of
+it, and C136's own `α` is itself a free modulus at an earlier stage before
+an additional constraint (`solve_cell`) pins it, so the asymmetry is a
+difference in constraint APPLIED, not a categorical object-kind mismatch.
+**Corrected verdict: `NO-LICENSE-FOUND`** (narrower than `ILL-POSED`) — no
+license exists in the rounds actually checked; whether the identification
+is unlicensable IN PRINCIPLE remains open. **Practical conclusion
+unchanged**: do not build a frame-selection round on the C133+C136
+recombination without first supplying an explicit license (a genuinely new
+construction naming `λ₀,λ₁` as its own coefficients from the start is not
+foreclosed). See
+`experiments/20260906-c163-ob1-lambda-alpha-licensing-audit/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
