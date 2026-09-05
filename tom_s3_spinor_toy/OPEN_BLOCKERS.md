@@ -395,6 +395,37 @@ anomaly filter; an exclusive one-channel-per-sector rule does not, for
 `N_gen=3` odd). See
 `experiments/20260905-c159-round95-link-scoping-parity-check/decision.md`.
 
+**User-directed attempt to actually construct the `all→both` structure,
+scoped down to a cheap first test, INCOMPLETE-MACHINERY-or-ILL-POSED, not
+resolved either way (C161, 2026-09-05/06, independent skeptic pass run,
+verdict `WEAKENED`, corrections applied):** rather than a brand-new 13D
+construction, tested the cheapest available route — extending C136's
+already-certified joint-Killing-spinor construction (which C136 itself
+left the `S⁶` side "used only by citation," never computing a
+channel-dependent coefficient) to actually compute the coupling
+coefficients C133's `Φ = 1_F⊗(λ₀w₀+λ₁w₁)` needs. **Found the anticipated
+gap was misdiagnosed**: the missing `S⁶`-side operator turns out to be
+algebraically irrelevant (C136's own `μ(t)` vanishes identically at
+`t∈{0,1}` regardless of any finite `S⁶` input) — the real gap is that
+neither C133 nor C136 ever states which of C136's two computed S3 frames
+(left-/right-invariant) plays `w₀` versus `w₁`; the four literal choices
+give 3 of claim.md's 5 possible verdicts, by frame choice alone, with the
+triality-channel axis confirmed inert throughout. **Skeptic-corrected
+disposition**: whether this is `INCOMPLETE-MACHINERY` (a frame-selection
+principle is missing and could in principle be found) or `ILL-POSED`
+(C133's own text calls `λ₀,λ₁` a free 2-parameter `Hom`-space modulus, not
+a spectral quantity — mapping it onto C136's *computed* eigenvalues may be
+a type mismatch, not an unresolved choice) is genuinely undetermined by
+this project's current content — **and the two readings license opposite
+next steps** (build a selection principle, vs. do not — audit whether the
+identification was ever licensed at all). Net: `all→both` remains "assumed,
+not derived" (C133 §8a), neither confirmed nor refuted; a genuinely new
+13D construction (the expensive path this round was scoped to avoid,
+budgeted at 5-15+ rounds per C132-C137's own recent, concentrated,
+mostly-unsuccessful attempt) remains unattempted and undiminished in
+priority if pursued. See
+`experiments/20260905-c161-all-to-both-construction-scoping/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
