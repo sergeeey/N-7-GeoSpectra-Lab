@@ -367,6 +367,65 @@ the sole remaining blocker (the 4th such convergence). See
 (read critically, not at face value — see `PARENT_ACTION_GATE.md` F4 for
 the fuller account).
 
+**Cheap parity pre-check on round95's link, ESCAPE-FOUND, not PROMOTE
+(C159, 2026-09-05, independent context-blind skeptic pass run and
+corrections applied, verdict `WEAKENED` → fixed):** before attempting to
+actually construct a pairing rule (expensive), tested whether round95's
+own `n_L=n_R` derivation (§3) combined with `n_L+n_R=N_gen` (true if a
+pairing rule is required to be an EXCLUSIVE function assigning each of the
+3 triality channels to exactly one `t`-sector) gives a general parity
+impossibility (`2n_L=3`, no integer solution, since `N_gen=3` is odd) —
+which would have redirected this entire bordism/Pin-structure sub-program
+away from "find the right pairing rule" entirely. **Result: does NOT
+hold as a general proof.** `n_L+n_R=N_gen` is not forced: C132/C133 §9
+(2026-09-02/03) already exhibits `all→both` — a channel supplying content
+to BOTH `t`-sectors — as one of exactly 3 logically available support
+patterns of a channel-uniform coupling ansatz; under it `n_L+n_R=2·N_gen`
+(this round's own accounting bridge, not stated by C133 itself), with no
+parity obstruction. E17/round85 §4 (2026-07-17) is NOT itself a live
+non-exclusive candidate, as an earlier draft of this round claimed — it is
+`BLOCKED` with the missing ingredient named (two of its three readings
+point away from coexistence, the third is an unadopted, tension-carrying
+choice) — corrected after skeptic review. **Net: OB1/H1c unchanged —
+still PARKED/OPEN — but the specific parity route that would have closed
+this cheaply is now itself closed**, and the round's own `all→both`
+consolidation sharpens what "round95's link" would actually have to
+supply (a non-exclusive, all-3-channel coupling structure survives the
+anomaly filter; an exclusive one-channel-per-sector rule does not, for
+`N_gen=3` odd). See
+`experiments/20260905-c159-round95-link-scoping-parity-check/decision.md`.
+
+**User-directed attempt to actually construct the `all→both` structure,
+scoped down to a cheap first test, INCOMPLETE-MACHINERY-or-ILL-POSED, not
+resolved either way (C161, 2026-09-05/06, independent skeptic pass run,
+verdict `WEAKENED`, corrections applied):** rather than a brand-new 13D
+construction, tested the cheapest available route — extending C136's
+already-certified joint-Killing-spinor construction (which C136 itself
+left the `S⁶` side "used only by citation," never computing a
+channel-dependent coefficient) to actually compute the coupling
+coefficients C133's `Φ = 1_F⊗(λ₀w₀+λ₁w₁)` needs. **Found the anticipated
+gap was misdiagnosed**: the missing `S⁶`-side operator turns out to be
+algebraically irrelevant (C136's own `μ(t)` vanishes identically at
+`t∈{0,1}` regardless of any finite `S⁶` input) — the real gap is that
+neither C133 nor C136 ever states which of C136's two computed S3 frames
+(left-/right-invariant) plays `w₀` versus `w₁`; the four literal choices
+give 3 of claim.md's 5 possible verdicts, by frame choice alone, with the
+triality-channel axis confirmed inert throughout. **Skeptic-corrected
+disposition**: whether this is `INCOMPLETE-MACHINERY` (a frame-selection
+principle is missing and could in principle be found) or `ILL-POSED`
+(C133's own text calls `λ₀,λ₁` a free 2-parameter `Hom`-space modulus, not
+a spectral quantity — mapping it onto C136's *computed* eigenvalues may be
+a type mismatch, not an unresolved choice) is genuinely undetermined by
+this project's current content — **and the two readings license opposite
+next steps** (build a selection principle, vs. do not — audit whether the
+identification was ever licensed at all). Net: `all→both` remains "assumed,
+not derived" (C133 §8a), neither confirmed nor refuted; a genuinely new
+13D construction (the expensive path this round was scoped to avoid,
+budgeted at 5-15+ rounds per C132-C137's own recent, concentrated,
+mostly-unsuccessful attempt) remains unattempted and undiminished in
+priority if pursued. See
+`experiments/20260905-c161-all-to-both-construction-scoping/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
@@ -645,34 +704,40 @@ See `experiments/20260810-consortium-c25-parity-of-t-selection/decision.md`.
 
 ---
 
-## OB12 — KO-dimension mapping: the sign tuple is verified, the NUMBER is not [OPENED 2026-08-10, C36 fallout]
+## OB12 — KO-dimension mapping: RESOLVED [OPENED 2026-08-10, C36 fallout; CLOSED 2026-09-05, C160]
 
-**The gap, stated precisely.** G18's finite triple has the tuple
+**✅ RESOLVED (C160, 2026-09-05).** G18's finite triple has the tuple
 `(J², JDJ⁻¹/D, JγJ⁻¹/γ) = (+1, +1, −1)`, all three **computed in this repo**
-[VERIFIED-sympy]. The label `KO-dim 6` attached to it is **inherited from CCM**
-and has never been derived here — this repo holds no sign-triple table, no CCM
-source file, and no internal mapping. `G26`'s own comparison already marked
-CCM's KO-6 as `[DOCS] postulated`, so *both* sides of "same KO-dim
-independently" (its original wording, corrected 2026-08-10) were inherited.
+[VERIFIED-sympy]. The label `KO-dim 6` was previously **inherited from CCM**
+without ever being independently checked against a cited primary source's own
+stated sign-triple ↔ KO-dimension table — that gap is now closed. C160 fetched
+(not recalled) two real sources: A. Connes, arXiv:hep-th/9603053 (axiom 7,
+"Reality," general `n mod 8` table) and Chamseddine-Connes-Marcolli,
+arXiv:hep-th/0610241 (Definition 2.7, restating the same table, PLUS §2.4
+eq. (2.19), the direct concrete statement for CCM's own `H_F` — their literal
+`N=3`-generation object this project's `H_F` is modeled on): "`J_F²=1`,
+`J_F γ_F = −γ_F J_F`. The relation (2.19), together with the commutation of
+`J_F` with the Dirac operators, is characteristic of KO-dimension equal to 6
+modulo 8." Convention checked, not assumed — CCM's own `(ε, ε′, ε″)` ordering
+is identical to this repo's `(J², JDJ⁻¹/D, JγJ⁻¹/γ)` ordering, so all three
+slots match exactly with no reordering needed. Independently re-verified
+directly by the orchestrating session (not just accepted from the agent):
+fetched hep-th/0610241 itself via `mcp__arxiv__read_paper` and confirmed the
+exact quoted text at the source. One honest data-quality note: the general
+table's `ε″` row renders incomplete past `n=3` in arXiv's HTML extraction (a
+rendering artifact of 1996/2006-era plain-TeX tables, confirmed independently
+in both fetches) — NOT extrapolated (a naive period-2 extrapolation would give
+the WRONG value at `n=6`); the resolution instead rests on CCM's own explicit
+`n=6`-specific statement (eq. 2.19), which does not depend on the damaged row.
+Full record: `experiments/20260905-c160-ob12-ko-dimension-table-citation/decision.md`.
+Registry updated: `docs/ko_dimension_registry.md` Entry 1,
+`mapping_status: RESOLVED`.
 
-**Status:** `BLOCKED_BY_EXTERNAL_INPUT` — a dependency, not a failure. Unchanged by this
-consolidation pass (2026-08-10) — still genuinely needs a cited primary source, nothing
-computable from inside this repo closes it. Noted for context, not as a substitute: C49/C52
-(OB2, below) already prove the specific `t=0,1` doubled construction this number would classify
-is not a valid geometry regardless of what the number turns out to be — low-stakes as things
-currently stand, not because the gap itself is resolved.
-
-**What closes it** (either one): a cited primary source for the sign-triple ↔
-KO-dimension table, transcribed with *its own* convention stated — in particular
-which sign that source calls `ε`, `ε′`, `ε″`, since G18's docstring ordering and
-the common literature ordering do not obviously agree; **or** an internal
-derivation over `n mod 8` for the model Clifford triple. The machinery for the
-reality-type half already exists (`label_vs_code_check.py`), but the
-finite-geometry conventions relating `J` to `D` are subtle enough that this must
-be derived, not assembled by analogy.
-
-**Until then:** quote the tuple, never the number. Registry:
-`docs/ko_dimension_registry.md`. Enforced by `hooks/claim_scope_gate.py`.
+**Historical note (superseded by the above):** previously `BLOCKED_BY_EXTERNAL_INPUT`
+— a dependency, not a failure. C49/C52 (OB2, below) already prove the specific
+`t=0,1` doubled construction this number would classify is not a valid geometry
+regardless of what the number turned out to be — this was low-stakes even while
+blocked, and remains so now that it is resolved.
 
 **Do not fold this into the geometric side.** `C32`/`C33`'s reality types are
 for the **geometric** `S³×S⁶` module — a different object. Combining finite and
@@ -2289,14 +2354,46 @@ predictable before building — a useful filter for evaluating future
 candidates cheaply. See `pearl_registry/INDEX.md` (2026-09-04, impact 7)
 and `experiments/20260904-c146-schur-forced-vanishing-theorem/decision.md`.
 
+**UPDATE (C162, 2026-09-06) — the ONE currently-buildable instantiation
+of C142's named candidate (`W_cand=3⊕3̄⊕3̄`, built as `m⊕3̄_extra` with a
+decoupled connection on the extra summand) was tested, and `Delta_dyn=0`
+is FORCED regardless of that connection's value.** Not merely at the
+natural zero-connection choice: a genericity probe plus a structural
+argument (Term1 of the Dirac Leibniz rule never touches the extra
+summand's own connection; Term2 stays within whatever block the input
+vector occupies, for ANY block-diagonal connection) show this holds for
+every decoupled connection `3̄_extra` could carry. The load-bearing fact
+is a plain `su(3)` branching count, verified two independent ways (exact
+nullspace computation on concrete matrices, and abstract Frobenius-
+reciprocity counting via C141's own `trivial_mult()`): `Sigma_even⊗3̄_extra`
+has zero invariants, so no decoupled connection on `3̄_extra` has any
+invariant target to map into. Independent context-blind skeptic pass
+(2026-09-06): `CONFIRMED-REAL`, including an independent by-hand
+re-derivation of the branching claim via standard CG rules
+(`Sigma_even⊗3̄ = 3̄⊕3⊕6̄` → 0 singlets; `Sigma_odd⊗3̄ = 1⊕8⊕3̄` → 1
+singlet) — no corrections needed. **Verdict: `PROMOTE-AS-NECESSARY-
+CONDITION`**, honestly scoped: this does NOT show `W_cand` can never
+give `Delta_dyn>0`, only that the one buildable (decoupled) instantiation
+cannot, for any connection. It sharpens C142's own two named escape
+options into two more specific sub-paths: **(i')** find a `W_cand`
+construction that avoids `m` entirely (so the zero-invariant obstruction
+found here does not apply), or **(ii')** find independent geometric data
+(not merely a decoupled default) coupling a new summand's connection to
+`m`'s own tangent bundle, which C142's search found does not currently
+exist in this project. See
+`experiments/20260906-c162-ob14-w-cand-scoping/decision.md`.
+
 **Owner / next step:** no internally-buildable test remains identified.
 The matched-singlet-count twist bundle (`m⊕2·1`) was already built (C141)
 and found `Delta_dyn=0`, same as every other tested case. The Kostant/
-Landweber literature route (C144/C145) is now also closed. Remaining
-options are all higher-cost/higher-risk: (a) a genuinely new,
-independently-motivated geometric construction supplying a second copy
-of `3bar` (C142's named gap, high AOG-5 risk without independent
-motivation), or (b) external input from Tom Lawrence's own framework
-(subject to this project's "DO NOT INITIATE CONTACT" constraint). Full
-detail:
+Landweber literature route (C144/C145) is now also closed. C162 further
+confirmed that `W_cand=3⊕3̄⊕3̄`'s own only-buildable instantiation is
+also forced to `Delta_dyn=0`, narrowing (not closing) the remaining
+options to the two sub-paths named above: (i') a `W_cand` construction
+that avoids `m`, or (ii') a genuinely new, independently-motivated
+geometric construction supplying real (non-decoupled) coupling data for
+a second copy of `3bar` (C142's named gap, high AOG-5 risk without
+independent motivation) — or (c) external input from Tom Lawrence's own
+framework (subject to this project's "DO NOT INITIATE CONTACT"
+constraint). Full detail:
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
