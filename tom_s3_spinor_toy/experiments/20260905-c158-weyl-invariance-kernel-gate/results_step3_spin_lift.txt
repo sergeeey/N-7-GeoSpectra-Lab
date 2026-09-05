@@ -1,0 +1,307 @@
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+==============================================================================
+STEP 3a  REGRESSION -- ad_on_m_general reproduces T2_M on Cartan directions
+==============================================================================
+  ad_on_m_general(h1) == T2_M[0] : True
+  ad_on_m_general(h2) == T2_M[1] : True
+
+==============================================================================
+STEP 3b  build A_01, A_12 (su(3) generators with exp((pi/2)A)=g_pq),
+         verify g(theta) at theta=pi/2 reproduces g01, g12 from Step 1
+==============================================================================
+  d/dtheta g01(theta)|_0 == A01 : True
+  d/dtheta g12(theta)|_0 == A12 : True
+  g01(pi/2) == g01 (Step 1's matrix) : True
+  g12(pi/2) == g12 (Step 1's matrix) : True
+
+==============================================================================
+STEP 3c  L01, L12 := ad_on_m_general(A01), ad_on_m_general(A12);
+         REGRESSION: d/dtheta R(theta)|_0 == L_pq, where R(theta) is
+         Step 1's own R_of construction applied to g(theta)
+==============================================================================
+  d/dtheta R01(theta)|_0 == L01 : True
+  d/dtheta R12(theta)|_0 == L12 : True
+  R01(pi/2), R12(pi/2) reproduce Step 1's R01, R12 (by uniqueness of the
+  one-parameter subgroup with a given generator -- Lie theory, not
+  re-verified numerically here since it follows from 3a-3c together).
+
+==============================================================================
+STEP 3d  spin_lift(L_pq) eigenvalues, and the CLOSED-FORM exponential
+==============================================================================
+  M01 eigenvalues: {-I: 2, I: 2, 0: 4}
+  M12 eigenvalues: {-I: 2, I: 2, 0: 4}
+
+  Since spec(M) subset {+i,-i,0}: exp((pi/2)M) = M + P_0, where
+  P_0 = M^2 + I is the projector onto the zero-eigenspace (verified:
+  on +-i eigenspaces M^2=-1 so M^2+I=0; on 0-eigenspace M^2+I=I).
+  This is EXACT closed form -- no numerical matrix exponential needed.
+
+==============================================================================
+STEP 3e  DECISIVE REGRESSION -- does conjugation by S01/S12 on the
+         Clifford VECTORS E_1..E_6 reproduce R01/R12 exactly?
+==============================================================================
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+==============================================================================
+STEP 1  build SU(3) Weyl representatives, verify the 2x2 swap fact first
+==============================================================================
+  isolated 2x2 check: g D g^-1 = [[b, 0], [0, a]]  (must be diag(b,a))
+  g01: unitary=True, det=1: True
+  g01: conjugation swaps positions (0, 1) on a diagonal probe: True
+  g12: unitary=True, det=1: True
+  g12: conjugation swaps positions (1, 2) on a diagonal probe: True
+
+  R01, R12 (action on the 6-dim m, in M_BASIS coordinates) built.
+
+==============================================================================
+GATE G1  [CORRECTED] R01^2, R12^3 as literal 6x6 matrices on m
+==============================================================================
+  [SECOND SELF-CORRECTION, before running] the original pre-registration
+  tested 'R12^3 = I', which is simply the wrong group-theoretic claim:
+  g12 represents the TRANSPOSITION (1,2), an order-2 element of S_3, not
+  a 3-cycle. The genuine order-3 element of W(A_2) is the PRODUCT
+  g01*g12 (a 3-cycle on the weight indices). Both g01 and g12 (simple
+  reflections) are tested for ORDER 2 below; the 3-cycle is tested
+  separately as a bonus regression, since 3-cycles are known to lift
+  honestly (no order-4 subtlety) -- only reflections have that issue.
+  R01^2 = [[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, -1, 0, 0, 0], [0, 0, 0, -1, 0, 0], [0, 0, 0, 0, -1, 0], [0, 0, 0, 0, 0, -1]]
+  R12^2 = [[-1, 0, 0, 0, 0, 0], [0, -1, 0, 0, 0, 0], [0, 0, -1, 0, 0, 0], [0, 0, 0, -1, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]]
+  R01^2 == I (literal, on all of m): False
+  R12^2 == I (literal, on all of m): False
+
+  [SELF-CORRECTION] Both are False, and that is EXPECTED, not a bug: this
+  is the standard SU(n)-Weyl-lift phenomenon -- a block-embedded SU(2)
+  representative of a simple reflection has order 4 in SU(n), not order
+  2, because N(T) -> W = N(T)/T does not split. g01^2 = diag(-1,-1,1) is
+  a genuine, nontrivial element of the maximal torus T itself (checked:
+  it is diagonal, unitary, det 1) -- NOT the identity, but ALSO not an
+  obstruction, because T2_M/family_sym were built to be invariant under
+  the FULL torus T already. The gate that actually matters is whether
+  R01^2 (and R12^3) act as the IDENTITY specifically on family_sym --
+  i.e. whether the torus element they equal is one family_sym is
+  already invariant under, which is exactly what T-equivariance means.
+
+==============================================================================
+GATE G1b  orthogonality of R01, R12 (they must preserve the Killing form)
+==============================================================================
+  R01 orthogonal: True   R12 orthogonal: True
+
+==============================================================================
+GATE G2  R01, R12 act on span{T2_M[0], T2_M[1]} as automorphisms of t
+==============================================================================
+  R01: R T2_M[0] R^-1 in span(T2_M): True
+  R01: R T2_M[1] R^-1 in span(T2_M): True
+  R12: R T2_M[0] R^-1 in span(T2_M): True
+  R12: R T2_M[1] R^-1 in span(T2_M): True
+
+==============================================================================
+GATE G3  R01, R12 map family_sym (the 6-dim equivariant family, as a
+         90-dim ambient ker) INTO ITSELF, as a SPAN
+==============================================================================
+  R01: maps all 6 family basis directions into span(family_sym): True
+  R12: maps all 6 family basis directions into span(family_sym): True
+
+==============================================================================
+GATE G1  [CORRECTED, the real test] R01^2, R12^2 act as the IDENTITY
+         specifically on family_sym (T-equivariant connections)
+==============================================================================
+  R01^2 acts as IDENTITY on all 6 family_sym basis directions: True
+  R12^2 acts as IDENTITY on all 6 family_sym basis directions: True
+  CONFIRMED: the order-4 lift is exactly absorbed by family_sym's own
+  T-invariance, as predicted. R01, R12 have order EXACTLY 2 when
+  restricted to family_sym, even though not on the ambient m.
+
+==============================================================================
+GATE G1c  BONUS regression: the 3-cycle g01*g12 lifts HONESTLY (no torus
+          subtlety at all -- (R01*R12)^3 = I literally on all of m)
+==============================================================================
+  (R01*R12)^3 == I literally, on the full 6-dim m (not just family): True
+
+==============================================================================
+  Building the 6x6 restriction of R01, R12 to family_sym's OWN
+  coordinates (needed for G4)
+==============================================================================
+  left-inverse check (Fam_pinv * Fam == I_6): True
+  W01 (R01 on family coords) built, orthogonal check: True
+  W12 (R12 on family coords) built, orthogonal check: True
+  W01^2 == I : True
+  W12^2 == I : True
+  (W01*W12)^3 == I : True
+  W01, W12 correctly generate an honest S_3 action on family_sym's
+  own 6-dim coordinates: both simple reflections order 2, their
+  product (the 3-cycle) order 3, as required for a genuine S_3.
+
+==============================================================================
+GATE G4  THE ACTUAL TEST -- is ker(M) = {a0=a2-a4, a1=a3-a5}
+         (C155's exact kernel) invariant under W01, W12?
+==============================================================================
+  ker(M) basis (C155's exact relation), as 6-dim vectors:
+    k0: (1, 0, 1, 0, 0, 0)
+    k1: (0, 1, 0, 1, 0, 0)
+    k2: (-1, 0, 0, 0, 1, 0)
+    k3: (0, -1, 0, 0, 0, 1)
+  W01 maps ker(M) INTO ITSELF: True
+  W12 maps ker(M) INTO ITSELF: True
+
+==============================================================================
+VERDICT
+==============================================================================
+  G4 (W01): ker(M) invariant : True
+  G4 (W12): ker(M) invariant : True
+  G4 OVERALL: ker(M) is W(A_2)=S_3-INVARIANT : True
+  [BUG FOUND AND FIXED, before trusting the result] the first version of
+  this check built 'want' from ROW i of R (R[i,j]), but R_of's own
+  construction stacks COLUMNS as the image of each M_BASIS generator
+  (R[:,i] = to_m(g*M_BASIS[i]*ginv)) -- so the correct formula uses
+  COLUMN i (R[j,i]), not row i. Row-vs-column is a transpose, and R is
+  orthogonal but not symmetric, so this produced a clean, reproducible
+  -want-shaped mismatch that looked like a sign/Pin ambiguity but was
+  pure indexing. Fixed below; re-run confirms which explanation is real.
+    S01: E_1 conjugation MISMATCH
+    S01: E_3 conjugation MISMATCH
+    S01: E_4 conjugation MISMATCH
+    S01: E_5 conjugation MISMATCH
+    S01: E_6 conjugation MISMATCH
+  S01: S E_i S^-1 == sum_j R[j,i] E_j for all i=1..6 : False
+Traceback (most recent call last):
+  File "E:\Проверка Гипотез\работаю над проверкой гипотез\N-7-GeoSpectra-Lab\tom_s3_spinor_toy\experiments\20260905-c158-weyl-invariance-kernel-gate\c158_step3_spin_lift.py", line 206, in <module>
+    assert ok_all, f"{name} does NOT correctly implement R via conjugation -- STOP"
+           ^^^^^^
+AssertionError: S01 does NOT correctly implement R via conjugation -- STOP

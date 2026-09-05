@@ -1,0 +1,269 @@
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+==============================================================================
+STEP 1  build SU(3) Weyl representatives, verify the 2x2 swap fact first
+==============================================================================
+  isolated 2x2 check: g D g^-1 = [[b, 0], [0, a]]  (must be diag(b,a))
+  g01: unitary=True, det=1: True
+  g01: conjugation swaps positions (0, 1) on a diagonal probe: True
+  g12: unitary=True, det=1: True
+  g12: conjugation swaps positions (1, 2) on a diagonal probe: True
+
+  R01, R12 (action on the 6-dim m, in M_BASIS coordinates) built.
+
+==============================================================================
+GATE G1  [CORRECTED] R01^2, R12^3 as literal 6x6 matrices on m
+==============================================================================
+  [SECOND SELF-CORRECTION, before running] the original pre-registration
+  tested 'R12^3 = I', which is simply the wrong group-theoretic claim:
+  g12 represents the TRANSPOSITION (1,2), an order-2 element of S_3, not
+  a 3-cycle. The genuine order-3 element of W(A_2) is the PRODUCT
+  g01*g12 (a 3-cycle on the weight indices). Both g01 and g12 (simple
+  reflections) are tested for ORDER 2 below; the 3-cycle is tested
+  separately as a bonus regression, since 3-cycles are known to lift
+  honestly (no order-4 subtlety) -- only reflections have that issue.
+  R01^2 = [[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, -1, 0, 0, 0], [0, 0, 0, -1, 0, 0], [0, 0, 0, 0, -1, 0], [0, 0, 0, 0, 0, -1]]
+  R12^2 = [[-1, 0, 0, 0, 0, 0], [0, -1, 0, 0, 0, 0], [0, 0, -1, 0, 0, 0], [0, 0, 0, -1, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]]
+  R01^2 == I (literal, on all of m): False
+  R12^2 == I (literal, on all of m): False
+
+  [SELF-CORRECTION] Both are False, and that is EXPECTED, not a bug: this
+  is the standard SU(n)-Weyl-lift phenomenon -- a block-embedded SU(2)
+  representative of a simple reflection has order 4 in SU(n), not order
+  2, because N(T) -> W = N(T)/T does not split. g01^2 = diag(-1,-1,1) is
+  a genuine, nontrivial element of the maximal torus T itself (checked:
+  it is diagonal, unitary, det 1) -- NOT the identity, but ALSO not an
+  obstruction, because T2_M/family_sym were built to be invariant under
+  the FULL torus T already. The gate that actually matters is whether
+  R01^2 (and R12^3) act as the IDENTITY specifically on family_sym --
+  i.e. whether the torus element they equal is one family_sym is
+  already invariant under, which is exactly what T-equivariance means.
+
+==============================================================================
+GATE G1b  orthogonality of R01, R12 (they must preserve the Killing form)
+==============================================================================
+  R01 orthogonal: True   R12 orthogonal: True
+
+==============================================================================
+GATE G2  R01, R12 act on span{T2_M[0], T2_M[1]} as automorphisms of t
+==============================================================================
+  R01: R T2_M[0] R^-1 in span(T2_M): True
+  R01: R T2_M[1] R^-1 in span(T2_M): True
+  R12: R T2_M[0] R^-1 in span(T2_M): True
+  R12: R T2_M[1] R^-1 in span(T2_M): True
+
+==============================================================================
+GATE G3  R01, R12 map family_sym (the 6-dim equivariant family, as a
+         90-dim ambient ker) INTO ITSELF, as a SPAN
+==============================================================================
+  R01: maps all 6 family basis directions into span(family_sym): True
+  R12: maps all 6 family basis directions into span(family_sym): True
+
+==============================================================================
+GATE G1  [CORRECTED, the real test] R01^2, R12^2 act as the IDENTITY
+         specifically on family_sym (T-equivariant connections)
+==============================================================================
+  R01^2 acts as IDENTITY on all 6 family_sym basis directions: True
+  R12^2 acts as IDENTITY on all 6 family_sym basis directions: True
+  CONFIRMED: the order-4 lift is exactly absorbed by family_sym's own
+  T-invariance, as predicted. R01, R12 have order EXACTLY 2 when
+  restricted to family_sym, even though not on the ambient m.
+
+==============================================================================
+GATE G1c  BONUS regression: the 3-cycle g01*g12 lifts HONESTLY (no torus
+          subtlety at all -- (R01*R12)^3 = I literally on all of m)
+==============================================================================
+  (R01*R12)^3 == I literally, on the full 6-dim m (not just family): True
+
+==============================================================================
+  Building the 6x6 restriction of R01, R12 to family_sym's OWN
+  coordinates (needed for G4)
+==============================================================================
+  left-inverse check (Fam_pinv * Fam == I_6): True
+  W01 (R01 on family coords) built, orthogonal check: True
+  W12 (R12 on family coords) built, orthogonal check: True
+  W01^2 == I : True
+  W12^2 == I : True
+  (W01*W12)^3 == I : True
+  W01, W12 correctly generate an honest S_3 action on family_sym's
+  own 6-dim coordinates: both simple reflections order 2, their
+  product (the 3-cycle) order 3, as required for a genuine S_3.
+
+==============================================================================
+GATE G4  THE ACTUAL TEST -- is ker(M) = {a0=a2-a4, a1=a3-a5}
+         (C155's exact kernel) invariant under W01, W12?
+==============================================================================
+  ker(M) basis (C155's exact relation), as 6-dim vectors:
+    k0: (1, 0, 1, 0, 0, 0)
+    k1: (0, 1, 0, 1, 0, 0)
+    k2: (-1, 0, 0, 0, 1, 0)
+    k3: (0, -1, 0, 0, 0, 1)
+  W01 maps ker(M) INTO ITSELF: True
+  W12 maps ker(M) INTO ITSELF: True
+
+==============================================================================
+VERDICT
+==============================================================================
+  G4 (W01): ker(M) invariant : True
+  G4 (W12): ker(M) invariant : True
+  G4 OVERALL: ker(M) is W(A_2)=S_3-INVARIANT : True
+  --- R01 ---
+    S_rot (corrected) conjugation reproduces Rot exactly: True
+    n (twisted adjoint) conjugation reproduces Refl exactly: True
+    S_full (odd, twisted) conjugation reproduces R01 exactly: True
+  --- R12 ---
+    S_rot (corrected) conjugation reproduces Rot exactly: True
+    n (twisted adjoint) conjugation reproduces Refl exactly: True
+    S_full (odd, twisted) conjugation reproduces R12 exactly: True
+==============================================================================
+Q1  order of S01, S12 on Sigma
+==============================================================================
+  S01^2 == I : False
+  S01^2 == -I : False
+  S12^2 == I : False
+  S12^2 == -I : False
+  S01^2 is neither +I nor -I -- printing it:
+⎡1  0  0   0   0   0   0  0⎤
+⎢                          ⎥
+⎢0  1  0   0   0   0   0  0⎥
+⎢                          ⎥
+⎢0  0  -1  0   0   0   0  0⎥
+⎢                          ⎥
+⎢0  0  0   -1  0   0   0  0⎥
+⎢                          ⎥
+⎢0  0  0   0   -1  0   0  0⎥
+⎢                          ⎥
+⎢0  0  0   0   0   -1  0  0⎥
+⎢                          ⎥
+⎢0  0  0   0   0   0   1  0⎥
+⎢                          ⎥
+⎣0  0  0   0   0   0   0  1⎦
+
+==============================================================================
+Q2  how does the invariant spinor psi_+ transform?
+==============================================================================
+  psi_+ built, ||psi_+||^2 = 2
+  S01 . psi_+ proportional to psi_+? ratio = None
+    S01.psi_+ (not proportional):
+⎡1 ⎤
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎣-ⅈ⎦
+  S12 . psi_+ proportional to psi_+? ratio = None
+    S12.psi_+ (not proportional):
+⎡1 ⎤
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎣-ⅈ⎦
+
+==============================================================================
+Q3  is D_Sigma(v) equivariant? (twisted-adjoint) S D(v) S^-1 == D(R.v)
+==============================================================================
+  S01/R01: (twisted-adjoint) S D(v) S^-1 == D(R.v) for all 6 family dirs: True
+  S12/R12: (twisted-adjoint) S D(v) S^-1 == D(R.v) for all 6 family dirs: True
+
+==============================================================================
+Q4  is M itself equivariant? S.M(v) =? M(R.v)  (or with a sign character)
+==============================================================================
+  S01/R01: S.M(v) == M(R.v)  [naive, holding psi_+ fixed]   : False
+  S01/R01: S.M(v) == -M(R.v) [naive, sign -1]               : False
+  S01/R01: S.M_+(v) == i*M_-(R.v)  [THE TRUE STATEMENT]     : True
+  S12/R12: S.M(v) == M(R.v)  [naive, holding psi_+ fixed]   : False
+  S12/R12: S.M(v) == -M(R.v) [naive, sign -1]               : False
+  S12/R12: S.M_+(v) == i*M_-(R.v)  [THE TRUE STATEMENT]     : True
+
+  CONCLUSION: M is not equivariant alone because psi_+ is not Weyl-fixed
+  (Q2: both generators send psi_+ -> -i*psi_-). The genuinely equivariant
+  object is the PAIR (M_+, M_-); the Weyl group swaps them (with phase i),
+  mirroring the swap of psi_+/psi_-. This is a complete answer, not a
+  failure -- the naive question (holding psi_+ fixed) was ill-posed.
