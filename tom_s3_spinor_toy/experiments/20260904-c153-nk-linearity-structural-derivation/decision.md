@@ -211,3 +211,26 @@ python c153_step1_nijenhuis_correlation.py       # withdrawn as evidence; correc
 python c153_step2_exact_rational_verification.py # exact reconstruction, 2-of-8, AND Step 2g (real Nijenhuis test)
 python c153_step3_per_plane_factorization.py     # per-plane law, 3 facts (not 24); correction appended in-file
 ```
+
+---
+
+## ⚠️ THIRD CORRECTION, same day, found by C154 — sector bases were never Gram-Schmidt orthonormalised
+
+`sector_basis_exact()` (this round's own Step 2) builds `dom_sym`/`tgt_sym`
+directly from `sympy.Matrix.nullspace()` with **no orthonormalisation** —
+unlike `S⁶`'s own `c147b.py`, which explicitly Gram-Schmidts. Checked by
+C154: both Grams happen to equal exactly `2·I₃` (a fortunate accident of
+this particular nullspace call, not guaranteed by the construction). So
+every `c(∇)` magnitude reported by this round (including the headline
+"uniform entry magnitude `2`" at the Levi-Civita point) is proportional to
+a genuine invariant, but on a basis scaled by an unaccounted factor
+relative to a properly unit-normalised one (`‖c‖²` off by a factor `2`).
+
+**Does not change any verdict already recorded in this file** — every sign
+pattern, every ratio-based conclusion (the per-plane law, the Nijenhuis
+correlation, C152's retraction/correction) is scale-invariant and
+unaffected. It DOES mean the specific magnitude `2` should not be compared
+against an external or absolutely-normalised target without first dividing
+by `√2` per side. See
+`experiments/20260904-c154-connection-coefficient-magnitude-vs-killing-eigenvalue/decision.md`
+for the discovery context.
