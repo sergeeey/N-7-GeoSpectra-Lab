@@ -635,6 +635,53 @@ remain entirely untouched and `BLOCKED-NEEDS-NEW-MACHINERY`; this is a
 single, narrow, terminal closure, not a new branch. See
 `experiments/20260906-c171-h1-prime-c168-reconciliation/decision.md`.
 
+**UPDATE (C173, 2026-09-06 -- CLOSES C169's items 2/3, skeptic-
+strengthened): user authorized attempting both remaining escalation
+items. Per the Cheapest Differentiating Test Protocol, checked item 3's
+possibility BEFORE spending item 2's expensive effort.** **Verdict:
+`ITEM3-IMPOSSIBLE-BY-G44`, sharpened to structurally forced, not merely
+hard.** G102's own exhaustive centralizer computation (re-verified fresh
+this session) proves the centralizer of `g₂` in the full 28-dimensional
+`so(8)` is EXACTLY zero-dimensional, and the centralizer of `su(3)` is a
+2-dimensional ABELIAN INNER algebra -- triality is an OUTER automorphism
+of `Spin(8)`/`D₄`, and no inner symmetry can ever realize an outer one.
+Round59's own `Σ` is confirmed (Casimir-spectrum match) to be an
+`SU(3)`-module of the identical type G102's own channels are -- so ANY
+object built purely from `G2/SU(3)`-representation data, round59's `Σ`
+included, carries no information that could select one triality channel
+over another. **Item 2 does NOT rescue this, even if perfectly
+executed** -- its own `Cl(9)=Cl(3)⊗Cl(6)` framework introduces no new
+symmetry beyond `S³`'s `SU(2)` and `S⁶`'s `SU(3)`/`G₂` data, so it cannot
+inject the missing Spin(8)/triality content either. **Independently
+corroborated the same session**: a parallel, concurrent session (working
+in this same shared repo) independently attempted item 2 directly and
+found `REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK` -- item 2's own
+construction succeeds at its narrow original goal, but its own kernel
+vector carries no triality label, exactly as this round predicted (a
+genuine ID collision resulted -- both sessions independently named their
+round "C172"; this round's own experiment was renamed to C173 after
+completion, the parallel session's own C172 folder left untouched, per
+this project's Unclaimed Work Ownership convention). Independent
+context-blind skeptic pass: `CONFIRMED-REAL`, verdict made STRONGER --
+closed the one gap this round itself had flagged open (whether a
+DISCRETE, not merely continuous, symmetry inside `Spin(8)` could realize
+triality) with a clean general argument: `Spin(8)` is CONNECTED, so
+`Ad(g)` is inner for EVERY `g∈Spin(8)` regardless of discrete-coset
+membership -- only elements outside `Spin(8)` entirely could ever be
+outer, and invoking those is exactly the "independent fiber-Spin(8)
+postulate" G102 already named as the only escape. **This closes the
+entire P4 escalation line (C169's items 2 and 3 together) as a route to
+resolving OB1** -- no internally-buildable construction from this
+project's own `G2/SU(3)` + `S³` geometric content can ever carry the
+triality-channel information the pairing rule needs; the only remaining
+routes are an independent fiber-Spin(8) postulate (high AOG-5 risk,
+no motivation beyond wanting to unblock OB1) or external input from Tom
+Lawrence. **P4's own Step 1 (C167, holonomy asymmetry) and item 1
+(C170/C171, explicit `t=0`/`t=1` kernel + reconciled convention) remain
+independently valid, standalone facts** -- only the escalation TOWARD a
+full physical selection mechanism is now closed. See
+`experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
