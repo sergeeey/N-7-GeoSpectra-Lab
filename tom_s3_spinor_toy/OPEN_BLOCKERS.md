@@ -1717,7 +1717,7 @@ minor wording item above.
 
 ---
 
-## OB6 — Codex items 5 and 8 (item 8 re-scoped 2026-07-17; not yet well-posed)
+## OB6 — Codex items 5 and 8 [BOTH MOOT 2026-09-06 — see "Second stale-pointer correction" below; item 5 was already MOOT since 2026-08-10/09-04]
 
 **What's open:**
 - **Item 5 [UPDATED 2026-08-10, consolidation pass — grading and real
@@ -1766,11 +1766,36 @@ longer open. Corrected rather than left to mislead a future reader.)*
 **Item 5 is effectively MOOT, not merely waiting** — the doubled
 construction it concerns was shown not to be a valid geometry (C49/C52),
 so deriving its physical action answers a question about an object already
-excluded. Item
-8 should be re-attempted only after (or explicitly conditional on) OB2/C11
-progress — re-read Codex's wording again at that point to confirm the
-premise then holds, rather than assuming this note's conclusion is still
-current.
+excluded.
+
+**Second stale-pointer correction (2026-09-06, requested audit "го OB6
+сначала" — same class of error as the 2026-09-04 fix above, this time on
+item 8's own sentence, which the 2026-09-04 pass left uncorrected despite
+citing the very fact that resolves it one paragraph earlier):** the
+sentence immediately above used to read "Item 8 should be re-attempted
+only after (or explicitly conditional on) OB2/C11 progress" — but OB2/C11
+progress is exactly what the 2026-09-04 correction had ALREADY cited
+(`ANSWERED 2026-08-10 (C60): NO`) two paragraphs up, in the same edit,
+without applying it to item 8. Applying it now: item 8's own premise
+("IF the actual gauge group is `SU(4)`-related... derived after the spin
+lift") is contingent on `C11_D4_PRODUCT_ANSATZ_FORK` (the non-product
+"doubled" construction) succeeding in realizing `SU(4)` as an actual gauge
+symmetry. That fork is the SAME construction OB2/C11 (C41-C60, closed
+2026-08-10) already showed is **not a valid NCG geometry at all**
+(fails both orientability and Poincaré duality, C49/C52) — independent of
+and prior to the KO-2/KO-4 question C41-C60 spent most of its 20 rounds
+on. Combined with G97's own closure (product framework: only `su(3)⊕u(1)`
+realized, not full `su(4)`), **both routes by which item 8's premise could
+ever become true are now closed** — the product-manifold route (G97,
+2026-07-xx) and the non-product/doubled route (OB2/C11, 2026-08-10). **Item
+8 is therefore effectively MOOT, for the same reason and by the same
+evidence as item 5** — not "conditional on progress that hasn't happened
+yet," but conditional on progress that happened over a month ago and
+went the wrong way. No further work is expected on item 8 absent a
+genuinely new (not yet attempted) third construction for realizing `SU(4)`
+as a gauge symmetry — re-read Codex's original wording again only if such
+a construction is proposed, to confirm the premise then holds, rather than
+assuming this note's conclusion covers a route it does not.
 
 ---
 
