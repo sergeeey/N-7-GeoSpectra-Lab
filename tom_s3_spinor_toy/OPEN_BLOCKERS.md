@@ -948,6 +948,34 @@ whether a selector exists — they were never tests of H1c. Any selector must be
 symmetry statement: `ι(g)=g⁻¹` pulls the whole family `∇^t → ∇^(1−t)` exactly, so
 `t↔1−t` is a genuine symmetry and only an odd term can break it.
 
+> **UPDATE (C176/C177, 2026-09-06): two MORE even functionals tested,
+> both land on the "boring" single-well case, not round99's double-well.**
+> An external reviewer proposed testing whether the Seeley-DeWitt-expanded
+> spectral action `S_spec(t)` (Hanisch-Pfäffle-Stephan 2009's
+> torsion-corrected formula) selects `t=0,1`. C176 computed `a_2(t) =
+> (9(2t-1)²-1)/(8π²)` — manifestly a function of `(2t-1)²`, i.e. **EVEN in
+> `(t-1/2)`**, exactly this section's own category. C177 then computed the
+> exact-n=3-spectrum spectral action `S_f(t,Λ)` (no borrowed formula) and
+> PROVED `S_f(x)=S_f(-x)` for `x=3(t-1/2)` analytically (from multiplicity
+> symmetry alone, not just observed) — also even, by construction, for any
+> cutoff `f`. Per this section's own corrected understanding (C123): an
+> even functional CANNOT break the residual `t=0`-vs-`t=1` degeneracy, but
+> it COULD legitimately select `{0,1}` as a SET against `t=1/2` — exactly
+> what round99's own curvature-norm toy achieved
+> (`CONFIRMED__DOUBLE_WELL_PLAUSIBLE_FROM_CLASSICAL_CURVATURE`). **Neither
+> C176 nor C177 achieved even that weaker outcome**: both land on a SINGLE
+> well at `t=1/2` (`a_2''(1/2)>0`, `S_f''(0)>0` in 15/15 cutoff×`Λ`
+> combinations, skeptic-confirmed `CONFIRMED-REAL` both rounds) — the
+> opposite shape from round99's double-well, using the same even-parity
+> category. This sharpens, not just adds to, this section's own registry:
+> among the even functionals tried on this project's own `t`-family so far
+> (round99 curvature toy: double-well; round111 `Scal(t)`: single-well,
+> same shape as C176/C177; C176 `a_2`: single-well; C177 exact-spectrum
+> `S_f`: single-well) round99's toy is now the ONE outlier, not the
+> representative case. See `experiments/20260906-c176-ob1-spectral-action-
+> torsion-selector/decision.md` and `experiments/20260906-c177-ob1-exact-
+> spectrum-spectral-action-test/decision.md`.
+
 **Unrepresented branch:** `C25` is recorded as OPEN, which presupposes an answer
 exists. If `ι` is a **gauge** symmetry rather than merely an isometry, "which
 endpoint" is like asking which gauge representative is physical — and every

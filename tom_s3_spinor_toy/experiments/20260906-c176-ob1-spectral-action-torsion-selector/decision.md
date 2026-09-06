@@ -225,3 +225,15 @@ n=3), joining the static-symmetry route (C173) and the condensate route
 (C137) as checked-and-negative. Registry (`OPEN_BLOCKERS.md`,
 `pearl_registry/INDEX.md`) not yet updated pending user confirmation of
 scope. No git operations run for this update.
+
+**UPDATE (2026-09-06, registry pass):** `pearl_registry/INDEX.md` updated
+with the `a_4_partial` `t=1/3,2/3` side-finding. `OPEN_BLOCKERS.md` OB13
+updated with a cross-reference this round did not originally make: `a_2(t)`
+is manifestly EVEN in `(t-1/2)` (a function of `(2t-1)²`) — exactly OB13's
+own registry category. Per OB13's corrected understanding (C123), an even
+functional cannot break the residual `t=0`-vs-`t=1` degeneracy but COULD
+select `{0,1}` as a set (as round99's own even curvature toy did); `a_2`
+does not even achieve that weaker outcome, landing on the single-well
+`t=1/2` case instead — see OB13 for the full comparison across this
+project's even functionals. `ASSUMPTIONS_MATRIX.md` row A updated to list
+this round among tried-and-negative candidate mechanisms.
