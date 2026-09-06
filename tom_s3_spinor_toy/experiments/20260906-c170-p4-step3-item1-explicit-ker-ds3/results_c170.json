@@ -1,0 +1,83 @@
+{
+  "step1_omega_recheck": {
+    "omega": "Matrix([[1, 0], [0, 1]])",
+    "omega_equals_I2_exactly": true
+  },
+  "step2_connection_self_consistency": {
+    "sum_i_Zi_Mi(t)": "Matrix([[3*c*t/2, 0], [0, 3*c*t/2]])",
+    "expected_t_times_H": "Matrix([[3*c*t/2, 0], [0, 3*c*t/2]])",
+    "matches_eq5_H_term": true,
+    "M_i(t)_as_coefficient_of_(t*c)": [
+      "Matrix([[0, -I/2], [-I/2, 0]])",
+      "Matrix([[0, -1/2], [1/2, 0]])",
+      "Matrix([[-I/2, 0], [0, I/2]])"
+    ]
+  },
+  "step3_t0_kernel": {
+    "M_i(t=0)_all_zero": true,
+    "conclusion": "Nabla^0_{Z_i}psi = Z_i(psi) for all i => parallel condition is psi = CONSTANT function on SU(2). ANY vector in C^2 is a valid kernel vector; e.g. psi_0_A=(1,0)^T, psi_0_B=(0,1)^T span the full 2-dim kernel."
+  },
+  "step4a_ei_identification_sign_check": {
+    "e_i = -i*sigma_i": {
+      "[e1,e2]": "Matrix([[-2*I, 0], [0, 2*I]])",
+      "c_value*e3": "Matrix([[-2*I, 0], [0, 2*I]])",
+      "matches": true
+    },
+    "e_i = +i*sigma_i": {
+      "[e1,e2]": "Matrix([[-2*I, 0], [0, 2*I]])",
+      "c_value*e3": "Matrix([[2*I, 0], [0, -2*I]])",
+      "matches": false
+    }
+  },
+  "step4b_t1_parallel_condition_check": {
+    "per_i": [
+      {
+        "i": 1,
+        "minus_M_i(1)_required": "Matrix([[0, I], [I, 0]])",
+        "minus_e_i_from_ginverse_calculus": "Matrix([[0, I], [I, 0]])",
+        "matches": true
+      },
+      {
+        "i": 2,
+        "minus_M_i(1)_required": "Matrix([[0, 1], [-1, 0]])",
+        "minus_e_i_from_ginverse_calculus": "Matrix([[0, 1], [-1, 0]])",
+        "matches": true
+      },
+      {
+        "i": 3,
+        "minus_M_i(1)_required": "Matrix([[I, 0], [0, -I]])",
+        "minus_e_i_from_ginverse_calculus": "Matrix([[I, 0], [0, -I]])",
+        "matches": true
+      }
+    ],
+    "all_i_match": true
+  },
+  "step5_holonomy_vs_c168_convention": {
+    "zeta_p": "Matrix([[exp(2*I*pi/3), 0], [0, exp(-2*I*pi/3)]])",
+    "zeta_p_inverse": "Matrix([[exp(-2*I*pi/3), 0], [0, exp(2*I*pi/3)]])",
+    "zeta_p_inverse_equals_zeta_p": false,
+    "eigenvalues_as_a_set_match": true,
+    "conclusion": "C170's derived holonomy for psi_1(g)=g^{-1}psi_0 is zeta_p^{-1}, NOT zeta_p as C168 modeled it. zeta_p^{-1} != zeta_p as MATRICES (swapped diagonal), though {eigenvalues} match as a SET. This means the SPECIFIC eigenvector-of-H_1 computation C168 did cannot be reused as-is for this candidate; it would need to be redone with H_1'=zeta_p^{-1} (or the psi_1 ansatz itself re-derived to target zeta_p directly, e.g. psi_1(g)=g.psi_0 instead of g^{-1}.psi_0 -- NOT attempted this round)."
+  },
+  "step6_ht_alone_eigenvalue_1_check": {
+    "H0_eigenvalues": [
+      "1"
+    ],
+    "H0_has_eigenvalue_1": true,
+    "H0_conclusion": "H0=I2 (C168's own MODELING ASSUMPTION), so EVERY vector, including psi_0 (any nonzero element of C^2, the t=0 kernel) is trivially an eigenvalue-1 eigenvector. Vacuous: this holds for ANY vector, not specifically because psi_0 is a kernel vector of D_S3(0).",
+    "H1_eigenvalues": [
+      "(-1)**(2/3)",
+      "-(-1)**(1/3)"
+    ],
+    "H1_has_eigenvalue_1": false,
+    "H1_conclusion": "H1=zeta_3 has eigenvalues {omega,omega^2} (primitive cube roots of unity), NEITHER equal to 1. Consequence: NO nonzero vector in C^2 -- regardless of which specific psi_1 candidate is used, and REGARDLESS of the Step 5 holonomy-convention ambiguity (zeta_3^{-1} has the SAME eigenvalue set) -- can ever be an eigenvalue-1 eigenvector of H_1 ALONE. This is a clean, convention-independent NO for the H_t-alone reading of task item 4 at t=1."
+  },
+  "verdict": {
+    "t0_kernel_certified": true,
+    "connection_formula_self_consistent": true,
+    "t1_candidate_satisfies_parallel_PDE": true,
+    "t1_candidate_matches_c168_H1_convention_directly": false,
+    "t0_survives_Ht_alone_eigenvalue_1": true,
+    "t1_survives_Ht_alone_eigenvalue_1": false
+  }
+}

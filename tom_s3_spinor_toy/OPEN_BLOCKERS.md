@@ -574,6 +574,45 @@ could attempt item 1 alone (cheapest of the three, per the skeptic's own
 lead) before items 2/3. See
 `experiments/20260906-c169-p4-step3-kernel-eigenvalue-scoping/decision.md`.
 
+**UPDATE (C170, 2026-09-06, C169's escalation item 1 attempted in
+isolation, skeptic-confirmed):** built the explicit `ker(D_S3(t))`
+vector at `t=0` and `t=1`, per C169's own scoping. **`t=0`: fully done,
+cheap** -- the kernel is any vector in the full 2-dimensional constant-
+spinor space, a one-line consequence of Agricola's own eq.(5) at `t=0`.
+**`t=1`: a genuine new derivation was required** (not a short mechanical
+step, confirming only half of the skeptic's own C169 cost lead) --
+derived the spin-connection matrices `M_i(t)` from Agricola's `Nabla^t=
+t[X,Y]` (new to this project, self-consistency-checked against eq.(5)
+exactly), identified the structure-constant generator with a concrete
+`su(2)` matrix under a forced sign, and constructed a candidate
+`psi_1(g)=g⁻¹.psi_0` verified to satisfy the parallel-transport PDE
+exactly. **A genuine basis/holonomy mismatch was found, not assumed:**
+this candidate's own derived holonomy under the ℤ₃ deck action is
+`ζ_p⁻¹`, NOT `ζ_p` as C168 modeled `H_1` -- different matrices (only
+their eigenvalue sets coincide) -- reported honestly as
+`BLOCKED-BASIS-MISMATCH` rather than silently patched. **One clean,
+convention-independent answer at the bare `H_t`-alone level (not the
+full `H_t⊗τ` question C168 already answered):** at `t=1`, NO vector can
+ever have `H_1`-eigenvalue exactly 1, regardless of which specific
+`psi_1` candidate or which of the `ζ_p`/`ζ_p⁻¹` ambiguity is used (both
+share the same eigenvalue set, neither containing 1). Independent
+context-blind skeptic pass (strict Context Asymmetry): `CONFIRMED-REAL`
+-- independently hand-re-derived all four load-bearing algebraic steps
+(the self-consistency check, the forced-sign bracket computation, the
+inverse-ansatz calculus, and the holonomy group-theory fact), all
+confirmed exactly; one minor accepted framing correction (the "forced
+sign" claim holds under a uniform-sign convention, with the TRUE unique-
+pinning justification being the round's own already-computed Step 4b
+joint-match, not the bracket condition alone -- no numeric correction
+needed). **Does NOT complete C169's overall escalation** -- items 2
+(`Cl(9)` twisted `D_S6`) and 3 (`SU(3)`-to-triality basis bridge) remain
+untouched. **P4's item-1 escalation is now split**: `t=0` certified,
+`t=1` constructed but convention-mismatched against C168 -- the natural
+next micro-step (not yet attempted) is reconciling `H_1'=ζ_p⁻¹` against
+C168's own T7-style generality argument, before attempting items 2/3.
+See
+`experiments/20260906-c170-p4-step3-item1-explicit-ker-ds3/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
