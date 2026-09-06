@@ -613,6 +613,28 @@ C168's own T7-style generality argument, before attempting items 2/3.
 See
 `experiments/20260906-c170-p4-step3-item1-explicit-ker-ds3/decision.md`.
 
+**UPDATE (C171, 2026-09-06, narrow reconciliation micro-step, self-
+checked, no skeptic pass needed):** ran the exact substitution C170's
+own Relaxation Map named -- does `H_1'=ζ_p⁻¹` (C170's own actually-
+derived `t=1` holonomy) reproduce C168's `H_1=ζ_p` classification when
+substituted into C168's own reused `invariant_subspace_report()`
+function (imported verbatim via `importlib`, not reimplemented)?
+**`RECONCILIATION-CONFIRMED`** -- identical dimension-2, all-three-
+channels-participate classification, exactly as C168's own T8 character-
+theory theorem predicted (`ζ_p⁻¹` is order-3 whenever `ζ_p` is, and T8
+covers ANY order-3 element). Cross-checked `H_1'` two independent ways
+(closed-form and C168's own `zeta3.inv()`) before the main comparison --
+both agreed exactly. **This closes C170's specific `BLOCKED-BASIS-
+MISMATCH` flag** -- C168's classification-level machinery is convention-
+insensitive to the `ζ_p` vs `ζ_p⁻¹` choice. No skeptic pass run (per FL
+Step 8a's "pre-answered concerns" allowance: narrow confirmatory check,
+result matched the a priori theorem prediction cleanly, reused already-
+skeptic-confirmed code verbatim, adversarial cross-check built into the
+script itself). **Does NOT touch C169's overall verdict** -- items 2/3
+remain entirely untouched and `BLOCKED-NEEDS-NEW-MACHINERY`; this is a
+single, narrow, terminal closure, not a new branch. See
+`experiments/20260906-c171-h1-prime-c168-reconciliation/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
