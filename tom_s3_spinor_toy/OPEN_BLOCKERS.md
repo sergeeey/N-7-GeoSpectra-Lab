@@ -453,6 +453,41 @@ construction naming `λ₀,λ₁` as its own coefficients from the start is not
 foreclosed). See
 `experiments/20260906-c163-ob1-lambda-alpha-licensing-audit/decision.md`.
 
+**UPDATE (C167, 2026-09-06, user-authorized from-scratch 13D construction
+attempt, per C132's own CDT ranking -- `P0`/`P2`/`P14` already attempted
+as C133/C134/C136, `P4` is the genuine next-ranked, never-tried candidate,
+skeptic-confirmed):** built Step 1 of `P4` (diagonal `ℤ_p` orbifold): does
+the `t=0` (left-invariant) canonical connection on `S³` descend to the
+lens space `L(p,1)=S³/ℤ_p` with trivial holonomy while `t=1` (right-
+invariant) does not? **Result: `HOLONOMY-ASYMMETRY-CONFIRMED-ALL-P`** --
+exact computation (sympy, no floating point) confirms `Ad(ζ_p)=Id` iff
+`p∈{1,2}` (`SU(2)`'s only central elements), with the asymmetry (trivial
+at t=0, nontrivial `Ad(ζ_p)`-twisted at t=1) holding for `p=3, 4, AND 5`
+-- not merely `p=3`, satisfying the project's own mandatory AOG-5 anti-
+circularity sweep (a prior candidate, `G33-A1`, was REJECTED specifically
+for choosing `p=3` only because `N_gen=3`). This directly removes, for
+exactly one endpoint, the simple-connectivity precondition round72/E7's
+own H1b proof relied on (`π₁(S³)=0` becomes `π₁(L(p,1))=ℤ_p≠0` after the
+quotient). Independent context-blind skeptic pass (strict Context
+Asymmetry: claim.md+script+results only, decision.md withheld):
+`CONFIRMED-REAL` -- independently re-derived the `SU(2)→SO(3)` angle-
+doubling factor by hand from scratch and confirmed it exactly; found and
+fixed one real but non-load-bearing code bug (a centrality-check field
+that always read `false`, unrelated to the verdict-bearing `Ad_is_identity`
+field which was already correct); corrected an overclaimed "adversarial
+sample point" characterization (the actual load-bearing check is the
+`Ad(ζ_p)` computation itself, independently re-derived and confirmed
+exact). **New finding not anticipated in C132's original sketch:** for `p`
+even (2, 4), `H¹(L(p,1);ℤ₂)=ℤ₂` gives two inequivalent spin structures, an
+open ambiguity for future rounds to resolve or sidestep (odd `p` is
+unambiguous). **What this does NOT do:** does not compute whether this
+holonomy fact actually changes `dim ker D^t` on the quotient (C132's own
+stated measurable outcome for this step); does not attempt Step 2
+(triality-correlation/pairing construction); does not resolve OB1 --
+`P4` stays ALIVE for a follow-up round, per C132's own multi-round budget
+for any new OB1 construction. See
+`experiments/20260906-c167-p4-diagonal-z3-orbifold/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
