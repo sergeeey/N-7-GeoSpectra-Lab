@@ -205,6 +205,12 @@ def iter_text_files(root: Path):
             continue
         if rel.endswith("test_g79a_lambda_identity_audit.py"):
             continue
+        if "/.claude/" in f"/{rel}" or rel.startswith(".claude/"):
+            # Claude Code's own session/tool state (e.g. hook counters that log
+            # raw file paths, some of which contain "lambda" as a substring of
+            # an experiment folder name) -- tool-internal bookkeeping, not
+            # repository research content; out of this audit's stated scope.
+            continue
         yield path, rel
 
 
@@ -242,7 +248,7 @@ def classify_occurrence(rel_path: str, line: str) -> tuple[str, str]:
         return "UNRELATED", "legacy root research text; no explicit coupling-sector marker"
     if path_lower in {"docs/outcomes.md", "docs/roadmap.md"}:
         return "UNRELATED", "spectral project documentation"
-    if path_lower.startswith("reports/") or path_lower.startswith("tests/"):
+    if path_lower.startswith(("reports/", "tests/")):
         return "UNRELATED", "legacy report/test lambda denotes spectral or local numerical quantity"
     if path_lower.startswith("tom_s3_spinor_toy/"):
         coupling_words = ("coupling", "free parameter", "does not fix", "not fix")
