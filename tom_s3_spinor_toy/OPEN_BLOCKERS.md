@@ -2460,11 +2460,32 @@ so both remain high-AOG-5-risk, requiring either a not-yet-conceived
 mathematical construction (out of this project's current scope per
 C164's own AOG-5 assessment) or (c) external input from Tom Lawrence's
 own framework (subject to this project's "DO NOT INITIATE CONTACT"
-constraint). One honest scope gap remains, named by C164's own skeptic
-pass but not yet acted on: AHL2023 (a published paper already cited
-elsewhere in this project, e.g. `round114-ahl2023-torsion-killing-spinor-
-crosscheck`) has never been grepped for OB14-specific coupling data —
-reading an already-published, already-cited paper does not violate the
-"DO NOT INITIATE CONTACT" constraint, and this is a cheap check not yet
-performed. Full detail:
+constraint).
+
+**UPDATE (C166, 2026-09-06, closes the AHL2023 scope gap, skeptic-
+confirmed):** read AHL2023 (arXiv:2203.02961) directly from its own LaTeX
+source — Section 5.1 (the `S⁶=G₂/SU(3)` case, needed here), Section 2.3
+(the general Nomizu-map coupling formalism), Section 4.1.1 (a genuine
+cross-summand coupling construction elsewhere in the paper, checked as an
+adversarial structural analogue), and — per the skeptic's own independent
+check — Sections 4.2-4.4 and 5.3 as well. **Verdict: `NO-RELEVANT-
+CONTENT`.** AHL2023's own §5.1 states `S⁶=G₂/SU(3)`'s isotropy
+representation is IRREDUCIBLE, and every object it builds there (invariant
+spinors, the nearly-Kähler 2-form `J`, the Ambrose-Singer torsion) lives
+in `Λ^k(m)` for that single irreducible `m` — the same pool C134/C162/
+C164/C165 already exhausted. The paper's one genuine cross-summand
+coupling method (§4.1.1, quaternionic spheres) requires a REDUCIBLE
+isotropy with distinct summands — exactly what `S⁶=G₂/SU(3)` structurally
+lacks — and is `sp(n-1)`-equivariant, not `su(3)`-equivariant, so it
+cannot transfer without inventing new geometric content. Independent
+skeptic pass: `CONFIRMED-REAL`, and surfaced AHL2023's own Remark 4.10 as
+a fourth independent primary-source citation converging on the same
+Schur's-Lemma-type structural conclusion (alongside C142's branching
+search, C165's holonomy argument, and this round's irreducibility
+citation). **This closes the last named, unactioned scope gap** — every
+internally- or externally-published-and-cited route currently available
+to this project has now been checked for OB14's remaining sub-paths, and
+all are exhausted. See
+`experiments/20260906-c166-ahl2023-ob14-coupling-data-check/decision.md`.
+Full detail on the underlying blocker:
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
