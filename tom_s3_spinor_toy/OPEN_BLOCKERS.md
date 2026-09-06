@@ -529,6 +529,51 @@ distinction named rather than glossed over. **Does NOT resolve OB1** --
 genuine escalation if this line is pursued further. See
 `experiments/20260906-c168-p4-step2-triality-correlation/decision.md`.
 
+**UPDATE (C169, 2026-09-06, P4 Step 3 attempt, skeptic-confirmed):**
+attempted the genuine escalation C168 identified -- applying C167's `H_t`
+and C168's `τ` directly to round59's own certified zero-mode vector, to
+check for the asymmetric eigenvalue pattern that would make P4 a genuine
+`t`-selector at the kernel level, not just a classification-level one.
+**Verdict: `CHANNEL-STRUCTURE-MAKES-QUESTION-ILL-POSED` +
+`BLOCKED-NEEDS-NEW-MACHINERY`.** Direct code inspection (grep + read,
+not inference) established the question is not well-posed as stated:
+round59's own zero mode carries NO `t`-index (0 matches for S3/holonomy/
+`H_t`/`SU(2)` across all three of its scripts) and NO Spin(8) triality
+label (its invariant sectors `EVEN_IDX=1⊕3̄`/`ODD_IDX=3⊕1` are indexed by
+`SU(3)`-representation type, a structurally `Cl(6)` object, not a
+triality channel) -- while C167's `H_t` and C168's `τ` are built as
+abstract objects with zero code-level connection to round59's own `Σ`/
+`EVEN_IDX`/`ODD_IDX`. **The obvious cheap fallback ("three copies of
+round59's kernel, one per channel") was checked and found to collapse
+algebraically into C168's own already-completed result** -- round59's
+kernel is a 1-dimensional inert scalar with no internal structure for
+`H_t` to act on independently, so the eigenvalue-1 condition reduces
+vector-for-vector to C168's own forced-by-τ computation, adding no new
+information. **The genuine escalation** (named via round68/E3's own
+certified decoupling identity `D_full²=D_S6²⊗Id_S3+Id_S6⊗D_S3(t)²`)
+requires three substantial new constructions, none existing in this
+project's history: (1) `ker(D_S3(t))` as an explicit vector (not merely
+an existence proof), (2) the real twisted `D_S6` reassembled into
+round68/E3's own named, never-attempted `Cl(9)` framework, and (3) a
+basis bridge from round59's `SU(3)`-index to the `{v,s,c}` triality
+index this project has not yet built (widening a previously-known
+two-realization basis-bridge gap to at least three, per this round's
+own finding). Each is independently comparable in scope to a full prior
+round. **Reported honestly as `BLOCKED`, per this project's own
+Substrate Gate discipline, rather than forcing a numeric answer.**
+Independent context-blind skeptic pass: `CONFIRMED-REAL` for the primary
+finding (independently re-derived the "three copies collapses" algebra
+by hand and re-verified all grep claims directly); two ancillary,
+non-load-bearing claims flagged `[WEAK]` -- item 1 of the escalation
+path may in fact be CHEAPER than a full round (a lead for a future
+attempt, not yet confirmed), and the "widens to three realizations"
+framing wasn't independently checked against its cited source but is
+structurally plausible. **P4 stays ALIVE but is now blocked on new
+machinery beyond this project's current content** -- a future round
+could attempt item 1 alone (cheapest of the three, per the skeptic's own
+lead) before items 2/3. See
+`experiments/20260906-c169-p4-step3-kernel-eigenvalue-scoping/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
