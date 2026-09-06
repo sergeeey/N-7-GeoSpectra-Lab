@@ -488,6 +488,47 @@ stated measurable outcome for this step); does not attempt Step 2
 for any new OB1 construction. See
 `experiments/20260906-c167-p4-diagonal-z3-orbifold/decision.md`.
 
+**UPDATE (C168, 2026-09-06, P4 Step 2 attempt, skeptic-confirmed):**
+built the diagonal `ℤ₃` action correlating `S³`'s orbifold quotient
+(`ζ₃` from C167) with `S⁶`'s triality permutation `τ` on the three
+channels `{v,s,c}`. **Verdict: `NON-EXCLUSIVE-PAIRING-INDUCED`** -- the
+invariant subspace of `H_t⊗τ` is dimension-2 with all three channels
+participating, for both `t=0` and `t=1`, matching the only pattern
+C159/C161/C163 found survives the anomaly filter for `N_gen=3` odd.
+**But the round's own honesty check (its own generality/forced-ness
+test) found this result is FORCED by `τ` being the regular
+representation of `ℤ₃` (character `[3,0,0]`) -- via the standard fact
+that `V⊗W` for `W`=regular rep decomposes into `dim(V)` copies of the
+regular rep for ANY `V` -- independent of the specific geometric
+holonomy `Ad(ζ₃)` from C167.** Confirmed directly: replacing `Ad(ζ₃)`
+with the identity (mechanism removed) or a different generic order-3
+element gives the SAME classification. **This is this project's
+recurring "forced not discovered" pattern** (previously seen in C144,
+C153, C154, C156, C158) -- the geometric mechanism C167 spent a full
+round establishing makes NO difference to this classification-level
+test; the agreement with C133's abstract `all→both` argument is
+explained by group theory common to both, not by independent geometric
+confirmation. Per FL's own Floor-Ceiling discipline, this is a
+`CRITERION_INVALID`-type floor defect in the TEST (not evidence against
+`P4`): the classification-level check cannot currently distinguish the
+geometric mechanism from a null one; a genuine `dim ker D^t` computation
+(Step 3) is the identified escalation that could actually discriminate.
+Independent context-blind skeptic pass (strict Context Asymmetry):
+`CONFIRMED-REAL`, with one accepted, non-fatal caveat (one of the
+round's own two generality-check controls was itself tautological,
+comparing the construction to an exact copy of itself; the round's
+OTHER control and its main character-theory argument remain valid and
+carry the actual conclusion). AOG-5 provenance re-verified at two
+levels: the number 3 traces to `Spin(8)` triality (Cartan-era Lie
+theory, external to and pre-dating any generation-counting motivation)
+-- non-circular at the level AOG-5 actually requires -- though this
+project's OWN reason for reaching for triality (G75, 2 days after
+`N_gen=3` was established) was itself generation-motivated, an honest
+distinction named rather than glossed over. **Does NOT resolve OB1** --
+`P4` remains ALIVE, Step 3 (the actual kernel computation) is the next
+genuine escalation if this line is pursued further. See
+`experiments/20260906-c168-p4-step2-triality-correlation/decision.md`.
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms
