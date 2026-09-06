@@ -1,24 +1,24 @@
 """Tests to ensure negative controls implementation does NOT mutate Gate 4B."""
 
-import pytest
-import numpy as np
 import sys
 from pathlib import Path
 
+import numpy as np
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from cc_toy_lab.spectral.s3_s1_product_discretized import build_s3_s1_product_operator
 from cc_toy_lab.controls.negative_controls import (
+    build_broken_wilson_control,
     build_random_hermitian_control,
     build_scrambled_geometry_control,
-    build_broken_wilson_control,
 )
+from cc_toy_lab.spectral.s3_s1_product_discretized import build_s3_s1_product_operator
 
 
 def test_s3s1_operator_still_hermitian():
     """Verify S³×S¹ operator Hermiticity unchanged after importing negative controls."""
     # Build standard S³×S¹ operator
-    op, _, meta = build_s3_s1_product_operator(
+    op, _, _meta = build_s3_s1_product_operator(
         j_max=2,
         s1_size=16,
         alpha=0.0,
@@ -48,7 +48,7 @@ def test_s3s1_dimension_unchanged():
     ]
 
     for j_max, s1_size in test_cases:
-        op, _, meta = build_s3_s1_product_operator(
+        op, _, _meta = build_s3_s1_product_operator(
             j_max=j_max,
             s1_size=s1_size,
             alpha=0.0,
@@ -126,21 +126,21 @@ def test_control_dimension_matches_s3s1():
 
     # Test all controls
     op_rh, meta_rh = build_random_hermitian_control(**test_params)
-    assert (
-        op_rh.shape[0] == expected_dim
-    ), f"random_hermitian dimension mismatch: {op_rh.shape[0]} vs {expected_dim}"
+    assert op_rh.shape[0] == expected_dim, (
+        f"random_hermitian dimension mismatch: {op_rh.shape[0]} vs {expected_dim}"
+    )
     assert meta_rh["total_dimension"] == expected_dim
 
     op_sg, meta_sg = build_scrambled_geometry_control(**test_params, alpha=0.0)
-    assert (
-        op_sg.shape[0] == expected_dim
-    ), f"scrambled_geometry dimension mismatch: {op_sg.shape[0]} vs {expected_dim}"
+    assert op_sg.shape[0] == expected_dim, (
+        f"scrambled_geometry dimension mismatch: {op_sg.shape[0]} vs {expected_dim}"
+    )
     assert meta_sg["total_dimension"] == expected_dim
 
     op_bw, meta_bw = build_broken_wilson_control(**test_params, alpha=0.0)
-    assert (
-        op_bw.shape[0] == expected_dim
-    ), f"broken_wilson dimension mismatch: {op_bw.shape[0]} vs {expected_dim}"
+    assert op_bw.shape[0] == expected_dim, (
+        f"broken_wilson dimension mismatch: {op_bw.shape[0]} vs {expected_dim}"
+    )
     assert meta_bw["total_dimension"] == expected_dim
 
 
@@ -187,12 +187,14 @@ def test_default_execution_does_not_start_pilot():
         capture_output=True,
         text=True,
         cwd=Path(__file__).parent.parent,
+        check=False,
     )
 
     assert result.returncode == 0, f"Script failed: {result.stderr}"
 
     # Should print plan, NOT execute
-    assert "Total cases: 54" in result.stdout
+    # 96, not 54 -- grid revised 2026-06-03, see reports/BATCH_DESIGN_v0.1.22.md
+    assert "Total cases: 96" in result.stdout
     assert "⚠️ Execution DISABLED" in result.stdout or "without execution" in result.stdout
 
     # Should NOT create output files
@@ -206,9 +208,10 @@ def test_default_execution_does_not_start_pilot():
             [sys.executable, "scripts/run_negative_controls_v0_1_22.py"],
             capture_output=True,
             cwd=Path(__file__).parent.parent,
+            check=False,
         )
 
         final_files = list(output_dir.glob("**/*"))
-        assert len(final_files) == len(
-            initial_files
-        ), "Default execution created new files (should only print plan)"
+        assert len(final_files) == len(initial_files), (
+            "Default execution created new files (should only print plan)"
+        )
