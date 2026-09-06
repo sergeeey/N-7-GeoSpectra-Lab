@@ -2743,3 +2743,32 @@ all are exhausted. See
 `experiments/20260906-c166-ahl2023-ob14-coupling-data-check/decision.md`.
 Full detail on the underlying blocker:
 `experiments/20260904-c139-twisted-s6-alternate-representation-negative-control/decision.md`.
+
+**UPDATE (C175, 2026-09-06, extended literature search beyond AHL2023,
+requested explicitly as "попробуй расширенный поиск"):** re-read
+Charbonneau & Harland 2016 (`Charbonneau_Harland_2016_NK_instantons.pdf`,
+already in the repo since 2026-06-24 but only ever used for the separate
+Universality open problem, never cross-checked against OB14) directly for
+this specific question. Their own Theorem 3 computes the FULL deformation
+space of the canonical connection on each of the four homogeneous
+nearly-Kähler 6-manifolds under BOTH their natural isotropy group `H` and
+the broader `SU(3)` structure group — via elliptic deformation theory, a
+method sharing no machinery with this project's own twisted-Dirac
+construction. **Result: `G₂/SU(3)`'s own deformation space is `0` in
+BOTH columns** — the paper's own text gives the exact mechanism: "`H=SU(3)`"
+for this one space among the four, so the broader-frame enlargement that
+gives the OTHER three spaces (`SU(2)³/SU(2)`, `Sp(2)/Sp(1)×U(1)`,
+`SU(3)/U(1)²`) real, nonzero deformation freedom is vacuous here — there
+is no room between `H` and `SU(3)` to gain anything from. **Independent
+confirmation, not a new escape route**: a fourth, structurally distinct
+method (following C70/C71, G102, C134/shape-operator/`R^c`, and AHL2023)
+finds the same zero. `dim(ker)=0` under the WIDEST available structure
+group is a strictly stronger statement than any single candidate coupling
+vanishing — no `SU(3)`-structure-compatible coupling of any kind can
+perturb this connection. **OB14 remains `BLOCKED-INTERNAL`, now
+independently reconfirmed a fourth way; no new candidate found.** Side
+finding (relevant to Universality, not OB14, not investigated here): the
+`H=SU(3)` vs `H⊊SU(3)` asymmetry means the four homogeneous NK6-spaces are
+NOT interchangeable for deformation-freedom purposes — flagged for
+`pearl_registry/INDEX.md`. See
+`experiments/20260906-c175-ob14-charbonneau-harland-2016-independent-confirmation/decision.md`.
