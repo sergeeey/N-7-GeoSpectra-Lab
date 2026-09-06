@@ -178,29 +178,50 @@ independent cross-check against round111's own textbook-anchored
 
 ---
 
-## 7. Recommendation on independent skeptic pass
+## 7. Independent skeptic pass (Step 8a) — RUN, verdict `CONFIRMED-REAL`
 
-**Recommended, not yet run.** This is a novel construction (first time
-this project has computed genuine Seeley-DeWitt coefficients for the S³
-torsion family) reaching a definite, somewhat surprising-in-detail
-conclusion (the `a_4_partial` minima at `t=1/3,2/3` specifically) — per
-this project's own Response Matrix, a context-blind skeptic pass (claim.md
-+ script + results only, no session history) is warranted before treating
-either the main verdict or the `t=1/3,2/3` side-finding as settled. Not
-run in this turn; flagged as the next honest step.
+Run context-blind per this project's Context Asymmetry Rule: the skeptic
+was given ONLY `claim.md`, the script, and `results_c176.json` — explicitly
+denied access to this `decision.md` (i.e. denied §§1-6 above, this
+author's own reasoning/framing/verdict), and told it could independently
+read/run any file the script itself imports or cites (round67/round99/
+round111's scripts) to check facts. It attempted 5 falsification attacks.
+
+**Overall verdict: `CONFIRMED-REAL`.** None of the 5 attacks broke the
+central claim (`SPECTRAL-SELECTOR-DIES-AT-HALF`). Per this project's
+Response Matrix, each concern gets an explicit response below rather than
+being silently accepted or waved away:
+
+| # | Skeptic's attack | Outcome | Response |
+|---|---|---|---|
+| 1 | Is `a_2`'s formula actually a correct transcription of HPS eq. 3/6/7? | Could not fetch arXiv from its sandbox (`NEEDS-REAL-DATA` for the literal check) — but **independently re-derived the same formula from the general heat-kernel coefficient `a_2=(4π)^{-n/2}(1/6)∫(R·tr I − 6·tr E)dvol` plus HPS's own stated `E=3/4·dT+R/4−9/8·T_0²`, from scratch, without reading my transcription** — and got the exact same `(1/16π²)(9/2·T_0²−R/3)`. | **Accepted as a stronger check than my own single-source read of the paper** — an independent from-scratch derivation is a better corroboration than "I read the PDF correctly." No action needed. |
+| 2 | Is the symbolic computation (`T_0²`, Riemann, Ricci norms) actually right, not just "ran without a Python exception"? | Independently re-derived `[Z_i,Z_j]=-2ε_{ijk}Z_k` from round67's own generators, got `T_0²=4(2t-1)²` by hand: matches. Cross-checked `‖Ric‖²=R²/n` (Einstein-space identity for n=3) against the script's `‖Riem‖²`: matches. | **Dismissed as not breaking anything** — this is a second, independent hand-derivation landing on the same numbers. Strengthens confidence. |
+| 3 | Is the "cross-check against round111" genuinely independent, or decorative? | **Real finding.** `R_LC` is `t`-independent, so it **drops out of `∂a_2/∂t` entirely** — the `t=1/2` minimum of `a_2` holds for ANY value of `R_LC` (sign included). The round111 cross-check therefore verifies the VALUE of `a_2` at its extrema (e.g. distinguishing `-1/(8π²)` from `1/π²` concretely) and matters for the `a_4_partial` numeric analysis (its `t=1/3,2/3` minima ARE `R_LC`-sign-sensitive) — but it does **not** back the `a_2` verdict itself, which §0's headline framing ("net conclusion... `a_2`... picks `t=1/2`... by a sizeable margin") could be read as implying. | **Accepted as a documented limitation, claim NOT changed** — the verdict is unaffected, but the framing overstated how much work the round111 cross-check was doing for it specifically. Recorded here so a future reader doesn't credit §1's reconciliation with confirming the verdict — it doesn't need to; the verdict is R_LC-independent by construction. |
+| 4 | Does substituting `R_LC=6` (vs. leaving it symbolic, vs. flipping its sign) change which verdict fires? | No — `a_2''(1/2)=9/π²>0` regardless of `R_LC`. Confirmed directly from `a2_analysis_symbolic` in `results_c176.json` (same critical point, same "min" classification, independent of `R_LC`). | Same as #3 — accepted, no action; this is the mechanism behind #3's finding. |
+| 5 | Is claim.md's own "a_2 is dimension-independent in its derivation" framing accurate? | **Weakened, technically imprecise as stated.** The actual numeric prefactor of `a_2` scales with `dim(spinor rep)=2^⌊n/2⌋` and `(4π)^{-n/2}`, both of which genuinely differ between n=3 (this project's actual case) and n=4 (HPS's own derivation) — so literally porting HPS's numeric coefficients `9/2` and `1/3` unchanged to n=3, as this script does, is not strictly "dimension-independent." What IS dimension-independent, and is the only thing the verdict actually needs, is the **relative sign** between the `T_0²` and `R` terms in `E` (both enter with the same sign in every dimension via the same Lichnerowicz/Weitzenböck structure) — and sign alone is what selects `t=1/2` over `t=0,1`. | **Accepted as a narrowing caveat on claim.md's own wording, not a retraction.** claim.md is left as originally written (frozen pre-registration, per this project's own discipline of not editing claim.md after the fact) — this table is where the correction lives. The verdict `SPECTRAL-SELECTOR-DIES-AT-HALF` survives because it only depends on the sign structure (dimension-robust), not the exact prefactor (which is NOT dimension-independent as claimed). A rigorous n=3 Seeley-DeWitt re-derivation (not borrowed n=4 coefficients) remains the honest next step if this line is pursued further — this was already flagged in §3's Relaxation Map as "a substantially bigger undertaking," now with an added concrete reason (not just the excluded `Ω_ij` term, but the prefactor itself).
+
+**Net effect on the round's own verdict:** unchanged — `SPECTRAL-SELECTOR-DIES-AT-HALF` survives independent, context-blind attack on 5 separate axes, 3 of which strengthen it (independent formula re-derivation, independent symbolic re-derivation, R_LC-sign-independence of the mechanism) and 2 of which narrow its framing without breaking it (round111 cross-check overstated as load-bearing; "dimension-independent" overstated as literal prefactor-equality rather than sign-equality). No FALSIFIED concerns; no true-kill condition (core predicate false with no viable response) was reached — per this project's Response Matrix, all 5 concerns land in Dismissed/Accepted-limitation, none in the rare "actually kills the claim" bucket.
 
 ---
 
 ## 8. Status
 
-`experiments/20260906-c176-ob1-spectral-action-torsion-selector/` — DONE.
-Verdict `SPECTRAL-SELECTOR-DIES-AT-HALF` for the specific formula tested;
-a genuine sign-convention discrepancy with round111 found and resolved in
-place (not hidden); one honestly-reported, uninterpreted side-finding
-(`a_4_partial` minima at `t=1/3,2/3`). OB1's row A remains open — this
-closes one more specific candidate mechanism (the borrowed 4D spectral
-action formula), joining the static-symmetry route (C173) and the
-condensate route (C137) as checked-and-negative. Registry
-(`OPEN_BLOCKERS.md`, `pearl_registry/INDEX.md`) not yet updated pending
-user confirmation of scope. No independent skeptic pass run yet (§7). No
-git operations run.
+`experiments/20260906-c176-ob1-spectral-action-torsion-selector/` — DONE,
+INCLUDING independent skeptic pass. Verdict `SPECTRAL-SELECTOR-DIES-AT-HALF`
+for the specific formula tested, now `[VERIFIED-tool]` at BOTH the original
+computation AND an independent context-blind skeptic re-derivation (§7) —
+this is a materially stronger evidence status than a single-pass result.
+A genuine sign-convention discrepancy with round111 found and resolved in
+place (not hidden, §1); the skeptic separately found the round111
+cross-check to be decorative for the actual verdict mechanism (§7, item 3)
+— narrows the story, does not change the verdict. One honestly-reported,
+uninterpreted side-finding (`a_4_partial` minima at `t=1/3,2/3`, §4) —
+skeptic did not specifically attack this side-finding beyond confirming
+its `R_LC`-sign-sensitivity (§7, item 4); still flagged, not yet added to
+`pearl_registry/INDEX.md`. OB1's row A remains open — this closes one more
+specific candidate mechanism (the borrowed 4D spectral action formula,
+now with an added honest caveat that it was borrowed, not re-derived for
+n=3), joining the static-symmetry route (C173) and the condensate route
+(C137) as checked-and-negative. Registry (`OPEN_BLOCKERS.md`,
+`pearl_registry/INDEX.md`) not yet updated pending user confirmation of
+scope. No git operations run for this update.
