@@ -652,16 +652,24 @@ included, carries no information that could select one triality channel
 over another. **Item 2 does NOT rescue this, even if perfectly
 executed** -- its own `Cl(9)=Cl(3)⊗Cl(6)` framework introduces no new
 symmetry beyond `S³`'s `SU(2)` and `S⁶`'s `SU(3)`/`G₂` data, so it cannot
-inject the missing Spin(8)/triality content either. **Independently
-corroborated the same session**: a parallel, concurrent session (working
-in this same shared repo) independently attempted item 2 directly and
-found `REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK` -- item 2's own
-construction succeeds at its narrow original goal, but its own kernel
-vector carries no triality label, exactly as this round predicted (a
-genuine ID collision resulted -- both sessions independently named their
-round "C172"; this round's own experiment was renamed to C173 after
-completion, the parallel session's own C172 folder left untouched, per
-this project's Unclaimed Work Ownership convention). Independent
+inject the missing Spin(8)/triality content either. A parallel, concurrent
+session (working in this same shared repo) independently attempted item 2
+directly; a genuine experiment-ID collision resulted (both sessions
+independently named their round "C172" -- this round's own experiment was
+renamed to C173 after completion, the parallel session's own C172 folder
+left untouched, per this project's Unclaimed Work Ownership convention).
+**CORRECTED 2026-09-07:** that session's own INITIAL verdict
+(`REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK`) was itself later
+overturned by that session's OWN context-blind skeptic pass, which caught
+a post-hoc criterion-shift (AOG-1 violation) -- its own `decision.md` now
+reads `BLOCKED-KERNEL-MULTIPLICITY-MISMATCH`, headline "FALSIFIED as
+originally framed" (the frozen check, `dim ker(D)` matching round59's
+claimed 1, failed outright at `dim ker(D)=36`). **This does not change
+C173's own verdict here**, which never depended on item 2's outcome
+either way (per the sentence immediately above) -- and even the
+CORRECTED result is, if anything, more consistent with C173's own
+conclusion: no triality label appears anywhere in that session's real
+construction under either its original or corrected telling. Independent
 context-blind skeptic pass: `CONFIRMED-REAL`, verdict made STRONGER --
 closed the one gap this round itself had flagged open (whether a
 DISCRETE, not merely continuous, symmetry inside `Spin(8)` could realize
