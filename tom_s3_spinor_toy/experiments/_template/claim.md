@@ -67,9 +67,26 @@ If no hypothesis is killed by FAIL → gate is not scientifically motivated. Do 
 
 ## Checks planned
 
-- T1: [description]
-- T2: [description]
-- T3: [description — include at least one adversarial/edge-case check]
+Every check whose PASS you intend to quote as evidence needs a **negative
+control**: an input for which that check MUST report failure. Name it here,
+before running — see `docs/negative_control_pattern.md` and the helper
+`experiments/_template/negative_control.py`.
+
+| # | Check | Negative control — input for which this check MUST fail |
+|---|---|---|
+| T1 | [description] | [e.g. "the same spectrum with one multiplicity broken"] |
+| T2 | [description] | [e.g. "an unrelated random matrix of the same shape"] |
+| T3 | [description — include at least one adversarial/edge-case check] | [...] |
+
+If you cannot name an input that makes a check fail, the check may be unable to
+fail at all — five such checks reached a verdict in the C179–C182 sequence, and
+self-review caught none of them. Record each control's outcome as a boolean in
+the results JSON (`res["negative_control"] = nc.as_dict()`), then before closing
+the round:
+
+```bash
+python scripts/check_negative_control.py experiments/<this-round>/
+```
 
 ---
 
