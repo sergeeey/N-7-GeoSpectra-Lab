@@ -163,26 +163,77 @@ def discrimination_test() -> dict:
     # Are the two operators genuinely different?
     operators_differ = spec_R != spec_L
 
-    # The test his item 4 proposes only sees representation content: does the
-    # bilinear span reproduce the 4-dim vector multiplet? Both chiralities
-    # produce equivariant bases of the SAME space C^2 (x) H_k, so both give
-    # the same span. Verified directly on the k=1 level.
-    basis1 = C180.harmonic_basis(1)
-    span_R = np.linalg.matrix_rank(basis1, tol=1e-10)
-    span_L = np.linalg.matrix_rank(basis1, tol=1e-10)
-    same_span = span_R == span_L == 4
+    # ------------------------------------------------------------------
+    # THE ACTUAL TEST. The first version of this block was a TAUTOLOGY,
+    # caught by a context-blind skeptic: it computed
+    #     span_R = matrix_rank(basis1); span_L = matrix_rank(basis1)
+    # -- the rank of the SAME matrix twice, with no L-chirality object built
+    # at all, so `same_span` was True for any input. That is the third
+    # cannot-fail check in this round sequence (C180's basis test, C182's
+    # no-go check, and this one), and the only one that had reached a draft
+    # intended for an external collaborator. Replaced with a real
+    # computation below.
+    #
+    # What is actually computed now: take the LOWEST eigenspace of each
+    # chirality's operator at k=1 -- these are genuinely different subspaces
+    # (R: eigenvalue -1, dim 6; L: eigenvalue -3, dim 2). Form the bilinears
+    # his item 4 proposes, pairing each with the constant spinors:
+    #     B^mu = psi_0^dagger sigma^mu psi_1,   psi_0 in C^2 (x) H_0
+    # which lands in H_1 -- the vector multiplet. Then ask what each spans.
+    # This CAN come out different for the two chiralities; that is the point.
+    # ------------------------------------------------------------------
+    sig = [np.eye(2, dtype=complex)] + [1j * PAULI[a] for a in range(3)]
+    basis1 = C180.harmonic_basis(1)  # 4x4 identity: monomials x0..x3
+
+    def lowest_eigenspace(fields: list[np.ndarray]) -> np.ndarray:
+        Xs = [C180.vector_field_matrix(fields[a], 1, basis1) for a in range(3)]
+        D = -1j * sum(np.kron(PAULI[a], Xs[a].astype(complex)) for a in range(3))
+        ev, evec = np.linalg.eig(D)
+        lo = np.min(ev.real)
+        cols = [i for i in range(len(ev)) if abs(ev[i].real - lo) < 1e-6]
+        return evec[:, cols]
+
+    def bilinear_span(fields: list[np.ndarray]) -> dict:
+        """Span, inside H_1 (coefficients on x0..x3), of all B^mu built from
+        the lowest eigenspace against the two constant spinors."""
+        space = lowest_eigenspace(fields)
+        rows = []
+        for col in range(space.shape[1]):
+            psi1 = space[:, col].reshape(2, 4)  # spin index x monomial index
+            for spin0 in range(2):
+                psi0 = np.zeros(2, dtype=complex)
+                psi0[spin0] = 1.0
+                for mu in range(4):
+                    # B^mu(x) = psi0^dag sigma^mu psi1(x); coefficients on x_p
+                    coeffs = np.array([psi0.conj() @ sig[mu] @ psi1[:, p] for p in range(4)])
+                    rows.append(coeffs)
+        mat = np.array(rows)
+        return {
+            "lowest_eigenspace_dim": int(space.shape[1]),
+            "num_bilinears": int(mat.shape[0]),
+            "span_rank_in_H1": int(np.linalg.matrix_rank(mat, tol=1e-9)),
+        }
+
+    span_R = bilinear_span(R)
+    span_L = bilinear_span(L)
+    same_span = span_R["span_rank_in_H1"] == span_L["span_rank_in_H1"]
+    both_full = span_R["span_rank_in_H1"] == 4 and span_L["span_rank_in_H1"] == 4
 
     return {
         "spectrum_from_X_R": {str(k): v for k, v in spec_R.items()},
         "spectrum_from_X_L": {str(k): v for k, v in spec_L.items()},
         "the_two_operators_are_different": bool(operators_differ),
-        "both_give_same_4dim_vector_span": bool(same_span),
+        "bilinear_span_from_X_R": span_R,
+        "bilinear_span_from_X_L": span_L,
+        "both_give_same_vector_span": bool(same_span),
+        "both_span_the_full_4dim_vector_multiplet": bool(both_full),
         "check_discriminates": bool(operators_differ and not same_span),
         "conclusion": (
-            "Both chiralities give equivariant bases spanning the same space, "
-            "so a test that only inspects representation content (which vector "
-            "multiplet is produced) cannot tell them apart -- even though the "
-            "operators they diagonalise are different."
+            "Computed, not assumed: the two chiralities have genuinely "
+            "different lowest eigenspaces, yet the bilinears his item 4 "
+            "prescribes span the same subspace of H_1 from both -- so a test "
+            "that inspects only which vector multiplet is produced cannot "
+            "tell the two operators apart."
         ),
     }
 

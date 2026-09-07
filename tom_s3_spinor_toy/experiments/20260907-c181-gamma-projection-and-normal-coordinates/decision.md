@@ -161,13 +161,25 @@ that come out as predicted.
 
 ---
 
-## 7. Recommendation on independent skeptic pass
+## 7. Independent skeptic pass (Step 8a) — RUN, verdict `WEAKENED`, one finding was serious
 
-**Recommended.** Targets: (a) whether the "does not discriminate" result
-is really about his check or an artifact of the particular alternative
-chosen (would a *third* alternative behave differently?); (b) whether the
-five unit directions used in item 5 are a sufficient spanning set or
-whether a general-`n` symbolic proof is needed.
+Context-blind (claim.md + script + results; both `decision.md` files
+withheld). No Bash available to it; it hand-derived and read the code line
+by line, and said so.
+
+| Attack | Outcome | Response |
+|---|---|---|
+| **The discrimination test (claim b — the headline finding, and the one already written into the draft reply)** | **BROKE IT.** The "same span" half was a tautology: `span_R = matrix_rank(basis1)` and `span_L = matrix_rank(basis1)` computed the rank of the **same matrix twice**, with no `X^L` object built at all — so `same_span` was `True` for any input. Directly contradicted claim.md's own "tested, not asserted". | **Accepted in full and rebuilt.** The test now takes the LOWEST eigenspace of each chirality's operator (genuinely different: dim 6 for `X^R` at eigenvalue `−1`, dim 2 for `X^L` at `−3`), forms the bilinears `B^μ = ψ₀†σ^μψ₁` his item 4 prescribes, and computes their span inside `H₁`. Result: **both give rank 4** — the full vector multiplet — from genuinely different starting subspaces. The conclusion survives, now as computation instead of assertion. |
+| **Claim (c), the correction being sent to him** | **Scoped too broadly.** The trace-invariance maths is textbook-certain, but the correction assumes "spinor multiplet" means a *single Weyl chirality*. If he meant a full Dirac bispinor `Ψ=(ψ_L,ψ_R)`, then `ΨΨ†` already has off-diagonal blocks pairing the chiralities and **his sentence is correct as written** — the "correction" would then misrepresent him. | **Accepted.** The draft has been rewritten to present this as a question about which reading he intended, not as an unqualified correction. This is the highest-cost error the pass could have caught, and it caught it before sending. |
+| Riemann normal coordinates (claim d) | **Did not break — and is stronger than the round claimed.** The first-derivative result is symbolic in unconstrained `n`, so it is a *proof* that all nine vanish, not a five-point sample; and because the embedding is real-analytic, the `t→0` limit is direction-independent, so a sixth direction cannot fail. | Accepted as a strengthening; §4's framing was more cautious than necessary. |
+| The projection formula (claim a) | **Did not break.** `Tr(σ_μ†σ_ν) = 2δ_μν` verified by hand, so `½Tr(σ_μ†g) = x_μ` exactly, with no hidden normalisation freedom. | No change. |
+
+**Net:** the verdict label is unchanged, but one of its two supporting
+legs was rebuilt from scratch and the outgoing correction to Tom was
+softened into a question. **This was the third cannot-fail check found in
+this round sequence** — after C180's basis test and C182's no-go check —
+and the only one that had already reached a draft intended for someone
+outside the project.
 
 ---
 

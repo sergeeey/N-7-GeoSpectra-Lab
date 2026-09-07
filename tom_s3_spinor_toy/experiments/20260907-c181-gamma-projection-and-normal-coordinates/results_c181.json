@@ -78,9 +78,20 @@
       ]
     },
     "the_two_operators_are_different": true,
-    "both_give_same_4dim_vector_span": true,
+    "bilinear_span_from_X_R": {
+      "lowest_eigenspace_dim": 6,
+      "num_bilinears": 48,
+      "span_rank_in_H1": 4
+    },
+    "bilinear_span_from_X_L": {
+      "lowest_eigenspace_dim": 2,
+      "num_bilinears": 16,
+      "span_rank_in_H1": 4
+    },
+    "both_give_same_vector_span": true,
+    "both_span_the_full_4dim_vector_multiplet": true,
     "check_discriminates": false,
-    "conclusion": "Both chiralities give equivariant bases spanning the same space, so a test that only inspects representation content (which vector multiplet is produced) cannot tell them apart -- even though the operators they diagonalise are different."
+    "conclusion": "Computed, not assumed: the two chiralities have genuinely different lowest eigenspaces, yet the bilinears his item 4 prescribes span the same subspace of H_1 from both -- so a test that inspects only which vector multiplet is produced cannot tell the two operators apart."
   },
   "item5_riemann_normal_coordinates": {
     "metric_at_origin_per_unit_direction": [
