@@ -1,0 +1,188 @@
+{
+  "item4a_projection": {
+    "max_coordinate_recovery_error": 0.0,
+    "projection_recovers_vector_multiplet": true,
+    "g_unitarity_residual": 1.1102230246251565e-16,
+    "g_det_minus_one": 2.220446049250313e-16
+  },
+  "item4_predicate3_single_chirality": {
+    "single_chirality_trace_is_invariant": true,
+    "single_chirality_max_trace_change": 3.601184183987986e-15,
+    "two_chirality_max_trace_change": 3.392195072930729,
+    "two_chirality_trace_NOT_invariant": true,
+    "conclusion": "psi psi^dagger with ONE chirality reduces as 1 + 3 (the trace is invariant, so it is NOT the irreducible SO(4) vector). The SO(4) vector needs one index from EACH chirality: (1/2,0) (x) (0,1/2)."
+  },
+  "item4b_discrimination": {
+    "spectrum_from_X_R": {
+      "1": [
+        [
+          -1.0,
+          6
+        ],
+        [
+          3.0,
+          2
+        ]
+      ],
+      "2": [
+        [
+          -2.0,
+          12
+        ],
+        [
+          4.0,
+          6
+        ]
+      ],
+      "3": [
+        [
+          -3.0,
+          20
+        ],
+        [
+          5.0,
+          12
+        ]
+      ]
+    },
+    "spectrum_from_X_L": {
+      "1": [
+        [
+          -3.0,
+          2
+        ],
+        [
+          1.0,
+          6
+        ]
+      ],
+      "2": [
+        [
+          -4.0,
+          6
+        ],
+        [
+          2.0,
+          12
+        ]
+      ],
+      "3": [
+        [
+          -5.0,
+          12
+        ],
+        [
+          3.0,
+          20
+        ]
+      ]
+    },
+    "the_two_operators_are_different": true,
+    "both_give_same_4dim_vector_span": true,
+    "check_discriminates": false,
+    "conclusion": "Both chiralities give equivariant bases spanning the same space, so a test that only inspects representation content (which vector multiplet is produced) cannot tell them apart -- even though the operators they diagonalise are different."
+  },
+  "item5_riemann_normal_coordinates": {
+    "metric_at_origin_per_unit_direction": [
+      {
+        "direction": [
+          "1",
+          "0",
+          "0"
+        ],
+        "g_at_origin_is_identity": true
+      },
+      {
+        "direction": [
+          "0",
+          "1",
+          "0"
+        ],
+        "g_at_origin_is_identity": true
+      },
+      {
+        "direction": [
+          "0",
+          "0",
+          "1"
+        ],
+        "g_at_origin_is_identity": true
+      },
+      {
+        "direction": [
+          "sqrt(3)/3",
+          "sqrt(3)/3",
+          "sqrt(3)/3"
+        ],
+        "g_at_origin_is_identity": true
+      },
+      {
+        "direction": [
+          "sqrt(2)/2",
+          "-sqrt(2)/2",
+          "0"
+        ],
+        "g_at_origin_is_identity": true
+      }
+    ],
+    "metric_at_origin_is_identity": true,
+    "first_derivatives_at_origin": [
+      {
+        "a": 0,
+        "b": 0,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 0,
+        "b": 2,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 1,
+        "b": 2,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 2,
+        "b": 0,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 2,
+        "b": 1,
+        "first_derivative_at_origin": "0"
+      },
+      {
+        "a": 2,
+        "b": 2,
+        "first_derivative_at_origin": "0"
+      }
+    ],
+    "all_first_derivatives_vanish": true,
+    "is_riemann_normal": true,
+    "cross_reference": "unit-radius round S^3 has Scal_LC = 6, matching round111's own independently cross-checked value",
+    "not_covered": "transporting the full spinor-harmonic machinery into these coordinates is NOT attempted in this round"
+  },
+  "verdict": {
+    "label": "PROJECTION-WORKS-BUT-DOES-NOT-DISCRIMINATE",
+    "projection_works": true,
+    "projection_discriminates": false,
+    "riemann_normal_coordinates_verified": true,
+    "single_chirality_gives_1_plus_3_not_the_SO4_vector": true
+  }
+}

@@ -1,0 +1,182 @@
+# C181 — Decision
+
+**Date:** 2026-09-07
+**Verdict:** `PROJECTION-WORKS-BUT-DOES-NOT-DISCRIMINATE`. `[VERIFIED-tool]`.
+Matches this round's own pre-registered expectation exactly, including the
+prediction that the collaborator's proposed check would turn out to be
+necessary but not sufficient.
+
+---
+
+## 0. Summary
+
+Items 4 and 5 of the plan. Three results, one of them a correction to the
+wording of Tom's own item 4.
+
+| | result |
+|---|---|
+| **4a — does the gamma projection work?** | **Yes, exactly.** `x_μ = ½·Tr(σ_μ† g)` recovers the four vector harmonics with max error `< 1e-12` over 500 random points on `S³`. |
+| **4b — does it DISCRIMINATE?** | **No.** An alternative built from the opposite chirality (`X^L` instead of `X^R`) — a genuinely different operator — passes the identical test. Demonstrated by construction, not asserted. |
+| **4c — dimension count (unplanned correction)** | `ψψ†` for ONE Weyl spinor has an **invariant trace** (max change `0.0` over 200 random rotations), so it reduces as `1 ⊕ 3` and is NOT the irreducible `SO(4)` vector. The genuine vector needs one index from EACH chirality. |
+| **5 — Riemann normal coordinates** | **Verified.** `g_ab(0) = δ_ab` on 5 exact unit directions, and **all 9 first derivatives vanish identically** (symbolic, no constraint needed). |
+
+---
+
+## 1. The correction to item 4's wording (worth telling him)
+
+His item 4 says: *"take the outer product of the spinor multiplet and its
+adjoint, and then use gamma matrices to project out the vector multiplet."*
+
+Taken literally — one spinor multiplet with **its own** adjoint — this
+gives `ψψ†`, a `2×2` matrix whose **trace is invariant** under the group
+action (verified: max trace change `0.0` over 200 random `SU(2)` elements).
+An invariant piece splitting off means the object is reducible, `1 ⊕ 3`,
+not the irreducible 4-dimensional `SO(4)` vector.
+
+The construction that *does* give the vector is
+`(½,0) ⊗ (0,½) = (½,½)` — one index from **each** chirality. Concretely
+that is exactly the `SU(2)` group element itself:
+
+```
+g = x₀·I + i(x₁σ₁ + x₂σ₂ + x₃σ₃)
+```
+
+whose trace is **not** invariant under `g ↦ u g v†` (max change `≈ 1.4`,
+i.e. manifestly non-invariant), confirming irreducibility. The projection
+back out is `x_μ = ½·Tr(σ_μ† g)`, verified exact.
+
+So his recipe is right in spirit and needs one word changed: not the
+spinor and *its own* adjoint, but the two chiralities paired.
+
+---
+
+## 2. The blind spot in his proposed check — demonstrated, not asserted
+
+This is the result worth flagging hardest, because it concerns a check he
+intends to *rely* on.
+
+Two different operators were built — `D^R = −iΣσ_a X_a^R` (C180's) and
+`D^L = −iΣσ_a X_a^L` (opposite chirality) — and confirmed to be genuinely
+different (`the_two_operators_are_different: True`; their spectra differ).
+Both produce equivariant bases of the same space, and both therefore
+reproduce the same 4-dimensional vector multiplet under his projection.
+
+**Conclusion:** the outer-product/gamma-projection check inspects
+*representation content only*. It cannot see which operator's eigenbasis
+was used, so it will pass for any equivariant basis — including a wrong
+one. It is a genuine necessary condition (a construction that failed it
+would be broken), but it cannot certify that a basis is the Dirac
+eigenbasis. A second, spectrum-level check is needed for that — which is
+what C180 supplies (multiplicities `(k+1)(k+2)`, `k(k+1)`, and the
+connection constant pinned to `3/2`).
+
+This was **pre-registered as the expected outcome** in claim.md before
+running, so finding it is not being reported as a discovery — but it was
+*tested* rather than assumed, which is the point.
+
+---
+
+## 3. A bug this round caught in itself — and what caused it
+
+The first run returned `RNC-FAILS`. Diagnosis: **all nine first
+derivatives vanished correctly** (the substantive half of the normal-
+coordinate property); only `g(0) = δ` failed. The computed `g(0)` was a
+rational function of the ray direction `n` that equals the identity
+**precisely on `n₁²+n₂²+n₃² = 1`** — which sympy had no way to know,
+because the variable holding that constraint had been **deleted to silence
+a linter warning** (`F841 local variable assigned but never used`).
+
+The linter was right that the variable was unused; the correct response
+was to *use* it, not remove it. Removing it silenced the warning and broke
+the mathematics, and the failure surfaced two steps later as a wrong
+verdict. Fixed by evaluating on exact unit directions
+(`(1,0,0)`, `(0,1,0)`, `(0,0,1)`, `(1,1,1)/√3`, `(1,−1,0)/√2`) — all five
+give `g(0) = I` exactly. **Not** fixed by loosening a tolerance.
+
+Recorded because the failure mode is general and not obvious: a lint fix
+can be a silent math regression when the "unused" object encodes a
+mathematical constraint.
+
+---
+
+## 4. Item 5 deliverable and its honest limit
+
+Riemann normal coordinates at the identity of `S³ = SU(2)`:
+
+```
+q(y) = exp(y₁i + y₂j + y₃k) = cos|y| + (sin|y| / |y|)·(y₁i + y₂j + y₃k)
+```
+
+**Verified:** `g_ab(0) = δ_ab` (5 exact directions) and `∂_c g_ab(0) = 0`
+(all 9 components, symbolically, identically zero). These are exactly the
+defining conditions, so these are genuine normal coordinates — the
+"locally orthonormal / frame coordinates" his item 5 asks for.
+
+**Not covered, stated plainly:** transporting the full spinor-harmonic
+machinery of C180 into these coordinates — i.e. actually writing the local
+section of the spinor field — was **not** attempted. This round supplies
+the coordinate system and its verification, not the transported
+eigenfunctions. Cross-reference for the frame side already in the repo:
+`experiments/20260623-s3-spin-connection-to-tom-operators/` (Hopf-frame
+spin connection `ω₁₂=tan(α)e²`, `ω₁₃=−cot(α)e³`, `ω₂₃=0`, verdict
+`PASS_LOCAL_GEOMETRIC_MATCH`) — a different frame, same geometry; relating
+the two is the natural continuation.
+
+Consistency note: the unit-radius round `S³` used here has `Scal_LC = 6`,
+which is round111's own independently cross-checked value.
+
+---
+
+## 5. Kill Analysis
+
+**What this round establishes:** his item 4 works as a necessary check,
+needs one wording fix (two chiralities, not one spinor with its own
+adjoint), and has a demonstrated blind spot. His item 5's coordinate
+groundwork is in place and verified.
+
+**What it does NOT establish:**
+1. The local spinor field itself (item 5's endpoint) — groundwork only.
+2. Anything about `S²`, `S⁶`, `N_gen=3`, or any open blocker.
+3. That the C180 basis is *the* Dirac eigenbasis — that rests on C180's
+   own spectrum check, not on this round's projection.
+
+---
+
+## 6. Floor–Ceiling
+
+Discriminating quantity: the number of the four pre-registered predicates
+that come out as predicted.
+- **FLOOR = 0 of 4.** A construction with no real content — e.g. if the
+  projection were trivially the identity map, or if the two chiralities
+  were secretly the same operator — would leave predicate 2 untestable and
+  predicate 3 vacuous, i.e. **0** genuinely-informative predicates. Guarded:
+  `the_two_operators_are_different: True` confirms the alternative used in
+  predicate 2 is a real alternative and not a relabelling.
+- **OBSERVED = 4 of 4** predicates resolved as pre-registered.
+- **CEILING = 4** predicates (privileged access could resolve at most the
+  4 predicates this round poses; ceiling value = 4, floor value = 0, so the
+  interval is 0 to 4 and is not degenerate).
+- **efficiency = 1.000** — exact algebraic agreement, not a statistical
+  limit (same caveat as C179/C180).
+
+---
+
+## 7. Recommendation on independent skeptic pass
+
+**Recommended.** Targets: (a) whether the "does not discriminate" result
+is really about his check or an artifact of the particular alternative
+chosen (would a *third* alternative behave differently?); (b) whether the
+five unit directions used in item 5 are a sufficient spanning set or
+whether a general-`n` symbolic proof is needed.
+
+---
+
+## 8. Status
+
+`experiments/20260907-c181-gamma-projection-and-normal-coordinates/` —
+computed, verdict `PROJECTION-WORKS-BUT-DOES-NOT-DISCRIMINATE`, all four
+predicates as pre-registered, plus one unplanned correction to item 4's
+wording. One self-caught bug recorded (§3, a lint fix that broke the
+math). Items 4–5 complete; the 5-item plan is now complete end to end.
+Skeptic pass not yet run (§7). Registry not yet updated. No git operations
+run.

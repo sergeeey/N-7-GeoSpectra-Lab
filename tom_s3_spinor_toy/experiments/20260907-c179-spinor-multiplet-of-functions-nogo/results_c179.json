@@ -1,0 +1,174 @@
+{
+  "per_sphere": {
+    "S^2": {
+      "double_cover": {
+        "m_ambient_dimension": 3,
+        "sphere": "S^2",
+        "clifford_relations": {
+          "max_abs_residual": 0.0,
+          "ok": true
+        },
+        "spinor_rep_dim": 2,
+        "spinor_generator_nonzero": true,
+        "vector_generator_nonzero": true,
+        "R_spin_2pi_is_minus_identity": true,
+        "R_vector_2pi_is_plus_identity": true,
+        "R_spin_4pi_is_plus_identity": true,
+        "R_spin_2pi_matrix": [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0
+          ]
+        ],
+        "R_vector_2pi_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "double_cover_confirmed": true
+      },
+      "induced_action": {
+        "max_point_displacement_under_2pi_rotation": 3.3306690738754696e-16,
+        "max_function_value_change": 1.7763568394002505e-15,
+        "induced_action_is_identity_on_functions": true
+      },
+      "contradiction": {
+        "eq4_induced_action_gives_plus_identity": true,
+        "eq40_spinor_rep_gives_minus_identity": true,
+        "forces_Phi_equals_minus_Phi": true,
+        "conclusion": "No nonzero multiplet of ordinary functions on S^2 can carry the spinor representation."
+      }
+    },
+    "S^3": {
+      "double_cover": {
+        "m_ambient_dimension": 4,
+        "sphere": "S^3",
+        "clifford_relations": {
+          "max_abs_residual": 0.0,
+          "ok": true
+        },
+        "spinor_rep_dim": 4,
+        "spinor_generator_nonzero": true,
+        "vector_generator_nonzero": true,
+        "R_spin_2pi_is_minus_identity": true,
+        "R_vector_2pi_is_plus_identity": true,
+        "R_spin_4pi_is_plus_identity": true,
+        "R_spin_2pi_matrix": [
+          [
+            -1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "R_vector_2pi_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "double_cover_confirmed": true
+      },
+      "induced_action": {
+        "max_point_displacement_under_2pi_rotation": 3.3306690738754696e-16,
+        "max_function_value_change": 1.7763568394002505e-15,
+        "induced_action_is_identity_on_functions": true
+      },
+      "contradiction": {
+        "eq4_induced_action_gives_plus_identity": true,
+        "eq40_spinor_rep_gives_minus_identity": true,
+        "forces_Phi_equals_minus_Phi": true,
+        "conclusion": "No nonzero multiplet of ordinary functions on S^3 can carry the spinor representation."
+      }
+    }
+  },
+  "dimension_trap_S3": {
+    "dim_vector_half_half": 4,
+    "dim_spinor_half_0_plus_0_half": 4,
+    "dimensions_coincide": true,
+    "kernel_element_phase_on_vector": 1,
+    "kernel_element_phase_on_spinor_L": -1,
+    "kernel_element_phase_on_spinor_R": -1,
+    "vector_descends_to_SO4": true,
+    "spinor_descends_to_SO4": false,
+    "dimension_trap_confirmed": true
+  },
+  "positive_control_A_tom_eq77_vector": {
+    "per_convention_satisfied": {
+      "his_convention_Gamma_eq_minus_T_row_contraction": true,
+      "transpose_variant": false,
+      "sign_variant_Gamma_eq_plus_T": false
+    },
+    "his_stated_convention_verifies": true,
+    "exactly_one_convention_works": true
+  },
+  "positive_control_B_half_integer_peter_weyl": {
+    "coordinate_reconstruction_max_error": 0.0,
+    "j_half_block_entries_are_functions_on_S3": true,
+    "left_right_action_linear_fit_residual": 1.3322676295501878e-15,
+    "induced_4x4_map_orthogonality_residual": 1.887379141862766e-15,
+    "j_half_block_carries_vector_rep_not_spinor": true
+  },
+  "verdict": {
+    "label": "NOGO-CONFIRMED-AND-DIMENSION-TRAP-CONFIRMED",
+    "substrate_ok": true,
+    "nogo_holds_for_S2_and_S3": true,
+    "dimension_trap_confirmed": true,
+    "positive_control_A_passed": true,
+    "positive_control_B_passed": true
+  }
+}
