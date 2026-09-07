@@ -192,3 +192,111 @@ wording. One self-caught bug recorded (§3, a lint fix that broke the
 math). Items 4–5 complete; the 5-item plan is now complete end to end.
 Skeptic pass not yet run (§7). Registry not yet updated. No git operations
 run.
+
+---
+
+## 9. CORRECTION (2026-09-07, later same day) — §1's "correction to Tom" is WITHDRAWN
+
+**Trigger:** a verbatim re-read of his §2.2 (p.13) while preparing the reply,
+prompted by an external review of the draft letter.
+
+**What §2.2 actually says, verbatim:**
+
+> "For n even, the representation which acts on the `d`-dimensional multiplet is
+> the spinor representation of `SO(n + 1)`; for n odd, it is the direct sum of
+> the two (fundamental) spinor representations."
+
+`n = 3` for `S³` is **odd**. So his multiplet is the direct sum of both
+fundamental spinors — a 4-component Dirac **bispinor**, not one Weyl chirality.
+And the next sentence already states the outcome we were about to "correct":
+
+> "The action induced on this by a rotation is a **reducible** representation of
+> `G`. This action partitions it into a set of bases for ket spaces, which
+> **include** the basis for a vector multiplet."
+
+He does not claim `ΨΨ†` **is** the vector. He claims it **contains** one, and
+says so with the word *reducible*. **His sentence is correct as written.**
+
+**Verified** (`c181b_bispinor_correction.py`, `results_c181b.json`):
+
+| block | transforms as | singlet drift under 400 random `SU(2)×SU(2)` | content |
+|---|---|---|---|
+| `M_LL` | `u_L M u_L†` | `3.6e-15` — **invariant, splits off** | `(1,1) ⊕ (3,1)` reducible |
+| `M_RR` | `u_R M u_R†` | `5.3e-15` — invariant | `(1,1) ⊕ (1,3)` reducible |
+| `M_LR` | `u_L M u_R†` | **`8.44` — not invariant** | `(2,2)` **irreducible = the vector** |
+| `M_RL` | `u_R M u_L†` | — | `(2,2)` the vector again |
+
+`1+3+1+3+4+4 = 16 = dim(ΨΨ†)`. Block transformation laws exact to `0.0`.
+The 4-vector norm from `M_LR` is preserved to `1.8e-15`.
+
+**So §1 of this file is withdrawn.** The C181 skeptic had flagged exactly this
+reading as the one that would invalidate the correction; his own §2.2 now
+settles which reading he meant. What survives from §1 is only the *location*
+result: the vector sits in the **off-diagonal** blocks, not the diagonal ones —
+which is useful to him, and is not a correction.
+
+**§2 of this file (the non-discrimination finding) is unaffected** and remains
+the substantive thing to tell him.
+
+### 9a. A fourth cannot-discriminate check — caught by a built-in control, not a skeptic
+
+The first version of `c181b` tried to separate the blocks by comparing the
+invariance of `|x|` built from each. Both returned `~1e-15`. Reason:
+`|x|² = ½Tr(M†M)` is the **Frobenius norm**, invariant under `M → u M v†` for
+*any* unitaries — so it holds for every block and discriminates nothing.
+
+Withdrawn and replaced by the singlet-drift test above, which puts the two
+blocks on opposite sides by 15 orders of magnitude
+(`discriminates: true` is asserted in the results JSON, not eyeballed).
+
+This is the **fourth** non-discriminating check in the C179–C182 sequence, after
+C180's multiplicity check, C182's no-go condition and C181's own span test.
+(C180's *basis-independence* test is NOT one of them — that was a
+congruence-vs-similarity bug producing a spurious failure, the opposite defect.) It is the
+**first one caught by a control deliberately built into the script** rather than
+by an external skeptic — which is the intended direction of travel, and the
+reason the negative control was put there at all.
+
+### 9b. An independent code review found the replacement discriminator half-hollow
+
+`c181b`'s rebuilt discriminator was `offdiag_x0_drift > 1e-3 AND diag_y0_drift < 1e-10`,
+and §9a presented the two halves as having to "come out on OPPOSITE sides or the
+test is worthless again". A code review (context-limited to the two scripts)
+pointed out that the **diagonal half is the identity** `Tr(u A u†) = Tr(A)` —
+trace cyclicity plus unitarity — which holds for **any** `2×2` matrix conjugated
+by the same unitary on both sides, whether or not it came from `Ψ`.
+
+**Verified rather than accepted:** the same test, run on an unrelated random
+matrix, gives max drift `9.5e-16` against the genuine block's `3.6e-15`.
+Indistinguishable. The conjunct carries **zero** information about whether the
+construction is correct. Now a measured field, `junk_control_diag_y0_max_drift`,
+with `diag_half_is_an_identity: true` asserted in the results JSON — the
+review's argument is data in the artifact, not a remark in a comment.
+
+**This is NOT a sixth cannot-fail check, and the distinction matters.** The
+compound flag *can* still come out `False`, via its off-diagonal conjunct: slice
+the wrong block and `offdiag_x0_drift` collapses to `~0` by the very same
+identity. What was wrong was the **claim about the test**, not the test. Every
+scrap of falsifying power sits in `offdiag_x0_drift > 1e-3`, and the results JSON
+now says exactly that in a field called `falsifying_power_is_entirely_in`.
+
+Two smaller findings, both accepted:
+- The Frobenius-norm value was still being reported next to the discriminator
+  captioned "which IS preserved" — the same quantity this file had **withdrawn
+  two sections earlier** for discriminating nothing. Relabelled
+  `UNITARITY_SANITY_ONLY_...` with an explicit "must not be quoted in support of
+  the (2,2) identification".
+- In `c180b`, the `6 → 7` corruption case detects the break through the
+  *invalid-product fallback* (`n_from_multiplicity` returns `None`), so it would
+  report "detected" even if the magnitude arithmetic were broken. Added
+  `6 → 12` — a **valid** product with the wrong `n`, which forces the arithmetic
+  to run. It also detects the corruption, and `broken_multiplicity_detected` now
+  keys on that case instead.
+
+**The part worth keeping:** this defect was found *in the script written to catch
+this class of defect*, one level up from the four it was auditing. The shape is
+new — not "a check that cannot fail", but **a compound `A AND B` discriminator in
+which one conjunct is a mathematical identity**, which inherits an
+unconditionally-true region while still looking like two independent tests. The
+useful question, and it is cheap: *per conjunct*, what would have to be true
+about the world — not about the code — for this half to come out False?

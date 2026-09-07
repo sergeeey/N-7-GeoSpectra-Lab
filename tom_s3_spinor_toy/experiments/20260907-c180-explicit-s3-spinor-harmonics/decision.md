@@ -213,3 +213,61 @@ a real negative control now exists (opposite chirality → constant flips to
 5-item plan complete. Notable side effect: this round supplies the
 independent cross-check that round67's own `claim.md:73` explicitly stated
 it lacked. Registry not yet updated. No git operations run.
+
+---
+
+## CORRECTION (2026-09-07, later same day) — `constant_was_solved_not_assumed` is NARROWER than its name
+
+**Trigger:** two independent context-blind adversarial reads of the draft reply
+to Tom. One of them flagged the letter's phrasing *"it drops out of the
+eigenvalue data rather than having to be put in by hand"*, observing that the
+target magnitude `n + 3/2` is supplied from outside the data.
+
+**The flag is correct, and the situation is worse than the flag stated.**
+`connection_constant_check` intersects, per `(eigenvalue, multiplicity)` pair,
+
+```
+c ∈ { val − (n + 3/2),  val + (n + 3/2) },    n read off the multiplicity
+```
+
+Observed negative branch: `val = −n` exactly, so `val + (n + 3/2) = 3/2`
+**identically**. Observed positive branch: `val = n + 3` exactly, so
+`val − (n + 3/2) = 3/2` **identically**. The value `3/2` is in every candidate
+set as an algebraic identity, so the intersection was never going to exclude it.
+
+**What the solve can and cannot detect** — `c180b_connection_constant_discrimination.py`,
+`results_c180b.json`, replaying the identical logic on corrupted spectra:
+
+| corruption | intersection | detected? |
+|---|---|---|
+| none (real `D₀` spectrum) | `[1.5]` unique | — |
+| every eigenvalue shifted by `+1` | `[2.5]` **unique** | **NO** |
+| every eigenvalue shifted by `+0.37` | `[1.87]` **unique** | **NO** |
+| one eigenvalue moved by `+0.6` | `[]` | yes |
+| spectrum rescaled by `1.2` (spacing broken) | `[]` | yes |
+| one multiplicity broken (`6 → 7`) | `[]` | yes |
+| spectrum reflected | `[−1.5]` | tracks chirality correctly |
+
+**Verdict: NOT VACUOUS, but narrower than claimed.** The check is a real
+constraint — a moved level, a broken spacing or a wrong multiplicity each
+destroys the intersection. What it cannot see is a *uniform additive shift*,
+which is precisely the quantity it purports to measure: the uniqueness is
+carried by the algebra and the value simply tracks the shift.
+
+**Honest statement, which replaces the old one everywhere:**
+
+> `D₀`'s spectrum is the Dirac spectrum up to a **single additive constant** — a
+> non-trivial fact, since corrupting any level, spacing or multiplicity destroys
+> it — and that constant is `3/2`.
+
+**NOT:** "the constant drops out of the eigenvalue data rather than being put in
+by hand." The draft reply to Tom has been rewritten accordingly; `claim.md`'s
+`constant_was_solved_not_assumed` field name is retained for provenance but is
+now qualified by this section.
+
+**This is the fifth cannot-fail check in the C179–C182 sequence** — and the
+first of a different *kind*. The earlier four could not fail at all; this one
+cannot fail to return a **unique** answer, which is subtler and was the harder
+to see, precisely because the surrounding test does real work. It is also the
+only one of the five that had reached a document intended for someone outside
+the project **and been leaned on there as the section's strongest point.**

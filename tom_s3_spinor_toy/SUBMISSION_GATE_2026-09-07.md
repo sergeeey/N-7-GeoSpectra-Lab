@@ -1,145 +1,161 @@
 # Submission Gate — draft reply to Tom Lawrence, 2026-09-07
 
-Per `~/.claude/rules/integrity.md` § Submission Gate. Artifact:
-`DRAFT_REPLY_TO_TOM_2026-09-07.md`.
+Per `~/.claude/rules/integrity.md` § Submission Gate. Artifacts:
+`DRAFT_REPLY_TO_TOM_2026-09-07.md` (English, the one that would be sent) and
+`DRAFT_REPLY_TO_TOM_2026-09-07_RU.md` (Russian, for Sergey's review). Both are at
+**revision 3**.
 
-## VERDICT: **NOT PASSED — DO NOT SEND YET.** 2 of 4 gates clear, 2 open.
+## VERDICT: **NOT PASSED — DO NOT SEND YET.** 3 of 4 gates clear.
+
+The change from the previous verdict is that **Gate 1 is now clear**: the letter
+itself has been adversarially read three times, twice context-blind. What remains
+open is Gate 4 (cooling-off) and two decisions that are Sergey's, not this
+document's.
 
 ---
 
-## Gate 1 — Adversarial review: **PARTIAL**
+## Gate 1 — Adversarial review: **CLEAR**
 
-| Round | Context-blind skeptic | Verdict |
+### Round-level (four passes, run before the letter existed)
+
+| Round | Verdict | What it found |
 |---|---|---|
-| C179 (the no-go) | run | `CONFIRMED-REAL` — 6 attacks, none broke it; supplied a *second* independent proof for `S³` |
-| C180 (the `S³` construction) | run | `WEAKENED` → all 3 concerns closed by added computation |
-| C181 (his check + RNC) | run | `WEAKENED` — found the discrimination test's 'same span' half was a TAUTOLOGY (same matrix ranked twice, no L-object built), and that the correction to Tom was scoped too broadly. **Both accepted**; the test was rebuilt as a real computation and the draft's correction softened into a question. |
-| C182 (the `S²` descent) | run | `WEAKENED` — found the scalar/spinor 'two checks' are one algebraic identity, and the no-go check was a tautology. **Both accepted and fixed**; the draft's wording was corrected as a result. |
-| **The draft letter itself** | **not run** | — |
+| C179 (the no-go) | `CONFIRMED-REAL` | 6 attacks, none broke it; supplied a *second* independent proof (Peter–Weyl) |
+| C180 (the `S³` construction) | `WEAKENED` | 3 concerns, all closed by added computation |
+| C181 (his check + RNC) | `WEAKENED` | the discrimination test's "same span" half was a **tautology**; the correction to Tom was scoped too broadly |
+| C182 (the `S²` descent) | `WEAKENED` | the "two checks" are one algebraic identity; the no-go condition was a **tautology** |
 
-**Open:** no adversarial read of the letter *as a letter* (tone,
-overclaim, anything that reads stronger than what was proved). All four
-round-level skeptic passes are now complete.
+### Letter-level (three reads, all after revision 1)
 
-**Track record — the reason this gate is not a formality:** of the four
-skeptic passes, three returned `WEAKENED` and between them found six real
-defects: a missing negative control; an imprecise citation; a pair of
-"checks" that were one algebraic identity; and **three separate
-cannot-fail checks** (C180's basis test, C182's no-go condition, C181's
-discrimination span). All six were accepted and fixed on the merits. Two
-of them forced corrections to this very draft — the S² wording, and the
-correction to Tom about `ψψ†`, which was scoped too broadly and is now
-posed as a question about which reading he intended.
+| Read | Kind | Verdict | What it found |
+|---|---|---|---|
+| **Sergey, manual** | full context | needs changes | **3 letter-level defects**: the 2π claim stated looser than its own `claim.md`; the letter **credited Tom with an error** (SO(n)'s defining rep is self-dual, so "dual ≠ defining" is wrong); the `S³` section read as if parallelizability *defeated* the obstruction |
+| **Blind read A** | context-blind, formal prompt | `WEAKENED` | `c = 3/2` "drops out of the data" overstates (the target `n+3/2` is supplied); "−1 on a half-turn" is convention-dependent; a quotation of Tom had been silently re-inflected; flagged one attribution as unverifiable |
+| **Blind read B** | context-blind, paraphrased prompt | needs changes | the projection formula `x_μ = ½Tr(σ_μ†g)` is wrong outside the quaternionic basis; "four functions" is ambiguous between 2 complex and Tom's 4 complex; the `S³` Dirac degeneracies want a citation |
 
-**The pattern is worth stating plainly:** every substantive defect found
-in this sequence was in a CHECK, not in a computation. The physics came
-out right each time; what kept failing was the machinery meant to
-establish that it was right.
+Both blind reads were given **only** the letter body (status block and changelog
+stripped), the `.py`/`results_*.json` files, and Tom's PDF; `claim.md` and
+`decision.md` were explicitly withheld. The two prompts were deliberately worded
+differently — a Paraphrase-Sensitivity Probe per
+`falsification-ladder.md` § Step 8a, justified here because sending is
+irreversible.
+
+**The probe earned its cost: the two reads overlapped on nothing.** A found the
+`c = 3/2` and quotation issues; B found the projection-formula and
+component-count issues. A single read would have missed roughly half.
+
+### Disposition of every letter-level finding
+
+| # | Finding | Disposition |
+|---|---|---|
+| 1 | `c = 3/2` "drops out of the data" | **ACCEPTED and escalated.** Re-tested with corrupted spectra (`c180b_...py`): a uniform `+1` shift returns a unique `2.5`, `+0.37` returns `1.87`. The *uniqueness* is algebraic and the *value* tracks the shift. Rewritten to claim only what survives. Recorded in C180 `decision.md`. |
+| 2 | Projection formula wrong as written | **ACCEPTED, diagnosis sharpened.** Verified both readings numerically: exact in the quaternionic basis `(I, iσ_k)` (error `0.0`), off by `i` on spatial components in the plain Pauli basis (error `1.14`). The code was right; the letter omitted the basis. Basis now stated. |
+| 3 | "four functions" ambiguous | **ACCEPTED.** Tom's `n=3` multiplet is 4 *complex* (the ambient bispinor); the built object is `ℂ²` = 2 complex. Disambiguated up front in §3. |
+| 4 | "−1 on a half-turn" convention-dependent | **ACCEPTED.** Code uses `U(θ)=exp(θX₃^R)` with weight read from `−½i X₃`, giving phase `exp(2iwθ)`; at `w=½, θ=π` that is `−1`. Self-consistent but normalisation-specific. Non-invariance now carries the argument; the `−1` is labelled as convention. |
+| 5 | Quotation re-inflected (`include` → `include[s]`) | **ACCEPTED.** Now quoted closer to verbatim. |
+| 6 | Citation wanted for the `S³` degeneracies | **ACCEPTED.** Camporesi–Higuchi, gr-qc/9505009 — **existence, authors and title verified via literature search, not cited from memory.** |
+| 7 | "similarity transformation" attribution unverifiable | **DISMISSED with evidence.** Tom's own message reads, verbatim: *"I'd assumed that matrices which transform the Laplacian spherical harmonics must be equivalent to those acting on the vector representation through a similarity transformation."* The reader did not have the email in scope and correctly said so. No change. |
+
+### Track record — why this gate is not a formality
+
+Across the four round-level and three letter-level reads, **every substantive
+defect found was in a CHECK or in the WRITING, never in a computation.** The
+physics came out right each time; what kept failing was the machinery meant to
+establish that it was right, and then the prose describing it.
+
+Five cannot-fail checks were found in this one sequence (C180 multiplicity
+check, C182 no-go condition, C181 span test, C181B Frobenius norm, C180
+`c`-uniqueness). **Corrected while writing this line:** an earlier draft of this
+list named C180's *basis-independence* test instead of its multiplicity check.
+The basis test was a different failure — a congruence-vs-similarity bug that
+produced a spurious FAILURE, which is the opposite defect.
+Three were caught by external skeptics, one by a negative control deliberately
+placed in the script, one by a corrupted-input replay run only because a skeptic
+queried the wording. **Self-review caught none of the five.** Recorded as a
+counted observation in `pearl_registry/INDEX.md` (2026-09-07, impact 7).
 
 ## Gate 2 — Evidence markers on every claim: **CLEAR**
 
-| # | Claim in the draft | Marker | Source |
-|---|---|---|---|
-| 1 | The July transpose finding; `L_x` opposite sign, `L_y`/`L_z` fine | `[VERIFIED]` | `20260728-tom-so3-harmonics-sign-check/TRANSPOSE_LEMMA.md` |
-| 2 | 2π rotation = identity on functions | `[VERIFIED-tool]` | C179: point shift `3.3e-16`, function-value change `1.8e-15` |
-| 3 | 2π rotation = `−1` in Spin(n+1) | `[VERIFIED-tool]` | C179, exact, both `d=2` and `d=4`; `4π → +Id` control passes |
-| 4 | Therefore no spinor multiplet of functions on `S²` or `S³` | `[VERIFIED-tool]` | C179 |
-| 5 | This resolves his `[*check*]` on §2.2 | `[INFERRED]` | interpretive reading of his own marker — correct as far as it goes, but it is our reading of his intent |
-| 6 | His footnotes 1 (p.3) and 2 (p.11) already flag the area | `[VERIFIED]` | direct read of the PDF |
-| 7 | Dimension trap: `dim(½,½) = dim[(½,0)⊕(0,½)] = 4`; kernel phase `+1` vs `−1` | `[VERIFIED-tool]` | C179 |
-| 8 | `S³ = SU(2)` is parallelizable | `[DOCS]` | standard |
-| 9 | `D₀` spectrum table (`k=0..3`) | `[VERIFIED-tool]` | C180 |
-| 10 | Multiplicities `(k+1)(k+2)`, `k(k+1)` are the standard `S³` Dirac degeneracies | `[VERIFIED-tool]` | `c85_certification.py`. **Note:** round67's own statement of this is marked `[INFERRED]` in its `claim.md:73` — cite c85, not round67 |
-| 11 | `c = 3/2` emerges uniquely | `[VERIFIED-tool]` | C180, intersection over 7 independent pairs |
-| 12 | Lowest harmonics are the two constant spinors | `[VERIFIED-tool]` | C180 |
-| 13 | `S²` is not parallelizable | `[DOCS]` | hairy-ball theorem |
-| 14 | `S²` descent dimensions 1,3,5 and 2,4,6 | `[VERIFIED-tool]` | C182. **Note:** these are ONE fact (both equal `k+1`), not two independent confirmations — the draft now says so explicitly |
-| 14b | Weight-0 fixed by the fibre; weight-`½` picks up `−1` on a half-turn | `[VERIFIED-tool]` | C182 `fibre_invariance_check`: drift `1.2e-15` vs `0.686`, phase `+1` vs `−1`. This is the genuinely independent check |
-| 15 | `2l+1` and `2(l+1)` are the standard counts | `[DOCS]` | textbook |
-| 16 | Half-integer weights only at odd `k`, and non-zero | `[VERIFIED-tool]` | C182 |
-| 17 | `x_μ = ½Tr(σ_μ†g)` recovers the vector exactly | `[VERIFIED-tool]` | C181, error `0.0` |
-| 18 | `ψψ†` (one chirality) has invariant trace → `1 ⊕ 3` | `[VERIFIED-tool]` for the maths; **`[INFERRED]` for its applicability to what Tom meant** | C181, `3.6e-15`. The skeptic noted that if he meant a full Dirac bispinor, his sentence is correct as written — the draft now asks rather than corrects |
-| 19 | Opposite-chirality alternative passes the same check | `[VERIFIED-tool]` | C181, **rebuilt after the skeptic found the original test tautological**: lowest eigenspaces genuinely differ (dim 6 vs 2), both bilinear spans have rank 4 in `H₁` |
-| 20 | Constant is `+3/2` vs `−3/2` by chirality | `[VERIFIED-tool]` | C180 skeptic follow-up |
-| 21 | RNC: `g(0)=δ` on 5 exact directions, all 9 first derivatives vanish | `[VERIFIED-tool]` | C181 |
-| 22 | Scope statements ("haven't built the `S²` Dirac operator", "groundwork only") | `[VERIFIED]` | accurate — matches what the rounds actually did |
+Claims unchanged from revision 1 are not re-listed; the table below covers every
+claim the revisions altered or added.
 
-No claim in the draft is unmarked, and no claim rests on `[MEMORY]`.
+| # | Claim in revision 3 | Marker | Source |
+|---|---|---|---|
+| 1 | 2π obstruction, scoped to "pullback-only action on scalar functions" | `[VERIFIED-tool]` | C179; scope now matches its own `claim.md` |
+| 2 | The obstruction is standard rep theory, not new | `[DOCS]` | Frobenius/Peter–Weyl; stated as context, with the two-line mechanism given explicitly so the claim does not rest on the label |
+| 3 | §2.2 says "the spinor representation of `SO(n+1)`" | `[VERIFIED]` | direct read, PDF p.13, quoted as a question not an assertion |
+| 4 | `SO(n)` defining rep is self-dual; `g↦gᵀ` is not a homomorphism | `[VERIFIED-tool]` | 600 random `SO(3)`/`SO(4)` elements: contragredient−defining `1.2e-15`; `(gh)ᵀ ≠ gᵀhᵀ` residual `1.943` |
+| 5 | Tom's p.13 bracketed question, quoted | `[VERIFIED]` | verbatim from PDF |
+| 6 | Tom's prior "similarity transformation" view | `[VERIFIED]` | verbatim from his own message |
+| 7 | `S³` construction changes category, does not defeat §1 | `[VERIFIED]` | matches C179 `decision.md`'s own scoping; confirmed by both blind reads |
+| 8 | Component bookkeeping: `ℂ²` = 2 complex vs Tom's 4 complex | `[VERIFIED]` | PDF §2.2 `d = 2^{(n+1)/2}`; the two restrict to the same rank-2 bundle on `S³` |
+| 9 | `D₀` spectrum table, `k=0..3` | `[VERIFIED-tool]` | `results_c180.json`, exact match |
+| 10 | Multiplicities are the standard `S³` Dirac degeneracies | `[VERIFIED-tool]` + `[DOCS]` | `c85_certification.py`; Camporesi–Higuchi gr-qc/9505009 |
+| 11 | **`D₀`'s spectrum is Dirac up to ONE additive constant, which is `3/2`** | `[VERIFIED-tool]` | `results_c180b.json`. **Replaces the withdrawn "the constant drops out of the data".** Corrupted-spectrum tests: moved level, broken spacing, broken multiplicity each destroy the solution; a uniform shift does not. |
+| 12 | `k=0` is two constant spinors, **not** zero modes; `\|λ\| = 3/2` | `[VERIFIED-tool]` | C180; consistent with KT-8 (round `S³` has no zero modes) |
+| 13 | `S²` dims 1,3,5 and 2,4,6 are ONE fact, not two | `[VERIFIED-tool]` | C182; the letter says so explicitly |
+| 14 | Weight-0 invariant, weight-`½` not; `−1` at `θ=π` in the stated parameterisation | `[VERIFIED-tool]` | C182 `fibre_invariance_check`; convention now stated |
+| 15 | p.435 reading | `[INFERRED]`, hedged in the letter | Gallier notes not read; letter says so |
+| 16 | **Tom's item 4 is correct as written** | `[VERIFIED-tool]` | `results_c181b.json`: for `n` odd his multiplet is the bispinor; `ΨΨ†` is reducible and contains the vector twice. **C181's "correction" withdrawn.** |
+| 17 | Block table `1+3+1+3+4+4 = 16`; vector in the off-diagonal blocks | `[VERIFIED-tool]` | `results_c181b.json`; discriminator: off-diagonal singlet drifts `8.44`, diagonal fixed at `3.6e-15` |
+| 18 | Projection exact **in the quaternionic basis** | `[VERIFIED-tool]` | verified in both bases; plain-Pauli error `1.14`, quaternionic `0.0` |
+| 19 | The check does not discriminate | `[VERIFIED-tool]` | C181, rebuilt after the tautology was found |
+| 20 | RNC: `g(0)=δ`, all 9 first derivatives vanish symbolically | `[VERIFIED-tool]` | C181 |
+| 21 | Tom's (79), (107), (108), (113) | `[VERIFIED-tool]` | direct PDF read + computation; **independently confirmed by both blind reads** |
+| 22 | §3.3 opening line; his stated preference for deriving via differential equations | `[VERIFIED]` | direct read, PDF p.17 |
+| 23 | "five of my own checks could not fail" | `[VERIFIED-tool]` | enumerated in `pearl_registry/INDEX.md` and the two `decision.md` corrections |
+
+No claim in either letter is unmarked, and none rests on `[MEMORY]`.
 
 ## Gate 3 — Internal consistency (text vs. data): **CLEAR**
 
-Every number in the draft was re-checked against the results JSON this
-session:
-
-- `D₀` table `(0,2) / (−1,6),(3,2) / (−2,12),(4,6) / (−3,20),(5,12)` —
-  matches `results_c180.json` exactly.
-- `c = 3/2`, unique over 7 pairs — matches `results_c180.json`.
-- `S²` dimensions `1,3,5` and `2,4,6` — match `results_c182.json`.
-- `0.0`, `3.6e-15`, `3.3e-16`, `1.8e-15` — match their respective JSONs.
-- All three scripts re-run from scratch this session; verdicts reproduce.
-- `pytest`: 2524 passed, 4 skipped, 0 failures.
+- Every number in revision 3 re-checked against the results JSONs this session.
+  **Caveat on method:** the automated sweep matches numbers by substring, which
+  is coarse for small integers; the load-bearing values (`c180b` corruption
+  table, `c181b` discriminator, block totals) were read field-by-field instead.
+- Both blind reads independently re-verified the spectrum table, multiplicities,
+  `c`, the `2`-vs-`6` eigenspace dims, and the `S²` ladders against the same
+  JSONs and found no rounding-up.
+- `pytest`: **2524 passed, 4 skipped, 0 failures** (513 s).
+- `ruff`: clean on both new scripts.
+- English and Russian versions carry the same claims; both at revision 3.
 
 ## Gate 4 — Cooling-off: **NOT OBSERVED**
 
-The draft was written in the same session as the results. Per the rule,
-the moment right after declaring something ready is the least reliable
-moment to judge readiness. **Re-read after a break before sending.**
+Revision 3 was written the same day as revisions 1 and 2. Per the rule, the
+moment right after declaring something ready is the least reliable moment to
+judge readiness — and this session has now produced three revisions each of which
+believed itself finished. **Re-read after a break before sending.**
 
 ---
 
 ## Blocking items before this may be sent
 
-1. **Human re-read of the equation transcription — STILL OPEN, but the
-   machine-side check has been redone more rigorously (2026-09-07,
-   second pass).** Every equation the draft relies on was re-read from the
-   PDF and compared literally:
-
-   | eq | page | source, verbatim | our rendering | result |
-   |---|---|---|---|---|
-   | (4) | 2 | `Φ'\|_B = Φ\|_A`, with (3) `gA = B` | `Φ'\|_{gA} = Φ\|_A` | match — substitution licensed by (3), **not a literal quote** |
-   | (40) | 6 | `g*: \|Φ_β⟩ ↦ \|Φ'_β⟩ = (Γ_d(g))_β^α \|Φ_α⟩` | identical | exact |
-   | (61) | 8 | `(T_ij)^k_l = −i(δ_jl δ^k_i − δ_il δ^k_j)` | identical | exact |
-   | (72) | 9 | `[−x^l(δ_jl ∂_i − δ_il ∂_j)\|φ_γ⟩] = [i c⁻¹Γ_d(T_ij)c]_γ^δ \|φ_δ⟩` | identical | exact |
-   | (77) | 9 | `[−x^l(δ_jl ∂_i − δ_il ∂_j)\|φ_γ⟩] = [i Γ_d(T_ij)]_γ^δ \|φ_δ⟩` | identical | exact |
-   | (89) | 12 | `\|φ_i⟩ = δ_ij √((n+1)/S) x^j/r` | identical | exact |
-   | (99) | 13 | `Γ_d(T_ij) = −T_ij` | identical | exact |
-   | §3.3 italic | 17 | "find harmonics of S² that form a basis for a two-component spinor and then harmonics of S³ … four-component spinor" | same | exact |
-   | §2.2 `d` | 13 | `d = 2^{n/2}` (n even), `2^{(n+1)/2}` (n odd) | 2 for S², 4 for S³ | match |
-
-   **New cross-check found on the second pass:** his own eq (100), p.13, is
-   the form (77) takes for the vector multiplet, and he states (91)
-   satisfies it. Expanded both sides by hand: RHS `= δ_jk φ_i − δ_ik φ_j`;
-   LHS with `φ_k = x_k/r` gives the same after the `x_k/r³` terms cancel.
-   So C179/C180's positive control A ("exactly one of three conventions
-   works, and it is his") independently agrees with **his own worked
-   result** — a cross-check that had not been made explicit before.
-
-   **Two things the second pass caught that the first missed:**
-   (a) the `[*check*]` at the end of §2.2 attaches to the *Fock-space
-   conclusion*, so our result settles a **premise** of it rather than the
-   marked sentence itself — the draft now says so;
-   (b) on p.17 he explicitly raises the half-integer-`l`-on-`S²` puzzle
-   himself (citing p.435 of the notes he found), which C179+C182 answer
-   directly — the draft now makes that connection.
-
-   **Why this item stays OPEN anyway:** this is still the same reader
-   checking his own reading. It is a stronger self-check than the first
-   (literal quotation, a found cross-check, two corrections), but the
-   specific failure mode the skeptic named — a misreading reproduced
-   identically on re-reading — is exactly the one it cannot exclude.
-   **Sergey should still look at the seven equations himself.**
-2. ~~C181 and C182 skeptic passes~~ — **DONE.** Both returned `WEAKENED`; all four findings accepted and fixed, two of which changed this draft.
-3. **Adversarial read of the letter itself**, separately from the rounds:
-   does anything in it read stronger than what was proved?
-4. **Cooling-off period.**
-5. **Attribution and tone conventions** for this correspondence — a
-   judgment call for Sergey, not something this gate can settle.
+1. **Cooling-off period.** Not waivable by this document.
+2. **Sergey's own read of the letter.** Revision 3 exists *because* his read of
+   revision 1 caught three defects that four round-level skeptic passes had not.
+   That is the strongest single argument for repeating it.
+3. **The decision to send at all, and the final tone.** A judgment call this gate
+   cannot make. Note the standing project constraint: **do not initiate contact
+   with Tom** — this exchange was initiated by him, so a reply is in scope, but
+   the scope is a reply.
+4. **Transcription self-check — partially closed.** Sergey independently flagged
+   (107)/(108) before any machine confirmed them, which is the first time the
+   human-side check found something first. The seven equations of revision 1 plus
+   the four new quotes of revision 3 (§2.2 twice, p.13 bracket, §3.3) are all
+   machine-verified and were re-verified by both blind reads, but the same
+   caveat stands: a misreading reproduced identically on re-reading is the one
+   failure mode this cannot exclude.
 
 ## Non-blocking notes
 
-- Claim 5 is `[INFERRED]`, not `[VERIFIED]` — it is our reading of what
-  his `[*check*]` marker was asking. Consider softening the wording, or
-  simply asking him whether that is what he meant.
-- Claim 10 should cite `c85_certification.py`, not round67, if a citation
-  is ever added — round67's own version of that statement is `[INFERRED]`
-  and self-flagged as un-cross-checked.
+- One check in C179 genuinely cannot fail: `R_spin(4π) = +Id` is the square of
+  `R_spin(2π) = −Id`. It is a sanity byproduct, is not load-bearing anywhere in
+  the letter, and is recorded here only so it is not later mistaken for
+  independent evidence. Flagged by blind read A.
+- Blind read A could not open the `.py` files (long Windows path with Cyrillic
+  and spaces) and verified against the JSONs and PDF only. It said so explicitly
+  rather than papering over it. Its coverage of the exact algebra of the
+  projection formula was therefore weaker than B's — which is precisely the gap
+  where B found finding #2. The two reads were complementary by accident as well
+  as by design.
