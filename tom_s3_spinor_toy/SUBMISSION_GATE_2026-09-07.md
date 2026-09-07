@@ -203,3 +203,58 @@ instruction for this letter).
   projection formula was therefore weaker than B's — which is precisely the gap
   where B found finding #2. The two reads were complementary by accident as well
   as by design.
+
+---
+
+## POST-SEND re-check, 2026-09-07 evening — one imprecision found, in the sent text
+
+A full re-verification of every checkable claim was run *after* sending, at
+Sergey's request. **The physics is clean; one parenthetical aside is not.**
+
+### The finding
+
+> §3: *"the standard `S³` Dirac degeneracies, in the form Camporesi and Higuchi
+> give them (gr-qc/9505009); note the reindexing, **my `k` is their `n`**."*
+
+That last clause holds on **one branch only**. Mapping each level to the standard
+`±(n + 3/2)`, multiplicity `(n+1)(n+2)`:
+
+| our `k` | branch | physical `λ` | their `n` |
+|---|---|---|---|
+| 0 | `−` | `−3/2` | 0 |
+| 1 | `−` | `−5/2` | 1 |
+| 1 | `+` | `+3/2` | **0** |
+| 2 | `−` | `−7/2` | 2 |
+| 2 | `+` | `+5/2` | **1** |
+| 3 | `−` | `−9/2` | 3 |
+| 3 | `+` | `+7/2` | **2** |
+
+So `n = k` on the negative branch and `n = k − 1` on the positive one. Equivalently:
+the two multiplicity families the letter quotes, `(k+1)(k+2)` and `k(k+1)`, are the
+**same** formula `(n+1)(n+2)` evaluated at `n = k` and `n = k − 1`.
+
+**What is NOT wrong:** the spectrum table, both multiplicity formulas, and the
+`c = 3/2` discussion. Every level is self-consistent between its eigenvalue and its
+multiplicity (checked both ways, 7/7). The defect is confined to the one-clause
+reading guide.
+
+**Root cause, worth naming:** this was the only claim in the letter about *someone
+else's paper's conventions*. Its existence was verified via literature search; its
+**indexing convention was not**, and the aside was written from the shape of our own
+table. Everything else in the letter was checked against either our own JSON or a
+verbatim read of Tom's PDF — this was the one sentence with neither backing.
+
+### Everything else re-verified clean
+
+Dimensions (`(½,½)` = 4, `(½,0)⊕(0,½)` = 4, `d = 2^{(n+1)/2}`), no `S³` zero modes
+(`|λ| ≥ 3/2`), `2l+1` / `2(l+1)`, the `1+3+1+3+4+4 = 16` decomposition,
+`R_spin(2π) = −I` and `R_spin(4π) = +I`, the projection exact in the quaternionic
+basis and off by `i` in the plain Pauli basis, and all three of Tom's typesetting
+slips.
+
+### Disposition
+
+**No correction sent, and the .docx/.pdf on the Desktop deliberately reproduce the
+text AS SENT** — including this clause. Altering them would make our record diverge
+from what Tom actually holds, which is worse than the imprecision. If a further
+letter goes out, fix it there in one line.
