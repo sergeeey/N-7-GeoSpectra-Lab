@@ -532,6 +532,32 @@ here): "discrete normalizer gap closed cheaply -- `Spin(8)` connected ->
 
 ---
 
+## 8c. Cross-reference found (2026-09-07, whole-project meta-analysis) --
+    independent confirmation from an already-closed OB4 gate
+
+**Found via a boyko-agent meta-analysis of the whole project, not a new
+computation.** `TRIALITY_DISTINGUISHABILITY_GATE.md` Section 10 (C78,
+2026-08-11 -- a MONTH before this round, on OB4/L3b's own question, not
+OB1/OB14's) independently computed the FULL commutant of the physical
+Dirac operator `D` within all of `so(8)` (28 dimensions) via direct SVD
+nullspace computation, and found: `commutant_dim=8`, EXACTLY `su(3)` --
+"any subalgebra larger than `su(3)` that anyone might propose in the
+future is, by this result, already known to fail." **This round's own
+general Lie-theory argument (Section 2 above: triality is an outer
+automorphism, `Spin(8)` connected implies every inner automorphism fails
+to realize it) supplies the STRUCTURAL REASON C78's exhaustive NUMERICAL
+result had to come out that way, for any physical `D` built from this
+coset's `G2/SU(3)` data -- not a new finding, a deeper explanation of an
+already-established one.** Cross-reference added to
+`TRIALITY_DISTINGUISHABILITY_GATE.md` Section 12. Neither this round's
+verdict nor OB4's own status changes; the two independent routes (C78's
+direct numerical test on the physical operator; this round's abstract,
+operator-independent argument) agree without either having been built to
+reproduce the other -- exactly the kind of convergence this project's own
+methodology treats as strengthening confidence, not as new content.
+
+---
+
 ## 9. Verification substrate (FL Step 2a, abbreviated)
 
 - All numeric claims in §1a/§1b are fresh re-runs this session (not read
