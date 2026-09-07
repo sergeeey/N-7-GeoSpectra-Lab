@@ -89,12 +89,45 @@ moment to judge readiness. **Re-read after a break before sending.**
 
 ## Blocking items before this may be sent
 
-1. **Human re-read of the equation transcription.** The draft quotes and
-   relies on Tom's eqs (4), (40), (61), (72), (77), (89), (99). These were
-   read off the PDF by machine and re-checked once by the same process.
-   The C179 skeptic explicitly named this as the one risk a self-check is
-   weakest against and could not verify it independently. **Sergey should
-   re-read those equations against the source.**
+1. **Human re-read of the equation transcription — STILL OPEN, but the
+   machine-side check has been redone more rigorously (2026-09-07,
+   second pass).** Every equation the draft relies on was re-read from the
+   PDF and compared literally:
+
+   | eq | page | source, verbatim | our rendering | result |
+   |---|---|---|---|---|
+   | (4) | 2 | `Φ'\|_B = Φ\|_A`, with (3) `gA = B` | `Φ'\|_{gA} = Φ\|_A` | match — substitution licensed by (3), **not a literal quote** |
+   | (40) | 6 | `g*: \|Φ_β⟩ ↦ \|Φ'_β⟩ = (Γ_d(g))_β^α \|Φ_α⟩` | identical | exact |
+   | (61) | 8 | `(T_ij)^k_l = −i(δ_jl δ^k_i − δ_il δ^k_j)` | identical | exact |
+   | (72) | 9 | `[−x^l(δ_jl ∂_i − δ_il ∂_j)\|φ_γ⟩] = [i c⁻¹Γ_d(T_ij)c]_γ^δ \|φ_δ⟩` | identical | exact |
+   | (77) | 9 | `[−x^l(δ_jl ∂_i − δ_il ∂_j)\|φ_γ⟩] = [i Γ_d(T_ij)]_γ^δ \|φ_δ⟩` | identical | exact |
+   | (89) | 12 | `\|φ_i⟩ = δ_ij √((n+1)/S) x^j/r` | identical | exact |
+   | (99) | 13 | `Γ_d(T_ij) = −T_ij` | identical | exact |
+   | §3.3 italic | 17 | "find harmonics of S² that form a basis for a two-component spinor and then harmonics of S³ … four-component spinor" | same | exact |
+   | §2.2 `d` | 13 | `d = 2^{n/2}` (n even), `2^{(n+1)/2}` (n odd) | 2 for S², 4 for S³ | match |
+
+   **New cross-check found on the second pass:** his own eq (100), p.13, is
+   the form (77) takes for the vector multiplet, and he states (91)
+   satisfies it. Expanded both sides by hand: RHS `= δ_jk φ_i − δ_ik φ_j`;
+   LHS with `φ_k = x_k/r` gives the same after the `x_k/r³` terms cancel.
+   So C179/C180's positive control A ("exactly one of three conventions
+   works, and it is his") independently agrees with **his own worked
+   result** — a cross-check that had not been made explicit before.
+
+   **Two things the second pass caught that the first missed:**
+   (a) the `[*check*]` at the end of §2.2 attaches to the *Fock-space
+   conclusion*, so our result settles a **premise** of it rather than the
+   marked sentence itself — the draft now says so;
+   (b) on p.17 he explicitly raises the half-integer-`l`-on-`S²` puzzle
+   himself (citing p.435 of the notes he found), which C179+C182 answer
+   directly — the draft now makes that connection.
+
+   **Why this item stays OPEN anyway:** this is still the same reader
+   checking his own reading. It is a stronger self-check than the first
+   (literal quotation, a found cross-check, two corrections), but the
+   specific failure mode the skeptic named — a misreading reproduced
+   identically on re-reading — is exactly the one it cannot exclude.
+   **Sergey should still look at the seven equations himself.**
 2. ~~C181 and C182 skeptic passes~~ — **DONE.** Both returned `WEAKENED`; all four findings accepted and fixed, two of which changed this draft.
 3. **Adversarial read of the letter itself**, separately from the rounds:
    does anything in it read stronger than what was proved?
