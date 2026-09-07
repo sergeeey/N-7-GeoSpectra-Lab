@@ -5,7 +5,31 @@ Per `~/.claude/rules/integrity.md` § Submission Gate. Artifacts:
 `DRAFT_REPLY_TO_TOM_2026-09-07_RU.md` (Russian, for Sergey's review). Both are at
 **revision 3**.
 
-## VERDICT: **NOT PASSED — DO NOT SEND YET.** 3 of 4 gates clear.
+## VERDICT: **CLOSED — PASSED and SENT, 2026-09-07 18:39.**
+
+All four gates clear; the three items this document could not settle were
+settled by Sergey, who read revision 4 and sent it. Revision 4 is the version
+that went. **This file is now a record of a completed gate, not a live
+checklist** — nothing in it should be edited except to append what Tom's reply
+teaches us about whether the gate caught the right things.
+
+### What the gate cost and what it caught — for calibrating the next one
+
+Four round-level skeptic passes, three letter-level reads (one by Sergey, two
+context-blind with deliberately different prompts), one code review, one
+cooling-off re-read after a 4h10m break. Between them:
+
+| | |
+|---|---|
+| Factual errors in the physics | **0** — every pass |
+| Defects in *checks* | **5** cannot-fail checks + 1 cannot-fail conjunct |
+| Defects in the *letter* | 3 (Sergey) + 3 (blind A) + 3 (blind B) + 3 (cooling-off) |
+| Claims withdrawn | **2** — our "correction" to Tom's item 4, and the `c = 3/2` framing |
+| Found by self-review | **0** |
+
+The single most expensive thing prevented: revision 1 would have told Tom he
+had made an error in his own §2.2 item 4. He had not. That correction was
+caught by a skeptic, confirmed by a verbatim re-read of his p.13, and withdrawn.
 
 The change from the previous verdict is that **Gate 1 is now clear**: the letter
 itself has been adversarially read three times, twice context-blind. What remains
@@ -120,18 +144,38 @@ No claim in either letter is unmarked, and none rests on `[MEMORY]`.
 - `ruff`: clean on both new scripts.
 - English and Russian versions carry the same claims; both at revision 3.
 
-## Gate 4 — Cooling-off: **NOT OBSERVED**
+## Gate 4 — Cooling-off: **OBSERVED**
 
-Revision 3 was written the same day as revisions 1 and 2. Per the rule, the
-moment right after declaring something ready is the least reliable moment to
-judge readiness — and this session has now produced three revisions each of which
-believed itself finished. **Re-read after a break before sending.**
+Revision 3 was finalised at **14:07**; the re-read happened at **18:17** — a gap
+of **4h10m**, and the intervening time went entirely to unrelated work (the
+negative-control machinery, the Revival Condition rule, a commit split). That is
+what the rule asks for: not a pause taken in the same breath as finishing, but a
+genuine change of task before re-reading.
+
+**Findings of the cooling-off re-read — no factual errors; three tone-level items,
+one of which should not be sent as written:**
+
+| # | Location | Finding |
+|---|---|---|
+| 1 | "a small and rather inbred sample" | **Should be changed.** The sample is *Sergey's own work and Dr. Buckholtz's*. "Inbred" describes the sampling, but sits next to a third party's name and can be heard as a judgement on his work. Rephrase to make clear it is about independence of review, not about the subjects. |
+| 2 | §1, "is adjacent to it but weaker" | Accurate but a small status move — "my statement is stronger than yours" — in a letter that asks for his assessment. Soften. |
+| 3 | "But first there's one result I want to lead with" | It is the fourth paragraph. Minor stumble. |
+
+**Structural note, Sergey's call not this gate's:** the two questions the letter
+most wants answered sit *after* six technical sections. Tom's own notes run to 18
+pages so length is not the issue, but questions at the end of a long letter get
+answered less often. One line in the opening would flag them.
+
+**Explicitly re-checked and left alone:** the "five checks" count (correct for the
+C179–C182 batch; the later sixth finding is a different shape and was recorded
+separately for exactly that reason), and naming Dr. Buckholtz (per Sergey's own
+instruction for this letter).
 
 ---
 
-## Blocking items before this may be sent
+## Blocking items — ALL SETTLED 2026-09-07 18:39 (kept for the record)
 
-1. **Cooling-off period.** Not waivable by this document.
+1. ~~**Cooling-off period.**~~ **DONE** — 4h10m gap, different work in between, re-read performed; three tone-level findings recorded under Gate 4, one of which ("inbred sample") should be changed before sending.
 2. **Sergey's own read of the letter.** Revision 3 exists *because* his read of
    revision 1 caught three defects that four round-level skeptic passes had not.
    That is the strongest single argument for repeating it.
