@@ -283,28 +283,55 @@ unedited) so that "C172" in this project's history refers unambiguously to
 the parallel session's item-2 attempt, and this round's own item-3
 scoping/no-go finding is recorded as C173.
 
-Its own `results_c172.json` (read, not re-run or verified by this round)
+**CORRECTED 2026-09-07, orchestrating session — the paragraph below (as
+originally written) is struck through, not deleted, because it cited a
+verdict the parallel session itself has since revised.** At the time this
+round read it, `results_c172.json` reported
+`REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK`. **That session's own
+subsequent context-blind skeptic pass caught a genuine post-hoc
+criterion-shift** (its first draft replaced its own frozen kill-criterion
+with a weaker "reconciliation" check immediately after the frozen one
+failed — this project's own AOG-1 anti-overfitting rule exists exactly
+for this) **and the parallel session's own `decision.md` now reads,
+in full**: verdict `BLOCKED-KERNEL-MULTIPLICITY-MISMATCH` +
+`PARTIAL-STRUCTURE-HOLDS-NO-EXPLICIT-ZERO`, headline **"FALSIFIED as
+originally framed."** The frozen, pre-registered check (does `dim ker(D)`
+match round59's own claimed `dim ker=1`?) failed outright: direct
+nullspace gives `dim ker(D)=36`, not 1. Checks that DID pass (chirality
+anticommutation, the decoupling identity, an explicit combined zero
+vector) were downgraded by that session's own skeptic to "confirmed but
+non-discriminating" — each holds for essentially any Hermitian operator
+built the same way, not specifically because of anything triality-related.
+
+~~Its own `results_c172.json` (read, not re-run or verified by this round)
 reports verdict `REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK`: all four of
 its pre-registered checks passed — the real twisted `D_S6` anticommutes with
 a natural `chi6_twisted`, the decoupling identity holds exactly with the real
 operator, `ker(D)`'s raw dimension (36) is reconciled with round59's own
 restricted-sector count (1) as genuinely different quantities (not a
 contradiction), and an explicit combined zero-mode `v⊗w` of `D_full` was
-found at both `t=0` and `t=1`.
+found at both `t=0` and `t=1`.~~
 
-**This is fully consistent with, and independently corroborates, this
-round's own conclusion:** that parallel session's own `claim.md` explicitly
-states, pre-registered, "Does NOT complete C169's full escalation on its own
-— item 3 ... remains entirely untouched regardless of this round's outcome."
-The combined vector `v⊗w` found there is exactly `v∈ker(D_S6,real)` (still
-purely `SU(3)`-indexed, no channel label — nothing in item 2's own
-construction added one) tensor `w∈ker(D_S3(t))` — precisely the object §3's
-argument predicts: item 2 succeeds at its own narrower goal
+~~**This is fully consistent with, and independently corroborates, this
+round's own conclusion:** ... item 2 succeeds at its own narrower goal
 (`ker(D_full)=0` with the real operator) while carrying zero triality
-content, because none was ever introduced.
+content, because none was ever introduced.~~
 
-**This is cited as corroborating evidence, not independently re-verified by
-this round** (per this round's own claim.md "What this does NOT mean" #5).
+**What actually survives this correction, and why C173's own verdict is
+UNCHANGED:** C173's decisive argument (Section 2 above) never depended on
+item 2 succeeding OR failing — it states plainly, BEFORE this section was
+ever written, that "item 2's Cl(9) reassembly changes none of this...
+because it stays entirely within `G2/SU(3)` (plus `S3`'s own separate
+`SU(2)`) holonomy data." The parallel session's own CORRECTED result is,
+if anything, MORE consistent with this than the original overclaim was:
+even its own genuinely-surviving finding (`ker(D_full)=ker(D)⊗ker(D_S3(t))`,
+its own check 5, added post-skeptic) shows no triality label appears
+anywhere in the real, un-overclaimed construction either — item 2, however
+its own headline is finally scored, introduces no channel-distinguishing
+content in either the original or the corrected telling. **This citation
+is downgraded from "corroborating evidence" to "background context,
+since revised by its own authors — not relied upon for C173's own
+verdict, which was never conditioned on it.**
 
 ---
 
