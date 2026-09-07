@@ -1699,6 +1699,23 @@ containing the other. Does not touch Gates 2-6; does not identify the
 shared `u(1)³` with any known physical charge. See
 `experiments/20260718-round125-so4xso4-vs-su3-centralizer-comparison/decision.md`.
 
+**UPDATE (2026-09-07, cross-reference found via whole-project meta-
+analysis, no new computation, no verdict change):** C173
+(`experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md`, an
+OB1/OB14 investigation, not an OB4 one) independently proved a general
+Lie-theory fact -- triality is an OUTER automorphism of `Spin(8)`/`D4`,
+and no INNER automorphism (which is all any construction internal to the
+connected group `Spin(8)` can ever produce) can realize it -- that
+supplies the STRUCTURAL REASON `TRIALITY_DISTINGUISHABILITY_GATE.md`
+Section 10's own exhaustive numerical result (`commutant(D,so(8))=su(3)`
+exactly, C78, 2026-08-11) had to come out the way it did. Cross-reference
+added to that file's own Section 12. **Does not change this OB's status**
+-- Gate 2 was already `CLOSED (NO), exhaustively` per C78; this is an
+independent confirmation via a genuinely different method (numerical
+commutant test on the physical operator vs. an abstract, operator-
+independent group-theory argument), agreeing without either being built
+to reproduce the other.
+
 **Owner / next step:** genuinely blocked without new input; flagged as one of
 the two irreducible open premises in `DERIVATION_GRAPH.yaml`'s D2 chain. See
 `TRIALITY_DISTINGUISHABILITY_GATE.md` for the full gate application,
