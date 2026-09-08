@@ -1,0 +1,47 @@
+==============================================================================
+G3  the sign conflict with C180 -- two different objects, not a conflict
+==============================================================================
+  matrix commutator  [R_a, R_b]      = -2 eps_abc R_c   (C180's object)
+  vector-field bracket [X_a^R,X_b^R] = 2 eps_abc X_c^R (C184's object)
+  [PASS] G3a the two signs are opposite -- so C180 and C184 do NOT contradict  matrix [-2], operator [2]
+  [PASS] G3b and the reason is order reversal: R_a R_b = R_{e_b e_a}
+
+==============================================================================
+F  the S^3 spinors actually written in Hopf coordinates
+==============================================================================
+  D_0 = -1: eigenspace dimension 6
+  D_0 =  3: eigenspace dimension 2
+  [PASS] F1 both k=1 blocks are found by solving, with dimensions 6 and 2  dims {-1: 6, 3: 2}
+
+  a D_0 = -1 eigenspinor, in x-coordinates : [-I*x1 + x2, 0]
+                     the same one in Hopf : [I*(exp(I*theta) - 1)*exp(-I*(-phi + psi + theta)/2)/2, 0]
+  [PASS] F2 the D_0=-1 eigenvalue survives the Hopf substitution identically
+
+  a D_0 =  3 eigenspinor, in x-coordinates : [-x0 - I*x3, -I*x1 + x2]
+                     the same one in Hopf : [(-exp(I*(phi + psi - theta)/2) - exp(I*(phi + psi + theta)/2))*exp(-I*(phi + psi))/2, I*(exp(I*theta) - 1)*exp(-I*(-phi + psi + theta)/2)/2]
+  [PASS] F2 the D_0=3 eigenvalue survives the Hopf substitution identically
+
+==============================================================================
+G1  the injected-error controls P1, P2 and P3 never had
+==============================================================================
+  spinor k=0: Casimir_L {0: 2}  Casimir_R {3/4: 2}
+  [PASS] G1-P1 the (j,j) test FAILS on the spinor space, which is genuinely (0,1/2) -- so P1 is not a check that passes on anything
+  with S = sigma (wrong by a factor 2): Casimir_R {3: 2}
+  [PASS] G1-P2 a mis-normalised spin operator no longer gives j_R = 1/2 -- so P2 can fail
+  a deliberately mixed operator -i sum sigma_a (x) X_a^L:
+  [PASS] G1-P3 it does NOT commute with the J^R Casimir, so the sort-by-irrep step is not something every operator passes
+
+==============================================================================
+SUMMARY
+==============================================================================
+  PASS  G3a the two signs are opposite -- so C180 and C184 do NOT contradict
+  PASS  G3b and the reason is order reversal: R_a R_b = R_{e_b e_a}
+  PASS  F1 both k=1 blocks are found by solving, with dimensions 6 and 2
+  PASS  F2 the D_0=-1 eigenvalue survives the Hopf substitution identically
+  PASS  F2 the D_0=3 eigenvalue survives the Hopf substitution identically
+  PASS  G1-P1 the (j,j) test FAILS on the spinor space, which is genuinely (0,1/2) -- so P1 is not a check that passes on anything
+  PASS  G1-P2 a mis-normalised spin operator no longer gives j_R = 1/2 -- so P2 can fail
+  PASS  G1-P3 it does NOT commute with the J^R Casimir, so the sort-by-irrep step is not something every operator passes
+
+8 of 8 checks passed
+all three follow-ups closed
