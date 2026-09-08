@@ -80,3 +80,31 @@ DRAFT_REPLY*
 *REPLY_TO_TOM*
 LETTER_TO_*
 *_TO_TOM_*
+
+# --- Claude Code service data (machine-local) -------------------------------
+# 167 of the 281 untracked paths in this tree were these: checkpoints/, state/,
+# agent-memory/. None of it is meant to be versioned, and a status list that is
+# 97% noise is exactly what makes someone reach for `git add -A`. Nine
+# .claude/state/*.json under experiments/20260810-c11-* predate this rule and
+# stay tracked -- gitignore does not untrack; they are listed in the commit.
+**/.claude/
+
+# --- Screenshots ------------------------------------------------------------
+# 105 files, 39 MB, none referenced by any document in the repo.
+FOTO/
+
+# --- LaTeX build products (preprint.tex is the source; these are outputs) ----
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+/tom_s3_spinor_toy/preprint.pdf
+
+# --- Third-party papers ------------------------------------------------------
+# This remote is PUBLIC. Reference PDFs downloaded to read are not ours to
+# redistribute, whatever their size. Keep them locally, do not commit them.
+Agricola_*.pdf
+Charbonneau_*.pdf
+MISLABELED_*.pdf
