@@ -68,3 +68,15 @@ Toy-модель*
 # an unsent draft reply (plus two decision.md files quoting Discord verbatim)
 # was found staged for a push to the public remote.
 correspondence/
+
+# The rule above is a PATH, and a path only protects files that were put in it.
+# On 2026-09-09 four DRAFT_REPLY_TO_TOM_*.md were written to tom_s3_spinor_toy/
+# instead -- outside correspondence/, therefore not ignored, therefore committed
+# (in 2b20d86 and c81c661) into this PUBLIC repo. Nothing was pushed; the four
+# were removed from all 69 local commits by filter-branch and the originals now
+# live in correspondence/. These name patterns close the gap the path left open:
+# a letter is now ignored wherever in the tree it is written.
+DRAFT_REPLY*
+*REPLY_TO_TOM*
+LETTER_TO_*
+*_TO_TOM_*
