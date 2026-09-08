@@ -108,3 +108,8 @@ FOTO/
 Agricola_*.pdf
 Charbonneau_*.pdf
 MISLABELED_*.pdf
+references/camporesi_higuchi_grqc9505009.pdf
+tom_s3_spinor_toy/McRae_2025_Exploring_Triality_Explicitly.pdf
+
+# --- Claude Code hook state committed by accident (2026-08-10) ------------
+**/experiments/*/.claude/state/*.json
