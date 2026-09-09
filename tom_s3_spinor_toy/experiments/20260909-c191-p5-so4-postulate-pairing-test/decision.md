@@ -196,3 +196,18 @@ python c191_p5_postulate_pairing.py
 ```
 
 `22/22`. `ruff check` and `ruff format`: clean.
+
+## 9. C192 cross-reference (added 2026-09-09, same day)
+
+`experiments/20260909-c192-so4xso4-pygae-clifford-crosscheck` independently
+re-derives THIS round's `P8`–`P10` (the naive-reading content comparison
+only, not the steelman/role-swap/split-identification sections) using
+`pygae/clifford`'s left-regular Cl(8) representation instead of this
+round's own `so4xso4_branching.py` Kronecker-product `Γ_i` matrices. Result:
+identical content confirmed (`8_s`=`8_c` under `so(4)_1` alone). Per C192's
+own skeptic-corrected framing: this confirms the `Γ_i`-realization layer is
+not the source of `P10` (Medium rung on the Independent Verification
+Strength Ladder), NOT the `so(4)_1` embedding/`Γ_9`-sign formulas above
+it — those are shared between the two rounds, not independently tested by
+C192. `P10` itself is unchanged; this is corroboration at the layer C192
+actually varied, not a broader re-derivation.
