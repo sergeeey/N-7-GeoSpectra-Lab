@@ -690,6 +690,41 @@ independently valid, standalone facts** -- only the escalation TOWARD a
 full physical selection mechanism is now closed. See
 `experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md`.
 
+**CHECKED (2026-09-09, session-level check, no new experiment ID — this is
+a Novelty Check that closed the question before it became a round): does
+the just-finished `C184-C190` S³-spinor chain (explicit quaternion-native
+`X_a^L`/`X_a^R` generators for `su(2)_L`/`su(2)_R`, the S³ Dirac operator
+built from them, and the derived `+-3/2` connection-correction shift for
+both handedness) supply new, independent motivation for the `P5`
+fiber-`Spin(8)` postulate (the one item C173 above names as the only
+internal route left, flagged high AOG-5 risk, "no motivation beyond
+wanting to unblock OB1")? **No.** Traced directly: `S³`'s own
+`SU(2)_L x SU(2)_R` acting on its ambient `R^4` IS the quaternion
+subalgebra `H subset O` (Cayley-Dickson) — exactly the `Stab_G2(H)`
+embedding a 2026-07-15 pearl already tested and killed (`dim=6` matches
+`SO(4)` exactly, but `Stab_G2(H)` is a subgroup of `G2`, hence inherits
+`G2`'s channel-blind restriction on `8_v,8_s,8_c` automatically — "fails
+to distinguish ANY of the three channels"). `C186-C190` gives this SAME
+embedding an explicit coordinate-space/quaternion-generator form; it does
+not change which abstract subgroup it is. The genuinely non-`G2` candidate
+that DOES survive (the `SO(4)xSO(4)` block-chirality construction, built
+and fully verified 2026-07-15, unified vector-rep/spinor-rep realizations
+confirmed identical) was already complete **before** `C186-190` and gets
+nothing new from it either — its own remaining gap (physically identifying
+`S3`'s actual isometry action with one of its two abstract `SO(4)` factors,
+which act on the full 8-dim octonion/spinor space, not on `S3`'s own 4-dim
+ambient space) is a different question than anything `C184-190` computed,
+and is exactly the "Part 5 or an unproposed non-`G2` candidate" gap C173
+already named — genuinely unmoved. **Net: the two most recent bursts of
+work in this project (the `C159-C177` OB1-internal search and the
+`C179-C190` Tom-correspondence S³-spinor chain) remain what they appear to
+be — topically adjacent, not substantively linked.** No new experiment
+folder for this — it is a negative check, not a claim, and is recorded here
+rather than silently discarded per this project's Pearl/Novelty-Check
+discipline (a plausible-looking bridge between two active threads is
+exactly the kind of thing that should be checked once and written down,
+not re-discovered and re-checked by a future session).
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms

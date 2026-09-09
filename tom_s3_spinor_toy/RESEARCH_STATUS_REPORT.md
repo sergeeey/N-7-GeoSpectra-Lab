@@ -6,6 +6,103 @@
 
 ---
 
+## ⚠️ Status correction (2026-09-09) — the 2026-09-05 box below is itself now 30 rounds stale
+
+`C161–C190` landed since 2026-09-05. **`N_gen=3` status is UNCHANGED — still
+CONDITIONAL** (`CLAIM_LEDGER.yaml` `C4_NGEN3_HEADLINE`); none of the four
+dependencies (`C1_S6_INDEX_1`, `C2_ROUND59_KERNEL_DIM1`,
+`C3_KT8_NO_ZERO_MODE`, `C_G67C3_THIRD_CHANNEL`) is touched by this window.
+
+- **C161–C166 — OB14 candidate scoping** closes the remaining external-
+  literature check: `C166` reads AHL2023 (arXiv:2203.02961) directly from
+  its own LaTeX source and confirms it does not supply a transferable
+  coupling-data construction for OB14's still-open second-`3bar` gap.
+  **OB14 stays `BLOCKED-INTERNAL`** — unchanged from the 2026-09-05 box.
+- **C167–C173 — the `P4` diagonal-`ℤ₃`-orbifold escalation, run to its
+  terminus.** `C173`'s own closing argument: `Spin(8)` is connected, so
+  every inner automorphism is realized by some `g∈Spin(8)`, while triality
+  is an OUTER automorphism of `Spin(8)`/`D₄` — no construction built purely
+  from this project's own `G₂`/`SU(3)`+`S³` geometric content can ever be
+  outer. **This closes the entire `P4` line as a route to OB1** (not just
+  this one candidate); `C173`'s own text names the only two routes left:
+  an independent fiber-`Spin(8)` postulate (`P5`, explicitly flagged high
+  AOG-5 risk — "no motivation beyond wanting to unblock OB1") or external
+  input from Tom Lawrence. See `OPEN_BLOCKERS.md` OB1 section for the full
+  chain and a 2026-09-09 follow-up check (below).
+- **C176/C177 (2026-09-06) — `P1` (spectral action) tested, closes.** Both
+  the `a₂` Seeley-DeWitt term and the exact-spectrum spectral action are
+  proven analytically even in `(t−½)` and land on a single well at `t=½` —
+  the opposite of even the weakest outcome (`{0,1}`-set-selection) OB13
+  would need. **This exhausts `C132`'s own prioritized queue through its
+  `P1`/`P2`/`P3`/`P4`/`P14` tier** — every item ranked above `P5` in that
+  round's own CDT scoring is now closed.
+- **C174–C178 — OB11/Butruille robustness thread.** Channel-independence
+  of the degenerate-perturbation-theory question is confirmed
+  methodologically (reuses `C173`'s own theorem, not new physics).
+- **C179–C182 (2026-09-07) — prompted by Tom Lawrence's own reply** (sent
+  letter, 2026-09-07 18:39, asking two explicit questions about writing
+  `S²`/`S³` spinors as coordinate functions): establishes, independent-
+  skeptic-confirmed, that spinors on `S²`/`S³` cannot be written as naive
+  multiplet-of-functions objects — a real, narrow mathematical result.
+  **Separately, this sequence surfaced a significant methodology finding:**
+  5 of 6 verification checks written in this round-sequence could not fail
+  by construction (a cannot-fail conjunct was even found inside the script
+  built to audit the other five); self-review caught none of them across
+  three layers, only external/skeptic passes did. A forward-enforcement
+  script (`scripts/check_negative_control.py`) was installed 2026-09-07;
+  its own tracked prediction ("does the skeptic-catch rate drop once
+  forward-enforced") remains **unscored — 0 of the 5 rounds needed to score
+  it have been counted yet**, `C183`–`C190` postdate the install and should
+  count toward this the next time this file or `pearl_registry/INDEX.md`
+  is touched.
+- **C183 (2026-09-08)** — closes the Butruille/Wolf-classification duality
+  question for round59/round65, correcting its own tautological check
+  mid-round.
+- **C184–C190 (2026-09-08/09) — the Tom-correspondence S²/S³-spinor
+  chain.** Explicit S²/S³ eigenspinors in Tom's own coordinates/labels
+  (`C184`); the S² Dirac operator built explicitly, closing a gap the sent
+  letter itself carried (`C185`); canonical, exact S³ eigenspinors over
+  `ℚ(i)` (`C186`); the Euler-angle reduction and its `(m,n)` periodicity,
+  derived precisely and closing a Round-24 fork as REJECTED-not-vague
+  (`C187`/`C187b`); `D` rebuilt directly from the quaternion generators,
+  16/16, closing the `C187` operator-construction gap (`C188`); the
+  `+3/2`/`−3/2` connection-correction shift derived from the actual
+  Levi-Civita connection (not fitted) for the right- and then left-acting
+  operator, finding along the way that the sent letter's own aside on
+  which handedness gets which sign was backwards (`C189`/`C190`).
+  **Explicitly NOT about OB1/S⁶/triality** — grep-verified zero hits for
+  those terms across all seven `C184–C190` `decision.md` files.
+- **CHECKED, 2026-09-09 (session-level, no new round ID):** does the
+  `C184–C190` chain supply new motivation for `P5`? **No** — `S³`'s own
+  `SU(2)_L×SU(2)_R` IS the quaternion subalgebra `H⊂O` already tested and
+  killed as `Stab_{G₂}(H)` (2026-07-15 pearl: subgroup of `G₂`, inherits
+  its channel-blind restriction, "fails to distinguish ANY of the three
+  channels"); `C184–190` gives this same embedding explicit coordinates,
+  not a new abstract subgroup. Full trace: `OPEN_BLOCKERS.md` OB1 section.
+  **The two most recent research threads in this project (`C159–C177`
+  OB1-internal, `C179–C190` Tom-correspondence) remain topically adjacent,
+  not substantively linked** — OB1/H1c stays correctly `PARKED`, pending
+  either an as-yet-unproposed non-`G₂` candidate or external input.
+
+**Test suite:** `[VERIFIED]` — this session ran the full suite directly
+(foreground Bash, real run, not delegated) on 2026-09-09 and read the exact
+output: **"2537 passed, 4 skipped, 75 warnings in 395.88s (0:06:35)"**, exit
+code 0, immediately before the `C190` commit.
+
+Current entry point for this window: `OPEN_BLOCKERS.md` OB1 section (the
+`P4`/`P5`/Tom-correspondence trace above), `null_results/INDEX.md` and
+`parked/INDEX.md` for terse per-round verdicts, `pearl_registry/INDEX.md`
+for the un-scored negative-control prediction and a scan-recommended
+cluster of ~15 pending methodology pearls (rows ~78–101, none individually
+overdue, but never triaged as a group). This box is additive per this
+file's own established pattern; the 2026-09-05 correction below remains
+historically accurate for what it covers and is not retracted. **Same known
+limitation as every prior box here:** this one will itself go stale as more
+rounds land; `ALIVE_BRANCHES.md` (last updated 2026-08-12, ~90 rounds
+behind) needs the same kind of refresh and was not attempted in this pass.
+
+---
+
 ## ⚠️ Status correction (2026-09-05) — the 2026-08-30 box below is itself now 49 rounds stale
 
 The 2026-08-30 box below stops at C111. C112–C160 landed since (2026-08-30
