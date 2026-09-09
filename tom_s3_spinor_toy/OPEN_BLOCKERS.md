@@ -725,6 +725,35 @@ discipline (a plausible-looking bridge between two active threads is
 exactly the kind of thing that should be checked once and written down,
 not re-discovered and re-checked by a future session).
 
+**`C191` (2026-09-09) — `P5` ITSELF ATTEMPTED, user-authorized as an
+explicit postulate, not a derivation.** `C132`'s Relaxation Map gated `P5`
+behind "if a route-(c) postulate... is ever granted" — the user gave that
+authorization this session, explicitly understanding the AOG-5 risk
+("ставить P5 как явно мотивированный постулат (не вывод)"). `C191` grants
+the postulate (S³'s `SU(2)_L×SU(2)_R` = one `so(4)` factor of the already-
+verified `SO(4)×SO(4) ⊂ Spin(8)` construction) and tests `C132`'s own
+claimed consequence — *"which block chirality... becomes which
+`SU(2)` factor, i.e. which `t`-sector... that is a pairing rule"* —
+against the branching content nobody had actually computed. **Result:
+REJECTED as literally stated.** Restricting the known `SU(2)^4` branching
+(`8_s=(2,1,2,1)+(1,2,1,2)`, `8_c=(2,1,1,2)+(1,2,2,1)`) to just the
+postulated S³-isometry factor gives **identical** content in `8_s` and
+`8_c` (`4×(1/2,0)+4×(0,1/2)` in both) — S³'s own isometry alone cannot
+tell the two triality channels apart, contra `C132`'s sentence. A
+steelman (fixing the *second* `so(4)` factor's own quantum number too)
+does separate `8_s` from `8_c` cleanly at each fixed value — but the
+separation **flips** between the two possible fixed values (`8_s` always
+tracks whichever value *matches* the second factor, `8_c` the mismatch),
+meaning the "pairing" reduces to a match/mismatch structure needing an
+**independent physical meaning for the second `so(4)` factor** that
+nothing in this project supplies — the exact same missing ingredient
+`C173` already named. **`OB1/H1c` remains `PARKED`: `P5`, the last item
+in `C132`'s queue, is now genuinely attempted (not merely screened) and
+closed in its stated form; nothing internal to this project remains
+untested.** See
+`experiments/20260909-c191-p5-so4-postulate-pairing-test/decision.md`
+(15/15 checks, including the steelman run before the verdict was written).
+
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent
 verification — no candidate claimed correct):** 15 candidate mechanisms

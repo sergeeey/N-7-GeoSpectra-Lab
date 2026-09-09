@@ -1,0 +1,62 @@
+==============================================================================
+A  reuse (not rebuild) the 2026-07-15 Cl(8) / block-chirality construction
+==============================================================================
+  [PASS] P1 GAMMA_A, GAMMA_B, GAMMA_9 imported from the existing, already-verified so4xso4_branching.py
+  [PASS] P2 [Gamma_A, Gamma_B] = 0 (re-confirmed, not re-derived)
+
+==============================================================================
+B  build so(4)_1's su(2)_L x su(2)_R generators (indices 1-4, the H-block)
+==============================================================================
+  [PASS] P3 [L_a, L_b] = -i eps_abc L_c -- su(2)_L closes
+  [PASS] P4 [R_a, R_b] = -i eps_abc R_c -- su(2)_R closes
+  [PASS] P5 [L_a, R_b] = 0 for all a,b -- L and R commute (genuine so(4)=su(2)+su(2) split)
+  [PASS] P6 [Casimir_L, Casimir_R] = 0 (independent quantum numbers, can be jointly diagonalized)
+
+==============================================================================
+C  THE POSTULATE (stated explicitly, not derived): this so(4)_1's su(2)_L,
+   su(2)_R IS identified with S3's own SU(2)_L, SU(2)_R (the isometry group
+   C186-C190 built explicitly as X_a^L, X_a^R). Nothing below tests whether
+   this identification is TRUE -- only what it PREDICTS if granted.
+==============================================================================
+  [PASS] P7 8_s (Gamma_9=+1) and 8_c (Gamma_9=-1) each have dimension 8
+  8_s (same block chirality, Gamma_A=Gamma_B): j_L content = {np.float64(0.0): 4, np.float64(0.5): 4}, j_R content = {np.float64(0.0): 4, np.float64(0.5): 4}
+  8_c (opposite block chirality, Gamma_A=-Gamma_B): j_L content = {np.float64(0.0): 4, np.float64(0.5): 4}, j_R content = {np.float64(0.0): 4, np.float64(0.5): 4}
+
+==============================================================================
+D  the actual (j_L,j_R) joint content -- does 8_s differ from 8_c?
+==============================================================================
+  8_s joint (j_L,j_R) content: {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  8_c joint (j_L,j_R) content: {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P8 8_s matches the row-58 SU(2)^4-branching prediction restricted to (L1,R1): 4-dim (j_L=1/2,j_R=0) + 4-dim (j_L=0,j_R=1/2)
+         got {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P9 8_c ALSO matches the same restricted content (this is the actual test -- does the postulate distinguish s from c, or not?)
+         got {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P10 [the actual finding] 8_s and 8_c have IDENTICAL (j_L,j_R) content under so(4)_1 ALONE -- the postulate as naively stated does NOT produce a pairing
+
+==============================================================================
+E  compare against C38's established content (S3's OWN Dirac-kernel result)
+==============================================================================
+  C38 (already established, this project's own S3 result): t=0 kernel = (1,2) i.e. {(0.0, 0.5): 1}, t=1 kernel = (2,1) i.e. {(0.5, 0.0): 1}
+  Note: C38's kernel is a single IRREP (dim 2 each); 8_s/8_c are 8-dim REDUCIBLE
+  spaces containing MULTIPLE copies of both (1,2)-type and (2,1)-type content --
+  a dimension mismatch the postulate's own sentence ('which SU(2) factor... is
+  which t-sector') does not address, independent of P10's finding above.
+  [PASS] P11 C38's kernel content (single irrep per t-sector) is a STRICT SUBSET of each of 8_s's and 8_c's full (multi-copy) content -- consistent with EITHER being 'the' t-sector rep, which is exactly why P10 is decisive: nothing here picks one over the other
+
+==============================================================================
+F  steelman: does FIXING so(4)_2's (L2,R2) quantum number rescue the pairing?
+   (checked, not just asserted, before writing this round's verdict)
+==============================================================================
+  [PASS] P12 so(4)_2's Casimirs commute with so(4)_1's (independent quantum numbers)
+  8_s full (j_L1,j_R1,j_L2,j_R2) content: {(np.float64(0.5), np.float64(0.0), np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5), np.float64(0.0), np.float64(0.5)): 4}
+  8_c full (j_L1,j_R1,j_L2,j_R2) content: {(np.float64(0.0), np.float64(0.5), np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.5), np.float64(0.0), np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P13 full 4-Casimir content reproduces row 58's SU(2)^4 branching exactly (8_s=(2,1,2,1)+(1,2,1,2), 8_c=(2,1,1,2)+(1,2,2,1))
+         got 8_s={(np.float64(0.5), np.float64(0.0), np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5), np.float64(0.0), np.float64(0.5)): 4}, 8_c={(np.float64(0.0), np.float64(0.5), np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.5), np.float64(0.0), np.float64(0.0), np.float64(0.5)): 4}
+  Fixing (L2,R2)=(1/2,0): 8_s gives (L1,R1)={(np.float64(0.5), np.float64(0.0)): 4}, 8_c gives (L1,R1)={(np.float64(0.0), np.float64(0.5)): 4}
+  Fixing (L2,R2)=(0,1/2): 8_s gives (L1,R1)={(np.float64(0.0), np.float64(0.5)): 4}, 8_c gives (L1,R1)={(np.float64(0.5), np.float64(0.0)): 4}
+  [PASS] P14 the REFINED postulate (fix a specific (L2,R2) 'internal' sector too) DOES produce a clean s-vs-c pairing at each fixed (L2,R2) value individually
+  [PASS] P15 [the real content of the steelman] -- but the two (L2,R2) choices give the OPPOSITE pairing to each other: at (1/2,0), 8_s<->(1/2,0); at (0,1/2), 8_s<->(0,1/2) -- i.e. 8_s tracks (L2,R2) SELF-consistently (matches at both), which means the 'pairing' is just relabelling L2R2 as L1R1, not new information
+
+==============================================================================
+C191: 15 passed, 0 failed
+==============================================================================
