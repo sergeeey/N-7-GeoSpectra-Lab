@@ -752,7 +752,10 @@ in `C132`'s queue, is now genuinely attempted (not merely screened) and
 closed in its stated form; nothing internal to this project remains
 untested.** See
 `experiments/20260909-c191-p5-so4-postulate-pairing-test/decision.md`
-(15/15 checks, including the steelman run before the verdict was written).
+(17/17 checks after a same-session extension: the rejection also holds
+under a role-swap -- postulating S3's isometry as the SECOND so(4) factor
+instead of the first gives the identical collapse, checked by computation
+rather than assumed by the construction's own H<->Hl symmetry).
 
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent

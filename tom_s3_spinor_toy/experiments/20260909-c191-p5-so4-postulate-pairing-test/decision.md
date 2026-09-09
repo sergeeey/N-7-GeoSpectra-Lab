@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-09
 **Verdict:** **REJECT** (claim a: naive P5 produces a definite `8_s`/`8_c` ↔
-`t=0`/`t=1` pairing). `15 of 15` checks pass — including the checks that
+`t=0`/`t=1` pairing). `17 of 17` checks pass — including the checks that
 establish the negative, and the steelman section that checks a stronger
 reading before this verdict was written, not after.
 
@@ -78,6 +78,15 @@ number (presumably an S⁶-side triality label) that nothing in this
 project's own content currently supplies — the same missing ingredient
 `C173` already named (Part 5, or a new non-`G2` construction).
 
+## 3.5 Role-swap check (added same session, closing a gap this decision itself first flagged)
+
+Does the naive-reading REJECT (§2) depend on the arbitrary choice of
+*which* `so(4)` factor is postulated to be `S³`'s isometry? `P16`/`P17`:
+**no, checked by computation, not assumed by symmetry.** Restricting to
+the *second* factor instead reproduces the identical
+`4×(1/2,0)+4×(0,1/2)` structure (`P16`) and the same `8_s`=`8_c` collapse
+(`P17`). The naive rejection is robust to this specific degree of freedom.
+
 ## 4. Kill Analysis
 
 **Killed:** the reading "one `so(4)` factor alone = S³'s isometry, ignore
@@ -128,8 +137,10 @@ informative, not an artifact of broken machinery.
 
 - Does not establish or refute whether S³'s isometry genuinely embeds in
   `Spin(8)` this way at all — only tests one consequence of assuming it.
-- Does not exhaust every possible reading of `P5` (see `claim.md` §What
-  this does NOT establish for the two readings tested and what was not).
+- Does not exhaust every possible reading of `P5` — three are now checked
+  (naive, refined/fixed-second-factor, role-swap); a *split* identification
+  and a *dynamical* second-factor treatment remain untested (see `claim.md`
+  §What this does NOT establish).
 - Does not change `OB1/H1c`'s `PARKED` status.
 - Does not touch `C186-C190`'s S³-spinor chain, `S²` construction, or
   anything about the Tom-correspondence thread — orthogonal.
@@ -150,5 +161,5 @@ cd experiments/20260909-c191-p5-so4-postulate-pairing-test
 python c191_p5_postulate_pairing.py
 ```
 
-`15/15`. `ruff check` and `ruff format`: clean (to be verified before
+`17/17`. `ruff check` and `ruff format`: clean (to be verified before
 commit).

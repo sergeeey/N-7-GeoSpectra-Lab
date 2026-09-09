@@ -58,5 +58,17 @@ F  steelman: does FIXING so(4)_2's (L2,R2) quantum number rescue the pairing?
   [PASS] P15 [the real content of the steelman] -- but the two (L2,R2) choices give the OPPOSITE pairing to each other: at (1/2,0), 8_s<->(1/2,0); at (0,1/2), 8_s<->(0,1/2) -- i.e. 8_s tracks (L2,R2) SELF-consistently (matches at both), which means the 'pairing' is just relabelling L2R2 as L1R1, not new information
 
 ==============================================================================
-C191: 15 passed, 0 failed
+G  role-swap check: does it matter WHICH so(4) factor plays 'S3's role'?
+   (claim.md flagged this as untested; cheap to check with what's already
+   built -- so(4)_2's own Casimirs, CASIMIR_L2/CASIMIR_R2, exist from
+   Section F. Checked, not assumed by symmetry.)
+==============================================================================
+  8_s restricted to (L2,R2) [S3 = SECOND factor instead]: {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  8_c restricted to (L2,R2) [S3 = SECOND factor instead]: {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P16 role-swap reproduces the SAME structure as P8 (by the construction's own H<->Hl symmetry, not assumed): 4x(1/2,0)+4x(0,1/2), matching P8 exactly
+         got {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P17 role-swap gives IDENTICAL 8_s/8_c content too -- naive P5 REJECTED regardless of which so(4) factor is postulated to be S3's isometry, not just for the one choice tested in Section D
+
+==============================================================================
+C191: 17 passed, 0 failed
 ==============================================================================

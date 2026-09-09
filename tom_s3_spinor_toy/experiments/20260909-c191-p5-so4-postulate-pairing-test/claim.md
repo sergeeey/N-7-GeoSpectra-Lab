@@ -110,6 +110,18 @@ summing over the second factor's own quantum numbers) gives:
 pairing rule. This is a genuine finding, not a re-statement of something
 already known: nobody had run this specific restriction before.
 
+**Role-swap, checked rather than assumed by symmetry (Section G,
+`P16`-`P17`, added same session after an initial draft of this claim had
+flagged the swap as untested):** does it matter *which* of the two
+`so(4)` factors is postulated to be `S³`'s isometry? Restricting to the
+*second* factor instead gives the identical `4×(1/2,0)+4×(0,1/2)`
+structure for `8_s` (`P16`, exact match to the first-factor case) and the
+same `8_s`=`8_c` collapse (`P17`) — the naive rejection (claim a) does
+**not** depend on the arbitrary choice of which factor plays "S³'s role";
+the construction's own `H↔Hl` block symmetry makes the two choices
+equivalent, now confirmed by computation rather than left as a plausible-
+but-unchecked symmetry argument.
+
 **Steelman, checked before writing this verdict (Section F, `P12`-`P15`):**
 does fixing the *second* `so(4)` factor's own quantum number `(L2,R2)`
 (treating it as an independent "internal" label the postulate left
@@ -173,11 +185,14 @@ external, matching `C173`'s already-established closure reasoning.
   scratch beyond the reused import** — `P1`/`P2` confirm the import is
   well-formed; the deeper triality-invariance/uniqueness claims are
   `C173`'s and the 2026-07-15 pearls', not re-derived here.
-- **Does not exhaust every possible reading of P5** — only the two most
-  natural ones (naive: ignore the second factor; refined: fix its quantum
-  number). A reading involving a *dynamical* (not fixed) second-factor
-  label, or a different choice of which `so(4)` factor plays which role,
-  is not excluded and not attempted.
+- **Does not exhaust every possible reading of P5** — three readings are
+  now checked (naive: ignore the second factor, `P10`; refined: fix its
+  quantum number, `P14`/`P15`; role-swap: which factor plays "S³'s role",
+  `P16`/`P17`, checked not assumed). **Still not attempted:** a *split*
+  identification (`S³`'s `SU(2)_L` from the first factor, `S³`'s
+  `SU(2)_R` from the second, rather than one factor wholesale), and a
+  *dynamical* (not fixed-value) treatment of the second factor's quantum
+  number. Neither is excluded by this round.
 - **Does not change `OB1/H1c`'s status** from `PARKED` — this round
   sharpens (does not resolve) what a working `P5`-style construction would
   actually need to supply.

@@ -415,6 +415,51 @@ check(
 # ---------------------------------------------------------------------------
 print()
 print("=" * 78)
+print("G  role-swap check: does it matter WHICH so(4) factor plays 'S3's role'?")
+print("   (claim.md flagged this as untested; cheap to check with what's already")
+print("   built -- so(4)_2's own Casimirs, CASIMIR_L2/CASIMIR_R2, exist from")
+print("   Section F. Checked, not assumed by symmetry.)")
+print("=" * 78)
+
+
+def joint_content_pair(basis, cas_a, cas_b):
+    ra = basis.conj().T @ cas_a @ basis
+    rb = basis.conj().T @ cas_b @ basis
+    combo = ra + np.pi * rb
+    _evals, evecs = np.linalg.eigh(combo)
+    content: dict[tuple[float, float], int] = {}
+    for k in range(combo.shape[0]):
+        vec = evecs[:, k]
+        ja = (vec.conj() @ ra @ vec).real
+        jb = (vec.conj() @ rb @ vec).real
+        ja_val = round((-1 + np.sqrt(max(0.0, 1 + 4 * ja))) / 2, 3)
+        jb_val = round((-1 + np.sqrt(max(0.0, 1 + 4 * jb))) / 2, 3)
+        key = (ja_val, jb_val)
+        content[key] = content.get(key, 0) + 1
+    return content
+
+
+joint_s_swap = joint_content_pair(V_S, CASIMIR_L2, CASIMIR_R2)
+joint_c_swap = joint_content_pair(V_C, CASIMIR_L2, CASIMIR_R2)
+print(f"  8_s restricted to (L2,R2) [S3 = SECOND factor instead]: {joint_s_swap}")
+print(f"  8_c restricted to (L2,R2) [S3 = SECOND factor instead]: {joint_c_swap}")
+
+check(
+    "P16 role-swap reproduces the SAME structure as P8 (by the construction's"
+    " own H<->Hl symmetry, not assumed): 4x(1/2,0)+4x(0,1/2), matching P8 exactly",
+    joint_s_swap == EXPECTED_FROM_ROW58,
+    f"got {joint_s_swap}",
+)
+check(
+    "P17 role-swap gives IDENTICAL 8_s/8_c content too -- naive P5 REJECTED"
+    " regardless of which so(4) factor is postulated to be S3's isometry,"
+    " not just for the one choice tested in Section D",
+    joint_s_swap == joint_c_swap,
+)
+
+# ---------------------------------------------------------------------------
+print()
+print("=" * 78)
 print(f"C191: {len(PASS)} passed, {len(FAIL)} failed")
 if FAIL:
     for f in FAIL:
