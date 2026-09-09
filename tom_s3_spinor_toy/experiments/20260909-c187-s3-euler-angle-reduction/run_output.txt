@@ -1,0 +1,35 @@
+==============================================================================
+A  metric in Euler angles, derived from the x0..x3 embedding  [P1]
+==============================================================================
+  [PASS] P1 x0^2+x1^2+x2^2+x3^2 = 1 identically
+  [PASS] P2 pulled-back metric is (1/4)(dth^2+dph^2+dps^2+2cos(th) dph dps)
+
+==============================================================================
+B  frame + spin connection, solved not quoted  [P3,P4]
+==============================================================================
+  [PASS] P3 the frame reproduces the metric: sum_a e^a (x) e^a = g
+  [PASS] P4 Cartan's structure equation has a unique solution
+  [PASS] P5 and it satisfies the equation IDENTICALLY (residuals exactly zero)
+
+==============================================================================
+C  assemble D; Step 0a -- does a plane-wave ansatz separate?  [P6,P7]
+==============================================================================
+  [PASS] P6 D applied to a plane-wave ansatz in 0.064s (< 1s; C185's abandoned attempt took ~1500s on the analogous S^2 problem)
+  [PASS] P7 both spinor components carry the SAME (m,n) -- no phase mismatch (the exact bug class C185 hit once)
+
+==============================================================================
+D  half-angle reduction  [P8,P9]
+==============================================================================
+  [PASS] P8 the half-angle substitution needed no simplify() on a transcendental expression -- pure algebraic rewriting
+  [PASS] P9 the bare m-term is present and needs the hom=(s^2+c^2) fix, exactly as C185's own trick required for its bare m-term
+  blind scan: 4 (m,n) x 4 degrees x 11 lambda = 176 kernel_dim calls, 3.4s
+  nonzero-kernel hits: NONE
+  [PASS] P10 the blind scan itself completed fast (3.4s for 176 cases) -- confirms claim (a): the method is fast even swept broadly
+
+  claim (b) [eigenvalue match]: NOT confirmed this round -- clean null
+  across the scan above. See decision.md for the periodicity hypothesis
+  and why this is reported honestly rather than forced.
+
+==============================================================================
+C187: 10 passed, 0 failed  (claim (a) checks only -- see above)
+==============================================================================
