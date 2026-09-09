@@ -2,9 +2,13 @@
 
 **Date:** 2026-09-09
 **Verdict:** **REJECT** (claim a: naive P5 produces a definite `8_s`/`8_c` ↔
-`t=0`/`t=1` pairing). `17 of 17` checks pass — including the checks that
-establish the negative, and the steelman section that checks a stronger
-reading before this verdict was written, not after.
+`t=0`/`t=1` pairing) **holds across four readings now tested** (naive,
+role-swap, fix-second-factor, split-identification). `22 of 22` checks
+pass — including the checks that establish the negative, the steelman
+section that checks a stronger reading before this verdict was written,
+and a user-authorized follow-up (split identification) that found a
+genuinely different, qualitatively cleaner separation of `8_s` from `8_c`
+— which still does not supply the specific pairing `P5`'s sentence wanted.
 
 All numbers trace to `c191_p5_postulate_pairing.py` and `run_output.txt`.
 
@@ -87,6 +91,28 @@ the *second* factor instead reproduces the identical
 `4×(1/2,0)+4×(0,1/2)` structure (`P16`) and the same `8_s`=`8_c` collapse
 (`P17`). The naive rejection is robust to this specific degree of freedom.
 
+## 3.6 Split identification (user-authorized follow-up: "да, проверь split-identification")
+
+A genuinely different postulate: `S³`'s `SU(2)_L` from the **first**
+`so(4)` factor, `S³`'s `SU(2)_R` from the **second** — not one factor
+wholesale. `P18`-`P22`: **this is the first reading where `8_s` and `8_c`
+differ by (j_L,j_R) TYPE, not just by relative multiplicity of shared
+types.**
+
+```
+8_s under split (L1,R2): 4x(j_L=1/2,j_R=0) + 4x(j_L=0,j_R=1/2)   -- BOTH C38 types
+8_c under split (L1,R2): 4x(j_L=1/2,j_R=1/2) + 4x(j_L=0,j_R=0)   -- NEITHER C38 type
+```
+
+`8_s`'s content is exactly `C38`'s two kernel types (`P21`) — the cleanest
+separation found across all four readings. **But `P22` shows this does not
+answer `P5`'s question:** `8_s` contains **both** `t=0`-type and
+`t=1`-type content simultaneously, so it does not single out one
+`t`-sector, and `8_c` (containing neither type) has no role as "the other"
+sector. This reading is genuine progress on a **different** question —
+"which sector carries `S³`-Dirac-flavored content at all" — not a partial
+answer to "which sector is `t=0` vs `t=1`."
+
 ## 4. Kill Analysis
 
 **Killed:** the reading "one `so(4)` factor alone = S³'s isometry, ignore
@@ -96,10 +122,15 @@ construction (re-verified, `P1`-`P2`, `P13`); `C38`'s own kernel-content
 result; `C173`'s prior closure of the `P4` escalation line; `OB1/H1c`'s
 overall `PARKED` status (unchanged — this round sharpens what a working
 `P5` would need, it does not resolve OB1).
-**Relaxation Map:** the surviving option is exactly the match/mismatch
-structure (`P14`/`P15`), contingent on an as-yet-unsupplied independent
-meaning for the second `so(4)` factor. No revival is possible from this
-project's own existing content alone — this mirrors, and does not
+**Relaxation Map:** two surviving options, neither yet a full derivation —
+the match/mismatch structure (`P14`/`P15`), contingent on an
+as-yet-unsupplied independent meaning for the second `so(4)` factor, and
+the split-identification's clean type-level separation (`P18`-`P21`),
+which is real and unconditional but answers a different question than the
+one `P5` posed (§3.6, `P22`) — it would need an *additional* argument for
+why "carries `S³`-Dirac-flavored content at all" implies a specific
+`t`-value, not just that it is `S³`-flavored. No revival is possible from
+this project's own existing content alone — this mirrors, and does not
 contradict, `C173`'s own conclusion.
 
 ## 5. Floor–Ceiling (Step 4a)
@@ -137,10 +168,13 @@ informative, not an artifact of broken machinery.
 
 - Does not establish or refute whether S³'s isometry genuinely embeds in
   `Spin(8)` this way at all — only tests one consequence of assuming it.
-- Does not exhaust every possible reading of `P5` — three are now checked
-  (naive, refined/fixed-second-factor, role-swap); a *split* identification
-  and a *dynamical* second-factor treatment remain untested (see `claim.md`
-  §What this does NOT establish).
+- Does not exhaust every possible reading of `P5` — four are now checked
+  (naive, refined/fixed-second-factor, role-swap, split-identification); a
+  *dynamical* second-factor treatment and the split reading's own mirror
+  remain untested (see `claim.md` §What this does NOT establish).
+- The split reading separates `8_s` from `8_c` cleanly by type (`P18`,
+  `P21`) but does **not** supply a `t=0`/`t=1` pairing (`P22`) — a
+  different open question than claim (a)'s, not a smaller version of it.
 - Does not change `OB1/H1c`'s `PARKED` status.
 - Does not touch `C186-C190`'s S³-spinor chain, `S²` construction, or
   anything about the Tom-correspondence thread — orthogonal.
@@ -161,5 +195,4 @@ cd experiments/20260909-c191-p5-so4-postulate-pairing-test
 python c191_p5_postulate_pairing.py
 ```
 
-`17/17`. `ruff check` and `ruff format`: clean (to be verified before
-commit).
+`22/22`. `ruff check` and `ruff format`: clean.

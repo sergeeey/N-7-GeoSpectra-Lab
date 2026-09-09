@@ -752,10 +752,17 @@ in `C132`'s queue, is now genuinely attempted (not merely screened) and
 closed in its stated form; nothing internal to this project remains
 untested.** See
 `experiments/20260909-c191-p5-so4-postulate-pairing-test/decision.md`
-(17/17 checks after a same-session extension: the rejection also holds
-under a role-swap -- postulating S3's isometry as the SECOND so(4) factor
-instead of the first gives the identical collapse, checked by computation
-rather than assumed by the construction's own H<->Hl symmetry).
+(22/22 checks after two same-session, user-authorized extensions: (1) the
+rejection also holds under a role-swap -- postulating S3's isometry as the
+SECOND so(4) factor instead of the first gives the identical collapse,
+checked by computation rather than assumed by the construction's own
+H<->Hl symmetry; (2) a genuinely different SPLIT identification (S3's
+SU(2)_L from the first factor, SU(2)_R from the second) DOES separate
+8_s from 8_c cleanly BY TYPE -- 8_s contains exactly C38's two kernel
+types simultaneously, 8_c contains neither -- but this answers "which
+sector is S3-Dirac-flavored at all," not "which sector is t=0 vs t=1";
+recorded as a pearl, not folded into a rescued P5, since it is a
+different question than the one the postulate was meant to answer).
 
 **DIVERGENT-mode 13D-parent-action survey run, H1c's actual remaining
 gap (C132, 2026-09-02, user-directed exploration, not a convergent

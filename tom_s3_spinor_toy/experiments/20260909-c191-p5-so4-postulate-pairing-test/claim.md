@@ -144,6 +144,33 @@ all — and supplying that independent meaning is exactly the missing
 ingredient `C173` already named (Part 5, or a genuinely new non-`G2`
 construction), not something this round's postulate alone provides.
 
+**Split identification, user-authorized follow-up ("да, проверь
+split-identification"), Section H, `P18`-`P22`:** a genuinely different
+postulate from every reading above (which each assign one `so(4)` factor
+*wholesale* to `S³`) — identify `S³`'s `SU(2)_L` with the **first**
+factor's `L`-generators and `S³`'s `SU(2)_R` with the **second** factor's
+`R`-generators. **Result: qualitatively different from every prior
+reading.** `8_s` and `8_c` now differ by *type*, not merely by
+multiplicity of shared types (`P18`) — the first reading tested where this
+holds:
+
+```
+8_s under split (L1,R2): 4x(j_L=1/2,j_R=0) + 4x(j_L=0,j_R=1/2)
+8_c under split (L1,R2): 4x(j_L=1/2,j_R=1/2) + 4x(j_L=0,j_R=0)
+```
+
+`8_s`'s content is **exactly** `C38`'s two kernel types — `(1,2)` and
+`(2,1)` — and `8_c`'s content contains **neither** (`P21`). This is the
+cleanest separation any reading has produced. **But it is not the pairing
+`P5`'s sentence wanted (`P22`):** `8_s` contains **both** `C38` types at
+once (`t=0`-type and `t=1`-type content simultaneously, 4-dim each), so it
+does not single out *one* `t`-sector — and `8_c`, containing neither type,
+has no `C38` analogue to serve as "the other" sector at all. This reading
+answers a different question well (which sector is genuinely
+`S³`-Dirac-flavored at all) rather than the one asked (which sector is
+which `t`-value) — a **different gap** than claim (a)'s, not a smaller
+version of it.
+
 ## Negative control
 
 None needed beyond the reused construction's own 2026-07-15 controls
@@ -185,14 +212,22 @@ external, matching `C173`'s already-established closure reasoning.
   scratch beyond the reused import** — `P1`/`P2` confirm the import is
   well-formed; the deeper triality-invariance/uniqueness claims are
   `C173`'s and the 2026-07-15 pearls', not re-derived here.
-- **Does not exhaust every possible reading of P5** — three readings are
+- **Does not exhaust every possible reading of P5** — four readings are
   now checked (naive: ignore the second factor, `P10`; refined: fix its
   quantum number, `P14`/`P15`; role-swap: which factor plays "S³'s role",
-  `P16`/`P17`, checked not assumed). **Still not attempted:** a *split*
-  identification (`S³`'s `SU(2)_L` from the first factor, `S³`'s
-  `SU(2)_R` from the second, rather than one factor wholesale), and a
-  *dynamical* (not fixed-value) treatment of the second factor's quantum
-  number. Neither is excluded by this round.
+  `P16`/`P17`; split: `S³`'s `L`/`R` from different factors, `P18`-`P22`).
+  **Still not attempted:** a *dynamical* (not fixed-value) treatment of
+  the second factor's quantum number, and the split reading's own mirror
+  (`S³`'s `SU(2)_R` from the first factor, `SU(2)_L` from the second —
+  not checked, though the construction's `H↔Hl` symmetry that made the
+  plain role-swap, `P16`/`P17`, symmetric makes an identical result likely
+  here too, and "likely" is exactly the standard this round does not
+  accept without running it). Neither is excluded by this round.
+- **The split reading (Section H) does not supply a `t`-sector pairing
+  even though it separates `8_s` from `8_c` cleanly** — see `P22`: it
+  answers "which sector carries `S³`-Dirac-type content at all" rather
+  than "which sector is `t=0` vs `t=1`". This is real progress on a
+  different question, not a partial answer to the one `P5` posed.
 - **Does not change `OB1/H1c`'s status** from `PARKED` — this round
   sharpens (does not resolve) what a working `P5`-style construction would
   actually need to supply.

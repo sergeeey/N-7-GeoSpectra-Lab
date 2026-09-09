@@ -70,5 +70,20 @@ G  role-swap check: does it matter WHICH so(4) factor plays 'S3's role'?
   [PASS] P17 role-swap gives IDENTICAL 8_s/8_c content too -- naive P5 REJECTED regardless of which so(4) factor is postulated to be S3's isometry, not just for the one choice tested in Section D
 
 ==============================================================================
-C191: 17 passed, 0 failed
+H  SPLIT identification: S3's SU(2)_L = so(4)_1's L, S3's SU(2)_R = so(4)_2's
+   R -- a genuinely different postulate from Sections D/G (one factor
+   wholesale). User-authorized follow-up: 'да, проверь split-identification'.
+==============================================================================
+  8_s under split (L1,R2): {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  8_c under split (L1,R2): {(np.float64(0.0), np.float64(0.0)): 4, (np.float64(0.5), np.float64(0.5)): 4}
+  [PASS] P18 split identification gives 8_s and 8_c DIFFERENT (j_L,j_R) TYPES entirely (not just different multiplicities of the same types, as in P14/P15)
+  [PASS] P19 8_s under split = 4x(j_L=1/2,j_R=0) + 4x(j_L=0,j_R=1/2) -- the SAME two 'off-diagonal' types the naive reading (P8) found, now UNIQUE to 8_s
+         got {(np.float64(0.5), np.float64(0.0)): 4, (np.float64(0.0), np.float64(0.5)): 4}
+  [PASS] P20 8_c under split = 4x(j_L=1/2,j_R=1/2) + 4x(j_L=0,j_R=0) -- 'diagonal' types that do NOT appear in C38's kernel content AT ALL
+         got {(np.float64(0.0), np.float64(0.0)): 4, (np.float64(0.5), np.float64(0.5)): 4}
+  [PASS] P21 [the actual finding] under the split postulate, 8_s's own content is EXACTLY {(1,2)-type, (2,1)-type} -- C38's own t=0/t=1 kernel types -- while 8_c's content contains NEITHER. This is the first reading tested (naive, role-swap, fix-second-factor) where 8_s and 8_c are cleanly separable BY TYPE, not just by which of two pre-existing types has more copies
+  [PASS] P22 BUT: 8_s contains BOTH C38 types at once (t=0 AND t=1 content simultaneously, 4-dim each) -- it does not single out ONE t-sector, and 8_c's content has no C38 analogue to be 'the other' t-sector at all. So this reading separates {8_s} from {8_c} cleanly, but does NOT supply a t=0-vs-t=1 pairing within that split -- a DIFFERENT gap than P10's, not a smaller one
+
+==============================================================================
+C191: 22 passed, 0 failed
 ==============================================================================

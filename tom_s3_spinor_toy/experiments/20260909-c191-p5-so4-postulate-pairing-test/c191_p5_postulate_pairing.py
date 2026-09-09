@@ -460,6 +460,64 @@ check(
 # ---------------------------------------------------------------------------
 print()
 print("=" * 78)
+print("H  SPLIT identification: S3's SU(2)_L = so(4)_1's L, S3's SU(2)_R = so(4)_2's")
+print("   R -- a genuinely different postulate from Sections D/G (one factor")
+print("   wholesale). User-authorized follow-up: 'да, проверь split-identification'.")
+print("=" * 78)
+
+joint_s_split = joint_content_pair(V_S, CASIMIR_L, CASIMIR_R2)
+joint_c_split = joint_content_pair(V_C, CASIMIR_L, CASIMIR_R2)
+print(f"  8_s under split (L1,R2): {joint_s_split}")
+print(f"  8_c under split (L1,R2): {joint_c_split}")
+
+check(
+    "P18 split identification gives 8_s and 8_c DIFFERENT (j_L,j_R) TYPES entirely"
+    " (not just different multiplicities of the same types, as in P14/P15)",
+    set(joint_s_split) != set(joint_c_split)
+    and not (set(joint_s_split) & set(joint_c_split)),
+)
+
+EXPECTED_S_SPLIT = {(0.5, 0.0): 4, (0.0, 0.5): 4}
+EXPECTED_C_SPLIT = {(0.5, 0.5): 4, (0.0, 0.0): 4}
+check(
+    "P19 8_s under split = 4x(j_L=1/2,j_R=0) + 4x(j_L=0,j_R=1/2) -- the SAME two"
+    " 'off-diagonal' types the naive reading (P8) found, now UNIQUE to 8_s",
+    joint_s_split == EXPECTED_S_SPLIT,
+    f"got {joint_s_split}",
+)
+check(
+    "P20 8_c under split = 4x(j_L=1/2,j_R=1/2) + 4x(j_L=0,j_R=0) -- 'diagonal'"
+    " types that do NOT appear in C38's kernel content AT ALL",
+    joint_c_split == EXPECTED_C_SPLIT,
+    f"got {joint_c_split}",
+)
+
+check(
+    "P21 [the actual finding] under the split postulate, 8_s's own content is"
+    " EXACTLY {(1,2)-type, (2,1)-type} -- C38's own t=0/t=1 kernel types -- while"
+    " 8_c's content contains NEITHER. This is the first reading tested (naive,"
+    " role-swap, fix-second-factor) where 8_s and 8_c are cleanly separable BY"
+    " TYPE, not just by which of two pre-existing types has more copies",
+    set(C38_T0) | set(C38_T1) == set(joint_s_split)
+    and not ((set(C38_T0) | set(C38_T1)) & set(joint_c_split)),
+)
+
+check(
+    "P22 BUT: 8_s contains BOTH C38 types at once (t=0 AND t=1 content"
+    " simultaneously, 4-dim each) -- it does not single out ONE t-sector,"
+    " and 8_c's content has no C38 analogue to be 'the other' t-sector at all."
+    " So this reading separates {8_s} from {8_c} cleanly, but does NOT supply a"
+    " t=0-vs-t=1 pairing within that split -- a DIFFERENT gap than P10's, not a"
+    " smaller one",
+    (0.5, 0.0) in joint_s_split
+    and (0.0, 0.5) in joint_s_split
+    and (0.5, 0.0) not in joint_c_split
+    and (0.0, 0.5) not in joint_c_split,
+)
+
+# ---------------------------------------------------------------------------
+print()
+print("=" * 78)
 print(f"C191: {len(PASS)} passed, {len(FAIL)} failed")
 if FAIL:
     for f in FAIL:
