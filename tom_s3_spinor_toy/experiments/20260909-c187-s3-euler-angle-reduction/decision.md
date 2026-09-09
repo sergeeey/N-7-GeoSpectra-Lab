@@ -1,12 +1,14 @@
-# C187 Decision — PARTIAL. The mechanism works; the eigenvalue match is unresolved, not forced.
+# C187 Decision — UPDATED. Periodicity derived; claim (b) rejected precisely, not generically.
 
-**Date:** 2026-09-09
-**Verdict:** **PARTIAL** (neither PROMOTE nor REJECT — this project's Falsification
-Ladder anticipates exactly this outcome for a claim with two independently
-checkable halves). Claim (a) **CONFIRMED**, 10/10. Claim (b) **OPEN**, not
-falsified, not verified.
+**Date:** 2026-09-09 (original), **updated same day** after the periodicity
+was derived per user request.
+**Verdict:** Claim (a) **CONFIRMED**, 10/10 (unchanged). Claim (b) **REJECTED,
+precisely** — the periodicity question is closed, and what remains is a
+distinct, narrower, unresolved question about `C187`'s own operator
+construction, not about labelling.
 
-All numbers trace to `c187_s3_euler_reduction.py` and `run_output.txt`.
+All numbers trace to `c187_s3_euler_reduction.py`, `run_output.txt`,
+`c187b_periodicity_and_operator_check.py`, and `run_output_b.txt`.
 
 ---
 
@@ -100,38 +102,120 @@ continuous metric, it is a yes/no question (does *some* `(m,n)` reproduce the
 known spectrum) that came back a clean null on every case tried, not a value
 sitting somewhere on a scale between a floor and a ceiling.
 
-## 4. Kill criterion for claim (b) — unresolved, carried forward
+## 4. Kill criterion for claim (b) — RESOLVED same day, both halves met
 
-Claim (b) is rejected only once the correct `(m,n)`-periodicity is derived
-**and** still fails to reproduce `-k` mult `(k+1)(k+2)`, `+(k+2)` mult
-`k(k+1)`. Until then it is open, not falsified — recorded explicitly so a
-future round does not have to rediscover that this is unresolved rather than
-disproven.
+The criterion recorded above was: reject (b) only once the correct
+`(m,n)`-periodicity is derived **and** still fails to reproduce the known
+spectrum. Both halves are now done — see `c187b_periodicity_and_operator_check.py`,
+`5/6` checks pass (the one designed failure is documented, not accidental).
+
+### 4a. The periodicity, derived
+
+`C186` built `J₃ᴸ`, `J₃ᴿ` from the quaternion axis "`k`" (Python index `a=2`)
+— an arbitrary choice among three equally valid `su(2)` Cartan directions;
+which one is called "3" only fixes the basis the weight labels are read in,
+not the physics. This project's Euler-angle embedding has its own preferred
+axis, found by solving for which linear combination of `∂θ,∂φ,∂ψ` each
+quaternion generator equals (least-squares against the embedding's own
+Jacobian, verified numerically to `1e-30` across several points, since exact
+symbolic simplification of these nested half-angle expressions proved
+unreliable — see the module docstring):
+
+```
+X_0^L = 2 d/dphi   EXACTLY   (quaternion "i", not "k")
+X_0^R = 2 d/dpsi   EXACTLY   (quaternion "i", not "k")
+X_2^L = 2 sin(phi) d/dth + 2 cos(phi)/tan(th) d/dph − 2 cos(phi)/sin(th) d/dps
+        (C186's own choice — mixes ALL THREE coordinates, not a pure direction)
+```
+
+Rebuilding `C186`'s joint-cell decomposition using axis `a=0` instead of `a=2`
+is a **relabelling**, not new physics: `[D₀,J_L]=0`, `[D₀,J_R]=0`,
+`[J_L,J_R]=0` all still hold identically (check `B1`). Under this relabelling,
+**every one of the four extreme-weight `k=1` states collapses to a single
+Fourier mode** shared by both spinor components (check `B2`, `4/4`) — exactly
+the ansatz shape `claim.md` assumed, where the "`k`"-axis version needed **four**
+separate Fourier modes per state (documented in `claim.md`'s Rosetta-stone
+section). **This is the periodicity**, and it fully answers the "what map"
+question this round originally left open.
+
+### 4b. What remains — narrowed, not solved
+
+Feeding the now-correctly-derived candidate, `(m,n)=(-1/2,1/2)`, expected
+eigenvalue `-1`, into `C187`'s own committed `D` operator does **not** return
+a constant multiple of the candidate (check `C1`, the one designed failure).
+This was checked exhaustively, not just once:
+
+- symbolically, under 4 sign conventions on the connection term and the
+  overall operator sign;
+- numerically (theta evaluated at several points, high precision, avoiding
+  the transcendental-simplify slowness this project has hit before), under
+  **all 144 combinations** of which Pauli matrix pairs with which vielbein
+  leg × connection sign × operator sign.
+
+Zero of 144 reproduce a theta-independent eigenvalue. This rules out a simple
+mislabeling or sign error as the cause. What it does **not** rule out —
+because it was not checked this round, and would need a differently-built
+operator to check — is a genuine construction defect in the vielbein or
+Cartan-connection derivation itself (as opposed to how it is *labelled*
+afterward). `C187`'s own internal checks (`P1`–`P9`: frame reproduces the
+metric exactly, Cartan's equation is solved with zero residual) certify the
+construction is **self-consistent**, not that it **equals** `C184`/`C186`'s
+independently-built `D₀`. That is a real, generalisable gap in what a
+self-consistency check can certify — recorded here because it will recur
+anywhere a project builds two representations of "the same" object by two
+different routes and only checks each route against itself.
+
+**Consequence for the falsifiable claim:** claim (b) as originally stated
+("scanning candidate eigenvalues reproduces the known spectrum") is now
+**REJECTED** — the derived, correctly-labelled candidate does not satisfy the
+eigen-equation for `C187`'s operator. This is a precise rejection of *this
+round's specific construction of `D`*, not of the underlying `S³` physics
+(`C184`/`C186` stand, cross-confirmed by the axis-relabelling exercise in
+§4a) and not of claim (a) (the half-angle mechanism itself, confirmed
+independently of any of this).
+
+### 4c. What a future round would need
+
+Rebuild `D` on `S³` in Euler angles by starting from the quaternion structure
+directly (express `X_a^R` in `(θ,φ,ψ)` coordinates via the same Jacobian
+technique used in §4a, then assemble `D = -i Σ_a σ_a X_a^R` using THOSE
+coordinate expressions) rather than an independently-chosen geometric
+vielbein — this guarantees agreement with `C184`/`C186`'s `D₀` by
+construction instead of needing to be checked for it afterward. Not attempted
+this round; recorded as the concrete next step, not vague future work.
 
 ## 5. What this does NOT establish
 
 - **Does not touch any physics claim.** `C184`/`C186`'s spectrum stands,
-  verified by a different method there.
-- **Does not settle the periodicity hypothesis** in §3 — it is named as a
-  plausible direction, not derived or verified.
+  verified by a different method there, and further cross-confirmed by the
+  axis-relabelling in §4a (which required no new computation, only a
+  relabelling, and still held).
+- **Does not identify the specific bug in `C187`'s vielbein/connection.**
+  §4b rules out mislabeling and sign errors across 144 combinations, but does
+  not diagnose what IS wrong — only that something is, localized to the
+  operator construction rather than to periodicity or physics.
 - **The half-angle pearl's core mechanism claim is confirmed on a second,
   genuinely independent geometry** (`S³` in Euler angles, not `S²`) — this is
-  real transfer, not a restatement of `C185`.
+  real transfer, not a restatement of `C185`, and is unaffected by §4's
+  finding since claim (a) and claim (b) test different things.
 
 ## 6. Consequence for the pearl registry
 
-The corrected test (filed in `C186`'s pass over the registry) is now **partly
-run**: its speed/polynomial half is answered (yes); its eigenvalue-match half
-is not yet answerable and is recorded as such, not silently dropped. The
+The corrected test (filed in `C186`'s pass over the registry) is now **fully
+run and resolved**: the speed/polynomial half is CONFIRMED; the eigenvalue-match
+half is REJECTED for a precisely localized reason (§4), not left open. The
 pearl's own `next_check` (`2026-10-15`) is unaffected — this round ran early,
-ahead of schedule, and found a real complication worth recording now rather
-than waiting.
+ahead of schedule, and closed the open question rather than leaving it for
+that date.
 
 ## 7. Reproduction
 
 ```
 cd experiments/20260909-c187-s3-euler-angle-reduction
-python c187_s3_euler_reduction.py
+python c187_s3_euler_reduction.py               # claim (a): 10/10
+python c187b_periodicity_and_operator_check.py  # periodicity + claim (b): 5/6
+                                                 # (the 1 failure is the documented finding)
 ```
 
-`10/10` (claim (a) checks). `ruff check` and `ruff format`: clean.
+`10/10` (claim (a)) and `5/6` (periodicity + localization, `C1`'s FAIL is
+expected and documented). `ruff check` and `ruff format`: clean on both files.

@@ -1,0 +1,27 @@
+==============================================================================
+A  the preferred axis: which quaternion generator aligns with d/dphi, d/dpsi?
+==============================================================================
+  [PASS] A1 X_0^L (quaternion i, LEFT mult) = 2 d/dphi EXACTLY
+         coeffs (unsimplified but numerically ==[0,2,0]): [0, 2*(-2*(1 - cos(theta))**2 - 3*cos(theta) - cos(2*theta) - cos(3*theta) + 5)/(cos(theta) - 2*cos(2*theta) - cos(3*theta) + 2), 2*sin(theta/2)**4/(sin(theta)**2*cos(theta/2)**2) + 1/(2*cos(theta/2)**2) + 2/sin(theta)**2 - 2/(sin(theta)**2*cos(theta/2)**2)]
+  [PASS] A2 X_0^R (quaternion i, RIGHT mult) = 2 d/dpsi EXACTLY
+         coeffs (unsimplified but numerically ==[0,0,2]): [0, 2*sin(theta/2)**4/(sin(theta)**2*cos(theta/2)**2) + 1/(2*cos(theta/2)**2) + 2/sin(theta)**2 - 2/(sin(theta)**2*cos(theta/2)**2), 2*(-2*(1 - cos(theta))**2 - 3*cos(theta) - cos(2*theta) - cos(3*theta) + 5)/(cos(theta) - 2*cos(2*theta) - cos(3*theta) + 2)]
+  [PASS] A3 X_2^L (quaternion k -- C186's own Cartan choice) is NOT a pure d/dphi or d/dpsi direction -- it mixes all three coordinates
+         coeffs=[2*sin(phi), (-4*(1 - cos(theta))**2*cos(phi) + 6*cos(phi) - cos(phi - 3*theta) + cos(phi - 2*theta) - 3*cos(phi - theta) - 3*cos(phi + theta) + cos(phi + 2*theta) - cos(phi + 3*theta))/(3*sin(theta) - sin(3*theta)), (4*(1 - cos(theta))**2*cos(phi) - 10*cos(phi) + cos(phi - 2*theta) + 4*cos(phi - theta) + 4*cos(phi + theta) + cos(phi + 2*theta))/(3*sin(theta) - sin(3*theta))]
+
+==============================================================================
+B  rebuild C186's k=1 weight decomposition on the i-axis (a=0)
+==============================================================================
+  [PASS] B1 rebuilt on axis a=0: [D0,JL0]=0, [D0,JR0]=0, [JL0,JR0]=0
+  [PASS] B2 all 4 extreme-weight states are a SINGLE Fourier mode on the i-axis (the k-axis version needed 4 monomials per state -- see claim.md)
+         4/4 extreme states reduced to one monomial
+
+==============================================================================
+C  does C187's OWN D operator reproduce this now-correctly-labelled state?
+==============================================================================
+  [FAIL] C1 C187's committed D operator gives a constant ratio D(psi)/psi = -1 on the derived, correctly-labelled candidate
+         ratio0=1/2 + I/tan(theta/2) - I/sin(theta), ratio1=(2*I*sin(theta/2) + 6*I*sin(3*theta/2) - 3*cos(theta/2) + 3*cos(3*theta/2))/(4*sin(theta/2)*sin(theta)) -- NOT reproduced; see claim.md's Kill criterion note. This is NOT a periodicity problem (part A/B above closed that); it is unresolved and localized to the operator construction itself.
+
+==============================================================================
+C187b: 5 passed, 1 failed
+  EXPECTED-OPEN: C1 C187's committed D operator gives a constant ratio D(psi)/psi = -1 on the derived, correctly-labelled candidate
+==============================================================================

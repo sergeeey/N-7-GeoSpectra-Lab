@@ -111,18 +111,45 @@ choice, not a failure to push through.
 
 ---
 
-## Kill criterion (for claim (b), unresolved — carried forward, not closed)
+## Kill criterion (for claim (b) — RESOLVED 2026-09-09, see `c187b_periodicity_and_operator_check.py`)
 
-Reject (b) as stated only after the correct `(m,n)`-periodicity is derived and
-still fails to reproduce the known spectrum. Until then, (b) is **OPEN**, not
-falsified.
+> Reject (b) as stated only after the correct `(m,n)`-periodicity is derived
+> and still fails to reproduce the known spectrum.
+
+Both halves of that condition are now met. The periodicity is derived: `C186`'s
+Cartan axis choice (quaternion `k`, index `a=2`) was arbitrary, and this
+project's Euler-angle embedding has its own preferred axis — `X₀ᴸ = 2∂_φ` and
+`X₀ᴿ = 2∂_ψ` exactly (quaternion `i`, index `a=0`), confirmed to `1e-30`
+numerically. Rebuilding `C186`'s weight decomposition on that axis (a
+relabelling, not new physics — `[D₀,J_L]=0`, `[D₀,J_R]=0` hold identically)
+makes every extreme-weight state a single, clean Fourier mode, exactly the
+shape this round's ansatz assumed. Applying `C187`'s own committed `D` operator
+to that now-correctly-labelled candidate still does **not** return a constant
+eigenvalue, checked under all 144 combinations of (which Pauli matrix pairs
+with which vielbein leg) × (connection sign) × (operator sign).
+
+**Verdict: claim (b) as stated is REJECTED — but the rejection is precise, not
+generic.** The failure is not periodicity (that is closed) and not the
+underlying physics (`C184`/`C186` untouched). It is localized to `C187`'s own
+geometric construction of `D` — see decision.md §4 for the full account and
+what would be needed to actually build the operator correctly.
 
 ## What this establishes
 
 - **Claim (a): CONFIRMED.** The half-angle reduction mechanism generalises to
   the `S³` Dirac operator in Euler angles exactly as the pearl predicted —
   fast, polynomial, no transcendental slowdown.
-- **Claim (b): INCOMPLETE**, for a stated, specific reason (quantum-number
-  periodicity), not a vague "needs more work".
+- **Claim (b): REJECTED, precisely.** The `(m,n)` periodicity question is
+  closed (derived, confirmed). What remains open is a distinct, narrower
+  question: `C187`'s specific frame/connection construction of `D` does not
+  match `C184`/`C186`'s operator, for a reason not yet isolated beyond "not a
+  labelling issue, not a simple sign".
 - **Does NOT touch any physics claim** in this project — `C184`/`C186`'s
-  spectrum stands, verified by an entirely different method there.
+  spectrum stands, verified by an entirely different method there, and is now
+  cross-confirmed as internally consistent under an axis relabelling.
+- **A general, reusable finding**, independent of `S³`: a geometric
+  construction's own internal self-consistency checks (frame reproduces the
+  metric, Cartan's equation solved with zero residual) do **not** certify that
+  the resulting operator equals a specific, independently-built reference
+  operator. That requires a cross-construction check — this round's real
+  methodological contribution.
