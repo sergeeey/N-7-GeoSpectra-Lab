@@ -1,29 +1,36 @@
 # Completeness Theorem — G₂/SU(3)-restricted mechanisms cannot discriminate triality channels
 
-**Date:** 2026-09-16 (rev 7, same day — see §0b-§0g for what changed and
+**Date:** 2026-09-16 (rev 8, same day — see §0b-§0h for what changed and
 why)
-**Status:** DRAFT. rev 1 through rev 6 were each reviewed and each found
-to have a real defect (§0b-§0f). A sixth skeptic pass on rev 6 found the
-most substantive defect yet found in this document's escape criteria —
-not a citation error, an actual mathematical gap: `E1`'s `SO(7)`-exclusion
-(added in rev 6) only blocks ONE of three `Spin(7)` conjugacy classes in
-`Spin(8)`, and `su(3) ⊂ g₂` sits inside a DIFFERENT one (the stabilizer of
-a spinor in `8_s`, not a vector in `8_v`) that `E1` as worded did not
-exclude, under which `8_v≅8_c` remain undistinguished — the theorem's own
-failure mode, admitted by its own escape condition. Also found: `E2`'s
-rev 6 justification ("`build_numeric_dirac` has no `t` argument") was
-simply wrong — the function's own `test_deformation` routine builds
-exactly such a family — though the conclusion happened to still hold, for
-an unstated, different, correct reason (scale-invariance of the
-commutant). Both fixed properly in rev 7 (§0g), not just re-labeled. The
-theorem's core mechanism (§1 steps 1-3, Hom-space/Schur's lemma) has now
-survived all six skeptic passes UNCHANGED — every defect across all six
-rounds was in material ABOUT the core result (mostly citation/scope
-precision; this round's `E1` finding is the first to be a genuine
-mathematical gap rather than an attribution error), never the core
-computation. **Still pending a fresh skeptic pass on rev 7 before this
-document is cited externally or propagated into
-`OPEN_BLOCKERS.md`/`pearl_registry`.**
+**Status:** DRAFT. rev 1 through rev 7 were each reviewed and each found
+to have a real defect (§0b-§0g). A seventh skeptic pass on rev 7 found
+that rev 7's own fix OVER-corrected: `E1`'s new `Hom_h=0` criterion is
+sufficient for algebraic distinguishability but not necessary — a real,
+hand-computed counterexample (a 2-dim abelian `h` under which
+`Hom_h(8_s,8_c)=4≠0` yet `8_s≇8_c` as `h`-modules, since their weight
+multisets differ) shows a genuinely discriminating `h` that rev 7's `E1`
+would wrongly reject. Fixed in rev 8 (§0h) by restating `E1` via the
+actual necessary-and-sufficient condition — pairwise NON-ISOMORPHISM as
+`h`-modules — with `Hom_h=0` kept as one sufficient special case, not the
+whole criterion. Also found and fixed: rev 7's own new text wrongly
+implied `round119`/`SO(4)×SO(4)` had a computed `Hom`-table (it doesn't —
+this is the SAME misattribution a fourth skeptic pass already caught and
+fixed once, reintroduced by rev 7); an overclaimed "recomputed from the
+representation theory directly" in §0g; a truncated `C78` quote in §2b
+that was fixed in §0d but not in the copy living in §2b itself; §5's
+reproduction trail was missing paths for `C72`/`C62`/`C63`, one of its
+own quotes was misattributed, and its "independently re-verified by
+`C72`" claim overstated `C72`'s own documented reuse of `G102`'s
+functions for the Hom-dimension part specifically. The theorem's core
+(§1 steps 1-3) was re-verified in the seventh pass too — the `Hom`
+dimensions independently re-derived from the branching data itself, the
+numerical residuals and negative controls re-confirmed against the
+primary sources' own reported figures (not re-derivable from theory
+alone, contra an overclaim in §0g now fixed) — and remains clean. Seven
+passes in, the core computation has never needed a correction; every
+defect has been in the escape criteria or citation apparatus around it.
+**Still pending a fresh skeptic pass on rev 8 before this document is
+cited externally or propagated into `OPEN_BLOCKERS.md`/`pearl_registry`.**
 **Purpose:** upgrade the informal `G44 Information-Retention Gate` (C150,
 `experiments/20260904-c150-g44-information-retention-gate/GATE.md`) from a
 pre-filter heuristic into an explicit, citable theorem with a stated,
@@ -437,11 +444,111 @@ these are checkable mathematical/citation facts, not judgment calls:
    already is.
 
 The theorem's core (§1 steps 1-3) was re-verified independently in this
-pass too — Hom dimensions, residuals, and negative-control numbers all
-recomputed from the representation theory directly, not merely re-quoted
-— and remains clean. Every defect across six rounds now has landed in
-either scope/citation precision or, this once, a genuine escape-condition
-gap — never in the core mechanism.
+pass too — corrected in rev 8, §0h, from an overclaim here: the `Hom`
+DIMENSIONS were independently re-derived from the branching data itself
+(which representation theory does determine), while the numerical
+residuals and negative-control figures (`5e-16`–`7e-16`, `1.6e-15` vs
+`4.53`/`2.91`) were re-confirmed against the primary sources' own
+reported numbers, not re-derived from theory — a residual is the output
+of a specific numerical computation, not a quantity abstract
+representation theory alone fixes. Core remains clean either way. Every
+defect across six rounds now has landed in either scope/citation
+precision or, this once, a genuine escape-condition gap — never in the
+core mechanism.
+
+## 0h. rev 7 → rev 8 — a seventh skeptic pass, user-requested, found rev 7's own fix over-corrected
+
+The user asked for a seventh pass. It confirmed rev 7's diagnosis of rev
+6 was correct, but found rev 7's OWN replacement criterion was itself
+wrong — one step further along the same "fix relocated, not removed"
+pattern named since §0e:
+
+1. **`E1`'s `Hom_h(i,j)=0` requirement is sufficient but NOT necessary —
+   rev 7 over-corrected.** The pass constructed an explicit counterexample
+   by hand: a 2-dimensional abelian `h` (a Cartan subalgebra slice) under
+   which `8_v` carries only integer weights while `8_s`/`8_c` carry only
+   half-integer weights (so `Hom_h(8_v,8_s)=Hom_h(8_v,8_c)=0`), but `8_s`
+   and `8_c`'s half-integer weight SETS differ (`8_s` contains the weight
+   `(1.5,0.5)`, which `8_c` does not — `8_c` has `(1.5,-0.5)` instead),
+   making `8_s≇8_c` as `h`-modules even though `Hom_h(8_s,8_c)=4≠0` (four
+   shared weights, each multiplicity 1). This `h` genuinely distinguishes
+   all three channels via `h`-equivariant data (the isotypic/weight
+   decomposition differs for every pair), but rev 7's `E1`, which demanded
+   `Hom_h=0` for every pair, would have wrongly rejected it. **Fixed:**
+   `E1` is restated via the actual necessary-and-sufficient condition —
+   the channels are pairwise NON-ISOMORPHIC as `h`-modules — using the
+   standard semisimple-representation criterion `dim Hom_h(i,j)² < dim
+   Hom_h(i,i)·dim Hom_h(j,j)` (Cauchy-Schwarz on multiplicity vectors;
+   equality holds iff isomorphic). `Hom_h=0` remains a valid, simpler
+   SPECIAL CASE (it trivially satisfies the inequality whenever
+   `Hom_h(i,i)>0`, which always holds by Schur), not the whole criterion.
+   Checked against every case already on record: `g₂` (`2²=4=2·2`,
+   equality, isomorphic, correctly NOT an escape), `su(3)` (`6²=36=6·6`,
+   same), `so(8)` (`0<1`, escape), `round124` (`0<16`, escape), and the
+   pass's own counterexample (`16<64`, escape) — all consistent.
+2. **Rev 7's own new text reintroduced a misattribution a FOURTH skeptic
+   pass had already caught and fixed once (§0e point 2).** §0g's closing
+   line for finding 1 said `round124` and `round119` were "checked case by
+   case... as `round124` and `round119` already were" in a context that
+   reads as both having a computed `Hom`-table — but `round119`
+   (`SO(4)×SO(4)`) has never had one; its distinguishing argument is
+   block-chirality matching (`Γ_A=Γ_B` vs `Γ_A=-Γ_B`), a DIFFERENT,
+   independently-valid way to establish non-isomorphism (an
+   `h`-invariant operator with different eigenvalues on `8_s` vs `8_c`
+   cannot act the same way on isomorphic modules). **Fixed**: `E1`'s
+   status cell and §0g/§0h's narrative now credit each construction with
+   its own, correct method, and note explicitly that the corrected
+   pairwise-non-isomorphism criterion — unlike the withdrawn `Hom_h=0`-only
+   version — actually accommodates both methods, since block-chirality
+   IS a valid way to demonstrate non-isomorphism without literally
+   computing a `Hom`-space.
+3. **§0g overclaimed how the core numbers were checked.** "residuals, and
+   negative-control numbers all recomputed from the representation theory
+   directly" is not a coherent claim — a residual like `5e-16` or a
+   negative-control deviation like `4.53` is the output of a numerical
+   computation on a specific, chosen basis/element, not a quantity
+   representation theory alone determines. **Fixed**: restated as
+   independently re-derived Hom DIMENSIONS from the branching data
+   (which representation theory does determine), with the numerical
+   residuals and controls re-confirmed by reading the primary sources'
+   own reported figures, not re-derived from theory.
+4. **A truncated `C78` quote survived in `§2b`'s own copy** even though
+   the identical truncation was already fixed in `§0d` (rev 7, §0g point
+   5) — the fix landed in one location, not both. **Fixed**: `§2b`'s
+   "What this does NOT establish, part 1" now also carries "within
+   `so(8)`" in the quote.
+5. **`§5`'s reproduction trail was missing the three experiments step 1-3
+   most directly depend on.** `C72`, `C62`, and `C63` were named in prose
+   throughout §0-§2 but never given file paths in the trail — an omission
+   this document's own §0b explicitly warns against (trusting compressed
+   summaries over primary sources). **Fixed**, paths located and verified
+   directly: `C72` → `experiments/20260811-c72-state-level-triality-g2-
+   equivariance-test/decision.md`; `C62` → `experiments/20260810-ob11iii-
+   triality-su3-invariance/decision.md`; `C63` → `experiments/20260810-
+   step4-channel-redundancy-redteam/decision.md`.
+6. **Step 2's quote was misattributed to `C72`.** "isomorphic objects take
+   equal values under any functor" does not appear in `C72`'s own
+   decision.md — it is `C150/GATE.md`'s own synthesizing prose (its own
+   line: "isomorphic objects take equal values under *any* functor").
+   **Fixed** — attributed to `GATE.md`, not `C72`.
+7. **"`independently re-verified by `C72`" overstated `C72`'s own
+   documented scope.** `C72`'s own decision.md states directly: "Reuses
+   `G102`'s `derivation_basis`/`stabilizer_basis`/`restrict_to_subalgebra`/
+   `so8_basis`... unmodified" — the `Hom`-dimension numbers in step 1 are
+   NOT independently recomputed, they are the same computation re-run
+   with `G102`'s own functions. What `C72` genuinely adds, independently,
+   is the explicit invertible isomorphism construction (new content, not
+   in `G102`). **Fixed** — step 1 now credits `C72` for what it actually,
+   independently contributes, and no longer calls the `Hom`-dimension
+   re-run "independent."
+
+None of these touch the theorem's actual truth value — `E1`'s two known
+constructions (`round124`, `round119`) both still qualify under the
+corrected criterion, and the core mechanism needed no change at all. This
+is the seventh consecutive round to find something, and the fifth
+consecutive time the something was a defect in material written to fix
+the PREVIOUS round's defect — worth naming plainly rather than treating
+each round as if it were independent of that pattern.
 
 ---
 
@@ -466,18 +573,26 @@ either way.
 
 **Proof (primary mechanism — Schur's lemma / Hom-space filtration):**
 
-1. `G102` P7/P8 (independently re-verified by `C72`): `dim
-   Hom_{g₂}(channel_i,channel_j) =
-   2` and `dim Hom_{su(3)}(channel_i,channel_j) = 6`, IDENTICAL for every
-   ordered pair `i,j ∈ {v,s,c}` including `i=j`. `C72` additionally
-   constructs EXPLICIT invertible `g₂`-equivariant isomorphisms between
-   all three channels (residual `5e-16`–`7e-16`).
+1. `G102` P7/P8: `dim Hom_{g₂}(channel_i,channel_j) = 2` and `dim
+   Hom_{su(3)}(channel_i,channel_j) = 6`, IDENTICAL for every ordered pair
+   `i,j ∈ {v,s,c}` including `i=j`. **Corrected in rev 8, §0h:** an
+   earlier draft called this "independently re-verified by `C72`" — `C72`
+   itself states it "Reuses `G102`'s `derivation_basis`/`stabilizer_basis`/
+   `restrict_to_subalgebra`/`so8_basis`... unmodified" for this specific
+   computation, so the `Hom`-dimension numbers are a re-RUN, not an
+   independent re-derivation. What `C72` DOES independently, newly
+   contribute: EXPLICIT invertible `g₂`-equivariant isomorphisms between
+   all three channels (residual `5e-16`–`7e-16`) — genuinely new
+   construction, not reused from `G102`.
 2. Any object built entirely from `g₂`- or `su(3)`-equivariant data is,
    by definition, invariant under composing with these explicit
    isomorphisms — i.e. it takes the IDENTICAL value on all three channels
-   (`C72`'s own point: "isomorphic objects take equal values under any
-   functor"). This is the base mechanism and needs nothing beyond Schur's
-   lemma plus the explicit isomorphisms already built.
+   (`C150/GATE.md`'s own synthesizing point, corrected in rev 8 — an
+   earlier draft attributed this to "`C72`'s own point," but the line
+   "isomorphic objects take equal values under *any* functor" appears in
+   `GATE.md`'s own prose, not in `C72`'s decision.md). This is the base
+   mechanism and needs nothing beyond Schur's lemma plus the explicit
+   isomorphisms already built.
 3. `C62` checked the one plausible escape at the morphism/trilinear level
    (not just the object level) — Baez's octonion trilinear-covariance
    construction — and found it ALSO collapses to the identical matrix on
@@ -599,8 +714,10 @@ find it calling this same test "Gate 2, TESTED, NO" throughout.
 **What this does NOT establish, part 1 (corrected in rev 4, §0d):**
 `C78`'s own decision.md is explicit that this result is about the one `D`
 tested, not a universal over every `D` built from `G₂/SU(3)` data — its
-own wording is "the largest symmetry `D` HAS," not "the largest symmetry
-any such `D` could ever have." The inner/outer argument (triality outer,
+own wording is "the largest symmetry `D` HAS, full stop, within `so(8)`"
+(corrected in rev 8, §0h — this copy of the quote was still missing
+"within `so(8)`" after the identical truncation was fixed in §0d), not
+"the largest symmetry any such `D` could ever have." The inner/outer argument (triality outer,
 `Spin(8)` connected) bounds whether an inner automorphism can REALIZE
 triality; it does NOT bound the DIMENSION of a commutant, which is a
 computed fact about one operator's specific matrix, not a structural
@@ -664,7 +781,7 @@ explicitly open rather than silently closed.
 
 | # | Escape condition | Why it escapes | Status in this project |
 |---|---|---|---|
-| E1 | `M` uses data equivariant under a subalgebra `h ⊆ so(8)` for which `Hom_h(channel_i,channel_j) = 0` for ALL `i≠j` — i.e. `h` genuinely, computably breaks the Schur's-lemma degeneracy that step 1 establishes for `g₂`/`su(3)`, checked directly, not inferred from rank or from avoiding any one named subgroup (corrected in rev 7, §0g, after a sixth skeptic pass found the rev-6 proxy criterion FALSE in general: `g₂`, hence `su(3) ⊂ g₂`, sits inside not one but THREE conjugate copies of `spin(7)` in `so(8)` — one per channel, since step 1's own `8_v\|_{g₂}=8_s\|_{g₂}=8_c\|_{g₂}=7⊕1` means `g₂` fixes a line in EACH of the three 8-dim reps, i.e. `g₂` ⊆ stabilizer-of-a-line-in-`8_x` for every `x∈{v,s,c}`. `round124`'s own zero-fixed-vector check (`TRIALITY_DISTINGUISHABILITY_GATE.md` §2b) only rules out the copy `so(7)_v` (stabilizer of a vector IN `8_v`) — but `su(3) ⊂ g₂ ⊂ so(7)_s` (stabilizer of a spinor in `8_s`, dim 21, rank 3) satisfies every rev-6 proxy condition (rank>2, not within `g₂`, not `so(7)_v`) while leaving `8_v≅8_c` (both `≅Δ₇`, the 8-dim spin rep of this `so(7)` copy) UNDISTINGUISHED — the theorem's own failure mode, passing its own escape condition. The proxy is replaced here by the actual mechanism, matching step 1's own method) | This is the SAME mechanism as step 1 (Schur's lemma / Hom-space filtration), applied to a bigger algebra where the `g₂`/`su(3)`-level degeneracy happens to break — not a separate geometric criterion | **Already used, ALGEBRAICALLY real, not hypothetical, by two DIFFERENT arguments, each independently verified for the SPECIFIC construction, not derived from a general proxy** (corrected in rev 5: rev 4 wrongly attributed a `Hom`-space computation to both): `round124`'s `su(3)⊕u(1)⊕u(1)` gives `Hom(channel_i,channel_j)=0` for `i≠j`, `[VERIFIED-tool]`, directly computed; `round119`'s `SO(4)×SO(4)` (`OPEN_BLOCKERS.md` OB4 Gate 1) distinguishes ALL THREE channels via block-chirality matching (`Γ_A=Γ_B` vs `Γ_A=-Γ_B`), a separate, also-real, also directly-verified argument — the source describes it as the first candidate in that investigation to separate `8_s` from `8_c` as well as `8_v`. **This clears algebraic distinguishability only, and only for these two SPECIFIC, checked constructions — not for any subgroup merely resembling them** — see the Commutant Condition note below before treating either as a working physical mechanism |
+| E1 | `M` uses data equivariant under a subalgebra `h ⊆ so(8)` under which the three channels are pairwise NON-ISOMORPHIC as `h`-modules — checked directly for the specific `h`, not inferred from rank or from avoiding any one named subgroup. **Corrected in rev 8, §0h, after a seventh skeptic pass found rev 7's `Hom_h=0`-for-all-pairs criterion itself FALSE — sufficient but not necessary, over-correcting rev 6's error into a new, stricter one.** Standard test for semisimple modules: `i` and `j` are non-isomorphic iff `dim Hom_h(i,j)² < dim Hom_h(i,i)·dim Hom_h(j,j)` (Cauchy-Schwarz on multiplicity vectors; equality iff isomorphic) — `Hom_h(i,j)=0` is one sufficient special case of this, not the whole criterion: a hand-constructed 2-dim abelian `h` (weights: `8_v` integer, `8_s`/`8_c` half-integer but with different weight SETS) gives `Hom_h(8_s,8_c)=4≠0` while `8_s≇8_c` — a genuinely discriminating `h` that the rev-7 `Hom=0`-only wording would have wrongly rejected. Checked against every case on record: `g₂` (`2²=4=2·2`, equality → isomorphic, correctly no escape), `su(3)` (`6²=36=6·6`, same), `so(8)` (`0<1`, escape), `round124` (`0<16`, escape) — all consistent (corrected in rev 7, §0g, after a sixth skeptic pass found rev 6's geometric proxy — rank/containment/named-subgroup exclusion — admitted a real counterexample: `su(3)⊂g₂` sits inside all THREE conjugate copies of `spin(7)` in `so(8)`, one per channel, since step 1's own `8_v\|_{g₂}=8_s\|_{g₂}=8_c\|_{g₂}=7⊕1` means `g₂` fixes a line in each of the three 8-dim reps; `round124`'s zero-fixed-vector check only rules out the vector-stabilizing copy `so(7)_v`, not the spinor-stabilizing copy `so(7)_s`, under which `8_v≅8_c` remain undistinguished while passing every rev-6 proxy condition) | This is the SAME mechanism as step 1 (Schur's lemma / Hom-space filtration), applied to a bigger algebra where the `g₂`/`su(3)`-level degeneracy happens to break — not a separate geometric criterion. Non-isomorphism, not merely `Hom=0`, is what "genuinely distinguishes" actually requires | **Already used, ALGEBRAICALLY real, not hypothetical, by two DIFFERENT methods, each independently verified for the SPECIFIC construction — both valid ways to establish non-isomorphism under the corrected criterion, not derived from a general proxy** (corrected in rev 5: rev 4 wrongly attributed a `Hom`-space computation to both; corrected in rev 8, §0h: rev 7's phrasing again read as if both had one): `round124`'s `su(3)⊕u(1)⊕u(1)` gives `Hom(channel_i,channel_j)=0` for `i≠j`, `[VERIFIED-tool]`, directly computed — the `Hom=0` special case; `round119`'s `SO(4)×SO(4)` (`OPEN_BLOCKERS.md` OB4 Gate 1) establishes non-isomorphism via a DIFFERENT, independently-valid method — block-chirality matching (`Γ_A=Γ_B` on `8_s`, `Γ_A=-Γ_B` on `8_c`): an `h`-invariant operator taking different eigenvalues on two modules is itself proof they are non-isomorphic (isomorphic modules could not carry an invariant operator with different spectra), with no `Hom`-space computed at all — the source describes it as the first candidate in that investigation to separate `8_s` from `8_c` as well as `8_v`. **This clears algebraic distinguishability only, and only for these two SPECIFIC, checked constructions — not for any subgroup merely resembling them** — see the Commutant Condition note below before treating either as a working physical mechanism |
 | E2 | `M` uses a physical Dirac operator/connection genuinely STRUCTURALLY different from `C73`'s `build_numeric_dirac(E, nomizu)` — not merely a uniform rescaling of the SAME `nomizu` input, since `commutant(t·D) = commutant(D)` for any nonzero scalar `t` (scaling an operator never changes what commutes with it) | `C78`'s commutant computation is about that ONE operator up to the scale-invariance just noted; a genuinely different connection/Nomizu structure is an untested premise, not covered by the same computation | Not attempted; no concrete candidate identified. **Corrected in rev 7, §0g, after a sixth skeptic pass found the rev-6 justification here FALSE:** rev 6 removed an earlier "a different `t`" example on the grounds that "`build_numeric_dirac` takes no `t` argument" — wrong: `C73`'s own `test_deformation` routine builds exactly this family (`nomizu_t = {i: [(t*cf,a,b) for (cf,a,b) in R59.NOMIZU[i]] for i in R59.NOMIZU}`, then `build_numeric_dirac(E, nomizu_t)`, swept over `t ∈ [-1,0,0.5,0.9,1,1.1,1.5,2]`). The conclusion (this family does not escape) happens to still be correct, but for the reason stated in this row's own "Why it escapes" column (scale-invariance of the commutant), not because the parameter doesn't exist. Separately: this project uses `t` for TWO unrelated things — this NOMIZU-rescaling parameter (`S⁶`-side, what `C73`/`C78` actually vary) and `OB1`/`OB13`'s `S³`-connection torsion parameter (a genuinely different, decoupled quantity `C78`'s `D` never touches) — do not conflate them. `C73`'s own script states the honest limitation directly: "this is a 1-parameter uniform-scale family only — no genuinely different admissible `S6` connection... exists anywhere in this project" — a real gap, not a vacuous one |
 | E3 | `M` invokes a group element outside `Spin(8)` entirely (e.g. `Pin(8)\Spin(8)`, or another exceptional construction) | Only elements outside the connected group `Spin(8)` can be outer automorphisms | Not attempted; `G102`'s own stated conclusion names this as one reading of "an independent fiber-Spin(8) postulate" |
 | E4 | `M` is supplied by genuinely external input (literature, or Tom Lawrence) carrying triality-channel content not derived from this project's own `S³×S⁶` geometry | External data is not subject to an internal-symmetry argument at all | `BLOCKED-EXTERNAL` per `OPEN_BLOCKERS.md` OB1/OB4/OB14 |
@@ -743,7 +860,8 @@ remains untested (§2b part 2).
 
 - `experiments/20260620-g44-d4-triality/decision.md` (G44)
 - `experiments/20260705-g102-spin8-fiber-obstruction/decision.md` (G102, P1-P8 table — the primary mechanism)
-- `experiments/20260904-c150-g44-information-retention-gate/GATE.md` (C72/C63/C62 synthesis, the gate's own scope section)
+- `experiments/20260904-c150-g44-information-retention-gate/GATE.md` (C72/C63/C62 synthesis, the gate's own scope section — also the source of step 2's "isomorphic objects take equal values under any functor" line, corrected in rev 8 from a misattribution to `C72`)
+- **Added in rev 8, §0h** (step 1-3's own three experiments — missing from this trail through seven prior revisions, an omission this document's own §0b warns against): `experiments/20260811-c72-state-level-triality-g2-equivariance-test/decision.md` (C72 — the explicit invertible `g₂`-equivariant isomorphisms, residual `5e-16`–`7e-16`; NOT the `Hom`-dimension numbers themselves, which reuse `G102`'s own functions unmodified per `C72`'s own stated scope); `experiments/20260810-ob11iii-triality-su3-invariance/decision.md` (C62 — the Baez octonion trilinear-covariance check, deviation `1.6e-15` vs `4.53`/`2.91` negative control); `experiments/20260810-step4-channel-redundancy-redteam/decision.md` (C63 — the `so(8)`-level survival fact cited in §2, `Hom_so8` off-diagonal `=0` plus the explicit `Φ:vec→sp` construction).
 - `experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md` (the inner/outer strengthening, §2, §8b)
 - `OPEN_BLOCKERS.md` OB4 (Gate 1 DONE — the `E1` escape route, already
   real; Gates 2-6 PARKED, not falsified — the status this document leaves
