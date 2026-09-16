@@ -150,21 +150,41 @@ check(
     "C1 alpha = -1/2, the SAME weight as chi_{+-1/2} itself -- spin weight 1/2, not 3/2",
     sp.simplify(alpha - sp.Rational(-1, 2)) == 0,
 )
-check("C2 psi has genuinely dropped out", sp.simplify(sp.diff(q, ps)) == 0)
+check(
+    "C2 psi has genuinely dropped out (algebraic sanity check on the "
+    "phase-stripping step, not itself a physics claim)",
+    sp.simplify(sp.diff(q, ps)) == 0,
+)
 
 # fold to closed trig form for the letter
 q_folded = sp.simplify(sp.trigsimp(sp.expand_complex(q)))
 print(f"  stripped, folded: {q_folded}")
 
 closed_form = sp.exp(-sp.I * ph / 2) * sp.cos(th / 2) * (3 * sp.cos(th / 2) ** 2 - 2)
-pt = {th: sp.Rational(7, 10), ph: sp.Rational(11, 10)}
-diff_closed = complex(q_folded.subs(pt).evalf(30)) - complex(
-    closed_form.subs(pt).evalf(30)
-)
+# WHY 5 points, not 1 (post-hoc hardening, 2026-09-16, per a skeptic finding
+# during an unrelated harness test): this exact closed form is quoted
+# verbatim in a letter sent to Tom Lawrence, so a single lucky-coincidence
+# point is not enough scrutiny for it. Points chosen to span both halves of
+# theta and both signs/quadrants of phi, none a special value where an
+# error could cancel by symmetry.
+CHECK_POINTS = [
+    {th: sp.Rational(7, 10), ph: sp.Rational(11, 10)},
+    {th: sp.Rational(1, 5), ph: sp.Rational(-3, 4)},
+    {th: sp.Rational(13, 10), ph: sp.Rational(5, 2)},
+    {th: sp.Rational(3, 4), ph: sp.Rational(-11, 3)},
+    {th: sp.Rational(29, 10), ph: sp.Rational(1, 17)},
+]
+closed_form_diffs = [
+    abs(complex(q_folded.subs(pt).evalf(30)) - complex(closed_form.subs(pt).evalf(30)))
+    for pt in CHECK_POINTS
+]
+print(f"  closed-form residuals at {len(CHECK_POINTS)} points: {closed_form_diffs}")
 check(
     "C3 closed form e^{-i phi/2} cos(theta/2) (3cos^2(theta/2)-2) matches, "
-    "numerically to 30 digits (symbolic simplify does not auto-collapse this one)",
-    abs(diff_closed) < 1e-25,
+    f"numerically to 30 digits at {len(CHECK_POINTS)} points spanning both "
+    "halves of theta and multiple phi quadrants (symbolic simplify does not "
+    "auto-collapse this one)",
+    all(d < 1e-25 for d in closed_form_diffs),
 )
 print("  closed form: e^(-i*phi/2) * cos(theta/2) * (3*cos(theta/2)^2 - 2)")
 
@@ -178,14 +198,30 @@ check(
 )
 chi_p = sp.exp(-sp.I * ph / 2) * sp.cos(th / 2)
 chi_m = sp.exp(sp.I * ph / 2) * sp.sin(th / 2)
+# WHY a concrete numeric check ALONGSIDE the symbolic one (post-hoc
+# hardening, 2026-09-16): "sp.diff(ratio) != 0" is only as trustworthy as
+# sympy's own simplification of that derivative -- a nonzero expression
+# sympy fails to reduce to a literal 0 would report as "not proportional"
+# even where the true ratio IS constant, and vice versa if a genuinely
+# nonzero derivative fails to simplify away spurious phase factors. This
+# is a concrete, tool-independent belt-and-suspenders control: if the
+# ratio is truly non-constant, it must take at least two DIFFERENT numeric
+# values -- a fact no simplification bug can hide.
+RATIO_POINTS = [sp.Rational(1, 5), sp.Rational(3, 2)]
 for name, chi in (("chi_{+1/2}", chi_p), ("chi_{-1/2}", chi_m)):
     ratio = sp.simplify(sp.powsimp(sp.expand(q / chi), force=True))
-    not_prop = sp.simplify(sp.diff(ratio, th)) != 0
+    not_prop_symbolic = sp.simplify(sp.diff(ratio, th)) != 0
+    ratio_values = [
+        complex(ratio.subs({th: t0, ph: sp.Rational(9, 10)}).evalf(30))
+        for t0 in RATIO_POINTS
+    ]
+    not_prop_numeric = abs(ratio_values[0] - ratio_values[1]) > 1e-20
     check(
         f"D2 NOT a constant multiple of {name} (genuinely new content, "
-        "not merely non-proportional by construction as in C196's weight-mismatch case)",
-        not_prop,
-        f"ratio = {ratio}",
+        "not merely non-proportional by construction as in C196's weight-mismatch case) "
+        "-- symbolic AND numeric checks agree",
+        not_prop_symbolic and not_prop_numeric,
+        f"ratio = {ratio}, values at theta={RATIO_POINTS} = {ratio_values}",
     )
 
 print()

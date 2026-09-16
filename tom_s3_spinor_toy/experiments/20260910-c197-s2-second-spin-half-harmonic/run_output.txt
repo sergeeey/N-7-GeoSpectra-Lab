@@ -18,17 +18,18 @@ C  substitute Hopf, strip the psi phase, on the m_R=-1/2 member
 ==============================================================================
   psi-exponent alpha = -1/2
   [PASS] C1 alpha = -1/2, the SAME weight as chi_{+-1/2} itself -- spin weight 1/2, not 3/2
-  [PASS] C2 psi has genuinely dropped out
+  [PASS] C2 psi has genuinely dropped out (algebraic sanity check on the phase-stripping step, not itself a physics claim)
   stripped, folded: -I*sin(phi/2)*cos(theta/2)/4 - 3*I*sin(phi/2)*cos(3*theta/2)/4 + cos(phi/2)*cos(theta/2)/4 + 3*cos(phi/2)*cos(3*theta/2)/4
-  [PASS] C3 closed form e^{-i phi/2} cos(theta/2) (3cos^2(theta/2)-2) matches, numerically to 30 digits (symbolic simplify does not auto-collapse this one)
+  closed-form residuals at 5 points: [0.0, 0.0, 0.0, 0.0, 0.0]
+  [PASS] C3 closed form e^{-i phi/2} cos(theta/2) (3cos^2(theta/2)-2) matches, numerically to 30 digits at 5 points spanning both halves of theta and multiple phi quadrants (symbolic simplify does not auto-collapse this one)
   closed form: e^(-i*phi/2) * cos(theta/2) * (3*cos(theta/2)^2 - 2)
 
 ==============================================================================
 D  genuinely new: double-valued, not proportional to chi_{-1/2} or chi_{+1/2}
 ==============================================================================
   [PASS] D1 double-valued: q(phi+2pi) = -q(phi)
-  [PASS] D2 NOT a constant multiple of chi_{+1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case)  ratio = ((3*exp(I*theta) + 1)*exp(2*I*theta) + exp(I*theta) + 3)*exp(-3*I*theta/2)/(8*cos(theta/2))
-  [PASS] D2 NOT a constant multiple of chi_{-1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case)  ratio = (3*exp(3*I*theta) + exp(2*I*theta) + exp(I*theta) + 3)*exp(-I*(phi + 3*theta/2))/(8*sin(theta/2))
+  [PASS] D2 NOT a constant multiple of chi_{+1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case) -- symbolic AND numeric checks agree  ratio = ((3*exp(I*theta) + 1)*exp(2*I*theta) + exp(I*theta) + 3)*exp(-3*I*theta/2)/(8*cos(theta/2)), values at theta=[1/5, 3/2] = [(0.9700998667618624+0j), (-0.3938941974984456-3.009265538105056e-36j)]
+  [PASS] D2 NOT a constant multiple of chi_{-1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case) -- symbolic AND numeric checks agree  ratio = (3*exp(3*I*theta) + exp(2*I*theta) + exp(I*theta) + 3)*exp(-I*(phi + 3*theta/2))/(8*sin(theta/2)), values at theta=[1/5, 3/2] = [(6.010123269089362-7.573706226033467j), (-0.2628268463189597+0.33120341018167715j)]
 
 ==============================================================================
 SUMMARY
@@ -37,11 +38,11 @@ SUMMARY
   PASS  B1 weight=-1/2 sector is 4-dimensional, like -3/2
   PASS  B2 second generator splits it into 4 distinct m_R labels -3/2..3/2
   PASS  C1 alpha = -1/2, the SAME weight as chi_{+-1/2} itself -- spin weight 1/2, not 3/2
-  PASS  C2 psi has genuinely dropped out
-  PASS  C3 closed form e^{-i phi/2} cos(theta/2) (3cos^2(theta/2)-2) matches, numerically to 30 digits (symbolic simplify does not auto-collapse this one)
+  PASS  C2 psi has genuinely dropped out (algebraic sanity check on the phase-stripping step, not itself a physics claim)
+  PASS  C3 closed form e^{-i phi/2} cos(theta/2) (3cos^2(theta/2)-2) matches, numerically to 30 digits at 5 points spanning both halves of theta and multiple phi quadrants (symbolic simplify does not auto-collapse this one)
   PASS  D1 double-valued: q(phi+2pi) = -q(phi)
-  PASS  D2 NOT a constant multiple of chi_{+1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case)
-  PASS  D2 NOT a constant multiple of chi_{-1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case)
+  PASS  D2 NOT a constant multiple of chi_{+1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case) -- symbolic AND numeric checks agree
+  PASS  D2 NOT a constant multiple of chi_{-1/2} (genuinely new content, not merely non-proportional by construction as in C196's weight-mismatch case) -- symbolic AND numeric checks agree
 
 9 of 9 checks passed
 a genuine second spin-1/2 harmonic found at k=3, distinct from k=1's chi_{+-1/2}
