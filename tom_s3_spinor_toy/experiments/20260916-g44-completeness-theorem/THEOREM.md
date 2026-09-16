@@ -1,38 +1,21 @@
 # Completeness Theorem — G₂/SU(3)-restricted mechanisms cannot discriminate triality channels
 
-**Date:** 2026-09-16 (rev 5, same day — see §0b/§0c/§0d/§0e for what
+**Date:** 2026-09-16 (rev 6, same day — see §0b/§0c/§0d/§0e/§0f for what
 changed and why)
-**Status:** DRAFT, PAUSED for human decision after a FIFTH skeptic pass —
-NOT skeptic-clean. rev 1 through rev 5 were each reviewed and each found
-to have a real defect (§0b, §0c, §0d, §0e — the fifth pass's findings are
-not yet written up as their own lettered section; two of its six findings
-were mechanical citation fixes, applied directly to §0/§2b above without a
-sixth full skeptic round). The theorem's core mechanism (§1 steps 1-3,
-Hom-space/Schur's lemma) has now survived all five passes UNCHANGED —
-every defect across all five rounds was in material ABOUT the core
-result, never the core computation. **Stopped here per this project's own
-Evaluator-Optimizer Guard** (`CLAUDE.md`: cap 3 cycles, then escalate
-rather than loop silently) — the fifth pass explicitly named this
-document as having exceeded that cap. Three substantive, not-yet-resolved
-findings from the fifth pass remain, requiring a judgment call rather
-than a mechanical fix, and are left for explicit human direction instead
-of a sixth autonomous cycle: (1) `E1`'s "larger than `su(3)`, not confined
-within `g₂`" wording admits `so(7)` as a passing example, but the source
-project treats escaping `SO(7)`-confinement as a SEPARATE, additional
-requirement beyond mere rank — `so(7)` alone leaves `8_s≅8_c` undistinguished,
-exactly the failure mode this theorem is about; (2) `E2`'s "a different
-`t`" parenthetical may describe a variation that does not actually change
-the tested operator at all (`C73`'s `build_numeric_dirac` signature has no
-`t` argument; `t` parametrizes a separate `S³`-side factor that `C173`
-states decouples `t`-independently from the `S⁶`/`so(8)` sector `C78`
-tested) — if so, `E2`'s example is null and should be removed or replaced,
-not merely re-worded; (3) the theorem statement's `S³`-isometry clause
-(§1) has essentially no proof coverage — steps 1-3 never mention `S³`,
-and the clause's best available support is an inner/outer argument this
-same document already withdrew (§0c) as invalid for exactly this kind of
-Hom-space distinguishability claim. Do not present this document as
-finalized, cite it externally, or update `OPEN_BLOCKERS.md`/`pearl_registry`
-from it until these three are resolved by explicit decision.
+**Status:** DRAFT. rev 1 through rev 5 were each reviewed and each found
+to have a real defect (§0b-§0e); a fifth skeptic pass found six more
+issues, two mechanical (fixed directly) and three substantive, requiring
+a judgment call rather than a mechanical fix — resolved in rev 6 by
+explicit user decision rather than a sixth autonomous skeptic cycle, per
+this project's own Evaluator-Optimizer Guard (`CLAUDE.md`: cap 3 review
+cycles, then escalate to a human rather than loop silently — the fifth
+pass itself named this document as having exceeded that cap). See §0f for
+what changed and why. The theorem's core mechanism (§1 steps 1-3,
+Hom-space/Schur's lemma) has now survived all five skeptic passes
+UNCHANGED — every defect across all five rounds was in material ABOUT the
+core result, never the core computation. **Still pending a fresh skeptic
+pass on rev 6 before this document is cited externally or propagated into
+`OPEN_BLOCKERS.md`/`pearl_registry`.**
 **Purpose:** upgrade the informal `G44 Information-Retention Gate` (C150,
 `experiments/20260904-c150-g44-information-retention-gate/GATE.md`) from a
 pre-filter heuristic into an explicit, citable theorem with a stated,
@@ -296,6 +279,65 @@ correction across all four passes — every defect, all four times, has
 been in material ABOUT the core result, never the core computation
 itself.
 
+## 0f. rev 5 → rev 6 — a fifth skeptic pass, escalated per the Evaluator-Optimizer Guard instead of auto-fixed
+
+A fifth skeptic pass on rev 5 found six issues. Two were mechanical
+citation errors (a stale `C173` §8c reference left in §0 after §1's copy
+of it was fixed; a wrong section number for the seven-gate list) and were
+fixed directly, without a sixth full skeptic round. The other three were
+substantive and were surfaced to the user rather than resolved
+autonomously, per this project's own Evaluator-Optimizer Guard — the
+fifth pass itself is the one that named this document as having exceeded
+the stack's own 3-cycle cap. The user's explicit decision: drop the
+`S³`-clause from the theorem statement entirely, and narrow `E1`/`E2`
+rather than keep patching them. Applied as follows:
+
+1. **`S³`-clause removed from §1's theorem statement, not merely
+   re-cited.** The fifth pass found the clause had essentially no proof
+   coverage of its own (steps 1-3 never mention `S³`) and that its best
+   available support — the `Spin(3)×Spin(6)`-type inner/outer argument
+   (`C173` §8b point 5) — is the SAME class of argument this document
+   already withdrew (§0c) as invalid for Hom-space distinguishability
+   claims specifically. Rather than hunt for a fourth citation, the
+   clause is dropped: the theorem now states only the `G₂`/`SU(3)`-
+   restricted-data premise it actually proves. Nothing about `S³`'s
+   isometry is claimed either way by this document any longer — that
+   question is untouched, not resolved.
+2. **`E1` narrowed to exclude `SO(7)`.** The fifth pass found the prior
+   wording ("larger than `su(3)`, rank > 2, not confined within `g₂`")
+   admits `so(7)` (rank 3) as a passing example — but under `SO(7)`
+   confinement (the stabilizer of a single vector in `8_v`), `8_v=7⊕1`
+   and `8_s≅8_c` remain UNDISTINGUISHED, exactly the failure this theorem
+   is about. `round124`'s own decision.md already checks and reports this
+   exact point (`TRIALITY_DISTINGUISHABILITY_GATE.md` §2b: "Zero fixed
+   vectors in `8_v` confirms this algebra also escapes confinement to
+   `SO(7)`, the same structural signature that let `SO(4)×SO(4)` work") —
+   the missing condition was already sitting in a source this document
+   already cites, just not carried into `E1`'s own wording. Fixed by
+   adding the same zero-fixed-vector condition explicitly.
+3. **`E2`'s "a different `t`" example removed, not reworded.** The fifth
+   pass found this example was likely NULL: `C73`'s `build_numeric_dirac`
+   takes `(E, nomizu)`, no `t` argument at all; `t` parametrizes a
+   separate `S³`-side factor that `C173` states decouples `t`-independently
+   from the `S⁶`/`so(8)` sector `C78` actually tested. Varying `t` would
+   not change the operator `C78`'s exhaustive result is about, so it does
+   not illustrate `E2`'s general point (a genuinely different operator) at
+   all. Removed rather than replaced with an unverified substitute — `E2`
+   as a category (a structurally different Dirac operator/connection)
+   remains valid and real; this document does not currently have a
+   concrete example of it.
+
+`§5`'s reproduction trail drops the `C191` citation, which existed only to
+support the now-removed `S³`-clause and is not cited by anything else in
+this document.
+
+This is the FIFTH round of self-correction, and the first one resolved by
+explicit human decision rather than another autonomous skeptic cycle —
+consistent with, not an exception to, the pattern named in §0e: once a
+correction loop has run its useful course (here, 3+ cycles per the
+stack's own cap), the right move is to surface the remaining judgment
+calls, not keep autonomously re-guessing at them.
+
 ---
 
 ## 1. Theorem statement (corrected)
@@ -304,26 +346,18 @@ itself.
 candidate mechanism whose observable factors ENTIRELY through data that
 survives `Spin(8) → G₂` restriction (or the weaker `→ SU(3)` restriction)
 of a single channel — its isomorphism class, its `g₂`- or `su(3)`-module
-structure, or its trilinear covariance relations (`C62`) — optionally
-combined with `S³`'s own separate `SU(2)_L × SU(2)_R` isometry data,
-**PROVIDED that data is not additionally embedded as part of a larger
-postulated `Spin(8)`-subgroup** (corrected in rev 5, §0e — see below for
-why that proviso is load-bearing, not a formality). **On this clause:**
-`C173` §3 point 2 notes such a combination's natural symmetry is
-`Spin(3)×Spin(6)`-type, not `Spin(8)`-level — this is the relevant support
-for BARE `S³` isometry data. `[WEAK]`: not independently stress-tested
-beyond this one structural observation. `C191`/`OB1` is NOT evidence for
-this clause (corrected in rev 5 — rev 4 cited it here wrongly): `C191`
-tests consequences of an ALREADY-POSTULATED `SO(4)×SO(4)`-in-`Spin(8)`
-embedding of `S³`'s isometry (`C191` §0: explicit postulate, not derived),
-which is exactly the kind of ADDITIONAL structure this clause's proviso
-excludes — and under that embedding, `C191`'s own split-identification
-reading (§3.6) finds `S³`'s data DOES cleanly separate `8_s` from `8_c`
-by type ("real and unconditional," `C191`'s Kill Analysis), though not the
-specific `t`-sector pairing `C191` was testing for. `C191` belongs to
-`E1`'s territory (§3) — a genuinely larger subgroup postulate — not to
-this clause. Then `M` cannot distinguish the three triality channels
-`8_v`, `8_s`, `8_c`.
+structure, or its trilinear covariance relations (`C62`). Then `M` cannot
+distinguish the three triality channels `8_v`, `8_s`, `8_c`.
+
+**Removed in rev 6, per explicit user decision (§0f):** earlier drafts
+optionally extended this premise to include `S³`'s own `SU(2)_L×SU(2)_R`
+isometry data. The proof below (steps 1-3) never uses `S³` data at all,
+and every citation offered in support across three revisions (`C173` §8b
+point 5, then `C191`) was independently found unable to carry the claim —
+see §0e/§0f. Rather than keep patching the citation, the clause is
+dropped. This document makes NO claim about whether `S³`'s isometry data
+adds discriminating content — that question is untouched, not resolved
+either way.
 
 **Proof (primary mechanism — Schur's lemma / Hom-space filtration):**
 
@@ -508,8 +542,8 @@ explicitly open rather than silently closed.
 
 | # | Escape condition | Why it escapes | Status in this project |
 |---|---|---|---|
-| E1 | `M` uses data at the FULL `so(8)` level, or from a subgroup of `Spin(8)` LARGER than `su(3)` (rank > 2) and not confined WITHIN `g₂` — including one built FROM `g₂`/`su(3)`'s own centralizer, not only one with no relation to it (corrected in rev 4: the earlier "postulated independently of the holonomy" wording wrongly excluded this table's own cited example, `round124`; corrected in rev 5, §0e: "larger than `g₂`" was imprecise — `su(3)⊕u(1)⊕u(1)`, dim 10, does not contain `g₂`, dim 14; it is larger than `su(3)` and sits outside `g₂`) | Step 1's Hom-uniformity is specific to the `g₂`/`su(3)`-restricted view; a strictly larger algebra is not bound by it | **Already used, ALGEBRAICALLY real, not hypothetical, by two DIFFERENT arguments** (corrected in rev 5: rev 4 wrongly attributed a `Hom`-space computation to both): `round124`'s `su(3)⊕u(1)⊕u(1)` gives `Hom(channel_i,channel_j)=0` for `i≠j`, `[VERIFIED-tool]`; `round119`'s `SO(4)×SO(4)` (`OPEN_BLOCKERS.md` OB4 Gate 1) distinguishes via block-chirality matching (`Γ_A=Γ_B` vs `Γ_A=-Γ_B`), a separate, also-real argument, not a `Hom` computation. **This clears algebraic distinguishability only** — see the Commutant Condition note below before treating either as a working physical mechanism |
-| E2 | `M` uses a physical Dirac operator/connection different from `C73`'s specific `build_numeric_dirac` — INCLUDING simply a different point in the same construction's own parameter family (a different `t`, or a degenerate locus such as `OB1`/`OB13`), not only a wholesale redesign | `C78`'s commutant computation is about that ONE operator; any other point in the family is an untested premise, not covered by the same computation | Not attempted at any other parameter value; `[UNKNOWN]` whether the commutant stays `su(3)` elsewhere in the family, including at degenerate loci where commutants are generically expected to grow |
+| E1 | `M` uses data at the FULL `so(8)` level, or from a subgroup of `Spin(8)` LARGER than `su(3)` (rank > 2), not confined WITHIN `g₂`, AND not confined to `SO(7)` (the stabilizer of a single vector in `8_v`) — including one built FROM `g₂`/`su(3)`'s own centralizer, not only one with no relation to it (corrected in rev 4: the earlier "postulated independently of the holonomy" wording wrongly excluded this table's own cited example, `round124`; corrected in rev 5, §0e: "larger than `g₂`" was imprecise; **corrected in rev 6, per explicit user decision:** the rank/outside-`g₂` conditions alone admit `so(7)` (rank 3), under which `8_v=7⊕1` and `8_s≅8_c` remain UNDISTINGUISHED — exactly this theorem's failure mode. The `SO(7)`-exclusion is not a new requirement invented for this fix: `round124`'s own decision.md already checks it explicitly — `TRIALITY_DISTINGUISHABILITY_GATE.md` §2b: "Zero fixed vectors in `8_v` confirms this algebra also escapes confinement to `SO(7)`, the same structural signature that let `SO(4)×SO(4)` work" — it was simply not carried into this row's own wording until now) | Step 1's Hom-uniformity is specific to the `g₂`/`su(3)`-restricted view; a strictly larger algebra not confined to `SO(7)` is not bound by it | **Already used, ALGEBRAICALLY real, not hypothetical, by two DIFFERENT arguments** (corrected in rev 5: rev 4 wrongly attributed a `Hom`-space computation to both): `round124`'s `su(3)⊕u(1)⊕u(1)` gives `Hom(channel_i,channel_j)=0` for `i≠j`, `[VERIFIED-tool]`, AND zero fixed vectors in `8_v`, explicitly checked as escaping `SO(7)`-confinement; `round119`'s `SO(4)×SO(4)` (`OPEN_BLOCKERS.md` OB4 Gate 1) distinguishes via block-chirality matching (`Γ_A=Γ_B` vs `Γ_A=-Γ_B`), a separate, also-real argument, not a `Hom` computation — the source describes it as the first candidate to distinguish ALL THREE channels, `8_s` from `8_c` included (`TRIALITY_DISTINGUISHABILITY_GATE.md` §2), which `SO(7)`-confinement structurally cannot do (`8_s≅8_c` there); this is not the same explicit zero-fixed-vector check as `round124`'s, but the same conclusion follows from what the source already states about it. **This clears algebraic distinguishability only** — see the Commutant Condition note below before treating either as a working physical mechanism |
+| E2 | `M` uses a physical Dirac operator/connection genuinely different from `C73`'s specific `build_numeric_dirac(E, nomizu)` construction — a structurally different Nomizu/connection input, not a wholesale redesign necessarily, but a real change to the operator itself | `C78`'s commutant computation is about that ONE operator; a genuinely different connection/Nomizu structure is an untested premise, not covered by the same computation | Not attempted; no concrete candidate identified — `[UNKNOWN]` whether any structurally different physical `D` would give a larger commutant. **Corrected in rev 6, per explicit user decision:** an earlier draft's example here ("a different `t`, or a degenerate locus such as `OB1`/`OB13`") is REMOVED, not reworded — `build_numeric_dirac` takes `(E, nomizu)`, no `t` argument at all; `t` parametrizes a separate `S³`-side factor that `C173` states decouples `t`-independently from the `S⁶`/`so(8)` sector `C78` actually tested, so varying `t` would not change the tested operator and does not illustrate this row |
 | E3 | `M` invokes a group element outside `Spin(8)` entirely (e.g. `Pin(8)\Spin(8)`, or another exceptional construction) | Only elements outside the connected group `Spin(8)` can be outer automorphisms | Not attempted; `G102`'s own stated conclusion names this as one reading of "an independent fiber-Spin(8) postulate" |
 | E4 | `M` is supplied by genuinely external input (literature, or Tom Lawrence) carrying triality-channel content not derived from this project's own `S³×S⁶` geometry | External data is not subject to an internal-symmetry argument at all | `BLOCKED-EXTERNAL` per `OPEN_BLOCKERS.md` OB1/OB4/OB14 |
 | E5 | `M` uses a geometric factor OTHER than `S⁶=G₂/SU(3)` (a different internal manifold entirely) | Changes the premise, not a mechanism within it | Out of scope; would be a different project |
@@ -584,15 +618,11 @@ remains untested (§2b part 2).
 - `experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md` (the inner/outer strengthening, §2, §8b)
 - `OPEN_BLOCKERS.md` OB4 (Gate 1 DONE — the `E1` escape route, already
   real; Gates 2-6 PARKED, not falsified — the status this document leaves
-  unchanged, per §4 point 4)
-- `experiments/20260909-c191-p5-so4-postulate-pairing-test/decision.md`
-  (C191 — tests a `t`-sector pairing rule under an ALREADY-POSTULATED
-  `SO(4)×SO(4)`-in-`Spin(8)` embedding of `S³`'s isometry; REJECTED for
-  that specific pairing claim, but its own split-identification reading
-  cleanly separates `8_s`/`8_c` by type under that embedding — cited in
-  §1's `S³`-clause as evidence for `E1`'s territory, NOT as evidence that
-  bare `S³` isometry data adds no content; corrected in rev 5, §0e, from
-  an earlier mischaracterization)
+  unchanged, per §4 point 4). **Dropped in rev 6:** `experiments/20260909-
+  c191-p5-so4-postulate-pairing-test/decision.md` (C191) was cited here
+  only to support the `S³`-clause removed from §1 (§0f); nothing else in
+  this document depends on it, so the citation is removed rather than left
+  dangling.
 - `TRIALITY_DISTINGUISHABILITY_GATE.md` §1 (the five-condition spec's own
   definitions — condition 1 = `U` exists, condition 2 = `[D,U]=0` for
   THAT specific `U`, condition 3 = a genuine `Spin(8)` action extending
