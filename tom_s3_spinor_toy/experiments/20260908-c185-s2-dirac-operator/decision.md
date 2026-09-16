@@ -1,9 +1,15 @@
-# C185 Decision — PROMOTE. The S² Dirac operator is built, and the caveat closes.
+# C185 Decision — PROMOTE. The S² Dirac operator is built and its spectrum derived; ONE pre-registered caveat (the χ frame-match) was NOT actually closed — see §4 addendum, 2026-09-10.
 
-**Date:** 2026-09-09
+**Date:** 2026-09-09 (§4 addendum added 2026-09-10)
 **Verdict:** **PROMOTE** — all seven pre-registered predictions hold, the
 injected-error control breaks the pattern, `13 of 13` checks pass. Exact
-symbolic arithmetic throughout; no floating point in any verdict.
+symbolic arithmetic throughout; no floating point in any verdict. The
+spectrum/multiplicity result is solid; the separate, pre-registered
+"χ is written in a different frame than this operator's eigenspinors"
+subtlety was flagged in `claim.md` as needing explicit resolution and was
+never actually resolved — this was silently dropped rather than reported,
+until a context-blind skeptic pass on correspondence drafted from this
+round caught it. See §4.
 
 All numbers trace to `c185_s2_dirac.py` and `run_output.txt`.
 
@@ -117,6 +123,28 @@ available at each step and would have been wrong each time.
   a deformed sphere.
 - **Does NOT settle the frame question for `S³`**, which is separate and still
   as stated in `C184`.
+- **Does NOT resolve the frame subtlety `claim.md` itself pre-registered as
+  needing explicit resolution, and this section originally omitted that gap
+  instead of reporting it (found 2026-09-10, by a context-blind skeptic
+  reviewing correspondence drafted from this round, not by this round's own
+  self-review).** `claim.md`'s own "Substrate note" states: *"the doublet
+  `chi` derived in `C184b` is written in the frame the Hopf descent
+  produces, which is NOT the coordinate frame a coordinate-built Dirac
+  operator uses. A hand-check... found `D chi` is not proportional to `chi`
+  in the naive pairing... this round must resolve it explicitly rather than
+  quietly re-pair things until something matches."` It was not resolved:
+  `c185_s2_dirac.py`'s eigenspinor ansatz (lines 218-224) is
+  `ψ=(f,g)e^{imφ}` with the SAME `m` on both components (lines 141-143
+  explain why: `D` swaps the two components, so consistency requires a
+  shared phase) — while `χ` from `C184b` carries OPPOSITE φ-phases on its
+  two components (`e^{-iφ/2}`, `e^{+iφ/2}`). These are different frames;
+  `χ` was never transported into the one this operator's eigenspinors
+  live in, and `kernel_dim()` (line 233) only ever checks dimensions, never
+  extracts or tests an actual eigenfunction against `χ`. The `m`-values do
+  line up (`±1/2` at `|λ|=1`, matching `χ`'s own labels) — the explicit
+  frame-transport and match is still owed, not done. This is a genuine,
+  still-open item, not a closed one; any future claim that "χ is confirmed
+  to be C185's `|λ|=1` eigenspinor" is not yet supported by this round.
 
 ---
 
@@ -129,7 +157,12 @@ available at each step and would have been wrong each time.
 > `S²` Dirac operator built directly would be an independent check, and I have
 > not built one.
 
-That is now false in its second half, and the bullet is replaced by the result.
+That is now false in its second half, and the bullet is replaced by the
+result — the spectrum, derived, `13/13`. It should NOT be replaced by
+silence on frames: see §4's added addendum — the honest replacement bullet
+states the spectrum is derived AND that `χ`'s match to this operator's own
+`|λ|=1` eigenspinor is not yet explicitly verified (a frame-transport still
+owed), not "the caveat is fully closed."
 The `χ` in §1 can be called eigenfunctions of an operator this project built —
 still not a novelty claim, but no longer a borrowed identification.
 
