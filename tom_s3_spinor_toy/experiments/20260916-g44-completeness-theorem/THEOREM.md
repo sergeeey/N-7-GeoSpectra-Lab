@@ -31,6 +31,16 @@ passes in, the core computation has never needed a correction; every
 defect has been in the escape criteria or citation apparatus around it.
 **Still pending a fresh skeptic pass on rev 8 before this document is
 cited externally or propagated into `OPEN_BLOCKERS.md`/`pearl_registry`.**
+**Verification update (2026-09-18, `C199`):** the GENERAL algebraic
+principle `E1`'s Cauchy-Schwarz criterion relies on (an equivariant linear
+isomorphism forces equal dimension across the three relevant
+equivariant-Hom spaces, hence a strict inequality on those dimensions
+proves non-isomorphism) is now a `sorry`-free, machine-checked Lean 4
+theorem — `experiments/20260918-c199-lean-hom-schwarz-formalization/
+Homschwarz/Basic.lean`, `lake build` clean. This verifies the GENERAL
+mechanism only, not this document's specific `G₂`/`SU(3)`/`Spin(8)`
+numbers (those stay verified by sympy/numpy as before) — see that
+experiment's `claim.md` "What this does NOT mean" section.
 **Purpose:** upgrade the informal `G44 Information-Retention Gate` (C150,
 `experiments/20260904-c150-g44-information-retention-gate/GATE.md`) from a
 pre-filter heuristic into an explicit, citable theorem with a stated,
@@ -858,6 +868,11 @@ remains untested (§2b part 2).
 
 ## 5. Reproduction / verification trail
 
+- `experiments/20260918-c199-lean-hom-schwarz-formalization/decision.md`
+  (C199 — Lean 4 machine-checked proof of `E1`'s general Cauchy-Schwarz
+  mechanism; first "Strong"-tier verification in this project's own
+  Independent Verification Strength Ladder; does NOT re-verify this
+  document's specific numbers, see that decision's own scope section)
 - `experiments/20260620-g44-d4-triality/decision.md` (G44)
 - `experiments/20260705-g102-spin8-fiber-obstruction/decision.md` (G102, P1-P8 table — the primary mechanism)
 - `experiments/20260904-c150-g44-information-retention-gate/GATE.md` (C72/C63/C62 synthesis, the gate's own scope section — also the source of step 2's "isomorphic objects take equal values under any functor" line, corrected in rev 8 from a misattribution to `C72`)
