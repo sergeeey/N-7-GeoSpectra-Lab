@@ -1,6 +1,10 @@
 # C198 Decision — kernel LINE is exactly fixed across C73b's whole torsion-angle family; my own pre-registered prediction was WRONG
 
 **Date:** 2026-09-17
+**Methodology note:** the general pattern this experiment tests (kernel
+orientation vs. kernel dimension as separate diagnostics) is written up in
+full, on its own, at `docs/kernel_geometry_vs_dimension_pattern.md` — this
+file covers only THIS specific instance's result.
 **Verdict:** **MAIN CLAIM FALSE** (pre-registered prediction that the kernel
 direction would rotate is REJECTED). `Δ_geo=0` really does coincide with
 ZERO geometric movement of the kernel LINE across this specific family —
