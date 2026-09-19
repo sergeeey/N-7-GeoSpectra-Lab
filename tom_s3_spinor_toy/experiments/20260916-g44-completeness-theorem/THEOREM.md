@@ -868,6 +868,11 @@ remains untested (§2b part 2).
 
 ## 5. Reproduction / verification trail
 
+- `experiments/20260919-c200-morphism-mapping-audit/decision.md` (C200 — computed
+  signature ladder on `{8_v,8_s,8_c}`: `su(3)`/`g2` all pairs isomorphic; each of the
+  three `so(7)` copies singles out one channel and leaves exactly one pair isomorphic;
+  `so(8)` distinguishes all three; explicit matrices, `Hom` dims via G102's machinery.
+  Consistent with §0g's analytic argument; not a new theorem)
 - `experiments/20260918-c199-lean-hom-schwarz-formalization/decision.md`
   (C199 — Lean 4 machine-checked proof of `E1`'s general Cauchy-Schwarz
   mechanism; first "Strong"-tier verification in this project's own

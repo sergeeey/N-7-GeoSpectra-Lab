@@ -1,0 +1,68 @@
+=== T0: instrument controls ===
+  PC-M g2 v-s: hom=2 verdict=EXACT_ISOMORPHISM residual=8.409939411535561e-15 -> PASS
+  PC-M g2 s-c: hom=2 verdict=EXACT_ISOMORPHISM residual=1.0408340855860843e-15 -> PASS
+  PC-M g2 c-v: hom=2 verdict=EXACT_ISOMORPHISM residual=5.551115123125783e-16 -> PASS
+  PC-M su3 v-s: hom=6 verdict=EXACT_ISOMORPHISM residual=1.8318679906315083e-15 -> PASS
+  PC-M su3 s-c: hom=6 verdict=EXACT_ISOMORPHISM residual=3.3584246494910985e-15 -> PASS
+  PC-M su3 c-v: hom=6 verdict=EXACT_ISOMORPHISM residual=3.0184188481996443e-15 -> PASS
+  PC-M3 basis change: verdict=EXACT_ISOMORPHISM residual=1.0302869668521453e-13 -> PASS
+  NC-M1 so(8) v-s: hom=0 verdict=NO_STRUCTURAL_BRIDGE strict-CS-nonisomorphic=True -> PASS
+  PC-M4 (was NC-M2) g2 8_v vs shifted correspondence: hom=1 rank=1 invariants of 8_v=1 verdict=PARTIAL_OR_HOMOMORPHISM(shared proper submodule) -> PASS  [pre-registered Hom=0 was WRONG: shared trivial summand; control added POST HOC]
+  NC-M2a so(8) 8_v (irreducible) vs shifted correspondence: hom=0 verdict=NO_STRUCTURAL_BRIDGE -> PASS
+  PC-G1 8_v vs node-shuffled 8_v: EXACT_ISOMORPHISM -> PASS
+  PC-G2 8_v vs 8_s: exact=False quotient_perm={'1': '3', '3': '4', '4': '1', '2': '2'} raw=QUOTIENT_RELATION -> PASS
+  PC-G2 8_s vs 8_c: exact=False quotient_perm={'1': '1', '3': '4', '4': '3', '2': '2'} raw=QUOTIENT_RELATION -> PASS
+  PC-G2 8_c vs 8_v: exact=False quotient_perm={'1': '3', '3': '1', '4': '4', '2': '2'} raw=QUOTIENT_RELATION -> PASS
+  PC-P1 8_v vs 8_v + pendant node (known core 8): raw=PARTIAL_ISOMORPHISM core=8 -> PASS
+  PC-H1 directed path P4 onto directed 3-cycle (known surjective hom): raw=HOMOMORPHISM core=2 -> PASS
+  NC-H1 directed path P4 vs single edge (no surjective hom exists): raw=NO_STRUCTURAL_BRIDGE -> PASS
+  NC-G1 one edge moved (WL-signature proves non-isomorphic): exact=False raw=PARTIAL_ISOMORPHISM core=6 -> PASS
+  NC-G2 random wiring x300: EXACT-or-QUOTIENT rate=0.0000 core-size counts={'4': 23, '5': 258, '6': 19} -> PASS
+        raw PARTIAL rule (core >= 4 of 8) fires on chance graphs at rate 1.000 -> the literal PARTIAL threshold has NO discriminating power at n=8
+  -> instrument valid (all 19 controls): True
+
+=== T1a: signature ladder on {8_v, 8_s, 8_c} (module level, explicit matrices) ===
+  su3    dim= 8: vs:EXACT(hom=6,endA=6,endB=6), sc:EXACT(hom=6,endA=6,endB=6), cv:EXACT(hom=6,endA=6,endB=6)
+  g2     dim=14: vs:EXACT(hom=2,endA=2,endB=2), sc:EXACT(hom=2,endA=2,endB=2), cv:EXACT(hom=2,endA=2,endB=2)
+  so7_v  dim=21: vs:NO_ST(hom=0,endA=2,endB=1), sc:EXACT(hom=1,endA=1,endB=1), cv:NO_ST(hom=0,endA=1,endB=2)
+  so7_s  dim=21: vs:NO_ST(hom=0,endA=1,endB=2), sc:NO_ST(hom=0,endA=2,endB=1), cv:EXACT(hom=1,endA=1,endB=1)
+  so7_c  dim=21: vs:EXACT(hom=1,endA=1,endB=1), sc:NO_ST(hom=0,endA=1,endB=2), cv:NO_ST(hom=0,endA=2,endB=1)
+  so8    dim=28: vs:NO_ST(hom=0,endA=1,endB=1), sc:NO_ST(hom=0,endA=1,endB=1), cv:NO_ST(hom=0,endA=1,endB=1)
+
+=== T1b: so(8) weight graphs of the three channels (combinatorial level) ===
+  8_v vs 8_s: raw=QUOTIENT_RELATION perm={'1': '3', '3': '4', '4': '1', '2': '2'} null-rate=0.0000 calibrated=QUOTIENT_RELATION
+  8_s vs 8_c: raw=QUOTIENT_RELATION perm={'1': '1', '3': '4', '4': '3', '2': '2'} null-rate=0.0000 calibrated=QUOTIENT_RELATION
+  8_c vs 8_v: raw=QUOTIENT_RELATION perm={'1': '3', '3': '1', '4': '4', '2': '2'} null-rate=0.0000 calibrated=QUOTIENT_RELATION
+
+=== T2a: triality channels {v,s,c} vs SM generations {g1,g2,g3}  [ENCODING-CHOICE] ===
+  S1 unbroken-group indistinguishability: raw=EXACT_ISOMORPHISM (core=3, hom_ab=None, hom_ba=None) chance-EXACT-rate=1.000 calibrated=VACUOUS_EXACT_ISOMORPHISM
+  S2 S1 + pairwise distinguishability (symmetric): raw=EXACT_ISOMORPHISM (core=3, hom_ab=None, hom_ba=None) chance-EXACT-rate=1.000 calibrated=VACUOUS_EXACT_ISOMORPHISM
+  S3 cyclic triality action vs transitive mass order: raw=NO_STRUCTURAL_BRIDGE (core=2, hom_ab=None, hom_ba=None) chance-EXACT-rate=0.083 calibrated=NO_STRUCTURAL_BRIDGE
+  S4 union of S2 and S3: raw=NO_STRUCTURAL_BRIDGE (core=2, hom_ab=None, hom_ba=None) chance-EXACT-rate=0.103 calibrated=NO_STRUCTURAL_BRIDGE
+  S3 with direction thrown away (both sides symmetric): raw=EXACT_ISOMORPHISM  <- direction is the only thing separating S3's verdict from an EXACT match
+  NOTE: on 3 nodes chance alone yields an exact match at the rates above, so no POSITIVE bridge on these encodings can be calibrated at alpha=0.05; the NO_BRIDGE verdicts are exhaustive facts about the encodings, not statistics.
+
+=== T2b: C198 pipeline, circulant/Lovasz (G_A) vs Dirac-on-S3xS6 kernel (G_B)  [ENCODING-CHOICE] ===
+  attribute level: exact=False core=0 raw=NO_STRUCTURAL_BRIDGE; role-level graphs identical by construction (one shared edge list): True
+  => NOT a test. The only content is the author's attribute table (where the analogy stops):
+    - obj: 'circulant graph' ~ 'bundle on S3xS6 + connection family'
+    - grp: 'abelian (Z_n)' ~ 'non-abelian (SU(2), SU(3) isotropy)'
+    - basis: '1-dim Fourier characters' ~ 'multi-dim irreps (Peter-Weyl)'
+    - prob: 'SDP (Lovasz theta)' ~ 'Dirac operator D(nabla)'
+    - red: '1x1 blocks (LP)' ~ 'multiplicity matrix blocks A_lambda'
+    - ker: 'random Fourier kernel, dim varies' ~ 'dim 1, stable over 13 angles'
+    - shape: 'null-space inequality PROVED' ~ 'kernel LINE fixed (C198, exact)'
+    - concl: 'numeric bound on invariant' ~ 'Delta_geo diagnostic, no rotation'
+
+=== T2c: round89 Killing constants (project: +1/2, -1/2) vs AHL2023 S3 statement (+1/2, +1/2)  [ENCODING-CHOICE] ===
+  magnitude layer only (two edgeless labelled nodes, trivially matchable): EXACT_ISOMORPHISM
+  full graph, strict edge labels: NO_STRUCTURAL_BRIDGE; with the label alphabet twisted opp<->same (the identification round89 shows physics forbids): QUOTIENT_RELATION -> the verdict flips on an encoding convention, not on data
+  sign-relation layer alone, strict labels: NO_STRUCTURAL_BRIDGE
+  LAYERED result = magnitude EXACT_ISOMORPHISM + sign relation NO_STRUCTURAL_BRIDGE; the single-graph classifier returns NO_STRUCTURAL_BRIDGE. The 5-outcome taxonomy has no verdict for a layered result (round89's own documented verdict, PARTIAL_OPPOSITE_SIGN_STRUCTURAL, is a layered statement).
+
+=== T2d: MethodOps 8-stage proposal (G_A) vs this stack's meta-loop.md (G_B)  [ENCODING-CHOICE, CIRCULAR] ===
+  |G_A|=15 |G_B|=16: raw=PARTIAL_ISOMORPHISM core=13/15 hom_ab=None hom_ba=False(cap_hit=False)
+  null: n=8 trials, step budget exhausted in 8; verdict: PARTIAL_ISOMORPHISM(UNCALIBRATED: null search budget exhausted in 8/8 trials)
+  CIRCULARITY: G_B was authored FROM G_A's vocabulary; the node correspondence is by construction, so the verdict is a check on my reading of the braces, not evidence about the world.
+
+wrote results_c200.json

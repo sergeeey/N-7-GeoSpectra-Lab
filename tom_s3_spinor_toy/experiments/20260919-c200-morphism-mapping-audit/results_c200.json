@@ -1,0 +1,707 @@
+{
+  "seed": 200,
+  "n_null": 300,
+  "alpha": 0.05,
+  "controls": {
+    "PC-M_g2_vs": {
+      "hom": 2,
+      "end_a": 2,
+      "end_b": 2,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 8.409939411535561e-15,
+      "pass": true
+    },
+    "PC-M_g2_sc": {
+      "hom": 2,
+      "end_a": 2,
+      "end_b": 2,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 1.0408340855860843e-15,
+      "pass": true
+    },
+    "PC-M_g2_cv": {
+      "hom": 2,
+      "end_a": 2,
+      "end_b": 2,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 5.551115123125783e-16,
+      "pass": true
+    },
+    "PC-M_su3_vs": {
+      "hom": 6,
+      "end_a": 6,
+      "end_b": 6,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 1.8318679906315083e-15,
+      "pass": true
+    },
+    "PC-M_su3_sc": {
+      "hom": 6,
+      "end_a": 6,
+      "end_b": 6,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 3.3584246494910985e-15,
+      "pass": true
+    },
+    "PC-M_su3_cv": {
+      "hom": 6,
+      "end_a": 6,
+      "end_b": 6,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 3.0184188481996443e-15,
+      "pass": true
+    },
+    "PC-M3_basis_change": {
+      "hom": 2,
+      "end_a": 2,
+      "end_b": 2,
+      "strict_cauchy_schwarz_nonisomorphic": false,
+      "verdict": "EXACT_ISOMORPHISM",
+      "invertible": true,
+      "rank": 8,
+      "residual": 1.0302869668521453e-13,
+      "pass": true
+    },
+    "NC-M1_so8_v_s": {
+      "hom": 0,
+      "end_a": 1,
+      "end_b": 1,
+      "strict_cauchy_schwarz_nonisomorphic": true,
+      "verdict": "NO_STRUCTURAL_BRIDGE",
+      "invertible": false,
+      "rank": 0,
+      "residual": null,
+      "pass": true
+    },
+    "PC-M4_g2_shift_shares_only_trivial_summand": {
+      "hom": 1,
+      "end_a": 2,
+      "end_b": 2,
+      "strict_cauchy_schwarz_nonisomorphic": true,
+      "verdict": "PARTIAL_OR_HOMOMORPHISM(shared proper submodule)",
+      "invertible": false,
+      "rank": 1,
+      "residual": null,
+      "invariants_of_8v_under_g2": 1,
+      "preregistered_expectation_hom0_was_wrong": true,
+      "pass": true
+    },
+    "NC-M2a_so8_shift": {
+      "hom": 0,
+      "end_a": 1,
+      "end_b": 1,
+      "strict_cauchy_schwarz_nonisomorphic": true,
+      "verdict": "NO_STRUCTURAL_BRIDGE",
+      "invertible": false,
+      "rank": 0,
+      "residual": null,
+      "pass": true
+    },
+    "PC-G1_shuffle": {
+      "raw": "EXACT_ISOMORPHISM",
+      "pass": true
+    },
+    "PC-G2_vs": {
+      "raw": "QUOTIENT_RELATION",
+      "perm": {
+        "1": "3",
+        "3": "4",
+        "4": "1",
+        "2": "2"
+      },
+      "pass": true
+    },
+    "PC-G2_sc": {
+      "raw": "QUOTIENT_RELATION",
+      "perm": {
+        "1": "1",
+        "3": "4",
+        "4": "3",
+        "2": "2"
+      },
+      "pass": true
+    },
+    "PC-G2_cv": {
+      "raw": "QUOTIENT_RELATION",
+      "perm": {
+        "1": "3",
+        "3": "1",
+        "4": "4",
+        "2": "2"
+      },
+      "pass": true
+    },
+    "PC-P1_pendant_partial": {
+      "raw": "PARTIAL_ISOMORPHISM",
+      "core_size": 8,
+      "pass": true
+    },
+    "PC-H1_path4_onto_cycle3": {
+      "raw": "HOMOMORPHISM",
+      "hom_ab": true,
+      "pass": true
+    },
+    "NC-H1_path4_onto_edge": {
+      "raw": "NO_STRUCTURAL_BRIDGE",
+      "hom_ab": false,
+      "pass": true
+    },
+    "NC-G1_edge_move": {
+      "raw": "PARTIAL_ISOMORPHISM",
+      "core_size": 6,
+      "pass": true
+    },
+    "NC-G2_random_wiring": {
+      "n": 300,
+      "exact_rate": 0.0,
+      "exact_or_quotient_rate": 0.0,
+      "core_ge_obs_rate": null,
+      "core_size_counts": {
+        "4": 23,
+        "5": 258,
+        "6": 19
+      },
+      "cap_hits": 0,
+      "chance_partial_rate": 1.0,
+      "pass": true
+    }
+  },
+  "instrument_valid": true,
+  "T1a_ladder": {
+    "su3": {
+      "dim": 8,
+      "vs": {
+        "hom": 6,
+        "end_a": 6,
+        "end_b": 6,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 1.8318679906315083e-15
+      },
+      "sc": {
+        "hom": 6,
+        "end_a": 6,
+        "end_b": 6,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 3.3584246494910985e-15
+      },
+      "cv": {
+        "hom": 6,
+        "end_a": 6,
+        "end_b": 6,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 3.0184188481996443e-15
+      }
+    },
+    "g2": {
+      "dim": 14,
+      "vs": {
+        "hom": 2,
+        "end_a": 2,
+        "end_b": 2,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 8.409939411535561e-15
+      },
+      "sc": {
+        "hom": 2,
+        "end_a": 2,
+        "end_b": 2,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 1.0408340855860843e-15
+      },
+      "cv": {
+        "hom": 2,
+        "end_a": 2,
+        "end_b": 2,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 5.551115123125783e-16
+      }
+    },
+    "so7_v": {
+      "dim": 21,
+      "vs": {
+        "hom": 0,
+        "end_a": 2,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      },
+      "sc": {
+        "hom": 1,
+        "end_a": 1,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 5.551115123125783e-16
+      },
+      "cv": {
+        "hom": 0,
+        "end_a": 1,
+        "end_b": 2,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      }
+    },
+    "so7_s": {
+      "dim": 21,
+      "vs": {
+        "hom": 0,
+        "end_a": 1,
+        "end_b": 2,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      },
+      "sc": {
+        "hom": 0,
+        "end_a": 2,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      },
+      "cv": {
+        "hom": 1,
+        "end_a": 1,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 9.992007221626409e-16
+      }
+    },
+    "so7_c": {
+      "dim": 21,
+      "vs": {
+        "hom": 1,
+        "end_a": 1,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": false,
+        "verdict": "EXACT_ISOMORPHISM",
+        "invertible": true,
+        "rank": 8,
+        "residual": 6.661338147750939e-16
+      },
+      "sc": {
+        "hom": 0,
+        "end_a": 1,
+        "end_b": 2,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      },
+      "cv": {
+        "hom": 0,
+        "end_a": 2,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      }
+    },
+    "so8": {
+      "dim": 28,
+      "vs": {
+        "hom": 0,
+        "end_a": 1,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      },
+      "sc": {
+        "hom": 0,
+        "end_a": 1,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      },
+      "cv": {
+        "hom": 0,
+        "end_a": 1,
+        "end_b": 1,
+        "strict_cauchy_schwarz_nonisomorphic": true,
+        "verdict": "NO_STRUCTURAL_BRIDGE",
+        "invertible": false,
+        "rank": 0,
+        "residual": null
+      }
+    }
+  },
+  "T1b_weight_graphs": {
+    "vs": {
+      "classify": {
+        "n_a": 8,
+        "n_b": 8,
+        "exact": false,
+        "quotient_label_perm": {
+          "1": "3",
+          "3": "4",
+          "4": "1",
+          "2": "2"
+        },
+        "core_size": 5,
+        "core_nodes": [
+          "(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+          "(Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+          "(Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1))",
+          "(Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1))",
+          "(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(-1, 1))"
+        ],
+        "core_threshold": 4,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "QUOTIENT_RELATION",
+        "quotient_kind": "twisted isomorphism: same-size graphs related by a declared automorphism of the edge-label alphabet (NOT a quotient map)"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 0.0,
+        "exact_or_quotient_rate": 0.0,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 0.0,
+        "calibrated": "QUOTIENT_RELATION",
+        "null_rate": 0.0
+      }
+    },
+    "sc": {
+      "classify": {
+        "n_a": 8,
+        "n_b": 8,
+        "exact": false,
+        "quotient_label_perm": {
+          "1": "1",
+          "3": "4",
+          "4": "3",
+          "2": "2"
+        },
+        "core_size": 5,
+        "core_nodes": [
+          "(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2))",
+          "(Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2))",
+          "(Fraction(1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(-1, 2))",
+          "(Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2), Fraction(1, 2))",
+          "(Fraction(-1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(1, 2))"
+        ],
+        "core_threshold": 4,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "QUOTIENT_RELATION",
+        "quotient_kind": "twisted isomorphism: same-size graphs related by a declared automorphism of the edge-label alphabet (NOT a quotient map)"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 0.0,
+        "exact_or_quotient_rate": 0.0,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 0.0,
+        "calibrated": "QUOTIENT_RELATION",
+        "null_rate": 0.0
+      }
+    },
+    "cv": {
+      "classify": {
+        "n_a": 8,
+        "n_b": 8,
+        "exact": false,
+        "quotient_label_perm": {
+          "1": "3",
+          "3": "1",
+          "4": "4",
+          "2": "2"
+        },
+        "core_size": 5,
+        "core_nodes": [
+          "(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2))",
+          "(Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(1, 2))",
+          "(Fraction(1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(1, 2))",
+          "(Fraction(-1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2))",
+          "(Fraction(-1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(-1, 2))"
+        ],
+        "core_threshold": 4,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "QUOTIENT_RELATION",
+        "quotient_kind": "twisted isomorphism: same-size graphs related by a declared automorphism of the edge-label alphabet (NOT a quotient map)"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 0.0,
+        "exact_or_quotient_rate": 0.0,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 0.0,
+        "calibrated": "QUOTIENT_RELATION",
+        "null_rate": 0.0
+      }
+    }
+  },
+  "T2a": {
+    "S1 unbroken-group indistinguishability": {
+      "raw": {
+        "n_a": 3,
+        "n_b": 3,
+        "exact": true,
+        "quotient_label_perm": null,
+        "core_size": 3,
+        "core_nodes": [
+          "v",
+          "s",
+          "c"
+        ],
+        "core_threshold": 3,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "EXACT_ISOMORPHISM"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 1.0,
+        "exact_or_quotient_rate": 1.0,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 1.0,
+        "calibrated": "VACUOUS_EXACT_ISOMORPHISM",
+        "null_rate": 1.0
+      }
+    },
+    "S2 S1 + pairwise distinguishability (symmetric)": {
+      "raw": {
+        "n_a": 3,
+        "n_b": 3,
+        "exact": true,
+        "quotient_label_perm": null,
+        "core_size": 3,
+        "core_nodes": [
+          "v",
+          "s",
+          "c"
+        ],
+        "core_threshold": 3,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "EXACT_ISOMORPHISM"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 1.0,
+        "exact_or_quotient_rate": 1.0,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 1.0,
+        "calibrated": "VACUOUS_EXACT_ISOMORPHISM",
+        "null_rate": 1.0
+      }
+    },
+    "S3 cyclic triality action vs transitive mass order": {
+      "raw": {
+        "n_a": 3,
+        "n_b": 3,
+        "exact": false,
+        "quotient_label_perm": null,
+        "core_size": 2,
+        "core_nodes": [
+          "v",
+          "s"
+        ],
+        "core_threshold": 3,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "NO_STRUCTURAL_BRIDGE"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 0.08333333333333333,
+        "exact_or_quotient_rate": 0.08333333333333333,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 0.08333333333333333,
+        "calibrated": "NO_STRUCTURAL_BRIDGE",
+        "null_rate": null
+      }
+    },
+    "S4 union of S2 and S3": {
+      "raw": {
+        "n_a": 3,
+        "n_b": 3,
+        "exact": false,
+        "quotient_label_perm": null,
+        "core_size": 2,
+        "core_nodes": [
+          "v",
+          "s"
+        ],
+        "core_threshold": 3,
+        "hom_ab": null,
+        "hom_ba": null,
+        "hom_cap_hit": false,
+        "raw": "NO_STRUCTURAL_BRIDGE"
+      },
+      "null": {
+        "n": 300,
+        "exact_rate": 0.10333333333333333,
+        "exact_or_quotient_rate": 0.10333333333333333,
+        "core_ge_obs_rate": null,
+        "core_size_counts": {},
+        "cap_hits": 0
+      },
+      "calibrated": {
+        "chance_exact_or_quotient_rate": 0.10333333333333333,
+        "calibrated": "NO_STRUCTURAL_BRIDGE",
+        "null_rate": null
+      }
+    },
+    "S3-symmetrised (direction thrown away)": {
+      "raw": "EXACT_ISOMORPHISM"
+    }
+  },
+  "T2b": {
+    "attribute_level": {
+      "exact": false,
+      "core_size": 0,
+      "raw": "NO_STRUCTURAL_BRIDGE"
+    },
+    "role_level_identical_by_construction": true,
+    "attribute_table_differences": [
+      "obj: 'circulant graph' ~ 'bundle on S3xS6 + connection family'",
+      "grp: 'abelian (Z_n)' ~ 'non-abelian (SU(2), SU(3) isotropy)'",
+      "basis: '1-dim Fourier characters' ~ 'multi-dim irreps (Peter-Weyl)'",
+      "prob: 'SDP (Lovasz theta)' ~ 'Dirac operator D(nabla)'",
+      "red: '1x1 blocks (LP)' ~ 'multiplicity matrix blocks A_lambda'",
+      "ker: 'random Fourier kernel, dim varies' ~ 'dim 1, stable over 13 angles'",
+      "shape: 'null-space inequality PROVED' ~ 'kernel LINE fixed (C198, exact)'",
+      "concl: 'numeric bound on invariant' ~ 'Delta_geo diagnostic, no rotation'"
+    ]
+  },
+  "T2c": {
+    "magnitude_layer": "EXACT_ISOMORPHISM",
+    "sign_relation_layer_strict": "NO_STRUCTURAL_BRIDGE",
+    "single_graph_strict": "NO_STRUCTURAL_BRIDGE",
+    "single_graph_with_sign_labels_identified": "QUOTIENT_RELATION"
+  },
+  "T2d": {
+    "classify": {
+      "n_a": 15,
+      "n_b": 16,
+      "exact": false,
+      "quotient_label_perm": null,
+      "core_size": 13,
+      "core_nodes": [
+        "CLASSIFY",
+        "CONTRACT",
+        "SUBSTRATE",
+        "ROUTE",
+        "EXECUTE",
+        "VERIFY",
+        "ADVERSARIAL",
+        "DECIDE",
+        "RECOMPOSE",
+        "NULL_RESULT",
+        "POSTMORTEM",
+        "REPLAN",
+        "METHOD_UPDATE"
+      ],
+      "core_threshold": 8,
+      "hom_ab": null,
+      "hom_ba": false,
+      "hom_cap_hit": false,
+      "raw": "PARTIAL_ISOMORPHISM"
+    },
+    "null": {
+      "n": 8,
+      "exact_rate": 0.0,
+      "exact_or_quotient_rate": 0.0,
+      "core_ge_obs_rate": 0.0,
+      "core_size_counts": {},
+      "cap_hits": 8
+    },
+    "calibrated": {
+      "chance_exact_or_quotient_rate": 0.0,
+      "calibrated": "PARTIAL_ISOMORPHISM(UNCALIBRATED: null search budget exhausted in 8/8 trials)",
+      "null_rate": null
+    }
+  }
+}
