@@ -153,7 +153,7 @@ decision is written.
 declared signature and on null calibration); adopt only the AMENDED protocol, only for
 computed pairs; the raw five-outcome prompt is not adopted as a standalone gate; the
 hand-encoded targets (T2a-T2d) are not findings. Independent skeptic pass: WEAKENED,
-all findings answered in `decision.md` (fixes not re-verified by a second pass).
+all findings answered in `decision.md` (fixes checked by a brute-force oracle, `verify_c200_bruteforce.py`, 0 mismatches; no second skeptic pass).
 Three pre-registered predictions were NOT met (NC-M2 malformed check, T2b tautology,
 T2c single-graph PARTIAL) and are recorded as such.
 

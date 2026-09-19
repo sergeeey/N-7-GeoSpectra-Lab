@@ -6,7 +6,8 @@ where it can be checked against known answers (19/19 controls), the amended
 protocol is worth keeping for COMPUTED pairs, the raw prompt as written is NOT
 adopted as a standalone gate, and the hand-encoded targets are NOT findings.
 Independent skeptic pass (context-blind): **WEAKENED** — every finding is answered in
-the table at the end; the fixes were NOT re-verified by a second skeptic pass.
+the table at the end; the fixes were checked by a brute-force oracle (0 mismatches,
+same author), not by a second skeptic pass.
 
 ---
 
@@ -205,7 +206,16 @@ vocabulary; do not cite T2 targets as evidence.
 | 6 | QUOTIENT is the wrong name for the twisted isomorphism | **Accepted** as F2; `quotient_kind` recorded. |
 | 7 | Minor: `hom` "False" where "not tested"; `core_size=1` when none found; `None` calibration treated as failure; hard-coded conclusions; NC-M2 replacement post hoc; one fixed-seed generic Hom element | **Fixed** (n/a, core size, calibration branches, conditional printing); **accepted** (post-hoc controls flagged; single seed for a generic element is a minor residual). |
 
-**Not done:** no second skeptic pass on the fixes. Dismissed: nothing.
+**Fix verification (added after the first write-up):** `verify_c200_bruteforce.py` /
+`verify_output.txt` compare `find_iso`, `max_common_induced` and `find_surj_hom` against
+exhaustive enumeration on 400 random labelled digraphs (<= 5 nodes): **0 mismatches**; and
+check the post-review fixes on known answers (`hom` reported `n/a` for equal-size pairs,
+`core_size = 0` with disjoint node labels, label-twist QUOTIENT, all `UNCALIBRATED`
+branches of `calibrate`). This is same-author verification, not a second skeptic pass; no
+second skeptic pass was run. Dismissed: nothing.
+
+**Adopted:** the amended protocol lives in `docs/morphism_audit_protocol.md` (optional
+pre-check, computed pairs only).
 
 ## Pre-registered predictions — scoreboard
 
