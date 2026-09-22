@@ -128,6 +128,43 @@ is available in this environment either. Full detail:
 This round's own `[VERIFIED-INDEPENDENT-INTERNAL]` status is unchanged —
 neither strengthened nor weakened.
 
+## Addendum (2026-09-23) — maintainer-facing interpretation ceiling, NOT part of
+the outbound external-verification packet
+
+While preparing `ROUND59_EXTERNAL_VERIFICATION_PACKET/` for an actual blind
+external reviewer, a review pass flagged that this project's own LATER work
+(`C143`/`C148`, `Δ_geo = dim ker D − F_graded`) changes what a clean external
+PASS on this round would mean, and that this reasoning must NOT be given to
+the verifier before (or instead of) their own computation — it would leak
+interpretation of the result, not just the result itself. Recorded here,
+internally, instead:
+
+Even a perfect external reproduction of `rank(D⁺|₁)=1` (this round's own
+claim) does not by itself tell us that this kernel dimension carries any
+DYNAMICAL content beyond what representation theory already forces. `C148`'s
+own diagnostic, applied across this project's other kernel-dimension
+findings, consistently finds `Δ_geo=0` — i.e. the observed kernel dimension
+matches the representation-theoretic floor exactly, with no residual
+"extra" geometric information beyond what the isotypic decomposition alone
+predicts. This round's own Route C analytic derivation already says the
+same thing in different words (§ above: "Term2 ≡ 0 ... by rep theory (Λ²⊗Λ²
+= 3⊗3 has no SU(3) singlet)" — the rank-1 result is representation-forced,
+not a dynamical accident of this specific geometry).
+
+**Consequence for how to read a future external PASS:** it would raise this
+claim's OWN verification-strength status (external human review, per the
+project's Independent Verification Strength Ladder) and would be a genuine,
+valuable, publishable strengthening of the mathematical/computational
+chain. It would NOT, on its own, raise confidence that this trivial-block
+mode corresponds to a physical fermion generation, and does NOT bear on
+`N_gen=3` — that remains gated on the separate, still-open
+generation-selection/product-operator problem this round never claimed to
+address (see `ROUND59_EXTERNAL_VERIFICATION_PACKET/problem_statement.md`'s
+own scope section, which now states the non-technical half of this ceiling
+to the verifier directly — the `C143`/`C148` mechanism reasoning above is
+deliberately NOT included there, since it could hint at how to interpret
+whatever rank the verifier finds before they find it).
+
 ## Files
 
 - `claim.md` — frozen BEFORE the run (kill criteria intact, none fired)
