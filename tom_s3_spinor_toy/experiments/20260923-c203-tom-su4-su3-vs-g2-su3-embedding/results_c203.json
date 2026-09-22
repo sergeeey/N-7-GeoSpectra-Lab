@@ -1,0 +1,88 @@
+{
+  "side_a": {
+    "dim_g2": 14,
+    "dim_su3": 8,
+    "stab_err": 2.329359079968483e-16,
+    "closure_err": 7.216449660063518e-16
+  },
+  "side_b": {
+    "clifford_err": 0.0,
+    "chirality_sq_err": 0.0,
+    "anticomm_err": 0.0,
+    "max_recon_err": 2.514331927660129e-16,
+    "max_imag_coeff": 2.0122792321330962e-16,
+    "closure_err": 2.0745806700915864e-16
+  },
+  "g10b_negative_control": {
+    "dim": 8,
+    "closure_err": 6.661338147750939e-16
+  },
+  "intertwiner_a_vs_b": {
+    "n_free": 0,
+    "best_err": Infinity,
+    "best_u": null,
+    "orthogonal_found": false,
+    "best_conformality_defect": Infinity
+  },
+  "intertwiner_a_vs_c_NEGATIVE_CONTROL": {
+    "n_free": 0,
+    "best_err": Infinity,
+    "best_u": null,
+    "orthogonal_found": false,
+    "best_conformality_defect": Infinity
+  },
+  "cartan_spectrum_ILLUSTRATIVE_ONLY": {
+    "spectrum_a": [
+      0.024303403258553583,
+      0.024303403258553583,
+      1.4230354619539576,
+      1.4230354619539576,
+      1.4473388652125114,
+      1.4473388652125114
+    ],
+    "spectrum_b": [
+      0.19471613573346222,
+      0.19471613573346222,
+      1.3280434215162862,
+      1.3280434215162862,
+      1.522759557249748,
+      1.522759557249748
+    ],
+    "spectrum_c_g10b": [
+      0.171184149813435,
+      0.171184149813435,
+      2.886922544105127,
+      2.886922544105127,
+      3.0581066939185617,
+      3.0581066939185617
+    ],
+    "max_diff_a_vs_b": 0.17041273247490862,
+    "max_diff_a_vs_c": 1.6107678287060503
+  },
+  "casimir_ratio": {
+    "A": {
+      "lambda_rep": 0.4444444444444442,
+      "lambda_adj": 1.0000000000000004,
+      "ratio": 0.444444444444444,
+      "rep_scalar_defect": 5.551115123125783e-16,
+      "adj_scalar_defect": 2.1094237467877974e-15,
+      "killing_det": 6561.000000000051
+    },
+    "B": {
+      "lambda_rep": 0.4444444444444445,
+      "lambda_adj": 0.9999999999999996,
+      "ratio": 0.4444444444444447,
+      "rep_scalar_defect": 2.7755575615628914e-16,
+      "adj_scalar_defect": 1.1102230246251565e-15,
+      "killing_det": 6561.000000000016
+    },
+    "C_g10b": {
+      "lambda_rep": 0.4444444444444445,
+      "lambda_adj": 1.0,
+      "ratio": 0.4444444444444445,
+      "rep_scalar_defect": 1.6653345369377348e-16,
+      "adj_scalar_defect": 2.220446049250313e-16,
+      "killing_det": 322486271.9999993
+    }
+  }
+}
