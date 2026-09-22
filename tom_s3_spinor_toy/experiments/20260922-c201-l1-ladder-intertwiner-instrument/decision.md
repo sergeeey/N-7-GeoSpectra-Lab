@@ -1,10 +1,17 @@
 # C201 Decision — McMurry 6.3(a) tool-verified; T_i U = U L_i intertwiner test pre-validated on a known case
 
 **Date:** 2026-09-22
-**Verdict: PROMOTE.** Both pre-registered claims confirmed by exact symbolic
-computation (`sympy`), zero approximation. One real bug was caught and fixed
-during the run (see below) — a hand-typed Cartesian generator had a sign error,
-diagnosed correctly as a bad control, not a physics disagreement.
+**Verdict: PROMOTE, narrowly scoped.** Both pre-registered claims confirmed by
+exact symbolic computation (`sympy`), zero approximation. One real bug was
+caught and fixed during the run (see below) — a hand-typed Cartesian generator
+had a sign error, diagnosed correctly as a bad control, not a physics
+disagreement.
+
+**Scope correction (added after review):** everything below is established
+for the CONTROL l=1 case only. Nothing here establishes irreducibility or
+representation-equivalence of any object in Tom Lawrence's own construction —
+this round is instrument calibration on a known sample, not a finding about
+his unseen (123)-(125). See "Scope, follow-ups, parked checks" below.
 
 ## Results
 
@@ -97,6 +104,46 @@ independently pinned down that the spherical side was correct.
    not to send a "we found the error" message.
 3. Does NOT touch this project's own G2/SU(3)/Spin(8) triality-channel
    physics (OB1, N_gen=3) — unrelated substrate (l=1 of so(3), not S3xS6).
+
+## Scope, follow-ups, parked checks (added after review)
+
+**The Part 3 FAIL was a genuine, unplanned negative control, not a designed
+one.** It is real evidence the pipeline can say "no" to an inconsistent input
+(caught its own sign error via the algebra assertion, before any equivalence
+claim was made) — stronger than a test that only ever confirms formulas it was
+itself built from. But it was an accident, not pre-registered as a negative
+control, and should not be cited as if it were a deliberately engineered one.
+
+**Pre-registered outcome space for when Tom's real (123)-(125) arrive**
+(decision tree, not yet run against real data):
+
+| Result of `T_i^Tom U = U L_i` | Reading |
+|---|---|
+| `T_i^Tom` itself fails `[Tx,Ty]=iTz` etc. | Cannot conclude anything about equivalence yet -- audit normalization, sign, `i` factors, and basis ORDER of his matrices first (this is a check on the input, same discipline as Part 3's own bug) |
+| Nondegenerate `U` found, independently confirmed on the held-out third generator | Same `j=1` representation as ours, in a different basis/convention -- not representation-theoretic novelty, but not an error either |
+| Only degenerate (non-invertible) intertwiners exist | Partial shared content, not full equivalence |
+| `Hom=0` (no intertwiner at all), both sides independently passing their own algebra check | Genuinely different representation-theoretic objects |
+
+**Two checks parked, NOT run in this round (no new round needed to add them
+later):**
+
+1. **Deliberate negative control.** Add a permanent unit test that injects a
+   wrong sign/coefficient into one generator and asserts the equivalence gate
+   rejects it -- converts Part 3's accidental FAIL into a designed one.
+2. **Full-rotation element `U(2*pi)`.** The intertwiner/Hom test only checks
+   whether two representations are the SAME dimension-3 object; it does not
+   distinguish integer spin from genuine half-integer (spinorial, doubly-valued
+   under SO(3)) content, which is the actual physical question behind Tom's
+   "spinor multiplet" argument. The discriminator is exact and already
+   confirmed on our own control: with `Lz=diag(1,0,-1)`,
+   `U(2*pi)=exp(-2*pi*i*Lz)=diag(1,1,1)=+I` exactly (integer eigenvalues make
+   this immediate, not requiring a fresh script) -- confirming l=1 is
+   integer-spin, as it must be. A genuine half-integer representation would give
+   `U(2*pi)=-I`, `U(4*pi)=+I`. **Trigger for building this as its own
+   instrument (with its own known-case positive control on spin-1/2 Pauli
+   generators, giving `U(2*pi)=-I`, before pointing it at Tom's object):**
+   only once Tom's own multiplet is specified concretely enough to build its
+   rotation operator, not before.
 
 ## Reproduction
 

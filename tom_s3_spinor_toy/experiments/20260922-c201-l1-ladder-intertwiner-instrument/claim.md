@@ -80,11 +80,17 @@ to Tom Lawrence's own (123)-(125) matrices once received."
 
 ## Verdict
 
-**PROMOTE.** All pre-registered checks pass by exact symbolic computation
-(`sympy`, zero approximation). One real bug was caught and fixed during the
-run: a hand-typed Cartesian generator had a sign error, correctly diagnosed as
-a bad control (Part 2 had already independently verified the spherical side),
-not a physics disagreement. See `decision.md` for full detail and what this
-means for the Tom Lawrence correspondence.
+**PROMOTE, narrowly scoped.** All pre-registered checks pass by exact symbolic
+computation (`sympy`, zero approximation), on the CONTROL l=1 case only. One
+real bug was caught and fixed during the run: a hand-typed Cartesian generator
+had a sign error, correctly diagnosed as a bad control (Part 2 had already
+independently verified the spherical side), not a physics disagreement --
+recorded as a genuine but UNPLANNED negative control, not a designed one. Two
+follow-up checks (a deliberate negative-control unit test; a `U(2*pi)` full-
+rotation discriminator for genuine half-integer/spinorial content, which the
+Hom/intertwiner test alone cannot distinguish from ordinary integer spin) are
+parked with explicit trigger conditions in `decision.md`, not run this round.
+Nothing here establishes anything about Tom Lawrence's own (123)-(125) --
+those remain unseen.
 
-Status: CLOSED PROMOTE.
+Status: CLOSED PROMOTE (instrument calibration only).
