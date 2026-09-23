@@ -116,13 +116,12 @@ gets the same "verify before use" treatment as an agent's).
 
 ## What this means for the Tom Lawrence correspondence
 
-Both pieces Tom explicitly asked for are now done, with full workings
-captured (not just final answers) -- ready to include in the next reply.
-NOT sent yet; per the standing DO NOT INITIATE CONTACT rule, sending
-requires the user's own explicit decision. Tom also asked separately for
-better equation formatting ("Word's equation editor... or even better,
-LaTeX") -- a formatting-only question, not addressed by this round, left
-for the letter-assembly step.
+Both pieces Tom explicitly asked for, plus the Part 3 complex-basis
+reconciliation, went out in the reply letter -- typeset as LaTeX/PDF per
+Tom's own stated preference ("Word's equation editor... or even better,
+LaTeX"). **SENT 2026-09-24** (`correspondence/DRAFT_REPLY_TO_TOM_2026-09-
+23_ladder-operators_rev1.pdf`, gitignored, not in this repo). Awaiting
+reply; DO NOT INITIATE CONTACT stands for any further message.
 
 ## Reproduce
 
