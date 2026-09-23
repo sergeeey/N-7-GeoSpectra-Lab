@@ -105,5 +105,55 @@
       "L_plus_on_plus_combo_is_zero": true,
       "L_minus_on_minus_combo_is_zero": true
     }
+  },
+  "part_c_reconcile": {
+    "y10_cart": "sqrt(3)*z/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+    "y11_cart": "-sqrt(6)*(x + I*y)/(4*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+    "y1m1_cart": "sqrt(6)*(x - I*y)/(4*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+    "checks": [
+      {
+        "action": "L_+ Y_{1,-1} (Cartesian-built)",
+        "lhs": "sqrt(6)*z/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "compared_to": "sqrt(2)*Y_{1,0} = sqrt(6)*z/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "residual": "0",
+        "matches": true
+      },
+      {
+        "action": "L_+ Y_{1,0} (Cartesian-built)",
+        "lhs": "sqrt(3)*(-x - I*y)/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "compared_to": "sqrt(2)*Y_{1,1} = sqrt(3)*(-x - I*y)/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "residual": "0",
+        "matches": true
+      },
+      {
+        "action": "L_+ Y_{1,1} (Cartesian-built)",
+        "lhs": "0",
+        "compared_to": "0 = 0",
+        "residual": "0",
+        "matches": true
+      },
+      {
+        "action": "L_- Y_{1,0} (Cartesian-built)",
+        "lhs": "sqrt(3)*(x - I*y)/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "compared_to": "sqrt(2)*Y_{1,-1} = sqrt(3)*(x - I*y)/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "residual": "0",
+        "matches": true
+      },
+      {
+        "action": "L_- Y_{1,1} (Cartesian-built)",
+        "lhs": "sqrt(6)*z/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "compared_to": "sqrt(2)*Y_{1,0} = sqrt(6)*z/(2*sqrt(pi)*sqrt(x**2 + y**2 + z**2))",
+        "residual": "0",
+        "matches": true
+      },
+      {
+        "action": "L_- Y_{1,-1} (Cartesian-built)",
+        "lhs": "0",
+        "compared_to": "0 = 0",
+        "residual": "0",
+        "matches": true
+      }
+    ],
+    "all_pass": true
   }
 }

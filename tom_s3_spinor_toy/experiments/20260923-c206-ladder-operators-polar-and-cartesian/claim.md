@@ -89,8 +89,14 @@ intermediate steps captured. Part B: the six Cartesian L_+/L_- results are
 internally consistent -- `L_+` on the top-of-ladder combination `(x+iy)/r`
 and `L_-` on the bottom-of-ladder combination `(x-iy)/r` both vanish exactly,
 confirming the construction behaves as genuine raising/lowering operators.
+Part C (added same day, see decision.md): applying the Cartesian L_+/L_-
+directly to the SAME normalized Y_{1,m} states used in Part A reproduces
+the exact `sqrt(2)` coefficients with zero residual -- Part A and Part B
+are the same calculation in different coordinates, not two calculations
+that merely agree up to a constant.
 
 **Evidence:** [VERIFIED-sympy 6/6] (Part A, polar) + [VERIFIED-sympy 6/6 +
-2/2 structural cross-checks] (Part B, Cartesian).
+2/2 structural cross-checks] (Part B, Cartesian) + [VERIFIED-sympy 6/6]
+(Part C, reconciliation).
 
 **Status:** CLOSED PROMOTE.

@@ -161,6 +161,67 @@ def part_b_cartesian_ladder() -> dict:
     }
 
 
+# =====================================================================
+# Part C: reconcile Part A (polar) with Part B (Cartesian) directly --
+# apply the CARTESIAN L_+/L_- to the SAME normalized Y_{1,m} states used in
+# Part A (just rewritten in x,y,z instead of theta,phi via x=r sin(theta)
+# cos(phi) etc., i.e. sin(theta)*exp(I*phi) -> (x+iy)/r), and confirm the
+# exact sqrt(2) ladder coefficients reappear -- not just up to a constant.
+# =====================================================================
+
+
+def part_c_reconcile_polar_and_cartesian() -> dict:
+    c = sp.sqrt(sp.Rational(3, 1) / (4 * sp.pi))
+    y10_cart = c * (z / r)
+    y11_cart = -(c / sp.sqrt(2)) * ((x + IMAG * y) / r)
+    y1m1_cart = (c / sp.sqrt(2)) * ((x - IMAG * y) / r)
+
+    sqrt2 = sp.sqrt(2)
+    checks = []
+
+    def check(label, lhs, rhs, rhs_label):
+        residual = sp.simplify(lhs - rhs)
+        checks.append(
+            {
+                "action": label,
+                "lhs": str(sp.simplify(lhs)),
+                "compared_to": f"{rhs_label} = {sp.simplify(rhs)}",
+                "residual": str(residual),
+                "matches": residual == 0,
+            }
+        )
+
+    check(
+        "L_+ Y_{1,-1} (Cartesian-built)",
+        l_plus_cart(y1m1_cart),
+        sqrt2 * y10_cart,
+        "sqrt(2)*Y_{1,0}",
+    )
+    check(
+        "L_+ Y_{1,0} (Cartesian-built)", l_plus_cart(y10_cart), sqrt2 * y11_cart, "sqrt(2)*Y_{1,1}"
+    )
+    check("L_+ Y_{1,1} (Cartesian-built)", l_plus_cart(y11_cart), sp.Integer(0), "0")
+    check(
+        "L_- Y_{1,0} (Cartesian-built)",
+        l_minus_cart(y10_cart),
+        sqrt2 * y1m1_cart,
+        "sqrt(2)*Y_{1,-1}",
+    )
+    check(
+        "L_- Y_{1,1} (Cartesian-built)", l_minus_cart(y11_cart), sqrt2 * y10_cart, "sqrt(2)*Y_{1,0}"
+    )
+    check("L_- Y_{1,-1} (Cartesian-built)", l_minus_cart(y1m1_cart), sp.Integer(0), "0")
+
+    all_pass = all(chk["matches"] for chk in checks)
+    return {
+        "y10_cart": str(y10_cart),
+        "y11_cart": str(y11_cart),
+        "y1m1_cart": str(y1m1_cart),
+        "checks": checks,
+        "all_pass": all_pass,
+    }
+
+
 def main() -> None:
     results: dict = {}
 
@@ -192,6 +253,22 @@ def main() -> None:
     print("\nLadder-structure cross-check (via (x+iy)/r and (x-iy)/r):")
     for k, v in part_b["ladder_structure_check"].items():
         print(f"  {k}: {v}")
+
+    print("\n" + "=" * 70)
+    print("PART C: reconcile Part A (polar) and Part B (Cartesian) directly --")
+    print("apply the CARTESIAN L_+/L_- to the SAME normalized Y_{1,m} states")
+    print("=" * 70)
+    part_c = part_c_reconcile_polar_and_cartesian()
+    results["part_c_reconcile"] = part_c
+    print(f"Y_1,0  (Cartesian form) = {part_c['y10_cart']}")
+    print(f"Y_1,1  (Cartesian form) = {part_c['y11_cart']}")
+    print(f"Y_1,-1 (Cartesian form) = {part_c['y1m1_cart']}\n")
+    for chk in part_c["checks"]:
+        print(f"  {chk['action']}:")
+        print(f"    result     = {chk['lhs']}")
+        print(f"    compare to = {chk['compared_to']}")
+        print(f"    residual   = {chk['residual']}   matches: {chk['matches']}\n")
+    print(f"PART C ALL PASS: {part_c['all_pass']}\n")
 
     out_path = Path(__file__).parent / "results_c206.json"
     out_path.write_text(json.dumps(results, indent=2, default=str))
