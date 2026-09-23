@@ -791,6 +791,22 @@ own rule, not rounded up because the answered half was informative. F6
 for any candidate deriving BOTH the torsion and metric EOMs
 self-consistently remains fully open.
 
+**UPDATE (C207, 2026-09-24) — C134's `PARTIAL` closes to `REJECT`, the
+metric sector shown violated, not merely unaddressed:** chaining three
+already-certified facts (C134's torsion EOM forces `t=1/2`; KT-8's zero
+fermion content at that point, so the metric equation reduces to pure
+vacuum `Ric(g)=0`; round111's own `S3` Ricci `=2*I_3` at `t=1/2`,
+confirmed nonzero as a full matrix) plus one standard product-manifold
+fact (Ricci is block-diagonal, one nonzero block suffices), the frozen
+background's `Ric(g)` is nonzero at the ONE point ECSK's torsion sector
+permits — independent of the `S6` block's own (never-certified) curvature.
+Free corollary: no finite `rho_3` rescues this either. **`F7` for this
+same candidate is `MOOT`** — no fixed point exists to test stability of.
+Does NOT close F6 for OB1/OB2 as a whole, only this specific bare-product
+ECSK candidate; does NOT touch the separate Freund-Rubin/flux program
+(G54-G66), which this result is consistent with needing in the first
+place. See `experiments/20260924-c207-ecsk-vacuum-eom-closure/decision.md`.
+
 **Pass criterion:** an actual action principle is named (Einstein-Cartan,
 Chamseddine-Connes-Marcolli spectral action, or another explicitly cited
 framework) and its equations of motion are derived or cited, not merely
