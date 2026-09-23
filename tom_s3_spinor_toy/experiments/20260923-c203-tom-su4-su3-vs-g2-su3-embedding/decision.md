@@ -54,34 +54,86 @@ scalar on each 6-dim representation (not merely averaging to the same value)
 rules out a coincidental match between structurally different reducible
 combinations of irreps.
 
-## Interpretation, honestly scoped
+## Interpretation, sharpened per user review (2026-09-23)
 
-**Established:** all three constructions -- Tom's own GUT-derivation
-embedding, this project's own G2/SU(3)-on-S6 Dirac-operator substrate, and
-even the independently-built G10-B control -- realize the identical
-representation TYPE of su(3): the fundamental "3" (and its conjugate
-"3bar"), realified as the standard 3+3bar real 6-dimensional orthogonal
-representation.
+The Casimir ratio alone is NOT a complete representation fingerprint --
+distinct irreps can share a Casimir eigenvalue. The classification claim
+below is licensed by the COMBINATION of computed invariants
+(dimension + reality + Casimir ratio) checked against su(3)'s known
+small-representation catalogue, not by the ratio number in isolation. Split
+explicitly into four tiers so this cannot later be misread as "one Casimir
+number proved equivalence":
 
-**Not established here:** the explicit O(6) matrix conjugating one embedding
-into another. That step additionally relies on citing a standard
-representation-theory fact (this specific representation type has a unique
-O(6)-conjugacy class) rather than an independently-constructed intertwiner.
-If a fully constructive proof is ever wanted, the next step would be finding
-the Lie-algebra automorphism between the two generator bases first (e.g. by
-matching Cartan subalgebras / root structure), then re-running the
-intertwiner search with the corrected correspondence -- not attempted this
-round, and not required to answer the correspondence-relevant question.
+**Computed [VERIFIED-tool, exact]:** dimension (6, real, orthogonal) and
+Casimir(rep)/Casimir(adjoint) = exactly 4/9 (scalar to ~1e-16), identically
+for all three constructions.
+
+**Classification inference [INFERRED, standard su(3) rep theory, not
+re-derived]:** dimension 6 + reality + Casimir ratio 4/9 together identify
+the representation TYPE as the realification of `3 (+) 3bar` -- this
+inference step, not the bare ratio, licenses "same representation type."
+
+**Not established:** (a) the explicit O(6) matrix conjugating one embedding
+into another; (b) which `phi in Aut(su(3))` -- possibly including the OUTER
+3<->3bar swap -- relates the two generator bases (exactly the unknown that
+made the naive `n_free=0` search uninformative rather than a real negative);
+(c) whether Tom's complex structure `J_Tom` matches this project's
+nearly-Kahler `J_NK` under the same (still unfound) `O`, or whether the
+associated 2-form/3-form (`omega`, `Omega`) or Nomizu-connection/torsion data
+correspond at all. None of (a)-(c) were tested.
+
+**Does NOT imply:** theory-level equivalence between Tom's Covariant
+Compactification and this project's own G2/SU(3)/N_gen=3 construction, or
+that any additional SU(3)-structure/connection data matches.
+
+## Coarse-graining caution (user-raised, 2026-09-23, directly tied to this project's own G44/C72 result)
+
+This project's own G44/C72 chain already established that restricting to
+G2 -- let alone further down to SU(3) -- CAN ERASE the triality information
+this project's N_gen=3 program actually depends on. A match at the bare
+su(3)-representation level between Tom's construction and ours can therefore
+mean EITHER of two very different things, and C203 as run cannot yet
+distinguish them:
+
+- a genuine shared geometric platform worth building on, OR
+- confirmation that both constructions have been coarse-grained down to
+  PRECISELY the level where the generation-counting information no longer
+  lives -- i.e. the match is real but uninformative for N_gen=3 specifically.
+
+**Explicit hierarchy for any follow-up (do not skip levels):**
+
+| Level | Claim | Status after C203 |
+|---|---|---|
+| H0 | Only the standard `SU(3) acting on R^6` matches | **Established this round** |
+| H1 | The same ADDITIONAL SU(3)-structure matches (`J`, `omega`, `Omega`) | Untested |
+| H2 | The match extends to operator/connection/torsion structure | Untested |
+
+C203 supports H0 only. It does not resolve whether the Tom/NK correspondence
+is a real bridge or precisely the point past which this project's own
+generation-relevant structure has already been coarse-graining away --
+possibly the more informative reading of a positive H0 result, not the less
+informative one.
+
+## Next step (explicitly NOT run this round, per user instruction)
+
+A candidate C204 would need to solve for `O in O(6)` and `phi in Aut(su(3))`
+JOINTLY (`O rho_A(X) O^-1 = rho_B(phi(X))`), including the outer 3<->3bar
+automorphism as a real branch to check, not an edge case to ignore -- then,
+if found, test H1 (`J_Tom` vs `O J_NK O^-1`) before touching H2. Parked
+rather than launched now; see `parked/INDEX.md`.
 
 ## What this means for the Tom Lawrence correspondence
 
-There IS a genuine, verified structural link between Tom's SO(10)-GUT
-derivation (his GPIC 2026 talk) and this project's own G2/SU(3)/N_gen=3
-physics substrate: both use the identical su(3) representation type inside
-so(6), not merely superficially similar terminology. This is a real,
-interesting cross-connection worth surfacing eventually -- NOT sent to Tom
-this round; per the standing DO NOT INITIATE CONTACT rule, any correspondence
-requires the user's own explicit, per-instance send decision.
+A real, verified representation-TYPE match exists between Tom's SO(10)-GUT
+derivation and this project's own G2/SU(3) substrate (H0 only) -- best
+described as **the first explicitly computed shared local
+representation-theoretic structure between Tom's six-dimensional sector and
+this project's own S6 construction**, not yet a claim of a physical bridge
+between the two theories. NOT sent to Tom this round; per the standing DO NOT
+INITIATE CONTACT rule, any correspondence requires the user's own explicit,
+per-instance send decision. Per the user's own stated priority, the more
+pressing next correspondence action is the already-completed C202 (ladder-
+operator matrix comparison), not this round.
 
 ## Reproduce
 

@@ -152,29 +152,53 @@ precision (~1e-16), and the Casimir is confirmed EXACTLY scalar (Schur's
 lemma check, "scalar defect" ~1e-16) on each representation, ruling out a
 coincidental match between structurally different reducible combinations.
 
-**What this establishes [VERIFIED-tool, exact]:** all three constructions
-realize the SAME representation TYPE of su(3) -- the fundamental "3"
-(equivalently its conjugate "3bar"), realified as the standard 3+3bar
-6-dimensional real orthogonal representation.
+**Sharpened per user review (2026-09-23) -- the Casimir ratio alone is NOT a
+complete representation fingerprint** (different irreps can share a Casimir
+eigenvalue); the classification claim below is licensed by the COMBINATION
+of dimension + reality structure + Casimir ratio, cross-checked against
+su(3)'s known small-representation catalogue -- not by the ratio in
+isolation. Kept as four explicitly separated tiers, so a future reader
+cannot compress this into "one Casimir number proved equivalence":
 
-**What this does NOT fully establish on its own [gap, named honestly]:** an
-EXPLICIT orthogonal conjugating matrix U was not constructed (the naive
-search that would have found it needs the correct generator correspondence,
-which was not solved for this round -- finding the Lie-algebra automorphism
-between the two bases first is a separate, larger computation not attempted
-here). The step from "same representation type, Casimir-confirmed" to "same
-O(6)-conjugacy class" relies additionally on a cited, standard fact of su(3)
-representation theory: for a fixed representation type realized as a real
-orthogonal representation compatible with an invariant metric, the embedding
-is unique up to O(6)-conjugation (Aut(su(3)) acting on this representation
-type has a single orbit under conjugation). This fact is NOT re-derived here
--- it is standard and well known, but this round should not be read as having
-independently proven it from scratch.
+**[VERIFIED-tool, exact] Computed:** dimension (6, real, orthogonal) +
+Casimir(rep)/Casimir(adjoint) = exactly 4/9, scalar to ~1e-16 (Schur's-lemma
+check), identically for all three independently-built constructions (A, B,
+and the G10-B control C).
 
-**Evidence:** [VERIFIED-tool] Casimir ratio, exact, 3/3 constructions agree
-to ~1e-16. [INFERRED, standard rep theory, not re-derived] the step from
-"same type" to "same conjugacy class."
+**[INFERRED, standard su(3) small-rep classification, not re-derived]
+Classification inference:** dimension 6 + real (self-conjugate as a real
+representation) + Casimir ratio 4/9 together identify the representation
+TYPE as the realification of `3 (+) 3bar` -- no other su(3) representation
+of dimension 6 shares this combination. This inference step, not the bare
+Casimir number, is what licenses calling all three "the same representation
+type."
 
-**Status:** CLOSED PROMOTE (representation-type equivalence rigorously
+**Not established here [named gap, not glossed over]:** (a) an explicit
+O(6) matrix conjugating one embedding into another; (b) which automorphism
+`phi in Aut(su(3))` -- including possibly the OUTER 3<->3bar swap -- relates
+the two generator bases (this is exactly the unknown that made the naive
+`n_free=0` search uninformative, not a real mismatch); (c) whether any
+ADDITIONAL geometric structure beyond the bare su(3)-action matches --
+Tom's own complex structure J_Tom vs this project's nearly-Kahler J_NK, the
+associated 2-form/3-form (omega, Omega), or a Nomizu-connection/torsion-level
+correspondence. None of (a)-(c) were tested this round.
+
+**Does NOT imply [explicit, per user's H0/H1/H2 hierarchy]:** theory-level
+equivalence between Tom's Covariant Compactification and this project's own
+G2/SU(3)/N_gen=3 construction; that any additional SU(3)-structure or
+connection/torsion data matches (H1/H2, untested); or -- flagged as a live
+concern, not resolved -- that this correspondence preserves the triality
+information this project's OWN G44/C72 chain already showed CAN be erased by
+restricting to G2, let alone to SU(3) (see decision.md's new "Coarse-graining
+caution" section). A common SU(3)-representation-type platform and a
+generation-counting-relevant bridge are two different claims; this round
+establishes only the former (H0).
+
+**Evidence:** [VERIFIED-tool] dimension+reality+Casimir-ratio, exact, 3/3
+constructions agree to ~1e-16. [INFERRED, standard rep theory, not
+re-derived] the classification step from "these invariants" to "3(+)3bar
+representation type."
+
+**Status:** CLOSED PROMOTE, narrowly scoped to H0 (representation-type
 established; full explicit-conjugacy-matrix construction is a natural,
 separate follow-up, not required for the correspondence-relevant conclusion).
