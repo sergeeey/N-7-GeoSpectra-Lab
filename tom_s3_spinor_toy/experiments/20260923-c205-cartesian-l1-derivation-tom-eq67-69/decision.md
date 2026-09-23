@@ -18,25 +18,78 @@ matrices) did not do this. This round does exactly that.
 | Stage | Method | Result |
 |---|---|---|
 | 1 | `L_z=i(x2*d/dx1-x1*d/dx2)`, `L_y`, `L_x` (Tom's eq 67-69) applied by direct symbolic differentiation to `x1/r, x2/r, x3/r` (his eq 91 basis, constant dropped) | 9 individual differentiation results, each exactly proportional to one basis function -- shown in full in `run_output.txt` |
-| 2a | Assembled 3x3 matrices (M_Lz, M_Ly, M_Lx) compared directly to Tom's eq(103)-(105) `[T_ij]` | Exact match, no sign flip needed |
-| 2b | Applied Tom's own eq(99) `Gamma_3(T)=-T` to the Stage-1 matrices | Exact match to his eq(106)-(108) `[Gamma_3(T_ij)]` |
-| 3 | Applied Tom's own `z` (eq 118) to the Stage-2b result | Exact match to his eq(123)-(125), the matrices his 2026-09-23 message specifically asked us to reach via this route |
+| 2 | Assembled 3x3 matrices (M_Lz, M_Ly, M_Lx), in Tom's own eq(76) row=input index convention, compared directly to his eq(106)-(108) `[Gamma_3(T_ij)]` | Exact match, in ONE step, no separate sign flip needed |
+| 3 | Applied Tom's own `z` (eq 118) directly to the Stage-2 result | Exact match to his eq(123)-(125), the matrices his 2026-09-23 message specifically asked us to reach via this route |
 
-## The one subtlety worth naming explicitly (not a discrepancy)
+## A real convention bug, caught by independent user review against the actual PDF (not the reporting agent's summary) -- REVISED
 
-Applying eq(67)-(69) DIRECTLY to the Cartesian basis functions lands you on
-eq(103)-(105) [T_ij] first -- NOT eq(106)-(108) [Gamma_3(T_ij)] directly.
-Tom's own eq(99) sign flip (`Gamma_3(T)=-T`) is a SEPARATE, additional step
-needed to reach the "vector multiplet" convention his (123)-(125) are stated
-in. This is worth being explicit about because Tom's own document contains a
-bracketed aside right after eq(99) expressing his own uncertainty about
-exactly this index/sign bookkeeping ("I don't like this -- can it be dealt
-with in any way?"). This round's direct computation gives that question a
-completely mechanical, unambiguous answer: yes, both matrices exist and are
-related by exactly the stated eq(99) sign flip, cleanly, with no residual
-ambiguity once you track which of his equations produces which matrix.
+The first version of this round reported: "applying eq(67)-(69) directly
+lands on eq(103)-(105) [T_ij] first; Tom's own eq(99) sign flip is then a
+SEPARATE step needed to reach eq(106)-(108) [Gamma_3(T_ij)]." The user
+independently re-derived the calculation by hand against Tom's actual PDF
+and found this framing was wrong -- not physically, but as a description of
+where the extra minus sign came from.
 
-## A build-time bug caught and fixed (self-caught, not Tom's)
+**Root cause, confirmed by direct computation:** `build_matrix()`'s original
+implementation assembled the matrix via `sp.Matrix(rows).T`, i.e. column j =
+image of basis_j -- the STANDARD linear-algebra "matrix of a linear map"
+convention. But Tom's own eq(76) states the index placement explicitly:
+`(-delta_x^I d_I |phi_gamma>) = (i Gamma_d(T_ij))_gamma^delta |phi_delta>`
+-- gamma (the INPUT basis label) is the row-like first index, delta (the
+output expansion coefficient) is the second. That is `sp.Matrix(rows)`
+WITHOUT the transpose. Since these generators are antisymmetric
+(`M^T = -M`), assembling the matrix with the wrong (transposed) convention
+exactly flips the overall sign -- which is precisely why the first version
+landed on `T_ij` (eq 103-105) instead of `Gamma_3(T_ij)` (eq 106-108)
+directly, and "needed" an extra negation that was really just undoing the
+convention error.
+
+**Corrected result:** building the matrix in Tom's own row=input convention
+reproduces eq(106)-(108) DIRECTLY, in a single step -- exactly as his own
+general theory says it should (his eq96, `Gamma_d(g)=g^-1=g^T`, applied to
+an antisymmetric generator gives `Gamma_d(T)=-T` immediately, no detour
+through `T` itself required). The standard linear-algebra transpose
+convention is kept in the script's output ONLY as an explicit, clearly
+labeled side-by-side comparison -- and it is genuinely useful there,
+because it shows mechanically, not just abstractly, exactly where the
+"-1"/transpose ambiguity comes from that Tom's own document raises in a
+bracketed aside right after eq(99) ("I don't like this -- can it be dealt
+with in any way?"). This round's corrected computation gives that
+long-standing self-doubt a fully mechanical answer: the ambiguity is a
+row/column (input/output) index-placement choice, and once you fix it to
+match his own eq(76) as literally written, there is no residual sign
+ambiguity anywhere in the chain.
+
+## Two further observations from the same re-check (recorded, NOT sent to Tom)
+
+1. **Page 15, eq(107)/(108) possible typesetting slip.** Verified by direct
+   visual inspection of the actual page image (not a text extraction):
+   eq(106) is printed correctly as `-T_23`. eq(107) and eq(108), however, are
+   printed as matrices that equal `T_31` and `T_12` themselves -- NOT
+   `-T_31`/`-T_12` as their own equation labels explicitly state
+   (`Gamma_3(T_ij) = -T_ij = (T_ij)^T`). This looks like an isolated
+   typesetting slip on 2 of 3 equations, not a conceptual error -- his own
+   eq(96) general theory and eq(109)-(112)'s own worked L_x example both
+   unambiguously intend `Gamma_3(T)=-T`, and this round's Step 2 comparison
+   above used that intended formula, not the possibly-mistyped printed one.
+2. **Page 14, dimension formula.** Tom's own text states: "the multiplet
+   therefore has `d=2j` dimensions if `j` is a half-integer or `d=2j+1`
+   dimensions if `j` is an integer." Standard representation theory gives
+   `dim = 2j+1` for ANY `j`, half-integer or integer -- e.g. at `j=1/2`
+   (the spinor case, which his own adjacent sentence and his own eq(101)
+   correctly show as 2-dimensional), his stated formula gives `d=2(1/2)=1`,
+   contradicting his own immediately-preceding text. A genuine,
+   self-contradicted slip in his document, confirmed by direct re-reading
+   of the page -- not yet raised with him.
+
+Neither observation changes this round's own verdict (both are about a
+DIFFERENT part of Tom's document than what this round's own chain of
+equations 67-125 needed to use). Recorded for the user's own judgment on
+whether/when to mention them -- gently, as questions, per this project's
+established correspondence discipline -- not unilaterally added to any
+draft reply.
+
+## A second, unrelated build-time bug caught and fixed (self-caught, not Tom's)
 
 The first version of the `decompose()` helper tried to symbolically clear
 denominators via `sp.Poly(expr * r**5, x1, x2, x3)`, which crashed

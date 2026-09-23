@@ -5,6 +5,26 @@ eq(67)-(69) differential operators DIRECTLY to Cartesian coordinates
 resulting 3x3 matrices -- full symbolic workings shown at every step, not
 just the final matrices.
 
+REVISED after a REAL bug caught by independent user review (not the earlier
+Explore-agent report -- the user re-checked against Tom's own PDF directly):
+the first version of `build_matrix` assembled the matrix with an extra,
+unjustified transpose (`sp.Matrix(rows).T`), which happens to equal the
+STANDARD linear-algebra "matrix of a linear map" convention (column j =
+image of basis_j) but is the TRANSPOSE of Tom's own stated index convention
+in his eq(76): "(-delta_x^I d_I |phi_gamma>) = (i Gamma_d(T_ij))_gamma^delta
+|phi_delta>" -- gamma (the INPUT basis label) is the FIRST/row-like index of
+Gamma_d, delta (the output expansion coefficient) is the second. Since these
+generators are all antisymmetric (M^T = -M), the wrong transpose flips the
+overall sign, which is exactly why the first version landed on eq(103)-(105)
+[T_ij] instead of eq(106)-(108) [Gamma_3(T_ij) = -T_ij] directly, and needed
+an extra explicit negation to reach Tom's stated matrices. Fixed here by
+building the matrix in TOM'S OWN row=input convention directly (no `.T`),
+verified below to reproduce eq(106)-(108) with no extra step. The STANDARD
+linear-algebra transpose convention is kept in the printout too, explicitly
+labeled, because it is a genuinely illustrative side note: it is exactly
+where the "-1" / transpose ambiguity Tom's own document worries about right
+after eq(99) comes from, made completely mechanical.
+
 This is deliberately NOT the ladder-operator (McMurry/spherical-harmonic)
 route -- that was C201/C202. This round only uses Tom's own Cartesian
 angular-momentum operators (his eq 67-69) and his own normalized real basis
@@ -84,12 +104,22 @@ def decompose(expr: sp.Expr) -> list[sp.Expr]:
     return coeffs
 
 
-def build_matrix(operator) -> tuple[sp.Matrix, list[list[sp.Expr]]]:
-    """Column j = operator applied to BASIS[j], decomposed in BASIS.
-    Returns both the assembled matrix and the raw per-step results (for
-    printing full workings, not just the final matrix)."""
+def build_matrix(operator) -> tuple[sp.Matrix, sp.Matrix, list[list[sp.Expr]]]:
+    """Returns TWO matrices from the same raw differentiation data, plus the
+    raw per-step results (full workings, not just final matrices):
+
+    - `matrix_tom_convention`: row j = coeffs when operator is applied to
+      BASIS[j] -- i.e. literally Tom's own eq(76) index placement, operator
+      (phi_gamma) = sum_delta M_gamma^delta phi_delta, gamma=row=input.
+      This is the one that matches his eq(106)-(108) directly.
+    - `matrix_standard_linalg`: the ordinary "matrix of a linear map"
+      convention (column j = image of basis_j), i.e. the transpose of the
+      above. Kept only as an explicit, labeled side-by-side illustration of
+      exactly the transpose/sign ambiguity Tom's own document flags after
+      eq(99) -- NOT used for any of the eq(106)-(125) comparisons below.
+    """
     raw_results = []
-    columns = []
+    rows = []
     for basis_fn in BASIS:
         applied = operator(basis_fn)
         applied_simplified = sp.simplify(applied)
@@ -101,9 +131,10 @@ def build_matrix(operator) -> tuple[sp.Matrix, list[list[sp.Expr]]]:
                 "coeffs": [str(c) for c in coeffs],
             }
         )
-        columns.append(coeffs)
-    matrix = sp.Matrix(columns).T
-    return matrix, raw_results
+        rows.append(coeffs)
+    matrix_tom_convention = sp.Matrix(rows)
+    matrix_standard_linalg = matrix_tom_convention.T
+    return matrix_tom_convention, matrix_standard_linalg, raw_results
 
 
 def main() -> None:
@@ -111,9 +142,9 @@ def main() -> None:
 
     print("=== Step 1: apply L_z, L_y, L_x directly to x1/r, x2/r, x3/r ===\n")
 
-    m_lz, raw_lz = build_matrix(l_z)
-    m_ly, raw_ly = build_matrix(l_y)
-    m_lx, raw_lx = build_matrix(l_x)
+    m_lz, m_lz_transpose, raw_lz = build_matrix(l_z)
+    m_ly, m_ly_transpose, raw_ly = build_matrix(l_y)
+    m_lx, m_lx_transpose, raw_lx = build_matrix(l_x)
 
     for name, raw in [("L_z", raw_lz), ("L_y", raw_ly), ("L_x", raw_lx)]:
         print(f"--- {name} ---")
@@ -123,62 +154,83 @@ def main() -> None:
             )
         print()
 
-    print("Resulting matrices (columns = operator applied to phi1,phi2,phi3):")
+    print(
+        "Resulting matrices, Tom's own eq(76) row=input convention (row j = coeffs when operator applied to phi_j):"
+    )
     print(f"  M_Lz =\n{m_lz}")
     print(f"  M_Ly =\n{m_ly}")
     print(f"  M_Lx =\n{m_lx}\n")
+    print(
+        "For comparison ONLY, the STANDARD linear-algebra 'matrix of a linear\n"
+        "map' convention (column j = image of basis_j) -- the TRANSPOSE of the\n"
+        "above, and exactly where the sign ambiguity Tom's own document raises\n"
+        "right after eq(99) comes from:"
+    )
+    print(f"  M_Lz^T =\n{m_lz_transpose}\n")
 
     results["step1_matrices"] = {
-        "M_Lz": str(m_lz),
-        "M_Ly": str(m_ly),
-        "M_Lx": str(m_lx),
+        "M_Lz_tom_convention": str(m_lz),
+        "M_Ly_tom_convention": str(m_ly),
+        "M_Lx_tom_convention": str(m_lx),
+        "M_Lz_standard_linalg_transpose": str(m_lz_transpose),
+        "M_Ly_standard_linalg_transpose": str(m_ly_transpose),
+        "M_Lx_standard_linalg_transpose": str(m_lx_transpose),
         "raw_workings": {"L_z": raw_lz, "L_y": raw_ly, "L_x": raw_lx},
     }
 
     print(
-        "=== Step 2a: compare DIRECTLY against Tom's own eq(103)-(105) [T_ij, defining rep] ===\n"
+        "=== Step 2: compare, in Tom's own eq(76) convention, DIRECTLY against his eq(106)-(108) [Gamma_3(T_ij)] ===\n"
     )
 
-    # Tom's eq (103)-(105): T_ij, the "defining representation" (real basis).
+    # Tom's eq (106)-(108): Gamma_3(T_ij) = -T_ij, as printed (his eq 99).
+    gamma3_t23 = sp.Matrix([[0, 0, 0], [0, 0, IMAG], [0, -IMAG, 0]])  # eq 106, role: L_x
+    gamma3_t31 = sp.Matrix([[0, 0, -IMAG], [0, 0, 0], [IMAG, 0, 0]])  # eq 107, role: L_y
+    gamma3_t12 = sp.Matrix([[0, IMAG, 0], [-IMAG, 0, 0], [0, 0, 0]])  # eq 108, role: L_z
+
+    match_lz = sp.simplify(m_lz - gamma3_t12) == sp.zeros(3, 3)
+    match_ly = sp.simplify(m_ly - gamma3_t31) == sp.zeros(3, 3)
+    match_lx = sp.simplify(m_lx - gamma3_t23) == sp.zeros(3, 3)
+
+    print(f"  M_Lz == Gamma_3(T_12) [eq 108], DIRECTLY, no extra step needed? {match_lz}")
+    print(f"  M_Ly == Gamma_3(T_31) [eq 107], DIRECTLY, no extra step needed? {match_ly}")
+    print(f"  M_Lx == Gamma_3(T_23) [eq 106], DIRECTLY, no extra step needed? {match_lx}")
+    print(
+        "  (Earlier draft of this script used the standard linear-algebra\n"
+        "   transpose convention instead, which lands on eq(103)-(105) [T_ij]\n"
+        "   directly and needs an EXTRA negation to reach Gamma_3 -- a real,\n"
+        "   independently-caught bug in the matrix-assembly convention, not a\n"
+        "   physics finding. Fixed: using Tom's own eq(76) row=input placement\n"
+        "   gives Gamma_3(T_ij) in a single step, exactly as his own general\n"
+        "   theory (his eq96, Gamma_d(g)=g^-1=g^T) says it should.)\n"
+    )
+
+    # NOTE (kept as an explicit, labeled side-check, per the reasoning above):
+    # eq(107) and eq(108) as literally PRINTED in the PDF appear to show T_31
+    # and T_12 themselves (unchanged sign), not -T_31/-T_12 as their own
+    # equation labels state -- eq(106) is printed correctly (= -T_23). This
+    # looks like an isolated typesetting slip on 2 of 3 equations, verified by
+    # direct visual inspection of page 15, not assumed from a text extraction.
+    # The values used above (gamma3_t23/t31/t12) are the LABELS' stated
+    # -T_ij = T_ij^T formula, which is also what his own eq(96) general theory
+    # requires -- not the possibly-mistyped printed matrices for (107)/(108).
     t23 = sp.Matrix([[0, 0, 0], [0, 0, -IMAG], [0, IMAG, 0]])
     t31 = sp.Matrix([[0, 0, IMAG], [0, 0, 0], [-IMAG, 0, 0]])
     t12 = sp.Matrix([[0, -IMAG, 0], [IMAG, 0, 0], [0, 0, 0]])
+    eq107_as_printed = sp.Matrix([[0, 0, IMAG], [0, 0, 0], [-IMAG, 0, 0]])  # == T_31, not -T_31
+    eq108_as_printed = sp.Matrix([[0, -IMAG, 0], [IMAG, 0, 0], [0, 0, 0]])  # == T_12, not -T_12
+    results["appendix_possible_pdf_typesetting_note"] = {
+        "eq106_printed_matches_minus_T23": sp.simplify(gamma3_t23 - (-t23)) == sp.zeros(3, 3),
+        "eq107_as_printed_equals_T31_not_minus_T31": eq107_as_printed == t31,
+        "eq108_as_printed_equals_T12_not_minus_T12": eq108_as_printed == t12,
+        "note": (
+            "eq(107)/(108) as printed on page 15 appear to equal T_31/T_12 "
+            "directly, not -T_31/-T_12 as their own labels state; eq(106) is "
+            "printed correctly. Not raised with Tom -- an internal note only, "
+            "verified against the actual page image, not a text extraction."
+        ),
+    }
 
-    match_lz_raw = sp.simplify(m_lz - t12) == sp.zeros(3, 3)
-    match_ly_raw = sp.simplify(m_ly - t31) == sp.zeros(3, 3)
-    match_lx_raw = sp.simplify(m_lx - t23) == sp.zeros(3, 3)
-
-    print(f"  M_Lz == T_12 [eq 105], DIRECTLY, no extra sign? {match_lz_raw}")
-    print(f"  M_Ly == T_31 [eq 104], DIRECTLY, no extra sign? {match_ly_raw}")
-    print(f"  M_Lx == T_23 [eq 103], DIRECTLY, no extra sign? {match_lx_raw}")
-    print(
-        "  (i.e.: applying eq(67)-(69) straight to the Cartesian basis functions\n"
-        "   reproduces eq(103)-(105) exactly -- the 'defining representation' T_ij,\n"
-        "   BEFORE the separate eq(99) sign flip Gamma_3(T)=-T is applied.)\n"
-    )
-
-    print(
-        "=== Step 2b: apply Tom's own eq(99) [Gamma_3(T_ij) = -T_ij] to reach eq(106)-(108) ===\n"
-    )
-
-    gamma3_t23 = -t23  # role: L_x (eq 69: omega^23 <-> L_x)
-    gamma3_t31 = -t31  # role: L_y (eq 68: omega^31 <-> L_y)
-    gamma3_t12 = -t12  # role: L_z (eq 67: omega^12 <-> L_z)
-
-    match_lz = sp.simplify((-m_lz) - gamma3_t12) == sp.zeros(3, 3)
-    match_ly = sp.simplify((-m_ly) - gamma3_t31) == sp.zeros(3, 3)
-    match_lx = sp.simplify((-m_lx) - gamma3_t23) == sp.zeros(3, 3)
-
-    print(f"  -M_Lz == Gamma_3(T_12) [eq 108]? {match_lz}")
-    print(f"  -M_Ly == Gamma_3(T_31) [eq 107]? {match_ly}")
-    print(f"  -M_Lx == Gamma_3(T_23) [eq 106]? {match_lx}\n")
-
-    results["step2_match_real_basis"] = {
-        "direct_match_vs_Tij_eq103_105": {
-            "M_Lz_vs_T12": match_lz_raw,
-            "M_Ly_vs_T31": match_ly_raw,
-            "M_Lx_vs_T23": match_lx_raw,
-        },
+    results["step2_match_gamma3"] = {
         "M_Lz_vs_Gamma3_T12": match_lz,
         "M_Ly_vs_Gamma3_T31": match_ly,
         "M_Lx_vs_Gamma3_T23": match_lx,
@@ -186,19 +238,19 @@ def main() -> None:
     }
 
     print(
-        "=== Step 3: apply Tom's own z (eq 118) to (-M_L), the Gamma_3-stage result, to reach (123)-(125) ===\n"
+        "=== Step 3: apply Tom's own z (eq 118) directly to M_L (already Gamma_3) to reach (123)-(125) ===\n"
     )
 
     z = sp.Matrix([[1, IMAG, 0], [0, 0, 1], [1, -IMAG, 0]])
     z_inv = z.inv()
 
-    gp_t12 = sp.simplify(z * (-m_lz) * z_inv)
-    gp_t31 = sp.simplify(z * (-m_ly) * z_inv)
-    gp_t23 = sp.simplify(z * (-m_lx) * z_inv)
+    gp_t12 = sp.simplify(z * m_lz * z_inv)
+    gp_t31 = sp.simplify(z * m_ly * z_inv)
+    gp_t23 = sp.simplify(z * m_lx * z_inv)
 
-    print(f"  z * (-M_Lz) * z^-1 =\n{gp_t12}   (compare to Tom's eq 123: diag(1,0,-1))")
-    print(f"  z * (-M_Ly) * z^-1 =\n{gp_t31}   (compare to Tom's eq 125)")
-    print(f"  z * (-M_Lx) * z^-1 =\n{gp_t23}   (compare to Tom's eq 124)\n")
+    print(f"  z * M_Lz * z^-1 =\n{gp_t12}   (compare to Tom's eq 123: diag(1,0,-1))")
+    print(f"  z * M_Ly * z^-1 =\n{gp_t31}   (compare to Tom's eq 125)")
+    print(f"  z * M_Lx * z^-1 =\n{gp_t23}   (compare to Tom's eq 124)\n")
 
     gp_t12_stated = sp.diag(1, 0, -1)
     gp_t23_stated = sp.Matrix([[0, -1, 0], [sp.Rational(-1, 2), 0, sp.Rational(1, 2)], [0, 1, 0]])
@@ -222,7 +274,7 @@ def main() -> None:
     }
 
     all_pass = (
-        results["step2_match_real_basis"]["all_match"]
+        results["step2_match_gamma3"]["all_match"]
         and results["step3_match_complex_basis"]["all_match"]
     )
     results["all_pass"] = all_pass

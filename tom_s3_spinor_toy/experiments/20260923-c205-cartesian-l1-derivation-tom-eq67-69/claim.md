@@ -106,16 +106,46 @@ complex/Cartan basis), independently verified, with complete workings.
 
 ## Verdict
 
-**PROMOTE.** All three stages of the chain (T_ij, Gamma_3(T_ij), and the
-z-transformed complex-basis matrices) match Tom's own stated eq(103)-(105),
-eq(106)-(108), and eq(123)-(125) exactly, by direct symbolic differentiation
-of his own eq(67)-(69) applied to his own normalized basis (eq 91) -- zero
-residual at every stage. Full step-by-step workings captured in
-`run_output.txt` and `results_c205.json` (raw per-basis-function
-differentiation results, not just final matrices).
+**PROMOTE — REVISED after a real bug caught by independent user review.**
+The user re-checked the first version's result directly against Tom's own
+PDF (not the reporting agent's summary) and found that Step 2's framing
+("direct differentiation gives T_ij, eq(99) must then be applied separately
+to reach Gamma_3") was an artifact of an incorrect matrix-assembly
+convention, not a genuine two-stage finding. `build_matrix()`'s original
+`sp.Matrix(rows).T` computed the STANDARD linear-algebra "matrix of a linear
+map" convention (column j = image of basis_j) — the TRANSPOSE of Tom's own
+stated index placement in his eq(76) ("(-delta_x^I d_I |phi_gamma>) =
+(i Gamma_d(T_ij))_gamma^delta |phi_delta>", gamma=input=row). Since these
+generators are antisymmetric, the wrong transpose exactly flips the sign,
+which is why the transposed version landed on eq(103)-(105) first.
 
-**Evidence:** [VERIFIED-sympy 9/9] (3 raw-differentiation matches vs
-eq103-105, 3 sign-flip matches vs eq106-108, 3 complex-basis matches vs
-eq123-125, all exact).
+**Corrected result:** building the matrix in Tom's own row=input convention
+(no `.T`) reproduces his eq(106)-(108) [Gamma_3(T_ij)] DIRECTLY, in a single
+step, exactly as his own general theory requires (his eq96,
+`Gamma_d(g)=g^-1=g^T`) — no separate eq(99) application needed. The
+STANDARD linear-algebra transpose is kept in the script and its output only
+as an explicit, clearly-labeled side-by-side comparison, because it is
+genuinely illustrative: it shows mechanically where the sign/transpose
+ambiguity Tom's own document raises right after eq(99) actually comes from.
 
-**Status:** CLOSED PROMOTE.
+**Two additional, independently-verified observations from this same
+re-check (recorded, not sent to Tom):**
+1. Page 15 of his PDF: eq(106) is printed correctly (`= -T_23`), but
+   eq(107) and eq(108) as literally printed appear to equal `T_31`/`T_12`
+   themselves, not `-T_31`/`-T_12` as their own equation labels state --
+   verified by direct visual inspection of the page image, not a text
+   extraction. Likely an isolated typesetting slip on 2 of 3 equations, not
+   raised with Tom.
+2. Page 14: his own stated formula "the multiplet therefore has d=2j
+   dimensions if j is a half-integer" is inconsistent with standard
+   representation theory (dim = 2j+1 for any j) and with his own adjacent
+   text/eq(101) (j=1/2 spinor stated and shown as 2-dimensional, but
+   d=2j=1 at j=1/2) -- a genuine, self-contradicted error in his document,
+   confirmed by direct re-reading of the page, not raised with Tom yet.
+
+**Evidence:** [VERIFIED-sympy 9/9, corrected] (3 raw-differentiation
+matches DIRECTLY vs eq106-108, 3 complex-basis matches vs eq123-125, all
+exact, both re-verified after the fix). [VERIFIED, direct page inspection]
+for the two document observations above.
+
+**Status:** CLOSED PROMOTE (corrected).

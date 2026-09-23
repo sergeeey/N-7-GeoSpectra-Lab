@@ -1,8 +1,11 @@
 {
   "step1_matrices": {
-    "M_Lz": "Matrix([[0, -I, 0], [I, 0, 0], [0, 0, 0]])",
-    "M_Ly": "Matrix([[0, 0, I], [0, 0, 0], [-I, 0, 0]])",
-    "M_Lx": "Matrix([[0, 0, 0], [0, 0, -I], [0, I, 0]])",
+    "M_Lz_tom_convention": "Matrix([[0, I, 0], [-I, 0, 0], [0, 0, 0]])",
+    "M_Ly_tom_convention": "Matrix([[0, 0, -I], [0, 0, 0], [I, 0, 0]])",
+    "M_Lx_tom_convention": "Matrix([[0, 0, 0], [0, 0, I], [0, -I, 0]])",
+    "M_Lz_standard_linalg_transpose": "Matrix([[0, -I, 0], [I, 0, 0], [0, 0, 0]])",
+    "M_Ly_standard_linalg_transpose": "Matrix([[0, 0, I], [0, 0, 0], [-I, 0, 0]])",
+    "M_Lx_standard_linalg_transpose": "Matrix([[0, 0, 0], [0, 0, -I], [0, I, 0]])",
     "raw_workings": {
       "L_z": [
         {
@@ -93,12 +96,13 @@
       ]
     }
   },
-  "step2_match_real_basis": {
-    "direct_match_vs_Tij_eq103_105": {
-      "M_Lz_vs_T12": true,
-      "M_Ly_vs_T31": true,
-      "M_Lx_vs_T23": true
-    },
+  "appendix_possible_pdf_typesetting_note": {
+    "eq106_printed_matches_minus_T23": true,
+    "eq107_as_printed_equals_T31_not_minus_T31": true,
+    "eq108_as_printed_equals_T12_not_minus_T12": true,
+    "note": "eq(107)/(108) as printed on page 15 appear to equal T_31/T_12 directly, not -T_31/-T_12 as their own labels state; eq(106) is printed correctly. Not raised with Tom -- an internal note only, verified against the actual page image, not a text extraction."
+  },
+  "step2_match_gamma3": {
     "M_Lz_vs_Gamma3_T12": true,
     "M_Ly_vs_Gamma3_T31": true,
     "M_Lx_vs_Gamma3_T23": true,
