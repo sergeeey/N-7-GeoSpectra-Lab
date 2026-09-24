@@ -81,6 +81,32 @@ supply your working") and Cartesian (the new calculation) routes.
 
 - `safe_for_runtime = False`. No `lambda` symbol introduced.
 
+## Part D (added 2026-09-24, Tom's follow-up: "the third stage")
+
+Tom, having received the reply, asked for the results in matrix form:
+"[Ladder operator][Column vector of states] = [3 x 3 matrix][Column
+vector of states]" -- the explicit 3x3 matrix, not just the six
+individual actions from Parts B/C.
+
+Built in both bases already used (real `x/r,y/r,z/r` from Part B, and
+the complex ladder basis `(x+iy)/r, z/r, (x-iy)/r` from Part C), reported
+in both matrix conventions but with only ONE of them, per basis, actually
+satisfying the literal equation `operator(v)=M@v` when `v` is the column
+vector of basis FUNCTIONS (not abstract state coefficients) -- see
+decision.md for a real transpose bug this distinction caught, caught by
+the user before sending, not after. Cross-verified against C205's own
+certified `M_Lx`, `M_Ly` matrices (`M_+ = M_Lx + i*M_Ly`, `M_- = M_Lx -
+i*M_Ly`) -- residual exactly zero.
+
+The complex-basis matrix (in the convention that actually satisfies the
+literal equation, Tom's own row=input, per his eq76) is the genuinely
+illustrative one -- e.g. `L_+ = [[0,0,0],[-1,0,0],[0,2,0]]` on
+`((x+iy)/r, z/r, (x-iy)/r)^T`: row 1 (applied to the top state) gives
+zero, row 2 (applied to the middle) gives `-1` times the top, row 3
+(applied to the bottom) gives `2` times the middle -- raising at every
+step, matching Part C's already-verified single-action results exactly,
+now assembled into the matrix form he asked for.
+
 ## Verdict
 
 **PROMOTE.** Part A: all six polar-form ladder actions match the expected
@@ -97,6 +123,8 @@ that merely agree up to a constant.
 
 **Evidence:** [VERIFIED-sympy 6/6] (Part A, polar) + [VERIFIED-sympy 6/6 +
 2/2 structural cross-checks] (Part B, Cartesian) + [VERIFIED-sympy 6/6]
-(Part C, reconciliation).
+(Part C, reconciliation) + [VERIFIED-sympy, 2/2 matrices x 2 bases x 2
+conventions, cross-checked to zero residual against C205] (Part D,
+explicit matrices).
 
 **Status:** CLOSED PROMOTE.

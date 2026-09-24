@@ -222,6 +222,123 @@ def part_c_reconcile_polar_and_cartesian() -> dict:
     }
 
 
+# =====================================================================
+# Part D: Tom's follow-up -- "the third stage" -- express L_+ and L_- as
+# explicit 3x3 matrices acting on a column vector of basis states,
+# [Ladder operator][column vector] = [3x3 matrix][column vector].
+#
+# Built in TWO bases (real x/r,y/r,z/r from Part B, and the complex
+# ladder basis (x+iy)/r, z/r, (x-iy)/r from Part C), and in BOTH matrix
+# conventions -- Tom's own row=input convention (his eq76, matching
+# C205's `M_Lx_tom_convention` etc.) and the STANDARD column=input
+# convention his literal request ([Op][col vec]=[Matrix][col vec]) calls
+# for. Cross-verified against C205's own certified L_x, L_y matrices
+# (M_+ = M_Lx + i*M_Ly, M_- = M_Lx - i*M_Ly) as an independent check --
+# not just re-derived from C206's own Part B action results alone.
+# =====================================================================
+
+# C205's own certified matrices (Tom's row=input convention), copied
+# verbatim from experiments/20260923-c205-.../results_c205.json --
+# same L_x, L_y generators (his eq68-69) as l_x_cart/l_y_cart above,
+# confirmed by direct action comparison before reuse.
+M_LX_TOM_FROM_C205 = sp.Matrix([[0, 0, 0], [0, 0, IMAG], [0, -IMAG, 0]])
+M_LY_TOM_FROM_C205 = sp.Matrix([[0, 0, -IMAG], [0, 0, 0], [IMAG, 0, 0]])
+
+
+def _linear_coeff_vector(expr: sp.Expr) -> sp.Matrix:
+    r"""For expr = a*x + b*y + c*z (degree-1 homogeneous, r already cleared),
+    return (a,b,c) via differentiation -- robust for complex coefficients
+    and mixed terms, unlike dividing by a single basis element (which only
+    extracts the right coefficient when the output is a PURE multiple of
+    that one basis element, false in general -- e.g. L_+(z/r) mixes x/r
+    and y/r in the real basis)."""
+    e = sp.expand(expr)
+    return sp.Matrix([sp.diff(e, x), sp.diff(e, y), sp.diff(e, z)])
+
+
+def build_matrix_both_conventions(operator, basis: list[sp.Expr]) -> dict:
+    r"""row j (Tom's eq76 convention, input=row) = coeffs of operator(basis[j])
+    in `basis`; the standard column=input matrix is its transpose. Basis
+    elements are decomposed by solving a linear system against the
+    monomial (x,y,z) representation (with the shared 1/r cleared first),
+    not by dividing by a single target term.
+
+    MANDATORY GATE (added 2026-09-24 after a real transpose bug reached a
+    sent PDF): when `v` is taken LITERALLY as the column vector of the
+    basis FUNCTIONS themselves (not abstract state coefficients), the
+    equation `operator(v) = M @ v` -- read entrywise on the left, as
+    ordinary matrix-vector product on the right -- is a concrete function
+    identity, checkable directly, not a matter of which convention "looks
+    standard". This function checks BOTH candidate matrices against that
+    literal identity and asserts that EXACTLY ONE of them satisfies it
+    (never zero, never both) before returning -- so the two matrices are
+    never presented as interchangeable again."""
+    basis_matrix = sp.Matrix.hstack(*[_linear_coeff_vector(b * r) for b in basis])
+    rows = []
+    for basis_fn in basis:
+        applied_times_r = sp.expand(operator(basis_fn) * r)
+        v = _linear_coeff_vector(applied_times_r)
+        row_coeffs = basis_matrix.solve(v)
+        rows.append([sp.simplify(c) for c in row_coeffs])
+    m_tom = sp.Matrix(rows)
+    m_standard = m_tom.T
+
+    basis_vec = sp.Matrix(basis)
+    entrywise_applied = sp.Matrix([operator(b) for b in basis])
+    residual_tom = sp.simplify(entrywise_applied - m_tom * basis_vec)
+    residual_standard = sp.simplify(entrywise_applied - m_standard * basis_vec)
+    tom_satisfies_literal_eq = residual_tom == sp.zeros(len(basis), 1)
+    standard_satisfies_literal_eq = residual_standard == sp.zeros(len(basis), 1)
+    if tom_satisfies_literal_eq == standard_satisfies_literal_eq:
+        raise AssertionError(
+            "Exactly one convention must satisfy operator(v)=M@v literally -- "
+            f"got tom={tom_satisfies_literal_eq}, standard={standard_satisfies_literal_eq}"
+        )
+
+    return {
+        "tom_row_input": m_tom,
+        "standard_column_input": m_standard,
+        "literal_eq_Lv_equals_Mv_satisfied_by": (
+            "tom_row_input" if tom_satisfies_literal_eq else "standard_column_input"
+        ),
+    }
+
+
+def part_d_explicit_matrices() -> dict:
+    real_basis = [x / r, y / r, z / r]
+    complex_basis = [(x + IMAG * y) / r, z / r, (x - IMAG * y) / r]
+
+    out = {}
+    for basis_name, basis in [("real_xyz", real_basis), ("complex_ladder", complex_basis)]:
+        m_plus = build_matrix_both_conventions(l_plus_cart, basis)
+        m_minus = build_matrix_both_conventions(l_minus_cart, basis)
+        out[basis_name] = {
+            "basis": [str(b) for b in basis],
+            "L_plus_tom_row_input": str(m_plus["tom_row_input"]),
+            "L_plus_standard_column_input": str(m_plus["standard_column_input"]),
+            "L_plus_literal_eq_satisfied_by": m_plus["literal_eq_Lv_equals_Mv_satisfied_by"],
+            "L_minus_tom_row_input": str(m_minus["tom_row_input"]),
+            "L_minus_standard_column_input": str(m_minus["standard_column_input"]),
+            "L_minus_literal_eq_satisfied_by": m_minus["literal_eq_Lv_equals_Mv_satisfied_by"],
+        }
+
+    # Cross-check: M_+ (Tom convention, real basis) should equal
+    # M_Lx + i*M_Ly using C205's OWN certified matrices -- independent of
+    # anything computed directly above.
+    m_plus_real_tom = build_matrix_both_conventions(l_plus_cart, real_basis)["tom_row_input"]
+    m_minus_real_tom = build_matrix_both_conventions(l_minus_cart, real_basis)["tom_row_input"]
+    predicted_plus = M_LX_TOM_FROM_C205 + IMAG * M_LY_TOM_FROM_C205
+    predicted_minus = M_LX_TOM_FROM_C205 - IMAG * M_LY_TOM_FROM_C205
+    residual_plus = sp.simplify(m_plus_real_tom - predicted_plus)
+    residual_minus = sp.simplify(m_minus_real_tom - predicted_minus)
+    out["cross_check_vs_c205"] = {
+        "M_plus_minus_(M_Lx_c205_plus_i_M_Ly_c205)_residual": str(residual_plus),
+        "M_minus_minus_(M_Lx_c205_minus_i_M_Ly_c205)_residual": str(residual_minus),
+        "cross_check_pass": residual_plus == sp.zeros(3, 3) and residual_minus == sp.zeros(3, 3),
+    }
+    return out
+
+
 def main() -> None:
     results: dict = {}
 
@@ -269,6 +386,28 @@ def main() -> None:
         print(f"    compare to = {chk['compared_to']}")
         print(f"    residual   = {chk['residual']}   matches: {chk['matches']}\n")
     print(f"PART C ALL PASS: {part_c['all_pass']}\n")
+
+    print("\n" + "=" * 70)
+    print("PART D: explicit 3x3 matrices -- [L][col vec] = [Matrix][col vec]")
+    print("=" * 70)
+    part_d = part_d_explicit_matrices()
+    results["part_d_explicit_matrices"] = part_d
+    for basis_name in ("real_xyz", "complex_ladder"):
+        block = part_d[basis_name]
+        print(f"\n-- basis: {basis_name} = {block['basis']} --")
+        print(f"  L_+ (Tom row=input)      = {block['L_plus_tom_row_input']}")
+        print(f"  L_+ (standard col=input) = {block['L_plus_standard_column_input']}")
+        print(
+            f"  L_+ literal 'Lv=Mv' (v=column of FUNCTIONS) satisfied by: "
+            f"{block['L_plus_literal_eq_satisfied_by']}"
+        )
+        print(f"  L_- (Tom row=input)      = {block['L_minus_tom_row_input']}")
+        print(f"  L_- (standard col=input) = {block['L_minus_standard_column_input']}")
+        print(
+            f"  L_- literal 'Lv=Mv' (v=column of FUNCTIONS) satisfied by: "
+            f"{block['L_minus_literal_eq_satisfied_by']}"
+        )
+    print(f"\nCross-check vs C205's own certified M_Lx, M_Ly: {part_d['cross_check_vs_c205']}")
 
     out_path = Path(__file__).parent / "results_c206.json"
     out_path.write_text(json.dumps(results, indent=2, default=str))

@@ -114,6 +114,105 @@ by tool-verification before either was finalized, per this project's
 standing `audit-verification-gate.md` discipline (a human's re-derivation
 gets the same "verify before use" treatment as an agent's).
 
+## Part D (2026-09-24) -- the explicit 3x3 matrices Tom asked for
+
+Tom's follow-up, quoted: "Just spotted, you haven't got the third stage.
+Could you please express your results in the form [Ladder operator]
+[Column vector of states] = [3 x 3 matrix][Column vector of states]".
+
+Built via a corrected decomposition method -- an earlier draft of this
+function divided the operator's output by a single target basis element
+(`applied/target`), which silently gives a WRONG answer whenever the
+output mixes more than one basis element (exactly what happens for
+`L_+(z/r)=-(x+iy)/r` in the real basis: dividing by `x/r` alone leaves a
+spurious `y/r` residual instead of cleanly reading off `-1`). Caught
+before running, not after -- replaced with a proper linear decomposition
+(extract the (x,y,z) coefficient vector by differentiation, since every
+output here is a degree-1 homogeneous polynomial once the shared `1/r` is
+cleared, then solve the resulting 3x3 linear system against the same
+basis's own coefficient matrix).
+
+**Results (real basis `x/r,y/r,z/r`, standard column=input convention,
+`[L][v]=[M][v]`):**
+```
+L_+ = [[0,0,-1],[0,0,-I],[1,I,0]]        L_- = [[0,0,1],[0,0,-I],[-1,I,0]]
+```
+
+**Results (complex ladder basis `(x+iy)/r, z/r, (x-iy)/r`, standard
+column=input convention):**
+```
+L_+ = [[0,-1,0],[0,0,2],[0,0,0]]         L_- = [[0,0,0],[-2,0,0],[0,1,0]]
+```
+This is the genuinely illustrative one -- purely super/subdiagonal, the
+textbook ladder-operator shape, matching Part C's individual actions
+exactly once assembled (column 1 of `L_+` = image of the top-of-ladder
+state = zero; column 3 = image of the bottom state = `2*(middle state)`).
+
+**Cross-check against C205's own certified matrices**
+(`M_+ = M_Lx + i*M_Ly`, `M_- = M_Lx - i*M_Ly`, using C205's exact
+`M_Lx_tom_convention`/`M_Ly_tom_convention` values copied verbatim from
+its `results_c205.json`): residual is the exact zero matrix for both `L_+`
+and `L_-`. This ties C206's ladder-operator matrices to C205's
+independently-verified rotation-generator matrices, not just to C206's
+own internal computation.
+
+Both Tom's own row=input convention (his eq76) and the standard
+column=input convention (what his literal request format calls for) are
+reported for both bases -- four matrices per operator, eight total,
+labeled explicitly to avoid the exact row/column ambiguity that caused
+C205's original bug.
+
+## A REAL transpose bug, caught by the user before sending (second
+## occurrence of the exact same bug class as C205)
+
+The first PDF draft (`REPLY_TO_TOM_2026-09-24_matrix-form.tex`, rev1)
+presented the `standard_column_input` matrices as satisfying
+`[Op][v]=[M][v]`, reasoning that Tom's literal phrasing
+("[Operator][column vector]=[3x3 matrix][column vector]") matches the
+"standard linear-algebra matrix-vector product" form. **This reasoning
+was wrong.** The user independently re-derived all four matrices by hand
+against the already-established single-step actions and found the PDF's
+matrices were exactly transposed relative to what the literal equation
+requires.
+
+**Root cause, confirmed with `sympy` before accepting the correction
+(not accepted on the user's word alone, per this project's own
+`audit-verification-gate.md` -- a human's re-derivation gets the same
+"verify before use" treatment as an agent's):** `v` in Tom's request is
+literally the column vector of the three basis FUNCTIONS themselves
+(`x/r, y/r, z/r`, or the complex combinations). The equation
+`operator(v) = M @ v`, read entrywise on the left (apply the operator to
+each function in `v`) and as ordinary matrix-vector multiplication on the
+right, is a concrete function identity -- computed directly:
+`entrywise_L(v) - M_standard @ v` is NOT zero (residual is exactly `2x`
+the correct answer, a full sign flip from the antisymmetric generator
+structure); `entrywise_L(v) - M_tom_row_input @ v` IS exactly zero, for
+all four matrices (`L_+`/`L_-` x real/complex basis).
+
+**Why the "standard convention" reasoning failed:** the `standard_column_
+input` matrix is correct for a DIFFERENT question -- "if `v` represents an
+ABSTRACT state with constant coefficients `v = v_1 e_1+v_2e_2+v_3e_3`,
+what matrix transforms those coefficients under the operator" -- not for
+"if `v` IS the literal vector of basis functions, what matrix reproduces
+`operator` applied entrywise." These are genuinely different objects that
+happen to share the notation `Mv`; conflating them is exactly what
+produced C205's original transpose bug, and produced this one too.
+
+**Fix, permanent, not just this-instance:** `build_matrix_both_
+conventions()` now contains a MANDATORY gate -- it computes the literal
+`operator(v) - M@v` residual for BOTH candidate matrices and raises
+`AssertionError` unless EXACTLY ONE of them is the zero vector. The
+function will not return silently if this check is ambiguous or if
+neither/both conventions satisfy the equation. This makes the specific
+failure mode that reached the PDF mechanically impossible to repeat
+within this script, per the user's own explicit request for a gate
+rather than relying on manual re-reading a second time.
+
+**Nothing was sent to Tom in the wrong form** -- caught in review before
+the PDF went out; only `rev1` (never sent) had the error, `rev2`
+(independently re-verified against the exact numbers typeset in the
+`.tex`, not just against the script's console output) is what was sent.
+
 ## What this means for the Tom Lawrence correspondence
 
 Both pieces Tom explicitly asked for, plus the Part 3 complex-basis
