@@ -807,6 +807,63 @@ ECSK candidate; does NOT touch the separate Freund-Rubin/flux program
 (G54-G66), which this result is consistent with needing in the first
 place. See `experiments/20260924-c207-ecsk-vacuum-eom-closure/decision.md`.
 
+**CSDR literature (added 2026-09-28, found via INSPIRE-HEP, citation
+pointer only — nothing below has been applied to this project's own
+`M4×S3×S6` construction yet):** F6's own gap is exactly the question
+Coset Space Dimensional Reduction answers in general — the standard
+ansatz for gauge+scalar fields under dimensional reduction over a
+homogeneous space `S/R`. Primary source, verified via
+`mcp__inspirehep__search_papers`:
+
+> Forgacs, P. & Manton, N.S., **"Space-Time Symmetries in Gauge
+> Theories"**, *Commun. Math. Phys.* (1979), DOI
+> [10.1007/BF01200108](https://doi.org/10.1007/BF01200108), 619
+> citations. [INSPIRE #140268](https://inspirehep.net/literature/140268)
+
+Canonical review (the field's own most-cited CSDR-specific reference):
+
+> Kapetanakis, D. & Zoupanos, G., **"Coset space dimensional reduction
+> of gauge theories"**, *Phys. Rept.* (1992), DOI
+> [10.1016/0370-1573(92)90101-5](https://doi.org/10.1016/0370-1573(92)90101-5),
+> 163 citations. [INSPIRE #33698](https://inspirehep.net/literature/33698)
+
+A third, narrower reference (checked directly — the author combination
+"Kubyshin-Manousselis-Zoupanos" recalled from an earlier session turned
+up 0 INSPIRE hits; his real CSDR-lineage co-authors are Mourao/Volobuev,
+not Manousselis/Zoupanos):
+
+> Kubyshin, Yu.A., Mourao, J.M. & Volobuev, I.P., **"Scalar Fields in
+> the Dimensional Reduction Scheme for Symmetric Spaces"**, *Int. J.
+> Mod. Phys. A* (1987), 46 citations.
+> [INSPIRE #22844](https://inspirehep.net/literature/22844)
+
+All three: metadata+abstract only (pre-arXiv or abstract-level check),
+not opened in full — a citation of the standard machinery, not an
+independent re-derivation.
+
+**UPDATE (C211, 2026-10-02) — one term of this machinery actually
+computed, superseding "citation only" above for the S6 side.** The pure-
+gauge Forgacs-Manton/Kapetanakis-Zoupanos papers above do not include
+gravity; the genuinely relevant extension is Chatzistavrakidis-
+Manousselis-Prezas-Zoupanos, "Coset Space Dimensional Reduction of
+Einstein-Yang-Mills theory" (arXiv:0712.2717, **full text** fetched via
+`mcp__arxiv__download_paper`, not abstract-only), whose eq. (4.27) gives
+the metric-moduli scalar potential with a gravity-only piece built from
+the coset's own `[complement,complement]` structure constants -- nonzero
+specifically for NON-symmetric cosets, which `S6=G2/SU(3)` is. Evaluated
+directly on G96/C210's own already-certified generators (no new algebra,
+verbatim reuse of G96's su(3)/complement split): `Term1=8`, `Term2=-16`
+(both normalization-dependent; the invariant is `Term2/Term1=-2` exactly).
+PASS on both kill conditions (basis-completeness residual 8.74e-16;
+Term1 != 0, confirming non-symmetric character). Does NOT close F6 -- this
+is one term of the CSDR effective Lagrangian (eq. 4.26), not a complete
+action; the gauge-sector term (eq. 4.27's third term) needs an explicit
+SU(3)-into-gauge-group embedding this project has never fixed for S6; no
+claim of agreement/disagreement with round111's S3 Ricci or C134/C207's
+ECSK torsion+metric EOM is made (different coset factor, different
+formalism). See `experiments/20261002-c211-csdr-moduli-potential-g2su3/
+decision.md`.
+
 **Pass criterion:** an actual action principle is named (Einstein-Cartan,
 Chamseddine-Connes-Marcolli spectral action, or another explicitly cited
 framework) and its equations of motion are derived or cited, not merely
