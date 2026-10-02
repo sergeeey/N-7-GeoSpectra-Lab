@@ -1,0 +1,18 @@
+{
+  "ricci_g_einstein_const": 2.5000000000000018,
+  "torsion_norm_sq": 23.999999999999993,
+  "correction_trace": 5.999999999999999,
+  "ricci_grad_diag": [
+    1.5000000000000022,
+    1.5000000000000022,
+    1.5000000000000016,
+    1.5000000000000027,
+    1.5000000000000018,
+    1.500000000000002
+  ],
+  "ricci_grad_einstein_like_const": 1.500000000000002,
+  "ricci_grad_off_diag_max": 9.80317800566197e-16,
+  "ricci_grad_diag_spread": 6.661338147750939e-16,
+  "verdict": "ISOTROPIC_CONFIRMED",
+  "source": "Friedrich-Ivanov arXiv:math/0102142 section 2, Ric^g=Ric^grad+(1/2)delta(T)-(1/4)sum g(T(e_i,X),T(Y,e_i))"
+}
