@@ -111,3 +111,25 @@ THAT formula directly, rather than re-deriving another bridge by hand.
 Not added to `PARENT_ACTION_GATE.md` -- this is an internal consistency
 check between two already-recorded results, not a new F6 input itself.
 Logged to `null_results/INDEX.md` per the REJECT protocol.
+
+## UPDATE 2026-10-02 (C216) — this REJECT's own rejected side may be the
+## wrong side; NOT resolved, NOT reopened here
+
+C216 found that C213's Castellani-formula code gives exactly HALF the
+textbook-correct Ricci value on an independent symmetric-space control
+(`2.5` instead of `5.0` on S6=SO(7)/SO(6)) -- a real, reproducible anomaly,
+root cause not identified (see C213's own decision.md UPDATE and C216's
+decision.md Sections 2-4 for the full diagnostic chain). **If** the same
+mechanism also means C213's G2/SU(3) `Ric^g` should really be `5.0` (not
+`2.5`), **then** this round's own rejected bridge formula
+(`Ric=(5/24)|T^c|^2`, predicting `Ric=5.0` from the torsion) would have
+been predicting the RIGHT number all along -- it was rejected here ONLY
+because the comparison target (Castellani's `2.5`) may itself have been
+wrong, not because the bridge formula was.
+
+**This is explicitly NOT resolved, NOT confirmed, and this round's REJECT
+verdict is NOT reversed by this note alone.** C216's own Relaxation Map
+(R3) names re-opening this specific question as a candidate next step,
+contingent on first confirming (via C216's R1/R2) which side of the
+Castellani discrepancy is actually wrong. Flagged per `research-
+methodology.md` principle 5 (immediate retroscan), not acted on here.

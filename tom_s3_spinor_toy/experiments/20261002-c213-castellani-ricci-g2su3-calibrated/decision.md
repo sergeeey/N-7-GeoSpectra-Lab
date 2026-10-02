@@ -124,3 +124,22 @@ against a second external source.
 ## Status
 
 `PARENT_ACTION_GATE.md` F6 section to be updated with this result.
+
+## UPDATE 2026-10-02 (C216) — unresolved anomaly flagged, verdict NOT changed
+
+C216 (`experiments/20261002-c216-kobayashi-nomizu-ricci-check/`), while
+independently cross-checking C215's `Ric^grad=1.5` via the Kobayashi-Nomizu
+canonical-connection formula, found that THIS round's own `riemann_ricci`
+code — re-imported directly, not retyped — gives `2.5` instead of the
+textbook-correct `5.0` on an independently-built symmetric-space positive
+control (S6=SO(7)/SO(6), round sphere). Two specific hypotheses for the
+cause were tested and REFUTED (a universal term2-coefficient bug would
+break the N^010 double-calibration above, which it does not; a degenerate-
+uniform-r code path would show a discontinuity under small perturbation,
+which it does not). Root cause NOT identified. **This round's own N^010
+calibration (both published points, machine precision) and the G2/SU(3)
+Einstein-ness/isotropy finding are UNAFFECTED and NOT retracted** — both
+survive regardless of the mechanism behind the new anomaly. The ABSOLUTE
+value `5/6` (and C214's rescaled `2.5`) is flagged as newly uncertain,
+pending the dedicated follow-up named in C216's own Relaxation Map (R1/R2).
+See C216's `decision.md` Sections 2-4 for the full diagnostic chain.

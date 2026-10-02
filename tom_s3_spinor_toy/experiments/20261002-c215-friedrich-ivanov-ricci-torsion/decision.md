@@ -96,3 +96,25 @@ about S6's own intrinsic geometry (two connections' Ricci tensors now
 both known, consistently related), not a new F6 equation-of-motion
 input on its own; `activeContext.md` updated with the full chain
 (C212-C215) for continuity.
+
+## UPDATE 2026-10-02 (C216) — the independent cross-check this round named
+## as its own next step ran, and MISMATCHED
+
+C216 ran exactly the Kobayashi-Nomizu cross-check named above ("Next step
+this motivates") and got `Ric^c_KN=4.0`, NOT this round's `Ric^grad=1.5` --
+a clean, large mismatch, failing C216's own pre-registered kill criterion.
+KN's own implementation is independently well-calibrated (exact match to
+the textbook value on a symmetric-space control; its bracket-only torsion
+matches C212/C214's octonion-route torsion exactly, `24=24`), so the
+mismatch is attributed to this round's INPUT (`Ric^g=2.5`, from C213's
+Castellani code) rather than to Friedrich-Ivanov's formula itself or to
+this round's own `corr`-term arithmetic (whose trace, `6.0`, is a provable
+algebraic identity given `|T|^2=24`, independent of any convention
+question). C216 found C213's Castellani code gives exactly HALF the
+textbook value on an independent symmetric-space control, root cause not
+identified -- if C213's true `Ric^g` is `5.0` (not `2.5`), this round's own
+formula would give `Ric^grad=5.0-1.0=4.0`, matching KN exactly. **NOT
+confirmed -- named as a live, unresolved possibility, not a correction.**
+This round's own component-wise isotropy check and internal arithmetic
+remain correct; only the ABSOLUTE value `1.5` is now flagged as uncertain,
+pending C213's own follow-up (see C213/C216 decision.md UPDATEs).
