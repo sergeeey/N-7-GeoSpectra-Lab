@@ -883,6 +883,26 @@ is the INTRINSIC geometric torsion of the S6 factor alone, same word,
 different object. See `experiments/20261002-c212-s6-nearlykahler-
 torsion-3form/decision.md`.
 
+**UPDATE (C213, 2026-10-02) — S6's own RICCI tensor now explicit,
+DOUBLY calibrated (reverses this session's earlier decision to set this
+derivation aside as too risky).** Castellani's general rescaled-coset
+curvature formula (arXiv:hep-th/9912277, eq 3.35-3.36) was implemented
+via machine-verified structure-constant extraction (literal Gell-Mann/
+Pauli matrices + `lstsq` basis expansion, NOT hand-transcribed abstract
+indices -- the exact risk flagged earlier this session, avoided by a
+different method). Calibrated against N^010's own published Ricci
+tensor at TWO independent (alpha,beta) solutions (eq 5.72, eq 5.73):
+both matched the target `R=12` to `~1e-15`, including vanishing off-
+diagonal. The SAME unmodified code, applied to G96/C210's certified
+G2/SU(3) data with uniform rescaling (isotropy irreducible): `Ricci_bd
+= (5/6) delta_bd` exactly -- Einstein to machine precision (diag spread
+`4.44e-16`), a nontrivial structural cross-check the code was never
+told to produce. Same normalization caveat as C211/C212 (value tied to
+G96's unit-radius convention); the bare number `5/6` itself has NOT
+been independently cross-checked against a second external source. See
+`experiments/20261002-c213-castellani-ricci-g2su3-calibrated/
+decision.md`.
+
 **Pass criterion:** an actual action principle is named (Einstein-Cartan,
 Chamseddine-Connes-Marcolli spectral action, or another explicitly cited
 framework) and its equations of motion are derived or cited, not merely
