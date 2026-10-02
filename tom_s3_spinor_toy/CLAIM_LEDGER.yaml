@@ -26,6 +26,11 @@
 #                      FORMALLY_CHECKED | INVALIDATED | CONTESTED
 #   lifecycle_status:  ACTIVE | PARKED | SUPERSEDED | RETIRED
 #
+# The lists above are a summary. The CANONICAL, machine-checked vocabulary is
+# `schema.enums` at the bottom of this file (it also declares PARTIAL for
+# test_outcome, PARTIALLY_SUPPORTED, VERIFIED_EXTERNAL_SOURCE). It is
+# enforced by scripts/lint_claim_ledger.py (run: python scripts/lint_claim_ledger.py).
+#
 # Every evidence_file:line trace was Read/Grep-confirmed this session or in
 # the session that produced it -- not recalled from memory.
 
@@ -156,8 +161,8 @@ claims:
     lifecycle_status: ACTIVE
     evidence_file: >
       tom_s3_spinor_toy/experiments/20260717-round102-a1-su4-isometry-precision-check/decision.md;
-      20260717-round108-codex-item1-full-background-stabilizer/decision.md;
-      20260717-round109-diagonal-embedding-nogo/decision.md
+      tom_s3_spinor_toy/experiments/20260717-round108-codex-item1-full-background-stabilizer/decision.md;
+      tom_s3_spinor_toy/experiments/20260717-round109-diagonal-embedding-nogo/decision.md
     depends_on: [C6_CUBIC_SU4_ANOMALY_MECHANISM]
     notes: >
       Three independent closures (rounds 102, 108, 109). Explicit residual
@@ -1816,7 +1821,7 @@ claims:
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260812-c84-sigma-minus-branch-and-n1-ansatz-null/decision.md"
-    depends_on: [C79_NONPRODUCT_S3S6_COUPLING_ARTIFACT_FOUND_AND_EXPLAINED, C81_RAW_KERNEL_EXCLUDED_RETEST_CLEAN_NULL_BOTH_HALVES, C83_SU3_OVERLAP_FOUND_9DIM_REMAINDER_TESTED_FULL_COMPLEMENT_EXHAUSTED]
+    depends_on: [C79_NONPRODUCT_COUPLING_ATTEMPT_NULL_UV_NONUNITARY_FOUND_ROBUSTNESS_CONFIRMED, C81_RAW_KERNEL_EXCLUDED_RETEST_CLEAN_NULL_BOTH_HALVES, C83_SU3_OVERLAP_FOUND_9DIM_REMAINDER_TESTED_FULL_COMPLEMENT_EXHAUSTED]
     supersedes: "no prior claim -- first round to explicitly build the sigma=-1 branch as matrices (previously cited only abstractly) and first round to attempt an explicit n>=1 matrix construction (previously only the closed-form eigenvalue formula was ever used, never realized as matrices)"
     convention: "Reuses C81's run_for_triple/build_t_generator, C79's get_bridge_to_sigma/self_dual_anti_self_dual_triples/SO4MOD, round67's clifford_generators/calibrate_h_H, and C73's build_numeric_dirac, all unmodified."
     does_not_imply:
@@ -1991,7 +1996,7 @@ claims:
   - id: C94_GROUP_ACTION_CERTIFICATION_SIGN_CORRECTED_BUT_BRACKET_UNRESOLVED
     statement: "Directed by an external reviewer's proposal: stop hand-deriving the q-side generator sign (C92/C93 showed real risk -- +l_{e_i}^T and -l_{e_i}^T were both produced from re-derivations of the same identity within minutes) and certify it directly from the group action's own defining formula via tool-verified symbolic differentiation, not paper algebra. Convention: (L_h f)(g):=f(h^-1 g), (R_h f)(g):=f(gh), F_{m,n}(g):=D^{1/2}_{m,n}(g)=g_{m,n} (D^{1/2}(g)=g literally, j=1/2). [VERIFIED-sympy] P1: RIGHT-translation generator = -l_{e_i}(1)^T uniformly across e1,e2,e3 (not l_{e_i} itself as this round's own pre-registered guess assumed -- l_{e_i} does not literally correspond to right-multiplication in this concrete embedding, a new fact, not a contradiction of anything prior). [VERIFIED-sympy] P2: LEFT-translation generator = +l_{e_i}(1)^T uniformly across e1,e2,e3 -- OPPOSITE SIGN from C93's own -l_{e_i}(1)^T, machine-exact match for all 3 units independently. This corrects C93. [VERIFIED-sympy+numpy, UNRESOLVED] P3 (exploratory, added after seeing P1/P2): the matched +l^T candidate does NOT satisfy [Y1,Y2]=2Y3 (instead [Y1,Y2]=-2Y3, exact opposite) -- this contradicts the expectation that dL of a verified group representation (L_h1 L_h2 = L_h1h2, independently confirmed both symbolically to first order AND numerically via matrix exponential + explicit 4-operator composition matching a group-commutator second-order expansion to O(t^3)) must be a genuine, non-anti Lie algebra homomorphism. Three independent attempts (direct symbolic bracket check, numerical group-commutator expansion, BCH-style hand expansion of the 4-operator product) did not locate the source of this discrepancy. HONEST CONCLUSION: neither +l^T nor -l^T (nor +l, -l) can currently be certified as the correct q-side generator -- this round found a real, tool-verified correction to C93's sign, but ALSO surfaced a deeper, unresolved inconsistency that undermines confidence in ANY sign determined so far. Per the directing reviewer's own explicit instruction, no C95 (double-CG multiplication-operator certification) or C96 (physical spectral-flow experiment) work should proceed until this is resolved."
     truth_status: PARTIALLY_SUPPORTED
-    test_outcome: MIXED
+    test_outcome: PARTIAL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2540,7 +2545,7 @@ claims:
   - id: C141_KERNEL_IS_GRADED_BRANCHING_FLOOR_NOT_DYNAMICS
     statement: "Testing whether D_S6 discriminates Sigma from a twist bundle W''=m(+)2*1 (dim 8, module type 3+3bar+1+1, matching Sigma's own two-singlet COUNT, C139-precheck-cleared decoupled-extra-singlets connection) -- NULL, QUALIFIED (deflationary). claim.md's own naive prediction that matched singlet COUNT gives Sigma's own restricted shape (2,1) is FALSE (verified two ways: domain=target=3). Two SUCCESSIVE context-blind FL Step 8a skeptic passes progressively corrected this round's own verdict. Pass 1 found the apples-to-apples reference point is NOT round59's own EVEN_IDX-restricted (2,1) certificate but Sigma SELF-TWISTED with the SAME unrestricted-second-factor convention this round already uses for m(+)2*1 ('T1', computed for the first time here): shape (3,3), matching m(+)2*1 exactly, kernel=1, robust across the whole 13-angle admissible family, containing round59's own certified sector as an exact subspace. This initially looked like a genuine shape-controlled discrimination (kernel 1 vs 0). Pass 2 found this conclusion was ALSO wrong: both T1 and m+2*1 are direct sums over their twist bundle's {connection}-invariant summands; applying rank-nullity PER SUMMAND (not to the aggregate (3,3) shape) gives a GRADED floor computable from PURE su(3) branching data alone (no Dirac operator, no NOMIZU, no connection geometry beyond knowing which summands exist) -- and this floor EXACTLY equals the observed kernel in ALL FOUR twist-bundle constructions ever computed in this project's history: round59/T0 (floor=1, observed=1), C139/m (floor=0, observed=0), C141/m+2*1 (floor=0, observed=0), T1/Sigma-self-twist (floor=1, observed=1). Independently re-verified by direct computation (script Section 10's graded_floor() function), AND independently re-derived by hand by the orchestrating session using only the already-established su(3)-multiplicities (EVEN_IDX=1+3bar, ODD_IDX=3+1, m=3+3bar) before this entry was registered -- not merely accepted from the skeptic or the round's own script. This means the kernel difference is fully explained by pure representation theory, GIVEN ONLY the already-established (by round59/C139, not new to this round) fact that individual connection channels are nonzero -- this round's own Dirac-operator computation contributes no new geometric/dynamical fact about D_S6 beyond recombining already-known values (round59's own Killing eigenvalue -sqrt(3), C139's own Term2 value -2*sqrt(3)/3, both re-verified as EXACT matches via basis-independent singular-value checks). Equivalence to Sigma re-verified fresh (intertwiner nullspace=0). A speculative alternative construction proposed and later withdrawn (an internally even/odd-graded 2-singlet twist bundle) was shown, by exhaustive brute-force search, to be PROVABLY INCAPABLE of achieving round59's own (2,1) shape regardless. GENUINELY OPEN, flagged not resolved: whether 'kernel always equals its graded floor' is a theorem or an empirical regularity holding only in the 4 cases tested so far -- the first twist bundle whose kernel EXCEEDS its own graded floor would be the first genuinely dynamical result in this entire line of work."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2560,7 +2565,7 @@ claims:
   - id: C144_ROUND59_UNTWISTED_DIRAC_PROPORTIONAL_TO_KOSTANT_CUBIC_TERM
     statement: "Triggered by the user citing two specific arXiv papers (math/0005056 Landweber, math/0005057-referenced Kostant 1999) while critiquing C143's Lemma 1, questioning whether its Schur's-lemma mechanism was already established mathematics for the maximal-rank case (G2 superset SU(3), both rank 2). Verified real via WebSearch + arxiv MCP (full LaTeX read, not abstract). SYMBOLIC RESULT (SymPy, exact): round59's own untwisted Levi-Civita Dirac operator D (already independently certified in experiments/20260714-round59-trivial-rank-certification/) equals (sqrt(3)/4) times the Chevalley quantization of the fundamental-3-form data already present, unmodified, in AHL2023's own Remark-5.2 Nomizu table -- an exact match on all 64 matrix entries, not a numerical near-match. This is Kostant's algebraic cubic-Dirac-operator term v, restricted to the trivial-G2-representation block that is exactly round59's own setup (Sigma alone, no V_lambda tensor factor -- verified structurally from Landweber's own equations that r(X_i) vanishes identically on this block, independent of any connection choice). POST-SKEPTIC CORRECTION (context-blind Step 8a pass, same session): the specific proportionality check is algebraically FORCED by the already-passing total-antisymmetry test on AHL2023's own structure constants plus the absence of repeated indices in the Nomizu table -- itself a generic consequence of building a naturally-reductive metric from any Ad-invariant form, not a G2/SU(3)-specific surprise. A coherent antisymmetry-preserving sign perturbation of the whole table would still pass this specific check while breaking round59's own Killing-spinor calibration (the actually discriminating test). Verdict downgraded from 'confirms round59's operator IS Kostant's, surprisingly' to 'confirms Kostant/Slebarski's algebraic framework genuinely applies to this project's Dirac-operator family' -- still a real, previously-unconnected, citable fact, but a narrower one than first framed. Whether the TWISTED constructions (C139, C141, C142's open W_cand=3+3bar+3bar) are literal instances of Landweber's twisted operator D_mu (Theorem th:slebarski, a general closed-form kernel formula per irreducible SU(3) summand) remains explicitly OPEN and unattempted -- flagged as the natural C145 follow-up, not executed in this round."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: PASS
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2578,7 +2583,7 @@ claims:
   - id: C145_TWISTED_DIRAC_NOT_KOSTANT_LANDWEBER_MU_BLOCK
     statement: "User-authorized follow-up to C144 ('го C145'): does C139/C141's own physicist-style twisted Dirac operator D' (Leibniz rule, both Sigma AND the twist bundle W=m carry their own Levi-Civita/Nomizu connection) coincide with Kostant/Landweber's algebraic twisted operator D_mu restricted to the trivial G2-representation block lambda=0 -- the exact block round59/C139/C141 compute? REJECTED, symbolically exact: D' does NOT equal alpha*c(v) tensor Id_W (alpha=sqrt(3)/4, c(v) reused unmodified from C144, both re-verified as a regression before the comparison). The residual equals exactly the extra term Sum_i e_i tensor conn_W[i] (W's own Nomizu connection, which Kostant's own construction gives zero weight at lambda=0 since r(X_i) vanishes on constants regardless of which H-representation is twisted by, per Landweber math/0005056 Section 3's own D_mu definition -- U_mu enters ONLY as a Hom_H(U_mu*,-) projection label, confirmed by direct citation, not inherited from summary). Nonzero at 192/2304 (48x48) matrix entries, Frobenius-norm ratio 4/9 relative to the matched part -- not a small correction. A self-raised follow-up check (before the skeptic pass) found this is even more decisive on the ACTUAL physics-relevant sector: projected onto the 1-dim su(3)-invariant domain-to-target block C139/C141 use for their own kernel computation, the Kostant candidate evaluates to EXACTLY ZERO while C139's own D' reproduces its own already-registered headline value |c|=1.154701 exactly -- the entire physical signal comes from the extra term. Context-blind skeptic pass (Step 8a) returned CONFIRMED-REAL, independently finding an even stronger confirmation: C139's own script (Sections 6a/7b) already computes this exact decomposition internally and states 'term1 remains exactly zero across whole torsion family' -- C139 itself established this fact on 2026-09-04 without ever connecting it to Kostant/Landweber until this round did. One hardening note (not fatal) closed by direct primary-source citation."
     truth_status: REFUTED
-    test_outcome: REJECT
+    test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2596,7 +2601,7 @@ claims:
   - id: C146_TERM1_VANISHING_IS_SCHUR_FORCED_NOT_M_SPECIFIC
     statement: "User proposed (post-C145) deriving E_W=D'-D_Kostant analytically and its SU(3)-equivariance as new low-hanging fruit; novelty check found most of this ALREADY done (E_W is literally C145's own already-computed EXTRA_TERM; the exact scalar c=-2*sqrt(3)/3 is already in C139's own registered results_c139.json, sympy exact arithmetic; SU(3)-equivariance is a trivial corollary of D' and D_Kostant both already being equivariant by construction). The genuinely open question instead: is C145's Term1=0 finding a numerical fact about twist bundle m specifically, or a FORCED, general theorem? PROVEN, symbolically, all four checks: (1) D_Sigma (round59's own untwisted operator) is SU(3)-equivariant, [D_Sigma,rho(a)]=0 for all 8 generators -- not previously verified standalone anywhere in this project's registry; (2) given equivariance + already-certified branching (Sigma_odd=3+1, Sigma_even=1+3bar), Schur's lemma forces D_Sigma's 'Sigma_odd-3-part' matrix block into Sigma_even to be EXACTLY ZERO (no '3' constituent in the target to map into) -- confirmed directly on the matrix; (3) C139's own domain-invariant vector is confirmed to have EXACTLY ZERO component along Sigma_odd's own '1'-part (all 6 entries), the mechanism that forces Term1 to see only the already-vanishing 3-block, since twist bundle m has no su(3) singlet to pair with that '1'; (4) D_Sigma's '1-block' (Sigma_odd's y123 column) exactly reproduces round59's own certified b=-sqrt(3), the complementary branch. CONSEQUENCE: Term1's vanishing is forced for ANY zero-singlet, 3bar-type twist bundle, not merely m -- provable in advance from pure branching data, no Dirac-operator computation needed. Free cross-check against C141's own already-registered Section 7-8 (no new computation): its m+2*1 twist's THREE {connection}-invariant summands split exactly as this theorem predicts -- the m-summand gives Term1=0/Term2=C139's own c_exact (matches this theorem's non-singlet branch), the two decoupled trivial singlets each give Term1=-sqrt(3) (matches this theorem's Check-4 value exactly)/Term2=0 (tautological, zero connection on a singlet). Context-blind skeptic pass: CONFIRMED-REAL, no fatal concern; two scope/citation-precision notes both accepted-with-doc (the specific column-to-irrep assignment used is standard rep theory imported not project-cited before now; Check 2's 24 zero entries split into 12 genuinely Schur-forced + 12 automatically parity-forced, now distinguished explicitly)."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: PASS
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2614,7 +2619,7 @@ claims:
   - id: C147_CONNECTION_COEFFICIENT_VANISHES_ONLY_AT_ZERO_CONNECTION
     statement: "User (consortium message) named this the single highest-value next round: for the invariant-connection class C139 already used, WHEN does the connection coefficient c_W(nabla) vanish? Both outcomes pre-registered as valuable (nonvanishing = robustness theorem; nontrivial zero locus = a genuine geometrically-tunable zero-mode mechanism). Novelty check first: C139's own Section 7b ALREADY swept 13 angles across C73b's certified 2-dim admissible torsion family and found |c(theta)| constant, but its own code comment names the residual gap exactly -- 'a linear functional on a real 2-dim space GENERICALLY has a 1-dim zero locus', so 13 samples cannot exclude a missed zero locus. THIS round supplies the continuum statement, made cheap by C146: since C146 proves Term1 == 0 identically (Schur-forced, any equivariant connection), c(nabla) = Term2(nabla), which is R-LINEAR in nabla by construction -- so TWO evaluations at basis directions determine the ENTIRE continuum, and the zero locus is decided by one basis-independent criterion (nonsingularity of the real 2x2 matrix [[Re c1, Re c2],[Im c1, Im c2]]). RESULT: the matrix is not merely nonsingular but an EXACT SIMILARITY -- det = 4/3, both singular values = 2*sqrt(3)/3, condition number 1.000000, c2/c1 = i. Hence c(alpha,beta) = c1*(alpha + i*beta), |c| = (2*sqrt(3)/3)*sqrt(alpha^2+beta^2), and c = 0 ONLY at the zero connection (the degenerate non-metric point). C139's kernel=0 is therefore a THEOREM over the family, not a scan result; the hoped-for geometrically-tunable zero mode does NOT exist inside this family. Linearity applied at NOMIZU's own coordinates reproduces C139's own registered |c_exact| = 2*sqrt(3)/3 exactly. Context-blind skeptic pass: CONFIRMED-REAL on the headline, no fatal concern (kill criterion did not fire; det sits ~15 orders above the float64 noise floor), with two scope caveats -- BOTH then closed by a follow-up (c147b) rather than merely documented: the complex structure making c C-linear is identified explicitly as the NEARLY-KAHLER J of AHL2023's own eq.(5) convention (NOMIZU o J verified in the family, independent of NOMIZU, acting as an exact 90-degree rotation in the family's coordinates -- so not an SVD-basis artifact), and both coefficients recomputed in EXACT sympy: c(NOMIZU) = -2*sqrt(3)/3, c(NOMIZU o J) = -2*sqrt(3)*I/3, ratio = I exactly (not float64 0.9999999999999997j)."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: PASS
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2632,7 +2637,7 @@ claims:
   - id: C148_DELTA_GEO_IS_ZERO_IN_EVERY_KERNEL_THIS_PROJECT_HAS_COMPUTED
     statement: "Accounting round (NO new computation -- every number read from already-committed results_c139.json and results_c141.json, cell-by-cell skeptic-verified). Decomposes all four twist-bundle kernels ever computed in this project into three levels: A = max(0, dim_domain - dim_target) (aggregate rank-nullity on the invariant-sector shape), F = the C141/C143 graded per-summand floor, K = observed kernel. RESULT: A <= F <= K holds in all four rows, and Delta_geo := K - F = 0 in ALL FOUR (round59/T0, C139/m, C141/m+2*1, T1). Delta_graded := F - A is nonzero in exactly ONE row: T1 (aggregate shape (3,3) gives A=0 while the graded floor gives F=1). Three framing corrections were forced by a context-blind skeptic pass and are incorporated, not appended: (1) this round's own first draft rejected the user's 'topology' label for level A, arguing it was 'Clebsch-Gordan, not topological' -- WITHDRAWN as too strong; by Bott's theorem the index of a homogeneous operator depends only on domain/range, and by Frobenius reciprocity it IS computed by branching multiplicities, so A is exactly the lambda=0 component of the EQUIVARIANT INDEX, genuinely topological AND branching-computable (these are not opposed; that coincidence is the content of the equivariant index theorem). Reached independently by the orchestrating session re-reading Landweber math/0005056 Section 3 and by the skeptic. What survives: in THIS pipeline both A and F come from the same branching data, so presenting their difference as 'representation theory beyond topology' would imply an independence of sources that does not exist here; and A is the EQUIVARIANT index at lambda=0, NOT the Atiyah-Singer index on the S6 bundle (different numbers -- this project has a registered null with ind(D(x)E)=7). (2) 'Delta_graded>0 marks where aggregate reasoning is insufficient' is a DEFINITIONAL identity (Delta_graded := F-A with F>=A always), not an empirical warning flag as the first draft framed it; only the n=1 coincidence is empirical. (3) The first draft conflated C141 with T1 -- C141's OWN row has Delta_graded=0; the nonzero row is T1, a comparison construction introduced INSIDE C141. This was missed by the orchestrating session entirely and is a genuine skeptic catch."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: NOT_RUN
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2650,7 +2655,7 @@ claims:
   - id: C149_OB11II_TRANSPORT_STEP_IS_WELLPOSED_FOR_D_SIGMA_UNDER_IDENTITY_COMPONENT
     statement: "Autonomous-session debt audit found a step NAMED but NEVER attempted: OB11(ii) (OPEN_BLOCKERS.md:1782-1791) specifies transporting D, J, gamma through the intertwiner U found in C70 and testing Clifford-compatibility; C72's own does_not_imply records it as explicitly deferred. NOBODY had checked whether that step is even WELL-POSED -- C70's OWN does_not_imply states U is non-unique ('Inn(su(3)) acts transitively on the solution family, ~8-real-dim continuous orbit'), and C142 (2026-09-04) sharpened this to 'basis-matching GAUGE freedom, not independent data'. CRITERION (elementary, one line): U'=U*g implies U'OU'^-1 = U(gOg^-1)U^-1, so the transported operator is representative-independent EXACTLY when [O, rho_su3(a)]=0. RESULT: for D_Sigma the transport IS representative-independent (commutator exactly 0, transport spread exactly 0 across 12 sampled group elements; negative control -- a random operator -- fails at order 1, commutator 2.476, spread 5.175, so the test genuinely discriminates). What makes this cheap TODAY and not on 2026-08-10: C146 (same session) proved D_Sigma is SU(3)-equivariant as a standalone fact for the first time -- a theorem proved to explain Term1's vanishing turned out to be the missing input for an unrelated three-week-old blocker. POST-SKEPTIC CORRECTIONS (verdict WEAKENED, three findings all accepted): (1) gamma is NOT a substantive control -- spin_lift builds every operator as sums of (1/2)E[a]E[b], parity-EVEN by construction, so [gamma,rho(a)]=0 holds automatically for ANY spin_lift output on ANY homogeneous space; the project already knew this (C139's own check `nab_i_preserves_sigma_even_odd_parity`). Evidence is therefore 1 substantive positive + 1 easy negative, NOT 2+1. (2) Only the IDENTITY COMPONENT of the residual freedom was sampled (exp of real span of the 8 su(3) generators); outer automorphisms (Z/2 for su(3)) and any discrete elements are untested -- 'well-posed' is scoped accordingly. (3) The exact 0.000e+00 transport spread for D_Sigma was flagged as numerically suspicious (a silent zero would make the row vacuous); CHECKED rather than explained away: max|D_Sigma|=1.732051=sqrt(3), ||D_Sigma||_F=2.449490=sqrt(6), rank=2, eigenvalues exactly {-sqrt3, 0x6, +sqrt3} matching round59's own certificate -- NOT degenerate; the exact zero is explained by extreme sparsity (2 nonzero entries out of 64). A non-degeneracy gate was added to the script. Unplanned corroboration of C146: rank 2 with only two nonzero entries means the untwisted operator is ENTIRELY the b-channel, a sharper statement than C146's own '3-block vanishes'."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: PASS
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2669,7 +2674,7 @@ claims:
   - id: C150_G44_INFORMATION_RETENTION_GATE_SYNTHESIS_NOT_THEOREM
     statement: "User proposed (consortium message, 2026-09-04) proving a functorial G44 information-loss theorem: if R: Rep(Spin(8))->Rep(G2) is restriction and F = F_tilde o R, then F(8v)=F(8s)=F(8c), so no such observable can discriminate triality channels -- ranked by the user as potentially one of the most useful results of the whole programme. NOVELTY CHECK BEFORE BUILDING (this project's own Mechanism-Transfer discipline) found the content ALREADY REGISTERED, in a STRONGER form than the proposed statement, so building it as a 'theorem' would have been a restatement -- the exact failure mode tiered [RESTATEMENT] once before in C136. What already exists: (a) C72 measured the collapse as a FILTRATION rather than a binary fact -- dim Hom(channel_i,channel_j) = 6 at su(3), 2 at g2, 0 at so(8) -- and constructed EXPLICIT INVERTIBLE g2-equivariant isomorphisms for all three channel pairs (dets 0.0129/0.0018/0.0047, intertwining residuals 5.0e-16 to 7.0e-16 across all 14 g2 generators). Given an explicit isomorphism, the functorial statement is a one-liner (isomorphic objects take equal values under any functor) -- no separate proof needed. (b) C63 established the information genuinely SURVIVES at so(8): the coincidental su(3)-level identification Phi intertwines su(3) at 5.13e-16 but fails against a generic so(8) element by ORDER ONE (residual 3.22, element norm 2.71). (c) The user's own red-team escape route -- that distinction might vanish at object level but survive in morphism/monoidal data -- was ALREADY TRIED in C62 via Baez's octonion trilinear-covariance construction (solving a(x).y + x.b(y) = c(x.y)): for all 8 su(3) generators the solution is (a,a,a), the identical matrix on all three channels, deviation 1.6e-15, with a working negative control (generic non-g2 so(8) element gives 4.53 and 2.91). So the trilinear structure collapses together with the objects. WHAT THIS ROUND ACTUALLY CONTRIBUTES: not mathematics, but an OPERATIONAL DECISION PROCEDURE assembling those three scattered results into one filter applicable before any construction -- 'does the proposed generation observable factor through g2-restricted data? YES -> closed without computation; NO -> state WHICH datum escapes and how it is realized; UNCLEAR -> treat as YES until answered'. Registered as a gate document, explicitly labelled synthesis rather than theorem."
     truth_status: SUPPORTED
-    test_outcome: NULL
+    test_outcome: NOT_RUN
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
@@ -2826,7 +2831,7 @@ claims:
     evidence_status: INTERNALLY_CERTIFIED
     lifecycle_status: ACTIVE
     evidence_file: "tom_s3_spinor_toy/experiments/20260905-c158-weyl-invariance-kernel-gate/decision.md"
-    depends_on: [C155_RANK2_QUADRATIC_FORM_KERNEL, C156_ROOT_RELATION_RULE_FALSIFIED_AND_REPLACEMENT_VACUOUS, C157_CHIRALITY_BALANCE_PROVEN_CLASSICAL_NOT_DISCOVERY]
+    depends_on: [C155_RATIO_IS_DIMENSIONAL_ARTIFACT_RANK_MISMATCH_ON_SU3T2, C156_ROOT_RELATION_RULE_FALSIFIED_AND_REPLACEMENT_VACUOUS, C157_CHIRALITY_BALANCE_PROVEN_CLASSICAL_NOT_DISCOVERY]
     supersedes: "no prior claim -- this round's own Steps 1-2 conclusions (G4 pass, isotypic decomposition) are RETAINED as verified computations but their epistemic status is downgraded in place (Steps 3-5 of the same round), from 'independent structural finding' to 'forced consequence, fully closed'"
     convention: "Clifford convention E_a^2=-1 (this project's standard, from round59); chirality operator omega=i^3*E_1..E_6 as defined in C156; Pin(m) twisted adjoint v|->alpha(s)*v*s^-1 (standard Chevalley/Meinrenken definition, independently confirmed matches Ciubotaru's own paper's convention)"
     caveat: "TRUE, fully verified (exact sympy arithmetic throughout, no floats), internally self-consistent mathematics -- but NOT a discovery under the user's own explicit five-gate mandate. Every load-bearing fact in this round is forced by objects that already existed in this project before C158 started, plus one independently-rediscovered 100-year-old classical fact (Pin cover of the Weyl group). Reported honestly as 'correct, complete, fully explained -- not new' rather than talked up. This was found through the round's OWN internal cross-checking (a self-caught forcing argument) PLUS one independent skeptic pass whose own suggested sharpening was then itself tool-verified rather than taken on faith."
@@ -2850,13 +2855,41 @@ schema:
   required:
     - id
     - statement
-    - truth_status        # PROVED | SUPPORTED | CONDITIONAL | OPEN | REFUTED
-    - test_outcome        # PASS | FAIL
+    - truth_status        # allowed values: see `enums` below
+    - test_outcome        # allowed values: see `enums` below
     - execution_status
     - evidence_status
-    - lifecycle_status    # ACTIVE | SUPERSEDED
+    - lifecycle_status
     - evidence_file
     - depends_on
+  # CANONICAL vocabulary for the five status fields (2026-10-03). This is the
+  # single source of truth: scripts/lint_claim_ledger.py reads it from here and
+  # tests/test_lint_claim_ledger.py fails if any entry uses a value not listed.
+  # The older prose lists in the file header and in earlier versions of this
+  # block disagreed with each other and with actual use; the values marked
+  # (used) were already in use and are now declared rather than guessed away.
+  #   test_outcome  PARTIAL (used): some checks passed, others failed or were not run
+  #   test_outcome  There is deliberately NO "NULL" value. Seven entries (C141,
+  #                 C144, C146-C150) had an UNQUOTED `NULL`, which YAML parses as
+  #                 null, silently erasing the field. On 2026-10-03 each was
+  #                 reassigned from its OWN text, not by a blanket rule: C141 FAIL
+  #                 (pre-registered discrimination did not discriminate, same
+  #                 pattern as C3/C14/C24: supported negative finding), C144 PASS
+  #                 (exact symbolic match, 64/64 entries), C146 PASS (proved, four
+  #                 checks), C147 PASS (exact similarity, det 4/3), C149 PASS
+  #                 (commutator exactly 0, negative control fails as required),
+  #                 C148 and C150 NOT_RUN (their own text: no new computation).
+  #                 Reversible via git if a different reading is preferred.
+  #   truth_status  PARTIALLY_SUPPORTED (used once, C94): part of the statement
+  #                 supported, the rest unresolved
+  #   evidence_status VERIFIED_EXTERNAL_SOURCE (used once, C67): a primary
+  #                 external source was read directly (not an internal certificate)
+  enums:
+    truth_status: [PROVED, SUPPORTED, PARTIALLY_SUPPORTED, CONDITIONAL, OPEN, REFUTED]
+    test_outcome: [PASS, FAIL, PARTIAL, INCONCLUSIVE, CONFLICTING, NOT_RUN]
+    execution_status: [READY, RUNNING, BLOCKED_INFRA, UNTRUSTED_ENV]
+    evidence_status: [ABSENT, PARTIAL, INTERNALLY_CERTIFIED, INDEPENDENTLY_REPRODUCED, EXTERNALLY_REVIEWED, FORMALLY_CHECKED, VERIFIED_EXTERNAL_SOURCE, INVALIDATED, CONTESTED]
+    lifecycle_status: [ACTIVE, PARKED, SUPERSEDED, RETIRED]
   optional:
     - notes
     - caveat
