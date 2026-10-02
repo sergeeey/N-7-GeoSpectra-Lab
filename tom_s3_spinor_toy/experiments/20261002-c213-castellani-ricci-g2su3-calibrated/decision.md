@@ -125,7 +125,23 @@ against a second external source.
 
 `PARENT_ACTION_GATE.md` F6 section to be updated with this result.
 
-## UPDATE 2026-10-02 (C216) — unresolved anomaly flagged, verdict NOT changed
+## UPDATE 2026-10-03 (C217) — RESOLVED: absolute values are in Castellani's half-convention
+
+C217 (`experiments/20261003-c217-castellani-convention-factor/`) found the
+cause of the anomaly below. Castellani's eq. (3.34) defines
+`R^a_b = R^a_{b de} V^d ^ V^e` without the standard 1/2, so this round's
+Riemann/Ricci are exactly 1/2 of the standard ones (2 x the code equals the
+unit round S6 tensor entry by entry, error 2e-15, on G2/SU(3) and on the
+SO(7)/SO(6) control). **Corrected values in the standard convention: Ricci
+`5/3` at G96's native `r=1` (not `5/6`), `5.0` in the ambient-unit frame (not
+`2.5`).** The PASS_CALIBRATED verdict, the N^010 calibration (it reproduces
+the paper's own convention), the Einstein-ness and the isotropy result all
+stand; only the bare absolute numbers `5/6` and `2.5` must not be quoted as
+standard Ricci values. The "Clean-number note" above is accordingly extended:
+the value was not just basis-dependent, it also carried this convention
+factor.
+
+## UPDATE 2026-10-02 (C216) — unresolved anomaly flagged, verdict NOT changed (SUPERSEDED by the C217 update above)
 
 C216 (`experiments/20261002-c216-kobayashi-nomizu-ricci-check/`), while
 independently cross-checking C215's `Ric^grad=1.5` via the Kobayashi-Nomizu

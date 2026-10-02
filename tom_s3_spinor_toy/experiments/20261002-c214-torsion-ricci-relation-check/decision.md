@@ -1,7 +1,7 @@
 # C214 Decision — torsion-Ricci relation check (C212 vs C213)
 
 **Date:** 2026-10-02
-**Verdict:** REJECT (the specific bridging formula `Ric=(5/24)|T^c|^2`) — C212 and C213 both independently re-confirmed, unaffected.
+**Verdict:** ~~REJECT~~ **RETRACTED 2026-10-03 (C217)** — the bridging formula `Ric=(5/24)|T^c|^2` was RIGHT: `5/24 * 24 = 5.0`, which is the true standard Ricci of the unit round S6 (= G2/SU(3) metric). The "computed 2.5" it was compared to was C213's Castellani value, which is in Castellani's half-convention (eq. 3.34 omits the standard 1/2); in the standard convention it is 5.0. Original text below kept as the record; see the UPDATE sections at the end. (Original verdict: REJECT of the specific bridging formula — C212 and C213 both independently re-confirmed, unaffected.)
 
 ## Results [VERIFIED-numpy]
 

@@ -9,6 +9,24 @@ Castellani-formula code shown to disagree with an independent symmetric-
 space control by exactly a factor of 2, root cause NOT identified, NOT a
 simple global coefficient bug (two specific hypotheses tested and refuted).
 
+> **RESOLVED 2026-10-03 by C217** (`experiments/20261003-c217-castellani-
+> convention-factor/`). The "unresolved Castellani anomaly" below is a
+> CONVENTION factor, not a bug: Castellani's eq. (3.34) defines the
+> curvature components by `R^a_b = R^a_{b de} V^d ^ V^e` WITHOUT the
+> standard 1/2, so his `R^a_{bde}` (and the code's output) is exactly 1/2
+> of the standard Riemann tensor. 2 x C213's tensor equals the unit round
+> S6 tensor entry by entry (1296 entries, error 2e-15) on BOTH the control
+> and the non-symmetric G2/SU(3), and KN + Friedrich-Ivanov (no Castellani
+> code) independently gives Ric^g = 5 = 4 + 1. Consequences: the MISMATCH
+> with 1.5 stands and is now explained (C215's 1.5 should be 4.0); C214's
+> REJECT is retracted; the "two refuted hypotheses" and the "suggestive,
+> NOT confirmed" language in Sections 2-4 below are SUPERSEDED (the
+> skeptic review of this round correctly noted that no diagnostic here
+> scaled all four terms together, and that G2/SU(3) = the round sphere
+> makes Ric^g = 5 a consequence, not a lead). Text below is kept as the
+> record of what was believed when it was committed; corrections to
+> statements that were simply wrong are marked CORRECTED.
+
 ## Results [VERIFIED-numpy]
 
 ```
@@ -21,7 +39,8 @@ Castellani Ric^g = 2.500000*delta  (spread 4.4e-16, off-diag 1.2e-16)
 --- G2/SU(3), ambient-unit frame (C214/C215 basis, scale=sqrt(3)) ---
 KN:  Ric^c = 4.000000*delta  (spread 1.8e-15, off-diag 1.7e-15), leak 3.7e-15
 KN:  |T|^2 = 24.000000  (EXACTLY matches C212/C214's octonion-route torsion)
-Castellani Ric^g = 2.500000*delta  (unchanged from C213/C214)
+Castellani Ric^g = 2.500000*delta  (CORRECTED: this is C214's rescaled value; C213 itself reported 0.8333 at r=1, the same code at r=sqrt3 gives 2.5)
+triangle_max_err = 2.5 on BOTH spaces (CORRECTED: this was in results_c216.json but not shown here; it is exactly (Ric^c + corr) - Castellani = 5 - 2.5, i.e. the factor 1/2 of C217)
 
 PREDICTION from C215 (Friedrich-Ivanov route): Ric^grad = 1.5
 KN route gives Ric^c = 4.000000
@@ -42,13 +61,14 @@ the method on the unknown (G2/SU(3)), per this project's own "instrument
 calibration before discovery" lesson (C201).
 
 **The torsion cross-check is a genuinely strong, independent confirmation.**
-KN's bracket-only torsion construction (`T^c(X,Y)=-[X,Y]_m`, no octonions
-anywhere) gives `|T|^2=24.000000` for G2/SU(3) — matching C212/C214's
-COMPLETELY DIFFERENT construction (the octonion cross product via G96's
-`phi` structure tensor) to the digit. Two unrelated mathematical objects
-(a Lie-bracket projection vs. an octonion triple product) landing on the
-identical number is strong evidence both are computing the same genuine
-geometric invariant correctly, in the same normalization.
+KN's bracket-only torsion construction (`T^c(X,Y)=-[X,Y]_m`, no octonion
+cross product in the KN code) gives `|T|^2=24.000000` for G2/SU(3) —
+matching C212/C214's octonion-cross-product construction to the digit.
+CORRECTED wording (skeptic review): these are two different OPERATIONS
+(a Lie-bracket projection vs. an octonion triple product), but both start
+from G96's `phi`-derived data, so the match checks the shared
+normalization and the two formulas' agreement, not a fully independent
+derivation from scratch. Still a strong consistency check.
 
 ## 2. What failed, and the diagnostic chain this triggered
 
@@ -100,15 +120,18 @@ UN-rescaled complement basis (`scale=1`, not C212-215's ambient-unit
 `scale=sqrt(3)`) and for a different purpose (a Schur's-Lemma vanishing
 question, not a Ricci computation). Re-running THIS round's own
 `kn_curvature_torsion` at `scale=1` gives `Ric^c=4/3` exactly (a clean
-rational number), and confirms the expected `Ric^c(scale) =
-Ric^c(1)/scale^2` geometric scaling law exactly (`(4/3)/3=4/9`... numerically
-`1.3333/4.0=0.3333=1/3=1/scale^2` with `scale^2=3`). This is a
+rational number). CORRECTED (the original sentence stated the scaling
+law inverted and contradicted its own arithmetic): the code and numbers
+give `Ric^c(scale) = Ric^c(1) * scale^2` (`4/3 -> 4.0`, factor
+`scale^2 = 3`); `scale` multiplies the generators to form the orthonormal
+frame `e_a = scale*K_a`, so a larger `scale` means SHORTER reference
+generators in the metric, not a bigger sphere. This is a
 SELF-CONSISTENCY check of C216's own scale-handling (algebraically
 guaranteed, not new information) — C165 itself never computed a Ricci
 tensor, only the raw curvature 2-form, so it does not independently
 pin down the absolute value `4.0` beyond what C216 already established.
 
-## 3. Net status: unresolved, not patched
+## 3. Net status: unresolved, not patched (SUPERSEDED by C217 — see the RESOLVED banner at the top; hypotheses (a)/(b) below are both wrong, the cause is Castellani's eq. 3.34 convention)
 
 **The control's 2.5-vs-5.0 discrepancy is real, reproducible, and NOT
 explained by either hypothesis tested.** Two live explanations remain,

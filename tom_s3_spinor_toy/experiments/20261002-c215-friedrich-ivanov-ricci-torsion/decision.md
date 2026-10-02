@@ -97,7 +97,21 @@ both known, consistently related), not a new F6 equation-of-motion
 input on its own; `activeContext.md` updated with the full chain
 (C212-C215) for continuity.
 
-## UPDATE 2026-10-02 (C216) — the independent cross-check this round named
+## UPDATE 2026-10-03 (C217) — the value 1.5 is WRONG; correct Ric^grad = 4.0
+
+C217 found that C213's Ricci (the input `Ric^g = 2.5`) is in Castellani's
+half-convention (eq. 3.34 omits the standard 1/2); the standard value in
+this frame is `Ric^g = 5.0` (round unit S6). Friedrich-Ivanov's formula
+itself, the torsion `|T|^2 = 24`, `corr = 1.0*delta` (trace `|T|^2/4 = 6`,
+an exact identity) and the component-wise isotropy check are all unaffected;
+the corrected result is `Ric^grad = Ric^g - corr = 5.0 - 1.0 = 4.0*delta`,
+isotropic as before, and **equal to C216's independent Kobayashi-Nomizu
+value 4.0**. The headline "new number 1.5" of this round is retracted.
+Note for the record: this round's own script asserts `Ric^g == 2.5`
+(`c215_friedrich_ivanov_check.py`) and so still encodes the half-convention;
+it was not edited.
+
+## UPDATE 2026-10-02 (C216) — the independent cross-check this round named (SUPERSEDED by C217 above)
 ## as its own next step ran, and MISMATCHED
 
 C216 ran exactly the Kobayashi-Nomizu cross-check named above ("Next step

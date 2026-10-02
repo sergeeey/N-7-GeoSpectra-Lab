@@ -903,6 +903,19 @@ been independently cross-checked against a second external source. See
 `experiments/20261002-c213-castellani-ricci-g2su3-calibrated/
 decision.md`.
 
+**CORRECTION (C217, 2026-10-03) — the absolute Ricci value above is in
+Castellani's half-convention.** Castellani's eq. (3.34) defines the
+curvature components without the standard 1/2, so C213's `5/6` (native
+`r=1`) is `5/3` in the standard convention, and the ambient-unit value `2.5`
+(C214) is `5.0`, the unit round S6 (the G2-invariant metric on G2/SU(3) is the
+round one). Verified component-wise (2 x the code equals the round tensor,
+1296 entries, error 2e-15) and by an independent Kobayashi-Nomizu +
+Friedrich-Ivanov route (C216/C217). Einstein-ness, isotropy and the N^010
+calibration (in the paper's own convention) are unaffected. C215's
+`Ric^grad=1.5` is corrected to `4.0`; C214's REJECT is retracted. Still not an
+F6 equation-of-motion input. See `experiments/20261003-c217-castellani-
+convention-factor/decision.md`.
+
 **Pass criterion:** an actual action principle is named (Einstein-Cartan,
 Chamseddine-Connes-Marcolli spectral action, or another explicitly cited
 framework) and its equations of motion are derived or cited, not merely

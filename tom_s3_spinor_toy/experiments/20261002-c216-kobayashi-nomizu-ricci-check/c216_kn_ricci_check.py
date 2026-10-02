@@ -15,7 +15,10 @@ connection = Levi-Civita), where Ric = 5*delta (n-1 for the unit n-sphere).
 
 Triangle check at the end: Ric^g (Castellani, calibrated in C213) must
 equal Ric^c (KN) - (1/4)*sum_i g(T(e_i,X),T(Y,e_i)) with T taken from the
-BRACKET (not from octonions). Holds on the control (T=0) and on G2/SU(3).
+BRACKET (not from octonions). CORRECTED 2026-10-03: as coded this does NOT
+hold -- it misses by 2.5 on both spaces (see results_c216.json), because
+Castellani's eq. 3.34 defines the components without the standard 1/2. It
+holds exactly for 2 x Castellani (C217).
 """
 
 from __future__ import annotations
