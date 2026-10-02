@@ -864,6 +864,25 @@ ECSK torsion+metric EOM is made (different coset factor, different
 formalism). See `experiments/20261002-c211-csdr-moduli-potential-g2su3/
 decision.md`.
 
+**UPDATE (C212, 2026-10-02) — S6's own TORSION (not curvature) now
+explicit and calibrated.** Agricola-Borowka-Friedrich (arXiv:1707.08591,
+full text, Prop 4.2) gives the characteristic-connection torsion 3-form
+`T^c(X,Y,Z)=-<N,(XxY)xZ>` via the octonion cross product -- the SAME
+structure G96's own `phi` tensor already encodes. Evaluated on G96/C210's
+certified complement basis: `|T|^2=8/9` exactly (normalization-dependent,
+same caveat as C211). MANDATORY positive control passed to machine
+precision (1.53e-16): Gray's theorem (torsion of a nearly-Kahler
+6-manifold's characteristic connection is totally antisymmetric),
+confirming the formula transcription is correct. A separate attempt
+(same session) to derive S6's Ricci/Einstein constant via a general
+rescaled-coset curvature formula (Castellani, arXiv:hep-th/9912277) was
+explicitly set aside as too risky to hand-transcribe without its own
+calibration case -- NOT attempted, not a silent gap. Does NOT relate to
+C134/C207's ECSK torsion (matter-sourced, full 13D background) -- this
+is the INTRINSIC geometric torsion of the S6 factor alone, same word,
+different object. See `experiments/20261002-c212-s6-nearlykahler-
+torsion-3form/decision.md`.
+
 **Pass criterion:** an actual action principle is named (Einstein-Cartan,
 Chamseddine-Connes-Marcolli spectral action, or another explicitly cited
 framework) and its equations of motion are derived or cited, not merely
