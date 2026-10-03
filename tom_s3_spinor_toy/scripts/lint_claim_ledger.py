@@ -3,8 +3,8 @@
 
 What it checks (errors -> exit code 1):
   L0  the ledger declares ``schema.required`` and ``schema.enums``, and the
-      enums cover all five status fields (truth_status, test_outcome,
-      execution_status, evidence_status, lifecycle_status)
+      enums cover the five status fields (truth_status, test_outcome,
+      execution_status, evidence_status, lifecycle_status) plus finding_status
   L1  every claim has all fields listed in ``schema.required`` (a YAML null or
       empty string counts as missing)
   L2  enum fields use only values declared in ``schema.enums`` (the single
@@ -18,19 +18,33 @@ What it checks (errors -> exit code 1):
   L7  every premise ``claim:`` in DERIVATION_GRAPH.yaml is a ledger id
   L8  no mapping in either YAML file repeats a key (``yaml.safe_load`` silently
       keeps the last value, so the earlier one would be lost without notice)
+  L9  a claim with truth_status REFUTED declares finding_status (see below)
+  L10 finding_status is consistent with the rest of the entry: RETRACTED needs
+      lifecycle_status SUPERSEDED/RETIRED; QUALIFIED needs a non-empty
+      ``caveat`` or ``does_not_imply`` that states the limit
+  L11 no ACTIVE claim that asserts a finding (truth_status PROVED/SUPPORTED, or
+      finding_status ESTABLISHED/QUALIFIED) lists a RETRACTED claim in
+      ``depends_on`` (``depends_on`` means "relies on"; cite a claim you correct
+      in ``supersedes``)
+
+Hypothesis status vs finding status. ``truth_status`` is the status of the
+proposition AS WORDED; for an entry that records a negative result it is often
+the status of the ORIGINAL HYPOTHESIS ("REFUTED as worded"). ``finding_status``
+(ESTABLISHED / QUALIFIED / OPEN / RETRACTED) is what the entry itself records as
+established, i.e. what later claims may rely on; when absent it equals
+``truth_status``. It is required exactly where the two diverge (REFUTED).
+``test_outcome`` is the outcome of the test of the motivating hypothesis, so
+SUPPORTED + FAIL is the normal shape of a supported negative finding and is not
+flagged. Before this split (2026-10-03) a "PROVED claim rests on a REFUTED
+premise" check was only advisory, because every hit read was a legitimate
+negative finding; with the split such a premise is judged by its finding_status.
 
 Advisory checks (``--advisory``; never change the exit code):
-  A1  a PROVED/SUPPORTED claim whose test_outcome is FAIL/CONFLICTING
   A2  an ACTIVE PROVED/SUPPORTED claim that depends on a premise which is
-      REFUTED / SUPERSEDED / RETIRED / FAIL / CONTESTED
-
-Why A1/A2 are advisory and not errors: in this ledger ``truth_status`` is often
-the status of the ORIGINAL HYPOTHESIS ("REFUTED as worded"), while the entry
-records the negative FINDING, and later claims legitimately build on that
-finding. On 2026-10-03 the entries behind C3, C14, C27 and C45 were read and
-were of this kind; the remaining hits were not each read. Until the schema
-separates hypothesis-status from finding-status, A1/A2 are prompts for a
-human, not defects.
+      SUPERSEDED / RETIRED, has finding_status OPEN, or has evidence_status
+      INVALIDATED / CONTESTED. These are legitimate when the dependant itself
+      resolves or re-grounds the premise (e.g. C155 on C154), so they are
+      prompts for a human, not defects.
 
 What "recognised reference" means (stated so L6 is not over-read): only
 tokens ending in a known file extension (case-insensitive, see ``_EXTS``) or
@@ -76,6 +90,8 @@ STATUS_FIELDS = (
     "evidence_status",
     "lifecycle_status",
 )
+# finding_status is optional per claim (defaults to truth_status) but must be declared.
+ENUM_FIELDS = (*STATUS_FIELDS, "finding_status")
 
 _EXTS = "md|py|yaml|yml|json|tex|txt|pdf|csv|npz|npy|ipynb|toml|cfg|ini|sh|log|html|bib|lean|png|jpg|svg"
 # path[:a[-b]] where path ends in a known extension (a file) or in "/" (a
@@ -89,10 +105,10 @@ _REF_RE = re.compile(
 )
 _URL_RE = re.compile(r"https?://\S+")
 
-_BAD_PREMISE_TRUTH = {"REFUTED"}
-_BAD_PREMISE_LIFECYCLE = {"SUPERSEDED", "RETIRED"}
-_BAD_PREMISE_TEST = {"FAIL", "CONFLICTING"}
-_BAD_PREMISE_EVIDENCE = {"INVALIDATED", "CONTESTED"}
+_STRONG = {"PROVED", "SUPPORTED"}
+_ASSERTS_FINDING = {"ESTABLISHED", "QUALIFIED"}
+_WEAK_PREMISE_LIFECYCLE = {"SUPERSEDED", "RETIRED"}
+_WEAK_PREMISE_EVIDENCE = {"INVALIDATED", "CONTESTED"}
 
 
 @dataclass(frozen=True)
@@ -226,6 +242,17 @@ def _is_empty(value: object) -> bool:
     return value is None or (isinstance(value, str) and not value.strip())
 
 
+def _weak_premise_reason(premise: dict) -> str | None:
+    """Why an established claim resting on ``premise`` deserves a human look (or None)."""
+    if premise.get("lifecycle_status") in _WEAK_PREMISE_LIFECYCLE:
+        return f"lifecycle_status={premise.get('lifecycle_status')}"
+    if premise.get("finding_status") == "OPEN":
+        return "finding_status=OPEN (question left unanswered)"
+    if premise.get("evidence_status") in _WEAK_PREMISE_EVIDENCE:
+        return f"evidence_status={premise.get('evidence_status')}"
+    return None
+
+
 # ---------------------------------------------------------------- the lint
 def lint_ledger(
     ledger: dict,
@@ -273,7 +300,7 @@ def lint_ledger(
             Finding("L0", "<schema>", "ledger has no schema.enums mapping")
         )
     else:
-        for f in STATUS_FIELDS:
+        for f in ENUM_FIELDS:
             if f not in enums:
                 rep.errors.append(
                     Finding("L0", "<schema>", f"schema.enums has no entry for '{f}'")
@@ -377,13 +404,38 @@ def lint_ledger(
                             )
                         )
 
-        truth, outcome = c.get("truth_status"), c.get("test_outcome")
-        if truth in {"PROVED", "SUPPORTED"} and outcome in _BAD_PREMISE_TEST:
-            rep.advisories.append(
+        finding = c.get("finding_status")
+        if c.get("truth_status") == "REFUTED" and _is_empty(finding):
+            rep.errors.append(
                 Finding(
-                    "A1",
+                    "L9",
                     cid,
-                    f"truth_status={truth} with test_outcome={outcome} (negative finding?)",
+                    "truth_status is REFUTED but finding_status is not declared "
+                    "(what does this entry establish?)",
+                )
+            )
+        if finding == "RETRACTED" and c.get("lifecycle_status") not in (
+            _WEAK_PREMISE_LIFECYCLE
+        ):
+            rep.errors.append(
+                Finding(
+                    "L10",
+                    cid,
+                    f"finding_status RETRACTED but lifecycle_status is "
+                    f"{c.get('lifecycle_status')!r} (must be SUPERSEDED or RETIRED)",
+                )
+            )
+        if (
+            finding == "QUALIFIED"
+            and _is_empty(c.get("caveat"))
+            and not c.get("does_not_imply")
+        ):
+            rep.errors.append(
+                Finding(
+                    "L10",
+                    cid,
+                    "finding_status QUALIFIED but neither caveat nor does_not_imply "
+                    "states the limit",
                 )
             )
 
@@ -393,26 +445,32 @@ def lint_ledger(
         )
 
     for c in entries:
-        if c.get("lifecycle_status") == "ACTIVE" and c.get("truth_status") in {
-            "PROVED",
-            "SUPPORTED",
-        }:
-            for d in deps.get(str(c.get("id")), []):
-                p = by_id.get(d)
-                if p is not None and (
-                    p.get("truth_status") in _BAD_PREMISE_TRUTH
-                    or p.get("lifecycle_status") in _BAD_PREMISE_LIFECYCLE
-                    or p.get("test_outcome") in _BAD_PREMISE_TEST
-                    or p.get("evidence_status") in _BAD_PREMISE_EVIDENCE
-                ):
-                    rep.advisories.append(
-                        Finding(
-                            "A2",
-                            str(c["id"]),
-                            f"{c['truth_status']} claim rests on {d} "
-                            f"(truth={p.get('truth_status')}, test={p.get('test_outcome')})",
-                        )
+        # "strong": an ACTIVE entry that asserts something as established
+        strong = c.get("lifecycle_status") == "ACTIVE" and (
+            c.get("truth_status") in _STRONG
+            or c.get("finding_status") in _ASSERTS_FINDING
+        )
+        if not strong:
+            continue
+        for d in deps.get(str(c.get("id")), []):
+            p = by_id.get(d)
+            if p is None:
+                continue
+            if p.get("finding_status") == "RETRACTED":
+                rep.errors.append(
+                    Finding(
+                        "L11",
+                        str(c["id"]),
+                        f"ACTIVE established claim depends on RETRACTED claim {d} "
+                        "(use `supersedes`, not `depends_on`, to cite a claim you correct)",
                     )
+                )
+                continue
+            reason = _weak_premise_reason(p)
+            if reason:
+                rep.advisories.append(
+                    Finding("A2", str(c["id"]), f"rests on {d} ({reason})")
+                )
 
     if graph is not None:
         seen_deriv: set[str] = set()

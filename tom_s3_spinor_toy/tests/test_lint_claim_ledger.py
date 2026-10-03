@@ -10,6 +10,8 @@ Design (this project's own negative-control discipline):
     already-parsed dicts;
   * the defect classes actually found in the real ledger on 2026-10-03 are
     re-injected into a copy of it and must be caught again (regression);
+  * the hypothesis-status / finding-status split is tested on the real ledger:
+    a legitimate negative finding (C45 -> C48) is silent, a retraction is not;
   * the real ledger + derivation graph must lint clean (the guard itself).
 
 Evidence level: the synthetic tests verify the TOOL ([VERIFIED-SYNTHETIC], valid
@@ -49,8 +51,9 @@ ENUMS = {
     "truth_status": ["PROVED", "SUPPORTED", "REFUTED"],
     "test_outcome": ["PASS", "FAIL", "NOT_RUN"],
     "execution_status": ["READY"],
-    "evidence_status": ["INTERNALLY_CERTIFIED"],
+    "evidence_status": ["INTERNALLY_CERTIFIED", "CONTESTED"],
     "lifecycle_status": ["ACTIVE", "SUPERSEDED"],
+    "finding_status": ["ESTABLISHED", "QUALIFIED", "OPEN", "RETRACTED"],
 }
 REQUIRED = [
     "id",
@@ -126,6 +129,12 @@ def _bad_enum(w):
     w[0]["claims"][0]["truth_status"] = "PARTLY_TRUE"
 
 
+def _bad_finding_enum(w):
+    w[0]["claims"][1]["finding_status"] = (
+        "PROVED"  # a truth_status value, not a finding value
+    )
+
+
 def _dup_id(w):
     w[0]["claims"].append(_claim("A"))
 
@@ -190,6 +199,10 @@ def _one_enum_field_missing(w):
     ]  # would silently switch L2 off for that field
 
 
+def _finding_enum_missing(w):
+    del w[0]["schema"]["enums"]["finding_status"]
+
+
 def _graph_unknown_premise(w):
     w[1]["derivations"][0]["premises"].append({"claim": "GHOST"})
 
@@ -198,10 +211,51 @@ def _graph_dup_derivation(w):
     w[1]["derivations"].append(copy.deepcopy(w[1]["derivations"][0]))
 
 
+def _refuted_without_finding(w):
+    # hypothesis refuted, but the entry does not say what it establishes
+    w[0]["claims"][0].update(truth_status="REFUTED", test_outcome="FAIL")
+
+
+def _retracted_but_active(w):
+    # B has no dependants, so this isolates L10 from L11
+    w[0]["claims"][1].update(finding_status="RETRACTED", lifecycle_status="ACTIVE")
+
+
+def _qualified_without_limit(w):
+    w[0]["claims"][1].update(finding_status="QUALIFIED")  # no caveat, no does_not_imply
+
+
+def _active_depends_on_retracted(w):
+    w[0]["claims"][0].update(
+        truth_status="REFUTED",
+        test_outcome="FAIL",
+        finding_status="RETRACTED",
+        lifecycle_status="SUPERSEDED",
+    )  # B (ACTIVE, SUPPORTED) depends on A
+
+
+def _qualified_depends_on_retracted(w):
+    # B is a refuted hypothesis whose finding is QUALIFIED (it still asserts a finding),
+    # and it relies on the retracted A: that is also reliance on withdrawn content
+    w[0]["claims"][0].update(
+        truth_status="REFUTED",
+        test_outcome="FAIL",
+        finding_status="RETRACTED",
+        lifecycle_status="SUPERSEDED",
+    )
+    w[0]["claims"][1].update(
+        truth_status="REFUTED",
+        test_outcome="FAIL",
+        finding_status="QUALIFIED",
+        caveat="limited to the round metric",
+    )
+
+
 CONTROLS = [
     (_del_statement, "L1"),
     (_none_outcome, "L1"),
     (_bad_enum, "L2"),
+    (_bad_finding_enum, "L2"),
     (_dup_id, "L3"),
     (_dangling, "L4"),
     (_self_dep, "L4"),
@@ -217,8 +271,14 @@ CONTROLS = [
     (_glob_no_match, "L6"),
     (_no_enums, "L0"),
     (_one_enum_field_missing, "L0"),
+    (_finding_enum_missing, "L0"),
     (_graph_unknown_premise, "L7"),
     (_graph_dup_derivation, "L7"),
+    (_refuted_without_finding, "L9"),
+    (_retracted_but_active, "L10"),
+    (_qualified_without_limit, "L10"),
+    (_active_depends_on_retracted, "L11"),
+    (_qualified_depends_on_retracted, "L11"),
 ]
 
 
@@ -232,6 +292,38 @@ def test_each_defect_class_triggers_exactly_its_code(world, mutate, code):
     assert rep.error_codes() == {code}, (
         f"{mutate.__name__}: expected only {code}, got {rep.errors}"
     )
+
+
+# ---------------------------------------------------------------- hypothesis vs finding status
+def test_refuted_hypothesis_with_established_finding_is_clean_and_silent(world):
+    """The exact shape of the old false positives (C45 -> C48): the hypothesis is refuted,
+    the negative finding stands, and a later claim legitimately builds on it."""
+    ledger = world[0]
+    ledger["claims"][0].update(
+        truth_status="REFUTED", test_outcome="FAIL", finding_status="ESTABLISHED"
+    )
+    ledger["claims"][1].update(truth_status="PROVED")
+    rep = run(world)
+    assert rep.errors == []
+    assert rep.advisories == []
+
+
+def test_qualified_finding_with_a_stated_limit_is_accepted(world):
+    for field_name, value in (
+        ("caveat", "limited to the round metric"),
+        ("does_not_imply", ["x"]),
+    ):
+        w = copy.deepcopy(world[0]), world[1], world[2]
+        w[0]["claims"][1].update(finding_status="QUALIFIED", **{field_name: value})
+        assert run(w).errors == [], field_name
+
+
+def test_supported_finding_with_failed_motivating_test_is_not_flagged(world):
+    """truth SUPPORTED + test FAIL is the normal shape of a supported negative finding."""
+    world[0]["claims"][0].update(truth_status="SUPPORTED", test_outcome="FAIL")
+    rep = run(world)
+    assert rep.errors == []
+    assert rep.advisories == []
 
 
 # ---------------------------------------------------------------- YAML-text-level defects
@@ -351,18 +443,31 @@ def test_tracked_mode_requires_exact_case_and_tracking(world, tmp_path):
     assert run(world, tracked={"ev.md"}, repo_root=tmp_path).error_codes() == {"L6"}
 
 
-# ---------------------------------------------------------------- advisories
-def test_advisories_never_become_errors(world):
-    ledger = world[0]
-    ledger["claims"][0].update(
-        truth_status="REFUTED", test_outcome="FAIL"
-    )  # negative finding
-    ledger["claims"][1].update(truth_status="PROVED")  # builds on it
+# ---------------------------------------------------------------- advisories (A2)
+@pytest.mark.parametrize(
+    "premise_update, reason_fragment",
+    [
+        ({"lifecycle_status": "SUPERSEDED"}, "SUPERSEDED"),
+        (
+            {
+                "truth_status": "REFUTED",
+                "test_outcome": "FAIL",
+                "finding_status": "OPEN",
+            },
+            "OPEN",
+        ),
+        ({"evidence_status": "CONTESTED"}, "CONTESTED"),
+    ],
+    ids=["superseded", "open_finding", "contested_evidence"],
+)
+def test_a2_flags_established_claim_resting_on_a_weak_premise(
+    world, premise_update, reason_fragment
+):
+    world[0]["claims"][0].update(premise_update)
     rep = run(world)
     assert rep.errors == []
-    assert {f.code for f in rep.advisories} == {"A2"}
-    ledger["claims"][0].update(truth_status="SUPPORTED", test_outcome="FAIL")
-    assert "A1" in {f.code for f in run(world).advisories}
+    assert [f.code for f in rep.advisories] == ["A2"]
+    assert reason_fragment in rep.advisories[0].message
 
 
 # ---------------------------------------------------------------- the real ledger
@@ -381,6 +486,10 @@ def _real_lint(ledger, graph, ledger_dups=(), graph_dups=()):
     return lint.lint_ledger(
         ledger, graph, ledger_dups=list(ledger_dups), graph_dups=list(graph_dups)
     )
+
+
+def _by_prefix(ledger, prefix):
+    return next(c for c in ledger["claims"] if str(c["id"]).startswith(prefix))
 
 
 def test_real_ledger_lints_clean(real):
@@ -409,7 +518,7 @@ def test_real_ledger_regressions_are_caught(real):
     ledger["claims"][idx]["test_outcome"] = None
     assert "L1" in _real_lint(ledger, graph).error_codes()
 
-    # (2) off-vocabulary value (the old `MIXED` / `REJECT` synonyms)
+    # (2) off-vocabulary value (the old `MIXED` / `REJECT` synonyms, and `NULL`)
     for bad in ("MIXED", "REJECT", "NULL"):
         ledger, graph = variant()
         ledger["claims"][idx]["test_outcome"] = bad
@@ -433,6 +542,21 @@ def test_real_ledger_regressions_are_caught(real):
     graph["derivations"][0]["premises"][0]["claim"] = "C0_NOT_A_CLAIM"
     assert "L7" in _real_lint(ledger, graph).error_codes()
 
+    # (6) a REFUTED entry that does not say what it establishes
+    ledger, graph = variant()
+    del _by_prefix(ledger, "C45_")["finding_status"]
+    assert "L9" in _real_lint(ledger, graph).error_codes()
+
+    # (7) a retracted entry that is still ACTIVE
+    ledger, graph = variant()
+    _by_prefix(ledger, "C28_")["lifecycle_status"] = "ACTIVE"
+    assert "L10" in _real_lint(ledger, graph).error_codes()
+
+    # (8) an ACTIVE established claim starts relying on the retracted C28
+    ledger, graph = variant()
+    _by_prefix(ledger, "C5_")["depends_on"] = [_by_prefix(ledger, "C28_")["id"]]
+    assert "L11" in _real_lint(ledger, graph).error_codes()
+
 
 def test_real_ledger_text_level_regressions_are_caught(real):
     """Unquoted NULL and a repeated key, injected into the real file TEXT."""
@@ -451,6 +575,42 @@ def test_real_ledger_text_level_regressions_are_caught(real):
     )
     data, dups = lint.load_yaml_text(doubled)
     assert "L8" in _real_lint(data, graph, dups).error_codes()
+
+
+def test_real_ledger_split_makes_negative_findings_silent_but_not_retractions(real):
+    """C45 (hypothesis REFUTED as worded, finding ESTABLISHED) is relied on by C48/C52/C56/C58.
+    Before the split those were flagged as 'rests on a REFUTED premise'; now they are silent,
+    while the genuinely weak premises (superseded records) are still reported."""
+    ledger, graph, ledger_dups, graph_dups = real
+    c45 = _by_prefix(ledger, "C45_")
+    assert c45["truth_status"] == "REFUTED"
+    assert c45["finding_status"] in (
+        "ESTABLISHED",
+        "QUALIFIED",
+    )  # a finding, not a retraction
+    dependants = [c["id"] for c in ledger["claims"] if c45["id"] in c["depends_on"]]
+    assert len(dependants) >= 3, (
+        "the premise of this test (C45 has active dependants) changed"
+    )
+
+    rep = _real_lint(ledger, graph, ledger_dups, graph_dups)
+    assert rep.errors == []
+    noisy = [
+        f for f in rep.advisories if f.claim_id in dependants and c45["id"] in f.message
+    ]
+    assert noisy == [], noisy
+
+    # every remaining advisory is the 'resting on a superseded/open/contested record' kind
+    for f in rep.advisories:
+        assert f.code == "A2"
+        assert any(
+            w in f.message
+            for w in ("SUPERSEDED", "RETIRED", "OPEN", "INVALIDATED", "CONTESTED")
+        )
+
+    # and the split is complete: every REFUTED entry declares what it establishes
+    refuted = [c for c in ledger["claims"] if c["truth_status"] == "REFUTED"]
+    assert refuted and all(c.get("finding_status") for c in refuted)
 
 
 def test_real_ledger_has_no_null_valued_status_fields(real):

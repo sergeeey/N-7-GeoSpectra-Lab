@@ -28,7 +28,9 @@
 #
 # The lists above are a summary. The CANONICAL, machine-checked vocabulary is
 # `schema.enums` at the bottom of this file (it also declares PARTIAL for
-# test_outcome, PARTIALLY_SUPPORTED, VERIFIED_EXTERNAL_SOURCE). It is
+# test_outcome, PARTIALLY_SUPPORTED, VERIFIED_EXTERNAL_SOURCE, and the
+# finding_status values that separate the status of a hypothesis from the status
+# of the finding an entry records). It is
 # enforced by scripts/lint_claim_ledger.py (run: python scripts/lint_claim_ledger.py).
 #
 # Every evidence_file:line trace was Read/Grep-confirmed this session or in
@@ -207,6 +209,7 @@ claims:
   - id: C10_MIXED_Y_ANOMALY_FAIL
     statement: "All three anomaly conditions ([SU(3)_c]^2 U(1)_Y, [U(1)_Y]^3, [grav]^2 U(1)_Y) computed for BOTH t=0,1 endpoints separately using Y=T3R+(B-L)/2 -- none show forcing of both sectors together"
     truth_status: REFUTED
+    finding_status: ESTABLISHED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -223,6 +226,7 @@ claims:
   - id: C16_REMAINING_MIXED_Y_CHANNELS_FAIL
     statement: "[SU(2)_L]^2 U(1)_Y and [SU(2)_R]^2 U(1)_Y (the 2 mixed-Y channels round96/round92 never computed) also vanish for both t=0,1 endpoints and in union -- extends C10's FAIL to the full 5-condition mixed-U(1)_Y set"
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -463,6 +467,7 @@ claims:
   - id: C22_H1A_KILLING_SPINOR_REFUTED
     statement: "The ordinary Riemannian Killing-spinor equation (nabla^LC psi = kappa X.psi) does NOT select t=0/1 -- round S3 already has Killing spinors w.r.t. the Levi-Civita connection (t=1/2) regardless of anything about the nabla^t family"
     truth_status: REFUTED
+    finding_status: ESTABLISHED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -568,6 +573,7 @@ claims:
   - id: C27_MULTIPLICITY_2_FAIL
     statement: "dim_C ker(D_{S3,t=0}) = 2, not 1 -- confirmed by two independent methods (Peter-Weyl representation theory; direct symbolic construction). The same holds at t=1 in the right-invariant frame under c0=-2 (C24). Combined with dim ker(D_{S6,twisted})=1 per channel (C2) and the tensor-product kernel identity for a decoupled sum-of-squares operator, this gives dim ker(D_full)=2 per triality channel, 6 total across 3 channels -- NOT the 3 the torsion-escape-route program needs. The frozen assumption ('exactly one physical internal mode per S6 zero mode') is FALSE as stated. No Majorana/reality condition, no orbifold projection, and no already-established gauge-multiplet-counting convention in this project currently resolves this gap"
     truth_status: REFUTED
+    finding_status: ESTABLISHED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -622,6 +628,7 @@ claims:
   - id: C28_OB10_GEOMETRIC_BUNDLE_PSEUDOREAL
     statement: "[RETRACTED 2026-08-09 -- SEE C32.] Original claim: the 16-dim geometric S3xS6 Clifford module is PSEUDOREAL (B*conj(B)=-I), with mixed signature Cl(6,3). BOTH parts are WRONG. The Cl(6,3) signature was an artifact of gluing two sub-projects that carry OPPOSITE Clifford sign conventions (S3/round67 uses Cl(0,3); S6/s6-harm-g0 uses Cl(6,0)) -- not a geometric fact. S3xS6 is a 9-dim RIEMANNIAN product and requires ONE uniform convention; under uniform Cl(0,9) the signature is (0,9) and the type is REAL (B*conj(B)=+I), matching Spin(9)'s Delta_9=R^16 (9 mod 8 = 1). Superseded by C32."
     truth_status: REFUTED
+    finding_status: RETRACTED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -738,6 +745,7 @@ claims:
   - id: C31_C27_MAJORANA_BRANCH_CLOSED
     statement: "[REASONING RETRACTED 2026-08-09 (C32); CONCLUSION REINSTATED 2026-08-10 (C33).] Original claim: the 'new reality/Majorana condition' row of C27's Relaxation Map is CLOSED, because the relevant factor is pseudo-real so no Majorana condition can exist. The PREMISE (C28's pseudo-reality of the 9-dim product) is a Clifford-convention artifact -- see C32 -- so this claim's REASONING is wrong and stays retracted. C32 then inferred the row was OPEN; C33 showed that inference was itself an over-correction (true of the 16-dim MODULE, false of the 2-dim ZERO MODE, which is what C27 is about). NET: the row is CLOSED, as this claim said, but for a reason this claim did not give -- restricting a (quaternionic (x) quaternionic) structure to (full S3 factor) (x) (1-dim S6 kernel) leaves the S3 quaternionic factor alone, and a scalar cannot flip the sign back. NOTE what always survived: the sub-fact that the S3 FACTOR ALONE is quaternionic is true and convention-independent (Spin(3)=SU(2) fundamental, 3 mod 8 = 3) -- and it is exactly that sub-fact which C33 shows was load-bearing all along; the error was routing it through the 9-dim product across a signature mismatch."
     truth_status: REFUTED
+    finding_status: RETRACTED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -1153,6 +1161,7 @@ claims:
   - id: C45_ALGEBRA_DOES_NOT_EARN_THE_DOUBLING
     statement: "REFUTED AS WORDED. The proposed C45 was: 'there is a natural algebra A on (H, D_block, gamma) satisfying the axioms available at this stage, AND its existence makes the doubling structurally necessary.' The second conjunct FAILS. [VERIFIED-exact] Of seven typed candidates, THREE are admissible (closed + unital + gamma-even) and they are NESTED: T6 (A+ (x) I) subset T7 (twisted diagonal) subset T4 (crossed product C^inf(S3) |x|_iota Z2). SELF-CHECK ON THE CRITERION, recorded not hidden: red-flag RF4 (>=2 admissible) is NEAR-TAUTOLOGICAL, because admissibility is inherited by every unital subalgebra. The informative question is whether the MAXIMAL gamma-even algebra is forced, and the answer is: it is unique up to a SECTOR-PRESERVING unitary over the geometric family gamma_theta = U_iota (x) (cos th s1 + sin th s2) [VERIFIED-numpy], but nothing forces maximality -- in a spectral triple the algebra is INPUT DATA, not derived. TWO SUPPORTING FACTS. (1) [VERIFIED-sympy] D^t - D^t' = 3(t-t') independent of BOTH n and sigma, so D^0 - D^1 = -3*Identity is BOUNDED and the bounded-commutator axiom imposes ZERO constraint on the sector index -- C42's own observation turned around. (2) [VERIFIED-numpy] the grading moduli sum_{lambda>0} d_lambda^2 = 54900 real dimensions at N_MAX=8, so gamma is massively non-unique and 'the algebra selected by the grading' is undefined without demanding gamma be GEOMETRIC. CONTROLS: gamma = I (x) s1 (iota dropped), U_iota (x) I (swap dropped) and U_iota (x) s3 (wrong Pauli) all FAIL to anticommute with D_block; U_iota (x) s2 PASSES -- so iota is genuinely load-bearing and the test is not vacuous."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2230,6 +2239,7 @@ claims:
   - id: C107_NAIVE_MEIER_KOSTANT_BRIDGE_FALSIFIED_EXACTLY
     statement: "Following boyko-project-radar (full-project scan, 2026-08-29) and /tracy's converged recommendation -- the C90-C106 Peter-Weyl multiplication-operator apparatus has never been pointed at OB1 (KT-8's torsion-selection question) -- this round first checked the necessary prerequisite: is C85/Meier's certified D-bar_k (the operator every C90-C106 round builds on) the SAME object as round67/Agricola's already-certified one-parameter torsion family D^t(n,sigma)=sigma*(n+3/2)+(t-1/2)*h_H (h_H=3), under the simplest natural identification (Peter-Weyl level n=C85's level k)? RESULT: exactly and provably FALSE, in both possible branch assignments. P1 CONFIRMED: D-bar_0 (k=0) has an exact, doubly-degenerate zero eigenspace (both eigenvalues exactly 0.0), [VERIFIED-tool]. P2 CONFIRMED: under n=k, C85's two eigenvalue branches (-k, k+2) require DIFFERENT, k-independent t values in round67's own formula (t=2/3 vs t=1) -- an exact symbolic mismatch (sympy), not a numeric near-miss, identical at every k tested. P4 CONFIRMED: swapping which eigenvalue maps to which sigma branch does not fix this -- the alternate assignment gives K-DEPENDENT required t on both sides, strictly worse. P3 is the sharpest finding: at n=k=0 specifically, round67's own certified family can NEVER produce a doubly-degenerate zero at ANY single t -- its two n=0 branches are 3t and 3t-3, which vanish at t=0 and t=1 respectively but never simultaneously. This is a t-independent structural PROOF using round67's own formula, not a search failure. Confirms this project has (at least) three independently-built S3-Dirac-operator constructions (G8/G4, Agricola/Kostant via round67, Meier/Peter-Weyl via C85) that had never been fully cross-checked against each other -- grep-confirmed absent from docs/clifford_convention_registry.md and docs/load_bearing_formulas.md before this round. Answers this round's own immediate question: the C90-C106 apparatus cannot be trivially torsion-deformed by importing round67's already-known crossing values -- no cheap shortcut exists. Two untested relaxations remain (Relaxation Map in decision.md): a nonlinear n=f(k) identification map, or building a torsion deformation NATIVELY inside C85's own Peter-Weyl framework via its certified L_i(k)/R_i(k) generators (C91-C99) rather than importing round67's abstract Kostant-cubic result."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2287,6 +2297,7 @@ claims:
   - id: C110_COVARIANCE_HYPOTHESIS_REFUTED_NO_SINGLE_CRITERION_FOUND
     statement: "Tests C109's own pearl (does covariance -- a coupling corresponding to a genuine real quaternion coordinate function, zero symbolic imaginary part in the aw,ax,bw,bx decomposition -- predict whether the k=1 coupled spectrum stays real?), per user request ('проверь ковариантность'). RESULT: all 5 formal predictions confirmed -- the hypothesis is cleanly REFUTED. P0 CONFIRMED: reproduces the 4 single-coordinate (aw,ax,bw,bx) + M_sum baseline exactly. P1 CONFIRMED: aw+bw (zero imag_part) is real; aw+i*bw (nonzero imag_part=bw) is ALSO real -- direct counter-example to naive covariance. P2 CONFIRMED: every zero-imag_part case tested is real (no false negatives for that direction). P3 CONFIRMED: aw+i*bw, i*aw alone (nonzero imag_part) are STILL real -- false positives for the hypothesis. P4 CONFIRMED: M_sum, (1,2,3,4), (1,-1,1,-1), (2,1,1,2) (nonzero imag_part) genuinely break reality. Neither direction of the naive hypothesis holds. A SECOND candidate pattern, noticed directly in this round's own data table (breaking cases all have imag_part built from {ax,bx} only; non-breaking-despite-nonzero-imag_part cases all have imag_part built from {aw,bw} only), was checked BEFORE being written up as a finding -- tested against M_pp alone (=aw+i*ax, imag_part=ax) and M_pm alone (=bw+i*bx, imag_part=bx), both long-established single CG components with certified real spectra from C100/C101 -- both stayed exactly real, refuting this second pattern too. Matrix entrywise-realness (informally checked) also does not separate the groups. The true criterion distinguishing 'breaks' from 'preserves' among 4-component-CG linear combinations at k=1 remains genuinely open after two refuted candidates -- flagged as a sharper pearl for a future systematic (not hand-picked) sweep, e.g. treating (c1,c2,c3,c4) as 4 independent complex unknowns and solving directly for the exact algebraic reality condition via the characteristic polynomial."
     truth_status: REFUTED
+    finding_status: ESTABLISHED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2452,6 +2463,7 @@ claims:
   - id: C119_BISMUT_RICCI_FLAT_CANDIDATE_KILLED_ON_F1_S6_FACTOR_NOT_RICCI_FLAT_AND_TOPOLOGICALLY_UNRESCUABLE
     statement: "PARENT_ACTION_GATE.md field F1 test of a candidate OB1 t-selection mechanism (Bismut-Ricci-flat condition Rc(g)=(1/4)H^2, from the generalized-Ricci-flow literature -- Gutierrez arXiv:2401.03332, Lauret-Will arXiv:2301.02335, Fusi-Lafuente-Stanfield arXiv:2608.25619, surfaced by a read-only literature-search round, not itself ledgered) against the frozen S3xS6 background. F1=FAIL, three failure modes (two sharing one input): (1) the frozen S6's own Bismut-Ricci defect Rc-(1/4)T^2=(4/3)*delta is exactly 4/3 of zero at every radius (rho_S6=5 exactly, radius-independent -- no strict nearly-Kahler 6-manifold is ever Bismut-Ricci-flat, a property of the class per Agricola's Ric^{nabla-bar}=2*Scal/15); (2) the S6 characteristic torsion is co-closed but NOT closed (dT has 72 nonzero components, forced by dT proportional to omega^omega, a nondegenerate 2-form in 6d -- so closedness is structurally incompatible with S6 being nearly Kahler, not merely unproven); (3) topological and unrescuable on the compact 9-manifold with a strict product metric and exact (no-dilaton) closure: H^3(S3xS6;R)=R generated only by vol_S3 (Kunneth, using b1(S3)=b2(S3)=0 AND b1(S6)=b2(S6)=b3(S6)=0), forcing H|_S6=0 and hence Ric(g_S6)=0 -- contradicted by the frozen S6's Ric=(5/3)*delta>0, for any t, torsion, or radius. The surviving S3-only half (t in {0,1}) is arithmetically correct and cross-validated against round111's Ric^t=8t(1-t)*delta by an independent route, but is an identity-level restatement of that already-certified result, not new content at the equation level (whether it supplies new content at the justification level is gate field F4, explicitly not assessed here). FL Step 8a skeptic pass (context-blind, 2026-08-31): overall F1=FAIL CONFIRMED after independent re-derivation of every load-bearing number; 'three independent ways' WEAKENED to 'three modes, two sharing one input'; 'unrescuable' WEAKENED to explicit scope (compact 9-manifold / product metric / no dilaton -- skeptic extended the proof to the full 13d background and to the dilaton case and confirmed the verdict survives both); 'no new content on S3' WEAKENED to 'no new equation, F4 unassessed'. Bonus, independent of the F1 verdict: cross-validates the project's own frozen S6 normalization (Scal=10, radius^2=3) against external nearly-Kahler theory for the first time, closing a Round-16 caveat that had been left open."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2488,6 +2500,7 @@ claims:
   - id: C121_ETA_INVARIANT_NULL_MOD2_IDENTICAL_ACROSS_INTERVALS
     statement: "Computed eta(D^t) (eta-invariant / gravitational Chern-Simons level of the torsion-deformed S3 Dirac operator), the candidate C120's own skeptic pass surfaced, at general t. Closed form found and independently confirmed via two structurally different derivation routes (Hurwitz-zeta/Bernoulli-polynomial route this round used; a separate heat-kernel Mellin-transform route by FL Step 8a skeptic, matching pole residues and the dP/da=-2(a^2-1/4) APS variation-formula identity): P(a)=a(3-4a^2)/6, a=3(t-1/2), on the base interval t in (0,1). This round's own first draft declared the decisive multi-interval comparison (does t in (0,1) show a quantization property not shared by neighboring intervals) 'not yet evaluable', citing spectral-flow machinery as a materially larger undertaking. FL Step 8a skeptic completed the actual computation in approximately 15 lines -- independently re-derived by this session from scratch before being trusted, not merely accepted -- eta(a) = P(a) + 2*sum_{n<=J}mu(n) on the J-th interval past the base one (mu(n)=(n+1)(n+2) already-certified S3 Dirac multiplicity): the SAME polynomial shifted only by an even integer on every interval. eta mod 2 is therefore IDENTICAL as a function of a on every interval; nothing distinguishes t in {0,1} from any other crossing pair (t=-1/3,4/3; t=-2/3,5/3; etc). This is structurally the same finding as round116 (the (n,sigma) crossing family has no n-dependent structure privileging n=0), reached via an independent construction. Two further real defects self-corrected this round: the boundary value originally reported (-1.5 at t=1) was a one-sided limit, not the true value at the crossing point (+1/2, since a genuine zero eigenvalue there contributes sign(0)=0, not the +1 naive continuation silently assigns); and an abandoned naive numerical cross-check was in fact salvageable with standard pole-subtraction, prematurely abandoned rather than fixed. What survives: the closed form P(a) itself (new, reusable), the dP/da identity, and one named unattempted variant (the APS reduced eta xi=(eta+h)/2 mod 1, materially different since mod 1 not mod 2 and incorporating the kernel dimension h(t)'s own non-constant jump across different-multiplicity crossings)."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2583,6 +2596,7 @@ claims:
   - id: C145_TWISTED_DIRAC_NOT_KOSTANT_LANDWEBER_MU_BLOCK
     statement: "User-authorized follow-up to C144 ('го C145'): does C139/C141's own physicist-style twisted Dirac operator D' (Leibniz rule, both Sigma AND the twist bundle W=m carry their own Levi-Civita/Nomizu connection) coincide with Kostant/Landweber's algebraic twisted operator D_mu restricted to the trivial G2-representation block lambda=0 -- the exact block round59/C139/C141 compute? REJECTED, symbolically exact: D' does NOT equal alpha*c(v) tensor Id_W (alpha=sqrt(3)/4, c(v) reused unmodified from C144, both re-verified as a regression before the comparison). The residual equals exactly the extra term Sum_i e_i tensor conn_W[i] (W's own Nomizu connection, which Kostant's own construction gives zero weight at lambda=0 since r(X_i) vanishes on constants regardless of which H-representation is twisted by, per Landweber math/0005056 Section 3's own D_mu definition -- U_mu enters ONLY as a Hom_H(U_mu*,-) projection label, confirmed by direct citation, not inherited from summary). Nonzero at 192/2304 (48x48) matrix entries, Frobenius-norm ratio 4/9 relative to the matched part -- not a small correction. A self-raised follow-up check (before the skeptic pass) found this is even more decisive on the ACTUAL physics-relevant sector: projected onto the 1-dim su(3)-invariant domain-to-target block C139/C141 use for their own kernel computation, the Kostant candidate evaluates to EXACTLY ZERO while C139's own D' reproduces its own already-registered headline value |c|=1.154701 exactly -- the entire physical signal comes from the extra term. Context-blind skeptic pass (Step 8a) returned CONFIRMED-REAL, independently finding an even stronger confirmation: C139's own script (Sections 6a/7b) already computes this exact decomposition internally and states 'term1 remains exactly zero across whole torsion family' -- C139 itself established this fact on 2026-09-04 without ever connecting it to Kostant/Landweber until this round did. One hardening note (not fatal) closed by direct primary-source citation."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2692,6 +2706,7 @@ claims:
   - id: C151_SU3T2_CARRIES_NO_CONNECTION_COEFFICIENT_PREDICTION_UNANSWERED
     statement: "Executed the pre-registered blind test of whether C147's holomorphy (c(J.nabla) = i c(nabla)) is a nearly-Kahler universality or a G2/SU(3) accident, on the designated second coset SU(3)/T^2. Run in gated stages so no restatement could be fitted to a seen answer. STAGE 0: the admissible invariant-connection family is 6-dimensional, not 2 (regression: the same solver reproduces C73b's certified 2 for su(3)) -- because the isotropy drops from SU(3) (dim 8) to the ABELIAN T^2, splitting m into three 2-real-dim root planes. This fired invalidation criterion #4, so the S^6-specific phrasing was RETIRED and the dimension-independent form frozen in PREREGISTRATION.md before c existed. STAGE 1a: J pinned by COMPUTATION not assertion -- the Nijenhuis tensor classifies all 8 invariant almost-complex structures as 6 integrable + 2 non-integrable (a conjugate pair), the textbook answer for the flag manifold, obtained here rather than cited; an armchair guess by the orchestrating session (that the discriminant was 'sign product -1') was refuted in passing. STAGE 1b: invariant sectors are (3,3), not (1,1), so c is MATRIX-VALUED -- exactly what restatement consequence #1 pre-committed. STAGE 2a: geometry built under CH2016's metric normalisation (basis verified EXACTLY B-orthonormal), Levi-Civita Nomizu (1/2)[X,Y]_m verified antisymmetric, round59's Clifford reused unmodified via a J-alignment relabelling; INDEPENDENT CALIBRATION GATE PASSED -- 2 invariant spinors with D eigenvalues exactly +-3, equal and opposite, the signature CH2016 Sec.2 proves for any homogeneous NK 6-manifold. STAGE 2b RESULT: c vanishes IDENTICALLY on the whole 6-dim family, so the prediction reduces to 0 = i*0 -- VACUOUS, NOT a confirmation. The first run of the test script printed 'PREDICTION CONFIRMED' because its own non-vacuity check, though computed, was not wired into the verdict; this validation-theater failure was caught by reading the output, the gate is now first and dominant, and the false verdict is recorded rather than overwritten. The vanishing was then DIAGNOSED BEFORE any verdict was assigned (the skeptic had pre-warned that BLOCKED-SUBSTRATE is the natural way to launder an inconvenient value): Levi-Civita IS in the family (3.3e-16), the operator IS nonzero (max|D|=3.0, 204/2304 entries, max|Dv|=6.38 and rank 15/24 on a random odd-block vector), yet it ANNIHILATES the entire 3-dim invariant domain (5.6e-17), which sits inside a 9-dim kernel -- and Term1 and Term2 vanish SEPARATELY rather than cancelling. So the observable is structurally absent, i.e. NO_HEADROOM in this project's own Floor-Ceiling vocabulary, not 'the test could not run'."
     truth_status: REFUTED
+    finding_status: OPEN
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2751,6 +2766,7 @@ claims:
   - id: C154_S6_RATIO_LAW_FORCED_NOT_DISCOVERED_SU3T2_OPEN
     statement: "Set out to test the real open question C153's novelty check left standing: why does |c(nabla_LC)|/|mu(nabla_LC)| = 2/3 exactly on both nearly-Kahler cosets this project can build (mu = the untwisted D_Sigma eigenvalue-magnitude on the isotropy-invariant Killing spinor). Went through TWO skeptic-driven reversals in one day, both context-blind, both unable to execute code, both independently tool-verified before being trusted. v1: naive scalarisation mu=<psi_+,D psi_+>/<psi_+,psi_+> gave FALSIFIED (mu=0 exactly at an independent S^6 family direction). Skeptic pass 1 (hand-derived, then tool-confirmed: D(nabla_LC.J)psi_+ = i*sqrt(3)*psi_- exactly) showed this scalarisation arbitrarily discarded the psi_- component; corrected to the full norm mu:=||D_Sigma(nabla)psi_+||, which gave CONFIRMED at 3 points (nabla_LC, nabla_LC.J, their sum) on S^6. Skeptic pass 2 (independently, also context-blind, also hand-derived then tool-verified) showed this 'confirmation' is EMPTY: <psi_+,psi_-> = 0 exactly (visible by inspection of their raw definitions in round59) forces the cross-term in mu's own quadratic form to vanish, and C147b's own already-registered c_B=i*c_A forces the cross-term in c's quadratic form to vanish too -- so BOTH forms are conformal (proportional to a^2+b^2) by facts already on record, and the closed form mu(a,b)=sqrt(3)*sqrt(a^2+b^2), ratio=2/3 EVERYWHERE (verified at a random untested point (a,b)=(3/7,-2/5), not just the 3 originally tested), is a 2-line algebraic consequence carrying ZERO new bits beyond the single ratio at the Levi-Civita point. On SU(3)/T^2, built a genuinely new test (T^2-invariant spinors via exact nullspace, mu(nabla_LC)=3 exactly matching C151 Stage 2a's calibration) but the Frobenius-norm-based |c(nabla)| did NOT reproduce 2/3 at any tested point (6 basis directions: ratio 2*sqrt(2), constant but wrong; their sum: 2*sqrt(6); the actual Levi-Civita vector: 2*sqrt(6)/3) -- genuinely INCONCLUSIVE, not falsified, since no canonical scalarisation was identified for c's 3-dimensional (vs S^6's 1-dimensional) target sector. SEPARATE FINDING, discovered while building the SU(3)/T^2 test: C153's own sector_basis_exact() builds dom_sym/tgt_sym from raw sympy nullspace() with NO Gram-Schmidt orthonormalisation (unlike S^6's own c147b.py, which does); checked directly, both Grams happen to equal exactly 2*I_3 (a fortunate accident, not guaranteed by construction) -- so C153's numbers are proportional to genuine invariants but on an unaccounted-for scale relative to a unit-normalised convention, flagged as a correction to C153, not itself a reason to distrust any of C153's existing ratio- or sign-based conclusions (all scale-invariant)."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2789,6 +2805,7 @@ claims:
   - id: C156_ROOT_RELATION_RULE_FALSIFIED_AND_REPLACEMENT_VACUOUS
     statement: "Attempted, under an explicit user mandate to pursue a discovery autonomously, to turn C155s A_2 observation into a general rule about full flag manifolds, and FAILED TWICE -- reported as a failure, not dressed up. (1) CORRECTION TO MY OWN C155: its Step 5 falsification was UNSOUND. It rejected a root-theoretic reading of the mu-map sign pattern by comparing the measured functional (1,-1,1) against the relation among ORIENTED plane weights (1,1,1) -- an object that flips sign under an arbitrary re-choice of plane orientation. The canonical datum is the relation among POSITIVE roots, which is (1,-1,1) and agrees exactly. C155 Step 5s verdict is withdrawn. (2) Built general machinery computing isotropy module, Clifford algebra, invariant spinors, equivariant connection family and Dirac response for ANY full flag manifold from the positive-root weights alone, no structure constants; A_2 regression against C153/C155s independent machinery PASSED (family dim 6, rank 2). (3) Before building, DISQUALIFIED three obvious test spaces: Sp(2)/T^2, A_3 and B_3 have NO invariant spinors at all. Criterion re-derived from scratch -- a spinor weight is (1/2)sum eps_k beta_k, so one exists iff the relation space R contains a +-1 vector -- reproducing the published Artacho-Semmelmann combinatorial characterisation (arXiv:2407.08493). (4) PRE-REGISTERED RULE rank(M) = 2*dim R FALSIFIED out of sample on G_2/T^2: predicted 8, measured 4. Diagnosis sharper than the empirical failure: on A_2 and A_2xA_2 the quantity 2*dim R coincidentally EQUALS dim_C Sigma^T, the dimension the image is FORCED into, so the rule was the forced chirality/invariance dimension wearing root-system clothing; on G_2 it predicts rank 8 into a target of real dimension 4, contradicting the forced containment -- excluded by dimension counting alone, so every dimensionally-consistent repair is dead too. (5) REPLACEMENT (HYPOTHESIS S: image(M) equals the opposite-chirality part of Sigma^T) passed all four pre-registered tests including a third-space prediction on A_2xA_2 -- and is nonetheless WITHDRAWN AS VACUOUS: a context-blind skeptic demanded a null model, I ran it, and random integer maps of the same shapes (2x6, 4x30, 4x12) are surjective 200/200 in every case. Containment is forced, surjectivity is generic, nothing remains. (6) The same skeptic supplied a structural fact I did not have: the even chirality split of Sigma^T is forced only when N is ODD (eps -> -eps preserves the relation and flips the +-count k -> N-k, changing parity iff N odd), so my framing rank = (1/2) dim_R Sigma^T silently assumed a regularity that was coincidental on both N-even test cases -- verified here by enumeration."
     truth_status: REFUTED
+    finding_status: QUALIFIED
     test_outcome: FAIL
     execution_status: READY
     evidence_status: INTERNALLY_CERTIFIED
@@ -2884,8 +2901,67 @@ schema:
   #                 supported, the rest unresolved
   #   evidence_status VERIFIED_EXTERNAL_SOURCE (used once, C67): a primary
   #                 external source was read directly (not an internal certificate)
+  #
+  # TWO STATUSES, TWO QUESTIONS (2026-10-03).
+  #   truth_status   = the status of the proposition AS WORDED in `statement`. For an
+  #                    entry that records a negative result this is often the status
+  #                    of the ORIGINAL HYPOTHESIS ("REFUTED as worded").
+  #   finding_status = what the entry ITSELF records as established, i.e. what later
+  #                    claims may rely on. When absent it equals truth_status.
+  #                    REQUIRED when truth_status is REFUTED (that is exactly where
+  #                    the two diverge: the hypothesis is refuted, the finding stands).
+  #       ESTABLISHED  the recorded finding stands, positive or negative, and the
+  #                    entry's own `caveat` / `does_not_imply` state no limit on the
+  #                    finding itself (disclaimers about OTHER claims or consequences,
+  #                    e.g. "does not imply N_gen=3", do not count as such a limit)
+  #       QUALIFIED    stands, but the entry's OWN `caveat` or `does_not_imply` states a
+  #                    limit on the finding itself: its strength or validity
+  #                    conditions, or an untested relaxation or variant that could
+  #                    overturn the broader reading (typical for a negative result:
+  #                    "only this construction was tested"). The limit must be written
+  #                    in this entry's own `caveat`/`does_not_imply` (not in `notes`,
+  #                    not in a dependant's caveat); the linter checks it exists (L10),
+  #                    not that the ESTABLISHED/QUALIFIED boundary was drawn well.
+  #       OPEN         the entry poses a question of its own and leaves it unanswered.
+  #                    A later entry may have answered it (then lifecycle is SUPERSEDED
+  #                    and the successor is named in the text).
+  #       RETRACTED    the recorded content was withdrawn (lifecycle_status must be
+  #                    SUPERSEDED or RETIRED; no ACTIVE PROVED/SUPPORTED claim may
+  #                    depend on it). SUPERSEDED alone does not mean RETRACTED.
+  #   test_outcome   = the outcome of the test of the hypothesis that MOTIVATED the
+  #                    entry. So truth_status SUPPORTED + test_outcome FAIL is the
+  #                    normal shape of a supported negative finding (C3, C14, C24,
+  #                    C141), not an inconsistency.
+  #   depends_on     means "relies on". To cite a claim you correct or retract, name
+  #                    it in `supersedes`, not in `depends_on`.
+  # The 15 REFUTED entries were classified on 2026-10-03 by reading each one, then
+  # checked by an independent BLIND classification (an agent given only the
+  # definitions and the entry texts, not these values). First pass: 9/15 agreed,
+  # including every value that drives a lint rule (RETRACTED C28 C31, OPEN C151);
+  # all 6 disagreements were on the ESTABLISHED/QUALIFIED boundary and traced to
+  # an ambiguous QUALIFIED definition, which was sharpened above. Final:
+  #   ESTABLISHED: C10 C22 C27 C110
+  #   QUALIFIED:   C16 C45 C107 C119 C121 C145 C154 C156 (each states a limit on the
+  #                finding in its own caveat/does_not_imply, e.g. C45 "only axioms
+  #                available at this stage", C107 "only the simplest map tested",
+  #                C145 "only the lambda=0 identification tested", C156 "hypothesis
+  #                S is vacuous, not false; A_4, C_3, D_4 untested")
+  #   OPEN:        C151 (its own third pre-committed outcome: question unanswered;
+  #                its successor C152 is named in its text)
+  #   RETRACTED:   C28 C31 (both lifecycle SUPERSEDED; C31's conclusion was
+  #                reinstated by C33, but this entry's recorded reasoning was not)
+  # After the sharpening 14/15 agree with the blind classification; that is NOT
+  # independent confirmation (the rule came from the blind classifier's own sort).
+  # The independent evidence is the 9 pre-sharpening matches. C156 differs
+  # (blind: ESTABLISHED, runner-up QUALIFIED) and stays QUALIFIED because its own
+  # does_not_imply states scope limits. Judgement calls, reversible via git.
+  # Known gaps, not changed: C10 stays ESTABLISHED although C16's caveat says the
+  # framing of C10's zeros was retroactively weakened (the limit lives in C16 and in
+  # C10's `notes`, not in C10's own caveat); C31 and C151 are better read as
+  # "reasoning retracted / question later answered by C33 / C152" than by one value.
   enums:
     truth_status: [PROVED, SUPPORTED, PARTIALLY_SUPPORTED, CONDITIONAL, OPEN, REFUTED]
+    finding_status: [ESTABLISHED, QUALIFIED, OPEN, RETRACTED]
     test_outcome: [PASS, FAIL, PARTIAL, INCONCLUSIVE, CONFLICTING, NOT_RUN]
     execution_status: [READY, RUNNING, BLOCKED_INFRA, UNTRUSTED_ENV]
     evidence_status: [ABSENT, PARTIAL, INTERNALLY_CERTIFIED, INDEPENDENTLY_REPRODUCED, EXTERNALLY_REVIEWED, FORMALLY_CHECKED, VERIFIED_EXTERNAL_SOURCE, INVALIDATED, CONTESTED]
@@ -2894,6 +2970,16 @@ schema:
     - notes
     - caveat
     - supersedes
+    - finding_status:
+        why: >
+          Separates the status of the HYPOTHESIS (truth_status: the proposition as
+          worded) from the status of the FINDING the entry records. Without it a
+          negative result ("hypothesis REFUTED, finding PROVED") is indistinguishable
+          from a retracted claim, so later claims that legitimately build on the
+          negative finding look like they rest on a refuted premise. Required when
+          truth_status is REFUTED; otherwise it defaults to truth_status. Values and
+          rules: see the comment above `enums`; enforced by
+          scripts/lint_claim_ledger.py (L9, L10, L11).
     - convention:
         why: >
           Which sign/Clifford/operator convention the claim is stated in.
