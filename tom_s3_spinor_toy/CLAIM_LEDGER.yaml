@@ -3841,6 +3841,58 @@ claims:
       - "that C212's torsion or the Einstein/isotropy findings of C213 are affected"
 
 
+  - id: C218_EXPLICIT_REAL_STRUCTURE_J_ON_ROUND59_SIGMA_EQUIVARIANCE_FORCED_TRANSPORT_NOT_ADVANCED
+    statement: "An explicit antiunitary J = B o K on round59's 8-dim Sigma exists for both signs eps = +-1 of J E_k J^-1 = eps E_k (solution space 1-dim each, B unitary). eps=+1 has the KO-6 pattern J^2=+1, J gamma = -gamma J; eps=-1 has J^2=-1, J gamma = -gamma J. Its commutation with RHO[a]=spin_lift(ADNU[a]) is FORCED (real-coefficient even Clifford elements always commute with it; tool-checked that it also holds for garbage real ADNU), so it is an arithmetic-consistency check and NOT evidence that ADNU realises su(3) correctly. The SU(3)-invariant complex structure on R^6 is the commutant of ADNU (dim 2, unique up to sign); its spin_lift commutation is forced by the same mechanism. Skeptic Step 8a: WEAKENED, all points accepted. C193's corollary addressed the nearly-Kahler complex structure, probably not OB11(ii)'s J (the NCG real structure)."
+    truth_status: SUPPORTED
+    finding_status: QUALIFIED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261003-c218-ob11ii-real-structure-j-explicit/decision.md"
+    depends_on: [C193_SPIN_LIFT_IS_EXACT_ANTI_HOMOMORPHISM_AND_J_PREREQUISITE_ONLY_NARROWED, C149_OB11II_TRANSPORT_STEP_IS_WELLPOSED_FOR_D_SIGMA_UNDER_IDENTITY_COMPONENT, C203_SU3_IN_SO6_THREE_CONSTRUCTIONS_SAME_REP_TYPE_H0_ONLY]
+    supersedes: "the J-related corollary of C193 as a statement about OB11(ii)'s J (C193's own decision.md section 8 annotates this); C193's count '28/28 non-degenerate' is 25 non-degenerate + 3 commuting pairs"
+    convention: "J = B o K with K entrywise complex conjugation in round59's basis; build_clifford(conj=True) equals the entrywise conjugate of E. Hermitian-generator convention for the equivariance statement."
+    does_not_imply:
+      - "that OB11(ii)'s transport step advanced or that U-transport of J is Clifford- or Hermiticity-compatible"
+      - "that J here is the real structure of the physical 32-dim H_matter (G18)"
+      - "that epsilon-prime (J vs D) or the 64-dim J(x)J on the product space were checked"
+      - "any change to N_gen=3 (CONDITIONAL)"
+
+  - id: C219_EXACT_S6_HEAT_KERNEL_B10_MINUS_0_0029521_GIVES_RHO6_STAR_1_154_NOT_1_090_FIT_ARTIFACT
+    statement: "The tau^2 coefficient of the S^6 spinor heat kernel is exactly B10 = -0.0029521 (Mellin / Euler-Maclaurin closed form with W6 = (2/15)(m^5-5m^3+4m)); the least-squares fit used by G54-C and copy-pasted into nine further test files gives -0.003302 (+11.8%, cause: basis truncated at tau^2; one extra tau^3 term gives 0.7%). With the exact value the UV-finite point is rho6* = 1.154 (UV ray rho3/rho6 = 1.138), not 1.090 (1.0743). The zeta_FP machinery was validated by T-independence (to 4e-10 absolute) and by an independent method (zeta_FP(1.3,1.1) = -4.70868915e-4, identical to all printed digits). Along rho3 = 0.986 rho6^2, G54-E's radii are NOT reproduced (local min 0.92 vs 0.953; zero ~1.367 vs 1.4469); the B10 fit error explains only part of that. Replacing the hard-coded 1.090 by 1.1541 in the downstream scripts moves the AdS-minimum radius 1.179 to 1.248, m_mod/m_KK 0.198% to 0.149% and the canonical mass ratio by about -29%, while the existence and sign structure of the minimum are unchanged (patched-constant reruns, not re-derivations)."
+    truth_status: SUPPORTED
+    finding_status: ESTABLISHED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261003-c219-h8-computed-dirac-casimir-2d-landscape/SW_FIT_AUDIT.md"
+    depends_on: []
+    supersedes: "the value rho6* = 1.090 and C_UV = 1.0743 of G54-C/G57 as exact results (they are products of a truncated-basis fit); the three radii of G54-E as numerical values"
+    caveat: "Pre-registered checks P1a (T-independence at 1e-8 relative) and P1b at s=6.3 FAILED as registered and were diagnosed, not loosened. Sensitivity numbers come from patched-constant reruns; G92's patched run is invalid because it hard-codes the old G91 minimum. Part of the G54-E discrepancy is unexplained."
+    does_not_imply:
+      - "that G54-E is refuted, only that its numbers are not reproduced by exact coefficients"
+      - "that any downstream conclusion other than the absolute numbers changes (existence/sign of the AdS minimum was unchanged in the reruns)"
+      - "that README, docs or any published value has been updated"
+
+  - id: C219_H8_COMPUTED_DIRAC_CASIMIR_NO_VALID_REGION_MINIMUM_FOR_ABS_KAPPA_LE_1_CUT_DEPENDENT
+    statement: "With the computed Dirac zeta_FP(rho3,rho6) on S^3 x S^6 (kappa times zeta_FP over Vol3 Vol6 rho3^3 rho6^6 added to G92's V_main) there is no local minimum in the imported valid region (rho3>1, rho6>1.5) for |kappa|<=1, mu in {0.5,1,2} and both finite-part definitions. This holds only because of the imported cut: for the attractive sign (kappa<0) a positive-definite minimum always exists at rho3 ~ 0.44-0.64, rho6 ~ 1.25-1.34. Valid-region minima appear only for kappa<0 in a window |kappa| ~ 29-70; none for kappa>0 up to 400. kappa is not derived; only the Dirac Casimir is included."
+    truth_status: PARTIALLY_SUPPORTED
+    finding_status: QUALIFIED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261003-c219-h8-computed-dirac-casimir-2d-landscape/decision.md"
+    depends_on: [C219_EXACT_S6_HEAT_KERNEL_B10_MINUS_0_0029521_GIVES_RHO6_STAR_1_154_NOT_1_090_FIT_ARTIFACT]
+    caveat: "Skeptic Step 8a verdict WEAKENED, all points accepted. V_main inputs imported from G91/G92 (with the fitted rho6*=1.090 in the headline run; re-run with 1.1541 in the follow-up). Convention: kappa*zeta(-1/2)/V_int is the static Casimir energy; a Coleman-Weinberg 4D potential would involve zeta'(-2), not computed. G92's -11/240 Dirac constant is not the S^3 Dirac value (-17/960 zeta-regularised sum)."
+    does_not_imply:
+      - "that modulus stabilisation is impossible in the valid region (kappa is free, bosonic Casimir terms are absent)"
+      - "that the EFT-validity cut rho3>1, rho6>1.5 was re-derived"
+      - "anything about N_gen=3, OB1 or the torsion parameter t (S^3 is round; C134 puts t=1/2)"
+
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
@@ -3984,6 +4036,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "199 entries as of C219 (2026-10-03): C218 and two C219 entries added (verify with `grep -c \"^  - id:\" CLAIM_LEDGER.yaml`). C219 is the first round in this ledger whose headline finding is a correction of an inherited fitted constant (rho6* 1.090 -> 1.154); downstream numbers are NOT updated in the ledger, only flagged."
   - "196 entries as of C217 (2026-10-03): C159-C203, C205-C207 and C210-C217 added in one pass (56 entries; rounds C204, C208 and C209 have no experiment folder: C204 was parked, the others do not exist). Drafted from each round's own decision.md, then independently re-checked against the sources by separate readers; C214's REJECT of the torsion-Ricci bridge is recorded as retracted (C217) and C213/C215 carry the corrected Ricci values (Castellani's half-convention). New entries phrase negative results as the finding (truth SUPPORTED/PROVED + test_outcome FAIL) and use finding_status only where REFUTED or partly withdrawn."
   - "125 entries as of C141 (2026-09-04), a methodologically significant deflationary finding: for all 4 twist-bundle-kernel computations ever run in this project (round59/T0, C139, C141, and a newly-built 'Sigma self-twisted unrestricted' comparison, T1), the observed invariant-sector kernel EXACTLY equals a graded rank-nullity floor computable from pure su(3) branching data alone -- meaning the 'kernel of twisted D_S6' test family may not discriminate Sigma's specific geometric content from an alternative the way OB14's 'why Sigma, not m' question assumed. Found only after TWO successive context-blind skeptic passes each overturned the round's own prior verdict in the same session (BLOCKED -> PROMOTE -> NULL_QUALIFIED); independently re-derived by hand by the orchestrating session (using only already-certified su(3)-multiplicities) before registration, and the script independently re-run (49/50 checks, 1 intentional fail). Does not falsify N_gen=3 or any prior kernel value -- questions the INTERPRETIVE weight placed on them. Falsifiable escape route named: a twist bundle whose kernel exceeds its own graded floor. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 125)."
   - "124 entries as of C139 (2026-09-04), the first genuine wrong-twist kernel!=1 result for round59's D_S6 construction (twisting by m_C, the tangent/isotropy rep, instead of Sigma) -- PROMOTE, qualified per two independent skeptic passes (both WEAKENED, both findings incorporated: Term1=0 is forced by Schur's lemma for any zero-singlet twist, not independent evidence; the load-bearing fact is Term2's robust non-vanishing across the whole admissible connection family). Does NOT falsify C2_ROUND59_KERNEL_DIM1 or C4_NGEN3_HEADLINE -- narrows round59's twist choice to needing independent physical justification, now a well-posed open question. Orchestrating session independently re-derived the round's central self-caught sign-convention bug from the Clifford algebra directly and independently re-ran the verification script (30/30 checks, byte-identical) before registering this entry. Honest gap, not backfilled: no direct-count note exists between C119 (120 entries) and this one -- claims C120 through C138 (including the C123-C137 15-round OB1 pipeline and C138's APS reduced-eta NULL) were added without a matching count note in the interim; not reconstructed from memory here, per this schema's own stated principle against guessing prior state. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 124)."

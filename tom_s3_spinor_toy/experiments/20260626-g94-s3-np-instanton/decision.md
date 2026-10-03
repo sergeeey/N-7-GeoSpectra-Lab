@@ -108,3 +108,9 @@ phenomenological input. This is the strongest result of the G91-G94 chain.
 
 **Main prediction (G94 updated):** m_mod/m_KK ∈ [0.14%, 0.20%]
 with uncertainty from c_S3, lambda parameters.
+
+
+---
+
+## Addendum 2026-10-03 (C219; original text above unedited)
+C219 audit A3: with rho6*=1.1541 instead of the fitted 1.090 the PATH+EFT window of this scan shifts (the K-pearl row rho3=1.9281 becomes rho3~2.02; rows previously 'saddle' become valid). The pearl value K~1.14 is therefore NOT robust to the B10 fit error of G54-C and should be treated as under audit until re-derived. See experiments/20261003-c219-h8-computed-dirac-casimir-2d-landscape/SW_FIT_AUDIT.md.
