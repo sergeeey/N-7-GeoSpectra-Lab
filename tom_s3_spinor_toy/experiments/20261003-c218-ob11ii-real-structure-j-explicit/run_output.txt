@@ -1,0 +1,57 @@
+==============================================================================
+0  load round59's machinery (reused, not retyped)
+==============================================================================
+  [PASS] Q0 round59 calibration re-verified on import
+  informational: build_clifford(conj=True) == entrywise conjugate of E: True
+
+==============================================================================
+1  P1: solve B * conj(E_k) = eps * E_k * B  (k=1..6) for eps = +1, -1
+==============================================================================
+  [PASS] P1[eps=+1] solution space of B*conj(E_k)=eps*E_k*B is exactly 1-dimensional
+         nullity = 1
+  [PASS] P1[eps=+1] B is proportional to a unitary (B B^dagger = c I, c != 0)
+         c = 1
+  [PASS] P1[eps=-1] solution space of B*conj(E_k)=eps*E_k*B is exactly 1-dimensional
+         nullity = 1
+  [PASS] P1[eps=-1] B is proportional to a unitary (B B^dagger = c I, c != 0)
+         c = 1
+
+==============================================================================
+2  P2: J^2 and (anti)commutation with the chirality grading gamma, both eps
+==============================================================================
+  eps=+1:  J^2 = 1*I   J gamma J^-1 = -1*gamma
+  eps=-1:  J^2 = -1*I   J gamma J^-1 = -1*gamma
+  [PASS] P2 at least one solution has the KO-6 pattern J^2=+1, J gamma = -gamma J
+
+==============================================================================
+3  P3: J RHO[a] J^-1 = RHO[a] for all a=1..8, both eps (predicted FORCED, not su(3)-specific)
+==============================================================================
+  [PASS] P3[eps=+1] J RHO[a] J^-1 = RHO[a] exactly for all 8 generators
+         max residual = 0.000e+00
+  [PASS] P3[eps=-1] J RHO[a] J^-1 = RHO[a] exactly for all 8 generators
+         max residual = 0.000e+00
+
+==============================================================================
+4  P4: negative controls -- the check CAN fail
+==============================================================================
+  [PASS] P4a antilinearity identity: complex-coefficient T = i*RHO[1] gives J T J^-1 = -T (in the Hermitian-generator convention this IS equivariance of exp(i theta T); arithmetic consistency, not evidence)
+         ||J T J^-1 - T|| = 2.0000, 2||T|| = 2.0000
+  [PASS] P4b a random unitary B' does NOT satisfy B' conj(E_k) B'^-1 = +-E_k
+         smaller-eps worst residual = 1.345
+  [PASS] P4c a random anti-Hermitian 8x8 generator does NOT satisfy J K J^-1 = K
+         residual = 3.855
+
+==============================================================================
+5  P5 (separate object): nearly-Kahler J as the commutant of ADNU on R^6
+==============================================================================
+  [PASS] P5a commutant of ADNU on R^6 has dimension exactly 2
+         dim = 2
+  [PASS] P5b the commutant contains an antisymmetric J_NK with J_NK^2 = -1 (up to sign)
+  [PASS] P5c [spin_lift(J_NK), RHO[a]] = 0 for all a (direct computation, not via C193's identity)
+         max residual = 0.000e+00
+  [PASS] P5d negative control: a random so(6) element does NOT commute with RHO
+         max residual = 2.500
+
+==============================================================================
+C218: 15 passed, 0 failed
+==============================================================================

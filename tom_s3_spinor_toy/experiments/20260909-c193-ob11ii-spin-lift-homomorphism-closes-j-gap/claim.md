@@ -204,3 +204,7 @@ NOT as closing OB11(ii)'s `J`-prerequisite.
 cd experiments/20260909-c193-ob11ii-spin-lift-homomorphism-closes-j-gap
 python c193_spin_lift_homomorphism.py
 ```
+
+> **2026-10-03 pointer:** two corrections to this file (the "28/28 non-degenerate" count is really
+> 25 + 3 commuting pairs; and the `J` argued about here is probably not OB11(ii)'s real-structure
+> `J`) are recorded in `decision.md` §8. The text above is left unedited.

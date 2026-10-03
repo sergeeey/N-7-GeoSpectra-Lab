@@ -139,7 +139,7 @@ half's algebra-level intertwiner is **FOUND** (C70, machine precision,
 shared-pipeline bug and pinned the real obstruction; C193 (2026-09-09)
 further narrowed the remaining gap (J's su(3)-equivariance becomes
 automatic once J is explicitly constructed — an existence argument, not
-yet a built matrix). **Condition (iii)** (triality acting purely as
+yet a built matrix) [CORRECTED 2026-10-03: C193's J was the nearly-Kähler complex structure, probably not OB11(ii)'s J (the NCG real structure); C218 built the real-structure J explicitly on round59's Σ — its commutation with RHO is forced, so the transport step is NOT advanced; see C193 decision.md §8 and C218 decision.md]. **Condition (iii)** (triality acting purely as
 `1⊗t`, no admixture) — the so(8)-algebra half is **CLOSED EXHAUSTIVELY**
 (C78: the entire so(8) commutant of the physical D is exactly su(3),
 dimension 8 — no candidate subalgebra can ever work); the one remaining

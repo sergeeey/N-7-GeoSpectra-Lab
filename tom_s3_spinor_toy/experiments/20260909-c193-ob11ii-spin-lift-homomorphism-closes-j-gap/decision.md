@@ -149,3 +149,26 @@ python diag_scale.py   # the scale-diagnosis probe that found the -1
 ```
 
 `16/16`. `ruff check` and `ruff format`: clean.
+
+---
+
+## 8. CORRECTIONS added 2026-10-03 (original text above left unedited, per never-delete-only-annotate)
+
+**(a) "28/28 non-degenerate" is wrong, in this file (§2 table row 2, §2 `Q4b` paragraph, §3) and in
+`claim.md` (Correction 2 item 2, closing paragraph).** `run_output.txt:57` shows the true
+breakdown: the anti-homomorphism identity holds for all 28 `ADNU`-generator pairs, but 3 of the 28
+(`(1,8)`, `(6,8)`, `(7,8)`) are zero-commutator pairs where both sides vanish, so only **25 are
+non-degenerate**. The finding (identity holds, flipped structure constants) is unchanged; the
+count was overstated. Caught by the independent per-claim verifiers during the C159–C217 ledger
+pass, not by this round.
+
+**(b) The `J` in this round's corollary is not (as far as can be told) the `J` of OB11(ii).**
+This round argued about the nearly-Kähler almost-complex structure (a real `6×6` matrix on `m`).
+OB11(ii)'s triple "`D`, `J`, `γ`" reads as the real-even-spectral-triple data, i.e. `J` = the NCG
+**real structure** (antiunitary) — `[INFERRED]` from the spectral-triple notation, from the
+project's own use of `J_F` (OB10: "`J_F²` stated as −1, actually +1"), and from
+`PARENT_ACTION_GATE.md:946` ("Real structure `J` — Not checked", a row distinct from the
+nearly-Kähler `J` at line 204); never stated verbatim in a file read. If so, §3's "narrowed, not
+closed" does not apply to OB11(ii)'s `J` at all: it narrowed a different object's gap. The
+anti-homomorphism identity (§2) itself is unaffected. The real-structure `J` was then built
+explicitly and tested in `experiments/20261003-c218-ob11ii-real-structure-j-explicit/`.
