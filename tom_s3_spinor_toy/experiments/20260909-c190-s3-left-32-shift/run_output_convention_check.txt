@@ -1,0 +1,13 @@
+D0^R per level: {0: {np.float64(0.0): 2}, 1: {np.float64(-1.0): 6, np.float64(3.0): 2}, 2: {np.float64(-2.0): 12, np.float64(4.0): 6}, 3: {np.float64(-3.0): 20, np.float64(5.0): 12}}
+D0^L per level: {0: {np.float64(0.0): 2}, 1: {np.float64(-3.0): 2, np.float64(1.0): 6}, 2: {np.float64(-4.0): 6, np.float64(2.0): 12}, 3: {np.float64(-5.0): 12, np.float64(3.0): 20}}
+D0^R + (-1.5): mismatching eigenvalue values within |lambda|<=3.5: 0
+D0^R + (+1.5): mismatching eigenvalue values within |lambda|<=3.5: 7
+D0^L + (-1.5): mismatching eigenvalue values within |lambda|<=3.5: 7
+D0^L + (+1.5): mismatching eigenvalue values within |lambda|<=3.5: 0
+k=0: spec(D0^L) == -spec(D0^R): True
+k=1: spec(D0^L) == -spec(D0^R): True
+k=2: spec(D0^L) == -spec(D0^R): True
+k=3: spec(D0^L) == -spec(D0^R): True
+
+shift s = D_full - D0 that reproduces +-(l+3/2): {'R': -1.5, 'L': 1.5}
+so c = D0 - D_phys = -s: {'R': 1.5, 'L': -1.5}

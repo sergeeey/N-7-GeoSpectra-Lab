@@ -66,10 +66,15 @@ dependencies (`C1_S6_INDEX_1`, `C2_ROUND59_KERNEL_DIM1`,
   derived precisely and closing a Round-24 fork as REJECTED-not-vague
   (`C187`/`C187b`); `D` rebuilt directly from the quaternion generators,
   16/16, closing the `C187` operator-construction gap (`C188`); the
-  `+3/2`/`−3/2` connection-correction shift derived from the actual
-  Levi-Civita connection (not fitted) for the right- and then left-acting
-  operator, finding along the way that the sent letter's own aside on
-  which handedness gets which sign was backwards (`C189`/`C190`).
+  connection-correction shift derived from the actual Levi-Civita connection
+  (not fitted) for the right- and then left-acting operator (`C189`/`C190`): the
+  additive shift `s = D_full − D₀` is `−3/2` (right-acting) and `+3/2` (left-acting).
+  `C190` first read the letter's pairing of the two signs as backwards; a 2026-10-03
+  check withdrew that as convention-dependent: the pairing numerically equals
+  `C180`'s table under `C180`'s convention `c = D₀ − D_phys = −s`, and `C189` read the
+  same sentence as consistent with the derivation. No error of the letter is
+  established; which reading is right is [UNKNOWN] until the letter's sentence is
+  re-read.
   **Explicitly NOT about OB1/S⁶/triality** — grep-verified zero hits for
   those terms across all seven `C184–C190` `decision.md` files.
 - **CHECKED, 2026-09-09 (session-level, no new round ID):** does the

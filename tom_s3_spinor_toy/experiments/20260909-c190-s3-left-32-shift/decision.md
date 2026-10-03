@@ -1,4 +1,11 @@
-# C190 Decision — PROMOTE, with a correction. The `3/2` magnitude holds for the left-acting operator; the letter's handedness-to-sign assignment does not.
+# C190 Decision — PROMOTE. The `3/2` magnitude holds for the left-acting operator. ~~The letter's handedness-to-sign assignment does not.~~ (second sentence WITHDRAWN 2026-10-03, see UPDATE)
+
+> **UPDATE 2026-10-03: the "correction" half of this verdict is WITHDRAWN as
+> convention-dependent — see the last section.** The derivation
+> (`D_full^L − D₀ᴸ = +3/2`, 16/16) and the mirror-image spectrum stand. What does
+> not stand is the claim that the letter's pairing was "backwards": that holds only
+> if the letter meant an additive shift `D_full − D₀` with right-acting value `+3/2`, which this round
+> assumed and never established. Original text below is kept as the record.
 
 **Date:** 2026-09-09
 **Verdict:** **PROMOTE** — `16 of 16` checks pass. The connection-correction
@@ -129,3 +136,83 @@ python c190_left_32_shift.py
 ```
 
 `16/16`. `ruff check` and `ruff format`: clean.
+
+---
+
+## UPDATE 2026-10-03 — the "letter's pairing was backwards" verdict is WITHDRAWN (convention-dependent; no error established)
+
+**How it surfaced.** An independent reader checking the ledger entries for C159–C217
+against their sources noticed that `C180` and `C189`/`C190` define "the constant" with
+opposite signs. Checked directly in the three decision files:
+
+| round | definition | right-acting | left-acting |
+|---|---|---|---|
+| `C180` (§2, §7) | `c` with `D₀ − c =` physical Dirac spectrum, `c = D₀ − D_phys` | `c = +3/2` | `c = −3/2` |
+| `C189` / this round | shift `s = D_full − D₀`, so `s = −c` | `s = −3/2` | `s = +3/2` |
+
+Same fact, opposite sign convention. The pairing this round's `claim.md` reads out of the
+letter's aside (right → `+3/2`, left → `−3/2`) numerically equals `C180`'s pairing in
+`C180`'s own convention. It is the *opposite* pairing only if its constant is read as the
+additive shift with right-acting value `+3/2`.
+
+**Recomputation (this update; no connection derivation is used).** The comparison target
+`±(l+3/2)` is the literature spectrum, as in `C189`, and the method is `C180`'s own
+harmonic-polynomial construction re-run, so it is independent of the *connection derivation*
+only. The `c` line the script prints is `−s`, not computed separately.
+`c190_convention_check.py` builds `D₀ᴿ = −iΣσₐ⊗Xₐᴿ` and `D₀ᴸ = −iΣσₐ⊗Xₐᴸ` directly on
+the harmonic degree-`k` polynomials of `ℝ⁴` for `k = 0..3` (quaternion right- and
+left-multiplication fields) and compares against `±(l+3/2)`, multiplicity `(l+1)(l+2)` per
+sign, over `|λ| ≤ 7/2`:
+
+| operator + added constant | mismatching eigenvalue values |
+|---|---|
+| `D₀ᴿ + (−3/2)` | **0** |
+| `D₀ᴿ + (+3/2)` | 7 |
+| `D₀ᴸ + (+3/2)` | **0** |
+| `D₀ᴸ + (−3/2)` | 7 |
+
+`spec(D₀ᴸ) = −spec(D₀ᴿ)` level by level for `k = 0..3` (this extends §3 from `k ≤ 2`).
+So `s = −3/2` (right), `+3/2` (left), equivalently `c = +3/2` (right), `−3/2` (left).
+Both readings are exact; the pairing differs by the sign convention of the constant, and
+possibly by the other conventions listed below.
+
+**What is withdrawn.** The headline "the letter's assignment is backwards", §4's
+"a correction of an unverified guess", §7's "factually backwards", the message printed by
+check P13 (`run_output.txt`, "had the assignment backwards"; P13 is the letter cross-check
+and is part of the "16/16", not of the derivation), and the pearl-row framing built on them. §4's table is still correct arithmetic, but it tests the
+*additive-shift* reading of `+3/2` for the right-acting operator; this round never
+established that the letter's constant was the additive shift, and `claim.md` item (c)
+was already worded ambiguously about the expected sign.
+
+**What stands.** `D_full^L − D₀ᴸ = diag(+3/2,+3/2)` exactly; the Cartan-derived left
+connection; the mirror-image spectra; the magnitude `3/2`; the derivation checks (the "16/16" also counts P13, whose message is withdrawn above).
+
+**Which reading of the letter's sentence is right is [UNKNOWN].** Three tracked paraphrases
+of the same sentence disagree. This round's `claim.md` reads it plainly as right `+3/2`,
+left `−3/2`. `C189`'s `claim.md` (the "does not derive the shift for the left-acting
+operator" bullet) and `C189`'s `decision.md` ("mirror (`+3/2`) shift for the left-acting
+operator") describe the letter's mirror case as `−3/2 → +3/2`, i.e. right `−3/2`, left
+`+3/2`, which is the derived additive pairing; and `C189` item (b) reads the letter's
+`k=0` statement as the `D₀`-eigenvalue `0` moving to a *negative* value for the
+right-acting operator. Outcomes:
+
+| the letter's constant means | pairing vs derivation |
+|---|---|
+| subtracted `c = D₀ − D_phys` (right `+3/2`, left `−3/2`), as in `C180` | consistent, no error |
+| additive shift, right `−3/2`, left `+3/2` (as `C189` paraphrased it) | consistent, no error |
+| additive shift, right `+3/2`, left `−3/2` (as this round read it) | pairing wrong |
+| ambiguous in the letter itself | neither right nor wrong |
+
+Only the third row is an error, and it conflicts with `C189`'s reading of the letter's own
+`k=0` statement. Further conventions that also flip the pairing, none fixed by this round:
+the overall sign of `D₀` (`−iΣσₐXₐ` versus `+iΣσₐXₐ`), and which operator is called
+"right-acting" (`C184` records the left/right naming as a convention, not closed; `C180`'s
+`Xᴿ` are built from right *multiplication*); `C180` also calls `c` an "additive constant"
+while subtracting it. The letter's own defining sentence was **not** re-read (it lives
+under `correspondence/`, which this session does not open); one re-read settles it.
+
+**Consequence.** No error of the letter is established. Do not edit a sent or draft
+letter on the strength of this round's original verdict. Anything already changed on
+that basis should be re-checked against the convention table above.
+
+**Reproduction.** `python c190_convention_check.py` (about a minute; sympy + numpy).
