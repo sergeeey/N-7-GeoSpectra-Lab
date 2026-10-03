@@ -112,8 +112,24 @@ Not added to `PARENT_ACTION_GATE.md` -- this is an internal consistency
 check between two already-recorded results, not a new F6 input itself.
 Logged to `null_results/INDEX.md` per the REJECT protocol.
 
-## UPDATE 2026-10-02 (C216) — this REJECT's own rejected side may be the
-## wrong side; NOT resolved, NOT reopened here
+## UPDATE 2026-10-03 (C217) — RETRACTED: the bridge formula was right
+
+C217 (`experiments/20261003-c217-castellani-convention-factor/`) showed that
+C213's Castellani-formula Ricci (the "computed 2.5" this round compared
+against) is in Castellani's half-convention (his eq. 3.34 defines the curvature
+components without the standard 1/2): the standard Ricci of the unit round
+S6 = G2/SU(3) is **5.0**, which is exactly what this round's bridge
+`Ric = (5/24)*norm2(T^c) = 5/24 * 24` predicted. The "50% mismatch" was an
+artifact of the comparator, so the REJECT is retracted (verdict line at the top
+struck through, `null_results/INDEX.md` row marked RETRACTED). What stands from
+this round: the basis/normalization finding (C212's tangent vectors have Gram
+= I/3; rescale factor sqrt(3); `|T|^2 = 24` in the ambient-orthonormal frame;
+antisymmetry preserved at 2.2e-16). The bridge itself remains self-derived (no
+primary source), and its agreement with the standard Ricci is shown only on
+G2/SU(3) and only via C217. The earlier text of this file is kept as the record.
+
+## UPDATE 2026-10-02 (C216) — SUPERSEDED by the C217 update above — this
+## REJECT's own rejected side may be the wrong side; NOT resolved, NOT reopened here
 
 C216 found that C213's Castellani-formula code gives exactly HALF the
 textbook-correct Ricci value on an independent symmetric-space control

@@ -2858,6 +2858,986 @@ claims:
       - "that this bears on N_gen=3, lambda (still FREE_COUPLING_PARAMETER), triality, or any physical claim -- explicitly excluded by the user's own mandate for this whole C155-C158 arc"
       - "that the specific numerical phase (-i in the psi_+/psi_- swap, i in the M_+/M_- equivariance) carries independent content -- flagged as likely a normalization artifact, not verified either way in this round"
 
+  - id: C159_PARITY_OBSTRUCTION_HOLDS_ONLY_FOR_EXCLUSIVE_PAIRING_NOT_GENERAL
+    statement: "Round95's anomaly condition n_L=n_R combined with n_L+n_R=N_gen=3 gives 2n_L=3 with no integer solution, but this is NOT a general impossibility proof for a channel-to-t-sector pairing rule. The arithmetic is correct only under the EXCLUSIVE reading (each of the 3 triality channels assigned to exactly one sector); a tool-run sweep N_gen=0..6 finds solutions only for even N_gen. The premise n_L+n_R=N_gen is not forced: C133 Section 9 lists 'all->both' as one of exactly 3 support patterns of a channel-uniform coupling ansatz, and with this round's own accounting bridge (not stated by C133) it gives n_L+n_R=2*N_gen, hence n_L=n_R=3 for N_gen=3 with no parity obstruction. E17/round85 Section 4 does NOT supply a live non-exclusive candidate -- it ends BLOCKED with the missing ingredient named; only C133's later support pattern fills that hole. Verdict ESCAPE-FOUND, WEAKENED by an independent skeptic pass (two overreaches corrected, top line unchanged). H1c stays OPEN and OB1 stays PARKED."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260905-c159-round95-link-scoping-parity-check/decision.md"
+    depends_on: [C6_CUBIC_SU4_ANOMALY_MECHANISM]
+    supersedes: "no prior claim -- scoping round that corrects its own pre-registered premise (that n_L+n_R=3 necessarily holds); round95's n_L=n_R derivation is confirmed unchanged"
+    does_not_imply:
+      - "that H1c/KT-8 is closed in either direction -- H1c stays OPEN and OB1 stays PARKED"
+      - "that all->both is a confirmed, physically realized structure -- it is an unexcluded, assumed structure (C133 'assumed Pati-Salam content'), and establishing it would still need the missing 13D parent action"
+      - "that round95's n_L=n_R derivation is wrong -- it is confirmed correct; only its combination with an assumed n_L+n_R=3 is blocked"
+    caveat: "The n_L+n_R=2*N_gen accounting step from the all->both support pattern is this round's own derived supplement, not a quantity C133 states. ESCAPE-FOUND shows only that exclusivity is not forced; it does not make all->both derived. The parity arithmetic itself stands under the exclusive reading."
+
+  - id: C160_SIGN_TRIPLE_PLUS_PLUS_MINUS_IS_KO_DIM_6_PER_CCM_SOURCE
+    statement: "A fetched primary source states the sign-triple <-> KO-dimension correspondence in the same slot order this project uses, and identifies the project's tuple (J^2, JDJ^-1 vs D, JgJ^-1 vs g) = (+1,+1,-1) with KO-dimension 6 mod 8. Chamseddine-Connes-Marcolli arXiv:hep-th/0610241, Definition 2.7, defines epsilon=J^2, epsilon' for JD vs DJ, epsilon'' for J gamma vs gamma J as functions of n mod 8 (same table as Connes arXiv:hep-th/9603053), and eq. (2.19) and the sentence after it state for their own finite geometry H_F: J_F^2=1 and J_F gamma_F = -gamma_F J_F (2.19), J_F commutes with the Dirac operators (next sentence), 'characteristic of KO-dimension equal to 6 modulo 8'. All three slots match the project's tuple with no reordering. The epsilon'' table row is cut off after n=3 in both HTML extractions (very likely a rendering artifact); it was not extrapolated, the n=6 third sign rests on the explicit prose of (2.19). docs/ko_dimension_registry.md Entry 1 was updated to RESOLVED, closing OB12 by the citation route."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: VERIFIED_EXTERNAL_SOURCE
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260905-c160-ob12-ko-dimension-table-citation/decision.md"
+    depends_on: [C36_JF_SQUARE_IS_PLUS_ONE_NOT_MINUS_ONE]
+    supersedes: "no prior claim -- resolves the open item C36 listed in its own does_not_imply (the KO number for the corrected tuple was inherited from CCM and not checked against a source text); C36's corrected tuple itself is unchanged"
+    convention: "epsilon = J^2, epsilon' <-> J D J^-1 vs D, epsilon'' <-> J gamma J^-1 vs gamma (source's own naming); identical in order to this project's tuple (J^2, JDJ^-1/D, JgJ^-1/g)"
+    does_not_imply:
+      - "anything about the geometric-side reality types (C32/C33) or their combination with this finite KO number -- the registry scope note forbids combining them without a separate theorem"
+      - "a change to OB2 (the t=0,1 doubled construction is not a valid geometry, independent of this KO number)"
+      - "an internal n-mod-8 derivation for the model Clifford triple -- OB12's other, harder closure route was not attempted"
+    caveat: "The identification matches this project's computed tuple slot by slot against CCM's own statement for their analogous H_F; it is not an independent derivation of the KO number from this project's own construction. The source table's third row is unreadable past n=3 in the fetched text."
+
+  - id: C161_LAMBDA_ALPHA_RECOMBINATION_UNDERDETERMINED_BY_FRAME_CHOICE
+    statement: "Mapping C133's coupling Phi = 1_F (x) (lambda_0 w_0 + lambda_1 w_1) onto C136's per-channel, per-(t,frame) alpha data does not yield an answer, and the anticipated missing ingredient (an unbuilt S6 twisted operator) is NOT what blocks it. Reading (i), scalar lambda = mu(t,rho,frame)*chi4*chi6: mu is exactly 0 at t=0 (left frame) and t=1 (right frame), so lambda_0=lambda_1=0 for every finite chi4, chi6 (14 combinations swept); the S6 value is algebraically irrelevant. Reading (ii), C136's 3x2 table: alpha is 0 (left) and +1 (right) at t=0, and -1 (left) and 0 (right) at t=1, identical for 8_v, 8_s, 8_c; the four literal (w_0,w_1) pairings give (0,0), (+1,-1), (0,-1), (+1,0), reaching 3 of the 5 pre-registered outcome rows. No principle in the project selects a pairing. An independent skeptic pass (WEAKENED) confirmed the arithmetic but noted C133 treats lambda_0, lambda_1 as free moduli of a Hom-space dimension count, so the identification with computed alpha may be a type mismatch (ILL-POSED) rather than an unresolved selection (INCOMPLETE-MACHINERY); not adjudicated here."
+    truth_status: SUPPORTED
+    test_outcome: INCONCLUSIVE
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260905-c161-all-to-both-construction-scoping/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- corrects this round's own claim.md framing that the missing ingredient is an unbuilt S6 twisted operator (shown algebraically irrelevant under reading (i); the gap lies on the S3 side under reading (ii))"
+    does_not_imply:
+      - "that all->both is or is not physically realized -- pairing B instantiates it as a nonzero channel-equal pair but nothing picks B over A, C or D"
+      - "that H1c or OB1 is closed -- even pairing B would be restatement-tier per C136's own F7 precedent, not a parent action satisfying PARENT_ACTION_GATE F4/F6"
+      - "that the untried relaxation-map candidates (P4, P13, P8, P1, P6, P7, P10, P12) are ruled out"
+      - "any change to N_gen=3 CONDITIONAL status or to lambda = FREE_COUPLING_PARAMETER"
+    caveat: "The mathematics (both readings' numbers, channel-uniformity, four-pairing enumeration) is tool-verified with HIGH confidence; the interpretive finding that no selection principle exists is WEAKENED, and which of INCOMPLETE-MACHINERY or ILL-POSED applies is undetermined here. A fifth pairing (t=1/2 simultaneous Killing constant) and a sixth (rep-label identification) exist and add to, not resolve, the ambiguity. round59 files were listed, not read in full; the 390 KB dolan-casimir decision.md was read only in lines 200-300. The round's own corrected recommendation: a follow-up should NOT be scoped as 'build a frame-selection principle' -- first audit whether C133's Phi was ever meant to be identified with C136's alpha-table (taken up by C163)."
+
+  - id: C162_DELTA_DYN_ZERO_FORCED_FOR_M_PLUS_DECOUPLED_3BAR
+    statement: "For W_cand = 3+3bar+3bar built as m (+) a decoupled extra 3bar (the only instantiation buildable from this project's existing content), the graded-floor diagnostic Delta_dyn is forced to exactly 0 for ANY block-diagonal connection the extra 3bar carries. Sigma_even (x) 3bar_extra contains no su(3) singlet while Sigma_odd (x) 3bar_extra contains exactly one (explicit nullspace computation and Frobenius-reciprocity count agree), so the 1-dimensional target_inv lies entirely in m's own channel. The 1x2 domain-to-target matrix is (d_m, d_extra) = (-2*sqrt(3)/3, 0): d_m equals C139's certified c exactly, d_extra vanishes at the natural connection and symbolically for arbitrary scale t. Rank 1, domain 2, target 1, floor 1, kernel 1, Delta_dyn 0 [VERIFIED-tool, 15/15 checks]; an independent skeptic pass returned CONFIRMED-REAL. This sharpens OB14's single 'second copy of 3bar' option into two sub-paths: (i') avoid m entirely, or (ii') find coupling data linking a new summand to m's tangent bundle."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c162-ob14-w-cand-scoping/decision.md"
+    depends_on: [C139_ALTERNATE_TWIST_M_KERNEL_ZERO, C141_KERNEL_IS_GRADED_BRANCHING_FLOOR_NOT_DYNAMICS, C146_TERM1_VANISHING_IS_SCHUR_FORCED_NOT_M_SPECIFIC, C147_CONNECTION_COEFFICIENT_VANISHES_ONLY_AT_ZERO_CONNECTION]
+    supersedes: "no prior claim -- tool-verifies the hand-derived [INFERRED] six-step argument in this round's own claim.md and sharpens OB14's undifferentiated 'second copy of 3bar' option into sub-paths (i') and (ii')"
+    does_not_imply:
+      - "that W_cand can never show Delta_dyn>0 -- only that the one currently buildable (decoupled) instantiation cannot, for any connection value on the decoupled piece"
+      - "that OB14 is resolved -- Sigma remains unexplained as the physically preferred twist"
+      - "any change to N_gen=3 CONDITIONAL status, lambda = FREE_COUPLING_PARAMETER, or safe_for_runtime = False"
+      - "that either sub-path (i') or (ii') was attempted -- no construction was built"
+    caveat: "Applies only to the decoupled (block-diagonal) instantiation. Transferring C139 Section 17's 'decoupled is the only buildable option' from extra singlets to an extra 3bar is an analogy supported by C142's separate search finding no geometric source for a second 3bar, not a literal re-citation."
+
+  - id: C163_NO_LICENSE_FOUND_FOR_LAMBDA_ALPHA_IDENTIFICATION
+    statement: "No license was found, in the rounds actually checked (C133 decision.md, C132 decision.md, and C38 via C125), for identifying C133's lambda_0, lambda_1 (coefficients of w_0, w_1 in Phi) with C136's computed per-channel alpha. C133 Section 9 defines them only as coordinates of a 2-dimensional sector space on which every symmetry rung acts trivially and calls the coupling space 'a 2-parameter continuum'; C133 has 0 hits for Killing, gravitino, torsion, equation of motion; C132 has 0 literal hits for lambda_0/lambda_1 and its synonym grep found only one unrelated 'modulus' hit; C38 supplies only two kernel labels. This round's first-draft verdict ILL-POSED / category error was withdrawn after an independent skeptic pass (WEAKENED): 'free continuum' is neutral toward later dynamical fixing, and alpha is itself a free modulus before solve_cell pins it, so the asymmetry is in the constraint applied, not in the kind of object. Whether the identification is unlicensable in principle stays open; a frame-selection round should not be built on this recombination without an explicit license."
+    truth_status: SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c163-ob1-lambda-alpha-licensing-audit/decision.md"
+    depends_on: [C161_LAMBDA_ALPHA_RECOMBINATION_UNDERDETERMINED_BY_FRAME_CHOICE, C38_T_KERNELS_ARE_THE_TWO_SPIN4_HALVES]
+    supersedes: "narrows C161's unadjudicated ILL-POSED vs INCOMPLETE-MACHINERY question to NO-LICENSE-FOUND; C161's arithmetic is untouched. This round's own first-draft ILL-POSED verdict is withdrawn within its decision.md (Section 8)."
+    does_not_imply:
+      - "that the identification is impossible in principle -- ILL-POSED was withdrawn as too strong; only that no license exists in the files checked"
+      - "that OB1 is closed -- only this one recombination route is addressed; the untried relaxation-map candidates are untouched"
+      - "that C133's or C136's own arithmetic or verdicts are affected -- both stand as written"
+      - "that a genuinely new coupling-term construction naming its coefficients lambda_0, lambda_1 from the start is foreclosed"
+    caveat: "Audit is textual and grep-based, with the skeptic's independent re-read finding no implicit pointer either; absence of a license in C133, C132 and C38 (via C125) is the finding. The test is PARTIAL because the falsifiable claim's 'not awaiting a value from an equation' half was weakened to a neutral reading. The source decision.md is internally uneven: only its verdict box and Section 8 were corrected after the skeptic pass, body Sections 4-6 and the Evidence-tier text still say ILL-POSED / category error; Section 8 is authoritative."
+
+  - id: C164_OB14_SUBPATH_SCOPING_INCONCLUSIVE_ONE_CANDIDATE_UNCHECKED
+    statement: "Scoping OB14's two sub-paths ((i') avoid m entirely, (ii') couple a new summand to m's tangent bundle) ends INCONCLUSIVE, not with the first draft's BOTH-HIGH-RISK-NO-CHEAP-DIFFERENTIATOR verdict, which was withdrawn after an independent skeptic pass (WEAKENED). Verified on re-read: C142's two rejected candidate sources hold up (C70/C71 triality intertwiners are Inn(su(3)) gauge-orbit relabelings; G102's triality channels restrict identically to G2); the S6 shape operator is the identity (totally umbilic), carrying no data; a 30-file ADNU/NOMIZU audit finds no su(3)-equivariant map between two different geometric objects. Corrected: C134's torsion is not 'structurally off-domain' -- its S6-relevant components are identically zero on 4D-Weyl content by chirality, so it still supplies no usable source. Left open: the canonical NOMIZU connection's curvature 2-form R^c (distinct from the Levi-Civita Riemann tensor) had never been computed as a separate object and could be an su(3)-equivariant source; AHL2023 was not grepped for OB14-specific coupling data."
+    truth_status: OPEN
+    test_outcome: INCONCLUSIVE
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c164-ob14-path-i-vs-ii-scoping/decision.md"
+    depends_on: [C162_DELTA_DYN_ZERO_FORCED_FOR_M_PLUS_DECOUPLED_3BAR]
+    supersedes: "no prior claim -- scoping round whose own first-draft verdict BOTH-HIGH-RISK-NO-CHEAP-DIFFERENTIATOR and its 'C134 torsion is off-domain' wording were withdrawn within decision.md (Section 9)"
+    does_not_imply:
+      - "that no independently motivated construction can ever exist for either sub-path -- BLOCKED-INTERNAL in C142's sense, not IMPOSSIBLE"
+      - "that either sub-path is cheaper or better motivated than the other -- no choice between (i') and (ii') was made"
+      - "that OB14 is resolved, or any change to N_gen=3 CONDITIONAL status or lambda = FREE_COUPLING_PARAMETER"
+      - "that C139, C141, C142, C143, C144, C145, C146 or C162 are reopened -- all re-cited, none re-derived"
+    caveat: "Cost and independent-motivation comparison of (i') and (ii') is [INFERRED] at MEDIUM-HIGH confidence and the first-draft claim that both fail AOG-5 was not promoted to a verdict. The R^c candidate was handed to a follow-up round and the AHL2023 grep was left as an honest scope gap. The C134 correction is a limit on the first draft: C134's own Section 8 (V2/V3, non-minimal couplings, bosonic sources) names surviving alternatives that the first draft's 'off-domain' framing had incorrectly foreclosed."
+
+  - id: C165_CANONICAL_CURVATURE_VANISHES_ON_FUNDAMENTAL_BLOCK_OF_LAMBDA2M
+    statement: "The curvature 2-form R^c of the canonical (Nomizu/Ambrose-Singer) connection of S^6 = G2/SU(3), R^c(X,Y) = -[X,Y]_h, restricted to the fundamental 3+3bar Casimir-eigenspace of Lambda^2(m) (a 6-dimensional superspace of the 3bar summand), is the zero map at machine precision (relative 1.7e-15), as pre-registered from Schur's Lemma: the target su(3) adjoint (dim 8, irreducible) shares no irrep with 3bar. R^c is nonzero overall (max 0.431); g2 was rebuilt from octonion derivations (closure 1.18e-15, Jacobi 5.55e-17); the Lambda^2(m) Casimir spectrum {0: mult 1, -4/3: mult 6, -3: mult 8} matches 1+(3+3bar)+8. So R^c supplies no independent su(3)-equivariant source for OB14 sub-paths (i') and (ii'), closing the third candidate C164 left open [VERIFIED-tool, 19/19 checks]. An independent skeptic pass returned CONFIRMED-REAL and noted the result is close to tautological: any connection with holonomy in SU(3) has adjoint-valued curvature, which has no 3bar component by Schur."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c165-canonical-connection-curvature-check/decision.md"
+    depends_on: [C164_OB14_SUBPATH_SCOPING_INCONCLUSIVE_ONE_CANDIDATE_UNCHECKED]
+    supersedes: "no prior claim -- resolves the one candidate (R^c) that C164's skeptic pass left open; C164 itself is not retracted"
+    does_not_imply:
+      - "that no other, not-yet-conceived su(3)-equivariant object could supply independent data for OB14 -- only this one candidate is closed"
+      - "that C142's rejections of C70/C71 or G102, or C164's shape-operator dismissal, were re-verified here -- they are cited, not re-derived"
+      - "that OB14 is closed as unreachable, or any change to N_gen=3 CONDITIONAL status or lambda = FREE_COUPLING_PARAMETER"
+    caveat: "The tested block is the combined 3+3bar Casimir-eigenspace, not 3bar alone (zero on a superspace implies zero on the 3bar subspace); the 3 versus 3bar split via the nearly-Kahler J was not attempted, and no cross-check against round59's NOMIZU/ADNU frame was run (the reductive property [h,m] in m was confirmed at 1.17e-15)."
+
+  - id: C166_AHL2023_HAS_NO_SU3_COUPLING_DATA_ON_S6_ISOTROPY_IRREDUCIBLE
+    statement: "Reading the primary source (arXiv:2203.02961v3, Agricola-Hofmann-Lawn; LaTeX sections 2.3, 2.4, 4.1.1, 5.1 by the round, plus 4.2-4.4 and 5.3 by the independent skeptic) found NO construction of su(3)-equivariant coupling data between two distinct bundles/representations on S^6=G2/SU(3) that OB14 sub-paths (i')/(ii') could use. Sec. 5.1 states the isotropy representation of this coset is irreducible (the only invariant metrics are multiples of the Killing form), and every object built there (invariant spinors Sigma_inv, nearly-Kahler 2-form J, Ambrose-Singer torsion T^AS in Lambda^3 m) is valued in Lambda^k m, not in a representation independent of m. Sec. 2.3-2.4 (Nomizu map, torsion classes) give no reducibility-independent coupling theorem. The one genuine cross-summand coupling (Sec. 4.1.1, quaternionic spheres, sp(n-1)-equivariant) needs a reducible isotropy representation, which S^6 lacks. Pre-registered kill conditions A, B, C all failed -> verdict NO-RELEVANT-CONTENT: the scope gap named in C164 Sec. 9 Concern 4 is closed as checked, found empty. [VERIFIED-primary-source]"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: VERIFIED_EXTERNAL_SOURCE
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c166-ahl2023-ob14-coupling-data-check/decision.md"
+    depends_on: [C162_DELTA_DYN_ZERO_FORCED_FOR_M_PLUS_DECOUPLED_3BAR, C164_OB14_SUBPATH_SCOPING_INCONCLUSIVE_ONE_CANDIDATE_UNCHECKED, C165_CANONICAL_CURVATURE_VANISHES_ON_FUNDAMENTAL_BLOCK_OF_LAMBDA2M]
+    supersedes: "no prior claim -- closes the scope gap named in C164 Sec. 9 Concern 4 (whether AHL2023 was quietly supplying OB14's missing coupling data); nothing is corrected or retracted"
+    convention: "irreducibility is REAL irreducibility of the 6-dim isotropy module m over R (AHL2023 Sec. 5.1 works over R), consistent with m (x) C = 3 + 3bar as a complex su(3)-module; Sigma_inv uses complex coefficients"
+    does_not_imply:
+      - "that no such coupling construction could exist for S^6=G2/SU(3) in principle -- only that AHL2023 as published supplies none, because its stated isotropy representation for this coset is irreducible"
+      - "that OB14 is closed -- it stays BLOCKED-INTERNAL / BLOCKED-EXTERNAL-OR-THEORETICAL; only one named, previously unactioned scope gap is closed"
+      - "that the Sec. 4.1.1 coupling method transfers to S^6 -- an su(3)-equivariant analogue would need a second invariant summand this project does not have (named in the round's Relaxation Map as high-AOG-5-risk territory, not endorsed as a next step)"
+      - "that this bears on N_gen=3, lambda (still FREE_COUPLING_PARAMETER), or any physical claim"
+    caveat: "The absence finding is limited to the AHL2023 sections actually read (2.3, 2.4, 4.1.1, 5.1 by the round; additionally 4.2-4.4 and 5.3 by the skeptic, all of which state reducible isotropy as their own precondition); it is not a statement about every section of the paper."
+
+  - id: C167_DIAGONAL_Z_P_ORBIFOLD_HOLONOMY_ASYMMETRY_FOR_ALL_P_GE_3
+    statement: "For the free left-translation action of Z_p (zeta_p = diag(e^{2 pi i/p}, e^{-2 pi i/p})) on S^3=SU(2), giving the lens space L(p,1): the left-invariant frame of the t=0 canonical connection descends with trivial holonomy for every p (exactly (L_zeta)_* X_A(g) = X_A(zeta g)), while the right-invariant frame of the t=1 connection descends with holonomy Ad(zeta_p), which equals Id iff zeta_p is central in SU(2), i.e. iff p in {1,2}; for p>=3 Ad(zeta_p) is a rotation by 4 pi/p (exact symbolic closed form for symbolic p, checked at p=1..5, with p=3,4,5 all nontrivial). The asymmetry is therefore general for every non-central zeta_p, tied to the centre of SU(2) being {+-I}, not specific to p=3. Freeness of the action verified exactly for p=1..5. Pre-registered verdict HOLONOMY-ASYMMETRY-CONFIRMED-ALL-P (kill conditions K1-K5 did not fire); independent context-blind skeptic CONFIRMED-REAL (re-derived the angle-doubling factor by hand). [VERIFIED-sympy]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c167-p4-diagonal-z3-orbifold/decision.md"
+    depends_on: [C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED]
+    supersedes: "no prior claim -- Step 1 of the P4 (diagonal Z_p orbifold) candidate from the C132 survey; it removes the pi_1(S^3)=0 precondition of the round72/E7 H1b proof for one endpoint but corrects nothing"
+    convention: "zeta_p acts by LEFT translation on S^3=SU(2); Ad(zeta_p) is the 3x3 real matrix of conjugation on the Pauli basis, a rotation by -4 pi/p in this conjugation convention (the sign is an orientation artifact, irrelevant to whether it equals Id); the result is frame-bundle (SO(3)) holonomy, independent of spin structure"
+    does_not_imply:
+      - "that this asymmetry is, or feeds into, a triality-correlation / generation-pairing mechanism (P4 Step 2) -- untouched here"
+      - "that a Dirac zero mode disappears at t=1 on L(p,1) -- connection/frame holonomy was tested, not dim ker D^t on the quotient"
+      - "which spin lift the trivially descending left-invariant frame selects for p even (H^1(L(p,1);Z_2)=Z_2, two spin structures) -- open; p odd (3, 5) is unambiguous"
+      - "evidence for p=3 specifically or for N_gen=3 -- the result is general for all p>=3; why p=3 rather than 4 or 5 is a separate unaddressed question, as is whether iota(g)=g^{-1} relating t=0 and t=1 stays on L(p,1) or maps to L(p,p-1)"
+      - "that OB1 is completed or reopened -- this is Step 1 only"
+    caveat: "The transformation-law identities (T2) reduce to associativity of matrix multiplication and would hold at any sample point, so they are an implementation-consistency check, not an independent falsification; the evidential weight rests on the symbolic Ad(zeta_p) computation (T1), which the skeptic re-derived by hand."
+
+  - id: C168_DIAGONAL_Z3_PAIRING_NON_EXCLUSIVE_BUT_FORCED_BY_TAU_ALONE
+    statement: "At the representation-theory / classification level only, with explicit modeling assumptions (spin-level holonomies H_0=I_2 and H_1=zeta_3, and tau = the 3-cycle permutation of the Spin(8) channels {v,s,c}), the diagonal Z3 action (zeta_3, tau) on S^3 x {v,s,c} is free, and H_t (x) tau has an invariant (eigenvalue-1) subspace of dimension exactly 2 in BOTH the t=0 and t=1 sectors, with every invariant vector having nonzero weight on all three channels (NON-EXCLUSIVE pairing; pre-registered K4 fired). This is FORCED by tau alone: tau has character [3,0,0], the regular representation of Z3, so V (x) tau is dim(V) copies of the regular representation for any Z3-representation V (H_t^3=I); H_1 replaced by a generic order-3 element gives the same result. Hence the geometric holonomy of C167 makes no difference at this level (pre-registered K6 negative), the result carries low independent discriminating weight beyond the abstract C133 all->both result, and independent context-blind skeptic confirmed it (CONFIRMED-REAL). [VERIFIED-sympy]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c168-p4-step2-triality-correlation/decision.md"
+    depends_on: [C159_PARITY_OBSTRUCTION_HOLDS_ONLY_FOR_EXCLUSIVE_PAIRING_NOT_GENERAL, C167_DIAGONAL_Z_P_ORBIFOLD_HOLONOMY_ASYMMETRY_FOR_ALL_P_GE_3]
+    supersedes: "no prior claim -- first computation of the tensored diagonal action; consistent with, and corrects nothing in, C167 or the abstract C133 support-pattern result"
+    convention: "H_0=I_2 is a modeling assumption (not derived from the Dirac operator); H_1=zeta_3 is the unambiguous spin lift because p=3 is odd (unique spin structure, per C167); tau=[[0,0,1],[1,0,0],[0,1,0]] on channel order (v,s,c); 'all three channels participate' is a statement in this permutation basis (basis-dependent, noted by the skeptic)"
+    does_not_imply:
+      - "that this is new evidence for all->both pairing beyond C133 -- the result is forced by tau being the regular representation of Z3, independent of the geometric holonomy"
+      - "that dim ker D^t on the actual quotient (S^3 x S^6)/Z3_diag was computed -- this is a representation-level model (spinor holonomy tensor abstract channel label), not the coupled Dirac operator"
+      - "that H_0=I_2 / H_1=zeta_3 is the physically correct transformation law of the actual zero-mode field, or that the field factorizes as spinor (x) channel -- modeling choices, not derived"
+      - "that the H_1=Identity control is independent information -- the skeptic noted it equals the t=0 computation; the scope condition of the forced-ness argument is H_t^3=I, and a non-Z3 H_t such as diag(-1,1) changes the result (invariant dimension 0)"
+      - "that OB1 is resolved, that the basis of tau is canonical (inherited open item), or that project-level motivation for triality is independent of N_gen=3 -- non-circularity (AOG-5) holds only in that tau's order 3 comes from external Spin(8) triality (Out(D4)=S3)"
+    caveat: "At classification level this test is floor-flat: the H_1=Identity control, which removes the geometric mechanism, gives the identical outcome, so the test cannot distinguish mechanism present from absent; recorded as a defect of the test, not as evidence against P4."
+
+  - id: C169_ROUND59_KERNEL_HAS_NO_T_OR_CHANNEL_INDEX_STEP3_ILL_POSED
+    statement: "Round59's certified zero-mode vector (kernel of the su(3)-invariant-sector twisted Dirac operator on S^6, dim ker=1) carries no t-index and no Spin(8) triality channel label: grep for S3/holonomy/t=0/t=1/zeta and for triality/Spin(8)/channel gives 0 matches in all three round59 scripts, its sectors are indexed by SU(3)-representation type, and the C167 H_t and C168 tau scripts act on an abstract su(2)/Pauli space and a bare 3x3 cyclic permutation matrix, with 0 references to round59 objects. Applying H_t (x) tau directly to round59's vector to read off an eigenvalue is therefore ill-posed as stated. The cheap 'three copies of round59's kernel' reformulation collapses exactly to C168's computation (the 1-dim kernel scalar cancels), adding nothing; independently re-derived by the skeptic. A genuine escalation would need (1) ker(D_S3(t)) as an explicit vector, (2) the real twisted D_S6 reassembled into the Cl(9) product framework of round68/E3, (3) an SU(3)-index to {v,s,c} basis bridge. Verdicts CHANNEL-STRUCTURE-MAKES-QUESTION-ILL-POSED + BLOCKED-NEEDS-NEW-MACHINERY. [VERIFIED-tool]"
+    truth_status: SUPPORTED
+    test_outcome: NOT_RUN
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c169-p4-step3-kernel-eigenvalue-scoping/decision.md"
+    depends_on: [C2_ROUND59_KERNEL_DIM1, C167_DIAGONAL_Z_P_ORBIFOLD_HOLONOMY_ASYMMETRY_FOR_ALL_P_GE_3, C168_DIAGONAL_Z3_PAIRING_NON_EXCLUSIVE_BUT_FORCED_BY_TAU_ALONE]
+    supersedes: "no prior claim -- scoping round; it corrects the task's literal framing of Step 3 (applying C167's H_t and C168's tau directly to round59's vector), which neither C167 nor C168 asserted, and retracts no result of round59, C167 or C168"
+    does_not_imply:
+      - "that any eigenvalue of the diagonal action was computed -- the well-posedness check failed first"
+      - "that P4 is dead or OB1 reopened -- a concrete escalation path is named, only not achievable within one round (OB1 stays PARKED -- REOPEN ONLY ON NEW EXTERNAL INPUT)"
+      - "that the three escalation items are each full-round scope, or that exactly three un-bridged Cl realizations exist -- both only [WEAK]: the skeptic confirmed full-round scope for item 2 only and could not verify the 'two before, three now' framing against C135's text; item 1 may be cheaper (see C170)"
+      - "that round59, C167 or C168 results are changed -- all cited and untouched"
+    caveat: "No new numerical computation was performed: all checks are grep/Read verification, so test_outcome is NOT_RUN. The collapse argument covers the identical-copies reformulation only; a variant embedding round59's kernel with channel-dependent phases or signs was raised in the round's own skeptic brief as a possible escape and is not separately addressed."
+    notes: "Later closure, not a correction: C173 (null_results/INDEX.md, REJECT ITEM3-IMPOSSIBLE-BY-G44) closes escalation items 2+3 together as a route to OB1, and states C167 and C170/C171 stand as standalone facts."
+
+  - id: C170_T0_KERNEL_EXPLICIT_T1_CANDIDATE_HOLONOMY_ZETA_INVERSE
+    statement: "Item 1 of C169's escalation, attempted in isolation: ker(D_S3(t)) as explicit vectors. At t=0 the spin-connection matrices vanish, M_i(0)=0, so the kernel is the full 2-dim space of constant spinors psi(g)=psi_0 (any psi_0 in C^2): cheap and certified. At t=1 a self-consistent explicit candidate psi_1(g)=g^{-1}.psi_0 satisfies the parallel-transport equation Nabla^1 psi=0 exactly, using spin-connection matrices M_i(t) derived here (self-check sum_i Z_i M_i(t)=t*H passed) and e_i=-i*sigma_i (uniform sign, pinned by matching all three M_i(1) jointly). Its derived holonomy under the deck map g->zeta_p g is zeta_p^{-1}, not the zeta_p that C168 modeled as H_1 (same eigenvalue set {omega, omega^2}) -> BLOCKED-BASIS-MISMATCH for C168's H_1 convention at this candidate. At the bare H_t level (no tau): H_0=I_2 has eigenvalue 1 trivially (vacuous; H_0=I_2 is C168's assumption), while H_1 has eigenvalues {omega, omega^2}, so no t=1 vector has H_1-eigenvalue 1, whichever of zeta, zeta^{-1} is used. Independent context-blind skeptic CONFIRMED-REAL. [VERIFIED-sympy]"
+    truth_status: SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c170-p4-step3-item1-explicit-ker-ds3/decision.md"
+    depends_on: [C23_H1B_FLATNESS_PARALLEL_SPINOR_PROVED, C167_DIAGONAL_Z_P_ORBIFOLD_HOLONOMY_ASYMMETRY_FOR_ALL_P_GE_3, C168_DIAGONAL_Z3_PAIRING_NON_EXCLUSIVE_BUT_FORCED_BY_TAU_ALONE, C169_ROUND59_KERNEL_HAS_NO_T_OR_CHANNEL_INDEX_STEP3_ILL_POSED]
+    supersedes: "no prior claim -- it qualifies, but does not retract, the C169 Sec. 10a skeptic lead that item 1 may be cheap (true for t=0 only), and shows C168's literal H_1=zeta_3 does not apply verbatim to this t=1 candidate; C168's own results are untouched"
+    convention: "c=+2 (the project's calibrated structure constant, h_H=3); Clifford generators Z_i=i*sigma_i with omega=Z_1 Z_2 Z_3=I_2; e_i=-i*sigma_i; connection Nabla^t_X Y = t[X,Y] (Agricola; the D^t formula with its t*H term, checked against here, is Agricola eq. (5)); M_i(t)=(1/4) sum_{j,k} Gamma^t_{ijk} Z_j Z_k with Gamma^t_{ijk}=t*c*eps_{ijk}"
+    does_not_imply:
+      - "that C169's escalation items 2 (real twisted D_S6 in Cl(9)) and 3 (SU(3)-to-triality basis bridge) were advanced -- untouched and BLOCKED-NEEDS-NEW-MACHINERY at that time"
+      - "that these S^3-side vectors can be combined with round59's kernel into ker(D_full) on S^3 x S^6 -- that composition needs items 2-3"
+      - "that psi_1(g)=g^{-1}.psi_0 is the unique or physically preferred t=1 construction -- a differently parametrised ansatz might match H_1=zeta_3 directly (not attempted)"
+      - "that C168's classification changed -- it is forced by tau alone; this round only supplies an S^3-side input"
+      - "that the e_i sign is forced by the bracket condition alone -- the skeptic noted [e_1,e_2]=c e_3 admits four Weyl-related sign patterns; uniqueness comes from matching all three M_i(1) jointly (Step 4b)"
+    caveat: "The t=1 vector is a candidate verified against the parallel-transport equation, convention-open against C168's H_1=zeta_3; the round's own note records that a globally flipped sign convention relative to Agricola's stated orientation was not re-verified against the PDF. Ledger claim C24 states that no alternative t=1 candidate under c=+2 had been found in the project; this round's source does not cite C24 and does not claim to settle it, and the relation between the two is not adjudicated here."
+    notes: "Later closure: C171 confirmed that substituting zeta_p^{-1} for zeta_p leaves C168's classification unchanged."
+
+  - id: C171_ZETA_INVERSE_HOLONOMY_RECONCILES_WITH_C168_CLASSIFICATION
+    statement: "Substituting H_1'=zeta_p^{-1} (p=3; the holonomy C170 derived for its t=1 candidate psi_1(g)=g^{-1}.psi_0) for H_1=zeta_p in C168's own invariant_subspace_report function (imported unmodified, not reimplemented) reproduces C168's t=1 result exactly: an invariant eigenvalue-1 subspace of dimension 2 with all three channels v,s,c participating (NON-EXCLUSIVE-ALL-THREE-PARTICIPATE). H_1' is confirmed order exactly 3 and was built two independent ways (closed form and zeta3.inv()), which agree exactly (symbolic). This resolves C170's BLOCKED-BASIS-MISMATCH only for this substitution at the classification level, as C168's character-theory result (V (x) regular representation, any Z3-representation V) already predicts; the eigenvector weight lists appear in swapped order because zeta_p^{-1} is zeta_p with its two diagonal entries exchanged. No skeptic pass was run (a lighter self-check was judged sufficient for a confirmatory substitution in reused code). Verdict RECONCILIATION-CONFIRMED. [VERIFIED-sympy 3/3]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c171-h1-prime-c168-reconciliation/decision.md"
+    depends_on: [C168_DIAGONAL_Z3_PAIRING_NON_EXCLUSIVE_BUT_FORCED_BY_TAU_ALONE, C170_T0_KERNEL_EXPLICIT_T1_CANDIDATE_HOLONOMY_ZETA_INVERSE]
+    supersedes: "no prior claim -- closes the single loose end named in C170's Relaxation Map; corrects nothing in C168 or C170"
+    does_not_imply:
+      - "that this is new evidence beyond C168's general result -- it is one instance confirming the forced-by-tau theorem was applied correctly to C170's concrete matrix"
+      - "that C169's escalation items 2 and 3 were advanced, or that C170's t=1 candidate can be combined with round59's kernel into ker(D_full) on S^3 x S^6"
+      - "that psi_1(g)=g^{-1}.psi_0 is the unique or physically preferred t=1 construction"
+      - "that C168's K6 verdict or C170's construction was re-litigated -- both are reused unchanged"
+    caveat: "No independent skeptic pass was run; the result is a confirmatory substitution inside reused C168 code and inherits C168's floor-flatness (the classification cannot distinguish mechanism present from absent)."
+
+  - id: C172_REAL_TWISTED_DS6_KERNEL_IS_36_DIM_CL9_CHECKS_FORCED
+    statement: "Plugging round59's real twisted D_S6 (64x64 on Sigma (x) Sigma, reused unmodified) into the Cl(9) product framework of round68/E3 with D_S3(t) did NOT verify pre-registered escalation item 2: the frozen check 3 FAILED, since direct full-matrix nullspace gives dim ker(D)=36, not the 1 of round59's su(3)-invariant-sector rank argument (36 had already been recorded by C73). Checks 1 (chirality anticommutes with D), 2 (decoupling D_full^2 = D^2 (x) I_2 + I_64 (x) D_S3(t)^2, exact at t=0, 1, 0.5) and 4 (explicit v (x) w zero, for an arbitrary kernel vector and for round59's own physical one, exact at t=0 and t=1) pass but are forced by the tensor structure and discriminate nothing. New: the full 128x128 D_full has nullspace dim 36 at t=0 and t=1 and 0 at t=0.5, equal to dim ker(D) x dim ker(D_S3(t)). Verdicts BLOCKED-KERNEL-MULTIPLICITY-MISMATCH + PARTIAL-STRUCTURE-HOLDS-NO-EXPLICIT-ZERO; the first-draft verdict REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK was overturned by the skeptic and is withdrawn. [VERIFIED-tool]"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c172-p4-escalation-item2-real-twisted-ds6-cl9/decision.md"
+    depends_on: [C2_ROUND59_KERNEL_DIM1, C169_ROUND59_KERNEL_HAS_NO_T_OR_CHANNEL_INDEX_STEP3_ILL_POSED, C170_T0_KERNEL_EXPLICIT_T1_CANDIDATE_HOLONOMY_ZETA_INVERSE]
+    supersedes: "no prior claim -- within the round, the first-draft verdict REAL-TWISTED-KERNEL-VERIFIED-IN-CL9-FRAMEWORK was withdrawn (post-hoc criterion shift caught by the skeptic; the null_results/INDEX.md C173 row, CORRECTED 2026-09-07, records that first draft being overturned) and this entry records the final verdict; it does not correct C2, because round59's dim ker=1 is a restricted-scope quantity (decision.md Section 8)"
+    does_not_imply:
+      - "that C169 escalation item 2 was completed -- the 'verified' headline is retracted; item 3 (SU(3)-to-triality basis bridge) is untouched"
+      - "that round59's dim ker=1 is contradicted -- it is the su(3)-invariant, G2-isotypic-sector-restricted quantity; the unrestricted 64x64 kernel is 36-dim and only 1 dimension is known to be the physically selected vector; whether the other 35 are consistent with the Rounds 52-56 positivity bound on non-trivial G2 sectors is open, neither confirmed nor excluded"
+      - "that a full 9-dimensional Dirac operator on a genuine product manifold was built -- it is a 64-dim reduction to invariants tensored with a 2x2 S^3 mode, with mismatched connections (Nomizu on S^6, torsion-deformed on S^3)"
+      - "that t=0 versus t=1 selection (OB1) is informed -- both give dim ker(D_full)=36"
+    caveat: "Checks 1, 2 and 4 are non-discriminating (forced; they hold for flat stand-ins and for any Hermitian operator with a kernel), the explicit-vector check passing for an arbitrary kernel vector is a negative control that lacked power, and the reconciliation check (round59's vector lies in the full kernel) has zero discriminating power given round59's published residual; only the 128x128 D_full nullspace (check 5) is new, since dim ker(D)=36 was already recorded by C73, and the novelty of the explicit round59 kernel vector is the round's own claim, not checked against the earlier C74 ledger note about an explicit S6 kernel vector."
+
+  - id: C173_ITEM3_TRIALITY_BRIDGE_IMPOSSIBLE_BY_G44_ITEM2_CANNOT_RESCUE
+    statement: "C169's escalation item 3 -- a basis bridge from round59's SU(3)-indexed zero-mode space Sigma to the {v,s,c} Spin(8) triality-channel index -- cannot be built as a non-trivial, channel-discriminating map: verdict ITEM3-IMPOSSIBLE-BY-G44. G102's centralizer computation (re-run fresh, [VERIFIED-tool], full 28-dim so(8) Leibniz kernel) gives dim 0 for the centralizer of g2 and a 2-dim abelian inner algebra for su(3); triality is an outer automorphism of Spin(8), and Spin(8) is connected so every Ad(g) is inner (this also closes the round's own flagged gap about a discrete normalizer). Sigma has the same su(3)-module type as the channels (Casimir -4/3, C65), so nothing built from G2/SU(3) data can select a channel. Executing item 2 (reassembly into Cl(9)=Cl(3)(x)Cl(6)) does not rescue item 3, since it adds no symmetry beyond S3's SU(2) and S6's G2/SU(3) data; only an independent fiber-Spin(8) postulate could supply channel content. Independent context-blind skeptic pass: CONFIRMED-REAL, verdict strengthened."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md"
+    depends_on: [C65_ROUND59_SIGMA_SAME_SU3_MODULE_AS_TRIALITY_CHANNELS, C169_ROUND59_KERNEL_HAS_NO_T_OR_CHANNEL_INDEX_STEP3_ILL_POSED]
+    supersedes: "no prior claim -- sharpens C169's status for item 3 from 'blocked, needs new machinery' to 'impossible as a non-trivial map', without contradicting C169's overall BLOCKED-NEEDS-NEW-MACHINERY verdict"
+    does_not_imply:
+      - "that round59's Sigma and G102's channels are the same concrete object -- only the same abstract su(3)-module type; the fine decomposition (3+3bar vs 3+3 vs 3bar+3bar) is left open and not needed for the argument"
+      - "that P4 or OB1 is dead -- a trivial bridge, or an explicit independent fiber-Spin(8) postulate (a choice, not a derivation), remains available"
+      - "that item 2 has no value for its own narrower goal (checking ker(D_full)=0 with the real operator) -- only that it cannot supply triality content"
+      - "that G44, G102, C65, round59 or round68/E3 results are wrong -- all re-verified, none altered; N_gen=3 stays CONDITIONAL"
+    caveat: "The round's own computation Hom_su3(Sigma, channel_x)=4 is invalid (index-by-index pairing of two unrelated su(3) bases) and is explicitly NOT used as evidence; the decisive argument is basis-independent. The concurrent session's item-2 verdict cited in the round (first REAL-TWISTED-KERNEL-VERIFIED) was later revised by that session to BLOCKED-KERNEL-MULTIPLICITY-MISMATCH (dim ker(D)=36, not 1) and is background only, not relied on; this verdict never depended on it."
+
+  - id: C174_NONPRODUCT_COUPLING_CHANNEL_TEST_BLOCKED_BY_36DIM_RAW_KERNEL_ARTIFACT
+    statement: "Extending C79's non-product coupling test (S3 Clifford generators Z_i with a so(4)_1 self-dual triple, bridged to round59's Sigma by channel-specific intertwiners U_v, U_s, U_c) from channel v to s and c, targeted at round59's own kernel vector, did not give a trustworthy answer on whether the channels are distinguished: verdict ARTIFACT-STILL-PRESENT (a pre-registered kill criterion that fired). The three bridges intertwine to < 1e-14 [VERIFIED-tool]. A first-draft 2x2 compression onto span(e1(x)v_round59, e2(x)v_round59) gave eigenvalues exactly [1.5, 1.5] in all channels but is vacuous (compressed coupling entry ~1e-17). Full 128x128 diagonalization with overlap tracking showed the tracked overlap collapsing from 1.63 (of 2.0) at eps=0 to 0.28-0.55 for nonzero eps, because v_round59 sits inside round59's 36-dimensional raw kernel; the cross-channel eigenvalue difference (max ~6.82) is therefore not informative. Channel (in)dependence of this coupling is left undetermined by this round."
+    truth_status: SUPPORTED
+    test_outcome: INCONCLUSIVE
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c174-ob11-nonproduct-d-channel-independence/decision.md"
+    depends_on: [C70_ROUND59_G102_INTERTWINER_FOUND_OB11II_HARD_HALF_CLOSED, C71_TRIALITY_BRIDGE_EXTENDED_MONODROMY_TEST_TAUTOLOGICAL_SELF_CORRECTED, C79_NONPRODUCT_COUPLING_ATTEMPT_NULL_UV_NONUNITARY_FOUND_ROBUSTNESS_CONFIRMED]
+    supersedes: "no prior claim -- extends C79 (channel v only) to channels s and c without trustworthy outcome; C79's own NULL for channel v is untouched"
+    does_not_imply:
+      - "that this coupling is channel-independent or channel-dependent -- genuinely undetermined by this round"
+      - "that OB11's non-product door is closed -- only that two specific analysis methods failed on this specific coupling"
+      - "that C79's channel-v NULL or C173's item-3 result is changed -- both untouched"
+      - "that N_gen=3's CONDITIONAL status changes"
+    caveat: "Both analysis methods tried (2x2 compression, highest-overlap eigenvalue tracking) fail on the 36-dim degenerate raw kernel; the round names proper degenerate perturbation theory inside the full 72-dim block (36 x the 2-dim S3 factor) as the correctly-scoped next step and did not attempt it. No independent skeptic pass was run (judged unnecessary for a methodological dead end)."
+    notes: "Reuses C172's helper reconcile_round59_vector_against_full_kernel as code only; the vector is re-verified here as a unit-norm kernel vector of D (residual 0). C172's own headline verdict was later revised to BLOCKED-KERNEL-MULTIPLICITY-MISMATCH and is not relied on."
+
+  - id: C175_CHARBONNEAU_HARLAND_THM3_GIVES_ZERO_DEFORMATIONS_ON_G2_SU3
+    statement: "Reading Charbonneau and Harland, 'Deformations of nearly Kaehler instantons' (arXiv:1510.07720v2, Commun. Math. Phys. 2016, DOI 10.1007/s00220-016-2675-y), pages 1-4 and 14-20 directly from the PDF in the repo: Theorem 3 (p.17) gives deformation space 0 for the canonical connection on G2/SU(3) both in the isotropy-group (H) bundle and in the broader SU(3) structure-group bundle (the paper states the two cases coincide because H=SU(3)), whereas the SU(3)-bundle spaces for the other three homogeneous nearly-Kaehler 6-manifolds are g (SU(2)^3/SU(2)), W^R_(1,0)+2g (Sp(2)/Sp(1)xU(1)) and 6g (SU(3)/U(1)^2). Verdict INDEPENDENT-CONFIRMATION-OF-RIGIDITY: a method this project had not used (elliptic deformation theory of instantons) supplies no new coupling data for OB14's W_cand on G2/SU(3), so the hope that the paper's large SU(3)-bundle deformation spaces apply to G2/SU(3) is killed and OB14's existing BLOCKED-INTERNAL status is reconfirmed. No computation was performed; the round transcribes and interprets a published theorem."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: VERIFIED_EXTERNAL_SOURCE
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c175-ob14-charbonneau-harland-2016-independent-confirmation/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- literature check that reconfirms, and does not alter, OB14's BLOCKED-INTERNAL status"
+    does_not_imply:
+      - "that no construction anywhere could supply W_cand's missing data -- only that this method (instanton deformation theory under the broadest SU(3) structure group) does not, for G2/SU(3)"
+      - "that the two remaining theoretical escapes for OB14 (a W_cand avoiding m entirely; external input) are strengthened or weakened -- the paper concerns deformations of m itself"
+      - "that the Universality question is resolved -- the asymmetry that only G2/SU(3) has H=SU(3) is noted as a side finding, not investigated"
+      - "that N_gen=3's CONDITIONAL status changes"
+    caveat: "Rests on the round's direct reading of Theorem 3's tables and the cited passage on p.17 (pages 1-4 and 14-20 only); no computation was performed and no independent skeptic pass was run (judged unnecessary for a transcription of a published theorem)."
+
+  - id: C176_TORSION_SPECTRAL_ACTION_A2_PREFERS_T_HALF_NOT_T_0_1
+    statement: "For S3's Cartan-Schouten torsion family D_S3(t), the leading Seeley-DeWitt term of the spectral action, built from the torsion-corrected formula of Hanisch-Pfaeffle-Stephan 2009 (arXiv:0911.5074 eq. 3, 6, 7; n=4 coefficients applied to n=3), is a_2(t) = (9(2t-1)^2 - 1)/(8 pi^2) with R_LC=6: minimum exactly at t=1/2 (-1/(8 pi^2)), larger at t=0,1 (1/pi^2). Verdict SPECTRAL-SELECTOR-DIES-AT-HALF, matching the expectation pre-registered before the run: the +9/2 coefficient on T_0^2(t)=4(2t-1)^2 forces the Levi-Civita point. [VERIFIED-tool] symbolic: ||Riem(t)||^2 = ||Ric(t)||^2 = 192 t^2 (t-1)^2 (all 27 Riemann components, matching round99). The partial a_4 (dimension-general terms only; the Omega_ij piece is excluded) has a local maximum at t=1/2 and minima at t=1/3, 2/3, an uninterpreted side finding. Independent context-blind skeptic pass: CONFIRMED-REAL, with two narrowing notes (the t=1/2 verdict does not depend on the value or sign of R_LC; the n=4 prefactors are not literally dimension-independent, only the relative sign of the T_0^2 and R terms is needed)."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c176-ob1-spectral-action-torsion-selector/decision.md"
+    depends_on: [C13_SCAL_T_EINSTEIN_CARTAN_SPLIT]
+    supersedes: "no prior claim -- first computation of a_2(t) and partial a_4(t) for S3's torsion family; does not touch the separate condensate route (C137) or OB1's PARKED status"
+    convention: "Scalar curvature R_LC=+6 (round111's Ricci contraction over the 1st and 4th indices, positive for spheres, matching the cited paper); this round's own 1st-and-3rd-index contraction gives the exact negative and is not used in a_2 or a_4. The t=1/2 verdict is independent of this sign."
+    does_not_imply:
+      - "that no spectral or gravitational action could select t=0,1 -- only this cited, 4D-derived formula's leading term was checked; an action built for the project's actual 9D/13D construction is untested"
+      - "that the a_4-partial minima at t=1/3, 2/3 mean anything or amount to a full a_4 -- the Omega_ij/Cl(3)-trace piece is not computed"
+      - "that this formula is the physically correct action for the project's 13D construction"
+      - "that C137's condensate-route conclusion, row B (kernel multiplicity 2), the D/E tension or N_gen=3's CONDITIONAL status are resolved or changed"
+    caveat: "Borrowed-formula result: the a_2 coefficients (9/2 and 1/3) are the cited paper's n=4 values applied to n=3, and only the relative sign of the T_0^2 and R terms is needed for the verdict; the a_4 computation is partial."
+
+  - id: C177_EXACT_S3_SPECTRAL_ACTION_MINIMUM_AT_T_HALF_FOR_ALL_TESTED_CUTOFFS
+    statement: "Computed directly from D^t's exact closed-form spectrum on S3 (D^t(n,sigma) = sigma(n+3/2) + 3(t-1/2), multiplicity (n+1)(n+2) per sign, reused from round67/E2), the spectral action S_f(t,Lambda) = sum m(n) f(D^t(n,sigma)^2/Lambda^2) has argmin_t exactly at t=1/2 with S_f''>0 there for all 15 pre-registered combinations of 3 cutoffs (f1=exp(-u), f2=exp(-u^2), a smooth compactly supported bump) and 5 values of Lambda (3, 5, 10, 20, 50); 0/15 were regulator-dependent. Verdict EXACT-SELECTOR-DIES-AT-HALF, matching the expectation pre-registered before the run. S_f(x)=S_f(-x) with x=3(t-1/2) follows from the multiplicity symmetry for any f, so t=1/2 is always a critical point. The closed-form S_f''(0) agrees with finite differences and with sympy differentiation (to 12 significant figures at Lambda=5, 10) after two verification-harness bugs (a factor-9 units mismatch, under-truncation) were found and fixed; max truncation residual 6.3e-28. The sign agrees with C176's borrowed-n=4 result. Independent context-blind skeptic pass: CONFIRMED-REAL."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c177-ob1-exact-spectrum-spectral-action-test/decision.md"
+    depends_on: [C176_TORSION_SPECTRAL_ACTION_A2_PREFERS_T_HALF_NOT_T_0_1]
+    supersedes: "no prior claim -- independent exact-spectrum re-test that corroborates, and does not replace, C176's borrowed-formula result"
+    does_not_imply:
+      - "that no physically motivated selection principle for t exists -- only 3 standard regulators on the exact S3 spectrum were tested; a structurally different action (e.g. opposite sign on the torsion-squared-like term) is untested and no candidate for one exists in the project"
+      - "a theorem over a whole class of cutoff functions -- a pathological or highly oscillatory f outside the tested family is not covered"
+      - "that C176's borrowed 4D formula is validated as a general method -- it agreed here for the sign of the second derivative only; the numeric value of a_4 was not compared"
+      - "that row B (kernel multiplicity 2), the D/E tension or N_gen=3's CONDITIONAL status change"
+    caveat: "Scope is exactly 3 pre-registered cutoff functions x 5 values of Lambda on the S3-restricted operator; no uniformity over a function class is claimed."
+
+  - id: C178_NONPRODUCT_T0_SPECTRUM_SPREAD_ATTRIBUTED_TO_BRIDGE_ARTIFACT_NO_CHANNEL_EVIDENCE
+    statement: "Degenerate perturbation theory was built inside the 72-dim degenerate subspace C^2(x)ker(D) (dim ker(D)=36 re-verified; v_round59 lies in it to 3.3e-16) for C79/C174's non-product coupling T in channels v, s, c. The method is validated: the gap between the full 128x128 D_joint(eps) eigenvalues and T_0's eigenvalues scales as eps^2 (1.65e-6 at eps=1e-3, 1.65e-8 at 1e-4). First-pass (seed 42) T_0 spectra differ across channels (max |v-s|=0.80, |v-c|=0.79, |s-c|=0.13), but re-solving each channel alone with 8 seeds already shifts its spectrum by 0.28 (v), 0.24 (s), 0.40 (c); the 8-seed mean |v-c| is 0.82. Corrected final verdict after an independent skeptic pass: the spread is attributed to the non-unitary, non-unique bridge U_channel (C79: ||U_v^dag U_v - I||=1.29), which makes the Hermitization of T non-gauge-covariant, so this computation gives no evidence of channel dependence; the further conclusion that the channels are independent is imported from C173's theorem applied to T, not produced by the test. The script's own original verdict was GAUGE-NOISE-DOMINATED-INCONCLUSIVE."
+    truth_status: SUPPORTED
+    test_outcome: INCONCLUSIVE
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260906-c178-ob11-degenerate-perturbation-theory-full-kernel/decision.md"
+    depends_on: [C70_ROUND59_G102_INTERTWINER_FOUND_OB11II_HARD_HALF_CLOSED, C71_TRIALITY_BRIDGE_EXTENDED_MONODROMY_TEST_TAUTOLOGICAL_SELF_CORRECTED, C79_NONPRODUCT_COUPLING_ATTEMPT_NULL_UV_NONUNITARY_FOUND_ROBUSTNESS_CONFIRMED, C173_ITEM3_TRIALITY_BRIDGE_IMPOSSIBLE_BY_G44_ITEM2_CANNOT_RESCUE, C174_NONPRODUCT_COUPLING_CHANNEL_TEST_BLOCKED_BY_36DIM_RAW_KERNEL_ARTIFACT]
+    supersedes: "no prior claim -- carries out the degenerate-PT step that C174's Relaxation Map named; the round's own first-pass verdict GAUGE-NOISE-DOMINATED-INCONCLUSIVE and its speculative 'reducible representation, larger centralizer' diagnosis are superseded in-file by the skeptic-corrected verdict above"
+    does_not_imply:
+      - "that degenerate perturbation theory is unreliable -- it is validated by the eps^2 residual scaling and unaffected by the correction"
+      - "that C79's channel-v NULL or C173's item-3 theorem is changed -- C173 is applied here, not re-proved"
+      - "that every conceivable non-product coupling is channel-independent -- only this T (C79/C174's construction) was analyzed"
+      - "that OB11's STRONG reading (blocked by G97) or N_gen=3's CONDITIONAL status changes"
+    caveat: "The independence conclusion is imported, not tested: the corrected post-skeptic verdict applies C173's theorem to T by treating T as a construction of the same class, while the same decision.md (Sections 4.2 and 5.3) says C173's finding concerns su(3)-invariant data only, a different class from this round's non-invariant coupling T, and Section 9 asserts the opposite without reconciling the two; that contradiction is unresolved. The spread is attributed to C79's documented non-unitary U_channel. The test_outcome is INCONCLUSIVE because the frozen criterion was not met and the independence verdict was not produced by the test. The frozen criterion (T_0 spectra equal across channels to 1e-6) was not met by the raw computation; the 8-seed signal-to-noise (1.99 as first computed with a mixed denominator, about 2.90 per pair per the skeptic) was not re-run, and the non-gauge-covariance explanation was not tested numerically after the correction. No gauge-invariant comparison quantity was built."
+
+  - id: C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP
+    statement: "A multiplet of single-valued complex functions on S^n, with the isometry group acting by the induced pullback action on functions, cannot carry a spinor representation: for S^2 (d=2) and S^3 (d=4) the 2*pi rotation acts as +Id on points and hence on functions (max point displacement 3.3e-16; max function-value change 1.8e-15 over 200 random points x 3 test functions) but as -Id on the spinor index (R_spin(2 pi) = -Id exactly; R_spin(4 pi) = +Id as periodicity control), forcing Phi = -Phi = 0. Verdict NOGO-CONFIRMED-AND-DIMENSION-TRAP-CONFIRMED. The S^3 dimension trap: the vector (1/2,1/2) and the spinor (1/2,0)+(0,1/2) both have dimension 4, so counting dimensions gives a false pass; the kernel element of Spin(4)->SO(4) acts as (-1)^(2jL+2jR), +1 on the vector and -1 on the spinor. Half-integer j does occur in L^2(S^3) (entries of the SU(2) matrix) but only in balanced (j,j) blocks, never in (1/2,0)+(0,1/2). Independent context-blind skeptic pass: CONFIRMED-REAL, with a second independent Peter-Weyl proof for S^3."
+    truth_status: PROVED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260907-c179-spinor-multiplet-of-functions-nogo/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first test in this project of whether a spinor representation occurs in L^2(S^n); the round imports standard representation theory (double cover, Peter-Weyl) and applies it explicitly, it does not discover it"
+    does_not_imply:
+      - "that spinor harmonics do not exist -- they exist as sections of a spinor bundle, which is trivial on S^3 (parallelizable), so spinor fields are 4-tuples of functions in the group trivialization"
+      - "that the general theory of tensor (integer-spin) multiplets in the same formalism is invalid -- it is untouched"
+      - "that this round constructs the spinor harmonics -- that is a separate, later step"
+      - "anything about S^6 or the project's own compactification content"
+    caveat: "Scope is existence within multiplets of global single-valued functions under the induced pullback action, for S^2 and S^3; spinor fields as sections of the spinor bundle are not excluded. The Relaxation Map's claim that S^3 is the tractable end and S^2 follows by descent from SU(2) at fixed U(1) weight is [INFERRED], not computed."
+
+  - id: C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT
+    statement: "In the left-invariant (group) trivialization of S^3 = SU(2), spinor fields are C^2-valued functions, and D0 = -i sum_a sigma_a (x) X_a^R, built from the explicit quaternion right-multiplication fields X_a^R (q -> q e_a, decision.md section 1), acts on C^2 (x) H_k (H_k = harmonic polynomials, dim (k+1)^2). For k = 0..3 its eigenvalues are 0 (k=0, dim 2), -1,+3 (k=1), -2,+4 (k=2), -3,+5 (k=3), with multiplicities (k+1)(k+2) and k(k+1) for the lower and upper eigenvalue of each level, matching the previously established S^3 Dirac degeneracy (c85_certification.py) by a different method. D0 - c equals the Dirac spectrum +-(n+3/2) for ONE additive constant c, with c=+3/2 for X^R and c=-3/2 for the opposite chirality X^L. Eight explicit k=1 eigenspinors (C^2-valued linear polynomials) are listed in results_c180.json; the k=0 spinors are the constant ones. A control check on the n=3 vector multiplet x_i/r verifies under the convention given in the convention field (exactly one of three sign/transpose variants works)."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260907-c180-explicit-s3-spinor-harmonics/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP, C85_MEIER_EQ63_REPAIRED_SUBSTRATE_CERTIFIED_INDEPENDENTLY_CONFIRMED]
+    supersedes: "no prior claim -- first explicit S^3 spinor harmonics in this project (earlier rounds held the spectrum only). The same file's later CORRECTION narrows its own 'connection constant was solved for, not supplied' wording to the statement made here: spectrum = Dirac spectrum up to a single additive constant, and that constant is 3/2."
+    convention: "D0 contains no spin-connection term, so the overall additive constant is a connection convention; X_a^R and X_a^L are the explicit quaternion right/left multiplication fields listed in decision.md section 1; the constant c=+3/2 (X^R) vs c=-3/2 (X^L) is defined by D0 - c = physical Dirac spectrum and is stated in this convention only."
+    does_not_imply:
+      - "that the multiplicity pattern alone certifies the right-invariant construction -- the opposite-chirality construction X^L gives identical multiplicities; only the sign of the constant discriminates"
+      - "that the constant 3/2 drops out of the eigenvalue data rather than being put in -- the target magnitude n+3/2 is supplied, and the uniqueness of the intersection is carried by the algebra"
+      - "that the structure holds beyond k <= 3, or covers S^2, S^4 and higher spheres, or normal coordinates"
+      - "that reproducing the known multiplicities is anything more than a consistency check on the construction"
+      - "that this bears on S^6, N_gen=3 or any open blocker"
+    caveat: "Narrowed by the file's own later CORRECTION: the per-pair intersection that returns c = 3/2 uniquely cannot see a uniform additive shift (shifts of +1 and +0.37 each returned a unique wrong constant); it does detect a moved level, a broken spacing or a wrong multiplicity. Honest statement: D0's spectrum is the Dirac spectrum up to a single additive constant (non-trivial), and that constant is 3/2. Eigenvalues come from numerical diagonalization (imaginary parts < 1e-9) with structural residuals exactly 0.0; levels k = 0..3 only. Skeptic pass (WEAKENED) concerns closed: negative control via X^L built, sourcing corrected, basis independence shown to 6.0e-14. The CORRECTION narrows the wording of this round's own claim rather than withdrawing a separate result, which is why the entry stays SUPPORTED (contrast C181, where a separately stated section was withdrawn). Later round C190 found that the handedness-to-sign assignment of this constant was stated backwards in a letter; the sign convention of c (D0 - c) is therefore stated explicitly here."
+
+  - id: C181_GAMMA_PROJECTION_NECESSARY_NOT_SUFFICIENT_AND_RNC_VERIFIED
+    statement: "On S^3 with the C180 construction: (a) the gamma projection x_mu = (1/2) Tr(sigma_mu^dag g), g = x0 I + i(x1 s1 + x2 s2 + x3 s3), recovers the four vector harmonics (max error < 1e-12 over 500 random points; Tr(sigma_mu^dag sigma_nu) = 2 delta); (b) it does NOT discriminate: an alternative basis built from the opposite chirality (X^L instead of X^R, a genuinely different operator; lowest eigenspaces dim 6 vs 2) also yields the full rank-4 vector multiplet from the bilinears psi0^dag sigma^mu psi1, so the check is necessary but not sufficient; (c) for the full bispinor Psi = (psi_L, psi_R), Psi Psi^dag has reducible diagonal blocks (1+3, singlet drift ~1e-15) and irreducible (2,2) off-diagonal blocks M_LR, M_RL = the vector (singlet drift 8.44); (d) exponential-map Riemann normal coordinates q(y) = exp(y1 i + y2 j + y3 k) at the identity satisfy g_ab(0) = delta on 5 exact unit directions and all 9 first derivatives vanish symbolically."
+    truth_status: PARTIALLY_SUPPORTED
+    finding_status: QUALIFIED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260907-c181-gamma-projection-and-normal-coordinates/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP, C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT]
+    supersedes: "no prior claim -- but this file's own section 1 (the claim that Weyl-spinor bilinears must be replaced by a two-chirality pairing, because one Weyl spinor with its own adjoint gives 1+3 rather than the vector) was WITHDRAWN by its own section 9: for the 4-component bispinor Psi Psi^dag already contains the (2,2) vector in its off-diagonal blocks. Only the location result survives."
+    convention: "sigma_mu = (I, i s1, i s2, i s3) (quaternionic basis) for the projection; S^3 = SU(2) with g -> u g v^dag; unit round S^3 (Scal_LC = 6)."
+    does_not_imply:
+      - "that the projection check is useless -- it is a genuine necessary condition, but it inspects representation content only, cannot see which operator's eigenbasis was used, and so cannot be the only check"
+      - "that a local spinor section in normal coordinates has been delivered -- only the coordinate system and its normal-coordinate property are verified; the C180 harmonics were not transported into it"
+      - "that the C180 basis is the Dirac eigenbasis -- that rests on C180's spectrum check, not on this projection"
+      - "that the withdrawn section 1 claim stands"
+    caveat: "PARTIAL WITHDRAWAL: section 1's claim that Weyl-spinor bilinears must be replaced by a two-chirality pairing was withdrawn in section 9; the true-but-moot fact is that psi psi^dag of ONE Weyl spinor has an invariant trace (drift 0.0 over 200 random rotations), i.e. reducible 1+3. Rebuilt in-round after skeptic pass: the first span test was a tautology (same matrix rank twice), replaced by the bilinear-span test. Section 9b: in the c181b discriminator the diagonal-block conjunct is an identity (junk-control drift 9.5e-16 vs 3.6e-15) and all falsifying power sits in the off-diagonal drift (> 1e-3). A first RNC failure was a lint edit that deleted the unit-norm constraint variable; fixed by evaluating on exact unit directions."
+
+  - id: C182_S2_SPINOR_SECTORS_BY_HOPF_DESCENT_WEIGHT_LADDER
+    statement: "Hopf descent S^2 = S^3/U(1): diagonalizing the U(1) fibre generator, weight = -(i/2) X3^R, on the harmonic spaces H_k of S^3 for k = 0..5 gives exactly k+1 spin weights in {-k/2 .. +k/2}, spaced by 1, symmetric about 0, each of multiplicity k+1. The weight-0 sector (k even) has dimension 1,3,5 = 2l+1 and the weight +-1/2 sectors (k odd only) have dimension 2,4,6 = 2(l+1), the standard S^2 scalar and Dirac multiplicities; both targets equal k+1 and follow from the ladder, so they are NOT two independent checks. Under the fibre action U(theta) = exp(theta X3^R) a weight-0 vector (k=2) is fixed (drift 1.2e-15, phase +1) while a weight-1/2 vector (k=3) is not (drift 0.686) and picks up exactly -1 at the half-turn, so the weight-+-1/2 sectors are sections of a non-trivial bundle, not functions on S^2, consistent with the S^3 no-go."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260907-c182-s2-spinor-harmonics-by-descent/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP, C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT]
+    supersedes: "no prior claim -- first spin-weight decomposition of the S^3 harmonics in this project. Corrects this round's own first draft, which billed the scalar column as an independent positive control and shipped a tautological no-go check."
+    convention: "weight = -(i/2) X3^R; the factor 1/2 is forced by requiring standard so(3) relations from C180's verified bracket (a factor -i instead would give ladder step 2 and fail the ladder check)."
+    does_not_imply:
+      - "that the S^2 Dirac eigenvalues +-(l+1) are derived -- only harmonic spaces and multiplicities were obtained; the S^2 Dirac operator was not built in this round"
+      - "that the scalar and spinor dimension agreements are two independent confirmations -- both targets equal k+1 and follow from the ladder"
+      - "that closed-form spin-weighted harmonics were written out explicitly"
+      - "that this bears on S^6, N_gen=3 or any open blocker"
+    caveat: "Dimension agreement with 2(l+1) is consistent with these sectors being the S^2 Dirac eigenspaces but does not prove it. After the context-blind skeptic pass only two genuinely independent checks remain (weight ladder; fibre invariance), not six; the SCALAR-OK-SPINOR-FAILS verdict branch was structurally unreachable and the first no-go check was logically empty, replaced by fibre_invariance_check(). Levels k = 0..5 only."
+
+  - id: C183_TERM2_STEP_FAILS_ONLY_ON_S3XS3_ALL_REPS_ISO_TO_DUAL
+    statement: "For the four homogeneous nearly-Kahler 6-manifolds (S^6 = G_2/SU(3), SU(3)/T^2, CP^3 = Sp(2)/(Sp(1)xU(1)), S^3xS^3 = SU(2)^3/SU(2)_diag), the 'no trivial component' step used for the trivial-block rank (Term2 = 0 because (Lambda^2(m^{1,0}) (x) Lambda^2(m^{1,0}))^H = 0) holds exactly when Lambda^2(m^{1,0}) shares no irreducible constituent with its own dual as an isotropy representation (Schur: dim (V (x) W)^H = dim Hom_H(V*, W)). One uniform torus-weight criterion with no per-space branch agrees with the prior four-space check on 4 of 4 (PASS, PASS, PASS, FAIL in the order listed) against a no-mechanism floor of 3 of 4, and both injected-error controls flip the verdict. It fails on S^3xS^3 alone because SU(2)_diag is the only one of the four isotropy groups whose every representation is isomorphic to its own dual; the only negation-symmetric 3-element sub-multiset of its m_C weights FAILs, and the H-level multiplicity of the isotropy-trivial slot there is 1."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260908-c183-butruille-duality-criterion/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- but the two pearl predictions (Round59, 2026-07-14; Round65, 2026-07-15) that the two-line Term2 argument extends to the remaining Butruille spaces are REFUTED AS STATED: true for SU(3)/T^2 and CP^3, false for S^3xS^3, so '2 of 4 and rising' is superseded by 3 of 4 with an explained exception. The S^3xS^3 four-space computation itself was not re-run (Round70/Round71, not ledger claims, already held it)."
+    convention: "'isomorphic to its own dual' is written in full; 'self-dual' is NOT used because it means Hodge self-dual 2-forms elsewhere in this repo. Torus-weight proxy for H-representations; duality on a compact group negates torus weights."
+    does_not_imply:
+      - "that Term2 != 0 on S^3xS^3 -- the cheap argument fails to force vanishing but does not force non-vanishing either; Round71 found the primary-source data for that coset not internally Hermitian-consistent, so the question stays open"
+      - "that the trivial-block rank fails to be 1 on S^3xS^3 -- the isotropy-Schur bound dim ker <= 1 holds on all four; what is missing there is the argument forcing it to equal 1"
+      - "that the Universality open problem is closed -- the result is a weaker universality claim than the pearls made"
+      - "that the criterion applies beyond the closed population of four (no fifth case exists to predict; the criterion is retrodictive and cannot be validated out of sample)"
+    caveat: "The three PASSes rest on a maximal-torus proxy: torus count 0 proves the H-trivial component absent (a real PASS), but torus count > 0 alone proves nothing about H (separating example H = SU(3), Lambda^2 = 3 + 6: torus count 6, H-count 0). Only the single FAIL (S^3xS^3) is completed at H-level in the script. Negative control (b) is a corruption built to move the decision, not the weight set of any SU(2) representation. Skeptic pass WEAKENED; the three defects (torus-vs-H overselling, inadmissible control, tautological J-independence assertion) were fixed in the artifact."
+
+  - id: C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED
+    statement: "Exact symbolic arithmetic (sympy over Q and Q(i), no floats in any verdict; 33/33 + 18/18 + 8/8 checks). (1) The lowest S^2 spinor doublet, DERIVED by Hopf descent from the k=1 harmonics of S^3 rather than written down, is, up to a constant unitary (a component swap), chi_{+1/2} = e^{-i phi/2} cos(theta/2), chi_{-1/2} = e^{+i phi/2} sin(theta/2); chi(phi+2pi) = -chi(phi) exactly, so these are double-valued, not functions of the angular coordinates, while every bilinear chi_a chi_b^* is single-valued and chi^dag sigma chi equals the unit radial vector exactly for the doublet as written (the derived one gives a fixed rotation of it); the weight-0 sector gives genuine single-valued functions (negative control). (2) On S^3, L^2 contains only (j,j) under SU(2)_L x SU(2)_R for k = 0..3, a second proof of the scalar-function no-go; as sections, k=0 is (0,1/2) with D0 = 0 (dim 2) and k=1 is (1/2,0) with D0 = +3 (dim 2) plus (1/2,1) with D0 = -1 (dim 6), so D0 sorts by irrep. (3) x^mu = (1/2) Tr(sigma_mu^dag U) returns (x0..x3) only in the quaternionic basis (I, i s1, i s2, i s3)."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260908-c184-tom-two-questions/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP, C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT, C182_S2_SPINOR_SECTORS_BY_HOPF_DESCENT_WEIGHT_LADDER]
+    supersedes: "no prior claim -- explicit S^2 doublet formulas and the bilinear-cancellation argument had not been written down before (C182 gave sector dimensions only). The first-run sign bug in J_tot and the quaternion-to-Pauli anti-isomorphism bug (descent along the wrong circle) are fixed in-round; an apparent sign conflict with C180's bracket is resolved as two different objects (matrix bracket vs vector-field bracket), not a correction."
+    convention: "(m_L, m_R) labels under Spin(4) = SU(2)_L x SU(2)_R with the two Weyl states of (1/2,0) and (0,1/2); which factor is called 'left' is a convention not fixed by the script; quaternion-to-Pauli map (1,i,j,k) -> (I, i s1, i s2, i s3) is an anti-isomorphism, so the Euler psi fibre is generated by the quaternionic-left field X3^L."
+    does_not_imply:
+      - "that the reading of the four S^3 labels as (m_L, m_R) with one entry zero matches the correspondent's intent -- assumed, not verified with the correspondent"
+      - "that the S^2 doublet is verified to solve the S^2 Dirac equation -- it is derived as a weight sector, but 'lowest Dirac harmonic' remained a textbook identification in this round because the S^2 Dirac operator was not built here"
+      - "that the S^3 spinors are 'just constants' in any frame -- true only in the group trivialization; in a coordinate frame they pick up the frame's rotation"
+      - "that any new mathematics is claimed -- Peter-Weyl, D^{1/2} matrix elements and spin-weighted harmonics are textbook"
+      - "that the harmonics are transported into Riemann normal coordinates, or that the P3 dimension match (2 and 6 are the only options at k=1) is the evidence -- the content is that D0 sorts by irrep"
+    caveat: "The independent reviewer had no shell and could not execute the script, so its 'no failure found' means close reading and hand algebra only; three real findings (no Hopf substitution into a spinor; only four of six predictions had injected-error controls; an apparent sign conflict with C180) were closed by c184c computation. Standing caveats not closed: the label reading and the left/right naming (convention). Only levels k = 0..3 for the S^3 content."
+
+  - id: C185_S2_DIRAC_OPERATOR_BUILT_SPECTRUM_PLUS_MINUS_N_PLUS_1
+    statement: "The Dirac operator on the round unit S^2 was built from the metric rather than quoted (frame; Cartan's first structure equation solved and checked to hold identically; unique spin connection; D), in exact symbolic arithmetic over Q(i) (13/13 checks): the frame reproduces the metric, D is formally self-adjoint, D^2 = nabla*nabla + R/4 holds componentwise with R = 2 (Lichnerowicz), and 0 is not an eigenvalue. For n = 0,1,2 the spectrum is lambda = +-(n+1) with multiplicity 2(n+1) per sign (+-1: 2, +-2: 4, +-3: 6; half-integer m labels), and the multiplicities 2, 4, 6 equal the sector dimensions obtained independently by Hopf weight counting in C182. Control: doubling the connection coefficient destroys the pattern (multiplicities [0,0,0]) rather than merely shifting it."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260908-c185-s2-dirac-operator/decision.md"
+    depends_on: [C182_S2_SPINOR_SECTORS_BY_HOPF_DESCENT_WEIGHT_LADDER, C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- closes C182's stated gap that the S^2 Dirac operator was not built and its eigenvalues +-(l+1) not derived. The decision's own section 4 addendum (2026-09-10) records one pre-registered item as NOT closed (chi frame-match), see caveat."
+    convention: "Round unit S^2; eigenspinors psi = (f(theta), g(theta)) e^{i m phi} with the same half-integer m on both components (D swaps components); eigenvalues and multiplicities are convention-independent, the overall sign of D flips with orientation, so the claim is about |lambda| and multiplicities."
+    does_not_imply:
+      - "that the S^2 spinors become functions -- the obstruction is untouched; this is an operator acting on the same double-valued objects"
+      - "that the C184 doublet chi has been shown to be this operator's |lambda| = 1 eigenspinor -- chi carries opposite phi-phases on its two components while this operator's eigenspinors share one phase; the explicit frame transport and match is still owed (only the m values +-1/2 line up)"
+      - "that the pattern continues beyond n = 2, or that it holds on a deformed sphere -- n = 0,1,2 and unit radius round metric only"
+      - "that any novelty is claimed -- +-(n+1) with multiplicity 2(n+1) on the round S^2 is textbook; what changed is that the project now produces it from its own construction"
+    caveat: "The pre-registered frame subtlety (chi from C184 is written in the frame the Hopf descent produces, not the frame this operator's eigenspinors live in) was flagged in claim.md as needing explicit resolution and was NOT resolved; the omission was found 2026-09-10 by a context-blind skeptic, not by this round's self-review. kernel_dim() checks dimensions only and never extracts an eigenfunction to compare with chi. Three failed checks in-round (P4 compared against the scalar Laplacian instead of the spinor-connection Laplacian; two malformed P3 attempts) were defects of the checks, not of D."
+
+  - id: C186_S3_EIGENSPINORS_K2_K3_EXACT_CANONICAL_WEIGHT_BASIS
+    statement: "Exact arithmetic over Q(i), no floats in any verdict (34/34 checks): for k = 2 and k = 3 on S^3, D0 = -i sum_a sigma_a X_a^R satisfies (D0 + k)(D0 - (k+2)) = 0 identically, with multiplicities 12 and 6 at k=2 (eigenvalues -2, +4) and 20 and 12 at k=3 (eigenvalues -3, +5; first exact computation, C180 had them numerically). Each D0 eigenspace splits, by the commuting labels J3^L and the total right angular momentum J3^R = orbital + spin, into weight cells that are ALL one-dimensional, so each eigenspinor is fixed up to a scalar by its weight (m_L, m_R), removing the basis arbitrariness inside degenerate levels; content is (j_L, j_R) = (k/2, (k+1)/2) at D0 = -k and (k/2, (k-1)/2) at D0 = k+2. All 50 produced eigenspinors, reassembled as polynomial 2-spinors, satisfy the differential equation D0 psi = lambda psi exactly. An injected error (J3^R built as orbital - spin) does not commute with D0 and is refused by a guard."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c186-s3-canonical-eigenspinors/decision.md"
+    depends_on: [C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT, C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- C180 gave the spectrum numerically at k <= 3 and no exact eigenvectors above k=1 existed; this round supplies the exact k=2,3 eigenspinors. The C184 k=2 multiplicities 12 and 6 were reproduced as a control."
+    convention: "J3^R = orbital + spin with the relative sign fixed by su(2) closure (opposite signs for left and right); Clifford/Pauli and quaternion table as in C180/C184; which SU(2) is called 'left' is a convention."
+    does_not_imply:
+      - "that 'every cell is one-dimensional' alone makes the basis canonical -- it is necessary but not sufficient (with the guard off the wrong J3^R still gives one-dimensional cells); canonicity rests on J3^R genuinely commuting with D0 (check B1), read together with B6"
+      - "that the pattern continues beyond k = 3 -- k = 2,3 computed against a k=1 control; continuation is inference"
+      - "that the 3/2 shift is derived -- in this round it is still matched, not derived"
+      - "that this round tests the half-angle (radial ODE) reduction -- it uses harmonic polynomials and the group action, with no angle or differential equation to reduce"
+      - "that any novelty is claimed -- the content is the Clebsch-Gordan decomposition of (k/2,k/2) (x) (0,1/2)"
+    caveat: "efficiency 1.0 is against a combinatorially capped ceiling (a cell cannot split below dimension 1), not an oracle arm, so it must not be quoted alongside efficiencies from experiments with an oracle ceiling. The first negative control did not break the structure: restrict() silently compressed a non-preserving operator; fixed so restrict() raises NotPreserved unless the operator preserves the subspace exactly, and the control was rebuilt with four checks (D1-D4)."
+
+  - id: C187_EULER_ANGLE_REDUCTION_FAST_BUT_VIELBEIN_D_FAILS_TO_MATCH_D0_SPECTRUM
+    statement: "For the S^3 Dirac operator in Euler angles (theta,phi,psi) built from a vielbein and a Cartan-solved spin connection, the half-angle substitution s=sin(theta/2), c=cos(theta/2) reduces the plane-wave eigenproblem to exact polynomial algebra with no simplify() on a transcendental expression: 0.1 s for one case, 5.2 s for a 176-combination scan (10/10 checks), against the ~1500 s killed first S^2 attempt in C185 (claim (a) CONFIRMED). The (m,n) periodicity is derived: X_0^L = 2 d/dphi and X_0^R = 2 d/dpsi exactly (quaternion 'i' axis, index a=0, numerically to 1e-30), so each extreme k=1 weight state is a single Fourier mode. But this round's own vielbein-plus-connection D does NOT reproduce the known D_0 spectrum: for the derived candidate (m,n)=(-1/2,1/2), expected eigenvalue -1, 0 of 144 sign/pairing/operator-sign combinations give a theta-independent eigenvalue (claim (b) REJECTED; 5/6 checks in c187b, the one failure being the documented finding). The defect is localized to this construction of D, not to periodicity or the C184/C186 spectrum, and was not diagnosed."
+    truth_status: SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c187-s3-euler-angle-reduction/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C185_S2_DIRAC_OPERATOR_BUILT_SPECTRUM_PLUS_MINUS_N_PLUS_1, C186_S3_EIGENSPINORS_K2_K3_EXACT_CANONICAL_WEIGHT_BASIS]
+    supersedes: "no prior claim -- runs the corrected falsification test of the half-angle method registered in C186 (section 4), whose original task (exact k>=2 eigenspinors) did not exercise the method"
+    convention: "Euler-angle embedding x0=cos(th/2)cos((phi+psi)/2), x1=cos(th/2)sin((phi+psi)/2), x2=sin(th/2)cos((phi-psi)/2), x3=sin(th/2)sin((phi-psi)/2), metric g=(1/4)diag-block(1,[[1,cos th],[cos th,1]]); plane-wave ansatz (F(th),G(th))exp(i(m phi+n psi)); Cartan axis = quaternion 'i' (index a=0), not the 'k' axis (a=2) used for the weight labels in C186."
+    does_not_imply:
+      - "that the half-angle reduction reproduces the S^3 spectrum: claim (b) was rejected for this construction and the cause was not isolated beyond 'not a labelling issue, not a simple sign'"
+      - "that the C184/C186 spectrum is affected: it was obtained by a different method (finite exact matrices, no angles) and is unchanged"
+      - "that a geometric construction's internal self-consistency certifies equality to a reference operator: here the frame reproduces the metric and Cartan's equation has zero residual (P1-P9) and the operator still differs from D_0"
+      - "a diagnosis of the defect in the vielbein or connection: mislabelling and 144 sign/pairing combinations are excluded, nothing more"
+      - "that the speed comparison is a like-for-like efficiency ratio: its floor is C185's S^2 run, a different instance and script"
+    caveat: "decision.md was updated the same day: its first version left claim (b) open as a possible periodicity offset; the final verdict is claim (a) CONFIRMED and claim (b) REJECTED precisely (periodicity closed, defect localized to this operator construction). C188 later bypasses this construction rather than repairing it."
+
+  - id: C188_QUATERNION_NATIVE_EULER_ANGLE_DIRAC_REPRODUCES_SPECTRUM_K0_TO_3
+    statement: "Building the S^3 Dirac operator in Euler angles directly as D = -i sum_a sigma_a X_a^R, with X_a^R the quaternion right-multiplication generators re-expressed in (theta,phi,psi) through the embedding Jacobian (a change of variables, no vielbein and no Cartan connection), reproduces the eigenvalue -k exactly at k=0,1,2,3 (16/16 checks). The generators are X_0^R = 2 d/dpsi, X_1^R = 2cos(psi) d/dtheta + 2sin(psi)/sin(theta) d/dphi - 2sin(psi)/tan(theta) d/dpsi, X_2^R = -2sin(psi) d/dtheta + 2cos(psi)/sin(theta) d/dphi - 2cos(psi)/tan(theta) d/dpsi (tangent to S^3 and equal to the closed form to <1e-30). Candidates were re-derived at each level, not extrapolated: (m,n)=(k/2,k/2), F=-cos(theta/2)^k, G=+cos(theta/2)^k, lambda=-k, confirmed by direct evaluation at random (theta,phi,psi). At k=2 the ratio D psi/psi is constant to 30 digits over 5 points against a spread of 13.54 for a wrong radial part (efficiency 1.0). The k=1 state is the mirror (m<->-m, F<->-G) of the candidate on which C187's vielbein D failed."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c188-s3-euler-quaternion-native-dirac/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C186_S3_EIGENSPINORS_K2_K3_EXACT_CANONICAL_WEIGHT_BASIS, C187_EULER_ANGLE_REDUCTION_FAST_BUT_VIELBEIN_D_FAILS_TO_MATCH_D0_SPECTRUM]
+    supersedes: "no prior claim -- executes the next step named in C187b (its section 4c); C187's own vielbein-plus-connection D stays rejected and its defect stays undiagnosed (bypassed, not repaired)"
+    convention: "D_0 = -i sum_a sigma_a X_a^R with X_a^R the quaternion right-multiplication generators; Euler-angle embedding and i-axis (index a=0) Rosetta-stone labelling of (m,n) as in C187/C187b."
+    does_not_imply:
+      - "that the pattern continues beyond k=3: it is verified at four levels only; continuation rests on C184's general theorem and is not computed here"
+      - "anything about the +(k+2) branch: only the -k extreme state was checked here (that branch is C184/C186's result)"
+      - "a diagnosis of C187's defect: this round bypasses the vielbein/connection approach"
+      - "that the half-angle speed trick works for this construction: it does not (see caveat)"
+      - "an independent confirmation of the C184/C186 spectrum: this is the same operator re-coordinatized (a change of variables), so agreement is guaranteed by construction and only shows the chain rule was applied correctly"
+    caveat: "The half-angle/kernel_dim reduction of C185/C187 does not transfer to this construction: the cos(psi), sin(psi) prefactors of X_1^R and X_2^R leave an explicit residual psi-dependence, and the k=1..3 exact-rank computations were killed after hanging for minutes (k=0, N=0 completed with kernel dim 2). Verification here is by direct numeric evaluation of D psi = lambda psi at random points."
+
+  - id: C189_DERIVED_SPIN_CONNECTION_SHIFT_IS_MINUS_3_2_FOR_RIGHT_ACTING_S3_DIRAC
+    statement: "On the unit S^3 with the orthonormal frame {X_a^R} (g(X_a^R,X_b^R)=delta_ab exactly), the Levi-Civita spin connection was solved from Cartan's structure equation (unique solution, zero residual): omega_01 = (sin psi/2, -sin theta cos psi/2, 0), omega_02 = (cos psi/2, sin psi sin theta/2, 0), omega_12 = (0, -cos theta/2, -1/2) in (theta,phi,psi) components. The covariant operator differs from D_0 by D_full - D_0 = diag(-3/2,-3/2) exactly, position-independent (10/10 checks). Shifting D_0's verified spectrum (-k with multiplicity (k+1)(k+2), +(k+2) with multiplicity k(k+1)) by -3/2 gives +-(l+3/2) with multiplicity (l+1)(l+2) per sign (both branches carry the same formula after relabelling l=k and l=k-1), matching the Camporesi-Higuchi form (gr-qc/9505009) at 20 common eigenvalues for 12 levels; that literature form was used only as a cross-check after the derivation. Negative controls: omega=0 gives 0; omega_12 -> -omega_12 gives -1/2 (also constant, so constancy alone does not discriminate); an ad hoc sin(2 theta) term breaks constancy."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c189-s3-derive-32-shift/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C188_QUATERNION_NATIVE_EULER_ANGLE_DIRAC_REPRODUCES_SPECTRUM_K0_TO_3]
+    supersedes: "no prior claim -- earlier project rounds (G8, round67, A1/C55) used +-(l+3/2) or a quoted Peter-Weyl formula as input and none built the connection; this is the first derivation of the constant from the connection"
+    convention: "D_0 = -i sum_a sigma_a X_a^R (C184/C188), X_a^R the quaternion right-multiplication generators; the shift is defined as D_full - D_0 in the coframe dual to {X_a^R} (C180 defines c = D_0 - D_phys instead, the opposite sign)."
+    does_not_imply:
+      - "the shift for the left-acting operator: not computed in this round (see C190)"
+      - "a re-derivation of D_0's own spectrum: that is C184/C188's result, used here as an input"
+      - "that the +-(l+3/2) multiplicity formula is proved for all l: the cross-check covers 12 levels (20 common eigenvalues inside the truncation range)"
+      - "that constancy of the extra term is a discriminating check by itself: two wrong connections (omega=0, one flipped sign) also give constants"
+    caveat: "The agreement with +-(l+3/2) is a finite cross-check (12 levels, boundary eigenvalues excluded as truncation artifacts); the shift itself, diag(-3/2,-3/2), is an exact symbolic result."
+
+  - id: C190_LEFT_ACTING_SHIFT_IS_PLUS_3_2_AND_RIGHT_IS_MINUS_3_2_PAIRING_FIXED
+    statement: "For the left-acting S^3 Dirac operator D_0^L = -i sum_a sigma_a X_a^L, the Levi-Civita spin connection in the orthonormal frame {X_a^L} was solved from Cartan's structure equation (unique, zero residual): omega_01 = (sin phi/2, 0, -sin theta cos phi/2), omega_02 = (-cos phi/2, 0, -sin phi sin theta/2), omega_12 = (0, 1/2, cos theta/2). D_full^L - D_0^L = diag(+3/2,+3/2) exactly, position-independent (16/16 checks). D_0^L's spectrum is exactly the negation of D_0^R's at k=0,1,2 ({+k: (k+1)(k+2), -(k+2): k(k+1)}). In this round's convention (shift = D_full - D_0) the pairing is right -> -3/2 (C189) and left -> +3/2: shifting D_0^R by +3/2 over 20 levels gives 32 mismatches out of 33 comparable eigenvalues and values +-1/2 that the positive curvature of S^3 forbids, while -3/2 gives 0 mismatches out of 36. C180 records the same pairing as c=+3/2 (X^R), c=-3/2 (X^L) under its opposite convention c = D_0 - D_phys."
+    truth_status: SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c190-s3-left-32-shift/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C188_QUATERNION_NATIVE_EULER_ANGLE_DIRAC_REPRODUCES_SPECTRUM_K0_TO_3, C189_DERIVED_SPIN_CONNECTION_SHIFT_IS_MINUS_3_2_FOR_RIGHT_ACTING_S3_DIRAC]
+    supersedes: "no prior claim for the left-acting operator -- the round reports that an earlier, never-derived assignment of the two shift signs to the two handedness (right -> +3/2, left -> -3/2) does not hold in the D_full - D_0 convention it tested; whether that assignment was meant in the opposite convention (c = D_0 - D_phys, as in C180) was not established, so no earlier claim is marked corrected here. The magnitude 3/2 and the mirror-image relation of the two spectra are confirmed"
+    convention: "D_0^R = -i sum_a sigma_a X_a^R and D_0^L = -i sum_a sigma_a X_a^L, with X_a^R and X_a^L the quaternion right- and left-multiplication generators of C184; each shift is D_full - D_0 in the coframe dual to the respective frame."
+    does_not_imply:
+      - "a re-derivation of C189's right-handed result: -3/2 for D_0^R is reused as an input to the cross-check"
+      - "D_0^L's spectrum beyond k=0,1,2: the negation pattern is exact at those levels and the broader-k sweep was not re-run for the left side"
+      - "that the earlier assignment was in fact backwards: that holds only in the D_full - D_0 convention tested here (see caveat), and the round makes no claim about the origin of the discrepancy"
+    caveat: "claim.md's pre-registered item (c) is worded ambiguously about the expected sign; the final verdict in decision.md (PROMOTE with a correction, 16/16) is that the magnitude 3/2 holds for both handedness and the pairing is right -> -3/2, left -> +3/2. Sign-convention dependence [INFERRED from C180 decision.md sections 2 and 7 against C189/C190]: C180 defines c by D_0 - c = physical Dirac spectrum and finds c=+3/2 for X^R and c=-3/2 for X^L, while C189/C190 define the shift as D_full - D_0 and find -3/2 for right and +3/2 for left; these are one fact in opposite sign conventions, so the 'backwards' verdict on the earlier assignment holds only if that assignment used the D_full - D_0 convention, which the round did not establish. The round itself says it does not confirm the stated handedness-to-sign assignment, hence PARTIAL."
+
+  - id: C191_P5_POSTULATE_ALONE_CANNOT_SEPARATE_8S_FROM_8C_PAIRING_RULE_REJECTED
+    statement: "Under the explicit postulate that one so(4) summand of the SO(4)xSO(4) in Spin(8) block-chirality construction is S^3's own SU(2)_L x SU(2)_R isometry, 8_s and 8_c restrict to IDENTICAL (j_L,j_R) content, 4x(1/2,0) + 4x(0,1/2) each, reproducing the known SU(2)^4 branching (8_s=(2,1,2,1)+(1,2,1,2), 8_c=(2,1,1,2)+(1,2,2,1)) used as positive control (P8, P9, P13): the isometry alone gives no 8_s/8_c <-> t=0/t=1 pairing rule (efficiency 0.0), and the result is unchanged when the second factor plays S^3's role (P16, P17). Fixing the second factor's quantum number (L2,R2) separates them at each fixed value, but 8_s tracks the (L1,R1) that matches (L2,R2) and 8_c the mismatch -- a match/mismatch structure needing an independent S^6-side meaning for the second factor. A split identification (SU(2)_L from the first factor, SU(2)_R from the second) separates them by type, 8_s = 4x(1/2,0)+4x(0,1/2) (both C38 kernel types) and 8_c = 4x(1/2,1/2)+4x(0,0) (neither), but still does not single out one t-sector (P22). 22/22 checks."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c191-p5-so4-postulate-pairing-test/decision.md"
+    depends_on: [C38_T_KERNELS_ARE_THE_TWO_SPIN4_HALVES]
+    supersedes: "no prior claim -- first computation of a consequence that C132's survey asserted without computing (that identifying one so(4) factor with S^3's isometry yields an 8_s/8_c <-> t pairing rule); that sentence is not supported as stated"
+    convention: "SU(2)^4 notation (L1,R1,L2,R2) for SO(4)xSO(4); (j_L,j_R) are the labels of S^3's SU(2)_L x SU(2)_R under the postulated identification; the SO(4)xSO(4) block-chirality construction (2026-07-15) is imported, not rebuilt."
+    does_not_imply:
+      - "that the postulate itself (S^3's isometry identified with a so(4) factor of the Spin(8) fiber) is true or false: only one consequence of granting it was tested"
+      - "that every reading of P5 is excluded: four were run (naive, fixed second factor, role-swap, split); a dynamical treatment of the second factor and the split reading's own mirror were not run"
+      - "that the split reading gives a t-sector pairing: 8_s carries both C38 types at once and 8_c neither, so it answers which sector is S^3-Dirac-flavoured, not which is t=0 versus t=1"
+      - "any change to the PARKED status of OB1/H1c"
+    caveat: "Run as an explicit, user-authorized postulate, not a derivation; the postulate fails AOG-5 (no independent motivation), as flagged earlier in C132/C173. C192 later reproduces only the naive-reading comparison (P8-P10), and only at the Gamma_i-realization layer; the steelman, role-swap and split sections were not independently re-derived."
+
+  - id: C192_P10_REPRODUCES_UNDER_PYGAE_CLIFFORD_GAMMA_REALIZATION_MEDIUM_RUNG
+    statement: "C191's P10 (8_s and 8_c have identical (j_L,j_R) content under so(4)_1 alone) reproduces when the Cl(8,0) generators Gamma_i are rebuilt independently as the 256x256 real left-regular representation from pygae/clifford 1.5.1 instead of the 16x16 Kronecker-product gammas: {Gamma_i,Gamma_j}=2 delta_ij holds on all 256 matrices (Q1); the Casimir scale is calibrated from V_S alone (0.25, against the known j(j+1)=0.75) and reused unchanged on V_C; the Gamma_9=+1 and Gamma_9=-1 blocks both give 64x(1/2,0) + 64x(0,1/2), identical (Q14-Q16, 17/17 checks). The informative content is that only two of four possible (j_L,j_R) types appear, in an exact 64:64 split; the factor 16 follows from Cl(8,0) = Mat(16,R) [DOCS]. Only the raw Gamma_i matrices are independent: the so(4)_1 embedding, Gamma_A/Gamma_B/Gamma_9 and the L_a/R_a self-dual split are C191's formulas reused verbatim."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c192-so4xso4-pygae-clifford-crosscheck/decision.md"
+    depends_on: [C191_P5_POSTULATE_ALONE_CANNOT_SEPARATE_8S_FROM_8C_PAIRING_RULE_REJECTED]
+    supersedes: "no prior claim -- first use of a third-party Clifford-algebra library in this project's Cl(8)/Spin(8) line; the original 'Strong rung' framing was corrected to Medium after a context-blind skeptic pass (HIGH concern: shared formulas above Gamma_i)"
+    convention: "Real convention for the so(4)_1 generators (M(i,j)=Gamma_i Gamma_j for i!=j, no factor i), which closes with the single scale k=-2; the Casimir scale is calibrated on V_S against j=1/2. The k=-2 follows from the M=Gamma_iGamma_j normalization and was found empirically before it was derived."
+    does_not_imply:
+      - "that the so(4)_1 embedding formulas, the Gamma_A/Gamma_B/Gamma_9 construction or the L_a/R_a split were re-derived: they are shared with C191 verbatim, so a bug there would be inherited, not caught"
+      - "that C191's steelman, role-swap or split-identification sections (P11-P22) were re-derived: only the naive-reading comparison (P8-P10) was cross-checked"
+      - "that the factor 16 is evidence: it follows from Cl(8,0) = Mat(16,R), which is cited and not re-derived here"
+      - "that the P5 postulate is physically motivated, or any change to the PARKED status of OB1/H1c"
+    caveat: "Medium rung on the Independent Verification Strength Ladder (different matrix realization of the same anticommutation relations, same formulas on top), not Strong; verdict PROMOTE (WEAKENED) after a context-blind skeptic pass with six concerns, none FALSIFIED."
+
+  - id: C193_SPIN_LIFT_IS_EXACT_ANTI_HOMOMORPHISM_AND_J_PREREQUISITE_ONLY_NARROWED
+    statement: "The function spin_lift of round59_route_a_independent.py (so(6) -> spin(6) on the 8-dim Lambda-L' presentation of Sigma) satisfies [spin_lift(X,E), spin_lift(Y,E)] = -spin_lift([X,Y]_so6, E) exactly: 5/5 generic random antisymmetric pairs, 48/48 NOMIZU/ADNU pairs and 28/28 ADNU-generator pairs, of which 25 are non-degenerate and 3 commuting pairs agree trivially (16/16 checks). It is therefore an anti-homomorphism, not a homomorphism: RHO[a]=spin_lift(ADNU[a]) carries the flipped su(3) structure constants. The pre-registered coefficient +1 failed on every generic pair (entrywise ratio exactly -1, sympy-exact, diag_scale.py), and the exact normalization of spin_lift is NOT derived from first principles (a by-hand derivation predicted an extra factor 1/2 that the computation does not show). Corollary: since SU(3) stabilizes J, spin_lift(J) would commute with RHO[a] once an explicit J exists -- an existence statement; no J and no spin_lift(J) matrix was constructed, so C149's 'J remains unchecked' prerequisite is narrowed, not closed."
+    truth_status: SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260909-c193-ob11ii-spin-lift-homomorphism-closes-j-gap/decision.md"
+    depends_on: [C149_OB11II_TRANSPORT_STEP_IS_WELLPOSED_FOR_D_SIGMA_UNDER_IDENTITY_COMPONENT]
+    supersedes: "no prior claim -- the pre-registered homomorphism coefficient +1 and the round's own title claim of 'closing' the J gap were corrected in-round (to -1 and to 'narrows') and are not asserted here"
+    convention: "spin_lift as coded in round59_route_a_independent.py (coeff*(1/2)*E[a]E[b] per term) with that file's E, NOMIZU and ADNU; [X,Y]_so6 = XY-YX; SU(3) is the isotropy subgroup stabilizing J on S^6=G2/SU(3) [DOCS]."
+    does_not_imply:
+      - "that OB11(ii)'s J prerequisite is closed: J was not constructed in round59's basis, spin_lift(J) was never produced, and J versus -J is not fixed"
+      - "that OB11(ii)'s transport step (D, J, gamma, B-L through U) was advanced in any way that enters real code"
+      - "that earlier rounds using RHO/spin_lift (C139, C141, C142, C146, C149, C162, C164, C165) are affected: they appear to rely on sign-insensitive facts, but this was not re-audited round by round"
+      - "a first-principles derivation of spin_lift's normalization: the -1 versus the by-hand +1/2 discrepancy is unresolved"
+    caveat: "Any reuse of RHO/spin_lift output that assumes standard su(3) structure constants (Casimir-sign, weight-label or orientation arguments) must be audited against the anti-homomorphism fact and the unresolved normalization. The sign match in Q4 is not independent of Q2's -1. The verdict is PROMOTE (WEAKENED) on the algebraic identity and NARROWED-ONLY on the OB11(ii) prerequisite, after a context-blind skeptic pass whose five concerns were all accepted."
+
+  - id: C194_SINGLE_HOPF_FRAME_CANDIDATE_REPRODUCES_K1_NOT_K0_ZERO_MODE
+    statement: "The candidate frame map psi = U(theta,phi,psi)*v (U = the Euler/Hopf SU(2) matrix of C184, v a constant 2-vector) does NOT give the four k=0 (D_0=0) S^3 spinor objects a non-constant Hopf-coordinate form: the entries of U are degree-1 homogeneous in the ambient coordinates (x0..x3), so U*v is automatically degree-1, and U*(1,0)^T reproduces exactly (up to an overall sign, symbolic and 30-digit numeric) the already-published k=1, D_0=+3 eigenspinor of C184c, not a k=0 object. Separately, the Euler-angle generators X_a^R are pure first-derivative operators with no zeroth-order term, so every constant pair lies in ker(D_0) (constants are a subset of ker(D_0), shown symbolically); the reverse inclusion ker(D_0)=constants at k<=3 rests on the already-published two-branch spectrum lambda=-k and lambda=k+2 (C184, C188), not on this round's own computation. Only ONE flat-frame candidate was killed. [VERIFIED-sympy 6/6]"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260910-c194-s3-hopf-zero-mode-frame-check/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C188_QUATERNION_NATIVE_EULER_ANGLE_DIRAC_REPRODUCES_SPECTRUM_K0_TO_3]
+    supersedes: "no prior claim -- first test of this specific candidate frame map; the round's own first-draft write-up overclaimed that checks C1/C2 alone prove ker(D_0)=constants, and a context-blind skeptic pass corrected it the same day, so this entry records the corrected, narrower final state"
+    convention: "D_0 = -i sum_a sigma_a X_a^R with C188's closed-form Euler-angle generators X_a^R (X_0^R = 2 d/dpsi, X_1^R, X_2^R); a flat left/right-invariant-generator construction, not a Levi-Civita/curved-connection operator"
+    does_not_imply:
+      - "that no local-frame convention whatsoever (possibly a curved-connection operator rather than D_0) could give a non-constant expression -- only one flat-frame candidate was tested"
+      - "that C1/C2 prove the reverse inclusion ker(D_0)=constants -- they establish only constants subset of ker(D_0)"
+      - "that ker(D_0)=constants beyond k<=3 -- the rest is inference from the pattern of the published spectrum"
+      - "any change to the verdicts of C184, C185 or C188"
+    caveat: "The statement ker(D_0)=constants at k<=3 rests on the already-published spectrum values (C184 angular-momentum coupling, C188 explicit k=0..3 values), not on anything newly computed here; whether lambda=-k and lambda=k+2 continue to avoid 0 for every k>3 is inference, not a completed proof."
+
+  - id: C195_CHI_DIFFERENCE_JUMP_VANISHES_ONLY_AT_EQUATOR
+    statement: "For the S^2 doublet of C184, chi_{+1/2} = e^{-i phi/2} cos(theta/2) and chi_{-1/2} = e^{i phi/2} sin(theta/2), both anti-periodic under phi -> phi+2pi, the difference Delta = chi_{+1/2} - chi_{-1/2} has a branch-cut jump across phi=0 equal to 2*Delta(theta,0) = 2*sqrt(2)*cos(theta/2 + pi/4). On [0,pi] this vanishes at exactly one point, theta = pi/2 (tan(theta/2) = 1, the equator), so the difference is continuous across the cut only on the equator. Negative control: a genuinely single-valued (phi-independent, non-constant) pair has jump identically zero for every theta, so the isolated zero is a property of the half-integer pair, not of how 'jump' is defined. Exact symbolic arithmetic [VERIFIED-sympy 7/7]."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260910-c195-s2-chi-difference-equator-continuity/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- C184 derives the doublet but never examined the continuity of its difference"
+    convention: "chi_{+1/2} and chi_{-1/2} as derived in C184 section 1 (formulas above); branch cut placed at phi=0; the jump is 2*Delta(theta,0) by anti-periodicity"
+    does_not_imply:
+      - "a general theorem about when sums of anti-periodic functions are continuous -- only this specific pair was checked"
+      - "anything about continuity of derivatives -- out of scope for this round"
+      - "any result beyond this specific chi_{+1/2}, chi_{-1/2} pair"
+    caveat: "The negative control D1 (a phi-independent pair whose jump is identically zero) replaced a first control that was vacuous (it passed when it should have failed); it was chosen after that run, so it is a post-hoc control."
+
+  - id: C196_K3_DESCENT_GIVES_GENUINE_SPIN_WEIGHT_3_2_S2_HARMONIC
+    statement: "Applying the C184b fibre-descent recipe (diagonalise the fibre generator, split the weight degeneracy with the second generator, substitute Hopf coordinates, strip the pure psi-phase) at k=3 instead of k=1 works: the k=3 level has dimension 16 and carries only half-integer fibre weights {-3/2,-1/2,1/2,3/2}; each weight sector is 4-dimensional (right SU(2) label j_R=3/2, split into 4 distinct m_R by the second generator; a pre-registered 1-dimensional prediction was wrong and was caught by the script). The weight -3/2, m_R=-3/2 object is (e^{3i theta}+3e^{2i theta}+3e^{i theta}+1) e^{-3i(phi+theta)/2}/8 = cos^3(theta/2) e^{-3i phi/2}, i.e. a spin-weight-3/2 (NOT spin-1/2) S^2 harmonic: psi strips to a pure phase, it is double-valued under phi -> phi+2pi (an ordinary single-valued function fails the same test) and it is not a constant multiple of chi_{-1/2}. The descent method therefore generalises beyond k=1. [VERIFIED-sympy 9/9]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260910-c196-s2-higher-spin-weight-tower/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- first application of the fibre-descent method beyond k=1; corrects this round's own initial label of the k=3 object as 'spin-1/2-type' (it is spin-weight 3/2), fixed in claim.md after a later context-blind skeptic pass"
+    does_not_imply:
+      - "a second example of the spin-1/2 content carried by chi_{+/-1/2} -- the object is spin-weight 3/2; the k=3 weight -1/2 sector is the separate round C197"
+      - "the full spin-weighted harmonic family for all j -- this is one additional data point, not an induction proof"
+      - "any change to the C179 no-go (spinor absent from the bare scalar L2(S^2) decomposition) -- this round concerns sections, the route C179 named as open"
+      - "a settlement of the sections-versus-bare-harmonics question that motivated the round, or support for decision.md section 3's reading that S^2 and S^3 both carry spinor-type content -- that reading rested on the withdrawn spin-1/2 label and was weakened (C197 claim.md)"
+    caveat: "One additional data point (k=3), not the general family. The not-proportional-to-chi_{-1/2} check could not fail by construction, since the two objects have different phi-periodicity (-3/2 versus -1/2); the genuinely failable comparison within the spin-1/2 weight is C197. The spin-1/2 -> spin-weight-3/2 correction exists only in claim.md; decision.md (title and section 3) and run_output.txt were not updated and still carry the pre-correction reading that this object strengthens the case for spinor-type content in the sections sense, which this entry does not record."
+
+  - id: C197_K3_DESCENT_GIVES_SECOND_GENUINE_SPIN_WEIGHT_1_2_S2_HARMONIC
+    statement: "At k=3, fibre weight -1/2, m_R=-1/2, after Hopf substitution and stripping the psi-phase, the descent method gives q = e^{-i phi/2} cos(theta/2) (3cos^2(theta/2) - 2): its psi-exponent is -1/2, the same as chi_{+/-1/2} (not -3/2 as for the k=3 weight -3/2 object of C196), so it is a genuine spin-weight-1/2 S^2 harmonic of this construction; it is double-valued under phi -> phi+2pi and is not a constant multiple of either chi_{+1/2} or chi_{-1/2} (a failable comparison, since all three share the same -1/2 phi-periodicity). The closed form matches numerically to 30 digits at 5 points spanning both halves of theta and several phi quadrants. [VERIFIED-sympy 9/9]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260910-c197-s2-second-spin-half-harmonic/decision.md"
+    depends_on: [C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C196_K3_DESCENT_GIVES_GENUINE_SPIN_WEIGHT_3_2_S2_HARMONIC]
+    supersedes: "no prior claim -- computes the k=3 weight -1/2 sector that C196 printed in its weight list but did not compute; supplies the actual second spin-1/2 example, a sibling of C196 that does not change C196's own verdict"
+    does_not_imply:
+      - "the general spin-weighted family for all j -- this is j=3/2, a second data point alongside chi's j=1/2"
+      - "that q is an eigenfunction of any specific Dirac-type operator on S^2 -- the S^2 Dirac spectrum of C185 is a separate result"
+      - "any correction to C196's own verdict -- that round stays correct for the spin-weight-3/2 object it actually computed"
+    caveat: "No direct spectral verification that q is an eigenfunction of the S^2 Dirac operator of C185 was done: that operator acts on 2-component spinors with a shared phi-phase, while q (like chi) is a single-component Hopf-descended object, so the test first needs the frame transport that C185 flags as unresolved for chi itself. Left as a named open gap (post-hoc hardening of 2026-09-16 strengthened how C3/D2 are checked, not what they conclude)."
+
+  - id: C198_KERNEL_LINE_EXACTLY_FIXED_ACROSS_C73B_TORSION_FAMILY
+    statement: "Across the 13-angle torsion family of C73b (kernel_dim = 1 at all 13 angles, matching C73b's saved results) the unit kernel line of D(theta) in the 2-dim domain_inv coordinates does not move: overlap(theta, theta_NOMIZU) = 1.000000 at all 13 angles, so Delta_geo = 0 coincides with zero orientation movement of the kernel on this family. Exact mechanism: block(theta) = exp(-i theta)*Block_t1 to machine precision (max diff < 3e-16), i.e. Block_t2 = -i*Block_t1, so the real 2-parameter family collapses onto a single complex line traversed by a pure phase and the null line cannot rotate; |a| = 1 and |b| = sqrt(3) at every angle, in both this run and C73b's saved JSON. The round's own pre-registered prediction that the kernel direction would rotate was rejected. Controls: antipodal overlap = 1 (to 2e-16); reduced-coordinate and full 64-dim overlaps agree (<1e-8). [VERIFIED-numpy 4/4]"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260917-c198-kernel-orientation-vs-dimension/decision.md"
+    depends_on: [C73_ROUND59_DIRAC_BATTERY_CHIRALITY_DIRECT_DEFORMATION_ROBUST_NEG_CONTROL_OPEN, C73B_GENUINE_2PARAM_TORSION_FAMILY_KERNEL_PROTECTED_SPLUS_STILL_NOT_INDEPENDENT, C148_DELTA_GEO_IS_ZERO_IN_EVERY_KERNEL_THIS_PROJECT_HAS_COMPUTED]
+    supersedes: "no prior claim -- first comparison of kernel lines (not just kernel dimensions) across a family in this project; rejects the round's own pre-registered prediction and revises neither C73b nor C148"
+    does_not_imply:
+      - "anything about N_gen=3, or any revision of C73b's admissibility/calibration verdict"
+      - "that kernel orientation is a useless diagnostic in general -- only this one family was tested, and a structurally different or calibration-admissible nonzero-kernel family could still show movement (none exists in the project today)"
+      - "that Delta_geo captures all kernel information in other families -- the rigidity here follows from this family being a phase-rotation orbit of one complex line"
+    caveat: "The family is an abstract Hom_su(3)(m, Lambda^2 m) family: every one of the 13 swept angles fails calibration (calibration_passes is false in C73b's results) and round59's NOMIZU point was never itself swept as a discrete angle, so this is a statement about the structure of the abstract Hom-space, not about physically realised geometry. C73b's ledger entry (C73B) already registered the U(1) phase structure of b (arg(b) exactly linear in the sweep angle, slope -1; 'physically one complex parameter'). What C198 adds is that a co-rotates with the same phase (C73b never saved a), so the whole block is a phase orbit and the kernel line is fixed."
+
+  - id: C199_LEAN_PROVES_EQUIVARIANT_ISO_FORCES_EQUAL_HOM_DIMENSIONS
+    statement: "A complete Lean 4 proof (Lean v4.34.0, mathlib v4.34.0; lake build succeeds, 1589 jobs, zero errors, zero sorry/admit in Homschwarz/Basic.lean) that for finite-dimensional vector spaces V, W over a field k with families of generator endomorphisms rho_V, rho_W indexed by the same arbitrary set iota (generator i on V paired with generator i on W), an equivariant linear isomorphism V ~ W forces the equivariant-Hom spaces Hom_h(V,V), Hom_h(V,W), Hom_h(W,W) to have equal finrank (theorem EquivariantEquiv.finrank_eq). Hence a strict inequality finrank(Hom_h(V,W))^2 < finrank(Hom_h(V,V))*finrank(Hom_h(W,W)) rules out any equivariant isomorphism V ~ W (corollary no_equivariant_equiv_of_finrank_sq_lt). The proof is elementary (composition with an invertible equivariant map gives two linear equivalences between the Hom spaces) and uses no Schur lemma, semisimplicity or algebraic-closure hypothesis."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: FORMALLY_CHECKED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260918-c199-lean-hom-schwarz-formalization/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first machine-checked artifact in this project; formalizes the general lemma behind the escape criterion E1 (rev 8) of the G44 THEOREM.md without changing any earlier result"
+    does_not_imply:
+      - "a re-verification of THEOREM.md's specific numbers (dim Hom_g2 = 2, dim Hom_su3 = 6 on the Spin(8) representations) -- those stay verified by the project's own sympy/numpy checks; only the general principle licensing their use is certified"
+      - "a formalization of the round124 or round119 constructions (su(3)+u(1)+u(1), SO(4)xSO(4)) -- encoding the project's Clifford-algebra matrices in Lean is out of scope"
+      - "that Lean is adopted as ongoing practice for this project -- a single proof-of-concept round"
+    caveat: "The build was run outside the repo tree in a short ASCII path (C:/leanwork/c199) because Lake fails in the long Cyrillic project path (a Substrate-Gate infrastructure block, not evidence about the claim); only source artifacts were copied back and the .lake build cache is untracked, so reproduction needs a short ASCII path. The build emitted 10 cosmetic style-linter warnings, none affecting soundness. Per decision.md only source files were copied back (no build log or hash), so nothing in the repo ties the committed Homschwarz/Basic.lean to the file that was built; the committed source was confirmed free of sorry/admit/axiom by reading it."
+
+  - id: C200_MORPHISM_AUDIT_VERDICT_DEPENDS_ON_SIGNATURE_AMENDED_PROTOCOL_ADOPTED_NARROWLY
+    statement: "Instrument-validation round for a 5-outcome 'morphism mapping audit' (EXACT / PARTIAL / HOMOMORPHISM / QUOTIENT / NO_BRIDGE) run on nine object pairs. The classifier passes 19/19 controls (kill criteria did not fire). The verdict is a function of the declared signature: for the modules {8_v,8_s,8_c} it is EXACT under g2 (dim Hom=2) and su(3) (dim Hom=6), splits 1+2 under each so(7) copy, and is NO_BRIDGE under so(8); the so(8) weight graphs are related only by a twisted isomorphism (outer S3 on Dynkin labels {1,3,4}; 0 of 300 random same-size graphs match). Findings on the prompt: the literal PARTIAL rule fires on chance 8-node graphs at rate 1.000; QUOTIENT conflates twisted isomorphism with attribute coarsening; HOMOMORPHISM is unavailable for equal-size pairs. Only an amended protocol is adopted, as an optional pre-check for computed pairs; the hand-encoded targets T2a-T2d are not findings. [VERIFIED-tool]"
+    truth_status: PARTIALLY_SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260919-c200-morphism-mapping-audit/decision.md"
+    depends_on: [C72_G2_EQUIVARIANCE_SWEEP_BRIDGE_SURVIVES_TO_G2_VANISHES_AT_SO8, C199_LEAN_PROVES_EQUIVARIANT_ISO_FORCES_EQUAL_HOM_DIMENSIONS]
+    supersedes: "no prior claim -- instrument-validation round; re-expresses closed results (C72, C63, G102, C173, THEOREM.md) in a new vocabulary and changes no existing verdict"
+    does_not_imply:
+      - "any new physics verdict on triality versus generations, or any change to the status of OB1 or N_gen=3"
+      - "that prose analogies can be classified reliably -- for the hand-encoded targets the input encoding is the author's choice"
+      - "validity beyond these nine pairs"
+      - "that the amended protocol has been used by any other round -- it is proposed, not yet exercised"
+    caveat: "Three pre-registered predictions were NOT met (NC-M2 was a malformed check and was replaced post hoc by PC-M4/NC-M2a; T2b was tautological; T2c's predicted single-graph PARTIAL reproducing round89 was not obtained: the classifier returns NO_BRIDGE under strict labels and the verdict flips with an encoding convention). Controls cover PARTIAL and HOMOMORPHISM only on three hand-built graphs. The independent skeptic pass returned WEAKENED; fixes were checked only by a same-author brute-force oracle (0 mismatches), with no second skeptic pass. Novelty of the signature ladder is not established: decision.md section 2 says no search was made for an earlier computation of the three so(7) Hom tables ([UNKNOWN]) and treats them as consistent with, not new to, the analytic argument; the su(3)/g2/so(8) rows (dim Hom 6/2/0) reproduce C72."
+
+  - id: C201_L1_LADDER_SQRT2_EXACT_INTERTWINER_TEST_CALIBRATED_ON_CONTROL
+    statement: "Using only McMurry's stated polar-form L+/- and l=1 spherical harmonics, exact sympy computation gives L+Y(1,-1)=sqrt(2)Y(1,0), L+Y(1,0)=sqrt(2)Y(1,1), L-Y(1,1)=sqrt(2)Y(1,0), L-Y(1,0)=sqrt(2)Y(1,-1), L+Y(1,1)=0, L-Y(1,-1)=0 (coefficient sqrt(2) throughout, no hidden factor). The 3x3 Lx,Ly,Lz built from these satisfy [Lx,Ly]=i*Lz and Casimir 2*I exactly. As a known-answer control, the T_i U = U L_i intertwiner test between this l=1 representation and the real Cartesian vector representation of so(3) found an invertible U from two generators; the same U also solves the held-out third generator (EQUIVALENT_REPRESENTATIONS). The commutant of {Lx,Ly,Lz} is 1-dimensional (Schur). [VERIFIED-tool, exact sympy; control l=1 only]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260922-c201-l1-ladder-intertwiner-instrument/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first tool verification of the l=1 ladder relations (replaces an earlier hand derivation marked INFERRED, same content at a higher evidence tier) and first calibration of the T_i U = U L_i test; corrects nothing"
+    convention: "L+/- from McMurry p.144 polar form; Y_lm from McMurry (4.45) with P_1^0=cos(theta), P_1^1=sin(theta) and no extra Condon-Shortley factor; Lx=(L+ + L-)/2, Ly=(L+ - L-)/(2i); Cartesian so(3) generators derived by differentiation L_k=-i*eps_kij*x_i*d/dx_j, not typed from memory"
+    does_not_imply:
+      - "anything about the correspondent's own matrices or construction: the round used a substitute known case only"
+      - "that the intertwiner test can reject inequivalent representations: its only observed 'no' was an unplanned sign error in a hand-typed control generator, not a pre-registered negative control"
+      - "that the test separates integer from half-integer spin: the U(2*pi) full-rotation check was parked, not run (Lz=diag(1,0,-1) gives U(2*pi)=+I for this control only)"
+      - "anything about the G2/SU(3)/Spin(8) triality-channel or N_gen=3 claims (unrelated substrate)"
+    caveat: "Established for the control l=1 case only (instrument calibration on a known sample). The first Part 3 run failed because a hand-typed Cartesian generator had a sign error; it was fixed by deriving the generators by differentiation, and that FAIL is recorded as an unplanned, not designed, negative control. A deliberate negative-control unit test and a U(2*pi) discriminator were parked with trigger conditions, not run."
+
+  - id: C202_CORRESPONDENT_L1_MATRICES_EQUIVALENT_TO_C201_VIA_U_ROLE_MAP_SIGN
+    statement: "The correspondent's 3x3 l=1 so(3) generator matrices (T_12, T_23, T_31 in a complex basis), reconstructed here exactly from defining-representation matrices, the rule Gamma(T)=-T applied to all three generators, and a real-to-complex basis change (3/3 exact matches), are equivalent to the C201 ladder-operator l=1 representation via the explicit invertible intertwiner U=diag(-1, sqrt(2)/2, 1) under the role map T_12<->Lz, T_23<->Lx, T_31<->-Ly. U was solved from the first two roles and the third held out: under the naive role T_31<->+Ly the holdout classified as TRANSPOSE, which for these antisymmetric generators (M^T=-M) coincides with NEGATIVE; with T_31<->-Ly all three checks pass with the same U. [VERIFIED-sympy 7/7, exact]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260923-c202-tom-ladder-intertwiner-real-data/decision.md"
+    depends_on: [C201_L1_LADDER_SQRT2_EXACT_INTERTWINER_TEST_CALIBRATED_ON_CONTROL]
+    supersedes: "no prior claim -- first run of the C201-calibrated intertwiner test on a second explicit l=1 representation; corrects nothing"
+    convention: "Role map T_12<->Lz, T_23<->Lx, T_31<->-Ly (not +Ly); Gamma(T)=-T applied uniformly to all three defining-representation generators; Lx=(L+ + L-)/2 and Ly=(L+ - L-)/(2i) as in C201; U solves T_role U = U L_role"
+    does_not_imply:
+      - "that the correspondent's notes contain an error: the only sign problems found were in this round's own transcription and own role-map choice"
+      - "anything about half-integer (spinor) multiplets: scope is the l=1 vector representation only"
+      - "that the index-ordering explanation of the third-role sign was tested: it is asserted in the round, not checked"
+      - "anything about the G2/SU(3)/Spin(8) triality-channel or N_gen=3 claims (unrelated substrate)"
+    caveat: "The role-map sign for the third generator was fixed after the holdout failed under the naive sign; the round attributes this to an index-ordering ambiguity, not a derivation error on either side. Two self-caught bugs (a dropped negation in transcription; a matrix-equals-zero helper that could never return True) were fixed before the final result."
+
+  - id: C203_SU3_IN_SO6_THREE_CONSTRUCTIONS_SAME_REP_TYPE_H0_ONLY
+    statement: "Three independently built real 6-dimensional orthogonal su(3) representations -- A: the project's G2/SU(3)-on-S6 construction (G96: stabilizer of e6 in Im(O) acting on the 6-dim tangent space); B: SU(3) inside SU(4)~SO(6) via a Cl(6) gamma-matrix construction with Gell-Mann matrices (the correspondent's construction); C: the earlier G10-B J-preserving su(3) as a control -- all give Casimir(rep)/Casimir(adjoint)=4/9 exactly (agreement ~1e-16), with the Casimir exactly scalar on each (Schur check, defect ~1e-16). Together with dimension 6 and reality, this identifies all three, by standard su(3) classification [INFERRED, not re-derived], as the realification of 3+3bar: the same representation TYPE (level H0 only). [VERIFIED-tool for the invariants]"
+    truth_status: SUPPORTED
+    finding_status: QUALIFIED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260923-c203-tom-su4-su3-vs-g2-su3-embedding/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- this exact comparison had not been run; the earlier G10-B caveat (embedding not shown unique) is not resolved by this round"
+    convention: "Casimir(rep)/Casimir(adjoint) computed from each side's own structure constants and Killing form g_ij=Tr(ad(T_i)ad(T_j)), so generator normalization cancels; so(6)->su(4) via M_ab <-> (1/4)[Gamma_a,Gamma_b] restricted to the chiral block, with Hermitian Cl(6) gamma matrices"
+    does_not_imply:
+      - "theory-level equivalence between the correspondent's construction and this project's G2/SU(3)/N_gen=3 construction"
+      - "that any additional SU(3)-structure (J, omega, Omega) or operator/connection/torsion data match: levels H1 and H2 were not tested"
+      - "that an explicit O(6) matrix conjugating one embedding into another, or the relating automorphism of su(3) including the outer 3<->3bar swap, was found: the naive index-matched intertwiner search gave n_free=0, which is uninformative (arbitrary generator pairing), not evidence of inequivalence"
+      - "that the match is informative for N_gen=3: restricting to G2 and further to SU(3) can erase triality information (cf. C72), so an H0 match cannot distinguish a real bridge from common coarse-graining"
+    caveat: "H0 only. The classification of dimension 6 + real + Casimir ratio 4/9 as the realification of 3+3bar rests on standard su(3) small-representation theory [INFERRED], not re-derived here; the Casimir ratio alone is not a complete fingerprint, since distinct irreps can share a Casimir value. Scope was narrowed within the round after review to H0. G10-B (construction C) was planned as a negative control expected to differ and instead gave the same 4/9, so the test's discriminating power was not demonstrated. The explicit-conjugacy follow-up (C204) was parked, not run."
+
+  - id: C205_CARTESIAN_L1_ROTATION_GENERATORS_ROW_INPUT_CONVENTION_NO_SEPARATE_SIGN_FLIP
+    statement: "Exact sympy differentiation of the Cartesian rotation generators Lx=i(z d/dy - y d/dz), Ly=i(x d/dz - z d/dx), Lz=i(y d/dx - x d/dy) on the normalized real l=1 basis x/r, y/r, z/r gives nine results, each exactly proportional to one basis function (r cancels exactly). With the 3x3 matrix assembled in the row=input convention (row = the function differentiated, column = coefficient of the output basis function, no transpose), this reproduces -T_ij (Gamma(T_ij)=-T_ij) directly in one step, and the real-to-complex basis change reproduces the complex-basis matrices (3 raw + 3 complex-basis exact matches). The standard column=input matrix is the transpose, which for these antisymmetric generators is exactly the negative; the extra minus sign seen in a first version was an index-convention artifact, not a separate sign-flip step. [VERIFIED-sympy: 9 differentiations, 3+3 exact matrix matches; corrected]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260923-c205-cartesian-l1-derivation-tom-eq67-69/decision.md"
+    depends_on: [C202_CORRESPONDENT_L1_MATRICES_EQUIVALENT_TO_C201_VIA_U_ROLE_MAP_SIGN]
+    supersedes: "no prior claim -- revises only this round's own first-version framing (a separate sign-flip step after reaching T_ij), which came from assembling the transposed matrix; corrects no earlier round"
+    convention: "Matrix assembled in the row=input convention: operator(phi_gamma) = sum_delta M[gamma][delta] phi_delta (sp.Matrix(rows) with NO transpose). The standard linear-algebra column=input matrix is its transpose, equal to its negative for these antisymmetric generators"
+    does_not_imply:
+      - "any claim about the correspondent's notes beyond this chain of matrix identities"
+      - "that the ladder operators L+/- were computed: this round used only the rotation generators Lx,Ly,Lz"
+      - "that the C201 McMurry route is redone: this is the Cartesian route only"
+      - "anything about the G2/SU(3)/Spin(8) triality-channel or N_gen=3 claims (unrelated substrate)"
+    caveat: "The final result is the corrected version: a first version assembled the matrix as the transpose (column=input) and presented the minus sign as a separate sign-flip step; this was found by an independent user re-derivation against the source document, not by the script. The same bug class recurred in C206. A separate build-time bug in the denominator-clearing helper (Poly crash on sqrt) was fixed with identical results."
+
+  - id: C206_LADDER_OPERATORS_POLAR_AND_CARTESIAN_SQRT2_MATRIX_FORM_ROW_INPUT
+    statement: "Exact sympy: (A) McMurry's polar-form ladder operators give on the l=1 harmonics L+y(1,0)=sqrt(2)y(1,1), L+y(1,-1)=sqrt(2)y(1,0), L-y(1,0)=sqrt(2)y(1,-1), L-y(1,1)=sqrt(2)y(1,0), L+y(1,1)=0, L-y(1,-1)=0. (B) Cartesian L+/-=Lx+/-i*Ly on x/r,y/r,z/r give L+ -> z/r, i*z/r, -(x+iy)/r and L- -> -z/r, i*z/r, (x-iy)/r, with L+[(x+iy)/r]=0 and L-[(x-iy)/r]=0. (C) The same Cartesian operators on the normalized Y(1,m) rewritten in x,y,z reproduce the sqrt(2) coefficients of (A) with zero residual: the polar and Cartesian routes are one calculation in two coordinate systems. (D) For [operator][column of basis functions]=[M][column of basis functions], M is the row=input matrix; e.g. in the basis ((x+iy)/r, z/r, (x-iy)/r), L+ = [[0,0,0],[-1,0,0],[0,2,0]]. Zero residual against C205. [VERIFIED-sympy]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260923-c206-ladder-operators-polar-and-cartesian/decision.md"
+    depends_on: [C201_L1_LADDER_SQRT2_EXACT_INTERTWINER_TEST_CALIBRATED_ON_CONTROL, C205_CARTESIAN_L1_ROTATION_GENERATORS_ROW_INPUT_CONVENTION_NO_SEPARATE_SIGN_FLIP]
+    supersedes: "no prior claim -- extends C201 (which reported only the sqrt(2) headline) with full intermediate workings and adds the Cartesian L+/- route; corrects only this round's own first matrix presentation (transposed, see caveat)"
+    convention: "L+/- = Lx +/- i*Ly with Lx=i(z d/dy - y d/dz), Ly=i(x d/dz - z d/dx); McMurry polar L+=e^{i*phi}(d/dtheta + i*cot(theta)*d/dphi), L-=e^{-i*phi}(-d/dtheta + i*cot(theta)*d/dphi). For [operator](v)=M v with v the column of basis FUNCTIONS, M must be the row=input matrix (M[i][j]=coefficient of basis_j in operator(basis_i)); the standard column=input matrix is its transpose"
+    does_not_imply:
+      - "that C205's rotation-generator result is changed or redone"
+      - "that the column=input matrix is wrong in general: it answers a different question (constant coefficients of an abstract state), not [operator][column of basis functions]"
+      - "anything about the G2/SU(3)/Spin(8) triality-channel or N_gen=3 claims (unrelated substrate)"
+    caveat: "Final state after a caught transpose bug: the first presentation of part D labelled the column=input matrices as satisfying [Op][v]=[M][v], which was exactly transposed; found by independent user re-derivation and confirmed with sympy (entrywise L(v)-M@v nonzero for column=input, zero for row=input, all four matrices). Second occurrence of the C205 bug class; the script now has a mandatory gate requiring exactly one convention to satisfy the literal equation. A hand-derived three-step ladder chain had a wrong third link (L+(2z) written as -(x+iy) instead of -2(x+iy), by linearity) and was removed from the write-up."
+
+  - id: C207_ECSK_C134_VACUUM_EINSTEIN_VIOLATED_AT_T_HALF_F6_REJECT_F7_MOOT
+    statement: "At t=1/2 -- the one point where C134's torsion equation of motion is self-consistent and where KT-8 (no zero modes) makes the fermion stress tensor vanish, so the metric equation reduces to vacuum Ric(g)=0 -- the frozen M4 x S3 x S6 background has Ric(g) != 0: round111's Ricci^t(Z_a,Z_b)=8t(1-t)*delta_ab gives Ric_S3=2*I_3 (all three eigenvalues 2, full matrix, not only the trace), and the Ricci tensor of a Riemannian product is block-diagonal (textbook, cited not derived), so one nonzero block suffices whatever the S6 block is. No finite S3 radius rho_3 makes Ric_S3 vanish (it is 2/rho_3^2). PARENT_ACTION_GATE F6 (metric EOM) for the ECSK/C134 candidate therefore closes from PARTIAL to REJECT, and F7 (stability) is MOOT for it. [VERIFIED-sympy 6/6]"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260924-c207-ecsk-vacuum-eom-closure/decision.md"
+    depends_on: [C3_KT8_NO_ZERO_MODE, C13_SCAL_T_EINSTEIN_CARTAN_SPLIT]
+    supersedes: "no prior claim -- closes a gap that C134 had logged only as PARTIAL (metric equation asserted violated, not formally closed); corrects or retracts no earlier result"
+    does_not_imply:
+      - "that the S6 block's curvature was computed or vanishes: the argument is independent of it"
+      - "that F6 is closed for the OB1/OB2 program as a whole: other candidates (e.g. a flux-supported Freund-Rubin-type background, G54-G66) are untouched"
+      - "that C134's torsion derivation or the ECSK framework as an action principle is killed: only this bare-product background is shown incompatible"
+      - "anything about the OB1/N_gen=3 S6-only chain (G73/G74A/G74B)"
+    caveat: "The chain rests on C134's torsion equation of motion (T=0 at t=1/2) and on KT-8 as cited; the S6 block curvature was deliberately not computed (as of this round, 2026-09-24, no certified Ricci tensor for the actual nearly-Kahler metric existed in the project; C213 and C217 later computed it). Covers only the bare-product, no-flux ECSK/fermion-condensate-torsion candidate on the frozen M4xS3xS6 background."
+    notes: "C134 is not a ledger claim, hence absent from depends_on; C3 is the KT-8 entry and C13 the round111 Scal(t) entry."
+
+  - id: C210_G96_G2_BASIS_REPRODUCES_STANDARD_ROOT_SYSTEM_RATIO_3_ANGLES_30
+    statement: "Extracting a Cartan subalgebra and root system from G96's own 14-generator octonion-derivation basis of g2 (7x7 real antisymmetric matrices) with the ambient trace form reproduces the standard G2 root system: for a generic Cartan element H1, ad(H1) has a 2-dim kernel and 12 purely imaginary nonzero eigenvalues (real parts ~7e-16); the 12 roots split into six short (trace-form norm-squared 1/3) and six long (1.0), long/short ratio 3.0 (length ratio sqrt(3)), and all 12 consecutive angular gaps are 30.0 degrees, measured after Gram-Schmidt orthonormalizing {H1,H2} under the trace form. This is a basis-free confirmation that the construction realizes g2, beyond closing under commutation. [VERIFIED-numpy 6/6; comparator root system checked by WebSearch]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20260927-c210-g96-root-system-crosscheck/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- G96 verified only closure, Jacobi and the SU(3) stabilizer and never extracted a Cartan subalgebra or roots; this adds a root-system check and corrects nothing"
+    convention: "Lengths and angles measured with the ambient trace form on Gram-Schmidt-orthonormalized {H1,H2}; roots read from [H2,E_k]=i*phi_k*E_k on the complexified adjoint representation. Raw (theta,phi) eigenvalue coordinates are not orthonormal and gave wrong angular gaps in a first version"
+    does_not_imply:
+      - "that the Chevalley-basis structure-constant tables cited in the MathOverflow answers (Carter, Vavilov-Plotkin) were checked: neither book was opened"
+      - "anything about the OB1/N_gen=3 or G2/SU(3)-on-S6 physics claims"
+      - "that G96's closure, Jacobi or SU(3)-stabilizer checks were redone"
+    caveat: "Numerical (numpy) evidence at machine precision (~1e-15), not exact arithmetic."
+    notes: "Relies on G96 (experiments/20260626-g96-s6-g2-su3), which is not a ledger claim; ledger id C96 is an unrelated round."
+
+  - id: C211_CSDR_GRAVITY_MODULI_POTENTIAL_TERMS_ON_S6_G2_SU3_RATIO_MINUS_2
+    statement: "The gravity-only terms of the CSDR metric-moduli potential (Chatzistavrakidis-Manousselis-Prezas-Zoupanos arXiv:0712.2717 eq. 4.27) were evaluated on the certified G2/SU(3) generators (G96/C210): Term1=sum (f^a_ce)^2 = 8, Term2 = 2 sum f^c_da f^d_ca = -16, so Term2/Term1 = -2 exactly. Only the ratio is normalization-invariant; the absolute values 8/-16 belong to the Frobenius-orthonormal complement basis at unit radius. [VERIFIED-numpy] basis-completeness residual 8.7e-16, max|f^a_bc| = 0.458 (non-symmetric coset, as expected). One term of a larger Lagrangian: it does not close F6."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261002-c211-csdr-moduli-potential-g2su3/decision.md"
+    depends_on: [C210_G96_G2_BASIS_REPRODUCES_STANDARD_ROOT_SYSTEM_RATIO_3_ANGLES_30]
+    supersedes: "no prior claim -- first computation of the CSDR gravity-sector moduli-potential terms for this project's S6 factor (supersedes only the earlier citation-only pointer in PARENT_ACTION_GATE.md F6)"
+    convention: "Frobenius-orthonormal complement basis of G96/C210, gamma_ab = delta_ab at unit radius; only the ratio Term2/Term1 is basis-independent."
+    does_not_imply:
+      - "that F6 is closed: this is one term of eq. 4.26's Lagrangian, not a complete action"
+      - "that the absolute values 8, -16 are physical: they depend on the normalization"
+      - "any relation to round111's S3 Ricci scalar or to the C134/C207 ECSK torsion and metric equations (different factor, different formalism)"
+      - "the third (gauge-sector) term of eq. 4.27, which needs an SU(3) embedding this project has not fixed"
+      - "that CSDR is the physical mechanism for this background"
+
+  - id: C212_NEARLY_KAHLER_TORSION_3FORM_ON_S6_G2_SU3_NORM_SQUARED_8_9_NATIVE_BASIS
+    statement: "The characteristic-connection torsion 3-form of S6=G2/SU(3), T^c(X,Y,Z) = -<N,(XxY)xZ> (Agricola-Borowka-Friedrich arXiv:1707.08591 Prop. 4.2, octonion cross product from G96's structure tensor), was computed on G96/C210's certified complement basis: |T|^2 = sum T_abc^2 = 8/9 exactly in that native basis (24 in the ambient-orthonormal frame, see C214). Positive control: total antisymmetry (Gray's theorem) holds to 1.5e-16. [VERIFIED-numpy] This gives torsion, not curvature."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261002-c212-s6-nearlykahler-torsion-3form/decision.md"
+    depends_on: [C210_G96_G2_BASIS_REPRODUCES_STANDARD_ROOT_SYSTEM_RATIO_3_ANGLES_30]
+    supersedes: "no prior claim -- first explicit torsion 3-form for this project's S6 factor"
+    convention: "Native basis: G96's Frobenius-orthonormal complement generators mapped to tangent vectors by K -> K@N with |N|=1. These tangent vectors are NOT ambient-orthonormal (Gram = I/3, found in C214); in the ambient-orthonormal frame |T|^2 = 24 = 27 x 8/9."
+    does_not_imply:
+      - "the Ricci tensor or Einstein constant of S6: this is torsion, not curvature"
+      - "that the absolute magnitude 8/9 is frame-independent (it is tied to G96's basis)"
+      - "any identification with the matter-sourced ECSK torsion of C134/C207 (same word, different object)"
+
+  - id: C213_S6_RICCI_VIA_CASTELLANI_FORMULA_EINSTEIN_ISOTROPIC_HALF_CONVENTION_VALUES
+    statement: "S6=G2/SU(3)'s Ricci tensor was computed with Castellani's rescaled-coset curvature formula (arXiv:hep-th/9912277 eq. 3.35-3.36), structure constants extracted by lstsq from literal matrices, and calibrated on N^010 at two published (alpha,beta) points (R=12 reproduced to ~1e-15, off-diagonal vanishing). On G2/SU(3) it is Einstein and isotropic to machine precision (diag spread 4.4e-16). The absolute values (5/6 at r=1; the same code gives 2.5 in the ambient-unit frame, as used in C214) are in Castellani's half-convention: eq. 3.34 defines the components without the standard 1/2, so the standard Ricci is 5/3 at r=1 and 5.0 in the ambient-unit frame (round unit S6), established in C217. [VERIFIED-numpy]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261002-c213-castellani-ricci-g2su3-calibrated/decision.md"
+    depends_on: [C210_G96_G2_BASIS_REPRODUCES_STANDARD_ROOT_SYSTEM_RATIO_3_ANGLES_30]
+    supersedes: "no prior claim -- first Ricci tensor for this project's S6 factor; its absolute values are corrected by C217 (factor 2 convention), its Einstein/isotropy result is unaffected"
+    convention: "Castellani eq. 3.34: R^a_b = R^a_{b de} V^d ^ V^e (no 1/2), so code output = 1/2 x standard Ricci. Native r=1 gives 5/6 (standard 5/3); r=sqrt(3) (ambient-orthonormal) gives 2.5 (standard 5.0)."
+    does_not_imply:
+      - "that 5/6 or 2.5 are standard Ricci eigenvalues (they are half of them; see C217)"
+      - "that F6 is closed: this is an intrinsic curvature number, not an equation of motion"
+      - "any relation to C212's torsion beyond sharing the G96 basis (a bridge is the subject of C214/C215)"
+    caveat: "Quote the standard values (5/3 at r=1, 5.0 in the ambient-unit frame), not the half-convention numbers 5/6 and 2.5. The N^010 calibration validates the code against the paper's own convention, not against the standard definition."
+
+  - id: C214_TORSION_RICCI_BASIS_MISMATCH_FOUND_BRIDGE_REJECT_RETRACTED_BY_C217
+    statement: "Established: C212 (torsion) and C213 (Ricci) were computed in different metric normalizations (tangent Gram = I/3, rescale factor sqrt(3)); in the ambient-orthonormal frame the torsion is |T|^2 = 24 (= 27 x 8/9) and antisymmetry still holds (2.2e-16). WITHDRAWN 2026-10-03 (C217): the REJECT of the bridge formula Ric = (5/24)*norm2(T^c) (predicted 5.0 vs 'computed 2.5', a factor 2). The bridge predicted the correct standard Ricci 5.0; the 2.5 it was compared with is C213's value in Castellani's half-convention. [VERIFIED-numpy for the basis finding]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261002-c214-torsion-ricci-relation-check/decision.md"
+    depends_on: [C212_NEARLY_KAHLER_TORSION_3FORM_ON_S6_G2_SU3_NORM_SQUARED_8_9_NATIVE_BASIS, C213_S6_RICCI_VIA_CASTELLANI_FORMULA_EINSTEIN_ISOTROPIC_HALF_CONVENTION_VALUES]
+    supersedes: "no prior claim -- but its own REJECT verdict is retracted by C217 (null_results row C214 marked RETRACTED)"
+    does_not_imply:
+      - "that the torsion-Ricci bridge formula was refuted (the REJECT is retracted)"
+      - "that any Ricci value in this entry's decision.md (2.5) is standard: it is the half-convention number"
+    caveat: "The bridge is self-derived (Russo mu-based theorem plus the Agricola T^c definition), not found in a primary source. Its agreement with the standard Ricci 5.0 comes from C217's correction, not from C214's own comparison, and is shown only on G2/SU(3). C214's original REJECT verdict is retracted."
+
+  - id: C215_FRIEDRICH_IVANOV_RELATION_ON_S6_COMPONENTWISE_ISOTROPIC_RIC_GRAD_4_CORRECTED
+    statement: "Friedrich-Ivanov's relation for a metric connection with skew torsion (arXiv:math/0102142 sec. 2), Ric^g = Ric^grad - (1/4) sum g(T(e_i,X),T(Y,e_i)) with delta(T) = 0 for nearly-Kahler, was applied component-wise on S6=G2/SU(3) in the ambient-unit frame: the correction term is 1.0*delta (trace |T|^2/4 = 6, an exact identity), and Ric^grad = Ric^g - corr is isotropic to 1e-15. With the standard Ric^g = 5.0 (C217) this gives Ric^grad = 4.0, equal to the independent Kobayashi-Nomizu value of C216. The originally recorded value 1.5 (from the half-convention value 2.5, C213's code at r=sqrt(3) as used in C214) is retracted. [VERIFIED-numpy]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261002-c215-friedrich-ivanov-ricci-torsion/decision.md"
+    depends_on: [C212_NEARLY_KAHLER_TORSION_3FORM_ON_S6_G2_SU3_NORM_SQUARED_8_9_NATIVE_BASIS, C213_S6_RICCI_VIA_CASTELLANI_FORMULA_EINSTEIN_ISOTROPIC_HALF_CONVENTION_VALUES, C214_TORSION_RICCI_BASIS_MISMATCH_FOUND_BRIDGE_REJECT_RETRACTED_BY_C217]
+    supersedes: "no prior claim -- but its recorded headline Ric^grad = 1.5 is corrected to 4.0 by C217; the component-wise isotropy check and the correction term are unaffected"
+    does_not_imply:
+      - "that Ric^grad = 1.5 (retracted)"
+      - "that C215 independently confirms C214's bridge formula (a different formula, from a different author)"
+      - "that F6 is closed: an intrinsic structural result, not an equation of motion"
+    caveat: "Quote Ric^grad = 4.0, not the 1.5 in the original decision text; the script c215_friedrich_ivanov_check.py still asserts Ric^g == 2.5 (half-convention) and was not edited."
+
+  - id: C216_KOBAYASHI_NOMIZU_ROUTE_GIVES_RIC_C_4_ON_S6_CONTRADICTING_C215_1_5_EXPLAINED_BY_C217
+    statement: "The Kobayashi-Nomizu canonical-connection route (R^c(X,Y)Z = -[[X,Y]_h,Z], T^c = -[X,Y]_m, pure Lie bracket, no octonions) was calibrated on the round S6=SO(7)/SO(6) (Ric^c = 5.000000, T = 0) and then gave Ric^c = 4.000000 on G2/SU(3) with bracket torsion |T|^2 = 24.000000, matching C212/C214's octonion route. C213's Castellani code gave 2.5 instead of 5.0 on the same control. KN's 4.0 contradicted C215's recorded 1.5, failing the pre-registered kill criterion, and the contradiction is real: C217 shows C215's input was in a half-convention (correct Ric^grad = 4.0). Its own 'unresolved Castellani anomaly' framing and the two 'refuted' explanations are superseded by C217. [VERIFIED-numpy]"
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261002-c216-kobayashi-nomizu-ricci-check/decision.md"
+    depends_on: [C212_NEARLY_KAHLER_TORSION_3FORM_ON_S6_G2_SU3_NORM_SQUARED_8_9_NATIVE_BASIS, C213_S6_RICCI_VIA_CASTELLANI_FORMULA_EINSTEIN_ISOTROPIC_HALF_CONVENTION_VALUES, C214_TORSION_RICCI_BASIS_MISMATCH_FOUND_BRIDGE_REJECT_RETRACTED_BY_C217, C215_FRIEDRICH_IVANOV_RELATION_ON_S6_COMPONENTWISE_ISOTROPIC_RIC_GRAD_4_CORRECTED]
+    supersedes: "no prior claim -- but it contradicts C215's headline value, and its own anomaly analysis (Castellani 'bug' hypotheses) is superseded by C217"
+    convention: "Orthonormal frame e_a = scale*K_a; Ric^c(scale) = Ric^c(1)*scale^2 (4/3 at scale 1, 4.0 at scale sqrt(3)). Torsion norm from the Lie bracket alone."
+    does_not_imply:
+      - "that Castellani's formula has a bug or a symmetric-space-specific defect (it is a half-convention, C217)"
+      - "that the bracket-torsion match is an independent derivation from scratch (both routes start from G96's data)"
+      - "that its two tested 'causes' of the anomaly were the explanation (neither was)"
+
+  - id: C217_CASTELLANI_CURVATURE_IS_HALF_STANDARD_CONVENTION_EQ_3_34_RESOLVES_C216
+    statement: "C213's Castellani-formula curvature is exactly 1/2 of the standard curvature: eq. (3.34) defines R^a_b = R^a_{b de} V^d ^ V^e without the standard 1/2. Component-wise (6^4 = 1296 entries), 2 x the code equals the unit round S6 tensor to 2e-15 on both the symmetric SO(7)/SO(6) control and the non-symmetric G2/SU(3); on G2/SU(3) the code as-is and a term2-only doubling fail as negative controls; an independent Kobayashi-Nomizu + Friedrich-Ivanov route gives Ric^g = 5.0 with no Castellani code. Consequences: S6 standard Ricci is 5.0 (ambient-unit) / 5/3 (r=1); C215's Ric^grad is 4.0; C214's REJECT is retracted. [VERIFIED-numpy, VERIFIED-source arXiv hep-th/9912277 eq. 3.34]"
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261003-c217-castellani-convention-factor/decision.md"
+    depends_on: [C213_S6_RICCI_VIA_CASTELLANI_FORMULA_EINSTEIN_ISOTROPIC_HALF_CONVENTION_VALUES, C214_TORSION_RICCI_BASIS_MISMATCH_FOUND_BRIDGE_REJECT_RETRACTED_BY_C217, C215_FRIEDRICH_IVANOV_RELATION_ON_S6_COMPONENTWISE_ISOTROPIC_RIC_GRAD_4_CORRECTED, C216_KOBAYASHI_NOMIZU_ROUTE_GIVES_RIC_C_4_ON_S6_CONTRADICTING_C215_1_5_EXPLAINED_BY_C217]
+    supersedes: "C214's REJECT verdict (retracted); C215's headline value Ric^grad = 1.5 (corrected to 4.0); the absolute Ricci values of C213 (5/6, 2.5 -> 5/3, 5.0); C216's 'unresolved Castellani anomaly' framing"
+    convention: "Standard Riemann/Ricci: R^a_b = (1/2) R^a_{b de} V^d ^ V^e. Castellani's components are half of these; the G2-invariant metric on G2/SU(3) is the round one (G2 in SO(7), isotropy rep real-irreducible), so unit-sphere Ricci = n-1 = 5."
+    does_not_imply:
+      - "that the N^010 published R = 12 is a standard-convention value (if the factor is uniform there it would be 24; not checked independently)"
+      - "that F6 is closed or that any equation of motion was checked"
+      - "that C212's torsion or the Einstein/isotropy findings of C213 are affected"
+
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
@@ -3002,6 +3982,7 @@ schema:
           them, because prose is not queryable. A field is.
 
 notes_on_this_ledger:
+  - "196 entries as of C217 (2026-10-03): C159-C203, C205-C207 and C210-C217 added in one pass (56 entries; rounds C204, C208 and C209 have no experiment folder: C204 was parked, the others do not exist). Drafted from each round's own decision.md, then independently re-checked against the sources by separate readers; C214's REJECT of the torsion-Ricci bridge is recorded as retracted (C217) and C213/C215 carry the corrected Ricci values (Castellani's half-convention). New entries phrase negative results as the finding (truth SUPPORTED/PROVED + test_outcome FAIL) and use finding_status only where REFUTED or partly withdrawn."
   - "125 entries as of C141 (2026-09-04), a methodologically significant deflationary finding: for all 4 twist-bundle-kernel computations ever run in this project (round59/T0, C139, C141, and a newly-built 'Sigma self-twisted unrestricted' comparison, T1), the observed invariant-sector kernel EXACTLY equals a graded rank-nullity floor computable from pure su(3) branching data alone -- meaning the 'kernel of twisted D_S6' test family may not discriminate Sigma's specific geometric content from an alternative the way OB14's 'why Sigma, not m' question assumed. Found only after TWO successive context-blind skeptic passes each overturned the round's own prior verdict in the same session (BLOCKED -> PROMOTE -> NULL_QUALIFIED); independently re-derived by hand by the orchestrating session (using only already-certified su(3)-multiplicities) before registration, and the script independently re-run (49/50 checks, 1 intentional fail). Does not falsify N_gen=3 or any prior kernel value -- questions the INTERPRETIVE weight placed on them. Falsifiable escape route named: a twist bundle whose kernel exceeds its own graded floor. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 125)."
   - "124 entries as of C139 (2026-09-04), the first genuine wrong-twist kernel!=1 result for round59's D_S6 construction (twisting by m_C, the tangent/isotropy rep, instead of Sigma) -- PROMOTE, qualified per two independent skeptic passes (both WEAKENED, both findings incorporated: Term1=0 is forced by Schur's lemma for any zero-singlet twist, not independent evidence; the load-bearing fact is Term2's robust non-vanishing across the whole admissible connection family). Does NOT falsify C2_ROUND59_KERNEL_DIM1 or C4_NGEN3_HEADLINE -- narrows round59's twist choice to needing independent physical justification, now a well-posed open question. Orchestrating session independently re-derived the round's central self-caught sign-convention bug from the Clifford algebra directly and independently re-ran the verification script (30/30 checks, byte-identical) before registering this entry. Honest gap, not backfilled: no direct-count note exists between C119 (120 entries) and this one -- claims C120 through C138 (including the C123-C137 15-round OB1 pipeline and C138's APS reduced-eta NULL) were added without a matching count note in the interim; not reconstructed from memory here, per this schema's own stated principle against guessing prior state. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 124)."
   - "120 entries as of C119, PARENT_ACTION_GATE.md field F1 test of the Bismut-Ricci-flat candidate for OB1's t-selection mechanism (2026-08-31). F1=FAIL -- killed on three grounds, the frozen S6 factor's own Bismut-Ricci defect (rho=5, radius-independent), non-closed characteristic torsion, and a topological (Kunneth) argument that the condition is unsatisfiable on the frozen S3xS6 background for any t/torsion/radius. FL Step 8a skeptic pass (context-blind) CONFIRMED the F1=FAIL verdict after independently re-deriving every load-bearing number; several summary claims (three INDEPENDENT modes; UNRESCUABLE with no stated scope; S3-half has no new CONTENT) were WEAKENED as overreach and corrected in place in decision.md, not the underlying result. OB1 stays PARKED -- this candidate closes what looked like reopen-condition 2 (a newly-published parent mechanism) as not relevant to this frozen background, meeting none of the four actual reopen conditions. Honest gap, not backfilled: the notes below this one jump from 96 (C95, 2026-08-12) straight to this entry -- claims C96 through C118 were added to this ledger without a matching direct-count note in the interim; not reconstructed from memory here, per this schema's own stated principle against guessing prior state. Verified by direct count (`grep -c \"^  - id:\" CLAIM_LEDGER.yaml` = 120)."
