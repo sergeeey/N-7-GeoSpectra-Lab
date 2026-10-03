@@ -1,0 +1,56 @@
+==============================================================================
+P0  exact S^6 coefficients (Mellin) vs G54's least-squares fits
+==============================================================================
+  [PASS] P0a B0 = 2/15 exactly
+         B0=0.133333333333333
+  exact: B6=-0.050529  B8=-0.0076455  B10=-0.0029521
+  G54 6-param fit: B8=-0.0076  B10=-0.0033  (7-param B10 was -0.0029)
+  [PASS] P0b exact B8, B10 within 25% of G54's 6-param fits
+         rel diff B8=0.006, B10=0.118
+
+==============================================================================
+P1  instrument checks
+==============================================================================
+  [FAIL] P1a zeta_FP independent of split point T (rel spread < 1e-8)
+         zeta_FP=-4.7086934871e-04, spread=9.21e-07
+  [FAIL] P1b split-Mellin equals brute double sum at s=6.3
+         Mellin=2.6269139660e-04, brute=2.6269132069e-04
+  [PASS] P1b split-Mellin equals brute double sum at s=8.1
+         Mellin=2.7230140313e-06, brute=2.7230140313e-06
+  [PASS] P1c G54's fitted B8,B10 in my c_half give rho6* = 1.090 +- 0.01
+         rho6*(fit)=1.0883
+  rho6*(exact B8,B10) = 1.1541   [A1 predicted ~1.15]
+  [PASS] P1d negative control: dropping a W6 term breaks the Mellin-vs-brute match
+         rel diff = 1.938e-03
+
+==============================================================================
+P1'  radii along rho3 = 0.986 rho6^2 (reported difference vs G54-E, not pass/fail)
+==============================================================================
+  with_psi=True: min at rho6=0.600 (zeta_FP=-1.889e-03); zeros at [1.3669]
+  with_psi=False: min at rho6=0.600 (zeta_FP=-1.914e-03); zeros at [1.3625]
+  G54-E: rho6_min=0.953 (zeta_FP=-8.63e-4), rho6*=1.090, rho6**=1.4469
+
+==============================================================================
+P2/P3  2D landscape with the COMPUTED Casimir (G92's V_main)
+==============================================================================
+  psi=True  kappa=+0.25: grid-local minima=0, in valid region=0
+  psi=True  kappa=+0.50: grid-local minima=0, in valid region=0
+  psi=True  kappa=+1.00: grid-local minima=0, in valid region=0
+  psi=True  kappa=-0.25: grid-local minima=1, in valid region=0  (at (0.529140564297865, 1.273546938525077))
+  psi=True  kappa=-0.50: grid-local minima=1, in valid region=0  (at (0.5867415031069575, 1.273546938525077))
+  psi=True  kappa=-1.00: grid-local minima=1, in valid region=0  (at (0.6178523253932029, 1.273546938525077))
+  psi=False kappa=+0.25: grid-local minima=0, in valid region=0
+  psi=False kappa=+0.50: grid-local minima=0, in valid region=0
+  psi=False kappa=+1.00: grid-local minima=0, in valid region=0
+  psi=False kappa=-0.25: grid-local minima=1, in valid region=0  (at (0.529140564297865, 1.273546938525077))
+  psi=False kappa=-0.50: grid-local minima=1, in valid region=0  (at (0.5867415031069575, 1.273546938525077))
+  psi=False kappa=-1.00: grid-local minima=1, in valid region=0  (at (0.6178523253932029, 1.273546938525077))
+  [PASS] P2 no local minimum in the valid region (rho3>1, rho6>1.5) for |kappa|<=1, both FP definitions
+  P3 psi=True: minimal |kappa| for any local min / for one in the valid region: {-1: {'any': (0.05, (0.4531661131278851, 1.273546938525077, -6.740922592563518e-05)), 'valid': (42.60489396834388, (1.090689988553681, 1.5659087903990259, -1.0549065673583335e-06))}}
+  P3 psi=False: minimal |kappa| for any local min / for one in the valid region: {-1: {'any': (0.05, (0.4531661131278851, 1.273546938525077, -6.740753030018945e-05)), 'valid': (42.60489396834388, (1.090689988553681, 1.5659087903990259, -1.0218142753793275e-06))}}
+
+==============================================================================
+C219: 6 passed, 2 failed
+  FAILED: P1a zeta_FP independent of split point T (rel spread < 1e-8)
+  FAILED: P1b split-Mellin equals brute double sum at s=6.3
+==============================================================================
