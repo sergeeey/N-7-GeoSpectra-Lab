@@ -279,5 +279,69 @@ checked against the output before acting:
 | 9 | NIT | several checks cannot fail on their own | **Fixed**: nine labelled `restatement`, excluded from the count |
 | 10 | NIT | structural `!=` used for a negative direction | **Fixed**: `not zero(...)` |
 
-No concern was dismissed. Remaining, unverified: McMurry pp.92 and 144; the correspondent's own
-definition of `Γ'`.
+No concern was dismissed. Remaining, unverified: McMurry p.92 (not seen; the `m<0` definition); the
+`L±` definitions from p.144 and the `m ≥ 0` harmonics from (4.45) / Table B1 p.91 were taken from C201
+and are not re-checked against the book here; the correspondent's own definition of `Γ'`.
+
+## 8. Independent re-implementation (2026-10-13)
+
+A separate subagent was given the **definitions and the task list only** (no expected answers, no
+repository access, no C220 files) and asked to compute T1–T7: the real-harmonic integrals, the Gram
+matrices, the six ladder actions in polar and Cartesian form, the matrices in four bases (row = input),
+the "discovery" route, and identities (2), (3). Its raw printed outputs are in
+`independent_pass_outputs.txt` (this folder). Its scripts (about 1000 lines) are **not archived**: they do not pass
+the repository's ruff rules (E741, E731, B023) and were not reworked; they exist only in the session scratchpad.
+
+| Item | Independent result | Agrees with C220 |
+|---|---|---|
+| T1 | `∫x²dS = ∫y²dS = ∫z²dS = 4πr⁴/3`; mixed integrals 0; `∫(x/r)²dS = ∫x²dΩ = 4πr²/3`; `N_k = √(3/4π) r^(k−2)` | yes (A6, A6b, P1, P2) |
+| T2 | Gram of `(x+iy, z, x−iy)` = `(4πr⁴/3)·diag(2,1,2)`; Gram of `Y'(1,m)` = identity | yes (P3a, P3b) |
+| T3 | all six ladder results `√2·Y'` or 0, polar = Cartesian, `r`-independent, norms² 2,2,0 | yes (P4-*, F1) |
+| T4 | basis `e`: `M(L+) = [[0,0,0],[−1,0,0],[0,2,0]]`, `M(L−) = [[0,−2,0],[0,0,1],[0,0,0]]`, all five statements `M(O) = Γ'` hold. Basis `Y'`: `M(L±)` entries `√2`, only `Lz = Γ'(T12)` holds. `M_Y = D M_e D⁻¹`, `D ∝ diag(−1,√2,1)`, unique among all 3×3 matrices (1-dimensional solution space, `Γ'` irreducible) | yes (P6a–P6l); the uniqueness over all matrices is new |
+| T5 | `χ = C sinθ` (m=±1, right pairing); `C/sinθ` (wrong pairing) not normalisable; `C' = −C` (phase version `β = α+π`); positivity at the pole gives `C = −√(3/8π)` | yes (E1–E7) |
+| T6 | identities (2) and (3), read as in the letter, hold; definite integrals `π` and `4/3` | yes (A1, A2) |
+| T7 | numerical worst deviations: integrals 3.6e-15, Gram 3.5e-14, polar finite differences 2.3e-13, Cartesian 4.6e-11, matrices 1.3e-13 | consistent with F1–F4 |
+
+Differences and limits, stated rather than hidden:
+
+* The agent's basis `(u)` is `(−(x+iy)/(√2 r), z/r, (x−iy)/(√2 r))`, with the Condon–Shortley sign, so it gives `√2, √2`. C220's `u` has **no** sign
+  and gives `−√2, +√2`. The two are different bases; the sign claim (R9) was not covered by the independent pass.
+  By hand, flipping the sign of the first basis function maps `M[a][b] → s_a s_b M[a][b]` with `s = (−1,1,1)`, giving `−√2` and `+√2`.
+* The `κ` table (P5a, P5c) was not covered by the independent pass.
+* The Condon–Shortley phase was taken as given; no mpmath or higher-precision rerun; the finite-difference code had
+  no negative control beyond the `β = α` case of T5.
+* Side result, confirmed here by `antirep_check` (main session) and independently by the agent: in the row = input
+  convention the printed `Γ'` satisfy `[Γ'(T23),Γ'(T31)] = −iΓ'(T12)` and cyclically, whereas `[L_x,L_y] = iL_z`
+  (checked symbolically: `[Lx,Ly]f − iLz f = 0`). This is the reverse-order product `M(AB) = M(B)M(A)`, not an error.
+
+Evidence marker: **[VERIFIED-INDEPENDENT]** for the items marked "yes" (separately written code, definitions only;
+the same model family wrote both, so this is independent code, not an independent mind).
+
+## 9. Review of the reply text (2026-10-13, round 1)
+
+A context-blind skeptic read the draft reply, its attachment, the traceability table and this folder (no
+shell). Fixed after tool or file checks: an internal contradiction about "equal weight" (the raw basis has norms 2:1:2);
+numerical values quoted for the wrong functions (33.5 are for `(x±iy)/r`, `z/r`, not `x±iy`, `z`); Gram matrices written
+without `r²`; an overclaim that every step was written out (one Cartesian row and the off-diagonal Gram zeros were added);
+the κ statement (`κ = −1` changes only the sign); direction of `D`; "from the ladder operators alone" without the `+√2`
+condition; counts of negative controls (five: P5b, P5c, P6f, P6k, E4; the dimension test is separate). Not done: computing
+`κ` from (4.45) at `m = −1` (the text of (4.45) is not in the repository; the reply asks for the value instead).
+
+**Rounds 2 and 3** (fresh skeptic each time; the Evaluator-Optimizer cap of 3 is now used up, so there is no round 4).
+Each round found a different class of problem, all checked against files before acting:
+
+| Round | Class of defect found | Fix |
+|---|---|---|
+| 2 | the coverage sentence about the second program claimed more than section 8 shows (κ table, no-sign basis not covered) | itemised what was and was not covered |
+| 2 | an `r`-power error: `∫|L−Y(1,1)|²` over the sphere is `2r²` for `Y` without `1/r`, `2` only for `Y'` | restated with `Y'` and `dS` |
+| 2 | the reply described the correspondent's "indirect"/"direct" as something he meant; they are quoted words of the earlier notes | reworded; flagged for the sender to verify |
+| 2 | cause of the matrix difference incomplete (also the missing Condon–Shortley sign on the first function); `Γ'` notation lost its subscript 3 (seen in the correspondent's own PDF); the symbol `Y'` used before definition | added |
+| 3 | `\mathbb 1` rendered as a wrong symbol in the compiled PDF (found only by viewing the PDF) | `\mathbf 1`, recompiled |
+| 3 | a false statement that identity (3) was "garbled when extracted": his PDF itself prints the first cosine without an argument (checked by viewing his PDF, not the text extraction) | reworded in the letter and the attachment |
+| 3 | "your printed Γ'" asserted what the notes contain; the matrices are only as transcribed in C205 | "as I transcribed them" throughout |
+| 3 | the second program varied the phases of `C`, `C'` with both coefficients fixed at `+√2`; the remark about a phase in a ladder coefficient was not computed independently | itemised as not covered |
+
+Substitution stated: the independent reviewer cap (`reviewer`) was closed, so `skeptic` was used instead for all three rounds
+(`doubt-driven-development.md` Independent Review Fallback Policy). Remaining, not checked by anyone: McMurry p.92, the `L±`
+definitions (p.144), the equation numbers of the correspondent's notes, whether "indirect"/"direct" in the earlier notes map onto
+the two routes in the reply. The sender must check these before sending.
