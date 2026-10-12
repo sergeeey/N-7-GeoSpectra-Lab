@@ -3892,6 +3892,24 @@ claims:
       - "that the EFT-validity cut rho3>1, rho6>1.5 was re-derived"
       - "anything about N_gen=3, OB1 or the torsion parameter t (S^3 is round; C134 puts t=1/2)"
 
+  - id: C220_L1_HARMONICS_R4_NORM_SQRT2_FORCED_BY_NORM_PRINTED_GAMMA_FITS_RAW_BASIS_ONLY
+    statement: "Exact sympy plus a numeric cross-check, l=1 harmonics on S^2 of radius r. (1) int x^2 dS = int y^2 dS = int z^2 dS = 4 pi r^4/3, mixed integrals 0; 4 pi r^2/3 is int (x/r)^2 dS or int x^2 dOmega (which route any calculation took is not decided). Normalised: x_i' = sqrt(3/(4 pi)) x_i/r^2. (2) x+iy, z, x-iy have squared norms 8 pi r^4/3, 4 pi r^4/3, 8 pi r^4/3 (ratio 2:1:2); with the Condon-Shortley phase Y'(1,1) = -sqrt(3/8pi)(x+iy)/r^2, Y'(1,0) = sqrt(3/4pi) z/r^2, Y'(1,-1) = +sqrt(3/8pi)(x-iy)/r^2. (3) L+- Y' = sqrt(2) Y' (0 at the ends), polar and Cartesian, any r; the modulus sqrt(2) is forced by int |L- Y'(1,1)|^2 dS = 2 and holds for any equal-norm set. (4) M(L+-) = Gamma'(T23) +- i Gamma'(T31) with the printed Gamma' only in the raw basis (and common rescalings); in the sphere-normalised basis M(L+-) has entries sqrt(2), sqrt(2) and Gamma' becomes D Gamma' D^-1. (5) Rediscovery from L+ Y(1,1) = 0, L- Y(1,-1) = 0 gives chi ~ sin(theta); both routes to Y(1,0) agree iff C' = -C, given +sqrt(2) coefficients. [VERIFIED-sympy, VERIFIED-numeric]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261012-c220-harmonic-normalisation-and-ladder-discovery/decision.md"
+    depends_on: [C201_L1_LADDER_SQRT2_EXACT_INTERTWINER_TEST_CALIBRATED_ON_CONTROL, C205_CARTESIAN_L1_ROTATION_GENERATORS_ROW_INPUT_CONVENTION_NO_SEPARATE_SIGN_FLIP, C206_LADDER_OPERATORS_POLAR_AND_CARTESIAN_SQRT2_MATRIX_FORM_ROW_INPUT]
+    supersedes: "no prior claim -- first sphere normalisation of the l=1 harmonics and first ladder-operator rediscovery route in this project. Corrects no result. It shows that C201's Y(1,-1), taken from the standard relation Y_{l,-m} = (-1)^m conj(Y_{l,m}), is forced by the +sqrt(2) ladder equations; C201's wording 'ONLY McMurry's own stated definitions' is imprecise for m<0 and is not edited here"
+    convention: "L_z = -i d_phi; L+ = e^{i phi}(d_theta + i cot(theta) d_phi), L- = e^{-i phi}(-d_theta + i cot(theta) d_phi); Cartesian Lx = i(z d_y - y d_z), Ly = i(x d_z - z d_x), L+- = Lx +- i Ly; matrices in the row=input convention; Gamma' as encoded in C205 step 3 (basis (x+iy, z, x-iy)); Condon-Shortley phase (Y(1,1) negative)"
+    does_not_imply:
+      - "what McMurry p.92 says for m<0, or that the polar L+- definitions were re-checked against the book: they are as used in C201/C206"
+      - "how any particular calculation obtained its numbers: the kappa table and the two r^2 routes are statements about dependence, not diagnoses"
+      - "that the printed Gamma' (the complex-basis generator matrices as transcribed in C205) were re-read in their source: they are tied to C205's saved results by computation only"
+      - "anything about the spinor (j=1/2) representation, or the G2/SU(3)/Spin(8) triality-channel or N_gen=3 claims (unrelated substrate)"
+    caveat: "The numeric route is independent of sympy's differentiation and integration but not of the definitions. 9 of the 58 checks are restatements and are not counted as evidence. The first draft of the claim overstated two points (that +sqrt(2) selects unit normalisation, and that the printed Gamma' work in both bases); both were corrected after a context-blind skeptic pass (decision.md, claim.md amendments). The Condon-Shortley phase is a convention."
+
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
