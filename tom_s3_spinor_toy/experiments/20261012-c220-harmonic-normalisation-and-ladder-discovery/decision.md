@@ -402,3 +402,8 @@ Findings and fixes (each checked against the documents first):
 | SHOULD | the second program and these checks were written by the same model family | left to the sender (disclosure choice); recorded in the draft's header |
 
 Cap note: this is round 5; rounds 4 and 5 were run on the user's instruction after the cap of 3. The edits after round 5 were checked by code only.
+
+## 13. Status (2026-10-13)
+
+The reply (a covering message, the letter and the workings PDF) was sent by the user on 2026-10-13, without McMurry p.92 (the only page not seen; the letter says so and
+asks for it). Not claimed: the `κ = −2` reading of the correspondent's `Y(1,−1)` (offered as a question, not a result). Awaiting his reply. Nothing from the letter text is stored in the repository.
