@@ -353,3 +353,18 @@ flip; true only for modulus `√2`), a statement about the correspondent's matri
 "exactly √2 each time" (0 at the two ends), "norms" vs "squared norms", "integral 1" for `x'_i` (it is the integral of `(x'_i)²`),
 an unsupported mapping of the earlier "indirect"/"direct" routes. All fixed in the draft and in the attachment's matching sentence.
 The edited text was not reviewed again. Lesson recorded: after a style rewrite, re-run the claim list, not only the style check.
+
+## 10. Checked against our own earlier documents (2026-10-13, after the user supplied both PDFs)
+
+* **24 Sept letter (matrix form).** States the basis `((x+iy)/r, z/r, (x−iy)/r)` and the row = input convention
+  (the correspondent's (76)). Its four matrices (real and complex basis) were reproduced by code. It does not mention
+  normalisation. So the earlier draft sentence "I did not state that basis clearly" was **false** and was removed.
+* **23 Sept notes (Parts 1-3).** Eqs (9)-(11) are `L±` on `x/r, y/r, z/r` (built from his (68), (69)); (12)-(15) follow by linearity;
+  (16)-(18) restate them in the complex basis, so Part 3 is the **same method**, not a second one. The words "indirect"/"direct" are
+  not in the notes (the word "directly" is, in Part 2 and Part 3). Part 1's six actions with its printed (3)-(5) were reproduced.
+  The notes did say that `x±iy` and `z` lack the relative normalisation of the `Y(1,m)`; they gave no ratio and no sign.
+  They also called `Y(1,-1)` "McMurry's own normalization", which is wrong for `m = −1` (conjugation relation was used).
+  The steps behind (9)-(11) were missing from the workings PDF and were added (section 3.2, unnumbered paragraph).
+* Code: scratch `sep23_check.py`, `sep24_check.py` (not archived): elementary steps `L_x x = 0, L_y x = −iz, …`, (9)-(18), the
+  linearity example `L₊(x−iy) = z − i(iz) = 2z`, Part 1's six actions: all True. The reply text was not reviewed by a skeptic
+  after these edits (cap used; the edits are checked by code against the documents).
