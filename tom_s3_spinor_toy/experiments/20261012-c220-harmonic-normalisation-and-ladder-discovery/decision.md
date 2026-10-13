@@ -345,3 +345,11 @@ Substitution stated: the independent reviewer cap (`reviewer`) was closed, so `s
 (`doubt-driven-development.md` Independent Review Fallback Policy). Remaining, not checked by anyone: McMurry p.92, the `L±`
 definitions (p.144), the equation numbers of the correspondent's notes, whether "indirect"/"direct" in the earlier notes map onto
 the two routes in the reply. The sender must check these before sending.
+
+**Round 4** (2026-10-13, run on the user's explicit instruction after the cap of 3; a simplified-English rewrite of the reply).
+The rewrite brought back a defect already fixed in round 1 ("harmonics follow from the ladder operators alone", without the
+`+√2` and pole-positivity conditions) and added new ones: "any set with equal norms gives the same coefficients" (false for a sign
+flip; true only for modulus `√2`), a statement about the correspondent's matrices as if seen (they are only described in his letter),
+"exactly √2 each time" (0 at the two ends), "norms" vs "squared norms", "integral 1" for `x'_i` (it is the integral of `(x'_i)²`),
+an unsupported mapping of the earlier "indirect"/"direct" routes. All fixed in the draft and in the attachment's matching sentence.
+The edited text was not reviewed again. Lesson recorded: after a style rewrite, re-run the claim list, not only the style check.
