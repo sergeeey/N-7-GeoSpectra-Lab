@@ -368,3 +368,20 @@ The edited text was not reviewed again. Lesson recorded: after a style rewrite, 
 * Code: scratch `sep23_check.py`, `sep24_check.py` (not archived): elementary steps `L_x x = 0, L_y x = −iz, …`, (9)-(18), the
   linearity example `L₊(x−iy) = z − i(iz) = 2z`, Part 1's six actions: all True. The reply text was not reviewed by a skeptic
   after these edits (cap used; the edits are checked by code against the documents).
+
+## 11. Checked against the source pages (2026-10-13; PDFs already in the user's Downloads)
+
+* **McMurry p.144** (page image): problem 6.2 gives `L+ = e^{iφ}(∂θ + i cotθ ∂φ)`, `L− = e^{−iφ}(−∂θ + i cotθ ∂φ)` — the operators used here.
+  Problem 6.3(a) asks to prove `√2` for all four non-zero ladder relations "with the definition (4.45)". So "polar `L±`" is no longer "not checked".
+* **McMurry p.91** (page image): (4.44) `P_l^m = (1−x²)^{|m|/2} d^{|m|}/dx^{|m|} P_l`; (4.45) `Y_lm = (−1)^m [(2l+1)(l−m)!/(4π(l+m)!)]^{1/2} P_l^m(cosθ) e^{imφ}`,
+  "defined for m ≥ 0"; note: "(4.44) implies P_l^{−m} = P_l^m. However the associated Legendre functions for m<0 are sometimes normalized differently."
+  Table B1: `P_1^0 = cosθ`, `P_1^1 = sinθ`. So `Y(1,1)` (negative) and `Y(1,0)` of this round ARE McMurry's own, by (4.45).
+* **(4.45) applied literally at `m = −1`** with `P_1^{−1} = P_1^1 = sinθ` (scratch `k445_check.py`, sympy): `Y(1,−1) = −√(3/2π) sinθ e^{−iφ}` = **−2 × ours (κ = −2)**;
+  `L− Y(1,0) = −(√2/2)·Y(1,−1)_lit`, `L+ Y(1,−1)_lit = −2√2 Y(1,0)`, `L+ Y(1,0) = √2 Y(1,1)` unchanged. This reproduces the correspondent's description
+  (one ladder operator as expected, the other not; no `√2` on lowering `Y(1,0)`); it is a **candidate explanation, not a fact**. The letter offers it as a question.
+  With this `Y(1,−1)`, problem 6.3(a)'s `L+ Y(1,−1) = √2 Y(1,0)` fails: the book's statement needs the page-92 `Y(1,−1)`, expected to be ours.
+* **Tom's notes v5** (page images 15-16 + text extraction): (67)-(69) are `L_z, L_y, L_x`; (76) and (112) fix row = input (`(Γ)_i^j φ_j`); (115)-(118): `|φ'_1⟩ = |φ_1⟩ + i|φ_2⟩`,
+  `|φ'_2⟩ = |φ_3⟩`, `|φ'_3⟩ = |φ_1⟩ − i|φ_2⟩`, `z = [[1,i,0],[0,0,1],[1,−i,0]]`; (122) `Γ'_3 = z Γ_3 z^{−1}`; (123)-(125) are exactly the matrices used (`diag(1,0,−1)`,
+  `[[0,−1,0],[−1/2,0,1/2],[0,1,0]]`, `[[0,−i,0],[i/2,0,i/2],[0,−i,0]]`). The earlier "as transcribed" caveat is therefore removed.
+* The 23 Sept message's `U = diag(−1, √2/2, 1)` equals `(√2/2)·D^{−1}`; with row = input no sign flip is needed for the third generator (`u_check.py`).
+* **Still unseen:** McMurry p.92 only.
