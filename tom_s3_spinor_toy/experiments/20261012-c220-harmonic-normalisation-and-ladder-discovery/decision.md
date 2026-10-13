@@ -385,3 +385,20 @@ The edited text was not reviewed again. Lesson recorded: after a style rewrite, 
   `[[0,−1,0],[−1/2,0,1/2],[0,1,0]]`, `[[0,−i,0],[i/2,0,i/2],[0,−i,0]]`). The earlier "as transcribed" caveat is therefore removed.
 * The 23 Sept message's `U = diag(−1, √2/2, 1)` equals `(√2/2)·D^{−1}`; with row = input no sign flip is needed for the third generator (`u_check.py`).
 * **Still unseen:** McMurry p.92 only.
+
+## 12. Round 5 of the reply review (2026-10-13, user-requested; the skeptic received the source pages as images)
+
+Findings and fixes (each checked against the documents first):
+
+| Severity | Finding | Fix |
+|---|---|---|
+| MUST | the correspondent's letter p.1 already says he used (4.45) for `Y(1,−1)` and that it holds for `m ≥ 0` only; the draft called the cause "open" | the letter now quotes that and asks only whether the literal function is the one he got |
+| SHOULD | with `κ = −2` McMurry 6.3(a) also fails for `L− Y(1,0)` (his own case); the product relations still hold; 6.3(a) itself says "with the definition (4.45)" and p.91 warns that `m < 0` is "sometimes normalized differently" | added; "your reading was natural" |
+| SHOULD | the 23 Sept notes' (19) already show `1/√2` and the minus sign; their error was "entirely accounted for by the relative normalization" | sentence corrected |
+| SHOULD | `U` and the `L_y` sign were in a chat message, not in the notes PDF | the paragraph names the message |
+| SHOULD | dates: his letter is dated 10 Oct; "Part 1 normalisation" was **my** Part 1, not his | fixed |
+| SHOULD | coverage: the (4.45) step and the document comparisons rested on scratch scripts | consolidated into `c220_source_checks.py` (21 checks, ruff-clean, `run_output_source_checks.txt`); one always-true "check" removed; the letter lists the (4.45) step as not covered by the second program |
+| SHOULD | stale traceability rows (T5, T6, R24) | rewritten; rows R32, R33 added |
+| SHOULD | the second program and these checks were written by the same model family | left to the sender (disclosure choice); recorded in the draft's header |
+
+Cap note: this is round 5; rounds 4 and 5 were run on the user's instruction after the cap of 3. The edits after round 5 were checked by code only.
