@@ -3911,6 +3911,25 @@ claims:
     caveat: "The numeric route is independent of sympy's differentiation and integration but not of the definitions. 9 of the 58 checks are restatements and are not counted as evidence. The first draft of the claim overstated two points (that +sqrt(2) selects unit normalisation, and that the printed Gamma' work in both bases); both were corrected after a context-blind skeptic pass (decision.md, claim.md amendments). The Condon-Shortley phase is a convention. A separately written re-implementation (a subagent given the definitions only, no expected answers) agrees on the integrals, Gram matrices, the six ladder actions, the matrices in the e and Y' bases (D unique), and Part E; it did not cover the kappa table or the no-sign basis, the Condon-Shortley phase was taken as given, double precision only, and its scripts are not archived (outputs: independent_pass_outputs.txt; decision.md section 8). Same model family wrote both, so evidence_status stays INTERNALLY_CERTIFIED. The earlier wording 'McMurry p.92/p.144 never seen' was wrong: only p.92 was not seen."
 
 
+  - id: C221_SPINOR_LADDER_ORBITAL_STEP4_FAILS_COT_RATIO_SPIN_WEIGHT_HALF_CLOSES_CLOSURE_ONLY_AT_S_PM_HALF
+    statement: "Sympy exact (closure scan and D3c numeric at 4 angles), unit S^2, the five ladder steps for m=+-1/2. (1) With McMurry p.144 operators (s=0): L+(chi e^{i phi/2})=0 and L-(chi e^{-i phi/2})=0 give chi = C sqrt(sin theta); step 4 fails: L- Y_up = -cot(theta) Y_dn, L+ Y_dn = +cot(theta) Y_up (theta-dependent); L-^2 Y_up = -sin^(-3/2)(theta) e^(-3 i phi/2), not square-integrable; norms pi^2 each, L- Y_up has norm pi^2 too (forced by the algebra) and is orthogonal to Y_dn (independent pass only). (2) With L+-(s) = e^{+-i phi}(+-d_theta + i cot(theta) d_phi - s/sin(theta)): [L+,L-]=2Lz and [Lz,L+-]=+-L+- for every s and generic F (also for unequal constants in L+ and L-, so the commutator test cannot see a != b); highest/lowest weight sin^m tan^s(theta/2), sin^m tan^-s(theta/2). s=1/2: Y_up = sin(theta/2)e^{i phi/2}/sqrt(2 pi), Y_dn = -cos(theta/2)e^{-i phi/2}/sqrt(2 pi), L- Y_up = Y_dn, L+ Y_dn = Y_up, L^2=3/4, norm 1. Closure scan s in {0,+-1/2,+-1,+-3/2}: only s=+-1/2 closes (skeptic's hand derivation, run: closes for all real s iff 4 s^2 = 1). Equals the C184 S^2 doublet up to normalisation and sign with labels reversed (quantisation along -z). [VERIFIED-sympy, VERIFIED-numeric]"
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261014-c221-spinor-ladder-covariant/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP, C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED, C220_L1_HARMONICS_R4_NORM_SQRT2_FORCED_BY_NORM_PRINTED_GAMMA_FITS_RAW_BASIS_ONLY]
+    supersedes: "no prior claim -- first application of the five ladder steps to the spinor case. Corrects no result; states that the label of the C184 doublet is the opposite of the Lz eigenvalue"
+    convention: "unit S^2, dOmega = sin(theta) dtheta dphi; Lz = -i d_phi; L+- as McMurry p.144 at s=0; L^2 = L-L+ + Lz^2 + Lz; Condon-Shortley sign on the lower function"
+    does_not_imply:
+      - "that a multiplet of single-valued functions carries the spin-1/2 representation (C179 stands); anti-periodicity is a statement in the e^{+-i phi/2} gauge, and for s=+-1/2 the phase can be removed by regular patch gauges"
+      - "which functions the correspondent intends; only what the plain operators give and what one extra term changes"
+      - "where the -s/sin(theta) term comes from, or that the pair is the standard spin-weighted harmonics (from memory, unchecked); the J = L + S version with single-valued functions was not computed"
+      - "anything about N_gen=3, OB1 or lambda"
+    caveat: "29 main checks and 5 controls, but about 10 of the main checks are forced by definition or by the algebra and carry little evidence (decision.md section 8); the symbolic-m,s statements in B2a/B2b may have run on a numeric fallback path that the json does not record; the preview preceded pre-registration; the pre-registered control D3 was wrong and was replaced after the fact (D3a-c); the independent re-implementation is same-model-family code and its scripts are not archived; the j-|s| closure rule is exploratory and unchecked against a source. One context-blind skeptic round (no shell; script run by the orchestrator, 23/23)."
+
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY
