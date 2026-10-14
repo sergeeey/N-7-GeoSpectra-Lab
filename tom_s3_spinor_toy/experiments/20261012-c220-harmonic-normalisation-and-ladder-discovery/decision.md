@@ -407,3 +407,15 @@ Cap note: this is round 5; rounds 4 and 5 were run on the user's instruction aft
 
 The reply (a covering message, the letter and the workings PDF) was sent by the user on 2026-10-13, without McMurry p.92 (the only page not seen; the letter says so and
 asks for it). Not claimed: the `κ = −2` reading of the correspondent's `Y(1,−1)` (offered as a question, not a result). Awaiting his reply. Nothing from the letter text is stored in the repository.
+
+## 14. McMurry p.92 received and checked (2026-10-14)
+
+The correspondent sent page 92 (scan, rotated 90 degrees). It defines the harmonics for negative `m_l`: `Y_{l,−|m_l|}(θ,φ) = (−1)^{m_l} Y*_{l,|m_l|}(θ,φ)`, states that the
+set is normalised and orthogonal on the unit sphere, (4.46), and that each `Y_{l,m_l}` has parity `(−1)^l` (the rest of the page: quantisation of the angle between the angular momentum vector and the z axis).
+Checked by exact sympy (scratch `p92_check.py`, output recorded here): the p.92 relation gives **`Y(1,−1) = +√(3/8π) sinθ e^{−iφ}`, identical to the one used in the reply** (and in C201, the 23 Sept notes);
+`L− Y(1,0) = √2 Y(1,−1)`, `L+ Y(1,−1) = √2 Y(1,0)`, `L− Y(1,1) = √2 Y(1,0)` hold; (4.46) norms of `Y(1,1), Y(1,0), Y(1,−1)` are all 1. The literal (4.45) at `m = −1` divided by the p.92 value is `−2`
+(so `κ = −2` remains the factor between the literal reading and McMurry's own definition).
+
+Consequences: (a) the reply's expectation "I expect page 92 to give the Y(1,−1) of Step 2" is confirmed; (b) the 23 Sept notes' phrase "McMurry's own normalization" for `Y(1,−1)` turns out to be correct in value,
+although it was unsupported when written (the page had not been seen); (c) "McMurry p.92 not seen" is closed; (d) `κ = −2` explains the correspondent's discrepancy only if he applied (4.45) literally at `m = −1`; he has not said.
+Nothing in the sent letter needs correction; a one-line note in the next message can state that p.92 confirms the value.
