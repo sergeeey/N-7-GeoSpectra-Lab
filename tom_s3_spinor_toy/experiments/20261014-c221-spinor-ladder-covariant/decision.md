@@ -122,7 +122,7 @@ script then reproduced symbolically, that it does not. D3a–c are post-hoc repl
 ## 5. Independent re-implementation (2026-10-14/15)
 
 A subagent was given the operator definitions and a list of tasks T1–T10, no expected answers, and wrote its own code
-(`ops.py` and four scripts; run in the session scratch folder, not archived in the repository). Its printed
+(`ops.py` and four scripts; the scripts are not archived, the printed outputs are in `independent_pass_outputs.txt`). Its printed
 results agree with the main script on:
 
 | Task | Independent pass result | Main script |
