@@ -81,6 +81,10 @@ DRAFT_REPLY*
 LETTER_TO_*
 *_TO_TOM_*
 
+# Correspondence exports (added 2026-10-16): the raw chat export and the
+# attachments under docs/perepiska/ are private and were untracked, not ignored.
+tom_s3_spinor_toy/docs/perepiska/
+
 # --- Claude Code service data (machine-local) -------------------------------
 # 167 of the 281 untracked paths in this tree were these: checkpoints/, state/,
 # agent-memory/. None of it is meant to be versioned, and a status list that is
