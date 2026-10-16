@@ -1,0 +1,59 @@
+=== Step 1: apply L_z, L_y, L_x directly to x1/r, x2/r, x3/r ===
+
+--- L_z ---
+  L_z(x1/sqrt(x1**2 + x2**2 + x3**2)) = I*x2/sqrt(x1**2 + x2**2 + x3**2)  ->  coeffs (phi1,phi2,phi3) = ['0', 'I', '0']
+  L_z(x2/sqrt(x1**2 + x2**2 + x3**2)) = -I*x1/sqrt(x1**2 + x2**2 + x3**2)  ->  coeffs (phi1,phi2,phi3) = ['-I', '0', '0']
+  L_z(x3/sqrt(x1**2 + x2**2 + x3**2)) = 0  ->  coeffs (phi1,phi2,phi3) = ['0', '0', '0']
+
+--- L_y ---
+  L_y(x1/sqrt(x1**2 + x2**2 + x3**2)) = -I*x3/sqrt(x1**2 + x2**2 + x3**2)  ->  coeffs (phi1,phi2,phi3) = ['0', '0', '-I']
+  L_y(x2/sqrt(x1**2 + x2**2 + x3**2)) = 0  ->  coeffs (phi1,phi2,phi3) = ['0', '0', '0']
+  L_y(x3/sqrt(x1**2 + x2**2 + x3**2)) = I*x1/sqrt(x1**2 + x2**2 + x3**2)  ->  coeffs (phi1,phi2,phi3) = ['I', '0', '0']
+
+--- L_x ---
+  L_x(x1/sqrt(x1**2 + x2**2 + x3**2)) = 0  ->  coeffs (phi1,phi2,phi3) = ['0', '0', '0']
+  L_x(x2/sqrt(x1**2 + x2**2 + x3**2)) = I*x3/sqrt(x1**2 + x2**2 + x3**2)  ->  coeffs (phi1,phi2,phi3) = ['0', '0', 'I']
+  L_x(x3/sqrt(x1**2 + x2**2 + x3**2)) = -I*x2/sqrt(x1**2 + x2**2 + x3**2)  ->  coeffs (phi1,phi2,phi3) = ['0', '-I', '0']
+
+Resulting matrices, Tom's own eq(76) row=input convention (row j = coeffs when operator applied to phi_j):
+  M_Lz =
+Matrix([[0, I, 0], [-I, 0, 0], [0, 0, 0]])
+  M_Ly =
+Matrix([[0, 0, -I], [0, 0, 0], [I, 0, 0]])
+  M_Lx =
+Matrix([[0, 0, 0], [0, 0, I], [0, -I, 0]])
+
+For comparison ONLY, the STANDARD linear-algebra 'matrix of a linear
+map' convention (column j = image of basis_j) -- the TRANSPOSE of the
+above, and exactly where the sign ambiguity Tom's own document raises
+right after eq(99) comes from:
+  M_Lz^T =
+Matrix([[0, -I, 0], [I, 0, 0], [0, 0, 0]])
+
+=== Step 2: compare, in Tom's own eq(76) convention, DIRECTLY against his eq(106)-(108) [Gamma_3(T_ij)] ===
+
+  M_Lz == Gamma_3(T_12) [eq 108], DIRECTLY, no extra step needed? True
+  M_Ly == Gamma_3(T_31) [eq 107], DIRECTLY, no extra step needed? True
+  M_Lx == Gamma_3(T_23) [eq 106], DIRECTLY, no extra step needed? True
+  (Earlier draft of this script used the standard linear-algebra
+   transpose convention instead, which lands on eq(103)-(105) [T_ij]
+   directly and needs an EXTRA negation to reach Gamma_3 -- a real,
+   independently-caught bug in the matrix-assembly convention, not a
+   physics finding. Fixed: using Tom's own eq(76) row=input placement
+   gives Gamma_3(T_ij) in a single step, exactly as his own general
+   theory (his eq96, Gamma_d(g)=g^-1=g^T) says it should.)
+
+=== Step 3: apply Tom's own z (eq 118) directly to M_L (already Gamma_3) to reach (123)-(125) ===
+
+  z * M_Lz * z^-1 =
+Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])   (compare to Tom's eq 123: diag(1,0,-1))
+  z * M_Ly * z^-1 =
+Matrix([[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]])   (compare to Tom's eq 125)
+  z * M_Lx * z^-1 =
+Matrix([[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]])   (compare to Tom's eq 124)
+
+  Matches Tom's stated eq(123)? True
+  Matches Tom's stated eq(124)? True
+  Matches Tom's stated eq(125)? True
+
+=== OVERALL: full chain (differential operator -> Cartesian -> complex basis) verified: True ===

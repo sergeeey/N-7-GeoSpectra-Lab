@@ -1,0 +1,229 @@
+{
+ "checks": [
+  {
+   "id": "A1",
+   "text": "L_z (chi(theta) e^{i m phi}) = m (chi e^{i m phi}) for m = +-1/2",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A2",
+   "text": "L+ [chi e^{i phi/2}] = 0 is chi' - (1/2) cot(theta) chi = 0; dsolve gives chi = C sin^{1/2}(theta)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A3",
+   "text": "L- [chi e^{-i phi/2}] = 0 gives chi = C' sin^{1/2}(theta)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A2b",
+   "text": "the solution of a first-order linear homogeneous ODE is unique up to a constant (so no other chi)",
+   "ok": true,
+   "kind": "restatement"
+  },
+  {
+   "id": "A2c",
+   "text": "psi_up = sqrt(sin) e^{i phi/2} is annihilated by L+ ; psi_dn = sqrt(sin) e^{-i phi/2} by L-",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "D5",
+   "text": "literal step 3 (m = -1, s = 0): L- [chi e^{-i phi}] = 0 gives chi = C sin(theta): the VECTOR m=-1 function, not a spinor",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A4a",
+   "text": "L- psi_up = (-1/tan(theta)) psi_dn ; L+ psi_dn = (1/tan(theta)) psi_up (ratios, exact)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A4b",
+   "text": "step 4 FAILS with a constant coefficient: the ratios depend on theta",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A5a",
+   "text": "L-^2 psi_up = -sin^{-3/2}(theta) e^{-3 i phi/2}: the lowering chain does not terminate",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A5b",
+   "text": "int |L-^2 psi_up|^2 dOmega = 2 pi int sin^{-2} dtheta diverges (2 pi * 2 cot(eps) -> infinity)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A6",
+   "text": "Casimir L^2 = L-L+ + Lz^2 + Lz = 3/4 on psi_up and psi_dn",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A7a",
+   "text": "<psi_up, psi_up> = pi^2 (so N = 1/pi) and the same for psi_dn",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A7b",
+   "text": "<L- psi_up, L- psi_up> = pi^2 (the algebra identity j(j+1) - m(m-1) = 1 times the norm)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A7c",
+   "text": "psi_up and psi_dn are orthogonal (the phi integral of e^{-i phi} over [0, 2 pi] is 0)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "A8",
+   "text": "psi(phi + 2 pi) = -psi(phi) for psi_up and psi_dn (double-valued, consistent with C179)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B1a",
+   "text": "[L+,L-] F - 2 Lz F = 0 for generic F and generic s",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B1b",
+   "text": "[Lz,L+] F - L+ F = 0 and [Lz,L-] F + L- F = 0 for generic F and generic s",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B2a",
+   "text": "f'/f = m cot(theta) + s/sin(theta) integrates to f = sin^m(theta) tan^s(theta/2) (d/dtheta ln tan(theta/2) = 1/sin(theta))",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B2b",
+   "text": "L+ [sin^m tan^s(theta/2) e^{i m phi}] = 0 and L- [sin^{-m} tan^{-s}(theta/2) e^{i m phi}] = 0 for symbolic m, s",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B2c",
+   "text": "independent dsolve of the s = 1/2 highest-weight ODE agrees with the integrated form (ratio constant at 4 angles)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B3a",
+   "text": "s=1/2: sin(theta/2) e^{i phi/2} is highest weight (L+ = 0); cos(theta/2) e^{-i phi/2} is lowest weight (L- = 0)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B3b",
+   "text": "s=1/2 closure: L- psi_up = + psi_dn and L+ psi_dn = + psi_up (modulus-1 constants, Condon-Shortley sign on psi_dn)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B3c",
+   "text": "s=1/2: Casimir L^2 = 3/4 on both",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B3d",
+   "text": "s=1/2: both unit-normalised with N = 1/sqrt(2 pi); with B3b, |L- psi_up| = |psi_dn| = 1 = |psi_up| (the norm forced by step 4 agrees with the sphere integral)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B3e",
+   "text": "s=1/2 pair is anti-periodic: psi(phi + 2 pi) = -psi(phi)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B4",
+   "text": "s=1/2 pair = C184b doublet up to normalisation and sign, labels reversed: C184b chi_{+1/2} has Lz = -1/2",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B5c",
+   "text": "the closed-form action on chi(theta) equals the full operator action for generic chi, m, s (so the scan below is exact in form)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B6",
+   "text": "s=-1/2 mirror pair closes exactly: cos(theta/2) e^{i phi/2} -> L- -> sin(theta/2) e^{-i phi/2} with constant +1 (and back)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B5a",
+   "text": "closure holds for s = +1/2 and s = -1/2 (mirror images under theta -> pi - theta)",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "B5b",
+   "text": "closure FAILS for s = 0 (the closure test can say no)",
+   "ok": true,
+   "kind": "control"
+  },
+  {
+   "id": "D1",
+   "text": "integer positive control, s = 0: L+ [sin e^{i phi}] = 0 and L- Y(1,1) = sqrt(2) Y(1,0) (the C220 result)",
+   "ok": true,
+   "kind": "control"
+  },
+  {
+   "id": "D2",
+   "text": "s = 1/2 operators on the integer harmonics Y(1,m) do NOT close (L- Y(1,1)/Y(1,0) depends on theta)",
+   "ok": true,
+   "kind": "control"
+  },
+  {
+   "id": "D3a",
+   "text": "the commutator test alone is BLIND to unequal constants: [L+_a, L-_b] F = 2 Lz F holds for symbolic a, b (so also for a = 1/2, b = -1/2); the pre-registered D3 predicted a failure and was wrong",
+   "ok": true,
+   "kind": "main"
+  },
+  {
+   "id": "D3b",
+   "text": "unequal constants (L+ with s = 1/2, L- with s = -1/2): the closure ratio L- psi_up / psi_dn is theta-dependent (does not close)",
+   "ok": true,
+   "kind": "control"
+  },
+  {
+   "id": "D3c",
+   "text": "adjointness <G, L+_a F> = <L-_b G, F> holds for a = b (gap < 1e-15) and fails for a != b (gap > 0.1)",
+   "ok": true,
+   "kind": "control"
+  }
+ ],
+ "values": {
+  "A4_L-psi_up_over_psi_dn": "-1/tan(theta)",
+  "A4_L+psi_dn_over_psi_up": "1/tan(theta)",
+  "A5_L-^2_psi_up": "-1/sin(theta)**(3/2)",
+  "A7_norm2_psi_up": "pi**2",
+  "B3_norms": "1, 1",
+  "B5_scan": "{\"0\": {\"closes\": false, \"L-up/dn\": \"theta-dependent: -3.233, -0.7936, 0.1299, 1.662\", \"L+dn/up\": \"theta-dependent: 3.233, 0.7936, -0.1299, -1.662\"}, \"1/2\": {\"closes\": true, \"L-up/dn\": \"-1\", \"L+dn/up\": \"-1\"}, \"-1/2\": {\"closes\": true, \"L-up/dn\": \"1\", \"L+dn/up\": \"1\"}, \"1\": {\"closes\": false, \"L-up/dn\": \"theta-dependent: -0.2284, -0.7809, -2.445, -28.77\", \"L+dn/up\": \"theta-dependent: -154.8, -7.541, -1.657, -0.4271\"}, \"-1\": {\"closes\": false, \"L-up/dn\": \"theta-dependent: 154.8, 7.541, 1.657, 0.4271\", \"L+dn/up\": \"theta-dependent: 0.2284, 0.7809, 2.445, 28.77\"}, \"3/2\": {\"closes\": false, \"L-up/dn\": \"theta-dependent: -0.04621, -0.5211, -4.271, -194.3\", \"L+dn/up\": \"theta-dependent: -2004, -26.94, -2.139, -0.1601\"}, \"-3/2\": {\"closes\": false, \"L-up/dn\": \"theta-dependent: 2004, 26.94, 2.139, 0.1601\", \"L+dn/up\": \"theta-dependent: 0.04621, 0.5211, 4.271, 194.3\"}}",
+  "B5_other_s_exploratory": "s=1: False, s=-1: False, s=3/2: False, s=-3/2: False",
+  "D3c_adjoint_gaps": {
+   "(0, 0)": 5.350710141059991e-108,
+   "(1/2, 1/2)": 5.350710141059991e-108,
+   "(1/2, -1/2)": 6.702064327658226,
+   "(0, 1/2)": 3.351032163829113
+  }
+ }
+}

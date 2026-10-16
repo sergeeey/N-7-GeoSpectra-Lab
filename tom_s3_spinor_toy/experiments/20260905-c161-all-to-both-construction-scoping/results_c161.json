@@ -1,0 +1,82 @@
+{
+  "checks_total": 5,
+  "checks_passed": 5,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "1a_mu_vanishes_at_its_own_parallel_point",
+      "ok": true,
+      "detail": "reproduces C136 C5/C6: mu(0, left) = mu(1, right) = 0 -- this is what 'parallel at that (t,frame)' MEANS, already certified in C136, not recomputed here."
+    },
+    {
+      "name": "1b_lambda_0_and_lambda_1_are_zero_for_every_chi4_chi6_swept",
+      "ok": true,
+      "detail": "14 (chi4,chi6) combinations, including +-sqrt(3) (this project's own g2su3 twisted-operator output, cited not recomputed) and a large 1000.0 -- lambda_0 = lambda_1 = 0 * chi4 * chi6 = 0 in every case. WHY: mu(t) itself, not chi4*chi6, is what vanishes at these two points, so the still-unbuilt S6-side value is ALGEBRAICALLY IRRELEVANT to this reading's answer -- 0 times anything finite is 0."
+    },
+    {
+      "name": "1c_reading_i_is_the_channel_uniform_null_route",
+      "ok": true,
+      "detail": "reproduces C136 E1 directly (imported, not recomputed): the chi6 input is identical across all 3 channels regardless, so reading (i)'s lambda_0=lambda_1=0 conclusion is trivially the same for 8_v, 8_s, 8_c."
+    },
+    {
+      "name": "2a_raw_alpha_table_is_channel_uniform",
+      "ok": true,
+      "detail": "all four (t,frame) cells agree across 8_v/8_s/8_c to within TOL -- so WHICHEVER of the four pairings below is picked, the channel axis is inert; the only live question is the FRAME-SELECTION axis, not the channel axis."
+    },
+    {
+      "name": "2b_the_four_literal_pairings_span_multiple_kill_criterion_outcomes",
+      "ok": true,
+      "detail": "pairings and verdicts: {'A_natural_natural': 'NULL-DEGENERATE (both zero)', 'B_twisted_twisted': 'PROMOTE-AS-DERIVATION-shaped (both nonzero)', 'C_natural_twisted': 'NULL-CONTRADICTS-LABEL (exactly one zero)', 'D_twisted_natural': 'NULL-CONTRADICTS-LABEL (exactly one zero)'}. 3 distinct outcomes from claim.md's own 5-row kill-criterion table, depending SOLELY on which frame is arbitrarily assigned to w_0 vs w_1 -- a choice neither C133 nor C136 makes. This is the file's central finding: the recombination is underdetermined by already-certified content, not merely unfinished."
+    }
+  ],
+  "data": {
+    "mu_at_t0_left": 0.0,
+    "mu_at_t1_right": 0.0,
+    "reading_i_lambda_0_sweep_all_zero": true,
+    "reading_i_lambda_1_sweep_all_zero": true,
+    "alpha_by_channel_t_frame": {
+      "8_v": {
+        "t=0.0|left": 0.0,
+        "t=0.0|right": 1.0,
+        "t=1.0|left": -1.0,
+        "t=1.0|right": 0.0
+      },
+      "8_s": {
+        "t=0.0|left": 0.0,
+        "t=0.0|right": 1.0,
+        "t=1.0|left": -1.0,
+        "t=1.0|right": 0.0
+      },
+      "8_c": {
+        "t=0.0|left": 0.0,
+        "t=0.0|right": 1.0,
+        "t=1.0|left": -1.0,
+        "t=1.0|right": 0.0
+      }
+    },
+    "four_pairings_lambda0_lambda1": {
+      "A_natural_natural": [
+        0.0,
+        0.0
+      ],
+      "B_twisted_twisted": [
+        1.0,
+        -1.0
+      ],
+      "C_natural_twisted": [
+        0.0,
+        -1.0
+      ],
+      "D_twisted_natural": [
+        1.0,
+        0.0
+      ]
+    },
+    "four_pairings_verdicts": {
+      "A_natural_natural": "NULL-DEGENERATE (both zero)",
+      "B_twisted_twisted": "PROMOTE-AS-DERIVATION-shaped (both nonzero)",
+      "C_natural_twisted": "NULL-CONTRADICTS-LABEL (exactly one zero)",
+      "D_twisted_natural": "NULL-CONTRADICTS-LABEL (exactly one zero)"
+    }
+  }
+}

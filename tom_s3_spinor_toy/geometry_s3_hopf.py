@@ -45,4 +45,4 @@ def weighted_inner_product(
     The (2π)² factor integrates over θ, φ ∈ [0, 2π].
     """
     integrand = f * np.conj(g_func) * volume_measure(alpha_grid)
-    return float(np.trapz(integrand, alpha_grid).real) * (2.0 * np.pi) ** 2
+    return float(np.trapezoid(integrand, alpha_grid).real) * (2.0 * np.pi) ** 2

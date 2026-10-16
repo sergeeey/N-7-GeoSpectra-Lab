@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "case": "real D0 spectrum",
+      "intersection": [
+        1.5
+      ],
+      "unique": true
+    },
+    {
+      "case": "every eigenvalue shifted by +1",
+      "intersection": [
+        2.5
+      ],
+      "unique": true
+    },
+    {
+      "case": "every eigenvalue shifted by +0.37",
+      "intersection": [
+        1.87
+      ],
+      "unique": true
+    },
+    {
+      "case": "ONE eigenvalue moved by +0.6",
+      "intersection": [],
+      "unique": false
+    },
+    {
+      "case": "spectrum rescaled by 1.2 (spacing broken)",
+      "intersection": [],
+      "unique": false
+    },
+    {
+      "case": "spectrum reflected",
+      "intersection": [
+        -1.5
+      ],
+      "unique": true
+    },
+    {
+      "case": "one multiplicity broken (6 -> 7, INVALID product: fallback path)",
+      "intersection": [],
+      "unique": false
+    },
+    {
+      "case": "one multiplicity broken (6 -> 12, VALID product: arithmetic path)",
+      "intersection": [],
+      "unique": false
+    }
+  ],
+  "uniform_shift_still_unique": true,
+  "broken_level_detected": true,
+  "broken_spacing_detected": true,
+  "broken_multiplicity_detected": true,
+  "broken_multiplicity_detected_via_fallback_only": true,
+  "reflection_tracks_chirality": true,
+  "verdict": "NOT VACUOUS but NARROWER THAN CLAIMED. The solve detects a moved level, a broken spacing and a wrong multiplicity -- each destroys the intersection. It cannot detect a uniform additive shift: a spectrum shifted by +1 returns a unique 2.5, one shifted by +0.37 returns a unique 1.87. So the UNIQUENESS is carried by the algebra and the VALUE simply tracks the shift. Honest statement: D0's spectrum is the Dirac spectrum up to a single additive constant -- a real constraint, since any level/spacing/multiplicity corruption breaks it -- and that constant is 3/2. NOT: 'the constant drops out of the eigenvalue data'."
+}

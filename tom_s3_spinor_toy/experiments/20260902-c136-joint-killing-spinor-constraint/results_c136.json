@@ -1,0 +1,438 @@
+{
+  "checks_total": 57,
+  "checks_passed": 57,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "A1_cl6_anticommutators",
+      "ok": true,
+      "detail": "36 pairs, {Gamma_a,Gamma_b} = 2 delta_ab"
+    },
+    {
+      "name": "A2_gamma7_involution",
+      "ok": true,
+      "detail": "Gamma_7^2 = 1"
+    },
+    {
+      "name": "A3_gamma7_anticommutes_with_all_cl6",
+      "ok": true,
+      "detail": "Gamma_7 is the Z2 GRADING of Cl(6) -- exists because dim S6 = 6 is EVEN"
+    },
+    {
+      "name": "A4_gamma7_is_NOT_scalar",
+      "ok": true,
+      "detail": "an even-dimensional Clifford factor has a non-central volume element"
+    },
+    {
+      "name": "A5_cl9_anticommutators",
+      "ok": true,
+      "detail": "81 pairs"
+    },
+    {
+      "name": "A6_cl13_all_169_anticommutators",
+      "ok": true,
+      "detail": "0 failures, worst residual 0.000e+00, eta = diag(+,-,...,-)"
+    },
+    {
+      "name": "A7_omega13_scalar_plus_one",
+      "ok": true,
+      "detail": "omega_13 = 1.0000+0.0000j * 1 -- reproduces C125 E3. A first draft of this file used gam7_sign = -1 and this check CAUGHT it (it returned -1)."
+    },
+    {
+      "name": "A8_omega13_flips_in_the_other_module",
+      "ok": true,
+      "detail": "gam7_sign = -1 gives omega_13 = -1, i.e. the OTHER inequivalent Cl(1,12) module (C125 section 1b). Both are carried through section H."
+    },
+    {
+      "name": "A9_Omega3_equals_g5_x_1_x_Gamma7",
+      "ok": true,
+      "detail": "C134 section 5a item 1 reproduced independently: Omega_3 has NO S3 content"
+    },
+    {
+      "name": "A10_Omega3_Omega6_equals_i_gamma5",
+      "ok": true,
+      "detail": "measured 0.0000+1.0000j, C125 D4 = 0+1i. C125's OWN DOWNGRADE IS CARRIED FORWARD: this is forced in every irrep of Cl(1,12) and is NOT a discovery about the split."
+    },
+    {
+      "name": "A11_omega3_intrinsic_is_scalar_plus_one",
+      "ok": true,
+      "detail": "C125 section 4: an ODD-dimensional Clifford factor has a CENTRAL, SCALAR volume element -- it cannot be a grading. General reason, not convention."
+    },
+    {
+      "name": "B1_even_S3_elements_commute_with_S6_vectors",
+      "ok": true,
+      "detail": "[Gamma^i Gamma^j, Gamma^a] = 0 on all 3*3*6 = 54 triples, worst 0.00e+00. REPRESENTATION-INDEPENDENT: follows from {Gamma^i, Gamma^a} = 0 alone."
+    },
+    {
+      "name": "B2_odd_S3_elements_ANTIcommute_with_S6_vectors",
+      "ok": true,
+      "detail": "{Gamma^i, Gamma^a} = 0, so an odd S3 element cannot commute with Cl(6) and therefore cannot act as (S3 operator) (x) 1 on the module."
+    },
+    {
+      "name": "B3_S3_two_forms_are_1_x_M2_x_1",
+      "ok": true,
+      "detail": "Gamma^{3+i}Gamma^{3+j} = 1_4 (x) Z_i Z_j (x) 1_8. BOTH the S3 spin connection AND the S3 torsion term live here, so BOTH factorise exactly."
+    },
+    {
+      "name": "B4_S6_two_forms_are_1_x_1_x_M8",
+      "ok": true,
+      "detail": "same statement for the S6 factor"
+    },
+    {
+      "name": "B5_S3_vector_carries_gamma5_AND_Gamma7",
+      "ok": true,
+      "detail": "Gamma^{3+i} = (i gamma_5) (x) sigma_i (x) Gamma_7 -- the ONLY cross-factor operators appearing are the two GRADINGS, each Z2-valued."
+    },
+    {
+      "name": "B6_S6_vector_carries_identity_on_the_S3_slot",
+      "ok": true,
+      "detail": "Gamma^{6+a} = (i gamma_5) (x) 1_2 (x) Gamma_a -- NO S3 operator appears. One-directional, forced by dim S3 = 3 ODD (omega_3 central, check A11)."
+    },
+    {
+      "name": "B7_S6_vectors_commute_with_the_whole_even_S3_algebra",
+      "ok": true,
+      "detail": "so the S6 equation cannot see any S3 datum beyond a scalar"
+    },
+    {
+      "name": "B8_the_two_carriers_are_involutions",
+      "ok": true,
+      "detail": "gamma_5^2 = Gamma_7^2 = 1 -- each carrier transmits exactly ONE BIT"
+    },
+    {
+      "name": "B9_the_two_carriers_commute",
+      "ok": true,
+      "detail": "they generate (Z2)^2, a group of order 4. A Z3 channel label cannot be transmitted through scalars valued in {+1,-1}."
+    },
+    {
+      "name": "C1_su2_structure_constants_verified",
+      "ok": true,
+      "detail": "[E_i,E_j] = eps_ijk E_k from explicit 2x2 matrices"
+    },
+    {
+      "name": "C3_left_invariant_law",
+      "ok": true,
+      "detail": "nabla^t_X eta_L = -(t/rho3) X . eta_L, 10 (t,rho) points x 3 directions"
+    },
+    {
+      "name": "C4_right_invariant_law",
+      "ok": true,
+      "detail": "nabla^t_Y eta_R = +((1-t)/rho3) Y . eta_R"
+    },
+    {
+      "name": "C5_t0_left_invariant_spinor_is_parallel",
+      "ok": true,
+      "detail": "reproduces round72 H1b at t = 0 (left-invariant, (-)-connection)"
+    },
+    {
+      "name": "C6_t1_right_invariant_spinor_is_parallel",
+      "ok": true,
+      "detail": "reproduces round72 H1b at t = 1 (right-invariant, (+)-connection)"
+    },
+    {
+      "name": "C7_LC_killing_constants_are_minus_half_and_plus_half",
+      "ok": true,
+      "detail": "at t = 1/2 the invariant spinors are Killing with constants -1/2 and +1/2 -- AHL2023 section 6 case (II): 'a pair of invariant Killing spinors for the constant 1/2, BUT NO INVARIANT GENERALIZED KILLING SPINORS' [CITED, pdftotext this round, FULL sentence -- a previous draft truncated it at the comma. The dropped clause CLOSES Relaxation-Map variant V2: a non-scalar A_3 against nabla^t is exactly a non-scalar symmetric A against nabla^LC, which AHL2023 states does not exist for invariant spinors on the round S3 = SU(2).]"
+    },
+    {
+      "name": "C8_Dirac_n0_left_branch_equals_3t",
+      "ok": true,
+      "detail": "D^t(n=0) = 3t * I_2 on the left-invariant spinors -- reproduces C64's own certified value at 5 t-points"
+    },
+    {
+      "name": "C9_Dirac_n0_right_branch_equals_3t_minus_3",
+      "ok": true,
+      "detail": "D^t(n=0) = (3t-3) * I_2 on the right-invariant spinors -- reproduces round67's other branch, quoted verbatim by C107: 'the two n=0 branches are 3t and 3t-3; zero at t=0 and t=1 respectively, never simultaneously'. At t=1/2 these give +-3/2, the classical Friedrich-1980 constant -- but here it falls out of the FULL first-order operator WITH its whole t-dependence, not from round114's trace collapse."
+    },
+    {
+      "name": "D1_13D_S3_spin_connection_reduces_to_the_intrinsic_one",
+      "ok": true,
+      "detail": "the block used below is the restriction of the genuine 13D operator, not an ansatz"
+    },
+    {
+      "name": "D2_S3_equation_fixes_lambda_equals_mu_chi4_chi6",
+      "ok": true,
+      "detail": "24 configurations: lambda = mu*chi4*chi6 solves it, lambda + 0.37 does not. THIS is the only cross-factor coupling the constraint produces."
+    },
+    {
+      "name": "D3_S6_equation_carries_no_S3_datum",
+      "ok": true,
+      "detail": "the S6 equation's only cross-factor input is chi4; the S3 slot is exactly 1_2"
+    },
+    {
+      "name": "D4_flat_M4_integrability_forces_lambda_zero",
+      "ok": true,
+      "detail": "[Gamma_0,Gamma_1] eps != 0, so d_mu eps = lam Gamma_mu eps has no solution on flat M4 unless lam = 0 (single-constant ansatz A = lam * 1_13)"
+    },
+    {
+      "name": "E1_solution_set_is_UNIFORM_across_the_three_channels",
+      "ok": true,
+      "detail": "KILL BRANCH (b) FIRES: no channel-selectivity, hence no pairing information. The cell content is now the alpha SOLVED from the 64-dim residual, which depends on chi6 -- so this check CAN return False (F4 shows it does). But see F7: it is still a RESTATEMENT of E-L3B, not independent evidence."
+    },
+    {
+      "name": "E2_t_sectors_carry_different_alpha_neither_preferred",
+      "ok": true,
+      "detail": "t=0 and t=1 require different alpha on the two invariant frames, with equal dimension -> NO sector SELECTION. The (1,2)/(2,1) rep LABELS are hard-coded strings cited to C38, NOT computed here (skeptic finding, accepted); only the frame/alpha content is computed."
+    },
+    {
+      "name": "E3_reading_i_single_constant_only_t_in_0_1_survives",
+      "ok": true,
+      "detail": "reading (i), A = lam*1_13 with lam = 0 forced by flat M4 (check D4): surviving t = [0.0, 1.0]. NOT used to fill the table -- lam = 0 annihilates chi6, so reading (i) has zero cross-factor content by arithmetic (skeptic finding, accepted). And see F5: it restates round72 H1b."
+    },
+    {
+      "name": "E4_reading_ii_block_scalar_A_every_t_survives",
+      "ok": true,
+      "detail": "41/41 grid points admit a solution with a free alpha -> in the STANDARD generalized-Killing reading the constraint has ZERO t-selection content. Both readings agree on E1 (channel uniformity), which is the kill."
+    },
+    {
+      "name": "E5_a_Z2_carrier_CAN_produce_the_asymmetry__bandwidth_argument_withdrawn",
+      "ok": true,
+      "detail": "with a 2+1 chi6 assignment the table IS channel-asymmetric, which satisfies claim.md's predicate. So 'a Z3 label cannot pass through a Z2 carrier' never entailed the kill -- WITHDRAWN. The operative fact is chi6's CONSTANCY (L5/G74B), not the bandwidth count."
+    },
+    {
+      "name": "F1_round114_collapse_reproduced_explicitly",
+      "ok": true,
+      "detail": "sum_i Gamma^i A(e_i) = -tr(A) * 1 for 20 random diagonal A -- the EXACT round114 failure mode. NO quantity of this shape is used as evidence anywhere in this round; sections D/E use the FULL first-order equation."
+    },
+    {
+      "name": "F2_output_depends_on_every_input_varied",
+      "ok": true,
+      "detail": "lambda moves under all 7 perturbations: {'t': -0.5, 'rho3': 0.15, 'chi4': 0.6, 'chi6': 0.6, 'frame_L_vs_R': 1.0, 'structure_constant': -0.25000000000000006, 'torsion_normalisation': 0.3}. CORRECTED FRAMING (both skeptic passes, accepted): a previous draft said 'round114's -tr(A) moved under NONE of its analogous inputs'. THAT IS FALSE -- round114 computed D^s = s/2 - 3/2, which moves under s and has a zero crossing at s=3 (round114 decision.md:23-26). Input-dependence was never round114's failure criterion; ONE-LINE DERIVABILITY FROM THE SOURCE was. F2 therefore shows only that lambda is a non-constant function of its own arguments. The real round114 test is F7."
+    },
+    {
+      "name": "F3_parity_theorem_is_representation_generic",
+      "ok": true,
+      "detail": "the section-B parity theorem survives 5 random Cl(6) basis changes. DECLARED LIMITATION, not a claim: it is a fact about dim 3 ODD / dim 6 EVEN, true for ANY M3 x M6, and carries NO information about THIS background."
+    },
+    {
+      "name": "F4_detector_positive_control_on_the_SOLVER",
+      "ok": true,
+      "detail": "real inputs -> 1 distinct SOLVED alpha set; injected channel-dependent chi6 -> 2. The injection now reaches the solution set, so E1 is a check that CAN fail."
+    },
+    {
+      "name": "F5_t_selection_is_a_restatement_of_round72_H1b",
+      "ok": true,
+      "detail": "lambda = 0 turns the joint constraint into 'a nabla^t-parallel spinor exists', which round72 H1b already PROVED holds exactly at t = 0,1. The 13D apparatus adds NOTHING to that half. Flagged, not claimed as new."
+    },
+    {
+      "name": "F6_anticommutation_survives_general_GL64_similarity",
+      "ok": true,
+      "detail": "10 GL(64,C) similarities, worst scaled residual 1.25e-15. SCOPE (skeptic finding, accepted): F3 and F6 re-check only parity_facts (B1/B2/B7) and anticommutation -- they do NOT re-check B5/B6, on which the bandwidth count rested. Since that count is withdrawn (E5), nothing now depends on the gap."
+    },
+    {
+      "name": "F7_headline_is_a_RESTATEMENT_of_EL3B_not_independent_evidence",
+      "ok": true,
+      "detail": "the three S6 input dicts are literally equal, so 'the columns are identical' follows in one line from E-L3B + L5 with NOTHING this round computed. By round114's own stated criterion the headline is a RESTATEMENT. Prior art saying the same: null_results G44-B1 ('S6 blind to tau'), GAP-4 ('no S3 quantum number to mix, structurally not just empirically'), Round81 ('omega=Z1Z2Z3=I2 is central'), pearl rows 22 and 36. The round's positive content is section G, not this."
+    },
+    {
+      "name": "G1_C134_bilinear_vanishes_on_chiral_content",
+      "ok": true,
+      "detail": "P_L Gamma^0 Omega_3 P_L = P_R Gamma^0 Omega_3 P_R = 0 -- C134 route 2 reproduced"
+    },
+    {
+      "name": "G2_linear_operator_does_NOT_vanish_on_chiral_content",
+      "ok": true,
+      "detail": "P_L Omega_3 P_L != 0: Omega_3 COMMUTES with gamma_5, so it preserves 4D chirality. G1's vanishing comes entirely from the Gamma^0 insertion of the Dirac adjoint, which a linear-in-spinor constraint does not have."
+    },
+    {
+      "name": "G3_Omega3_commutes_with_gamma5",
+      "ok": true,
+      "detail": "the structural reason for G2"
+    },
+    {
+      "name": "G4_Gamma0_anticommutes_with_gamma5",
+      "ok": true,
+      "detail": "the structural reason for G1"
+    },
+    {
+      "name": "G5_S3_torsion_two_forms_preserve_4D_chirality",
+      "ok": true,
+      "detail": "so C134's chirality-flip kill cannot fire on this round's construction. C134 section 8's assertion VERIFIED, not assumed."
+    },
+    {
+      "name": "H1_parity_theorem_holds_in_the_other_module",
+      "ok": true,
+      "detail": "sections B1/B2/B7 unchanged for gam7_sign = -1"
+    },
+    {
+      "name": "H2_pairing_law_holds_in_the_other_module",
+      "ok": true,
+      "detail": "section D2 unchanged: lambda = mu * chi4 * chi6 in both modules"
+    },
+    {
+      "name": "H3_route2_non_transfer_holds_in_the_other_module",
+      "ok": true,
+      "detail": "section G unchanged: the bilinear dies, the linear operator does not"
+    },
+    {
+      "name": "I1_Omega3_acts_as_chi4_chi6_on_the_factorised_ansatz",
+      "ok": true,
+      "detail": "Omega_3 eps = chi4*chi6*eps exactly, all 4 chirality combinations"
+    },
+    {
+      "name": "I2_dilatino_condition_on_the_S3_leg_forces_t_one_half",
+      "ok": true,
+      "detail": "T_3 . eps = (2(2t-1)/rho3) * chi4*chi6 * eps, which vanishes ONLY at t = 1/2 (41-point grid). So the ALGEBRAIC half of the type-II system, if imposed with the S6 torsion switched off, reproduces C134's kill from a completely different direction. NOT imposed in sections D/E; recorded so the scope gap is explicit."
+    },
+    {
+      "name": "I3_dilatino_condition_is_also_channel_blind",
+      "ok": true,
+      "detail": "its only cross-factor content is the SAME chi4*chi6 pair of Z2 carriers, so it adds no bandwidth and cannot revive P14. With the S6 torsion restored the condition becomes a relation between t and S6 data -- a genuine cross-factor t-selection candidate (Relaxation Map), still channel-blind. The NK torsion coefficient c_6 is [UNKNOWN] here and is deliberately NOT invented."
+    },
+    {
+      "name": "J1_off_block_A_carries_a_full_Cl6_vector_not_a_grading_bit",
+      "ok": true,
+      "detail": "sum_a Gamma^{6+a} is NOT in span{1, Gamma_7}: an off-block symmetric A puts a Cl(6) vector into the S3 equation, so the '(Z2)^2 bandwidth' claim is FALSE without an extra hypothesis. REPAIR: the theorem now requires A to have no off-block component. That IS forced by G2-invariance -- SU(3) acts on T_p S6 = R^6 = 3 + 3bar with NO trivial summand, so an SU(3)-invariant vector is 0 -- but it must be ARGUED, and a non-G2-invariant A is exactly route (b)."
+    },
+    {
+      "name": "J2_channel_dependent_S6_data_pairs_t_to_the_channel_with_no_Z2_bottleneck",
+      "ok": true,
+      "detail": "hypothetical beta_alpha -> three DISTINCT t values {'8_v': 0.1, '8_s': 0.35, '8_c': 0.8}: a genuine 3-way channel-selective pairing, obtained through the shared scalar lambda and NOT through any Z2 carrier. So the bandwidth bound never bounded the pairing. The binding constraint is E-L3B (all beta_alpha equal), i.e. prior art -- which is the honest statement of what kills P14."
+    }
+  ],
+  "data": {
+    "ast_audit_check_call_sites": 57,
+    "A_cl13_worst_anticommutator_residual": 0.0,
+    "A_omega13_scalar_value": "(1+0j)",
+    "A_Omega3_Omega6_over_gamma5": "1j",
+    "A_omega3_intrinsic": "(1+0j)",
+    "B_worst_even_commutator": 0.0,
+    "C_killing_constant_law": {
+      "left": "-t/rho3",
+      "right": "+(1-t)/rho3"
+    },
+    "C_Dirac_n0_eigenvalues": {
+      "t=0.0|left": 0.0,
+      "t=0.0|right": -3.0,
+      "t=0.25|left": 0.75,
+      "t=0.25|right": -2.25,
+      "t=0.5|left": 1.5,
+      "t=0.5|right": -1.5,
+      "t=1.0|left": 3.0,
+      "t=1.0|right": 0.0,
+      "t=1.3|left": 3.9000000000000004,
+      "t=1.3|right": 0.9000000000000001
+    },
+    "D_pairing_law": "lambda = mu(t,rho3,frame) * chi4 * chi6",
+    "E_table_3x2": {
+      "8_v|t=0": {
+        "channel": "8_v",
+        "t": 0.0,
+        "reading": "(ii) block-scalar A; alpha SOLVED from the 64-dim residual",
+        "chi6": 1,
+        "S3_solution_space": [
+          "left-invariant (1,2): alpha = +0.000000",
+          "right-invariant (2,1): alpha = +1.000000"
+        ],
+        "S3_dim_C": 4,
+        "S6_solution": "[UNKNOWN] -- NOT COMPUTED this round; identical across the three channels because the inputs are (E-L3B), which is all the kill needs",
+        "M4_solution": "constant spinor, dim_C 4",
+        "S6_connection_id": "canonical_G2_equivariant"
+      },
+      "8_v|t=1": {
+        "channel": "8_v",
+        "t": 1.0,
+        "reading": "(ii) block-scalar A; alpha SOLVED from the 64-dim residual",
+        "chi6": 1,
+        "S3_solution_space": [
+          "left-invariant (1,2): alpha = -1.000000",
+          "right-invariant (2,1): alpha = +0.000000"
+        ],
+        "S3_dim_C": 4,
+        "S6_solution": "[UNKNOWN] -- NOT COMPUTED this round; identical across the three channels because the inputs are (E-L3B), which is all the kill needs",
+        "M4_solution": "constant spinor, dim_C 4",
+        "S6_connection_id": "canonical_G2_equivariant"
+      },
+      "8_s|t=0": {
+        "channel": "8_s",
+        "t": 0.0,
+        "reading": "(ii) block-scalar A; alpha SOLVED from the 64-dim residual",
+        "chi6": 1,
+        "S3_solution_space": [
+          "left-invariant (1,2): alpha = +0.000000",
+          "right-invariant (2,1): alpha = +1.000000"
+        ],
+        "S3_dim_C": 4,
+        "S6_solution": "[UNKNOWN] -- NOT COMPUTED this round; identical across the three channels because the inputs are (E-L3B), which is all the kill needs",
+        "M4_solution": "constant spinor, dim_C 4",
+        "S6_connection_id": "canonical_G2_equivariant"
+      },
+      "8_s|t=1": {
+        "channel": "8_s",
+        "t": 1.0,
+        "reading": "(ii) block-scalar A; alpha SOLVED from the 64-dim residual",
+        "chi6": 1,
+        "S3_solution_space": [
+          "left-invariant (1,2): alpha = -1.000000",
+          "right-invariant (2,1): alpha = +0.000000"
+        ],
+        "S3_dim_C": 4,
+        "S6_solution": "[UNKNOWN] -- NOT COMPUTED this round; identical across the three channels because the inputs are (E-L3B), which is all the kill needs",
+        "M4_solution": "constant spinor, dim_C 4",
+        "S6_connection_id": "canonical_G2_equivariant"
+      },
+      "8_c|t=0": {
+        "channel": "8_c",
+        "t": 0.0,
+        "reading": "(ii) block-scalar A; alpha SOLVED from the 64-dim residual",
+        "chi6": 1,
+        "S3_solution_space": [
+          "left-invariant (1,2): alpha = +0.000000",
+          "right-invariant (2,1): alpha = +1.000000"
+        ],
+        "S3_dim_C": 4,
+        "S6_solution": "[UNKNOWN] -- NOT COMPUTED this round; identical across the three channels because the inputs are (E-L3B), which is all the kill needs",
+        "M4_solution": "constant spinor, dim_C 4",
+        "S6_connection_id": "canonical_G2_equivariant"
+      },
+      "8_c|t=1": {
+        "channel": "8_c",
+        "t": 1.0,
+        "reading": "(ii) block-scalar A; alpha SOLVED from the 64-dim residual",
+        "chi6": 1,
+        "S3_solution_space": [
+          "left-invariant (1,2): alpha = -1.000000",
+          "right-invariant (2,1): alpha = +0.000000"
+        ],
+        "S3_dim_C": 4,
+        "S6_solution": "[UNKNOWN] -- NOT COMPUTED this round; identical across the three channels because the inputs are (E-L3B), which is all the kill needs",
+        "M4_solution": "constant spinor, dim_C 4",
+        "S6_connection_id": "canonical_G2_equivariant"
+      }
+    },
+    "E_surviving_t_on_grid": [
+      0.0,
+      1.0
+    ],
+    "E_surviving_t_reading_ii_count": 41,
+    "E5_two_plus_one_split_would_satisfy_the_predicate": true,
+    "F1_round114_collapse_reproduced": true,
+    "F_lambda_baseline": -0.3,
+    "F_lambda_sensitivity": {
+      "t": -0.5,
+      "rho3": 0.15,
+      "chi4": 0.6,
+      "chi6": 0.6,
+      "frame_L_vs_R": 1.0,
+      "structure_constant": -0.25000000000000006,
+      "torsion_normalisation": 0.3
+    },
+    "F4_real_alphas_distinct": 1,
+    "F4_fake_alphas_distinct": 2,
+    "F_worst_similarity_residual": 1.2548755479733704e-15,
+    "F7_verdict_is_one_line_derivable_from_EL3B": true,
+    "I_Omega3_eigenvalue_on_factorised_eps": {
+      "chi4=+1,chi6=+1": 1,
+      "chi4=+1,chi6=-1": -1,
+      "chi4=-1,chi6=+1": -1,
+      "chi4=-1,chi6=-1": 1
+    },
+    "I_dilatino_zero_at": [
+      0.5
+    ],
+    "J2_t_of_channel_under_hypothetical_beta": {
+      "8_v": 0.1,
+      "8_s": 0.35,
+      "8_c": 0.8
+    }
+  }
+}

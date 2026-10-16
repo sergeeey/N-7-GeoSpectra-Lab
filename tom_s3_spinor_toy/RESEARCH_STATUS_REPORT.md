@@ -6,6 +6,240 @@
 
 ---
 
+## ⚠️ Status correction (2026-09-09) — the 2026-09-05 box below is itself now 30 rounds stale
+
+`C161–C190` landed since 2026-09-05. **`N_gen=3` status is UNCHANGED — still
+CONDITIONAL** (`CLAIM_LEDGER.yaml` `C4_NGEN3_HEADLINE`); none of the four
+dependencies (`C1_S6_INDEX_1`, `C2_ROUND59_KERNEL_DIM1`,
+`C3_KT8_NO_ZERO_MODE`, `C_G67C3_THIRD_CHANNEL`) is touched by this window.
+
+- **C161–C166 — OB14 candidate scoping** closes the remaining external-
+  literature check: `C166` reads AHL2023 (arXiv:2203.02961) directly from
+  its own LaTeX source and confirms it does not supply a transferable
+  coupling-data construction for OB14's still-open second-`3bar` gap.
+  **OB14 stays `BLOCKED-INTERNAL`** — unchanged from the 2026-09-05 box.
+- **C167–C173 — the `P4` diagonal-`ℤ₃`-orbifold escalation, run to its
+  terminus.** `C173`'s own closing argument: `Spin(8)` is connected, so
+  every inner automorphism is realized by some `g∈Spin(8)`, while triality
+  is an OUTER automorphism of `Spin(8)`/`D₄` — no construction built purely
+  from this project's own `G₂`/`SU(3)`+`S³` geometric content can ever be
+  outer. **This closes the entire `P4` line as a route to OB1** (not just
+  this one candidate); `C173`'s own text names the only two routes left:
+  an independent fiber-`Spin(8)` postulate (`P5`, explicitly flagged high
+  AOG-5 risk — "no motivation beyond wanting to unblock OB1") or external
+  input from Tom Lawrence. See `OPEN_BLOCKERS.md` OB1 section for the full
+  chain and a 2026-09-09 follow-up check (below).
+- **C176/C177 (2026-09-06) — `P1` (spectral action) tested, closes.** Both
+  the `a₂` Seeley-DeWitt term and the exact-spectrum spectral action are
+  proven analytically even in `(t−½)` and land on a single well at `t=½` —
+  the opposite of even the weakest outcome (`{0,1}`-set-selection) OB13
+  would need. **This exhausts `C132`'s own prioritized queue through its
+  `P1`/`P2`/`P3`/`P4`/`P14` tier** — every item ranked above `P5` in that
+  round's own CDT scoring is now closed.
+- **C174–C178 — OB11/Butruille robustness thread.** Channel-independence
+  of the degenerate-perturbation-theory question is confirmed
+  methodologically (reuses `C173`'s own theorem, not new physics).
+- **C179–C182 (2026-09-07) — prompted by Tom Lawrence's own reply** (sent
+  letter, 2026-09-07 18:39, asking two explicit questions about writing
+  `S²`/`S³` spinors as coordinate functions): establishes, independent-
+  skeptic-confirmed, that spinors on `S²`/`S³` cannot be written as naive
+  multiplet-of-functions objects — a real, narrow mathematical result.
+  **Separately, this sequence surfaced a significant methodology finding:**
+  5 of 6 verification checks written in this round-sequence could not fail
+  by construction (a cannot-fail conjunct was even found inside the script
+  built to audit the other five); self-review caught none of them across
+  three layers, only external/skeptic passes did. A forward-enforcement
+  script (`scripts/check_negative_control.py`) was installed 2026-09-07;
+  its own tracked prediction ("does the skeptic-catch rate drop once
+  forward-enforced") remains **unscored — 0 of the 5 rounds needed to score
+  it have been counted yet**, `C183`–`C190` postdate the install and should
+  count toward this the next time this file or `pearl_registry/INDEX.md`
+  is touched.
+- **C183 (2026-09-08)** — closes the Butruille/Wolf-classification duality
+  question for round59/round65, correcting its own tautological check
+  mid-round.
+- **C184–C190 (2026-09-08/09) — the Tom-correspondence S²/S³-spinor
+  chain.** Explicit S²/S³ eigenspinors in Tom's own coordinates/labels
+  (`C184`); the S² Dirac operator built explicitly, closing a gap the sent
+  letter itself carried (`C185`); canonical, exact S³ eigenspinors over
+  `ℚ(i)` (`C186`); the Euler-angle reduction and its `(m,n)` periodicity,
+  derived precisely and closing a Round-24 fork as REJECTED-not-vague
+  (`C187`/`C187b`); `D` rebuilt directly from the quaternion generators,
+  16/16, closing the `C187` operator-construction gap (`C188`); the
+  connection-correction shift derived from the actual Levi-Civita connection
+  (not fitted) for the right- and then left-acting operator (`C189`/`C190`): the
+  additive shift `s = D_full − D₀` is `−3/2` (right-acting) and `+3/2` (left-acting).
+  `C190` first read the letter's pairing of the two signs as backwards; a 2026-10-03
+  check withdrew that as convention-dependent: the pairing numerically equals
+  `C180`'s table under `C180`'s convention `c = D₀ − D_phys = −s`, and `C189` read the
+  same sentence as consistent with the derivation. No error of the letter is
+  established; which reading is right is [UNKNOWN] until the letter's sentence is
+  re-read.
+  **Explicitly NOT about OB1/S⁶/triality** — grep-verified zero hits for
+  those terms across all seven `C184–C190` `decision.md` files.
+- **CHECKED, 2026-09-09 (session-level, no new round ID):** does the
+  `C184–C190` chain supply new motivation for `P5`? **No** — `S³`'s own
+  `SU(2)_L×SU(2)_R` IS the quaternion subalgebra `H⊂O` already tested and
+  killed as `Stab_{G₂}(H)` (2026-07-15 pearl: subgroup of `G₂`, inherits
+  its channel-blind restriction, "fails to distinguish ANY of the three
+  channels"); `C184–190` gives this same embedding explicit coordinates,
+  not a new abstract subgroup. Full trace: `OPEN_BLOCKERS.md` OB1 section.
+  **The two most recent research threads in this project (`C159–C177`
+  OB1-internal, `C179–C190` Tom-correspondence) remain topically adjacent,
+  not substantively linked** — OB1/H1c stays correctly `PARKED`, pending
+  either an as-yet-unproposed non-`G₂` candidate or external input.
+
+**Test suite:** `[VERIFIED]` — this session ran the full suite directly
+(foreground Bash, real run, not delegated) on 2026-09-09 and read the exact
+output: **"2537 passed, 4 skipped, 75 warnings in 395.88s (0:06:35)"**, exit
+code 0, immediately before the `C190` commit.
+
+Current entry point for this window: `OPEN_BLOCKERS.md` OB1 section (the
+`P4`/`P5`/Tom-correspondence trace above), `null_results/INDEX.md` and
+`parked/INDEX.md` for terse per-round verdicts, `pearl_registry/INDEX.md`
+for the un-scored negative-control prediction and a scan-recommended
+cluster of ~15 pending methodology pearls (rows ~78–101, none individually
+overdue, but never triaged as a group). This box is additive per this
+file's own established pattern; the 2026-09-05 correction below remains
+historically accurate for what it covers and is not retracted. **Same known
+limitation as every prior box here:** this one will itself go stale as more
+rounds land; `ALIVE_BRANCHES.md` (last updated 2026-08-12, ~90 rounds
+behind) needs the same kind of refresh and was not attempted in this pass.
+
+---
+
+## ⚠️ Status correction (2026-09-05) — the 2026-08-30 box below is itself now 49 rounds stale
+
+The 2026-08-30 box below stops at C111. C112–C160 landed since (2026-08-30
+through 2026-09-05). **`N_gen=3` status is UNCHANGED — still CONDITIONAL,
+unweakened** (`CLAIM_LEDGER.yaml` `C4_NGEN3_HEADLINE`: `truth_status:
+CONDITIONAL`); no round in this window touches its dependencies
+(`C1_S6_INDEX_1`, `C2_ROUND59_KERNEL_DIM1`, `C3_KT8_NO_ZERO_MODE`,
+`C_G67C3_THIRD_CHANNEL`) — every round below that could plausibly bear on
+it says so explicitly in its own `does_not_imply`.
+
+- **C112–C118 (+ negative control C122)** — a self-contained Peter-Weyl
+  reality-preservation sub-thread, explicitly **not** about OB1/S⁶/triality
+  (per its own `parked/INDEX.md` entry): characterized the window where
+  single-component removal preserves spectral reality (`j2 ∈ {3/2,2}`, i.e.
+  `n∈{4,5}`) against two candidate mechanisms (a representation-theoretic
+  "asymmetric rule" and a spectral-density alternative). Neither mechanism
+  explains *why* the window is narrow to exactly those two cells; the
+  density alternative's own negative control (C122) took 3 rounds, each
+  skeptic-caught a genuine defect (category error, mismatched search
+  instruments, then a grid-resolution artifact), and is itself now inconclusive.
+  **PARKED** (`parked/INDEX.md` `PW-ASYMMETRIC-RULE-MECHANISM`,
+  `C122-NEGATIVE-CONTROL`) — no reopen condition met.
+- **C119–C131 (+ C159), OB1 parent-action / bordism-Pin sub-program** — a
+  long chain testing candidate "parent action" mechanisms that might force a
+  specific torsion parameter `t` on the S³ factor. Bismut-Ricci-flat (C119),
+  Yang-Mills/Chern-Simons transgression (C123/C124, `STRUCTURAL_NO_GO` for
+  the whole Lovelock-Cartan class), full gauge-equivalence (C125), Pin-structure
+  existence on the relevant mapping torus (C128–C131) — each closed for a
+  distinct, carefully-scoped reason, and **four independent routes now
+  converge on the same missing prerequisite: round95's still-unbuilt S⁶↔S³
+  link**. C159 (2026-09-05) tested the cheapest possible shortcut around
+  that link — a parity-counting argument that would have shown a pairing
+  rule is impossible outright for `N_gen=3` odd — and found it does **not**
+  hold in general (C132/C133's `all→both` non-exclusive coupling pattern
+  evades it); OB1/H1c stays **PARKED**, unresolved, but the remaining gap is
+  now sharply characterized rather than open-ended.
+- **C132–C138** — further OB1 parent-action candidates from a 13D survey
+  (C132) and its own ranked follow-ups: a symmetry-assumption ladder (C133),
+  Einstein-Cartan torsion sourced by a fermion bilinear (C134, REJECT — the
+  needed source term is exactly chirality-flipping and vanishes on the
+  certified zero-mode sector), a joint Killing-spinor constraint (C136,
+  REJECT — tiered `[RESTATEMENT]`, follows from already-registered facts),
+  a fermion-condensate mechanism (C137, REJECT — no dynamical derivation
+  available in this project's frozen content), and the APS reduced
+  eta-invariant (C138, NULL — closes `pearl_registry` row 116, same
+  underlying reason as C121: nothing in this family singles out `t=0`).
+- **C139–C146, OB14 (opened C139)** — built a genuinely different twist
+  bundle (`m`, not `Sigma`) for round59's `D_{S⁶}` construction and found
+  `kernel=0` where `Sigma` gives `kernel=1` — the first evidence `Sigma` is
+  not the unique twist bundle compatible with this project's calibration
+  discipline. Follow-ups found something more fundamental: the kernel of
+  every twist bundle tested (4/4 cases) exactly equals a graded rank-nullity
+  floor computable from pure `su(3)` branching data alone (C141), the one
+  natural matched-shape alternative (`m⊕2·1`) gives the same floor (C141),
+  and an external Kostant/Landweber literature shortcut was checked and
+  closed (C144 found round59's *untwisted* operator IS Kostant's cubic
+  Dirac term; C145 found the *twisted* case is provably **not** an instance
+  of Kostant/Landweber's `D_μ`, closing that route). **OB14 is
+  `BLOCKED-INTERNAL`** — no internally-buildable test remains identified;
+  needs either a genuinely new geometric construction or external input.
+- **C147–C158 — connection-coefficient / Weyl-group sub-thread on S⁶ and
+  SU(3)/T²** (a separate line from OB1/OB14, not primarily about `N_gen=3`).
+  C147 proved the S⁶ twist-connection coefficient vanishes only at the zero
+  connection (a theorem over the whole admissible family, not a scan). A
+  parallel test on the second homogeneous nearly-Kähler space, SU(3)/T²,
+  was first reported vacuous (C151) then **retracted same day**: a
+  non-equivariant sign bug in the invariant-sector construction, caught by
+  a context-blind skeptic pass from code alone; on the corrected sector
+  C151's own frozen, pre-registered prediction was executed and confirmed
+  (C152). C153 explained the resulting pattern via a per-root-plane
+  multiplicative law. **C154, C156, and C158 each attempted to turn a
+  numeric coincidence into a general rule and, on inspection, found the
+  rule was a forced consequence of already-known facts rather than a new
+  discovery** — the same shape recurring a fifth time after C144/C153
+  (C157, which *did* survive as a genuine, fully-verified classical theorem
+  — a Weyl-character-formula balance argument, exact on 18 root systems
+  including `E₆` — was still correctly reported as "not a discovery" once
+  checked against the literature, the special case of a 1998
+  Gross-Kostant-Ramond-Sternberg formula built on the same Kostant operator
+  C144 already identified). **This recurring pattern is a genuine
+  methodological development, separate from any physics result**: this
+  session adopted a project-wide **five-gate discovery mandate** — a
+  result may only be called a "discovery" if it clears all five of
+  (1) a proven theorem, (2) an out-of-sample/held-out test, (3) a null
+  model with real discriminating power, (4) a literature novelty audit,
+  and (5) an independent context-blind skeptic pass — precisely to catch
+  this failure mode before it reaches a claim.md headline.
+- **C150 — G44 Information-Retention Gate** — an operational pre-filter for
+  any future OB4 (third triality channel, `8_v`) proposal, assembling
+  already-registered results (C62/C63/C72) into a yes/no gate. Explicitly
+  labelled a **synthesis, not a new theorem** — passing is necessary, not
+  sufficient; only failing is decisive. Does not touch OB4's own still-open
+  status.
+- **C160 — OB12 RESOLVED** (2026-09-05). The informally-inherited claim that
+  this project's finite spectral triple has `KO-dimension 6` (sign triple
+  `(J²,JDJ⁻¹/D,JγJ⁻¹/γ)=(+1,+1,−1)`) was source-traced for the first time to
+  a primary reference: Chamseddine-Connes-Marcolli (arXiv:hep-th/0610241),
+  eq. (2.19), quoted directly and independently re-fetched by the
+  orchestrating session before accepting — same variable convention, no
+  reordering needed. `docs/ko_dimension_registry.md` updated to
+  `mapping_status: RESOLVED`. **The first blocker in this window to reach a
+  genuine CLOSED status**, rather than PARKED/BLOCKED/scoped.
+
+**Test suite:** `[VERIFIED]` — resolved, not a real discrepancy: this
+session ran the full suite directly (background Bash, not delegated) on
+2026-09-05 and read the actual output verbatim: **"2524 passed, 4 skipped,
+75 warnings in 476.45s (0:07:56)"**, exit code 0. `pytest` reports a
+`failed` count explicitly only when failures occur; none was reported, so
+`0 failed` and `4 skipped` are both true of the same single run, not
+competing self-reports — the two activeContext.md phrasings a later pass
+flagged as "unreconciled" were simply two partial descriptions of one
+result, now stated in full. A fresh independent re-run was not repeated
+for this box, since a byte-for-byte-cited existing run already satisfies
+this file's own evidence bar.
+
+Whole-repo prior context: `reports/RESEARCH_AUDIT_WHOLE_REPO_2026-08-30.md`.
+Current entry point for this window: `OPEN_BLOCKERS.md` sections OB1
+(bordism/Pin sub-program + C159), OB12 (now RESOLVED), OB14 (twist-bundle
+question, BLOCKED-INTERNAL), OB4 (G44 gate), OB13 (parity/gauge-equivalence);
+`null_results/INDEX.md` and `parked/INDEX.md` for the terse per-round
+verdicts; `pearl_registry/INDEX.md`'s 2026-09-04/2026-09-05 rows for the
+"forced not discovered" pattern and the five-gate mandate; `CLAIM_LEDGER.yaml`
+for the C139–C160 entries' full `does_not_imply` scoping. This box is
+additive per this file's own established pattern; the 2026-08-30 correction
+below remains historically accurate for what it covers and is not retracted.
+**Same known limitation as every prior box here — now stated for the third
+time running:** this one will itself go stale as more rounds land; the
+automated-staleness-check idea first floated 2026-08-12 is still not
+implemented.
+
+---
+
 ## ⚠️ Status correction (2026-08-30) — the 2026-08-12 box below is itself now 18 rounds stale
 
 The 2026-08-12 correction below stops at C102. C103–C111 landed since (all still

@@ -60,3 +60,9 @@ Adding Casimir energy changes the landscape; the unconstrained minimum shifts si
   - Coefficient magnitude: plausible (0.27 × |C_Dirac|) ✓
   - 2D minimum stability: confirmed ✓
   - Path recovery: OPEN (rho3=rho6^2 not dynamically reproduced yet)
+
+
+---
+
+## Addendum 2026-10-03 (C219; original text above unedited)
+C219 (a) rho6*=1.090 is a fit artifact (exact 1.1541); this script hard-codes the old G91 minimum, so a patched rerun is invalid and G92 needs the new G91 minimum first. (b) `c_dirac_theoretical = -11/240` (script line ~193, 'Camporesi-Higuchi') is not the S3 Dirac value: the zeta-regularised sum is -17/960 (|Dirac| = 17/480 or 17/960); the plausibility ratio 0.27 becomes 0.35 or 0.70. (c) With C219's computed zeta_FP in place of the parametric C/rho3^4, the attractive-sign minimum sits at rho3 ~ 0.44-0.64, still inside the EFT-invalid region. See experiments/20261003-c219-h8-computed-dirac-casimir-2d-landscape/SW_FIT_AUDIT.md.

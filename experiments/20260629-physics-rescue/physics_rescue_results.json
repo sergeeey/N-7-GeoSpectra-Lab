@@ -33,6 +33,6 @@
   "summary": {
     "all_killed": true,
     "H0_status": "CONFIRMED",
-    "verdict": "S^3 x S^6 with R>0 cannot produce chiral fermions via known mechanisms"
+    "verdict": "S^3 x S^6 with R>0: the four SPECIFIC untwisted/minimal mechanisms tested here (H1 untwisted gauge bundle, H2 minimal H^2/H^4 flux on S^6 alone, H3 single discrete quotient, H4 minimal finite algebra) cannot produce chiral fermions -- not a claim that every mechanism in the literature is excluded (see module docstring)."
   }
 }

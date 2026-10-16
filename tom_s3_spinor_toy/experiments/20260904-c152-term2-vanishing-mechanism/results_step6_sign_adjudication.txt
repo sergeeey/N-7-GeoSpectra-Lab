@@ -1,0 +1,56 @@
+STEP 1  J-aligned m basis built (X<->Y swapped on planes with eps=-1)
+        EPS_NK = (-1, 1, -1)  ->  J_NK is the STANDARD J_0 in this basis
+STEP 1  basis is B-ORTHONORMAL: True   max|Gram - I| = 0.000e+00
+STEP 2  Nomizu Lambda(e_i) = (1/2)[e_i,.]_m built; max|L + L^T| = 0.000e+00
+STEP 3  round59's Clifford algebra reused unmodified (e_i^2 = -1 verified)
+
+==============================================================================
+STEP 4  CALIBRATION GATE (this gate CAN fail; it pins the geometry)
+==============================================================================
+  T^2-invariant spinors in Sigma : 2   (Stage 1b predicted 2)
+  D_Sigma on the invariant 2-plane, eigenvalues: [ 3.+0.j -3.+0.j]
+  both eigenvalues nonzero        : True
+  eigenvalues equal and opposite  : True   (CH2016 Sec.2: psi, Vol.psi carry +-lambda)
+  => CALIBRATION PASSED. |D-eigenvalue| on invariant spinors = 3.00000000
+     (S^6's own certified value under its normalisation was sqrt(3) = 1.73205081)
+
+==============================================================================
+STEP 5  Invariant sectors of Sigma (x) W  -- cross-check of Stage 1b
+==============================================================================
+  domain dim (Sigma_odd  (x) W)^T2 = 3   (Stage 1b predicted 3)
+  target dim (Sigma_even (x) W)^T2 = 3   (Stage 1b predicted 3)
+  MATCHES Stage 1b's weight-arithmetic prediction: True
+
+==============================================================================
+STAGE 2a VERDICT
+==============================================================================
+  metric/basis orthonormal under CH2016's B   : True
+  Nomizu operators are metric connections     : True
+  Killing-spinor calibration gate             : PASSED (|mu| = 3.000000)
+  sector dims reproduce Stage 1b's prediction : True
+
+  Geometry is built and independently calibrated. c is STILL NOT
+  COMPUTED -- extracting it is Stage 2b, a separate file.
+==============================================================================
+ADJUDICATOR: which sector generator does D actually commute with?
+==============================================================================
+  G with +1*T2_M in the W slot (C151's choice     ) : max|[D,G]| = 2.000e+00
+  G with -1*T2_M in the W slot (skeptic's proposal) : max|[D,G]| = 0.000e+00
+
+  -> D is equivariant for the -1 convention (0.00e+00 vs 2.00e+00)
+
+  same adjudication on S^6 (where C145's 1.154701 independently fixes it):
+    G with +1*ADNU  : max|[D,G]| = 3.333e-01  
+    G with -1*ADNU  : max|[D,G]| = 1.509e-17  = C139/C145's choice
+
+==============================================================================
+CONSEQUENCE FOR C151 AND C152
+==============================================================================
+  C151's     sector (sgn=+1): dims (3,3)  max|Term1| = 0.000e+00  max|Term2| = 0.000e+00
+  skeptic's  sector (sgn=-1): dims (3,3)  max|Term1| = 0.000e+00  max|Term2| = 1.000e+00
+
+  VERDICT:
+    *** D does NOT commute with C151's generator. THE SKEPTIC IS RIGHT. ***
+    C151's invariant sector is built from an inconsistent action, so
+    C151's c == 0 AND every C152 conclusion resting on that sector
+    must be withdrawn, not merely weakened.

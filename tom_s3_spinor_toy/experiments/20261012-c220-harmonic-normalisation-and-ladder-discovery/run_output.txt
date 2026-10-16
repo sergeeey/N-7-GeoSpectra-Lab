@@ -1,0 +1,304 @@
+
+====================================================================================================
+PART A  Real harmonics: is  int x*x dS  proportional to r^2 or to r^4?
+====================================================================================================
+Set-up: x = r sin(th) cos(ph), y = r sin(th) sin(ph), z = r cos(th);  dS = r^2 sin(th) dth dph.
+So   x^2 dS = r^4 sin^3(th) cos^2(ph) dth dph   (r^2 from x^2, r^2 from dS).
+
+  [PASS] A1  identity (2): d/dphi[phi/2 + sin(phi)cos(phi)/2] = cos^2(phi)
+  int_0^2pi cos^2(phi) dphi = F2(2pi)-F2(0) = pi;   int_0^2pi sin^2(phi) dphi = 2pi - pi = pi
+  [PASS] A2  identity (3) as read: d/dtheta[cos(3th)/12 - 3cos(th)/4] = sin^3(th)
+  int_0^pi sin^3(theta) dtheta = F3(pi)-F3(0) = 4/3
+  [PASS] A3  d/dtheta[-cos^3(th)/3] = cos^2(th) sin(th)
+  int_0^pi cos^2(theta) sin(theta) dtheta = 2/3
+
+  int x^2 dS = r^4 * (int sin^3) * (int cos^2) = r^4 * 4/3 * pi = 4*pi*r**4/3
+  int y^2 dS = r^4 * (int sin^3) * (int sin^2) = r^4 * 4/3 * pi = 4*pi*r**4/3
+  int z^2 dS = r^4 * (int cos^2 sin) * (2 pi)  = r^4 * 2/3 * 2pi        = 4*pi*r**4/3
+  mixed: int xy dS ~ int_0^2pi sin(ph)cos(ph) = 0;  xz ~ int cos(ph) = 0;  yz ~ int sin(ph) = 0
+
+  Full double integrals (sympy, independent of the step-by-step route), Gram of (x,y,z) on S^2_r:
+  Matrix([[4*pi*r**4/3, 0, 0], [0, 4*pi*r**4/3, 0], [0, 0, 4*pi*r**4/3]])
+  [PASS] P1  int x^2 dS = int y^2 dS = int z^2 dS = 4 pi r^4/3 and all mixed integrals vanish (step route)
+  [PASS] P1b  full double-integral Gram matrix of (x,y,z) = (4 pi r^4/3) * identity
+
+  Dimension check: x^2 has degree 2 in r, dS has degree 2  => int x^2 dS must have degree 4.
+  candidate 4 pi r^2/3 has degree 2;  candidate 4 pi r^4/3 has degree 4
+  [PASS] A4  r^4 version passes the dimension test   (restatement, not counted)
+  [PASS] A5  NEGATIVE CONTROL: r^2 version FAILS the dimension test for x   (restatement, not counted)
+  The r^2 value 4 pi r^2/3 arises from EITHER of two different integrals:
+    route 1:  int (x/r)^2 dS = 4*pi*r**2/3   (degree 2): the integral of x/r, not of x;
+    route 2:  int x^2 dOmega = 4*pi*r**2/3   (degree 2): x^2 with the r^2 of dS left out.
+  This script does not decide which route anyone's calculation took; it shows both give r^2.
+  [PASS] A6  route 1: int (x/r)^2 dS = 4 pi r^2/3
+  [PASS] A6b  route 2: int x^2 dOmega (no r^2 from dS) = 4 pi r^2/3
+  [PASS] P2a  N = sqrt(3/(4pi))/r^2 equals (1/2) sqrt(3/pi)/r^2
+
+  Gram matrix of x'_i = N x_i with N = sqrt(3/(4 pi))/r^2:
+  Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+  [PASS] P2  normalised real harmonics x'_i = (1/2) sqrt(3/pi) x_i/r^2 have Gram matrix = identity
+
+  Other normalisations of the same three functions on S^2_r (what each needs):
+    int (x_i)^2 dS = 4*pi*r**4/3   =>  normalising constant sqrt(3)/(2*sqrt(pi)*r**2)
+    int (x_i/r)^2 dS = 4*pi*r**2/3   =>  normalising constant sqrt(3)/(2*sqrt(pi)*r)
+    int (x_i/r^2)^2 dS = 4*pi/3   =>  normalising constant sqrt(3)/(2*sqrt(pi))
+
+====================================================================================================
+PART A (numeric)  independent quadrature at r = 2
+====================================================================================================
+  numeric int x^2 dS = 67.0206432766;  4 pi r^4/3 = 67.0206432766;  4 pi r^2/3 = 16.7551608191
+  numeric int z^2 dS = 67.0206432766;  numeric int xy dS = -9.09e-16
+  [PASS] A7  numeric quadrature at r=2 agrees with 4 pi r^4/3 (rel. 1e-9) and not with 4 pi r^2/3
+
+====================================================================================================
+PART B  Complex harmonics normalised by the same method
+====================================================================================================
+Raw functions  p = x+iy, z, m = x-iy.   Gram matrix <f_a, f_b> = int conj(f_a) f_b dS:
+  Matrix([[8*pi*r**4/3, 0, 0], [0, 4*pi*r**4/3, 0], [0, 0, 8*pi*r**4/3]])
+  (|x+iy|^2 = x^2+y^2 gives 8 pi r^4/3;  z^2 gives 4 pi r^4/3: squared norms in the ratio 2 : 1 : 2.)
+  [PASS] P3a  raw complex functions are mutually orthogonal with squared norms 8pi r^4/3, 4pi r^4/3, 8pi r^4/3
+
+  Normalised: Y'_(1,1) = -sqrt(3/8pi) (x+iy)/r^2, Y'_(1,0) = sqrt(3/4pi) z/r^2, Y'_(1,-1) = +sqrt(3/8pi) (x-iy)/r^2
+  Gram matrix of (Y'_(1,1), Y'_(1,0), Y'_(1,-1)) =
+  Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+  [PASS] P3b  Gram matrix of the normalised complex harmonics = identity
+  [PASS] P3-(1,1)  Y'_(1,1) on S^2_r = Y_(1,1)(theta,phi)/r   (restatement, not counted)
+  [PASS] P3-(1,0)  Y'_(1,0) on S^2_r = Y_(1,0)(theta,phi)/r   (restatement, not counted)
+  [PASS] P3-(1,-1)  Y'_(1,-1) on S^2_r = Y_(1,-1)(theta,phi)/r   (restatement, not counted)
+  [PASS] P3-pos1  POSITIVE CONTROL: sympy Ynm(1,1) equals the Y_(1,1) used here
+  [PASS] P3-pos0  POSITIVE CONTROL: sympy Ynm(1,0) equals the Y_(1,0) used here
+  [PASS] P3-pos-1  POSITIVE CONTROL: sympy Ynm(1,-1) equals the Y_(1,-1) used here
+
+====================================================================================================
+PART C  Ladder operators on the sphere-normalised complex harmonics (polar and Cartesian)
+====================================================================================================
+Polar form (operators as used in C201/C206, attributed there to McMurry p.144 and not re-checked against the book; unit sphere, the 1/r of Y' passes through, see below):
+
+  L+ Y(1,-1):  f = sqrt(6)*exp(-I*phi)*sin(theta)/(4*sqrt(pi))
+      (+d_theta) f = sqrt(6)*exp(-I*phi)*cos(theta)/(4*sqrt(pi));   i cot(theta) d_phi f = sqrt(6)*exp(-I*phi)*cos(theta)/(4*sqrt(pi))
+      sum = sqrt(6)*exp(-I*phi)*cos(theta)/(2*sqrt(pi));   times e^(+i phi) => sqrt(6)*cos(theta)/(2*sqrt(pi))
+      target sqrt2 Y(1,0) = sqrt(6)*cos(theta)/(2*sqrt(pi));   difference = 0  -> OK
+  L+ Y(1,0):  f = sqrt(3)*cos(theta)/(2*sqrt(pi))
+      (+d_theta) f = -sqrt(3)*sin(theta)/(2*sqrt(pi));   i cot(theta) d_phi f = 0
+      sum = -sqrt(3)*sin(theta)/(2*sqrt(pi));   times e^(+i phi) => -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi))
+      target sqrt2 Y(1,1) = -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi));   difference = 0  -> OK
+  L+ Y(1,1):  f = -sqrt(6)*exp(I*phi)*sin(theta)/(4*sqrt(pi))
+      (+d_theta) f = -sqrt(6)*exp(I*phi)*cos(theta)/(4*sqrt(pi));   i cot(theta) d_phi f = sqrt(6)*exp(I*phi)*cos(theta)/(4*sqrt(pi))
+      sum = 0;   times e^(+i phi) => 0
+      target 0 = 0;   difference = 0  -> OK
+  L- Y(1,1):  f = -sqrt(6)*exp(I*phi)*sin(theta)/(4*sqrt(pi))
+      (-d_theta) f = sqrt(6)*exp(I*phi)*cos(theta)/(4*sqrt(pi));   i cot(theta) d_phi f = sqrt(6)*exp(I*phi)*cos(theta)/(4*sqrt(pi))
+      sum = sqrt(6)*exp(I*phi)*cos(theta)/(2*sqrt(pi));   times e^(-i phi) => sqrt(6)*cos(theta)/(2*sqrt(pi))
+      target sqrt2 Y(1,0) = sqrt(6)*cos(theta)/(2*sqrt(pi));   difference = 0  -> OK
+  L- Y(1,0):  f = sqrt(3)*cos(theta)/(2*sqrt(pi))
+      (-d_theta) f = sqrt(3)*sin(theta)/(2*sqrt(pi));   i cot(theta) d_phi f = 0
+      sum = sqrt(3)*sin(theta)/(2*sqrt(pi));   times e^(-i phi) => sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi))
+      target sqrt2 Y(1,-1) = sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi));   difference = 0  -> OK
+  L- Y(1,-1):  f = sqrt(6)*exp(-I*phi)*sin(theta)/(4*sqrt(pi))
+      (-d_theta) f = -sqrt(6)*exp(-I*phi)*cos(theta)/(4*sqrt(pi));   i cot(theta) d_phi f = sqrt(6)*exp(-I*phi)*cos(theta)/(4*sqrt(pi))
+      sum = 0;   times e^(-i phi) => 0
+      target 0 = 0;   difference = 0  -> OK
+  [PASS] P4-polar  all six polar ladder relations: coefficient sqrt(2) (0 at the ends)
+
+r-dependence: apply the operators to Y'(r,theta,phi) = Y(theta,phi)/r.  The operators contain no d_r, so
+  L+ Y(1,-1):  L(Y/r) = sqrt(6)*cos(theta)/(2*sqrt(pi)*r)   vs   target/r = sqrt(6)*cos(theta)/(2*sqrt(pi)*r)
+  L+ Y(1,0):  L(Y/r) = -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi)*r)   vs   target/r = -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi)*r)
+  L+ Y(1,1):  L(Y/r) = 0   vs   target/r = 0
+  L- Y(1,1):  L(Y/r) = sqrt(6)*cos(theta)/(2*sqrt(pi)*r)   vs   target/r = sqrt(6)*cos(theta)/(2*sqrt(pi)*r)
+  L- Y(1,0):  L(Y/r) = sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi)*r)   vs   target/r = sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi)*r)
+  L- Y(1,-1):  L(Y/r) = 0   vs   target/r = 0
+  [PASS] P4-r  ladder coefficients are independent of r   (restatement, not counted)
+
+Cartesian form: Y'_(1,m)(x,y,z) with 1/(x^2+y^2+z^2) = 1/r^2 (rational functions, no square roots).
+  Y'_(1,+1) = -sqrt(6)*(x + I*y)/(4*sqrt(pi)*(x**2 + y**2 + z**2))
+  Y'_(1,+0) = sqrt(3)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+  Y'_(1,-1) = sqrt(6)*(x - I*y)/(4*sqrt(pi)*(x**2 + y**2 + z**2))
+  L_x f = i(z f_y - y f_z),  L_y f = i(x f_z - z f_x),  L_+- = L_x +- i L_y.
+
+  L+ Y'(1,-1):  L_x f = sqrt(6)*z/(4*sqrt(pi)*(x**2 + y**2 + z**2));   L_y f = -sqrt(6)*I*z/(4*sqrt(pi)*(x**2 + y**2 + z**2))
+      L_+ f = sqrt(6)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2));   target = sqrt(6)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2))  -> OK
+  L+ Y'(1,0):  L_x f = -sqrt(3)*I*y/(2*sqrt(pi)*(x**2 + y**2 + z**2));   L_y f = sqrt(3)*I*x/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+      L_+ f = sqrt(3)*(-x - I*y)/(2*sqrt(pi)*(x**2 + y**2 + z**2));   target = sqrt(3)*(-x - I*y)/(2*sqrt(pi)*(x**2 + y**2 + z**2))  -> OK
+  L+ Y'(1,1):  L_x f = sqrt(6)*z/(4*sqrt(pi)*(x**2 + y**2 + z**2));   L_y f = sqrt(6)*I*z/(4*sqrt(pi)*(x**2 + y**2 + z**2))
+      L_+ f = 0;   target = 0  -> OK
+  L- Y'(1,1):  L_x f = sqrt(6)*z/(4*sqrt(pi)*(x**2 + y**2 + z**2));   L_y f = sqrt(6)*I*z/(4*sqrt(pi)*(x**2 + y**2 + z**2))
+      L_- f = sqrt(6)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2));   target = sqrt(6)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2))  -> OK
+  L- Y'(1,0):  L_x f = -sqrt(3)*I*y/(2*sqrt(pi)*(x**2 + y**2 + z**2));   L_y f = sqrt(3)*I*x/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+      L_- f = sqrt(3)*(x - I*y)/(2*sqrt(pi)*(x**2 + y**2 + z**2));   target = sqrt(3)*(x - I*y)/(2*sqrt(pi)*(x**2 + y**2 + z**2))  -> OK
+  L- Y'(1,-1):  L_x f = sqrt(6)*z/(4*sqrt(pi)*(x**2 + y**2 + z**2));   L_y f = -sqrt(6)*I*z/(4*sqrt(pi)*(x**2 + y**2 + z**2))
+      L_- f = 0;   target = 0  -> OK
+  [PASS] P4-cart  all six Cartesian ladder relations: coefficient sqrt(2) (0 at the ends)
+  [PASS] P4-Lz  L_z (Cartesian) has eigenvalues m on Y'(1,m)
+
+====================================================================================================
+PART C2  Why the magnitude is sqrt(2): it is forced by the norm
+====================================================================================================
+With L_+^dagger = L_-, <L_- Y, L_- Y> = <Y, L_+ L_- Y> = l(l+1) - m(m-1) for |l=1,m>.  Direct integral on S^2_r:
+
+  int |L- Y'(1,1)|^2 dS = 2
+  int |L- Y'(1,0)|^2 dS = 2
+  int |L- Y'(1,-1)|^2 dS = 0
+  int |L+ Y'(1,-1)|^2 dS = 2
+  int |L+ Y'(1,0)|^2 dS = 2
+  int |L+ Y'(1,1)|^2 dS = 0
+  [PASS] P4-norm  int |L_pm Y'|^2 dS = l(l+1) - m(m pm 1) = 2,2,0,2,2,0 for every r
+
+====================================================================================================
+PART C3  Dependence of the coefficients on the normalisation and the phase (P5)
+====================================================================================================
+  Replace Y(1,-1) by kappa*Y(1,-1):  L- Y(1,0) = (sqrt(2)/kappa) * [kappa Y(1,-1)];   L+ [kappa Y(1,-1)] = (sqrt(2)*kappa) * Y(1,0)
+  [PASS] P5a  coefficients become sqrt(2)/kappa and kappa*sqrt(2)
+
+  kappa      L- Y(1,0) coefficient     L+ Y(1,-1) coefficient   (illustration only: NOT a claim about any particular text)
+  1         sqrt(2)                   sqrt(2)                  
+  -1        -sqrt(2)                  -sqrt(2)                 
+  2         sqrt(2)/2                 2*sqrt(2)                
+  1/2       2*sqrt(2)                 sqrt(2)/2                
+  sqrt(2)/2 2                         1                        
+  sqrt(2)   1                         2                        
+
+  Drop the Condon-Shortley sign of Y(1,1):  L+ Y(1,0) = (-sqrt(2)) * Y(1,1)_noCS
+  [PASS] P5b  NEGATIVE CONTROL: without the CS sign of Y(1,1) the coefficient is -sqrt(2), not +sqrt(2)   (negative control)
+  [PASS] P5c  NEGATIVE CONTROL: Y(1,-1) with the opposite sign gives -sqrt(2) for L- Y(1,0)   (negative control)
+
+====================================================================================================
+PART D  Matrices (row = input):  operator(b_a) = sum_b M[a][b] b_b
+====================================================================================================
+
+  basis e   = ((x+iy)/r, z/r, (x-iy)/r)   [raw complex, norms^2 2:1:2]
+    Gram = Matrix([[8*pi/3, 0, 0], [0, 4*pi/3, 0], [0, 0, 8*pi/3]])
+    L+ = Matrix([[0, 0, 0], [-1, 0, 0], [0, 2, 0]])
+    L- = Matrix([[0, -2, 0], [0, 0, 1], [0, 0, 0]])
+    Lz = Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])
+    Lx = (L+ + L-)/2 = Matrix([[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]])
+    Ly = (L+ - L-)/(2i) = Matrix([[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]])
+
+  basis u   = ((x+iy)/(sqrt2 r), z/r, (x-iy)/(sqrt2 r))   [unitary, no CS phase]
+    Gram = Matrix([[4*pi/3, 0, 0], [0, 4*pi/3, 0], [0, 0, 4*pi/3]])
+    L+ = Matrix([[0, 0, 0], [-sqrt(2), 0, 0], [0, sqrt(2), 0]])
+    L- = Matrix([[0, -sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]])
+    Lz = Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])
+    Lx = (L+ + L-)/2 = Matrix([[0, -sqrt(2)/2, 0], [-sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])
+    Ly = (L+ - L-)/(2i) = Matrix([[0, -sqrt(2)*I/2, 0], [sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])
+
+  basis Y'  = (Y'(1,1), Y'(1,0), Y'(1,-1))   [sphere-normalised, CS phase]
+    Gram = Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+    L+ = Matrix([[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]])
+    L- = Matrix([[0, sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]])
+    Lz = Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])
+    Lx = (L+ + L-)/2 = Matrix([[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])
+    Ly = (L+ - L-)/(2i) = Matrix([[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])
+  [PASS] P6a  basis e: M(L+) = [[0,0,0],[-1,0,0],[0,2,0]] and M(L-) = [[0,-2,0],[0,0,1],[0,0,0]] (C206)
+  [PASS] P6b  basis Y': both non-zero entries of M(L+) and of M(L-) are sqrt(2)
+  [PASS] P6c  basis u (unitary, no CS phase): entries are -sqrt(2) and +sqrt(2): the CS phase is what makes both +sqrt(2)
+
+  Gamma'(T12) = Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]]);  Gamma'(T23) = Matrix([[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]]);  Gamma'(T31) = Matrix([[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]])   (C205 step 3, basis e)
+  [PASS] P6d  basis e: M(Lz) = Gamma'(T12), M(Lx) = Gamma'(T23), M(Ly) = Gamma'(T31)
+  [PASS] P6e  basis e: M(L+) = Gamma'(T23) + i Gamma'(T31)  and  M(L-) = Gamma'(T23) - i Gamma'(T31)   (restatement, not counted)
+  [PASS] P6f  NEGATIVE CONTROL: with e1 and e3 swapped, M(Lx) no longer equals Gamma'(T23)   (negative control)
+
+  Y'_a = sum_b D[a][b] e_b with D = sqrt(3/4pi) * Matrix([[-sqrt(2)/2, 0, 0], [0, 1, 0], [0, 0, sqrt(2)/2]])  (the overall scalar cancels in D M D^-1)
+  [PASS] P6g  D proportional to diag(-1/sqrt2, 1, 1/sqrt2)   (restatement, not counted)
+  Gamma''(T12) = D Gamma'(T12) D^-1 = Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])
+  Gamma''(T23) = D Gamma'(T23) D^-1 = Matrix([[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])
+  Gamma''(T31) = D Gamma'(T31) D^-1 = Matrix([[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])
+  [PASS] P6h  in basis Y': D Gamma'(T12,T23,T31) D^-1 = M(Lz), M(Lx), M(Ly)
+  [PASS] P6i  in basis Y' the CONJUGATED Gamma'' (not the printed Gamma') satisfy L+- = Gamma''(T23) +- i Gamma''(T31) (linearity, follows from P6h)   (restatement, not counted)
+  [PASS] P6k  NEGATIVE CONTROL: the PRINTED Gamma'(T23) +- i Gamma'(T31) do NOT give M(L+-) in the sphere-normalised basis Y'   (negative control)
+    printed Gamma'(T23)+iGamma'(T31) = Matrix([[0, 0, 0], [-1, 0, 0], [0, 2, 0]])   vs   M_Y'(L+) = Matrix([[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]])
+  [PASS] P6l  a COMMON rescaling (alpha = 7) of the three basis functions of e leaves M(L+-) unchanged, so the printed Gamma' still apply
+  [PASS] P5d  equal norms (any common scale) + CS phase already give sqrt(2), sqrt(2): alpha*Y' and (-e1/sqrt2, e2, e3/sqrt2)
+    Gram of (-e1/sqrt2, e2, e3/sqrt2) = Matrix([[4*pi/3, 0, 0], [0, 4*pi/3, 0], [0, 0, 4*pi/3]]);   M(L+) = Matrix([[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]])
+  Hermitian in the orthonormal basis Y' (as they must be): True;  not Hermitian in basis e: True
+  [PASS] P6j  generator matrices are Hermitian in the orthonormal basis Y' and not Hermitian in basis e
+
+====================================================================================================
+PART E  'Discover' the complex harmonics from the ladder operators
+====================================================================================================
+Step 1.  L_z = -i d_phi.  Eigenfunctions of L_z with eigenvalue m: psi = g(r) chi_m(theta) e^{i m phi}.
+  dsolve(-i F' = m F) = Eq(F(phi), C1*exp(I*m*phi))   (single-valuedness F(phi+2pi) = F(phi) forces m integer; l = 1 allows m = -1, 0, 1)
+  [PASS] E1  L_z eigenfunctions have the phi-dependence e^{i m phi}
+
+Step 2.  Highest weight: L_+ [chi(theta) e^{i phi}] = 0.
+  L_+ [chi e^(i phi)] = e^(2 i phi) * (-chi(theta)*cot(theta) + Derivative(chi(theta), theta))  => ODE: -chi(theta)*cot(theta) + Derivative(chi(theta), theta) = 0
+  dsolve => Eq(chi(theta), C1*sin(theta))
+  [PASS] E2  L_+[chi e^{i phi}] = 0 gives chi = C sin(theta)
+
+Step 3.  Lowest weight: L_- [chi(theta) e^{-i phi}] = 0.
+  L_- [chi e^(-i phi)] = e^(-2 i phi) * (chi(theta)*cot(theta) - Derivative(chi(theta), theta))  => ODE: chi(theta)*cot(theta) - Derivative(chi(theta), theta) = 0
+  dsolve => Eq(chi(theta), C1*sin(theta))
+  [PASS] E3  L_-[chi e^{-i phi}] = 0 gives chi = C' sin(theta)
+
+Negative controls: the wrong annihilation conditions.
+  L_- [chi e^(i phi)] = 0   => Eq(chi(theta), C1/sin(theta))
+  L_+ [chi e^(-i phi)] = 0  => Eq(chi(theta), C1/sin(theta))
+  norm of chi = C/sin(theta): int |chi|^2 sin(theta) dtheta = int dtheta/sin(theta) = -log(1 - cos(epsilon))/2 + log(-cos(epsilon) - 1)/2 - log(cos(epsilon) - 1)/2 + log(cos(epsilon) + 1)/2  ->  oo as epsilon -> 0
+  [PASS] E4  NEGATIVE CONTROL: wrong annihilation conditions give chi = C/sin(theta), which is not normalisable   (negative control)
+
+Step 4.  Normalise on S^2_r with the radial factor 1/r (so that Y' = Y(theta,phi)/r, as in Part B).
+  int |Y11|^2 dOmega = 8*pi*C*conjugate(C)/3  =>  |C|^2 = 3/(8 pi),  |C| = sqrt(3/(8 pi))   (and likewise |C'|)
+  [PASS] E5  normalisation fixes |C| = |C'| = sqrt(3/(8 pi))
+
+Step 5.  Get Y(1,0) two ways and require agreement.
+  L_- Y11 = -2*C*cos(theta)      L_+ Y(1,-1) = 2*Cp*cos(theta)
+  ||L_- Y11||^2 = 2  => the normalised Y(1,0) is L_- Y11 / sqrt(2): the coefficient sqrt(2) is forced by the norm
+  Y10 (route 1) = L_- Y11/sqrt2 = -sqrt(2)*C*cos(theta);   Y10 (route 2) = L_+ Y(1,-1)/sqrt2 = sqrt(2)*Cp*cos(theta)
+  routes agree iff C' = [-C]
+  [PASS] E6  taking both ladder coefficients +sqrt(2), the two routes give the same Y(1,0) only if C' = -C
+  If instead L_+ Y(1,-1) = sqrt2 e^(i alpha) Y(1,0): routes agree iff C' = [-C*exp(I*alpha)]
+  [PASS] E6c  the relation C' = -C is conditional on the +sqrt(2) convention: with a phase e^(i alpha) it becomes C' = -C e^(i alpha)
+  [PASS] E6b  the norm of L_- Y11 is 2, so dividing by sqrt(2) is forced
+
+Step 6.  What is fixed and what is a convention.
+  * Fixed: chi_(1,+-1) ~ sin(theta); chi_(1,0) ~ cos(theta); |C| from the norm; C' = -C from the two routes, GIVEN that both ladder coefficients are taken +sqrt(2).
+  * Convention: the overall phase of C (one phase per multiplet).  Requiring Y(1,0) > 0 at theta = 0 gives C < 0:
+    sign test: C = +1*|C| gives Y(1,0)(theta=0) = -sqrt(3)/(2*sqrt(pi))  (positive: False)
+    sign test: C = -1*|C| gives Y(1,0)(theta=0) = sqrt(3)/(2*sqrt(pi))  (positive: True)
+    Y(1,1) = -sqrt(6)*exp(I*phi)*sin(theta)/(4*sqrt(pi));  Y(1,0) = sqrt(3)*cos(theta)/(2*sqrt(pi));  Y(1,-1) = sqrt(6)*exp(-I*phi)*sin(theta)/(4*sqrt(pi))
+  [PASS] E7  the discovered harmonics equal the Part B harmonics (CS phase, equal to sympy Ynm)
+
+====================================================================================================
+PART F  Independent numerical cross-check (quadrature + finite differences, no sympy)
+====================================================================================================
+  finite-difference check at 6 random points on S^2_(r=2): max |L_pm Y' - sqrt2 Y'_(m pm 1)| = 6.83e-12
+  [PASS] F1  numerical Cartesian ladder action reproduces the sqrt(2) coefficients (|err| < 1e-7)
+  numerical Gram matrix of Y' on S^2_(r=2):
+[[ 1.+0.j -0.-0.j -0.-0.j]
+ [-0.+0.j  1.+0.j  0.+0.j]
+ [-0.+0.j  0.-0.j  1.+0.j]]
+  [PASS] F2  numerical Gram matrix of the normalised complex harmonics = identity (|err| < 1e-8)
+  numerical squared norms of (x+iy)/r, z/r, (x-iy)/r at r=2: [33.51032164 16.75516082 33.51032164]  ratio [2. 1. 2.]
+  [PASS] F3  raw complex basis has squared-norm ratio 2 : 1 : 2
+
+====================================================================================================
+PART F2  Numerical matrices in bases e and Y' (Gauss-Legendre quadrature + finite differences)
+====================================================================================================
+  basis e: max |M_numeric - M_symbolic| over L+, L-, Lz = 6.15e-12
+  [PASS] F4-e  numerical row-input matrices of L+, L-, Lz in basis e equal the symbolic ones (|err| < 1e-7)
+  basis Y': max |M_numeric - M_symbolic| over L+, L-, Lz = 4.87e-12
+  [PASS] F4-Y'  numerical row-input matrices of L+, L-, Lz in basis Y' equal the symbolic ones (|err| < 1e-7)
+
+====================================================================================================
+PART G  Cross-round consistency with the saved C205 / C206 results (loaded, not retyped)
+====================================================================================================
+  C206 saved complex-ladder matrices: L+ = Matrix([[0, 0, 0], [-1, 0, 0], [0, 2, 0]]);  L- = Matrix([[0, -2, 0], [0, 0, 1], [0, 0, 0]])
+  [PASS] G1  this round's M(L+-) in basis e equal the matrices saved in C206 results
+  this round, real basis (x,y,z)/r:  {'Lx': Matrix([
+[0,  0, 0],
+[0,  0, I],
+[0, -I, 0]]), 'Ly': Matrix([
+[0, 0, -I],
+[0, 0,  0],
+[I, 0,  0]]), 'Lz': Matrix([
+[ 0, I, 0],
+[-I, 0, 0],
+[ 0, 0, 0]])}
+  [PASS] G2  this round's real-basis M(Lx), M(Ly), M(Lz) equal the matrices saved in C205 results
+  z M_saved z^-1 :  Lz = Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]]);  Lx = Matrix([[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]]);  Ly = Matrix([[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]])
+  [PASS] G3  the typed Gamma'(T12,T23,T31) equal z * (saved C205 real-basis matrices) * z^-1
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+  independent main checks: 44/44 pass;  negative controls: 5/5 behaved as required;  restatements (not counted): 9/9 hold
+  wrote results_c220.json

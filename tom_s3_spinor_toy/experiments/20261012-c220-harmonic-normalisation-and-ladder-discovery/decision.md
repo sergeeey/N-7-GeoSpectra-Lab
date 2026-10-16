@@ -1,0 +1,421 @@
+# C220 Decision — the surface integral is 4πr⁴/3; the coefficient √2 is forced by the norm; the matrices are basis-dependent forms of one operator identity
+
+**Date:** 2026-10-12
+**Verdict:** **PROMOTE** (the seven pre-registered predictions P1–P7 hold; three of them had to be
+restated more carefully after the independent pass, see the last section and `claim.md` "Amendments").
+In `c220_harmonic_normalisation_and_ladder_discovery.py` (`run_output.txt`, `results_c220.json`):
+`44/44` independent main checks pass, `5/5` negative controls behave as required, and `9` further
+checks that follow from others (or compare two typings of one formula) hold but are **not counted** as
+evidence. A numerical route that does not use sympy's differentiation or integration (scipy quadrature,
+numpy finite differences) agrees; it is independent of the calculus, **not** of the definitions and
+conventions. The matrices of C205/C206 are loaded from their saved results and compared.
+
+Every number below is copied from `run_output.txt`. `[VERIFIED-sympy]` = exact symbolic;
+`[VERIFIED-numeric]` = independent quadrature / finite differences.
+
+## 0. Conventions used (fixed in `claim.md` before the run)
+
+| Item | Definition |
+|---|---|
+| Sphere | `S²` of radius `r`; `x = r sinθ cosφ`, `y = r sinθ sinφ`, `z = r cosθ`; `dS = r² sinθ dθ dφ` |
+| `L_z`, `L_±` (polar, McMurry p.144 as in C201/C206) | `L_z = −i ∂_φ`; `L₊ = e^{iφ}(∂_θ + i cotθ ∂_φ)`; `L₋ = e^{−iφ}(−∂_θ + i cotθ ∂_φ)` |
+| Cartesian (C205/C206) | `L_x = i(z∂_y − y∂_z)`, `L_y = i(x∂_z − z∂_x)`, `L_z = i(y∂_x − x∂_y)`; `L_± = L_x ± iL_y` |
+| Matrices | row = input: `operator(b_a) = Σ_b M[a][b] b_b` |
+| Inner product | `⟨f,g⟩ = ∫ f* g dS` |
+
+## 1. Real harmonics: `∫x*x dS` is proportional to `r⁴`, not `r²`
+
+**Steps** [VERIFIED-sympy]. With `x² dS = r⁴ sin³θ cos²φ dθ dφ` (one `r²` from `x²`, one from `dS`):
+
+```
+identity (2):  d/dφ [ φ/2 + sinφ cosφ/2 ] = cos²φ            =>  ∫₀^{2π} cos²φ dφ = π ,  ∫₀^{2π} sin²φ dφ = 2π − π = π
+identity (3):  d/dθ [ cos3θ/12 − 3cosθ/4 ] = sin³θ             =>  ∫₀^{π}  sin³θ dθ  = 4/3
+               d/dθ [ −cos³θ/3 ]           = cos²θ sinθ        =>  ∫₀^{π}  cos²θ sinθ dθ = 2/3
+
+∫ x² dS = r⁴ · (4/3) · π         = 4π r⁴/3
+∫ y² dS = r⁴ · (4/3) · π         = 4π r⁴/3
+∫ z² dS = r⁴ · (2/3) · 2π        = 4π r⁴/3
+∫ xy dS ∝ ∫ sinφ cosφ dφ = 0 ,  ∫ xz dS ∝ ∫ cosφ dφ = 0 ,  ∫ yz dS ∝ ∫ sinφ dφ = 0
+```
+
+(Identity (3) was garbled in the PDF text extraction; it was read as `cos3θ/12 − 3cosθ/4`, and at that
+reading it is correct.) A separate full double integration of all nine products gives the Gram matrix
+`(4πr⁴/3)·I`. [VERIFIED-numeric] at `r = 2`: `∫x² dS = 67.0206432766 = 4π·2⁴/3`, `∫xy dS = −9e−16`.
+
+**Where the `r²` value can come from.** Two different integrals both give `4πr²/3`:
+route 1, `∫(x/r)² dS` (the integral of `x/r`, not of `x`); route 2, `∫x² dΩ` (the area element with the
+`r²` of `dS` left out). This script shows that both give `r²`; it does **not** decide which of them any
+particular calculation used.
+**Dimension test** (an illustration, not independent evidence; the integral itself is established by the
+step route, the full double integral and the quadrature): `x²` carries degree 2 in `r`, `dS` degree 2, so
+`∫x² dS` must have degree 4. `4πr⁴/3` passes; `4πr²/3` does not.
+
+**Normalised real harmonics** (P2): `x'ᵢ = √(3/(4π)) xᵢ/r² = ½√(3/π) xᵢ/r²`, and the Gram matrix of
+`(x', y', z')` is exactly the identity. The same three functions need different constants depending on
+what is being normalised:
+
+| function | `∫f² dS` | normalising constant |
+|---|---|---|
+| `xᵢ` | `4πr⁴/3` | `√3/(2√π r²)` |
+| `xᵢ/r` | `4πr²/3` | `√3/(2√π r)` |
+| `xᵢ/r²` | `4π/3` | `√3/(2√π)` (independent of `r`) |
+
+So `x'ᵢ = N xᵢ/r²` with `N = √(3/4π)` is the one for which the normalised function has no `r` left in its
+norm, which is why it matches the "Y(θ,φ)/r" form of Section 2.
+
+## 2. Complex harmonics, by the same method
+
+**Raw functions** `p = x+iy`, `z`, `m = x−iy`; Gram matrix `⟨fₐ,f_b⟩` [VERIFIED-sympy]:
+
+```
+diag( 8πr⁴/3 ,  4πr⁴/3 ,  8πr⁴/3 ),   all off-diagonal entries 0
+```
+
+(`|x+iy|² = x²+y²`, hence the factor 2.) Squared norms are in the ratio **2 : 1 : 2**; confirmed
+numerically at `r = 2` (33.5103, 16.7552, 33.5103). **This 2:1:2 is the whole difference between the
+"raw" basis and a normalised one.**
+
+**Normalised, with the Condon–Shortley phase** (P3):
+
+```
+Y'(1, 1) = −√(3/8π) (x+iy)/r²     = Y(1, 1)(θ,φ)/r ,  Y(1, 1) = −√(3/8π) sinθ e^{ iφ}
+Y'(1, 0) = +√(3/4π)  z   /r²      = Y(1, 0)(θ,φ)/r ,  Y(1, 0) = +√(3/4π) cosθ
+Y'(1,−1) = +√(3/8π) (x−iy)/r²     = Y(1,−1)(θ,φ)/r ,  Y(1,−1) = +√(3/8π) sinθ e^{−iφ}
+```
+
+Gram matrix of these three on `S²_r` is exactly the identity. **Positive control:** sympy's own
+`Ynm(1,m,θ,φ)` reproduces all three `Y(1,m)` (an implementation that does not use this script's
+definitions). Numerical Gram matrix at `r = 2` equals the identity to better than `1e-8`.
+
+## 3. The ladder operators on the sphere-normalised harmonics
+
+**Answer to the question "do we get exactly McMurry's equations?":** yes, the coefficient is `√2` in
+all four non-trivial cases and `0` at the two ends, in polar **and** in Cartesian form, for every `r`.
+
+### 3.1 Polar form, every step (`c = √(3/4π)`; `Y10 = c cosθ`, `Y11 = −(c/√2) sinθ e^{iφ}`, `Y1,−1 = (c/√2) sinθ e^{−iφ}`)
+
+| action | `±∂_θ f` | `i cotθ ∂_φ f` | sum | × `e^{±iφ}` | result |
+|---|---|---|---|---|---|
+| `L₊Y(1,−1)` | `(c/√2) cosθ e^{−iφ}` | `(c/√2) cosθ e^{−iφ}` | `√2 c cosθ e^{−iφ}` | `√2 c cosθ` | `√2 Y(1,0)` |
+| `L₊Y(1,0)` | `−c sinθ` | `0` | `−c sinθ` | `−c sinθ e^{iφ}` | `√2 Y(1,1)` |
+| `L₊Y(1,1)` | `−(c/√2) cosθ e^{iφ}` | `+(c/√2) cosθ e^{iφ}` | `0` | `0` | `0` |
+| `L₋Y(1,1)` | `+(c/√2) cosθ e^{iφ}` | `+(c/√2) cosθ e^{iφ}` | `√2 c cosθ e^{iφ}` | `√2 c cosθ` | `√2 Y(1,0)` |
+| `L₋Y(1,0)` | `+c sinθ` | `0` | `c sinθ` | `c sinθ e^{−iφ}` | `√2 Y(1,−1)` |
+| `L₋Y(1,−1)` | `−(c/√2) cosθ e^{−iφ}` | `+(c/√2) cosθ e^{−iφ}` | `0` | `0` | `0` |
+
+(`±∂_θ` is `+∂_θ` for `L₊`, `−∂_θ` for `L₋`.) All six differences from the target are `0` exactly.
+
+### 3.2 Cartesian form (functions written with `1/(x²+y²+z²)`, so no square roots)
+
+`L_x f = i(z f_y − y f_z)`, `L_y f = i(x f_z − z f_x)`, `L_± = L_x ± iL_y`; write `ρ = x²+y²+z²`.
+
+| action | `L_x f` | `L_y f` | `L_± f` | target |
+|---|---|---|---|---|
+| `L₊Y'(1,−1)` | `√6 z/(4√π ρ)` | `−i√6 z/(4√π ρ)` | `√6 z/(2√π ρ)` | `√2 Y'(1,0)` ✓ |
+| `L₊Y'(1,0)` | `−i√3 y/(2√π ρ)` | `i√3 x/(2√π ρ)` | `−√3 (x+iy)/(2√π ρ)` | `√2 Y'(1,1)` ✓ |
+| `L₊Y'(1,1)` | `√6 z/(4√π ρ)` | `i√6 z/(4√π ρ)` | `0` | `0` ✓ |
+| `L₋Y'(1,1)` | `√6 z/(4√π ρ)` | `i√6 z/(4√π ρ)` | `√6 z/(2√π ρ)` | `√2 Y'(1,0)` ✓ |
+| `L₋Y'(1,0)` | `−i√3 y/(2√π ρ)` | `i√3 x/(2√π ρ)` | `√3 (x−iy)/(2√π ρ)` | `√2 Y'(1,−1)` ✓ |
+| `L₋Y'(1,−1)` | `√6 z/(4√π ρ)` | `−i√6 z/(4√π ρ)` | `0` | `0` ✓ |
+
+`L_z` (Cartesian) has eigenvalue `m` on `Y'(1,m)`. [VERIFIED-numeric] by finite differences at six random
+points on `S²_{r=2}`: `max |L_± Y' − √2 Y'| = 6.8e−12`.
+
+### 3.3 `r` does not matter
+
+None of the operators contains `∂_r` (they are tangent to the spheres), so `L(Y/r) = (LY)/r`; checked for
+all six cases. The coefficients are the same for every `r > 0`.
+
+### 3.4 The magnitude `√2` is forced by the norm
+
+`⟨L₋Y,L₋Y⟩ = ⟨Y,L₊L₋Y⟩ = l(l+1) − m(m−1)`. Direct integration on `S²_r`:
+
+```
+∫|L₋Y'(1,1)|² dS = 2   ∫|L₋Y'(1,0)|² dS = 2   ∫|L₋Y'(1,−1)|² dS = 0
+∫|L₊Y'(1,−1)|² dS = 2  ∫|L₊Y'(1,0)|² dS = 2   ∫|L₊Y'(1,1)|² dS = 0
+```
+
+So for harmonics of **equal norm** (any common scale, since `L` is linear) the coefficient has modulus
+`√2`; a different modulus can only come from unequal norms in the set.
+
+### 3.5 What a different normalisation or phase does (P5)
+
+Replace `Y(1,−1)` by `κ·Y(1,−1)`: `L₋Y(1,0) = (√2/κ)·[κY(1,−1)]` and `L₊[κY(1,−1)] = κ√2·Y(1,0)`.
+
+| κ | `L₋Y(1,0)` coeff. | `L₊Y(1,−1)` coeff. |
+|---|---|---|
+| 1 | `√2` | `√2` |
+| −1 | `−√2` | `−√2` |
+| 2 | `√2/2` | `2√2` |
+| 1/2 | `2√2` | `√2/2` |
+| √2 | `1` | `2` |
+| 1/√2 | `2` | `1` |
+
+This table is an illustration of the dependence only; it is **not** a claim about which normalisation
+any particular text or calculation used. Two negative controls: dropping the Condon–Shortley sign of
+`Y(1,1)` turns `L₊Y(1,0) = √2 Y(1,1)` into `−√2 Y(1,1)`; flipping the sign of `Y(1,−1)` turns
+`L₋Y(1,0)` into `−√2` times it. So "all coefficients `+√2`" selects **equal norms (any common scale)** and the
+phase `Y(1,−1) = −Y*(1,1)`; it does not select unit normalisation: the basis `(−e₁/√2, e₂, e₃/√2)`, with
+Gram matrix `(4π/3)·I`, and `7·Y'` both give `√2, √2` (check P5d).
+
+## 4. The matrices
+
+Row = input. Three bases (all `1/r` factors dropped; they cancel). Gram matrices at the top.
+
+| basis | Gram | `M(L₊)` | `M(L₋)` |
+|---|---|---|---|
+| `e = ((x+iy)/r, z/r, (x−iy)/r)` | `diag(8π/3, 4π/3, 8π/3)` | `[[0,0,0],[−1,0,0],[0,2,0]]` | `[[0,−2,0],[0,0,1],[0,0,0]]` |
+| `u = ((x+iy)/(√2 r), z/r, (x−iy)/(√2 r))` (unitary, no CS phase) | `(4π/3)·I` | `[[0,0,0],[−√2,0,0],[0,√2,0]]` | `[[0,−√2,0],[0,0,√2],[0,0,0]]` |
+| `Y' = (Y'(1,1), Y'(1,0), Y'(1,−1))` | `I` | `[[0,0,0],[√2,0,0],[0,√2,0]]` | `[[0,√2,0],[0,0,√2],[0,0,0]]` |
+
+Basis `u` shows the effect of the phase alone: entries `−√2` and `+√2`. The Condon–Shortley sign is what
+makes both `+√2`. `M(L_z) = diag(1,0,−1)` in all three.
+
+**The generator matrices.** The correspondent's complex-basis matrices (his notes' equations 123–125, as
+encoded and verified in C205 step 3, basis `e`) are
+
+```
+Γ'(T12) = diag(1,0,−1)    Γ'(T23) = [[0,−1,0],[−½,0,½],[0,1,0]]    Γ'(T31) = [[0,−i,0],[i/2,0,i/2],[0,−i,0]]
+```
+
+- In basis `e`: `M(L_z) = Γ'(T12)`, `M(L_x) = Γ'(T23)`, `M(L_y) = Γ'(T31)`, and therefore
+  `M(L₊) = Γ'(T23) + iΓ'(T31)`, `M(L₋) = Γ'(T23) − iΓ'(T31)` exactly [VERIFIED-sympy]. This is the
+  observation that the non-symmetric `(−1, 2)` forms are Γ'-combinations.
+- Negative control: with `e₁` and `e₃` swapped, `M(L_x)` no longer equals `Γ'(T23)`.
+- Passing to `Y'`: `Y'ₐ = Σ_b D[a][b] e_b` with `D ∝ diag(−1/√2, 1, 1/√2)`. Then
+  `Γ'' = D Γ' D⁻¹`:
+
+```
+Γ''(T12) = diag(1,0,−1)
+Γ''(T23) = (1/√2) [[0,1,0],[1,0,1],[0,1,0]]
+Γ''(T31) = (i/√2) [[0,1,0],[−1,0,1],[0,−1,0]]
+```
+
+  and these equal `M_{Y'}(L_z), M_{Y'}(L_x), M_{Y'}(L_y)`. They are Hermitian (as they must be in an
+  orthonormal basis); the `e`-basis matrices are not.
+- **The printed `Γ'` work only in basis `e`.** The equality `M(L±) = Γ'(T23) ± iΓ'(T31)` with the
+  *printed* matrices holds in basis `e` and in any **common** rescaling of it (`7·e`: check P6l). In the
+  sphere-normalised basis `Y'` it fails: `Γ'(T23) + iΓ'(T31)` is `[[0,0,0],[−1,0,0],[0,2,0]]`, while
+  `M_{Y'}(L₊)` is `[[0,0,0],[√2,0,0],[0,√2,0]]` (negative control P6k). In `Y'` the correct matrices
+  are the conjugated `Γ'' = DΓ'D⁻¹` above, and for those the identity is just linearity (it follows
+  from the previous bullet). So: **if the printed `Γ'` are to be kept, the harmonics must be the
+  equal-weight set `(x+iy, z, x−iy)` (squared norms 2:1:2), not the sphere-normalised set; if the
+  sphere-normalised set is wanted, the `Γ` matrices must be replaced by `DΓ'D⁻¹`.** The `√2, √2`
+  symmetric forms are exactly `M_{Y'}(L±)`. The matrices of the saved C205/C206 results reproduce
+  exactly (checks G1–G3), and a numerical computation in both bases agrees to `6e−12` (F4).
+
+## 5. "Discovering" the harmonics from the ladder operators
+
+1. **`L_z` eigenfunctions.** `−i F'(φ) = m F(φ)` ⇒ `F = C e^{imφ}` (sympy `dsolve`). Single-valuedness
+   forces integer `m`; for `l = 1`, `m ∈ {−1,0,1}`. So `ψ = g(r) χ_m(θ) e^{imφ}`.
+2. **Highest weight.** `L₊[χ(θ)e^{iφ}] = e^{2iφ}(χ' − cotθ χ) = 0` ⇒ `χ = C sinθ`.
+3. **Lowest weight.** `L₋[χ(θ)e^{−iφ}] = e^{−2iφ}(cotθ χ − χ') = 0` ⇒ `χ = C' sinθ`.
+   **Negative controls:** the wrong annihilation conditions `L₋[χe^{iφ}] = 0` and `L₊[χe^{−iφ}] = 0` give
+   `χ = C/sinθ`, and `∫dθ/sinθ` diverges at both poles, so this is not normalisable and is rejected.
+4. **Normalisation** with `g(r) = 1/r`: `∫|C sinθ e^{iφ}|² dΩ = 8π|C|²/3 = 1` ⇒ `|C| = |C'| = √(3/8π)`.
+5. **`Y(1,0)` two ways.** `L₋(C sinθ e^{iφ}) = −2C cosθ` and `L₊(C' sinθ e^{−iφ}) = 2C' cosθ`.
+   `‖L₋Y11‖² = 2` (Section 3.4), so the normalised `Y(1,0)` is `L₋Y11/√2 = −√2 C cosθ`; route 2 gives
+   `√2 C' cosθ`. **Taking both ladder coefficients to be `+√2`, the two routes agree only if
+   `C' = −C`.** The condition is conditional on that convention: if instead
+   `L₊Y(1,−1) = √2 e^{iα} Y(1,0)`, the relation is `C' = −C e^{iα}` (check E6c).
+6. **What remains a convention.** One overall phase per multiplet, and the choice that the ladder
+   coefficients are real and positive. Requiring `Y(1,0) > 0` at `θ = 0` (the sign is computed: `C = +|C|`
+   gives `−√3/(2√π)`, `C = −|C|` gives `+√3/(2√π)`) gives `C = −√(3/8π)`, and `C'` is then taken from the
+   relation of step 5, and then `Y(1,1) = −√(3/8π) sinθ e^{iφ}`, `Y(1,0) = √(3/4π) cosθ`,
+   `Y(1,−1) = +√(3/8π) sinθ e^{−iφ}`, identical to Section 2 and to sympy's `Ynm`.
+
+## 6. Pre-registered predictions
+
+| # | Prediction | Result |
+|---|---|---|
+| P1 | `∫x² dS = 4πr⁴/3`; mixed vanish; `r²` value belongs to `x/r`; fails dimension test | **holds** |
+| P2 | `x'ᵢ = √(3/4π) xᵢ/r² = ½√(3/π) xᵢ/r²`; Gram = I | **holds** |
+| P3 | raw norms `8π,4π,8π · r⁴/3`, orthogonal; normalised CS harmonics; polar form `Y/r`; = sympy `Ynm` | **holds** |
+| P4 | `L_±Y' = √2 Y'` (0 at ends), polar and Cartesian, any `r`; `∫|L₋Y'|² = 2` | **holds** |
+| P5 | `κ`-dependence `√2/κ`, `κ√2`; CS sign flips the coefficient sign; (restated) positive `√2` selects equal norms, not unit norm | **holds** as restated |
+| P6 | basis `e`: `(−1,2)` forms `= Γ'(T23) ± iΓ'(T31)`; basis `Y'`: `√2,√2`; `DΓ'D⁻¹` Hermitian | **holds**; the original wording "identity holds in both bases" was wrong for the *printed* `Γ'` and is restated in Section 4 |
+| P7 | discovery route; `C' = −C`; non-normalisable negative control | **holds**, with `C' = −C` conditional on the `+√2` convention |
+
+## 7. What this does not show
+
+1. **What McMurry p.92 says for `m < 0`.** This project has not seen that page. C201 took `Y(1,−1)` from
+   the standard relation `Y_{l,−m} = (−1)^m Y*_{l,m}`. This round shows the result is *forced*: given
+   `Y(1,0)` and requiring `L₋Y(1,0) = +√2·Y(1,−1)`, one gets `Y(1,−1) = +√(3/8π) sinθ e^{−iφ}`, which is the
+   standard-relation value. Whether the book's printed definition agrees is unverified.
+2. **Known imprecision in C201 (not edited here).** C201's `decision.md` says it used "ONLY McMurry's own
+   stated definitions"; for `m < 0` it used the standard relation instead (comment at
+   `c201_l1_ladder_intertwiner.py:40-43`), and the ledger entry for C201 carries a similar phrase.
+3. **How anyone else's numbers arose.** The `κ` table is a statement about the dependence of the
+   coefficients on the normalisation, not about any particular calculation.
+4. **The spinor (`j = 1/2`) representation.** Not covered; the announced next step.
+5. **The Condon–Shortley phase is a choice.** It is the choice for which every ladder coefficient is `+√2`.
+6. The correspondent's `Γ'` matrices are the ones encoded in C205 (his notes' equations 123–125 as
+   transcribed there). They are now tied to C205's saved results by computation (check G3: `z · M_saved ·
+   z⁻¹` with `z` defined by basis `e`), but their definition in his notes was not re-read for this round.
+7. The operator definitions `L_z, L_±` (polar) are those used in C201/C206 and attributed there to
+   McMurry p.144; they are not re-checked against the book here. The Cartesian ones satisfy
+   `[L_x,L_y] = iL_z` and `L₊` raises `m` by 1 (verified by the skeptic by hand).
+8. Part F is independent of sympy's differentiation and integration but retypes the definitions, so it
+   catches a calculus error, not a convention error.
+
+## Skeptic concerns (FL step 8a, claim.md + code only)
+
+Independent pass: a skeptic agent given only `claim.md`, the script and its output (no reasoning
+chain). It verified by hand the integral, the norms, all twelve ladder results, the Cartesian
+commutation relation, the basis-`e` matrices, `DMD⁻¹`, and every step of Part E. It could not run the
+script, could not see the correspondent's PDF, and did not check McMurry p.92 or p.144. Its findings, each
+checked against the output before acting:
+
+| # | Severity | Concern | Response |
+|---|---|---|---|
+| 1 | MUST-FIX | P5: "`+√2` selects unit normalisation" is false (`L` is linear) | **Fixed**: restated as equal norms; check P5d |
+| 2 | MUST-FIX | P6: printed `Γ'` do **not** give `M(L±)` in `Y'`; P6e/P6i cannot fail | **Fixed**: confirmed by hand (`(G23+iG31)[1][0] = −1` vs `√2`); negative control P6k, check P6l; P6e/P6i relabelled restatements; Section 4 rewritten |
+| 3 | SHOULD | the `r²` value has two routes; the script cannot say which was used | **Fixed**: A6, A6b; wording |
+| 4 | SHOULD | `C' = −C` is conditional on the `+√2` convention | **Fixed**: E6 relabelled, E6c |
+| 5 | SHOULD | E7 did not use E6; sign of `C` set by hand | **Fixed**: `C'` from E6, sign computed |
+| 6 | SHOULD | nothing loaded from C201/C205/C206 results | **Fixed**: G1–G3. C205's JSON stores the real-basis matrices, not the complex-basis `Γ'`, so `Γ'` is tied through `z · M_saved · z⁻¹` (G3) |
+| 7 | SHOULD | Part F is independent of sympy calculus, not of definitions; covered P1–P4 only | **Fixed**: wording; extended to the matrices (F4) |
+| 8 | SHOULD | "McMurry harmonics" overstates the source | **Fixed**: relabelled |
+| 9 | NIT | several checks cannot fail on their own | **Fixed**: nine labelled `restatement`, excluded from the count |
+| 10 | NIT | structural `!=` used for a negative direction | **Fixed**: `not zero(...)` |
+
+No concern was dismissed. Remaining, unverified: McMurry p.92 (not seen; the `m<0` definition); the
+`L±` definitions from p.144 and the `m ≥ 0` harmonics from (4.45) / Table B1 p.91 were taken from C201
+and are not re-checked against the book here; the correspondent's own definition of `Γ'`.
+
+## 8. Independent re-implementation (2026-10-13)
+
+A separate subagent was given the **definitions and the task list only** (no expected answers, no
+repository access, no C220 files) and asked to compute T1–T7: the real-harmonic integrals, the Gram
+matrices, the six ladder actions in polar and Cartesian form, the matrices in four bases (row = input),
+the "discovery" route, and identities (2), (3). Its raw printed outputs are in
+`independent_pass_outputs.txt` (this folder). Its scripts (about 1000 lines) are **not archived**: they do not pass
+the repository's ruff rules (E741, E731, B023) and were not reworked; they exist only in the session scratchpad.
+
+| Item | Independent result | Agrees with C220 |
+|---|---|---|
+| T1 | `∫x²dS = ∫y²dS = ∫z²dS = 4πr⁴/3`; mixed integrals 0; `∫(x/r)²dS = ∫x²dΩ = 4πr²/3`; `N_k = √(3/4π) r^(k−2)` | yes (A6, A6b, P1, P2) |
+| T2 | Gram of `(x+iy, z, x−iy)` = `(4πr⁴/3)·diag(2,1,2)`; Gram of `Y'(1,m)` = identity | yes (P3a, P3b) |
+| T3 | all six ladder results `√2·Y'` or 0, polar = Cartesian, `r`-independent, norms² 2,2,0 | yes (P4-*, F1) |
+| T4 | basis `e`: `M(L+) = [[0,0,0],[−1,0,0],[0,2,0]]`, `M(L−) = [[0,−2,0],[0,0,1],[0,0,0]]`, all five statements `M(O) = Γ'` hold. Basis `Y'`: `M(L±)` entries `√2`, only `Lz = Γ'(T12)` holds. `M_Y = D M_e D⁻¹`, `D ∝ diag(−1,√2,1)`, unique among all 3×3 matrices (1-dimensional solution space, `Γ'` irreducible) | yes (P6a–P6l); the uniqueness over all matrices is new |
+| T5 | `χ = C sinθ` (m=±1, right pairing); `C/sinθ` (wrong pairing) not normalisable; `C' = −C` (phase version `β = α+π`); positivity at the pole gives `C = −√(3/8π)` | yes (E1–E7) |
+| T6 | identities (2) and (3), read as in the letter, hold; definite integrals `π` and `4/3` | yes (A1, A2) |
+| T7 | numerical worst deviations: integrals 3.6e-15, Gram 3.5e-14, polar finite differences 2.3e-13, Cartesian 4.6e-11, matrices 1.3e-13 | consistent with F1–F4 |
+
+Differences and limits, stated rather than hidden:
+
+* The agent's basis `(u)` is `(−(x+iy)/(√2 r), z/r, (x−iy)/(√2 r))`, with the Condon–Shortley sign, so it gives `√2, √2`. C220's `u` has **no** sign
+  and gives `−√2, +√2`. The two are different bases; the sign claim (R9) was not covered by the independent pass.
+  By hand, flipping the sign of the first basis function maps `M[a][b] → s_a s_b M[a][b]` with `s = (−1,1,1)`, giving `−√2` and `+√2`.
+* The `κ` table (P5a, P5c) was not covered by the independent pass.
+* The Condon–Shortley phase was taken as given; no mpmath or higher-precision rerun; the finite-difference code had
+  no negative control beyond the `β = α` case of T5.
+* Side result, confirmed here by `antirep_check` (main session) and independently by the agent: in the row = input
+  convention the printed `Γ'` satisfy `[Γ'(T23),Γ'(T31)] = −iΓ'(T12)` and cyclically, whereas `[L_x,L_y] = iL_z`
+  (checked symbolically: `[Lx,Ly]f − iLz f = 0`). This is the reverse-order product `M(AB) = M(B)M(A)`, not an error.
+
+Evidence marker: **[VERIFIED-INDEPENDENT]** for the items marked "yes" (separately written code, definitions only;
+the same model family wrote both, so this is independent code, not an independent mind).
+
+## 9. Review of the reply text (2026-10-13, round 1)
+
+A context-blind skeptic read the draft reply, its attachment, the traceability table and this folder (no
+shell). Fixed after tool or file checks: an internal contradiction about "equal weight" (the raw basis has norms 2:1:2);
+numerical values quoted for the wrong functions (33.5 are for `(x±iy)/r`, `z/r`, not `x±iy`, `z`); Gram matrices written
+without `r²`; an overclaim that every step was written out (one Cartesian row and the off-diagonal Gram zeros were added);
+the κ statement (`κ = −1` changes only the sign); direction of `D`; "from the ladder operators alone" without the `+√2`
+condition; counts of negative controls (five: P5b, P5c, P6f, P6k, E4; the dimension test is separate). Not done: computing
+`κ` from (4.45) at `m = −1` (the text of (4.45) is not in the repository; the reply asks for the value instead).
+
+**Rounds 2 and 3** (fresh skeptic each time; the Evaluator-Optimizer cap of 3 is now used up, so there is no round 4).
+Each round found a different class of problem, all checked against files before acting:
+
+| Round | Class of defect found | Fix |
+|---|---|---|
+| 2 | the coverage sentence about the second program claimed more than section 8 shows (κ table, no-sign basis not covered) | itemised what was and was not covered |
+| 2 | an `r`-power error: `∫|L−Y(1,1)|²` over the sphere is `2r²` for `Y` without `1/r`, `2` only for `Y'` | restated with `Y'` and `dS` |
+| 2 | the reply described the correspondent's "indirect"/"direct" as something he meant; they are quoted words of the earlier notes | reworded; flagged for the sender to verify |
+| 2 | cause of the matrix difference incomplete (also the missing Condon–Shortley sign on the first function); `Γ'` notation lost its subscript 3 (seen in the correspondent's own PDF); the symbol `Y'` used before definition | added |
+| 3 | `\mathbb 1` rendered as a wrong symbol in the compiled PDF (found only by viewing the PDF) | `\mathbf 1`, recompiled |
+| 3 | a false statement that identity (3) was "garbled when extracted": his PDF itself prints the first cosine without an argument (checked by viewing his PDF, not the text extraction) | reworded in the letter and the attachment |
+| 3 | "your printed Γ'" asserted what the notes contain; the matrices are only as transcribed in C205 | "as I transcribed them" throughout |
+| 3 | the second program varied the phases of `C`, `C'` with both coefficients fixed at `+√2`; the remark about a phase in a ladder coefficient was not computed independently | itemised as not covered |
+
+Substitution stated: the independent reviewer cap (`reviewer`) was closed, so `skeptic` was used instead for all three rounds
+(`doubt-driven-development.md` Independent Review Fallback Policy). Remaining, not checked by anyone: McMurry p.92, the `L±`
+definitions (p.144), the equation numbers of the correspondent's notes, whether "indirect"/"direct" in the earlier notes map onto
+the two routes in the reply. The sender must check these before sending.
+
+**Round 4** (2026-10-13, run on the user's explicit instruction after the cap of 3; a simplified-English rewrite of the reply).
+The rewrite brought back a defect already fixed in round 1 ("harmonics follow from the ladder operators alone", without the
+`+√2` and pole-positivity conditions) and added new ones: "any set with equal norms gives the same coefficients" (false for a sign
+flip; true only for modulus `√2`), a statement about the correspondent's matrices as if seen (they are only described in his letter),
+"exactly √2 each time" (0 at the two ends), "norms" vs "squared norms", "integral 1" for `x'_i` (it is the integral of `(x'_i)²`),
+an unsupported mapping of the earlier "indirect"/"direct" routes. All fixed in the draft and in the attachment's matching sentence.
+The edited text was not reviewed again. Lesson recorded: after a style rewrite, re-run the claim list, not only the style check.
+
+## 10. Checked against our own earlier documents (2026-10-13, after the user supplied both PDFs)
+
+* **24 Sept letter (matrix form).** States the basis `((x+iy)/r, z/r, (x−iy)/r)` and the row = input convention
+  (the correspondent's (76)). Its four matrices (real and complex basis) were reproduced by code. It does not mention
+  normalisation. So the earlier draft sentence "I did not state that basis clearly" was **false** and was removed.
+* **23 Sept notes (Parts 1-3).** Eqs (9)-(11) are `L±` on `x/r, y/r, z/r` (built from his (68), (69)); (12)-(15) follow by linearity;
+  (16)-(18) restate them in the complex basis, so Part 3 is the **same method**, not a second one. The words "indirect"/"direct" are
+  not in the notes (the word "directly" is, in Part 2 and Part 3). Part 1's six actions with its printed (3)-(5) were reproduced.
+  The notes did say that `x±iy` and `z` lack the relative normalisation of the `Y(1,m)`; they gave no ratio and no sign.
+  They also called `Y(1,-1)` "McMurry's own normalization", which is wrong for `m = −1` (conjugation relation was used).
+  The steps behind (9)-(11) were missing from the workings PDF and were added (section 3.2, unnumbered paragraph).
+* Code: scratch `sep23_check.py`, `sep24_check.py` (not archived): elementary steps `L_x x = 0, L_y x = −iz, …`, (9)-(18), the
+  linearity example `L₊(x−iy) = z − i(iz) = 2z`, Part 1's six actions: all True. The reply text was not reviewed by a skeptic
+  after these edits (cap used; the edits are checked by code against the documents).
+
+## 11. Checked against the source pages (2026-10-13; PDFs already in the user's Downloads)
+
+* **McMurry p.144** (page image): problem 6.2 gives `L+ = e^{iφ}(∂θ + i cotθ ∂φ)`, `L− = e^{−iφ}(−∂θ + i cotθ ∂φ)` — the operators used here.
+  Problem 6.3(a) asks to prove `√2` for all four non-zero ladder relations "with the definition (4.45)". So "polar `L±`" is no longer "not checked".
+* **McMurry p.91** (page image): (4.44) `P_l^m = (1−x²)^{|m|/2} d^{|m|}/dx^{|m|} P_l`; (4.45) `Y_lm = (−1)^m [(2l+1)(l−m)!/(4π(l+m)!)]^{1/2} P_l^m(cosθ) e^{imφ}`,
+  "defined for m ≥ 0"; note: "(4.44) implies P_l^{−m} = P_l^m. However the associated Legendre functions for m<0 are sometimes normalized differently."
+  Table B1: `P_1^0 = cosθ`, `P_1^1 = sinθ`. So `Y(1,1)` (negative) and `Y(1,0)` of this round ARE McMurry's own, by (4.45).
+* **(4.45) applied literally at `m = −1`** with `P_1^{−1} = P_1^1 = sinθ` (scratch `k445_check.py`, sympy): `Y(1,−1) = −√(3/2π) sinθ e^{−iφ}` = **−2 × ours (κ = −2)**;
+  `L− Y(1,0) = −(√2/2)·Y(1,−1)_lit`, `L+ Y(1,−1)_lit = −2√2 Y(1,0)`, `L+ Y(1,0) = √2 Y(1,1)` unchanged. This reproduces the correspondent's description
+  (one ladder operator as expected, the other not; no `√2` on lowering `Y(1,0)`); it is a **candidate explanation, not a fact**. The letter offers it as a question.
+  With this `Y(1,−1)`, problem 6.3(a)'s `L+ Y(1,−1) = √2 Y(1,0)` fails: the book's statement needs the page-92 `Y(1,−1)`, expected to be ours.
+* **Tom's notes v5** (page images 15-16 + text extraction): (67)-(69) are `L_z, L_y, L_x`; (76) and (112) fix row = input (`(Γ)_i^j φ_j`); (115)-(118): `|φ'_1⟩ = |φ_1⟩ + i|φ_2⟩`,
+  `|φ'_2⟩ = |φ_3⟩`, `|φ'_3⟩ = |φ_1⟩ − i|φ_2⟩`, `z = [[1,i,0],[0,0,1],[1,−i,0]]`; (122) `Γ'_3 = z Γ_3 z^{−1}`; (123)-(125) are exactly the matrices used (`diag(1,0,−1)`,
+  `[[0,−1,0],[−1/2,0,1/2],[0,1,0]]`, `[[0,−i,0],[i/2,0,i/2],[0,−i,0]]`). The earlier "as transcribed" caveat is therefore removed.
+* The 23 Sept message's `U = diag(−1, √2/2, 1)` equals `(√2/2)·D^{−1}`; with row = input no sign flip is needed for the third generator (`u_check.py`).
+* **Still unseen:** McMurry p.92 only.
+
+## 12. Round 5 of the reply review (2026-10-13, user-requested; the skeptic received the source pages as images)
+
+Findings and fixes (each checked against the documents first):
+
+| Severity | Finding | Fix |
+|---|---|---|
+| MUST | the correspondent's letter p.1 already says he used (4.45) for `Y(1,−1)` and that it holds for `m ≥ 0` only; the draft called the cause "open" | the letter now quotes that and asks only whether the literal function is the one he got |
+| SHOULD | with `κ = −2` McMurry 6.3(a) also fails for `L− Y(1,0)` (his own case); the product relations still hold; 6.3(a) itself says "with the definition (4.45)" and p.91 warns that `m < 0` is "sometimes normalized differently" | added; "your reading was natural" |
+| SHOULD | the 23 Sept notes' (19) already show `1/√2` and the minus sign; their error was "entirely accounted for by the relative normalization" | sentence corrected |
+| SHOULD | `U` and the `L_y` sign were in a chat message, not in the notes PDF | the paragraph names the message |
+| SHOULD | dates: his letter is dated 10 Oct; "Part 1 normalisation" was **my** Part 1, not his | fixed |
+| SHOULD | coverage: the (4.45) step and the document comparisons rested on scratch scripts | consolidated into `c220_source_checks.py` (21 checks, ruff-clean, `run_output_source_checks.txt`); one always-true "check" removed; the letter lists the (4.45) step as not covered by the second program |
+| SHOULD | stale traceability rows (T5, T6, R24) | rewritten; rows R32, R33 added |
+| SHOULD | the second program and these checks were written by the same model family | left to the sender (disclosure choice); recorded in the draft's header |
+
+Cap note: this is round 5; rounds 4 and 5 were run on the user's instruction after the cap of 3. The edits after round 5 were checked by code only.
+
+## 13. Status (2026-10-13)
+
+The reply (a covering message, the letter and the workings PDF) was sent by the user on 2026-10-13, without McMurry p.92 (the only page not seen; the letter says so and
+asks for it). Not claimed: the `κ = −2` reading of the correspondent's `Y(1,−1)` (offered as a question, not a result). Awaiting his reply. Nothing from the letter text is stored in the repository.
+
+## 14. McMurry p.92 received and checked (2026-10-14)
+
+The correspondent sent page 92 (scan, rotated 90 degrees). It defines the harmonics for negative `m_l`: `Y_{l,−|m_l|}(θ,φ) = (−1)^{m_l} Y*_{l,|m_l|}(θ,φ)`, states that the
+set is normalised and orthogonal on the unit sphere, (4.46), and that each `Y_{l,m_l}` has parity `(−1)^l` (the rest of the page: quantisation of the angle between the angular momentum vector and the z axis).
+Checked by exact sympy (scratch `p92_check.py`, output recorded here): the p.92 relation gives **`Y(1,−1) = +√(3/8π) sinθ e^{−iφ}`, identical to the one used in the reply** (and in C201, the 23 Sept notes);
+`L− Y(1,0) = √2 Y(1,−1)`, `L+ Y(1,−1) = √2 Y(1,0)`, `L− Y(1,1) = √2 Y(1,0)` hold; (4.46) norms of `Y(1,1), Y(1,0), Y(1,−1)` are all 1. The literal (4.45) at `m = −1` divided by the p.92 value is `−2`
+(so `κ = −2` remains the factor between the literal reading and McMurry's own definition).
+
+Consequences: (a) the reply's expectation "I expect page 92 to give the Y(1,−1) of Step 2" is confirmed; (b) the 23 Sept notes' phrase "McMurry's own normalization" for `Y(1,−1)` turns out to be correct in value,
+although it was unsupported when written (the page had not been seen); (c) "McMurry p.92 not seen" is closed; (d) `κ = −2` explains the correspondent's discrepancy only if he applied (4.45) literally at `m = −1`; he has not said.
+Nothing in the sent letter needs correction; a one-line note in the next message can state that p.92 confirms the value.

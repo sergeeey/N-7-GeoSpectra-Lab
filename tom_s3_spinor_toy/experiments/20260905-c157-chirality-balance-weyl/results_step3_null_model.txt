@@ -1,0 +1,43 @@
+==============================================================================
+C157 STEP 3  NULL MODEL -- is balance generic for random sign-sum sets?
+==============================================================================
+  A_2 shape        (N= 3, dim=3): balanced in 5/300 nonempty trials (1.7%)
+  G_2 shape        (N= 6, dim=2): balanced in 71/300 nonempty trials (23.7%)
+  A_2xA_2 shape    (N= 6, dim=4): balanced in 1/300 nonempty trials (0.3%)
+  D_4 shape        (N=12, dim=4): balanced in 31/300 nonempty trials (10.3%)
+  F_4 shape        (N=24, dim=4): balanced in 17/300 nonempty trials (5.7%)
+
+==============================================================================
+VERDICT
+==============================================================================
+  If the random rate is near 100%: balance is dimension/parity generic,
+  same failure mode as C156's surjectivity. If well below 100%: the root
+  system's actual algebraic structure (not just N, dim) is doing the work,
+  consistent with (not proof of, but consistent with) the Weyl-denominator
+  mechanism actually being load-bearing rather than incidental.
+p=0/100
+    ...D_4 shape: trial 0/100 done
+    ...D_4 shape: trial 20/100 done
+    ...D_4 shape: trial 40/100 done
+    ...D_4 shape: trial 60/100 done
+    ...D_4 shape: trial 80/100 done
+  D_4 shape        (N=10, dim=3, range=+-1): balanced 35/100 nonempty (35.0%), blown_up=0/100
+    ...F_4 shape: trial 0/100 done
+    ...F_4 shape: trial 20/100 done
+    ...F_4 shape: trial 40/100 done
+    ...F_4 shape: trial 60/100 done
+    ...F_4 shape: trial 80/100 done
+  F_4 shape        (N=16, dim=2, range=+-1): balanced 85/100 nonempty (85.0%), blown_up=0/100
+
+==============================================================================
+VERDICT
+==============================================================================
+  A_2 shape: 5.0% balanced over 100 usable trials (0 blown up, not counted)
+  G_2 shape: 35.0% balanced over 100 usable trials (0 blown up, not counted)
+  A_2xA_2 shape: 1.0% balanced over 100 usable trials (0 blown up, not counted)
+  D_4 shape: 35.0% balanced over 100 usable trials (0 blown up, not counted)
+  F_4 shape: 85.0% balanced over 100 usable trials (0 blown up, not counted)
+
+  Near 100% => balance is dimension/parity-generic (vacuous, C156-style).
+  Well below 100% => root-system structure does real algebraic work.
+EXIT=0

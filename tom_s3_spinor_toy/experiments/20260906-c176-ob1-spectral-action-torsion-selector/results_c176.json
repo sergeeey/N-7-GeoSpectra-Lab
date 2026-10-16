@@ -1,0 +1,113 @@
+{
+  "killing_form_gram_matrix": "Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])",
+  "gram_is_identity": true,
+  "T0_squared_t": "4*(2*t - 1)**2",
+  "T0_squared_at_half_is_zero": true,
+  "T0_squared_shape_matches_2t_minus_1_squared": true,
+  "riemann_check_vs_round99": {
+    "matches_round99_R121": true
+  },
+  "riemann_norm_squared_t": "192*t**2*(t - 1)**2",
+  "ricci_is_proportional_to_identity": true,
+  "ricci_norm_squared_t": "192*t**2*(t - 1)**2",
+  "scalar_curvature_from_this_rounds_own_riemann_derivation": "24*t**2 - 24*t",
+  "round111_script_candidates_found": [
+    "E:\\\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0413\u0438\u043f\u043e\u0442\u0435\u0437\\\u0440\u0430\u0431\u043e\u0442\u0430\u044e \u043d\u0430\u0434 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u043e\u0439 \u0433\u0438\u043f\u043e\u0442\u0435\u0437\\N-7-GeoSpectra-Lab\\tom_s3_spinor_toy\\experiments\\20260717-round111-codex-item6-scalar-curvature-action\\e34_scalar_curvature_action.py"
+  ],
+  "round111_reconciliation_note": "This round's own scalar-curvature-of-nabla^t (derived fresh from round99's R^t(Zi,Zj)Zk formula) is a DIFFERENT quantity from Hanisch-Pfaeffle-Stephan's fixed Levi-Civita 'R' used in the a_2/a_4 formula below -- HPS's R is the UNCHANGING background metric's own scalar curvature (torsion carries all t-dependence via T_0^2 instead). This round's own derived scal_from_riemann(t) is NOT plugged into the a_2/a_4 formula; only its value is reported for cross-checking against round111's separately-stated Scal(t)=Scal_LC-6(2t-1)^2 formula by a human reader, not auto-reconciled here -- a genuine apparent sign/shape difference was found by hand before running this script and is NOT resolved automatically; see decision.md for the honest discussion.",
+  "a2_analysis_symbolic": {
+    "label": "a_2(t), symbolic R_LC",
+    "expression": "(-R_LC + 54*(2*t - 1)**2)/(48*pi**2)",
+    "derivative": "9*(2*t - 1)/(2*pi**2)",
+    "critical_points": [
+      {
+        "t_critical": "1/2",
+        "second_derivative": "9/pi**2",
+        "nature": "min"
+      }
+    ],
+    "value_at_0": "(54 - R_LC)/(48*pi**2)",
+    "value_at_half": "-R_LC/(48*pi**2)",
+    "value_at_1": "(54 - R_LC)/(48*pi**2)"
+  },
+  "a4_partial_analysis_symbolic": {
+    "label": "a_4_partial(t), symbolic R_LC",
+    "expression": "(R_LC**2 - 108*R_LC*(2*t - 1)**2 + 2916*(2*t - 1)**4)/(1152*pi**2)",
+    "derivative": "3*(-R_LC + 54*(2*t - 1)**2)*(2*t - 1)/(8*pi**2)",
+    "critical_points": [
+      {
+        "t_critical": "1/2",
+        "second_derivative": "-3*R_LC/(4*pi**2)",
+        "nature": "unclear"
+      },
+      {
+        "t_critical": "-sqrt(6)*sqrt(R_LC)/36 + 1/2",
+        "second_derivative": "3*R_LC/(2*pi**2)",
+        "nature": "unclear"
+      },
+      {
+        "t_critical": "sqrt(6)*sqrt(R_LC)/36 + 1/2",
+        "second_derivative": "3*R_LC/(2*pi**2)",
+        "nature": "unclear"
+      }
+    ],
+    "value_at_0": "(R_LC**2 - 108*R_LC + 2916)/(1152*pi**2)",
+    "value_at_half": "R_LC**2/(1152*pi**2)",
+    "value_at_1": "(R_LC**2 - 108*R_LC + 2916)/(1152*pi**2)"
+  },
+  "R_LC_value_used": 6,
+  "R_LC_value_source": "experiments/20260717-round111-codex-item6-scalar-curvature-action/e34_scalar_curvature_action.py -- Scal_LC=6, independently cross-checked against the textbook Killing-form formula Ric_LC=-(1/4)*B, agrees with the general R^t formula's own t=1/2 value exactly (cross_check_ok=True in that script's own output).",
+  "a2_analysis_numeric": {
+    "label": "a_2(t), R_LC=6",
+    "expression": "(9*(2*t - 1)**2 - 1)/(8*pi**2)",
+    "derivative": "9*(2*t - 1)/(2*pi**2)",
+    "critical_points": [
+      {
+        "t_critical": "1/2",
+        "second_derivative": "9/pi**2",
+        "nature": "min"
+      }
+    ],
+    "value_at_0": "pi**(-2)",
+    "value_at_half": "-1/(8*pi**2)",
+    "value_at_1": "pi**(-2)"
+  },
+  "a4_partial_analysis_numeric": {
+    "label": "a_4_partial(t), R_LC=6",
+    "expression": "(81*(2*t - 1)**4 - 18*(2*t - 1)**2 + 1)/(32*pi**2)",
+    "derivative": "9*(-2*t + 9*(2*t - 1)**3 + 1)/(4*pi**2)",
+    "critical_points": [
+      {
+        "t_critical": "1/3",
+        "second_derivative": "9/pi**2",
+        "nature": "min"
+      },
+      {
+        "t_critical": "1/2",
+        "second_derivative": "-9/(2*pi**2)",
+        "nature": "max"
+      },
+      {
+        "t_critical": "2/3",
+        "second_derivative": "9/pi**2",
+        "nature": "min"
+      }
+    ],
+    "value_at_0": "2/pi**2",
+    "value_at_half": "1/(32*pi**2)",
+    "value_at_1": "2/pi**2"
+  },
+  "verdict": {
+    "T0_squared_zero_at_half_positive_at_0_1": "True",
+    "a2_min_at_half_R_LC_6": true,
+    "a2_has_minimum_at_0_or_1": false,
+    "a4_partial_has_minimum_at_0_or_1": false,
+    "a4_partial_interior_minima_found": [
+      "1/3",
+      "2/3"
+    ],
+    "a4_partial_note": "a_4_partial (subleading, F_0-weighted term) has its OWN critical points, generally NOT at t=0,1 exactly for R_LC=6 -- reported honestly, not forced to match the hoped-for t=0,1 answer. See a4_partial_analysis_numeric above for exact locations/values.",
+    "label": "SPECTRAL-SELECTOR-DIES-AT-HALF",
+    "honest_note": "a_2's own t-dependence comes ENTIRELY from the T_0^2(t) term (R_LC is t-independent by construction) -- so a_2(t)'s shape is dictated purely by whether T_0^2(t) is zero at t=1/2 and positive at t=0,1 (an upward parabola, minimized at t=1/2) or the reverse. See T0_squared_t above for the actual computed shape, not an assumption."
+  }
+}

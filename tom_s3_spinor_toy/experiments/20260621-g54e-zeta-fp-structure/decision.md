@@ -68,3 +68,9 @@ G54-D pearl (rho6** ∈ (1.2, 1.5)) is now PROMOTED from pending to:
 3. Double scale-invariance pearl G54-A+B (already in pearl registry): V_flux=const AND
    c_{1/2}≈const along SM constraint — now extended to: zeta_FP plateau also flat
    in [0.7, 1.2] (all O(10⁻³))
+
+
+---
+
+## Addendum 2026-10-03 (C219; original text above unedited)
+C219 (`experiments/20261003-c219-h8-computed-dirac-casimir-2d-landscape/`) recomputed the S6 heat-kernel coefficients exactly (Mellin): B8=-0.0076455, B10=-0.0029521. The 6-parameter fit used here (B10=-0.0033) is 12% off, so the UV-finite point is rho6*=1.154 (UV ray rho3/rho6=1.138), not 1.090 / 1.0743. The zeta_FP values and radii quoted in G54-D/E (min 0.953, zero 1.4469) were NOT reproduced by the exact computation (local min 0.92, zero ~1.367); the B10 fit error explains only part of this. Downstream constants named rho6*=1.090 (G70, G77, G82, G84c, G85b, G88a/b, G91, G92) were not re-assessed. See C219 decision.md.

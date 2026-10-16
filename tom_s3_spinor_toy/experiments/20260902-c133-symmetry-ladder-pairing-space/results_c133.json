@@ -1,0 +1,597 @@
+{
+  "step0_octonions": {
+    "identity_e0": true,
+    "norm_multiplicative_max_err": 5.684341886080802e-14,
+    "alternative_max_err": 1.4210854715202004e-14,
+    "nonassociative_basis_triples": 168
+  },
+  "step1_g2": {
+    "dim_Der_O_exact": 14,
+    "all_kill_the_unit": true,
+    "all_skew_on_ImO": true,
+    "all_skew_full": true
+  },
+  "step2a_J3O": {
+    "jordan_product_stays_hermitian_max_resid": 1.7763568394002505e-15,
+    "jordan_commutative_max_err": 0.0,
+    "jordan_identity_max_err": 1.1368683772161603e-13
+  },
+  "step2b_sigma": {
+    "sigma_cubed_is_identity_max_err": 0.0,
+    "sigma_is_jordan_automorphism_max_err": 1.7763568394002505e-15,
+    "sigma_acts_as_xyz_to_zxy_max_err": 0.0
+  },
+  "step2c_entrywise_derivations": {
+    "system_shape": [
+      19683,
+      192
+    ],
+    "nullity_numeric": 28,
+    "smallest_kept_singular_value": 3.464101615137754,
+    "largest_dropped_singular_value": 5.733691079191068e-15
+  },
+  "step2d_so8": {
+    "n_generators": 28,
+    "each_projection_skew_max_err": 8.326672684688674e-16,
+    "projection_ranks_as_matrix_spaces": [
+      28,
+      28,
+      28
+    ],
+    "bracket_closure_rel_resid": 3.089573701263428e-15,
+    "dim_so8_is_28_and_projections_are_onto": true
+  },
+  "step2e_diagonal_is_g2": {
+    "dim_diagonal_subalgebra": 14,
+    "smallest_kept_singular_value": 1.4142135623730945,
+    "largest_dropped_singular_value": 1.78504405296523e-15,
+    "dim_Der_O_independently": 14,
+    "rel_dist_g2basis_to_diagonal_span": 2.899300677479639e-15,
+    "rel_dist_diagonal_to_g2basis_span": 3.729205170667136e-15
+  },
+  "step2f_sigma_cyclic_shift": {
+    "cyclically_shifted_triple_stays_in_algebra_rel_resid": 2.3086261091365532e-15,
+    "conjugation_identity_sigma_delta_sigmainv_eq_delta_A3A1A2_max_err": 0.0
+  },
+  "step3_rung1_G2": {
+    "three_blocks_are_literally_the_same_matrices": true,
+    "dim_Hom_g2_between_any_two_blocks": {
+      "dim": 2,
+      "smallest_kept_sv": 2.4494897427831774,
+      "largest_dropped_sv": 9.44008951890089e-16,
+      "dim_exact_rational": 2
+    },
+    "dim_End_g2_of_24dim_F": 18,
+    "channel_matrix_M_is_free_3x3": true,
+    "explicit_channel_mixing_Phi_commutator_max_err": 0.0,
+    "explicit_channel_mixing_Phi_is_nonzero": true,
+    "dim_End_g2_of_24dim_F_DIRECT_SOLVE": 18,
+    "direct_solve_agrees_with_the_9x2_product": true
+  },
+  "step3_rung2_Spin8": {
+    "pairwise_Hom_dims": {
+      "Hom(rho1->rho1)": {
+        "dim": 1,
+        "smallest_kept_sv": 1.4142135623730938,
+        "largest_dropped_sv": 6.701763112457123e-16
+      },
+      "Hom(rho2->rho1)": {
+        "dim": 0,
+        "smallest_kept_sv": 1.0801234497346435,
+        "largest_dropped_sv": null
+      },
+      "Hom(rho3->rho1)": {
+        "dim": 0,
+        "smallest_kept_sv": 1.0801234497346426,
+        "largest_dropped_sv": null
+      },
+      "Hom(rho1->rho2)": {
+        "dim": 0,
+        "smallest_kept_sv": 1.0801234497346435,
+        "largest_dropped_sv": null
+      },
+      "Hom(rho2->rho2)": {
+        "dim": 1,
+        "smallest_kept_sv": 1.414213562373095,
+        "largest_dropped_sv": 9.058718781160904e-16
+      },
+      "Hom(rho3->rho2)": {
+        "dim": 0,
+        "smallest_kept_sv": 1.0801234497346428,
+        "largest_dropped_sv": null
+      },
+      "Hom(rho1->rho3)": {
+        "dim": 0,
+        "smallest_kept_sv": 1.0801234497346426,
+        "largest_dropped_sv": null
+      },
+      "Hom(rho2->rho3)": {
+        "dim": 0,
+        "smallest_kept_sv": 1.080123449734643,
+        "largest_dropped_sv": null
+      },
+      "Hom(rho3->rho3)": {
+        "dim": 1,
+        "smallest_kept_sv": 1.4142135623730927,
+        "largest_dropped_sv": 6.319296548457445e-16
+      }
+    },
+    "dim_End_so8_of_24dim_F": 3
+  },
+  "step3_rung3_triality": {
+    "U_cubed_is_identity_max_err": 0.0,
+    "dim_commutant_so8_only_direct_solve": 3,
+    "dim_commutant_so8_plus_U_direct_solve": 1,
+    "so8_only_sv_gap": [
+      1.0801234497346424,
+      6.253340397635466e-16
+    ],
+    "so8_plus_U_sv_gap": [
+      1.0801234497346428,
+      7.129743361429354e-16
+    ],
+    "U_commutes_with_diagonal_g2_max_err": 0.0,
+    "dim_commutant_g2_plus_U_direct_solve": 6
+  },
+  "step4_negative_control_equivalent": {
+    "rep_triple": "(rho1, rho1, rho1) -- MUTUALLY EQUIVALENT",
+    "pairwise_Hom_dims": {
+      "Hom(block1->block1)": 1,
+      "Hom(block2->block1)": 1,
+      "Hom(block3->block1)": 1,
+      "Hom(block1->block2)": 1,
+      "Hom(block2->block2)": 1,
+      "Hom(block3->block2)": 1,
+      "Hom(block1->block3)": 1,
+      "Hom(block2->block3)": 1,
+      "Hom(block3->block3)": 1
+    },
+    "dim_commutant_so8": 9,
+    "dim_commutant_so8_plus_U": 3,
+    "sv_gaps": [
+      [
+        1.4142135623730934,
+        6.363153058625284e-16
+      ],
+      [
+        1.414213562373093,
+        9.303202028241262e-16
+      ]
+    ],
+    "block_diagonality_forced": false,
+    "channel_mixing_permitted_at_Spin8_level": true
+  },
+  "step4_negative_control_conjugated_basis": {
+    "rep_triple": "(rho1, Q2 rho1 Q2^T, Q3 rho1 Q3^T) -- EQUIVALENT but in DIFFERENT BASES",
+    "blocks_are_NOT_literally_identical_max_difference": 0.31329999157972876,
+    "dim_commutant_so8": 9,
+    "sv_gap": [
+      1.414213562373093,
+      8.376838018398354e-16
+    ],
+    "still_returns_9_so_the_solver_is_doing_rep_theory_not_array_matching": true
+  },
+  "step4_control_mixed": {
+    "rep_triple": "(rho1, rho1, rho2) -- two equivalent + one inequivalent",
+    "pairwise_Hom_dims": {
+      "Hom(block1->block1)": 1,
+      "Hom(block2->block1)": 1,
+      "Hom(block3->block1)": 0,
+      "Hom(block1->block2)": 1,
+      "Hom(block2->block2)": 1,
+      "Hom(block3->block2)": 0,
+      "Hom(block1->block3)": 0,
+      "Hom(block2->block3)": 0,
+      "Hom(block3->block3)": 1
+    },
+    "dim_commutant_so8": 5,
+    "dim_commutant_so8_plus_U": 1,
+    "sv_gaps": [
+      [
+        1.0801234497346428,
+        5.938011143334141e-16
+      ],
+      [
+        0.8965412266345435,
+        6.757518256366244e-16
+      ]
+    ],
+    "block_diagonality_forced": false,
+    "channel_mixing_permitted_at_Spin8_level": true
+  },
+  "step4_control_inequivalent_reference": {
+    "rep_triple": "(rho1, rho2, rho3) -- the real case",
+    "pairwise_Hom_dims": {
+      "Hom(block1->block1)": 1,
+      "Hom(block2->block1)": 0,
+      "Hom(block3->block1)": 0,
+      "Hom(block1->block2)": 0,
+      "Hom(block2->block2)": 1,
+      "Hom(block3->block2)": 0,
+      "Hom(block1->block3)": 0,
+      "Hom(block2->block3)": 0,
+      "Hom(block3->block3)": 1
+    },
+    "dim_commutant_so8": 3,
+    "dim_commutant_so8_plus_U": 1,
+    "sv_gaps": [
+      [
+        1.0801234497346424,
+        6.253340397635466e-16
+      ],
+      [
+        1.0801234497346428,
+        7.129743361429354e-16
+      ]
+    ],
+    "block_diagonality_forced": true,
+    "channel_mixing_permitted_at_Spin8_level": false
+  },
+  "step5_trilinear": {
+    "Hom_so8(rho2 x rho3 -> rho1)": {
+      "dim": 1,
+      "smallest_kept_sv": 1.4142135623730936,
+      "largest_dropped_sv": 3.0963953842541285e-15
+    },
+    "Hom_so8(rho3 x rho1 -> rho2)": {
+      "dim": 1,
+      "smallest_kept_sv": 1.4142135623730934,
+      "largest_dropped_sv": 3.1853730302806662e-15
+    },
+    "Hom_so8(rho1 x rho2 -> rho3)": {
+      "dim": 1,
+      "smallest_kept_sv": 1.4142135623730936,
+      "largest_dropped_sv": 2.9770009675219093e-15
+    },
+    "CONTROL Hom_so8(rho1 x rho1 -> rho1)": {
+      "dim": 0,
+      "smallest_kept_sv": 1.0801234497346421,
+      "largest_dropped_sv": null
+    },
+    "CONTROL Hom_so8(rho1 x rho2 -> rho1)": {
+      "dim": 0,
+      "smallest_kept_sv": 1.0801234497346428,
+      "largest_dropped_sv": null
+    }
+  },
+  "step5b_inequivalence_certificate": {
+    "statistic": "tr(rho_a(X)^k) for k=2,4,6,8, basis-independent, no eigenvalue sorting",
+    "SMALLEST_relative_separation_between_two_DIFFERENT_reps": 0.013266893755151245,
+    "positive_control_LARGEST_deviation_for_an_ORTHOGONALLY_CONJUGATED_copy": 2.789233016952149e-15,
+    "control_is_genuine_not_x_minus_x": true,
+    "reps_are_pairwise_inequivalent_by_invariants": true,
+    "test_can_fail": true,
+    "note": "A generic element of the algebra has different power-traces in rho1, rho2, rho3, while an orthogonally conjugated copy of rho1 agrees with rho1 to machine precision. This certifies inequivalence WITHOUT any rank/tolerance decision and WITHOUT eigenvalue sorting, and is the independent ground for step3_rung2's Hom=0.",
+    "dim_End_R_of_each_block": [
+      1,
+      1,
+      1
+    ]
+  },
+  "step5c_g2_branching": {
+    "dim_commutant_of_g2_on_R8": 2,
+    "eigenvalue_multiplicities_of_a_generic_commutant_element": {
+      "0.19637382": 7,
+      "1.13651099": 1
+    },
+    "branching_8_restricted_to_g2": [
+      1,
+      7
+    ],
+    "matches_G44_null_result_1_plus_7": true
+  },
+  "step5d_how_much_symmetry_is_needed": {
+    "Z3_three_cycle": {
+      "permutation": "(0 1 2) -- the triality 3-cycle",
+      "is_jordan_automorphism_max_err": 8.881784197001252e-16,
+      "mixes_diagonal_and_offdiagonal_parts": 0.0,
+      "order": 3,
+      "normalises_the_so8_image_rel_resid": 2.32487567333398e-15,
+      "dim_commutant_so8_plus_this": 1,
+      "sv_gap": [
+        1.0801234497346428,
+        7.129743361429354e-16
+      ]
+    },
+    "Z2_transposition": {
+      "permutation": "(0 1) -- a single transposition",
+      "is_jordan_automorphism_max_err": 1.7763568394002505e-15,
+      "mixes_diagonal_and_offdiagonal_parts": 0.0,
+      "order": 2,
+      "normalises_the_so8_image_rel_resid": 1.777725342608453e-15,
+      "dim_commutant_so8_plus_this": 2,
+      "sv_gap": [
+        1.0801234497346424,
+        8.674874954541889e-16
+      ]
+    },
+    "reading": "What forces lambda_1=lambda_2=lambda_3 is TRANSITIVITY on the three channels. A transposition only identifies two of them (dim 2 survives). Z3 is the minimal transitive subgroup of the triality S3, so 'only the Z3 rung' is correct among the three rungs tested, but the precise necessary-and-sufficient condition is transitivity, not the 3-cycle specifically."
+  },
+  "step5e_U_is_a_legitimate_symmetry_only_where_claimed": {
+    "real_case_(rho1,rho2,rho3)_U_normalises_rel_resid": 2.32487567333398e-15,
+    "equivalent_control_(rho1,rho1,rho1)_U_normalises_rel_resid": 6.690448257589853e-16,
+    "mixed_control_(rho1,rho1,rho2)_U_normalises_rel_resid": 0.9194883001777909,
+    "note": "U normalises the algebra image in the real case and in the equivalent control, so '+U' is a genuine symmetry requirement in both. It does NOT normalise it in the MIXED control, so that row's '+U' number is an arbitrary extra linear condition and must NOT be read as a symmetry statement."
+  },
+  "step5f_criterion_a_discriminating_power": {
+    "dim_diagonal_locus_measured": 14,
+    "dim_it_could_have_been": "any integer in 0..28",
+    "so_step2e_is_the_falsifiable_step": true,
+    "dim_End_of_F_under_g2": 18,
+    "dim_End_of_F_under_g2_plus_ONE_extra_so8_generator": 3,
+    "Phi_commutator_with_that_extra_generator": 0.3465156095169085,
+    "reading": "Adding a single generator outside g2 collapses the permitted space from 18 and breaks Phi outright, so the rung-1 check discriminates against a group one generator larger. But GIVEN step2e, Phi's g2-equivariance is an identity, so kill criterion (a) is best described as NON-FALSIFIABLE AS WRITTEN, with its real content relocated to step2e."
+  },
+  "step5g_measured_ceiling": {
+    "sweep_over_every_subgroup_of_the_triality_S3": {
+      "trivial_{e}": {
+        "dim": 3,
+        "sv_gap": [
+          1.0801234497346424,
+          6.253340397635466e-16
+        ],
+        "orbits_on_channels": 3
+      },
+      "Z2_(01)": {
+        "dim": 2,
+        "sv_gap": [
+          1.0801234497346424,
+          8.674874954541889e-16
+        ],
+        "orbits_on_channels": 2
+      },
+      "Z2_(02)": {
+        "dim": 2,
+        "sv_gap": [
+          1.0801234497346424,
+          7.930664258183335e-16
+        ],
+        "orbits_on_channels": 2
+      },
+      "Z2_(12)": {
+        "dim": 2,
+        "sv_gap": [
+          1.0801234497346426,
+          8.370828844745047e-16
+        ],
+        "orbits_on_channels": 2
+      },
+      "Z3_(012)": {
+        "dim": 1,
+        "sv_gap": [
+          1.0801234497346428,
+          7.129743361429354e-16
+        ],
+        "orbits_on_channels": 1
+      },
+      "S3_full": {
+        "dim": 1,
+        "sv_gap": [
+          1.080123449734643,
+          1.1180048355874836e-15
+        ],
+        "orbits_on_channels": 1
+      }
+    },
+    "MEASURED_ceiling_min_attainable_dim": 1,
+    "floor_from_the_equivalent_irrep_null_model": 9,
+    "law": "dim = number of orbits of the assumed subgroup on {v,s,c} -- check the column",
+    "law_holds": true,
+    "note": "Ceiling is now a measured minimum over the full symmetry lattice, not the definitional 'a nonzero coupling needs >=1 parameter'. It is still 1; the difference is that it was searched for rather than asserted."
+  },
+  "step5h_tolerance_sensitivity": {
+    "tolerance_factor_swept": [
+      0.001,
+      0.1,
+      1.0,
+      10.0,
+      1000.0,
+      1000000.0,
+      1000000000.0
+    ],
+    "default_factor_used_everywhere_else": 1000.0,
+    "dims_at_each_factor": {
+      "Hom(rho2->rho1)_expect_0": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Hom(rho1->rho1)_expect_1": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "Hom_g2_expect_2": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "entrywise_derivations_expect_28": [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      "commutant_so8_RUNG2_expect_3": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "commutant_so8_plus_U_RUNG3_expect_1": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "commutant_g2_RUNG1_expect_18": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ]
+    },
+    "distinct_dims_seen_per_probe": {
+      "Hom(rho2->rho1)_expect_0": [
+        0
+      ],
+      "Hom(rho1->rho1)_expect_1": [
+        0,
+        1
+      ],
+      "Hom_g2_expect_2": [
+        2
+      ],
+      "entrywise_derivations_expect_28": [
+        28
+      ],
+      "commutant_so8_RUNG2_expect_3": [
+        3
+      ],
+      "commutant_so8_plus_U_RUNG3_expect_1": [
+        1
+      ],
+      "commutant_g2_RUNG1_expect_18": [
+        18
+      ]
+    },
+    "largest_singular_value_of_each_system": {
+      "Hom(rho2->rho1)_expect_0": 1.581138830084191,
+      "Hom(rho1->rho1)_expect_1": 1.632993161855453,
+      "Hom_g2_expect_2": 4.898979485566357,
+      "entrywise_derivations_expect_28": 4.8989794855663575,
+      "commutant_so8_RUNG2_expect_3": 1.632993161855454,
+      "commutant_so8_plus_U_RUNG3_expect_1": 2.38047614284762,
+      "commutant_g2_RUNG1_expect_18": 4.898979485566358
+    },
+    "actual_tolerance_per_probe_per_factor": {
+      "Hom(rho2->rho1)_expect_0": {
+        "factor_0.001": 6.291413575689454e-16,
+        "factor_0.1": 6.291413575689455e-14,
+        "factor_1": 6.291413575689454e-13,
+        "factor_10": 6.2914135756894544e-12,
+        "factor_1000": 6.291413575689454e-10,
+        "factor_1e+06": 6.291413575689454e-07,
+        "factor_1e+09": 0.0006291413575689454
+      },
+      "Hom(rho1->rho1)_expect_1": {
+        "factor_0.001": 6.497744000732935e-16,
+        "factor_0.1": 6.497744000732935e-14,
+        "factor_1": 6.497744000732934e-13,
+        "factor_10": 6.497744000732934e-12,
+        "factor_1000": 6.497744000732935e-10,
+        "factor_1e+06": 6.497744000732934e-07,
+        "factor_1e+09": 0.0006497744000732934
+      },
+      "Hom_g2_expect_2": {
+        "factor_0.001": 9.746616001099397e-16,
+        "factor_0.1": 9.746616001099397e-14,
+        "factor_1": 9.746616001099396e-13,
+        "factor_10": 9.746616001099396e-12,
+        "factor_1000": 9.746616001099397e-10,
+        "factor_1e+06": 9.746616001099396e-07,
+        "factor_1e+09": 0.0009746616001099396
+      },
+      "entrywise_derivations_expect_28": {
+        "factor_0.001": 2.1411009235450833e-14,
+        "factor_0.1": 2.1411009235450834e-12,
+        "factor_1": 2.1411009235450833e-11,
+        "factor_10": 2.1411009235450834e-10,
+        "factor_1000": 2.1411009235450832e-08,
+        "factor_1e+06": 2.1411009235450833e-05,
+        "factor_1e+09": 0.021411009235450834
+      },
+      "commutant_so8_RUNG2_expect_3": {
+        "factor_0.001": 5.847969600659645e-15,
+        "factor_0.1": 5.847969600659645e-13,
+        "factor_1": 5.8479696006596446e-12,
+        "factor_10": 5.847969600659645e-11,
+        "factor_1000": 5.847969600659644e-09,
+        "factor_1e+06": 5.847969600659644e-06,
+        "factor_1e+09": 0.005847969600659644
+      },
+      "commutant_so8_plus_U_RUNG3_expect_1": {
+        "factor_0.001": 8.829264761562128e-15,
+        "factor_0.1": 8.829264761562128e-13,
+        "factor_1": 8.829264761562128e-12,
+        "factor_10": 8.829264761562128e-11,
+        "factor_1000": 8.829264761562127e-09,
+        "factor_1e+06": 8.829264761562127e-06,
+        "factor_1e+09": 0.008829264761562127
+      },
+      "commutant_g2_RUNG1_expect_18": {
+        "factor_0.001": 8.77195440098946e-15,
+        "factor_0.1": 8.77195440098946e-13,
+        "factor_1": 8.77195440098946e-12,
+        "factor_10": 8.77195440098946e-11,
+        "factor_1000": 8.77195440098946e-09,
+        "factor_1e+06": 8.771954400989459e-06,
+        "factor_1e+09": 0.008771954400989459
+      }
+    },
+    "probes_stable_across_all_7_factors": [
+      "Hom(rho2->rho1)_expect_0",
+      "Hom_g2_expect_2",
+      "entrywise_derivations_expect_28",
+      "commutant_so8_RUNG2_expect_3",
+      "commutant_so8_plus_U_RUNG3_expect_1",
+      "commutant_g2_RUNG1_expect_18"
+    ],
+    "probes_that_move": [
+      "Hom(rho1->rho1)_expect_1"
+    ],
+    "default_tolerance_actually_used_per_probe": {
+      "Hom(rho2->rho1)_expect_0": 6.291413575689454e-10,
+      "Hom(rho1->rho1)_expect_1": 6.497744000732935e-10,
+      "Hom_g2_expect_2": 9.746616001099397e-10,
+      "entrywise_derivations_expect_28": 2.1411009235450832e-08,
+      "commutant_so8_RUNG2_expect_3": 5.847969600659644e-09,
+      "commutant_so8_plus_U_RUNG3_expect_1": 8.829264761562127e-09,
+      "commutant_g2_RUNG1_expect_18": 8.77195440098946e-09
+    },
+    "why_the_mover_moves": "End(rho1) drops 1 -> 0 ONLY at factor 1e-3, where its tolerance falls to ~6.50e-16 -- BELOW the 6.70e-16 floating-point noise floor of the true zero singular value, so no numerically-zero value could be detected at all. That is a degenerate tolerance, not a competing rank call. At the DEFAULT factor 1e3 its tolerance is ~6.50e-10 (NOT 6.5e-13, which is the factor-1 value and was misquoted in an earlier draft): about six orders above the noise floor and about nine orders below the smallest genuine singular value 1.414.",
+    "all_probes_including_the_mover_stable_from_factor_1e-1_upward": true
+  },
+  "step6_ladder": {
+    "rung1_G2_dim_of_permitted_endomorphisms_of_F": 18,
+    "rung1_channel_matrix_M_free": "arbitrary 3x3",
+    "rung2_Spin8_dim": 3,
+    "rung2_channel_matrix_M": "diagonal, independent lambda_1,2,3",
+    "rung3_Spin8_plus_Z3_dim": 1,
+    "rung3_channel_matrix_M": "scalar, lambda_1 = lambda_2 = lambda_3",
+    "NEGATIVE_CONTROL_equivalent_triple_dim_at_Spin8_level": 9,
+    "NEGATIVE_CONTROL_PASSES": true
+  },
+  "kill_criteria": {
+    "a_G2_equivariant_channel_mixing_map_EXISTS": true,
+    "a_FIRES_if_False": false,
+    "b_Hom_Spin8_8v_8s_is_zero": true,
+    "b_FIRES_if_False": false,
+    "c_U_conjugates_the_three_blocks_cyclically": true,
+    "c_FIRES_if_False": false
+  }
+}

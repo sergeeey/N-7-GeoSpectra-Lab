@@ -1,0 +1,428 @@
+{
+  "structural_controls": {
+    "max_antisymmetry_residual": 0.0,
+    "su2_L_closure_residual": 0.0,
+    "su2_R_closure_residual": 0.0,
+    "L_R_commute_residual": 0.0,
+    "rank_of_LR_span": 6,
+    "rank_of_LR_plus_coordinate_rotations": 6,
+    "LR_spans_so4": true,
+    "ok": true
+  },
+  "control_item2_tom_eq77_S3_vector": {
+    "per_convention_satisfied": {
+      "his_convention_Gamma_eq_minus_T_row_contraction": true,
+      "transpose_variant": false,
+      "sign_variant_Gamma_eq_plus_T": false
+    },
+    "his_stated_convention_verifies": true,
+    "exactly_one_convention_works": true
+  },
+  "spinor_levels": [
+    {
+      "k": 0,
+      "dim_H_k": 1,
+      "dim_H_k_expected": 1,
+      "dim_matches": true,
+      "total_dim_spinor_space": 2,
+      "max_abs_imaginary_part_of_eigenvalues": 0.0,
+      "eigenvalues_real": true,
+      "spectrum": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "multiplicities_found": [
+        2
+      ],
+      "multiplicities_expected_from_round67": [
+        2
+      ],
+      "multiplicities_match": true
+    },
+    {
+      "k": 1,
+      "dim_H_k": 4,
+      "dim_H_k_expected": 4,
+      "dim_matches": true,
+      "total_dim_spinor_space": 8,
+      "max_abs_imaginary_part_of_eigenvalues": 5.724587470723463e-17,
+      "eigenvalues_real": true,
+      "spectrum": [
+        {
+          "eigenvalue": -1.0,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 3.0,
+          "multiplicity": 2
+        }
+      ],
+      "multiplicities_found": [
+        6,
+        2
+      ],
+      "multiplicities_expected_from_round67": [
+        6,
+        2
+      ],
+      "multiplicities_match": true
+    },
+    {
+      "k": 2,
+      "dim_H_k": 9,
+      "dim_H_k_expected": 9,
+      "dim_matches": true,
+      "total_dim_spinor_space": 18,
+      "max_abs_imaginary_part_of_eigenvalues": 7.216449660063518e-16,
+      "eigenvalues_real": true,
+      "spectrum": [
+        {
+          "eigenvalue": -2.0,
+          "multiplicity": 12
+        },
+        {
+          "eigenvalue": 4.0,
+          "multiplicity": 6
+        }
+      ],
+      "multiplicities_found": [
+        12,
+        6
+      ],
+      "multiplicities_expected_from_round67": [
+        12,
+        6
+      ],
+      "multiplicities_match": true
+    },
+    {
+      "k": 3,
+      "dim_H_k": 16,
+      "dim_H_k_expected": 16,
+      "dim_matches": true,
+      "total_dim_spinor_space": 32,
+      "max_abs_imaginary_part_of_eigenvalues": 8.049116928532385e-16,
+      "eigenvalues_real": true,
+      "spectrum": [
+        {
+          "eigenvalue": -3.0,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 5.0,
+          "multiplicity": 12
+        }
+      ],
+      "multiplicities_found": [
+        20,
+        12
+      ],
+      "multiplicities_expected_from_round67": [
+        20,
+        12
+      ],
+      "multiplicities_match": true
+    }
+  ],
+  "connection_constant_check": {
+    "method": "intersect per-pair candidate constants c = eigenvalue -+ (n+3/2)",
+    "per_pair_analysis": [
+      {
+        "eigenvalue": 0.0,
+        "multiplicity": 2,
+        "n_from_multiplicity": 0,
+        "required_magnitude": 1.5,
+        "candidate_constants": [
+          -1.5,
+          1.5
+        ]
+      },
+      {
+        "eigenvalue": -1.0,
+        "multiplicity": 6,
+        "n_from_multiplicity": 1,
+        "required_magnitude": 2.5,
+        "candidate_constants": [
+          -3.5,
+          1.5
+        ]
+      },
+      {
+        "eigenvalue": 3.0,
+        "multiplicity": 2,
+        "n_from_multiplicity": 0,
+        "required_magnitude": 1.5,
+        "candidate_constants": [
+          1.5,
+          4.5
+        ]
+      },
+      {
+        "eigenvalue": -2.0,
+        "multiplicity": 12,
+        "n_from_multiplicity": 2,
+        "required_magnitude": 3.5,
+        "candidate_constants": [
+          -5.5,
+          1.5
+        ]
+      },
+      {
+        "eigenvalue": 4.0,
+        "multiplicity": 6,
+        "n_from_multiplicity": 1,
+        "required_magnitude": 2.5,
+        "candidate_constants": [
+          1.5,
+          6.5
+        ]
+      },
+      {
+        "eigenvalue": -3.0,
+        "multiplicity": 20,
+        "n_from_multiplicity": 3,
+        "required_magnitude": 4.5,
+        "candidate_constants": [
+          -7.5,
+          1.5
+        ]
+      },
+      {
+        "eigenvalue": 5.0,
+        "multiplicity": 12,
+        "n_from_multiplicity": 2,
+        "required_magnitude": 3.5,
+        "candidate_constants": [
+          1.5,
+          8.5
+        ]
+      }
+    ],
+    "intersection_of_candidates": [
+      1.5
+    ],
+    "constant_is_unique": true,
+    "solved_connection_constant": 1.5,
+    "equals_three_halves": true,
+    "constant_was_solved_not_assumed": true,
+    "full_spectrum_matches_round67": true
+  },
+  "skeptic_followup_chirality_discrimination": {
+    "per_chirality": {
+      "X_R": {
+        "spectra": {
+          "0": [
+            {
+              "eigenvalue": 0.0,
+              "multiplicity": 2
+            }
+          ],
+          "1": [
+            {
+              "eigenvalue": -1.0,
+              "multiplicity": 6
+            },
+            {
+              "eigenvalue": 3.0,
+              "multiplicity": 2
+            }
+          ],
+          "2": [
+            {
+              "eigenvalue": -2.0,
+              "multiplicity": 12
+            },
+            {
+              "eigenvalue": 4.0,
+              "multiplicity": 6
+            }
+          ],
+          "3": [
+            {
+              "eigenvalue": -3.0,
+              "multiplicity": 20
+            },
+            {
+              "eigenvalue": 5.0,
+              "multiplicity": 12
+            }
+          ]
+        },
+        "multiplicities": {
+          "0": [
+            2
+          ],
+          "1": [
+            6,
+            2
+          ],
+          "2": [
+            12,
+            6
+          ],
+          "3": [
+            20,
+            12
+          ]
+        },
+        "solved_constant": 1.5,
+        "constant_is_unique": true
+      },
+      "X_L": {
+        "spectra": {
+          "0": [
+            {
+              "eigenvalue": 0.0,
+              "multiplicity": 2
+            }
+          ],
+          "1": [
+            {
+              "eigenvalue": -3.0,
+              "multiplicity": 2
+            },
+            {
+              "eigenvalue": 1.0,
+              "multiplicity": 6
+            }
+          ],
+          "2": [
+            {
+              "eigenvalue": -4.0,
+              "multiplicity": 6
+            },
+            {
+              "eigenvalue": 2.0,
+              "multiplicity": 12
+            }
+          ],
+          "3": [
+            {
+              "eigenvalue": -5.0,
+              "multiplicity": 12
+            },
+            {
+              "eigenvalue": 3.0,
+              "multiplicity": 20
+            }
+          ]
+        },
+        "multiplicities": {
+          "0": [
+            2
+          ],
+          "1": [
+            6,
+            2
+          ],
+          "2": [
+            12,
+            6
+          ],
+          "3": [
+            20,
+            12
+          ]
+        },
+        "solved_constant": -1.5,
+        "constant_is_unique": true
+      }
+    },
+    "multiplicities_identical_across_chiralities": true,
+    "multiplicity_check_does_NOT_discriminate": true,
+    "constants": {
+      "X_R": 1.5,
+      "X_L": -1.5
+    },
+    "constant_check_DOES_discriminate": true,
+    "constants_are_opposite_sign": true
+  },
+  "skeptic_followup_basis_independence": {
+    "level_k": 2,
+    "scrambled_basis_non_orthonormality": 16.61425877208314,
+    "scrambling_is_nontrivial": true,
+    "max_eigenvalue_difference_under_random_change_of_basis": 5.995204332975845e-14,
+    "spectrum_is_basis_independent": true,
+    "note": "confirms the non-antisymmetry of the raw matrix in the monomial basis is a basis artefact, not a defect in the operator"
+  },
+  "explicit_lowest_harmonics": {
+    "k0": {
+      "description": "H_0 = span{1}; C^2 (x) H_0 = the two CONSTANT spinors",
+      "basis": [
+        "(1, 0)",
+        "(0, 1)"
+      ],
+      "note": "constant sections exist precisely because S^3 is parallelizable"
+    },
+    "k1": {
+      "description": "C^2 (x) H_1, dim 8; explicit eigen-spinors of D_0",
+      "eigenspinors": [
+        {
+          "eigenvalue": -1.0,
+          "spinor": [
+            "(+1.000+0.000i)*x0 (+0.000+0.333i)*x3",
+            "(-0.000-0.333i)*x1 (-0.333+0.000i)*x2"
+          ]
+        },
+        {
+          "eigenvalue": -1.0,
+          "spinor": [
+            "(-0.174+0.000i)*x0 (+1.000+0.000i)*x1 (-0.000-0.333i)*x2 (+0.000-0.058i)*x3",
+            "(+0.000+0.333i)*x0 (+0.000+0.058i)*x1 (+0.058-0.000i)*x2 (-0.333+0.000i)*x3"
+          ]
+        },
+        {
+          "eigenvalue": -1.0,
+          "spinor": [
+            "(-0.174-0.000i)*x0 (+1.000+0.000i)*x1 (+0.221+0.271i)*x2 (-0.036-0.046i)*x3",
+            "(+0.111+0.636i)*x0 (-0.034+0.098i)*x1 (+0.029+0.002i)*x2 (-0.636+0.111i)*x3"
+          ]
+        },
+        {
+          "eigenvalue": -1.0,
+          "spinor": [
+            "(-0.014-0.009i)*x0 (-0.154-0.110i)*x1 (+0.176+0.366i)*x2 (+1.000+0.000i)*x3",
+            "(-0.158+0.916i)*x0 (+0.462-0.113i)*x1 (+0.127-0.530i)*x2 (+0.704+0.443i)*x3"
+          ]
+        },
+        {
+          "eigenvalue": -1.0,
+          "spinor": [
+            "(-0.011+0.019i)*x0 (-0.125+0.218i)*x1 (-0.327-0.165i)*x2 (-0.383+0.096i)*x3",
+            "(+0.084-0.365i)*x0 (-0.364-0.893i)*x1 (+1.000+0.000i)*x2 (-0.076-0.629i)*x3"
+          ]
+        },
+        {
+          "eigenvalue": -1.0,
+          "spinor": [
+            "(-0.022-0.001i)*x0 (-0.308-0.052i)*x1 (+0.067+0.131i)*x2 (+1.000+0.000i)*x3",
+            "(+0.393-0.875i)*x0 (+0.715+0.013i)*x1 (+0.009-0.283i)*x2 (-0.698-0.274i)*x3"
+          ]
+        },
+        {
+          "eigenvalue": 3.0,
+          "spinor": [
+            "(+0.000+1.000i)*x0 (+1.000+0.000i)*x3",
+            "(-1.000+0.000i)*x1 (+0.000+1.000i)*x2"
+          ]
+        },
+        {
+          "eigenvalue": 3.0,
+          "spinor": [
+            "(+0.000+0.519i)*x0 (-0.000-1.000i)*x1 (+1.000+0.000i)*x2 (+0.519-0.000i)*x3",
+            "(-1.000-0.000i)*x0 (-0.519+0.000i)*x1 (+0.000+0.519i)*x2 (+0.000-1.000i)*x3"
+          ]
+        }
+      ]
+    }
+  },
+  "verdict": {
+    "label": "BOTH-CONFIRMED-PLUS-CONNECTION-CONSTANT",
+    "substrate_ok": true,
+    "eq77_S3_vector_ok": true,
+    "spinor_multiplicities_reproduce_round67": true,
+    "connection_constant_emerges_as_three_halves": true
+  }
+}

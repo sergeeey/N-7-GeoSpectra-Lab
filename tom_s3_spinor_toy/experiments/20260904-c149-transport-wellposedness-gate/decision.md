@@ -1,0 +1,92 @@
+# C149 — Decision
+
+## Result (`c149_transport_wellposedness.py`)
+
+| operator | role | `max_a ‖[O,ρ(a)]‖` | spread of `gOg⁻¹` | equivariant | transport invariant |
+|---|---|---|---|---|---|
+| `D_Σ` | positive control (C146) | **0.000e+00** | **0.000e+00** | yes | **yes** |
+| `γ` (EVEN/ODD grading) | positive control candidate | **0.000e+00** | 4.464e-16 | yes | **yes** |
+| random operator | **negative control** | 2.476e+00 | 5.175e+00 | no | **no** |
+
+Criterion and directly-measured invariance agree in all three cases.
+**⚠️ Corrected after the skeptic pass (see Response Matrix below): this is
+NOT "the criterion confirmed predictive by 2 positives + 1 negative".**
+`γ`'s agreement is structurally automatic (`spin_lift` is parity-preserving,
+so `[γ, ρ(a)] = 0` for ANY of its outputs, independent of `su(3)`), so the
+evidence is **1 substantive positive (`D_Σ`) + 1 easy negative**.
+
+## Verdict (first draft — SUPERSEDED, see "Verdict (corrected after skeptic)" below)
+
+> ~~**PROMOTE** — the step is well-posed for `D` and `γ`.~~ Left visible
+> rather than deleted, per this project's Hindsight Distortion Gap
+> Heuristic. The corrected verdict narrows this on two axes: `γ` is not a
+> substantive case, and "well-posed" holds only under the identity
+> component of the residual freedom.
+
+For `D_Σ` and `γ`, the ~8-real-dimensional `Inn(su(3))` freedom in `U`
+**does not reach them**, because they commute with exactly that freedom.
+So OB11(ii)'s planned transport is **not** a gauge artifact for these two
+operators, and a round built on it would be testing something real.
+
+The negative control fails by order 1 (spread 5.18 against a 1e-9
+threshold), so the test genuinely discriminates — this is not a
+vacuously-passing check.
+
+## What this actually buys
+
+OB11(ii)'s next step has sat unexecuted since 2026-08-10 with an unexamined
+soundness question underneath it. That question is now answered for two of
+the three operators, cheaply, without running the expensive step itself.
+Had the answer gone the other way, it would have saved a whole round from
+producing a gauge artifact; as it went, it *licenses* the step instead.
+
+**The `J` gap is real and is not glossed:** `J` is not constructed in
+round59's own file, so its `su(3)`-equivariance is genuinely unknown here.
+Anyone resuming OB11(ii) must check `J` against the same criterion first —
+it is a one-line check once `J` is in hand, and it is a prerequisite, not
+an optional extra.
+
+## Connection to today's other rounds (not a coincidence worth passing over)
+
+This check was only cheap because C146 (earlier today) proved `D_Σ` is
+`SU(3)`-equivariant as a standalone fact. Before that, the equivariance was
+implicit in round59/C139/C141's machinery but never isolated — and the
+well-posedness question could not have been answered by citation. A theorem
+proved for one purpose (explaining why `Term1` vanishes) turned out to be
+the missing input for an unrelated three-week-old blocker. Worth recording
+as a pattern: **isolating an implicit fact into an explicit one has
+downstream value that is not visible when the fact is proved.**
+
+## Kill Analysis (not applicable — no claim was killed)
+
+Nothing was falsified. The pre-registered kill criterion (either positive
+control showing gauge-dependence, or the negative control failing to show
+it) did not fire in any of the three cases.
+
+## Skeptic pass (Step 8a, context-blind)
+
+**Verdict: WEAKENED** (not falsified). Three real findings, all accepted.
+
+### Response Matrix (per FL Step 8a)
+
+| Concern | Severity | Response |
+|---|---|---|
+| **`γ` is vacuous as a positive control.** `spin_lift` builds operators as sums of `(1/2)E[a]E[b]`, which are parity-EVEN by construction, so `[γ, ρ(a)] = 0` holds automatically for ANY `spin_lift` output on any homogeneous space — it tests that `spin_lift` produces even operators, not anything about `su(3)` equivariance | **fatal to the "positive control" framing**, not to the verdict | **Accepted in full.** The project already knew this — C139's own script has a check literally named `nab_i_preserves_sigma_even_odd_parity` with the comment *"spin_lift of any so(6) bivector is quadratic in Clifford generators, hence parity-preserving"*. I should have recognised it. **The substantive positive case is `D_Σ` alone** (via C146); `γ`'s well-posedness answer is still YES but is a corollary of `spin_lift`'s type, not evidence about `su(3)`. The claim "criterion confirmed predictive" therefore rests on **1 substantive positive + 1 easy negative**, not 2+1 — corrected below. |
+| **Residual-freedom scope**: the test samples only `exp(span_ℝ ρ_a)`, i.e. the identity component. Outer automorphisms (`Z/2` for `su(3)`) and any discrete elements of the true residual group are untested | scope | **Accepted, promoted from `does_not_imply` #5 to verdict-adjacent** (see corrected verdict below). "Well-posed" here means *well-posed under the identity component as generated by the sampled `su(3)` algebra* — a larger residual freedom would require re-checking. |
+| **Exact `0.000e+00` spread for `D_Σ` is numerically suspicious** — with `√3`-valued floats one expects a `~1e-16` roundoff floor (as `γ` shows); bitwise zero across 12 random `g` suggests a possible silent degeneracy. Requested a non-degeneracy check | scope, but genuinely suspicious | **Accepted and CHECKED, not explained away.** Result: `max|D_Σ| = 1.732051 = √3`, `‖D_Σ‖_F = 2.449490 = √6`, `rank = 2`, eigenvalues exactly `{−√3, 0×6, +√3}` — matching round59's own certified `Dψ± = ∓√3 ψ±`. **Not degenerate.** The exact zero is explained: `D_Σ` has only **2 nonzero entries out of 64**, so the transport arithmetic lands on exact zeros rather than accumulating roundoff. Benign, and the check was worth running. |
+
+**Unplanned corroboration of C146 from this check:** `rank(D_Σ) = 2` with only
+two nonzero entries means the untwisted operator is *entirely* the b-channel
+— an independent, sharper confirmation of C146's finding that `D_Σ`'s
+"`3`-block" vanishes (C146 showed those columns are zero; this shows almost
+everything else is too).
+
+## Verdict (corrected after skeptic): **PROMOTE, narrowed**
+
+For **`D_Σ`** — the one substantive case — the planned transport is
+representative-independent **under the identity component of the residual
+freedom**, so OB11(ii)'s next step is not a gauge artifact for it.
+For **`γ`** the answer is also YES but is structurally automatic
+(`spin_lift` is parity-preserving), not evidence about `su(3)`.
+**`J` remains unchecked** and is a prerequisite for anyone resuming OB11(ii).
+**Untested:** any residual freedom outside the identity component.

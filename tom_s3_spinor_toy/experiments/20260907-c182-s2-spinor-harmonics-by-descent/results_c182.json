@@ -1,0 +1,254 @@
+{
+  "weight_spectra": [
+    {
+      "k": 0,
+      "dim_H_k": 1,
+      "weights_real": true,
+      "weight_spectrum": [
+        {
+          "weight": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "weights_form_expected_ladder": true,
+      "all_multiplicities_equal_k_plus_1": true
+    },
+    {
+      "k": 1,
+      "dim_H_k": 4,
+      "weights_real": true,
+      "weight_spectrum": [
+        {
+          "weight": -0.5,
+          "multiplicity": 2
+        },
+        {
+          "weight": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "weights_form_expected_ladder": true,
+      "all_multiplicities_equal_k_plus_1": true
+    },
+    {
+      "k": 2,
+      "dim_H_k": 9,
+      "weights_real": true,
+      "weight_spectrum": [
+        {
+          "weight": -1.0,
+          "multiplicity": 3
+        },
+        {
+          "weight": -0.0,
+          "multiplicity": 3
+        },
+        {
+          "weight": 1.0,
+          "multiplicity": 3
+        }
+      ],
+      "weights_form_expected_ladder": true,
+      "all_multiplicities_equal_k_plus_1": true
+    },
+    {
+      "k": 3,
+      "dim_H_k": 16,
+      "weights_real": true,
+      "weight_spectrum": [
+        {
+          "weight": -1.5,
+          "multiplicity": 4
+        },
+        {
+          "weight": -0.5,
+          "multiplicity": 4
+        },
+        {
+          "weight": 0.5,
+          "multiplicity": 4
+        },
+        {
+          "weight": 1.5,
+          "multiplicity": 4
+        }
+      ],
+      "weights_form_expected_ladder": true,
+      "all_multiplicities_equal_k_plus_1": true
+    },
+    {
+      "k": 4,
+      "dim_H_k": 25,
+      "weights_real": true,
+      "weight_spectrum": [
+        {
+          "weight": -2.0,
+          "multiplicity": 5
+        },
+        {
+          "weight": -1.0,
+          "multiplicity": 5
+        },
+        {
+          "weight": -0.0,
+          "multiplicity": 5
+        },
+        {
+          "weight": 1.0,
+          "multiplicity": 5
+        },
+        {
+          "weight": 2.0,
+          "multiplicity": 5
+        }
+      ],
+      "weights_form_expected_ladder": true,
+      "all_multiplicities_equal_k_plus_1": true
+    },
+    {
+      "k": 5,
+      "dim_H_k": 36,
+      "weights_real": true,
+      "weight_spectrum": [
+        {
+          "weight": -2.5,
+          "multiplicity": 6
+        },
+        {
+          "weight": -1.5,
+          "multiplicity": 6
+        },
+        {
+          "weight": -0.5,
+          "multiplicity": 6
+        },
+        {
+          "weight": 0.5,
+          "multiplicity": 6
+        },
+        {
+          "weight": 1.5,
+          "multiplicity": 6
+        },
+        {
+          "weight": 2.5,
+          "multiplicity": 6
+        }
+      ],
+      "weights_form_expected_ladder": true,
+      "all_multiplicities_equal_k_plus_1": true
+    }
+  ],
+  "scalar_sector": {
+    "per_level": [
+      {
+        "k": 0,
+        "l": 0,
+        "weight_0_dimension_found": 1,
+        "expected_2l_plus_1": 1,
+        "match": true
+      },
+      {
+        "k": 2,
+        "l": 1,
+        "weight_0_dimension_found": 3,
+        "expected_2l_plus_1": 3,
+        "match": true
+      },
+      {
+        "k": 4,
+        "l": 2,
+        "weight_0_dimension_found": 5,
+        "expected_2l_plus_1": 5,
+        "match": true
+      }
+    ],
+    "all_match": true
+  },
+  "spinor_sectors": {
+    "per_level": [
+      {
+        "k": 0,
+        "parity": "even",
+        "half_integer_weight_present": false,
+        "expected_present": false
+      },
+      {
+        "k": 1,
+        "parity": "odd",
+        "l": 0,
+        "dim_weight_plus_half": 2,
+        "dim_weight_minus_half": 2,
+        "expected_2_l_plus_1": 2,
+        "match": true
+      },
+      {
+        "k": 2,
+        "parity": "even",
+        "half_integer_weight_present": false,
+        "expected_present": false
+      },
+      {
+        "k": 3,
+        "parity": "odd",
+        "l": 1,
+        "dim_weight_plus_half": 4,
+        "dim_weight_minus_half": 4,
+        "expected_2_l_plus_1": 4,
+        "match": true
+      },
+      {
+        "k": 4,
+        "parity": "even",
+        "half_integer_weight_present": false,
+        "expected_present": false
+      },
+      {
+        "k": 5,
+        "parity": "odd",
+        "l": 2,
+        "dim_weight_plus_half": 6,
+        "dim_weight_minus_half": 6,
+        "expected_2_l_plus_1": 6,
+        "match": true
+      }
+    ],
+    "all_match": true,
+    "half_integer_weights_only_at_odd_k": true
+  },
+  "fibre_invariance_check": {
+    "per_sector": [
+      {
+        "k": 2,
+        "sector": "weight_0",
+        "drift_under_generic_rotation": 1.1990720025332968e-15,
+        "phase_after_half_turn": [
+          1.0,
+          -0.0
+        ],
+        "expected": "invariant, phase +1",
+        "ok": true
+      },
+      {
+        "k": 3,
+        "sector": "weight_half",
+        "drift_under_generic_rotation": 0.6857956149109034,
+        "phase_after_half_turn": [
+          -1.0,
+          0.0
+        ],
+        "expected": "moves, phase -1",
+        "ok": true
+      }
+    ],
+    "weight0_descends_and_half_does_not": true
+  },
+  "verdict": {
+    "label": "DESCENT-CONFIRMED",
+    "weight_ladder_ok": true,
+    "sector_dimensions_match": true,
+    "fibre_invariance_ok": true,
+    "scalar_and_spinor_targets_are_the_same_number_k_plus_1": true,
+    "independent_content": "the ladder (one structural fact) plus the fibre-invariance check (the genuinely independent one); the two dimension 'checks' are one algebraic identity, not two confirmations"
+  }
+}

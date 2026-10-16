@@ -1,0 +1,87 @@
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+==============================================================================
+H-coh-odd : do odd directions 1,3,5 share one line, as 0,2,4 do?
+------------------------------------------------------------------------------
+  dir 3 vs dir 1: ratio = -1   same line: True
+  dir 5 vs dir 1: ratio = 1   same line: True
+  H-coh-odd holds: True
+
+==============================================================================
+H-plane : is the whole image the REAL span of M(dir0), M(dir1)?
+------------------------------------------------------------------------------
+  rank of span(M(dir0), M(dir1)) over R = 2
+  rank of span of ALL SIX images  over R = 2
+  H-plane holds (all six live in that same real 2-plane): True
+
+  is that 2-plane closed under multiplication by i (a complex line)?
+  rank([M0 M1 | i*M0]) = 3  (2 => complex line, 3 => NOT)
+  the 2-plane IS a complex line: False

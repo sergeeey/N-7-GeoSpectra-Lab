@@ -1,0 +1,44 @@
+{
+  "control": {
+    "c_kkk_max_abs": 0.0,
+    "as_is_x1": {
+      "max_abs_err_vs_round_riemann": 0.5,
+      "ricci_diag_mean": 2.5000000000000004
+    },
+    "uniform_x2": {
+      "max_abs_err_vs_round_riemann": 4.440892098500626e-16,
+      "ricci_diag_mean": 5.000000000000001
+    },
+    "term2_only_x2": {
+      "max_abs_err_vs_round_riemann": 4.440892098500626e-16,
+      "ricci_diag_mean": 5.000000000000001
+    },
+    "kn_plus_fi_ricci_diag_mean": 5.000000000000001,
+    "kn_plus_fi_offdiag_max": 2.394370367673545e-16,
+    "kn_plus_fi_vs_round_ricci_err": 1.7763568394002505e-15
+  },
+  "g2su3": {
+    "c_kkk_max_abs": 0.45831952177324076,
+    "as_is_x1": {
+      "max_abs_err_vs_round_riemann": 0.5000000000000002,
+      "ricci_diag_mean": 2.5000000000000018
+    },
+    "uniform_x2": {
+      "max_abs_err_vs_round_riemann": 1.9984014443252818e-15,
+      "ricci_diag_mean": 5.0000000000000036
+    },
+    "term2_only_x2": {
+      "max_abs_err_vs_round_riemann": 0.24618243845686444,
+      "ricci_diag_mean": 4.500000000000003
+    },
+    "kn_plus_fi_ricci_diag_mean": 5.0000000000000036,
+    "kn_plus_fi_offdiag_max": 1.6280379822042333e-15,
+    "kn_plus_fi_vs_round_ricci_err": 5.329070518200751e-15,
+    "gram_err": 1.204418303319762e-15,
+    "generators_antisym_err": 1.4988010832439613e-15
+  },
+  "uniform_ok": true,
+  "negative_controls_fail_as_required": true,
+  "kn_fi_independent_ok": true,
+  "verdict": "UNIFORM_FACTOR_2_CONFIRMED"
+}

@@ -1,0 +1,108 @@
+==============================================================================
+Importing C153 Step 2 (exact SU(3)/T^2 geometry, family, c_of_exact)
+==============================================================================
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+  exact family dimension (regression) : 6  (must be 6)
+
+==============================================================================
+STEP B1  exact T^2-invariant spinors in Sigma (nullspace, not SVD)
+==============================================================================
+  exact T^2-invariant spinors in Sigma : 2  (Stage 2a found 2 numerically)
+  D_Sigma(LC) on the orthonormalised invariant 2-plane, eigenvalues:
+    eigenvalue -3  (multiplicity 1)
+    eigenvalue 3  (multiplicity 1)
+  psi_+ (SU(3)/T^2) identified, ||psi_+||^2 = 2
+
+==============================================================================
+STEP B2  mu(nabla) = ||D_Sigma(nabla) psi_+|| / ||psi_+||, all 6 + sum
+==============================================================================
+  mu(LC) [must reproduce Stage 2a's exact 3] : 3
+
+==============================================================================
+STEP B3  |c(nabla)| via full Frobenius norm (nothing discarded), ratio
+==============================================================================
+  basis 0: mu =            2   |c| =      4*sqrt(2)   ratio = 2*sqrt(2)   ==2/3: False
+  basis 1: mu =            2   |c| =      4*sqrt(2)   ratio = 2*sqrt(2)   ==2/3: False
+  basis 2: mu =            2   |c| =      4*sqrt(2)   ratio = 2*sqrt(2)   ==2/3: False
+  basis 3: mu =            2   |c| =      4*sqrt(2)   ratio = 2*sqrt(2)   ==2/3: False
+  basis 4: mu =            2   |c| =      4*sqrt(2)   ratio = 2*sqrt(2)   ==2/3: False
+  basis 5: mu =            2   |c| =      4*sqrt(2)   ratio = 2*sqrt(2)   ==2/3: False
+  SUM of all 6: mu = 2*sqrt(2)   |c| = 8*sqrt(3)   ratio = 2*sqrt(6)
+  SUM ratio == 2/3 : False
+
+==============================================================================
+VERDICT
+==============================================================================
+  all tested basis directions give ratio 2/3 : False  (6/6 nondegenerate)
+  the SUM combination also gives ratio 2/3    : False
+  NOT confirmed uniformly -- report exactly which points failed and by
+  how much; do not average over failures.

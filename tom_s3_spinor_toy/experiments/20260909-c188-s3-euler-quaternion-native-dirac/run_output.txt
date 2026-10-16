@@ -1,0 +1,42 @@
+==============================================================================
+A  X_a^R (quaternion right multiplication) as (theta,phi,psi) operators
+==============================================================================
+  [PASS] P1 x0^2+..+x3^2 = 1 identically (same embedding used throughout this project)
+  [PASS] P2a X_0^R is genuinely tangent to S^3 (least-squares residual)
+         residual=0
+  [PASS] P2b X_0^R matches its stated closed form
+         max diff over 5 random points = 0E-163
+  [PASS] P3a X_1^R is genuinely tangent to S^3 (least-squares residual)
+         residual=1.573523180806092195278321660361958739174E-41
+  [PASS] P3b X_1^R matches its stated closed form
+         max diff over 5 random points = 0
+  [PASS] P4a X_2^R is genuinely tangent to S^3 (least-squares residual)
+         residual=5.579644101652240587726239007379236534541E-41
+  [PASS] P4b X_2^R matches its stated closed form
+         max diff over 5 random points = 0
+
+==============================================================================
+B  D = -i sum_a sigma_a X_a^R, assembled directly
+==============================================================================
+  [PASS] P8 D applied to a plane-wave ansatz in 0.052s
+  [PASS] P9 both components keep a SINGLE shared (m,n) -- no phase splitting (X_a^R's own cos(psi),sin(psi) factors could have shifted n, and don't)
+
+==============================================================================
+C  candidates re-derived at k=0,1,2,3 -- does THIS construction pass ALL?
+==============================================================================
+  [PASS] C0 k=0: (m,n)=(0,0) -> D psi = 0 psi, exactly, numerically confirmed
+  [PASS] C1 k=1: (m,n)=(1/2,1/2) -> D psi = -1 psi, exactly, numerically confirmed
+  [PASS] C2 k=2: (m,n)=(1,1) -> D psi = -2 psi, exactly, numerically confirmed
+  [PASS] C3 k=3: (m,n)=(3/2,3/2) -> D psi = -3 psi, exactly, numerically confirmed
+
+==============================================================================
+D  half-angle reduction -- does NOT transfer to this construction, and why
+==============================================================================
+  [PASS] D1 eq0 depends on BOTH F' and G' (unlike C185/C187, where each component's equation carried only the OTHER component's derivative)
+  [PASS] D2 eq0 retains an EXPLICIT psi dependence beyond the phase (X_1^R, X_2^R carry their own cos(psi)/sin(psi) prefactors, which do not cancel when dividing out the plane-wave phase e^{i(m phi+n psi)})
+  [PASS] D3 despite D1/D2, section C already confirms D psi = lambda psi EXACTLY at k=0..3 by direct numeric evaluation (over random theta, phi, AND psi) -- the half-angle/kernel_dim REDUCTION technique from C185/C187 does not transfer to this coordinate structure, but the OPERATOR ITSELF is verified correct by the more direct method in section C, which does not depend on it
+  A first attempt at the reduction (k=0, N=0) DID complete: kernel dim=2, matching the known multiplicity. k=1..3 hung (killed after several minutes, not a slow-but-correct computation) -- the leftover psi in eq0_h/eq1_h forces sympy's symbolic rank computation over a field with cos(psi), sin(psi) as extra parameters, not pure rationals, and that blows up combinatorially rather than just running slowly. Recorded as a genuine negative methodological finding, not chased further -- claim (b) does not need it, since C already closes it.
+
+==============================================================================
+C188: 16 passed, 0 failed
+==============================================================================

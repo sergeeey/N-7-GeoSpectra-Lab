@@ -1,0 +1,23 @@
+PASS  (4.45) at m=+1 equals Y(1,1) = -sqrt(3/8pi) sin e^{i phi}
+PASS  (4.45) at m=0 equals Y(1,0) = sqrt(3/4pi) cos
+PASS  (4.45) literal at m=-1 is -2 times Y(1,-1)_ours (kappa = -2)
+PASS  L- Y(1,0) = -(sqrt2/2) Y(1,-1)_literal
+PASS  L+ Y(1,-1)_literal = -2 sqrt2 Y(1,0)
+PASS  L+ Y(1,0) = sqrt2 Y(1,1) (does not involve Y(1,-1))
+PASS  L+- Y(1,-1)_literal products: L- L+ Y = 2 Y still holds (kappa cancels)
+PASS  U M(Lz) U^-1 = G12
+PASS  U M(Lx) U^-1 = G23
+PASS  U M(Ly) U^-1 = G31 (row = input, no sign flip)
+PASS  U = (sqrt2/2) D^-1
+PASS  D G23 D^-1 = M(Lx) in the sphere-normalised basis
+PASS  [G23,G31] = -i G12 (row = input)
+PASS  [Lx,Ly] f = i Lz f on a degree-1 polynomial
+PASS  24 Sept letter: real L+ matrix
+PASS  24 Sept letter: real L- matrix
+PASS  24 Sept letter: complex L+ matrix
+PASS  24 Sept letter: complex L- matrix
+PASS  23 Sept notes (9)-(15) reproduced
+PASS  linearity example L+(x-iy) = z - i(iz) = 2z
+PASS  23 Sept Part 1: six actions with its (3)-(5)
+
+21/21 checks pass

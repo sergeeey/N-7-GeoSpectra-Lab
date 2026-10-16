@@ -1,0 +1,143 @@
+{
+  "regression_check_round59_reimport": {
+    "s_positive": true,
+    "residual_zero": true,
+    "ndom": 2,
+    "ntgt": 1
+  },
+  "chi6_properties": {
+    "hermitian": true,
+    "chi6_squared_is_I": true,
+    "anticommutes_with_each_E": {
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true
+    },
+    "all_anticommute": true
+  },
+  "check1_anticommutation": {
+    "chi6_twisted_shape": [
+      64,
+      64
+    ],
+    "D_shape": [
+      64,
+      64
+    ],
+    "anticommutator_is_exactly_zero": true
+  },
+  "check2_decoupling": {
+    "t=0": {
+      "t": "0",
+      "decoupling_holds_exactly": true,
+      "max_abs_residual_entry": 0.0
+    },
+    "t=1": {
+      "t": "1",
+      "decoupling_holds_exactly": true,
+      "max_abs_residual_entry": 0.0
+    },
+    "t=0.5_LC": {
+      "t": "1/2",
+      "decoupling_holds_exactly": true,
+      "max_abs_residual_entry": 0.0
+    }
+  },
+  "check3_kernel_of_D": {
+    "dim_ker_exact_sympy_nullspace": 36,
+    "dim_ker_matches_round59_claim_of_1": false,
+    "numeric_eigvals_near_zero_count": 36,
+    "numeric_smallest_abs_eigval": 0.0,
+    "numeric_matches_exact": true
+  },
+  "reconciliation_round59_vs_full_kernel": {
+    "applicable": true,
+    "round59_own_restricted_kernel_vector_is_nonzero": true,
+    "round59_own_vector_D_times_v": "computed",
+    "round59_own_vector_is_in_full_unrestricted_ker_D": true,
+    "max_abs_residual_D_times_v": 0.0
+  },
+  "hermiticity": {
+    "D_is_hermitian": true,
+    "D_full_is_hermitian_at_t_0.5": true
+  },
+  "check4_explicit_combined_kernel": {
+    "arbitrary_kernel_vector": {
+      "t=0": {
+        "t_label": "t=0",
+        "t": "0",
+        "d_s3_has_kernel": true,
+        "d_s3_kernel_dim": 1,
+        "combined_vector_dim": 128,
+        "d_full_times_combined_is_exactly_zero": true,
+        "max_abs_residual_entry": 0.0
+      },
+      "t=1": {
+        "t_label": "t=1",
+        "t": "1",
+        "d_s3_has_kernel": true,
+        "d_s3_kernel_dim": 1,
+        "combined_vector_dim": 128,
+        "d_full_times_combined_is_exactly_zero": true,
+        "max_abs_residual_entry": 0.0
+      }
+    },
+    "round59_own_physical_kernel_vector": {
+      "t=0": {
+        "t_label": "t=0",
+        "t": "0",
+        "d_s3_has_kernel": true,
+        "d_s3_kernel_dim": 1,
+        "combined_vector_dim": 128,
+        "d_full_times_combined_is_exactly_zero": true,
+        "max_abs_residual_entry": 0.0
+      },
+      "t=1": {
+        "t_label": "t=1",
+        "t": "1",
+        "d_s3_has_kernel": true,
+        "d_s3_kernel_dim": 1,
+        "combined_vector_dim": 128,
+        "d_full_times_combined_is_exactly_zero": true,
+        "max_abs_residual_entry": 0.0
+      }
+    }
+  },
+  "check5_full_dfull_kernel_dimension": {
+    "t=0": {
+      "t_label": "t=0",
+      "t": "0",
+      "dim_ker_D_S3_at_this_t": 1,
+      "dim_ker_D_full_exact_nullspace": 36,
+      "predicted_dim_ker_D_x_ker_D_S3": 36,
+      "matches_tensor_product_prediction": true
+    },
+    "t=1": {
+      "t_label": "t=1",
+      "t": "1",
+      "dim_ker_D_S3_at_this_t": 1,
+      "dim_ker_D_full_exact_nullspace": 36,
+      "predicted_dim_ker_D_x_ker_D_S3": 36,
+      "matches_tensor_product_prediction": true
+    },
+    "t=0.5_LC": {
+      "t_label": "t=0.5_LC",
+      "t": "1/2",
+      "dim_ker_D_S3_at_this_t": 0,
+      "dim_ker_D_full_exact_nullspace": 0,
+      "predicted_dim_ker_D_x_ker_D_S3": 0,
+      "matches_tensor_product_prediction": true
+    }
+  },
+  "verdict": {
+    "check1_chirality_anticommutes": true,
+    "check2_decoupling_holds": true,
+    "check3_dim_ker_matches_round59_claim_of_1_FROZEN_CRITERION": false,
+    "check5_ker_dfull_equals_ker_D_tensor_ker_ds3": true,
+    "non_discriminating_checks_note": "checks 1, 2, and 4 (all variants) are algebraically forced given the dimension-general chirality/generator anticommutation fact (E3 decision.md L16-20, L91-93) plus plain tensor algebra (Dv=0, D_S3(t)w=0 => D_full(v(x)w)=0, needs no other property) -- they would pass identically for E3's own flat Clifford-algebra stand-ins. They are reported as confirmed STRUCTURAL FACTS about this construction, not as discriminating evidence for any claim about the REAL twisted operator specifically.",
+    "label": "BLOCKED-KERNEL-MULTIPLICITY-MISMATCH + PARTIAL-STRUCTURE-HOLDS-NO-EXPLICIT-ZERO"
+  }
+}

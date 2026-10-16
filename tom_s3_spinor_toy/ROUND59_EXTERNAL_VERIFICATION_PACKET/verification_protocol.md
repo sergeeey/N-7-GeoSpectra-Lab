@@ -69,11 +69,23 @@ disagrees with this project's own.
 4. The rank you computed.
 5. Your convention-sweep findings (which variants you tried, whether the
    verdict was stable).
-6. Your own derivation/reasoning, in enough detail that a third party
+6. **Two additional diagnostic quantities, as explicit reported values, not
+   just as internal checks you performed:**
+   - `delta_H = ||D⁻ - (D⁺)†||` — the Hermiticity/adjoint-consistency
+     residual from `critical_blocks.md` item 2.
+   - `delta_leak = ||(1-P_target)·D⁺·P_domain||` — the residual-leakage
+     norm from `critical_blocks.md` item 3.
+   Report `exactly zero` if your computation is symbolic/exact, or the
+   numeric norm and your working tolerance if any step used floating-point.
+   These turn the result from a single bit (`rank=1` or not) into a fuller,
+   more diagnostic fingerprint for comparison at unblinding — report them
+   even if both are zero, and even if you already used them only as
+   internal sanity gates before reaching this point.
+7. Your own derivation/reasoning, in enough detail that a third party
    could follow it independently of both this project's account and your
    specific code (if any).
-7. Explicit comparison against `expected_output_sealed.md`, written AFTER
-   you have recorded items 1-6, not interleaved with your derivation.
+8. Explicit comparison against `expected_output_sealed.md`, written AFTER
+   you have recorded items 1-7, not interleaved with your derivation.
 
 ## If your result disagrees
 

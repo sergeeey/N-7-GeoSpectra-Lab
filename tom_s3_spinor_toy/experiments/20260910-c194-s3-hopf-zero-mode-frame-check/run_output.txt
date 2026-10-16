@@ -1,0 +1,35 @@
+==============================================================================
+A  U(theta,phi,psi) is exactly the (x0,x1,x2,x3)->matrix map, re-verified
+==============================================================================
+  [PASS] A1 U(theta,phi,psi) == x0*I + x1*(i s1) + x2*(i s2) + x3*(i s3) |_Hopf, numerically to 30 digits
+
+==============================================================================
+B  candidate psi = U * v is the ALREADY-KNOWN k=1 eigenspinor, not k=0
+==============================================================================
+  [PASS] B1 U*(1,0)^T  ==  (x0+i x3, -x2+i x1) |_Hopf, numerically to 30 digits
+  [PASS] B2 (x0+i x3, -x2+i x1)  ==  -1 * C184c's own printed D_0=+3 eigenspinor, exactly (symbolic)
+  -> the A1 candidate construction is NOT new: it reproduces an already-published k=1 result, up to an overall sign.
+
+==============================================================================
+C  is the k=0 zero mode itself capable of ANY non-constant Hopf form?
+==============================================================================
+  [PASS] C1 all three X_a^R (C188's closed forms) are PURE first-derivative operators (no zeroth-order/additive term) -- so they annihilate every constant by construction
+  [PASS] C2 D_0 built from C188's X_a^R annihilates an ARBITRARY constant pair (a_c, b_c) identically
+
+==============================================================================
+D  negative control: the SAME 'U * v' recipe applied at k=0 itself
+==============================================================================
+  [PASS] D1 U is manifestly degree-1 homogeneous in (x0,x1,x2,x3) (its own matrix entries, part A)
+
+==============================================================================
+SUMMARY
+==============================================================================
+  PASS  A1 U(theta,phi,psi) == x0*I + x1*(i s1) + x2*(i s2) + x3*(i s3) |_Hopf, numerically to 30 digits
+  PASS  B1 U*(1,0)^T  ==  (x0+i x3, -x2+i x1) |_Hopf, numerically to 30 digits
+  PASS  B2 (x0+i x3, -x2+i x1)  ==  -1 * C184c's own printed D_0=+3 eigenspinor, exactly (symbolic)
+  PASS  C1 all three X_a^R (C188's closed forms) are PURE first-derivative operators (no zeroth-order/additive term) -- so they annihilate every constant by construction
+  PASS  C2 D_0 built from C188's X_a^R annihilates an ARBITRARY constant pair (a_c, b_c) identically
+  PASS  D1 U is manifestly degree-1 homogeneous in (x0,x1,x2,x3) (its own matrix entries, part A)
+
+6 of 6 checks passed
+all checks passed

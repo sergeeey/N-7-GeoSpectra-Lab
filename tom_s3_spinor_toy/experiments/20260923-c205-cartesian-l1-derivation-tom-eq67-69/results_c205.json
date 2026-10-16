@@ -1,0 +1,118 @@
+{
+  "step1_matrices": {
+    "M_Lz_tom_convention": "Matrix([[0, I, 0], [-I, 0, 0], [0, 0, 0]])",
+    "M_Ly_tom_convention": "Matrix([[0, 0, -I], [0, 0, 0], [I, 0, 0]])",
+    "M_Lx_tom_convention": "Matrix([[0, 0, 0], [0, 0, I], [0, -I, 0]])",
+    "M_Lz_standard_linalg_transpose": "Matrix([[0, -I, 0], [I, 0, 0], [0, 0, 0]])",
+    "M_Ly_standard_linalg_transpose": "Matrix([[0, 0, I], [0, 0, 0], [-I, 0, 0]])",
+    "M_Lx_standard_linalg_transpose": "Matrix([[0, 0, 0], [0, 0, -I], [0, I, 0]])",
+    "raw_workings": {
+      "L_z": [
+        {
+          "input": "x1/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "I*x2/sqrt(x1**2 + x2**2 + x3**2)",
+          "coeffs": [
+            "0",
+            "I",
+            "0"
+          ]
+        },
+        {
+          "input": "x2/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "-I*x1/sqrt(x1**2 + x2**2 + x3**2)",
+          "coeffs": [
+            "-I",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "input": "x3/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "0",
+          "coeffs": [
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      ],
+      "L_y": [
+        {
+          "input": "x1/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "-I*x3/sqrt(x1**2 + x2**2 + x3**2)",
+          "coeffs": [
+            "0",
+            "0",
+            "-I"
+          ]
+        },
+        {
+          "input": "x2/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "0",
+          "coeffs": [
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "input": "x3/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "I*x1/sqrt(x1**2 + x2**2 + x3**2)",
+          "coeffs": [
+            "I",
+            "0",
+            "0"
+          ]
+        }
+      ],
+      "L_x": [
+        {
+          "input": "x1/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "0",
+          "coeffs": [
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "input": "x2/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "I*x3/sqrt(x1**2 + x2**2 + x3**2)",
+          "coeffs": [
+            "0",
+            "0",
+            "I"
+          ]
+        },
+        {
+          "input": "x3/sqrt(x1**2 + x2**2 + x3**2)",
+          "operator_output": "-I*x2/sqrt(x1**2 + x2**2 + x3**2)",
+          "coeffs": [
+            "0",
+            "-I",
+            "0"
+          ]
+        }
+      ]
+    }
+  },
+  "appendix_possible_pdf_typesetting_note": {
+    "eq106_printed_matches_minus_T23": true,
+    "eq107_as_printed_equals_T31_not_minus_T31": true,
+    "eq108_as_printed_equals_T12_not_minus_T12": true,
+    "note": "eq(107)/(108) as printed on page 15 appear to equal T_31/T_12 directly, not -T_31/-T_12 as their own labels state; eq(106) is printed correctly. Not raised with Tom -- an internal note only, verified against the actual page image, not a text extraction."
+  },
+  "step2_match_gamma3": {
+    "M_Lz_vs_Gamma3_T12": true,
+    "M_Ly_vs_Gamma3_T31": true,
+    "M_Lx_vs_Gamma3_T23": true,
+    "all_match": true
+  },
+  "step3_match_complex_basis": {
+    "z_Mlz_zinv_vs_eq123": true,
+    "z_Mlx_zinv_vs_eq124": true,
+    "z_Mly_zinv_vs_eq125": true,
+    "all_match": true
+  },
+  "all_pass": true
+}

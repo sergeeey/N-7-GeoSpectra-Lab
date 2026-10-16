@@ -90,3 +90,14 @@ paper is the calibration anchor referenced throughout this packet — see
 - This packet does **not** ask you to evaluate `λ` (the project's free
   coupling parameter) or any runtime/safety claim — those are out of
   scope by the project's own standing fence.
+
+## What a successful reproduction would and would not establish
+
+A successful blind reproduction certifies the stated finite-dimensional
+trivial-block result and increases confidence in the mathematical/
+computational implementation of Round 59. It does **not** independently
+support an identification of this mode with a four-dimensional fermion
+generation, does **not** establish `N_gen=3`, and does **not** close the
+separate product-operator or generation-selection problems. This applies
+regardless of whether your result agrees or disagrees with this project's
+own — a clean PASS bounds what has been checked, it does not extend it.

@@ -1,0 +1,27 @@
+{
+  "experiment": "c173_hom_su3_round59_vs_channels",
+  "su3_r59_closure_residual": 1.1102230246251565e-16,
+  "casimir_n_zero": 2,
+  "casimir_nonzero_values": [
+    -1.333333
+  ],
+  "hom_su3_round59_sigma_to_channel": {
+    "v": 4,
+    "s": 4,
+    "c": 4
+  },
+  "hom_su3_channel_pairs_regression_of_g102_s7": {
+    "v-v": 6,
+    "v-s": 6,
+    "v-c": 6,
+    "s-v": 6,
+    "s-s": 6,
+    "s-c": 6,
+    "c-v": 6,
+    "c-s": 6,
+    "c-c": 6
+  },
+  "all_round59_to_channel_homs_equal_6": false,
+  "g102_s7_regression_reproduced": true,
+  "verdict": "HOM_COMPUTATION_INCONCLUSIVE_BY_CONSTRUCTION_SEE_DECISION_MD"
+}

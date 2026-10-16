@@ -1,0 +1,76 @@
+  [PASS] H0 the substitution really lands on the sphere
+  [PASS] H1 the quaternion->Pauli map is an ANTI-isomorphism: image(i)image(j) = -image(k)
+  [PASS] H2 and the reversed product is the homomorphic one: image(j)image(i) = +image(k)
+
+==============================================================================
+STEP 1-2  k=1 scalar harmonics on S^3, diagonalised by the fibre generator
+==============================================================================
+  fibre weight -1/2: [-I*x1 + x2, -I*x0 + x3]
+  fibre weight 1/2: [I*x1 + x2, I*x0 + x3]
+  [PASS] D1 the k=1 level splits into exactly two half-integer fibre weights, 2 vectors each
+
+==============================================================================
+STEP 3  split the degenerate fibre sector with the SECOND generator
+==============================================================================
+  [PASS] D2 the second generator splits the sector into two DISTINCT labels m = ±1/2
+  fibre weight -1/2, m =  1/2:  -I*x1 + x2
+  fibre weight -1/2, m = -1/2:  -I*x0 + x3
+
+==============================================================================
+STEP 4-5  substitute Hopf, confirm psi is a pure phase, strip it
+==============================================================================
+  m= 1/2:  psi-exponent alpha = -1/2   ->  I*(-exp(I*(phi - theta)/2) + exp(I*(phi + theta)/2))/2
+  m=-1/2:  psi-exponent alpha = -1/2   ->  -I*(exp(I*theta) + 1)*exp(-I*(phi + theta)/2)/2
+  [PASS] D3 psi enters each labelled vector as a PURE phase (alpha constant)
+  [PASS] D4 and the stripped functions depend on (theta, phi) only
+  constant ratios (derived m, hand m) -> factor: {(1/2, -1/2): -1, (-1/2, 1/2): -I}
+  [PASS] D5 each DERIVED component is a constant multiple of a hand-written one, and the m labels line up one-to-one
+
+==============================================================================
+STEP 6  the properties, on the DERIVED and LABELLED doublet
+==============================================================================
+  |chi|^2 = 1
+  [PASS] D6 the DERIVED doublet is double-valued: chi(phi+2pi) = -chi(phi)
+  [PASS] D7 every bilinear of the DERIVED doublet is single-valued in phi
+  chi^dag sigma chi = [sin(phi)*sin(theta), sin(theta)*cos(phi), -cos(theta)]
+  [PASS] D8 the bilinear is a UNIT vector identically
+  equals the radial vector exactly, component by component: False
+  M (derived = M . hand) = [[0, -1], [-I, 0]]
+  [PASS] D9 M is a constant unitary -- a basis choice, not a discrepancy
+  induced SO(3) matrix R = [[0, 1, 0], [1, 0, 0], [0, 0, -1]]
+  [PASS] D10 R is orthogonal with det +1 (a genuine rotation)
+  [PASS] D11 the DERIVED bilinear equals exactly R applied to the radial vector -- so the only difference from the hand-written version is that basis choice
+
+==============================================================================
+NEGATIVE CONTROL  the weight-0 sector: same machinery, opposite answer
+==============================================================================
+  [PASS] N0 the k=2 level has dimension 9
+  k=2 weights present: [-1, 0, 1]
+  [PASS] N1 k=2 carries INTEGER fibre weights only (so a weight-0 sector exists here)
+  [PASS] N2 the weight-0 vectors are psi-independent with NO phase to strip
+  [PASS] N3 and they are SINGLE-valued in phi -- genuine functions on S^2, the exact opposite of the half-integer sector
+
+==============================================================================
+SUMMARY
+==============================================================================
+  PASS  H0 the substitution really lands on the sphere
+  PASS  H1 the quaternion->Pauli map is an ANTI-isomorphism: image(i)image(j) = -image(k)
+  PASS  H2 and the reversed product is the homomorphic one: image(j)image(i) = +image(k)
+  PASS  D1 the k=1 level splits into exactly two half-integer fibre weights, 2 vectors each
+  PASS  D2 the second generator splits the sector into two DISTINCT labels m = ±1/2
+  PASS  D3 psi enters each labelled vector as a PURE phase (alpha constant)
+  PASS  D4 and the stripped functions depend on (theta, phi) only
+  PASS  D5 each DERIVED component is a constant multiple of a hand-written one, and the m labels line up one-to-one
+  PASS  D6 the DERIVED doublet is double-valued: chi(phi+2pi) = -chi(phi)
+  PASS  D7 every bilinear of the DERIVED doublet is single-valued in phi
+  PASS  D8 the bilinear is a UNIT vector identically
+  PASS  D9 M is a constant unitary -- a basis choice, not a discrepancy
+  PASS  D10 R is orthogonal with det +1 (a genuine rotation)
+  PASS  D11 the DERIVED bilinear equals exactly R applied to the radial vector -- so the only difference from the hand-written version is that basis choice
+  PASS  N0 the k=2 level has dimension 9
+  PASS  N1 k=2 carries INTEGER fibre weights only (so a weight-0 sector exists here)
+  PASS  N2 the weight-0 vectors are psi-independent with NO phase to strip
+  PASS  N3 and they are SINGLE-valued in phi -- genuine functions on S^2, the exact opposite of the half-integer sector
+
+18 of 18 checks passed
+the S^2 doublet is derived, not assumed; the weight-0 control gives the opposite answer with the same machinery

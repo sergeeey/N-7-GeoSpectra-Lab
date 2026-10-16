@@ -7,7 +7,24 @@ Formalizes hypothesis-arbiter kills H1-H4 as topological checks:
 - H3 (orbifold): chi(S^3 x S^6) = 0 -> no generation constraint
 - H4 (NCG): KO-dim(S^3 x S^6) = 1 mod 8 -> chirality requires 2 or 6
 
-Result: H0 (no-go triumphs) confirmed computationally.
+Result: H0 (no-go triumphs) confirmed computationally, for the SPECIFIC
+narrow instances of H1-H4 tested below -- not an exhaustive scan of every
+mechanism in the literature. In particular (audit note, 2026-09-06):
+- H1 only rules out an UNTWISTED gauge bundle; a nontrivial twist changes
+  the index via its Chern character and is a standard escape (see e.g.
+  the twisted-bundle construction this repo's own tom_s3_spinor_toy track
+  actually uses).
+- H2 only checks H^2(S^6)=H^4(S^6)=0 (no minimal NS-NS 2-form or internal
+  F_4 flux quantum on S^6 alone); it does not rule out every flux
+  compactification in the wider literature -- constructions with an
+  internal F_6 flux on other backgrounds exist (e.g. arXiv:2110.08276) and
+  are a genuinely different setup, not automatically excluded by this
+  check.
+- H3/H4 are similarly scoped to the single discrete-quotient / minimal
+  finite-algebra instance computed here, not every orbifold or NCG
+  construction.
+None of this reopens the specific instances H1-H4 killed here; it narrows
+what "H0 confirmed" is entitled to claim beyond them.
 """
 
 import json
@@ -23,12 +40,15 @@ def euler_sphere(n):
 
 
 def a_hat_genus_sphere(n):
-    """A-hat genus: 0 for all n except n=0 (A=1) and n=8 (A=1)."""
-    if n % 2 == 1:
-        return 0
+    """A-hat genus of the round n-sphere: 1 for n=0 (a point), 0 for every
+    n>=1. By the Lichnerowicz vanishing theorem, any closed spin manifold
+    admitting a metric of positive scalar curvature has A-hat=0; the round
+    sphere S^n (n>=1) always admits such a metric, so this holds for every
+    n including n=8. (Corrected 2026-09-06: this previously hardcoded
+    A-hat(S^8)=1 with no cited source -- mathematically wrong. Dormant bug:
+    this branch is never exercised by this script, which only ever calls
+    a_hat_genus_sphere(3) and a_hat_genus_sphere(6).)"""
     if n == 0:
-        return 1
-    if n == 8:
         return 1
     return 0
 
@@ -69,9 +89,7 @@ h4_s6 = 0  # H^4(S^6) = 0 (no harmonic 4-forms; FR uses internal F_4, not 2-form
 h2_killed = (h2_s6 == 0) and (h4_s6 == 0)
 print(f"  H^2(S^6) = {h2_s6}, H^4(S^6) = {h4_s6}")
 print(
-    "  KILL: H^2=H^4=0 on S^6 -> no NS-NS nor internal F_4 flux"
-    if h2_killed
-    else "  Flux possible"
+    "  KILL: H^2=H^4=0 on S^6 -> no NS-NS nor internal F_4 flux" if h2_killed else "  Flux possible"
 )
 results["H2_flux"] = {
     "H2_S6": h2_s6,
@@ -128,7 +146,13 @@ print(f"  H0 (no-go): {'CONFIRMED' if all_killed else 'PARTIAL'}")
 results["summary"] = {
     "all_killed": all_killed,
     "H0_status": "CONFIRMED" if all_killed else "PARTIAL",
-    "verdict": "S^3 x S^6 with R>0 cannot produce chiral fermions via known mechanisms",
+    "verdict": (
+        "S^3 x S^6 with R>0: the four SPECIFIC untwisted/minimal mechanisms "
+        "tested here (H1 untwisted gauge bundle, H2 minimal H^2/H^4 flux on "
+        "S^6 alone, H3 single discrete quotient, H4 minimal finite algebra) "
+        "cannot produce chiral fermions -- not a claim that every mechanism "
+        "in the literature is excluded (see module docstring)."
+    ),
 }
 
 with open(OUT / "physics_rescue_results.json", "w") as f:

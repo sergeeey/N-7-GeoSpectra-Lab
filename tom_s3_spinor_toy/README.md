@@ -67,6 +67,43 @@ choice (how the Clifford index `r` enters the operator). Full detail:
 
 ---
 
+## ⚠️ Status correction (2026-10-02) — test count stale again; the real current gap is F6, not this file
+
+Same pattern as the 2026-08-12 note above: the test count is stale again
+(2516 -> **2542 tests collected**, [VERIFIED] `pytest --collect-only`).
+N_gen=3's status is **UNCHANGED** — still CONDITIONAL on the same KT-8
+zero-mode blocker named in the 2026-07-17 correction above; nothing below
+revises that.
+
+Roughly seven weeks of work (C103 through C211, G96-G106, extensive
+correspondence with Tom Lawrence) happened between the 2026-08-12 note and
+this one. Rather than compress all of it into this file (which would
+itself become the next stale snapshot), this note names only what changes
+the PICTURE a reviewer should hold, and points to where the real current
+state actually lives:
+
+- **The single largest remaining gap is explicitly named and tracked:**
+  `PARENT_ACTION_GATE.md`'s own "F6 — Background equations" section calls
+  it "the single largest gap in the whole OB1 program" — no candidate has
+  yet derived a complete, self-consistent set of equations of motion
+  (torsion AND metric) for the frozen `M4xS3xS6` background. C134
+  (2026-09-02) derived a real torsion EOM for one candidate (Einstein-
+  Cartan); C207 (2026-09-24) showed that SAME candidate's metric sector is
+  violated in vacuum -> REJECT for that specific construction, not for F6
+  as a whole. C211 (2026-10-02) computed one term of the standard Coset
+  Space Dimensional Reduction gravity-moduli potential for S6=G2/SU(3) on
+  already-certified algebra (G96/C210) -- a new input, not a closure.
+- **Current, authoritative status lives in two files, not this README:**
+  `PARENT_ACTION_GATE.md` (the per-gate F1-F7/OB1/OB2 ledger, updated every
+  round) and `.claude/memory/activeContext.md` (dated session log). Treat
+  this README as an entry point and historical record of what was derived
+  when, not as the live status board.
+- **`PROJECT_CURRENT_STATE.md`, if cited anywhere as a status file, no
+  longer exists in this repo** — its role is now split between the two
+  files named above.
+
+---
+
 ## ⚠️ Where to Start (for reviewers)
 
 **The root `.py` files** (`alpha_dependence_comparison.py`, `reference_spinor_harmonics.py`,
