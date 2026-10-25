@@ -151,6 +151,9 @@ open**, and assembling the actual channel-decomposed physical Dirac
 operator (the real remaining task) is entangled with OB1. Full chain:
 `experiments/20260803-ob11-*` through `experiments/20260909-c193-*`.
 
+**2026-10-25 pointer (discriminator, not a verdict).** `experiments/20261025-ob11-triality-admissible-symmetry-discriminator/`:
+the su(3) action on the internal index C^8 decomposes as 3 + 3bar + 1 + 1, commutant dim 6; no G-invariant rank-1 projector onto a single triality channel (structural, internal index only). Zero-mode decomposition of the algebraic Round59 matrix D is INCONCLUSIVE: its kernel (36) sits in every isotypic block, and the singlet block gives dim ker 2 while round59 quotes invariant dims (2,1) — the group action on the fibre must be reconciled with round59 before any generation count.
+
 ## OB12 — KO-dimension mapping [RESOLVED 2026-09-05]
 
 Confirmed KO-dim 6 directly against real primary sources (Connes
