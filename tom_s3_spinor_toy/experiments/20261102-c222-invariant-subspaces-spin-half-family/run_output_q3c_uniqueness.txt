@@ -1,0 +1,14 @@
+PASS A1 U (n.sigma) U^dag = (R n).sigma with U = g in SU(2) (max error 3.8e-16)
+PASS A1b Psi_v is SU(2)-equivariant for every complex [a:b] (the ansatz uses the spin-1/2 rep U)
+PASS A2 <Psi_v,Psi_w> = 4 pi(|a|^2+|b|^2)<v,w> for all tested [a:b] (max rel. error 2.2e-15)
+PASS A3 det(a + b n.sigma) = a^2 - b^2 on |n|=1 (symbolic)
+PASS A4 the correspondent's Psi = -(1/2)(1 - n.sigma) e_+ (symbolic identity)
+PASS A5 dim Hom_SU(2)(V_{1/2}, C^2 (x) H_{<=2}) = 2 (multiplicity 2, from l=0 and l=1)
+PASS B1 coordinate functions xi^alpha: (g.xi^alpha)(xi) = (g^{-1})^alpha_beta xi^beta (linear, no sigma)
+PASS B2 eps conj(xi) transforms by g^{-1} as well: (eps conj(g^{-1}xi)) = g^{-1} (eps conj xi)
+PASS B2b every xi + t eps xibar (t in C) transforms by g^{-1}: invariant doublet
+PASS B3 the Hopf-phase U(1) moves the line [1:t] unless t in {0, infinity} (t -> t e^{2i beta})
+PASS B3b (h.f)(xi) = f(e^{-i beta} xi) gives coefficient t0 e^{2i beta} on eps xibar
+PASS B1b function-level: the dragged coordinate functions are linear combinations of the originals (zero residual)
+
+FAILS: none

@@ -1,0 +1,45 @@
+PASS P0 (1,0,0,0): lies on S^3
+PASS P0 (1,0,0,0): all six fields are orthogonal to u (tangent)
+PASS P0 (1,0,0,0): rank of the six fields = 3 (transitive)
+PASS P0 (1,0,0,0): stabilizer algebra dimension = 3
+PASS P0 (1,0,0,0): every stabilizer vector satisfies beta = g^-1 alpha g (Ad-conjugate of diagonal)
+PASS P0 (1,0,0,0): SU(2)_L alone acts freely (rank 3)
+PASS P0 (1,0,0,0): SU(2)_R alone acts freely (rank 3)
+PASS P1 (1/2,1/2,1/2,1/2): lies on S^3
+PASS P1 (1/2,1/2,1/2,1/2): all six fields are orthogonal to u (tangent)
+PASS P1 (1/2,1/2,1/2,1/2): rank of the six fields = 3 (transitive)
+PASS P1 (1/2,1/2,1/2,1/2): stabilizer algebra dimension = 3
+PASS P1 (1/2,1/2,1/2,1/2): every stabilizer vector satisfies beta = g^-1 alpha g (Ad-conjugate of diagonal)
+PASS P1 (1/2,1/2,1/2,1/2): SU(2)_L alone acts freely (rank 3)
+PASS P1 (1/2,1/2,1/2,1/2): SU(2)_R alone acts freely (rank 3)
+CAUGHT control: claim stabilizer algebra dimension 2 at P1
+CAUGHT control: claim a nonzero L-only stabilizer vector at P1
+PASS P3 (1/3,2/3,2/3,0): lies on S^3
+PASS P3 (1/3,2/3,2/3,0): all six fields are orthogonal to u (tangent)
+PASS P3 (1/3,2/3,2/3,0): rank of the six fields = 3 (transitive)
+PASS P3 (1/3,2/3,2/3,0): stabilizer algebra dimension = 3
+PASS P3 (1/3,2/3,2/3,0): every stabilizer vector satisfies beta = g^-1 alpha g (Ad-conjugate of diagonal)
+PASS P3 (1/3,2/3,2/3,0): SU(2)_L alone acts freely (rank 3)
+PASS P3 (1/3,2/3,2/3,0): SU(2)_R alone acts freely (rank 3)
+PASS P4 (0,0,0,1): lies on S^3
+PASS P4 (0,0,0,1): all six fields are orthogonal to u (tangent)
+PASS P4 (0,0,0,1): rank of the six fields = 3 (transitive)
+PASS P4 (0,0,0,1): stabilizer algebra dimension = 3
+PASS P4 (0,0,0,1): every stabilizer vector satisfies beta = g^-1 alpha g (Ad-conjugate of diagonal)
+PASS P4 (0,0,0,1): SU(2)_L alone acts freely (rank 3)
+PASS P4 (0,0,0,1): SU(2)_R alone acts freely (rank 3)
+PASS P0: stabilizer is exactly the diagonal alpha = beta
+PASS P0: the three broken (axial) directions span the tangent space (b,c,d)
+PASS Q5-3: invariant polynomials of degree 1..4 have dimensions [0, 1, 0, 1] = [0, 1, 0, 1]
+CAUGHT control: claim a cubic invariant exists
+PASS Q5-4: Hessian at (v,0,0,0) = diag(8 lam v^2, 0, 0, 0)
+PASS Q5-4: Hessian rank 1 (three zero modes)
+CAUGHT control: Hessian rank 2
+PASS Q5-4: kernel of the Hessian equals the span of the broken-generator directions at P0
+PASS Q5-4: the massive direction is the stabilizer singlet 'a' of C236
+PASS Q5-5: stabilizer generators close as su(2) on R^4
+PASS Q5-5: Casimir on R^4 has eigenvalues {0 once, 2 three times} (tangent triplet + normal singlet)
+PASS Q5-5: normal direction (a): Casimir 0
+PASS Q5-5: tangent block (b,c,d): Casimir matrix = 2 * identity (triplet)
+
+FAILS: none

@@ -1,0 +1,47 @@
+PASS coordinate extraction reproduces g (round trip)
+PASS P1: [X_i,X_j] = eps X_k and [Y_i,Y_j] = eps Y_k on a generic quartic
+PASS P1: X commutes with Y
+CAUGHT control: X - Y closes as a representation (it must not)
+PASS P2: Casimir -sum D_k^2 on (a,b,c,d) has eigenvalues {0:1, 2:3}
+PASS P2: D_k are a representation of su(2) on the 4 harmonics
+PASS P2: exactly one singlet; it is the coordinate a = (1/2) tr g
+PASS P2: 2a = tr g and Re part of g_00 + g_11
+PASS P2: D_k(a) = 0 for k = 1,2,3
+PASS P2: the three others (b,c,d) are a triplet (D_k(b),... nonzero and close)
+PASS P3: degree 0: harmonic dimension (n+1)^2 = 1
+PASS P3: degree 0: exactly 1 D-singlet
+PASS P3: degree 0: r^n U_n(a/r) = 1 is harmonic and D-invariant
+PASS P3: degree 1: harmonic dimension (n+1)^2 = 4
+PASS P3: degree 1: exactly 1 D-singlet
+PASS P3: degree 1: r^n U_n(a/r) = 2*a is harmonic and D-invariant
+PASS P3: degree 2: harmonic dimension (n+1)^2 = 9
+PASS P3: degree 2: exactly 1 D-singlet
+PASS P3: degree 2: r^n U_n(a/r) = 3*a**2 - b**2 - c**2 - d**2 is harmonic and D-invariant
+PASS P3: degree 3: harmonic dimension (n+1)^2 = 16
+PASS P3: degree 3: exactly 1 D-singlet
+PASS P3: degree 3: r^n U_n(a/r) = 4*a**3 - 4*a*b**2 - 4*a*c**2 - 4*a*d**2 is harmonic and D-invariant
+CAUGHT control: claim 2 D-singlets at degree 3
+PASS P4: degree 0: Dtot-singlets on C^2-valued fields = 0
+PASS P4: degree 0: Dorb-singlets (spin untouched) = 2
+PASS P5: degree 0: D0 commutes with X_k and K_k = Y_k + S_k
+   actual D0 spectrum degree 0 {0: 2}
+PASS P5: degree 0: D0 spectrum {0: 2}
+PASS P4: degree 1: Dtot-singlets on C^2-valued fields = 0
+PASS P4: degree 1: Dorb-singlets (spin untouched) = 2
+CAUGHT control: claim 1 Dtot-singlet at degree 1
+PASS P5: degree 1: D0 commutes with X_k and K_k = Y_k + S_k
+   actual D0 spectrum degree 1 {3: 2, -1: 6}
+PASS P5: degree 1: D0 spectrum {-1: 6, 3: 2}
+PASS P4: degree 2: Dtot-singlets on C^2-valued fields = 0
+PASS P4: degree 2: Dorb-singlets (spin untouched) = 2
+PASS P5: degree 2: D0 commutes with X_k and K_k = Y_k + S_k
+   actual D0 spectrum degree 2 {4: 6, -2: 12}
+PASS P5: degree 2: D0 spectrum {-2: 12, 4: 6}
+PASS P4: degree 3: Dtot-singlets on C^2-valued fields = 0
+PASS P4: degree 3: Dorb-singlets (spin untouched) = 2
+PASS P5: degree 3: D0 commutes with X_k and K_k = Y_k + S_k
+   actual D0 spectrum degree 3 {5: 12, -3: 20}
+PASS P5: degree 3: D0 spectrum {-3: 20, 5: 12}
+CAUGHT control: triplet Casimir equals 6 on the degree-1 harmonics
+
+FAILS: none

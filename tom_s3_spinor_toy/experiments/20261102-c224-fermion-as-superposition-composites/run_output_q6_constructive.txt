@@ -1,0 +1,6 @@
+PASS C1 xi^a = sum_b xi^a xi^b conj(xi^b) on S^3 (|xi|^2 = 1)
+PASS C2 each cubic composite xi^a xi^b conj(xi^b) is odd
+PASS C3 the even part of each fermion xi^a vanishes: no composite of two fermions reproduces it
+PASS C4 quadratic composites xi^a xi^b span a 3-dim space (spin 1, integer)
+
+FAILS: none

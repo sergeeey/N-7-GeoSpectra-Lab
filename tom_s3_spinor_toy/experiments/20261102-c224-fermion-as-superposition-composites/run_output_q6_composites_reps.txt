@@ -1,0 +1,8 @@
+PASS R1 two-spinor composites: Casimir eigenvalues are {0, 2} (integer spins only): [0.0, 2.0]
+PASS R2 three-spinor composites contain j=1/2 with multiplicity 2 (4 states total): got 4 states
+PASS R3 no nonzero SU(2)-intertwiner from integer spins V_0+V_1 to V_{1/2} (null space dim 0)
+PASS R4a exp(-2 pi i J_z) = -1 on spin 1/2
+PASS R4b exp(-2 pi i J_z) = +1 on V_0 (+) V_1
+PASS R3-control the same solver finds the identity on V_{1/2} (null space dim 1)
+
+FAILS: none

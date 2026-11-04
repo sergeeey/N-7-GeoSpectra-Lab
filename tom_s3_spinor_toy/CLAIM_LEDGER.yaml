@@ -3930,6 +3930,364 @@ claims:
     caveat: "29 main checks and 5 controls, but about 10 of the main checks are forced by definition or by the algebra and carry little evidence (decision.md section 8); the symbolic-m,s statements in B2a/B2b may have run on a numeric fallback path that the json does not record; the preview preceded pre-registration; the pre-registered control D3 was wrong and was replaced after the fact (D3a-c); the independent re-implementation is same-model-family code and its scripts are not archived; the j-|s| closure rule is exploratory and unchecked against a source. One context-blind skeptic round (no shell; script run by the orchestrator, 23/23)."
 
 
+  - id: C222_SPIN_HALF_INVARIANT_SUBSPACES_ON_S2_FORM_A_CP1_FAMILY_SCALARS_UNDER_DRAGGING_ONLY_INTEGER_SPIN
+    statement: "Exact sympy plus numeric checks, 39 checks in four scripts. (1) Scalar functions on S^2 under the dragging action (pullback by rotations) decompose into integer spins only, so no spin-1/2 invariant subspace exists among scalars. (2) Under the total action (rotation of the argument together with rotation of the two-component spin index) the pair Psi = (-(1-cos theta)/2, e^{i phi} sin theta / 2), Phi = J_- Psi spans a j = 1/2 doublet whose components lie in span{1, x, y, z}. (3) That doublet is not unique: for every [a:b] in CP^1 the subspace {Psi_v} is invariant under the total action, so the spin-1/2 invariant subspaces form a one-parameter family; the inner product within one subspace is 4 pi (|a|^2+|b|^2) <v,w> and across two subspaces 4 pi (conj(a) a' + conj(b) b') <v,w>. (4) A function in L^2 is an L^2 sum of harmonics, so a statement that a half-integer field 'cannot be a linear sum of harmonics' can only refer to scalar coefficients on the scalar space."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c222-invariant-subspaces-spin-half-family/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP, C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "J = L + S with L = -i x cross grad and S the spin matrices, as in the script docstrings; Psi, Phi as in the statement (the eta frame of C184)."
+    does_not_imply:
+      - "which of the CP^1 family, if any, the correspondent means, or whether he means the dragging action alone or the total action"
+      - "that the total action is physically the correct action for his model"
+      - "that the doublet is selected by any field equation: only invariance under rotations is tested"
+    caveat: "Some checks are definitional or duplicate each other (q3 K4d duplicates K4b; the scalar-trivial control in q3b is +1 by construction); the evidence is the exact representation-theory checks, not the count."
+    notes: "Result row R04 of the private correspondence layer."
+
+  - id: C223_HOPF_MAP_FIBRES_ARE_CIRCLES_G_AB_FRAME_CONSTANT_LEFT_ACTION_ONE_LINE_C1_PM1_FULL_FRAME_GLOBAL
+    statement: "Exact sympy plus numeric checks, 39 checks in five scripts. (1) For the Hopf map x_i = xi^dagger sigma_i xi: |x| = |xi|^2; the fibres over S^2 are circles xi -> e^{i phi} xi; Ad(-g) = Ad(g), so SU(2) -> SO(3) is two-to-one at group level only. (2) On S^3 = SU(2) the rows of the matrix g(x) form a frame of a two-dimensional bundle over S^2; under the left action by h it transforms by a constant matrix (h^T)^-1, independent of the point (covariance criterion: x-independence of M(h,x) = Phi(hx)^-1 Phi(x)); the Hopf U(1) acts as diag(t, conj t), so the frame descends to S^2 without a choice of lift. (3) A single line of this frame has winding +-1 (Chern number c1 = +-1): the north and south sections differ by e^{i phi} and no nowhere-zero global section exists; the full two-dimensional frame is global, given by an SU(2)-valued map. (4) A claim made earlier in the same working folder, that the frame is not SU(2)_L-covariant, used a wrong criterion (off-diagonal entries of M) and is withdrawn here."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c223-hopf-map-and-global-frame-bundle/decision.md"
+    depends_on: [C182_S2_SPINOR_SECTORS_BY_HOPF_DESCENT_WEIGHT_LADDER, C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "Frame representation h-bar = (h^T)^-1 for the left action; weights as in C182."
+    does_not_imply:
+      - "that this frame is the 'local ket basis' the correspondent has in mind"
+      - "which SU(2) factor is physical spin"
+      - "that a rank-2 bundle with these transition functions is the right model of a spinor multiplet"
+    caveat: "q5_descent_types.py contains the withdrawn criterion on purpose (its check T3 shows it is the wrong test); about three checks are definitional (D5-type arithmetic, U4-type tautologies were removed from the tracked set)."
+    notes: "Result rows R02, R05 and the retraction R06 of the private correspondence layer."
+
+  - id: C224_FERMION_NOT_A_CONSTANT_COEFFICIENT_SUPERPOSITION_OF_TWO_FERMION_COMPOSITES_THREE_FACTOR_IDENTITY_IS_TRIVIAL
+    statement: "Exact sympy plus numeric checks, 34 checks in five scripts, two defined models. (1) Cut sphere, phi in (0, 2 pi): e^{i phi/2} equals an L^2 sum of e^{i k phi} with coefficients c_k = i/(pi (1/2 - k)) (Parseval sum 1); the periodic sum takes the value 0 at the seam; psi(phi + 2 pi) = -psi(phi), so the result is not a function on S^2 and does not commute with rotations. (2) The two-spinor composite space has total spin 0 and 1 only, and there is no intertwiner from an integer-spin to a half-integer representation (null space dimension 0, control 1). (3) On S^3 with the central element z = -I acting by xi -> -xi: odd functions (fermions, by definition) and even functions are L^2-orthogonal; products of two odd functions are even, so a constant-coefficient superposition of two-fermion composites cannot be a fermion; eps_ab xi^a xi^b = 0 for one doublet and eps_ab xi^a (eps conj xi)^b = -|xi|^2 = -1 for two different doublets. (4) On S^3 the identity xi^a = sum_b xi^a xi^b conj(xi^b) holds (|xi| = 1) but equals xi^a times 1, so it is not evidence that a fermion is composed of three fermions."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c224-fermion-as-superposition-composites/decision.md"
+    depends_on: [C179_MULTIPLET_OF_FUNCTIONS_ON_SPHERE_CANNOT_CARRY_SPINOR_REP]
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "Fermion = odd under xi -> -xi (definition used here); composite = pointwise product; superposition = constant-coefficient linear combination, finite or L^2-closed."
+    does_not_imply:
+      - "anything about exchange statistics or a quantum field algebra: that needs a field model, none is built here"
+      - "that the correspondent's 'superposition' means constant coefficients; with point-dependent coefficients the statement changes"
+      - "that a physical fermion is composed of three fermions: the three-factor identity is trivial"
+    caveat: "The result is model-dependent: it holds for the two defined models. Checks M2 and M3b of q6_superposition_models.py are definitional; the Fourier overshoot mask in F4b was widened to 0.3 rad after a Gibbs overshoot (a calibration of a numeric check, the formula is unchanged)."
+    notes: "Result rows R07 and R08 of the private correspondence layer. Motivating hypothesis (a fermion is a superposition of the bosons composed of fermions) fails in the defined models, hence test_outcome FAIL with a supported negative finding."
+
+  - id: C225_SU2_DIFFERENTIAL_GENERATORS_D1_D2_D3_DERIVED_FROM_DEFINITION_COMMUTATORS_AND_WEIGHTS_FOR_GENERIC_F
+    statement: "Exact sympy, 11 checks, xi and conj(xi) treated as independent symbols (Wirtinger calculus). With the action (U(g) f)(xi, conj xi) = f(g^-1 xi, conj(g^-1 xi)) and generators D_a = (1/i) d/dt U(exp(i t sigma_a / 2)) at t = 0: D_a = -(1/2)(sigma_a xi)^alpha d_alpha + (1/2)(sigma_a^* conj xi)^alpha conj(d)_alpha, computed from the definition for a generic function F; [D_1, D_2] = i D_3 and its cyclic images hold identically for generic F (not only for polynomials); the D_3 eigenvalues on (xi^1, xi^2, conj xi^1, conj xi^2) are (-1/2, +1/2, +1/2, -1/2); D_3[(xi^1)^p (xi^2)^q (conj xi^1)^r (conj xi^2)^s] = ((-p+q+r-s)/2) times the monomial, checked for p, q, r, s <= 3."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c225-su2-differential-generators-note-check/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "U(g) f = f(g^-1 xi); g_a(t) = exp(i t sigma_a/2); (1/i) d/dt at t = 0; t real. The opposite (active, xi -> g xi) reading is treated in C226."
+    does_not_imply:
+      - "that this action is the one the correspondent means; with xi -> g xi the weights and the commutator sign both flip (C226)"
+      - "that the monomial formula holds for all exponents: checked for exponents <= 3 only, it follows from the first-order form"
+    caveat: "The first symbolic run failed on an artefact (a complex t gave a conjugate(t) residual); declaring t real removes it. The check count includes several restatements of the definition."
+    notes: "Result row R09 of the private correspondence layer; the generators were sent in a note on 2026-10-31."
+
+  - id: C226_HOPF_VECTOR_PROJECTION_SO3_NORMALISATION_AND_ACTIVE_PASSIVE_FLIP_OF_WEIGHTS_AND_ALGEBRA_SIGN
+    statement: "Exact sympy plus numeric checks, 30 checks. (1) For F = xi xi^dagger and V^i = (1/2) tr(F sigma^i) = (1/2) xi^dagger sigma^i xi: F = (1/2)|xi|^2 I + V^i sigma^i exactly, and sum_i V^i V^i = |xi|^4/4 as a polynomial identity. (2) V(g xi) = R(g) V(xi) with R_ij = (1/2) tr(sigma_j g^dagger sigma_i g): R R^T = I and det R = +1 exactly at five rational SU(2) elements (symbolic xi) and numerically for 2000 random elements (max |R R^T - I| < 1e-15); every unit xi is g(xi)(1,0) with g(xi) = [[xi^1, -conj xi^2],[xi^2, conj xi^1]] and V(xi) = R(g(xi)) (0, 0, 1/2) (500 random points, deviation 1e-16); V is invariant under xi -> e^{i phi} xi, |V| = |xi|^2/2. (3) The doublet psi = lambda xi with lambda^2 = sqrt(3/pi) on |xi| = 1 gives V = sqrt(3/(4 pi)) n, the sphere-normalised vector harmonics of C220; psi changes under the phase, so it is a section, not a function on S^2. (4) The active reading xi -> g xi and the reading f(g^-1 xi) give generators that differ by an overall sign: the D_3 weights on (xi^1, xi^2) change from (-1/2, +1/2) to (+1/2, -1/2) and at the same time [D_a, D_b] = +i eps D_c becomes -i eps D_c; with the first convention (D_1 + i D_2) psi = (-lambda xi^2, 0), (D_1 - i D_2) psi = (0, -lambda xi^1), with the second the signs are opposite. The weight +1/2 on the first component together with the standard algebra belongs to conj(xi)."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c226-hopf-vector-projection-and-convention-flip/decision.md"
+    depends_on: [C220_L1_HARMONICS_R4_NORM_SQRT2_FORCED_BY_NORM_PRINTED_GAMMA_FITS_RAW_BASIS_ONLY]
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "Two conventions compared side by side: A = U(g) f = f(g^-1 xi) (as in C225); B = xi -> g xi acting on the components."
+    does_not_imply:
+      - "which convention is physical, or which the correspondent intends: the sign flip is a mathematical fact about the two readings"
+      - "that psi = lambda xi is a field on S^2: it is a section of the Hopf bundle"
+      - "that the weight assignment of C225 is wrong: it is the consistent choice with [D_a, D_b] = +i eps D_c"
+    caveat: "The numeric parts (S2c, S2d, S3b) are random-sample checks, not proofs; the sample sizes are given in the statement. The normalisation check S4c is arithmetic, not an independent test."
+    notes: "Result rows R10, R11 and R12 of the private correspondence layer; computed on 2026-11-02 after the correspondent's message of that date."
+
+  - id: C227_D0_SPECTRUM_MULTIPLICITIES_FOR_ALL_S_FROM_PETER_WEYL_CHECKED_NUMERICALLY_TO_S_3
+    statement: "D0 = -i sum_a sigma_a X_a^R on L^2(S^3, C^2), with C = -1 (T_a = -i sigma_a), has eigenvalue -2s with multiplicity (2s+1)(2s+2) and eigenvalue 2s+2 with multiplicity (2s+1)(2s), for s = 0, 1/2, 1, 3/2, ... . Evidence: (a) a derivation by hand from Peter-Weyl (L^2(S^3) = sum V_s x V_s; D0 = -4 S.K; total spin s+1/2 gives -2s, total spin s-1/2 gives 2s+2), not checked by a tool; (b) the full spectrum of D0 on the 60-dimensional space of degree <= 3 polynomials modulo |x|^2 - 1 matches the formula, as do all 9 weight sectors, with [D0, J_3] = 0 (floating-point eigenvalues, exact matrix entries); (c) an independent numeric check by a fresh-context subagent, different SU(2) parametrisation, harmonic homogeneous polynomials of degree 0 to 6 (s up to 3), every degree matches with invariance residual at most 8e-14; (d) D0 - 3/2 reproduces the degeneracy (n+1)(n+2) of each of the eigenvalues +-(n+3/2) of Camporesi-Higuchi gr-qc/9505009 eq. (3.58), checked against the PDF text by the same subagent."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c227-d0-spectrum-all-s-peter-weyl/decision.md"
+    depends_on: [C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT]
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "X_a^R quaternion right-multiplication fields; T_a = -i sigma_a (C = -1); J_a = X_a + T_a."
+    does_not_imply:
+      - "that D0 - 3/2 is the geometric Dirac operator in the left-invariant frame: only equality of spectra is established"
+      - "the all-s statement beyond s = 3 by any tool: it rests on the hand derivation"
+      - "anything with the normalisation C = -1/2: every eigenvalue changes"
+    caveat: "The file name of the first script says deg2 but it uses N = 3, and its eigenvalues are floating point although the matrix entries are exact. The independent check is a fresh-context review by the same model family, not a human or a different-model review. It extends C180 (k <= 3) to s <= 3 numerically."
+    notes: "Result row R13 of the private correspondence layer; independent review verdict CONFIRMED-REAL (fresh-context subagent, same model family)."
+
+  - id: C228_H2_DOUBLET_NOT_INVARIANT_UNDER_D0_RESIDUAL_ONE_AND_PART_OUTSIDE_H2_HAS_NORM_TWO_PSI
+    statement: "With A = D0 - I, Gamma = sigma.n, Psi = (-(1-cos theta)/2, e^{i phi} sin theta/2), Phi = J_- Psi and H2 = span{Psi, Phi}: (1) numerically (sympy and float), Gamma Psi = -Psi and Gamma Phi = -Phi, J_- commutes with Gamma on a generic field, {A, Gamma} = 0, and the relative residual of A Psi on span{Psi, Phi} is 1.000 with coefficients 0; ||A Psi||/||Psi|| = 2, A^2 = 4 on the block, P2 A P2 = 0 to 1e-16. (2) An independent test by a fresh-context subagent on S^3: lifting Psi and Phi by T with pi(g) = g sigma_3 g^dagger and applying D0 directly gives projection coefficients [1, 0] and [0, 1] onto H2, ||D0 F||^2 / ||F||^2 = 5 and ||residual||^2 / ||F||^2 = 4, so the part of D0 Psi outside H2 has norm 2 ||Psi||; controls: D0 of a constant spinor is 0 and D0 T(const) = 3 T(const). Hence D0 H2 is not contained in H2."
+    truth_status: SUPPORTED
+    test_outcome: FAIL
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    evidence_file: "tom_s3_spinor_toy/experiments/20261102-c228-h2-doublet-not-invariant-under-d0/decision.md"
+    depends_on: [C180_S3_SPINOR_HARMONICS_EXPLICIT_DIRAC_SPECTRUM_UP_TO_CONSTANT]
+    supersedes: "no prior claim -- first tracked record of this result. It was computed on 2026-10-31 (or 2026-11-02 for C226) in a private working folder and re-run unchanged, apart from replacing the correspondent's name in comments, inside the experiment folder on 2026-11-02."
+    convention: "L = -i x cross grad (the step [J_-, Gamma] = 0 fails for L = +i x cross grad, probed by the subagent); lift T uses pi(g) = g sigma_3 g^dagger; side (left or right) convention of the correspondent not decided."
+    does_not_imply:
+      - "that no other doublet is D0-invariant: any nonzero subspace of ker(Gamma + 1) fails to be invariant in the same way, so the statement is weak"
+      - "which side convention (left or right) the correspondent uses: left open"
+      - "the analytic argument (Gamma-anticommutation, injectivity of A): it is in a private working draft and is not part of the tracked evidence"
+    caveat: "Numerical evidence plus a fresh-context independent test; the analytic proof is not tracked. The independent check is by the same model family. Motivating hypothesis (H2 is invariant under D0, i.e. a selection by D0) fails, hence test_outcome FAIL with a supported negative finding."
+    notes: "Result row R14 of the private correspondence layer; independent review verdict CONFIRMED-REAL (fresh-context subagent, same model family)."
+
+  - id: C229_THREE_READINGS_OF_SU2_ACTION_A_AND_C_ARE_REPRESENTATIONS_B_IS_ANTIREPRESENTATION_WEIGHTS_AND_ALGEBRA_SIGN_ASSERTED
+    statement: "Exact sympy, 29 asserted checks and 5 self-controls, derived from the definitions with g_a(t) = cos(t/2) + i sin(t/2) sigma_a. Reading A: (U(g)f)(xi) = f(g^-1 xi): representation, [D_a,D_b] = +i eps D_c, D3 weights (-1/2,+1/2) on (xi^1,xi^2), D+ xi = (-xi^2, 0). Reading B: f(g xi): anti-representation (D_B = -D_A componentwise), [D_a,D_b] = -i eps D_c, weights (+1/2,-1/2), D1 + i D2 lowers. Reading C: f(g^T xi): representation, [D_a,D_b] = +i eps D_c, weights (+1/2,-1/2), D+^C = -D-^A on a generic function. Casimir 3/4 on xi in all three. V(g xi) = R(g) V(xi) with R_ij = (1/2) tr(sigma_j g^dagger sigma_i g) for generic g (a, b, conj a, conj b independent), R R^T = (|a|^2+|b|^2)^2 I, R real; the S^2 integral of (lambda^2 V_i)^2 equals 1 for lambda^2 = sqrt(3/pi)."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c229-convention-asserted-check/decision.md"
+    depends_on: [C225_SU2_DIFFERENTIAL_GENERATORS_D1_D2_D3_DERIVED_FROM_DEFINITION_COMMUTATORS_AND_WEIGHTS_FOR_GENERIC_F, C226_HOPF_VECTOR_PROJECTION_SO3_NORMALISATION_AND_ACTIVE_PASSIVE_FLIP_OF_WEIGHTS_AND_ALGEBRA_SIGN]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    convention: "U(g) f = f(g^-1 xi) (A), f(g xi) (B), f(g^T xi) (C); D_a = (1/i) d/dt U(exp(i t sigma_a/2)) at t = 0, t real."
+    does_not_imply:
+      - "which reading is the correspondent's: that needs his text"
+      - "that anything in C225 or C226 was wrong: their mathematics is confirmed, only the testing of reading B was print-only there"
+      - "that reading B is 'the active reading' in a sense relevant to physics: it is an anti-representation"
+    caveat: "The row for reading C (D+ xi) is derived, not predicted. Reality and orthogonality of R hold for symbolic g, the S^2 integral is symbolic. Same-model-family review only."
+    notes: "Result of 2026-11-03 re-check of C225/C226; the earlier statement 'his reading is B' was wrong and is corrected here: the formulation 'components transform as the defining representation, no inverse action' is reading C (read literally as components going by g with no inverse it could also be reading B)."
+
+  - id: C230_H2_PRESERVED_BY_EQUIVARIANT_FIRST_ORDER_OPERATOR_IFF_B_PLUS_D_ZERO_CONSTANT_MATRIX_CANNOT_REPAIR_D0
+    statement: "Exact sympy, 19 asserted checks. The operators 1, sigma.L, Gamma, Gamma sigma.L commute with J; on the j = 1/2 multiplicity space (basis chi at l = 0, Gamma chi at l = 1) a general equivariant first-order operator O = a + b sigma.L + c Gamma + d Gamma sigma.L acts as [[a, c-2d],[c, a-2b]] (rank 4, complete on that block). For Psi = -chi/2 + Gamma chi/2: O Psi = (a-b-c+d) Psi + ((b+d)/2) A Psi with A Psi in ker(Gamma-1) pointwise and nonzero, so H2 = span{Psi,Phi} is preserved exactly when b + d = 0. D0-type A has (a,b,c,d) = (2,2,0,0), b+d = 2: not preserved (agrees with C228). O* = (1-Gamma) sigma.L preserves H2 (eigenvalue -2). A constant matrix M cannot repair A (exact sample-point system inconsistent); for O* the same solver returns M = lambda * 1."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c230-equivariant-operators-h2/decision.md"
+    depends_on: [C228_H2_DOUBLET_NOT_INVARIANT_UNDER_D0_RESIDUAL_ONE_AND_PART_OUTSIDE_H2_HAS_NORM_TWO_PSI]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    convention: "L = -i x cross grad; Gamma = sigma.n."
+    does_not_imply:
+      - "that O* is physical or that the correspondent's field equation lies in this family"
+      - "that the family is complete among all equivariant first-order operators on all j: shown only on the j = 1/2 block"
+    caveat: "The constant-M result rests on a six-point exact sample system plus its control, not on a symbolic identity. The C228 exclusion is robust against added constant matrix terms but not against added point-dependent terms."
+    notes: "Does not select a field equation; it shows which first-order operators would keep the doublet invariant."
+
+  - id: C231_CR_KERNEL_ON_S3_AT_CHARGE_N_HAS_DIMENSION_N_PLUS_1_SPIN_N_OVER_2_H2_IS_HOLOMORPHIC_DOUBLET_TIMES_FRAME_VECTOR
+    statement: "Exact sympy. For charge n = 0..4 the kernel of the CR operator Lbar on S^3 (polynomials of degree <= n+3 modulo the sphere relation) has dimension n+1 and equals the span of the holomorphic monomials x1^i x2^(n-i); for n = -1, -2 it is zero. The kernel is SU(2)-invariant (convention A) with Casimir (n/2)(n/2+1): spin n/2. D3 weights on (x1,x2,y1,y2) = (-1/2,+1/2,+1/2,-1/2); eta = (y2,-y1) transforms like (x1,x2). In the gauge xi = (cos(th/2), sin(th/2) e^{i ph}): Psi = xi^2 * J xi and Phi = -xi^1 * J xi with J xi = (-conj xi^2, conj xi^1), so H2 of C228 = {f(xi) J xi : f in span(xi^1, xi^2)}."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c231-cr-kernel-doublet/decision.md"
+    depends_on: [C228_H2_DOUBLET_NOT_INVARIANT_UNDER_D0_RESIDUAL_ONE_AND_PART_OUTSIDE_H2_HAS_NORM_TWO_PSI, C226_HOPF_VECTOR_PROJECTION_SO3_NORMALISATION_AND_ACTIVE_PASSIVE_FLIP_OF_WEIGHTS_AND_ALGEBRA_SIGN]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    convention: "pull-back convention A; Lbar = x1 d/dy2 - x2 d/dy1 (mod the sphere relation)."
+    does_not_imply:
+      - "that the correspondent's equation is Lbar f = 0: no text of his equation is available"
+      - "novelty: textbook status not checked"
+      - "that dimensions n+1 hold for all n: computed to n = 4"
+    caveat: "Kernel dimensions are computed on polynomials of bounded degree, not proved for all degrees; the Riemann-Roch (Borel-Weil) pattern is the expected general answer and its source was not opened."
+    notes: "With C230 this gives two concrete candidate selectors of the doublet (CR kernel; H2 is preserved by (1-Gamma) sigma.L, not by D0)."
+
+  - id: C232_J3R_ON_RIGHT_INDEX_IS_HALF_HOPF_CHARGE_AND_WEIGHT_ORDER_IS_A_LABELLING_CONVENTION
+    statement: "Exact sympy. (J3L, J3R) on (g00, g01, g10, g11) = ((-1/2,+1/2), (-1/2,-1/2), (+1/2,+1/2), (+1/2,-1/2)), reproducing the TOM-CERT-01 table independently. On every g_ab, 2*J3R equals the Hopf charge Q (xi-type +1, conj(xi)-type -1), so J3R on the right index is (1/2) diag(1,-1). Relabelling a doublet by the swap sigma_x keeps [T_a,T_b] = i eps T_c, maps T3 -> -T3, T2 -> -T2, T1 -> T1, and keeps Casimir 3/4: 'the first component has the negative eigenvalue' holds for (xi^1,xi^2) and for eta = (conj xi^2, -conj xi^1) and is reversed for (conj xi^1, conj xi^2) or for the swapped labelling."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c232-weight-dictionary-and-labelling/decision.md"
+    depends_on: [C226_HOPF_VECTOR_PROJECTION_SO3_NORMALISATION_AND_ACTIVE_PASSIVE_FLIP_OF_WEIGHTS_AND_ALGEBRA_SIGN]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that the correspondent's remark about the order of the weights is a mistake of his or ours: it concerns labelling"
+      - "that his index in his equation (77) is the right index of g_ab"
+    caveat: "The identification of J3R with the diagonal of his equation (77) rests on the diagonal alone; the text of (77) was not re-read."
+    notes: "Candidate dictionary entry: a spin-weight-type condition equals the Hopf charge divided by 2 (hypothesis)."
+
+  - id: C233_MUTATION_SCAN_40_MUTANTS_4_SURVIVORS_ALL_EQUIVALENT_19_OF_21_EARLIER_SCRIPTS_PRINT_ONLY
+    statement: "mutation_scan.py, 40 mutants: 27 KILLED by a check, 9 CRASHED (loud failure), 4 SURVIVED; excluding crashes 27 of 31 were caught. All 4 survivors were triaged by reading as equivalent or dead code (an extended range, a term multiplied by zero, a coefficient in a generic test polynomial, a label inside an f-string). print_only_scan.py (heuristic, many false positives): 19 of 21 scripts of C222-C228 contain no assert and no sys.exit, so they exit 0 even if a check prints FAIL; tom_line_check.py mitigates this by textual failure detection on the logs of pinned runs."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c233-mutation-and-print-scan/decision.md"
+    depends_on: [C225_SU2_DIFFERENTIAL_GENERATORS_D1_D2_D3_DERIVED_FROM_DEFINITION_COMMUTATORS_AND_WEIGHTS_FOR_GENERIC_F, C226_HOPF_VECTOR_PROJECTION_SO3_NORMALISATION_AND_ACTIVE_PASSIVE_FLIP_OF_WEIGHTS_AND_ALGEBRA_SIGN]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that the unmodified scripts are wrong: survivors are equivalent mutants and the C222-C228 numbers were re-run"
+      - "completeness: the operators and the sample are small; semantic mutations such as erasing a convention are not generated"
+    caveat: "A crash proves nothing about the checks (three crashing mutants change range bounds or indices)."
+    notes: "Meta-result about the quality of the checks, not about the mathematics."
+
+  - id: C234_SQRT_DET_G_IS_A_SCALAR_DENSITY_THE_RATIO_TO_A_REFERENCE_DENSITY_IS_A_SCALAR_FIRST_ORDER_IS_DEGREE_ONE_HARMONIC
+    statement: "Exact sympy at three regular points, 24 asserted checks and 3 self-controls. sqrt(det g) of the round S^3 is sin(eta)cos(eta) in Hopf coordinates and (2/(1+r^2))^3 in stereographic coordinates; at the same point the values differ (1/2 vs 1/8; 1/2 vs 27/8; 2 sqrt(5)/9 vs 1), so it is a scalar density of weight 1 and for the round metric a property of the chart. The ratio rho = sqrt(det g_deformed)/sqrt(det g_round) in the same coordinates has the same value at the same point in both charts (a scalar): for g = exp(2 e x4) g_round, rho = exp(3 e x4); for g = g_round + e dx4 (x) dx4, rho = sqrt(1 + e (1 - x4^2)). To first order rho = 1 + (1/2) tr h; for h = 2 e x4 g_round this is 1 + 3 e x4, a degree-1 harmonic."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c234-sqrtg-object-semantics/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "which object the correspondent means by 'the volume element in harmonics': undetermined"
+      - "that the first-order degree-1 content has anything to do with any particle identification: a hypothesis"
+    caveat: "Closed forms are checked at three points and for two deformations, not proved for all points or all deformations."
+    notes: "Semantic result: well-defined readings are the scalar ratio to a reference density, curvature scalars; the coordinate density is a chart artefact."
+
+  - id: C235_S3_HARMONIC_SECTORS_SCALARS_S_S_C2_FIELDS_JL_K_D0_DEPENDS_ON_S_K_SPIN_SIDE_IS_A_TRIVIALISATION_CHOICE
+    statement: "Exact sympy (rank and nullity of joint Casimir systems), 13 asserted checks and 3 self-controls, degrees 0..3. Scalars: sectors (j_L,j_R) = (s,s), dimension (2s+1)^2: 1, 4, 9, 16. C^2-valued fields in the left-invariant frame: sectors (j_L,k) with total right spin k: (0,1/2)[2, D0=0], (1/2,1)[6,-1], (1/2,0)[2,3], (1,3/2)[12,-2], (1,1/2)[6,4], (3/2,2)[20,-3], (3/2,1)[12,5]; in general (s,s+1/2): (2s+1)(2s+2) states, D0 = -2s; (s,s-1/2): (2s+1)(2s) states, D0 = 2s+2; total 60. D0 commutes with the left SU(2) and the total right SU(2). In the right-invariant frame the roles mirror: sectors (k,s), D0' = -D0. So which SU(2) carries the spin is a choice of trivialisation."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-c235-sector-classification/decision.md"
+    depends_on: [C227_D0_SPECTRUM_MULTIPLICITIES_FOR_ALL_S_FROM_PETER_WEYL_CHECKED_NUMERICALLY_TO_S_3]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    convention: "C227 conventions: g = x0 A0 + ..., C = -1, X_a left-invariant fields, T_a = -i sigma_a, J = X + T."
+    does_not_imply:
+      - "'half-integer j_L - j_R means fermion': a spin-statistics reading, not established"
+      - "'SU(2)_L is the weak interaction': the correspondent's statement"
+      - "which sector is a quark, a neutrino or a meson"
+    caveat: "Exact to degree 3; all degrees follow from Peter-Weyl (standard, not re-derived by tool). One prediction of mine (D0' keeps the values) was wrong and caught by the check: D0' = -D0."
+    notes: "Representation-level facts separated from interpretation-level statements in the decision file."
+
+  - id: C236_FOURTH_HARMONIC_IS_THE_DIAGONAL_SINGLET_A_CHARACTER_NO_FULL_DIAGONAL_SINGLET_ON_C2_FIELDS
+    statement: "Exact sympy, 37 checks. The four degree-1 harmonics split under the diagonal SU(2) (conjugation g -> h g h^-1, generators X_k + Y_k) as 1 + 3: Casimir 0 once and 2 three times; the singlet is a = (1/2) tr g, the triplet (b,c,d). Each scalar sector (s,s), degrees 0..3, has exactly one diagonal singlet, proportional to r^n U_n(a/r) (the SU(2) character). On C^2-valued fields of degree 0..3 there is no singlet of X + Y + S (left plus total right with spin) and two of X + Y (spin untouched). D0 reproduces the C235 spectrum (C227 normalisation, factor 2 on Y) and commutes with X_k and K_k = Y_k + S_k."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261104-c236-fourth-harmonic-diagonal-singlet/decision.md"
+    depends_on: [C235_S3_HARMONIC_SECTORS_SCALARS_S_S_C2_FIELDS_JL_K_D0_DEPENDS_ON_S_K_SPIN_SIDE_IS_A_TRIVIALISATION_CHOICE, C227_D0_SPECTRUM_MULTIPLICITIES_FOR_ALL_S_FROM_PETER_WEYL_CHECKED_NUMERICALLY_TO_S_3]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    convention: "u = (a,b,c,d), g = a I + i(d s1 - c s2 + b s3); X_k = -(T_k g).grad, Y_k = (g T_k).grad, S_k = T_k, T = -i sigma/2."
+    does_not_imply:
+      - "that the 'fourth harmonic' of the correspondent is this singlet: his definition is unknown"
+      - "that a spinor background cannot be invariant: the zero holds for X+Y+S (for all degrees, by the central element -1) but K = Y+S, which D0 commutes with, admits singlets (degree 1, D0 = 3)"
+    caveat: "Independent skeptic review (same model family) reproduced the logs byte for byte and found the C^2 'no singlet' statement trivial and conditional on the choice of diagonal; self-controls are negations of positive checks."
+    notes: "Q4 of the research map for the call of 2026-11-03."
+
+  - id: C237_VACUUM_POINT_STABILIZER_IS_DIAGONAL_SU2_ACTION_TRANSITIVE_INVARIANTS_ONLY_R2_THREE_PLUS_ONE_SPLIT
+    statement: "Exact sympy, 39 checks. Under g -> h g k^-1 on S^3 = SU(2) the action is transitive; at four sampled points the stabilizer algebra is 3-dimensional (the diagonal at (1,0,0,0), its Ad-conjugate elsewhere); SU(2)_L alone and SU(2)_R alone act freely. Polynomial invariants of SU(2)_L x SU(2)_R on the four degree-1 harmonics have dimensions 0,1,0,1 in degrees 1..4 (powers of r^2 only). For V = lambda (r^2 - v^2)^2 the Hessian at (v,0,0,0) is diag(8 lambda v^2, 0,0,0), its kernel is the span of the broken (axial) directions, and the stabilizer acts on the tangent space as a triplet and trivially on the normal direction."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261104-c237-vacuum-point-stabilizer-goldstones/decision.md"
+    depends_on: [C236_FOURTH_HARMONIC_IS_THE_DIAGONAL_SINGLET_A_CHARACTER_NO_FULL_DIAGONAL_SINGLET_ON_C2_FIELDS]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that this is the correspondent's 'vacuum point' or 'non-linear realisation'"
+      - "that the massive direction is the 'fourth harmonic' except for a vacuum point on the a-axis: at another point it is u, not a"
+    caveat: "Skeptic review: transitivity follows from the left action alone, 'beta = g^-1 alpha g' is a tautology once rank = 3, the Hessian result is Goldstone's theorem for the chosen symmetric potential and cannot discriminate; self-controls are negations of positive checks."
+    notes: "Standard geometry of the coset SU(2)xSU(2)/SU(2); no new physics claimed."
+
+  - id: C238_PREPRINT_ALGEBRA_CHECKED_EQ3_EQ5_SIGN_MISMATCH_EXTRA_GENERATOR_ONLY_IN_RANK_READING
+    statement: "Exact sympy, 26 checks, on the equations of the correspondent's preprint (Preprints.org 202510.2222.v2, 21 pages): eq (14) d/d theta = x d_y - y d_x correct; eq (60) is the metric induced by the embedding (59); eqs (62)-(63) are the infinitesimal rotation by -theta, keep the sphere, are Killing for (60) and tend to (65)-(68) as r -> infinity; the S^3 generalisation closes as so(4) ([P_a,P_b] = -M_ab) with Killing fields; the section 5.5 counting (one extra commuting generator iff N2 odd) holds for N2 = 1..8; worked examples (21)-(30) correct. Printed inconsistencies: eq (3) maps theta -> theta - omega while eq (5) says theta -> theta + omega (the paper splits into {(3), Fig 4, (4), (6), Fig 5} and {(5), (13)}); eq (57) prints y d_z where y d_x is meant."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261104-c238-tom-preprint-2222v2-formula-audit/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that the printed inconsistencies are errors in his physics or that either side is the misprint: unresolved"
+      - "that the extra commuting generator is m_L - m_R: holds only in the rank reading, X3 - Y3 does not commute with the diagonal Casimir"
+      - "anything about the 27-page book chapter (a different artifact)"
+    caveat: "The (54) check verifies one instance; the (62)-(63) -> (65)-(68) limit check tests z/r -> 1 only; N2 = 1 is hard-coded in the counting. Independent skeptic review (same model family) reproduced the log."
+    notes: "Artifact identity: preprint v2, not the book chapter; v1 (29 Oct 2025) lacks the footnote on half-integer l."
+
+  - id: C239_POSTER_32_STATE_GENERATORS_CONSISTENT_BOOKKEEPING_BY_CONSTRUCTION_SLOT_MAPPING_NOT_PRINTED
+    statement: "Numerical linear algebra (tolerance 1e-12), 23 checks, on the explicit generators printed on the correspondent's conference poster (IOCSYM 2026): J, K close into the Lorentz algebra; T_i = (1/2)(1 x P_L x sigma_i x 1) close into su(2) for a projector P_L, pinned to (1 -+ sigma_1)/2 by [T,K] = 0 ((1 - sigma_3)/2 fails); C_i' close into su(3); the 32 states split into 16 left-handed doublets + 16 right-handed singlets and 24 coloured + 8 colourless; the Spin(4) Dirac spinor is (1/2,0)+(0,1/2); the Spin(7) 8-spinor restricted to Spin(6) is 4 + 4bar with inequivalent weight sets."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261104-c239-sciforum-poster-fermion-bookkeeping/decision.md"
+    depends_on: []
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-03 or 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that harmonics on S^3 x S^6 produce one generation: the poster gives no harmonic computation and the content is bookkeeping by construction"
+      - "how the poster's abstract representations sit in the tensor slots: not printed, undecided"
+    caveat: "The 16+16 / 24+8 split holds for any projector and any 3+1 embedding and cannot fail; only 3 of the original 4 self-controls are independent. Two findings of the first draft (the 4 versus 4bar step, the isospin factor versus the S^3 SU(2)_L) were withdrawn after the skeptic review."
+    notes: "Artifact: poster of the 1st International Online Conference on Symmetry (sciforum 34762), local copy outside the repository."
+
+  - id: C240_NO_CHIRALITY_OPERATOR_ON_C2_AND_SECTOR_TABLE_DEGREES_0_1_D0_BLOCK_DIAGONAL_IS_A_GRADING_TAUTOLOGY
+    statement: "Exact sympy, degrees 0..1. The only 2x2 matrices commuting with sigma_1, sigma_2, sigma_3 are the scalars (Schur). The C^2-valued sectors of degrees 0..1 are (0,1/2)[2 states, D0 = 0], (1/2,0)[2, D0 = 3], (1/2,1)[6, D0 = -1], as in the C235 table. D0 is block diagonal in (j_L,k); this is a consequence of the degree grading and of the sectors being D0's own eigenspaces, not an independent finding about D0."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261104-c240-chirality-and-bidoublet-coupling/decision.md"
+    depends_on: [C235_S3_HARMONIC_SECTORS_SCALARS_S_S_C2_FIELDS_JL_K_D0_DEPENDS_ON_S_K_SPIN_SIDE_IS_A_TRIVIALISATION_CHOICE]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that S^3 has no chirality in a general sense: the check tests constant 2x2 matrices only"
+      - "that a (1/2,1/2) multiplet is necessary to connect (0,1/2) and (1/2,0), or that this is a mass mechanism: Clebsch-Gordan sufficiency is textbook and was not tested by this run"
+      - "that the poster's left/right labels are these sectors: untested premise"
+    caveat: "Skeptic review (same model family): the block-diagonality and the (2 + 6) rank split are tautologies of the grading and of the sector dimensions (a random non-equivariant map gives the same ranks); all three self-controls are negations of positive checks. Only the Schur statement and the sector table (duplicating C235) are retained."
+    notes: "Q6 of the research map for the call of 2026-11-03. Not to be presented to the correspondent as a result."
+
+  - id: C241_STANDARD_HYPERCHARGE_ADDED_TO_POSTER_32_STATES_GIVES_STANDARD_CHARGES_BY_CONSTRUCTION_NOT_A_DERIVATION
+    statement: "Numerical linear algebra (tolerance 1e-12), 11 checks. On the 32 states of the poster's generators (C239) with T3R = (1/2)(1 x P_R x sigma_3 x 1) and (B-L)/2 = diag(1/6,1/6,1/6,-1/2) added in the standard form Y = T3R + (B-L)/2 (Di Luzio arXiv:2005.00012 eq. 2.2), Q = T3L + Y has charges +2/3 (12 states), -1/3 (12), 0 (4), -1 (4); the states with trivial SU(3)_C and SU(2)_L and Y = 0 are 2 right-handed states. These facts hold by construction of the added operators; Y = T3R alone gives only +-1/2."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261104-c241-hypercharge-on-poster-32/decision.md"
+    depends_on: [C239_POSTER_32_STATE_GENERATORS_CONSISTENT_BOOKKEEPING_BY_CONSTRUCTION_SLOT_MAPPING_NOT_PRINTED]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-04 in its own experiment folder)."
+    does_not_imply:
+      - "that hypercharge follows from harmonics or from the S^3 isometry: T3R and B-L are added by hand and are not on the poster"
+      - "that commutation with the printed generators supports the choice: a nonsense Y with lepton value -5 commutes too"
+      - "that the poster's T3R is an S^3 isometry generator: untested"
+    caveat: "Skeptic review (same model family): H1-H4 are bookkeeping, the six Y eigenvalues are inputs, the isospin axis of T3R is free, the SU(2)_L Casimir identity makes 'singlet = right-handed' automatic; no self-control is independent evidence (one could never fire and was replaced). Filed as a consistency note."
+    notes: "Q3 of the research map for the call of 2026-11-03. Not to be presented to the correspondent as a result."
+
+
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
   # registry as the highest-value next step. This ledger was ALREADY

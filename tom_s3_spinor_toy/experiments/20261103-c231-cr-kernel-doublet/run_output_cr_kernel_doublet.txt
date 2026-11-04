@@ -1,0 +1,30 @@
+PASS n = 0: dim ker Lbar (charge n, degree <= 3) = 1
+PASS n = 0: kernel = span of the holomorphic monomials x1^i x2^(n-i)
+PASS n = 0: kernel is SU(2)-invariant and Casimir = (n/2)(n/2+1)
+PASS n = 1: dim ker Lbar (charge n, degree <= 4) = 2
+PASS n = 1: kernel = span of the holomorphic monomials x1^i x2^(n-i)
+PASS n = 1: kernel is SU(2)-invariant and Casimir = (n/2)(n/2+1)
+PASS n = 2: dim ker Lbar (charge n, degree <= 5) = 3
+PASS n = 2: kernel = span of the holomorphic monomials x1^i x2^(n-i)
+PASS n = 2: kernel is SU(2)-invariant and Casimir = (n/2)(n/2+1)
+PASS n = 3: dim ker Lbar (charge n, degree <= 6) = 4
+PASS n = 3: kernel = span of the holomorphic monomials x1^i x2^(n-i)
+PASS n = 3: kernel is SU(2)-invariant and Casimir = (n/2)(n/2+1)
+PASS n = 4: dim ker Lbar (charge n, degree <= 7) = 5
+PASS n = 4: kernel = span of the holomorphic monomials x1^i x2^(n-i)
+PASS n = 4: kernel is SU(2)-invariant and Casimir = (n/2)(n/2+1)
+PASS n = -1: kernel of Lbar is zero (degree <= 4)
+PASS n = -2: kernel of Lbar is zero (degree <= 4)
+PASS D3 weights on (x1, x2, y1, y2) = (-1/2, +1/2, +1/2, -1/2): anti-holomorphic doublet has the opposite weights
+PASS eta = (y2, -y1) transforms exactly like (x1, x2): D_a eta_i = -1/2 (sigma_a eta)_i
+PASS charge -1: kernel of the conjugate operator L has dimension 2 and is span{y1, y2}
+PASS charge -n: kernel of L has dimension n + 1 for n = 2, 3
+PASS Psi = xi^2 * J xi on the section xi = (cos th/2, sin th/2 e^{i ph})
+PASS Phi = k * xi^1 * J xi with a constant k (here k = -1)
+PASS J xi is the pointwise Gamma = -1 eigenvector (sigma.n J xi = - J xi)
+CAUGHT the sign-flipped operator x1 d/dy2 + x2 d/dy1 is tangent to S^3 (kills x1 y1 + x2 y2)
+CAUGHT conjugate operator L has a nonzero kernel at charge +1
+CAUGHT kernel of Lbar at n = -1 is NOT empty
+
+FAILS: none
+exit=0

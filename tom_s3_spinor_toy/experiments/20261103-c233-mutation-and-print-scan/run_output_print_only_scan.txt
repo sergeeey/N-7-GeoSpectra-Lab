@@ -1,0 +1,60 @@
+20261102-c222-invariant-subspaces-spin-half-family/q3_invariant_subspace.py: 5 print calls, 2 flagged
+   line 190: print("\nFAILS:", fails if fails else "none")   names=['fails']
+   line 99: print("   orbit with %d rotations: numerical rank %d" % (n, r))   names=['n', 'r']
+20261102-c222-invariant-subspaces-spin-half-family/q3b_spin_half_isotypic.py: 4 print calls, 1 flagged
+   line 184: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c222-invariant-subspaces-spin-half-family/q3c_uniqueness.py: 2 print calls, 1 flagged
+   line 278: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c222-invariant-subspaces-spin-half-family/q3d_corrections.py: 4 print calls, 1 flagged
+   line 51: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c223-hopf-map-and-global-frame-bundle/q2_hopf_map.py: 3 print calls, 1 flagged
+   line 181: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c223-hopf-map-and-global-frame-bundle/q5_bridge.py: 2 print calls, 1 flagged
+   line 119: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c223-hopf-map-and-global-frame-bundle/q5_descent_types.py: 2 print calls, 1 flagged
+   line 92: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c223-hopf-map-and-global-frame-bundle/q5_local_kets.py: 2 print calls, 1 flagged
+   line 187: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c223-hopf-map-and-global-frame-bundle/q5_obstructions.py: 3 print calls, 1 flagged
+   line 114: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c224-fermion-as-superposition-composites/q6_composites_reps.py: 2 print calls, 1 flagged
+   line 127: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c224-fermion-as-superposition-composites/q6_constructive.py: 2 print calls, 1 flagged
+   line 58: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c224-fermion-as-superposition-composites/q6_fourier_superposition.py: 3 print calls, 1 flagged
+   line 99: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c224-fermion-as-superposition-composites/q6_parity_statistics.py: 3 print calls, 1 flagged
+   line 96: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c224-fermion-as-superposition-composites/q6_superposition_models.py: 2 print calls, 1 flagged
+   line 104: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c225-su2-differential-generators-note-check/note_final_check.py: 2 print calls, 1 flagged
+   line 109: print("\nFAILS:", fails if fails else "none")   names=['fails']
+20261102-c226-hopf-vector-projection-and-convention-flip/hopf_vector_map_stages_check.py: 10 print calls, 2 flagged
+   line 274: print("FAILS:", fails if fails else "none")   names=['fails']
+   line 179: print(f"     point for {name}: xi = ({sp.simplify(u1)}, {sp.simplify(u2)}), V = {vals}")   names=['name', 'u1', 'u2', 'vals']
+20261102-c227-d0-spectrum-all-s-peter-weyl/independent_subagent_check_all_s_to_3.py: 2 print calls, 0 flagged
+20261102-c227-d0-spectrum-all-s-peter-weyl/weight_sectors_d0_check.py: 2 print calls, 1 flagged
+   line 173: print(text, flush=True)   names=['text']
+20261102-c228-h2-doublet-not-invariant-under-d0/h2_j12_block.py: 1 print calls, 1 flagged
+   line 131: print(text, flush=True)   names=['text']
+20261102-c228-h2-doublet-not-invariant-under-d0/h2_noninvariance_gamma.py: 1 print calls, 1 flagged
+   line 134: print(text, flush=True)   names=['text']
+20261102-c228-h2-doublet-not-invariant-under-d0/independent_subagent_check_s3_lift.py: 10 print calls, 5 flagged
+   line 46: print("Phi =", list(Phi))   names=['Phi', 'list']
+   line 117: print("J3 T Psi =", list(J3(F1)), " J3 T Phi =", list(J3(F2)))   names=['F1', 'F2', 'J3', 'list']
+   line 120: print("Gram =", Gm)   names=['Gm']
+   line 134: print("control constant spinor: D0 c =", list(DF))   names=['DF', 'list']
+   line 127: print(   names=['DF', 'F', 'R', 'coef', 'ip', 'list', 'name']
+20261103-c229-convention-asserted-check/conventions_asserted_check.py: 3 print calls, 0 flagged
+20261103-c230-equivariant-operators-h2/equivariant_operators_h2.py: 5 print calls, 1 flagged
+   line 245: print("  solution family for O*:", sol_star)   names=['sol_star']
+20261103-c231-cr-kernel-doublet/cr_kernel_doublet.py: 3 print calls, 0 flagged
+20261103-c232-weight-dictionary-and-labelling/weight_dictionary_and_labelling.py: 3 print calls, 0 flagged
+20261103-tom-cert-01/build_certificate.py: 1 print calls, 1 flagged
+   line 206: print(f"wrote {out_path}")   names=['out_path']
+20261103-tom-cert-01/negative_controls.py: 2 print calls, 1 flagged
+   line 356: print(f"CONTROLS: {'ALL BEHAVED AS DECLARED' if not bad else 'MISBEHAVED: ' + ','.join(bad)}")   names=['bad']
+20261103-tom-cert-01/run_all.py: 1 print calls, 1 flagged
+   line 29: print(s)   names=['s']
+20261103-tom-cert-01/verifier.py: 5 print calls, 1 flagged
+   line 728: print(f"RESULT: ACCEPT ({ran} checks passed, {len(RESULTS) - ran} skipped)")   names=['RESULTS', 'ran']

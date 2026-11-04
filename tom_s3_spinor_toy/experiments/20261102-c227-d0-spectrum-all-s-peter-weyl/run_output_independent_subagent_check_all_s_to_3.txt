@@ -1,0 +1,8 @@
+k=0 s=0.0 dimH(C^2)=2 invres=0.0e+00 max|Im|=0.0e+00 num={np.float64(0.0): 2} pred={-0.0: 2} match=True
+k=1 s=0.5 dimH(C^2)=8 invres=0.0e+00 max|Im|=1.4e-16 num={np.float64(-1.0): 6, np.float64(3.0): 2} pred={-1.0: 6, 3.0: 2} match=True
+k=2 s=1.0 dimH(C^2)=18 invres=8.6e-16 max|Im|=7.6e-16 num={np.float64(-2.0): 12, np.float64(4.0): 6} pred={-2.0: 12, 4.0: 6} match=True
+k=3 s=1.5 dimH(C^2)=32 invres=1.1e-14 max|Im|=8.9e-16 num={np.float64(-3.0): 20, np.float64(5.0): 12} pred={-3.0: 20, 5.0: 12} match=True
+k=4 s=2.0 dimH(C^2)=50 invres=2.1e-14 max|Im|=1.3e-15 num={np.float64(-4.0): 30, np.float64(6.0): 20} pred={-4.0: 30, 6.0: 20} match=True
+k=5 s=2.5 dimH(C^2)=72 invres=4.4e-14 max|Im|=4.2e-15 num={np.float64(-5.0): 42, np.float64(7.0): 30} pred={-5.0: 42, 7.0: 30} match=True
+k=6 s=3.0 dimH(C^2)=98 invres=8.4e-14 max|Im|=8.5e-15 num={np.float64(-6.0): 56, np.float64(8.0): 42} pred={-6.0: 56, 8.0: 42} match=True
+D0-3/2 per k listed; CS: -(2s+3/2) with n=2s, +(2s+1/2) with n=2s-1

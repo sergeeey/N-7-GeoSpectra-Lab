@@ -1,0 +1,9 @@
+PASS C1 cross-subspace inner product = 4pi(conj(a)a'+conj(b)b')<v,w> (trial 0)
+PASS C1 within one subspace: 4pi(|a|^2+|b|^2)<v,w> (trial 0)
+PASS C1 cross-subspace inner product = 4pi(conj(a)a'+conj(b)b')<v,w> (trial 1)
+PASS C1 within one subspace: 4pi(|a|^2+|b|^2)<v,w> (trial 1)
+PASS C1 cross-subspace inner product = 4pi(conj(a)a'+conj(b)b')<v,w> (trial 2)
+PASS C1 within one subspace: 4pi(|a|^2+|b|^2)<v,w> (trial 2)
+PASS C2 Bloch +n and -n subspaces are orthogonal (|<.,.>| = 7.5e-17)
+
+FAILS: none

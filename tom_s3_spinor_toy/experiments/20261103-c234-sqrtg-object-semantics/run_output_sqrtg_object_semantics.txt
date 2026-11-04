@@ -1,0 +1,30 @@
+PASS P1 (1/2,1/2,1/2,1/2): both coordinate values describe the same point of R^4
+PASS P1 (1/2,1/2,1/2,1/2): sqrt(g) from J^T J equals sin(eta)cos(eta) in Hopf and (2/(1+r^2))^3 in stereographic
+PASS P1 (1/2,1/2,1/2,1/2): the two values of sqrt(g) at the same point are different numbers (1/2 versus 1/8)
+PASS P2 (1/2,1/2,1/2,-1/2): both coordinate values describe the same point of R^4
+PASS P2 (1/2,1/2,1/2,-1/2): sqrt(g) from J^T J equals sin(eta)cos(eta) in Hopf and (2/(1+r^2))^3 in stereographic
+PASS P2 (1/2,1/2,1/2,-1/2): the two values of sqrt(g) at the same point are different numbers (1/2 versus 27/8)
+PASS P3 (1/3,2/3,2/3,0): both coordinate values describe the same point of R^4
+PASS P3 (1/3,2/3,2/3,0): sqrt(g) from J^T J equals sin(eta)cos(eta) in Hopf and (2/(1+r^2))^3 in stereographic
+PASS P3 (1/3,2/3,2/3,0): the two values of sqrt(g) at the same point are different numbers (2*sqrt(5)/9 versus 1)
+PASS P1 (1/2,1/2,1/2,1/2), conf: rho is the same in both coordinate systems
+PASS P1 (1/2,1/2,1/2,1/2), conf: rho equals the closed form at x4 = 1/2
+PASS P1 (1/2,1/2,1/2,1/2), aniso: rho is the same in both coordinate systems
+PASS P1 (1/2,1/2,1/2,1/2), aniso: rho equals the closed form at x4 = 1/2
+PASS P2 (1/2,1/2,1/2,-1/2), conf: rho is the same in both coordinate systems
+PASS P2 (1/2,1/2,1/2,-1/2), conf: rho equals the closed form at x4 = -1/2
+PASS P2 (1/2,1/2,1/2,-1/2), aniso: rho is the same in both coordinate systems
+PASS P2 (1/2,1/2,1/2,-1/2), aniso: rho equals the closed form at x4 = -1/2
+PASS P3 (1/3,2/3,2/3,0), conf: rho is the same in both coordinate systems
+PASS P3 (1/3,2/3,2/3,0), conf: rho equals the closed form at x4 = 0
+PASS P3 (1/3,2/3,2/3,0), aniso: rho is the same in both coordinate systems
+PASS P3 (1/3,2/3,2/3,0), aniso: rho equals the closed form at x4 = 0
+PASS P1 (1/2,1/2,1/2,1/2): (1/2) tr h = 3 e x4 and rho = 1 + 3 e x4 + O(e^2) for the conformal deformation
+PASS P2 (1/2,1/2,1/2,-1/2): (1/2) tr h = 3 e x4 and rho = 1 + 3 e x4 + O(e^2) for the conformal deformation
+PASS P3 (1/3,2/3,2/3,0): (1/2) tr h = 3 e x4 and rho = 1 + 3 e x4 + O(e^2) for the conformal deformation
+CAUGHT sqrt(g) alone agrees across Hopf and stereographic coordinates at P1
+CAUGHT wrong closed form rho = exp(2 e x4) for the conformal deformation at P1
+CAUGHT wrong closed form rho = sqrt(1 + e x4^2) for g_round + e dx4 dx4 at P1
+
+FAILS: none
+exit=0

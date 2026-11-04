@@ -1,0 +1,5 @@
+PASS T1 Phi descends: Phi(t xi) e_j = rho(t) Phi(xi) e_j
+PASS T2 F does not descend: rho(t)^{-1}F(t xi)e_1 differs from F(xi)e_1 (median gap 0.80)
+PASS T3 Phi is not SU(2)_L-covariant: frame change M(h,xi) has nonzero off-diagonal part (median 0.69)
+
+FAILS: none

@@ -1,0 +1,24 @@
+PASS [1, J_k] = 0 for generic F, k = x,y,z
+PASS [sigma.L, J_k] = 0 for generic F, k = x,y,z
+PASS [Gamma, J_k] = 0 for generic F, k = x,y,z
+PASS [Gamma sigma.L, J_k] = 0 for generic F, k = x,y,z
+PASS control: L_z alone does NOT commute with J_x (equivariance test can fail)
+PASS sigma.L chi = 0 and sigma.L (Gamma chi) = -2 Gamma chi
+PASS Gamma Gamma chi = chi
+PASS Psi = -chi/2 + Gamma chi/2 (the C228 highest-weight spinor)
+PASS Gamma Psi = -Psi (Psi lies in ker(Gamma+1) pointwise)
+PASS matrix of O on {chi, Gamma chi} = [[a, c-2d],[c, a-2b]]
+PASS the four operators span all 2x2 matrices on the j=1/2 multiplicity space (rank 4)
+PASS v = (-1,1) is an eigenvector of O  <=>  b + d = 0 (determinant of [Ov, v])
+PASS b = -d: O Psi = (a - c - 2b) Psi exactly
+PASS b = -d: O Phi = (a - c - 2b) Phi exactly (so H2 is invariant, with eigenvalue a - c - 2b)
+PASS general O: O Psi = (a - b - c + d) Psi + ((b + d)/2) A Psi
+PASS A Psi lies in ker(Gamma - 1) pointwise (so it is not in span{Psi,Phi} unless zero)
+PASS example O* = (1 - Gamma) sigma.L preserves H2: O* Psi = -2 Psi, O* Phi = -2 Phi
+PASS control: for O* (which preserves H2) the system is solvable and its solutions are exactly M = lambda * 1 (m1 = m2 = 0, m0 = m3); M = 0 is among them
+  solution family for O*: [{m0: s + 2, m1: 0, m2: 0, m3: s + 2, p: s, q: 0, r: 0}]
+  solutions of (A + M) H2 in H2 with M constant: []
+PASS no constant 2x2 matrix M makes (A + M) H2 invariant (sample-point system inconsistent)
+
+FAILS: none
+exit=0

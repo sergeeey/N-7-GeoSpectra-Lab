@@ -1,0 +1,11 @@
+PASS M1 constant-coefficient superposition of even functions is even
+PASS M2 projection of an odd function onto the even subspace vanishes pointwise
+PASS M3b xi_1 = xi_1 * 1 holds identically (coefficient is odd, the basis function is even)
+PASS M4a product of two odd functions is even
+PASS M4b product of three odd functions is odd
+PASS M5 eps_{ab} xi^a xi^b = 0 for one doublet
+PASS M6a eps_{ab} xi^a (eps xibar)^b = -|xi|^2 = -1 (constant)
+PASS M6b the spin-0 composite of two different doublets is nonzero
+PASS M7 the spin-0 composite has zero variance (constant function)
+
+FAILS: none

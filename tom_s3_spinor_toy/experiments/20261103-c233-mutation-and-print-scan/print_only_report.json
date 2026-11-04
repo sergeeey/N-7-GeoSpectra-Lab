@@ -1,0 +1,405 @@
+[
+ {
+  "file": "20261102-c222-invariant-subspaces-spin-half-family/q3_invariant_subspace.py",
+  "prints": 5,
+  "flagged": [
+   {
+    "line": 190,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   },
+   {
+    "line": 99,
+    "names": [
+     "n",
+     "r"
+    ],
+    "text": "print(\"   orbit with %d rotations: numerical rank %d\" % (n, r))"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c222-invariant-subspaces-spin-half-family/q3b_spin_half_isotypic.py",
+  "prints": 4,
+  "flagged": [
+   {
+    "line": 184,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c222-invariant-subspaces-spin-half-family/q3c_uniqueness.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 278,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c222-invariant-subspaces-spin-half-family/q3d_corrections.py",
+  "prints": 4,
+  "flagged": [
+   {
+    "line": 51,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c223-hopf-map-and-global-frame-bundle/q2_hopf_map.py",
+  "prints": 3,
+  "flagged": [
+   {
+    "line": 181,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c223-hopf-map-and-global-frame-bundle/q5_bridge.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 119,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c223-hopf-map-and-global-frame-bundle/q5_descent_types.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 92,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c223-hopf-map-and-global-frame-bundle/q5_local_kets.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 187,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c223-hopf-map-and-global-frame-bundle/q5_obstructions.py",
+  "prints": 3,
+  "flagged": [
+   {
+    "line": 114,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c224-fermion-as-superposition-composites/q6_composites_reps.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 127,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c224-fermion-as-superposition-composites/q6_constructive.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 58,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c224-fermion-as-superposition-composites/q6_fourier_superposition.py",
+  "prints": 3,
+  "flagged": [
+   {
+    "line": 99,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c224-fermion-as-superposition-composites/q6_parity_statistics.py",
+  "prints": 3,
+  "flagged": [
+   {
+    "line": 96,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c224-fermion-as-superposition-composites/q6_superposition_models.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 104,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c225-su2-differential-generators-note-check/note_final_check.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 109,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"\\nFAILS:\", fails if fails else \"none\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c226-hopf-vector-projection-and-convention-flip/hopf_vector_map_stages_check.py",
+  "prints": 10,
+  "flagged": [
+   {
+    "line": 274,
+    "names": [
+     "fails"
+    ],
+    "text": "print(\"FAILS:\", fails if fails else \"none\")"
+   },
+   {
+    "line": 179,
+    "names": [
+     "name",
+     "u1",
+     "u2",
+     "vals"
+    ],
+    "text": "print(f\"     point for {name}: xi = ({sp.simplify(u1)}, {sp.simplify(u2)}), V = {vals}\")"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c227-d0-spectrum-all-s-peter-weyl/independent_subagent_check_all_s_to_3.py",
+  "prints": 2,
+  "flagged": []
+ },
+ {
+  "file": "20261102-c227-d0-spectrum-all-s-peter-weyl/weight_sectors_d0_check.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 173,
+    "names": [
+     "text"
+    ],
+    "text": "print(text, flush=True)"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c228-h2-doublet-not-invariant-under-d0/h2_j12_block.py",
+  "prints": 1,
+  "flagged": [
+   {
+    "line": 131,
+    "names": [
+     "text"
+    ],
+    "text": "print(text, flush=True)"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c228-h2-doublet-not-invariant-under-d0/h2_noninvariance_gamma.py",
+  "prints": 1,
+  "flagged": [
+   {
+    "line": 134,
+    "names": [
+     "text"
+    ],
+    "text": "print(text, flush=True)"
+   }
+  ]
+ },
+ {
+  "file": "20261102-c228-h2-doublet-not-invariant-under-d0/independent_subagent_check_s3_lift.py",
+  "prints": 10,
+  "flagged": [
+   {
+    "line": 46,
+    "names": [
+     "Phi",
+     "list"
+    ],
+    "text": "print(\"Phi =\", list(Phi))"
+   },
+   {
+    "line": 117,
+    "names": [
+     "F1",
+     "F2",
+     "J3",
+     "list"
+    ],
+    "text": "print(\"J3 T Psi =\", list(J3(F1)), \" J3 T Phi =\", list(J3(F2)))"
+   },
+   {
+    "line": 120,
+    "names": [
+     "Gm"
+    ],
+    "text": "print(\"Gram =\", Gm)"
+   },
+   {
+    "line": 134,
+    "names": [
+     "DF",
+     "list"
+    ],
+    "text": "print(\"control constant spinor: D0 c =\", list(DF))"
+   },
+   {
+    "line": 127,
+    "names": [
+     "DF",
+     "F",
+     "R",
+     "coef",
+     "ip",
+     "list",
+     "name"
+    ],
+    "text": "print("
+   }
+  ]
+ },
+ {
+  "file": "20261103-c229-convention-asserted-check/conventions_asserted_check.py",
+  "prints": 3,
+  "flagged": []
+ },
+ {
+  "file": "20261103-c230-equivariant-operators-h2/equivariant_operators_h2.py",
+  "prints": 5,
+  "flagged": [
+   {
+    "line": 245,
+    "names": [
+     "sol_star"
+    ],
+    "text": "print(\"  solution family for O*:\", sol_star)"
+   }
+  ]
+ },
+ {
+  "file": "20261103-c231-cr-kernel-doublet/cr_kernel_doublet.py",
+  "prints": 3,
+  "flagged": []
+ },
+ {
+  "file": "20261103-c232-weight-dictionary-and-labelling/weight_dictionary_and_labelling.py",
+  "prints": 3,
+  "flagged": []
+ },
+ {
+  "file": "20261103-tom-cert-01/build_certificate.py",
+  "prints": 1,
+  "flagged": [
+   {
+    "line": 206,
+    "names": [
+     "out_path"
+    ],
+    "text": "print(f\"wrote {out_path}\")"
+   }
+  ]
+ },
+ {
+  "file": "20261103-tom-cert-01/negative_controls.py",
+  "prints": 2,
+  "flagged": [
+   {
+    "line": 356,
+    "names": [
+     "bad"
+    ],
+    "text": "print(f\"CONTROLS: {'ALL BEHAVED AS DECLARED' if not bad else 'MISBEHAVED: ' + ','.join(bad)}\")"
+   }
+  ]
+ },
+ {
+  "file": "20261103-tom-cert-01/run_all.py",
+  "prints": 1,
+  "flagged": [
+   {
+    "line": 29,
+    "names": [
+     "s"
+    ],
+    "text": "print(s)"
+   }
+  ]
+ },
+ {
+  "file": "20261103-tom-cert-01/verifier.py",
+  "prints": 5,
+  "flagged": [
+   {
+    "line": 728,
+    "names": [
+     "RESULTS",
+     "ran"
+    ],
+    "text": "print(f\"RESULT: ACCEPT ({ran} checks passed, {len(RESULTS) - ran} skipped)\")"
+   }
+  ]
+ }
+]

@@ -1,0 +1,20 @@
+PASS K1 integer m for all Y_lm, l<=4: R_z(2 pi) acts as identity on L^2(S^2) (no spin-1/2 weight)
+   relative L2 distance |R Y - e^{-i a/2} Y| / |Y| (max over sampled alpha) = 1.952
+PASS K2 Y is not an eigenvector of R_z(alpha) with eigenvalue e^{-i alpha/2}
+   orbit with 8 rotations: numerical rank 8
+   orbit with 16 rotations: numerical rank 16
+   orbit with 32 rotations: numerical rank 32
+PASS K3 numerical rank of the dragged orbit grows with the number of rotations (no finite spinor multiplet)
+PASS K4a numerical ||Y||^2 = 2 pi (6.283185)
+   sum_{l<=5} sum_m |c_lm|^2 = 5.924899   (||Y||^2 = 6.283185)
+   sum_{l<=10} sum_m |c_lm|^2 = 6.094483   (||Y||^2 = 6.283185)
+   sum_{l<=20} sum_m |c_lm|^2 = 6.186111   (||Y||^2 = 6.283185)
+   sum_{l<=40} sum_m |c_lm|^2 = 6.233930   (||Y||^2 = 6.283185)
+   sum_{l<=60} sum_m |c_lm|^2 = 6.250185   (||Y||^2 = 6.283185)
+PASS K4b partial sums converge to ||Y||^2 (L^2 completeness): deficit at L=60 below 0.05
+PASS K4c every m in -3..3 has nonzero coefficient at l=|m|: no finite expansion, infinite family
+PASS K4d (refuted reading) 'cannot be expressed as a linear sum of harmonics' is FALSE in L^2
+PASS K5 component 0 of Psi lies in span{1, x, y, z} (rel. residual 5.8e-16)
+PASS K5 component 1 of Psi lies in span{1, x, y, z} (rel. residual 5.3e-16)
+
+FAILS: none

@@ -1,0 +1,13 @@
+PASS N1a D1 from definition equals the note's D1
+PASS N1b D2 from definition equals the note's D2
+PASS N1c D3 from definition equals the note's D3
+PASS N3a [D1,D2] F - i D3 F = 0
+PASS N3b [D2,D3] F - i D1 F = 0
+PASS N3c [D3,D1] F - i D2 F = 0
+PASS N4a D3 xi1 = -1/2 xi1
+PASS N4b D3 xi2 = +1/2 xi2
+PASS N4c D3 conj(xi1) = +1/2 conj(xi1)
+PASS N4d D3 conj(xi2) = -1/2 conj(xi2)
+PASS N5 D3 monomial formula (-p+q+r-s)/2 for p,q,r,s <= 3
+
+FAILS: none

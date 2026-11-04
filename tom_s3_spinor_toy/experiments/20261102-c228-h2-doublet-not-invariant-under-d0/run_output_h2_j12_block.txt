@@ -1,0 +1,6 @@
+(a) max|A^2 Psi - 4 Psi| = 0.00e+00, max|A^2 Phi - 4 Phi| = 0.00e+00
+(b) ||A Psi||/||Psi|| = 2.000000000000, ||A Phi||/||Phi|| = 2.000000000000
+(c) <A Psi, Psi> = 5.57e-18, <A Psi, Phi> = 2.48e-17, <A Phi, Psi> = 3.29e-17, <A Phi, Phi> = 1.25e-16
+(d) <A Psi, Phi> = -0.000000-0.000000j, <Psi, A Phi> = 0.000000+0.000000j, difference = 5.10e-17
+RESULT: True
+
