@@ -1,4 +1,6 @@
 # S³×S¹ Negative Controls Results — v0.1.22
+
+> **ОБНОВЛЕНИЕ 2026-11-05 — ТАБЛИЦЫ КОНТРОЛЕЙ НЕ СОВПАДАЮТ С СЫРЫМИ JSON.** Control C (broken_wilson_scrambled): таблица даёт IPR(W=20) 0,0055 / 0,0016 / 0,0007 и N = 3520 при s1 = 16; сырые `reports/RUNS/broken_wilson_scrambled_v0.1.22/` дают N = 1760 и IPR(W=20) 0,22–0,74. Вердикт «CORRECTLY REJECTED» для контроля C **не подтверждён**. Строка «все контроли < 5 % ring» неверна. Актуально: `results/controls_from_raw.json`.
 # FL Full-Ladder Steps 3–8
 
 **Date:** 2026-06-03
