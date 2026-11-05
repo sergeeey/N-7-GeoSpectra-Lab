@@ -56,19 +56,23 @@
 | L4 | Lattice families (ring/wilson_ring) | ✅ ACCEPTS (both STABLE) |
 | L5 | Wilson details | ❌ DOES NOT DISTINGUISH (scrambled -0.07, STABLE) |
 
-**C1 (harness discrimination): CONFIRMED** — controls A/B/C correctly rejected
-**C2 (spectral_circle diagnosis): GEOMETRY-SPECIFIC** — scrambled 5× lower than S³×S¹ at s1=128
+**C1 (harness discrimination): NOT CONFIRMED** — по сырым данным control C (broken_wilson_scrambled) не отклонён: IPR(W=20) выше ring-референса, плато воспроизводится. Прежняя запись «CONFIRMED» опиралась на сводную таблицу v0.1.22, которая не совпадает с сырыми JSON (см. `reports/GATE4C_THRESHOLD_ORIGIN_NOTE_v0.1.26.md`).
+**C2 (spectral_circle diagnosis): UNVERIFIED** — файл `reports/RUNS/negative_controls_v0.1.22/c2_spectral_circle_scrambled_s1_128.json`, на который ссылается отчёт, в репозитории отсутствует; сырых записей `spectral_circle_scrambled` не найдено.
 
 **Total cases executed:** 132 local (v0.1.22) + 54 server (v0.1.22 batches 1-6) + 36 extended
 
-### Controls Summary
+### Controls Summary (сырые JSON `reports/RUNS/**`, W = 20)
 
-| Control | Cases | Verdict | IPR(W=20) max | vs ring ref |
-|---------|-------|---------|--------------|-------------|
-| A: random_hermitian | 24 local | ✅ REJECTED | 0.0024 | 0.7% |
-| B: scrambled_geometry | 24 local + 18 server | ✅ REJECTED | 0.052 | 16% |
-| C: broken_wilson_scrambled | 24 local + 18 server | ✅ REJECTED | 0.007 | 2% |
-| D: spectral_circle_scrambled | 24+6 local | GEOMETRY-SPECIFIC | 0.014 at s1=128 | — |
+Ring-референс: IPR(W=20) = 0.326 (s1=16), 0.322 (s1=32), 0.320 (s1=64), 0.339 (s1=128); n = 12 на размер, `reports/RUNS/gate4_fss_v0.1.24/batches/batch_06/results.json`.
+
+| Control | Cases | Verdict | IPR(W=20) max (сырые) | vs ring ref (тот же s1) |
+|---------|-------|---------|----------------------|------------------------|
+| A: random_hermitian | 3 на s1 (16, 64, 128) | ✅ REJECTED (убывает ∝ 1/N) | 0.0024 (s1=16) | 0.7% |
+| B: scrambled_geometry | 3 на s1 (16, 64, 128) | ✅ REJECTED (убывает) | 0.0545 (s1=16) | 17% (s1=16); 4% (s1=64, max 0.0119) |
+| C: broken_wilson_scrambled | 6 на s1 (16, 64, 128) | ❌ NOT REJECTED — IPR выше ring, плато воспроизводится | 0.744 (s1=16) | 228% (max), 158% (среднее, s1=16) |
+| D: spectral_circle_scrambled | — | UNVERIFIED — сырые данные отсутствуют | 0.014 (s1=128, из отчёта, не проверено) | — |
+
+Средние IPR контроля C по размерам: 0.516 (s1=16), 0.477 (s1=64), 0.476 (s1=128) — почти плоские, как у ring.
 
 **Reports:**
 - `reports/S3_S1_NEGATIVE_CONTROLS_RESULTS_v0.1.22.md` ← финальный

@@ -1,0 +1,789 @@
+{
+  "rows": [
+    {
+      "family": "ring",
+      "s1": 16,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.109375,
+      "ipr_naive": 0.08664772727272729,
+      "selected_fraction": 0.09090909090909091,
+      "clusters": 45,
+      "invariance_std": 3.697851079363442e-17
+    },
+    {
+      "family": "ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.33509747475747775,
+      "ipr_naive": 0.3317890628683417,
+      "selected_fraction": 0.09659090909090909,
+      "clusters": 75,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.33648977772300376,
+      "ipr_naive": 0.33791361811028364,
+      "selected_fraction": 0.09090909090909091,
+      "clusters": 75,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.35742285207297103,
+      "ipr_naive": 0.35742285207297103,
+      "selected_fraction": 0.1,
+      "clusters": 75,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.4129641207199348,
+      "ipr_naive": 0.4059481517628221,
+      "selected_fraction": 0.09431818181818181,
+      "clusters": 75,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.3059990252725454,
+      "ipr_naive": 0.30108827808331706,
+      "selected_fraction": 0.08522727272727272,
+      "clusters": 75,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 32,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.05859375,
+      "ipr_naive": 0.043678977272727314,
+      "selected_fraction": 0.09090909090909091,
+      "clusters": 85,
+      "invariance_std": 1.3526394372366473e-17
+    },
+    {
+      "family": "ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.29340286257198106,
+      "ipr_naive": 0.3002620786314655,
+      "selected_fraction": 0.08977272727272727,
+      "clusters": 155,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.30416634519330293,
+      "ipr_naive": 0.3049842821579098,
+      "selected_fraction": 0.09829545454545455,
+      "clusters": 155,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.3397918219343524,
+      "ipr_naive": 0.33964421228632014,
+      "selected_fraction": 0.09545454545454546,
+      "clusters": 155,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.3739459638654161,
+      "ipr_naive": 0.36834497395588045,
+      "selected_fraction": 0.09375,
+      "clusters": 155,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.3030171237392304,
+      "ipr_naive": 0.3023062002495717,
+      "selected_fraction": 0.09772727272727273,
+      "clusters": 155,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 64,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.029272151898734177,
+      "ipr_naive": 0.022549715909090967,
+      "selected_fraction": 0.08977272727272727,
+      "clusters": 165,
+      "invariance_std": 5.027706288167843e-18
+    },
+    {
+      "family": "ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.2874639018543021,
+      "ipr_naive": 0.28974655512536873,
+      "selected_fraction": 0.09857954545454546,
+      "clusters": 315,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.3088451985931697,
+      "ipr_naive": 0.31142277535520085,
+      "selected_fraction": 0.09744318181818182,
+      "clusters": 315,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.36371846528879104,
+      "ipr_naive": 0.3637184652887907,
+      "selected_fraction": 0.1,
+      "clusters": 315,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.36319936101809364,
+      "ipr_naive": 0.3631961026935974,
+      "selected_fraction": 0.09971590909090909,
+      "clusters": 315,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.35680820319430273,
+      "ipr_naive": 0.3586153379251675,
+      "selected_fraction": 0.09744318181818182,
+      "clusters": 315,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "ring",
+      "s1": 128,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.015181107954545454,
+      "ipr_naive": 0.01149680397727269,
+      "selected_fraction": 0.1,
+      "clusters": 325,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.34892079588096087,
+      "ipr_naive": 0.34892079588096103,
+      "selected_fraction": 0.1,
+      "clusters": 635,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.35984204966877065,
+      "ipr_naive": 0.3599793503477984,
+      "selected_fraction": 0.09985795454545454,
+      "clusters": 635,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.3488384452178544,
+      "ipr_naive": 0.34794302549926526,
+      "selected_fraction": 0.09957386363636364,
+      "clusters": 635,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.34724875984109865,
+      "ipr_naive": 0.3475114489734303,
+      "selected_fraction": 0.09943181818181818,
+      "clusters": 635,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.3864136675874297,
+      "ipr_naive": 0.38641366758742973,
+      "selected_fraction": 0.1,
+      "clusters": 635,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 256,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.0076584901433691755,
+      "ipr_naive": 0.005620784973483727,
+      "selected_fraction": 0.09907670454545454,
+      "clusters": 645,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.35698810785937457,
+      "ipr_naive": 0.35753936246989537,
+      "selected_fraction": 0.09907670454545454,
+      "clusters": 1275,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.3494587330876595,
+      "ipr_naive": 0.34967250566096486,
+      "selected_fraction": 0.09964488636363636,
+      "clusters": 1275,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.3384456608297996,
+      "ipr_naive": 0.3375501013430127,
+      "selected_fraction": 0.09928977272727273,
+      "clusters": 1275,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.32344355627231053,
+      "ipr_naive": 0.3229473388941847,
+      "selected_fraction": 0.09907670454545454,
+      "clusters": 1275,
+      "invariance_std": null
+    },
+    {
+      "family": "ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.3735636652378725,
+      "ipr_naive": 0.3736312185360523,
+      "selected_fraction": 0.09907670454545454,
+      "clusters": 1275,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 16,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.0625,
+      "ipr_naive": 0.0625,
+      "selected_fraction": 0.09772727272727273,
+      "clusters": 76,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.24619185603925015,
+      "ipr_naive": 0.23927402214764815,
+      "selected_fraction": 0.09204545454545454,
+      "clusters": 80,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.22463893838342902,
+      "ipr_naive": 0.23934256973678192,
+      "selected_fraction": 0.08636363636363636,
+      "clusters": 80,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.20758209499898553,
+      "ipr_naive": 0.20366612804446038,
+      "selected_fraction": 0.09545454545454546,
+      "clusters": 80,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.28122266794362677,
+      "ipr_naive": 0.2871548867524484,
+      "selected_fraction": 0.09545454545454546,
+      "clusters": 80,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 16,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.25397433046493134,
+      "ipr_naive": 0.25216814372286445,
+      "selected_fraction": 0.09431818181818181,
+      "clusters": 80,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 32,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.03125,
+      "ipr_naive": 0.03125,
+      "selected_fraction": 0.09431818181818181,
+      "clusters": 160,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.24296094959333095,
+      "ipr_naive": 0.240844270154175,
+      "selected_fraction": 0.09431818181818181,
+      "clusters": 160,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.2073247569320028,
+      "ipr_naive": 0.21016872467548983,
+      "selected_fraction": 0.09772727272727273,
+      "clusters": 160,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.23086798363405397,
+      "ipr_naive": 0.23026874575967352,
+      "selected_fraction": 0.09943181818181818,
+      "clusters": 160,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.2933654083165328,
+      "ipr_naive": 0.2966518570613427,
+      "selected_fraction": 0.0971590909090909,
+      "clusters": 160,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 32,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.27868314947865286,
+      "ipr_naive": 0.2803151718202877,
+      "selected_fraction": 0.09545454545454546,
+      "clusters": 160,
+      "invariance_std": 5.551115123125783e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 64,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.015625,
+      "ipr_naive": 0.015625,
+      "selected_fraction": 0.09886363636363636,
+      "clusters": 320,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.24086240632927144,
+      "ipr_naive": 0.2406259539402207,
+      "selected_fraction": 0.09971590909090909,
+      "clusters": 320,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.24511185058753587,
+      "ipr_naive": 0.24742902980978537,
+      "selected_fraction": 0.09517045454545454,
+      "clusters": 320,
+      "invariance_std": 2.7755575615628914e-17
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.26541102526024624,
+      "ipr_naive": 0.2645968077388875,
+      "selected_fraction": 0.09460227272727273,
+      "clusters": 320,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.2929609352867933,
+      "ipr_naive": 0.29296093528679334,
+      "selected_fraction": 0.1,
+      "clusters": 320,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 64,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.2954929208792904,
+      "ipr_naive": 0.29549292087929047,
+      "selected_fraction": 0.1,
+      "clusters": 320,
+      "invariance_std": 0.0
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 128,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.007812499999999999,
+      "ipr_naive": 0.0078125,
+      "selected_fraction": 0.09971590909090909,
+      "clusters": 640,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.24760143590928302,
+      "ipr_naive": 0.24731743537472015,
+      "selected_fraction": 0.09957386363636364,
+      "clusters": 640,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.2635327052538336,
+      "ipr_naive": 0.2642464730903459,
+      "selected_fraction": 0.09758522727272727,
+      "clusters": 640,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.22930518556824903,
+      "ipr_naive": 0.22930518556824894,
+      "selected_fraction": 0.1,
+      "clusters": 640,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.2707897270494234,
+      "ipr_naive": 0.2712560688980351,
+      "selected_fraction": 0.09943181818181818,
+      "clusters": 640,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 128,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.2666742533266716,
+      "ipr_naive": 0.26670849655125434,
+      "selected_fraction": 0.09971590909090909,
+      "clusters": 640,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 256,
+      "W": 0.0,
+      "seed": 7,
+      "ipr_proj": 0.0039062499999999996,
+      "ipr_naive": 0.00390625,
+      "selected_fraction": 0.09985795454545454,
+      "clusters": 1280,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 7,
+      "ipr_proj": 0.25076399287716117,
+      "ipr_naive": 0.2507299869871533,
+      "selected_fraction": 0.09928977272727273,
+      "clusters": 1280,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 11,
+      "ipr_proj": 0.2547570273870812,
+      "ipr_naive": 0.25482157535820626,
+      "selected_fraction": 0.09978693181818182,
+      "clusters": 1280,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 23,
+      "ipr_proj": 0.23564202934778525,
+      "ipr_naive": 0.2357741182074961,
+      "selected_fraction": 0.09978693181818182,
+      "clusters": 1280,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 42,
+      "ipr_proj": 0.24871497487548072,
+      "ipr_naive": 0.24889643580714801,
+      "selected_fraction": 0.09964488636363636,
+      "clusters": 1280,
+      "invariance_std": null
+    },
+    {
+      "family": "wilson_ring",
+      "s1": 256,
+      "W": 20.0,
+      "seed": 101,
+      "ipr_proj": 0.27342469305061884,
+      "ipr_naive": 0.2734332211888569,
+      "selected_fraction": 0.09957386363636364,
+      "clusters": 1280,
+      "invariance_std": null
+    }
+  ],
+  "controls": [
+    {
+      "control": "random_hermitian",
+      "s1": 16,
+      "ipr_proj": 0.001137672493310705,
+      "selected_fraction": 0.1
+    },
+    {
+      "control": "broken_wilson_scrambled",
+      "s1": 16,
+      "ipr_proj": 0.5456571482598501,
+      "selected_fraction": 0.1
+    },
+    {
+      "control": "random_hermitian",
+      "s1": 32,
+      "ipr_proj": 0.0005676760621631242,
+      "selected_fraction": 0.1
+    },
+    {
+      "control": "broken_wilson_scrambled",
+      "s1": 32,
+      "ipr_proj": 0.4747710838531262,
+      "selected_fraction": 0.1
+    },
+    {
+      "control": "random_hermitian",
+      "s1": 64,
+      "ipr_proj": 0.0002839307045179073,
+      "selected_fraction": 0.1
+    },
+    {
+      "control": "broken_wilson_scrambled",
+      "s1": 64,
+      "ipr_proj": 0.5461771907245093,
+      "selected_fraction": 0.1
+    }
+  ],
+  "consistency": {
+    "ring": {
+      "dense": 0.3350974747574774,
+      "reduced": 0.33509747475747775,
+      "diff": 3.3306690738754696e-16
+    },
+    "wilson_ring": {
+      "dense": 0.24619185603924976,
+      "reduced": 0.24619185603925015,
+      "diff": 3.885780586188048e-16
+    }
+  },
+  "verdict": {
+    "ring": {
+      "ipr_proj": {
+        "P1": true,
+        "P1_value": 0.34837994465740335,
+        "P2": true,
+        "P2_slope": 0.026085086817203958,
+        "P3": true,
+        "P3_ratios": {
+          "32": 5.510226320398619,
+          "64": 11.478726509487057,
+          "128": 23.59859008393103,
+          "256": 45.48937690532062
+        },
+        "P4": false
+      },
+      "ipr_naive": {
+        "P1": true,
+        "P1_value": 0.34826810538082204,
+        "P2": true,
+        "P2_slope": 0.022997806747100995,
+        "P3": true,
+        "P3_ratios": {
+          "32": 7.397342374542614,
+          "64": 14.959826928091177,
+          "128": 31.15245405295145,
+          "256": 61.96075939993977
+        },
+        "P4": null
+      },
+      "verdict_projector": "FAIL",
+      "verdict_naive_for_sensitivity": "PASS",
+      "definition_sensitive": true
+    },
+    "wilson_ring": {
+      "ipr_proj": {
+        "P1": true,
+        "P1_value": 0.2526605435076254,
+        "P2": true,
+        "P2_slope": -0.042429707859975845,
+        "P3": true,
+        "P3_ratios": {
+          "32": 8.02049438690927,
+          "64": 17.149940970792155,
+          "128": 32.714324661951,
+          "256": 64.68109913795212
+        },
+        "P4": false
+      },
+      "ipr_naive": {
+        "P1": true,
+        "P1_value": 0.25273106750977214,
+        "P2": true,
+        "P2_slope": -0.04290993533060494,
+        "P3": true,
+        "P3_ratios": {
+          "32": 8.0527921246142,
+          "64": 17.16615228998371,
+          "128": 32.73814168275467,
+          "256": 64.69915328250167
+        },
+        "P4": null
+      },
+      "verdict_projector": "FAIL",
+      "verdict_naive_for_sensitivity": "PASS",
+      "definition_sensitive": true
+    }
+  },
+  "thresholds": {
+    "P1": 0.25,
+    "P2_abs_slope": 0.1,
+    "P3_ratio": 2.0,
+    "P4_fraction": 0.16
+  },
+  "note_P4": "reference = mean over seeds of ring IPR_proj(W=20) at s1=64; controls use seed 7"
+}
