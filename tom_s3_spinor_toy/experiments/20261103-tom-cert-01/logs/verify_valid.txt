@@ -1,0 +1,20 @@
+PASS V0_statement: certificate declares the schema and the exact conventions this verifier implements
+PASS V1_basis_definition: basis equals g_ab: True; rank 4 of 4
+PASS V2gen_generators: exactly three generators, equal to -i sigma_a/2
+PASS V2a_closure: dL(T_a) W and dR(T_a) W lie in W for a = 1..3 (every basis image is expressible)
+PASS V2b_dL_matrices: claimed dL matrices equal recomputed ones; mismatching a: []
+PASS V2c_dR_matrices: claimed dR matrices equal recomputed ones; mismatching a: []
+PASS V3a_group_L: 12 group elements; L_h matrix mismatches at []
+PASS V3b_group_R: 12 group elements; R_k matrix mismatches at []
+PASS V3c_homomorphism: L_(hh') = L_h L_h' and R_(kk') = R_k R_k' on non-commuting pairs; bad: []
+PASS V3d_L_R_commute: L_h and R_k commute for all 12^2 pairs; bad: []
+PASS V3e_convention_equivariance: claimed group matrices equal the closed forms (h^-1)_ac and k_cb, and satisfy L_h dL(T) = dL(hTh^-1) L_h, R_k dR(T) = dR(kTk^-1) R_k; violations: []
+PASS V4_algebra: [X_a,X_b] = eps_abc X_c for dL and dR, [dL_a,dR_b] = 0; violations: []
+PASS V5a_invariant_blocks: partition ok: True; blocks invariant under dL (left_blocks) and dR (right_blocks): True
+PASS V5b_doublets_irreducible: two left doublets have identical generator matrices (isomorphic): True; two right doublets likewise: True; commutant dim of a left block 1, of a right block 1 (1 = irreducible)
+PASS V5c_commutants: commutant dims: full L+R 1, L only 4, R only 4 (expected 1, 4, 4)
+PASS V6_casimir_weights: Casimirs J_L^2 = J_R^2 = 3/4 * identity: True; (J3L, J3R) weights diagonal and equal to the claim, each of (+-1/2, +-1/2) exactly once: True
+PASS V7_gram_unitarity: Gram <g_ab, g_cd> = (1/2) delta (uniform measure, E[x_i conj(x_j)] = delta_ij/2, i.e. E[u_k u_l] = delta_kl/4 for real coordinates): True; all six generators skew-Hermitian w.r.t. it (unitary action): True
+PASS V8_conjugate_equivalence: eps T eps^-1 = conj(T) for all T_a and sampled h: True; left doublet block = conj(T_a) (conjugate of the defining rep, equivalent via eps): True; right block = T_a: True
+RESULT: ACCEPT (18 checks passed, 0 skipped)
+verify exit=0
