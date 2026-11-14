@@ -1,0 +1,448 @@
+{
+  "checks": {
+    "at_nomizu_own_point_theta0_kernel_matches_main_computation": true,
+    "block2_exact_is_nonempty_before_eigenvalue_check": true,
+    "block2_singular_values_numerically_unambiguous": true,
+    "c139_module_all_own_checks_passed_on_fresh_reload": true,
+    "c139_own_headline_kernel_still_zero_on_fresh_reload": true,
+    "c141_reverification_matches_precheck_own_null_dim": true,
+    "cg_method_reproduces_round59_own_certified_domain_2_via_trivial_mult_function": true,
+    "cg_method_reproduces_round59_own_certified_target_1_via_trivial_mult_function": true,
+    "conn_w2_extra_singlets_fully_decoupled_full_2x2_block_zero": true,
+    "conn_w2_is_the_precheck_own_object_dim8": true,
+    "conn_w2_top_left_6x6_matches_c139_rho_vector_m_exactly": true,
+    "d_dprime2_is_hermitian": true,
+    "d_dprime2_linear_in_nomizu_scale_t=0.5": true,
+    "d_dprime2_linear_in_nomizu_scale_t=2.0": true,
+    "domain_inv_matches_this_rounds_own_hand_prediction_3": true,
+    "exact_domain_inv_dim_matches_numeric_w2": true,
+    "exact_kernel_dim_matches_numeric_kernel_dim": true,
+    "exact_singular_values_of_block_numerically_unambiguous": true,
+    "exact_target_inv_dim_matches_numeric_w2": true,
+    "exact_term1_plus_term2_equals_exact_block": true,
+    "f5_general_domain_minus_target_formula_holds_for_all_test_modules": true,
+    "f7_2_1_shape_requires_exactly_these_two_module_types": true,
+    "forward_is_hermitian_adjoint_of_backward_w2": true,
+    "graded_rank_nullity_floor_exactly_predicts_observed_kernel_in_all_4_cases": true,
+    "kernel_dim_constant_across_whole_admissible_family": true,
+    "no_equivariant_map_sigma_to_w2_reverified_fresh_in_c141": true,
+    "preregistered_prediction_computed_before_any_invariant_sector_numerics": true,
+    "shape_matches_claim_md_naive_2_1_expectation": false,
+    "t0_domain_and_target_embed_exactly_in_t1": true,
+    "t0_positive_control_reproduces_round59_kernel_1": true,
+    "t0_positive_control_reproduces_round59_shape_2_1": true,
+    "t1_exact_kernel_matches_numeric": true,
+    "t1_kernel_constant_across_whole_admissible_family": true,
+    "t1_kernel_is_1_not_0": true,
+    "t1_shape_matches_c141_own_w2_shape_3_3": true,
+    "t1_singular_values_numerically_unambiguous": true,
+    "target_inv_matches_this_rounds_own_hand_prediction_3": true,
+    "term1_exact_has_exactly_2_nonzero_entries": true,
+    "term1_nonzero_entries_are_a_single_common_value": true,
+    "term1_nonzero_singular_values_both_equal_sqrt3": true,
+    "term1_plus_term2_equals_full_block_w2": true,
+    "term1_rank_is_exactly_2_basis_independent": true,
+    "term2_exact_has_exactly_1_nonzero_entry": true,
+    "term2_rank_is_exactly_1_basis_independent": true,
+    "term2_single_nonzero_entry_matches_c139_own_c_exact": true,
+    "term2_sole_nonzero_singular_value_equals_c139_abs_c_exact": true,
+    "torsion_family_is_2dim_matches_c73b_w2": true,
+    "w2_adnu_action_is_real_antisymmetric_all_a": true,
+    "w2_commutant_dim_6_matches_3_plus_3bar_plus_1mult2": true,
+    "w2_has_exactly_2_su3_singlets": true
+  },
+  "data": {
+    "angular_sweep_summary": {
+      "kernel_dim_constant_across_family": true,
+      "kernel_dims_seen_across_sweep": [
+        0
+      ],
+      "rank_dims_seen_across_sweep": [
+        3
+      ]
+    },
+    "angular_sweep_torsion_family": {
+      "0": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.732050807568877,
+          1.732050807568877,
+          1.1547005383792515
+        ]
+      },
+      "112.5": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.1547005383792512
+        ]
+      },
+      "135": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.1547005383792515
+        ]
+      },
+      "157.5": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688772,
+          1.7320508075688772,
+          1.1547005383792512
+        ]
+      },
+      "180": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.1547005383792515
+        ]
+      },
+      "202.5": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688772,
+          1.7320508075688772,
+          1.1547005383792515
+        ]
+      },
+      "22.5": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.732050807568877,
+          1.732050807568877,
+          1.1547005383792515
+        ]
+      },
+      "225": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688772,
+          1.7320508075688772,
+          1.1547005383792517
+        ]
+      },
+      "247.5": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.154700538379251
+        ]
+      },
+      "270": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.154700538379251
+        ]
+      },
+      "45": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688774,
+          1.7320508075688774,
+          1.1547005383792515
+        ]
+      },
+      "67.5": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.1547005383792512
+        ]
+      },
+      "90": {
+        "kernel_dim": 0,
+        "rank": 3,
+        "singular_values": [
+          1.7320508075688767,
+          1.7320508075688767,
+          1.154700538379251
+        ]
+      }
+    },
+    "basis_independent_term_decomposition": {
+      "note": "Rank and singular-value spectrum are invariant under any U(n) change of orthonormal basis on domain_inv/target_inv separately -- unlike the specific matrix entries reported in Section 6b, which depend on the particular basis sympy's nullspace()/gram_schmidt returned. Term1 has rank 2 (both nonzero singular values exactly sqrt(3)); Term2 has rank 1 (its sole nonzero singular value exactly |C139's c_exact|). These are the basis-independent, load-bearing facts; Section 6b's exact entries are a stronger, but basis-DEPENDENT, supporting observation.",
+      "term1_rank": 2,
+      "term1_singular_values": [
+        1.7320508075688772,
+        1.7320508075688772,
+        0.0
+      ],
+      "term2_rank": 1,
+      "term2_singular_values": [
+        1.1547005383792517,
+        0.0,
+        0.0
+      ]
+    },
+    "deformation_sweep": {
+      "0.5": {
+        "max_abs_residual": 0.0
+      },
+      "2.0": {
+        "max_abs_residual": 0.0
+      }
+    },
+    "equivalence_reverification": {
+      "intertwiner_nullspace_dim_sigma_to_w2": 0,
+      "precheck_own_null_dim": 0
+    },
+    "exact_crosscheck": {
+      "block_exact": [
+        [
+          "0",
+          "-sqrt(3)",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-sqrt(3)"
+        ],
+        [
+          "-2*sqrt(3)/3",
+          "0",
+          "0"
+        ]
+      ],
+      "domain_inv_dim_exact": 3,
+      "kernel_dim_exact": 0,
+      "rank_exact": 3,
+      "target_inv_dim_exact": 3
+    },
+    "exact_mechanistic_decomposition": {
+      "interpretation": "The 3x3 block is, up to a basis permutation, EXACTLY DIAGONAL: 2 channels carry ONLY Term1 (the Killing-eigenvalue mechanism, identical in both, reflecting the 2 extra decoupled singlets each independently reproducing round59's OWN untwisted mechanism), and 1 channel carries ONLY Term2 (C139's own m-twist Term2 result, embedded unchanged). kernel=0 here is the DIRECT SUM of two ALREADY-ESTABLISHED nonvanishing facts (round59's own Killing eigenvalue, appearing twice, and C139's own Term2 finding, appearing once) -- not a new, independent nonvanishing mechanism this round discovered on its own terms.",
+      "term1_exact": [
+        [
+          "0",
+          "-sqrt(3)",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-sqrt(3)"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "term1_n_nonzero": 2,
+      "term1_nonzero_values": [
+        "-sqrt(3)"
+      ],
+      "term2_exact": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-2*sqrt(3)/3",
+          "0",
+          "0"
+        ]
+      ],
+      "term2_matches_c139_c_exact": true,
+      "term2_n_nonzero": 1,
+      "term2_nonzero_values": [
+        "-2*sqrt(3)/3"
+      ]
+    },
+    "graded_rank_nullity_floor": {
+      "all_match": true,
+      "cases": {
+        "C139 (twist = m, dim6, SINGLE connection block, not decoupled)": {
+          "graded_floor": 0,
+          "matches": true,
+          "observed_kernel": 0,
+          "summands": [
+            {
+              "3": 1,
+              "3bar": 1
+            }
+          ]
+        },
+        "C141 (twist = m+2*1, connection DECOUPLED into m-block + 2 zero-conn singlets)": {
+          "graded_floor": 0,
+          "matches": true,
+          "observed_kernel": 0,
+          "summands": [
+            {
+              "3": 1,
+              "3bar": 1
+            },
+            {
+              "1": 1
+            },
+            {
+              "1": 1
+            }
+          ]
+        },
+        "T0 / round59 (twist = EVEN_IDX alone, dim4, single summand)": {
+          "graded_floor": 1,
+          "matches": true,
+          "observed_kernel": 1,
+          "summands": [
+            {
+              "1": 1,
+              "3bar": 1
+            }
+          ]
+        },
+        "T1 (twist = Sigma self-twist, NAB preserves EVEN/ODD exactly -> 2 summands)": {
+          "graded_floor": 1,
+          "matches": true,
+          "observed_kernel": 1,
+          "summands": [
+            {
+              "1": 1,
+              "3bar": 1
+            },
+            {
+              "1": 1,
+              "3": 1
+            }
+          ]
+        }
+      },
+      "interpretation": "For every twist bundle tested in this project's history (4/4), the observed kernel EXACTLY equals a graded rank-nullity floor computable from pure su(3) branching data (per {connection}-invariant summand), with NO reference to the specific Dirac operator/NOMIZU/connection geometry beyond the ALREADY-ESTABLISHED (by round59/C139) fact that each individual channel is nonzero. This means the T1-vs-C141 kernel DIFFERENCE (Section 9) is a pure representation-theory/branching artifact, not new dynamical/geometric content this round contributes -- it could have been predicted, without running ANY of this round's own Dirac-operator computation, purely from knowing each twist bundle's decomposition into connection-invariant summands and their individual domain-target shape imbalance (mult_W(3bar)-mult_W(3) per summand). This directly undermines claim.md's own kill criterion premise that a genuine discrimination 'cannot be attributed to a bare singlet-count/shape effect' -- it can, in every case tested so far, be so attributed, in a stronger (graded, per-summand) sense than claim.md's own literal kill criterion (b) anticipated (which only checked the AGGREGATE shape)."
+    },
+    "invariant_sector_dims": {
+      "claim_md_naive_expectation": [
+        2,
+        1
+      ],
+      "domain_ODD_x_W2": 3,
+      "preregistered_hand_cg_prediction": [
+        3,
+        3
+      ],
+      "round59_comparison": {
+        "domain": 2,
+        "target": 1
+      },
+      "shape_matches_claim_md_naive": false,
+      "target_EVEN_x_W2": 3
+    },
+    "main_result": {
+      "backward_kernel_dim": 0,
+      "backward_rank": 3,
+      "block_shape": [
+        3,
+        3
+      ],
+      "domain_dim": 3,
+      "forward_kernel_dim": 0,
+      "forward_rank": 3,
+      "matches_round59_pattern_kernel_eq_1": false,
+      "singular_values": [
+        1.7320508075688772,
+        1.7320508075688772,
+        1.1547005383792517
+      ],
+      "target_dim": 3
+    },
+    "preregistration": {
+      "by_hand_cg_prediction": {
+        "domain": 3,
+        "target": 3
+      },
+      "claim_md_naive_expectation": {
+        "domain": 2,
+        "target": 1
+      },
+      "derivation": "mult(1 in A(x)B) = sum over irreducible constituents a of A of mult_A(a)*mult_B(a*) (Frobenius reciprocity). W''=m(+)2*1 has BOTH a 3 AND a 3bar AND two singlets in the SAME bundle that both domain and target tensor against -- unlike Sigma, whose two singlets are split one into EVEN_IDX, one into ODD_IDX, which are tensored with DIFFERENT 'other' factors (EVEN(x)EVEN for target, ODD(x)EVEN for domain). Matching TOTAL singlet count does not imply matching invariant-sector SHAPE because shape depends on the full branching pattern relative to which factor is paired with which, not just a count."
+    },
+    "skeptic_pass_1_corrections": {
+      "f5_general_formula": "domain - target = mult_W(3bar) - mult_W(3), verified for all tested modules",
+      "f6_round59_kernel_bound": {
+        "domain_minus_target": 1,
+        "forced_kernel_floor": 1
+      },
+      "f7_2_1_shape_solutions": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    "t0_t1_apples_to_apples_comparison": {
+      "c141_w2_kernel_for_comparison": 0,
+      "note": "T1 (Sigma self-twisted, unrestricted 2nd factor) is the METHODOLOGICALLY CONSISTENT reference point for C141's own W''=m+2*1 computation (SAME unrestricted-2nd-factor convention, SAME resulting shape (3,3)) -- NOT round59's own EVEN_IDX-restricted (2,1). T0 confirms this section's own machinery against round59's certified values before trusting T1. SUPERSEDED by Section 10 below (skeptic-pass-2-triggered): the kernel difference (1 vs 0) found here is shown there to be FULLY EXPLAINED by a graded/per-connection-summand rank-nullity floor, computable from pure su(3) branching data alone with NO reference to the specific Dirac/NOMIZU geometry -- NOT a genuine dynamical discrimination. Kept here, unedited, per this project's Hindsight Distortion Gap Heuristic; do not read this note in isolation, read Section 10.",
+      "shape_matched_discrimination": true,
+      "t0_domain": 2,
+      "t0_embeds_in_t1_residuals": {
+        "domain": 1.1102230246251565e-16,
+        "target": 0.0
+      },
+      "t0_kernel": 1,
+      "t0_target": 1,
+      "t1_block_exact": [
+        [
+          "-1",
+          "-sqrt(3)",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-sqrt(3)"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ]
+      ],
+      "t1_domain": 3,
+      "t1_kernel_constant_across_sweep": true,
+      "t1_kernel_exact": 1,
+      "t1_kernel_numeric": 1,
+      "t1_target": 3
+    },
+    "term_decomposition": {
+      "note": "unlike C139's W'=m (zero singlets, Term1=0 FORCED by Schur's lemma per C139 Sec 8b), W''=m+2*1 HAS two singlets -- the forcing argument's own premise (domain singlet must draw entirely from ODD's 3-piece because EVEN has no 3-constituent) does not directly apply in the same form once EVEN_IDX(x)W'' contains MULTIPLE trivial channels (Sec 4: dim 3, not 1) -- Term1's vanishing or non-vanishing here is recorded as an honest computed fact, not assumed either way.",
+      "term1_is_zero_matrix": false,
+      "term1_max_abs_entry": 1.7320508075688772
+    },
+    "w2_module_type_check": {
+      "commutant_dim": 6,
+      "n_singlets": 2
+    }
+  }
+}

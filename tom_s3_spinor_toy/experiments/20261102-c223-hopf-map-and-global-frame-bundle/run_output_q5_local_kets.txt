@@ -1,0 +1,12 @@
+PASS K1 F(xi) = [xi | eps xibar] is unitary with det -1 on S^3
+PASS K2 equivariance F(g xi) = g F(xi) for g in SU(2)
+PASS K3 F(e^{ib} xi) = F(xi) diag(e^{ib}, e^{-ib}) (not invariant: needs the Hopf section)
+PASS K4a s_N = e^{i ph} s_S on the overlap
+PASS K4b frame transition: F_N = F_S diag(e^{i ph}, e^{-i ph}) (torus-valued, det 1)
+PASS K5a global SU(2)-valued frame G(n) on S^2 for a^2 != b^2 (unitary, det 1, continuous)
+PASS K5b G is covariant: G(g n) = g G(n) g^{-1} (frame index conjugated)
+PASS K6 line-section transition winding = 1 (obstructs the Bloch LINE, c_1 = +-1)
+PASS K7 rank-1 members a=b and a=-b are orthogonal subspaces (|<.,.>| = 6.0e-17)
+PASS K8 M(1,1,n) = 2 P_{+n} has rank 1 for every n (pointwise line, the only Hopf-obstructed piece)
+
+FAILS: none

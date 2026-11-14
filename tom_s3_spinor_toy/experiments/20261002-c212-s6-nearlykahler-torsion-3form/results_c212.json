@@ -1,0 +1,11 @@
+{
+  "dim_complement": 6,
+  "tangent_rank": 6,
+  "cross_antisym_err": 5.551115123125783e-17,
+  "cross_orth_err": 2.302719768565433e-17,
+  "torsion_total_antisymmetry_err": 1.5265566588595902e-16,
+  "norm_T_squared": 0.8888888888888883,
+  "max_abs_T_component": 0.1527731739244132,
+  "source": "Agricola-Borowka-Friedrich, arXiv:1707.08591, Prop 4.2, full text fetched via mcp__arxiv__download_paper",
+  "status": "PASS_CALIBRATED"
+}

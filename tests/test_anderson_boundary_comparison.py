@@ -22,13 +22,26 @@ def test_periodic_boundary_adds_wraparound_edges():
 
 def test_anderson_boundary_comparison_cli_smoke(tmp_path: Path):
     env = dict(os.environ, CC_TOY_LAB_SKIP_REPORT_UPDATE="1")
-    result = subprocess.run(
-        [sys.executable, "scripts/anderson_3d_boundary_comparison.py", "--smoke"],
-        check=False,
-        capture_output=True,
-        text=True,
-        env=env,
-    )
+    # Measured baseline (2026-09-06, one run on the dev machine): ~2s.
+    # 60s is a large engineering margin (~30x), not a claim about what a
+    # timeout necessarily means -- a loaded machine or slow I/O could also
+    # exceed it without a genuine hang. Treat a timeout here as "needs
+    # diagnosis", not an automatic verdict of "hung".
+    try:
+        result = subprocess.run(
+            [sys.executable, "scripts/anderson_3d_boundary_comparison.py", "--smoke"],
+            check=False,
+            capture_output=True,
+            text=True,
+            env=env,
+            timeout=60,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise AssertionError(
+            f"anderson_3d_boundary_comparison.py --smoke exceeded 60s "
+            f"(measured baseline ~2s on one run; margin ~30x) -- needs "
+            f"diagnosis, not necessarily a hang. stdout so far: {exc.stdout!r}"
+        ) from exc
 
     assert result.returncode == 0
     assert "anderson_3d_boundary_comparison complete" in result.stdout

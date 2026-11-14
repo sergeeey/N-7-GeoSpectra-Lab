@@ -1,0 +1,21 @@
+=== Part 0: transcription self-check ===
+  eq(123) reconstructed == transcribed: True
+  eq(124) reconstructed == transcribed: True
+  eq(125) reconstructed == transcribed: True
+  ALL MATCH: True
+
+=== Part 1: intertwiner search (T_12<->Lz, T_23<->Lx solved; T_31<->Ly held out) ===
+  U = Matrix([[-1, 0, 0], [0, sqrt(2)/2, 0], [0, 0, 1]])
+  det(U) nonzero: True  (det = -sqrt(2)/2)
+  Holdout (T_31 <-> L_y) classification: TRANSPOSE
+
+=== Part 2: alternate role-map scan (only if Part 1 holdout failed) ===
+  similarity(T_31) == -L_y      : True
+  similarity(T_31) == L_y^T     : True
+  similarity(T_31) == -(L_y^T)  : False
+
+=== Part 3: corrected role map (T_31 <-> -L_y), all three checked ===
+  T12_vs_Lz: True
+  T23_vs_Lx: True
+  T31_vs_minus_Ly: True
+  ALL PASS: True

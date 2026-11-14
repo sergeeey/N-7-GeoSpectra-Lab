@@ -1,0 +1,39 @@
+REGRESSION (su(3) isotropy, S^6 = G2/SU(3))
+  n generators fed to solver          : 8  (expect 8)
+  dim Hom_su3(m, Lambda^2 m)          : 2  (C73b certified: 2)
+  -> solver reproduces C73b exactly. Safe to feed it T^2 generators.
+
+T^2 ACTION ON m  (SU(3)/T^2, the flag manifold F_{1,2,3})
+  H1 = i*diag(1,-1,0): weights on (m_12, m_13, m_23) = (2.0, 1.0, -1.0)
+  H2 = i*diag(0,1,-1): weights on (m_12, m_13, m_23) = (-1.0, 1.0, 2.0)
+  -> m is THREE 2-real-dim weight planes (one per positive root),
+     NOT the 3(+)3bar of the SU(3)-isotropy case.
+  sanity: both T^2 generators are real antisymmetric (valid so(6))  [OK]
+
+==============================================================================
+(a) ADMISSIBLE INVARIANT-CONNECTION FAMILY
+==============================================================================
+  dim Hom_su3(m, Lambda^2 m)  [S^6, C73b certified]      = 2
+  dim Hom_T2 (m, Lambda^2 m)  [SU(3)/T^2, THIS ROUND]    = 6
+  ratio                                                   = 3.0x larger
+
+==============================================================================
+(c) ISOTROPY-INVARIANT CONTENT, su(3) vs T^2
+==============================================================================
+  dim commutant of isotropy on m   -- su(3) : 2
+  dim commutant of isotropy on m   -- T^2   : 6
+  (commutant dim counts inequivalent irreducible constituents;
+   a larger number means the isotropy separates m into more pieces)
+
+==============================================================================
+STAGE 0 VERDICT
+==============================================================================
+  Family is 6-dimensional, NOT 2. Per the pre-registration's
+  invalidation criterion #4, the prediction's S^6-specific phrasing
+  ('exact 90-degree rotation in a 2-dim family') MUST NOT be carried
+  across verbatim. It must be restated in the form that survives any
+  even dimension -- 'c is C-linear with respect to J' -- and that
+  restatement must be FROZEN BEFORE c is computed.
+
+  c was NOT computed in this script. Nothing here can have been
+  fitted to an answer, because no answer exists yet.

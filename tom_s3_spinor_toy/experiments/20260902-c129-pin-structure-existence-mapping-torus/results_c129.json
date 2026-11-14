@@ -1,0 +1,481 @@
+{
+  "P1_iota_is_inverse_err": 4.446309804673419e-16,
+  "P1_iota_is_involution_err": 0.0,
+  "P1_iota_is_linear_err": 0.0,
+  "P1_det_ambient_R4": -1.0,
+  "P1_fixed_points_are_fixed_err": 0.0,
+  "P1_min_move_of_generic_point": 0.3567816433103218,
+  "P1_fixedpt_identity_err": 0.0,
+  "P1_det_dIota_TS3": [
+    -1.0000000002042624,
+    -0.9999999998397133
+  ],
+  "P1_det_dPhi_TS3_NEGCONTROL": [
+    0.9999999995866561,
+    1.0000000003075584
+  ],
+  "P1_det_dCoset_TS3": [
+    -1.00000000043234,
+    -0.9999999997133029
+  ],
+  "P1_coset_square_formula_err": 5.640599496620651e-16,
+  "P1_coset_square_min_displacement": 0.17915835162301755,
+  "P2_M_iota_equals_minus_Ad_err": 2.1398208591393035e-10,
+  "P2_M_iota_wrong_sign_NEGCONTROL": 3.4641016150586412,
+  "P2_M_phi_equals_Ad_b_err": 4.549583473491031e-10,
+  "P3_mapping_tori": {
+    "S3_iota_deg_minus1": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "Z/2",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    },
+    "S3_identity_deg_plus1": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "Z^1",
+        "Z^1"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    },
+    "S3_arbitrary_selfmap_deg_0": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "0",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "S3_arbitrary_selfmap_deg_7": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "Z/6",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    },
+    "S3_selfmap_deg_2_F2RANK_PROBE": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "0",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "CONTROL_S2_identity": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "Z^1",
+        "Z^1"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    },
+    "CONTROL_S2_antipodal_deg_minus1": {
+      "cell_ranks_by_dim": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "Z/2",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    },
+    "CONTROL_S1_reflection_KleinBottle": {
+      "cell_ranks_by_dim": [
+        1,
+        2,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1 + Z/2",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^2",
+        "(Z/2)^1"
+      ]
+    },
+    "CONTROL_S1_identity_torus": {
+      "cell_ranks_by_dim": [
+        1,
+        2,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^2",
+        "Z^1"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^2",
+        "(Z/2)^1"
+      ]
+    },
+    "NONMINIMAL_S3_iota_deg_minus1": {
+      "cell_ranks_by_dim": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "Z/2",
+        "0"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    },
+    "NONMINIMAL_S3_identity": {
+      "cell_ranks_by_dim": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "H_Z": [
+        "Z^1",
+        "Z^1",
+        "0",
+        "Z^1",
+        "Z^1"
+      ],
+      "H_F2": [
+        "(Z/2)^1",
+        "(Z/2)^1",
+        "0",
+        "(Z/2)^1",
+        "(Z/2)^1"
+      ]
+    }
+  },
+  "P3_H2_F2_of_M_iota": "0",
+  "P3_H2_F2_of_M_iota_NONMINIMAL_MODEL": "0",
+  "P3_two_CW_models_agree": true,
+  "P3_nonminimal_model_has_2cells": 2,
+  "P3_H2_F2_independent_of_degree": [
+    "0"
+  ],
+  "P3_no_2cells_in_M_iota": true,
+  "P3_CONTROL_nonzero_H2_exists": {
+    "CONTROL_S2_identity": "(Z/2)^1",
+    "CONTROL_S2_antipodal_deg_minus1": "(Z/2)^1",
+    "CONTROL_S1_reflection_KleinBottle": "(Z/2)^1",
+    "CONTROL_S1_identity_torus": "(Z/2)^1"
+  },
+  "P4_RP_control": {
+    "RP2": {
+      "w1": "a",
+      "w2": "a**2",
+      "w1sq": "a**2",
+      "w2_plus_w1sq": "0",
+      "Pin_plus": false,
+      "Pin_minus": true
+    },
+    "RP3": {
+      "w1": "0",
+      "w2": "0",
+      "w1sq": "0",
+      "w2_plus_w1sq": "0",
+      "Pin_plus": true,
+      "Pin_minus": true
+    },
+    "RP4": {
+      "w1": "a",
+      "w2": "0",
+      "w1sq": "a**2",
+      "w2_plus_w1sq": "a**2",
+      "Pin_plus": true,
+      "Pin_minus": false
+    },
+    "RP6": {
+      "w1": "a",
+      "w2": "a**2",
+      "w1sq": "a**2",
+      "w2_plus_w1sq": "0",
+      "Pin_plus": false,
+      "Pin_minus": true
+    },
+    "RP2xRP2": {
+      "w1": "a + b",
+      "w2": "a**2 + a*b + b**2",
+      "w1sq": "a**2 + b**2",
+      "w2_plus_w1sq": "a*b",
+      "Pin_plus": false,
+      "Pin_minus": false
+    }
+  },
+  "P4_RP2_matches_literature": true,
+  "P4_RP4_matches_literature": true,
+  "P4_M_iota": {
+    "H2_F2_minimal_model": "0",
+    "H2_F2_nonminimal_model": "0",
+    "w1_nonzero_because_det_dIota_is_minus1": true,
+    "w2_class": "0",
+    "w1sq_class": "0",
+    "w1sq_zero_reason": "pullback of a^2 from H^2(S^1;F_2) = 0 (independent of PART 3)",
+    "w2_zero_reason": "lives in H^2(M;F_2) = 0 (PART 3, two CW models)",
+    "Pin_plus": true,
+    "Pin_minus": true
+  },
+  "P5_explicit_pin_lift": {
+    "Pin_plus_Cl(3,0)": {
+      "clifford_relations_err": 0.0,
+      "omega_squared": [
+        -1.0,
+        0.0
+      ],
+      "omega_is_central_err": 0.0,
+      "quaternion_embedding_sign": -1,
+      "embedding_fit_both_signs": {
+        "1": 2.824513063421572,
+        "-1": 4.406061034464155e-16
+      },
+      "exactly_one_sign_works": true,
+      "rho(S)_equals_Ad_err": 8.270975252328749e-16,
+      "rho(omega*S)_equals_MINUS_Ad_err": 8.270975252328749e-16,
+      "residual_imaginary_part": 1.1102230246251565e-16
+    },
+    "Pin_minus_Cl(0,3)": {
+      "clifford_relations_err": 0.0,
+      "omega_squared": [
+        1.0,
+        0.0
+      ],
+      "omega_is_central_err": 0.0,
+      "quaternion_embedding_sign": 1,
+      "embedding_fit_both_signs": {
+        "1": 4.1168171577819285e-16,
+        "-1": 2.814437891364373
+      },
+      "exactly_one_sign_works": true,
+      "rho(S)_equals_Ad_err": 7.290793267202665e-16,
+      "rho(omega*S)_equals_MINUS_Ad_err": 7.290793267202665e-16,
+      "residual_imaginary_part": 1.1102230246251565e-16
+    }
+  },
+  "P5_lift_exists_in_both_signatures": true,
+  "P5_omega_sq_in_Cl3": [
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0
+    ]
+  ],
+  "P5_omega4_sq_is_the_SAME_in_both": {
+    "Pin_plus_Cl(3,0)": {
+      "vector_square_e_i^2": 1,
+      "omega_4_squared_predicted": 1
+    },
+    "Pin_minus_Cl(0,3)": {
+      "vector_square_e_i^2": -1,
+      "omega_4_squared_predicted": 1
+    }
+  },
+  "P5_what_distinguishes_the_groups_is_vector_square": [
+    1,
+    -1
+  ],
+  "P5_Cl4_bridge": {
+    "clifford_relations_err_Cl(4,0)": 0.0,
+    "omega3_anticommutes_with_e4_err": 0.0,
+    "omega3_commutes_with_e4_FALSE_control": 4.0,
+    "rho_omega3_on_e1e2e3_should_be_minus1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rho_omega3_on_e4_should_be_PLUS1": 0.0
+  },
+  "P6_F2_betti_numbers": [
+    1,
+    1,
+    0,
+    1,
+    1
+  ],
+  "P6_euler_characteristic": 0,
+  "P6_poincare_duality_mod2_symmetric": true,
+  "P6_coset_map_is_linear_det": [
+    -1.000000000000001,
+    -0.9999999999999991
+  ],
+  "P6_coset_map_has_eigenvalue_plus1": 1.5543122344752192e-15,
+  "GATE": {
+    "G1_iota_is_inverse": true,
+    "G2_iota_is_involution": true,
+    "G3_iota_is_linear_diag": true,
+    "G4_fixed_point_identity": true,
+    "G5_det_dIota_is_minus1": true,
+    "G6_det_dPhi_is_plus1_NEGCONTROL": true,
+    "G7_det_dCoset_is_minus1": true,
+    "G8_coset_square_formula": true,
+    "G9_coset_generically_not_involution": true,
+    "G10_M_iota_is_minus_Ad": true,
+    "G11_wrong_sign_control_fires": true,
+    "G12_M_phi_is_Ad_b": true,
+    "G13_H2F2_of_M_iota_vanishes": true,
+    "G14_H2F2_vanishes_for_every_degree": true,
+    "G15_M_iota_has_no_2cells": true,
+    "G16_CONTROL_S2xS1_has_nonzero_H2": true,
+    "G17_CONTROL_S2antipodal_has_nonzero_H2": true,
+    "G18_CONTROL_KleinBottle_H1_is_Z_plus_Z2": true,
+    "G19_CONTROL_KleinBottle_H2_vanishes": true,
+    "G20_CONTROL_torus_H2_is_Z": true,
+    "G21_M_iota_H4_Z_vanishes_nonorientable": true,
+    "G22_CONTROL_S3xS1_H4_Z_is_Z_orientable": true,
+    "G23_RP2_is_Pin_minus_not_plus": true,
+    "G24_RP4_is_Pin_plus_not_minus": true,
+    "G25_RP3_is_spin": true,
+    "G25b_RP2xRP2_admits_NEITHER_structure": true,
+    "G25c_RP2xRP2_w2_plus_w1sq_is_nonzero": true,
+    "G26_clifford_relations_hold_both_sigs": true,
+    "G27_omega_central_both_sigs": true,
+    "G28_rho_of_Spin_is_Ad": true,
+    "G29_explicit_lift_covers_minus_Ad_both_sigs": true,
+    "G29b_embedding_sign_determination_is_nonvacuous": true,
+    "G30a_Cl4_relations_hold": true,
+    "G30b_omega3_ANTIcommutes_with_e4": true,
+    "G30c_omega3_is_NOT_central_in_Cl4_CONTROL": true,
+    "G30d_rho_omega3_is_minus1_on_e1e2e3": true,
+    "G30e_rho_omega3_is_PLUS1_on_e4": true,
+    "G30f_omega4_sq_is_the_SAME_in_both_signatures": true,
+    "G30_omega3_sq_differs_between_the_two_groups": true,
+    "G31_IDENTITY_euler_characteristic_is_zero": true,
+    "G32_IDENTITY_poincare_duality_mod2": true,
+    "G33_coset_map_linear_det_minus1": true,
+    "G34_coset_map_has_fixed_point": true,
+    "G35_f2_rank_unit_tests": true,
+    "G36_F2RANK_PROBE_deg2_H3_and_H4_vanish": true,
+    "G37a_nonminimal_model_really_has_2cells": true,
+    "G37b_nonminimal_model_gives_H2_zero": true,
+    "G37c_two_CW_models_agree_in_every_degree": true,
+    "G37_F2RANK_PROBE_matches_Z_computation": true
+  },
+  "GATE_PASSED": "49 / 49",
+  "ALL_OK": true,
+  "VERDICT_INPUTS": {
+    "w1_nonzero": true,
+    "H2_M_iota_F2_minimal_model": "0",
+    "H2_M_iota_F2_nonminimal_model": "0",
+    "w2_zero": true,
+    "w1_squared_zero": true,
+    "Pin_plus_exists": true,
+    "Pin_minus_exists": true,
+    "answer_depends_on_choice_of_relating_map": false
+  }
+}

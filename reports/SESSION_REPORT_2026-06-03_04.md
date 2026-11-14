@@ -1,5 +1,7 @@
 # Session Report — 2026-06-03 → 2026-06-04
 
+> **ОБНОВЛЕНИЕ 2026-11-05.** Утверждение «C1 CONFIRMED (контроли A/B/C отклонены, IPR <16% от ring)» (пункт 4) **не подтверждено** для контроля C: по сырым JSON broken_wilson_term даёт IPR 0,22–0,74 против ring ≈ 0,32. Число 16 % — сводное отношение одного контроля при s1 = 16. Актуально: `docs/ROADMAP.md` (C1 NOT CONFIRMED), `reports/GATE4C_THRESHOLD_ORIGIN_NOTE_v0.1.26.md`.
+
 **Project:** GeoSpectra Lab (Covariant Compactification Toy Lab)
 **Scope:** v0.1.22 Negative Controls → v0.1.25 (dimension fix, block solver, Tom mapping)
 **Commits:** ead66d7 (init) → 49c4d25 (latest)

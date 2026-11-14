@@ -1,0 +1,419 @@
+{
+  "partA": {
+    "Ixx": "4*pi*r**4/3",
+    "Iyy": "4*pi*r**4/3",
+    "Izz": "4*pi*r**4/3",
+    "gram_raw": "Matrix([[4*pi*r**4/3, 0, 0], [0, 4*pi*r**4/3, 0], [0, 0, 4*pi*r**4/3]])",
+    "gram_normalised": "Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])",
+    "N": "sqrt(3)/(2*sqrt(pi)*r**2)"
+  },
+  "partB": {
+    "gram_raw_complex": "Matrix([[8*pi*r**4/3, 0, 0], [0, 4*pi*r**4/3, 0], [0, 0, 8*pi*r**4/3]])",
+    "gram_normalised": "Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])",
+    "Y11": "-sqrt(6)*exp(I*phi)*sin(theta)/(4*sqrt(pi))",
+    "Y10": "sqrt(3)*cos(theta)/(2*sqrt(pi))",
+    "Y1m1": "sqrt(6)*exp(-I*phi)*sin(theta)/(4*sqrt(pi))"
+  },
+  "partC": {
+    "kappa_minus": "sqrt(2)/kappa",
+    "kappa_plus": "sqrt(2)*kappa",
+    "noCS_coeff": "-sqrt(2)",
+    "norms": {
+      "L- Y'(1,1)": "2",
+      "L- Y'(1,0)": "2",
+      "L- Y'(1,-1)": "0",
+      "L+ Y'(1,-1)": "2",
+      "L+ Y'(1,0)": "2",
+      "L+ Y'(1,1)": "0"
+    }
+  },
+  "partD": {
+    "e   = ((x+iy)/r, z/r, (x-iy)/r)   [raw complex, norms^2 2:1:2]": {
+      "G": "Matrix([[8*pi/3, 0, 0], [0, 4*pi/3, 0], [0, 0, 8*pi/3]])",
+      "Lp": "Matrix([[0, 0, 0], [-1, 0, 0], [0, 2, 0]])",
+      "Lm": "Matrix([[0, -2, 0], [0, 0, 1], [0, 0, 0]])",
+      "Lz": "Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])",
+      "Lx": "Matrix([[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]])",
+      "Ly": "Matrix([[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]])"
+    },
+    "u   = ((x+iy)/(sqrt2 r), z/r, (x-iy)/(sqrt2 r))   [unitary, no CS phase]": {
+      "G": "Matrix([[4*pi/3, 0, 0], [0, 4*pi/3, 0], [0, 0, 4*pi/3]])",
+      "Lp": "Matrix([[0, 0, 0], [-sqrt(2), 0, 0], [0, sqrt(2), 0]])",
+      "Lm": "Matrix([[0, -sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]])",
+      "Lz": "Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])",
+      "Lx": "Matrix([[0, -sqrt(2)/2, 0], [-sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])",
+      "Ly": "Matrix([[0, -sqrt(2)*I/2, 0], [sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])"
+    },
+    "Y'  = (Y'(1,1), Y'(1,0), Y'(1,-1))   [sphere-normalised, CS phase]": {
+      "G": "Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])",
+      "Lp": "Matrix([[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]])",
+      "Lm": "Matrix([[0, sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]])",
+      "Lz": "Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])",
+      "Lx": "Matrix([[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])",
+      "Ly": "Matrix([[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])"
+    },
+    "Gamma_in_Yprime": {
+      "T12": "Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])",
+      "T23": "Matrix([[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])",
+      "T31": "Matrix([[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])"
+    }
+  },
+  "partE": {
+    "relation": "[-C]",
+    "norm_Lm_Y11": "2",
+    "Y10": "sqrt(3)*cos(theta)/(2*sqrt(pi))"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "text": "identity (2): d/dphi[phi/2 + sin(phi)cos(phi)/2] = cos^2(phi)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "A2",
+      "text": "identity (3) as read: d/dtheta[cos(3th)/12 - 3cos(th)/4] = sin^3(th)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "A3",
+      "text": "d/dtheta[-cos^3(th)/3] = cos^2(th) sin(th)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P1",
+      "text": "int x^2 dS = int y^2 dS = int z^2 dS = 4 pi r^4/3 and all mixed integrals vanish (step route)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P1b",
+      "text": "full double-integral Gram matrix of (x,y,z) = (4 pi r^4/3) * identity",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "A4",
+      "text": "r^4 version passes the dimension test",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "A5",
+      "text": "NEGATIVE CONTROL: r^2 version FAILS the dimension test for x",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "A6",
+      "text": "route 1: int (x/r)^2 dS = 4 pi r^2/3",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "A6b",
+      "text": "route 2: int x^2 dOmega (no r^2 from dS) = 4 pi r^2/3",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P2a",
+      "text": "N = sqrt(3/(4pi))/r^2 equals (1/2) sqrt(3/pi)/r^2",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P2",
+      "text": "normalised real harmonics x'_i = (1/2) sqrt(3/pi) x_i/r^2 have Gram matrix = identity",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "A7",
+      "text": "numeric quadrature at r=2 agrees with 4 pi r^4/3 (rel. 1e-9) and not with 4 pi r^2/3",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P3a",
+      "text": "raw complex functions are mutually orthogonal with squared norms 8pi r^4/3, 4pi r^4/3, 8pi r^4/3",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P3b",
+      "text": "Gram matrix of the normalised complex harmonics = identity",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P3-(1,1)",
+      "text": "Y'_(1,1) on S^2_r = Y_(1,1)(theta,phi)/r",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P3-(1,0)",
+      "text": "Y'_(1,0) on S^2_r = Y_(1,0)(theta,phi)/r",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P3-(1,-1)",
+      "text": "Y'_(1,-1) on S^2_r = Y_(1,-1)(theta,phi)/r",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P3-pos1",
+      "text": "POSITIVE CONTROL: sympy Ynm(1,1) equals the Y_(1,1) used here",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P3-pos0",
+      "text": "POSITIVE CONTROL: sympy Ynm(1,0) equals the Y_(1,0) used here",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P3-pos-1",
+      "text": "POSITIVE CONTROL: sympy Ynm(1,-1) equals the Y_(1,-1) used here",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P4-polar",
+      "text": "all six polar ladder relations: coefficient sqrt(2) (0 at the ends)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P4-r",
+      "text": "ladder coefficients are independent of r",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P4-cart",
+      "text": "all six Cartesian ladder relations: coefficient sqrt(2) (0 at the ends)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P4-Lz",
+      "text": "L_z (Cartesian) has eigenvalues m on Y'(1,m)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P4-norm",
+      "text": "int |L_pm Y'|^2 dS = l(l+1) - m(m pm 1) = 2,2,0,2,2,0 for every r",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P5a",
+      "text": "coefficients become sqrt(2)/kappa and kappa*sqrt(2)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P5b",
+      "text": "NEGATIVE CONTROL: without the CS sign of Y(1,1) the coefficient is -sqrt(2), not +sqrt(2)",
+      "ok": true,
+      "kind": "control"
+    },
+    {
+      "id": "P5c",
+      "text": "NEGATIVE CONTROL: Y(1,-1) with the opposite sign gives -sqrt(2) for L- Y(1,0)",
+      "ok": true,
+      "kind": "control"
+    },
+    {
+      "id": "P6a",
+      "text": "basis e: M(L+) = [[0,0,0],[-1,0,0],[0,2,0]] and M(L-) = [[0,-2,0],[0,0,1],[0,0,0]] (C206)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P6b",
+      "text": "basis Y': both non-zero entries of M(L+) and of M(L-) are sqrt(2)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P6c",
+      "text": "basis u (unitary, no CS phase): entries are -sqrt(2) and +sqrt(2): the CS phase is what makes both +sqrt(2)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P6d",
+      "text": "basis e: M(Lz) = Gamma'(T12), M(Lx) = Gamma'(T23), M(Ly) = Gamma'(T31)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P6e",
+      "text": "basis e: M(L+) = Gamma'(T23) + i Gamma'(T31)  and  M(L-) = Gamma'(T23) - i Gamma'(T31)",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P6f",
+      "text": "NEGATIVE CONTROL: with e1 and e3 swapped, M(Lx) no longer equals Gamma'(T23)",
+      "ok": true,
+      "kind": "control"
+    },
+    {
+      "id": "P6g",
+      "text": "D proportional to diag(-1/sqrt2, 1, 1/sqrt2)",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P6h",
+      "text": "in basis Y': D Gamma'(T12,T23,T31) D^-1 = M(Lz), M(Lx), M(Ly)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P6i",
+      "text": "in basis Y' the CONJUGATED Gamma'' (not the printed Gamma') satisfy L+- = Gamma''(T23) +- i Gamma''(T31) (linearity, follows from P6h)",
+      "ok": true,
+      "kind": "restatement"
+    },
+    {
+      "id": "P6k",
+      "text": "NEGATIVE CONTROL: the PRINTED Gamma'(T23) +- i Gamma'(T31) do NOT give M(L+-) in the sphere-normalised basis Y'",
+      "ok": true,
+      "kind": "control"
+    },
+    {
+      "id": "P6l",
+      "text": "a COMMON rescaling (alpha = 7) of the three basis functions of e leaves M(L+-) unchanged, so the printed Gamma' still apply",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P5d",
+      "text": "equal norms (any common scale) + CS phase already give sqrt(2), sqrt(2): alpha*Y' and (-e1/sqrt2, e2, e3/sqrt2)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "P6j",
+      "text": "generator matrices are Hermitian in the orthonormal basis Y' and not Hermitian in basis e",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E1",
+      "text": "L_z eigenfunctions have the phi-dependence e^{i m phi}",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E2",
+      "text": "L_+[chi e^{i phi}] = 0 gives chi = C sin(theta)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E3",
+      "text": "L_-[chi e^{-i phi}] = 0 gives chi = C' sin(theta)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E4",
+      "text": "NEGATIVE CONTROL: wrong annihilation conditions give chi = C/sin(theta), which is not normalisable",
+      "ok": true,
+      "kind": "control"
+    },
+    {
+      "id": "E5",
+      "text": "normalisation fixes |C| = |C'| = sqrt(3/(8 pi))",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E6",
+      "text": "taking both ladder coefficients +sqrt(2), the two routes give the same Y(1,0) only if C' = -C",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E6c",
+      "text": "the relation C' = -C is conditional on the +sqrt(2) convention: with a phase e^(i alpha) it becomes C' = -C e^(i alpha)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E6b",
+      "text": "the norm of L_- Y11 is 2, so dividing by sqrt(2) is forced",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "E7",
+      "text": "the discovered harmonics equal the Part B harmonics (CS phase, equal to sympy Ynm)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "F1",
+      "text": "numerical Cartesian ladder action reproduces the sqrt(2) coefficients (|err| < 1e-7)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "F2",
+      "text": "numerical Gram matrix of the normalised complex harmonics = identity (|err| < 1e-8)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "F3",
+      "text": "raw complex basis has squared-norm ratio 2 : 1 : 2",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "F4-e",
+      "text": "numerical row-input matrices of L+, L-, Lz in basis e equal the symbolic ones (|err| < 1e-7)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "F4-Y'",
+      "text": "numerical row-input matrices of L+, L-, Lz in basis Y' equal the symbolic ones (|err| < 1e-7)",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "G1",
+      "text": "this round's M(L+-) in basis e equal the matrices saved in C206 results",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "G2",
+      "text": "this round's real-basis M(Lx), M(Ly), M(Lz) equal the matrices saved in C205 results",
+      "ok": true,
+      "kind": "main"
+    },
+    {
+      "id": "G3",
+      "text": "the typed Gamma'(T12,T23,T31) equal z * (saved C205 real-basis matrices) * z^-1",
+      "ok": true,
+      "kind": "main"
+    }
+  ],
+  "all_main_pass": true,
+  "all_controls_ok": true,
+  "all_restatements_hold": true
+}

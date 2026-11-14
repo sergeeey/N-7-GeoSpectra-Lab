@@ -1,0 +1,17 @@
+{
+  "trace_consistency_residual_should_be_zero": "0",
+  "trace_consistency_holds": true,
+  "ricci_s3_eigenvalue_at_t_half": "2",
+  "ricci_s3_eigenvalue_at_t_half_is_nonzero": true,
+  "ricci_s3_eigenvalue_at_t_half_is_positive": true,
+  "ric_s3_matrix_at_t_half": "Matrix([[2, 0, 0], [0, 2, 0], [0, 0, 2]])",
+  "ric_s3_matrix_eigenvalues": {
+    "2": 3
+  },
+  "ric_s3_matrix_all_eigenvalues_nonzero": true,
+  "scal_lc_matches_round111_published_value_6": true,
+  "ricci_s3_eigenvalue_rescaled_by_radius": "2/rho3**2",
+  "no_finite_rho3_sets_ricci_s3_to_zero": true,
+  "conclusion": "Ric(S3) at t=1/2 is exactly 2*I_3, nonzero and positive-definite, for ANY finite S3 radius. Since Ric(M4 x S3 x S6) is block-diagonal (standard product-manifold fact), Ric(g) on the full frozen background is nonzero at t=1/2 -- the vacuum Einstein equation Ric(g)=0 is violated at the ONE point where C134's torsion equation is self-consistent and KT-8 guarantees zero fermion content. F6 for the ECSK+C134 candidate closes PARTIAL -> REJECT. The argument does not depend on the S6 block's own curvature value.",
+  "all_pass": true
+}

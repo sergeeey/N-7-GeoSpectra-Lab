@@ -1,0 +1,37 @@
+==============================================================================
+A  each component's own anti-periodicity under phi -> phi+2pi
+==============================================================================
+  [PASS] A1 chi_+1/2(phi+2pi) = -chi_+1/2(phi), exactly
+  [PASS] A2 chi_-1/2(phi+2pi) = -chi_-1/2(phi), exactly
+  [PASS] A3 delta = chi_+1/2 - chi_-1/2 inherits the same anti-periodicity
+
+==============================================================================
+B  the branch-cut jump across phi=0, as a function of theta
+==============================================================================
+  jump(theta) = 2*delta(theta, 0) = 2*sqrt(2)*cos(theta/2 + pi/4)
+  [PASS] B1 jump(theta) simplifies to a single cosine of a shifted half-angle
+
+==============================================================================
+C  Tom's claim: jump vanishes iff tan(theta/2) = 1
+==============================================================================
+  [PASS] C1 jump(theta) = 0 has the unique solution theta = pi/2 on [0, pi]  solved theta = [pi/2]
+  [PASS] C2 tan(theta/2) = 1 at that solution, exactly
+
+==============================================================================
+D  negative control: a genuinely single-valued (integer-weight) pair
+==============================================================================
+  [PASS] D1 the phi-independent (single-valued) pair has an IDENTICALLY zero jump for every theta, not just theta=pi/2 -- confirming the B/C result is a genuine, non-trivial property of the half-integer pair, not an artifact of how 'jump' is defined  jump == 0 identically in phi, while delta itself is a non-constant function of theta (not a vacuous 0==0 case)
+
+==============================================================================
+SUMMARY
+==============================================================================
+  PASS  A1 chi_+1/2(phi+2pi) = -chi_+1/2(phi), exactly
+  PASS  A2 chi_-1/2(phi+2pi) = -chi_-1/2(phi), exactly
+  PASS  A3 delta = chi_+1/2 - chi_-1/2 inherits the same anti-periodicity
+  PASS  B1 jump(theta) simplifies to a single cosine of a shifted half-angle
+  PASS  C1 jump(theta) = 0 has the unique solution theta = pi/2 on [0, pi]
+  PASS  C2 tan(theta/2) = 1 at that solution, exactly
+  PASS  D1 the phi-independent (single-valued) pair has an IDENTICALLY zero jump for every theta, not just theta=pi/2 -- confirming the B/C result is a genuine, non-trivial property of the half-integer pair, not an artifact of how 'jump' is defined
+
+7 of 7 checks passed
+all checks passed

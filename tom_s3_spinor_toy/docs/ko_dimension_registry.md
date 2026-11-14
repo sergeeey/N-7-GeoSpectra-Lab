@@ -34,39 +34,65 @@ tuple to number is stated with its convention and its source.
 | **`J D J⁻¹` vs `D`** | **`+1`** — `[D_F, J_F] = 0` [VERIFIED, G18 T7] |
 | **`J γ J⁻¹` vs `γ`** | **`−1`** — `{J_F, γ_F} = 0` [VERIFIED, G18 T6] |
 | **sign tuple** | **`(+1, +1, −1)`** |
-| **KO number** | ⛔ **`BLOCKED_BY_EXTERNAL_INPUT`** — see below |
+| **KO number** | ✅ **`6`** (mod 8) — `mapping_status: RESOLVED`, see below |
 | **claimed elsewhere as** | `KO-dim 6`, attributed to CCM (Chamseddine–Connes–Marcolli, arXiv:hep-th/0610241) |
 
-### Why the number is blocked, not merely unrecorded
+### Resolution (C160, 2026-09-05)
+
+`mapping_status: RESOLVED`. Closed via the cheap citation route (option 1 below),
+not the internal derivation route (option 2) — see
+`experiments/20260905-c160-ob12-ko-dimension-table-citation/decision.md` for the
+full search record, verbatim quotes, and convention-matching reasoning.
+
+- **KO number:** `6` (mod 8)
+- **Primary source:** A. Chamseddine, A. Connes, M. Marcolli, "Gravity and the
+  standard model with neutrino mixing," arXiv:hep-th/0610241, §2.4, eq. (2.19)
+  — CCM's own finite geometry `H_F` (their `N=3`-generation object) is shown to
+  satisfy `J_F² = 1`, `J_F` commutes with the Dirac operator, and
+  `J_F γ_F = −γ_F J_F`, which their own text calls "characteristic of
+  KO-dimension equal to 6 modulo 8." This instantiates the general axiom
+  (their own Definition 2.7, restating A. Connes, "Gravity coupled with matter
+  and the foundation of non-commutative geometry," arXiv:hep-th/9603053, axiom
+  7 "Reality") stating `J²=ε`, `JD=ε′DJ`, `Jγ=ε″γJ` as a function of `n mod 8`.
+- **Convention the source uses:** `ε = J²`; `ε′` ties `JDJ⁻¹` vs `D`
+  (`JD=ε′DJ`); `ε″` ties `JγJ⁻¹` vs `γ` (`Jγ=ε″γJ`). This ordering is
+  **identical** to this repo's own `(J², JDJ⁻¹/D, JγJ⁻¹/γ)` ordering — checked
+  explicitly, not assumed; the ordering-mismatch risk flagged below did not
+  materialize for this object.
+- **Convention non-transfer note:** the general `n`-mod-8 table's third row
+  (`ε″`) rendered incomplete past `n=3` in both arXiv-HTML fetches used for this
+  resolution (a rendering artifact, not extrapolated or trusted past what was
+  legible) — the resolution instead rests on CCM's own explicit, direct
+  statement of all three signs for their own `H_F` at `n=6` (eq. 2.19 + its
+  surrounding prose), which does not depend on the damaged table row.
+
+### Why the number *was* blocked, historically
 
 Mapping `(+1, +1, −1)` to a KO-dimension requires a table of the eight sign
-triples. This repository contains **no such table**, **no CCM source file**, and
-**no internal derivation** of the mapping. `G26`'s own comparison table already
-records CCM's KO-6 as `[DOCS] postulated` — so the number was inherited on both
-sides of that comparison, and "same KO-dim independently" (its original wording,
-corrected 2026-08-10) was never supported.
+triples. Before C160, this repository contained **no such table**, **no CCM
+source file**, and **no internal derivation** of the mapping. `G26`'s own
+comparison table recorded CCM's KO-6 as `[DOCS] postulated` — so the number had
+been inherited on both sides of that comparison, and "same KO-dim
+independently" (its original wording, corrected 2026-08-10) was never
+supported. Recording the number from memory was precisely the move this
+registry existed to stop; C160 closed the gap by fetching and quoting the
+actual primary source instead (see Resolution above).
 
-Recording the number from memory is precisely the move this registry exists to
-stop. Marked `BLOCKED_BY_EXTERNAL_INPUT` per `perelman-audit.md`'s own verdict
-vocabulary: not a failure, a dependency.
+### What closed it
 
-### What closes it
-
-Exactly one of:
+Option 1 of the two possible routes (option 2 remains untaken, not needed):
 
 1. **A cited primary source** for the sign-triple ↔ KO-dimension table
    (Connes' axioms, or CCM §2 / Connes–Marcolli), transcribed here with its own
    convention stated — in particular *which* of the three signs the source calls
    `ε`, `ε′`, `ε″`, since G18's docstring and the common literature ordering do
-   not obviously agree.
+   not obviously agree. **— DONE, see Resolution above.**
 2. **An internal derivation** computing the triple for the model Clifford
    spectral triple in each `n mod 8` and matching. Feasible with machinery
    already built this week (`label_vs_code_check.py` does the `n=6,7` reality
    types), but the finite-geometry conventions for how `J` relates to `D` are
    subtle enough that the derivation must be written carefully, not assembled by
-   analogy.
-
-Until then: quote the **tuple**, never the number.
+   analogy. **— not attempted, not needed now that option 1 is closed.**
 
 ### Scope note — the geometric side is a different object
 

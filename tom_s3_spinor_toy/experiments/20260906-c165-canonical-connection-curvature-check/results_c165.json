@@ -1,0 +1,123 @@
+{
+  "checks_total": 19,
+  "checks_passed": 19,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "t1_dim_g2_is_14",
+      "ok": true,
+      "detail": "got 14"
+    },
+    {
+      "name": "t1_g2_closed_under_commutation",
+      "ok": true,
+      "detail": "max closure residual = 1.18e-15"
+    },
+    {
+      "name": "t1_jacobi_identity_holds",
+      "ok": true,
+      "detail": "max Jacobi residual = 5.55e-17"
+    },
+    {
+      "name": "t1_dim_su3_stabilizer_is_8",
+      "ok": true,
+      "detail": "got 8"
+    },
+    {
+      "name": "t1_dim_m_complement_is_6",
+      "ok": true,
+      "detail": "got 6"
+    },
+    {
+      "name": "t1_su3_orthonormal_basis_still_8dim",
+      "ok": true,
+      "detail": "got 8 after orthonormalizing su3_gens"
+    },
+    {
+      "name": "t1_su3_m_bracket_stays_in_m_reductive_property",
+      "ok": true,
+      "detail": "max residual outside m = 1.17e-15 -- confirms [h,m] subset m (reductive decomposition), required for R^c's closed-form to apply."
+    },
+    {
+      "name": "t2_bracket_of_m_with_m_lands_fully_in_g2",
+      "ok": true,
+      "detail": "max residual outside span(su3_gens ++ comp_gens) = 2.18e-15"
+    },
+    {
+      "name": "t2_antisymmetry_of_r_tensor",
+      "ok": true,
+      "detail": "R^c(e_i,e_j) = -R^c(e_j,e_i), required of any curvature 2-form."
+    },
+    {
+      "name": "t2_r_tensor_is_genuinely_nonzero_somewhere",
+      "ok": true,
+      "detail": "max |R^c component| = 0.430866 -- confirms this is not a trivially-vanishing construction before checking the 3bar-restriction specifically (a nonzero object overall, that may still vanish on one summand)."
+    },
+    {
+      "name": "t3_va_matrices_antisymmetric",
+      "ok": true,
+      "detail": "max |V_a + V_a^T| = 4.44e-16 (expected ~0 for an orthonormal m-basis)"
+    },
+    {
+      "name": "t3_m_is_casimir_irreducible_single_eigenvalue",
+      "ok": true,
+      "detail": "C2|_m eigenvalues = [-1.333333 -1.333333 -1.333333 -1.333333 -1.333333 -1.333333], spread = 3.11e-15 -- m must be a single real irreducible su(3)-module (3(+)3bar complexified), hence Casimir-scalar, per Schur's Lemma applied to the REAL representation."
+    },
+    {
+      "name": "t3_lambda2m_has_exactly_3_distinct_casimir_eigenvalues",
+      "ok": true,
+      "detail": "got 3 distinct eigenvalues: [-3.      -1.33333  0.     ], expected 3 (singlet=0, fundamental x6, adjoint x8) matching Lambda^2(3(+)3bar) = 3bar(+)1(+)8(+)3"
+    },
+    {
+      "name": "t3_multiplicities_match_1_6_8",
+      "ok": true,
+      "detail": "multiplicities = [1, 6, 8], expected [1,6,8]"
+    },
+    {
+      "name": "t3_singlet_eigenvalue_is_zero",
+      "ok": true,
+      "detail": "putative singlet eigenvalue = 0.0"
+    },
+    {
+      "name": "t3_fundamental_block_eigenvalue_matches_m_own_casimir",
+      "ok": true,
+      "detail": "Lambda^2m fundamental-block eigenvalue = -1.33333, m's own C2 = -1.333333"
+    },
+    {
+      "name": "t3_fund_eigenspace_is_6dim",
+      "ok": true,
+      "detail": "got 6"
+    },
+    {
+      "name": "t4_R_c_vanishes_on_fundamental_3plus3bar_block",
+      "ok": true,
+      "detail": "max|R^c|_fund| / max|R^c| = 1.735e-15 -- if < 1e-4, confirms ZERO-ON-3BAR-SUMMAND (the 3bar summand is a subspace of this 6-dim fundamental block, so a zero restriction here implies zero specifically on 3bar, and on 3, by linear algebra alone -- restriction of a zero map to any subspace is zero)."
+    },
+    {
+      "name": "t4_su3_c_is_casimir_irreducible_confirms_adjoint_8",
+      "ok": true,
+      "detail": "C2|_su3(adjoint action) eigenvalues spread = 4.44e-15 -- confirms su(3)_C is a single irreducible 8-dim module under its own adjoint action (standard for a simple Lie algebra), non-isomorphic to the 3-dim 3bar by dimension count alone -- Schur's Lemma therefore forces Hom_su3(3bar,8)=0 independent of the specific curvature values found above."
+    }
+  ],
+  "data": {
+    "t1_dim_g2": 14,
+    "t1_dim_su3": 8,
+    "t1_dim_m": 6,
+    "t1_max_closure_err": 1.1820198652057667e-15,
+    "t1_max_jacobi_err": 5.551115123125783e-17,
+    "t1_max_reductive_err": 1.1726730697603216e-15,
+    "t2_max_residual_outside_g2": 2.1751721141145334e-15,
+    "t2_max_abs_r_component": 0.4308657526109283,
+    "t3_fund_casimir_eigenvalue": -1.3333333333333346,
+    "t3_lambda2m_eigenvalue_multiplicities": {
+      "-3.0": 8,
+      "-1.33333": 6,
+      "0.0": 1
+    },
+    "t4_max_abs_r_on_fund_block": 7.475537922371081e-16,
+    "t4_relative_r_on_fund_block": 1.7350039721354901e-15,
+    "t4_zero_on_fund_block": true,
+    "t4_adjoint_casimir_spread": 4.440892098500626e-15
+  },
+  "verdict": "ZERO-ON-3BAR-SUMMAND"
+}

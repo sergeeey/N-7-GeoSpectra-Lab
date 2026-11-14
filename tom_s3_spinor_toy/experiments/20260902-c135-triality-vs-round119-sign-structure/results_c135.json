@@ -1,0 +1,391 @@
+{
+  "step0_reused_from_c133": {
+    "source_file": "../20260902-c133-symmetry-ladder-pairing-space/c133_symmetry_ladder.py",
+    "sha256": "ddc67bf9c75acfaff11e2280cb5a5c1e68dfd5cad66e3f82832b15c52bc8fe45",
+    "reused_objects": [
+      "T_O / C_O (Cayley-Dickson octonion table + conjugation)",
+      "to_matrix / from_matrix / jordan_prod (J3(O))",
+      "sigma  (the explicit triality Z3, C133 SS3c)",
+      "U24    (its 24x24 channel realisation, c133 script lines 637-642)",
+      "TRIPLES / RHO (the 28 so(8) triality triples)"
+    ],
+    "sigma_cubed_is_identity_max_err": 0.0,
+    "sigma_acts_as_xyz_to_zxy_max_err": 0.0,
+    "sigma_is_jordan_automorphism_max_err": 1.7763568394002505e-15,
+    "U_normalises_the_so8_image_rel_resid": 2.32487567333398e-15,
+    "n_so8_generators": 28
+  },
+  "step1_block_split_is_an_octonion_automorphism": {
+    "H_span_e0_e3_is_a_subalgebra_leakage": 0.0,
+    "CONTROL_span_e0_e1_e2_is_NOT_a_subalgebra_leakage": 1.0,
+    "n_quaternionic_4_subsets_through_e0": 7,
+    "matches_7_Fano_lines": true,
+    "D_A_is_an_octonion_automorphism_resid": 0.0,
+    "SECOND_G2_involution_also_resid_0": {
+      "fixed_subalgebra": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "resid": 0.0
+    },
+    "CONTROL_nonquaternionic_4_4_split_resid": {
+      "fixed_subspace": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "resid": 22.995097546382453
+    },
+    "CONTROL_negate_the_unit_resid": 17.968027480683748,
+    "CONTROL_random_orthogonal_resid": 15.404385288199759,
+    "reading": "D_A (fix H, negate H-ell) IS an automorphism of O, hence lies in G2 = Aut(O) = Fix(triality).  Exactly 7 of the 35 four-subsets through e0 are quaternion subalgebras -- the 7 Fano lines -- so the H/H-ell split is one of a G2-orbit of equivalent choices, not a distinguished one.  The three controls (a NON-quaternionic 4+4 split, negating the unit, a random rotation) all fail by O(1), so the test genuinely can fail."
+  },
+  "step2_center_of_Spin8_as_slot_sign_triples": {
+    "scan": {
+      "+++": {
+        "product_of_signs": 1,
+        "jordan_automorphism_resid": 0.0,
+        "is_automorphism": true
+      },
+      "++-": {
+        "product_of_signs": -1,
+        "jordan_automorphism_resid": 21.42585264082314,
+        "is_automorphism": false
+      },
+      "+-+": {
+        "product_of_signs": -1,
+        "jordan_automorphism_resid": 14.791468417152739,
+        "is_automorphism": false
+      },
+      "+--": {
+        "product_of_signs": 1,
+        "jordan_automorphism_resid": 0.0,
+        "is_automorphism": true
+      },
+      "-++": {
+        "product_of_signs": -1,
+        "jordan_automorphism_resid": 14.335880328041869,
+        "is_automorphism": false
+      },
+      "-+-": {
+        "product_of_signs": 1,
+        "jordan_automorphism_resid": 0.0,
+        "is_automorphism": true
+      },
+      "--+": {
+        "product_of_signs": 1,
+        "jordan_automorphism_resid": 0.0,
+        "is_automorphism": true
+      },
+      "---": {
+        "product_of_signs": -1,
+        "jordan_automorphism_resid": 15.945706717030903,
+        "is_automorphism": false
+      }
+    },
+    "passing": [
+      "+++",
+      "+--",
+      "-+-",
+      "--+"
+    ],
+    "n_passing": 4,
+    "matches_Klein_four_group": true,
+    "reading": "Exactly the four sign triples with product +1 are automorphisms; the other four fail by O(1).  These four are the center Z2 x Z2 of Spin(8).  EVERY nontrivial one has exactly ONE '+' and TWO '-'."
+  },
+  "step3_Z3_orbit_on_the_center": {
+    "orbit": {
+      "+--": {
+        "image_under_U_conjugation": "-+-",
+        "is_fixed": false
+      },
+      "-+-": {
+        "image_under_U_conjugation": "--+",
+        "is_fixed": false
+      },
+      "--+": {
+        "image_under_U_conjugation": "+--",
+        "is_fixed": false
+      },
+      "+++": {
+        "image_under_U_conjugation": "+++",
+        "is_fixed": true
+      }
+    },
+    "three_nontrivial_elements_form_one_3_cycle": true,
+    "identity_element_is_fixed": true
+  },
+  "step4_D_A_is_triality_fixed": {
+    "diag_DA_DA_DA_is_a_J3O_automorphism_resid": 0.0,
+    "CONTROL_diag_DA_DA_randomSO8_resid": 13.116602560117688,
+    "CONTROL_diag_nonquaternionic_split_x3_resid": 10.344871649792275,
+    "commutator_with_U24_max_abs": 0.0,
+    "reading": "The SAME matrix D_A in all three slots is a J3(O) automorphism and commutes with the triality U exactly -- i.e. D_A is triality-FIXED. Replacing one slot by a random SO(8) element, or D_A by a 4+4 sign operator whose fixed subspace is NOT a quaternion subalgebra, breaks it by O(1)."
+  },
+  "step5_so4_so4_is_the_centralizer_of_D_A": {
+    "D_A_centralizer": {
+      "dim_centralizer": 12,
+      "triality_image_stays_in_the_same_subalgebra_rel_resid": 2.2356774154550206e-15,
+      "T_cubed_minus_I_max_abs": 3.1086244689504383e-15,
+      "T_eigenvalue_multiplicities": {
+        "plus_1": 6,
+        "omega": 3,
+        "omega_bar": 3
+      }
+    },
+    "CONTROL_nonquaternionic_split_centralizer": {
+      "dim_centralizer": 12,
+      "triality_image_stays_in_the_same_subalgebra_rel_resid": 0.9032084539773977,
+      "T_cubed_minus_I_max_abs": 0.9710024960722454,
+      "T_eigenvalue_multiplicities": {
+        "plus_1": 3,
+        "omega": 0,
+        "omega_bar": 0
+      }
+    },
+    "SECOND_G2_involution_centralizer": {
+      "dim_centralizer": 12,
+      "triality_image_stays_in_the_same_subalgebra_rel_resid": 1.5920408814274994e-15,
+      "T_cubed_minus_I_max_abs": 3.552713678800501e-15,
+      "T_eigenvalue_multiplicities": {
+        "plus_1": 6,
+        "omega": 3,
+        "omega_bar": 3
+      }
+    },
+    "reading": "so(4)+so(4) IS the centralizer of D_A in so(8) (dim 12 = 6+6).  Its triality image lands back inside itself, and T has eigenvalue multiplicities {+1 x6, omega x3, omega-bar x3} with T^3 = I -- independently replicating pearl row 41 through C133's triples instead of row 41's own covariance solve.  This is EXPLAINED, not just observed: D_A is triality-fixed (step 4), so its centralizer must be triality-invariant.  The control is a 4+4 sign operator whose fixed subspace is NOT a quaternion subalgebra: same dim-12 centralizer, but its triality image does NOT stay inside -- so the test discriminates on quaternionicity, not on dimension counting."
+  },
+  "step6_clifford_side_reconstruction": {
+    "anticommutator_max_err": 0.0,
+    "Gamma_A_squared_minus_I": 0.0,
+    "Gamma_B_squared_minus_I": 0.0,
+    "Gamma_A_Gamma_B_commutator": 0.0,
+    "Gamma_9_squared_minus_I": 0.0,
+    "Gamma_9_equals_product_of_all_eight": 0.0,
+    "reproduces_L3b_relations": "Gamma_A Gamma_B = Gamma_9 and [Gamma_A, Gamma_B] = 0 -- both stated as VERIFIED in L3B_SPIN8_INTERFACE_SPEC.md SS1.5, reproduced here."
+  },
+  "step6b_the_three_sign_patterns": {
+    "per_channel": {
+      "8_v": {
+        "dim_S_plus_or_minus": 8,
+        "Gamma_A_minus_Gamma_B_max_abs": 2.0,
+        "Gamma_A_plus_Gamma_B_max_abs": 0.0,
+        "relation": "Gamma_A = -Gamma_B",
+        "epsilon_rho_X_of_Gamma_9": -1,
+        "Gamma_B_eigenvalue_multiplicities_+1_-1": [
+          4,
+          4
+        ],
+        "vector_channel_only_rho_v_Gamma_B_equals_D_A": 0.0
+      },
+      "8_s": {
+        "dim_S_plus_or_minus": 8,
+        "Gamma_A_minus_Gamma_B_max_abs": 0.0,
+        "Gamma_A_plus_Gamma_B_max_abs": 2.0,
+        "relation": "Gamma_A = +Gamma_B",
+        "epsilon_rho_X_of_Gamma_9": 1,
+        "Gamma_B_eigenvalue_multiplicities_+1_-1": [
+          4,
+          4
+        ],
+        "vector_channel_only_rho_v_Gamma_B_equals_D_A": null
+      },
+      "8_c": {
+        "dim_S_plus_or_minus": 8,
+        "Gamma_A_minus_Gamma_B_max_abs": 2.0,
+        "Gamma_A_plus_Gamma_B_max_abs": 0.0,
+        "relation": "Gamma_A = -Gamma_B",
+        "epsilon_rho_X_of_Gamma_9": -1,
+        "Gamma_B_eigenvalue_multiplicities_+1_-1": [
+          4,
+          4
+        ],
+        "vector_channel_only_rho_v_Gamma_B_equals_D_A": null
+      }
+    },
+    "epsilon_triple_(v,s,c)": [
+      -1,
+      1,
+      -1
+    ],
+    "n_DISTINCT_sign_patterns_across_the_three_channels": 2,
+    "reading": "The relative sign of (Gamma_A, Gamma_B) is rho_X(Gamma_9), a CENTRAL element -- so it is a Z2-valued statistic.  8_s is the odd one out; 8_v and 8_c carry the SAME relation Gamma_A = -Gamma_B."
+  },
+  "step7_DECISIVE": {
+    "epsilon_triple": [
+      -1,
+      1,
+      -1
+    ],
+    "n_distinct_values": 2,
+    "stabiliser_of_the_pattern_in_S3_order": 2,
+    "stabiliser_elements": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "any_3_cycle_fixes_the_pattern": false,
+    "channels_sharing_a_pattern": [
+      [
+        "8_v",
+        "8_c"
+      ],
+      [
+        "8_s"
+      ]
+    ],
+    "VERDICT_z3_cyclically_permutes_the_sign_patterns": false,
+    "THIS_TEST_IS_ONE_SIDED": "DISCLOSED, not hidden.  Once Gamma_A Gamma_B = Gamma_9 is a NONTRIVIAL CENTRAL element (step 6, verified), the sign triple is forced by step 2 to have exactly one '+' -- so n_distinct_values could never have been 3.  The test therefore has kill power but no rescue power: it could fire and did, but could not have confirmed. The informative content is the REASON (the statistic is the image of a central element), which is contingent on round119's specific choice of the two half-volume operators -- step 8 exhibits a different statistic on the SAME construction that does take three distinct values.",
+    "reading": "A consistent single-symmetry cyclic permutation of THREE sign patterns requires three DISTINCT patterns.  There are only two.  The stabiliser of the pattern inside the triality S3 is the Z2 swapping the two channels that share it -- so the fixed pair (Gamma_A, Gamma_B) manifestly breaks S3 to Z2, and no Z3 fixes it."
+  },
+  "step8_what_the_Z3_DOES_permute": {
+    "su2_factors_of_so4_1_commute_max_err": 0.0,
+    "su2_factor_sanity": {
+      "su2_1": {
+        "dim": 3,
+        "bracket_closure_rel_resid": 2.420617115722136e-16
+      },
+      "su2_2": {
+        "dim": 3,
+        "bracket_closure_rel_resid": 2.223261648749532e-16
+      },
+      "su2_3": {
+        "dim": 3,
+        "bracket_closure_rel_resid": 2.422313846649802e-16
+      },
+      "su2_4": {
+        "dim": 3,
+        "bracket_closure_rel_resid": 2.237726045655905e-16
+      }
+    },
+    "pairings_per_channel": {
+      "8_v": [
+        [
+          "su2_1",
+          "su2_2"
+        ],
+        [
+          "su2_3",
+          "su2_4"
+        ]
+      ],
+      "8_s": [
+        [
+          "su2_2",
+          "su2_4"
+        ],
+        [
+          "su2_1",
+          "su2_3"
+        ]
+      ],
+      "8_c": [
+        [
+          "su2_1",
+          "su2_4"
+        ],
+        [
+          "su2_2",
+          "su2_3"
+        ]
+      ]
+    },
+    "n_distinct_pairings": 3,
+    "all_three_pairings_distinct": true,
+    "n_su2_label_permutations_inducing_a_channel_3_cycle": 8,
+    "all_such_permutations_have_order_3": true,
+    "all_such_permutations_predict_fixed_dim_6": true,
+    "NOTE_fixed_dim_6_is_arithmetic_not_measured": true,
+    "step5_MEASURED_plus1_multiplicity": 6,
+    "example_3_cycle_rows": [
+      {
+        "perm_of_su2_labels": [
+          0,
+          2,
+          3,
+          1
+        ],
+        "order": 3,
+        "channel_map": {
+          "8_v": "8_s",
+          "8_s": "8_c",
+          "8_c": "8_v"
+        },
+        "induces_a_3_cycle_of_channels": true,
+        "predicted_fixed_subalgebra_dim": 6
+      },
+      {
+        "perm_of_su2_labels": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "order": 3,
+        "channel_map": {
+          "8_v": "8_c",
+          "8_s": "8_v",
+          "8_c": "8_s"
+        },
+        "induces_a_3_cycle_of_channels": true,
+        "predicted_fixed_subalgebra_dim": 6
+      }
+    ],
+    "reading": "Under so(4)+so(4) = su(2)^4 each channel splits into two 4-dim pieces, and each piece is a doublet of exactly TWO of the four su(2) factors.  The three channels realise the three DISTINCT ways to pair up {1,2,3,4}.  Triality permutes the channels cyclically (step 0: U^3 = I, U normalises the algebra), hence it cyclically permutes these three pairings.  THAT is the genuine Z3 structure -- and it is exactly the 3-cycle of the four su(2) factors whose fixed subalgebra is 3 + 3 = 6-dimensional, matching step 5's measured {+1 x6, omega x3, omega-bar x3}."
+  },
+  "step8b_CONTROLS_for_the_pairing_claim": {
+    "T4a_degenerate_labels_n_distinct": 2,
+    "T4a_counter_CAN_report_less_than_3": true,
+    "T4b_nonquaternionic_split_n_distinct": 3,
+    "T4b_pairings": {
+      "8_v": [
+        [
+          "su2_1",
+          "su2_2"
+        ],
+        [
+          "su2_3",
+          "su2_4"
+        ]
+      ],
+      "8_s": [
+        [
+          "su2_2",
+          "su2_4"
+        ],
+        [
+          "su2_1",
+          "su2_3"
+        ]
+      ],
+      "8_c": [
+        [
+          "su2_1",
+          "su2_4"
+        ],
+        [
+          "su2_2",
+          "su2_3"
+        ]
+      ]
+    },
+    "T4b_distinctness_survives_a_NON_quaternionic_split": true,
+    "reading": "T4a: the counter is not stuck at 3 -- collapsing the four su(2) labels onto two makes it drop, so it can report a failure. T4b, THE IMPORTANT ONE: three distinct pairings ALSO appear for a 4+4 split of the gamma indices whose fixed subspace is NOT a quaternion subalgebra.  So distinctness of the three pairings is GENERIC to any 4+4 split and is NOT evidence about the octonionic H/H-ell structure.  What IS special to the quaternionic split is step 5: only there does the resulting so(4)+so(4) stay inside itself under triality (2.24e-15 vs the control's 0.903).  The correct claim is therefore: distinctness is generic; TRIALITY-COVARIANCE of the three pairings is not."
+  },
+  "step9_kill_criterion": {
+    "criterion_a_BLOCKED_no_basis_identification": false,
+    "criterion_a_note": "NOT blocked.  Both sides live on O = R^8 and the identification was already built and machine-verified in this project's own record (the P,Q intertwiners, pearl row 43).  Moreover the decisive facts used here -- Gamma_A Gamma_B = Gamma_9 central, the center being Z2 x Z2 with one '+' per nontrivial element, and triality permuting those three cyclically -- are basis-INDEPENDENT, so any residual mismatch between the two octonion realisations cannot change them.",
+    "criterion_b_FIRES_sigma_does_not_cyclically_permute_the_patterns": true,
+    "claim_as_preregistered_is": "FALSE"
+  }
+}

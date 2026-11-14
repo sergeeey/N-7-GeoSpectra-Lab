@@ -1,0 +1,15 @@
+   j=1/2 DIMENSION (number of states) for Lmax=0..6: [2, 4, 4, 4, 4, 4, 4]
+   j=3/2 DIMENSION (number of states) for Lmax=0..6: [0, 4, 8, 8, 8, 8, 8]
+PASS T2a j=1/2 dimension is 2 at Lmax=0 and 4 for all Lmax=1..6 (no higher-l j=1/2)
+PASS T3 j=3/2 dimension: 0 at Lmax=0, 4 at Lmax=1 (from l=1), 8 for Lmax>=2 (from l=1 AND l=2: l(x)1/2 = (l+1/2)+(l-1/2))
+PASS T1a J^2 on H_2 (x) C^2 is block-diagonal and reproduces the l=2 block
+PASS T1 H_2 (x) C^2: j=5/2 multiplicity 6 and j=3/2 multiplicity 4 (dims 2j+1)
+PASS T4a the J_z=+1/2 part of the j=1/2 isotypic component is 2-dimensional
+PASS T4b for random [a:b] in CP^1 the span{Phi_ab, J_- Phi_ab} is J-invariant (CP^1 family of spin-1/2 subspaces)
+PASS T4c different [a:b] give different subspaces (projectors differ)
+PASS T5a Psi = -1/2 e_+ + Psi_1 (pointwise identity)
+PASS T6a exp(-2 pi i J_z) = -1 on the whole C^2-valued space (all J_z half-integer)
+PASS T6b exp(-2 pi i L_z) = +1 on the scalar harmonics (integer spins only)
+PASS T7 (sanity) L_z restricted to scalar harmonics has integer eigenvalues (dragging alone)
+
+FAILS: none

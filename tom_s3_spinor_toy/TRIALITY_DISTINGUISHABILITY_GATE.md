@@ -359,6 +359,44 @@ exhaustiveness — a different, complementary search (an actual coupling
 term, not just a commutator test), now itself complete across the full
 complement for this one construction.
 
+## 12. C173 cross-reference (2026-09-06/07) — the GENERAL Lie-theory reason
+    §10's exhaustive numerical result had to come out the way it did
+
+**Found via a whole-project meta-analysis, not a new computation on this
+file's own question.** `experiments/20260906-c173-p4-items23-scoping-g44-
+nogo/decision.md` (a different investigation, on OB1/OB14's own triality-
+bridge question, not OB4/L3b) independently proves a GENERAL fact that
+directly explains §10's own already-closed result:
+
+**Triality is an OUTER automorphism of `Spin(8)`/`D₄`
+(`Aut(so(8))/Inn(so(8))=S₃`), and no INNER automorphism can ever realize
+an outer one.** Since `Spin(8)` is connected, `Ad(g)` is inner for EVERY
+`g∈Spin(8)`, regardless of which subgroup or centralizer `g` happens to
+sit in. **This is not a new finding about this gate's own question — it
+is the structural REASON §10's exhaustive numerical commutant computation
+(`commutant(D, so(8)) = su(3)`, exactly, nothing larger) came out the way
+it did, and could not have come out any other way**, for ANY physical
+operator `D` built from this coset's own `G2/SU(3)` data: any candidate
+symmetry beyond `su(3)` that anyone could ever propose lives inside
+`Inn(so(8))` (since it comes from `Spin(8)` itself, a connected group),
+and can therefore never be, or contain, the outer triality action needed
+to distinguish the three channels — independent of whether that candidate
+happens to also commute with the specific physical `D` tested.
+
+**Net effect: this DEEPENS §10's own already-correct verdict, it does not
+change it.** `GATE 2: CLOSED (NO), exhaustively` (§10) and `OPEN_BLOCKERS.md`
+OB4's own status stand exactly as recorded. The two results are
+independent confirmations of the same underlying fact, reached by
+genuinely different methods (§10: direct numerical commutant computation
+on the physical operator; C173: an abstract, operator-independent
+Lie-theory argument) — worth cross-referencing precisely because they
+agree without either having been built to reproduce the other. See
+`experiments/20260906-c173-p4-items23-scoping-g44-nogo/decision.md` and
+`pearl_registry/INDEX.md` (2026-09-06, the general "inner cannot realize
+outer automorphism" pearl).
+
+---
+
 ## Sources
 
 - `tom_s3_spinor_toy/L3B_SPIN8_INTERFACE_SPEC.md` §1 (SO(4)×SO(4) candidate,

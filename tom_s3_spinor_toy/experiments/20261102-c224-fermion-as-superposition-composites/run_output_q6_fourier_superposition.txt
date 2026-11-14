@@ -1,0 +1,11 @@
+PASS F1 c_k = i/(pi(1/2-k)) by midpoint quadrature (max error 2.1e-11)
+PASS F2 Parseval sum |c_k|^2 over |k|<=400 = 0.999494 (-> 1)
+PASS F3a S(0) = 0 (average of +1 and -1 at the seam)
+PASS F3b S(phi) ~ f(phi) on (0, 2 pi) at interior points
+PASS F3c f(phi+2pi) = -f(phi)  but  S(phi+2pi) = S(phi): S is not the antiperiodic f on the circle
+   |R f - e^{-i a/2} f| on arc (0,alpha) (max) = 2.000 ; off arc = 2.48e-16
+PASS F4a dragging does not multiply f by e^{-i alpha/2}: difference is a step of size 2 on (0, alpha)
+PASS F4b dragged field equals S(phi - alpha) (integer-weight superposition, coefficients c_k e^{-ik alpha})
+PASS F5 composites: (+1/2)+(+1/2) = 1 and (+1/2)+(-1/2) = 0 (integer weights)
+
+FAILS: none

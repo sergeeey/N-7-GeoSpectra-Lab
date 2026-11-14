@@ -1,0 +1,13 @@
+{
+  "ambient_norm_sq_raw": 0.3333333333333333,
+  "rescale_factor": 1.7320508075688774,
+  "torsion_norm_sq_ambient": 23.999999999999993,
+  "torsion_antisym_err": 2.220446049250313e-16,
+  "ricci_einstein_const_ambient": 2.5000000000000018,
+  "ricci_off_diag_max": 1.1884846176834138e-15,
+  "mu_sq_from_torsion": 0.9999999999999997,
+  "ricci_predicted_from_russo": 4.999999999999998,
+  "relative_error": 0.49999999999999944,
+  "verdict": "MISMATCH",
+  "source": "Russo arXiv:2002.04673 (Ric=5mu^2) + derivation (this file) of |T^c|^2=24mu^2"
+}

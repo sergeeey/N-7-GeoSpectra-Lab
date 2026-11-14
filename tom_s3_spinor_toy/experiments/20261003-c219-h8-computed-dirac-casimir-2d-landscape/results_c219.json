@@ -1,0 +1,87 @@
+{
+  "B6_exact": -0.05052910052910052,
+  "B8_exact": -0.0076455026455026455,
+  "B10_exact": -0.0029521404521404516,
+  "rel_diff_B8_vs_G54": 0.005951557093425602,
+  "rel_diff_B10_vs_G54": 0.11783299389002055,
+  "rho6_star_G54_fit_inputs": 1.088323265697079,
+  "rho6_star_exact": 1.1540977671376194,
+  "path_min_rho6_psi_True": 0.6,
+  "path_zeros_psi_True": [
+    1.36690104489758
+  ],
+  "path_zeta_at_min_psi_True": -0.0018893595454729246,
+  "path_min_rho6_psi_False": 0.6,
+  "path_zeros_psi_False": [
+    1.3624958342654314
+  ],
+  "path_zeta_at_min_psi_False": -0.001914450750475347,
+  "zeta_grid_range": [
+    -12440.711127010716,
+    0.10758821997198337
+  ],
+  "kappa_+0.25_psi_True_n_min": 0,
+  "kappa_+0.25_psi_True_n_valid_min": 0,
+  "kappa_+0.50_psi_True_n_min": 0,
+  "kappa_+0.50_psi_True_n_valid_min": 0,
+  "kappa_+1.00_psi_True_n_min": 0,
+  "kappa_+1.00_psi_True_n_valid_min": 0,
+  "kappa_-0.25_psi_True_n_min": 1,
+  "kappa_-0.25_psi_True_n_valid_min": 0,
+  "kappa_-0.50_psi_True_n_min": 1,
+  "kappa_-0.50_psi_True_n_valid_min": 0,
+  "kappa_-1.00_psi_True_n_min": 1,
+  "kappa_-1.00_psi_True_n_valid_min": 0,
+  "kappa_+0.25_psi_False_n_min": 0,
+  "kappa_+0.25_psi_False_n_valid_min": 0,
+  "kappa_+0.50_psi_False_n_min": 0,
+  "kappa_+0.50_psi_False_n_valid_min": 0,
+  "kappa_+1.00_psi_False_n_min": 0,
+  "kappa_+1.00_psi_False_n_valid_min": 0,
+  "kappa_-0.25_psi_False_n_min": 1,
+  "kappa_-0.25_psi_False_n_valid_min": 0,
+  "kappa_-0.50_psi_False_n_min": 1,
+  "kappa_-0.50_psi_False_n_valid_min": 0,
+  "kappa_-1.00_psi_False_n_min": 1,
+  "kappa_-1.00_psi_False_n_valid_min": 0,
+  "P3_psi_True": {
+    "-1": {
+      "any": [
+        0.05,
+        [
+          0.4531661131278851,
+          1.273546938525077,
+          -6.740922592563518e-05
+        ]
+      ],
+      "valid": [
+        42.60489396834388,
+        [
+          1.090689988553681,
+          1.5659087903990259,
+          -1.0549065673583335e-06
+        ]
+      ]
+    }
+  },
+  "P3_psi_False": {
+    "-1": {
+      "any": [
+        0.05,
+        [
+          0.4531661131278851,
+          1.273546938525077,
+          -6.740753030018945e-05
+        ]
+      ],
+      "valid": [
+        42.60489396834388,
+        [
+          1.090689988553681,
+          1.5659087903990259,
+          -1.0218142753793275e-06
+        ]
+      ]
+    }
+  }
+}

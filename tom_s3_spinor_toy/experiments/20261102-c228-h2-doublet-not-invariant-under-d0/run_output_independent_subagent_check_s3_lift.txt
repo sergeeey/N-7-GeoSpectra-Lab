@@ -1,0 +1,11 @@
+Phi = [x/2 - I*y/2, -z/2 - 1/2]
+Gamma Psi + Psi on S2: [0, 0]
+Gamma Phi + Phi on S2: [0, 0]
+flipped-L convention: Gamma Phi' + Phi' on S2: [x*z - x - I*y*z + I*y, x**2 + y**2 + 2*z - 2]
+{A,Gamma} G on S2 (should be 0): [0, 0]
+J3 T Psi = [0, 0]  J3 T Phi = [0, 0]
+Gram = Matrix([[1/2, 0], [0, 1/2]])
+TPsi: projection coeffs = [1, 0], ||D0F||^2/||F||^2 = 5, ||residual||^2/||F||^2 = 4
+TPhi: projection coeffs = [0, 1], ||D0F||^2/||F||^2 = 5, ||residual||^2/||F||^2 = 4
+control constant spinor: D0 c = [0, 0]
+control T(const): D0 T c - 3 T c = [0, 0]

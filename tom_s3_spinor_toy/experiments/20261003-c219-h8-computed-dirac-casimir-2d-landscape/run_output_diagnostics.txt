@@ -1,0 +1,27 @@
+D1  T-spread by T-range (cancellation hypothesis)
+  T-args (0.03, 0.06): zeta=[-0.000470869349, -0.000470868938]  abs spread=4.11e-10
+  T-args (0.06, 0.12, 0.2): zeta=[-0.000470868938, -0.000470868916, -0.000470868915]  abs spread=2.30e-11
+  T-args (0.12, 0.2, 0.3): zeta=[-0.000470868916, -0.000470868915, -0.000470868981]  abs spread=6.62e-11
+D2  brute-sum convergence at s=6.3
+  N=220: brute=2.626913206947e-04  rel diff to Mellin=2.89e-07
+  N=400: brute=2.626913877777e-04  rel diff to Mellin=3.36e-08
+  N=800: brute=2.626913958728e-04  rel diff to Mellin=2.77e-09
+D3  zeta_FP along rho3=0.986 rho6^2 at G54's quoted points (G54: 1.2 -> -6.5e-4, 1.5 -> +2.0e-4, 1.09 -> -7.98e-4, 0.953 -> -8.63e-4)
+  rho6=0.700: zeta_FP=-7.0785e-04
+  rho6=0.953: zeta_FP=-6.7501e-04
+  rho6=1.090: zeta_FP=-5.8418e-04
+  rho6=1.200: zeta_FP=-4.1675e-04
+  rho6=1.350: zeta_FP=-5.1236e-05
+  rho6=1.447: zeta_FP=+2.7004e-04
+  rho6=1.500: zeta_FP=+4.7400e-04
+D4  feed G54's FITTED B8,B10 into the same machinery (cause test; T-independence expected to break)
+  rho6=0.953: zeta_FP(G54 fit B8,B10)=-7.7943e-04
+  rho6=1.090: zeta_FP(G54 fit B8,B10)=-6.8903e-04
+  rho6=1.200: zeta_FP(G54 fit B8,B10)=-5.1622e-04
+  rho6=1.500: zeta_FP(G54 fit B8,B10)=+4.1333e-04
+  zero(s): [1.3918]  min at 0.6
+D5  refine the landscape minima (L-BFGS, Hessian) for the computed Casimir
+  kappa=-1.00: x=[0.6246, 1.2522]  V=-2.441e-05  Hessian eig=[0.001081305693, 0.002352850971]  PD=True
+  kappa=-0.25: x=[0.5347, 1.2522]  V=-3.903e-05  Hessian eig=[0.001711206512, 0.004780353376]  PD=True
+  kappa=-0.05: x=[0.4413, 1.255]  V=-6.848e-05  Hessian eig=[0.00294344694, 0.011662143384]  PD=True
+  kappa=-42.60: x=[1.0847, 1.5243]  V=-1.081e-06  Hessian eig=[2.8911567e-05, 4.9024424e-05]  PD=True

@@ -1,0 +1,45 @@
+{
+  "part1_mcmurry_ladder": {
+    "L+ Y(1,-1) = sqrt(2) Y(1,0)": true,
+    "L+ Y(1,0)  = sqrt(2) Y(1,1)": true,
+    "L+ Y(1,1)  = 0": true,
+    "L- Y(1,1)  = sqrt(2) Y(1,0)": true,
+    "L- Y(1,0)  = sqrt(2) Y(1,-1)": true,
+    "L- Y(1,-1) = 0": true
+  },
+  "part1_all_pass": true,
+  "part2_so3_algebra": {
+    "[Lx,Ly] == i*Lz": true,
+    "[Ly,Lz] == i*Lx": true,
+    "[Lz,Lx] == i*Ly": true,
+    "casimir_is_2I": true
+  },
+  "part3_positive_control": {
+    "cartesian_algebra_ok": true,
+    "cartesian_casimir_ok": true,
+    "intertwiner_found": true,
+    "u_matrix": [
+      [
+        "-I",
+        "0",
+        "I"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "sqrt(2)*I",
+        "0"
+      ]
+    ],
+    "ly_independently_satisfied": true,
+    "verdict": "EQUIVALENT_REPRESENTATIONS"
+  },
+  "part4_irreducibility": {
+    "commutant_dim": 1,
+    "is_irreducible_by_schur": true
+  }
+}

@@ -1,0 +1,23 @@
+PASS g00: (J3L, J3R) = (-1/2, 1/2)
+PASS g00: 2*J3R = Hopf charge Q = 1
+PASS g01: (J3L, J3R) = (-1/2, -1/2)
+PASS g01: 2*J3R = Hopf charge Q = -1
+PASS g10: (J3L, J3R) = (1/2, 1/2)
+PASS g10: 2*J3R = Hopf charge Q = 1
+PASS g11: (J3L, J3R) = (1/2, -1/2)
+PASS g11: 2*J3R = Hopf charge Q = -1
+PASS (1/2) diag(1,-1) equals the weight matrix of J3R on the right index (asserted entrywise)
+PASS [J^L_a, J^L_b] = i eps J^L_c and [J^R_a, J^R_b] = i eps J^R_c on a test polynomial (J = i dX is a standard su(2))
+PASS swap relabelling keeps the su(2) algebra: [tau'_a, tau'_b] = i eps tau'_c
+PASS swap relabelling: tau'_3 = -tau_3, tau'_2 = -tau_2, tau'_1 = tau_1
+PASS Casimir unchanged (3/4)
+PASS (xi1, xi2): weights (-1/2, +1/2)
+PASS eta = (y2, -y1): weights (-1/2, +1/2): the conjugate doublet in epsilon-relabelled order looks the same
+PASS (y1, y2): weights (+1/2, -1/2): reversed order
+PASS (xi2, xi1) (swapped labelling): weights (+1/2, -1/2)
+CAUGHT the swapped generators keep tau_3 (no sign flip)
+CAUGHT (y1, y2) has the same weights as (xi1, xi2)
+CAUGHT 2*J3R differs from the Hopf charge on g01
+
+FAILS: none
+exit=0

@@ -1,0 +1,43 @@
+STEP 0  m basis: 6 anti-Hermitian traceless 3x3 matrices  [OK]
+
+==============================================================================
+STEP 1  Classify all 8 invariant almost-complex structures by Nijenhuis
+==============================================================================
+  eps=(1, 1, 1)  product=+1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(1, 1, -1)  product=-1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(1, -1, 1)  product=-1  max|N| = 4.000e+00   non-integrable (NK candidate)
+  eps=(1, -1, -1)  product=+1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(-1, 1, 1)  product=-1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(-1, 1, -1)  product=+1  max|N| = 4.000e+00   non-integrable (NK candidate)
+  eps=(-1, -1, 1)  product=+1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+  eps=(-1, -1, -1)  product=-1  max|N| = 0.000e+00   INTEGRABLE (Kahler)
+
+  integrable     : 6 of 8 -> [(1, 1, 1), (1, 1, -1), (1, -1, -1), (-1, 1, 1), (-1, -1, 1), (-1, -1, -1)]
+  non-integrable : 2 of 8 -> [(1, -1, 1), (-1, 1, -1)]
+
+==============================================================================
+STEP 2  Pin J_NK (rule fixed before any c exists)
+==============================================================================
+  RULE: J_NK is a non-integrable invariant a.c.s.; among those, take the
+  lexicographically first sign tuple. Any other non-integrable choice is
+  related to it by a Weyl/conjugation symmetry of the coset, so the rule
+  is a labelling convention, not a physical selection -- and it is fixed
+  here, with c uncomputed.
+  J_NK sign tuple = (-1, 1, -1)   (sign product +1)
+
+==============================================================================
+STEP 3  Does J_NK map the admissible connection family into itself?
+        (pre-committed: if NOT, verdict is BLOCKED-STRUCTURE)
+==============================================================================
+  dim of admissible family (Stage 0 regression) = 6  (expect 6)
+  worst residual of J-image against family span = 4.782e-16
+  J_NK PRESERVES the admissible family: True
+
+==============================================================================
+STAGE 1a VERDICT
+==============================================================================
+  J_NK maps the family into itself. The restated prediction
+  c(J.nabla) = +-i c(nabla) is WELL-POSED on this coset, and Stage 1b
+  (invariant-sector dimensions, still before c) may proceed.
+
+  c HAS STILL NOT BEEN COMPUTED anywhere in Stage 0 or Stage 1a.

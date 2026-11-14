@@ -14,7 +14,7 @@ Toy tests for HYP_01–HYP_03. Does not promote physical compactification or SM 
 
 - Status: `hypothesis_supported` — Single admissible eigenvalue stable across conventions in toy truncation.
 - Kernel dimension (toy constraint): 1
-- Eigenvalues (UNIT / SQRT2): (-1.4109907439877516e-17,) / (2.3606623455016808e-17,)
+- Eigenvalues (UNIT / SQRT2): (-1.410990743987752e-17,) / (2.3606623455016808e-17,)
 
 ## HYP_03 — Nonlinear realization
 

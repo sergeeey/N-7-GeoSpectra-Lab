@@ -1,0 +1,12 @@
+{
+  "dim_g2": 14,
+  "dim_su3": 8,
+  "dim_complement": 6,
+  "comp_spans_with_su3_max_residual": 8.743006318923108e-16,
+  "max_abs_f_abc": 0.4583195217732403,
+  "term1_sum_f_squared": 8.000000000000002,
+  "term2_cross_contraction": -16.00000000000001,
+  "term1_plus_term2": -8.000000000000009,
+  "source": "Chatzistavrakidis-Manousselis-Prezas-Zoupanos, arXiv:0712.2717, eq. 4.27, full text fetched via mcp__arxiv__download_paper",
+  "status": "COMPUTED"
+}

@@ -1,5 +1,7 @@
 # Отчёт о проделанной работе — сессия 2026-06-03 → 04
 
+> **ОБНОВЛЕНИЕ 2026-11-05.** Утверждение «контроли отклонены (IPR(W=20) < 16 % от ring-эталона)» **не подтверждено** для broken_wilson по сырым JSON (IPR 0,22–0,74 при ring ≈ 0,32). Актуально: `docs/ROADMAP.md`, `reports/GATE4C_THRESHOLD_ORIGIN_NOTE_v0.1.26.md`.
+
 **Проект:** GeoSpectra Lab (Covariant Compactification Toy Lab)
 **Диапазон commit'ов:** ead66d7 (git init) → 22fd9fe (HEAD, запушено)
 **Расширяет:** `SESSION_REPORT_2026-06-03_04.md` (этот — финальная полная версия)

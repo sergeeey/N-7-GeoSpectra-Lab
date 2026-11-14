@@ -1,0 +1,15 @@
+PASS H1 |x(xi)| = |xi|^2 (max error 5.33e-15 over 2000 samples)
+PASS H2a x is constant on the orbit e^{i a} xi0 (max deviation 2.99e-16)
+PASS H2b Jacobian of S^3 -> S^2 has rank 2 at generic points (so fibres are 1-dimensional circles): ranks=[np.int64(2)]
+PASS H3 x(-xi) = x(xi)
+   max |x(tom_xi) - (sin th cos ph, sin th sin ph, cos th)| = 5.901e-16
+PASS H4a the correspondent Hopf coordinates map to the sphere point (theta, phi), independent of psi
+PASS H4b psi -> psi+2pi flips the sign of xi (two branches)
+PASS H4c psi -> psi+4pi returns xi
+PASS H5a Ad(-g) = Ad(g) (the 2:1 is exact at group level)
+PASS H5b Ad(g) in SO(3)
+PASS H5c Ad(h)=Ad(g) implies h = +-g (kernel {+1,-1}), sampled
+PASS H6 charge-1 field xi_2: F(-xi) = -F(xi) (sign flip, one value per circle point)
+PASS H6 charge-0 field |xi|^2 : F(-xi)=F(xi), descends to S^2
+
+FAILS: none

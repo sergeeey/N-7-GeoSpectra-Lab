@@ -1,0 +1,36 @@
+==============================================================================
+C156 STEP 1  re-examining C155 Step 5
+==============================================================================
+  measured plane weights (values on the two Cartan generators):
+    plane A: (-2, 1)
+    plane B: (1, 1)
+    plane C: (1, -2)
+
+  standard simple roots (rows of the A_2 Cartan matrix): a1=(2, -1), a2=(-1, 2)
+  highest root a1+a2 = (1, 1)
+
+  assign each plane its POSITIVE root (orientation-independent):
+    plane A: weight = -(a1)  ->  positive root = a1
+    plane B: weight = +(a1+a2)  ->  positive root = a1+a2
+    plane C: weight = -(a2)  ->  positive root = a2
+
+  the unique linear relation among the three POSITIVE roots:
+    solving c1*a1 + c2*a1+a2 + c3*a2 = 0
+    solution space: [{c1: c3, c2: -c3}]
+    relation coefficients (A,B,C), normalised: (1, -1, 1)
+    check it really vanishes: (0, 0) -> True
+
+==============================================================================
+  COMPARISON
+==============================================================================
+    mu's per-plane functional (measured, C155)     : (1, -1, 1)
+    relation among the ORIENTED weights (C155 St5) : (1, 1, 1)
+    relation among the POSITIVE roots (this step)  : (1, -1, 1)
+    mu functional PROPORTIONAL to positive-root relation: True
+
+  => C155 Step 5's falsification compared mu against the relation among
+     the ORIENTED weights, which is orientation-dependent. Against the
+     canonical POSITIVE-root relation the two agree exactly.
+     C155 Step 5's verdict was UNSOUND and must be corrected.
+     This does NOT yet establish a rule: n=1, and A_2 has exactly one
+     relation, so agreement here is a 1-in-4 sign coincidence a priori.

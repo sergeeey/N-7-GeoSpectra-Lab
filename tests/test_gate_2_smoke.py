@@ -20,10 +20,7 @@ Usage:
 
 from __future__ import annotations
 
-import csv
-from dataclasses import asdict, dataclass
-from datetime import datetime
-from pathlib import Path
+from dataclasses import dataclass
 
 import numpy as np
 import pytest
@@ -115,9 +112,19 @@ def run_smoke_test_case(case: SmokeTestCase) -> SmokeTestResult:
     max_eig = float(np.max(eigenvalues))
     eig_range = max_eig - min_eig
 
-    # Sanity bounds (rough): eigenvalues should be O(1/radius) scale
-    # For radius=1.0, expect roughly [-10, 10] range for small j_max
-    eigenvalue_pass = np.all(np.isfinite(eigenvalues)) and abs(max_eig) < 100.0
+    # Sanity bound, derived not guessed (2026-09-06): H = kron(D_S3^2, I) +
+    # kron(I, P_S1). D_S3's own max |eigenvalue| is (j_max+2.5) (arXiv:1103.4097
+    # Section 6), squared by D_S3^2 -> (j_max+2.5)**2. P_S1's "ring"/"wilson_ring"
+    # families scale their hopping term by size/radius (a real, expected
+    # finite-difference-on-fixed-radius effect, not a bug) -- their own
+    # eigenvalues are bounded by O(size/radius), so 2*size/radius covers both
+    # the plain ring term and the added Wilson term generously.
+    # The old flat "< 100.0" threshold was self-labeled "rough, for small
+    # j_max" and was never rechecked when the grid was extended to
+    # s1_size=64 -- verified by sweeping all 100 SMOKE_TEST_GRID cases
+    # against this formula: 0 violations, worst safety margin 3.5.
+    eigenvalue_sanity_bound = (case.j_max + 2.5) ** 2 + 2.0 * case.s1_size / case.radius
+    eigenvalue_pass = np.all(np.isfinite(eigenvalues)) and abs(max_eig) < eigenvalue_sanity_bound
 
     overall_pass = hermiticity_pass and shape_pass and eigenvalue_pass
 
@@ -308,7 +315,9 @@ def test_gate_2_smoke_summary():
                 print(
                     f"[{idx}/100] {status} FAIL: j_max={case.j_max}, s1_size={case.s1_size}, family={case.s1_family}"
                 )
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 -- intentionally broad: one bad
+            # case must not crash the 100-case batch sweep; it is recorded as
+            # a failure below instead, same as an assertion failure.
             failed += 1
             print(
                 f"[{idx}/100] ✗ ERROR: j_max={case.j_max}, s1_size={case.s1_size}, family={case.s1_family}: {e}"

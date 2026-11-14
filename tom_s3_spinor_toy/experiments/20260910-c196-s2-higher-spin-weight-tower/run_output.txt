@@ -1,0 +1,55 @@
+==============================================================================
+A  build the k=3 harmonic level (degree-3, Laplacian-free) on S^3
+==============================================================================
+  [PASS] A1 k=3 harmonic level has dimension 16 (the (3/2,3/2) representation, dim (2*3/2+1)^2)  found dim 16
+
+==============================================================================
+B  diagonalise the fibre generator -- confirm HALF-integer weights at odd k
+==============================================================================
+  k=3 fibre weights present: [-3/2, -1/2, 1/2, 3/2]
+  [PASS] B1 k=3 carries only HALF-integer fibre weights (odd k, opposite of C184b's own even-k=2 integer-weight negative control)
+  [PASS] B2 CORRECTED: each fibre-weight sector at k=3 is 4-dimensional (degenerate, mirroring C184b's own k=1 degeneracy) -- a naive 'already split' assumption was wrong and is replaced below by the same second-generator split C184b used
+
+==============================================================================
+B'  split the degenerate weight=-3/2 sector with the second generator X3R
+==============================================================================
+  [PASS] B3 the second generator splits the 4-dim sector into 4 DISTINCT labels m_R = -3/2..3/2
+  fibre weight -3/2, m_R =  3/2:  x1**3 + 3*I*x1**2*x2 - 3*x1*x2**2 - I*x2**3
+  fibre weight -3/2, m_R =  1/2:  x0*x1**2 + 2*I*x0*x1*x2 - x0*x2**2 + I*x1**2*x3 - 2*x1*x2*x3 - I*x2**2*x3
+  fibre weight -3/2, m_R = -1/2:  x0**2*x1 + I*x0**2*x2 + 2*I*x0*x1*x3 - 2*x0*x2*x3 - x1*x3**2 - I*x2*x3**2
+  fibre weight -3/2, m_R = -3/2:  x0**3 + 3*I*x0**2*x3 - 3*x0*x3**2 - I*x3**3
+
+==============================================================================
+C  substitute Hopf, strip the psi phase, on the labelled m_R=-3/2 member
+==============================================================================
+  psi-exponent alpha = -3/2
+  stripped weight=-3/2 function of (theta,phi): (exp(3*I*theta) + 3*exp(2*I*theta) + 3*exp(I*theta) + 1)*exp(-3*I*(phi + theta)/2)/8
+  [PASS] C1 psi enters as a pure phase here too (alpha constant, independent of theta/phi)
+  [PASS] C2 the stripped result depends on (theta, phi) only -- psi has genuinely dropped out
+
+==============================================================================
+D  is this a GENUINE new object -- double-valued, and NOT proportional to chi_{-1/2}?
+==============================================================================
+  [PASS] D1 q_top is double-valued under phi -> phi+2pi: q_top(phi+2pi) = -q_top(phi)
+  [PASS] D2 q_top is NOT a constant multiple of C184's chi_{-1/2} -- a genuinely distinct, second member of the S^2 spin-weighted family, not a rescaled repeat  ratio depends on angles: (exp(3*I*theta) + 3*exp(2*I*theta) + 3*exp(I*theta) + 1)*exp(-I*(2*phi + 3*theta/2))/(8*sin(theta/2))
+
+==============================================================================
+NEGATIVE CONTROL  a genuinely single-valued function cannot pass D1
+==============================================================================
+  [PASS] N1 an ordinary (integer-weight, single-valued) function does NOT satisfy f(phi+2pi) = -f(phi) -- confirms D1 is a real, failable discriminator
+
+==============================================================================
+SUMMARY
+==============================================================================
+  PASS  A1 k=3 harmonic level has dimension 16 (the (3/2,3/2) representation, dim (2*3/2+1)^2)
+  PASS  B1 k=3 carries only HALF-integer fibre weights (odd k, opposite of C184b's own even-k=2 integer-weight negative control)
+  PASS  B2 CORRECTED: each fibre-weight sector at k=3 is 4-dimensional (degenerate, mirroring C184b's own k=1 degeneracy) -- a naive 'already split' assumption was wrong and is replaced below by the same second-generator split C184b used
+  PASS  B3 the second generator splits the 4-dim sector into 4 DISTINCT labels m_R = -3/2..3/2
+  PASS  C1 psi enters as a pure phase here too (alpha constant, independent of theta/phi)
+  PASS  C2 the stripped result depends on (theta, phi) only -- psi has genuinely dropped out
+  PASS  D1 q_top is double-valued under phi -> phi+2pi: q_top(phi+2pi) = -q_top(phi)
+  PASS  D2 q_top is NOT a constant multiple of C184's chi_{-1/2} -- a genuinely distinct, second member of the S^2 spin-weighted family, not a rescaled repeat
+  PASS  N1 an ordinary (integer-weight, single-valued) function does NOT satisfy f(phi+2pi) = -f(phi) -- confirms D1 is a real, failable discriminator
+
+9 of 9 checks passed
+S^2 carries a genuine second rung of the spin-weighted tower, by the same descent method that produced chi_{+-1/2} -- not an isolated case

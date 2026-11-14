@@ -1,0 +1,98 @@
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+==============================================================================
+V1  verify the skeptic's hand-derived closed form for Q_mu
+==============================================================================
+  Q_mu computed  = 4*(a0**2 - 2*a0*a2 + 2*a0*a4 + a1**2 - 2*a1*a3 + 2*a1*a5 + a2**2 - 2*a2*a4 + a3**2 - 2*a3*a5 + a4**2 + a5**2)
+  skeptic's form = 4*(a0**2 - 2*a0*a2 + 2*a0*a4 + a1**2 - 2*a1*a3 + 2*a1*a5 + a2**2 - 2*a2*a4 + a3**2 - 2*a3*a5 + a4**2 + a5**2)
+  V1 -- skeptic's closed form is EXACTLY correct: True
+
+==============================================================================
+V2  the test the skeptic asked for and could NOT run:
+    rank of the UNION map  v |-> (D(v)psi_+, D(v)psi_-)
+==============================================================================
+  rank(v -> D(v) psi_+)              = 2
+  rank(v -> D(v) psi_-)              = 2
+  rank(v -> (D(v)psi_+, D(v)psi_-))  = 2   <- skeptic predicted 4
+  V2 -- skeptic's chirality prediction (4) correct: False
+  NOTE: this does NOT touch the central claim; Q_mu is defined on psi_+.
+
+==============================================================================
+V3  settle the skeptic's F2: rotate Q_c by a random CROSS-PLANE
+    orthogonal matrix. Isotropy must survive; mere diagonality would not.
+==============================================================================
+  Re(G_c) in the V-orthonormal basis is 2*I : True
+  R is orthogonal : True
+  R genuinely mixes planes (nonzero cross-plane entries): True
+  Re(G_c) after cross-plane rotation is STILL 2*I : True
+  rank(Q_mu) after the same rotation : 2  (rank is invariant, must stay 2)
+
+  V3 -- isotropy of Q_c is REAL, not a basis artifact: True

@@ -1,0 +1,37 @@
+==============================================================================
+P4  REGRESSION -- must reproduce C156's Clifford-algebra chirality splits
+==============================================================================
+  A_2   : N=  3  |Z|=   2  even(+)=   1  odd(-)=   1  balanced=True
+  G_2   : N=  6  |Z|=   4  even(+)=   2  odd(-)=   2  balanced=True
+  A_2xA_2: N=  6  |Z|=   4  even(+)=   2  odd(-)=   2  balanced=True
+  P4 REGRESSION PASSED: reformulation reproduces C156's actual numbers.
+
+==============================================================================
+P1  FULL CENSUS -- every root system in scope
+==============================================================================
+  A_2   : N=  3  |Z|=   2  even(+)=   1  odd(-)=   1  balanced=True
+  A_3   : N=  6  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  A_4   : N= 10  |Z|=  24  even(+)=  12  odd(-)=  12  balanced=True
+  A_5   : N= 15  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  A_6   : N= 21  |Z|=2640  even(+)=1320  odd(-)=1320  balanced=True
+  B_2   : N=  4  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  B_3   : N=  9  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  B_4   : N= 16  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  B_5   : N= 25  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  C_2   : N=  4  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  C_3   : N=  9  |Z|=  16  even(+)=   8  odd(-)=   8  balanced=True
+  C_4   : N= 16  |Z|= 384  even(+)= 192  odd(-)= 192  balanced=True
+  C_5   : N= 25  |Z|=   0  even(+)=   0  odd(-)=   0  balanced=True
+  D_4   : N= 12  |Z|=  64  even(+)=  32  odd(-)=  32  balanced=True
+  D_5   : N= 20  |Z|=2688  even(+)=1344  odd(-)=1344  balanced=True
+  G_2   : N=  6  |Z|=   4  even(+)=   2  odd(-)=   2  balanced=True
+  F_4   : N= 24  |Z|=34432  even(+)=17216  odd(-)=17216  balanced=True
+  E_6   : N= 36  |Z|=13697920  even(+)=6848960  odd(-)=6848960  balanced=True
+
+==============================================================================
+SUMMARY
+==============================================================================
+  systems with |Z|>0 (admit invariant spinors): ['A_2', 'A_4', 'A_6', 'C_3', 'C_4', 'D_4', 'D_5', 'G_2', 'F_4', 'E_6']
+  ALL BALANCED (even==odd) across every system, N odd or even: True
+  N-EVEN systems with spinors (the genuinely open cases before this round): ['A_4', 'C_4', 'D_4', 'D_5', 'G_2', 'F_4', 'E_6']
+  P1 CONFIRMED: True

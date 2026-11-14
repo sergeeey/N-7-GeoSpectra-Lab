@@ -1,0 +1,47 @@
+GATE  eps=(-1,1,-1) [C151's own J]: max|Term1| = 0.000e+00, max|Term2| = 0.000e+00
+GATE  C151 regression PASSED -- the rebuild is faithful
+==============================================================================
+SCAN OVER ALL 8 INVARIANT ALMOST-COMPLEX STRUCTURES ON SU(3)/T^2
+==============================================================================
+           eps  kind              dom  tgt    max|Term1|    max|Term2|
+     (1, 1, 1)  integrable          3    3     0.000e+00     0.000e+00
+    (1, 1, -1)  integrable          3    3     0.000e+00     0.000e+00
+    (1, -1, 1)  NON-INT (NK)        3    3     0.000e+00     0.000e+00
+   (1, -1, -1)  integrable          3    3     0.000e+00     0.000e+00
+    (-1, 1, 1)  integrable          3    3     0.000e+00     0.000e+00
+   (-1, 1, -1)  NON-INT (NK)        3    3     0.000e+00     0.000e+00
+   (-1, -1, 1)  integrable          3    3     0.000e+00     0.000e+00
+  (-1, -1, -1)  integrable          3    3     0.000e+00     0.000e+00
+
+==============================================================================
+VERDICT
+==============================================================================
+  Term2 block zero for the 2 NEARLY-KAHLER J : True
+  Term2 block zero for the 6 INTEGRABLE  J   : True
+
+  -> J IS IRRELEVANT. The Term2 block vanishes for every invariant
+     almost-complex structure on SU(3)/T^2, integrable or not. So the
+     cancellation is NOT a nearly-Kahler phenomenon; it is a property
+     of m itself on this coset. This SUPPORTS the root-type reading
+     and REMOVES the NK structure as the explanation.
+
+==============================================================================
+VACUITY CHECK: are the 8 eps genuinely different operators?
+==============================================================================
+  eps=     (1, 1, 1)   ||D.probe|| = 8.5075380147   max|D - D_ref| = 0.000e+00
+  eps=    (1, 1, -1)   ||D.probe|| = 9.0051340836   max|D - D_ref| = 7.071e-01
+  eps=    (1, -1, 1)   ||D.probe|| = 7.5667166113   max|D - D_ref| = 7.071e-01
+  eps=   (1, -1, -1)   ||D.probe|| = 7.9043622799   max|D - D_ref| = 1.000e+00
+  eps=    (-1, 1, 1)   ||D.probe|| = 7.9043622799   max|D - D_ref| = 7.071e-01
+  eps=   (-1, 1, -1)   ||D.probe|| = 7.5667166113   max|D - D_ref| = 1.000e+00
+  eps=   (-1, -1, 1)   ||D.probe|| = 9.0051340836   max|D - D_ref| = 1.000e+00
+  eps=  (-1, -1, -1)   ||D.probe|| = 8.5075380147   max|D - D_ref| = 7.071e-01
+
+  spread of ||D.probe|| across the 8      : 1.438e+00
+  all 8 operators literally IDENTICAL     : False
+
+==============================================================================
+VERDICT ON STEP 5
+==============================================================================
+  Step 5 is a genuine test: the 8 operators differ, and all still
+  annihilate the invariant sector. The J-independence conclusion stands.

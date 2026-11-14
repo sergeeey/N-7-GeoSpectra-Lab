@@ -1,5 +1,7 @@
 # Claims and Caveats — GeoSpectra Lab
 
+> **ОБНОВЛЕНИЕ 2026-11-05 — ЧАСТИЧНО НЕВЕРНО.** Строка про контроли «IPR(W=20) < 16 % of ring reference» (около строки 58) не подтверждается сырыми данными: broken_wilson_term даёт IPR(W=20) 0,22–0,74 при ring ≈ 0,32 (выше референса). Порог 16 % был сводным отношением одного контроля, а не критерием. Актуальные числа: `results/controls_from_raw.json` (скрипт `scripts/aggregate_controls_from_raw.py`) и `reports/GATE4C_RESULTS_v0.1.26.md`. Этот документ исправлен не переписыванием, а баннером; история сохранена.
+
 **Purpose:** Explicit boundaries of what GeoSpectra Lab can and cannot claim based on current validation status.
 
 **Last updated:** 2026-06-03

@@ -1,0 +1,7 @@
+(1) |Gamma Psi + Psi| = 1.11e-16,  |Gamma Phi + Phi| = 1.67e-16
+(2) |J_-(Gamma F) - Gamma(J_- F)| on generic F = 7.77e-16
+(3) |Gamma A Psi - A Psi| = 3.33e-16
+(4) relative residual of A Psi on span{Psi,Phi} = 1.000e+00 (coefficients [-0.-0.j  0.-0.j])
+sanity [Lx,Ly] - i Lz on test scalar = 3.33e-16 (must be ~0)
+RESULT: True
+

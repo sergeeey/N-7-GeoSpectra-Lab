@@ -1,0 +1,16 @@
+PASS H3: Y commutes with J, K, T_i and C_i'
+PASS H3: T3R commutes with J, K, T_i, C_i' and with T3L
+PASS H3: Q commutes with T3L, T3R, Y, B-L and the colour generators
+PASS H1: electric charges {-1.0: 4, -0.333333: 12, 0.0: 4, 0.666667: 12} = standard {0.666667: 12, -0.333333: 12, 0.0: 4, -1.0: 4} (u: 12, d: 12, nu: 4, e: 4)
+PASS H2: Y on the g5 = -1 block {-0.5: 4, 0.166667: 12} = {0.166667: 12, -0.5: 4}
+PASS H2: Y on the g5 = +1 block {-1.0: 2, -0.333333: 6, -0.0: 2, 0.666667: 6} = {0.666667: 6, -0.333333: 6, 0.0: 2, -1.0: 2}
+   note: which g5 sign is 'left-handed' is fixed by P_L = (1 - sigma_1)/2 on the poster (g5 = sigma_1 on the chirality factor: P_L projects on g5 = -1).
+PASS H4: number of states with SU(3)_C Casimir 0, SU(2)_L Casimir 0 and Y = 0: 2 = 2 (nu_R, two spins)
+PASS H4: these two states have Q = 0 and sit in the g5 = +1 block (right-handed)
+PASS H4: the other colourless SU(2)_L-singlets are the right-handed electron states (Y = -1), 2 of them
+PASS H5: with Y = T3R alone the charges are {-0.5: 16, 0.5: 16}, not the standard set
+CAUGHT control: Y = T3R alone reproduces the standard charges
+CAUGHT control: the up-quark charge is 1/3 (12 states with Q = 1/3)
+PASS H3 weakness: a nonsense Y (lepton value -5 instead of -1/2) commutes with all printed generators too, so H3 carries no evidential weight
+
+FAILS: none

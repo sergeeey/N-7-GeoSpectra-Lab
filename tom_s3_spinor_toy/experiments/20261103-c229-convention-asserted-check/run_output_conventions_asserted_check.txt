@@ -1,0 +1,37 @@
+PASS D_B == -D_A componentwise (B is the anti-representation)
+PASS A closed form D_a = -1/2 (sigma xi).d + 1/2 (conj(sigma) conj(xi)).conj(d)
+PASS A: commutator sign
+PASS A: D3 weights
+PASS A: [D3,D+] sign
+PASS A: D+ xi
+PASS A: Casimir 3/4 on xi
+PASS B: commutator sign
+PASS B: D3 weights
+PASS B: [D3,D+] sign
+PASS B: D+ xi
+PASS B: Casimir 3/4 on xi
+PASS C: commutator sign
+PASS C: D3 weights
+PASS C: [D3,D+] sign
+PASS C: D+ xi
+PASS C: Casimir 3/4 on xi
+PASS C: D+^C = -D-^A on a generic F (so D+^C is a genuine raising operator of its own D3)
+PASS A: U_g1 U_g2 = U_(g1 g2) is True (rep) and U_g1 U_g2 = U_(g2 g1) is False (anti)
+PASS B: U_g1 U_g2 = U_(g1 g2) is False (rep) and U_g1 U_g2 = U_(g2 g1) is True (anti)
+PASS C: U_g1 U_g2 = U_(g1 g2) is True (rep) and U_g1 U_g2 = U_(g2 g1) is False (anti)
+PASS V(g xi) = R(g) V(xi) for generic g (a, b, conj a, conj b independent, norm NOT imposed)
+PASS R R^T = (|a|^2+|b|^2)^2 I and det R = (|a|^2+|b|^2)^3 (so R in SO(3) when |a|^2+|b|^2 = 1)
+PASS every entry of R equals its complex conjugate as a polynomial (R is REAL, not just orthogonal)
+PASS index order: R_ij = 1/2 tr(sigma_j g^+ sigma_i g) equals 1/2 tr(sigma_i g sigma_j g^+)
+PASS R is not symmetric for generic g (so a transpose error would be seen)
+PASS unit xi = (cos th/2, sin th/2 e^{i ph}) gives V = n/2 (n the unit vector)
+PASS integral over S^2 of (lambda^2 V_i)^2 = 1 for i = 1,2,3 with lambda^2 = sqrt(3/pi) (computed, not assumed)
+PASS V invariant under xi -> e^{i phi} xi
+CAUGHT erased convention B (D_B := D_A) passes the B claims
+CAUGHT lambda^2 = sqrt(1/pi) gives unit sphere norms
+CAUGHT R*(1+i) passes the reality check
+CAUGHT transposed R satisfies V(g xi) = R V(xi)
+CAUGHT damaged D_1 (holomorphic sign flipped) keeps [D_a,D_b] = +i eps D_c
+
+FAILS: none
+exit=0

@@ -1,0 +1,302 @@
+INDEPENDENT RE-IMPLEMENTATION OF C220 (T1-T7) -- raw printed outputs
+Written 2026-10-13 by a separate subagent that was given the DEFINITIONS and the task list only
+(no expected answers, no repository access, no C220 files). Source scripts are NOT archived here
+(about 1000 lines, not lint-clean under the repo ruff config); they exist only in the session scratchpad.
+Notation in the outputs: c = sqrt(3/(8 pi)), d = sqrt(3/(4 pi)) = sqrt2 * c; basis (u) there = (-(x+iy)/(sqrt2 r), z/r, (x-iy)/(sqrt2 r)), i.e. WITH the Condon-Shortley sign.
+
+================ t1_t2 ================
+=== T1 ===
+int x^2 dS = 4*pi*r**4/3
+int y^2 dS = 4*pi*r**4/3
+int z^2 dS = 4*pi*r**4/3
+int xy dS = 0
+int xz dS = 0
+int yz dS = 0
+int (x/r)^2 dS = 4*pi*r**2/3
+int x^2 dOmega = 4*pi*r**2/3
+k=0: norm^2 of x/r^0 = 4*pi*r**4/3;  N_k = sqrt(3)/(2*sqrt(pi)*r**2);  dN/dr = -sqrt(3)/(sqrt(pi)*r**3)
+   check norm^2 of N_k x/r^k = 1
+k=1: norm^2 of x/r^1 = 4*pi*r**2/3;  N_k = sqrt(3)/(2*sqrt(pi)*r);  dN/dr = -sqrt(3)/(2*sqrt(pi)*r**2)
+   check norm^2 of N_k x/r^k = 1
+k=2: norm^2 of x/r^2 = 4*pi/3;  N_k = sqrt(3)/(2*sqrt(pi));  dN/dr = 0
+   check norm^2 of N_k x/r^k = 1
+Method B: int r^2 dS = 4*pi*r**4  => each of x^2,y^2,z^2 = 4*pi*r**4/3
+int_0^2pi cos^2 =  pi ; int_0^pi sin^3 = 4/3 ; product*r^4 = 4*pi*r**4/3 (= int x^2 dS)
+
+=== T2 ===
+Gram of (x+iy, z, x-iy) = [[8*pi*r**4/3, 0, 0], [0, 4*pi*r**4/3, 0], [0, 0, 8*pi*r**4/3]]
+   = (4 pi r^4/3) * [[2, 0, 0], [0, 1, 0], [0, 0, 2]]
+Gram of (Y'(1,1),Y'(1,0),Y'(1,-1)) = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+Gram of (Y(1,1),Y(1,0),Y(1,-1)) w.r.t. dS (no 1/r) = [[r**2, 0, 0], [0, r**2, 0], [0, 0, r**2]]
+Method B: <x+iy,x+iy> = 8*pi*r**4/3  <z,z> = 4*pi*r**4/3  <x+iy,x-iy> = int(x^2-y^2)-2i int(xy) = 0
+
+================ t3 ================
+=== POLAR operators ===
+L+ Y'(1,-1) = sqrt(2) * Y'(1,0)   norm^2 = 2   [raw: sqrt(6)*cos(theta)/(2*sqrt(pi)*r)]
+L+ Y'(1,+0) = sqrt(2) * Y'(1,1)   norm^2 = 2   [raw: -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi)*r)]
+L+ Y'(1,+1) = 0 * Y'(1,None)   norm^2 = 0   [raw: 0]
+L- Y'(1,+1) = sqrt(2) * Y'(1,0)   norm^2 = 2   [raw: sqrt(6)*cos(theta)/(2*sqrt(pi)*r)]
+L- Y'(1,+0) = sqrt(2) * Y'(1,-1)   norm^2 = 2   [raw: sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi)*r)]
+L- Y'(1,-1) = 0 * Y'(1,None)   norm^2 = 0   [raw: 0]
+
+=== CARTESIAN operators ===
+L+ Y'(1,-1) = sqrt(2) * Y'(1,0)  [Cartesian, rho-explicit]  raw=sqrt(6)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+L+ Y'(1,+0) = sqrt(2) * Y'(1,1)  [Cartesian, rho-explicit]  raw=sqrt(3)*(-x - I*y)/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+L+ Y'(1,+1) = 0  [Cartesian, rho-explicit]
+L- Y'(1,+1) = sqrt(2) * Y'(1,0)  [Cartesian, rho-explicit]  raw=sqrt(6)*z/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+L- Y'(1,+0) = sqrt(2) * Y'(1,-1)  [Cartesian, rho-explicit]  raw=sqrt(3)*(x - I*y)/(2*sqrt(pi)*(x**2 + y**2 + z**2))
+L- Y'(1,-1) = 0  [Cartesian, rho-explicit]
+
+Cartesian with r a fixed symbol (differs from (a) only if L acted on rho; it must not):
+L+ Y'(1,-1) = sqrt(2) * Y'(1,0)
+L+ Y'(1,+0) = sqrt(2) * Y'(1,1)
+L+ Y'(1,+1) = 0
+L- Y'(1,+1) = sqrt(2) * Y'(1,0)
+L- Y'(1,+0) = sqrt(2) * Y'(1,-1)
+L- Y'(1,-1) = 0
+
+L+ rho = 0 ; L- rho = 0 ; Lz rho = 0
+
+Cartesian form of Y' (r^2 = x^2+y^2+z^2):
+  Y'(1,1)  = -sqrt(3/(8pi)) (x+iy)/r^2
+  Y'(1,0)  =  sqrt(3/(4pi)) z/r^2
+  Y'(1,-1) =  sqrt(3/(8pi)) (x-iy)/r^2
+  Cartesian-form minus polar-form for m=+1 on sphere: 0
+  Cartesian-form minus polar-form for m=+0 on sphere: 0
+  Cartesian-form minus polar-form for m=-1 on sphere: 0
+
+Agreement polar vs Cartesian (difference of results, simplified):
+  L+ m=-1: 0
+  L+ m=+0: 0
+  L+ m=+1: 0
+  L- m=+1: 0
+  L- m=+0: 0
+  L- m=-1: 0
+
+Cartesian-route norm^2 of results:
+  ||L+ Y'(1,-1)||^2 = 2
+  ||L+ Y'(1,+0)||^2 = 2
+  ||L+ Y'(1,+1)||^2 = 0
+  ||L- Y'(1,+1)||^2 = 2
+  ||L- Y'(1,+0)||^2 = 2
+  ||L- Y'(1,-1)||^2 = 0
+
+Lz Y'(1,m)/Y'(1,m): [1, 0, -1]
+
+================ t4 ================
+
+########## basis (e) ##########
+  L+: matching == projection ? True
+  L-: matching == projection ? True
+  Lz: matching == projection ? True
+  Lx: matching == projection ? True
+  Ly: matching == projection ? True
+  M(L+) = [[0, 0, 0], [-1, 0, 0], [0, 2, 0]]
+  M(L-) = [[0, -2, 0], [0, 0, 1], [0, 0, 0]]
+  M(Lz) = [[1, 0, 0], [0, 0, 0], [0, 0, -1]]
+  M(Lx) = [[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]]
+  M(Ly) = [[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]]
+  Lx == (L+ + L-)/2 : True   Ly == (L+ - L-)/(2i) : True
+  M(Lz)=G12: True
+  M(Lx)=G23: True
+  M(Ly)=G31: True
+  M(L+)=G23+iG31: True
+  M(L-)=G23-iG31: True
+  diagonal D (M = D G D^-1) solution family: [{d1: d3, d2: d3}]
+  D = Matrix([[d3, 0, 0], [0, d3, 0], [0, 0, d3]])  free params: [d3]
+
+########## basis (Y) ##########
+  L+: matching == projection ? True
+  L-: matching == projection ? True
+  Lz: matching == projection ? True
+  Lx: matching == projection ? True
+  Ly: matching == projection ? True
+  M(L+) = [[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]]
+  M(L-) = [[0, sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]]
+  M(Lz) = [[1, 0, 0], [0, 0, 0], [0, 0, -1]]
+  M(Lx) = [[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]]
+  M(Ly) = [[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]]
+  Lx == (L+ + L-)/2 : True   Ly == (L+ - L-)/(2i) : True
+  M(Lz)=G12: True
+  M(Lx)=G23: False
+  M(Ly)=G31: False
+  M(L+)=G23+iG31: False
+  M(L-)=G23-iG31: False
+  diagonal D (M = D G D^-1) solution family: [{d1: -d3, d2: sqrt(2)*d3}]
+  D = Matrix([[-d3, 0, 0], [0, sqrt(2)*d3, 0], [0, 0, d3]])  free params: [d3]
+
+########## basis (aY) ##########
+  L+: matching == projection ? True
+  L-: matching == projection ? True
+  Lz: matching == projection ? True
+  Lx: matching == projection ? True
+  Ly: matching == projection ? True
+  M(L+) = [[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]]
+  M(L-) = [[0, sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]]
+  M(Lz) = [[1, 0, 0], [0, 0, 0], [0, 0, -1]]
+  M(Lx) = [[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]]
+  M(Ly) = [[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]]
+  Lx == (L+ + L-)/2 : True   Ly == (L+ - L-)/(2i) : True
+  M(Lz)=G12: True
+  M(Lx)=G23: False
+  M(Ly)=G31: False
+  M(L+)=G23+iG31: False
+  M(L-)=G23-iG31: False
+  diagonal D (M = D G D^-1) solution family: [{d1: -d3, d2: sqrt(2)*d3}]
+  D = Matrix([[-d3, 0, 0], [0, sqrt(2)*d3, 0], [0, 0, d3]])  free params: [d3]
+
+########## basis (u) ##########
+  L+: matching == projection ? True
+  L-: matching == projection ? True
+  Lz: matching == projection ? True
+  Lx: matching == projection ? True
+  Ly: matching == projection ? True
+  M(L+) = [[0, 0, 0], [sqrt(2), 0, 0], [0, sqrt(2), 0]]
+  M(L-) = [[0, sqrt(2), 0], [0, 0, sqrt(2)], [0, 0, 0]]
+  M(Lz) = [[1, 0, 0], [0, 0, 0], [0, 0, -1]]
+  M(Lx) = [[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]]
+  M(Ly) = [[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]]
+  Lx == (L+ + L-)/2 : True   Ly == (L+ - L-)/(2i) : True
+  M(Lz)=G12: True
+  M(Lx)=G23: False
+  M(Ly)=G31: False
+  M(L+)=G23+iG31: False
+  M(L-)=G23-iG31: False
+  diagonal D (M = D G D^-1) solution family: [{d1: -d3, d2: sqrt(2)*d3}]
+  D = Matrix([[-d3, 0, 0], [0, sqrt(2)*d3, 0], [0, 0, d3]])  free params: [d3]
+
+#### Commutators (row = input convention is an anti-homomorphism) ####
+[G23,G31] = [[-I, 0, 0], [0, 0, 0], [0, 0, I]]  vs i*G12 = [[I, 0, 0], [0, 0, 0], [0, 0, -I]]  vs -i*G12 = [[-I, 0, 0], [0, 0, 0], [0, 0, I]]
+[G31,G12] = [[0, I, 0], [I/2, 0, -I/2], [0, -I, 0]]  vs i*G23 = [[0, -I, 0], [-I/2, 0, I/2], [0, I, 0]]  vs -i*G23 = [[0, I, 0], [I/2, 0, -I/2], [0, -I, 0]]
+[G12,G23] = [[0, -1, 0], [1/2, 0, 1/2], [0, -1, 0]]  vs i*G31 = [[0, 1, 0], [-1/2, 0, -1/2], [0, 1, 0]]  vs -i*G31 = [[0, -1, 0], [1/2, 0, 1/2], [0, -1, 0]]
+[M(Lx),M(Ly)] == -i M(Lz) (row convention) : True
+[M(Lx),M(Ly)] == +i M(Lz) : False
+Column-convention (transpose) of M(L+) in basis e: [[0, -1, 0], [0, 0, 2], [0, 0, 0]]
+
+================ t4b ================
+nullspace dimension of {D : D G = M D for G12,G23,G31} = 1
+  basis vector as matrix D: [[-1, 0, 0], [0, sqrt(2), 0], [0, 0, 1]]
+commutant dimension of {G12,G23,G31} = 1 (1 => irreducible, scalars only)
+
+================ t5 ================
+L+ psi / e^{i(m+1)phi} = -m*chi(theta)*cot(theta) + Derivative(chi(theta), theta)
+L- psi / e^{i(m-1)phi} = -m*chi(theta)/tan(theta) - Derivative(chi(theta), theta)
+
+case (a): L+ psi = 0, m=+1:  ODE: -chi(theta)*cot(theta) + Derivative(chi(theta), theta) = 0
+   dsolve: Eq(chi(theta), C1*sin(theta))
+
+case (b): L- psi = 0, m=-1:  ODE: chi(theta)*cot(theta) - Derivative(chi(theta), theta) = 0
+   dsolve: Eq(chi(theta), C1*sin(theta))
+
+case (c): L- psi = 0, m=+1:  ODE: -chi(theta)/tan(theta) - Derivative(chi(theta), theta) = 0
+   dsolve: Eq(chi(theta), C1/sin(theta))
+
+case (d): L+ psi = 0, m=-1:  ODE: chi(theta)*cot(theta) + Derivative(chi(theta), theta) = 0
+   dsolve: Eq(chi(theta), C1/sin(theta))
+
+Substitution check (should be 0):
+  (a): 0
+  (b): 0
+  (c): 0
+  (d): 0
+
+Normalisability (norm^2 = int |psi|^2 r^2 sin th dth dph; each psi multiplied by f(r)=1/r):
+  (a): norm^2 = 2 pi |C|^2 int sin^3 = 8*pi*A_a**2/3 -> finite; unit norm when |C| = [sqrt(6)/(4*sqrt(pi))]
+  (b): norm^2 = 2 pi |C|^2 int sin^3 = 8*pi*A_b**2/3 -> finite; unit norm when |C| = [sqrt(6)/(4*sqrt(pi))]
+  (c): int_1/100^pi/2 dth/sin = 5.29830903316609
+  (c): int_1/10000^pi/2 dth/sin = 9.90348755170280
+  (c): int dth/sin(th) = log tan(th/2): limit th->0+ = -oo, th->pi- = oo  => norm^2 diverges (log) at BOTH poles: NOT normalisable
+  (d): int_1/100^pi/2 dth/sin = 5.29830903316609
+  (d): int_1/10000^pi/2 dth/sin = 9.90348755170280
+  (d): int dth/sin(th) = log tan(th/2): limit th->0+ = -oo, th->pi- = oo  => norm^2 diverges (log) at BOTH poles: NOT normalisable
+
+||psi_a||^2 = 1  ||psi_b||^2 = 1
+L- psi_a = -sqrt(6)*exp(I*alpha)*cos(theta)/(2*sqrt(pi)*r)   norm = sqrt(2)
+L+ psi_b = sqrt(6)*exp(I*beta)*cos(theta)/(2*sqrt(pi)*r)   norm = sqrt(2)
+Y0a = -sqrt(3)*exp(I*alpha)*cos(theta)/(2*sqrt(pi)*r)   ; Y0a/Y'(1,0) = -exp(I*alpha)
+Y0b = sqrt(3)*exp(I*beta)*cos(theta)/(2*sqrt(pi)*r)   ; Y0b/Y'(1,0) = exp(I*beta)
+Y0a - Y0b = sqrt(3)*(-exp(I*alpha) - exp(I*beta))*cos(theta)/(2*sqrt(pi)*r)
+condition Y0a=Y0b  <=> -exp(I*alpha) - exp(I*beta) = 0   <=>  exp(i beta) = - exp(i alpha)
+with C' = -C (beta = alpha+pi): 0
+Y0a / Y'(1,0) = -exp(I*alpha) => positive at th=0 iff exp(i alpha) = -1 => C = -sqrt(6)/(4*sqrt(pi)) = -sqrt(3/(8 pi)); C' = sqrt(6)/(4*sqrt(pi))
+then psi_a = -sqrt(6)*exp(I*phi)*sin(theta)/(4*sqrt(pi)*r) = Y'(1,1) ? True ; psi_b = sqrt(6)*exp(-I*phi)*sin(theta)/(4*sqrt(pi)*r) = Y'(1,-1) ? True
+C real-only version: Y0a = -sgn(C) Y'(1,0); Y0b = sgn(C') Y'(1,0) => Y0a=Y0b iff C' = -C
+
+================ t6 ================
+d/dphi F = cos(phi)**2
+  minus cos^2(phi) simplifies to: 0 | trigsimp: 0
+d/dtheta G = 3*sin(theta)/4 - sin(3*theta)/4
+  minus sin^3(theta): expand_trig -> 0 | simplify: 0
+exp-rewrite check 1: 0
+exp-rewrite check 2: 0
+max |dF-cos^2| over 2001 points: 1.1102230246251565e-16
+max |dG-sin^3| over 2001 points: 4.579669976578771e-16
+F(2pi)-F(0) = pi  (int_0^2pi cos^2)
+G(pi)-G(0)  = 4/3  (int_0^pi sin^3)
+numerical:  3.141592653589793 1.3333333333333333
+
+================ t7 ================
+C:\Users\serge\miniconda3\Lib\site-packages\scipy\integrate\_quadpack_py.py:1264: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  quad_r = quad(f, low, high, args=args, full_output=self.full_output,
+=== T1 numeric (scipy dblquad, adaptive) ===
+  r=0.5: done
+  r=1.0: done
+  r=2.3: done
+=== T2 numeric Gram ===
+  r=0.5: Gram(trip)/(4pi r^4/3)=
+[[ 2. -0. -0.]
+ [-0.  1. -0.]
+ [-0. -0.  2.]]
+  r=1.0: Gram(trip)/(4pi r^4/3)=
+[[ 2. -0. -0.]
+ [-0.  1. -0.]
+ [-0. -0.  2.]]
+  r=2.3: Gram(trip)/(4pi r^4/3)=
+[[ 2. -0. -0.]
+ [-0.  1. -0.]
+ [-0. -0.  2.]]
+=== T3 numeric (FD polar and FD Cartesian; norms by GL quadrature) ===
+  r=0.5: done
+  r=1.0: done
+  r=2.3: done
+=== T4 numeric ===
+  r=0.5: done
+  r=1.0: done
+  r=2.3: done
+Truth table (from numerically-confirmed matrices):
+  basis e: {'Lz=G12': True, 'Lx=G23': True, 'Ly=G31': True, 'L+=G23+iG31': True, 'L-=G23-iG31': True}  | M = D G D^-1 with D=diag(-1,sqrt2,1): {'Lz': True, 'Lx': False, 'Ly': False}
+  basis Y: {'Lz=G12': True, 'Lx=G23': False, 'Ly=G31': False, 'L+=G23+iG31': False, 'L-=G23-iG31': False}  | M = D G D^-1 with D=diag(-1,sqrt2,1): {'Lz': True, 'Lx': True, 'Ly': True}
+  basis aY: {'Lz=G12': True, 'Lx=G23': False, 'Ly=G31': False, 'L+=G23+iG31': False, 'L-=G23-iG31': False}  | M = D G D^-1 with D=diag(-1,sqrt2,1): {'Lz': True, 'Lx': True, 'Ly': True}
+  basis u: {'Lz=G12': True, 'Lx=G23': False, 'Ly=G31': False, 'L+=G23+iG31': False, 'L-=G23-iG31': False}  | M = D G D^-1 with D=diag(-1,sqrt2,1): {'Lz': True, 'Lx': True, 'Ly': True}
+=== T5 numeric ===
+  alpha=3.142, beta=0.000: ||psi_a||=1.000000000000  max|L+psi_a|,|L-psi_b|=1.54e-13  max|Y0a-Y0b|=8.230e-14  max|Y0a+e^(i alpha)Y'10|=7.89e-14
+  alpha=0.300, beta=3.442: ||psi_a||=1.000000000000  max|L+psi_a|,|L-psi_b|=1.50e-13  max|Y0a-Y0b|=4.239e-14  max|Y0a+e^(i alpha)Y'10|=7.73e-14
+  alpha=0.300, beta=0.300: ||psi_a||=1.000000000000  max|L+psi_a|,|L-psi_b|=1.49e-13  max|Y0a-Y0b|=5.741e-01  max|Y0a+e^(i alpha)Y'10|=7.73e-14
+
+=== WORST-CASE DEVIATIONS (numeric vs closed form) ===
+  T1 integrals (abs err rel to scale r^4): 3.553e-15
+  T1 N_k unit-norm |norm^2-1|: 1.110e-16
+  T2 Gram(x+iy,z,x-iy) rel to r^4: 3.464e-14
+  T2 Gram(Y') - I: 8.216e-15
+  T3 polar-FD pointwise |L Y' - coef Y'|: 2.333e-13
+  T3 cart-FD[rho] pointwise: 4.600e-11
+  T3 cart-FD[fixed] pointwise: 1.035e-13
+  T3 norm^2 |num - exact|: 6.459e-13
+  T3 norm^2 (cart) |num - exact|: 7.338e-12
+  T4 [e] LS vs expected: 1.277e-13
+  T4 [e] projection vs expected: 1.050e-13
+  T4 [Y] LS vs expected: 9.155e-14
+  T4 [Y] projection vs expected: 7.883e-14
+  T4 [aY] LS vs expected: 1.038e-13
+  T4 [aY] projection vs expected: 8.127e-14
+  T4 [u] LS vs expected: 9.217e-14
+  T4 [u] projection vs expected: 8.682e-14
+
+================ antirep_check (written by the main session, not by the independent agent) ================
+[G23,G31] + i G12 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] (zero => [G23,G31] = -i G12)
+[G31,G12] + i G23 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+[G12,G23] + i G31 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+[G23,G31] - i G12 = [[-2*I, 0, 0], [0, 0, 0], [0, 0, 2*I]] (zero => standard)
+[Lx,Ly]f - i Lz f = 0

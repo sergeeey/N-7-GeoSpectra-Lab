@@ -1,0 +1,70 @@
+TOM-CERT-01 run_all  python 3.13.2  sympy 1.14.0  Windows-11-10.0.26200-SP0
+S0 static checks on verifier.py: imports = ['fractions', 'json', 're', 'sys']
+  -> OK
+S1 clean copy of ['build_certificate.py', 'verifier.py', 'negative_controls.py'] in an empty temp directory
+$ python.exe build_certificate.py certificate.json   (cwd = clean copy)
+  wrote certificate.json
+  -> exit code 0
+$ python.exe verifier.py certificate.json   (cwd = clean copy)
+  PASS V0_statement: certificate declares the schema and the exact conventions this verifier implements
+  PASS V1_basis_definition: basis equals g_ab: True; rank 4 of 4
+  PASS V2gen_generators: exactly three generators, equal to -i sigma_a/2
+  PASS V2a_closure: dL(T_a) W and dR(T_a) W lie in W for a = 1..3 (every basis image is expressible)
+  PASS V2b_dL_matrices: claimed dL matrices equal recomputed ones; mismatching a: []
+  PASS V2c_dR_matrices: claimed dR matrices equal recomputed ones; mismatching a: []
+  PASS V3a_group_L: 12 group elements; L_h matrix mismatches at []
+  PASS V3b_group_R: 12 group elements; R_k matrix mismatches at []
+  PASS V3c_homomorphism: L_(hh') = L_h L_h' and R_(kk') = R_k R_k' on non-commuting pairs; bad: []
+  PASS V3d_L_R_commute: L_h and R_k commute for all 12^2 pairs; bad: []
+  PASS V3e_convention_equivariance: claimed group matrices equal the closed forms (h^-1)_ac and k_cb, and satisfy L_h dL(T) = dL(hTh^-1) L_h, R_k dR(T) = dR(kTk^-1) R_k; violations: []
+  PASS V4_algebra: [X_a,X_b] = eps_abc X_c for dL and dR, [dL_a,dR_b] = 0; violations: []
+  PASS V5a_invariant_blocks: partition ok: True; blocks invariant under dL (left_blocks) and dR (right_blocks): True
+  PASS V5b_doublets_irreducible: two left doublets have identical generator matrices (isomorphic): True; two right doublets likewise: True; commutant dim of a left block 1, of a right block 1 (1 = irreducible)
+  PASS V5c_commutants: commutant dims: full L+R 1, L only 4, R only 4 (expected 1, 4, 4)
+  PASS V6_casimir_weights: Casimirs J_L^2 = J_R^2 = 3/4 * identity: True; (J3L, J3R) weights diagonal and equal to the claim, each of (+-1/2, +-1/2) exactly once: True
+  PASS V7_gram_unitarity: Gram <g_ab, g_cd> = (1/2) delta (uniform measure, E[x_i conj(x_j)] = delta_ij/2, i.e. E[u_k u_l] = delta_kl/4 for real coordinates): True; all six generators skew-Hermitian w.r.t. it (unitary action): True
+  PASS V8_conjugate_equivalence: eps T eps^-1 = conj(T) for all T_a and sampled h: True; left doublet block = conj(T_a) (conjugate of the defining rep, equivalent via eps): True; right block = T_a: True
+  RESULT: ACCEPT (18 checks passed, 0 skipped)
+  -> exit code 0
+$ python.exe negative_controls.py certificate.json   (cwd = clean copy)
+  OK   P0_valid_certificate: exit 0 (declared 0); declared=-; also failed=[] -- positive control
+  OK   P1_keys_reversed: exit 0 (declared 0); declared=-; also failed=[] -- positive control (key order is irrelevant)
+  OK   N1a_wrong_sign_dL: exit 1 (declared 1); declared=['V2b_dL_matrices', 'V4_algebra']; also failed=['V3e_convention_equivariance', 'V6_casimir_weights', 'V8_conjugate_equivalence'] -- sign of the left action flipped: also violates [X_a,X_b] = +eps X_c
+  OK   N1b_wrong_sign_group_L: exit 1 (declared 1); declared=['V3a_group_L', 'V3e_convention_equivariance']; also failed=[] -- claims (L_h f)(x) = f(h x) instead of f(h^-1 x): h and h^-1 swapped
+  OK   N2a_transposed_dR: exit 1 (declared 1); declared=['V2c_dR_matrices']; also failed=['V3e_convention_equivariance', 'V4_algebra', 'V8_conjugate_equivalence'] -- indices of the right-action matrices permuted (M -> M^T)
+  OK   N2b_rows_instead_of_columns: exit 1 (declared 1); declared=['V5a_invariant_blocks']; also failed=['V5b_doublets_irreducible', 'V8_conjugate_equivalence'] -- left doublets claimed as fixed ROW span{g_a0,g_a1} instead of fixed column
+  OK   N2c_swapped_basis_labels: exit 1 (declared 1); declared=['V1_basis_definition']; also failed=['V2b_dL_matrices', 'V2c_dR_matrices', 'V3a_group_L', 'V3b_group_R', 'V3e_convention_equivariance'] -- g01 and g10 exchanged in the declared basis
+  OK   N2d_permuted_weights: exit 1 (declared 1); declared=['V6_casimir_weights']; also failed=[] -- weights of g01, g10 exchanged
+  OK   N3a_broken_closure_V1_skipped: exit 1 (declared 1); declared=['V2a_closure']; also failed=['V2b_dL_matrices', 'V2c_dR_matrices', 'V3a_group_L', 'V3b_group_R', 'V3c_homomorphism', 'V3d_L_R_commute', 'V3e_convention_equivariance', 'V7_gram_unitarity'] -- g11 replaced by |x0|^2; with V1 skipped, the closure check itself must catch it
+  OK   N3b_broken_closure_full_run: exit 1 (declared 1); declared=['V1_basis_definition', 'V2a_closure']; also failed=['V2b_dL_matrices', 'V2c_dR_matrices', 'V3a_group_L', 'V3b_group_R', 'V3c_homomorphism', 'V3d_L_R_commute', 'V3e_convention_equivariance', 'V7_gram_unitarity'] -- same damage, nothing skipped
+  OK   N4_perturbation_1e-30: exit 1 (declared 1); declared=['V2b_dL_matrices']; also failed=['V3e_convention_equivariance', 'V4_algebra', 'V5b_doublets_irreducible', 'V5c_commutants', 'V6_casimir_weights', 'V7_gram_unitarity', 'V8_conjugate_equivalence'] -- one entry changed by 10^-30: exact arithmetic must still reject (a float test would not)
+  OK   N5_wrong_casimir_claim: exit 1 (declared 1); declared=['V6_casimir_weights']; also failed=[] -- claims j(j+1) = 1/2
+  OK   N6_decimal_literal: exit 2 (declared 2); declared=not an exact rational literal; also failed=[] -- non-rational literal
+  OK   N7_non_unit_quaternion: exit 2 (declared 2); declared=not a unit rational quaternion; also failed=[] -- not an element of SU(2)
+  OK   M1_empty_group_matrices: exit 1 (declared 1); declared=['V3a_group_L', 'V3b_group_R']; also failed=['V3e_convention_equivariance'] -- claimed matrices []
+  OK   M1b_truncated_group_matrix: exit 1 (declared 1); declared=['V3a_group_L']; also failed=['V3e_convention_equivariance'] -- only the first row of each L matrix
+  OK   M2_no_group_elements: exit 2 (declared 2); declared=at least 6; also failed=[] -- group layer would be vacuous
+  OK   M3_no_homomorphism_pairs: exit 2 (declared 2); declared=at least 4; also failed=[] -- homomorphism layer would be vacuous
+  OK   M4a_empty_weights: exit 1 (declared 1); declared=['V6_casimir_weights']; also failed=[] -- 
+  OK   M4b_garbage_extra_weight: exit 1 (declared 1); declared=['V6_casimir_weights']; also failed=[] -- 
+  OK   M5a_empty_gram: exit 1 (declared 1); declared=['V7_gram_unitarity']; also failed=[] -- 
+  OK   M5b_one_entry_gram: exit 1 (declared 1); declared=['V7_gram_unitarity']; also failed=[] -- 
+  OK   M6_empty_generators: exit 1 (declared 1); declared=['V2gen_generators']; also failed=[] -- 
+  OK   M7_right_block_reordered: exit 1 (declared 1); declared=['V5b_doublets_irreducible']; also failed=['V8_conjugate_equivalence'] -- second right block listed in the wrong order
+  OK   M8_extra_empty_block: exit 1 (declared 1); declared=['V5a_invariant_blocks']; also failed=[] -- 
+  OK   M9_bool_float_commutant_claims: exit 1 (declared 1); declared=['V5c_commutants']; also failed=[] -- True == 1 and 4.0 == 4 in Python
+  OK   M10_duplicate_monomial: exit 2 (declared 2); declared=duplicate monomial; also failed=[] -- 
+  OK   M11_matrix_padded_to_4x5: exit 2 (declared 2); declared=4x4; also failed=[] -- 
+  OK   M12_decimal_quaternion: exit 2 (declared 2); declared=not an integer; also failed=[] -- 
+  OK   M13_zero_denominator: exit 1 (declared 1); declared=['V7_gram_unitarity']; also failed=[] -- no crash, no exit-1 ambiguity
+  OK   M14a_trailing_newline: exit 1 (declared 1); declared=['V7_gram_unitarity']; also failed=[] -- 
+  OK   M14b_arabic_digits: exit 1 (declared 1); declared=['V7_gram_unitarity']; also failed=[] -- 
+  OK   M15_negative_pair_index: exit 2 (declared 2); declared=out of range; also failed=[] -- 
+  OK   M17_false_conventions_text: exit 1 (declared 1); declared=['V0_statement']; also failed=[] -- the declared conventions are part of the statement
+  OK   N8_other_homomorphic_convention: exit 1 (declared 1); declared=['V3e_convention_equivariance']; also failed=[] -- verifier modified to implement L_h f = f(h^T x), R_k f = f(x.conj(k)) (also homomorphisms); certificate group matrices conjugated to match; the homomorphism checks cannot tell, the closed-form/equivariance check must
+  CONTROLS: ALL BEHAVED AS DECLARED
+  -> exit code 0
+S5 sha256 fresh certificate  b35dc9288e76c5f30e2eaac283788ba9e4fb2a8c1604c811a60157d75db4c2b6
+   sha256 stored certificate b35dc9288e76c5f30e2eaac283788ba9e4fb2a8c1604c811a60157d75db4c2b6
+  -> IDENTICAL
+RUN_ALL: ALL STEPS AS DECLARED

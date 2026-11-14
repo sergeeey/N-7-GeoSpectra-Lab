@@ -1,0 +1,35 @@
+PASS A1: eq (3) maps (r,theta) to (r, theta - omega)
+CAUGHT A1 control: eq (3) maps theta to theta + omega (as eq (5) states)
+PASS A1: eq (5) (theta + omega) is the map x cos w - y sin w, -(...) NOT the map (3): they differ
+PASS A1: eq (3) as printed gives theta' = theta - omega (same formula as the covariance (4)/(6)), which differs from the map x cos w - y sin w, ... implied by (5)
+PASS A2: V(A) at (2,3) = (-4, 12)
+PASS A2: after x' = x + 3 the components at A are unchanged (eq 23-24)
+PASS A2: V_r = 13, V_theta = 13/2 at (sqrt13, pi/6)
+PASS A2: A has theta' = pi/2 and V_theta = r'^2 sin(theta' - pi/3) = 13/2
+PASS A3: eq (14) d/dtheta = x d_y - y d_x (chain rule)
+CAUGHT A3 control: eq (57) as printed read literally (y d_z, no y d_x term in the plane) equals d_phi
+PASS A3: eq (54) lambda = i n from e^{lambda(theta+2pi)} = e^{lambda theta}
+PASS A4: eq (60) = metric induced by the embedding (59)
+PASS A4: eqs (62)-(63) keep the point on the sphere: delta z of the full rotation equals -(p . delta p)/z
+PASS A4: eqs (62)-(63) = delta x = -(theta x x) projected on (p1,p2) (rotation by -theta)
+PASS A4: the three fields of (62)-(63) are Killing for the metric (60)
+PASS A4: z/r -> 1 as r -> infinity, so (62)-(63) -> (65)-(68) (arc-length translations l = theta r plus the rotation t3)
+PASS A4: g_ab -> delta_ab as r -> infinity (eq 64)
+PASS A5: S^3 sigma metric = induced metric of the embedding (q, z) in R^4
+PASS A5: all six fields P_a, M_ab are Killing for the S^3 sigma metric
+PASS A5: [P_a, P_b] = -M_ab (so(4) structure, broken-broken -> unbroken)
+CAUGHT A5 control: [P_a, P_b] = +M_ab
+PASS A5: [M_ab, P_c] = delta_bc P_a - delta_ac P_b (P_a transform as a vector of so(3))
+PASS A5: [P_a/r, P_b/r] = -M_ab/r^2 -> 0 as r -> infinity: the translations commute in the decompactification limit
+CAUGHT A5 control: sign-flipped metric is Killing
+PASS A6: extra commuting generators for N2 = 1..8: {1: 1, 2: 0, 3: 1, 4: 0, 5: 1, 6: 0, 7: 1, 8: 0} = [1,0,1,0,1,0,1,0]
+CAUGHT A6 control: claim an extra commuting generator at N2 = 2
+    L3 - R3 = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, -1], [0, 0, 1, 0]]  rank 2
+    L3 + R3 = [[0, 1, 0, 0], [-1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]  rank 2
+PASS A7: A_L3 - A_R3 and A_L3 + A_R3 are antisymmetric rank-2 (each a rotation in ONE plane of R^4)
+PASS A7: so(4) = su(2)_L + su(2)_R: L and R commute, relations close
+PASS A7: degree 1: iX3, iY3 commute and their joint spectrum is all pairs (m_L, m_R) in {-s..s}^2, s = 1/2, each once (4 states)
+PASS A7: degree 2: iX3, iY3 commute and their joint spectrum is all pairs (m_L, m_R) in {-s..s}^2, s = 1, each once (9 states)
+PASS A7: degree 3: iX3, iY3 commute and their joint spectrum is all pairs (m_L, m_R) in {-s..s}^2, s = 3/2, each once (16 states)
+
+FAILS: none

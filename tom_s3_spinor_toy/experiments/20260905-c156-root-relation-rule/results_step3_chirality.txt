@@ -1,0 +1,31 @@
+==============================================================================
+A_2 = SU(3)/T^2
+==============================================================================
+  H1a omega^2 == I : True
+  H1b omega anticommutes with every E_a (D is ODD): True
+  invariant spinors: complex dim 2  (real dim 4)
+  H3 chirality split of Sigma^T : dim_C(+) = 1, dim_C(-) = 1
+     splits EVENLY: True
+  H2 psi has definite chirality: True (chirality 1)
+  rank(M) = 2;  opposite-chirality half of Sigma^T has real dim 2
+  H4 image(M) contained in the opposite-chirality half: True
+  H5 image(M) EQUALS that half (surjective): True
+
+==============================================================================
+G_2/T^2
+==============================================================================
+  H1a omega^2 == I : True
+  H1b omega anticommutes with every E_a (D is ODD): True
+  invariant spinors: complex dim 4  (real dim 8)
+  H3 chirality split of Sigma^T : dim_C(+) = 2, dim_C(-) = 2
+     splits EVENLY: True
+  H2 psi has definite chirality: True (chirality 1)
+  rank(M) = 4;  opposite-chirality half of Sigma^T has real dim 4
+  H4 image(M) contained in the opposite-chirality half: True
+  H5 image(M) EQUALS that half (surjective): True
+
+==============================================================================
+SUMMARY
+==============================================================================
+  A_2: dim_C Sigma^T = 2 (+:1, -:1), rank(M) = 2, opposite half real dim = 2, contained = True
+  G_2: dim_C Sigma^T = 4 (+:2, -:2), rank(M) = 4, opposite half real dim = 4, contained = True

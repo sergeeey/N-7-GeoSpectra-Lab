@@ -1,0 +1,39 @@
+==============================================================================
+A  X_a^R is orthonormal w.r.t. the metric this project already uses
+==============================================================================
+  [PASS] P1 g(X_a^R, X_b^R) = delta_ab * (x0^2+..+x3^2) identically -- ON THE UNIT SPHERE this is exactly delta_ab, no rescaling needed
+
+==============================================================================
+B  dual coframe + Cartan's structure equation for the REAL connection
+==============================================================================
+  [PASS] P2 the dual coframe satisfies e^a(X_b) = delta_ab exactly
+  [PASS] P3 Cartan's structure equation has a unique solution
+  [PASS] P4 the closed-form connection satisfies Cartan's equation IDENTICALLY (residuals exactly zero)
+         omega_01=[sin(psi)/2, -sin(theta)*cos(psi)/2, 0], omega_02=[cos(psi)/2, sin(psi)*sin(theta)/2, 0], omega_12=[0, -cos(theta)/2, -1/2]
+
+==============================================================================
+C  D_full - D_0: is the omitted term genuinely a constant?
+==============================================================================
+  [PASS] P5 D_full - D_0 is a SCALAR matrix (proportional to identity), position-independent -- exactly the homogeneity argument the letter made, now verified by direct computation, not asserted
+         D_full - D_0 = [-3/2, 0, 0, -3/2]
+  [PASS] P6 the constant is exactly -3/2 (magnitude 3/2, as the letter's fitted value said -- but this one is COMPUTED, not fitted)
+         computed shift = -3/2
+
+==============================================================================
+D  cross-check: does the derived shift reproduce +-(l+3/2), (l+1)(l+2)?
+==============================================================================
+  [PASS] P7 all 20 common eigenvalues (well inside the truncation range, boundary effects excluded) match +-(l+3/2) with multiplicity (l+1)(l+2) EXACTLY
+         mismatches: []
+
+==============================================================================
+E  negative control: value-discriminating, and genuinely falsifiable
+==============================================================================
+  [PASS] P8 with NO connection at all, the extra term is 0 (i.e. D_full=D_0 identically) -- the shift genuinely comes from the connection
+  [PASS] P9 flipping the sign of omega_12 gives a DIFFERENT constant (-1/2, not -3/2) -- the check discriminates by VALUE, not merely by 'is it constant' (several wrong connections still happen to give constants)
+         got [-1/2, 0, 0, -1/2]
+  [PASS] P10 a GENUINELY structure-breaking connection (extra position-dependent term added) gives a NON-constant, non-diagonal leftover -- 'constant' is not a free/forced outcome of this computation
+         got [-2*I*sin(psi)*cos(theta) - 3/2, 2*cos(psi)*cos(theta), -2*cos(psi)*cos(theta), 2*I*sin(psi)*cos(theta) - 3/2]
+
+==============================================================================
+C189: 10 passed, 0 failed
+==============================================================================

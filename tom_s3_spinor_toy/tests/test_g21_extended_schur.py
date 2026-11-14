@@ -159,7 +159,10 @@ def test_more_generators_smaller_commutant():
     d_cartan = commutant_dim(GENS_CARTAN)  # 80
     d_no_bl = commutant_dim(GENS_NO_BL)  # 12
     d_with_bl = commutant_dim(GENS_WITH_BL)  # 8
-    assert d_cartan >= d_no_bl >= d_with_bl
+    assert d_cartan >= d_no_bl >= d_with_bl, (
+        f"commutant dims: cartan={d_cartan} (expect 80), no_bl={d_no_bl} (expect 12), "
+        f"with_bl={d_with_bl} (expect 8)"
+    )
 
 
 def test_cartan_subset_of_no_bl():

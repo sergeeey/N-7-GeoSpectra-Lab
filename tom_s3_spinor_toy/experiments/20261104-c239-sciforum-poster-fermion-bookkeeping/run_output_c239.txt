@@ -1,0 +1,30 @@
+PASS B1: [J_i, J_j] = i eps J_k
+PASS B1: [J_i, K_j] = i eps K_k
+PASS B1: [K_i, K_j] = -i eps J_k (Lorentz algebra)
+PASS B1: P_L = (1 - sigma_1)/2 is a projector
+PASS B1: T_i close into su(2): [T_i, T_j] = i eps T_k
+PASS B1: the eight C_i' = (1/2) lambda close under commutation (su(3))
+PASS B1: T, C, J, K mutually commute where required (T,C vs J,K; T vs C)
+CAUGHT B1 control: boost without the factor i satisfies [K,K] = -i eps J
+CAUGHT B1 control: with a non-projector P_L the T_i close into su(2)
+PASS B2: gamma5 = 1 (x) sigma_1 commutes with J and K
+PASS B2: T_i vanish on the right-handed block and are nonzero on the left-handed block
+CAUGHT B2 control: T_i act on the right-handed block
+PASS B2: SU(2)_L Casimir = 3/4 on 16 states (left-handed) and 0 on 16 states (right-handed)
+PASS B2: SU(3) Casimir eigenvalues: 4/3 on 24 states (colour triplets) and 0 on 8 (leptons)
+PASS B3-count: 2 x 2 x 3 x 2 = 24, 2 x 2 = 4, 2 x 2 = 4, total 32 = 2 x 2 x 2 x 4
+PASS B3: Spin(4) Dirac spinor has 4 components
+PASS B3: the two triples close into su(2)_L and su(2)_R and commute
+PASS B3: Spin(4) Dirac spinor = (1/2,0) + (0,1/2): (casL, casR) = [(np.float64(0.0), np.float64(0.75)), (np.float64(0.0), np.float64(0.75)), (np.float64(0.75), np.float64(0.0)), (np.float64(0.75), np.float64(0.0))]
+PASS B4: Spin(7) spinor has 8 components
+PASS B4: the chirality of Spin(6) (product of six gammas) commutes with all Spin(6) generators
+PASS B4: its eigenvalues are +1 (4 states) and -1 (4 states)
+PASS B4: Spin(6) weights on chirality +: [(np.float64(-0.5), np.float64(-0.5), np.float64(0.5)), (np.float64(-0.5), np.float64(0.5), np.float64(-0.5)), (np.float64(0.5), np.float64(-0.5), np.float64(-0.5)), (np.float64(0.5), np.float64(0.5), np.float64(0.5))]
+PASS B4: Spin(6) weights on chirality -: [(np.float64(-0.5), np.float64(-0.5), np.float64(-0.5)), (np.float64(-0.5), np.float64(0.5), np.float64(0.5)), (np.float64(0.5), np.float64(-0.5), np.float64(0.5)), (np.float64(0.5), np.float64(0.5), np.float64(-0.5))]
+PASS B4: the two 4-dimensional blocks have DIFFERENT weight sets, i.e. 4 and 4bar are inequivalent
+PASS B4: weights of 4bar are the negatives of weights of 4 (conjugate representation)
+CAUGHT B4 control: claim 4 and 4bar have equal weight sets
+PASS B1: with P_L = (1 - sigma_3)/2 (a projector that closes into su(2)) T_i do NOT commute with the boosts K_j, so P_L is forced to (1 -+ sigma_1)/2
+CAUGHT control: P_L = (1 - sigma_3)/2 is compatible with the boosts
+
+FAILS: none

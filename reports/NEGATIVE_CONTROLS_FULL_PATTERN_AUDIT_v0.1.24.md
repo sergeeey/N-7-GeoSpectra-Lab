@@ -1,5 +1,7 @@
 # Negative Controls Full Pattern Audit — v0.1.24
 
+> **ОБНОВЛЕНИЕ 2026-11-05 — ПРОТИВОРЕЧИВО.** Этот аудит утверждает, что broken_wilson_term воспроизводит полный паттерн Gate 4B (контраст 8,20×, FSS STABLE). Это расходится с `docs/ROADMAP.md` (контроль C «REJECTED») и с сырыми JSON v0.1.22, где broken_wilson даёт IPR выше ring. Вывод не подтверждён ни в одну сторону: требуется пересчёт из сырых данных. Не использовать как основание для claim.
+
 **Date:** 2026-05-31  
 **Audit Status:** ✅ **FULL_PATTERN_AUDIT_COMPLETED**  
 **Final Verdict:** ❌ **HARNESS_NONSPECIFIC** — 1/3 контролей воспроизвёл полный паттерн Gate 4B

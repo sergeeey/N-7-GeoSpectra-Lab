@@ -1,0 +1,122 @@
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+
+==============================================================================
+C153 STEP 3 -- per-plane factorization, tested directly (not read off)
+==============================================================================
+
+  plane 0 (family direction index 0), varying the OTHER two eps:
+    eps_0=+1, others={1: 1, 2: 1} -> sign = +i
+    eps_0=+1, others={1: 1, 2: -1} -> sign = +i
+    eps_0=+1, others={1: -1, 2: 1} -> sign = +i
+    eps_0=+1, others={1: -1, 2: -1} -> sign = +i
+    eps_0=-1, others={1: 1, 2: 1} -> sign = -i
+    eps_0=-1, others={1: 1, 2: -1} -> sign = -i
+    eps_0=-1, others={1: -1, 2: 1} -> sign = -i
+    eps_0=-1, others={1: -1, 2: -1} -> sign = -i
+    plane 0: eps_0=+1 always gives +i, independent of others: True
+    plane 0: eps_0=-1 always gives -i, independent of others: True
+
+  plane 1 (family direction index 1), varying the OTHER two eps:
+    eps_1=+1, others={0: 1, 2: 1} -> sign = +i
+    eps_1=+1, others={0: 1, 2: -1} -> sign = +i
+    eps_1=+1, others={0: -1, 2: 1} -> sign = +i
+    eps_1=+1, others={0: -1, 2: -1} -> sign = +i
+    eps_1=-1, others={0: 1, 2: 1} -> sign = -i
+    eps_1=-1, others={0: 1, 2: -1} -> sign = -i
+    eps_1=-1, others={0: -1, 2: 1} -> sign = -i
+    eps_1=-1, others={0: -1, 2: -1} -> sign = -i
+    plane 1: eps_1=+1 always gives +i, independent of others: True
+    plane 1: eps_1=-1 always gives -i, independent of others: True
+
+  plane 2 (family direction index 2), varying the OTHER two eps:
+    eps_2=+1, others={0: 1, 1: 1} -> sign = +i
+    eps_2=+1, others={0: 1, 1: -1} -> sign = +i
+    eps_2=+1, others={0: -1, 1: 1} -> sign = +i
+    eps_2=+1, others={0: -1, 1: -1} -> sign = +i
+    eps_2=-1, others={0: 1, 1: 1} -> sign = -i
+    eps_2=-1, others={0: 1, 1: -1} -> sign = -i
+    eps_2=-1, others={0: -1, 1: 1} -> sign = -i
+    eps_2=-1, others={0: -1, 1: -1} -> sign = -i
+    plane 2: eps_2=+1 always gives +i, independent of others: True
+    plane 2: eps_2=-1 always gives -i, independent of others: True
+
+==============================================================================
+VERDICT
+==============================================================================
+  Per a same-day skeptic pass: this is genuinely 3 independent facts
+  (one per plane, eps_k=+1), not 24. family_sym's columns are exactly
+  block-local per plane, and acs_from_eps is exactly block-diagonal by
+  construction -- so the other two planes' signs CANNOT affect this
+  computation (forced by structure, not measured), and eps_k=-1 follows
+  from eps_k=+1 by linearity + acs_from_eps(-e)=-acs_from_eps(e). The
+  per-plane law c((J_eps)|_plane k . v_k) = i^{eps_k} c(v_k) is real and
+  confirmed, at this correct strength -- see claim.md / decision.md.

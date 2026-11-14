@@ -1,0 +1,15 @@
+STEP 0  Clifford convention e_i.e_i=-1 reproduced (8x8, verbatim round59)  [OK]
+STEP 1  Levi-Civita Nomizu operators reproduce Thm 5.1 Killing eqn (verbatim round59)  [OK]
+STEP 1  round59's own D psi_+ = (-sqrt(3)) psi_+   [OK, matches -sqrt3]
+STEP 2  total antisymmetry of C_ijk (cyclic + swap) over all (i,j,k): True
+STEP 3  built c(omega_raw) := quantization of raw structure-constant 3-form  [done]
+STEP 4  candidate scalar alpha (from first nonzero entry) = sqrt(3)/4
+STEP 4  D == alpha * c(omega_raw) EXACTLY on all 64 entries: True
+STEP 5  v_op psi_+ = (-4) psi_+  (is exact eigenvector: True)
+
+==============================================================================
+SUMMARY
+==============================================================================
+This checks ONLY the 'raw Lam as structure constants' hypothesis.
+It does NOT yet resolve whether Kostant's v needs additional su(3)-sector
+input (AD[k]) beyond the pure-m data in Lam.

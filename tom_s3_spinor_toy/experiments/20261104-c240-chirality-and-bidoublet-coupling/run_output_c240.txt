@@ -1,0 +1,15 @@
+PASS R1: matrices commuting with sigma_1, sigma_2, sigma_3 form a 1-dimensional space (scalars): no chirality operator on C^2
+CAUGHT R1 control: a 2-dimensional commutant (a nontrivial chirality operator exists)
+PASS R3: D0 commutes with X_k and K_k (block-diagonal in (j_L,k))
+   (casL, casK, dim, D0): [(3/4, 0, 2, 3), (0, 3/4, 2, 0), (3/4, 2, 6, -1)]
+   sectors (j_L, k, dim, D0): [(0, 1/2, 2, 0), (1/2, 0, 2, 3), (1/2, 1, 6, -1)]
+PASS R2: degrees 0..1 give sectors (0,1/2)[2, D0=0], (1/2,0)[2, D0=3], (1/2,1)[6, D0=-1]
+PASS R3: D0 maps each of the sectors into itself: D0 B = lambda B, so (0,1/2) -> (1/2,0) matrix elements vanish
+CAUGHT R3 control: claim D0 connects (0,1/2) and (1/2,0)
+PASS R4: multiplication by (a,b,c,d) of the (0,1/2) sector gives 8 independent vectors (rank 8) filling degree 1 (x) C^2
+CAUGHT R4 control: the multiplication map has rank 7
+PASS R4: the (1/2,0) component of the images has rank 2 (nonzero: (0,1/2) x (1/2,1/2) contains (1/2,0))
+PASS R4: the (1/2,1) component has rank 6 ((0,1/2) x (1/2,1/2) = (1/2,0) + (1/2,1))
+PASS R4: the two components exhaust the image (2 + 6 = 8)
+
+FAILS: none

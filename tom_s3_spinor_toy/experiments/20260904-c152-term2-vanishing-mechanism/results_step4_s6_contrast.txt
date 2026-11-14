@@ -1,0 +1,41 @@
+STEP 4  round59 imported, its own calibration gate re-verified  [OK]
+STEP 4  Cartan pair of su(3) located by commutation: generators (1, 8)
+STEP 4  vector-rep sign gate on S^6: -1 (24 pairs)
+STEP 4  REGRESSION vs C145: |Term2| on the su(3)-sector = 1.154701  (C145 published 1.154701)
+STEP 4  T^2-invariant sectors on S^6 : domain 3, target 3 (Step 1 predicted 3 and 3)
+
+==============================================================================
+S^6 : per-direction contributions to the T^2-invariant 3x3 block
+==============================================================================
+  i    max|Term1_i|    max|Term2_i|
+  1        0.000000        0.288675
+  2        0.000000        0.288675
+  3        0.000000        0.288675
+  4        0.000000        0.288675
+  5        0.000000        0.288675
+  6        0.000000        0.288675
+SUM       0.000e+00       5.774e-01
+
+  entry (0, 0) (most alive), contribution by direction:
+    i=1:  +0.000000 +0.000000j   |z| = 0.000000
+    i=2:  +0.000000 +0.000000j   |z| = 0.000000
+    i=3:  +0.000000 +0.000000j   |z| = 0.000000
+    i=4:  +0.000000 +0.000000j   |z| = 0.000000
+    i=5:  -0.288675 +0.000000j   |z| = 0.288675
+    i=6:  -0.288675 +0.000000j   |z| = 0.288675
+    SUM  :  -0.577350+0.000000j
+
+==============================================================================
+THE DISCRIMINATOR
+==============================================================================
+  SU(3)/T^2 : Term1 per-direction ZERO (weight-forced), Term2 per-direction
+              ALIVE (|.|=0.5) but summing to ZERO -- pairwise cancellation
+  S^6       : Term1 sum = 0.000e+00, Term2 sum = 5.774e-01
+
+  -> Term2 SURVIVES on S^6 under the SAME T^2 and the SAME tensorial
+     construction. Both connections are T^2-equivariant, so equivariance
+     alone does NOT force the zero. The remaining difference between the
+     two cases is the weight TYPE of m: root-type on SU(3)/T^2 (where m's
+     weights are the roots themselves, so the 6 directions pair up inside
+     root planes on which T^2 acts by rotation) versus fundamental-type on
+     S^6 (m = 3 (+) 3bar, weights not roots, no such pairing).

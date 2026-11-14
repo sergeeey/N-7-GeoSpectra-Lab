@@ -1,0 +1,169 @@
+{
+  "ALL_INJECTIONS_CAUGHT": true,
+  "AT_LEAST_ONE_INJECTION_MOVES_THE_HEADLINE": true,
+  "N_INJECTIONS_MOVING_THE_HEADLINE": 8,
+  "baseline_gates_passed": 37,
+  "baseline_gates_total": 37,
+  "injections": {
+    "UCT_Ext_of_free_group_nonzero": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 36,
+      "gates_that_fired": [
+        "G10_H2_M_iota_vanishes_for_every_tested_coefficient"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "H2_M_iota_vanishes_for_every_tested_abelian_coefficient",
+        "TWISTED_Pin_minus_exists_on_M_iota",
+        "TWISTED_Pin_plus_exists_on_M_iota"
+      ]
+    },
+    "commutator_pairing_always_zero": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 36,
+      "gates_that_fired": [
+        "G17_Q8_shows_a_central_extension_of_a_product_CAN_have_a_cross_term"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": []
+    },
+    "local_coefficient_monodromy_neutered": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 36,
+      "gates_that_fired": [
+        "G29c_swap_and_trivial_monodromy_give_DIFFERENT_betti_vectors"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": []
+    },
+    "monodromy_term_dropped": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 33,
+      "gates_that_fired": [
+        "G01_klein_bottle_H1_is_Z_plus_Z2",
+        "G06_minimal_M_iota_H_is_Z_Z_0_Z2_0",
+        "G09c_degrees_are_distinguishable_H3_differs_across_them",
+        "G11_H3_M_iota_Z_vanishes"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "H3_M_iota_Z_vanishes"
+      ]
+    },
+    "nonminimal_model_d2_zeroed": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 31,
+      "gates_that_fired": [
+        "G08_nonminimal_agrees_with_minimal_AT_EVERY_DEGREE",
+        "G09b_H2_zero_at_every_degree_in_the_NONMINIMAL_model",
+        "G10_H2_M_iota_vanishes_for_every_tested_coefficient",
+        "G28_M_iota_H2_F2_is_zero_dimensional_in_both_models",
+        "G29_H2_with_local_coefficients_vanishes_incl_swap",
+        "G29b_NONMINIMAL_model_H2_zero_for_both_monodromies"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "H2_M_iota_vanishes_for_every_tested_abelian_coefficient",
+        "H2_M_iota_vanishes_for_local_coefficients_incl_swap",
+        "H2_zero_at_every_tested_degree_in_the_NONMINIMAL_model",
+        "TWISTED_Pin_minus_exists_on_M_iota",
+        "TWISTED_Pin_plus_exists_on_M_iota"
+      ]
+    },
+    "pin_plus_minus_criteria_swapped": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 34,
+      "gates_that_fired": [
+        "G22_RP2_is_pin_minus_only",
+        "G23_RP4_is_pin_plus_only",
+        "G27_RP4_twist_flips_pin_minus_to_available"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": []
+    },
+    "pin_verdict_ignores_the_twist": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 34,
+      "gates_that_fired": [
+        "G25_TWIST_CAN_RESCUE_untwisted_fails_twisted_works",
+        "G26_TWIST_CAN_BREAK_untwisted_works_twisted_fails",
+        "G27_RP4_twist_flips_pin_minus_to_available"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "twist_can_change_the_answer_in_general"
+      ]
+    },
+    "rank_mod_p_returns_zero": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 32,
+      "gates_that_fired": [
+        "G09b_H2_zero_at_every_degree_in_the_NONMINIMAL_model",
+        "G28_M_iota_H2_F2_is_zero_dimensional_in_both_models",
+        "G29_H2_with_local_coefficients_vanishes_incl_swap",
+        "G29b_NONMINIMAL_model_H2_zero_for_both_monodromies",
+        "G29c_swap_and_trivial_monodromy_give_DIFFERENT_betti_vectors"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "H2_M_iota_vanishes_for_local_coefficients_incl_swap",
+        "H2_zero_at_every_tested_degree_in_the_NONMINIMAL_model",
+        "TWISTED_Pin_minus_exists_on_M_iota",
+        "TWISTED_Pin_plus_exists_on_M_iota"
+      ]
+    },
+    "smith_normal_form_returns_empty": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 31,
+      "gates_that_fired": [
+        "G01_klein_bottle_H1_is_Z_plus_Z2",
+        "G06_minimal_M_iota_H_is_Z_Z_0_Z2_0",
+        "G08_nonminimal_agrees_with_minimal_AT_EVERY_DEGREE",
+        "G09c_degrees_are_distinguishable_H3_differs_across_them",
+        "G10_H2_M_iota_vanishes_for_every_tested_coefficient",
+        "G11_H3_M_iota_Z_vanishes"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "H2_M_iota_vanishes_for_every_tested_abelian_coefficient",
+        "H2_zero_at_every_tested_degree_in_the_NONMINIMAL_model",
+        "H3_M_iota_Z_vanishes",
+        "TWISTED_Pin_minus_exists_on_M_iota",
+        "TWISTED_Pin_plus_exists_on_M_iota"
+      ]
+    },
+    "su2_to_so3_returns_identity": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 36,
+      "gates_that_fired": [
+        "G31_explicit_lift_covers_minus_Ad"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "constructive_route_lift_exhibited"
+      ]
+    },
+    "twisted_adjoint_transposed": {
+      "caught": true,
+      "caught_by_crash": false,
+      "gates_passed": 36,
+      "gates_that_fired": [
+        "G31_explicit_lift_covers_minus_Ad"
+      ],
+      "gates_total": 37,
+      "headline_fields_moved": [
+        "constructive_route_lift_exhibited"
+      ]
+    }
+  }
+}

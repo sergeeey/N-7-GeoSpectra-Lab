@@ -1,0 +1,54 @@
+==============================================================================
+A  X_a^L is orthonormal (same argument as C189, checked again for L)
+==============================================================================
+  [PASS] P1 g(X_a^L, X_b^L) = delta_ab * (x0^2+..+x3^2) identically
+
+==============================================================================
+B  X_a^L in Euler-angle coordinates, verified against the closed form
+==============================================================================
+  [PASS] P2a X_0^L is genuinely tangent to S^3
+  [PASS] P2b X_0^L matches its stated closed form
+         max diff = 0E-164
+  [PASS] P3a X_1^L is genuinely tangent to S^3
+  [PASS] P3b X_1^L matches its stated closed form
+         max diff = 0
+  [PASS] P4a X_2^L is genuinely tangent to S^3
+  [PASS] P4b X_2^L matches its stated closed form
+         max diff = 0
+
+==============================================================================
+C  dual coframe + Cartan's structure equation for the L-connection
+==============================================================================
+  [PASS] P5 the dual L-coframe satisfies e^a(X_b) = delta_ab exactly
+  [PASS] P6 Cartan's structure equation has a unique solution
+  [PASS] P7 the closed-form L-connection satisfies Cartan's equation IDENTICALLY
+         omega_01=[sin(phi)/2, 0, -sin(theta)*cos(phi)/2], omega_02=[-cos(phi)/2, 0, -sin(phi)*sin(theta)/2], omega_12=[0, 1/2, cos(theta)/2]
+
+==============================================================================
+D  D_full^L - D_0^L: compute the shift, do not assume its sign
+==============================================================================
+  [PASS] P8 D_full^L - D_0^L is a scalar matrix, position-independent
+         D_full^L - D_0^L = [3/2, 0, 0, 3/2]
+  [PASS] P9 the L-shift is exactly +3/2 (mirror of C189's -3/2 for R)
+         computed L-shift = 3/2
+
+==============================================================================
+E  D_0^L's own spectrum -- IS it really the mirror of D_0^R's?
+==============================================================================
+  [PASS] P10 k=0: D_0^L spectrum = {0: 2}, is exactly D_0^R's spectrum NEGATED (mirror-image, per the letter's OWN correct half of this claim)
+         expected -D_0^R pattern {0: 2}
+  [PASS] P11 k=1: D_0^L spectrum = {-3: 2, 1: 6}, is exactly D_0^R's spectrum NEGATED (mirror-image, per the letter's OWN correct half of this claim)
+         expected -D_0^R pattern {1: 6, -3: 2}
+  [PASS] P12 k=2: D_0^L spectrum = {-4: 6, 2: 12}, is exactly D_0^R's spectrum NEGATED (mirror-image, per the letter's OWN correct half of this claim)
+         expected -D_0^R pattern {2: 12, -4: 6}
+
+==============================================================================
+F  the discrepancy with the letter's stated sign assignment
+==============================================================================
+  D_0^R shifted by -3/2 (this round's + C189's derived value): 36 checked, 0 mismatches, sub-floor values []
+  D_0^R shifted by +3/2 (the letter's stated expectation):     33 checked, 32 mismatches, sub-floor values [1/2, -1/2]
+  [PASS] P13 the DERIVED shift (-3/2 for R, verified via Cartan) reproduces the physical spectrum with ZERO error; the letter's stated expectation (+3/2 for R) does NOT -- confirming the letter's aside on handedness vs sign was an unverified guess, and it had the assignment backwards
+
+==============================================================================
+C190: 16 passed, 0 failed
+==============================================================================

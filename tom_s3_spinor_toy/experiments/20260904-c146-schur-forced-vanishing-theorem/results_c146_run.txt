@@ -1,0 +1,116 @@
+=== 1. Sigma-side machinery (unchanged from round59) ===
+  [PASS] sigma_side_killing_spinor_calibration_still_passes_unchanged   first factor (Sigma, Clifford action) is byte-identical to round59's own -- this is a regression check, not a new result
+
+=== 2. Twist bundle W' = m_C (complexified tangent rep of S6) ===
+  [PASS] rho_vector_sign_fix_matches_spin_lift_structure_constants   max|f_sigma - f_m_fixed| over nonzero entries = 6.661e-16 (post-fix, expect ~0; pre-fix this was exactly -f_sigma, i.e. max|f_sigma+f_m|~1e-15 -- see decision.md Section 3d)
+  [PASS] rho_m_nomizu_real_antisymmetric_all_i   nabla^m_i must be real+antisymmetric (=anti-Hermitian) to generate a genuine metric SO(6) connection -- true by construction (bivec_to_6x6), verified not assumed
+  [PASS] rho_m_adnu_real_antisymmetric_all_a
+  [PASS] m_has_no_su3_singlet_dim_0   dim common nullspace of ADNU-action on C^6 = 0 (expect 0)
+  [PASS] m_commutant_under_su3_has_dim_2   dim(commutant)=2 (expect 2, confirming 2 inequivalent irreducible su(3)-constituents each multiplicity 1 -- '3+3bar', not '6' irreducible or a higher-multiplicity structure)
+
+=== 3. Undisclosed-symmetry check (done BEFORE the kernel computation) ===
+  [PASS] nab_i_preserves_sigma_even_odd_parity   max|NAB_i[even,odd]| = 0.000e+00 (expect ~0 -- spin_lift of any so(6) bivector is quadratic in Clifford generators, hence parity-preserving)
+  [PASS] sigma_even_block_irreducible_under_nab   dim(commutant)=1 on S+ (expect 1 -- irreducible)
+  [PASS] sigma_odd_block_irreducible_under_nab   dim(commutant)=1 on S- (expect 1 -- irreducible)
+  [PASS] no_equivariant_map_sigma_to_m_under_nomizu_connection   dim(intertwiner space)=0 (expect 0 -- confirms nabla^m is NOT nabla^Sigma restricted to a 6-dim subspace under any change of basis; consistent with 3b: Sigma's only invariant-subspace dims are {0,4,8}, and with vector-6 / half-spin-4 / half-spin-4bar being pairwise-inequivalent irreducible representations of so(6)=su(4)) -- CATCHES THE EXACT UNDISCLOSED-SYMMETRY TRAP THAT INVALIDATED C73's ATTEMPT (b), CHECKED HERE BEFORE ANY KERNEL COMPUTATION
+
+=== 4. su(3)-invariant sector dimensions (domain, target) ===
+  [PASS] domain_inv_dim_matches_clebsch_gordan_prediction_1   dim(ODD_IDX(x)m)_su3-inv = 1 (predicted 1, from (3(+)1)(x)(3(+)3bar) = 1(+)3(+)3bar(+)3bar(+)6(+)8, trivial multiplicity 1)
+  [PASS] target_inv_dim_matches_clebsch_gordan_prediction_1   dim(EVEN_IDX(x)m)_su3-inv = 1 (predicted 1, from (1(+)3bar)(x)(3(+)3bar) = 1(+)3(+)3(+)3bar(+)6bar(+)8, trivial multiplicity 1)
+
+=== 5. Self-consistency: generalized machinery reproduces round59 exactly ===
+  [PASS] generalized_dirac_matches_c73_reference_when_twist_equals_sigma   max|diff| = 0.000e+00
+  [PASS] generalized_machinery_reproduces_round59_certificate_a_b   a=(-1+0j), b=(-1.7320508075688772+0j) (round59 certified: |a|=1, |b|=sqrt(3))
+  [PASS] generalized_machinery_reproduces_round59_domain_target_dims   domain=2, target=1 (round59 certified: 2, 1)
+
+=== 6. Main computation: twisted Dirac certificate for W'=m ===
+  [PASS] d_prime_is_hermitian   max|D' - D'^dagger| = 0.000e+00
+  c = <w_hat, D' u_hat> = (-1.1336213214396011-0.21962703137561634j)
+  rank = 1, kernel_dim (domain) = 0
+  [PASS] c_value_is_numerically_unambiguous   |c| = 1.155e+00 (must sit clearly on one side of the numerical-noise floor)
+  [PASS] forward_is_hermitian_adjoint_of_backward   max|diff| = 2.220e-16
+  [PASS] term1_plus_term2_equals_full_c   term1=0j, term2=(-1.1336213214396011-0.21962703137561634j), sum=(-1.1336213214396011-0.21962703137561634j), full c=(-1.1336213214396011-0.21962703137561634j)
+  term1 (Killing-eigenvalue piece) = 0j
+  term2 (twist-connection piece)   = (-1.1336213214396011-0.21962703137561634j)
+
+=== 7. Deformation/linearity check (same discipline as C73's t-sweep) ===
+  [PASS] d_prime_linear_in_nomizu_scale_t=0.5   c(t=0.5)=(-0.5668106607198006-0.10981351568780817j), t*c(1)=(-0.5668106607198006-0.10981351568780817j)
+  [PASS] d_prime_linear_in_nomizu_scale_t=2.0   c(t=2.0)=(-2.2672426428792023-0.4392540627512327j), t*c(1)=(-2.2672426428792023-0.4392540627512327j)
+
+=== 7b. Angular sweep across the 2-dim admissible torsion family (skeptic-2 test) ===
+  [PASS] torsion_family_is_2dim_matches_c73b   dim Hom_su3(m,Lambda^2 m) = 2 (C73b certified: 2)
+  [PASS] nomizu_reconstructs_in_torsion_basis   residual=1.692e-16 (C73b certified: 5.6e-16)
+  |c(theta)| range: [1.154701, 1.154701]  spread=6.661e-16
+  Term1 nonzero anywhere in sweep: False
+  c(theta) hits zero anywhere in sweep: False
+  [PASS] term1_remains_exactly_zero_across_whole_torsion_family   Term1=0 forced by su(3)-equivariance + zero-singlet module type (Section 8b) -- should hold for EVERY admissible connection direction, not just NOMIZU's own point, since the forcing argument never used NOMIZU's specific numeric values
+  [PASS] abs_c_is_constant_across_whole_torsion_family   |c(theta)| spread=6.661e-16 across 13 angles -- if constant (matching C73b's OWN finding that |b|=sqrt(3) is constant for round59's kernel across its own 13-angle sweep), Term2 is C-LINEAR in a single complex parameter (not merely R-linear in 2 independent reals), and its zero locus is the single point 'zero connection', not a 1-dim line within the family -- directly answering skeptic pass 2's single-direction-accident concern. If NOT constant, that concern stands and is reported honestly, not hidden.
+  [PASS] kernel_zero_holds_across_whole_torsion_family   if kernel=0 holds at every tested angle (not just NOMIZU's own point), this is 'topologically protected across the whole admissible family' in exactly the sense C73b certified for round59's OWN kernel=1 -- the direct, decisive answer to skeptic pass 2's central objection
+
+=== 8. Exact sympy cross-check of c ===
+  [PASS] exact_domain_inv_dim_matches_numeric   exact=1, numeric=1
+  [PASS] exact_target_inv_dim_matches_numeric   exact=1, numeric=1
+  c_exact = -2*sqrt(3)/3
+  [PASS] exact_abs_c_matches_numeric_abs_c   |exact|=1.1547005384, |numeric|=1.1547005384 -- raw phases legitimately differ (exact=(-1.1547005383792515+0j), numeric=(-1.1336213214396011-0.21962703137561634j)) because domain/target are each 1-dim, so the orthonormal-basis PHASE is a free gauge choice independent between the SVD-numeric and sympy-exact nullspace routes; |c| is gauge-invariant
+  [PASS] exact_c_is_exactly_zero_or_clearly_nonzero   c_exact=-2*sqrt(3)/3, simplifies to zero: False
+  s_exact = |c_exact|^2 = 4/3
+
+=== SUMMARY ===
+  boolean checks : 30 distinct names from 29 call sites  (passed 30)
+  recorded data  : 13  -- NOT counted as checks
+  hardcoded-condition self-audit: PASS (no check() takes a literal)
+  failures       : 0  []
+
+  HEADLINE: c = (-1.1336213214396011-0.21962703137561634j)  |c| = 1.154701e+00
+  forward kernel_dim = 0  (domain dim 1)
+  matches round59 pattern (kernel==1): False
+  wrote E:\Проверка Гипотез\работаю над проверкой гипотез\N-7-GeoSpectra-Lab\tom_s3_spinor_toy\experiments\20260904-c139-twisted-s6-alternate-representation-negative-control\results_c139.json
+STEP 0  round59 machinery imported, calibration re-verified  [OK]
+
+==============================================================================
+CHECK 1  D_Sigma SU(3)-equivariance:  [D_Sigma, rho_Sigma(a)] == 0 ?
+==============================================================================
+  a=1: [D_Sigma, rho_Sigma(1)] == 0 : True
+  a=2: [D_Sigma, rho_Sigma(2)] == 0 : True
+  a=3: [D_Sigma, rho_Sigma(3)] == 0 : True
+  a=4: [D_Sigma, rho_Sigma(4)] == 0 : True
+  a=5: [D_Sigma, rho_Sigma(5)] == 0 : True
+  a=6: [D_Sigma, rho_Sigma(6)] == 0 : True
+  a=7: [D_Sigma, rho_Sigma(7)] == 0 : True
+  a=8: [D_Sigma, rho_Sigma(8)] == 0 : True
+  ALL 8 generators commute with D_Sigma: True
+
+==============================================================================
+CHECK 2  D_Sigma's 'y1,y2,y3 columns' (Sigma_odd's su(3)-3-part) are
+         EXACTLY ZERO in every row (forced by Check 1 + branching)
+==============================================================================
+  NOTE (skeptic-flagged precision): rows {0,4,5,6} (Sigma_even) are
+  zero because of SCHUR's lemma (no '3' in Sigma_even); rows {1,2,3,7}
+  (Sigma_odd) are zero for a SEPARATE, automatic reason -- D_Sigma is
+  strictly parity-FLIPPING (Clifford x spin-lift = odd<->even only),
+  so odd->odd is zero regardless of any su(3) argument. Both subsets
+  are checked together below; only the first 4 rows are the genuinely
+  Schur-forced content this round's theorem rests on.
+  D_Sigma[:, {1,2,3}] (the y1,y2,y3 columns) all zero: True
+
+==============================================================================
+CHECK 3  C139's own domain invariant has zero y123-component
+==============================================================================
+  domain_inv dimension (exact): 1  (expect 1)
+  u_hat's y123-block (6 components, one per W-index): [0, 0, 0, 0, 0, 0]
+  ALL exactly zero (confirms the mechanism): True
+
+==============================================================================
+CHECK 4  D_Sigma's y123-column reproduces round59's own b=-sqrt(3)
+==============================================================================
+  D_Sigma[row=0 ('1' in Sigma_even), col=7 (y123)] = -sqrt(3)
+  matches round59's own certified b=-sqrt(3): True
+
+==============================================================================
+SUMMARY
+==============================================================================
+  D_Sigma SU(3)-equivariant                         : True
+  D_Sigma's Sigma_odd-3-block -> Sigma_even is zero  : True
+  C139's domain invariant avoids Sigma_odd's 1-part  : True
+  D_Sigma's Sigma_odd-1-block matches round59's b    : True
+  ALL FOUR (the theorem, fully verified)             : True

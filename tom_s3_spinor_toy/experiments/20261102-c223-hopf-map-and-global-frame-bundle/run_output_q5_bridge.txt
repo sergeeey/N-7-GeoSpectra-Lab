@@ -1,0 +1,8 @@
+PASS B1 g(h x) = h g(x) (left covariance of the ket matrix)
+PASS B2 B_{hx}(hbar e_j) = h . B_x(e_j): covariant with CONSTANT frame rep hbar (x-independent)
+PASS B3 B_{t x}(e_j) = rho(t) B_x(e_j): the class [x, B_x(e_j)] is well defined on S^2
+PASS B4 under right SU(2)_R: B -> k^T B (fibre change, descends only for the torus)
+PASS B5 generic right lines are NOT torus-invariant (100/100 not invariant); the poles e_1, e_2 are
+PASS B6 M(h,x) = Phi(hx)^{-1} Phi(x) is constant in x (covariant); T3's off-diagonal test was the wrong criterion
+
+FAILS: none

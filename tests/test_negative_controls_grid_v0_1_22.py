@@ -1,6 +1,13 @@
-"""Tests for negative controls grid coverage and integrity (v0.1.22)."""
+"""Tests for negative controls grid coverage and integrity (v0.1.22).
 
-import pytest
+Grid updated 2026-09-06 to match the documented 2026-06-03 batch redesign
+(reports/BATCH_DESIGN_v0.1.22.md): a skeptic audit found the original
+54-case pre-registration needed a 4th control (spectral_circle_scrambled)
+and s1_size=128 restored (to compare against Gate 4B's strongest finding
+point). scripts/run_negative_controls_v0_1_22.py's own PILOT_GRID was
+updated accordingly at the time; these tests were not, until now.
+"""
+
 import sys
 from pathlib import Path
 
@@ -9,14 +16,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from scripts.run_negative_controls_v0_1_22 import (
     generate_full_grid,
     split_into_batches,
-    PILOT_GRID,
 )
 
 
 def test_grid_total_cases():
-    """Verify pilot grid has exactly 54 cases."""
+    """Verify pilot grid has exactly 96 cases (4 controls x 2 W x 4 sizes x 1 j_max x 3 seeds,
+    per the 2026-06-03 batch redesign, reports/BATCH_DESIGN_v0.1.22.md)."""
     cases = generate_full_grid()
-    assert len(cases) == 54, f"Expected 54 cases, got {len(cases)}"
+    assert len(cases) == 96, f"Expected 96 cases, got {len(cases)}"
 
 
 def test_grid_no_duplicates():
@@ -35,15 +42,21 @@ def test_grid_no_duplicates():
         assert key not in unique_keys, f"Duplicate case detected: {key}"
         unique_keys.add(key)
 
-    assert len(unique_keys) == 54
+    assert len(unique_keys) == 96
 
 
 def test_grid_controls_set():
-    """Verify controls set exactly matches protocol."""
+    """Verify controls set exactly matches protocol (4 controls including
+    Control D, spectral_circle_scrambled, added 2026-06-03)."""
     cases = generate_full_grid()
     controls = {c["control"] for c in cases}
 
-    expected_controls = {"random_hermitian", "scrambled_geometry", "broken_wilson_term"}
+    expected_controls = {
+        "random_hermitian",
+        "scrambled_geometry",
+        "broken_wilson_term",
+        "spectral_circle_scrambled",
+    }
     assert controls == expected_controls, f"Controls mismatch: {controls}"
 
 
@@ -57,11 +70,12 @@ def test_grid_disorder_values():
 
 
 def test_grid_sizes():
-    """Verify s1_size set = {16, 64, 128} (skip 32)."""
+    """Verify s1_size set = {16, 32, 64, 128} (all 4, restored 2026-06-03
+    for full FSS coverage per reports/BATCH_DESIGN_v0.1.22.md)."""
     cases = generate_full_grid()
     sizes = {c["s1_size"] for c in cases}
 
-    expected_sizes = {16, 64, 128}
+    expected_sizes = {16, 32, 64, 128}
     assert sizes == expected_sizes, f"Sizes mismatch: {sizes}"
 
 
@@ -84,26 +98,26 @@ def test_grid_seeds():
 
 
 def test_batch_count():
-    """Verify 6 batches (3 controls × 2 W)."""
+    """Verify 8 batches (4 controls × 2 W, per the 2026-06-03 redesign)."""
     cases = generate_full_grid()
     batches = split_into_batches(cases)
 
-    assert len(batches) == 6, f"Expected 6 batches, got {len(batches)}"
+    assert len(batches) == 8, f"Expected 8 batches, got {len(batches)}"
 
 
 def test_batch_sizes():
-    """Verify each batch has exactly 9 cases."""
+    """Verify each batch has exactly 12 cases (4 sizes x 1 j_max x 3 seeds)."""
     cases = generate_full_grid()
     batches = split_into_batches(cases)
 
     for batch in batches:
-        assert (
-            len(batch["cases"]) == 9
-        ), f"Batch {batch['batch_id']} has {len(batch['cases'])} cases, expected 9"
+        assert len(batch["cases"]) == 12, (
+            f"Batch {batch['batch_id']} has {len(batch['cases'])} cases, expected 12"
+        )
 
 
 def test_batch_coverage():
-    """Verify batches cover all 54 cases without overlap."""
+    """Verify batches cover all 96 cases without overlap."""
     cases = generate_full_grid()
     batches = split_into_batches(cases)
 
@@ -114,10 +128,10 @@ def test_batch_coverage():
     # No duplicates across batches
     assert len(all_batch_case_ids) == len(set(all_batch_case_ids)), "Batch overlap detected"
 
-    # All 54 cases covered
-    assert (
-        len(all_batch_case_ids) == 54
-    ), f"Batches cover {len(all_batch_case_ids)} cases, expected 54"
+    # All 96 cases covered
+    assert len(all_batch_case_ids) == 96, (
+        f"Batches cover {len(all_batch_case_ids)} cases, expected 96"
+    )
 
 
 def test_control_dimension_consistency():
@@ -135,9 +149,9 @@ def test_control_dimension_consistency():
         if key not in dimension_map:
             dimension_map[key] = expected_dim
         else:
-            assert (
-                dimension_map[key] == expected_dim
-            ), f"Dimension mismatch for {key}: {dimension_map[key]} vs {expected_dim}"
+            assert dimension_map[key] == expected_dim, (
+                f"Dimension mismatch for {key}: {dimension_map[key]} vs {expected_dim}"
+            )
 
 
 def test_alpha_fixed():

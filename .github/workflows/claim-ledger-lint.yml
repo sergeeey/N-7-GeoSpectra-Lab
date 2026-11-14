@@ -1,0 +1,35 @@
+name: Claim ledger lint
+
+# Mechanical integrity of tom_s3_spinor_toy/CLAIM_LEDGER.yaml and DERIVATION_GRAPH.yaml:
+# schema/enums, unique ids, no repeated YAML keys, depends_on resolves and is acyclic,
+# every RECOGNISED evidence_file reference exists with valid line ranges, derivation-graph
+# premises are ledger ids. Runs on every push to main and every PR targeting main (not
+# path-filtered), because renaming or deleting an experiment file breaks evidence references
+# without touching the ledger. It checks that the ledger is well-formed, NOT that any claim
+# is true. Use `python tom_s3_spinor_toy/scripts/lint_claim_ledger.py --tracked` locally for
+# the same exact-case, tracked-files-only check (a Windows checkout is case-insensitive).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  claim-ledger-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pytest and pyyaml
+        run: pip install pytest pyyaml
+
+      - name: Lint the claim ledger
+        run: python tom_s3_spinor_toy/scripts/lint_claim_ledger.py --tracked
+
+      - name: Linter tests (positive/negative controls + real-ledger guard)
+        run: python -m pytest tom_s3_spinor_toy/tests/test_lint_claim_ledger.py -v

@@ -103,12 +103,12 @@ def generate_plot(save_path: Path) -> None:
     ax.set_title("Correct: Weighted L²(S³, sinα cosα dα)\n[Camporesi-Higuchi eq 3.25]")
     for n, c in zip(range(3), colors):
         phi = phi_nl_hopf(n, 0, alpha)
-        norm = np.sqrt(abs(np.trapz(phi**2 * volume_measure(alpha), alpha)))
+        norm = np.sqrt(abs(np.trapezoid(phi**2 * volume_measure(alpha), alpha)))
         phi_n = phi / norm if norm > 1e-12 else phi
         lam = eigenvalue_s3(n)
         ax.plot(alpha, phi_n, color=c, lw=2, label=f"φ_{{n={n}}} (λ=±{lam:.1f}), Jacobi")
     tom = tom_ansatz(alpha)
-    tom_n = tom / np.sqrt(np.trapz(tom**2 * volume_measure(alpha), alpha))
+    tom_n = tom / np.sqrt(np.trapezoid(tom**2 * volume_measure(alpha), alpha))
     ax.plot(alpha, tom_n, "r--", lw=2.5, label="√sin(2α) — Tom's ansatz")
     ax.axhline(0, color="black", lw=0.5)
     ax.set_xlabel("α (Hopf angle)")
@@ -125,13 +125,13 @@ def generate_plot(save_path: Path) -> None:
         mask = np.isfinite(f)
         if mask.sum() < 10:
             continue
-        norm = np.sqrt(abs(np.trapz(f[mask] ** 2, alpha[mask])))
+        norm = np.sqrt(abs(np.trapezoid(f[mask] ** 2, alpha[mask])))
         f_n = f / norm if norm > 1e-12 else f
         ax.plot(alpha[mask], f_n[mask], color=c, lw=2, label=f"φ_{{n={n}}}/√(sinα cosα)")
-    tom_unw_norm = np.sqrt(np.trapz(tom**2, alpha))
+    tom_unw_norm = np.sqrt(np.trapezoid(tom**2, alpha))
     ax.plot(alpha, tom / tom_unw_norm, "r--", lw=2.5, label="√sin(2α) (Tom's ansatz)")
     sqrt_g = np.sqrt(volume_measure(alpha))
-    sqrt_g_norm = np.sqrt(np.trapz(sqrt_g**2, alpha))
+    sqrt_g_norm = np.sqrt(np.trapezoid(sqrt_g**2, alpha))
     ax.plot(alpha, sqrt_g / sqrt_g_norm, "k:", lw=1.5, label="√(sinα cosα) [=√g^{1/2}]")
     ax.axhline(0, color="black", lw=0.5)
     ax.set_xlabel("α (Hopf angle)")

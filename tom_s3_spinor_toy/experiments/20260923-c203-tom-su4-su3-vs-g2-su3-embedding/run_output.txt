@@ -1,0 +1,24 @@
+=== Side A (G96 reuse: G2/SU(3) on S6 tangent space) ===
+  dim(G2)=14, dim(su3)=8
+  stabilizer err=2.33e-16, closure err=7.22e-16
+
+=== Side B (Tom's SU(3) subset SU(4) ~ SO(6) via Cl(6) gammas) ===
+  Clifford err=0.00e+00
+  chirality^2 err=0.00e+00, anticomm err=0.00e+00
+  reconstruction err=2.51e-16, max imag coeff=2.01e-16
+  closure err=2.07e-16
+
+=== G10-B negative control (different, known su(3)-in-so(6) embedding) ===
+  dim=8, closure err=6.66e-16
+
+=== Naive index-matched intertwiner search (NOT conclusive alone -- no known generator correspondence between A and B/C bases) ===
+  A vs B: n_free=0, orthogonal_found=False
+  A vs C: n_free=0, orthogonal_found=False
+
+=== Rigorous, basis-independent verdict test: Casimir(rep)/Casimir(adjoint) ratio ===
+  A (ours, G96): ratio=0.444444  (rep scalar defect=5.55e-16, adj scalar defect=2.11e-15)
+  B (Tom's, SU(4)): ratio=0.444444  (rep scalar defect=2.78e-16, adj scalar defect=1.11e-15)
+  C (G10-B, control): ratio=0.444444  (rep scalar defect=1.67e-16, adj scalar defect=2.22e-16)
+  Theoretical value for su(3) fundamental 3(+3bar): 4/9 = 0.444444
+  |ratio_A - ratio_B| = 7.22e-16
+  |ratio_A - ratio_C| = 5.00e-16

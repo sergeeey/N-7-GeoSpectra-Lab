@@ -389,3 +389,35 @@ separate, not-yet-run round"). Worth recording next to SR9's "caught only from
 outside": correcting an error is itself an operation that can introduce one,
 in the opposite direction, and the moment right after a retraction is exactly
 when a compensating over-correction is easiest to believe.
+
+
+---
+
+## SR11 — C213/C214/C215: S6 Ricci values were in Castellani's half-convention
+
+**Conclusion (survives, unchanged):** the G2/SU(3) metric is Einstein and the
+Ricci tensor is isotropic (C213); the nearly-Kahler torsion has `|T|^2 = 24`
+in the ambient-unit frame (C212, re-confirmed by the bracket route in C216);
+Friedrich-Ivanov's relation and its component-wise isotropy check (C215).
+
+**What changed (C217, 2026-10-03):** Castellani's eq. (3.34) defines the
+curvature components `R^a_{b de}` by `R^a_b = R^a_{b de} V^d ^ V^e`, without the
+standard 1/2, so the Ricci values from C213's code are exactly 1/2 of the
+standard ones. Corrected: Ricci `5/6 -> 5/3` (native `r=1`), `2.5 -> 5.0`
+(ambient-unit frame, = unit round S6); C215 `Ric^grad` `1.5 -> 4.0` (= the
+independent Kobayashi-Nomizu value of C216); **C214's REJECT is RETRACTED**
+(the bridge `Ric = (5/24) * norm2(T^c)` predicted the correct 5.0).
+
+**Where the stale version still lives:** `experiments/20261002-c213-*`,
+`c214-*`, `c215-*` `claim.md`/`decision.md` bodies and `results_c21[345].json`
+(bare numbers `5/6`, `2.5`, `1.5`; each decision.md now carries a dated UPDATE
+pointing here); `c215_friedrich_ivanov_check.py` asserts `Ric^g == 2.5`;
+`PARENT_ACTION_GATE.md` F6 (CORRECTION block added); `null_results/INDEX.md`
+C214 row (marked RETRACTED); the C216 row (marked RESOLVED).
+
+**How it was caught:** by an independent skeptic pass (fallback for a closed
+`reviewer` cap) on C216, which pointed out that no diagnostic had scaled all
+four terms together; the cause was then read from the primary source. The
+first convention-independent positive control (textbook `Ric = n-1` on
+SO(7)/SO(6)) is what exposed the discrepancy; the earlier N^010 calibration
+only matched the paper's own numbers, i.e. its convention.

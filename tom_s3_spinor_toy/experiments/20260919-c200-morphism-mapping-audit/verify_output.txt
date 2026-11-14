@@ -1,0 +1,6 @@
+random cross-checks: 400 pairs, mismatches = 0
+label twist: QUOTIENT_RELATION twisted isomorphism: same-size graphs re
+hom n/a for equal-size pairs: ok
+core_size 0 with disjoint node labels: ok
+calibrate branches: ok
+ALL CHECKS DONE

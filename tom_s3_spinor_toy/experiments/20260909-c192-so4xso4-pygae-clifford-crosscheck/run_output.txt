@@ -1,0 +1,55 @@
+==============================================================================
+0  build Cl(8,0) via pygae/clifford, extract left-regular 256x256 matrices
+==============================================================================
+  [PASS] Q0 clifford.Cl(8) has all-positive signature, 256 blades
+  [PASS] Q1 {Gamma_i,Gamma_j}=2 delta_ij on ALL 256x256 matrices (clifford's own geometric product, not the project's numpy Kronecker construction)
+  [PASS] Q2 each Gamma_i is symmetric (forced: orthogonal + Gamma_i^2=I on a real signed-permutation representation -- a structural check the project's own Hermitian complex construction could not even pose)
+
+==============================================================================
+A  chirality split: Gamma_A, Gamma_B, Gamma_9 on the 256-dim regular rep
+==============================================================================
+  [PASS] Q3 Gamma_A^2=I
+  [PASS] Q4 Gamma_B^2=I
+  [PASS] Q5 [Gamma_A,Gamma_B]=0
+  [PASS] Q6 Gamma_9^2=I
+  [PASS] Q7 8_s-block (Gamma_9=+1) and 8_c-block (Gamma_9=-1) each dim 128 (16 copies of C191's 8-dim 8_s/8_c)
+         got 128, 128
+
+==============================================================================
+B  so(4)_1's su(2)_L x su(2)_R generators (indices 1-4), REAL convention
+   (no i-factor needed here -- Gamma_i is symmetric, not Hermitian-complex,
+   so Gamma_i@Gamma_j for i!=j is already real antisymmetric, the natural
+   real so(n) generator; calibrated against the KNOWN row-58 result below,
+   not assumed correct.)
+==============================================================================
+  [PASS] Q8 su(2)_L closes with a SINGLE consistent global scale k (empirically found, not assumed +-1)
+         k=-2.0
+  [PASS] Q9 su(2)_R closes with the SAME scale k as su(2)_L
+         k_L=-2.0 k_R=-2.0
+  [PASS] Q10 [L_a,R_b]=0 for all a,b (genuine so(4)=su(2)+su(2) split)
+  [PASS] Q11 [Casimir_L,Casimir_R]=0
+  [PASS] Q12 Casimir_L, Casimir_R symmetric (so eigh is valid)
+
+==============================================================================
+C  joint (j_L,j_R) content on V_S / V_C -- calibrate scale against row58,
+   THEN read off the actual finding (does NOT assume the calibration works)
+==============================================================================
+  raw Casimir_L eigenvalues on V_S (uncalibrated): [0.0, 3.0]
+  [PASS] Q13 exactly one nonzero distinct Casimir_L eigenvalue on V_S (needed to calibrate scale unambiguously against the known j=1/2 value)
+         got [3.0]
+  calibration: SCALE = 0.75 / 3.0 = 0.25
+  8_s-block joint (j_L,j_R) content (128-dim, 16 copies): {(np.float64(0.5), np.float64(0.0)): 64, (np.float64(0.0), np.float64(0.5)): 64}
+  8_c-block joint (j_L,j_R) content (128-dim, 16 copies): {(np.float64(0.5), np.float64(0.0)): 64, (np.float64(0.0), np.float64(0.5)): 64}
+  [PASS] Q14 8_s content = 16x C191's row-58-restricted result (4x(1/2,0)+4x(0,1/2) -> 64x(1/2,0)+64x(0,1/2)) -- CALIBRATION CHECK, must pass before Q15/Q16 mean anything
+         got {(np.float64(0.5), np.float64(0.0)): 64, (np.float64(0.0), np.float64(0.5)): 64}
+
+==============================================================================
+D  the actual cross-check: does 8_c ALSO match (reproducing C191's P9/P10)
+==============================================================================
+  [PASS] Q15 8_c ALSO matches the same 16x-scaled row-58 content (mirrors C191's own P9 -- checking the postulate does NOT distinguish s from c)
+         got {(np.float64(0.5), np.float64(0.0)): 64, (np.float64(0.0), np.float64(0.5)): 64}
+  [PASS] Q16 [THE CROSS-CHECK] 8_s and 8_c have IDENTICAL (j_L,j_R) content under so(4)_1 alone, independently reproduced via pygae/clifford's own left-regular Cl(8) representation -- reproduces C191's P10
+
+==============================================================================
+C192: 17 passed, 0 failed
+==============================================================================

@@ -1,0 +1,26 @@
+STEP 1  round59's own Clifford + Nomizu machinery imported, calibration re-verified  [OK]
+STEP 2  C144 regression: D_Sigma == alpha*c(v) exactly, alpha=sqrt(3)/4: True
+STEP 3  W = m_C (6-dim) Nomizu connection built from the same NOMIZU data  [done]
+STEP 3  sanity: at least one conn_W[i] is nonzero: True
+
+==============================================================================
+STEP 4  DECISIVE TEST
+==============================================================================
+  D'  ==  alpha * c(v) (x) Id_W   (i.e. D' is literally Kostant's D_mu|_V0): False
+  residual EXACTLY equals Sum_i E_i (x) conn_W[i] (as predicted): True
+  nonzero entries in residual (out of 48x48=2304): 192
+  ||alpha*c(v)(x)Id_W||_F^2 = 36
+  ||extra term||_F^2       = 16
+  ratio extra/kostant (size comparison, not a proof of anything): 4/9
+
+==============================================================================
+SUMMARY
+==============================================================================
+  C139/C141's twisted operator D' is NOT literally Kostant/Landweber's
+  D_mu|_{V_0} -- it carries a genuinely EXTRA term (the twist bundle's own
+  Levi-Civita connection, which Kostant's own construction does not have
+  at lambda=0, since r(X_i) kills it there regardless of the H-rep chosen).
+  Slebarski's theorem does NOT directly resolve C142's W_cand question via
+  this route; C139/C141's construction is a more general 'physicist-style'
+  twisted Dirac operator (own connection on W), not Kostant's group-theoretic
+  one (W as a passive label with no connection at lambda=0).

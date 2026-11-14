@@ -1,9 +1,9 @@
-"""Negative Controls Pilot Execution — v0.1.22 (54 cases)
+"""Negative Controls Pilot Execution — v0.1.22 (96 cases)
 
 ⚠️ CRITICAL GUARDRAILS:
 - This script executes FALSIFICATION controls, NOT validation
 - DO NOT run without reviewing pre-registration + implementation plan
-- Protocol immutability: grid locked (54 cases), no threshold changes
+- Protocol immutability: grid locked (96 cases), no threshold changes
 - Forbidden claims: "negative controls validate S³×S¹"
 - Default mode: --print-plan (does NOT execute pilot)
 
@@ -11,34 +11,39 @@ Purpose:
     Test whether harness can reject non-geometric baselines.
     If ANY control reproduces Gate 4B-like PASS pattern → harness lacks specificity.
 
-Grid: 54 cases (25% of Gate 4B 216-case grid)
-    - 3 controls × 2 W × 3 sizes × 1 j_max × 3 seeds
+Grid: 96 cases (revised 2026-06-03 per skeptic audit, see
+reports/BATCH_DESIGN_v0.1.22.md -- supersedes the original 54-case
+pre-registration; the original 3-control/3-size grid was found to need a
+4th control (spectral_circle_scrambled) and s1_size=128 restored, to
+compare against Gate 4B's strongest finding point)
+    - 4 controls × 2 W × 4 sizes × 1 j_max × 3 seeds
 
 Batching strategy:
-    - 6 batches × 9 cases (split by control × disorder_W)
+    - 8 batches × 12 cases (split by control × disorder_W)
     - Batch runtime: ~14 min per batch (estimated)
 
 Pre-requisites:
 1. Pre-registration: reports/S3_S1_NEGATIVE_CONTROLS_PREREGISTRATION_v0.1.22.md
 2. Implementation plan: reports/NEGATIVE_CONTROLS_IMPLEMENTATION_PLAN_v0.1.22.md
-3. Unit tests pass: pytest tests/test_negative_controls_*.py -v
-4. Git status clean
+3. Batch redesign (2026-06-03): reports/BATCH_DESIGN_v0.1.22.md
+4. Unit tests pass: pytest tests/test_negative_controls_*.py -v
+5. Git status clean
 
-Date: 2026-05-22
+Date: 2026-05-22 (grid revised 2026-06-03, see reports/BATCH_DESIGN_v0.1.22.md)
 Status: IMPLEMENTATION (pilot execution pending explicit command)
 
 Related:
 - reports/S3_S1_NEGATIVE_CONTROLS_PREREGISTRATION_v0.1.22.md
 - reports/NEGATIVE_CONTROLS_IMPLEMENTATION_PLAN_v0.1.22.md
+- reports/BATCH_DESIGN_v0.1.22.md
 """
-
-import sys
-import os
-from pathlib import Path
 
 # Thermal constraint mitigation: limit CPU cores to 80% (prevent overheating)
 # Detect total cores, use 80% to leave headroom for cooling
 import multiprocessing
+import os
+import sys
+from pathlib import Path
 
 total_cores = multiprocessing.cpu_count()
 limited_cores = max(1, int(total_cores * 0.8))
@@ -53,21 +58,30 @@ print(f"🔧 Thermal mitigation: limiting to {limited_cores}/{total_cores} CPU c
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-import argparse
-import time
-import json
-import numpy as np
-from collections import defaultdict
+# These imports must come after the OMP/MKL/OPENBLAS thread-limit env vars
+# above are set, or the thermal-mitigation limit has no effect on numpy's
+# BLAS backend -- the ordering is intentional, not accidental. (Verified
+# 2026-09-06: whether ruff's default rule set flags this as E402 depends on
+# the ruff version in use -- newer local installs may not select E402 by
+# default, but the noqa markers below are still correct and harmless either
+# way, since they only suppress a rule that would otherwise fire here.)
+import argparse  # noqa: E402
+import json  # noqa: E402
+import time  # noqa: E402
 
-from cc_toy_lab.controls.negative_controls import (
+import numpy as np  # noqa: E402
+from scipy.linalg import eigh  # noqa: E402
+
+from cc_toy_lab.controls.negative_controls import (  # noqa: E402
+    build_broken_wilson_control,
     build_random_hermitian_control,
     build_scrambled_geometry_control,
-    build_broken_wilson_control,
     build_spectral_circle_scrambled_control,
 )
-from cc_toy_lab.spectral.metrics import mean_adjacent_gap_ratio, inverse_participation_ratio
-from scipy.linalg import eigh
-
+from cc_toy_lab.spectral.metrics import (  # noqa: E402
+    inverse_participation_ratio,
+    mean_adjacent_gap_ratio,
+)
 
 # Locked v0.1.22 negative controls grid
 # v0.1.22 update (2026-06-03): added spectral_circle_scrambled (Control D)
@@ -309,7 +323,7 @@ def run_single_case(case: dict, use_gpu: bool = False) -> dict:
 def run_batch(
     batch: dict,
     output_dir: Path,
-    case_limit: int = None,
+    case_limit: int | None = None,
     cooling_pause: float = 0.0,
     use_gpu: bool = False,
 ) -> list[dict]:
@@ -434,7 +448,7 @@ def main():
         if args.cooling_pause > 0:
             print(f"  ❄️ Thermal mitigation: {args.cooling_pause}s pause between cases")
         if args.use_gpu:
-            print(f"  🚀 GPU acceleration: NVIDIA RTX via CuPy")
+            print("  🚀 GPU acceleration: NVIDIA RTX via CuPy")
         run_batch(
             batch,
             output_dir,
@@ -451,7 +465,7 @@ def main():
             if args.cooling_pause > 0:
                 print(f"  ❄️ Thermal mitigation: {args.cooling_pause}s pause between cases")
             if args.use_gpu:
-                print(f"  🚀 GPU acceleration: NVIDIA RTX via CuPy")
+                print("  🚀 GPU acceleration: NVIDIA RTX via CuPy")
             run_batch(
                 batch,
                 output_dir,

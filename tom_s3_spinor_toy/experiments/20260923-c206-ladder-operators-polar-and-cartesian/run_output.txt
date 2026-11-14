@@ -1,0 +1,62 @@
+======================================================================
+PART A: McMurry 6.3(a) -- ladder operators in POLAR form, l=1
+======================================================================
+y_1,0  = sqrt(3)*cos(theta)/(2*sqrt(pi))
+y_1,1  = -sqrt(6)*exp(I*phi)*sin(theta)/(4*sqrt(pi))
+y_1,-1 = sqrt(6)*exp(-I*phi)*sin(theta)/(4*sqrt(pi))
+
+  L_+ y_{1,0}:
+    raw        = -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi))
+    simplified = -sqrt(3)*(I*sin(phi) + cos(phi))*sin(theta)/(2*sqrt(pi))
+    compare to = sqrt(2) * y_{1,1} = -sqrt(3)*exp(I*phi)*sin(theta)/(2*sqrt(pi))
+    match (+sqrt2): True   match (-sqrt2): False
+
+  L_+ y_{1,-1}:
+    raw        = (sqrt(6)*exp(-I*phi)*sin(theta)*cot(theta)/(4*sqrt(pi)) + sqrt(6)*exp(-I*phi)*cos(theta)/(4*sqrt(pi)))*exp(I*phi)
+    simplified = sqrt(6)*cos(theta)/(2*sqrt(pi))
+    compare to = sqrt(2) * y_{1,0} = sqrt(6)*cos(theta)/(2*sqrt(pi))
+    match (+sqrt2): True   match (-sqrt2): False
+
+  L_+ y_{1,1}:
+    raw        = (sqrt(6)*exp(I*phi)*sin(theta)*cot(theta)/(4*sqrt(pi)) - sqrt(6)*exp(I*phi)*cos(theta)/(4*sqrt(pi)))*exp(I*phi)
+    simplified = 0
+    compare to = 0 (already top of ladder) = 0
+    match (+sqrt2): True   match (-sqrt2): True
+
+  L_- y_{1,0}:
+    raw        = sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi))
+    simplified = sqrt(3)*(-I*sin(phi) + cos(phi))*sin(theta)/(2*sqrt(pi))
+    compare to = sqrt(2) * y_{1,-1} = sqrt(3)*exp(-I*phi)*sin(theta)/(2*sqrt(pi))
+    match (+sqrt2): True   match (-sqrt2): False
+
+  L_- y_{1,1}:
+    raw        = (sqrt(6)*exp(I*phi)*sin(theta)*cot(theta)/(4*sqrt(pi)) + sqrt(6)*exp(I*phi)*cos(theta)/(4*sqrt(pi)))*exp(-I*phi)
+    simplified = sqrt(6)*cos(theta)/(2*sqrt(pi))
+    compare to = sqrt(2) * y_{1,0} = sqrt(6)*cos(theta)/(2*sqrt(pi))
+    match (+sqrt2): True   match (-sqrt2): False
+
+  L_- y_{1,-1}:
+    raw        = (sqrt(6)*exp(-I*phi)*sin(theta)*cot(theta)/(4*sqrt(pi)) - sqrt(6)*exp(-I*phi)*cos(theta)/(4*sqrt(pi)))*exp(-I*phi)
+    simplified = 0
+    compare to = 0 (already bottom of ladder) = 0
+    match (+sqrt2): True   match (-sqrt2): True
+
+PART A ALL PASS: True
+
+======================================================================
+PART B: L_+, L_- in CARTESIAN form, applied to x/r, y/r, z/r
+======================================================================
+  L_+(x/r) = z/sqrt(x**2 + y**2 + z**2)
+  L_+(y/r) = I*z/sqrt(x**2 + y**2 + z**2)
+  L_+(z/r) = (-x - I*y)/sqrt(x**2 + y**2 + z**2)
+  L_-(x/r) = -z/sqrt(x**2 + y**2 + z**2)
+  L_-(y/r) = I*z/sqrt(x**2 + y**2 + z**2)
+  L_-(z/r) = (x - I*y)/sqrt(x**2 + y**2 + z**2)
+
+Ladder-structure cross-check (via (x+iy)/r and (x-iy)/r):
+  L_plus_on_(x+iy)/r_should_be_zero_top_of_ladder: 0
+  L_plus_on_(x-iy)/r_should_raise_to_something_prop_z/r: 2*z/sqrt(x**2 + y**2 + z**2)
+  L_minus_on_(x+iy)/r_should_lower_to_something_prop_z/r: -2*z/sqrt(x**2 + y**2 + z**2)
+  L_minus_on_(x-iy)/r_should_be_zero_bottom_of_ladder: 0
+  L_plus_on_plus_combo_is_zero: True
+  L_minus_on_minus_combo_is_zero: True

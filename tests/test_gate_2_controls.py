@@ -18,7 +18,6 @@ Usage:
 from __future__ import annotations
 
 import numpy as np
-import pytest
 
 from cc_toy_lab.spectral.dirac_s3 import build_s3_dirac_operator, s3_dimension
 
@@ -27,7 +26,17 @@ class TestPositiveControl:
     """Positive control: S³ Dirac eigenvalues match analytical theory."""
 
     def test_eigenvalues_vs_theory_j0(self):
-        """j_max=0 → k=1: expect λ = +1.5, -2.5 (arXiv:1103.4097 page 15)."""
+        """j_max=0 -> k=0,1 (arXiv:1103.4097 Section 6, eq. after (6)).
+
+        Meier's own derivation: on H^q_k, (Dbar+k)(Dbar-(k+2))=0, and after
+        D = Dbar - 3/2 this gives branches +(k+1/2) [degeneracy k(k+1)] and
+        -(k+3/2) [degeneracy (k+1)(k+2)]. At k=0 the positive branch's own
+        basis range (p=1..k) is EMPTY -- degeneracy k(k+1)=0 -- so k=0
+        contributes ONLY -(0+3/2)=-1.5, with degeneracy (0+1)(0+2)=2. This
+        is forced by the paper's own formula, not a special-cased choice.
+        Verified directly against the primary source, 2026-09-06 (previous
+        version of this test omitted the k=0 branch entirely).
+        """
         j_max = 0
         radius = 1.0
 
@@ -37,9 +46,9 @@ class TestPositiveControl:
         # Extract eigenvalues
         eigenvalues = np.linalg.eigvalsh(d_s3)
 
-        # Expected (arXiv:1103.4097 page 15): k=1 → λ₊ = +(1+1/2)/R, λ₋ = -(1+3/2)/R
-        # λ₊ = +1.5, λ₋ = -2.5 (ASYMMETRIC: |1.5| ≠ |2.5|)
-        expected = np.array([-2.5, 1.5])
+        # k=0: -1.5 (positive branch degeneracy 0, doesn't appear).
+        # k=1: +1.5, -2.5.
+        expected = np.array([-2.5, -1.5, 1.5])
 
         # Get unique eigenvalues (ignoring degeneracy)
         actual_unique = np.unique(np.round(eigenvalues, 6))
@@ -48,30 +57,30 @@ class TestPositiveControl:
         np.testing.assert_allclose(actual_unique, expected, atol=1e-6)
 
     def test_eigenvalues_vs_theory_j1(self):
-        """j_max=1 → k=1,2: expect λ = {+1.5, -2.5, +2.5, -3.5}."""
+        """j_max=1 -> k=0,1,2 (arXiv:1103.4097 Section 6): {-1.5, +1.5,-2.5, +2.5,-3.5}."""
         j_max = 1
         radius = 1.0
 
         d_s3, _ = build_s3_dirac_operator(j_max=j_max, radius=radius)
         eigenvalues = np.linalg.eigvalsh(d_s3)
 
-        # Expected: k=1 → {+1.5, -2.5}, k=2 → {+2.5, -3.5}
-        expected = np.array([-3.5, -2.5, 1.5, 2.5])
+        # k=0 -> -1.5; k=1 -> {+1.5, -2.5}; k=2 -> {+2.5, -3.5}
+        expected = np.array([-3.5, -2.5, -1.5, 1.5, 2.5])
 
         actual_unique = np.unique(np.round(eigenvalues, 6))
 
         np.testing.assert_allclose(actual_unique, expected, atol=1e-6)
 
     def test_eigenvalues_vs_theory_j2(self):
-        """j_max=2 → k=1,2,3: expect λ = {+1.5, -2.5, +2.5, -3.5, +3.5, -4.5}."""
+        """j_max=2 -> k=0,1,2,3 (arXiv:1103.4097 Section 6): includes k=0's -1.5."""
         j_max = 2
         radius = 1.0
 
         d_s3, _ = build_s3_dirac_operator(j_max=j_max, radius=radius)
         eigenvalues = np.linalg.eigvalsh(d_s3)
 
-        # Expected: k=1 → {+1.5, -2.5}, k=2 → {+2.5, -3.5}, k=3 → {+3.5, -4.5}
-        expected = np.array([-4.5, -3.5, -2.5, 1.5, 2.5, 3.5])
+        # k=0 -> -1.5; k=1 -> {+1.5,-2.5}; k=2 -> {+2.5,-3.5}; k=3 -> {+3.5,-4.5}
+        expected = np.array([-4.5, -3.5, -2.5, -1.5, 1.5, 2.5, 3.5])
 
         actual_unique = np.unique(np.round(eigenvalues, 6))
 
@@ -85,8 +94,8 @@ class TestPositiveControl:
         d_s3, _ = build_s3_dirac_operator(j_max=j_max, radius=radius)
         eigenvalues = np.linalg.eigvalsh(d_s3)
 
-        # Expected: k=1,2,3 eigenvalues divided by 2.0
-        expected = np.array([-4.5, -3.5, -2.5, 1.5, 2.5, 3.5]) / 2.0
+        # Same 7-value j_max=2 set (including k=0's -1.5) divided by 2.0
+        expected = np.array([-4.5, -3.5, -2.5, -1.5, 1.5, 2.5, 3.5]) / 2.0
 
         actual_unique = np.unique(np.round(eigenvalues, 6))
 
@@ -129,9 +138,9 @@ class TestNegativeControl:
             # S³ Dirac spacing_std ≈ 0 (uniform)
             # Random: spacing_std >> 0
             # Threshold: spacing_std > 0.1 → not Dirac-like
-            assert (
-                spacing_std > 0.1
-            ), f"Random matrix suspiciously uniform spacing: {spacing_std:.3f}"
+            assert spacing_std > 0.1, (
+                f"Random matrix suspiciously uniform spacing: {spacing_std:.3f}"
+            )
 
 
 class TestBaselineMetrics:
@@ -178,7 +187,10 @@ class TestBaselineMetrics:
         assert kernel_count == 0, f"Expected 0 zero modes (S³ trivial), got {kernel_count}"
 
     def test_eigenvalue_pairing(self):
-        """Eigenvalues come in pairs per k-level (arXiv:1103.4097 structure)."""
+        """Eigenvalues come in pairs per k-level (arXiv:1103.4097 structure),
+        except k=0 which contributes a negative-only value with no positive
+        partner (its positive-branch degeneracy k(k+1) is 0 at k=0 -- see
+        test_eigenvalues_vs_theory_j0's docstring for the derivation)."""
         j_max = 2
         radius = 1.0
 
@@ -188,23 +200,25 @@ class TestBaselineMetrics:
         # Get unique eigenvalues
         unique_eigs = np.unique(np.round(eigenvalues, 6))
 
-        # For j_max=2: k=1,2,3 → 6 unique eigenvalues (2 per k-level)
-        # IMPORTANT: eigenvalues are NOT symmetric (|λ₊| ≠ |λ₋|)
-        expected_count = 2 * (j_max + 1)  # 2 eigenvalues per k-level
+        # For j_max=2: k=0 (negative only) + k=1,2,3 (paired) -> 7 unique
+        # eigenvalues, NOT 2*(j_max+1) -- that count silently assumed every
+        # level is paired, which is false at k=0.
+        expected_count = 2 * (j_max + 1) + 1  # k=0's unpaired value, plus j_max+1 pairs
         assert len(unique_eigs) == expected_count, (
-            f"Expected {expected_count} unique eigenvalues (2 per k-level), "
-            f"got {len(unique_eigs)}"
+            f"Expected {expected_count} unique eigenvalues ((j_max+1) pairs "
+            f"plus k=0's unpaired negative value), got {len(unique_eigs)}"
         )
 
-        # Verify pairing: each k-level has λ₊ = +(k+1/2) and λ₋ = -(k+3/2)
-        # For k=1,2,3: expect {+1.5, -2.5}, {+2.5, -3.5}, {+3.5, -4.5}
+        # Verify pairing: each k>=1 level has λ₊ = +(k+1/2) and λ₋ = -(k+3/2);
+        # k=0 contributes only a negative value, no positive partner.
         positive_eigs = unique_eigs[unique_eigs > 1e-9]
         negative_eigs = unique_eigs[unique_eigs < -1e-9]
 
-        # Both branches should have j_max+1 eigenvalues (one per k-level)
-        assert (
-            len(positive_eigs) == j_max + 1
-        ), f"Expected {j_max+1} positive eigenvalues, got {len(positive_eigs)}"
-        assert (
-            len(negative_eigs) == j_max + 1
-        ), f"Expected {j_max+1} negative eigenvalues, got {len(negative_eigs)}"
+        # Positive branch: one value per k=1..j_max+1 level (j_max+1 total).
+        assert len(positive_eigs) == j_max + 1, (
+            f"Expected {j_max + 1} positive eigenvalues, got {len(positive_eigs)}"
+        )
+        # Negative branch: same j_max+1 levels PLUS k=0's own unpaired value.
+        assert len(negative_eigs) == j_max + 2, (
+            f"Expected {j_max + 2} negative eigenvalues (includes k=0), got {len(negative_eigs)}"
+        )

@@ -1,0 +1,13 @@
+{
+  "casimir_values": {
+    "0.0": 2,
+    "1.333333": 6
+  },
+  "commutant_dim": 6,
+  "casimir_ranks": {
+    "0.0": 2,
+    "1.333333": 6
+  },
+  "rank1_inside_multiplet_is_invariant": false,
+  "verdict": "TRIALITY_IS_INVARIANT_BLOCK__NO_RANK1_INVARIANT_SECTOR"
+}

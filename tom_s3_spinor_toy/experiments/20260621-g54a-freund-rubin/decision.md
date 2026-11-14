@@ -3,6 +3,28 @@
 **Date:** 2026-06-21  
 **Verdict:** PROMOTE (F1-F4 PASS; F4 completed as G54-F — Dine-Seiberg runaway in EH frame, 2026-06-21)
 
+## Primary source (added 2026-09-28, found via INSPIRE-HEP)
+
+This round and its whole G54-G66 successor chain cite "the Freund-Rubin
+mechanism" throughout without ever naming the actual paper. Found via
+`mcp__inspirehep__search_papers` (query `a Freund AND a Rubin AND t
+dimensional reduction`, single exact hit, not ambiguous):
+
+> Freund, P.G.O. & Rubin, M.A., **"Dynamics of Dimensional Reduction"**,
+> *Phys. Lett. B* **97** (1980), DOI
+> [10.1016/0370-2693(80)90590-0](https://doi.org/10.1016/0370-2693(80)90590-0),
+> 1049 citations. [INSPIRE-HEP #154579](https://inspirehep.net/literature/154579)
+
+Abstract [VERIFIED-INSPIRE]: in `d`-dimensional unified theories carrying
+gravity plus an antisymmetric tensor field of rank `s-1`, preferential
+compactification of `d-s` or `s` spacelike dimensions occurs — the worked
+example given is 11D supergravity with `s=4`. This is exactly the
+mechanism this round's own `V_flux` formula and the F4/G54-C/G54-D chain
+below build on (a flux quantum on the compactifying factor selects a
+preferred radius/ratio) -- the paper itself was never opened here (pre-
+arXiv era, 1980; only metadata+abstract fetched, not the full text), so
+this is a citation, not an independent re-derivation from the primary.
+
 ## Results
 
 ### F1 (flux formula) — PASS [VERIFIED]

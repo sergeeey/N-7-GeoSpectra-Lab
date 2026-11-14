@@ -1,0 +1,11 @@
+PASS G1 s_N and s_S have Bloch vector +n (max errors 6.0e-16, 5.8e-16)
+PASS G2 s_N = e^{i ph} s_S on the overlap (max error 1.2e-16)
+   winding of s_N/s_S around the equator = 1.000000
+PASS G2b transition winding is +1 (c_1 = +-1, nonzero)
+PASS G3a eta = e^{-i ph/2} chi (max error 1.7e-16)
+PASS G3b chi is single valued in ph (period 2 pi)
+PASS G3c eta is antiperiodic (eta(ph+2pi) = -eta(ph)) -- the gauge factor is responsible
+PASS G3d chi has Bloch vector -n (max error 5.8e-16)
+PASS G5 the stabiliser of N has no nonzero fixed vector in the fibre C^2 (rank 2 = 2)
+
+FAILS: none

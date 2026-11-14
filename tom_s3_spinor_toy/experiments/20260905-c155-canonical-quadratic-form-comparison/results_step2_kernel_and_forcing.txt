@@ -1,0 +1,119 @@
+==============================================================================
+STEP 2a  exact M_BASIS (J-aligned), exact B-orthonormality check
+==============================================================================
+  gram - I is exactly zero: True
+
+==============================================================================
+STEP 2b  exact Levi-Civita Nomizu operators and T^2 Cartan generator
+==============================================================================
+  Nomizu operators exactly antisymmetric: True
+  T^2 Cartan generators built exactly
+
+==============================================================================
+STEP 2c  exact spin_lift (Clifford), exact invariant sector via nullspace
+==============================================================================
+  exact sector dims: domain 3, target 3  (Stage 1b predicted 3,3)
+
+==============================================================================
+STEP 2d  exact equivariant connection family (nullspace, not SVD)
+==============================================================================
+  exact family dimension: 6  (Stage 0 predicted 6)
+  Levi-Civita connection lies exactly in the exact family: True
+
+==============================================================================
+STEP 2e  c_of, exact, built purely from the objects above
+==============================================================================
+  exact c(Levi-Civita), entry (0,0) = 2*I
+  entrywise |.|: [2, 2, 2, 2, 2, 2]
+
+==============================================================================
+STEP 2f  O(eps) = c(J_eps.v) - i*c(v), EXACT, for all 8 eps x 6 family directions
+==============================================================================
+  eps=     (1, 1, 1)  EXACTLY ZERO on ALL 6 directions, uniform sign +i
+  eps=    (1, 1, -1)  per-direction split, signs = ['+i', '+i', '+i', '+i', '-i', '-i']
+  eps=    (1, -1, 1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '+i', '+i']
+  eps=   (1, -1, -1)  per-direction split, signs = ['+i', '+i', '-i', '-i', '-i', '-i']
+  eps=    (-1, 1, 1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '+i', '+i']
+  eps=   (-1, 1, -1)  per-direction split, signs = ['-i', '-i', '+i', '+i', '-i', '-i']
+  eps=   (-1, -1, 1)  per-direction split, signs = ['-i', '-i', '-i', '-i', '+i', '+i']
+  eps=  (-1, -1, -1)  EXACTLY ZERO on ALL 6 directions, uniform sign -i
+
+==============================================================================
+VERDICT
+==============================================================================
+  exactly zero for   : [(-1, -1, -1), (1, 1, 1)]
+  exactly nonzero for: [(-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1)]
+  matches C152 Step 8's floating-point 2-of-8 pattern: True
+
+  CONFIRMED EXACTLY. O(eps) is the identically zero linear map on the
+  6-dim family for precisely the nearly-Kahler pair, built here from
+  scratch in exact rational arithmetic with no floats anywhere.
+
+==============================================================================
+STEP 2g  NON-TAUTOLOGICAL check: Nijenhuis computed DIRECTLY in the
+         ALIGNED basis (no relabelling), for all 8 aligned eps
+==============================================================================
+  aligned eps=     (1, 1, 1)  Nijenhuis (worst component) =     -4   non-integrable
+  aligned eps=    (1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (1, -1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=    (-1, 1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, 1, -1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=   (-1, -1, 1)  Nijenhuis (worst component) =      0   integrable
+  aligned eps=  (-1, -1, -1)  Nijenhuis (worst component) =     -4   non-integrable
+
+  aligned non-integrable set (computed DIRECTLY, no relabelling) : [(-1, -1, -1), (1, 1, 1)]
+  aligned C-linear set (Step 2f, independent computation)        : [(-1, -1, -1), (1, 1, 1)]
+  DIRECT MATCH (non-tautological): True
+  CONFIRMED, non-tautologically: computed independently in the SAME
+  coordinate system with NO relabelling step, non-integrability and
+  global C-linearity pick out the exact same 2 of 8 structures.
+==============================================================================
+C155 STEP 2  concreteness + forcing check
+==============================================================================
+  psi_+ built, ||psi_+||^2 = 2
+  T^2-invariant subspace of Sigma: complex dim 2  (= 4 real)
+
+==============================================================================
+(A)  explicit kernel of  v |-> D_Sigma(v) psi_+   (not a rank number)
+==============================================================================
+  real matrix of M : 16 x 6
+  rank(M)          = 2   (Step 1 predicted image rank 2)
+  dim ker(M)       = 4   (Step 1 predicted 4)
+    ker[0] coeffs=[1, 0, 1, 0, 0, 0]  ->  D_Sigma(v) psi_+ == 0 EXACTLY: True
+    ker[1] coeffs=[0, 1, 0, 1, 0, 0]  ->  D_Sigma(v) psi_+ == 0 EXACTLY: True
+    ker[2] coeffs=[-1, 0, 0, 0, 1, 0]  ->  D_Sigma(v) psi_+ == 0 EXACTLY: True
+    ker[3] coeffs=[0, -1, 0, 0, 0, 1]  ->  D_Sigma(v) psi_+ == 0 EXACTLY: True
+  RANDOM kernel combination annihilates psi_+ EXACTLY: True
+  the SAME connection has  ||c||^2 = 8522896/11025  (nonzero => c survives where mu dies)
+  ker[0] also annihilates psi_- : True
+
+==============================================================================
+(B)  FORCING CHECK -- run BEFORE calling anything a discovery
+==============================================================================
+  B1 support of each family basis direction over the 3 root planes
+    direction 0: e-index block [0, 1], 2-form pairs [(2, 4), (2, 5), (3, 4), (3, 5)]
+    direction 1: e-index block [0, 1], 2-form pairs [(2, 4), (2, 5), (3, 4), (3, 5)]
+    direction 2: e-index block [2, 3], 2-form pairs [(0, 4), (0, 5), (1, 4), (1, 5)]
+    direction 3: e-index block [2, 3], 2-form pairs [(0, 4), (0, 5), (1, 4), (1, 5)]
+    direction 4: e-index block [4, 5], 2-form pairs [(0, 2), (0, 3), (1, 2), (1, 3)]
+    direction 5: e-index block [4, 5], 2-form pairs [(0, 2), (0, 3), (1, 2), (1, 3)]
+
+  B2 per-direction magnitudes (equal across planes => Weyl/Schur forced)
+    dir 0:  ||c||^2 =     32   ||D psi_+||^2 =      8
+    dir 1:  ||c||^2 =     32   ||D psi_+||^2 =      8
+    dir 2:  ||c||^2 =     32   ||D psi_+||^2 =      8
+    dir 3:  ||c||^2 =     32   ||D psi_+||^2 =      8
+    dir 4:  ||c||^2 =     32   ||D psi_+||^2 =      8
+    dir 5:  ||c||^2 =     32   ||D psi_+||^2 =      8
+
+  B3 image of M inside the T^2-invariant subspace
+    M(dir 0) lies in the T^2-invariant subspace: True
+    M(dir 1) lies in the T^2-invariant subspace: True
+    M(dir 2) lies in the T^2-invariant subspace: True
+    M(dir 3) lies in the T^2-invariant subspace: True
+    M(dir 4) lies in the T^2-invariant subspace: True
+    M(dir 5) lies in the T^2-invariant subspace: True
+    (equivariance predicts YES for all; image is 2 REAL dims inside a
+     4-real-dim invariant space, so 2 extra real dims are killed by
+     something beyond equivariance -- that is what B2 sign pattern tests)

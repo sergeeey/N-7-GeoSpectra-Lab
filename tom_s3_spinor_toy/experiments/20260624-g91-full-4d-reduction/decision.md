@@ -105,3 +105,9 @@ Until ρ₃ is independently stabilized, the verdict is CONSTRAINED (not UNCONDI
 frame-independent given the path constraint. It improves on G88A (proxy)
 in two ways: (1) frame independence proved, (2) correct KK eigenvalue used.
 The single remaining assumption is external stabilization of ρ₃.
+
+
+---
+
+## Addendum 2026-10-03 (C219; original text above unedited)
+C219 audit A3 measured (patched-constant rerun of this script, not a re-derivation): replacing the hard-coded rho6*=1.090 by the exact 1.1541 moves the AdS minimum radius 1.179 -> 1.248, m_mod/m_KK 0.198% -> 0.149% (-25%), m2_KK 0.161 -> 0.065, G88A canonical ratio 0.252% -> 0.179%. Existence of the minimum and the qualitative structure are unchanged; absolute numbers are not robust to the B10 fit error of G54-C. See experiments/20261003-c219-h8-computed-dirac-casimir-2d-landscape/SW_FIT_AUDIT.md.

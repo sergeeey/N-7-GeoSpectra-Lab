@@ -1,0 +1,46 @@
+{
+  "n010_structure_constant_checks": {
+    "C_K1K2_to_H3_vs_eps123": {
+      "got": 1.0,
+      "expected": 1.0
+    },
+    "C_H_closure_H1H2_H3": {
+      "got": 1.0,
+      "expected": 1.0
+    },
+    "mixed_Ka_A_vs_fGellMann": {
+      "got": 0.5000000000000002,
+      "expected": 0.5
+    }
+  },
+  "n010_secondary_check_all_match": true,
+  "n010_calibration": [
+    {
+      "label": "N_I^010 (eq 5.72)",
+      "R_ab": 12.000000000000005,
+      "R_AB": 12.000000000000004,
+      "off_diag": 3.947702281153776e-15,
+      "pass": true
+    },
+    {
+      "label": "N_II^010 (eq 5.73)",
+      "R_ab": 12.000000000000005,
+      "R_AB": 12.000000000000004,
+      "off_diag": 2.197038757335679e-15,
+      "pass": true
+    }
+  ],
+  "calibration_passed": true,
+  "status": "PASS_CALIBRATED",
+  "g2su3_ricci_diag": [
+    0.8333333333333339,
+    0.8333333333333337,
+    0.8333333333333338,
+    0.8333333333333341,
+    0.8333333333333337,
+    0.8333333333333335
+  ],
+  "g2su3_einstein_constant": 0.8333333333333339,
+  "g2su3_einstein_deviation": 4.440892098500626e-16,
+  "g2su3_off_diagonal_max": 3.951676872363595e-16
+}

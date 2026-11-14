@@ -1,0 +1,44 @@
+{
+  "part0_transcription_check": {
+    "match_t12": true,
+    "match_t23": true,
+    "match_t31": true,
+    "reconstructed_t12": "Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])",
+    "reconstructed_t23": "Matrix([[0, -1, 0], [-1/2, 0, 1/2], [0, 1, 0]])",
+    "reconstructed_t31": "Matrix([[0, -I, 0], [I/2, 0, I/2], [0, -I, 0]])",
+    "all_match": true
+  },
+  "part1_intertwiner_search": {
+    "solved": true,
+    "free_symbols": [
+      "u22"
+    ],
+    "n_free_params": 1,
+    "u_concrete": "Matrix([[-1, 0, 0], [0, sqrt(2)/2, 0], [0, 0, 1]])",
+    "det_u_nonzero": true,
+    "det_u": "-sqrt(2)/2",
+    "holdout_direct_ok": false,
+    "similarity_direct_minus_ly": "Matrix([[0, sqrt(2)*I, 0], [-sqrt(2)*I, 0, sqrt(2)*I], [0, -sqrt(2)*I, 0]])",
+    "holdout_classification": "TRANSPOSE",
+    "our_lx": "Matrix([[0, sqrt(2)/2, 0], [sqrt(2)/2, 0, sqrt(2)/2], [0, sqrt(2)/2, 0]])",
+    "our_ly": "Matrix([[0, -sqrt(2)*I/2, 0], [sqrt(2)*I/2, 0, -sqrt(2)*I/2], [0, sqrt(2)*I/2, 0]])",
+    "our_lz": "Matrix([[1, 0, 0], [0, 0, 0], [0, 0, -1]])"
+  },
+  "part2_scan_alternate_role_maps": {
+    "needed": true,
+    "against_minus_ly": true,
+    "against_ly_transpose": true,
+    "against_minus_ly_transpose": false,
+    "similarity_direct": "Matrix([[0, sqrt(2)*I/2, 0], [-sqrt(2)*I/2, 0, sqrt(2)*I/2], [0, -sqrt(2)*I/2, 0]])",
+    "ly": "Matrix([[0, -sqrt(2)*I/2, 0], [sqrt(2)*I/2, 0, -sqrt(2)*I/2], [0, sqrt(2)*I/2, 0]])"
+  },
+  "part3_corrected_role_map": {
+    "role_map": "T_12<->L_z, T_23<->L_x, T_31<->-L_y",
+    "checks": {
+      "T12_vs_Lz": true,
+      "T23_vs_Lx": true,
+      "T31_vs_minus_Ly": true
+    },
+    "all_pass": true
+  }
+}

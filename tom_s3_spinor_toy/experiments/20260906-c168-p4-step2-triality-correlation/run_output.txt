@@ -1,0 +1,202 @@
+{
+  "T1_zeta3_and_Ad": {
+    "zeta3_cubed_equals_identity": true,
+    "zeta3_is_order_exactly_3": true,
+    "Ad_zeta3_matrix": [
+      [
+        "-1/2",
+        "-sqrt(3)/2",
+        "0"
+      ],
+      [
+        "sqrt(3)/2",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "Ad_matches_C167_cited_closed_form": true,
+    "Ad_eigs_match_1_omega_omega2_as_a_set": true
+  },
+  "T2_tau": {
+    "tau_matrix": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "tau_cubed_equals_identity": true,
+    "tau_is_order_exactly_3": true,
+    "tau_eigs_match_1_omega_omega2_as_a_set": true
+  },
+  "T3_freeness": {
+    "checks": [
+      {
+        "k": 1,
+        "zeta3_k_equals_identity": false,
+        "conclusion": "zeta3^k != I -> diagonal action free at this k regardless of tau"
+      },
+      {
+        "k": 2,
+        "zeta3_k_equals_identity": false,
+        "conclusion": "zeta3^k != I -> diagonal action free at this k regardless of tau"
+      }
+    ],
+    "diagonal_action_is_free": true
+  },
+  "T4_spin_holonomies": {
+    "H0_is_identity": true,
+    "H1_is_zeta3": true,
+    "H1_order_exactly_3": true,
+    "note": "H0=I2 is a MODELING ASSUMPTION per claim.md item 2 of 'What this does NOT mean' -- not independently re-derived from the Dirac operator this round."
+  },
+  "T5_T6_sector_reports": {
+    "t0": {
+      "sector": "t=0",
+      "D_matrix_shape": [
+        6,
+        6
+      ],
+      "dim_invariant_eigenvalue_1_subspace": 2,
+      "channel_weight_per_invariant_vector": [
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "channel_participates_v_s_c": [
+        true,
+        true,
+        true
+      ],
+      "n_participating_channels": 3,
+      "classification": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE"
+    },
+    "t1": {
+      "sector": "t=1",
+      "D_matrix_shape": [
+        6,
+        6
+      ],
+      "dim_invariant_eigenvalue_1_subspace": 2,
+      "channel_weight_per_invariant_vector": [
+        [
+          "(1 - (-1)**(1/3))*(1 + sqrt(3)*I)/2",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "(1 - (-1)**(1/3))*(1 + sqrt(3)*I)/2",
+          "1"
+        ]
+      ],
+      "channel_participates_v_s_c": [
+        true,
+        true,
+        true
+      ],
+      "n_participating_channels": 3,
+      "classification": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE"
+    }
+  },
+  "T7_generality_check": {
+    "t1_generic_order3_H1": {
+      "sector": "t=1 (generic order-3 H1)",
+      "D_matrix_shape": [
+        6,
+        6
+      ],
+      "dim_invariant_eigenvalue_1_subspace": 2,
+      "channel_weight_per_invariant_vector": [
+        [
+          "1 + sqrt(3)*(-2*(-1)**(5/6) + I)/9",
+          "1 + sqrt(3)*(-2*(-1)**(5/6) + I)/9",
+          "4*sqrt(3)*(-2*(-1)**(5/6) + I)/9"
+        ],
+        [
+          "1 + sqrt(3)*(-2*(-1)**(5/6) + I)/9",
+          "4*sqrt(3)*(-2*(-1)**(5/6) + I)/9",
+          "1 + sqrt(3)*(-2*(-1)**(5/6) + I)/9"
+        ]
+      ],
+      "channel_participates_v_s_c": [
+        true,
+        true,
+        true
+      ],
+      "n_participating_channels": 3,
+      "classification": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE"
+    },
+    "t1_identity_control": {
+      "sector": "t=1 (H1=Identity control)",
+      "D_matrix_shape": [
+        6,
+        6
+      ],
+      "dim_invariant_eigenvalue_1_subspace": 2,
+      "channel_weight_per_invariant_vector": [
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "channel_participates_v_s_c": [
+        true,
+        true,
+        true
+      ],
+      "n_participating_channels": 3,
+      "classification": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE"
+    },
+    "summary": {
+      "dim_invariant_t0": 2,
+      "dim_invariant_t1_zeta3": 2,
+      "dim_invariant_t1_generic_order3": 2,
+      "dim_invariant_t1_identity_control": 2,
+      "all_dims_equal": true,
+      "classification_t0": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE",
+      "classification_t1_zeta3": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE",
+      "classification_t1_generic_order3": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE",
+      "classification_t1_identity_control": "NON-EXCLUSIVE-ALL-THREE-PARTICIPATE",
+      "all_classifications_equal": true,
+      "interpretation": "If all_dims_equal AND all_classifications_equal: the classification (dimension=2, all three channels participate) is FORCED by tau being a regular representation of Z3 on 3 letters, independent of H_1's specific value (standard fact: V (x) regular_rep = dim(V) copies of regular_rep, for ANY V). This round's specific holonomy content (Ad(zeta_3) / zeta_3 from the geometric quotient) would then carry NO independent discriminating weight in this classification-level check -- reported explicitly per claim.md C2, not omitted."
+    }
+  },
+  "T8_character_theory_confirmation": {
+    "chi_W_(character_of_tau_on_Z3_elements_e_g_g2)": [
+      "3",
+      "0",
+      "0"
+    ],
+    "matches_regular_rep_character_3_0_0": true,
+    "conclusion": "tau is (a copy of) the regular representation of Z3 -- character [3,0,0] confirms it directly. Standard representation theory then FORCES V (x) tau = dim(V) copies of the regular rep for ANY rep V of Z3, so the classification-level result (dim invariant subspace, all-channels-participate) is a structural consequence of tau's identity as the regular rep, not of the specific holonomy H_t."
+  }
+}

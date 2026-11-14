@@ -1,0 +1,24 @@
+T1 (kernel_dim + |a|,|b| magnitudes match C73b's own independently-run sweep exactly): PASS
+T1b (block(theta) == exp(-i*theta)*Block_t1 exactly, i.e. Block_t2 == -i*Block_t1): PASS
+T2 (antipodal overlap ~= 1): PASS {'0': 1.0000000000000002, '22.5': 1.0000000000000002, '45': 1.0000000000000004, '67.5': 1.0000000000000002, '90': 1.0000000000000002, '112.5': 1.0, '135': 1.0000000000000002, '157.5': 1.0000000000000002, '180': 1.0000000000000002, '202.5': 1.0000000000000002, '225': 1.0000000000000004, '247.5': 1.0000000000000002, '270': 1.0000000000000002}
+T3 (reduced vs full-embedding overlap agree): PASS
+
+overlap(theta, theta_NOMIZU) across the sweep:
+  theta=0: overlap=1.000000
+  theta=22.5: overlap=1.000000
+  theta=45: overlap=1.000000
+  theta=67.5: overlap=1.000000
+  theta=90: overlap=1.000000
+  theta=112.5: overlap=1.000000
+  theta=135: overlap=1.000000
+  theta=157.5: overlap=1.000000
+  theta=180: overlap=1.000000
+  theta=202.5: overlap=1.000000
+  theta=225: overlap=1.000000
+  theta=247.5: overlap=1.000000
+  theta=270: overlap=1.000000
+
+min=1.000000  max=1.000000
+MAIN CLAIM (kernel direction rotates, i.e. NOT constant): FALSE
+
+Wrote E:\Проверка Гипотез\работаю над проверкой гипотез\N-7-GeoSpectra-Lab\tom_s3_spinor_toy\experiments\20260917-c198-kernel-orientation-vs-dimension\results_c198.json

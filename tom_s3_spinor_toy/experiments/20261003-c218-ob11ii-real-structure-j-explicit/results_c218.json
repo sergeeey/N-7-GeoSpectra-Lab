@@ -1,0 +1,18 @@
+{
+  "conj_true_equals_entrywise_conjugate": true,
+  "nullity_eps_+1": 1,
+  "nullity_eps_-1": 1,
+  "J2_eps_+1": "1",
+  "gamma_sign_eps_+1": -1,
+  "J2_eps_-1": "-1",
+  "gamma_sign_eps_-1": -1,
+  "P3_max_residual_eps_+1": 0,
+  "P3_max_residual_eps_-1": 0,
+  "P4a_norm_res": 2.0,
+  "P4a_two_norm_T": 2.0,
+  "P4b_random_unitary_worst_residual": 1.3453221408136569,
+  "P4c_random_antiherm_residual": 3.8554605567629237,
+  "commutant_dim_ADNU_R6": 2,
+  "P5c_max_residual": 0.0,
+  "P5d_random_so6_residual": 2.5
+}

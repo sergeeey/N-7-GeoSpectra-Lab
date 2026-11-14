@@ -245,13 +245,16 @@ statement — **then** the tension becomes concrete and sharp: `n_L=3`,
 
 1. Violates round90's Section 3-4 anomaly requirement `n_L=n_R` (Section 3
    above) directly (`3 != 0`).
-2. **Additionally and independently** would violate Witten's `SU(2)` global
-   anomaly for `SU(2)_L` itself (round90 Section 3a, `Phys. Lett.` B117 (1982)
-   324-328, reused by citation): an `SU(2)` gauge theory with an ODD number of
-   doublets is inconsistent, and `n_L=3` is odd. This second consequence is a
-   NEW observation (not previously flagged in E14 or round90) worth recording
-   as a pearl candidate (below) — it does not change today's verdict, since it
-   only fires under the same not-yet-established literal-pairing scenario.
+2. ~~**Additionally and independently** would violate Witten's `SU(2)` global
+   anomaly for `SU(2)_L` itself... an `SU(2)` gauge theory with an ODD number of
+   doublets is inconsistent, and `n_L=3` is odd.~~ **RETRACTED, 2026-09-05
+   (flagged by C159 §1a, confirmed below in the Pearl-registry candidate
+   section) — this conflates `n_L` (generation count) with doublet count;
+   round90's own correction (Section 2 above, same file this point cites)
+   establishes each generation supplies 4 doublets, so the true count
+   `4·n_L` is even for every integer `n_L`, `n_L=3` included. Witten's
+   anomaly is never violated by this construction. Only point 1 (round90's
+   own `n_L=n_R` cubic-anomaly condition) stands.**
 
 This is the concrete, falsifiable form the Relaxation Map takes: the
 dissolution found here holds only in the ABSENCE of a specific future result
@@ -323,10 +326,34 @@ round90's time, using material round90 itself already had.**
 |---|---|
 | Close H1c/KT-8 with a definite S6-channel↔S3-`t`-sector pairing rule | A stated 13D parent action (E18/KT-1's core gap) specifying independent fields for `t=0` and `t=1` and how each couples to the 3 triality channels — not attempted here |
 | Check whether such a pairing, if found, assigns all 3 generations to one `t`-sector or splits them | Depends entirely on the still-missing parent action; cannot be checked in advance of it |
-| If the "all-3-to-one-sector" scenario of Section 5 is ever realized | Would need to reconcile with BOTH round90's `n_L=n_R` requirement AND the newly-flagged Witten-odd-doublet problem (Section 5, point 2) — a strictly harder combined constraint than round90 alone identified |
+| If the "all-3-to-one-sector" scenario of Section 5 is ever realized | Would need to reconcile with round90's `n_L=n_R` requirement. ~~AND the newly-flagged Witten-odd-doublet problem (Section 5, point 2)~~ **RETRACTED 2026-09-05 — see Pearl-registry candidate section below: this constraint does not bind, round90's condition alone applies.** |
 | Upgrade L5's "left-handed = SM doublet" sentence from label to derivation | Would require an explicit argument for why the S6-chirality sector (`D^+`/`D^-`) determines, rather than merely suggests a name for, the S3 `t`-sector — not supplied anywhere in this project currently |
 
 ## Pearl-registry candidate
+
+> **⚠️ RETRACTED (2026-09-05, flagged by C159 §1a, confirmed and corrected
+> here — original text below preserved unchanged, per this project's
+> never-delete-only-annotate discipline):** this pearl candidate conflates
+> "number of generations assigned to the `SU(2)_L` sector" (`n_L`) with
+> "number of `SU(2)_L` doublets," and is **wrong** by this project's own
+> already-recorded correction, in the very file this section cites.
+> Round90's own retroactive correction block (top of
+> `experiments/20260717-round90-pati-salam-gauge-completeness/decision.md`,
+> added 2026-07-17, same day as this file) establishes explicitly: **"each
+> Pati-Salam multiplet ALONE already contains 4 `SU(2)`-doublets (the `4`
+> of `SU(4)` supplies the multiplicity), which is even."** That is, a
+> single generation's `(4,2,1)` content is not one `SU(2)_L` doublet but
+> **four** — so `n_L` generations supply `4·n_L` doublets, which is
+> **even for every non-negative integer `n_L`**, `n_L=3` included. Witten's
+> `SU(2)` global anomaly (odd doublet count is inconsistent) can therefore
+> **never** be violated by this construction's own matter content,
+> regardless of how many generations land in the `SU(2)_L` sector — the
+> "additional, independent" inconsistency this section claimed for the
+> `n_L=3` scenario **does not exist**. The original claim rested on the
+> same doublet-counting confusion round90's own correction block had
+> already retracted, in the same file this section cites (Section 2
+> above), one day before this observation was drafted. Below is the
+> ORIGINAL, uncorrected text, kept for the record:
 
 **Observation:** if this project's H1c/KT-8 gap is ever closed by a pairing
 rule that assigns all 3 generations to the same `S^3` `t`-sector (matching a
@@ -345,6 +372,14 @@ global registry). `next_check`: before any future experiment claims to close
 H1c/KT-8, verify the resulting `S^3`-side doublet counts against BOTH this
 project's own round90 cubic-anomaly requirement AND this Witten-parity check,
 not round90's condition alone.
+
+**Net effect of the retraction:** round90's own `n_L=n_R` cubic-anomaly
+requirement (Section 3 above, unaffected by this correction) remains the
+ONLY anomaly-cancellation condition this project's construction is subject
+to — there is no "strictly harder combined constraint" from Witten's
+anomaly on top of it. The Relaxation Map row above referencing "the
+newly-flagged Witten-odd-doublet problem" is likewise retracted — it named
+a constraint that does not bind.
 
 ## Assumptions carried, unresolved
 

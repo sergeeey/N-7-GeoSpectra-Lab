@@ -1,0 +1,24 @@
+{
+  "control": {
+    "ric_c_KN": 5.000000000000001,
+    "ric_c_spread": 8.881784197001252e-16,
+    "ric_c_offdiag": 2.394370367673545e-16,
+    "torsion_norm_sq_from_bracket": 0.0,
+    "torsion_antisym_err": 0.0,
+    "ric_g_castellani": 2.5000000000000004,
+    "triangle_max_err": 2.500000000000001
+  },
+  "kn_control_pass": true,
+  "castellani_control_pass": false,
+  "g2su3": {
+    "ric_c_KN": 4.000000000000003,
+    "ric_c_spread": 1.7763568394002505e-15,
+    "ric_c_offdiag": 1.6861512186494565e-15,
+    "torsion_norm_sq_from_bracket": 24.00000000000002,
+    "torsion_antisym_err": 2.4998514922986333e-15,
+    "ric_g_castellani": 2.5000000000000018,
+    "triangle_max_err": 2.500000000000002
+  },
+  "status": "MISMATCH",
+  "predicted_by_C215": 1.5
+}

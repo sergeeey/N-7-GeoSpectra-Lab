@@ -1,0 +1,321 @@
+# Independent re-implementation, outputs only (scripts not archived). Written by a subagent given the definitions and tasks T1-T10, no expected answers.
+# Note: in a_out.txt the T4 section ends with a sympy NotImplementedError traceback; a2_out.txt redoes that tail. In c_out.txt the last block is the exploratory j-|s| table; its first-pass False for j=3/2, s=+-3/2 was re-run on a narrower grid in d_out.txt.
+
+######## a_out.txt
+=== T1: commutators, generic F(theta,phi), symbolic s ===
+[L+,L-] - 2 Lz     -> 0
+[Lz,L+] - L+       -> 0
+[Lz,L-] + L-       -> 0
+
+--- Casimir on F = f(theta) e^{i m phi}, symbolic m,s: compare with
+    -f'' - cot f' + (m + s cos)^2/sin^2 f + s^2 f
+L2 f e^{im phi} - claimed form = 0
+
+=== T2: solve L+ psi_up = 0 (m=+1/2), L- psi_dn = 0 (m=-1/2) ===
+s = 0
+   direct ODE check that L+ psi_up reduces to e^{3i phi/2} * ODE_up: 0
+   direct ODE check that L- psi_dn reduces to e^{-3i phi/2} * ODE_dn: 0
+   dsolve (up): Eq(chi(theta), C1*sqrt(sin(theta)))
+   dsolve (dn): Eq(chi(theta), C1*sqrt(sin(theta)))
+s = 1/2
+   direct ODE check that L+ psi_up reduces to e^{3i phi/2} * ODE_up: 0
+   direct ODE check that L- psi_dn reduces to e^{-3i phi/2} * ODE_dn: 0
+   dsolve (up): Eq(chi(theta), C1*tan(theta/2)*Abs(cos(theta/2)))
+   dsolve (dn): Eq(chi(theta), C1*Abs(cos(theta/2)))
+s = -1/2
+   direct ODE check that L+ psi_up reduces to e^{3i phi/2} * ODE_up: 0
+   direct ODE check that L- psi_dn reduces to e^{-3i phi/2} * ODE_dn: 0
+   dsolve (up): Eq(chi(theta), C1*Abs(cos(theta/2)))
+   dsolve (dn): Eq(chi(theta), C1*tan(theta/2)*Abs(cos(theta/2)))
+
+Separable ODE: chi'/chi = (1/2) cot + s/sin   (up),   chi'/chi = (1/2) cot - s/sin   (dn)
+sympy integral of (1/2)cot + s/sin : s*(log(cos(theta) - 1)/2 - log(cos(theta) + 1)/2) + log(sin(theta))/2
+closed forms: chi_up = C sin^{1/2} tan(theta/2)^s ; chi_dn = C sin^{1/2} tan(theta/2)^{-s}
+s=0: symbolic L+psi_up = 0 ; L-psi_dn = 0 ; numeric max|.| = 4.58e-16, 4.58e-16
+s=1/2: symbolic L+psi_up = 0 ; L-psi_dn = 0 ; numeric max|.| = 3.97e-15, 3.55e-15
+s=-1/2: symbolic L+psi_up = 0 ; L-psi_dn = 0 ; numeric max|.| = 3.55e-15, 3.97e-15
+s=1: symbolic L+psi_up = 0 ; L-psi_dn = 0 ; numeric max|.| = 3.18e-14, 2.93e-14
+s=-1: symbolic L+psi_up = 0 ; L-psi_dn = 0 ; numeric max|.| = 2.93e-14, 3.18e-14
+s=3/2: symbolic L+psi_up = 0 ; L-psi_dn = 0 ; numeric max|.| = 4.55e-13, 7.63e-13
+
+For generic symbolic s:
+L+ psi_up(s) = 0   L- psi_dn(s) = 0
+
+Special forms: s=0 : chi_up = chi_dn = sin^{1/2}(theta)
+               s=1/2 : chi_up = sin^{1/2} tan^{1/2}(theta/2); identity check vs sqrt(2) sin(theta/2): 2.220446049250313e-16
+               s=1/2 : chi_dn = sin^{1/2} tan^{-1/2}(theta/2); identity check vs sqrt(2) cos(theta/2): 2.220446049250313e-16
+
+=== T3: does L- psi_up ∝ psi_dn (const coeff)?  does L+ psi_dn ∝ psi_up? ===
+s=0: analytic formulas for L-psi_up, L+psi_dn verified, max residual 9.2e-16, 9.2e-16
+s=1/2: analytic formulas for L-psi_up, L+psi_dn verified, max residual 4.1e-15, 3.5e-15
+s=-1/2: analytic formulas for L-psi_up, L+psi_dn verified, max residual 3.5e-15, 4.1e-15
+s=s: analytic formulas for L-psi_up, L+psi_dn verified, max residual 1.9e-12, 4.5e-12
+
+s=0:
+   ratio L-psi_up / psi_dn  (sympy simplify) = -1/tan(theta)
+   ratio L+psi_dn / psi_up  (sympy simplify) = 1/tan(theta)
+   numeric: ratio- real range [-19.983331, 19.983331], max|imag| 9.3e-16
+   numeric: ratio+ real range [-19.983331, 19.983331], max|imag| 9.3e-16
+   L2 psi_up / psi_up = 3/4   ; numeric residual vs 3/4: 7.600742297140889e-14
+   L2 psi_dn / psi_dn = 3/4
+s=1/2:
+   ratio L-psi_up / psi_dn  (sympy simplify) = -(cos(theta) + 1)*tan(theta/2)/sin(theta)
+   ratio L+psi_dn / psi_up  (sympy simplify) = (cos(theta) - 1)/(sin(theta)*tan(theta/2))
+   numeric: ratio- real range [-1.000000, -1.000000], max|imag| 4.5e-14
+   numeric: ratio+ real range [-1.000000, -1.000000], max|imag| 2.3e-14
+   L2 psi_up / psi_up = -3*tan(theta/2)**2/16 - tan(theta/2)/(2*tan(theta)) + 5/8 - 1/(2*tan(theta/2)*tan(theta)) + 1/(16*tan(theta/2)**2) + cos(theta)/(2*sin(theta)**2) + 1/(4*sin(theta)**2)   ; numeric residual vs 3/4: 1.6575633342598904e-13
+   L2 psi_dn / psi_dn = tan(theta/2)**2/16 + tan(theta/2)/(2*tan(theta)) + 5/8 + 1/(2*tan(theta/2)*tan(theta)) - 3/(16*tan(theta/2)**2) - cos(theta)/(2*sin(theta)**2) + 1/(4*sin(theta)**2)
+s=-1/2:
+   ratio L-psi_up / psi_dn  (sympy simplify) = (1 - cos(theta))/(sin(theta)*tan(theta/2))
+   ratio L+psi_dn / psi_up  (sympy simplify) = (cos(theta) + 1)*tan(theta/2)/sin(theta)
+   numeric: ratio- real range [1.000000, 1.000000], max|imag| 2.3e-14
+   numeric: ratio+ real range [1.000000, 1.000000], max|imag| 4.5e-14
+   L2 psi_up / psi_up = tan(theta/2)**2/16 + tan(theta/2)/(2*tan(theta)) + 5/8 + 1/(2*tan(theta/2)*tan(theta)) - 3/(16*tan(theta/2)**2) - cos(theta)/(2*sin(theta)**2) + 1/(4*sin(theta)**2)   ; numeric residual vs 3/4: 9.06470090778756e-14
+   L2 psi_dn / psi_dn = -3*tan(theta/2)**2/16 - tan(theta/2)/(2*tan(theta)) + 5/8 - 1/(2*tan(theta/2)*tan(theta)) + 1/(16*tan(theta/2)**2) + cos(theta)/(2*sin(theta)**2) + 1/(4*sin(theta)**2)
+
+Generic s ratio formulas (closed form):
+  r_-(theta;s) = L-psi_up/psi_dn = -(cos theta + 2 s) tan(theta/2)^(2 s) / sin theta
+  r_+(theta;s) = L+psi_dn/psi_up = +(cos theta - 2 s) tan(theta/2)^(-2 s) / sin theta
+  product r_+ r_- = (4 s^2 - cos^2 theta)/sin^2 theta ; for s=±1/2 -> 1
+  s=0: r_- simplified: -1/tan(theta) ; r_+ simplified: 1/tan(theta)
+       check against direct operators: 9.155133597044475e-16 9.155133597044475e-16
+  s=1/2: r_- simplified: -(cos(theta) + 1)*tan(theta/2)/sin(theta) ; r_+ simplified: (cos(theta) - 1)/(sin(theta)*tan(theta/2))
+       check against direct operators: 4.101212462150837e-15 3.4584173955548887e-15
+  s=-1/2: r_- simplified: (1 - cos(theta))/(sin(theta)*tan(theta/2)) ; r_+ simplified: (cos(theta) + 1)*tan(theta/2)/sin(theta)
+       check against direct operators: 3.4584173955548887e-15 4.101212462150837e-15
+
+=== T4: s=0, L-L- psi_up ===
+L- psi_up      = -exp(-I*phi/2)*cos(theta)/sqrt(sin(theta))
+L-^2 psi_up    = -exp(-3*I*phi/2)/sin(theta)**(3/2)
+  residual vs  -sin^{-3/2}(theta) e^{-3 i phi/2} : 8.286281022897839e-14
+L-^3 psi_up    = -3*exp(-5*I*phi/2)*cos(theta)/sin(theta)**(5/2)
+  residual vs  -3 cos sin^{-5/2} e^{-5 i phi/2} : 5.697967974875459e-12
+L-^4 psi_up    = (12*sin(theta)**2 - 15)*exp(-7*I*phi/2)/sin(theta)**(7/2)
+|L-^2 psi_up|^2 sin theta = conjugate(sin(theta)**(-3/2))/sqrt(sin(theta))
+Traceback (most recent call last):
+  File "C:\Users\serge\AppData\Local\Temp\claude\E-------------------------------------------------N-7-GeoSpectra-Lab-tom-s3-spinor-toy\26a37c6d-edb7-4c68-99f5-893483434e72\scratchpad\c221_indep\a_t1_t4.py", line 176, in <module>
+    sp.limit(I2, eps, 0, "+"),
+    ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\limits.py", line 66, in limit
+    return Limit(e, z, z0, dir).doit(deep=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\limits.py", line 384, in doit
+    r = gruntz(e, z, z0, dir)
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\gruntz.py", line 695, in gruntz
+    r = limitinf(e0, z)
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\core\cache.py", line 72, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\gruntz.py", line 452, in limitinf
+    c0, e0 = mrv_leadterm(e, x)
+             ~~~~~~~~~~~~^^^^^^
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\core\cache.py", line 72, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\gruntz.py", line 494, in mrv_leadterm
+    Omega, exps = mrv(e, x)
+                  ~~~^^^^^^
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\gruntz.py", line 263, in mrv
+    s, expr = mrv(d, x)
+              ~~~^^^^^^
+  File "C:\Users\serge\miniconda3\Lib\site-packages\sympy\series\gruntz.py", line 319, in mrv
+    raise NotImplementedError(
+        "Don't know how to calculate the mrv of '%s'" % e)
+NotImplementedError: Don't know how to calculate the mrv of 'Integral(conjugate(sin(theta)**(-3/2))/sqrt(sin(theta)), (theta, 1/epsilon, pi - 1/epsilon))'
+
+######## a2_out.txt
+=== T4 tail (s=0): integrals of L- psi_up and L-^2 psi_up ===
+density check |L-psi_up|^2 : 1.0658141036401503e-14
+density check |L-^2 psi_up|^2 : 3.637978807091713e-12
+<L-psi_up, L-psi_up> = 2 pi int_0^pi cos^2 dtheta = pi**2
+2 pi int_eps^{pi-eps} sin^-2 dtheta = 4*pi/tan(epsilon)
+  -> eps->0 limit: oo
+  numeric cutoffs eps = 1e-1,1e-2,1e-3,1e-4: [125.24454760421162, 1256.5951732546139, 12566.366425568687, 125663.70572471271]
+  times eps (should tend to 4 pi = 12.566370614359172 ): [12.524454760421163, 12.56595173254614, 12.566366425568686, 12.566370572471271]
+  quad eps=0.1: 125.244548
+  quad eps=0.01: 1256.595173
+  quad eps=0.001: 12566.366426
+<psi_dn, L- psi_up> = 2 pi int sin^{1/2} (-cos sin^{-1/2}) sin dtheta = 0
+L2 (L- psi_up) / (L- psi_up): 3/4
+L-psi_up / psi_dn (s=0) = -cot(theta): unbounded at both poles (|.|~1/theta).
+near theta->0 : L-psi_up ~ -theta^{-1/2},  psi_dn ~ theta^{1/2}
+Hermiticity: <psi_up, L+ L- psi_up> = <L-psi_up, L-psi_up>?   L+L- = L2 - Lz^2 + Lz ->  (3/4 - 1/4 + 1/2)=1 times <psi_up,psi_up>
+   <psi_up,psi_up> = pi**2  ; <L-psi_up,L-psi_up> = pi**2
+   L+ psi_dn(s=0) = exp(I*phi/2)*cos(theta)/sqrt(sin(theta))
+   <L- psi_up, psi_dn> = 0  ; <psi_up, L+ psi_dn> = 0
+
+######## b_out.txt
+=== T5: norms ===
+--- s = 0 (constants = 1 : psi_up = sin^(1/2) tan^s(th/2) e^(i phi/2), psi_dn = sin^(1/2) tan^-s(th/2) e^(-i phi/2))
+   <psi_up,psi_up> numeric quad = 9.869604401089 (quad err 1.1e-13); phi-spread of |F|^2 = 0.0e+00; /pi = 3.1415926536; /pi^2 = 1.0000000000
+   <psi_dn,psi_dn> numeric quad = 9.869604401089 (quad err 1.1e-13); phi-spread of |F|^2 = 0.0e+00; /pi = 3.1415926536; /pi^2 = 1.0000000000
+   <L- psi_up,L- psi_up> numeric quad = 9.869604401089 (quad err 1.1e-13); phi-spread of |F|^2 = 7.1e-15; /pi = 3.1415926536; /pi^2 = 1.0000000000
+--- s = 1/2 (constants = 1 : psi_up = sin^(1/2) tan^s(th/2) e^(i phi/2), psi_dn = sin^(1/2) tan^-s(th/2) e^(-i phi/2))
+   <psi_up,psi_up> numeric quad = 12.566370614359 (quad err 1.4e-13); phi-spread of |F|^2 = 0.0e+00; /pi = 4.0000000000; /pi^2 = 1.2732395447
+   <psi_dn,psi_dn> numeric quad = 12.566370614359 (quad err 1.4e-13); phi-spread of |F|^2 = 0.0e+00; /pi = 4.0000000000; /pi^2 = 1.2732395447
+   <L- psi_up,L- psi_up> numeric quad = 12.566370614359 (quad err 1.4e-13); phi-spread of |F|^2 = 1.1e-15; /pi = 4.0000000000; /pi^2 = 1.2732395447
+--- s = -1/2 (constants = 1 : psi_up = sin^(1/2) tan^s(th/2) e^(i phi/2), psi_dn = sin^(1/2) tan^-s(th/2) e^(-i phi/2))
+   <psi_up,psi_up> numeric quad = 12.566370614359 (quad err 1.4e-13); phi-spread of |F|^2 = 0.0e+00; /pi = 4.0000000000; /pi^2 = 1.2732395447
+   <psi_dn,psi_dn> numeric quad = 12.566370614359 (quad err 1.4e-13); phi-spread of |F|^2 = 0.0e+00; /pi = 4.0000000000; /pi^2 = 1.2732395447
+   <L- psi_up,L- psi_up> numeric quad = 12.566370614359 (quad err 1.4e-13); phi-spread of |F|^2 = 9.0e-16; /pi = 4.0000000000; /pi^2 = 1.2732395447
+
+Exact (hand-checked closed forms):
+  s=1/2 : |psi_up|^2 - (1 - cos th) residual: 2.220446049250313e-16 ; |psi_dn|^2 - (1 + cos th): 3.3306690738754696e-16
+  s=1/2 : <psi_up,psi_up> = 4*pi ; <psi_dn,psi_dn> = 4*pi ; <L-psi_up,L-psi_up> = <psi_dn,psi_dn> =  4*pi (L-psi_up = -psi_dn)
+  s=-1/2: |psi_up|^2 = 1 + cos, |psi_dn|^2 = 1 - cos : same integrals -> 4*pi 4*pi ;  L-psi_up = +psi_dn ->  4*pi
+  s=0   : |psi|^2 = sin th ; <psi_up,psi_up> = 2 pi int sin^2 = pi**2 ; <L-psi_up,L-psi_up> = 2 pi int cos^2 = pi**2
+
+Normalising constants N (N*psi has unit norm), for the constants-=-1 functions:
+  s=0   : N = 1/pi (psi_up, psi_dn, and L-psi_up all have norm^2 = pi^2)
+  s=±1/2: N = 1/sqrt(4 pi) = 1/(2 sqrt(pi)) (psi_up, psi_dn, L-psi_up all have norm^2 = 4 pi)
+
+General-s norm: <psi_up,psi_up> = 4 pi Gamma(3/2+s) Gamma(3/2-s)  (finite for |s|<3/2); check numerically:
+   s=    0: numeric 9.8696044011 ; 4 pi Gamma Gamma = 9.8696044011
+   s=  0.5: numeric 12.5663706144 ; 4 pi Gamma Gamma = 12.5663706144
+   s= -0.5: numeric 12.5663706144 ; 4 pi Gamma Gamma = 12.5663706144
+   s=  1.0: numeric 29.6088132033 ; 4 pi Gamma Gamma = 29.6088132033
+   s= -1.0: numeric 29.6088132033 ; 4 pi Gamma Gamma = 29.6088132033
+   s= 1.25: numeric 73.2780740962 ; 4 pi Gamma Gamma = 73.2780740962
+   s=±3/2 : integrand ~ sin^2 tan^3(th/2) ~ (pi-th)^-1 at th->pi -> log divergent: psi_up(s=3/2) NOT normalisable
+
+=== T6: closure scan  (m=+1/2 highest weight, m=-1/2 lowest weight, constants 1) ===
+closed forms: r_-(th;s) = L-psi_up/psi_dn = -(cos th + 2s) tan^(2s)(th/2)/sin th ;  r_+(th;s) = L+psi_dn/psi_up = (cos th - 2s) tan^(-2s)(th/2)/sin th
+s=0    : r_- constant? False ; r_+ constant? False ; closure(both) = NO   r_-(th=0.5,1.2,2.0,2.8) = [-1.83049, -0.38878, 0.45766, 2.8127] ; r_+ = [1.83049, 0.38878, -0.45766, -2.8127]
+        r_- as th->0+ : -1000 ; th->pi- : +1000
+s=1/2  : r_- constant? True  ; r_+ constant? True  ; closure(both) = YES  r_-(th=0.5,1.2,2.0,2.8) = [-1.0, -1.0, -1.0, -1.0] ; r_+ = [-1.0, -1.0, -1.0, -1.0]
+        constants: L-psi_up = (-1.0000000000) psi_dn ,  L+psi_dn = (-1.0000000000) psi_up
+        r_- as th->0+ : -1 ; th->pi- : -1
+s=-1/2 : r_- constant? True  ; r_+ constant? True  ; closure(both) = YES  r_-(th=0.5,1.2,2.0,2.8) = [1.0, 1.0, 1.0, 1.0] ; r_+ = [1.0, 1.0, 1.0, 1.0]
+        constants: L-psi_up = (+1.0000000000) psi_dn ,  L+psi_dn = (+1.0000000000) psi_up
+        r_- as th->0+ : +1 ; th->pi- : +1
+s=1    : r_- constant? False ; r_+ constant? False ; closure(both) = NO   r_-(th=0.5,1.2,2.0,2.8) = [-0.39134, -1.18631, -4.22487, -106.14608] ; r_+ = [-35.90782, -3.75404, -1.0955, -0.26128]
+        r_- as th->0+ : -0.00075 ; th->pi- : -4e+09
+s=-1   : r_- constant? False ; r_+ constant? False ; closure(both) = NO   r_-(th=0.5,1.2,2.0,2.8) = [35.90782, 3.75404, 1.0955, 0.26128] ; r_+ = [0.39134, 1.18631, 4.22487, 106.14608]
+        r_- as th->0+ : +4e+09 ; th->pi- : +0.00075
+s=3/2  : r_- constant? False ; r_+ constant? False ; closure(both) = NO   r_-(th=0.5,1.2,2.0,2.8) = [-0.13465, -1.15515, -10.73418, -1197.22976] ; r_+ = [-265.91527, -8.83798, -0.99454, -0.06038]
+        r_- as th->0+ : -5e-07 ; th->pi- : -1.6e+13
+
+=== T7: normalised pair, sign of psi_dn chosen so that L- psi_up = + psi_dn ===
+--- s = 1/2
+   psi_up = sqrt(2)*exp(I*phi/2)*sin(theta/2)/(2*sqrt(pi)) 
+   psi_dn = -sqrt(2)*exp(-I*phi/2)*cos(theta/2)/(2*sqrt(pi))
+   L+ psi_up                 : symbolic simplify -> 0 ; numeric max = 9.8e-16
+   L- psi_dn                 : symbolic simplify -> 0 ; numeric max = 4.4e-16
+   L- psi_up - psi_dn        : symbolic simplify -> 0 ; numeric max = 9.8e-16
+   L+ psi_dn - psi_up        : symbolic simplify -> sqrt(2)*(cos(theta/2)/8 + cos(3*theta/2)/8 - sin(2*theta)/(16*sin(theta/2)))*exp(I*phi/2)/(sqrt(pi)*sin(theta)) ; numeric max = 8.4e-16
+   Lz psi_up - psi_up/2      : symbolic simplify -> 0 ; numeric max = 0.0e+00
+   Lz psi_dn + psi_dn/2      : symbolic simplify -> 0 ; numeric max = 0.0e+00
+   L2 psi_up - 3/4 psi_up    : symbolic simplify -> 0 ; numeric max = 3.3e-14
+   L2 psi_dn - 3/4 psi_dn    : symbolic simplify -> sqrt(2)*(-cos(theta/2) - cos(3*theta/2) + sin(2*theta)/(2*sin(theta/2)))*exp(-I*phi/2)/(8*sqrt(pi)*sin(theta)**2) ; numeric max = 3.1e-14
+   <psi_up,psi_up> = 1
+   <psi_dn,psi_dn> = 1
+   <psi_up,psi_dn> = 0
+--- s = -1/2
+   psi_up = sqrt(2)*exp(I*phi/2)*cos(theta/2)/(2*sqrt(pi)) 
+   psi_dn = sqrt(2)*exp(-I*phi/2)*sin(theta/2)/(2*sqrt(pi))
+   L+ psi_up                 : symbolic simplify -> 0 ; numeric max = 4.4e-16
+   L- psi_dn                 : symbolic simplify -> 0 ; numeric max = 9.8e-16
+   L- psi_up - psi_dn        : symbolic simplify -> sqrt(2)*(cos(theta/2)/8 + cos(3*theta/2)/8 - sin(2*theta)/(16*sin(theta/2)))*exp(-I*phi/2)/(sqrt(pi)*sin(theta)) ; numeric max = 8.4e-16
+   L+ psi_dn - psi_up        : symbolic simplify -> 0 ; numeric max = 9.8e-16
+   Lz psi_up - psi_up/2      : symbolic simplify -> 0 ; numeric max = 0.0e+00
+   Lz psi_dn + psi_dn/2      : symbolic simplify -> 0 ; numeric max = 0.0e+00
+   L2 psi_up - 3/4 psi_up    : symbolic simplify -> sqrt(2)*(cos(theta/2) + cos(3*theta/2) - sin(2*theta)/(2*sin(theta/2)))*exp(I*phi/2)/(8*sqrt(pi)*sin(theta)**2) ; numeric max = 4.3e-14
+   L2 psi_dn - 3/4 psi_dn    : symbolic simplify -> 0 ; numeric max = 2.7e-14
+   <psi_up,psi_up> = 1
+   <psi_dn,psi_dn> = 1
+   <psi_up,psi_dn> = 0
+
+=== T8: periodicity phi -> phi + 2 pi ===
+s=1/2: psi_up(phi+2pi)/psi_up = -1; psi_dn(phi+2pi)/psi_dn = -1
+s=-1/2: psi_up(phi+2pi)/psi_up = -1; psi_dn(phi+2pi)/psi_dn = -1
+unnormalised s=0: ratio up -1, dn -1
+unnormalised s=1/2: ratio up -1, dn -1
+operators L± contain e^{±i phi} (periodic), Lz = -i d/dphi: the antiperiodic sector is mapped to itself.
+
+######## c_out.txt
+=== exact (not just numeric) re-check of the T7 residuals that sympy left in half-angle form ===
+s=1/2: L- psi_up - psi_dn      : exact simplify (theta=2u) -> 0 | 0
+s=1/2: L+ psi_dn - psi_up      : exact simplify (theta=2u) -> 0 | 0
+s=1/2: L2 psi_up - 3/4 psi_up  : exact simplify (theta=2u) -> 0 | 0
+s=1/2: L2 psi_dn - 3/4 psi_dn  : exact simplify (theta=2u) -> 0 | 0
+s=-1/2: L- psi_up - psi_dn      : exact simplify (theta=2u) -> 0 | 0
+s=-1/2: L+ psi_dn - psi_up      : exact simplify (theta=2u) -> 0 | 0
+s=-1/2: L2 psi_up - 3/4 psi_up  : exact simplify (theta=2u) -> 0 | 0
+s=-1/2: L2 psi_dn - 3/4 psi_dn  : exact simplify (theta=2u) -> 0 | 0
+
+=== T9: s = 0 integer control ===
+ODE reduction checks: 0 0
+dsolve L+ [chi e^{i phi}]=0 : Eq(chi(theta), C1*sin(theta))
+dsolve L- [chi e^{-i phi}]=0: Eq(chi(theta), C1*sin(theta))
+L+ A = 0  ; L- B = 0
+L- A          = -2*cos(theta)
+L-^2 A        = -2*exp(-I*phi)*sin(theta)   (= -2 B ?) 0
+L-^3 A        = 0
+L- cos        = exp(-I*phi)*sin(theta)  ; L+ cos = -exp(I*phi)*sin(theta)
+L+ B          = 2*cos(theta)
+Casimir on A, cos, B : 2 2 2
+<Y11,Y11> = 1
+<Y10,Y10> = 1
+<Y1-1,Y1-1> = 1
+Y10 - L- Y11/sqrt2    : 0
+Y1-1 - L- Y10/sqrt2   : 0
+L- Y1-1               : 0
+L+ Y1-1 - sqrt2 Y10   : 0
+L+ Y10 - sqrt2 Y11    : 0
+L+ Y11                : 0
+(coefficients: L-Y11 = sqrt2 Y10, L-Y10 = sqrt2 Y1-1, L-Y1-1 = 0, L+Y1-1 = sqrt2 Y10, L+Y10 = sqrt2 Y11, L+Y11 = 0;  = sqrt(j(j+1)-m(m-1)) with j=1)
+
+=== T10: negative control, different constants in L+ (a) and L- (b) ===
+[L+_a, L-_b] - 2 Lz  (symbolic a,b, generic F) -> 0
+[L+_{1/2}, L-_{-1/2}] - 2 Lz                      -> 0
+[Lz,L+] - L+ -> 0  ; [Lz,L-] + L- -> 0
+[Cas, L+_a] F  with Cas = L-_b L+_a + Lz^2 + Lz : 0
+
+--- the commutator test does not discriminate. Discriminating tests:
+(i) formal adjointness  <G, L+_a F> = <L-_b G, F>  (needs b = a), test functions vanishing at the poles
+   a=0     b=0    : <G,L+F> = -3.0133135937  <L-G,F> = -3.0133135937  |diff| = 4.44e-16
+   a=1/2   b=1/2  : <G,L+F> = -4.8021793914  <L-G,F> = -4.8021793914  |diff| = 0.00e+00
+   a=-1/2  b=-1/2 : <G,L+F> = -1.2244477960  <L-G,F> = -1.2244477960  |diff| = 0.00e+00
+   a=1     b=1    : <G,L+F> = -6.5910451891  <L-G,F> = -6.5910451891  |diff| = 1.78e-15
+   a=1/2   b=-1/2 : <G,L+F> = -4.8021793914  <L-G,F> = -1.2244477960  |diff| = 3.58e+00
+   a=0     b=1/2  : <G,L+F> = -3.0133135937  <L-G,F> = -4.8021793914  |diff| = 1.79e+00
+   a=1     b=0    : <G,L+F> = -6.5910451891  <L-G,F> = -3.0133135937  |diff| = 3.58e+00
+(ii) T3-type closure test with a != b : psi_up = sin^{1/2} tan^a(th/2) e^{i phi/2} (L+_a psi_up=0), psi_dn = sin^{1/2} tan^{-b}(th/2) e^{-i phi/2} (L-_b psi_dn=0)
+   a=1/2   b=1/2  : L-_b psi_up / psi_dn in [-1.00000,-1.00000] ; L+_a psi_dn / psi_up in [-1.00000,-1.00000]  -> constant? True
+   a=-1/2  b=-1/2 : L-_b psi_up / psi_dn in [+1.00000,+1.00000] ; L+_a psi_dn / psi_up in [+1.00000,+1.00000]  -> constant? True
+   a=1/2   b=-1/2 : L-_b psi_up / psi_dn in [-19.98333,+19.98333] ; L+_a psi_dn / psi_up in [-19.98333,+19.98333]  -> constant? False
+   a=-1/2  b=1/2  : L-_b psi_up / psi_dn in [-19.98333,+19.98333] ; L+_a psi_dn / psi_up in [-19.98333,+19.98333]  -> constant? False
+   analytic: L-_b psi_up = -(cos th + (a+b))/sin th * psi_up e^{-i phi}, so a+b=0 gives -cot th (not constant)
+
+=== extra: general closure criterion  (highest weight m=j, s): is L-^{2j} psi_up ∝ psi_dn(const)? ===
+   j=1/2  s=0    : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1/2  s=1/2  : L-^(2j) psi_up ∝ psi_dn const? True  const=-1.0000000000000009 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=1/2  s=-1/2 : L-^(2j) psi_up ∝ psi_dn const? True  const=0.9999999999999984 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=1/2  s=1    : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1/2  s=-1   : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1/2  s=3/2  : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1/2  s=-3/2 : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1    s=0    : L-^(2j) psi_up ∝ psi_dn const? True  const=-2.0 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=1    s=1/2  : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1    s=-1/2 : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1    s=1    : L-^(2j) psi_up ∝ psi_dn const? True  const=2.0000000000036824 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=1    s=-1   : L-^(2j) psi_up ∝ psi_dn const? True  const=2.000000000000101 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=1    s=3/2  : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=1    s=-3/2 : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=3/2  s=0    : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=3/2  s=1/2  : L-^(2j) psi_up ∝ psi_dn const? True  const=6.000000000008323 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=3/2  s=-1/2 : L-^(2j) psi_up ∝ psi_dn const? True  const=-5.999999999995279 ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=3/2  s=1    : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=3/2  s=-1   : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> False
+   j=3/2  s=3/2  : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> True
+   j=3/2  s=-3/2 : L-^(2j) psi_up ∝ psi_dn const? False const=None ; prediction 'j-|s| in {0,1,2..}' -> True
+
+######## d_out.txt
+s=3/2: after 1 L-:  -3*(cos(theta) + 1)*exp(I*phi/2)*sqrt(sin(theta))*tan(theta/2)**(3/2)
+s=3/2: after 2 L-:  3*(-16*(1 - cos(theta))**2*cos(theta) - 8*(1 - cos(theta))**2*cos(2*theta) - 6*(1 - cos(theta))**2 + 16*cos(theta) - 9*cos(2*theta) - 12*cos(3*theta) + 5)*exp(-I*phi/2)/(8*(cos(theta) + 1)**2*sqrt(sin(theta))*sqrt(tan(theta/2)))
+s=3/2: after 3 L-:  3*(-35*sin(theta)**3*tan(theta/2)**6 + 123*sin(theta)**3*tan(theta/2)**4 + 159*sin(theta)**3*tan(theta/2)**2 + sin(theta)**3 - 120*sin(theta)**2*cos(theta)*tan(theta/2)**5 - 16*sin(theta)**2*cos(theta)*tan(theta/2)**3 - 24*sin(theta)**2*cos(theta)*tan(theta/2) - 90*sin(theta)**2*tan(theta/2)**5 + 84*sin(theta)**2*tan(theta/2)**3 - 18*sin(theta)**2*tan(theta/2) - 216*sin(theta)*cos(theta)*tan(theta/2)**4 - 216*sin(theta)*cos(theta)*tan(theta/2)**2 - 156*sin(theta)*tan(theta/2)**4 - 156*sin(theta)*tan(theta/2)**2 - 80*cos(theta)*tan(theta/2)**3 - 40*tan(theta/2)**3)*exp(-3*I*phi/2)/(64*sin(theta)**(3/2)*tan(theta/2)**(3/2))
+s=3/2: L-^3 psi_up / psi_dn (exact, theta=2u) ->  -6
+   numeric ratio range: -6.000000000000464 -5.999999999899801  max|imag| 0.0
+s=-3/2: after 1 L-:  3*(1 - cos(theta))*exp(I*phi/2)*sqrt(sin(theta))/tan(theta/2)**(3/2)
+s=-3/2: after 2 L-:  3*(16*(1 - cos(theta))**2*cos(theta) - 8*(1 - cos(theta))**2*cos(2*theta) - 6*(1 - cos(theta))**2 - 56*cos(theta) + 23*cos(2*theta) - 4*cos(3*theta) + 37)*exp(-I*phi/2)/(8*(cos(theta) + 1)**2*sqrt(sin(theta))*tan(theta/2)**(7/2))
+s=-3/2: after 3 L-:  3*(-sin(theta)**3*tan(theta/2)**6 - 159*sin(theta)**3*tan(theta/2)**4 - 123*sin(theta)**3*tan(theta/2)**2 + 35*sin(theta)**3 - 24*sin(theta)**2*cos(theta)*tan(theta/2)**5 - 16*sin(theta)**2*cos(theta)*tan(theta/2)**3 - 120*sin(theta)**2*cos(theta)*tan(theta/2) + 18*sin(theta)**2*tan(theta/2)**5 - 84*sin(theta)**2*tan(theta/2)**3 + 90*sin(theta)**2*tan(theta/2) - 216*sin(theta)*cos(theta)*tan(theta/2)**4 - 216*sin(theta)*cos(theta)*tan(theta/2)**2 + 156*sin(theta)*tan(theta/2)**4 + 156*sin(theta)*tan(theta/2)**2 - 80*cos(theta)*tan(theta/2)**3 + 40*tan(theta/2)**3)*exp(-3*I*phi/2)/(64*sin(theta)**(3/2)*tan(theta/2)**(9/2))
+s=-3/2: L-^3 psi_up / psi_dn (exact, theta=2u) ->  51/8 + 3/(8*tan(u)**6) - 9/(8*sin(u)**2) + 9/(8*sin(u)**4) - 3/(8*sin(u)**6)
+   numeric ratio range: 5.99999999999812 6.000000000024006  max|imag| 0.0

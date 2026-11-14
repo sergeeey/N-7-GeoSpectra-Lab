@@ -1,0 +1,61 @@
+
+==============================================================================
+  SU(3)/T^2   (m = root spaces, ADJOINT type)
+==============================================================================
+  V = (1,0) space of J_NK   : [(-2, 1), (1, 1), (1, -2)]
+  m (x) C weights           : [(2, -1), (1, 1), (-1, 2), (-2, 1), (-1, -1), (1, -2)]
+  Sigma_even weights        : [(0, 0), (-1, 2), (-1, -1), (2, -1)]
+  Sigma_odd  weights        : [(-2, 1), (1, 1), (1, -2), (0, 0)]
+  domain  (Sigma_odd  (x) W)^T2 : dim 3  at Sigma-weights [(-2, 1), (1, 1), (1, -2)]
+  target  (Sigma_even (x) W)^T2 : dim 3  at Sigma-weights [(-1, 2), (-1, -1), (2, -1)]
+
+  [Term1] shared weight domain n Sigma_even : EMPTY
+  [Term1] verdict : FORCED ZERO by weights alone
+
+  [Term2] admissible paths (sigma -> sigma', delta = sigma'-sigma in m):
+           (-2, 1) -> (-1, 2)   delta = (1, 1)
+           (-2, 1) -> (-1, -1)   delta = (1, -2)
+           (1, 1) -> (-1, 2)   delta = (-2, 1)
+           (1, 1) -> (2, -1)   delta = (1, -2)
+           (1, -2) -> (-1, -1)   delta = (-2, 1)
+           (1, -2) -> (2, -1)   delta = (1, 1)
+  [Term2] total paths = 6   per domain vector = {(-2, 1): 2, (1, 1): 2, (1, -2): 2}
+  [Term2] H1 verdict : H1 REFUTED -- paths exist
+
+==============================================================================
+  S^6 = G2/SU(3)   (m = 3 (+) 3bar, FUNDAMENTAL type)
+==============================================================================
+  V = (1,0) space of J_NK   : [(1, 0), (-1, 1), (0, -1)]
+  m (x) C weights           : [(1, 0), (-1, 1), (0, -1), (-1, 0), (1, -1), (0, 1)]
+  Sigma_even weights        : [(0, 0), (0, 1), (1, -1), (-1, 0)]
+  Sigma_odd  weights        : [(1, 0), (-1, 1), (0, -1), (0, 0)]
+  domain  (Sigma_odd  (x) W)^T2 : dim 3  at Sigma-weights [(1, 0), (-1, 1), (0, -1)]
+  target  (Sigma_even (x) W)^T2 : dim 3  at Sigma-weights [(0, 1), (1, -1), (-1, 0)]
+
+  [Term1] shared weight domain n Sigma_even : EMPTY
+  [Term1] verdict : FORCED ZERO by weights alone
+
+  [Term2] admissible paths (sigma -> sigma', delta = sigma'-sigma in m):
+           (1, 0) -> (0, 1)   delta = (-1, 1)
+           (1, 0) -> (1, -1)   delta = (0, -1)
+           (-1, 1) -> (0, 1)   delta = (1, 0)
+           (-1, 1) -> (-1, 0)   delta = (0, -1)
+           (0, -1) -> (1, -1)   delta = (1, 0)
+           (0, -1) -> (-1, 0)   delta = (-1, 1)
+  [Term2] total paths = 6   per domain vector = {(1, 0): 2, (-1, 1): 2, (0, -1): 2}
+  [Term2] H1 verdict : H1 REFUTED -- paths exist
+
+==============================================================================
+STEP 1 CONCLUSION
+==============================================================================
+  admissible Term2 paths : SU(3)/T^2 = 6   S^6 = 6
+  -> H1 REFUTED on SU(3)/T^2: admissible paths exist, so the zero is
+     NOT a pure weight selection rule. The coefficients along those
+     paths must cancel -> H2 or H3. Step 2 computes them; Step 3's
+     perturbation control decides between representation and geometry.
+
+  NOTE: the two spaces have the SAME number of admissible paths
+  (6 each, 2 per domain vector), despite m being
+  adjoint-type on one and fundamental-type on the other. So the path
+  COUNT does not discriminate them -- whatever separates S^6 from
+  SU(3)/T^2 lives in the COEFFICIENTS, not in the weight combinatorics.
