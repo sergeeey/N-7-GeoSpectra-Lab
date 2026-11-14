@@ -173,6 +173,11 @@ claims:
       Codex) argued the Claude skeptic overcorrected the round102 framing
       (so(6)=su(4) as ALGEBRAS is physically relevant regardless of the
       SU(4)!=SO(6)-as-groups point) -- net effect unchanged, framing sharpened.
+      Scope of PROVED (added 2026-11-14 from round109/decision.md): holds for
+      Lie-algebra homomorphisms su(4) -> Killing algebra of the product
+      manifold only; simplicity of su(4) is cited (Cartan classification),
+      not computed in round109; the round109 skeptic verdict was WEAKENED (two
+      scope corrections accepted, core argument survived).
 
   - id: C8_K3_EQUIV_T3R
     statement: "K3 (a previously separate charge) is identical to T3R"

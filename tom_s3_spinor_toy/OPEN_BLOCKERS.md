@@ -87,14 +87,23 @@ everywhere it appears). One residual minor wording nit: two lines in
 is actually "input from," slightly more definite than warranted. Not
 urgent, not a fence violation.
 
-## OB6 — Codex items 5 and 8 [BOTH MOOT 2026-09-06]
+## OB6 — Codex items 5 and 8 [item 5 MOOT; item 8 MOOT for the closed routes only, qualified 2026-11-14]
 
 Item 5 (physical action for the OB2 doubled construction): moot, since
 OB2 showed that construction isn't a valid geometry at all. Item 8
-(precise gauge group if SU(4) were realized): moot, since BOTH routes by
-which SU(4) could ever become an actual gauge symmetry are closed — the
-product-manifold route (G97: only su(3)⊕u(1) realized) and the
-non-product/doubled route (OB2, above).
+(precise gauge group if SU(4) were realized): moot only for the two
+routes that are closed — the product-manifold route (G97: only
+su(3)⊕u(1) realized; closed for Lie-algebra homomorphisms into the
+Killing algebra, round109) and the doubled t=0/t=1 construction (OB2,
+above). The remaining field-dependent / bundle-twisted fork (the doubled
+construction is separately closed by OB2) is NOT closed (round103,
+round109 scope note, CLAIM_LEDGER C7), so the question item 8 asks is
+not excluded for that fork.
+
+Correction 2026-11-14: the earlier wording said BOTH routes by which
+SU(4) could ever become a gauge symmetry were closed. That was stronger
+than round109/decision.md and the C7 ledger note, which both leave the
+twisted/non-product fork open.
 
 ## OB7 — round111 uncommitted [RESOLVED 2026-07-17] · OB9 — E7-E13 chain needed consolidation [RESOLVED 2026-07-19]
 
