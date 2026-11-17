@@ -1,0 +1,26 @@
+PASS A1 V1 + i V2 = conj(p1) p2
+PASS A1b V3 = (1/2)(|p1|^2 - |p2|^2)
+PASS A2 xi^1 = r cos(th/2) real: conj(xi^1) xi^2 = (r^2/2) sin th e^{i phi} has the unique solution xi^2 = r e^{i phi} sin(th/2)
+PASS A2b V(xi_A) = (r^2/2)(sin th cos ph, sin th sin ph, cos th)
+PASS A3 (v.sigma) xi_A = xi_A and xi xi^dagger = (r^2/2)(I + v.sigma)
+PASS B1 u_21 = i s (n1 + i n2) and u_12 = i s (n1 - i n2)
+PASS B2 u unitary with det 1
+PASS B3 u (r,0)^T = xi_A (with R and N)
+PASS B4 any unit n = (n1, n2, 0): V = (r^2/2)(-n2 sin th, n1 sin th, cos th)
+PASS B5a (t1 + i t2)/th = sin ph - i cos ph = -i e^{i ph}
+PASS B5b (t1 - i t2)/th = sin ph + i cos ph = i e^{-i ph}
+PASS C1 xi' second component = -r e^{-i phi} sin(th/2)
+PASS C2 V(xi') = (-V1, V2, V3) of the standard vector
+PASS C3 xi' = u^T (r,0)^T for n = (t1, t2)/th
+PASS C3b xi' = u (r,0)^T for n = (t1, -t2)/th
+PASS C4 xi' = sigma3 conj(xi_A)
+PASS C5a conjugation alone: V -> diag(1,-1,1) V
+PASS C5b i sigma3 is in SU(2) (det 1) and acts on V as diag(-1,-1,1)
+PASS C5c det diag(-1,1,1) = -1
+PASS C6 xi' = conj(u^{-1}) (r,0)^T, and conj(u) = (u^{-1})^T
+PASS C7 phi = 0: u is the real matrix [[c, -s], [s, c]] and xi = r (c, s) while xi' = r (c, -s)
+PASS C8 phi = pi/2: both versions coincide
+PASS N1 numeric, 500 random points, worst abs residual 4.0e-15 < 1e-12
+
+23 PASS, 0 FAIL
+FAILS: none

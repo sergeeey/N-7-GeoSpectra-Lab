@@ -4292,6 +4292,46 @@ claims:
     caveat: "Skeptic review (same model family): H1-H4 are bookkeeping, the six Y eigenvalues are inputs, the isospin axis of T3R is free, the SU(2)_L Casimir identity makes 'singlet = right-handed' automatic; no self-control is independent evidence (one could never fire and was replaced). Filed as a consistency note."
     notes: "Q3 of the research map for the call of 2026-11-03. Not to be presented to the correspondent as a result."
 
+  - id: C242_SECOND_COMPONENT_E_I_PHI_SIN_HALF_THETA_FIXED_BY_V_AND_BY_U_UNDER_STATED_INPUTS_OTHER_SIGN_VERSION_IS_THE_U_TRANSPOSE_ENTRY_DETERMINANT_MINUS_ONE
+    statement: "Exact sympy plus numeric checks, 23 checks (22 exact, 1 numeric with 500 random points, worst residual 4e-15). For V^i = (1/2) xi^dagger sigma^i xi: V^1 + i V^2 = conj(xi^1) xi^2 and V^3 = (1/2)(|xi^1|^2 - |xi^2|^2). With V = (r^2/2)(sin th cos ph, sin th sin ph, cos th), |xi| = r and xi^1 = r cos(th/2) real positive, the unique solution is xi^2 = r e^{i ph} sin(th/2); the relative phase is fixed, only the common phase is free. For u = cos(th/2) I + i sin(th/2) n.sigma and xi = u (r,0)^T: xi^2 = r u_21 = i r sin(th/2)(n_1 + i n_2); for any unit n = (n_1, n_2, 0), V = (r^2/2)(-n_2 sin th, n_1 sin th, cos th). Under the INPUT assumptions (N) th n = (t1, t2, 0) and (R) sin ph = t1/th, cos ph = -t2/th: (t1 + i t2)/th = -i e^{i ph}, so the u-route gives the same xi^2 as the sphere route. The version with (t1 - i t2)/th = i e^{-i ph} has xi'^2 = -r e^{-i ph} sin(th/2); it equals u^T (r,0)^T (the other entry of u) for n = (t1,t2,0)/th, equals u (r,0)^T for n = (t1,-t2,0)/th, equals sigma_3 conj(xi), and gives V' = (-V^1, V^2, V^3), a map with determinant -1 (conjugation: V^2 -> -V^2; i sigma_3 lies in SU(2) and acts as a rotation by pi). Also xi' = conj(u^{-1}) (r,0)^T with conj(u) = (u^{-1})^T. At phi = 0, u is the real matrix [[c,-s],[s,c]] and xi = r (c, s) while xi' = r (c, -s); at phi = pi/2 the two versions coincide."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261116-c242-second-component-and-transpose-relation/decision.md"
+    depends_on: [C226_HOPF_VECTOR_PROJECTION_SO3_NORMALISATION_AND_ACTIVE_PASSIVE_FLIP_OF_WEIGHTS_AND_ALGEBRA_SIGN, C229_THREE_READINGS_OF_SU2_ACTION_A_AND_C_ARE_REPRESENTATIONS_B_IS_ANTIREPRESENTATION_WEIGHTS_AND_ALGEBRA_SIGN_ASSERTED]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-16 in its own experiment folder; precursor scripts ran earlier the same day in a private working folder)."
+    convention: "Standard Pauli matrices; V^i = (1/2) xi^dagger sigma^i xi; xi = u (r,0)^T; u_21 is row 2, column 1; theta is both the norm of (t1, t2) and the polar angle (an input identification)."
+    does_not_imply:
+      - "that (N) or (R) hold for the correspondent's explicit u or coordinates: both are inputs"
+      - "which of the two sign versions the correspondent intends"
+      - "that the orientation reversal has a physical meaning, or that it is the same issue as the anti-representation or transposed readings of C229: only an algebraic relation (the second version is built from u^T) is shown; the link to reading C of C229 is a hypothesis"
+    caveat: "Same-model-family review only (four fresh-context reviews of the letter that uses these results); the numeric part is a random-sample check; no independent human review. Hand re-derivation by the project owner has not been done at the time of writing."
+    notes: "Result row R18 of the private correspondence layer; computed 2026-11-16 after the correspondent's message of that date. The closing question of the letter that uses these results asks which n the correspondent uses, because that decides which entry of u the printed combination is."
+
+  - id: C243_TRANSPOSE_OF_SU2_ELEMENT_IS_SIGMA2_INVERSE_SIGMA2_INVERSION_REVERSES_S3_ORIENTATION_AND_SWAPS_LEFT_RIGHT_LINK_TO_SPIN_CHOICE_IS_HYPOTHESIS
+    statement: "Exact sympy plus numeric checks, 13 checks. For u in SU(2) written u = [[a, -conj b], [b, conj a]] (a, b, conj a, conj b independent symbols; then a conj a + b conj b = 1): u^T = sigma_2 u^{-1} sigma_2 and u^T e_1 = i sigma_2 u^{-1} e_2, so the doublet built from the first row of u equals the inverse element acting on the other basis vector, up to a fixed unitary and a phase; numerically on 500 random elements, worst residual 6e-16. In quaternion coordinates inversion is (x0, x) -> (x0, -x), determinant -1 on R^4 (it reverses the orientation of S^3), and (h g k)^{-1} = k^{-1} g^{-1} h^{-1} (it turns left translation by h into right translation by h^{-1}). Negative controls: for ONE pair of doublets of C242 an SU(2) element mapping xi_+ to xi_- exists (transitivity), but the linear map V_+ -> V_- fixed by three independent points is diag(-1,1,1) with determinant -1, so no FIXED SU(2) element realises it at all points; and xi' = sigma_3 conj(xi) of C242 holds for n3 = 0 only (median residual 0.56 for generic n3). Addendum 2026-11-17 (cross-check with C229): on functions of a doublet, reading C, (U_C(g)f)(xi) = f(g^T xi), equals reading A, (U_A(g)f)(xi) = f(g^{-1} xi), written in the fixed variables sigma_2 xi, i.e. U_C(g) = S U_A(g) S with (Sf)(xi) = f(sigma_2 xi); this follows from g^T = sigma_2 g^{-1} sigma_2 and was checked numerically on 300 random SU(2) elements and random quadratic f, worst residual 1.1e-14; with this function-action convention both readings satisfy U(gh) = U(g)U(h) (300 of 300), so reading C is an ordinary representation, not an anti-representation."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261117-c243-transpose-inverse-identity-and-left-right-inversion/decision.md"
+    depends_on: [C242_SECOND_COMPONENT_E_I_PHI_SIN_HALF_THETA_FIXED_BY_V_AND_BY_U_UNDER_STATED_INPUTS_OTHER_SIGN_VERSION_IS_THE_U_TRANSPOSE_ENTRY_DETERMINANT_MINUS_ONE, C229_THREE_READINGS_OF_SU2_ACTION_A_AND_C_ARE_REPRESENTATIONS_B_IS_ANTIREPRESENTATION_WEIGHTS_AND_ALGEBRA_SIGN_ASSERTED]
+    supersedes: "no prior claim -- first tracked record of this result (computed 2026-11-17 in its own experiment folder)."
+    convention: "Standard Pauli matrices; u = [[a, -conj b], [b, conj a]]; e_1 = (1,0)^T, e_2 = (0,1)^T; left translation L_h g = h g, right translation R_k g = g k."
+    does_not_imply:
+      - "that the sign question of C242 is a question of left versus right SU(2), or which SU(2) is the spin: a HYPOTHESIS, needing the correspondent's explicit definitions"
+      - "anything about the earlier contragredient-representation issue: UNVERIFIED, no comparison was made"
+      - "that SU(2) cannot map one doublet to another: for one pair it can (transitivity); only a FIXED element realising the reflection at all points is excluded"
+      - "that inversion on S^3 is the same map as the reflection of the 2-sphere in C242: the S^3 statement is a standard fact stated alongside the algebraic identity"
+      - "which SU(2) acts as physical spin in the correspondent's model, or anything about R05 or R12: reading C being reading A in rotated variables is a statement about our readings only"
+    caveat: "Same-model-family review only; the S^3 orientation and left/right facts are standard, not newly derived; the reading-C cross-check is numeric plus the exact identity above (a symbolic run with a generic function was started and stopped, not completed); no independent human review."
+    notes: "Result row R19 of the private correspondence layer; computed 2026-11-17 after an external note was compared with C242. An earlier wording in the working discussion, that no SU(2) element can map one doublet to the other, was wrong and is corrected by negative control N1."
+
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim

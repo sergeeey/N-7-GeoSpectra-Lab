@@ -1,0 +1,16 @@
+PASS E1 u u^dagger = (a conj a + b conj b) I, so u^dagger = u^{-1} on the unit sphere
+PASS E2 u^T = sigma2 u^dagger sigma2 (identity in a, b, conj a, conj b)
+PASS E3 u^T e1 = i sigma2 u^dagger e2
+PASS E3b conj(u) = sigma2 u sigma2 (the same fact for the conjugate matrix)
+PASS E4 numeric, 500 random SU(2) elements, worst residual 5.6e-16 < 1e-12
+PASS E5a g^{-1} has quaternion coordinates (x0, -x1, -x2, -x3) (worst 4.7e-16)
+PASS E5b the map (x0, x1, x2, x3) -> (x0, -x1, -x2, -x3) has determinant -1: inversion reverses the orientation of S^3
+PASS E6 (h g k)^{-1} = k^{-1} g^{-1} h^{-1}: inversion turns left translation by h into right translation by h^{-1} (worst 6.7e-16)
+PASS N1 for ONE pair (theta, phi) an SU(2) element g with g xi_+ = xi_- exists (SU(2) is transitive; worst 6.7e-16)
+PASS N2 three independent points fix the linear map V_+ -> V_- uniquely: M = diag(-1, 1, 1)
+PASS N3 det M = -1, so M is not in SO(3): no FIXED SU(2) element realises xi_+(p) -> xi_-(p) at all points
+PASS N4a xi' = sigma3 conj(xi) holds for n3 = 0 (worst 2.0e-16)
+PASS N4b and fails for generic n3 (median residual 0.56): not a general SU(2) identity
+
+13 PASS, 0 FAIL
+FAILS: none
