@@ -20,7 +20,7 @@ Standard Pauli matrices; V^i = (1/2) xi^dagger sigma^i xi; xi = u (r,0)^T; theta
 
 - that (N) or (R) hold for the correspondent's explicit u or coordinates: both are inputs
 - which of the two sign versions the correspondent intends
-- that the orientation reversal has a physical meaning, or that it is the same issue as the anti-representation / transposed readings of C229: only an algebraic relation (the second version is built from u^T) is shown; the link to reading C of C229 is a hypothesis
+- that the orientation reversal has a physical meaning, or that it is the same issue as the anti-representation / transposed readings of C229: only an algebraic relation (the second version is built from u^T) is shown; the link to reading C of C229 is a hypothesis; C243 (E3) shows the u^T-built doublet is the inverse element acting on the other basis vector, and whether the orientation reversal is a property of the antilinear map xi -> sigma3 conj(xi) rather than of the representation type is an inference, not checked against the correspondent's definitions
 
 ## Caveat
 

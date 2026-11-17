@@ -15,18 +15,18 @@ Exact sympy plus numeric checks, 13 checks. For u in SU(2) written u = [[a, -con
 | inversion on S^3 reverses orientation | standard fact, checked in quaternion coordinates |
 | inversion turns left translation into right translation | EXACT |
 | link to the choice of the spin SU(2) | HYPOTHESIS |
-| link to the earlier contragredient-representation issue | UNVERIFIED |
+| link to the earlier contragredient-representation issue | NOT EXAMINED (referent not defined in this record) |
 
 ## Addendum 2026-11-17: reading C of C229
 
-Reading C, (U_C(g) f)(xi) = f(g^T xi), is reading A, (U_A(g) f)(xi) = f(g^{-1} xi), in the fixed variables sigma2 xi: U_C(g) = S U_A(g) S, (Sf)(xi) = f(sigma2 xi). Follows from g^T = sigma2 g^{-1} sigma2 (E2). Numeric: 300 random SU(2) elements, random quadratic f, worst residual 1.1e-14; both readings satisfy U(gh) = U(g)U(h) in 300 of 300 (reverse order in 0 of 300), so reading C is an ordinary representation. The generator comparison (R3) is a weak check (same arithmetic path on both sides, residual exactly 0). Status: exact identity plus numeric support. Not established: which SU(2) is the spin, R05, R12. Consequence: reading C adds no representation beyond reading A in rotated variables. A symbolic run with a generic function was started and stopped unfinished.
+Reading C, (U_C(g) f)(xi) = f(g^T xi), is reading A, (U_A(g) f)(xi) = f(g^{-1} xi), in the fixed variables sigma2 xi: U_C(g) = S U_A(g) S, (Sf)(xi) = f(sigma2 xi). Follows from g^T = sigma2 g^{-1} sigma2 (E2). Numeric: 300 random SU(2) elements, random quadratic f, worst residual 1.1e-14; both readings satisfy U(gh) = U(g)U(h) in 300 of 300 (reverse order in 0 of 300; gated checks R4A, R4C), so reading C is an ordinary representation. The generator comparison (R3) is redundant with R1, not a separate confirmation: it is R1 evaluated at t = +-1e-5 divided by 2t, and its residual is exactly 0 because both sides give bit-identical numbers for one-parameter elements (an independent review showed it does fail under mutants such as reading B or the identity in place of S). The composition-order counts are now gated checks (R4A, R4C with a reversed-order control). Status: exact identity plus numeric support. Not established: which SU(2) is the spin, R05, R12. Consequence: reading C adds no representation beyond reading A in rotated variables. A symbolic run with a generic function was started and stopped unfinished.
 
 ## Scripts and outputs
 
 | script | output | outcome |
 |---|---|---|
 | `transpose_inverse_identity_check.py` | `run_output_transpose_inverse_identity_check.txt` | 13 PASS, 0 FAIL |
-| `reading_C_vs_A_numeric_check.py` | `run_output_reading_C_vs_A_numeric_check.txt` | 3 PASS, 0 FAIL |
+| `reading_C_vs_A_numeric_check.py` | `run_output_reading_C_vs_A_numeric_check.txt` | 7 PASS, 0 FAIL |
 
 ## Conventions
 
@@ -35,11 +35,13 @@ Standard Pauli matrices; u = [[a, -conj b], [b, conj a]]; e1 = (1, 0)^T, e2 = (0
 ## What this does NOT imply
 
 - that the sign question of C242 is a question of left versus right SU(2), or which SU(2) is the spin: a HYPOTHESIS, needing the correspondent's explicit definitions
-- anything about the earlier contragredient-representation issue (UNVERIFIED)
+- anything about the earlier contragredient-representation issue (not examined; the only comparison made is with reading C of C229, see addendum)
 - that SU(2) cannot map one doublet to another: for one pair it can; only a FIXED element realising the reflection at all points is excluded
 - that inversion on S^3 is the same map as the reflection of the 2-sphere in C242
 
 ## Caveat
+
+Checks E5b (determinant of a literal diagonal matrix) and E6 ((hgk)^-1 = k^-1 g^-1 h^-1, true in any group) restate standard facts and cannot fail in a meaningful way; the first branch of E3b is never taken (the test runs on the second, hand-typed conjugate). The identities hold for all of SL(2,C) (independent review), so calling them SU(2) identities is a weaker statement than is true.
 
 Same-model-family review only; the S^3 orientation and left/right facts are standard, not newly derived; no independent human review. The reading-C cross-check (addendum) is numeric plus the exact identity.
 

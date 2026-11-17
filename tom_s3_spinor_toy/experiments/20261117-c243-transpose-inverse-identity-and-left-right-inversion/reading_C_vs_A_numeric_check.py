@@ -36,7 +36,9 @@ check(f"R1 U_C(g) = S U_A(g) S on random quadratic f (worst {w1:.1e})", w1 < 1e-
 check(f"R2 g^T = sigma2 g^-1 sigma2 (worst {w2:.1e})", w2 < 1e-12)
 for name in "AC":
     r = [x for x in rel if x[0] == name]
-    print(f"INFO reading {name}: U(gh)=U(g)U(h) in {sum(x[1] for x in r)}/300; U(gh)=U(h)U(g) in {sum(x[2] for x in r)}/300")
+    n_fwd, n_rev = sum(x[1] for x in r), sum(x[2] for x in r)
+    check(f"R4{name} reading {name}: U(gh) = U(g)U(h) in {n_fwd}/300 (ordinary representation)", n_fwd == 300)
+    check(f"R4{name}c control, reading {name}: reversed order U(gh) = U(h)U(g) in {n_rev}/300 (discriminates)", n_rev == 0)
 # generators: d/dt U(exp(i t sigma_a/2)) at 0 via central difference on f at a point
 def gen(U, a, f, z, t=1e-5):
     g = lambda s: np.cos(s/2)*np.eye(2) + 1j*np.sin(s/2)*P[a]

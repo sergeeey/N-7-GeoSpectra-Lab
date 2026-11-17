@@ -1,8 +1,10 @@
 PASS R1 U_C(g) = S U_A(g) S on random quadratic f (worst 1.1e-14)
 PASS R2 g^T = sigma2 g^-1 sigma2 (worst 6.0e-16)
-INFO reading A: U(gh)=U(g)U(h) in 300/300; U(gh)=U(h)U(g) in 0/300
-INFO reading C: U(gh)=U(g)U(h) in 300/300; U(gh)=U(h)U(g) in 0/300
+PASS R4A reading A: U(gh) = U(g)U(h) in 300/300 (ordinary representation)
+PASS R4Ac control, reading A: reversed order U(gh) = U(h)U(g) in 0/300 (discriminates)
+PASS R4C reading C: U(gh) = U(g)U(h) in 300/300 (ordinary representation)
+PASS R4Cc control, reading C: reversed order U(gh) = U(h)U(g) in 0/300 (discriminates)
 PASS R3 generator of reading C = generator of reading A in S-rotated variables (worst 0.0e+00 < 1e-6)
 
-3 PASS, 0 FAIL
+7 PASS, 0 FAIL
 FAILS: none
