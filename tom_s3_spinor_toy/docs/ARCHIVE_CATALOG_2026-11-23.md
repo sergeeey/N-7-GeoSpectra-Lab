@@ -43,10 +43,11 @@ The other roughly 90 unmerged branches carry patch-unique commits whose files al
 
 Six worktrees outside the repository folder, all Phase 4 audits of older GeoSpectra work. Four have one uncommitted file each and may belong to other sessions: not touched.
 
-## Cleanup policy (nothing deleted yet)
+## Cleanup performed (2026-11-23, after explicit list approval)
 
-- Candidates: local branches fully merged into HEAD, excluding `main`, the current branch, `backup*` and `preserve*` (207 names in the private manifest). Deletion with `git branch -d` only, after a name-to-SHA manifest is saved, and only after an explicit list approval.
-- Not touched: the 102 unmerged branches, all tags, `preserve/*`, the worktrees, remote branches.
+- Deleted 207 local branches that were fully merged into HEAD (`git branch -d`, 0 refusals): 36 research, 28 feature, 13 docs, 11 null, 9 chore, 6 fix, 5 feat, 6 others. Before deletion: none checked out in a worktree, none pointed to by a tag, every tip an ancestor of HEAD (re-checked for all 207 SHAs: 0 unreachable afterwards). Local branches: 312 before, 105 after.
+- Recovery: every name and SHA is in the private manifest (`refs_manifest_20261123.tsv`); `git branch <name> <sha>` recreates any of them. The commits themselves were never removed.
+- Not touched: the 102 unmerged branches, `main`, `backup*`, `preserve*`, all tags, the six worktrees, remote branches.
 
 ## Limits
 
