@@ -1,0 +1,17 @@
+PASS frame_orthonormal: 0.000e+00
+PASS clifford_compat_s_conn=+1: 1.887e-15
+PASS clifford_compat_s_conn=-1: 1.520e+01
+PASS su2_closure_plus: 0.000e+00
+PASS su2_closure_minus: 0.000e+00
+PASS plus_minus_commute: 0.000e+00
+N3+ = [0, 1/2, -1/2]  N3- = [0, 1/2, 1/2]
+N1+ = [-cos(theta - thetat)/2, sin(theta - thetat)/(2*tan(alpha)), sin(theta - thetat)*tan(alpha)/2]
+N1- = [cos(theta + thetat)/2, -sin(theta + thetat)/(2*tan(alpha)), sin(theta + thetat)*tan(alpha)/2]
+PASS kosmann_commutes_with_D_s_kos=+1: 1.637e-14
+PASS kosmann_commutes_with_D_s_kos=-1: 3.499e+01
+PASS control_componentwise_commutes_with_D: 4.352e+01
+PASS kosmann_bracket_homomorphism: 4.935e-15
+PASS torus_correction_zero_d_theta: 0.000e+00
+PASS torus_correction_zero_d_thetat: 0.000e+00
+correction for N1+ : Matrix([[-I*sin(theta - thetat)/(4*sin(alpha)), -sin(theta - thetat)/(4*cos(alpha)) + I*cos(theta - thetat)/4], [sin(theta - thetat)/(4*cos(alpha)) + I*cos(theta - thetat)/4, I*sin(theta - thetat)/(4*sin(alpha))]])
+ALL_PASS

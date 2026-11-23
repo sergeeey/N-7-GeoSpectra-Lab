@@ -1,0 +1,25 @@
+PASS radius invariant D1
+PASS radius invariant D2
+PASS radius invariant D3
+PASS Lie bracket [1,2]
+PASS Lie bracket [2,3]
+PASS Lie bracket [3,1]
+PASS ladder 3:0
+PASS ladder 3:-xi2
+PASS ladder 3:-xi1
+PASS ladder 3:0
+PASS unphased Pauli identity D1
+PASS unphased Pauli identity D2
+PASS unphased Pauli identity D3
+PASS phased covariance with U sigma U^-1 D1
+PASS phased covariance with U sigma U^-1 D2
+PASS phased covariance with U sigma U^-1 D3
+PASS phased original Pauli identity fails D1
+PASS phased original Pauli identity fails D2
+PASS phased original Pauli identity holds D3
+PASS phased original ladder D+ fails
+PASS phased original ladder D- fails
+PASS phased original ladder zeros hold
+22 exact SymPy checks passed
+Original ladder residuals phased: [0, -xi2 + I*xi2, xi1 - I*xi1, 0]
+Transformed sigma: ['Matrix([[0, -I], [I, 0]])', 'Matrix([[0, -1], [-1, 0]])', 'Matrix([[1, 0], [0, -1]])']

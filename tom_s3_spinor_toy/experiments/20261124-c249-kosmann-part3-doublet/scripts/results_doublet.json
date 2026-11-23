@@ -1,0 +1,59 @@
+{
+ "nonzero_residuals": [],
+ "spinor_conditions": 30,
+ "closed_form_conditions_vanish_exactly": true,
+ "A": "cos(alpha/2)",
+ "B": "-I*sin(alpha/2)",
+ "JR3_plus_is_half": {
+  "value": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "JL_annihilate_plus": {
+  "value": 8.804605268330395e-17,
+  "expected": "zero",
+  "pass": true
+ },
+ "JR_plus_annihilates_plus": {
+  "value": 9.578041621035848e-17,
+  "expected": "zero",
+  "pass": true
+ },
+ "minus_nonzero": {
+  "value": 0.9938181731956991,
+  "expected": "nonzero",
+  "pass": true
+ },
+ "JR3_minus_is_minus_half": {
+  "value": 4.6092748560941446e-17,
+  "expected": "zero",
+  "pass": true
+ },
+ "JR_plus_on_minus_returns_plus": {
+  "value": 9.138766954136112e-16,
+  "expected": "zero",
+  "pass": true
+ },
+ "JR_minus_annihilates_minus": {
+  "value": 1.1170885514943367e-15,
+  "expected": "zero",
+  "pass": true
+ },
+ "JL_annihilate_minus": {
+  "value": 9.453520876243599e-16,
+  "expected": "zero",
+  "pass": true
+ },
+ "control_scalar_action_on_plus_not_closed": {
+  "value": 1.0697118650202404,
+  "expected": "nonzero",
+  "pass": true
+ },
+ "partner_minus": "Matrix([[(-2*sin(alpha/2)*sin(alpha)*sin(theta - thetat) - 2*I*sin(alpha/2)*sin(alpha)*cos(theta - thetat) + sin(alpha/2)*sin(theta - thetat)*tan(alpha) + I*sin(alpha/2)*cos(theta - thetat)*tan(alpha) - sin(alpha)**2*sin(theta - thetat)*cos(alpha/2)/cos(alpha) - I*sin(alpha)**2*cos(alpha/2)*cos(theta - thetat)/cos(alpha) + sin(theta - thetat)*cos(alpha/2)*cos(alpha) - sin(theta - thetat)*cos(alpha/2) + I*cos(alpha/2)*cos(alpha)*cos(theta - thetat) - I*cos(alpha/2)*cos(theta - thetat))*exp(I*(theta - thetat)/2)/(4*cos(alpha)*tan(alpha))], [(-exp(I*(-3*alpha - theta + thetat)) + exp(I*(-alpha - theta + thetat)) + exp(I*(alpha - theta + thetat)) - exp(I*(3*alpha - theta + thetat)))*exp(I*(theta - thetat)/2)/(4*(cos(3*alpha/2) - cos(5*alpha/2)))]])",
+ "plus_theta_2pi_ratio": "-1",
+ "pointwise_norm2_plus": "1",
+ "scalar_solutions": [
+  "{A: 0, Ap: 0}"
+ ],
+ "scalar_only_zero": true
+}

@@ -1,0 +1,67 @@
+{
+ "frame_orthonormal": {
+  "max_residual": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "clifford_compat_s_conn=+1": {
+  "max_residual": 1.887379141862766e-15,
+  "expected": "zero",
+  "pass": true
+ },
+ "clifford_compat_s_conn=-1": {
+  "max_residual": 15.198053097131139,
+  "expected": "nonzero",
+  "pass": true
+ },
+ "bracket_const_plus": "-1",
+ "su2_closure_plus": {
+  "max_residual": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "bracket_const_minus": "-1",
+ "su2_closure_minus": {
+  "max_residual": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "plus_minus_commute": {
+  "max_residual": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "kosmann_commutes_with_D_s_kos=+1": {
+  "max_residual": 1.6366826872708184e-14,
+  "expected": "zero",
+  "pass": true
+ },
+ "kosmann_commutes_with_D_s_kos=-1": {
+  "max_residual": 34.988676516484105,
+  "expected": "nonzero",
+  "pass": true
+ },
+ "control_componentwise_commutes_with_D": {
+  "max_residual": 43.51957939840051,
+  "expected": "nonzero",
+  "pass": true
+ },
+ "kosmann_bracket_homomorphism": {
+  "max_residual": 4.934719669528575e-15,
+  "expected": "zero",
+  "pass": true
+ },
+ "torus_correction_zero_d_theta": {
+  "max_residual": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "torus_correction_zero_d_thetat": {
+  "max_residual": 0.0,
+  "expected": "zero",
+  "pass": true
+ },
+ "correction_matrix_N1_plus": "Matrix([[-I*sin(theta - thetat)/(4*sin(alpha)), -sin(theta - thetat)/(4*cos(alpha)) + I*cos(theta - thetat)/4], [sin(theta - thetat)/(4*cos(alpha)) + I*cos(theta - thetat)/4, I*sin(theta - thetat)/(4*sin(alpha))]])",
+ "S_CONN": 1,
+ "S_KOS": 1
+}

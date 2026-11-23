@@ -1,0 +1,15 @@
+PASS closed form satisfies all 30 conditions exactly
+A(alpha) = cos(alpha/2)   B(alpha) = -I*sin(alpha/2)
+PASS JR3_plus_is_half: 0.000e+00
+PASS JL_annihilate_plus: 8.805e-17
+PASS JR_plus_annihilates_plus: 9.578e-17
+PASS minus_nonzero: 9.938e-01
+PASS JR3_minus_is_minus_half: 4.609e-17
+PASS JR_plus_on_minus_returns_plus: 9.139e-16
+PASS JR_minus_annihilates_minus: 1.117e-15
+PASS JL_annihilate_minus: 9.454e-16
+PASS control_scalar_action_on_plus_not_closed: 1.070e+00
+partner m_R = -1/2: Matrix([[(-2*sin(alpha/2)*sin(alpha)*sin(theta - thetat) - 2*I*sin(alpha/2)*sin(alpha)*cos(theta - thetat) + sin(alpha/2)*sin(theta - thetat)*tan(alpha) + I*sin(alpha/2)*cos(theta - thetat)*tan(alpha) - sin(alpha)**2*sin(theta - thetat)*cos(alpha/2)/cos(alpha) - I*sin(alpha)**2*cos(alpha/2)*cos(theta - thetat)/cos(alpha) + sin(theta - thetat)*cos(alpha/2)*cos(alpha) - sin(theta - thetat)*cos(alpha/2) + I*cos(alpha/2)*cos(alpha)*cos(theta - thetat) - I*cos(alpha/2)*cos(theta - thetat))*exp(I*(theta - thetat)/2)/(4*cos(alpha)*tan(alpha))], [(-exp(I*(-3*alpha - theta + thetat)) + exp(I*(-alpha - theta + thetat)) + exp(I*(alpha - theta + thetat)) - exp(I*(3*alpha - theta + thetat)))*exp(I*(theta - thetat)/2)/(4*(cos(3*alpha/2) - cos(5*alpha/2)))]])
+antiperiodic factor: -1  |plus|^2 = 1
+PASS scalar highest-weight (0,1/2) only A = 0: [{A: 0, Ap: 0}]
+ALL_PASS

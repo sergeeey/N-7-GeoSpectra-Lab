@@ -1,0 +1,10 @@
+spinor=True (p,q)=(1/2,-1/2) (jL3,jR3)=(0,1/2)  singular values: 3.73e+00 2.16e+00 1.93e+00 3.09e-16
+spinor=True (p,q)=(1/2,1/2) (jL3,jR3)=(1/2,0)  singular values: 3.73e+00 2.16e+00 1.93e+00 2.02e-16
+spinor=True (p,q)=(-1/2,1/2) (jL3,jR3)=(0,-1/2)  singular values: 3.45e+00 2.05e+00 1.81e+00 1.71e+00
+spinor=True (p,q)=(-1/2,-1/2) (jL3,jR3)=(-1/2,0)  singular values: 3.45e+00 2.05e+00 1.81e+00 1.71e+00
+spinor=True (p,q)=(0,0) (jL3,jR3)=(0.0,0.0)  singular values: 2.53e+00 2.53e+00 2.24e+00 2.24e+00
+spinor=False (p,q)=(1/2,-1/2) (jL3,jR3)=(0,1/2)  singular values: 1.95e+00 1.60e+00
+spinor=False (p,q)=(1/2,1/2) (jL3,jR3)=(1/2,0)  singular values: 1.95e+00 1.60e+00
+spinor=False (p,q)=(-1/2,1/2) (jL3,jR3)=(0,-1/2)  singular values: 1.95e+00 1.60e+00
+spinor=False (p,q)=(-1/2,-1/2) (jL3,jR3)=(-1/2,0)  singular values: 1.95e+00 1.60e+00
+spinor=False (p,q)=(0,0) (jL3,jR3)=(0.0,0.0)  singular values: 2.24e+00 0.00e+00

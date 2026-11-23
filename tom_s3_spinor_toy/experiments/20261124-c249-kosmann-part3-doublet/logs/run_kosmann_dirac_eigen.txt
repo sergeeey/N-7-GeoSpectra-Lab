@@ -1,0 +1,4 @@
+plus: D psi = -3*I/2 psi exact=True; Killing nabla_X psi = -I/2 X.psi exact=True
+minus: D psi = -3*I/2 psi exact=True; Killing nabla_X psi = -I/2 X.psi exact=True
+PASS control: lambda+1 is not an eigenvalue
+ALL_PASS

@@ -1,0 +1,15 @@
+{
+ "plus": {
+  "eigenvalue": "-3*I/2",
+  "dirac_eigen_exact": true,
+  "killing_mu": "-I/2",
+  "killing_exact": true
+ },
+ "minus": {
+  "eigenvalue": "-3*I/2",
+  "dirac_eigen_exact": true,
+  "killing_mu": "-I/2",
+  "killing_exact": true
+ },
+ "control_wrong_eigenvalue_passes": false
+}

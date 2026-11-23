@@ -1,0 +1,16 @@
+J-^R plus vs claimed minus (40 pts): 5.307459667246081e-16
+JR+ plus num40: 4.886798946544367e-16  exact: [0, 0]
+JR3 plus-1/2 num40: 0.0  exact: [0, 0]
+JL plus num40: 3.507813029374117e-16  exact: [0, 0, 0, 0, 0, 0]
+JL minus num40: 3.507813029374117e-16  exact: [0, 0, 0, 0, 0, 0]
+JR- minus num40: 4.886798946544367e-16  exact: [0, 0]
+JR+ minus - plus num40: 5.307459667246081e-16  exact: [0, 0]
+JR3 minus+1/2 num40: 0.0  exact: [0, 0]
+clifford compat [1, 0, 0] 2.2972242157820777e-14
+clifford compat [0, 1/sin(alpha), 0] 1.0756055434083966e-14
+clifford compat [0, 0, 1/cos(alpha)] 2.442469965580314e-13
+clifford compat [cos(thetat), alpha*theta, sin(theta)] 7.25751479167098e-14
+kosmann clifford-compat s_kos 1 9.856460379795035e-14
+kosmann clifford-compat s_kos -1 102.02377525422922
+Killing mu=-i/2 plus 4.440892098500626e-16
+Killing mu=-i/2 minus 4.440892098500626e-16

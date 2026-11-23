@@ -4426,6 +4426,45 @@ claims:
       - "anything about S^6 or the product S^3 x S^6"
     caveat: "The source of the recorded answer is outside the repository (private notes); the entry paraphrases it. No computation was run; the only certified part is the degree-1 block of TOM-CERT-01, already registered."
     notes: "Row R17 of the private correspondence layer. Resolved only by the correspondent's answer."
+  - id: C248_FACTOR_I_IN_SECOND_COMPONENT_IS_PAULI_BASIS_ROTATION_U_DIAG_1_I
+    statement: "Exact sympy, 22 checks (four negative controls), exit 0 (2026-11-24). With D_a = -1/2 (sigma_a xi).d_xi + 1/2 (sigma_a* barxi).d_barxi on C^2, psi = xi/r obeys D_a psi = -1/2 sigma_a psi; for the phased doublet (xi1, i xi2) this identity fails for a = 1, 2 (holds for a = 3) and the ladder values become i and -i instead of -1; it holds again exactly with sigma'_a = U sigma_a U^-1, U = diag(1, i), i.e. sigma'_1 = sigma_2, sigma'_2 = -sigma_1, sigma'_3 = sigma_3 (a rotation of the axes by pi/2 about the third axis)."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261124-c248-factor-i-is-sigma-basis-rotation/decision.md"
+    depends_on: [C242_SECOND_COMPONENT_E_I_PHI_SIN_HALF_THETA_FIXED_BY_V_AND_BY_U_UNDER_STATED_INPUTS_OTHER_SIGN_VERSION_IS_THE_U_TRANSPOSE_ENTRY_DETERMINANT_MINUS_ONE]
+    supersedes: "no prior claim -- first tracked record of the factor-i reading."
+    convention: "Standard Pauli matrices; generators of the dragged scalar field on C^2 as written in the statement; U = diag(1, i)."
+    does_not_imply:
+      - "a result about the correspondent's theory: it is a choice of basis (project rule 10), not to be presented as a finding"
+      - "which convention the correspondent uses: that is an open question to the correspondent"
+      - "anything about S^3 geometry, a Dirac operator, or a later operator of the correspondent"
+    caveat: "The script was written outside the repository (external analysis, 2026-11-24) and re-run here with ruff fixes and check() exiting non-zero instead of assert; it was not rewritten independently. Same model family, no human review. Elementary identity (conjugation by a diagonal unitary)."
+    notes: "Prepares the reading of an answer to the factor-i question; nothing is sent."
+  - id: C249_KOSMANN_HOPF_FRAME_ZERO_HALF_DOUBLET_IS_KILLING_SPINOR_PAIR_SCALAR_ANSATZ_HAS_NONE
+    statement: "Round unit S^3, Hopf coordinates, frame E = (d_alpha, d_theta/sin alpha, d_thetat/cos alpha), generators J_a = -i L_{N_a} with L the Kosmann (spinorial) Lie derivative and N^+ (N3 = (d_theta - d_thetat)/2) as SU(2)_R. (1) The Kosmann term with the sign fixed by commutation with D (residual 1.6e-14; opposite sign 35, component-wise action 44) respects brackets (4.9e-15) and vanishes identically for d_theta and d_thetat. (2) psi_+ = e^{i(theta - thetat)/2} (cos(alpha/2), -i sin(alpha/2)) and psi_- = e^{-i(theta - thetat)/2} (-i sin(alpha/2), cos(alpha/2)) form a (0, 1/2) doublet: the 30 highest-weight conditions vanish exactly (Weierstrass substitution), and seven closure conditions (J^L = 0 on both states, J^R_3 = +-1/2, J^R_+ psi_+ = 0, J^R_- psi_- = 0, J^R_+ psi_- = psi_+) vanish exactly with symbolic angles, the eighth (J^R_- psi_+ = psi_-) numerically at 40 points, about 5e-16 (skeptic scripts, re-run; print-only, evidence is the log content). (3) Both states satisfy D psi = -(3i/2) psi and nabla_X psi = -(i/2) X.psi exactly (Killing spinors, |psi|^2 = 1). (4) The scalar ansatz A(alpha) e^{i(theta - thetat)/2} with the plain vector-field action has only A = 0. The total spinor term for N_1^+ (spin connection plus Kosmann term) is (i/4)[cos(theta - thetat) sigma_1 - sin(theta - thetat)/cos(alpha) sigma_2 - sin(theta - thetat)/sin(alpha) sigma_3]."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261124-c249-kosmann-part3-doublet/decision.md"
+    depends_on: [C55_A1_VERIFIED_IOTA_FLIPS_THE_DIRAC_OPERATOR, C222_SPIN_HALF_INVARIANT_SUBSPACES_ON_S2_FORM_A_CP1_FAMILY_SCALARS_UNDER_DRAGGING_ONLY_INTEGER_SPIN, TOM_CERT_01_SPAN_GAB_SU2LR_HALFHALF_EXACT]
+    supersedes: "no prior claim -- first tracked record of the Kosmann derivative in the Hopf frame."
+    convention: "Clifford with Hermitian sigma (sigma_a sigma_b + sigma_b sigma_a = 2 delta_ab), so D = sum sigma_a nabla_a has imaginary eigenvalues; spin connection (1/4) sum omega_bc sigma_b sigma_c with omega_bc(X) = g(nabla_X E_c, E_b); Kosmann term + (1/4) sum g(nabla_{E_b} v, E_c) sigma_b sigma_c in this index order; [N1, N2] = -N3 for both factors. Which factor is called L or R follows the Cartan generators d_theta +- d_thetat of the correspondent's ansatz as quoted in an external summary. Frame orientation det[x, E1, E2, E3] = -1; the eigenvalue sign and the L/R pairing flip with orientation or with D = i sigma.nabla. The (1/2, 0) highest weight e^{i(theta + thetat)/2} (cos(alpha/2), i sin(alpha/2)) has D = +3i/2."
+    does_not_imply:
+      - "the correspondent's operator, field equation or Clifford convention: generators are derived here from the embedding"
+      - "which SU(2) is spin or which multiplet is physical; a (1/2, 0) highest weight also exists (rank scan, numeric only)"
+      - "that the correspondent made an error: it shows only that the phase as quoted in an external summary is compatible with a spinor field, and that a scalar profile with the plain vector-field action has no non-zero solution"
+      - "a reproduction of his equation cot^2(2 alpha) = -1, or that this result explains it: his slides were not opened and the scalar control is a different, pointwise system"
+      - "global smoothness across alpha = 0, pi/2 by direct check: inferred from the Killing equation"
+      - "novelty: Kosmann derivative and Killing spinors on S^3 are standard"
+    caveat: "The closed form was read off numeric null vectors at four alphas (sp.solve returned an empty list) and then verified exactly; the five angle samples of the first check rely on a first-harmonic structure; this is no longer load-bearing because the closure conditions were also checked exactly with symbolic angles. Kosmann sign: pre-run guess -1, the discriminating test chose +1. The SO(3) winding of the Hopf frame was not computed; antiperiodicity is shown for the doublet's components only. Same author and model family; context-blind skeptic review 2026-11-24: CONFIRMED-REAL within the stated conventions (it re-checked all closure and Killing conditions with symbolic angles; found the sign misprint in claim.md, now amended). No human review."
+    notes: "Motivated by an external text of 2026-11-24 that proposed a frame-rotation (Kosmann) term; the boxed operator of that text (cot(2 alpha) off-diagonal) does not match the term found here."
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim

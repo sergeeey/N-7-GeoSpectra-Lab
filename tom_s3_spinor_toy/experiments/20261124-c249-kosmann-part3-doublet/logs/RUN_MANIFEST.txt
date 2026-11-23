@@ -1,0 +1,10 @@
+Re-run 2026-11-24 after ruff import fixes, sequential.
+C248 script and skeptic scripts: python -I. C249 own scripts: plain python (python -I drops the script folder from sys.path, so the shared kosmann_geometry module was not found on the first attempt; that attempt is not a result).
+C248 verify_factor_i_basis_rotation.py exit=0 22 PASS
+C249 skeptic/attack.py exit=0
+C249 skeptic/attack2.py exit=0
+C249 kosmann_checks.py exit=0 ALL_PASS
+C249 kosmann_rank_scan.py exit=0 spinor=False (p,q)=(0,0) (jL3,jR3)=(0.0,0.0)  singular values: 2.24e+00 0.00e+00
+C249 kosmann_doublet.py exit=0 ALL_PASS
+C249 kosmann_dirac_eigen.py exit=0 ALL_PASS
+Review fixes 2026-11-24: C248 re-run after check() change: exit=0, 22 PASS (also passes under python -O). kosmann_checks.py re-run after exact torus check: exit=0 ALL_PASS. Print-only scripts (rank_scan, skeptic/attack*): exit code carries no evidence; read the logs.

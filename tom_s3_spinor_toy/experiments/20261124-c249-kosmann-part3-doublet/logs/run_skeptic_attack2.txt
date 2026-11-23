@@ -1,0 +1,4 @@
+traces C_N: [0, 0, 0, 0, 0, 0]
+sig1 sig2 sig3 = Matrix([[I, 0], [0, I]])
+orientation det: -1
+(1/2,0) highest weight (cos, i sin) residual 5.465201778264203e-17 D eigen 1.4999999999999998j eig check 2.220446049250313e-16
