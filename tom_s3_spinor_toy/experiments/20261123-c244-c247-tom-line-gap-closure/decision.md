@@ -39,7 +39,7 @@ Not addressed: the C221 scan covers only j = 1/2 in its own entry, so no indepen
 | literal m = -1 reading is the l = 1 lowest-weight state (C245) | exact |
 | scalar ladder at m = +-1/2 does not close (C245) | exact; restates C221 (1) |
 | bridge identity on S^1-invariant spinors (C246) | numerical on test fields (degrees 0 to 3) and the closed form on five fields in all, negative controls fail; the Omega link is exact; analytic proof exists in a private theorem note, not re-derived here |
-| sign/convention relation to the published reduction (C246) | hand algebra from equations read; pages 4 to 7 and 11 to 19 of the source not read; not a script result |
+| sign/convention relation to the published reduction (C246) | hand algebra from equations read; source downloaded 2026-11-23 (private copy) and pages 4 to 7 and 11 to 19 read (volume form, frame, connection, Hodge-de Rham part: nothing changes the relation); pages 2 to 3, 8 to 10, 25 to 27 not re-read here; not a script result |
 | reading of the recorded statement (C247) | OPEN; hypothesis that the statements concern different spaces is INFERRED, untested |
 
 ## What this decision does NOT establish
@@ -51,7 +51,7 @@ Not addressed: the C221 scan covers only j = 1/2 in its own entry, so no indepen
 
 ## Follow-ups
 
-- Read the unread pages of the published reduction, or fetch the primary source (needs an explicit yes for the download).
+- Read pages 2 to 3, 8 to 10 and 25 to 27 of the published note myself (the PDF is stored privately; pages 4 to 7 and 11 to 19 were read 2026-11-23).
 - Open the primary source of the edth operator.
 - Ask the correspondent which space his statement about the harmonic basis refers to (R17).
 
