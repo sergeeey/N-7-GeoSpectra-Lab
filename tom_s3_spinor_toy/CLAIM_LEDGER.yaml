@@ -4332,6 +4332,24 @@ claims:
     caveat: "Same-model-family review only; the S^3 orientation and left/right facts are standard, not newly derived; the reading-C cross-check is numeric plus the exact identity above (its generator check R3 is redundant with R1, not an independent confirmation; checks E5b, E6 and the determinant checks restate standard facts and cannot fail in a meaningful way; a symbolic run with a generic function was started and stopped, not completed); no independent human review."
     notes: "Result row R19 of the private correspondence layer; computed 2026-11-17 after an external note was compared with C242. An earlier wording in the working discussion, that no SU(2) element can map one doublet to the other, was wrong and is corrected by negative control N1."
 
+  - id: TOM_CERT_01_SPAN_GAB_SU2LR_HALFHALF_EXACT
+    statement: "On S^3 = SU(2) with g(x) = [[x0, -conj x1], [x1, conj x0]], the four matrix-element functions g_ab span a 4-dimensional space W of degree-1 functions. Exact Gaussian-rational verification: W is invariant under SU(2)_L and SU(2)_R; it splits into two isomorphic left doublets (fixed column) and two isomorphic right doublets (fixed row); it is irreducible of type (1/2, 1/2) (commutant of the full L x R action has dimension 1; commutants of L alone and of R alone have dimension 4); the Casimirs are J_L^2 = J_R^2 = 3/4; the joint weights (J_3L, J_3R) of g00, g01, g10, g11 are (-1/2,+1/2), (-1/2,-1/2), (+1/2,+1/2), (+1/2,-1/2), each combination of (+-1/2, +-1/2) occurring exactly once; the uniform-measure Gram matrix is (1/2) delta and all six generators are skew-Hermitian with respect to it."
+    truth_status: PROVED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: ESTABLISHED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261103-tom-cert-01/decision.md"
+    depends_on: []
+    convention: "Coordinates x=(x0,x1), g(x)=[[x0,-conj x1],[x1,conj x0]]; T_a = -i sigma_a/2 with [T_a,T_b]=eps_abc T_c; left action L_h f(x)=f(h^-1 x), right action R_k f(x)=f(x k); the conventions are part of the statement (verifier check V0) and the group-equivariance check V3e fixes them against a homomorphic alternative."
+    does_not_imply:
+      - "which SU(2) acts as spin; W is a statement about SU(2)_L x SU(2)_R on S^3, not about spin (R05 stays open)."
+      - "that W is the correspondent's multiplet, that any field equation holds, or anything about D_0 or the Dirac operator."
+      - "anything for functions of degree > 1: W is the degree-1 block only."
+      - "novelty: the (1/2,1/2) structure is the classical Peter-Weyl decomposition of the defining representation, recorded here as an exact reproducible certificate."
+    caveat: "Builder (sympy) and verifier (stdlib fractions) are one author's pair in one session and share conventions; the only independent check is a context-blind skeptic of the same model family (2026-11-03, see REPORT_RU.md section 7a); no human review. Verified 2026-11-23: nine files match SHA256SUMS.txt; verify_valid ACCEPT 18/18; negative controls as declared; fresh rebuild hash identical."
+    notes: "Folder committed in 1792f9b. decision.md added 2026-11-23 with this entry. Before this entry, C232, C233 and C243 cited the result without a row of their own. The folder is not an independent reproduction. Overlap found 2026-11-23: an earlier packet (experiments/20260809-tom-s3-harmonics-solution-packet, on unmerged branch b2-independent-reimplementation, private copy in correspondence/branch_recovery_2026-11-23, git-ignored) computes the same j=1/2 Peter-Weyl block in a different chart; re-run 2026-11-23 in a scratch copy: results json identical to the stored one (verdict ALL_CHECKS_PASS). Weight-labelling conventions of the two are NOT reconciled here."
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim
