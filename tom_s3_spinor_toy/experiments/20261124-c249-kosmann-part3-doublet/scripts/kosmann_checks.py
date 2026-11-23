@@ -5,6 +5,9 @@ import random
 import sys
 
 import sympy as sp
+
+# WHY: python -I (used by tom_line_check --run) drops the script folder from sys.path
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
 from kosmann_geometry import (
     NM,
     NP,

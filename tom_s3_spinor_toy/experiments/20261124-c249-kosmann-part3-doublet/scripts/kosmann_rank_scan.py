@@ -5,7 +5,12 @@ conditions of a highest weight (or singlet) for both SU(2)s. Unknowns (A, B, A',
 Null-space dimension > 0 at generic alpha means a non-zero local solution of the first-order system.
 """
 
+import sys
+
 import sympy as sp
+
+# WHY: python -I (used by tom_line_check --run) drops the script folder from sys.path
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
 from kosmann_geometry import NM, NP, I, Q, T, a, kos_matrix, omega, t
 
 C = {id(N): sp.simplify(omega(N) + kos_matrix(N)) for N in NP + NM}

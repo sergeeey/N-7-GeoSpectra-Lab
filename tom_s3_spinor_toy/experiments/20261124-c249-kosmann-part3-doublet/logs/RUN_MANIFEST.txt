@@ -8,3 +8,4 @@ C249 kosmann_rank_scan.py exit=0 spinor=False (p,q)=(0,0) (jL3,jR3)=(0.0,0.0)  s
 C249 kosmann_doublet.py exit=0 ALL_PASS
 C249 kosmann_dirac_eigen.py exit=0 ALL_PASS
 Review fixes 2026-11-24: C248 re-run after check() change: exit=0, 22 PASS (also passes under python -O). kosmann_checks.py re-run after exact torus check: exit=0 ALL_PASS. Print-only scripts (rank_scan, skeptic/attack*): exit code carries no evidence; read the logs.
+sys.path fix 2026-11-24 (scripts now import the shared module under python -I): kosmann_checks, kosmann_doublet, kosmann_dirac_eigen re-run by tom_line_check --run R21 (all UNCHANGED, ALL_PASS); kosmann_rank_scan re-run with python -I, exit 0, same singular values.
