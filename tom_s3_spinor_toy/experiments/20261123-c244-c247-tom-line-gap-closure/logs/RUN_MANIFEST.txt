@@ -1,0 +1,12 @@
+RUN_MANIFEST 2026-11-23: python -I <script> from this folder; exit code, SHA256 of the log, and byte comparison with the log of the run BEFORE the style fixes (kept outside the repository)
+q4_m_minus_one_stage2 exit=0 sha256=642216d615ca0af7 identical-to-pre-fix-log
+m_minus_half_ladder_check exit=0 sha256=5182b2dedbc36936 identical-to-pre-fix-log
+verify_euler_operators exit=0 sha256=ce5320b49e628b64 identical-to-pre-fix-log
+verify_euler_closure_rule exit=0 sha256=d1782d540a43b8a6 identical-to-pre-fix-log
+verify_euler_final exit=0 sha256=f235a49f12264540 identical-to-pre-fix-log
+verify_euler_dictionary_signs exit=0 sha256=0530a048784a01d6 identical-to-pre-fix-log
+verify_euler_vs_sympy_wignerd exit=0 sha256=ffaa01df9fcaec76 identical-to-pre-fix-log
+verify_dirac_closed_form exit=0 sha256=1491c569466b00b7 identical-to-pre-fix-log
+verify_tom_bridge_sigmaL_formula exit=0 sha256=c089aef5303ae589 identical-to-pre-fix-log
+verify_tom_frame_identity_full exit=0 sha256=238d578c48ca54b7 identical-to-pre-fix-log
+verify_dirac_closed_form_more_fields exit=0 sha256=dd1bb008bafbce95 new-script-no-pre-fix-log

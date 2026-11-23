@@ -1,0 +1,8 @@
+hopf doublet (cos th, sin th e^{i phi}): closed-form error 4.48e-16, +Gamma control error 2.00e+00, ok=True
+(e^{-i phi} sin^2 th, cos th sin th e^{2 i phi}): closed-form error 1.81e-15, +Gamma control error 2.00e+00, ok=True
+(n_x + i n_y, n_z): closed-form error 8.88e-16, +Gamma control error 2.00e+00, ok=True
+(1, i cos(2 th) e^{-i phi}): closed-form error 2.84e-15, +Gamma control error 2.39e+00, ok=True
+U sigma_3 U^dagger = Gamma: exact zero = True, numeric worst over 200 points = 2.22e-16
+U W U^dagger = exp(i pi Gamma/4): exact zero = True, numeric worst over 200 points = 2.48e-16
+Gamma^2 = 1: exact zero = True, numeric worst over 200 points = 3.33e-16
+RESULT: True
