@@ -1,0 +1,17 @@
+PASS A1 D e_2 = e^{i psi/2} eta
+PASS A2 K_z acting on the entries of the COLUMN D e_2 gives +1/2 (the review is right about this)
+PASS A3 the column transforms in the DUAL representation: J_a (D e_2) = -(sigma_a/2) D e_2 (a = x, y, z)
+PASS B1 Phi(Y eta) = e^{-i psi/2} Y
+PASS B2 K_z Phi(Y eta) = -1/2 Phi(Y eta): the STATE has weight -1/2, the column +1/2 (conjugation flips the sign)
+PASS B3 so the two statements are about different objects and do not contradict each other
+   J^Euler_+ (D e_2) at theta=pi/2, phi=psi=0: (-0.707107+0.000000j, 0.000000+0.000000j)   (review: (-1/sqrt2, 0) = (-0.707107, 0))
+PASS C1 the review's first number reproduces: (-1/sqrt2, 0)
+PASS C2 and equals -sigma_+ (D e_2) (dual representation)
+   J^lab_+ eta at the same point: (0.353553+0.000000j, -0.353553+0.000000j)   (review: (1/(2 sqrt2), -1/(2 sqrt2)) = (0.353553, -0.353553))
+PASS C3 the review's second number reproduces
+PASS C4 J^lab_+ eta = c eta with c = -e^{i phi}/(2 sin theta)
+PASS D1 Phi(J^lab_a Psi) = J^Euler_a Phi(Psi) for a = x, y, z, for an ARBITRARY two-component field Psi (complex, not only eigenstates)
+PASS D2 control: the un-conjugated pairing fails to intertwine for 2 of 3 axes (must be > 0)
+PASS E1 J_- f_up = +f_dn for the Condon-Shortley pair of C221(b)
+PASS E2 rephasing the lower state by e^{i alpha} multiplies the coefficient by e^{-i alpha}: the sign is a phase CONVENTION
+ALL PASS

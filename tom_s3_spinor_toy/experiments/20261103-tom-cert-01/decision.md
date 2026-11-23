@@ -58,3 +58,5 @@ A packet of 2026-08-09 (experiments/20260809-tom-s3-harmonics-solution-packet, p
 | `verifier.py` | `logs/verify_valid.txt` | ACCEPT, 18 checks |
 | `negative_controls.py` | `logs/negative_controls.txt` | ALL BEHAVED AS DECLARED |
 | `run_all.py` | `logs/run_all.txt` | ALL STEPS AS DECLARED, exit 0 |
+
+Ledger: TOM_CERT_01_SPAN_GAB_SU2LR_HALFHALF_EXACT

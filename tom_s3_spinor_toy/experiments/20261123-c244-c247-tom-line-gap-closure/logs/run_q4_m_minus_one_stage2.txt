@@ -1,0 +1,14 @@
+PASS S0 operator form: L_+ on e^{i m phi} F gives e^{i(m+1)phi}(F' - m cot F)
+PASS S1a literal m=-1: f = sin(theta) satisfies L_- Y = 0
+PASS S1b literal m=-1: L_+ of the same function is non-zero (so it is not an L_+ null state; it is the l=1 lowest weight Y_{1,-1})
+PASS S2 m=+1/2: f = sin^{1/2} th gives L_+ Y = 0
+PASS S3 m=-1/2: f = sin^{1/2} th gives L_- Y = 0
+   theta-part of L_- Y_{1/2,1/2} = -cos(theta)/sqrt(sin(theta))
+   ratio to sin^{1/2} th (the Y_{1/2,-1/2} candidate) = -1/tan(theta)
+PASS S4 L_- Y_{1/2,1/2} is NOT a constant multiple of Y_{1/2,-1/2} (ratio depends on theta)
+PASS S5 (control, must be 0 by S3) L_- Y_{1/2,-1/2} = 0
+   L_- applied again (m=-1/2 phase): -1/sin(theta)**(3/2)
+PASS S6 Y_{1/2,1/2} has phase e^{i m phi}, m=1/2, antiperiodic under phi->phi+2pi
+PASS S6 Y_{1/2,-1/2} has phase e^{i m phi}, m=-1/2, antiperiodic under phi->phi+2pi
+
+FAILS: none

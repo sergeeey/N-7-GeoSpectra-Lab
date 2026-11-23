@@ -1,0 +1,14 @@
+deg0 (1,0) | W=rot(pi/2) | c=(7.312011238372155e-18+1.9999999999999993j) | residual=1.556e-15 | min_pole_dist=0.100
+deg0 (1,0) | W=id | c=(0.09393636376293134-6.419810763328154e-19j) | residual=2.090e+00 | min_pole_dist=0.100
+deg1 (-n_z, -(n_x+i n_y)) | W=rot(pi/2) | c=1.9999999999999996j | residual=2.349e-15 | min_pole_dist=0.100
+deg1 (-n_z, -(n_x+i n_y)) | W=id | c=(0.09393636376293127+5.5539765264799835e-18j) | residual=2.013e+00 | min_pole_dist=0.100
+deg1 (n_x, n_y) | W=rot(pi/2) | c=(-1.771703319457069e-17+1.9999999999999993j) | residual=3.153e-15 | min_pole_dist=0.100
+deg1 (n_x, n_y) | W=id | c=(0.1983388695311094+5.315109958371208e-17j) | residual=3.071e+00 | min_pole_dist=0.100
+deg2 (n_z^2, n_x n_z) | W=rot(pi/2) | c=(3.6560648479349493e-17+1.9999999999999991j) | residual=6.076e-15 | min_pole_dist=0.100
+deg2 (n_z^2, n_x n_z) | W=id | c=(-0.10807696212153142+3.822249613750176e-17j) | residual=3.036e+00 | min_pole_dist=0.100
+deg2 (n_x^2-n_y^2, i n_x n_y) | W=rot(pi/2) | c=(4.492294666668562e-18+1.9999999999999996j) | residual=4.409e-15 | min_pole_dist=0.100
+deg2 (n_x^2-n_y^2, i n_x n_y) | W=id | c=(0.04691451263344019-2.6953768000011385e-17j) | residual=4.066e+00 | min_pole_dist=0.100
+deg3 (n_z^3-n_z, n_x n_z^2 + i n_y) | W=rot(pi/2) | c=(3.457088740852867e-17+1.9999999999999993j) | residual=4.202e-15 | min_pole_dist=0.100
+deg3 (n_z^3-n_z, n_x n_z^2 + i n_y) | W=id | c=(0.017299578576601526+2.780701813294698e-17j) | residual=3.943e+00 | min_pole_dist=0.100
+deg3 (n_x^3, i n_y^3) | W=rot(pi/2) | c=(5.058981430583773e-17+1.9999999999999998j) | residual=3.554e-15 | min_pole_dist=0.100
+deg3 (n_x^3, i n_y^3) | W=id | c=(0.10852070490865011+3.891524177372134e-17j) | residual=2.716e+00 | min_pole_dist=0.100

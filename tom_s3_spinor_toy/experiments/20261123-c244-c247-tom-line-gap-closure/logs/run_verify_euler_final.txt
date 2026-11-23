@@ -1,0 +1,38 @@
+PASS 1.0 D is unitary with det 1
+explicit generators (coefficients of d/dphi, d/dtheta, d/dpsi):
+  X_x (left)  = (-(cos(phi - theta) + cos(phi + theta))/(2*sin(theta)), -sin(phi), cos(phi)/sin(theta))
+  X_y (left)  = (-(sin(phi - theta) + sin(phi + theta))/(2*sin(theta)), cos(phi), sin(phi)/sin(theta))
+  X_z (left)  = (1, 0, 0)
+  Y_x (right) = (-cos(psi)/sin(theta), sin(psi), (cos(psi - theta) + cos(psi + theta))/(2*sin(theta)))
+  Y_y (right) = (sin(psi)/sin(theta), cos(psi), -(sin(psi - theta) + sin(psi + theta))/(2*sin(theta)))
+  Y_z (right) = (0, 0, 1)
+PASS 1.1 definition: J_a D_rc = -(sigma_a D / 2)_rc  for a = x, y, z and all entries
+PASS 1.2 definition: K_a D_rc = -(D sigma_a / 2)_rc  for a = x, y, z and all entries
+PASS 1.3 [J_x, J_y] = +i J_z (standard)
+PASS 1.4 [K_x, K_y] = -i K_z (body-fixed: anomalous sign)
+PASS 1.5 [J_a, K_b] = 0 for all 9 pairs
+PASS 1.6 Casimirs J^2 = K^2
+PASS 1.7 J_z = -i d/dphi and K_z = -i d/dpsi
+PASS 2.1 convention A: J_+ = e^{i phi}(d_th + i cot d_ph - (i/sin) d_psi) = e^{i phi}(d_th + i cot d_ph + K_z/sin)
+PASS 2.2 convention A: J_- has the SAME sign of the K_z/sin term
+PASS 2.3 convention B (psi_B = -psi): the d/dpsi_B term flips sign (+i/sin), weight k_B = -k; K_z/sin unchanged
+PASS 2.4 on e^{-i psi/2} Y (K_z = -1/2): J_+ = e^{i phi}(d_th + i cot d_ph - 1/(2 sin)) Y, i.e. c = -e^{i phi}/(2 sin theta)
+PASS 3.1 sympy Rotation.D(1/2, m, m') equals the matrix D entry by entry (complex values, same Euler convention)
+PASS 3.2 complex ladder coefficient = -sqrt(j(j+1)-m(m+-1)) (real, negative): Euler picture 40, N chart 40, S chart 40 transitions
+PASS 3.3 dictionary is equivariant: <De2| J_+ Psi> = J_+ <De2|Psi>  (complex, both states)
+PASS 3.4 dictionary is equivariant for J_- and J_z
+PASS 3.5 f_up = e^{-i psi/2} e^{i phi/2} sin(theta/2) and f_dn = -e^{-i psi/2} e^{-i phi/2} cos(theta/2)
+PASS 3.6 f_up = +D^{1/2}_{-1/2,1/2} and f_dn = -D^{1/2}_{1/2,1/2} (sympy, complex): the minus of C'=-C is the left-multiplication sign
+PASS 3.7 pair of C221(b): J_- f_up = +1 * f_dn and J_+ f_dn = +1 * f_up (complex constants)
+PASS 3.8 north chart (psi=-phi): Y^N_up = e^{i phi} sin(theta/2), Y^N_dn = -cos(theta/2)
+PASS 3.9 south chart (psi=+phi): Y^S_up = sin(theta/2), Y^S_dn = -e^{-i phi} cos(theta/2)
+PASS 3.10 N -> S transition on the amplitudes: Y^S = e^{-i phi} Y^N (both states, complex)
+PASS 3.11 ladder constants are the SAME complex number (+1) in the eta frame, the N chart and the S chart
+PASS 4.1 D(psi+2pi) = -D, D(phi+2pi) = -D, D(psi+4pi) = D (exact)
+PASS 4.2 matrix exponential: exp(-i 2pi sigma_n/2) = -1 and exp(-i 4pi sigma_n/2) = +1 for 10 random axes n
+PASS 4.3 Wigner functions: F(psi+2pi) = F(phi+2pi) = (-1)^(2j) F and the 4pi shift gives F, for j up to 2 (54 functions)
+PASS 4.4 matrices of J_a built from the operators on the (2j+1)-dim space: algebra, Casimir j(j+1), spectrum -j..j, and exp(-i 2pi J.n) = (-1)^(2j), exp(-i 4pi J.n) = 1 for random axes
+PASS 4.5 amplitudes: in the eta frame Y(phi+2pi) = -Y; in the N and S charts Y(phi+2pi) = +Y
+PASS 4.6 the spinor field Psi = Y eta is single-valued; the frame eta changes sign (so does Y), the product does not
+PASS 4.7 the body-fixed generator: K_z e^{ik psi} = k e^{ik psi}; psi -> psi + 2 pi gives e^{2 pi i k} = -1 for half-integer k (frame sign flip)
+ALL PASS

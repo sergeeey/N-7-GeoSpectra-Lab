@@ -4350,6 +4350,80 @@ claims:
       - "novelty: the (1/2,1/2) structure is the classical Peter-Weyl decomposition of the defining representation, recorded here as an exact reproducible certificate."
     caveat: "Builder (sympy) and verifier (stdlib fractions) are one author's pair in one session and share conventions; the only independent check is a context-blind skeptic of the same model family (2026-11-03, see REPORT_RU.md section 7a); no human review. Verified 2026-11-23: nine files match SHA256SUMS.txt; verify_valid ACCEPT 18/18; negative controls as declared; fresh rebuild hash identical."
     notes: "Folder committed in 1792f9b. decision.md added 2026-11-23 with this entry. Before this entry, C232, C233 and C243 cited the result without a row of their own. The folder is not an independent reproduction. Overlap found 2026-11-23: an earlier packet (experiments/20260809-tom-s3-harmonics-solution-packet, on unmerged branch b2-independent-reimplementation, private copy in correspondence/branch_recovery_2026-11-23, git-ignored) computes the same j=1/2 Peter-Weyl block in a different chart; re-run 2026-11-23 in a scratch copy: results json identical to the stored one (verdict ALL_CHECKS_PASS). Weight-labelling conventions of the two are NOT reconciled here."
+  - id: C244_EULER_ANGLE_ORIGIN_OF_EXTRA_TERM_AND_CLOSURE_RULE_REPRODUCED_PRIMARY_SOURCE_NOT_OPENED
+    statement: "Exact sympy plus random-point checks, five scripts re-run 2026-11-23 from a self-contained copy. With the Euler parametrisation D(phi,theta,psi) = Rz(phi) Ry(theta) Rz(psi) the generators are J+ = e^{i phi}(d_theta + i cot(theta) d_phi - (i/sin theta) d_psi) and J- = e^{-i phi}(-d_theta + i cot(theta) d_phi - (i/sin theta) d_psi), with [J+,J-] = 2 L_z (12 checks). On functions e^{i k psi} Y the d_psi term becomes k/sin(theta), so the extra term of the spin-weighted ladder of C221 is a derivative along the third Euler angle (weight k = -s): k = -1/2 gives c = -e^{i phi}/(2 sin theta) and k = +1/2 does not; in the north and south charts the term is k e^{i phi} tan(theta/2) and k e^{i phi} cot(theta/2). Predicted and measured closure agree in every scanned (j,k) row (ALL AGREE; 14 predicted closures, 22 predicted failures) and the rule equals the exploratory rule of C221 on 21 pairs. The sign of the lowering coefficient is a phase convention (rephasing the lower state by e^{i alpha} multiplies it by e^{-i alpha}); the frame column has weight +1/2 and the state weight -1/2 (30 and 14 further checks). Against sympy Wigner D: 69 checks pass, and the control with the wrong sign of the d_psi term fails in 18 of 18 cases with k != 0."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261123-c244-c247-tom-line-gap-closure/decision.md"
+    depends_on: [C221_SPINOR_LADDER_ORBITAL_STEP4_FAILS_COT_RATIO_SPIN_WEIGHT_HALF_CLOSES_CLOSURE_ONLY_AT_S_PM_HALF, C184_S2_DOUBLET_DERIVED_DOUBLE_VALUED_BILINEAR_SINGLE_VALUED]
+    supersedes: "no prior claim -- first tracked record of the Euler-angle derivation; supplements C221 without editing it."
+    convention: "Unit S^2 with Euler angles (phi,theta,psi), D = Rz(phi) Ry(theta) Rz(psi); L+- as in C221; K_z e^{ik psi} = k e^{ik psi}; Condon-Shortley sign on the lower function."
+    does_not_imply:
+      - "that C221's own entry or section 7.3 of its decision file is amended: C221 is unchanged and this entry supplements it"
+      - "that the ladder is the standard spin-weighted (edth) ladder: the match rests on a secondary source and the primary source (Goldberg 1967) was not opened for this claim"
+      - "which half-integer value or operator the correspondent intends"
+      - "anything about N_gen=3, OB1 or lambda"
+    caveat: "Same author and same model family; one context-blind verifier review (2026-11-02) gave WEAKENED: the derivation is reproducible, but the memory-note wording that it closes C221 section 7.3 overstated what the ledger recorded. Scripts were copied with style-only fixes (ruff; the 13 logs are byte-identical before and after the fixes) and re-run from experiments/20261123-c244-c247-tom-line-gap-closure/scripts (10 of 10 exit 0). Closure rule checked on scanned rows only. No human review."
+    notes: "Row R16 of the private correspondence layer. Before this entry the ledger recorded the origin of the extra term only as not established (C221 does_not_imply)."
+  - id: C245_LITERAL_M_MINUS_ONE_IS_L1_LOWEST_WEIGHT_SCALAR_LADDER_AT_M_PM_HALF_DOES_NOT_CLOSE
+    statement: "Exact sympy, 13 checks (9 + 4), re-run 2026-11-23. With the plain ladder operators of C221 at s = 0, the literal m = -1 condition f = sin(theta) gives L_- Y = 0 while L_+ Y is non-zero, so it is the l = 1 lowest-weight state Y_{1,-1} and not an L_+ null state. For m = +-1/2 with f = sin^{1/2}(theta): L_+ Y_up = 0 and L_- Y_down = 0, but L_- Y_up = -e^{-i phi/2} cos(theta)/sqrt(sin theta) and L_+ Y_down = +e^{i phi/2} cos(theta)/sqrt(sin theta) are not constant multiples of Y_down and Y_up (the ratio depends on theta), so the scalar ladder does not close at m = +-1/2; both functions are antiperiodic under phi -> phi + 2 pi. The m = +-1/2 part restates C221 (1); new here is the identification of the literal m = -1 reading."
+    truth_status: SUPPORTED
+    test_outcome: PASS
+    execution_status: READY
+    evidence_status: INTERNALLY_CERTIFIED
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261123-c244-c247-tom-line-gap-closure/decision.md"
+    depends_on: [C221_SPINOR_LADDER_ORBITAL_STEP4_FAILS_COT_RATIO_SPIN_WEIGHT_HALF_CLOSES_CLOSURE_ONLY_AT_S_PM_HALF]
+    supersedes: "no prior claim -- records the literal m = -1 reading; the m = +-1/2 part restates C221 (1)."
+    convention: "Unit S^2; L+- = e^{+-i phi}(+-d_theta + i cot(theta) d_phi); Lz = -i d_phi; Y = f(theta) e^{i m phi}."
+    does_not_imply:
+      - "which m-value or operator the correspondent meant: whether he meant m = -1/2 is a question for him"
+      - "that a multiplet of single-valued functions carries spin 1/2 (C179 stands)"
+      - "anything about which functions a spinor field is built from"
+    caveat: "Same author and model family; exact for the stated operators and functions; no independent review of these two scripts. The C221 entry already contains the m = +-1/2 non-closure."
+    notes: "Row R03 of the private correspondence layer, re-run 2026-11-23 through the layer's own runner and again from the copy in this folder's scripts directory."
+  - id: C246_S3_S2_REDUCTION_IDENTITY_NUMERICALLY_VERIFIED_RELATION_TO_PUBLISHED_REDUCTION_PARTLY_UNREAD
+    statement: "Numerical check, three scripts re-run 2026-11-23 (residuals about 1e-15, negative controls fail with errors of order 1 to 8). On S^1-invariant spinors the reduction of the S^3 operator is T^-1 (D0 - I) T = 2(1 + sigma.L) = 2i Omega D_1 Omega^-1 = i Omega D_{1/2} Omega^-1, with the closed form D_1 = sum_k sigma_k (grad n_k . grad) - Gamma, Gamma = sigma.n, on the unit S^2 (20 points, max error 9.16e-16; the control with +Gamma gives 2.04). The identity holds on all test fields of degrees 0 to 3, the control 2(1 - sigma.L) fails on every discriminating field, and the factor c = 2i with residual about 1e-15 appears for the rotated frame while the identity frame gives residuals of order 3. Relation to the published reduction (an expository note, eq. 4.11, base radius 1/2): same geometric content (the vertical term vanishes on invariants and the zero-order term is -1/2) but not the same equation: the sign, the Clifford/i convention and the frame differ; this comparison is hand algebra on the equations read, not a script result."
+    truth_status: PARTIALLY_SUPPORTED
+    test_outcome: PARTIAL
+    execution_status: READY
+    evidence_status: PARTIAL
+    lifecycle_status: ACTIVE
+    finding_status: QUALIFIED
+    evidence_file: "tom_s3_spinor_toy/experiments/20261123-c244-c247-tom-line-gap-closure/decision.md"
+    depends_on: [C185_S2_DIRAC_OPERATOR_BUILT_SPECTRUM_PLUS_MINUS_N_PLUS_1, C227_D0_SPECTRUM_MULTIPLICITIES_FOR_ALL_S_FROM_PETER_WEYL_CHECKED_NUMERICALLY_TO_S_3]
+    supersedes: "no prior claim -- first tracked record of the S^3 to S^2 reduction check and of its relation to the published reduction."
+    convention: "Left-invariant fields X_a with T_a = -i sigma_a, D0 = -i sum_a sigma_a X_a; (T psi)(g) = g^dagger psi(pi(g)); Omega = exp(i pi Gamma/4); D_{1/2} = 2 D_1 on the sphere of radius 1/2."
+    does_not_imply:
+      - "that the published reduction and this one are the same equation: only the geometric content agrees"
+      - "novelty: none is claimed"
+      - "anything about the correspondent's operator: D0 is ours"
+      - "a proof for arbitrary spinors: the check is on test fields; an analytic proof exists in a private theorem note and was not re-derived here"
+    caveat: "Same author and model family; verifier review 2026-11-02: WEAKENED. Pages 4 to 7 and 11 to 19 of the published note were not read; the sign and convention relation is hand algebra without a script; the source file is not stored locally (a download needs an explicit yes)."
+    notes: "Row R15 of the private correspondence layer; no experiment folder existed before this one."
+  - id: C247_OPEN_READING_OF_FERMION_WAVEFORMS_SUBSET_OF_HARMONIC_BASIS_AGAINST_C222_C224
+    statement: "Open question, no computation. A recorded answer from the correspondent (item 4 of a June 2026 question round) says that the fermion waveforms are a subset of the harmonic basis up to normalisation and look like snapshots of massless states. C222 shows that scalar functions under dragging on S^2 carry only integer spin, so the spin-1/2 doublet is not a multiplet of scalar harmonics; C224 shows that a fermion is not a constant-coefficient superposition of two fermion composites. Hypothesis (INFERRED, untested against the correspondent): the statements concern different spaces. On S^3 the degree-1 matrix-element block W of TOM-CERT-01 (two left doublets, type (1/2,1/2)) is a subset of the harmonic basis of L^2(S^3); on S^2 the doublet is a section, not a scalar harmonic. Not resolved: which space and which basis the recorded statement refers to."
+    truth_status: OPEN
+    test_outcome: NOT_RUN
+    execution_status: READY
+    evidence_status: PARTIAL
+    lifecycle_status: ACTIVE
+    finding_status: OPEN
+    evidence_file: "tom_s3_spinor_toy/experiments/20261123-c244-c247-tom-line-gap-closure/decision.md"
+    depends_on: [C222_SPIN_HALF_INVARIANT_SUBSPACES_ON_S2_FORM_A_CP1_FAMILY_SCALARS_UNDER_DRAGGING_ONLY_INTEGER_SPIN, C224_FERMION_NOT_A_CONSTANT_COEFFICIENT_SUPERPOSITION_OF_TWO_FERMION_COMPOSITES_THREE_FACTOR_IDENTITY_IS_TRIVIAL, TOM_CERT_01_SPAN_GAB_SU2LR_HALFHALF_EXACT]
+    supersedes: "no prior claim -- first tracked record of this open question."
+    convention: "None fixed: the question is which basis and which space the recorded statement means."
+    does_not_imply:
+      - "a contradiction: this is a question about how to read the statement, not a correction"
+      - "that W is the correspondent's multiplet or that any fermion exists"
+      - "anything about S^6 or the product S^3 x S^6"
+    caveat: "The source of the recorded answer is outside the repository (private notes); the entry paraphrases it. No computation was run; the only certified part is the degree-1 block of TOM-CERT-01, already registered."
+    notes: "Row R17 of the private correspondence layer. Resolved only by the correspondent's answer."
 
 schema:
   # Added 2026-08-10 after an external review named a machine-readable claim

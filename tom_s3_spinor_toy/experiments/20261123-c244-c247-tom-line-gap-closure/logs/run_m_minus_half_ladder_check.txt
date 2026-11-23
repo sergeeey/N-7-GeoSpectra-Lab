@@ -1,0 +1,8 @@
+PASS Q1 L_+ Y_up = 0
+PASS Q2 L_- Y_down = 0
+   L_+ Y_down = exp(I*phi/2)*cos(theta)/sqrt(sin(theta))
+PASS Q3 L_+ Y_down is not a constant multiple of Y_up
+   L_- Y_up   = -exp(-I*phi/2)*cos(theta)/sqrt(sin(theta))
+PASS Q4 L_- Y_up is not a constant multiple of Y_down
+
+FAILS: none

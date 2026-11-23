@@ -1,0 +1,13 @@
+PASS L_z = -i d/d phi
+PASS [L_x, L_y] = i L_z
+PASS [J+, J-] = 2 L_z
+PASS J+ = e^{i phi}(d_th + i cot th d_ph - (i/sin th) d_psi)
+PASS J- = e^{-i phi}(-d_th + i cot th d_ph - (i/sin th) d_psi)  (same sign of the d_psi term)
+PASS weight k: J+ (e^{ik psi} Y) = e^{ik psi} e^{i phi}(d_th + i cot th d_ph + k/sin th) Y  (checked at random points)
+PASS k = -1/2 reproduces the letter's operator literally, c = -e^{i phi}/(2 sin theta)
+PASS control: k = +1/2 does NOT reproduce the letter's operator
+PASS chart N (psi' = psi + phi): J+ acts as (L+ + c) with c = k e^{i phi} tan(theta/2)
+PASS chart S (psi'' = psi - phi): J+ acts as (L+ + c) with c = k e^{i phi} cot(theta/2)
+PASS D(phi,theta,psi) e_2 = e^{i psi/2} eta
+PASS psi = -phi gives eta_N = e^{-i phi/2} eta; psi = +phi gives eta_S = e^{i phi/2} eta
+ALL PASS
