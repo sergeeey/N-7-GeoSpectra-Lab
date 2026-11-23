@@ -36,7 +36,7 @@ The other roughly 90 unmerged branches carry patch-unique commits whose files al
 ## Re-run of the packet (2026-11-23)
 
 - The packet script was run from a scratch copy together with its round-76 dependency: exit 0, 53 s. The fresh results json is identical to the stored one; verdict `ALL_CHECKS_PASS`. [VERIFIED by command]
-- The independent second implementation did not finish in 280 s; a background run was started with a 25-minute limit. Until it finishes it is `[UNKNOWN]`, not verified.
+- The independent second implementation did not finish: a 280 s foreground run and a 25-minute background run both hit the timeout (exit 124) inside step C (exact coefficient matching of the 4x4 matrices). Steps A and B printed `True` (chart check, generators by differentiating the group action, Cartan components). Its own header says it was parked mid-build. Status: `[UNKNOWN]`, not verified, not a failure of the packet.
 - The packet computes the same j = 1/2 Peter-Weyl block as the ledger row `TOM_CERT_01_SPAN_GAB_SU2LR_HALFHALF_EXACT`, in a different chart. The weight labelling of the two is not reconciled.
 
 ## Worktrees
