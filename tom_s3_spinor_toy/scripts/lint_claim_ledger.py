@@ -46,6 +46,11 @@ Advisory checks (``--advisory``; never change the exit code):
       resolves or re-grounds the premise (e.g. C155 on C154), so they are
       prompts for a human, not defects.
 
+  A3  an experiment folder dated on or after ``A3_FROM`` whose ``decision.md`` has no
+      ``Ledger:`` line (``Ledger: C<nn> | none-because: <reason>``, see
+      ``experiments/_template/decision.md``). Older folders are not flagged: back-filling them in
+      bulk is not wanted.
+
 What "recognised reference" means (stated so L6 is not over-read): only
 tokens ending in a known file extension (case-insensitive, see ``_EXTS``) or
 in ``/`` (a directory) are recognised; URLs are ignored. A malformed token
@@ -104,6 +109,11 @@ _REF_RE = re.compile(
     r"(?::(?P<a>\d+)(?:-(?P<b>\d+))?)?"
 )
 _URL_RE = re.compile(r"https?://\S+")
+
+A3_FROM = "20261103"  # first experiment date the A3 check applies to (YYYYMMDD)
+_LEDGER_LINE_RE = re.compile(
+    r"^\s*[*_`>#\-\s]*Ledger\s*:", re.IGNORECASE | re.MULTILINE
+)
 
 _STRONG = {"PROVED", "SUPPORTED"}
 _ASSERTS_FINDING = {"ESTABLISHED", "QUALIFIED"}
@@ -488,6 +498,31 @@ def lint_ledger(
     return rep
 
 
+def decision_ledger_advisories(
+    experiments_dir: Path, from_date: str = A3_FROM
+) -> list[Finding]:
+    """A3: decision.md of an experiment dated >= from_date must carry a ``Ledger:`` line."""
+    out: list[Finding] = []
+    if not experiments_dir.is_dir():
+        return out
+    for d in sorted(experiments_dir.iterdir()):
+        if not d.is_dir() or not re.match(r"\d{8}-", d.name) or d.name[:8] < from_date:
+            continue
+        dec = d / "decision.md"
+        if not dec.exists():
+            continue
+        text = dec.read_text(encoding="utf-8", errors="replace")
+        if not _LEDGER_LINE_RE.search(text):
+            out.append(
+                Finding(
+                    "A3",
+                    d.name,
+                    "decision.md has no `Ledger:` line (see experiments/_template)",
+                )
+            )
+    return out
+
+
 def _git_tracked(repo_root: Path) -> set[str]:
     out = subprocess.run(
         ["git", "ls-files"],
@@ -529,6 +564,7 @@ def main(argv: list[str] | None = None) -> int:
         ledger, graph, ledger_dups=ledger_dups, graph_dups=graph_dups, tracked=tracked
     )
 
+    rep.advisories.extend(decision_ledger_advisories(PROJECT_DIR / "experiments"))
     for f in rep.errors:
         print(f)
     if args.advisory:

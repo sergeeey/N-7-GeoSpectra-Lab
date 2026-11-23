@@ -122,3 +122,16 @@ Accepted-limitation.
 ## 6. Status
 
 Where the artifacts live, what was committed, what was not.
+
+---
+
+## 7. Registry line (one line, last in the file; the linter warns if it is missing)
+
+```
+Ledger: C<nn> | none-because: <reason, e.g. superseded, no durable claim, pre-ledger era>
+Follow-ups: <experiment folders that continue, correct or supersede this result> | none
+```
+
+`Ledger:` names the `CLAIM_LEDGER.yaml` entry that carries this result (that file is the only claim
+catalogue; do not add another). `Follow-ups:` is what lets the next reader see that a blocked or
+escalated study was later answered (G99 was answered by G100). Update it when a follow-up appears.

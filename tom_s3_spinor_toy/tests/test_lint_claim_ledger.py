@@ -640,3 +640,38 @@ def test_cli_exit_codes(tmp_path, capsys):
         lint.main(["--ledger", str(path), "--graph", str(tmp_path / "none.yaml")]) == 1
     )
     assert "[L6]" in capsys.readouterr().out
+
+
+# ---------------------------------------------------------------- advisory A3 (decision.md registry line)
+def _mk_exp(root, name, body):
+    d = root / name
+    d.mkdir(parents=True)
+    (d / "decision.md").write_text(body, encoding="utf-8")
+
+
+def test_a3_flags_new_decision_without_ledger_line_and_accepts_the_line(tmp_path):
+    _mk_exp(tmp_path, "20261104-new-no-line", "# Decision\n**Verdict:** PASS\n")
+    _mk_exp(
+        tmp_path,
+        "20261104-new-with-ledger",
+        "# Decision\n\nLedger: C229 | none-because: -\n",
+    )
+    _mk_exp(
+        tmp_path, "20261104-new-none-because", "# D\nLedger: none-because: superseded\n"
+    )
+    found = lint.decision_ledger_advisories(tmp_path)
+    assert [f.claim_id for f in found] == ["20261104-new-no-line"]
+    assert found[0].code == "A3"
+
+
+def test_a3_ignores_folders_before_the_cutoff_and_non_dated_dirs(tmp_path):
+    _mk_exp(tmp_path, "20260701-old-no-line", "# Decision\n")
+    _mk_exp(tmp_path, "_template", "# Decision\n")
+    assert lint.decision_ledger_advisories(tmp_path) == []
+    assert lint.decision_ledger_advisories(tmp_path / "does-not-exist") == []
+
+
+def test_a3_never_changes_the_exit_code(capsys):
+    # advisories print only with --advisory and never fail the run
+    assert lint.main([]) == 0
+    assert "advisories hidden" in capsys.readouterr().out
