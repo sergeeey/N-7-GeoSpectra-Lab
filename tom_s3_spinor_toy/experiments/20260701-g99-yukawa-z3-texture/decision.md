@@ -65,3 +65,18 @@ Escalated to user (per doubt-driven-development Step 4: primary/skeptic
 disagreement on how to proceed -- in this case, disagreement between the
 original G99 proposal and both reviewers, plus a higher-stakes side finding
 requiring explicit direction before further work).
+
+---
+
+## Addendum 2026-11-03 (link added by a registry audit; the text above is unchanged)
+
+- The "bigger finding" escalated above (G44 REJECT vs G73 PROMOTE, never reconciled in writing) was taken up the same day by
+  `experiments/20260701-g100-ach-g44-g73-audit/` (verdict PASS): Case 7 added to `TOM_RECONSTRUCTION_ACH_MATRIX.md`,
+  README "N_gen = 3 EXACTLY" softened, status recorded as OPEN pending G67-C3 / G72 (Tom). No change to the N_gen=3 mathematics.
+- G99 itself was never run or formally closed. Later work on the question it raised: `experiments/20260711-gap4-s3-s6-mode-mixing/`
+  (REJECT: the S3 factor is a generation-blind spectator), OB11 in `OPEN_BLOCKERS.md` and
+  `experiments/20261025-ob11-triality-admissible-symmetry-discriminator/` (no invariant projector onto one triality channel; zero-mode count INCONCLUSIVE).
+- Reopen only after the OB11 fibre-action discrepancy is settled; a Z3 action on the generations must be derived, not assigned.
+
+Ledger: none-because: blocked before implementation, no durable claim
+Follow-ups: 20260701-g100-ach-g44-g73-audit, 20260711-gap4-s3-s6-mode-mixing, 20261025-ob11-triality-admissible-symmetry-discriminator

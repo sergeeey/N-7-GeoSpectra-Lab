@@ -47,3 +47,21 @@ not specific to any one computation.
 - Close S6-HARM branch (G0→G5 complete) and summarize for Tom update
 - Tom Lawrence correspondence: await reply on rows 17+19 before S³ structure changes
 - ACH matrix: G4/G5 close λ-identifiability evidence chain
+
+---
+
+## Addendum 2026-11-03: strength of the evidence (registry audit; the text above is unchanged)
+
+Re-read of `s6_harm_g5_spin_connection.py` ([VERIFIED-tool], by reading the code, not by rerunning):
+
+- T1-T5 (13 of the 17 checks) test the Cartan structure equations for the three (beta_k, phi_k) pairs and the coordinate/frame forms of omega. These support the stated
+  law omega^{phi_k}_{beta_k}(coord) = cos beta_k and its frame form, for the diagonal pairs only.
+- T6 (3 checks) compares the frame coefficient with cot beta_k, which T5 already established; it does not compute the G2 root-generator expression.
+  It therefore does not establish "same coefficient as G2" (claim C5) as an independent result.
+- T7 (1 check) is `dirac_shift == cotbk_pair_count` with `dirac_shift = 6 // 2` and `cotbk_pair_count = 3` both fixed in the script, i.e. a tautology.
+  It does not derive the +3 shift of the Dirac spectrum (claim C6); that shift rests on G4.
+- So "17/17" is 13 independent checks plus 4 that restate or assume. The "cot beta_k universality chain" across G2-G5 is a statement about the form of one coefficient, not a derivation linking the four levels.
+- No later experiment cites this result (searched `experiments`, `tests`, `scripts`).
+
+Ledger: none-because: single-script result, not carried into CLAIM_LEDGER (add a claim only with the strength above)
+Follow-ups: none

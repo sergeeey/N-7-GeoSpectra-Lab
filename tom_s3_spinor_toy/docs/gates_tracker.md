@@ -106,7 +106,7 @@ python scripts/export_results.py --all     → both
 | G100 | Audit | G73 "×3 channels" dependency map: what does it rely on? | PASS | G67-C3: 2/3 closed (G68 L≠R); 1/3 open (8_v vector channel) | 6/6 | 2026-07-01 |
 | G102 | Triality | Can Spin(8) fiber give third triality channel derivably? | NULL | c_{so(8)}(g₂)=0; no fiber symmetry coexists with S⁶ geometry; 8_v = MODEL POSTULATE | 14/14 | 2026-07-05 |
 | G103 | Lambda Origin | KK tower lambda-blindness + UV mechanism proposals | PASS | m_mod∝λ⁰·⁴⁹³; 5 external proposals killed; KK sector λ-blind | 12/12 | 2026-07-05 |
-| G104 | Lambda Origin | H1 vs H2 forward test on S²×S⁶ (different geometry) | NULL | κ/ρ_min stays blind off (3,6) coincidence; H1≠H2 not distinguishable | 8/8 | 2026-07-05 |
+| G104 | Lambda Origin | H1 vs H2 forward test on S²×S⁶ (different geometry) | NULL | κ (λ-insensitive, spread 0.23%; C1 κ²=1.170 vs 7/6) cannot separate H1/H2. V_min ratio H1/H2 = 2.03 and m_mod ratio 1.41, both unchanged at ρ*=1.090 and ρ*=1.1541 (scratch rerun, addendum 2026-10-26). No physical preference: no target | 8/8 | 2026-07-05 |
 | G105 | Modulus Mass | Analytic derivation of m_mod∝ρ₆^α power law | PROMOTE | Leading order α=1/2 EXACTLY from asymptotic expansion; unifies G66+G103 | 18/18 | 2026-07-06 |
 | G106 | Modulus Mass | Pre-registered prediction at genuinely new N=7 point | PROMOTE | κ² within 0.22%; exponent within 0.001; pre-registration confirmed | 6/6 | 2026-07-06 |
 
